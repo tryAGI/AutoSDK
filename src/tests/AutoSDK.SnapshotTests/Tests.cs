@@ -59,6 +59,8 @@ public partial class Tests
     [DataRow("", "vectara.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("", "mistral.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("", "mistral.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("", "weaviate.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("", "weaviate.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string callerName, string fileName, JsonSerializerType jsonSerializerType)
     {
         if (callerName == "Empty")

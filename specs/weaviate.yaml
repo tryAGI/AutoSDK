@@ -1,0 +1,4553 @@
+openapi: 3.0.1
+info:
+  title: Weaviate
+  description: "# Introduction\n Weaviate is an open source, AI-native vector database that helps developers create intuitive and reliable AI-powered applications. \n ### Base Path \nThe base path for the Weaviate server is structured as `[YOUR-WEAVIATE-HOST]:[PORT]/v1`. As an example, if you wish to access the `schema` endpoint on a local instance, you would navigate to `http://localhost:8080/v1/schema`. Ensure you replace `[YOUR-WEAVIATE-HOST]` and `[PORT]` with your actual server host and port number respectively. \n ### Questions? \nIf you have any comments or questions, please feel free to reach out to us at the community forum [https://forum.weaviate.io/](https://forum.weaviate.io/). \n### Issues? \nIf you find a bug or want to file a feature request, please open an issue on our GitHub repository for [Weaviate](https://github.com/weaviate/weaviate). \n### Want more documentation? \nFor a quickstart, code examples, concepts and more, please visit our [documentation page](https://weaviate.io/developers/weaviate)."
+  contact:
+    name: Weaviate
+    url: https://weaviate.io
+  version: '1.26.5'
+servers:
+  - url: https:///v1
+paths:
+  /:
+    get:
+      tags:
+        - root
+      summary: List available endpoints
+      description: Get links to other endpoints to help discover the REST API
+      operationId: weaviate.root
+      responses:
+        '200':
+          description: Weaviate is alive and ready to serve content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  links:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Link'
+  /.well-known/live:
+    get:
+      tags:
+        - well-known
+      summary: Get application liveness.
+      description: Determines whether the application is alive. Can be used for kubernetes liveness probe
+      operationId: weaviate.wellknown.liveness
+      responses:
+        '200':
+          description: The application is able to respond to HTTP requests
+          content:
+            application/json: { }
+  /.well-known/ready:
+    get:
+      tags:
+        - well-known
+      summary: Get application readiness.
+      description: Determines whether the application is ready to receive traffic. Can be used for kubernetes readiness probe.
+      operationId: weaviate.wellknown.readiness
+      responses:
+        '200':
+          description: The application has completed its start-up routine and is ready to accept traffic.
+          content:
+            application/json: { }
+        '503':
+          description: 'The application is currently not able to serve traffic. If other horizontal replicas of weaviate are available and they are capable of receiving traffic, all traffic should be redirected there instead.'
+          content:
+            application/json: { }
+  /.well-known/openid-configuration:
+    get:
+      tags:
+        - well-known
+      summary: OIDC discovery information (if OIDC auth is enabled)
+      description: 'OIDC Discovery page, redirects to the token issuer if one is configured'
+      responses:
+        '200':
+          description: 'Successful response, inspect body'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  href:
+                    type: string
+                    description: The Location to redirect to
+                  clientId:
+                    type: string
+                    description: OAuth Client ID
+                  scopes:
+                    type: array
+                    items:
+                      type: string
+                    description: OAuth Scopes
+                    x-omitempty: true
+        '404':
+          description: 'Not found, no oidc provider present'
+          content:
+            application/json: { }
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  /objects:
+    get:
+      tags:
+        - objects
+      summary: Get a list of objects.
+      description: 'Lists all objects in reverse order of creation. The data will be returned as an array of objects. <br/><br/>Tip: If you are looking to list all objects in a collection, use the `after` parameter.'
+      operationId: objects.list
+      parameters:
+        - $ref: '#/components/parameters/CommonAfterParameterQuery'
+        - $ref: '#/components/parameters/CommonOffsetParameterQuery'
+        - $ref: '#/components/parameters/CommonLimitParameterQuery'
+        - $ref: '#/components/parameters/CommonIncludeParameterQuery'
+        - $ref: '#/components/parameters/CommonSortParameterQuery'
+        - $ref: '#/components/parameters/CommonOrderParameterQuery'
+        - $ref: '#/components/parameters/CommonClassParameterQuery'
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      responses:
+        '200':
+          description: 'Successful response. <br/><br/>If `class` is not provided, the response will not include any objects.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectsListResponse'
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json: { }
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.query
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    post:
+      tags:
+        - objects
+      summary: Create a new object.
+      description: 'Create a new object. <br/><br/>Meta-data and schema values are validated. <br/><br/>**Note: Use `/batch` for importing many objects**: <br/>If you plan on importing a large number of objects, it''s much more efficient to use the `/batch` endpoint. Otherwise, sending multiple single requests sequentially would incur a large performance penalty. <br/><br/>**Note: idempotence of `/objects`**: <br/>POST /objects will fail if an id is provided which already exists in the class. To update an existing object with the objects endpoint, use the PUT or PATCH method.'
+      operationId: objects.create
+      parameters:
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Object created.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Object'
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.add
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  '/objects/{id}':
+    get:
+      tags:
+        - objects
+      summary: List objects.
+      description: Get a specific object based on its UUID. Also available as Websocket bus.
+      operationId: objects.get
+      parameters:
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/CommonIncludeParameterQuery'
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Object'
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json: { }
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
+      x-serviceIds:
+        - weaviate.local.query
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    put:
+      tags:
+        - objects
+      summary: Update an object.
+      description: Updates an object based on its UUID. Given meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+      operationId: objects.update
+      parameters:
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Successfully received.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Object'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json: { }
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    delete:
+      tags:
+        - objects
+      summary: Delete an object.
+      description: Deletes an object from the database based on its UUID.
+      operationId: objects.delete
+      parameters:
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      responses:
+        '204':
+          description: Successfully deleted.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json: { }
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: true
+      x-available-in-websocket: true
+    head:
+      tags:
+        - objects
+      summary: Check if object exists.
+      description: Checks if an object exists in the system based on its UUID.
+      operationId: objects.head
+      parameters:
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '204':
+          description: Object exists.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Object doesn't exist.
+          content:
+            application/json: { }
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: true
+      x-available-in-websocket: true
+    patch:
+      tags:
+        - objects
+      summary: Update an object using patch semantics.
+      description: Update an object based on its UUID (using patch semantics). This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+      operationId: objects.patch
+      parameters:
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+      requestBody:
+        description: 'RFC 7396-style patch, the body contains the object to merge into the existing object.'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+        x-bodyName: body
+      responses:
+        '204':
+          description: Successfully applied. No content provided.
+          content:
+            application/json: { }
+        '400':
+          description: The patch-JSON is malformed.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json: { }
+        '422':
+          description: The patch-JSON is valid but unprocessable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  '/objects/{className}/{id}':
+    get:
+      tags:
+        - objects
+      summary: Get an object.
+      description: Get a data object based on its collection and UUID. Also available as Websocket bus.
+      operationId: objects.class.get
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/CommonIncludeParameterQuery'
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+        - $ref: '#/components/parameters/CommonNodeNameParameterQuery'
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Object'
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json: { }
+        '422':
+          description: 'Request is well-formed (i.e., syntactically correct), but erroneous.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.query
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    put:
+      tags:
+        - objects
+      summary: Update an object.
+      description: Update an object based on its uuid and collection. This (`put`) method replaces the object with the provided object.
+      operationId: objects.class.put
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The uuid of the data object to update.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Successfully received.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Object'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json: { }
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    delete:
+      tags:
+        - objects
+      summary: Delete an object.
+      description: 'Delete an object based on its collection and UUID. <br/><br/>Note: For backward compatibility, beacons also support an older, deprecated format without the collection name. As a result, when deleting a reference, the beacon specified has to match the beacon to be deleted exactly. In other words, if a beacon is present using the old format (without collection name) you also need to specify it the same way. <br/><br/>In the beacon format, you need to always use `localhost` as the host, rather than the actual hostname. `localhost` here refers to the fact that the beacon''s target is on the same Weaviate instance, as opposed to a foreign instance.'
+      operationId: objects.class.delete
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      responses:
+        '204':
+          description: Successfully deleted.
+          content:
+            application/json: { }
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json: { }
+        '422':
+          description: 'Request is well-formed (i.e., syntactically correct), but erroneous.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: true
+      x-available-in-websocket: true
+    head:
+      tags:
+        - objects
+      summary: Check if an object exists.
+      description: 'Checks if a data object exists based on its collection and uuid without retrieving it. <br/><br/>Internally it skips reading the object from disk other than checking if it is present. Thus it does not use resources on marshalling, parsing, etc., and is faster. Note the resulting HTTP request has no body; the existence of an object is indicated solely by the status code.'
+      operationId: objects.class.head
+      parameters:
+        - name: className
+          in: path
+          description: The class name as defined in the schema
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The uuid of the data object
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      responses:
+        '204':
+          description: Object exists.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Object doesn't exist.
+          content:
+            application/json: { }
+        '422':
+          description: 'Request is well-formed (i.e., syntactically correct), but erroneous.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: true
+      x-available-in-websocket: true
+    patch:
+      tags:
+        - objects
+      summary: Update an object using patch semantics.
+      description: Update an individual data object based on its collection and uuid. This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
+      operationId: objects.class.patch
+      parameters:
+        - name: className
+          in: path
+          description: The class name as defined in the schema
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: The uuid of the data object to update.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+      requestBody:
+        description: 'RFC 7396-style patch, the body contains the object to merge into the existing object.'
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+        x-bodyName: body
+      responses:
+        '204':
+          description: Successfully applied. No content provided.
+          content:
+            application/json: { }
+        '400':
+          description: The patch-JSON is malformed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json: { }
+        '422':
+          description: The patch-JSON is valid but unprocessable.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  '/objects/{id}/references/{propertyName}':
+    put:
+      tags:
+        - objects
+      summary: Replace cross-references.
+      description: Replace all references in cross-reference property of an object.
+      operationId: objects.references.update
+      parameters:
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: propertyName
+          in: path
+          description: Unique name of the property related to the Object.
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MultipleRef'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Successfully replaced all the references.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the property exists or that it is a class?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    post:
+      tags:
+        - objects
+      summary: Add a cross-reference.
+      description: Add a cross-reference.
+      operationId: objects.references.create
+      parameters:
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: propertyName
+          in: path
+          description: Unique name of the property related to the Object.
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SingleRef'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Successfully added the reference.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the property exists or that it is a class?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    delete:
+      tags:
+        - objects
+      summary: Delete a cross-reference.
+      description: Delete the single reference that is given in the body from the list of references that this property has.
+      operationId: objects.references.delete
+      parameters:
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: propertyName
+          in: path
+          description: Unique name of the property related to the Object.
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SingleRef'
+        required: true
+        x-bodyName: body
+      responses:
+        '204':
+          description: Successfully deleted.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      deprecated: true
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  '/objects/{className}/{id}/references/{propertyName}':
+    put:
+      tags:
+        - objects
+      summary: Replace cross-references.
+      description: Replace **all** references in cross-reference property of an object.
+      operationId: objects.class.references.put
+      parameters:
+        - name: className
+          in: path
+          description: The class name as defined in the schema
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: propertyName
+          in: path
+          description: Unique name of the property related to the Object.
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MultipleRef'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Successfully replaced all the references.
+          content:
+            application/json: { }
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Source object doesn't exist.
+          content:
+            application/json: { }
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the property exists or that it is a class?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    post:
+      tags:
+        - objects
+      summary: Add a cross-reference.
+      description: Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
+      operationId: objects.class.references.create
+      parameters:
+        - name: className
+          in: path
+          description: The class name as defined in the schema
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: propertyName
+          in: path
+          description: Unique name of the property related to the Object.
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SingleRef'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Successfully added the reference.
+          content:
+            application/json: { }
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Source object doesn't exist.
+          content:
+            application/json: { }
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the property exists or that it is a class?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    delete:
+      tags:
+        - objects
+      summary: Delete a cross-reference.
+      description: Delete the single reference that is given in the body from the list of references that this property has.
+      operationId: objects.class.references.delete
+      parameters:
+        - name: className
+          in: path
+          description: The class name as defined in the schema
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: Unique ID of the Object.
+          required: true
+          schema:
+            type: string
+            format: uuid
+        - name: propertyName
+          in: path
+          description: Unique name of the property related to the Object.
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SingleRef'
+        required: true
+        x-bodyName: body
+      responses:
+        '204':
+          description: Successfully deleted.
+          content:
+            application/json: { }
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Successful query result but no resource was found.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the property exists or that it is a class?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  /objects/validate:
+    post:
+      tags:
+        - objects
+      summary: Validate an object.
+      description: 'Validate an object''s schema and meta-data without creating it. <br/><br/>If the schema of the object is valid, the request should return nothing with a plain RESTful request. Otherwise, an error object will be returned.'
+      operationId: objects.validate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Object'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Successfully validated.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.query.meta
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  /batch/objects:
+    post:
+      tags:
+        - batch
+      summary: Batch create new objects.
+      description: 'Create new objects in bulk. <br/><br/>Meta-data and schema values are validated. <br/><br/>**Note: idempotence of `/batch/objects`**: <br/>`POST /batch/objects` is idempotent, and will overwrite any existing object given the same id.'
+      operationId: batch.objects.create
+      parameters:
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fields:
+                  type: array
+                  items:
+                    enum:
+                      - ALL
+                      - class
+                      - schema
+                      - id
+                      - creationTimeUnix
+                    type: string
+                    default: ALL
+                  description: Define which fields need to be returned. Default value is ALL
+                objects:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Object'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: 'Request succeeded, see response body to get detailed information about each batched item.'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ObjectsGetResponse'
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.add
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+    delete:
+      tags:
+        - batch
+      summary: Batch delete objects.
+      description: 'Batch delete objects that match a particular filter. <br/><br/>The request body takes a single `where` filter and will delete all objects matched. <br/><br/>Note that there is a limit to the number of objects to be deleted at once using this filter, in order to protect against unexpected memory surges and very-long-running requests. The default limit is 10,000 and may be configured by setting the `QUERY_MAXIMUM_RESULTS` environment variable. <br/><br/>Objects are deleted in the same order that they would be returned in an equivalent Get query. To delete more objects than the limit, run the same query multiple times.'
+      operationId: batch.objects.delete
+      parameters:
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+        - $ref: '#/components/parameters/CommonTenantParameterQuery'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchDelete'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: 'Request succeeded, see response body to get detailed information about each batched item.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchDeleteResponse'
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  /batch/references:
+    post:
+      tags:
+        - batch
+      summary: Batch create cross-references.
+      description: Batch create cross-references between collections items (objects or objects) in bulk.
+      operationId: batch.references.create
+      parameters:
+        - $ref: '#/components/parameters/CommonConsistencyLevelParameterQuery'
+      requestBody:
+        description: A list of references to be batched. The ideal size depends on the used database connector. Please see the documentation of the used connector for help
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/BatchReference'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: 'Request Successful. Warning: A successful request does not guarantee that every batched reference was successfully created. Inspect the response body to see which references succeeded and which failed.'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BatchReferenceResponse'
+        '400':
+          description: Malformed request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.add
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  /graphql:
+    post:
+      tags:
+        - graphql
+      summary: Perform a GraphQL query.
+      description: Get a response based on a GraphQL query
+      operationId: graphql.post
+      requestBody:
+        description: The GraphQL query request parameters.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GraphQLQuery'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Successful query (with select).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphQLResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.query
+        - weaviate.local.query.meta
+        - weaviate.network.query
+        - weaviate.network.query.meta
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  /graphql/batch:
+    post:
+      tags:
+        - graphql
+      summary: Perform batched GraphQL queries.
+      description: Perform batched GraphQL query
+      operationId: graphql.batch
+      requestBody:
+        description: The GraphQL queries.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GraphQLQueries'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Successful query (with select).
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphQLResponses'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: 'Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.query
+        - weaviate.local.query.meta
+        - weaviate.network.query
+        - weaviate.network.query.meta
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  /meta:
+    get:
+      tags:
+        - meta
+      summary: Get instance metadata.
+      description: Returns meta information about the server. Can be used to provide information to another Weaviate instance that wants to interact with the current instance.
+      operationId: meta.get
+      responses:
+        '200':
+          description: Successful response.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Meta'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.query.meta
+      x-available-in-mqtt: false
+      x-available-in-websocket: false
+  /schema:
+    get:
+      tags:
+        - schema
+      summary: Get the entire schema.
+      description: Fetch an array of all collection definitions from the schema.
+      operationId: schema.dump
+      parameters:
+        - name: consistency
+          in: header
+          description: 'If consistency is true, the request will be proxied to the leader to ensure strong schema consistency'
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: Successfully dumped the database schema.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Schema'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.query.meta
+    post:
+      tags:
+        - schema
+      summary: Create a collection.
+      description: 'Create a new data object collection. <br/><br/>If [AutoSchema](https://weaviate.io/developers/weaviate/config-refs/schema#auto-schema) is enabled, Weaviate will attempt to infer the schema from the data at import time. However, manual schema definition is recommended for production environments. <br/><br/>For further discussions of parameters, please see the [schema reference page](https://weaviate.io/developers/weaviate/config-refs/schema).'
+      operationId: schema.objects.create
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Class'
+        required: true
+        x-bodyName: objectClass
+      responses:
+        '200':
+          description: Added the new Object class to the schema.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Class'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid Object class
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.add.meta
+  '/schema/{className}':
+    get:
+      tags:
+        - schema
+      summary: Get a single collection schema.
+      operationId: schema.objects.get
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: consistency
+          in: header
+          description: 'If consistency is true, the request will be proxied to the leader to ensure strong schema consistency'
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: 'Found the Class, returned as body'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Class'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: This class does not exist
+          content:
+            application/json: { }
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.get.meta
+    put:
+      tags:
+        - schema
+      summary: Update an existing collection.
+      description: 'Alter an existing collection definition. <br/><br/>Note that not all settings are mutable ([see this list](https://weaviate.io/developers/weaviate/config-refs/schema#mutability)). To update any other (i.e. immutable) setting, you need to delete the collection, re-create it with the correct setting and then re-import the data. <br/><br/>This endpoint cannot be used to modify properties. Instead use POST /v1/schema/{className}/properties. A typical use case for this endpoint is to update a index configuration, such as `vectorIndexConfig/dynamicEfFactor`. <br/><br/>You should attach a body to this PUT request with the entire new configuration of the collection.'
+      operationId: schema.objects.update
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Class'
+        required: true
+        x-bodyName: objectClass
+      responses:
+        '200':
+          description: Class was updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Class'
+        '422':
+          description: Invalid update attempt
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Class to be updated does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate.meta
+    delete:
+      tags:
+        - schema
+      summary: Remove a collection (and its data).
+      description: Remove a collection from the schema. This will also delete all the objects in the collection.
+      operationId: schema.objects.delete
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Removed the Object class from the schema.
+          content:
+            application/json: { }
+        '400':
+          description: Could not delete the Object class.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate.meta
+  '/schema/{className}/properties':
+    post:
+      tags:
+        - schema
+      summary: Add a property.
+      description: 'Add a property to an existing collection. <br/><br/>If possible, we encourage you to create all required properties at collection creation time. Adding a property after collection creation can lead to [some indexing limitations](https://weaviate.io/developers/weaviate/config-refs/schema).'
+      operationId: schema.objects.properties.add
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Property'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Added the property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Property'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid property.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate.meta
+  '/schema/{className}/shards':
+    get:
+      tags:
+        - schema
+      summary: Get the shard status
+      description: Get the status of every shard in the cluster.
+      operationId: schema.objects.shards.get
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tenant
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Found the status of the shards, returned as body'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShardStatusList'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: This class does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.get.meta
+  '/schema/{className}/shards/{shardName}':
+    put:
+      tags:
+        - schema
+      summary: Update a shard status.
+      description: 'Update a shard status for a collection. For example, a shard may have been marked as `READONLY` because its disk was full. After providing more disk space, use this endpoint to set the shard status to `READY` again. There is also a convenience function in each client to set the status of all shards of a collection.'
+      operationId: schema.objects.shards.update
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: shardName
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShardStatus'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Shard status was updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShardStatus'
+        '422':
+          description: Invalid update attempt
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Shard to be updated does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.manipulate.meta
+  '/schema/{className}/tenants':
+    get:
+      tags:
+        - schema
+      summary: Get the list of tenants.
+      description: Get all tenants from a collection.
+      operationId: tenants.get
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: consistency
+          in: header
+          description: 'If consistency is true, the request will be proxied to the leader to ensure strong schema consistency'
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: tenants from specified class.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tenant'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid Tenant class
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    put:
+      tags:
+        - schema
+      summary: Update a tenant.
+      description: Update a tenant for a collection
+      operationId: tenants.update
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Tenant'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Updated tenants of the specified class
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tenant'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid Tenant class
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    post:
+      tags:
+        - schema
+      summary: Create a new tenant
+      description: Create a new tenant for a collection. Multi-tenancy must be enabled in the collection definition.
+      operationId: tenants.create
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Tenant'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Added new tenants to the specified class
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tenant'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid Tenant class
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+    delete:
+      tags:
+        - schema
+      summary: Delete tenant(s).
+      description: Delete tenants from a collection
+      operationId: tenants.delete
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+        required: true
+        x-bodyName: tenants
+      responses:
+        '200':
+          description: Deleted tenants from specified class.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid Tenant class
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  '/schema/{className}/tenants/{tenantName}':
+    head:
+      tags:
+        - schema
+      summary: Check whether a tenant exists
+      description: Check if a tenant exists for a specific class
+      operationId: tenant.exists
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: tenantName
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: consistency
+          in: header
+          description: 'If consistency is true, the request will be proxied to the leader to ensure strong schema consistency'
+          schema:
+            type: boolean
+            default: true
+      responses:
+        '200':
+          description: The tenant exists in the specified class
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: The tenant not found
+          content:
+            application/json: { }
+        '422':
+          description: Invalid Tenant class
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  '/backups/{backend}':
+    get:
+      tags:
+        - backups
+      summary: List backups in progress
+      description: List all backups in progress
+      operationId: backups.list
+      parameters:
+        - name: backend
+          in: path
+          description: 'Backup backend name e.g. filesystem, gcs, s3.'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Existed backups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackupListResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid backup list.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.backup
+    post:
+      tags:
+        - backups
+      summary: Start a backup process
+      description: 'Start creating a backup for a set of collections. <br/><br/>Notes: <br/>- Weaviate uses gzip compression by default. <br/>- Weaviate stays usable while a backup process is ongoing.'
+      operationId: backups.create
+      parameters:
+        - name: backend
+          in: path
+          description: 'Backup backend name e.g. `filesystem`, `gcs`, `s3`, `azure`.'
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BackupCreateRequest'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Backup create process successfully started.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackupCreateResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid backup creation attempt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.backup
+  '/backups/{backend}/{id}':
+    get:
+      tags:
+        - backups
+      summary: Get backup process status
+      description: 'Returns status of backup creation attempt for a set of collections. <br/><br/>All client implementations have a `wait for completion` option which will poll the backup status in the background and only return once the backup has completed (successfully or unsuccessfully). If you set the `wait for completion` option to false, you can also check the status yourself using this endpoint.'
+      operationId: backups.create.status
+      parameters:
+        - name: backend
+          in: path
+          description: 'Backup backend name e.g. filesystem, gcs, s3.'
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: 'The ID of a backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Backup creation status successfully returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackupCreateStatusResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Not Found - Backup does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid backup restoration status attempt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.backup
+    delete:
+      tags:
+        - backups
+      summary: Cancel backup
+      description: Cancel created backup with specified ID
+      operationId: backups.cancel
+      parameters:
+        - name: backend
+          in: path
+          description: 'Backup backend name e.g. filesystem, gcs, s3.'
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: 'The ID of a backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Successfully deleted.
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid backup cancellation attempt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.backup
+  '/backups/{backend}/{id}/restore':
+    get:
+      tags:
+        - backups
+      summary: Get restore process status
+      description: 'Returns status of a backup restoration attempt for a set of classes. <br/><br/>All client implementations have a `wait for completion` option which will poll the backup status in the background and only return once the backup has completed (successfully or unsuccessfully). If you set the `wait for completion` option to false, you can also check the status yourself using the this endpoint.'
+      operationId: backups.restore.status
+      parameters:
+        - name: backend
+          in: path
+          description: 'Backup backend name e.g. `filesystem`, `gcs`, `s3`, `azure`.'
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: 'The ID of a backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Backup restoration status successfully returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackupRestoreStatusResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Not Found - Backup does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.backup
+    post:
+      tags:
+        - backups
+      summary: Start a restoration process
+      description: 'Starts a process of restoring a backup for a set of collections. <br/><br/>Any backup can be restored to any machine, as long as the number of nodes between source and target are identical.<br/><br/>Requrements:<br/><br/>- None of the collections to be restored already exist on the target restoration node(s).<br/>- The node names of the backed-up collections'' must match those of the target restoration node(s).'
+      operationId: backups.restore
+      parameters:
+        - name: backend
+          in: path
+          description: 'Backup backend name e.g. `filesystem`, `gcs`, `s3`, `azure`.'
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: 'The ID of a backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BackupRestoreRequest'
+        required: true
+        x-bodyName: body
+      responses:
+        '200':
+          description: Backup restoration process successfully started.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BackupRestoreResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Not Found - Backup does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid backup restoration attempt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.local.backup
+  /cluster/statistics:
+    get:
+      tags:
+        - cluster
+      summary: See Raft cluster statistics
+      description: Returns Raft cluster statistics of Weaviate DB.
+      operationId: cluster.get.statistics
+      responses:
+        '200':
+          description: Cluster statistics successfully returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClusterStatisticsResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid backup restoration status attempt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.cluster.statistics.get
+  /nodes:
+    get:
+      tags:
+        - nodes
+      summary: Node information for the database.
+      description: Returns node information for the entire database.
+      operationId: nodes.get
+      parameters:
+        - $ref: '#/components/parameters/CommonOutputVerbosityParameterQuery'
+      responses:
+        '200':
+          description: Nodes status successfully returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NodesStatusResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Not Found - Backup does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid backup restoration status attempt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.nodes.status.get
+  '/nodes/{className}':
+    get:
+      tags:
+        - nodes
+      summary: Node information for a collection.
+      description: Returns node information for the nodes relevant to the collection.
+      operationId: nodes.get.class
+      parameters:
+        - name: className
+          in: path
+          required: true
+          schema:
+            type: string
+        - $ref: '#/components/parameters/CommonOutputVerbosityParameterQuery'
+      responses:
+        '200':
+          description: Nodes status successfully returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NodesStatusResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '404':
+          description: Not Found - Backup does not exist
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '422':
+          description: Invalid backup restoration status attempt.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.nodes.status.get.class
+  /classifications/:
+    post:
+      tags:
+        - classifications
+      summary: Starts a classification.
+      description: 'Trigger a classification based on the specified params. Classifications will run in the background, use GET /classifications/<id> to retrieve the status of your classification.'
+      operationId: classifications.post
+      requestBody:
+        description: parameters to start a classification
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Classification'
+        required: true
+        x-bodyName: params
+      responses:
+        '201':
+          description: Successfully started classification.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Classification'
+        '400':
+          description: Incorrect request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.classifications.post
+  '/classifications/{id}':
+    get:
+      tags:
+        - classifications
+      summary: View previously created classification
+      description: 'Get status, results and metadata of a previously created classification'
+      operationId: classifications.get
+      parameters:
+        - name: id
+          in: path
+          description: classification id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'Found the classification, returned as body'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Classification'
+        '404':
+          description: Not Found - Classification does not exist
+          content:
+            application/json: { }
+        '401':
+          description: Unauthorized or invalid credentials.
+          content:
+            application/json: { }
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+      x-serviceIds:
+        - weaviate.classifications.get
+components:
+  schemas:
+    Link:
+      type: object
+      properties:
+        href:
+          type: string
+          description: target of the link
+        rel:
+          type: string
+          description: 'relationship if both resources are related, e.g. ''next'', ''previous'', ''parent'', etc.'
+        name:
+          type: string
+          description: human readable name of the resource group
+        documentationHref:
+          type: string
+          description: weaviate documentation about this resource group
+    Principal:
+      type: object
+      properties:
+        username:
+          type: string
+          description: The username that was extracted either from the authentication information
+        groups:
+          type: array
+          items:
+            type: string
+    C11yWordsResponse:
+      properties:
+        concatenatedWord:
+          type: object
+          properties:
+            concatenatedWord:
+              type: string
+            singleWords:
+              type: array
+              items:
+                format: string
+            concatenatedVector:
+              $ref: '#/components/schemas/C11yVector'
+            concatenatedNearestNeighbors:
+              $ref: '#/components/schemas/C11yNearestNeighbors'
+          description: Weighted results for all words
+        individualWords:
+          type: array
+          items:
+            type: object
+            properties:
+              word:
+                type: string
+              present:
+                type: boolean
+              info:
+                type: object
+                properties:
+                  vector:
+                    $ref: '#/components/schemas/C11yVector'
+                  nearestNeighbors:
+                    $ref: '#/components/schemas/C11yNearestNeighbors'
+          description: Weighted results for per individual word
+      description: An array of available words and contexts.
+    C11yExtension:
+      properties:
+        concept:
+          type: string
+          description: 'The new concept you want to extend. Must be an all-lowercase single word, or a space delimited compound word. Examples: ''foobarium'', ''my custom concept'''
+          example: foobarium
+        definition:
+          type: string
+          description: 'A list of space-delimited words or a sentence describing what the custom concept is about. Avoid using the custom concept itself. An Example definition for the custom concept ''foobarium'': would be ''a naturally occurring element which can only be seen by programmers'''
+        weight:
+          type: number
+          description: 'Weight of the definition of the new concept where 1=''override existing definition entirely'' and 0=''ignore custom definition''. Note that if the custom concept is not present in the contextionary yet, the weight cannot be less than 1.'
+          format: float
+      description: 'A resource describing an extension to the contextinoary, containing both the identifier and the definition of the extension'
+    C11yNearestNeighbors:
+      type: array
+      items:
+        type: object
+        properties:
+          word:
+            type: string
+          distance:
+            type: number
+            format: float
+      description: C11y function to show the nearest neighbors to a word.
+    C11yVector:
+      type: array
+      items:
+        type: number
+        format: float
+      description: 'A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.'
+    Vector:
+      type: array
+      items:
+        type: number
+        format: float
+      description: 'A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.'
+    Vectors:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/Vector'
+      description: A map of named vectors for multi-vector representations.
+    C11yVectorBasedQuestion:
+      type: array
+      items:
+        type: object
+        properties:
+          classVectors:
+            maxItems: 300
+            minItems: 300
+            type: array
+            items:
+              type: number
+              format: float
+            description: Vectorized classname.
+          classProps:
+            maxItems: 300
+            minItems: 300
+            type: array
+            items:
+              type: object
+              properties:
+                propsVectors:
+                  type: array
+                  items:
+                    type: number
+                    format: float
+                value:
+                  type: string
+                  description: String with valuename.
+            description: Vectorized properties.
+      description: 'Receive question based on array of classes, properties and values.'
+    Deprecation:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The id that uniquely identifies this particular deprecations (mostly used internally)
+        status:
+          type: string
+          description: Whether the problematic API functionality is deprecated (planned to be removed) or already removed
+        apiType:
+          type: string
+          description: 'Describes which API is effected, usually one of: REST, GraphQL'
+        msg:
+          type: string
+          description: What this deprecation is about
+        mitigation:
+          type: string
+          description: User-required object to not be affected by the (planned) removal
+        sinceVersion:
+          type: string
+          description: The deprecation was introduced in this version
+        plannedRemovalVersion:
+          type: string
+          description: A best-effort guess of which upcoming version will remove the feature entirely
+        removedIn:
+          type: string
+          description: 'If the feature has already been removed, it was removed in this version'
+          x-nullable: true
+        removedTime:
+          type: string
+          description: 'If the feature has already been removed, it was removed at this timestamp'
+          format: date-time
+          x-nullable: true
+        sinceTime:
+          type: string
+          description: The deprecation was introduced in this version
+          format: date-time
+        locations:
+          type: array
+          items:
+            type: string
+          description: The locations within the specified API affected by this deprecation
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+      description: An error response given by Weaviate end-points.
+    GraphQLError:
+      properties:
+        locations:
+          type: array
+          items:
+            type: object
+            properties:
+              column:
+                type: integer
+                format: int64
+              line:
+                type: integer
+                format: int64
+        message:
+          type: string
+        path:
+          type: array
+          items:
+            type: string
+      description: An error response caused by a GraphQL query.
+    GraphQLQuery:
+      type: object
+      properties:
+        operationName:
+          type: string
+          description: The name of the operation if multiple exist in the query.
+        query:
+          type: string
+          description: Query based on GraphQL syntax.
+        variables:
+          type: object
+          description: Additional variables for the query.
+      description: 'GraphQL query based on: http://facebook.github.io/graphql/.'
+    GraphQLQueries:
+      type: array
+      items:
+        $ref: '#/components/schemas/GraphQLQuery'
+      description: A list of GraphQL queries.
+    GraphQLResponse:
+      properties:
+        data:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/JsonObject'
+          description: GraphQL data object.
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/GraphQLError'
+          description: Array with errors.
+          x-omitempty: true
+      description: 'GraphQL based response: http://facebook.github.io/graphql/.'
+    GraphQLResponses:
+      type: array
+      items:
+        $ref: '#/components/schemas/GraphQLResponse'
+      description: A list of GraphQL responses.
+    InvertedIndexConfig:
+      type: object
+      properties:
+        cleanupIntervalSeconds:
+          type: number
+          description: Asynchronous index clean up happens every n seconds
+          format: int
+          default: 60
+        bm25:
+          $ref: '#/components/schemas/BM25Config'
+        stopwords:
+          $ref: '#/components/schemas/StopwordConfig'
+        indexTimestamps:
+          type: boolean
+          description: Index each object by its internal timestamps
+          default: false
+        indexNullState:
+          type: boolean
+          description: Index each object with the null state
+          default: false
+        indexPropertyLength:
+          type: boolean
+          description: Index length of properties
+          default: false
+      description: Configure the inverted index built into Weaviate
+    ShardingConfig:
+      type: object
+      properties:
+        desiredCount:
+          type: integer
+          description: '(Defaults to the number of nodes in the cluster.) Controls how many shards should be created for this collection index. The typical setting is that a collection should be distributed across all the nodes in the cluster, but you can explicitly set this value to a lower value. If the `desiredCount` is larger than the amount of physical nodes in the cluster, then some nodes will contain multiple shards.'
+        virtualPerPhysical:
+          type: integer
+          description: Weaviate uses virtual shards. This helps in reducing the amount of data moved when resharding
+          default: 128
+      description: Specify how the index should be sharded and distributed in the cluster
+    ReplicationConfig:
+      type: object
+      properties:
+        factor:
+          type: integer
+          description: Number of times a class is replicated
+          default: 1
+        asyncEnabled:
+          type: boolean
+          description: Enable asynchronous replication
+          x-omitempty: false
+        objectDeletionConflictResolution:
+          enum:
+            - NoAutomatedResolution
+            - PermanentDeletion
+          type: string
+          description: Conflict resolution strategy for deleted objects
+          x-omitempty: true
+      description: Configure how replication is executed in a cluster
+    BM25Config:
+      type: object
+      properties:
+        k1:
+          type: number
+          description: Calibrates term-weight scaling based on the term frequency within a document
+          format: float
+          default: 1.2
+        b:
+          type: number
+          description: Calibrates term-weight scaling based on the document length
+          format: float
+          default: 0.75
+      description: tuning parameters for the BM25 algorithm
+    StopwordConfig:
+      type: object
+      properties:
+        preset:
+          enum:
+            - en
+            - none
+          type: string
+          description: pre-existing list of common words by language
+          default: en
+        additions:
+          type: array
+          items:
+            type: string
+          description: Stopwords to be considered additionally. Can be any array of custom strings.
+        removals:
+          type: array
+          items:
+            type: string
+          description: stopwords to be removed from consideration. Can be any array of custom strings.
+      description: fine-grained control over stopword list usage
+    MultiTenancyConfig:
+      properties:
+        enabled:
+          type: boolean
+          description: Whether or not multi-tenancy is enabled for this class
+          default: false
+          x-omitempty: false
+        autoTenantCreation:
+          type: boolean
+          description: Nonexistent tenants should (not) be created implicitly
+          x-omitempty: false
+        autoTenantActivation:
+          type: boolean
+          description: Existing tenants should (not) be turned HOT implicitly when they are accessed and in another activity status
+          x-omitempty: false
+      description: Configuration related to multi-tenancy within a class
+    JsonObject:
+      type: object
+      description: JSON object value.
+    Meta:
+      type: object
+      properties:
+        hostname:
+          type: string
+          description: The url of the host.
+          format: url
+        version:
+          type: string
+          description: The Weaviate server version.
+        modules:
+          type: object
+          description: Module-specific meta information.
+      description: Contains meta information of the current Weaviate instance.
+    MultipleRef:
+      type: array
+      items:
+        $ref: '#/components/schemas/SingleRef'
+      description: Multiple instances of references to other objects.
+    PatchDocumentObject:
+      required:
+        - op
+        - path
+      properties:
+        from:
+          type: string
+          description: A string containing a JSON Pointer value.
+        op:
+          enum:
+            - add
+            - remove
+            - replace
+            - move
+            - copy
+            - test
+          type: string
+          description: The operation to be performed.
+        path:
+          type: string
+          description: A JSON-Pointer.
+        value:
+          type: object
+          description: The value to be used within the operations.
+        merge:
+          $ref: '#/components/schemas/Object'
+      description: 'Either a JSONPatch document as defined by RFC 6902 (from, op, path, value), or a merge document (RFC 7396).'
+    PatchDocumentAction:
+      required:
+        - op
+        - path
+      properties:
+        from:
+          type: string
+          description: A string containing a JSON Pointer value.
+        op:
+          enum:
+            - add
+            - remove
+            - replace
+            - move
+            - copy
+            - test
+          type: string
+          description: The operation to be performed.
+        path:
+          type: string
+          description: A JSON-Pointer.
+        value:
+          type: object
+          description: The value to be used within the operations.
+        merge:
+          $ref: '#/components/schemas/Object'
+      description: 'Either a JSONPatch document as defined by RFC 6902 (from, op, path, value), or a merge document (RFC 7396).'
+    PeerUpdate:
+      properties:
+        id:
+          type: string
+          description: The session ID of the peer.
+          format: uuid
+        name:
+          type: string
+          description: Human readable name.
+        uri:
+          type: string
+          description: The location where the peer is exposed to the internet.
+          format: uri
+        schemaHash:
+          type: string
+          description: The latest known hash of the peer's schema.
+      description: A single peer in the network.
+    PeerUpdateList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PeerUpdate'
+      description: List of known peers.
+    VectorWeights:
+      type: object
+      description: 'Allow custom overrides of vector weights as math expressions in word-based vectorization models. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word.'
+    PropertySchema:
+      type: object
+      description: 'Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.'
+    SchemaHistory:
+      type: object
+      description: 'This is an open object, with OpenAPI Specification 3.0 this will be more detailed. See Weaviate docs for more info. In the future this will become a key/value OR a SingleRef definition.'
+    Schema:
+      type: object
+      properties:
+        classes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Class'
+          description: Semantic classes that are available.
+        maintainer:
+          type: string
+          description: Email of the maintainer.
+          format: email
+        name:
+          type: string
+          description: Name of the schema.
+      description: 'Definitions of semantic schemas (also see: https://github.com/weaviate/weaviate-semantic-schemas).'
+    SchemaClusterStatus:
+      type: object
+      properties:
+        healthy:
+          type: boolean
+          description: 'True if the cluster is in sync, false if there is an issue (see error).'
+          x-omitempty: false
+        error:
+          type: string
+          description: Contains the sync check error if one occurred
+          x-omitempty: true
+        hostname:
+          type: string
+          description: 'Hostname of the coordinating node, i.e. the one that received the cluster. This can be useful information if the error message contains phrases such as ''other nodes agree, but local does not'', etc.'
+        nodeCount:
+          type: number
+          description: Number of nodes that participated in the sync check
+          format: int
+        ignoreSchemaSync:
+          type: boolean
+          description: The cluster check at startup can be ignored (to recover from an out-of-sync situation).
+          x-omitempty: false
+      description: Indicates the health of the schema in a cluster.
+    Class:
+      required:
+        - class
+      type: object
+      properties:
+        class:
+          type: string
+          description: 'Name of the collection (a.k.a. class). Multiple words should be concatenated in CamelCase, e.g. `ArticleAuthor`.'
+        vectorConfig:
+          type: object
+          properties:
+            <vector_name>:
+              $ref: '#/components/schemas/VectorConfig'
+          description: 'Configure named vectors (https://weaviate.io/developers/weaviate/config-refs/schema/multi-vector). Either use this field or `vectorizer`, `vectorIndexType`, and `vectorIndexConfig` fields. Available from `v1.24.0`.'
+        vectorIndexType:
+          $ref: '#/components/schemas/VectorIndexType'
+        vectorIndexConfig:
+          $ref: '#/components/schemas/VectorIndexConfig'
+        shardingConfig:
+          $ref: '#/components/schemas/ShardingConfig'
+        replicationConfig:
+          $ref: '#/components/schemas/ReplicationConfig'
+        invertedIndexConfig:
+          $ref: '#/components/schemas/InvertedIndexConfig'
+        multiTenancyConfig:
+          $ref: '#/components/schemas/MultiTenancyConfig'
+        vectorizer:
+          $ref: '#/components/schemas/Vectorizer'
+        moduleConfig:
+          type: object
+          properties:
+            <module_name>:
+              $ref: '#/components/schemas/CollectionModuleConfig'
+          description: Configuration specific to modules in a collection context.
+        description:
+          type: string
+          description: Description of the collection for documentation purposes.
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/Property'
+          description: Define properties of the collection.
+    Property:
+      required:
+        - name
+        - dataType
+      type: object
+      properties:
+        dataType:
+          $ref: '#/components/schemas/DataType'
+        description:
+          $ref: '#/components/schemas/PropertyDescription'
+        moduleConfig:
+          type: object
+          properties:
+            <module_name>:
+              $ref: '#/components/schemas/PropertyModuleConfig'
+          description: Configuration specific to modules in a property context.
+        name:
+          $ref: '#/components/schemas/PropertyName'
+        indexInverted:
+          type: boolean
+          description: '(Deprecated) Whether to include this property in the inverted index. If `false`, this property cannot be used in `where` filters, `bm25` or `hybrid` search. <br/><br/>Unrelated to vectorization behavior (deprecated as of v1.19; use indexFilterable or/and indexSearchable instead)'
+          default: true
+          x-nullable: true
+        indexFilterable:
+          $ref: '#/components/schemas/IndexFilterable'
+        indexSearchable:
+          $ref: '#/components/schemas/IndexSearchable'
+        indexRangeFilters:
+          $ref: '#/components/schemas/indexRangeFilters'
+        tokenization:
+          $ref: '#/components/schemas/Tokenization'
+        nestedProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/NestedProperty'
+          description: 'The properties of the nested object(s). Applies to object and object[] data types.'
+          x-omitempty: true
+    CollectionModuleConfig:
+      type: object
+      properties:
+        vectorizeClassName:
+          type: boolean
+          description: Whether the name of the collection is used in determining the object vector.
+          default: true
+      description: 'E.g. `text2vec-transformers`, `text2vec-openai`.'
+    PropertyModuleConfig:
+      type: object
+      properties:
+        skip:
+          type: boolean
+          description: 'If true, the whole property will NOT be included in vectorization.'
+          default: false
+        vectorizePropertyName:
+          type: boolean
+          description: Whether the name of the property is used in determining the object vector.
+          default: true
+      description: 'E.g. `text2vec-transformers`, `text2vec-openai`.'
+    VectorConfig:
+      type: object
+      properties:
+        vectorizer:
+          $ref: '#/components/schemas/Vectorizer'
+        vectorIndexType:
+          $ref: '#/components/schemas/VectorIndexType'
+        vectorIndexConfig:
+          $ref: '#/components/schemas/VectorIndexConfig'
+      description: Configuration of each named vector.
+    Vectorizer:
+      enum:
+        - none
+        - <vectorizer_module_name>
+      type: string
+      description: 'Vectorizer for this collection (e.g. `text2vec-transformers`). This will override any cluster-wide default set by an environment variable. <br/><br/>If `none`, you must import a vector with each object yourself.'
+    VectorIndexType:
+      enum:
+        - hnsw
+        - flat
+      type: string
+      description: 'Name of the vector index to use, eg. (HNSW)'
+      default: hnsw
+    VectorIndexConfig:
+      type: object
+      description: 'Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details'
+    Tokenization:
+      enum:
+        - word
+        - lowercase
+        - whitespace
+        - field
+        - trigram
+        - gse
+        - kagome_kr
+      type: string
+      description: 'Set tokenization of the property as separate words or whole field. Applies to text and text[] data types.'
+      default: word
+    IndexFilterable:
+      type: boolean
+      description: 'Whether to include this property in the filterable, Roaring Bitmap index. If `false`, this property cannot be used in `where` filters. <br/><br/>Unrelated to vectorization behavior.'
+      default: true
+      x-nullable: true
+    IndexSearchable:
+      type: boolean
+      description: 'Whether to include this property in the searchable, inverted index. Applicable only to properties of data type text and text[]. If `false`, this property cannot be used in `bm25` or `hybrid` searches. <br/><br/>Unrelated to vectorization behavior.'
+      default: true
+      x-nullable: true
+    indexRangeFilters:
+      type: boolean
+      description: 'Whether to include this property in the filterable, range-based Roaring Bitmap inverted index. Defaults to false. Provides better performance for range queries compared to filterable index in large datasets. Applicable only to properties of data type int, number, date.'
+      x-nullable: true
+    PropertyName:
+      type: string
+      description: 'The name of the property. Multiple words should be concatenated in camelCase, e.g. `nameOfAuthor`.'
+    DataType:
+      type: array
+      items:
+        enum:
+          - string
+          - 'string[]'
+          - object
+          - 'object[]'
+          - int
+          - 'int[]'
+          - number
+          - 'number[]'
+          - date
+          - 'date[]'
+          - uuid
+          - 'uuid[]'
+          - geoCoordinates
+          - phoneNumber
+          - blob
+          - <cross_reference>
+        type: string
+      description: 'Data type of the property. If it starts with a capital (for example Person), may be a reference to another type.'
+    PropertyDescription:
+      type: string
+      description: Description of the property for documentation purposes.
+    NestedProperty:
+      required:
+        - name
+        - dataType
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/PropertyName'
+        dataType:
+          $ref: '#/components/schemas/DataType'
+        description:
+          $ref: '#/components/schemas/PropertyDescription'
+        indexFilterable:
+          $ref: '#/components/schemas/IndexFilterable'
+        indexSearchable:
+          $ref: '#/components/schemas/IndexSearchable'
+        indexRangeFilters:
+          $ref: '#/components/schemas/indexRangeFilters'
+        tokenization:
+          $ref: '#/components/schemas/Tokenization'
+        nestedProperties:
+          type: array
+          items:
+            $ref: '#/components/schemas/NestedProperty'
+          description: Specify the properties of the nested object(s) as required.
+          x-omitempty: true
+    ShardStatusList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ShardStatusGetResponse'
+      description: The status of all the shards of a Class
+    ShardStatusGetResponse:
+      properties:
+        name:
+          type: string
+          description: Name of the shard
+        status:
+          type: string
+          description: Status of the shard
+        vectorQueueSize:
+          type: integer
+          description: Size of the vector queue of the shard
+          x-omitempty: false
+      description: Response body of shard status get request
+    ShardStatus:
+      properties:
+        status:
+          type: string
+          description: Status of the shard
+      description: The status of a single shard
+    BackupCreateStatusResponse:
+      properties:
+        id:
+          type: string
+          description: 'The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+        backend:
+          type: string
+          description: 'Backup backend name e.g. filesystem, gcs, s3.'
+        path:
+          type: string
+          description: destination path of backup files proper to selected backend
+        error:
+          type: string
+          description: error message if creation failed
+        status:
+          enum:
+            - STARTED
+            - TRANSFERRING
+            - TRANSFERRED
+            - SUCCESS
+            - FAILED
+            - CANCELED
+          type: string
+          description: phase of backup creation process
+          default: STARTED
+      description: The definition of a backup create metadata
+    BackupRestoreStatusResponse:
+      properties:
+        id:
+          type: string
+          description: 'The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+        backend:
+          type: string
+          description: 'Backup backend name e.g. filesystem, gcs, s3.'
+        path:
+          type: string
+          description: destination path of backup files proper to selected backup backend
+        error:
+          type: string
+          description: error message if restoration failed
+        status:
+          enum:
+            - STARTED
+            - TRANSFERRING
+            - TRANSFERRED
+            - SUCCESS
+            - FAILED
+          type: string
+          description: phase of backup restoration process
+          default: STARTED
+      description: The definition of a backup restore metadata
+    BackupConfig:
+      type: object
+      properties:
+        CPUPercentage:
+          maximum: 80
+          minimum: 1
+          type: integer
+          description: Desired CPU core utilization ranging from 1%-80%
+          default: 50
+          x-nullable: false
+        ChunkSize:
+          maximum: 512
+          minimum: 2
+          type: integer
+          description: 'Aimed chunk size, with a minimum of 2MB, default of 128MB, and a maximum of 512MB. The actual chunk size may vary.'
+          default: 128
+          x-nullable: false
+        CompressionLevel:
+          enum:
+            - DefaultCompression
+            - BestSpeed
+            - BestCompression
+          type: string
+          description: Compression level used by compression algorithm
+          default: DefaultCompression
+          x-nullable: false
+      description: Backup custom configuration
+    RestoreConfig:
+      type: object
+      properties:
+        CPUPercentage:
+          maximum: 80
+          minimum: 1
+          type: integer
+          description: Desired CPU core utilization ranging from 1%-80%
+          default: 50
+          x-nullable: false
+      description: Backup custom configuration
+    BackupCreateRequest:
+      required:
+        - id
+      properties:
+        id:
+          type: string
+          description: 'The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+        config:
+          $ref: '#/components/schemas/BackupConfig'
+        include:
+          type: array
+          items:
+            type: string
+          description: 'List of collections to include in the backup creation process. If not set, all collections are included. Cannot be used together with `exclude`.'
+        exclude:
+          type: array
+          items:
+            type: string
+          description: 'List of collections to exclude from the backup creation process. If not set, all collections are included. Cannot be used together with `include`.'
+      description: Request body for creating a backup of a set of classes
+    BackupCreateResponse:
+      properties:
+        id:
+          type: string
+          description: 'The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+        classes:
+          type: array
+          items:
+            type: string
+          description: The list of classes for which the backup creation process was started
+        backend:
+          type: string
+          description: 'Backup backend name e.g. filesystem, gcs, s3.'
+        path:
+          type: string
+          description: destination path of backup files proper to selected backend
+        error:
+          type: string
+          description: error message if creation failed
+        status:
+          enum:
+            - STARTED
+            - TRANSFERRING
+            - TRANSFERRED
+            - SUCCESS
+            - FAILED
+          type: string
+          description: phase of backup creation process
+          default: STARTED
+      description: The definition of a backup create response body
+    BackupListResponse:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: string
+            description: 'The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+          path:
+            type: string
+            description: destination path of backup files proper to selected backend
+          classes:
+            type: array
+            items:
+              type: string
+            description: The list of classes for which the existed backup process
+          status:
+            enum:
+              - STARTED
+              - TRANSFERRING
+              - TRANSFERRED
+              - SUCCESS
+              - FAILED
+              - CANCELED
+            type: string
+            description: status of backup process
+      description: The definition of a backup create response body
+    BackupRestoreRequest:
+      properties:
+        config:
+          $ref: '#/components/schemas/RestoreConfig'
+        include:
+          type: array
+          items:
+            type: string
+          description: 'List of collections to include in the backup restoration process. If not set, all collections are included. Cannot be used together with `exclude`.'
+        exclude:
+          type: array
+          items:
+            type: string
+          description: 'List of collections to exclude from the backup restoration process. If not set, all collections are included. Cannot be used together with `include`.'
+        node_mapping:
+          type: object
+          additionalProperties:
+            type: string
+          description: Allows overriding the node names stored in the backup with different ones. Useful when restoring backups to a different environment.
+      description: Request body for restoring a backup for a set of classes
+    BackupRestoreResponse:
+      properties:
+        id:
+          type: string
+          description: 'The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.'
+        classes:
+          type: array
+          items:
+            type: string
+          description: The list of classes for which the backup restoration process was started
+        backend:
+          type: string
+          description: 'Backup backend name e.g. filesystem, gcs, s3.'
+        path:
+          type: string
+          description: destination path of backup files proper to selected backend
+        error:
+          type: string
+          description: error message if restoration failed
+        status:
+          enum:
+            - STARTED
+            - TRANSFERRING
+            - TRANSFERRED
+            - SUCCESS
+            - FAILED
+          type: string
+          description: phase of backup restoration process
+          default: STARTED
+      description: The definition of a backup restore response body
+    NodeStats:
+      properties:
+        shardCount:
+          type: number
+          description: 'The count of Weaviate''s shards. To see this value, set `output` to `verbose`.'
+          format: int
+          x-omitempty: false
+        objectCount:
+          type: number
+          description: The total number of objects in DB.
+          format: int64
+          x-omitempty: false
+      description: The summary of Weaviate's statistics.
+    BatchStats:
+      properties:
+        queueLength:
+          type: number
+          description: How many objects are currently in the batch queue.
+          format: int
+          x-omitempty: true
+          x-nullable: true
+        ratePerSecond:
+          type: number
+          description: How many objects are approximately processed from the batch queue per second.
+          format: int
+          x-omitempty: false
+      description: The summary of a nodes batch queue congestion status.
+    NodeShardStatus:
+      properties:
+        name:
+          type: string
+          description: The name of the shard.
+          x-omitempty: false
+        class:
+          type: string
+          description: The name of shard's class.
+          x-omitempty: false
+        objectCount:
+          type: number
+          description: The number of objects in shard.
+          format: int64
+          x-omitempty: false
+        vectorIndexingStatus:
+          description: The status of the vector indexing process.
+          format: string
+          x-omitempty: false
+        compressed:
+          description: The status of vector compression/quantization.
+          format: boolean
+          x-omitempty: false
+        vectorQueueLength:
+          type: number
+          description: The length of the vector indexing queue.
+          format: int64
+          x-omitempty: false
+        loaded:
+          type: boolean
+          description: The load status of the shard.
+          x-omitempty: false
+      description: The definition of a node shard status response body
+    NodeStatus:
+      properties:
+        name:
+          type: string
+          description: The name of the node.
+        status:
+          enum:
+            - HEALTHY
+            - UNHEALTHY
+            - UNAVAILABLE
+            - TIMEOUT
+            - INDEXING
+          type: string
+          description: Node's status.
+          default: HEALTHY
+        version:
+          type: string
+          description: The version of Weaviate.
+        gitHash:
+          type: string
+          description: The gitHash of Weaviate.
+        stats:
+          $ref: '#/components/schemas/NodeStats'
+        batchStats:
+          $ref: '#/components/schemas/BatchStats'
+        shards:
+          type: array
+          items:
+            $ref: '#/components/schemas/NodeShardStatus'
+          description: The list of the shards with it's statistics.
+      description: The definition of a backup node status response body
+    NodesStatusResponse:
+      type: object
+      properties:
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/NodeStatus'
+      description: The status of all of the Weaviate nodes
+    RaftStatistics:
+      properties:
+        appliedIndex:
+          type: string
+        commitIndex:
+          type: string
+        fsmPending:
+          type: string
+        lastContact:
+          type: string
+        lastLogIndex:
+          type: string
+        lastLogTerm:
+          type: string
+        lastSnapshotIndex:
+          type: string
+        lastSnapshotTerm:
+          type: string
+        latestConfiguration:
+          type: object
+          description: Weaviate Raft nodes.
+        latestConfigurationIndex:
+          type: string
+        numPeers:
+          type: string
+        protocolVersion:
+          type: string
+        protocolVersionMax:
+          type: string
+        protocolVersionMin:
+          type: string
+        snapshotVersionMax:
+          type: string
+        snapshotVersionMin:
+          type: string
+        state:
+          type: string
+        term:
+          type: string
+      description: The definition of Raft statistics.
+    Statistics:
+      properties:
+        name:
+          type: string
+          description: The name of the node.
+        status:
+          enum:
+            - HEALTHY
+            - UNHEALTHY
+            - UNAVAILABLE
+            - TIMEOUT
+          type: string
+          description: Node's status.
+          default: HEALTHY
+        bootstrapped:
+          type: boolean
+        dbLoaded:
+          type: boolean
+        initialLastAppliedIndex:
+          type: number
+          format: uint64
+        lastAppliedIndex:
+          type: number
+        isVoter:
+          type: boolean
+        leaderId:
+          type: object
+        leaderAddress:
+          type: object
+        open:
+          type: boolean
+        ready:
+          type: boolean
+        candidates:
+          type: object
+        raft:
+          $ref: '#/components/schemas/RaftStatistics'
+      description: The definition of node statistics.
+    ClusterStatisticsResponse:
+      type: object
+      properties:
+        statistics:
+          type: array
+          items:
+            $ref: '#/components/schemas/Statistics'
+        synchronized:
+          type: boolean
+          x-omitempty: false
+      description: The cluster statistics of all of the Weaviate nodes
+    SingleRef:
+      properties:
+        class:
+          type: string
+          description: 'If using a concept reference (rather than a direct reference), specify the desired class name here'
+          format: uri
+        schema:
+          $ref: '#/components/schemas/PropertySchema'
+        beacon:
+          type: string
+          description: 'If using a direct reference, specify the URI to point to the cross-ref here. Should be in the form of weaviate://localhost/<uuid> for the example of a local cross-ref to an object'
+          format: uri
+        href:
+          type: string
+          description: 'If using a direct reference, this read-only fields provides a link to the referenced resource. If ''origin'' is globally configured, an absolute URI is shown - a relative URI otherwise.'
+          format: uri
+        classification:
+          $ref: '#/components/schemas/ReferenceMetaClassification'
+      description: Either set beacon (direct reference) or set class and schema (concept reference)
+    AdditionalProperties:
+      type: object
+      additionalProperties:
+        type: object
+      description: (Response only) Additional meta information about a single object.
+    ReferenceMetaClassification:
+      properties:
+        overallCount:
+          type: number
+          description: 'overall neighbors checked as part of the classification. In most cases this will equal k, but could be lower than k - for example if not enough data was present'
+          format: int64
+        winningCount:
+          type: number
+          description: 'size of the winning group, a number between 1..k'
+          format: int64
+        losingCount:
+          type: number
+          description: 'size of the losing group, can be 0 if the winning group size equals k'
+          format: int64
+        closestOverallDistance:
+          type: number
+          description: 'The lowest distance of any neighbor, regardless of whether they were in the winning or losing group'
+          format: float32
+        winningDistance:
+          type: number
+          description: 'deprecated - do not use, to be removed in 0.23.0'
+          format: float32
+        meanWinningDistance:
+          type: number
+          description: Mean distance of all neighbors from the winning group
+          format: float32
+        closestWinningDistance:
+          type: number
+          description: Closest distance of a neighbor from the winning group
+          format: float32
+        closestLosingDistance:
+          type: number
+          description: 'The lowest distance of a neighbor in the losing group. Optional. If k equals the size of the winning group, there is no losing group'
+          format: float32
+          x-nullable: true
+        losingDistance:
+          type: number
+          description: 'deprecated - do not use, to be removed in 0.23.0'
+          format: float32
+          x-nullable: true
+        meanLosingDistance:
+          type: number
+          description: 'Mean distance of all neighbors from the losing group. Optional. If k equals the size of the winning group, there is no losing group.'
+          format: float32
+          x-nullable: true
+      description: This meta field contains additional info about the classified reference property
+    BatchReference:
+      properties:
+        from:
+          type: string
+          description: 'Long-form beacon-style URI to identify the source of the cross-ref including the property name. Should be in the form of weaviate://localhost/<kinds>/<uuid>/<className>/<propertyName>, where <kinds> must be one of ''objects'', ''objects'' and <className> and <propertyName> must represent the cross-ref property of source class to be used.'
+          format: uri
+          example: weaviate://localhost/Zoo/a5d09582-4239-4702-81c9-92a6e0122bb4/hasAnimals
+        to:
+          type: string
+          description: Short-form URI to point to the cross-ref. Should be in the form of weaviate://localhost/<uuid> for the example of a local cross-ref to an object
+          format: uri
+          example: weaviate://localhost/97525810-a9a5-4eb0-858a-71449aeb007f
+        tenant:
+          type: string
+          description: Name of the reference tenant.
+    BatchReferenceResponse:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/BatchReference'
+        - properties:
+            result:
+              properties:
+                status:
+                  enum:
+                    - SUCCESS
+                    - PENDING
+                    - FAILED
+                  type: string
+                  default: SUCCESS
+                errors:
+                  $ref: '#/components/schemas/ErrorResponse'
+              description: Results for this specific reference.
+              format: object
+    GeoCoordinates:
+      properties:
+        latitude:
+          type: number
+          description: The latitude of the point on earth in decimal form
+          format: float
+          x-nullable: true
+        longitude:
+          type: number
+          description: The longitude of the point on earth in decimal form
+          format: float
+          x-nullable: true
+    PhoneNumber:
+      properties:
+        input:
+          type: string
+          description: The raw input as the phone number is present in your raw data set. It will be parsed into the standardized formats if valid.
+        internationalFormatted:
+          type: string
+          description: Read-only. Parsed result in the international format (e.g. +49 123 ...)
+        defaultCountry:
+          type: string
+          description: Optional. The ISO 3166-1 alpha-2 country code. This is used to figure out the correct countryCode and international format if only a national number (e.g. 0123 4567) is provided
+        countryCode:
+          type: number
+          description: Read-only. The numerical country code (e.g. 49)
+          format: uint64
+        national:
+          type: number
+          description: Read-only. The numerical representation of the national part
+          format: uint64
+        nationalFormatted:
+          type: string
+          description: Read-only. Parsed result in the national format (e.g. 0123 456789)
+        valid:
+          type: boolean
+          description: Read-only. Indicates whether the parsed number is a valid phone number
+    Object:
+      type: object
+      properties:
+        class:
+          type: string
+          description: The object collection name.
+        vectorWeights:
+          $ref: '#/components/schemas/VectorWeights'
+        properties:
+          $ref: '#/components/schemas/PropertySchema'
+        id:
+          type: string
+          description: ID of the object.
+          format: uuid
+        creationTimeUnix:
+          type: integer
+          description: (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
+          format: int64
+        lastUpdateTimeUnix:
+          type: integer
+          description: (Response only) Timestamp of the last object update in milliseconds since epoch UTC.
+          format: int64
+        vector:
+          $ref: '#/components/schemas/C11yVector'
+        vectors:
+          $ref: '#/components/schemas/Vectors'
+        tenant:
+          type: string
+          description: Name of the tenant.
+        additional:
+          $ref: '#/components/schemas/AdditionalProperties'
+    ObjectsGetResponse:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/Object'
+        - properties:
+            deprecations:
+              type: array
+              items:
+                $ref: '#/components/schemas/Deprecation'
+        - properties:
+            result:
+              properties:
+                status:
+                  enum:
+                    - SUCCESS
+                    - PENDING
+                    - FAILED
+                  type: string
+                  default: SUCCESS
+                errors:
+                  $ref: '#/components/schemas/ErrorResponse'
+              description: Results for this specific Object.
+              format: object
+    BatchDelete:
+      type: object
+      properties:
+        match:
+          type: object
+          properties:
+            class:
+              type: string
+              description: Class (name) which objects will be deleted.
+              example: City
+            where:
+              $ref: '#/components/schemas/WhereFilter'
+          description: Outlines how to find the objects to be deleted.
+        output:
+          enum:
+            - minimal
+            - verbose
+          type: string
+          description: Controls the verbosity of the output.
+          default: minimal
+        dryRun:
+          type: boolean
+          description: 'If true, the call will show which objects would be matched using the specified filter without deleting any objects. <br/><br/>Depending on the configured verbosity, you will either receive a count of affected objects, or a list of IDs.'
+          default: false
+    BatchDeleteResponse:
+      type: object
+      properties:
+        match:
+          type: object
+          properties:
+            class:
+              type: string
+              description: Class (name) which objects will be deleted.
+              example: City
+            where:
+              $ref: '#/components/schemas/WhereFilter'
+          description: Outlines how to find the objects to be deleted.
+        output:
+          enum:
+            - minimal
+            - verbose
+          type: string
+          description: Controls the verbosity of the output.
+          default: minimal
+        dryRun:
+          type: boolean
+          description: 'If true, objects will not be deleted yet, but merely listed. Defaults to false.'
+          default: false
+        results:
+          type: object
+          properties:
+            matches:
+              type: number
+              description: How many objects were matched by the filter.
+              format: int64
+              x-omitempty: false
+            limit:
+              type: number
+              description: 'The most amount of objects that can be deleted in a single query, equals QUERY_MAXIMUM_RESULTS.'
+              format: int64
+              x-omitempty: false
+            successful:
+              type: number
+              description: How many objects were successfully deleted in this round.
+              format: int64
+              x-omitempty: false
+            failed:
+              type: number
+              description: How many objects should have been deleted but could not be deleted.
+              format: int64
+              x-omitempty: false
+            objects:
+              type: array
+              items:
+                properties:
+                  id:
+                    type: string
+                    description: ID of the Object.
+                    format: uuid
+                  status:
+                    enum:
+                      - SUCCESS
+                      - DRYRUN
+                      - FAILED
+                    type: string
+                    default: SUCCESS
+                  errors:
+                    $ref: '#/components/schemas/ErrorResponse'
+                description: Results for this specific Object.
+                format: object
+              description: With output set to "minimal" only objects with error occurred will the be described. Successfully deleted objects would be omitted. Output set to "verbose" will list all of the objets with their respective statuses.
+      description: Delete Objects response.
+    ObjectsListResponse:
+      type: object
+      properties:
+        objects:
+          type: array
+          items:
+            $ref: '#/components/schemas/Object'
+          description: The actual list of Objects.
+        deprecations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Deprecation'
+        totalResults:
+          type: integer
+          description: The total number of Objects for the query. The number of items in a response may be smaller due to paging.
+          format: int64
+      description: List of Objects.
+    Classification:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ID to uniquely identify this classification run
+          format: uuid
+          example: ee722219-b8ec-4db1-8f8d-5150bb1a9e0c
+        class:
+          type: string
+          description: class (name) which is used in this classification
+          example: City
+        classifyProperties:
+          type: array
+          items:
+            type: string
+          description: which ref-property to set as part of the classification
+          example:
+            - inCountry
+        basedOnProperties:
+          type: array
+          items:
+            type: string
+          description: base the text-based classification on these fields (of type text)
+          example:
+            - description
+        status:
+          enum:
+            - running
+            - completed
+            - failed
+          type: string
+          description: status of this classification
+          example: running
+        meta:
+          $ref: '#/components/schemas/ClassificationMeta'
+        type:
+          type: string
+          description: which algorithm to use for classifications
+        settings:
+          type: object
+          description: classification-type specific settings
+        error:
+          type: string
+          description: error message if status == failed
+          default: ''
+          example: 'classify xzy: something went wrong'
+        filters:
+          type: object
+          properties:
+            sourceWhere:
+              $ref: '#/components/schemas/WhereFilter'
+            trainingSetWhere:
+              $ref: '#/components/schemas/WhereFilter'
+            targetWhere:
+              $ref: '#/components/schemas/WhereFilter'
+      description: 'Manage classifications, trigger them and view status of past classifications.'
+    ClassificationMeta:
+      type: object
+      properties:
+        started:
+          type: string
+          description: time when this classification was started
+          format: date-time
+          example: '2017-07-21T17:32:28.0000000+00:00'
+        completed:
+          type: string
+          description: time when this classification finished
+          format: date-time
+          example: '2017-07-21T17:32:28.0000000+00:00'
+        count:
+          type: integer
+          description: number of objects which were taken into consideration for classification
+          example: 147
+        countSucceeded:
+          type: integer
+          description: number of objects successfully classified
+          example: 140
+        countFailed:
+          type: integer
+          description: number of objects which could not be classified - see error message for details
+          example: 7
+      description: Additional information to a specific classification
+    WhereFilter:
+      type: object
+      properties:
+        operands:
+          type: array
+          items:
+            $ref: '#/components/schemas/WhereFilter'
+          description: 'combine multiple where filters, requires ''And'' or ''Or'' operator'
+        operator:
+          enum:
+            - And
+            - Or
+            - Equal
+            - Like
+            - NotEqual
+            - GreaterThan
+            - GreaterThanEqual
+            - LessThan
+            - LessThanEqual
+            - WithinGeoRange
+            - IsNull
+            - ContainsAny
+            - ContainsAll
+          type: string
+          description: operator to use
+          example: GreaterThanEqual
+        path:
+          type: array
+          items:
+            type: string
+          description: path to the property currently being filtered
+          example:
+            - inCity
+            - City
+            - name
+        valueInt:
+          type: integer
+          description: value as integer
+          format: int64
+          example: 2000
+          x-nullable: true
+        valueNumber:
+          type: number
+          description: value as number/float
+          format: float64
+          example: 3.14
+          x-nullable: true
+        valueBoolean:
+          type: boolean
+          description: value as boolean
+          example: false
+          x-nullable: true
+        valueString:
+          type: string
+          description: value as text (deprecated as of v1.19; alias for valueText)
+          example: my search term
+          x-nullable: true
+        valueText:
+          type: string
+          description: value as text
+          example: my search term
+          x-nullable: true
+        valueDate:
+          type: string
+          description: value as date (as string)
+          example: TODO
+          x-nullable: true
+        valueIntArray:
+          type: array
+          items:
+            type: integer
+            format: int64
+          description: value as integer
+          example: '[100, 200]'
+          x-nullable: true
+          x-omitempty: true
+        valueNumberArray:
+          type: array
+          items:
+            type: number
+            format: float64
+          description: value as number/float
+          example:
+            - 3.14
+          x-nullable: true
+          x-omitempty: true
+        valueBooleanArray:
+          type: array
+          items:
+            type: boolean
+          description: value as boolean
+          example:
+            - true
+            - false
+          x-nullable: true
+          x-omitempty: true
+        valueStringArray:
+          type: array
+          items:
+            type: string
+          description: value as text (deprecated as of v1.19; alias for valueText)
+          example:
+            - my search term
+          x-nullable: true
+          x-omitempty: true
+        valueTextArray:
+          type: array
+          items:
+            type: string
+          description: value as text
+          example:
+            - my search term
+          x-nullable: true
+          x-omitempty: true
+        valueDateArray:
+          type: array
+          items:
+            type: string
+          description: value as date (as string)
+          example: TODO
+          x-nullable: true
+          x-omitempty: true
+        valueGeoRange:
+          $ref: '#/components/schemas/WhereFilterGeoRange'
+      description: Filter search results using a where filter
+    WhereFilterGeoRange:
+      type: object
+      properties:
+        geoCoordinates:
+          $ref: '#/components/schemas/GeoCoordinates'
+        distance:
+          type: object
+          properties:
+            max:
+              type: number
+              format: float64
+      description: filter within a distance of a georange
+    Tenant:
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          type: string
+          description: name of the tenant
+        activityStatus:
+          enum:
+            - ACTIVE
+            - INACTIVE
+            - OFFLOADED
+            - OFFLOADING
+            - ONLOADING
+            - HOT
+            - COLD
+            - FROZEN
+            - FREEZING
+            - UNFREEZING
+          type: string
+          description: 'activity status of the tenant''s shard. Optional for creating tenant (implicit `ACTIVE`) and required for updating tenant. For creation, allowed values are `ACTIVE` - tenant is fully active and `INACTIVE` - tenant is inactive; no actions can be performed on tenant, tenant''s files are stored locally. For updating, `ACTIVE`, `INACTIVE` and also `OFFLOADED` - as INACTIVE, but files are stored on cloud storage. The following values are read-only and are set by the server for internal use: `OFFLOADING` - tenant is transitioning from ACTIVE/INACTIVE to OFFLOADED, `ONLOADING` - tenant is transitioning from OFFLOADED to ACTIVE/INACTIVE. We still accept deprecated names `HOT` (now `ACTIVE`), `COLD` (now `INACTIVE`), `FROZEN` (now `OFFLOADED`), `FREEZING` (now `OFFLOADING`), `UNFREEZING` (now `ONLOADING`).'
+      description: attributes representing a single tenant within weaviate
+  parameters:
+    CommonAfterParameterQuery:
+      name: after
+      in: query
+      description: 'A threshold UUID of the objects to retrieve after, using an UUID-based ordering. This object is not part of the set. <br/><br/>Must be used with `class`, typically in conjunction with `limit`. <br/><br/>Note `after` cannot be used with `offset` or `sort`. <br/><br/>For a null value similar to offset=0, set an empty string in the request, i.e. `after=` or `after`.'
+      schema:
+        type: string
+    CommonOffsetParameterQuery:
+      name: offset
+      in: query
+      description: The starting index of the result window. Note `offset` will retrieve `offset+limit` results and return `limit` results from the object with index `offset` onwards. Limited by the value of `QUERY_MAXIMUM_RESULTS`. <br/><br/>Should be used in conjunction with `limit`. <br/><br/>Cannot be used with `after`.
+      schema:
+        type: integer
+        format: int64
+        default: 0
+    CommonLimitParameterQuery:
+      name: limit
+      in: query
+      description: The maximum number of items to be returned per page. The default is 25 unless set otherwise as an environment variable.
+      schema:
+        type: integer
+        format: int64
+        default: 25
+    CommonIncludeParameterQuery:
+      name: include
+      in: query
+      description: 'Include additional information, such as classification infos. Allowed values include: `classification`, `vector`, `interpretation`, `featureProjection` and other module-specific additional properties.'
+      schema:
+        type: string
+    CommonConsistencyLevelParameterQuery:
+      name: consistency_level
+      in: query
+      description: Determines how many replicas must acknowledge a request before it is considered successful
+      schema:
+        enum:
+          - ONE
+          - QUORUM
+          - ALL
+        type: string
+        default: QUORUM
+    CommonTenantParameterQuery:
+      name: tenant
+      in: query
+      description: Specifies the tenant in a request targeting a multi-tenant collection
+      schema:
+        type: string
+    CommonNodeNameParameterQuery:
+      name: node_name
+      in: query
+      description: The target node which should fulfill the request
+      schema:
+        type: string
+    CommonSortParameterQuery:
+      name: sort
+      in: query
+      description: 'Name(s) of the property to sort by - e.g. `city`, or `country,city`.'
+      schema:
+        type: string
+    CommonOrderParameterQuery:
+      name: order
+      in: query
+      description: 'Order parameter to tell how to order (asc or desc) data within given field. Should be used in conjunction with `sort` parameter. If providing multiple `sort` values, provide multiple `order` values in corresponding order, e.g.: `sort=author_name,title&order=desc,asc`.'
+      schema:
+        enum:
+          - asc
+          - desc
+        type: string
+    CommonClassParameterQuery:
+      name: class
+      in: query
+      description: 'The collection from which to query objects.  <br/><br/>Note that if `class` is not provided, the response will not include any objects.'
+      schema:
+        type: string
+    CommonOutputVerbosityParameterQuery:
+      name: output
+      in: query
+      description: Controls the verbosity of the output.
+      schema:
+        enum:
+          - minimal
+          - verbose
+        type: string
+        default: minimal
+  securitySchemes:
+    oidc:
+      type: oauth2
+      description: OIDC (OpenConnect ID - based on OAuth2)
+      flows:
+        implicit:
+          authorizationUrl: http://to-be-configured-in-the-application-config/
+          scopes: { }
+security:
+  - { }
+  - oidc: [ ]
+tags:
+  - name: root
+    description: The root of the API. Note the base url is `/v1`.
+  - name: schema
+    description: Operate on the database schema. <br/><br/>Note an 'Object class' in Weaviate is being renamed to a 'collection'. <br/><br/>See <a href='https://weaviate.io/developers/weaviate/manage-data/collections'>this page</a> for client code examples.
+  - name: objects
+    description: 'Create, update and delete objects and cross-references.'
+  - name: batch
+    description: 'Create, update and delete multiple objects and references at once. <br/><br/>Note that object-level errors may be reported even in a successful batch request. Accordingly, we recommend you check the response body for errors.'
+  - name: backups
+    description: 'Create, restore and check the status of backups. <br/><br/>See the [backups page](https://weaviate.io/developers/weaviate/configuration/backups) for a general introduction, configuration, and tech background of backups.'
+  - name: meta
+    description: 'Retrieve information about the server such as the hostname, location, versions and modules.'
+  - name: cluster
+    description: Retrieve information about the cluster.
+  - name: nodes
+    description: 'Retrieve information about relevant nodes in the cluster. The query can be for the entire cluster, or for a particular collection.'
+  - name: well-known
+    description: '`.well-known` endpoints. If OpenID Connect (OIDC) authentication is enabled, this endpoint includes OIDC configuration details.'
+  - name: graphql
+    description: 'Query data using the GraphQL query language. See the [Weaviate GraphQL documentation](https://weaviate.io/developers/weaviate/api/graphql) for query syntax details.'
+  - name: classifications
+    description: Perform classification operations
+externalDocs:
+  url: https://github.com/weaviate/weaviate

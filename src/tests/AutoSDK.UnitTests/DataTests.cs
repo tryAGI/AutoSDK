@@ -30,6 +30,7 @@ public partial class DataTests
     [DataRow("google-gemini.yaml")]
     [DataRow("vectara.yaml")]
     [DataRow("mistral.yaml")]
+    [DataRow("weaviate.yaml")]
     public Task PrepareData(string resourceName)
     {
         return VerifyAsync(Data.Prepare((
