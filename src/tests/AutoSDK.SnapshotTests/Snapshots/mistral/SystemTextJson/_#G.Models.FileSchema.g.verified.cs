@@ -10,14 +10,16 @@ namespace G
     public sealed partial class FileSchema
     {
         /// <summary>
-        /// The size of the file, in bytes.
+        /// The size of the file, in bytes.<br/>
+        /// Example: 13000
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Bytes { get; set; }
 
         /// <summary>
-        /// The UNIX timestamp (in seconds) of the event.
+        /// The UNIX timestamp (in seconds) of the event.<br/>
+        /// Example: 1716963433
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
@@ -25,14 +27,16 @@ namespace G
         public required global::System.DateTimeOffset CreatedAt { get; set; }
 
         /// <summary>
-        /// The name of the uploaded file.
+        /// The name of the uploaded file.<br/>
+        /// Example: files_upload.jsonl
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Filename { get; set; }
 
         /// <summary>
-        /// The unique identifier of the file.
+        /// The unique identifier of the file.<br/>
+        /// Example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -45,14 +49,16 @@ namespace G
         public int? NumLines { get; set; }
 
         /// <summary>
-        /// The object type, which is always "file".
+        /// The object type, which is always "file".<br/>
+        /// Example: file
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Object { get; set; }
 
         /// <summary>
-        /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.
+        /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.<br/>
+        /// Example: fine-tune
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FileSchemaPurposeJsonConverter))]

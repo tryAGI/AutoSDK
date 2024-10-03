@@ -10,19 +10,22 @@ namespace G
     public sealed partial class DeleteFileOut
     {
         /// <summary>
-        /// The deletion status.
+        /// The deletion status.<br/>
+        /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Deleted { get; set; } = default!;
 
         /// <summary>
-        /// The ID of the deleted file.
+        /// The ID of the deleted file.<br/>
+        /// Example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
-        /// The object type that was deleted
+        /// The object type that was deleted<br/>
+        /// Example: file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
         public string Object { get; set; } = default!;

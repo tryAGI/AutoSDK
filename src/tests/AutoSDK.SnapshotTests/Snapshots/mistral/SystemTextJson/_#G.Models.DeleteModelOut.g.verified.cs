@@ -11,13 +11,15 @@ namespace G
     {
         /// <summary>
         /// The deletion status<br/>
-        /// Default Value: true
+        /// Default Value: true<br/>
+        /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         public bool? Deleted { get; set; } = true;
 
         /// <summary>
-        /// The ID of the deleted model.
+        /// The ID of the deleted model.<br/>
+        /// Example: ft:open-mistral-7b:587a6b29:20240514:7e773925
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -91,7 +91,7 @@ namespace G
         /// Default Value: fine-tuned
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.FTModelCardType? Type { get; set; } = "fine-tuned";
+        public global::G.FTModelCardType? Type { get; set; } = global::G.FTModelCardType.FineTuned;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

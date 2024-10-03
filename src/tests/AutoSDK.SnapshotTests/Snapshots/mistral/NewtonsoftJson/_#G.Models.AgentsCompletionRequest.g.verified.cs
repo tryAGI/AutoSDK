@@ -24,7 +24,8 @@ namespace G
         public int? MaxTokens { get; set; }
 
         /// <summary>
-        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
+        /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage>> Messages { get; set; } = default!;

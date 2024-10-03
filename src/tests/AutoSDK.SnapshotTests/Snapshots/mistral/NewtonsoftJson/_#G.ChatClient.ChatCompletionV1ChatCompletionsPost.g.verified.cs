@@ -122,13 +122,15 @@ namespace G
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </param>
         /// <param name="messages">
-        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
+        /// Example: []
         /// </param>
         /// <param name="minTokens">
         /// The minimum number of tokens to generate in the completion.
         /// </param>
         /// <param name="model">
-        /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.
+        /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.<br/>
+        /// Example: mistral-small-latest
         /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.

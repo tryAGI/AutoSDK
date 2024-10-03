@@ -18,7 +18,8 @@ namespace G
         public int? MaxTokens { get; set; }
 
         /// <summary>
-        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
+        /// Example: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -31,7 +32,8 @@ namespace G
         public int? MinTokens { get; set; }
 
         /// <summary>
-        /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.
+        /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.<br/>
+        /// Example: mistral-small-latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -27,13 +27,15 @@ namespace G
         /// ID of the model to use. Only compatible for now with:<br/>
         ///   - `codestral-2405`<br/>
         ///   - `codestral-latest`<br/>
-        /// Default Value: codestral-2405
+        /// Default Value: codestral-2405<br/>
+        /// Example: codestral-2405
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Model { get; set; } = default!;
 
         /// <summary>
-        /// The text/code to complete.
+        /// The text/code to complete.<br/>
+        /// Example: def
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
         public string Prompt { get; set; } = default!;
@@ -58,7 +60,8 @@ namespace G
         public bool? Stream { get; set; } = false;
 
         /// <summary>
-        /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
+        /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.<br/>
+        /// Example: return a+b
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("suffix")]
         public string? Suffix { get; set; }

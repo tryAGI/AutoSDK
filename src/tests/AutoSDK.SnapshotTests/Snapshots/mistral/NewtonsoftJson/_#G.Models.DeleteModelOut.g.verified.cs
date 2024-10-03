@@ -11,13 +11,15 @@ namespace G
     {
         /// <summary>
         /// The deletion status<br/>
-        /// Default Value: true
+        /// Default Value: true<br/>
+        /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deleted")]
         public bool? Deleted { get; set; } = true;
 
         /// <summary>
-        /// The ID of the deleted model.
+        /// The ID of the deleted model.<br/>
+        /// Example: ft:open-mistral-7b:587a6b29:20240514:7e773925
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;

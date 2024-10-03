@@ -10,21 +10,24 @@ namespace G
     public sealed partial class DeleteFileOut
     {
         /// <summary>
-        /// The deletion status.
+        /// The deletion status.<br/>
+        /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Deleted { get; set; }
 
         /// <summary>
-        /// The ID of the deleted file.
+        /// The ID of the deleted file.<br/>
+        /// Example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
 
         /// <summary>
-        /// The object type that was deleted
+        /// The object type that was deleted<br/>
+        /// Example: file
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]

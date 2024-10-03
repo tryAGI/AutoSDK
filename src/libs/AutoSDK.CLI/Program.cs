@@ -6,6 +6,7 @@ var rootCommand = new RootCommand(
     description: "CLI tool to use AutoSDK");
 rootCommand.AddCommand(new GenerateCommand());
 rootCommand.AddCommand(new SimplifyCommand());
+rootCommand.AddCommand(new ConvertCommand());
 rootCommand.AddCommand(new InitializeCommand());
 rootCommand.AddCommand(new AiCommand());
 

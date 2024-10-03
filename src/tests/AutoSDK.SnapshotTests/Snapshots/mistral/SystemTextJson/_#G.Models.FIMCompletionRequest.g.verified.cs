@@ -27,14 +27,16 @@ namespace G
         /// ID of the model to use. Only compatible for now with:<br/>
         ///   - `codestral-2405`<br/>
         ///   - `codestral-latest`<br/>
-        /// Default Value: codestral-2405
+        /// Default Value: codestral-2405<br/>
+        /// Example: codestral-2405
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Model { get; set; }
 
         /// <summary>
-        /// The text/code to complete.
+        /// The text/code to complete.<br/>
+        /// Example: def
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -61,7 +63,8 @@ namespace G
         public bool? Stream { get; set; } = false;
 
         /// <summary>
-        /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
+        /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.<br/>
+        /// Example: return a+b
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
         public string? Suffix { get; set; }

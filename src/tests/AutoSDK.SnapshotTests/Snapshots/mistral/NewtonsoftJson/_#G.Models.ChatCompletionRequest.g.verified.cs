@@ -18,7 +18,8 @@ namespace G
         public int? MaxTokens { get; set; }
 
         /// <summary>
-        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
+        /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.OneOf<global::G.SystemMessage, global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage>> Messages { get; set; } = default!;
@@ -30,7 +31,8 @@ namespace G
         public int? MinTokens { get; set; }
 
         /// <summary>
-        /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.
+        /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.<br/>
+        /// Example: mistral-small-latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Model { get; set; } = default!;

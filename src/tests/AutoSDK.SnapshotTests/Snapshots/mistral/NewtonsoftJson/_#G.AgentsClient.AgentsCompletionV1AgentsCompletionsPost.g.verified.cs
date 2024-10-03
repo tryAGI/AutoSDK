@@ -125,7 +125,8 @@ namespace G
         /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
         /// </param>
         /// <param name="messages">
-        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
+        /// Example: []
         /// </param>
         /// <param name="minTokens">
         /// The minimum number of tokens to generate in the completion.

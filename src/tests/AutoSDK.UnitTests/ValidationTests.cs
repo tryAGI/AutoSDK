@@ -87,6 +87,70 @@ public class ValidationTests : VerifyBase
     [TestMethod]
     public void ConvertToOpenApi30_RegexForExclusiveMinimum_Success()
     {
+      OpenApi31Support.ConvertYamlToOpenApi30(
+        """
+        EmbeddingResponseData:
+          title: EmbeddingResponseData
+          type: object
+          properties:
+            object:
+              type: string
+              example: embedding
+            embedding:
+              type: array
+              items:
+                type: number
+              example:
+                - 0.1
+                - 0.2
+                - 0.3
+            index:
+              type: integer
+              example: 0
+          example:
+            - object: embedding
+              embedding:
+                - 0.1
+                - 0.2
+                - 0.3
+              index: 0
+            - object: embedding
+              embedding:
+                - 0.4
+                - 0.5
+                - 0.6
+              index: 1
+
+        """).Should().Be(
+        """
+        EmbeddingResponseData:
+          example:
+            embedding:
+              - 0.10000000000000001
+              - 0.20000000000000001
+              - 0.29999999999999999
+            index: 0
+            object: embedding
+          properties:
+            embedding:
+              example:
+                - 0.10000000000000001
+                - 0.20000000000000001
+                - 0.29999999999999999
+              items:
+                type: number
+              type: array
+            index:
+              example: 0
+              type: integer
+            object:
+              example: embedding
+              type: string
+          title: EmbeddingResponseData
+          type: object
+
+        """);
+      
         OpenApi31Support.ConvertYamlToOpenApi30(
         """
         ImageURLChunk:
@@ -288,6 +352,9 @@ public class ValidationTests : VerifyBase
             properties:
               messages:
                 description: The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+                example:
+                  - content: Who is the best French painter? Answer in one short sentence.
+                    role: user
                 items:
                   discriminator:
                     mapping:
@@ -305,6 +372,7 @@ public class ValidationTests : VerifyBase
                 type: array
               model:
                 description: ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.
+                example: mistral-small-latest
                 nullable: true
                 title: Model
                 type: string

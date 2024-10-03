@@ -10,13 +10,13 @@ namespace G
     public sealed partial class ChatCompletionChoice
     {
         /// <summary>
-        /// 
+        /// Example: stop
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ChatCompletionChoiceFinishReason FinishReason { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
         public int Index { get; set; } = default!;

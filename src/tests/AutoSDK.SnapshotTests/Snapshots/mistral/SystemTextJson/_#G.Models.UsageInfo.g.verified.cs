@@ -10,21 +10,21 @@ namespace G
     public sealed partial class UsageInfo
     {
         /// <summary>
-        /// 
+        /// Example: 34
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CompletionTokens { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 16
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PromptTokens { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 50
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -73,7 +73,7 @@ namespace G
         /// Default Value: base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.BaseModelCardType? Type { get; set; } = "base";
+        public global::G.BaseModelCardType? Type { get; set; } = global::G.BaseModelCardType.Base;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: stop
     /// </summary>
     public enum ChatCompletionChoiceFinishReason
     {

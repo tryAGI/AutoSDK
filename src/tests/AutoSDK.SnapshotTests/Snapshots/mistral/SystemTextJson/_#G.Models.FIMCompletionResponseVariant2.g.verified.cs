@@ -10,7 +10,7 @@ namespace G
     public sealed partial class FIMCompletionResponseVariant2
     {
         /// <summary>
-        /// 
+        /// Example: codestral-latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }

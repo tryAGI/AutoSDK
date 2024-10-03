@@ -10,19 +10,19 @@ namespace G
     public sealed partial class EmbeddingResponse
     {
         /// <summary>
-        /// 
+        /// Example: cmpl-e5cc70bb28c444948073e77776eb30ef
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: mistral-small-latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: chat.completion
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
         public string Object { get; set; } = default!;

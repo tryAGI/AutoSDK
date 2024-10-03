@@ -95,7 +95,8 @@ namespace G
         /// Default Value: fine-tuned
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::G.FTModelCardType? Type { get; set; } = "fine-tuned";
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FTModelCardTypeJsonConverter))]
+        public global::G.FTModelCardType? Type { get; set; } = global::G.FTModelCardType.FineTuned;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

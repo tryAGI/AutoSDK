@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ChatCompletionChoice
     {
         /// <summary>
-        /// 
+        /// Example: stop
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter))]
@@ -18,7 +18,7 @@ namespace G
         public required global::G.ChatCompletionChoiceFinishReason FinishReason { get; set; }
 
         /// <summary>
-        /// 
+        /// Example: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]

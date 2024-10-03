@@ -130,10 +130,12 @@ namespace G
         /// ID of the model to use. Only compatible for now with:<br/>
         ///   - `codestral-2405`<br/>
         ///   - `codestral-latest`<br/>
-        /// Default Value: codestral-2405
+        /// Default Value: codestral-2405<br/>
+        /// Example: codestral-2405
         /// </param>
         /// <param name="prompt">
-        /// The text/code to complete.
+        /// The text/code to complete.<br/>
+        /// Example: def
         /// </param>
         /// <param name="randomSeed">
         /// The seed to use for random sampling. If set, different calls will generate deterministic results.
@@ -146,7 +148,8 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="suffix">
-        /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
+        /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.<br/>
+        /// Example: return a+b
         /// </param>
         /// <param name="temperature">
         /// What sampling temperature to use, between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>

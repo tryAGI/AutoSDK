@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Example: stop
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ChatCompletionChoiceFinishReason

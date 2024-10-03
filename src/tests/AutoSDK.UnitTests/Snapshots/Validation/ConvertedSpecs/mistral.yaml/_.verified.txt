@@ -14,6 +14,9 @@
           type: integer
         messages:
           description: The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+          example:
+            - content: Who is the best French painter? Answer in one short sentence.
+              role: user
           items:
             discriminator:
               mapping:
@@ -159,6 +162,8 @@
           type: string
         type:
           default: base
+          enum:
+            - base
           title: Type
       required:
         - id
@@ -174,8 +179,10 @@
             - model_length
             - error
             - tool_calls
+          example: stop
           type: string
         index:
+          example: 0
           type: integer
         message:
           $ref: '#/components/schemas/AssistantMessage'
@@ -196,6 +203,9 @@
           type: integer
         messages:
           description: The prompt(s) to generate completions for, encoded as a list of dict with role and content.
+          example:
+            - content: Who is the best French painter? Answer in one short sentence.
+              role: user
           items:
             discriminator:
               mapping:
@@ -219,6 +229,7 @@
           type: integer
         model:
           description: ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.
+          example: mistral-small-latest
           nullable: true
           title: Model
           type: string
@@ -285,12 +296,16 @@
             $ref: '#/components/schemas/ChatCompletionChoice'
           type: array
         created:
+          example: 1702256327
           type: integer
         id:
+          example: cmpl-e5cc70bb28c444948073e77776eb30ef
           type: string
         model:
+          example: mistral-small-latest
           type: string
         object:
+          example: chat.completion
           type: string
         usage:
           $ref: '#/components/schemas/UsageInfo'
@@ -306,6 +321,7 @@
       properties:
         created_at:
           description: The UNIX timestamp (in seconds) for when the checkpoint was created.
+          example: 1716963433
           title: Created At
           type: integer
         metrics:
@@ -381,15 +397,18 @@
       properties:
         deleted:
           description: The deletion status.
+          example: false
           title: Deleted
           type: boolean
         id:
           description: The ID of the deleted file.
+          example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
           format: uuid
           title: Id
           type: string
         object:
           description: The object type that was deleted
+          example: file
           title: Object
           type: string
       required:
@@ -403,10 +422,12 @@
         deleted:
           default: true
           description: The deletion status
+          example: true
           title: Deleted
           type: boolean
         id:
           description: The ID of the deleted model.
+          example: ft:open-mistral-7b:587a6b29:20240514:7e773925
           title: Id
           type: string
         object:
@@ -579,10 +600,13 @@
     EmbeddingResponse:
       properties:
         id:
+          example: cmpl-e5cc70bb28c444948073e77776eb30ef
           type: string
         model:
+          example: mistral-small-latest
           type: string
         object:
+          example: chat.completion
           type: string
         usage:
           $ref: '#/components/schemas/UsageInfo'
@@ -594,14 +618,27 @@
         - usage
       type: object
     EmbeddingResponseData:
+      example:
+        embedding:
+          - 0.10000000000000001
+          - 0.20000000000000001
+          - 0.29999999999999999
+        index: 0
+        object: embedding
       properties:
         embedding:
+          example:
+            - 0.10000000000000001
+            - 0.20000000000000001
+            - 0.29999999999999999
           items:
             type: number
           type: array
         index:
+          example: 0
           type: integer
         object:
+          example: embedding
           type: string
       title: EmbeddingResponseData
       type: object
@@ -643,11 +680,13 @@
         model:
           default: codestral-2405
           description: "ID of the model to use. Only compatible for now with:\n  - `codestral-2405`\n  - `codestral-latest`"
+          example: codestral-2405
           nullable: true
           title: Model
           type: string
         prompt:
           description: The text/code to complete.
+          example: def
           title: Prompt
           type: string
         random_seed:
@@ -670,8 +709,9 @@
           title: Stream
           type: boolean
         suffix:
-          default: &o1240 
+          default: &o1300 
           description: Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
+          example: return a+b
           nullable: true
           title: Suffix
           type: string
@@ -699,6 +739,7 @@
         - $ref: '#/components/schemas/ChatCompletionResponse'
         - properties:
             model:
+              example: codestral-latest
               type: string
           type: object
     FTModelCapabilitiesOut:
@@ -775,6 +816,8 @@
           type: string
         type:
           default: fine-tuned
+          enum:
+            - fine-tuned
           title: Type
       required:
         - id
@@ -844,18 +887,22 @@
       properties:
         bytes:
           description: The size of the file, in bytes.
+          example: 13000
           title: Bytes
           type: integer
         created_at:
           description: The UNIX timestamp (in seconds) of the event.
+          example: 1716963433
           title: Created At
           type: integer
         filename:
           description: The name of the uploaded file.
+          example: files_upload.jsonl
           title: Filename
           type: string
         id:
           description: The unique identifier of the file.
+          example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
           format: uuid
           title: Id
           type: string
@@ -865,12 +912,14 @@
           type: integer
         object:
           description: The object type, which is always "file".
+          example: file
           title: Object
           type: string
         purpose:
           description: The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.
           enum:
             - fine-tune
+          example: fine-tune
           title: Purpose
           type: string
         sample_type:
@@ -902,7 +951,7 @@
       additionalProperties: false
       properties:
         description:
-          default: *o1240
+          default: *o1300
           title: Description
           type: string
         name:
@@ -1288,16 +1337,19 @@
       properties:
         cost:
           description: The cost of the fine-tuning job.
+          example: 10
           nullable: true
           title: Cost
           type: number
         cost_currency:
           description: The currency used for the fine-tuning job cost.
+          example: EUR
           nullable: true
           title: Cost Currency
           type: string
         data_tokens:
           description: The total number of tokens in the training dataset.
+          example: 305375
           nullable: true
           title: Data Tokens
           type: integer
@@ -1310,6 +1362,7 @@
           type: string
         epochs:
           description: The number of complete passes through the entire training dataset.
+          example: 4.2922000000000002
           nullable: true
           title: Epochs
           type: number
@@ -1319,6 +1372,7 @@
           type: integer
         expected_duration_seconds:
           description: The approximated time (in seconds) for the fine-tuning process to complete.
+          example: 220
           nullable: true
           title: Expected Duration Seconds
           type: integer
@@ -1330,16 +1384,19 @@
           type: string
         train_tokens:
           description: The total number of tokens used during the fine-tuning process.
+          example: 1310720
           nullable: true
           title: Train Tokens
           type: integer
         train_tokens_per_step:
           description: The number of tokens consumed by one training step.
+          example: 131072
           nullable: true
           title: Train Tokens Per Step
           type: integer
         training_steps:
           description: The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
+          example: 10
           nullable: true
           title: Training Steps
           type: integer
@@ -1442,18 +1499,22 @@
       properties:
         bytes:
           description: The size of the file, in bytes.
+          example: 13000
           title: Bytes
           type: integer
         created_at:
           description: The UNIX timestamp (in seconds) of the event.
+          example: 1716963433
           title: Created At
           type: integer
         filename:
           description: The name of the uploaded file.
+          example: files_upload.jsonl
           title: Filename
           type: string
         id:
           description: The unique identifier of the file.
+          example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
           format: uuid
           title: Id
           type: string
@@ -1463,12 +1524,14 @@
           type: integer
         object:
           description: The object type, which is always "file".
+          example: file
           title: Object
           type: string
         purpose:
           description: The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.
           enum:
             - fine-tune
+          example: fine-tune
           title: Purpose
           type: string
         sample_type:
@@ -1750,18 +1813,22 @@
       properties:
         bytes:
           description: The size of the file, in bytes.
+          example: 13000
           title: Bytes
           type: integer
         created_at:
           description: The UNIX timestamp (in seconds) of the event.
+          example: 1716963433
           title: Created At
           type: integer
         filename:
           description: The name of the uploaded file.
+          example: files_upload.jsonl
           title: Filename
           type: string
         id:
           description: The unique identifier of the file.
+          example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
           format: uuid
           title: Id
           type: string
@@ -1771,12 +1838,14 @@
           type: integer
         object:
           description: The object type, which is always "file".
+          example: file
           title: Object
           type: string
         purpose:
           description: The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.
           enum:
             - fine-tune
+          example: fine-tune
           title: Purpose
           type: string
         sample_type:
@@ -1797,10 +1866,13 @@
     UsageInfo:
       properties:
         completion_tokens:
+          example: 34
           type: integer
         prompt_tokens:
+          example: 16
           type: integer
         total_tokens:
+          example: 50
           type: integer
       required:
         - prompt_tokens
@@ -2316,6 +2388,7 @@ paths:
       operationId: jobs_api_routes_fine_tuning_update_fine_tuned_model
       parameters:
         - description: The ID of the model to update.
+          example: ft:open-mistral-7b:587a6b29:20240514:7e773925
           in: path
           name: model_id
           required: true
@@ -2344,6 +2417,7 @@ paths:
       operationId: jobs_api_routes_fine_tuning_unarchive_fine_tuned_model
       parameters:
         - description: The ID of the model to unarchive.
+          example: ft:open-mistral-7b:587a6b29:20240514:7e773925
           in: path
           name: model_id
           required: true
@@ -2365,6 +2439,7 @@ paths:
       operationId: jobs_api_routes_fine_tuning_archive_fine_tuned_model
       parameters:
         - description: The ID of the model to archive.
+          example: ft:open-mistral-7b:587a6b29:20240514:7e773925
           in: path
           name: model_id
           required: true
@@ -2407,6 +2482,7 @@ paths:
       operationId: delete_model_v1_models__model_id__delete
       parameters:
         - description: The ID of the model to delete.
+          example: ft:open-mistral-7b:587a6b29:20240514:7e773925
           in: path
           name: model_id
           required: true
@@ -2434,6 +2510,7 @@ paths:
       operationId: retrieve_model_v1_models__model_id__get
       parameters:
         - description: The ID of the model to retrieve.
+          example: ft:open-mistral-7b:587a6b29:20240514:7e773925
           in: path
           name: model_id
           required: true

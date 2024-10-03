@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using System.Globalization;
+using AutoSDK.Helpers;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Extensions;
@@ -14,10 +15,19 @@ namespace AutoSDK.Extensions;
 public static class OpenApiExtensions
 {
     public static OpenApiDocument GetOpenApiDocument(
-        this string yaml,
+        this string yamlOrJson,
         CancellationToken cancellationToken = default)
     {
-        var openApiDocument = new OpenApiStringReader().Read(yaml, out var diagnostics);
+        yamlOrJson = yamlOrJson ?? throw new ArgumentNullException(nameof(yamlOrJson));
+        
+        if (OpenApi31Support.IsOpenApi31(yamlOrJson))
+        {
+            yamlOrJson = OpenApi31Support.ConvertToOpenApi30(yamlOrJson);
+            
+            Console.WriteLine("Microsoft.OpenAPI currently doesn't support OpenAPI 3.1.0. Converting to OpenAPI 3.0.3. It may not work correctly.");
+        }
+        
+        var openApiDocument = new OpenApiStringReader().Read(yamlOrJson, out var diagnostics);
         if (diagnostics.Errors.Any())
         {
             throw new AggregateException(diagnostics.Errors.Select(x => new InvalidOperationException(x.Message)));

@@ -5,7 +5,8 @@
 namespace G
 {
     /// <summary>
-    /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.
+    /// The intended purpose of the uploaded file. Only accepts fine-tuning (`fine-tune`) for now.<br/>
+    /// Example: fine-tune
     /// </summary>
     public enum FileSchemaPurpose
     {

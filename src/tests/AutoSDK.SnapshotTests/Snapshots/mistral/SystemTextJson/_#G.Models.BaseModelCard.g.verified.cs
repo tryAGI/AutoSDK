@@ -75,7 +75,8 @@ namespace G
         /// Default Value: base
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public global::G.BaseModelCardType? Type { get; set; } = "base";
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BaseModelCardTypeJsonConverter))]
+        public global::G.BaseModelCardType? Type { get; set; } = global::G.BaseModelCardType.Base;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -10,19 +10,22 @@ namespace G
     public sealed partial class LegacyJobMetadataOut
     {
         /// <summary>
-        /// The cost of the fine-tuning job.
+        /// The cost of the fine-tuning job.<br/>
+        /// Example: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost")]
         public double? Cost { get; set; }
 
         /// <summary>
-        /// The currency used for the fine-tuning job cost.
+        /// The currency used for the fine-tuning job cost.<br/>
+        /// Example: EUR
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cost_currency")]
         public string? CostCurrency { get; set; }
 
         /// <summary>
-        /// The total number of tokens in the training dataset.
+        /// The total number of tokens in the training dataset.<br/>
+        /// Example: 305375
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_tokens")]
         public int? DataTokens { get; set; }
@@ -41,7 +44,8 @@ namespace G
         public required string Details { get; set; }
 
         /// <summary>
-        /// The number of complete passes through the entire training dataset.
+        /// The number of complete passes through the entire training dataset.<br/>
+        /// Example: 4.2922
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("epochs")]
         public double? Epochs { get; set; }
@@ -53,7 +57,8 @@ namespace G
         public int? EstimatedStartTime { get; set; }
 
         /// <summary>
-        /// The approximated time (in seconds) for the fine-tuning process to complete.
+        /// The approximated time (in seconds) for the fine-tuning process to complete.<br/>
+        /// Example: 220
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expected_duration_seconds")]
         public int? ExpectedDurationSeconds { get; set; }
@@ -66,19 +71,22 @@ namespace G
         public global::G.LegacyJobMetadataOutObject? Object { get; set; } = global::G.LegacyJobMetadataOutObject.JobMetadata;
 
         /// <summary>
-        /// The total number of tokens used during the fine-tuning process.
+        /// The total number of tokens used during the fine-tuning process.<br/>
+        /// Example: 1310720
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("train_tokens")]
         public int? TrainTokens { get; set; }
 
         /// <summary>
-        /// The number of tokens consumed by one training step.
+        /// The number of tokens consumed by one training step.<br/>
+        /// Example: 131072
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("train_tokens_per_step")]
         public int? TrainTokensPerStep { get; set; }
 
         /// <summary>
-        /// The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
+        /// The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.<br/>
+        /// Example: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_steps")]
         public int? TrainingSteps { get; set; }

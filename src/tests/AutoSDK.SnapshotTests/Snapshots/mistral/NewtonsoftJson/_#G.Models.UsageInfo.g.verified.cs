@@ -10,19 +10,19 @@ namespace G
     public sealed partial class UsageInfo
     {
         /// <summary>
-        /// 
+        /// Example: 34
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int CompletionTokens { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 16
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int PromptTokens { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Example: 50
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalTokens { get; set; } = default!;
