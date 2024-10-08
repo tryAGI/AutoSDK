@@ -29,13 +29,6 @@ namespace G
         public required byte[] File { get; set; }
 
         /// <summary>
-        /// Binary file contents. The file name of the file will be used as the document ID.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Filename { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

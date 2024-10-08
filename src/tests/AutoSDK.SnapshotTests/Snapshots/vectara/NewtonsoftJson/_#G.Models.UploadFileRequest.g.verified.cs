@@ -28,12 +28,6 @@ namespace G
         public byte[] File { get; set; } = default!;
 
         /// <summary>
-        /// Binary file contents. The file name of the file will be used as the document ID.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("filename", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Filename { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

@@ -88,7 +88,8 @@ public class SchemaContext
                 return [];
             }
             
-            if (Schema.IsBinary())
+            if (Schema.IsBinary() &&
+                Parent?.Children.Any(x => x.PropertyName == PropertyName + "name") != true)
             {
                 return
                 [

@@ -54,15 +54,11 @@ namespace G
         /// <param name="file">
         /// Binary file contents. The file name of the file will be used as the document ID.
         /// </param>
-        /// <param name="requestFilename">
-        /// Binary file contents. The file name of the file will be used as the document ID.
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Document> UploadFileAsync(
             string corpusKey,
             byte[] file,
-            string requestFilename,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::G.UploadFileRequestMetadata? metadata = default,
