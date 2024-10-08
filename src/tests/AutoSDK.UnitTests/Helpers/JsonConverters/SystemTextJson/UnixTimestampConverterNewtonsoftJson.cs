@@ -21,7 +21,12 @@ namespace AutoSDK.JsonConverters
                 switch (reader.Value)
                 {
                     case long unixTimestamp:
-                        return global::System.DateTimeOffset.FromUnixTimeSeconds(unixTimestamp);
+                        if (unixTimestamp >= -62135596800L && unixTimestamp <= 253402300799L)
+                        {
+                            return global::System.DateTimeOffset.FromUnixTimeSeconds(unixTimestamp);
+                        }
+                    
+                        return global::System.DateTimeOffset.FromUnixTimeMilliseconds(unixTimestamp);
                     case int unixTimestampInt:
                         return global::System.DateTimeOffset.FromUnixTimeSeconds(unixTimestampInt);
                 }
