@@ -28,7 +28,11 @@ namespace G
 
         /// <summary>
         /// Create a corpus<br/>
-        /// Create a corpus, which is a container to store documents and associated metadata.
+        /// Create a corpus, which is a container to store documents and associated metadata. This is where you <br/>
+        /// create the unique `corpus_key` that identifies the corpus. The `corpus_key` can be custom-defined <br/>
+        /// following your preferred naming convention, allowing you to easily manage the corpus's data and <br/>
+        /// reference it in queries. For more information, see <br/>
+        /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -140,7 +144,11 @@ namespace G
 
         /// <summary>
         /// Create a corpus<br/>
-        /// Create a corpus, which is a container to store documents and associated metadata.
+        /// Create a corpus, which is a container to store documents and associated metadata. This is where you <br/>
+        /// create the unique `corpus_key` that identifies the corpus. The `corpus_key` can be custom-defined <br/>
+        /// following your preferred naming convention, allowing you to easily manage the corpus's data and <br/>
+        /// reference it in queries. For more information, see <br/>
+        /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -153,7 +161,7 @@ namespace G
         /// Example: My corpus
         /// </param>
         /// <param name="description">
-        /// Description for the corpus.<br/>
+        /// Description of the corpus.<br/>
         /// Example: Documents with important information for my prompt.
         /// </param>
         /// <param name="queriesAreAnswers">
@@ -175,7 +183,7 @@ namespace G
         /// <param name="customDimensions">
         /// A custom dimension is an additional numerical field attached to a document part. You<br/>
         /// can then multiply this numerical field with a query time custom dimension of the same<br/>
-        /// name. This allows boosting (or deboosting) document parts for arbitrary reasons.<br/>
+        /// name. This allows boosting (or burying) document parts for arbitrary reasons.<br/>
         /// This feature is only enabled for Scale customers.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

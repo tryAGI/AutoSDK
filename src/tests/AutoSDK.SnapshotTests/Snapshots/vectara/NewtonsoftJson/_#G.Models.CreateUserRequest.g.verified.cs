@@ -22,7 +22,7 @@ namespace G
         public string? Username { get; set; }
 
         /// <summary>
-        /// The description for the user.
+        /// The description of the user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }

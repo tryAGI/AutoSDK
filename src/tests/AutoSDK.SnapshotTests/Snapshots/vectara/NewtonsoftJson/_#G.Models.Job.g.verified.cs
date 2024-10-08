@@ -52,6 +52,12 @@ namespace G
         public global::System.DateTime? CompletedAt { get; set; }
 
         /// <summary>
+        /// The username of the user who created the job. This property may be missing, e.g., if the job was created by the system, not a user.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created_by_username")]
+        public string? CreatedByUsername { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

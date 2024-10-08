@@ -8,7 +8,7 @@ namespace G
         /// <summary>
         /// Add a document to a corpus<br/>
         /// Add a document to a corpus. You can add documents that are either in a typical structured format,<br/>
-        /// or in a format that explicitly specifies each document part that becomes a search result.
+        /// or in a format that explicitly specifies each document part.  Each part becomes a separate search result.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -29,7 +29,7 @@ namespace G
         /// <summary>
         /// Add a document to a corpus<br/>
         /// Add a document to a corpus. You can add documents that are either in a typical structured format,<br/>
-        /// or in a format that explicitly specifies each document part that becomes a search result.
+        /// or in a format that explicitly specifies each document part.  Each part becomes a separate search result.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

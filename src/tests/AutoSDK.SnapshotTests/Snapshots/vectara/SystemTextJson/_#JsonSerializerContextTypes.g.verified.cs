@@ -119,15 +119,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserFunctionReranker? Type25 { get; set; }
+        public float? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MMRReranker? Type26 { get; set; }
+        public global::G.UserFunctionReranker? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public float? Type27 { get; set; }
+        public global::G.MMRReranker? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>

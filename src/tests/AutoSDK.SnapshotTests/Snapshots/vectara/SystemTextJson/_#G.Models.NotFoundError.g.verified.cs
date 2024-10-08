@@ -10,7 +10,7 @@ namespace G
     public sealed partial class NotFoundError
     {
         /// <summary>
-        /// The ID cannot found.
+        /// The ID cannot be found.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }

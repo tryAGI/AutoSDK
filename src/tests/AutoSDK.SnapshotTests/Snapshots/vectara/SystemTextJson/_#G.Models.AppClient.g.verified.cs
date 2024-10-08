@@ -11,7 +11,7 @@ namespace G
     {
         /// <summary>
         /// The Vectara App Client ID. This ID is not used during an OAuth<br/>
-        /// flow but the ID used within the Vectara API.
+        /// flow.  However, the ID used within the Vectara API.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
@@ -35,7 +35,7 @@ namespace G
         public string? ClientId { get; set; }
 
         /// <summary>
-        /// The key used in API requests. Should be kept secure.
+        /// The client secret used in API requests.  The secret should be kept secure.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_secret")]
         public string? ClientSecret { get; set; }

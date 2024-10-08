@@ -10,7 +10,7 @@ namespace G
     public sealed partial class StructuredDocument
     {
         /// <summary>
-        /// The Document ID, must be unique within the corpus.
+        /// The document ID, must be unique within the corpus.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -40,7 +40,7 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// The metadata for a document and is an arbitrary JSON object. Properties of this object<br/>
+        /// The metadata for a document as an arbitrary JSON object. Properties of this object<br/>
         /// can be used by document level filter attributes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]

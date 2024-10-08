@@ -41,7 +41,7 @@ namespace G
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// Indicates that this corpus does not store documents amd stores chats instead.
+        /// Indicates that this corpus does not store documents and stores chats instead.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chat_history_corpus")]
         public bool? ChatHistoryCorpus { get; set; }

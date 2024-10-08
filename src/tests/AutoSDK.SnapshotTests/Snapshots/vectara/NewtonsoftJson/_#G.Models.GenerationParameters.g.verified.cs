@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// The preset values to use to feed the query results and other context to the model.<br/>
         /// A `generation_preset` is an object with a bundle of properties that specifies:<br/>
-        ///   * The `prompt_template` that is rendered then sent to the LLM.<br/>
+        ///   * The `prompt_template` that is rendered and then sent to the LLM.<br/>
         ///   * The LLM used.<br/>
         ///   * `model_parameter`s such as temperature.<br/>
         ///  <br/>
         /// All of these properties except the model can be overriden by setting them in this<br/>
         /// object. Even when a `prompt_template` is set, the `generation_preset_name` is used to set <br/>
         /// the model used.<br/>
-        /// If `generation_preset_name` is not set the Vectara platform will use the default model and<br/>
+        /// If `generation_preset_name` is not set, the Vectara platform will use the default model and<br/>
         /// prompt.<br/>
         /// Example: vectara-summary-ext-v1.2.0
         /// </summary>
@@ -61,7 +61,7 @@ namespace G
         public string? PromptTemplate { get; set; }
 
         /// <summary>
-        /// This is property is deprecated in favor clearer naming. Use `prompt_template`. This property will be<br/>
+        /// This property is deprecated in favor clearer naming. Use `prompt_template`. This property will be<br/>
         /// ignored if `prompt_template` is set.<br/>
         /// Example: [<br/>
         ///   {"role": "system", "content": "You are a helpful search assistant."},<br/>
@@ -82,7 +82,7 @@ namespace G
         /// than this value. This is generally implemented by including the `max_response_characters` in the<br/>
         /// prompt, and the LLM's instruction following capability dictates how closely the generated output<br/>
         /// is limited.<br/>
-        /// So, this value This is currently a Scale-only feature.<br/>
+        /// This is currently a Scale-only feature.<br/>
         /// See [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.<br/>
         /// Example: 300
         /// </summary>

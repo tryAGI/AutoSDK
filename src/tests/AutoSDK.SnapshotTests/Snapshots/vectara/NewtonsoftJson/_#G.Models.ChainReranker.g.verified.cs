@@ -17,7 +17,7 @@ namespace G
         public string? Type { get; set; } = "chain";
 
         /// <summary>
-        /// Specify an array of rerankers to search results consecutively after each other.
+        /// Specify an array of rerankers to apply to search results consecutively.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rerankers", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.SearchReranker> Rerankers { get; set; } = default!;

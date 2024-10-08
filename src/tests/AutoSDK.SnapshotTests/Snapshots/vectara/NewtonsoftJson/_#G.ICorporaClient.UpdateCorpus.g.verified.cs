@@ -9,8 +9,10 @@ namespace G
         /// Update a corpus<br/>
         /// Enable, disable, or update the name and description of a corpus. This lets you<br/>
         /// manage data availability without deleting the corpus, which is useful for <br/>
-        /// maintenance and security purposes. Update the name and description of a corpus <br/>
-        /// dynamically to help keep your data aligned with changing business needs.
+        /// maintenance and security purposes. The `corpus_key` uniquely identifies the corpus. <br/>
+        /// For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition). <br/>
+        /// Update the name and description of a corpus dynamically to help keep your data <br/>
+        /// aligned with changing business needs.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -32,8 +34,10 @@ namespace G
         /// Update a corpus<br/>
         /// Enable, disable, or update the name and description of a corpus. This lets you<br/>
         /// manage data availability without deleting the corpus, which is useful for <br/>
-        /// maintenance and security purposes. Update the name and description of a corpus <br/>
-        /// dynamically to help keep your data aligned with changing business needs.
+        /// maintenance and security purposes. The `corpus_key` uniquely identifies the corpus. <br/>
+        /// For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition). <br/>
+        /// Update the name and description of a corpus dynamically to help keep your data <br/>
+        /// aligned with changing business needs.
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -46,12 +50,12 @@ namespace G
         /// Example: false
         /// </param>
         /// <param name="name">
-        /// The name for the corpus. If unset or null then the corpus will remain in the same state.<br/>
+        /// The name for the corpus. If unset or null, then the corpus will remain in the same state.<br/>
         /// Example: new-name
         /// </param>
         /// <param name="description">
-        /// Description of the corpus. If unset or null then the corpus will remain in the same state.<br/>
-        /// Example: New description for the corpus.
+        /// Description of the corpus. If unset or null, then the corpus will remain in the same state.<br/>
+        /// Example: New description of the corpus.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

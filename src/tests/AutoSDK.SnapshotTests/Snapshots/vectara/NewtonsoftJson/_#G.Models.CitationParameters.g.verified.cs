@@ -14,14 +14,14 @@ namespace G
         /// Can be one of:<br/>
         /// * `numeric` - Citations formatted as simple numerals: \[1\], \[2\] ...<br/>
         /// * `none` - Citations removed from text.<br/>
-        /// * `html` - Citation formatted as url like `&lt;a href="url_pattern"&gt;text_pattern&lt;/a&gt;`.<br/>
+        /// * `html` - Citation formatted as a URL like `&lt;a href="url_pattern"&gt;text_pattern&lt;/a&gt;`.<br/>
         /// * `markdown` - Formatted as `[text_pattern](url_pattern)`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
         public global::G.CitationParametersStyle? Style { get; set; }
 
         /// <summary>
-        /// The url pattern if the citation_style is set to `html` or `markdown`.<br/>
+        /// The URL pattern if the citation_style is set to `html` or `markdown`.<br/>
         /// The pattern can access metadata attributes in the document or part.<br/>
         /// e.g. `https://my.doc/foo/{doc.id}/{part.id}`<br/>
         /// The default `url_pattern` is an empty string.<br/>
@@ -32,7 +32,7 @@ namespace G
 
         /// <summary>
         /// The text pattern if the citation_style is set to `html` or `markdown`.<br/>
-        /// This pattern sets the href for html or the text within `[]` in markdown,<br/>
+        /// This pattern sets the href for HTML or the text within `[]` in markdown,<br/>
         /// and defaults to N being the index of result if it is not set.<br/>
         /// The default citation style looks like `[N](&lt;url_pattern&gt;)` for markdown.<br/>
         /// You can use metadata attributes in the `text_pattern`. For example,<br/>

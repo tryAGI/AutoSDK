@@ -10,7 +10,9 @@ namespace G
         /// Replace the filter attributes of a corpus. This does not happen immediately, but<br/>
         /// instead creates a job and will complete when that job completes. Until that<br/>
         /// job completes, using new filter attributes will not work.<br/>
-        /// You can monitor the status of the filter change using the returned job id.
+        /// You can monitor the status of the filter change using the returned job ID. The <br/>
+        /// `corpus_key` uniquely identifies the corpus. For more information, see <br/>
+        /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -33,7 +35,9 @@ namespace G
         /// Replace the filter attributes of a corpus. This does not happen immediately, but<br/>
         /// instead creates a job and will complete when that job completes. Until that<br/>
         /// job completes, using new filter attributes will not work.<br/>
-        /// You can monitor the status of the filter change using the returned job id.
+        /// You can monitor the status of the filter change using the returned job ID. The <br/>
+        /// `corpus_key` uniquely identifies the corpus. For more information, see <br/>
+        /// [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

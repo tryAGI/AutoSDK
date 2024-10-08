@@ -10,6 +10,19 @@ namespace G
     public sealed partial class CorpusLimits
     {
         /// <summary>
+        /// The number of documents contained in the corpus.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("used_docs")]
+        public long? UsedDocs { get; set; }
+
+        /// <summary>
+        /// The number of document parts contained in the corpus.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("used_parts")]
+        public long? UsedParts { get; set; }
+
+        /// <summary>
+        /// NOTE: This field is currently not populated by the system.<br/>
         /// The number of bytes contained in the corpus. This includes the document metadata,<br/>
         /// document part metadata, and document contents.
         /// </summary>
@@ -24,6 +37,7 @@ namespace G
         public long? UsedCharacters { get; set; }
 
         /// <summary>
+        /// NOTE: This field is currently not populated by the system.<br/>
         /// The maximum number of bytes the corpus can be.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_bytes")]
@@ -36,6 +50,7 @@ namespace G
         public long? MaxMetadataBytes { get; set; }
 
         /// <summary>
+        /// NOTE: This field is currently not populated by the system.<br/>
         /// The maximum per-second addition of new documents to corpus.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index_rate")]

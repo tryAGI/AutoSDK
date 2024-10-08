@@ -10,7 +10,7 @@ namespace G
     public sealed partial class StructuredDocumentSection
     {
         /// <summary>
-        /// The section ID. Gets converted to a metadata field.
+        /// The section ID. This gets converted to a metadata field automatically.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public int? Id { get; set; }

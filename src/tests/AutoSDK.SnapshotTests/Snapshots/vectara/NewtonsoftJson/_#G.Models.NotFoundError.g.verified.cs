@@ -10,7 +10,7 @@ namespace G
     public sealed partial class NotFoundError
     {
         /// <summary>
-        /// The ID cannot found.
+        /// The ID cannot be found.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }

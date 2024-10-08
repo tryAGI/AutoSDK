@@ -18,6 +18,13 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
+        /// Description of the custom dimension.<br/>
+        /// Example: Product importance.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
         /// Default value of a custom dimension on a document part if the custom<br/>
         /// dimension value is not specified when the document part is indexed.<br/>
         /// A value of 0 means that custom dimension is not considered.<br/>

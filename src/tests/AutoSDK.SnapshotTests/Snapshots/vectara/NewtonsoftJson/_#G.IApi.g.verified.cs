@@ -41,7 +41,7 @@ namespace G
         public QueriesClient Queries { get; }
 
         /// <summary>
-        /// Upload files to a corpus for automatic parsing and document extraction
+        /// Upload files to a corpus for automatic parsing, text extraction, chunking, and indexing
         /// </summary>
         public UploadClient Upload { get; }
 
@@ -51,7 +51,7 @@ namespace G
         public IndexClient Index { get; }
 
         /// <summary>
-        /// Create, manage, and update corpora and their associated settings for administration purposes
+        /// Create, manage, and update corpora and their associated settings
         /// </summary>
         public CorporaClient Corpora { get; }
 
@@ -61,7 +61,7 @@ namespace G
         public DocumentsClient Documents { get; }
 
         /// <summary>
-        /// Create, manage, and interact with chat sessions for conversational AI and administrative monitoring
+        /// Create, manage, and interact with chat sessions for conversational AI
         /// </summary>
         public ChatsClient Chats { get; }
 
@@ -71,7 +71,7 @@ namespace G
         public LargeLanguageModelsClient LargeLanguageModels { get; }
 
         /// <summary>
-        /// List encoders that turn text into vectors such as Boomerang
+        /// List available encoders (such as Boomerang) that turn text into vectors
         /// </summary>
         public EncodersClient Encoders { get; }
 

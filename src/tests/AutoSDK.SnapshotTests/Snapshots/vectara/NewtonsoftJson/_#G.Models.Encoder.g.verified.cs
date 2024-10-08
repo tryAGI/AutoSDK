@@ -25,7 +25,7 @@ namespace G
 
         /// <summary>
         /// When this encoder is used to create an embedding, it shows the count of dimensions for the output embedding.<br/>
-        /// A high dimensionality will consume more storage space, but it allows for an increase the quality of<br/>
+        /// A high dimensionality will consume more storage space, but it allows for an increase in the quality of<br/>
         /// the embedding.<br/>
         /// Example: 768
         /// </summary>
@@ -39,7 +39,7 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// Indicates whether the encoder is default used when creating a corpus.<br/>
+        /// Indicates whether the default encoder is used when creating a corpus.<br/>
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default")]

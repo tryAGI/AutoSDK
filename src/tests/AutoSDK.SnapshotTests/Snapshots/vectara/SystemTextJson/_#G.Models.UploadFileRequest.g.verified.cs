@@ -16,6 +16,12 @@ namespace G
         public global::G.UploadFileRequestMetadata? Metadata { get; set; }
 
         /// <summary>
+        /// Optional multipart section to override the filename.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        public string? Filename { get; set; }
+
+        /// <summary>
         /// Binary file contents. The file name of the file will be used as the document ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file")]

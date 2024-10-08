@@ -17,15 +17,15 @@ namespace G
         public bool? Enabled { get; set; }
 
         /// <summary>
-        /// The name for the corpus. If unset or null then the corpus will remain in the same state.<br/>
+        /// The name for the corpus. If unset or null, then the corpus will remain in the same state.<br/>
         /// Example: new-name
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
-        /// Description of the corpus. If unset or null then the corpus will remain in the same state.<br/>
-        /// Example: New description for the corpus.
+        /// Description of the corpus. If unset or null, then the corpus will remain in the same state.<br/>
+        /// Example: New description of the corpus.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }

@@ -17,7 +17,7 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// Indicates whether this a document or document part metadata filter.<br/>
+        /// Indicates whether this is a document or document part metadata filter.<br/>
         /// Example: document
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("level", Required = global::Newtonsoft.Json.Required.Always)]

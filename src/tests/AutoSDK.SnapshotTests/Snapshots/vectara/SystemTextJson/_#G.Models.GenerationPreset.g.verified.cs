@@ -35,7 +35,7 @@ namespace G
         public string? PromptTemplate { get; set; }
 
         /// <summary>
-        /// Preset maximum number of search results to be available to the prompt.
+        /// Preset maximum number of search results that will be available to the prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_used_search_results")]
         public int? MaxUsedSearchResults { get; set; }
@@ -54,14 +54,14 @@ namespace G
         public float? Temperature { get; set; }
 
         /// <summary>
-        /// Higher values penalize new tokens based on their existing frequency in the text so far,<br/>
+        /// Higher values penalize new tokens based on their existing frequency in the generation so far,<br/>
         /// decreasing the model's likelihood to repeat the same line verbatim.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
         public float? FrequencyPenalty { get; set; }
 
         /// <summary>
-        /// Higher values penalize new tokens based on whether they appear in the text so far,<br/>
+        /// Higher values penalize new tokens based on whether they appear in the generation so far,<br/>
         /// increasing the model's likelihood to talk about new topics.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]

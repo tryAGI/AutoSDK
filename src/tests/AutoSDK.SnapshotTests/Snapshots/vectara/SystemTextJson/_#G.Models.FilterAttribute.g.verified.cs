@@ -18,7 +18,7 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
-        /// Indicates whether this a document or document part metadata filter.<br/>
+        /// Indicates whether this is a document or document part metadata filter.<br/>
         /// Example: document
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("level")]

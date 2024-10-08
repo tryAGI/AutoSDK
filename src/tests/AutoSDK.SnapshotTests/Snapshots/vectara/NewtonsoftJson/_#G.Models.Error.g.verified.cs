@@ -16,7 +16,7 @@ namespace G
         public global::System.Collections.Generic.IList<string>? Messages { get; set; }
 
         /// <summary>
-        /// The ID of the request that can be used to help Vectara support debug what went wrong .
+        /// The ID of the request that can be used to help Vectara support debug what went wrong.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("request_id")]
         public string? RequestId { get; set; }

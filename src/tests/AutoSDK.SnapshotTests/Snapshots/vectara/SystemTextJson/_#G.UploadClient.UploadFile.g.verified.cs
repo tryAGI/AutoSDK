@@ -35,7 +35,7 @@ namespace G
         /// * `metadata` - (Optional) Specifies a JSON object representing any additional metadata to be associated with the extracted document. For example, `'metadata={"key": "value"};type=application/json'`<br/>
         /// * `file` - Specifies the file that you want to upload.<br/>
         /// * `filename` - Specified as part of the file field with the file name that you want to associate with the uploaded file. For a curl example, use the following syntax: `'file=@/path/to/file/file.pdf;filename=desired_filename.pdf'`<br/>
-        /// For more detailed information see this [File Upload API guide.](https://docs.vectara.com/docs/api-reference/indexing-apis/file-upload/file-upload)
+        /// For more detailed information, see this [File Upload API guide.](https://docs.vectara.com/docs/api-reference/indexing-apis/file-upload/file-upload)
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -119,6 +119,12 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.Metadata}"),
                     name: "metadata");
             } 
+            if (request.Filename != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Filename}"),
+                    name: "filename");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>())
                 {
@@ -186,7 +192,7 @@ namespace G
         /// * `metadata` - (Optional) Specifies a JSON object representing any additional metadata to be associated with the extracted document. For example, `'metadata={"key": "value"};type=application/json'`<br/>
         /// * `file` - Specifies the file that you want to upload.<br/>
         /// * `filename` - Specified as part of the file field with the file name that you want to associate with the uploaded file. For a curl example, use the following syntax: `'file=@/path/to/file/file.pdf;filename=desired_filename.pdf'`<br/>
-        /// For more detailed information see this [File Upload API guide.](https://docs.vectara.com/docs/api-reference/indexing-apis/file-upload/file-upload)
+        /// For more detailed information, see this [File Upload API guide.](https://docs.vectara.com/docs/api-reference/indexing-apis/file-upload/file-upload)
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>
@@ -197,10 +203,13 @@ namespace G
         /// <param name="metadata">
         /// Arbitrary object that will be attached as document metadata to the extracted document.
         /// </param>
+        /// <param name="filename">
+        /// Optional multipart section to override the filename.
+        /// </param>
         /// <param name="file">
         /// Binary file contents. The file name of the file will be used as the document ID.
         /// </param>
-        /// <param name="filename">
+        /// <param name="requestFilename">
         /// Binary file contents. The file name of the file will be used as the document ID.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -208,17 +217,19 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Document> UploadFileAsync(
             string corpusKey,
             byte[] file,
-            string filename,
+            string requestFilename,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::G.UploadFileRequestMetadata? metadata = default,
+            string? filename = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UploadFileRequest
             {
                 Metadata = metadata,
-                File = file,
                 Filename = filename,
+                File = file,
+                Filename = requestFilename,
             };
 
             return await UploadFileAsync(

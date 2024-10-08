@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Indicates whether this a document or document part metadata filter.<br/>
+    /// Indicates whether this is a document or document part metadata filter.<br/>
     /// Example: document
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

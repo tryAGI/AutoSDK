@@ -7,7 +7,9 @@ namespace G
     {
         /// <summary>
         /// Remove all documents and data in a corpus<br/>
-        /// Resets a corpus, which removes all documents and data from the specified corpus, while keeping the corpus itself.
+        /// Resets a corpus, which removes all documents and data from the specified corpus, <br/>
+        /// while keeping the corpus itself. The `corpus_key` uniquely identifies the corpus. <br/>
+        /// For more information, see [Corpus Key Definition](https://docs.vectara.com/docs/api-reference/search-apis/search#corpus-key-definition).
         /// </summary>
         /// <param name="requestTimeout"></param>
         /// <param name="requestTimeoutMillis"></param>

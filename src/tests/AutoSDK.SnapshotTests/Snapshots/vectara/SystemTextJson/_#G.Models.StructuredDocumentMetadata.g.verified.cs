@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The metadata for a document and is an arbitrary JSON object. Properties of this object<br/>
+    /// The metadata for a document as an arbitrary JSON object. Properties of this object<br/>
     /// can be used by document level filter attributes.
     /// </summary>
     public sealed partial class StructuredDocumentMetadata

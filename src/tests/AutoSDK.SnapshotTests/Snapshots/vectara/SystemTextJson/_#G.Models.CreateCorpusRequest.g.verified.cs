@@ -25,7 +25,7 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// Description for the corpus.<br/>
+        /// Description of the corpus.<br/>
         /// Example: Documents with important information for my prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -70,7 +70,7 @@ namespace G
         /// <summary>
         /// A custom dimension is an additional numerical field attached to a document part. You<br/>
         /// can then multiply this numerical field with a query time custom dimension of the same<br/>
-        /// name. This allows boosting (or deboosting) document parts for arbitrary reasons.<br/>
+        /// name. This allows boosting (or burying) document parts for arbitrary reasons.<br/>
         /// This feature is only enabled for Scale customers.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_dimensions")]

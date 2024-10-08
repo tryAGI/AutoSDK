@@ -10,7 +10,7 @@ namespace G
     public sealed partial class CoreDocument
     {
         /// <summary>
-        /// The Document ID, must be unique within the corpus.<br/>
+        /// The document ID, must be unique within the corpus.<br/>
         /// Example: my-doc-id
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]

@@ -11,14 +11,16 @@ namespace G
             ref int? requestTimeout,
             ref int? requestTimeoutMillis,
             ref int? limit,
-            ref string? pageKey);
+            ref string? pageKey,
+            ref string? corpusKey);
         partial void PrepareListApiKeysRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? requestTimeout,
             int? requestTimeoutMillis,
             int? limit,
-            string? pageKey);
+            string? pageKey,
+            string? corpusKey);
         partial void ProcessListApiKeysResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,6 +39,10 @@ namespace G
         /// Default Value: 10
         /// </param>
         /// <param name="pageKey"></param>
+        /// <param name="corpusKey">
+        /// A user-provided key for a corpus.<br/>
+        /// Example: my-corpus
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListApiKeysResponse> ListApiKeysAsync(
@@ -44,6 +50,7 @@ namespace G
             int? requestTimeoutMillis = default,
             int? limit = 10,
             string? pageKey = default,
+            string? corpusKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -53,7 +60,8 @@ namespace G
                 requestTimeout: ref requestTimeout,
                 requestTimeoutMillis: ref requestTimeoutMillis,
                 limit: ref limit,
-                pageKey: ref pageKey);
+                pageKey: ref pageKey,
+                corpusKey: ref corpusKey);
 
             var __pathBuilder = new PathBuilder(
                 path: "/v2/api_keys",
@@ -61,6 +69,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("page_key", pageKey) 
+                .AddOptionalParameter("corpus_key", corpusKey) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -102,7 +111,8 @@ namespace G
                 requestTimeout: requestTimeout,
                 requestTimeoutMillis: requestTimeoutMillis,
                 limit: limit,
-                pageKey: pageKey);
+                pageKey: pageKey,
+                corpusKey: corpusKey);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

@@ -10,7 +10,7 @@ namespace G
     public sealed partial class UpdateUserRequest
     {
         /// <summary>
-        /// Indicates whether to disable or disable the user.
+        /// Indicates whether to enable or disable the user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enabled")]
         public bool? Enabled { get; set; }
