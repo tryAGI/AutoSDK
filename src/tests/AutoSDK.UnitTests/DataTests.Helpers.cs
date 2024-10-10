@@ -1,43 +1,17 @@
-﻿using System.Runtime.CompilerServices;
-using AutoSDK.Models;
-using AutoSDK.Naming.Methods;
+﻿using AutoSDK.Models;
 
 namespace AutoSDK.UnitTests;
 
 [TestClass]
 public partial class DataTests : VerifyBase
 {
-    private Settings DefaultSettings => new(
-        TargetFramework: "netstandard2.0",
-        Namespace: "G",
-        ClassName: "Api",
-        ClsCompliantEnumPrefix: "x",
-        NamingConvention: default,
-        JsonSerializerType: default,
-        UseRequiredKeyword: default,
-        GenerateConstructors: false,
-        GroupByTags: true,
-        GenerateMethods: false,
-        MethodNamingConvention: default,
-        MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,
-        GenerateMethodsAsHttpClientExtensions: false,
-        GenerateMethodsUsingSystemNetHttpJson: false,
-        IncludeOperationIds: [],
-        ExcludeOperationIds: [],
-        IncludeTags: [],
-        ExcludeTags: [],
-        JsonSerializerContext: string.Empty,
-        GenerateJsonSerializerContextTypes: false,
-        GenerateModels: false,
-        ValidateAnyOfs: false,
-        ModelStyle: default,
-        IncludeModels: [],
-        ExcludeModels: [],
-        ExcludeDeprecatedOperations: false,
-        GeneratePolyfills: true,
-        GenerateSdk: true,
-        FromCli: false
-    );
+    private Settings DefaultSettings => Settings.Default with
+    {
+        TargetFramework = "netstandard2.0",
+        Namespace = "G",
+        ClassName = "Api",
+        ClsCompliantEnumPrefix = "x",
+    };
 
     private Task VerifyAsync(
         Data data,
