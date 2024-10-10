@@ -1,5 +1,8 @@
 using System.Text.RegularExpressions;
 using SharpYaml.Serialization;
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
 
 namespace AutoSDK.Helpers;
 
@@ -10,7 +13,8 @@ public static class OpenApi31Support
         input = input ?? throw new ArgumentNullException(nameof(input));
         
         return input.Contains("openapi: 3.1.0") ||
-               input.Contains("\"openapi\":\"3.1.0\"");
+               input.Contains("\"openapi\":\"3.1.0\"") ||
+               input.Contains("\"openapi\": \"3.1.0\"");
     }
     
     public static string ConvertToOpenApi30(string input)
@@ -28,27 +32,137 @@ public static class OpenApi31Support
     public static string ConvertJsonToOpenApi30(string input)
     {
         input = input ?? throw new ArgumentNullException(nameof(input));
-        
-        var output = input.Replace("\"openapi\":\"3.1.0\"", "\"openapi\":\"3.0.3\"");
-        
-        // JSON regex replacements for exclusiveMaximum and exclusiveMinimum
-        Regex exclusiveMaximumJsonRegex = new(@"""exclusiveMaximum""\s*:\s*(?<value>[\d\.eE\+\-]+)", RegexOptions.Compiled);
-        output = exclusiveMaximumJsonRegex.Replace(output, match =>
-        {
-            string value = match.Groups["value"].Value;
 
-            return $"\"maximum\": {value}, \"exclusiveMaximum\": true";
+        if (JsonNode.Parse(input) is not JsonObject jsonNode)
+        {
+            return input;
+        }
+
+        ConvertJsonNode(jsonNode);
+
+        var output = jsonNode.ToJsonString(new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
         });
 
-        Regex exclusiveMinimumJsonRegex = new(@"""exclusiveMinimum""\s*:\s*(?<value>[\d\.eE\+\-]+)", RegexOptions.Compiled);
-        output = exclusiveMinimumJsonRegex.Replace(output, match =>
-        {
-            string value = match.Groups["value"].Value;
-
-            return $"\"minimum\": {value}, \"exclusiveMinimum\": true";
-        });
-        
         return output;
+    }
+    
+    private static void ConvertJsonNode(JsonObject node)
+    {
+        node = node ?? throw new ArgumentNullException(nameof(node));
+
+        foreach (var entry in node.ToList())
+        {
+            // Recursively convert child nodes if the value is an object
+            if (entry.Value is JsonObject childNode)
+            {
+                ConvertJsonNode(childNode);
+            }
+            else if (entry.Value is JsonArray listNode)
+            {
+                // Recursively convert each item in a sequence (array)
+                foreach (var item in listNode)
+                {
+                    if (item is JsonObject listItem)
+                    {
+                        ConvertJsonNode(listItem);
+                    }
+                }
+            }
+
+            string keyString = entry.Key;
+            // if (keyString == "anyOf" &&
+            //     entry.Value is JsonArray anyOfList && anyOfList.Count == 2 &&
+            //     anyOfList.Any(v =>
+            //         v is JsonObject objects &&
+            //         objects.ContainsKey("type") &&
+            //         objects["type"] == null))
+            // {
+            //     var first = anyOfList[0] as JsonObject;
+            //     var second = anyOfList[1] as JsonObject;
+            //     var firstType = first?["type"];
+            //     var secondType = second?["type"];
+            //
+            //     if (firstType == null || secondType == null)
+            //     {
+            //         // Replace "anyOf" with "type: string, nullable: true"
+            //         node["type"] = firstType?.ToString() ?? secondType?.ToString();
+            //         node["nullable"] = true;
+            //
+            //         var nonNullObject = firstType != null ? first : second;
+            //         foreach (var kvp in nonNullObject)
+            //         {
+            //             node[kvp.Key] = kvp.Value;
+            //         }
+            //         
+            //         node.Remove(keyString);
+            //     }
+            // }
+            if (keyString == "openapi")
+            {
+                node["openapi"] = "3.0.3";
+            }
+            // if (keyString == "exclusiveMinimum" && entry.Value is not JsonValue)
+            // {
+            //     node["minimum"] = entry.Value;
+            //     node["exclusiveMinimum"] = true;
+            // }
+            // if (keyString == "exclusiveMaximum" && entry.Value is not JsonValue)
+            // {
+            //     node["maximum"] = entry.Value;
+            //     node["exclusiveMaximum"] = true;
+            // }
+            //
+            // // Identify "type" that is a list containing "string" and "null"
+            // if (keyString == "type" &&
+            //     entry.Value is JsonArray typeList &&
+            //     typeList.Contains(null))
+            // {
+            //     // Replace "type" with "string" and add "nullable: true"
+            //     node["type"] = typeList.First(v => v != null).ToString();
+            //     node["nullable"] = true;
+            //
+            //     // If there's an "enum", remove the "null" from its values
+            //     if (node.TryGetPropertyValue("enum", out var enumValue) && enumValue is JsonArray enumList)
+            //     {
+            //         node["enum"] = new JsonArray(enumList.Where(v => v != null).ToArray());
+            //     }
+            // }
+            //
+            // // Replace "examples" with single "example"
+            // if (keyString == "examples" && entry.Value is JsonArray { Count: > 0 } examplesList)
+            // {
+            //     node.Remove(keyString);
+            //     node["example"] = examplesList[0];
+            // }
+            //
+            // // Fix "example" node when "items" is missing and "example" is a list
+            // if (keyString == "example" && entry.Value is JsonArray { Count: > 0 } exampleList && !node.ContainsKey("items"))
+            // {
+            //     node["example"] = exampleList[0];
+            // }
+            //
+            // // Identify "const" node for removal and convert to "enum" if "enum" is missing
+            // if (keyString == "const")
+            // {
+            //     if (!node.ContainsKey("enum"))
+            //     {
+            //         node["enum"] = new JsonArray(entry.Value);
+            //     }
+            //     node.Remove(keyString);
+            // }
+            //
+            // // Fix "items" node when "$ref" is present and "items" is a list
+            // if (keyString == "items" && entry.Value is JsonArray itemsNode &&
+            //     itemsNode.ElementAtOrDefault(0) is JsonObject itemsValue &&
+            //     itemsValue.ElementAtOrDefault(0).Key == "$ref")
+            // {
+            //     node["items"] = itemsValue;
+            // }
+        }
     }
     
     public static string ConvertYamlToOpenApi30(string input)
