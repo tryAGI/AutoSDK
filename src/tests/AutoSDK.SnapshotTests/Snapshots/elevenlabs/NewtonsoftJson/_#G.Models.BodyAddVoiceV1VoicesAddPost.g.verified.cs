@@ -1,0 +1,49 @@
+﻿//HintName: G.Models.BodyAddVoiceV1VoicesAddPost.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class BodyAddVoiceV1VoicesAddPost
+    {
+        /// <summary>
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// A list of file paths to audio recordings intended for voice cloning
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<byte[]> Files { get; set; } = default!;
+
+        /// <summary>
+        /// If set will remove background noise for voice samples using our audio isolation model. If the samples do not include background noise, it can make the quality worse.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("remove_background_noise")]
+        public bool? RemoveBackgroundNoise { get; set; } = false;
+
+        /// <summary>
+        /// How would you describe the voice?
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("description")]
+        public string? Description { get; set; }
+
+        /// <summary>
+        /// Serialized labels dictionary for the voice.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("labels")]
+        public string? Labels { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

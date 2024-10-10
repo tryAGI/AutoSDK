@@ -1,0 +1,276 @@
+﻿//HintName: G.Api.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// This is the documentation for the ElevenLabs API. You can use this API to use our service programmatically, this is done by using your xi-api-key. &lt;br/&gt; You can view your xi-api-key using the 'Profile' tab on https://elevenlabs.io. Our API is experimental so all endpoints are subject to change.<br/>
+    /// If no httpClient is provided, a new one will be created.<br/>
+    /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+    /// </summary>
+    public sealed partial class Api : global::G.IApi, global::System.IDisposable
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public const string BaseUrl = "";
+
+        private readonly global::System.Net.Http.HttpClient _httpClient;
+        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; } = new global::System.Text.Json.JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true,
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                Converters =
+                {
+                    new global::G.JsonConverters.ChapterResponseModelStateJsonConverter(),
+                    new global::G.JsonConverters.ChapterResponseModelStateNullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelTargetAudienceJsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelTargetAudienceNullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelStateJsonConverter(),
+                    new global::G.JsonConverters.ProjectResponseModelStateNullableJsonConverter(),
+                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccessJsonConverter(),
+                    new global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccessNullableJsonConverter(),
+                    new global::G.JsonConverters.BodyAddProjectV1ProjectsAddPostTargetAudienceJsonConverter(),
+                    new global::G.JsonConverters.BodyAddProjectV1ProjectsAddPostTargetAudienceNullableJsonConverter(),
+                    new global::G.JsonConverters.PronunciationDictionaryAliasRuleRequestModelTypeJsonConverter(),
+                    new global::G.JsonConverters.PronunciationDictionaryAliasRuleRequestModelTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.PronunciationDictionaryPhonemeRuleRequestModelTypeJsonConverter(),
+                    new global::G.JsonConverters.PronunciationDictionaryPhonemeRuleRequestModelTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostGenderJsonConverter(),
+                    new global::G.JsonConverters.BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostGenderNullableJsonConverter(),
+                    new global::G.JsonConverters.BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostAgeJsonConverter(),
+                    new global::G.JsonConverters.BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostAgeNullableJsonConverter(),
+                    new global::G.JsonConverters.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRoleJsonConverter(),
+                    new global::G.JsonConverters.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelCurrencyJsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelCurrencyNullableJsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelStatusJsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelBillingPeriodJsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelBillingPeriodNullableJsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelCharacterRefreshPeriodJsonConverter(),
+                    new global::G.JsonConverters.ExtendedSubscriptionResponseModelCharacterRefreshPeriodNullableJsonConverter(),
+                    new global::G.JsonConverters.LibraryVoiceResponseModelCategoryJsonConverter(),
+                    new global::G.JsonConverters.LibraryVoiceResponseModelCategoryNullableJsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategoryJsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategoryNullableJsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelStateJsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelStateNullableJsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelSourceJsonConverter(),
+                    new global::G.JsonConverters.SpeechHistoryItemResponseModelSourceNullableJsonConverter(),
+                    new global::G.JsonConverters.VoiceResponseModelCategoryJsonConverter(),
+                    new global::G.JsonConverters.VoiceResponseModelCategoryNullableJsonConverter(),
+                    new global::G.JsonConverters.VoiceSharingResponseModelStatusJsonConverter(),
+                    new global::G.JsonConverters.VoiceSharingResponseModelStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.VoiceSharingResponseModelCategoryJsonConverter(),
+                    new global::G.JsonConverters.VoiceSharingResponseModelCategoryNullableJsonConverter(),
+                    new global::G.JsonConverters.VoiceSharingResponseModelReviewStatusJsonConverter(),
+                    new global::G.JsonConverters.VoiceSharingResponseModelReviewStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.VoiceResponseModelSafetyControlJsonConverter(),
+                    new global::G.JsonConverters.VoiceResponseModelSafetyControlNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelResponseModelConcurrencyGroupJsonConverter(),
+                    new global::G.JsonConverters.ModelResponseModelConcurrencyGroupNullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelQualityPresetJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelQualityPresetNullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelStateJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelStateNullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelTargetAudienceJsonConverter(),
+                    new global::G.JsonConverters.ProjectExtendedResponseModelTargetAudienceNullableJsonConverter(),
+                    new global::G.JsonConverters.ProjectSnapshotUploadResponseModelStatusJsonConverter(),
+                    new global::G.JsonConverters.ProjectSnapshotUploadResponseModelStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.SsoProviderResponseModelProviderTypeJsonConverter(),
+                    new global::G.JsonConverters.SsoProviderResponseModelProviderTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelCurrencyJsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelCurrencyNullableJsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelStatusJsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelBillingPeriodJsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelBillingPeriodNullableJsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelCharacterRefreshPeriodJsonConverter(),
+                    new global::G.JsonConverters.SubscriptionResponseModelCharacterRefreshPeriodNullableJsonConverter(),
+                    new global::G.JsonConverters.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetFormatTypeJsonConverter(),
+                    new global::G.JsonConverters.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetFormatTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownTypeJsonConverter(),
+                    new global::G.JsonConverters.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
+                    new global::G.JsonConverters.AllOfJsonConverterFactory1(),
+                }
+            };
+
+
+        /// <summary>
+        /// Convert text into lifelike speech using a voice of your choice.
+        /// </summary>
+        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Create speech by combining the style and content of an audio file you upload with a voice of your choice.
+        /// </summary>
+        public SpeechToSpeechClient SpeechToSpeech => new SpeechToSpeechClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Access the different models of the platform.
+        /// </summary>
+        public ModelsClient Models => new ModelsClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Access to voices created either by you or us.
+        /// </summary>
+        public VoicesClient Voices => new VoicesClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Access to your samples. A sample is any audio file you attached to a voice. A voice can have one or more samples.
+        /// </summary>
+        public SamplesClient Samples => new SamplesClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Accesses your speech history. Your speech history is a list of all your created audio including its metadata using our text-to-speech and speech-to-speech models.
+        /// </summary>
+        public SpeechHistoryClient SpeechHistory => new SpeechHistoryClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Access, create and convert Projects programmatically, only specifically whitelisted accounts can access the Projects API. If you need access please contact our sales team.
+        /// </summary>
+        public ProjectsClient Projects => new ProjectsClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public SoundGenerationClient SoundGeneration => new SoundGenerationClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AudioIsolationClient AudioIsolation => new AudioIsolationClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public VoiceGenerationClient VoiceGeneration => new VoiceGenerationClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UserClient User => new UserClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public DubbingClient Dubbing => new DubbingClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public WorkspaceClient Workspace => new WorkspaceClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AudioNativeClient AudioNative => new AudioNativeClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsageClient Usage => new UsageClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public PronunciationDictionaryClient PronunciationDictionary => new PronunciationDictionaryClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// Creates a new instance of the Api.
+        /// If no httpClient is provided, a new one will be created.
+        /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
+        /// </summary>
+        /// <param name="httpClient"></param>
+        /// <param name="baseUri"></param>
+        /// <param name="authorizations"></param>
+        public Api(
+            global::System.Net.Http.HttpClient? httpClient = null,
+            global::System.Uri? baseUri = null,
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
+        {
+            _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
+            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+
+            Initialized(_httpClient);
+        }
+
+        /// <inheritdoc/>
+        public void Dispose()
+        {
+            _httpClient.Dispose();
+        }
+
+        partial void Initialized(
+            global::System.Net.Http.HttpClient client);
+        partial void PrepareArguments(
+            global::System.Net.Http.HttpClient client);
+        partial void PrepareRequest(
+            global::System.Net.Http.HttpClient client,
+            global::System.Net.Http.HttpRequestMessage request);
+        partial void ProcessResponse(
+            global::System.Net.Http.HttpClient client,
+            global::System.Net.Http.HttpResponseMessage response);
+        partial void ProcessResponseContent(
+            global::System.Net.Http.HttpClient client,
+            global::System.Net.Http.HttpResponseMessage response,
+            ref string content);
+    }
+}

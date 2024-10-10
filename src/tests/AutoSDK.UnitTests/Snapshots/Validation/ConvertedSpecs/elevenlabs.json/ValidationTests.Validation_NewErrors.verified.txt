@@ -1,0 +1,62 @@
+﻿[
+  {
+    Message: embed is not a valid property at #/paths/~1v1~1dubbing~1{dubbing_id}~1transcript~1{language_code}/get/parameters/schema,
+    Pointer: 
+  },
+  {
+    Message: include_in_schema is not a valid property at #/components/schemas/Body_Add_project_v1_projects_add_post/properties/quality_preset,
+    Pointer: 
+  },
+  {
+    Message: include_in_schema is not a valid property at #/components/schemas/Body_Add_project_v1_projects_add_post/properties/acx_volume_normalization,
+    Pointer: 
+  },
+  {
+    Message: include_in_schema is not a valid property at #/components/schemas/Body_Add_project_v1_projects_add_post/properties/callback_url,
+    Pointer: 
+  },
+  {
+    Message: examples is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/voice_name,
+    Pointer: 
+  },
+  {
+    Message: examples is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/voice_description,
+    Pointer: 
+  },
+  {
+    Message: examples is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/generated_voice_id,
+    Pointer: 
+  },
+  {
+    Message: examples is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/labels,
+    Pointer: 
+  },
+  {
+    Message: name is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/labels,
+    Pointer: 
+  },
+  {
+    Message: emded is not a valid property at #/components/schemas/Body_Dub_a_video_or_an_audio_file_v1_dubbing_post/properties/use_profanity_filter,
+    Pointer: 
+  },
+  {
+    Message: examples is not a valid property at #/components/schemas/Body_Generate_a_random_voice_v1_voice_generation_generate_voice_post/properties/text,
+    Pointer: 
+  },
+  {
+    Message: include_in_schema is not a valid property at #/components/schemas/Body_Text_to_speech_streaming_v1_text_to_speech__voice_id__stream_post/properties/use_pvc_as_ivc,
+    Pointer: 
+  },
+  {
+    Message: include_in_schema is not a valid property at #/components/schemas/Body_Text_to_speech_streaming_with_timestamps_v1_text_to_speech__voice_id__stream_with_timestamps_post/properties/use_pvc_as_ivc,
+    Pointer: 
+  },
+  {
+    Message: include_in_schema is not a valid property at #/components/schemas/Body_Text_to_speech_v1_text_to_speech__voice_id__post/properties/use_pvc_as_ivc,
+    Pointer: 
+  },
+  {
+    Message: include_in_schema is not a valid property at #/components/schemas/Body_Text_to_speech_with_timestamps_v1_text_to_speech__voice_id__with_timestamps_post/properties/use_pvc_as_ivc,
+    Pointer: 
+  }
+]

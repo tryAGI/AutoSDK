@@ -1,0 +1,12 @@
+﻿[
+  {
+    RuleName: ParameterMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1v1~1usage~1character-stats/get/parameters/0/example
+  },
+  {
+    RuleName: ParameterMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1v1~1usage~1character-stats/get/parameters/1/example
+  }
+]

@@ -1,0 +1,88 @@
+﻿//HintName: JsonSerializerContextConverters.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    internal sealed partial class JsonSerializerContextConverters
+    {
+        private readonly global::System.Type[] _types = new global::System.Type[]
+        {
+            typeof(global::G.JsonConverters.ChapterResponseModelStateJsonConverter),
+            typeof(global::G.JsonConverters.ChapterResponseModelStateNullableJsonConverter),
+            typeof(global::G.JsonConverters.ProjectResponseModelTargetAudienceJsonConverter),
+            typeof(global::G.JsonConverters.ProjectResponseModelTargetAudienceNullableJsonConverter),
+            typeof(global::G.JsonConverters.ProjectResponseModelStateJsonConverter),
+            typeof(global::G.JsonConverters.ProjectResponseModelStateNullableJsonConverter),
+            typeof(global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccessJsonConverter),
+            typeof(global::G.JsonConverters.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccessNullableJsonConverter),
+            typeof(global::G.JsonConverters.BodyAddProjectV1ProjectsAddPostTargetAudienceJsonConverter),
+            typeof(global::G.JsonConverters.BodyAddProjectV1ProjectsAddPostTargetAudienceNullableJsonConverter),
+            typeof(global::G.JsonConverters.PronunciationDictionaryAliasRuleRequestModelTypeJsonConverter),
+            typeof(global::G.JsonConverters.PronunciationDictionaryAliasRuleRequestModelTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.PronunciationDictionaryPhonemeRuleRequestModelTypeJsonConverter),
+            typeof(global::G.JsonConverters.PronunciationDictionaryPhonemeRuleRequestModelTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostGenderJsonConverter),
+            typeof(global::G.JsonConverters.BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostGenderNullableJsonConverter),
+            typeof(global::G.JsonConverters.BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostAgeJsonConverter),
+            typeof(global::G.JsonConverters.BodyGenerateARandomVoiceV1VoiceGenerationGenerateVoicePostAgeNullableJsonConverter),
+            typeof(global::G.JsonConverters.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRoleJsonConverter),
+            typeof(global::G.JsonConverters.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelCurrencyJsonConverter),
+            typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelCurrencyNullableJsonConverter),
+            typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelStatusJsonConverter),
+            typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelBillingPeriodJsonConverter),
+            typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelBillingPeriodNullableJsonConverter),
+            typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelCharacterRefreshPeriodJsonConverter),
+            typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelCharacterRefreshPeriodNullableJsonConverter),
+            typeof(global::G.JsonConverters.LibraryVoiceResponseModelCategoryJsonConverter),
+            typeof(global::G.JsonConverters.LibraryVoiceResponseModelCategoryNullableJsonConverter),
+            typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategoryJsonConverter),
+            typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategoryNullableJsonConverter),
+            typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelStateJsonConverter),
+            typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelStateNullableJsonConverter),
+            typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelSourceJsonConverter),
+            typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelSourceNullableJsonConverter),
+            typeof(global::G.JsonConverters.VoiceResponseModelCategoryJsonConverter),
+            typeof(global::G.JsonConverters.VoiceResponseModelCategoryNullableJsonConverter),
+            typeof(global::G.JsonConverters.VoiceSharingResponseModelStatusJsonConverter),
+            typeof(global::G.JsonConverters.VoiceSharingResponseModelStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.VoiceSharingResponseModelCategoryJsonConverter),
+            typeof(global::G.JsonConverters.VoiceSharingResponseModelCategoryNullableJsonConverter),
+            typeof(global::G.JsonConverters.VoiceSharingResponseModelReviewStatusJsonConverter),
+            typeof(global::G.JsonConverters.VoiceSharingResponseModelReviewStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.VoiceResponseModelSafetyControlJsonConverter),
+            typeof(global::G.JsonConverters.VoiceResponseModelSafetyControlNullableJsonConverter),
+            typeof(global::G.JsonConverters.ModelResponseModelConcurrencyGroupJsonConverter),
+            typeof(global::G.JsonConverters.ModelResponseModelConcurrencyGroupNullableJsonConverter),
+            typeof(global::G.JsonConverters.ProjectExtendedResponseModelQualityPresetJsonConverter),
+            typeof(global::G.JsonConverters.ProjectExtendedResponseModelQualityPresetNullableJsonConverter),
+            typeof(global::G.JsonConverters.ProjectExtendedResponseModelStateJsonConverter),
+            typeof(global::G.JsonConverters.ProjectExtendedResponseModelStateNullableJsonConverter),
+            typeof(global::G.JsonConverters.ProjectExtendedResponseModelTargetAudienceJsonConverter),
+            typeof(global::G.JsonConverters.ProjectExtendedResponseModelTargetAudienceNullableJsonConverter),
+            typeof(global::G.JsonConverters.ProjectSnapshotUploadResponseModelStatusJsonConverter),
+            typeof(global::G.JsonConverters.ProjectSnapshotUploadResponseModelStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.SsoProviderResponseModelProviderTypeJsonConverter),
+            typeof(global::G.JsonConverters.SsoProviderResponseModelProviderTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.SubscriptionResponseModelCurrencyJsonConverter),
+            typeof(global::G.JsonConverters.SubscriptionResponseModelCurrencyNullableJsonConverter),
+            typeof(global::G.JsonConverters.SubscriptionResponseModelStatusJsonConverter),
+            typeof(global::G.JsonConverters.SubscriptionResponseModelStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.SubscriptionResponseModelBillingPeriodJsonConverter),
+            typeof(global::G.JsonConverters.SubscriptionResponseModelBillingPeriodNullableJsonConverter),
+            typeof(global::G.JsonConverters.SubscriptionResponseModelCharacterRefreshPeriodJsonConverter),
+            typeof(global::G.JsonConverters.SubscriptionResponseModelCharacterRefreshPeriodNullableJsonConverter),
+            typeof(global::G.JsonConverters.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetFormatTypeJsonConverter),
+            typeof(global::G.JsonConverters.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetFormatTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownTypeJsonConverter),
+            typeof(global::G.JsonConverters.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
+            typeof(global::G.JsonConverters.AllOfJsonConverterFactory1),
+        };
+    }
+}

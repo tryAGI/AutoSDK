@@ -61,6 +61,8 @@ public partial class Tests
     [DataRow("", "mistral.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("", "weaviate.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("", "weaviate.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("elevenlabs", "elevenlabs.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("elevenlabs", "elevenlabs.json", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string callerName, string fileName, JsonSerializerType jsonSerializerType)
     {
         if (callerName == "Empty")
@@ -113,6 +115,10 @@ public partial class Tests
                 ["build_property.AutoSDK_ExcludeDeprecatedOperations"] = "true",
                 //["build_property.AutoSDK_JsonSerializerContext"] = "SourceGenerationContext",
                 //["build_property.AutoSDK_GenerateMethods"] = "true",
+            },
+            "elevenlabs" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
             },
             _ => new Dictionary<string, string>(),
         };

@@ -31,6 +31,7 @@ public partial class DataTests
     [DataRow("vectara.yaml")]
     [DataRow("mistral.yaml")]
     [DataRow("weaviate.yaml")]
+    [DataRow("elevenlabs.json")]
     public Task PrepareData(string resourceName)
     {
         return VerifyAsync(Data.Prepare((
@@ -43,7 +44,12 @@ public partial class DataTests
                     "mystic.yaml" => MethodNamingConvention.Summary,
                     "replicate.yaml" => MethodNamingConvention.OperationIdWithDots,
                     _ => default,
-                }
+                },
+                IgnoreOpenApiErrors = resourceName switch
+                {
+                    "elevenlabs.json" => true,
+                    _ => false,
+                },
             })),
             resourceName: Path.GetFileNameWithoutExtension(resourceName));
     }
