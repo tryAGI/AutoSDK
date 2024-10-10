@@ -21,7 +21,7 @@ public static class Data
         
         var (text, settings) = tuple;
 
-        var openApiDocument = text.GetOpenApiDocument(cancellationToken);
+        var openApiDocument = text.GetOpenApiDocument(settings, cancellationToken);
 
         var schemas = openApiDocument.GetSchemas(settings);
         

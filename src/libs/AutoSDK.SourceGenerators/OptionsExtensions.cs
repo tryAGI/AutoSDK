@@ -62,6 +62,9 @@ public static class OptionsExtensions
             
             GeneratePolyfills: options.GetBoolGlobalOption(nameof(Settings.GeneratePolyfills), prefix, defaultValue: true),
             
+            IgnoreOpenApiErrors: options.GetBoolGlobalOption(nameof(Settings.IgnoreOpenApiErrors), prefix),
+            IgnoreOpenApiWarnings: options.GetBoolGlobalOption(nameof(Settings.IgnoreOpenApiWarnings), prefix, defaultValue: true),
+            
             GenerateSdk: options.GetBoolGlobalOption(nameof(Settings.GenerateSdk), prefix, defaultValue: true),
             FromCli: false);
     }

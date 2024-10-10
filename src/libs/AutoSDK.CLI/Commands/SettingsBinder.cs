@@ -11,7 +11,9 @@ public class SettingsBinder(
     Option<string> clientClassName,
     Option<MethodNamingConvention> methodNamingConvention,
     Option<bool> excludeDeprecatedOperations,
-    Option<string> clsCompliantEnumPrefix
+    Option<string> clsCompliantEnumPrefix,
+    Option<bool> ignoreOpenApiErrors,
+    Option<bool> ignoreOpenApiWarnings
     )
     : BinderBase<Settings>
 {
@@ -49,6 +51,8 @@ public class SettingsBinder(
             IncludeModels: [],
             ExcludeModels: [],
             GeneratePolyfills: true,
+            IgnoreOpenApiErrors: bindingContext.ParseResult.GetValueForOption(ignoreOpenApiErrors),
+            IgnoreOpenApiWarnings: bindingContext.ParseResult.GetValueForOption(ignoreOpenApiWarnings),
             GenerateSdk: true,
             FromCli: true
         );

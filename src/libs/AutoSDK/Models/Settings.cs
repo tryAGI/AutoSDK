@@ -33,6 +33,9 @@ public readonly record struct Settings(
     ModelStyle ModelStyle,
     ImmutableArray<string> IncludeModels,
     ImmutableArray<string> ExcludeModels,
+    
+    bool IgnoreOpenApiErrors,
+    bool IgnoreOpenApiWarnings,
 
     bool GeneratePolyfills,
 
@@ -66,6 +69,8 @@ public readonly record struct Settings(
         ModelStyle: default,
         IncludeModels: ImmutableArray<string>.Empty,
         ExcludeModels: ImmutableArray<string>.Empty,
+        IgnoreOpenApiErrors: false,
+        IgnoreOpenApiWarnings: true,
         GeneratePolyfills: true,
         GenerateSdk: true,
         FromCli: false

@@ -66,6 +66,11 @@
     <CompilerVisibleProperty Include="AutoSDK_IncludeModels"/>
     <!-- List of ids separated by ;. Default: Empty -->
     <CompilerVisibleProperty Include="AutoSDK_ExcludeModels"/>
+
+    <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_IgnoreOpenApiErrors"/>
+    <!-- true/false. Default: true -->
+    <CompilerVisibleProperty Include="AutoSDK_IgnoreOpenApiWarnings"/>
     
     <!-- true/false. Default: true -->
     <CompilerVisibleProperty Include="AutoSDK_GeneratePolyfills"/>

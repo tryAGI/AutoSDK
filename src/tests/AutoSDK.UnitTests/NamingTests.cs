@@ -12,7 +12,7 @@ public partial class NamingTests
     public static SchemaContext[] PrepareModels([StringSyntax("yaml")] string yaml)
     {
         var settings = Settings.Default;
-        var openApiDocument = yaml.GetOpenApiDocument();
+        var openApiDocument = yaml.GetOpenApiDocument(settings);
         var schemaContexts = openApiDocument.GetSchemas(settings);
         
         var models = schemaContexts

@@ -46,6 +46,14 @@ public class GenerateCommand : Command
             aliases: ["--clsCompliantEnumPrefix"],
             getDefaultValue: () => "x",
             description: "Prefix for enums which start with a number to make them CLS compliant. Pass empty string to disable prefixing(it will be non-CLS compliant '_')");
+        var ignoreOpenApiErrorsOption = new Option<bool>(
+            aliases: ["--ignore-openapi-errors"],
+            getDefaultValue: () => Settings.Default.IgnoreOpenApiErrors,
+            description: "Ignore OpenAPI errors");
+        var ignoreOpenApiWarningsOption = new Option<bool>(
+            aliases: ["--ignore-openapi-warnings"],
+            getDefaultValue: () => Settings.Default.IgnoreOpenApiWarnings,
+            description: "Ignore OpenAPI warnings");
         AddArgument(inputOption);
         AddOption(outputOption);
         AddOption(targetFrameworkOption);
@@ -55,6 +63,8 @@ public class GenerateCommand : Command
         AddOption(singleFileOption);
         AddOption(excludeDeprecatedOption);
         AddOption(clsCompliantEnumPrefixOption);
+        AddOption(ignoreOpenApiErrorsOption);
+        AddOption(ignoreOpenApiWarningsOption);
 
         this.SetHandler(
             HandleAsync,
@@ -67,7 +77,9 @@ public class GenerateCommand : Command
                 clientClassNameOption,
                 methodNamingConventionOption,
                 excludeDeprecatedOption,
-                clsCompliantEnumPrefixOption));
+                clsCompliantEnumPrefixOption,
+                ignoreOpenApiErrorsOption,
+                ignoreOpenApiWarningsOption));
     }
 
     private static async Task HandleAsync(

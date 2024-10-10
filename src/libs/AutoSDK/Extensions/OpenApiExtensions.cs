@@ -9,6 +9,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Form;
+using Microsoft.OpenApi.Validations;
 
 namespace AutoSDK.Extensions;
 
@@ -16,6 +17,7 @@ public static class OpenApiExtensions
 {
     public static OpenApiDocument GetOpenApiDocument(
         this string yamlOrJson,
+        Settings settings,
         CancellationToken cancellationToken = default)
     {
         yamlOrJson = yamlOrJson ?? throw new ArgumentNullException(nameof(yamlOrJson));
@@ -27,15 +29,18 @@ public static class OpenApiExtensions
             Console.WriteLine("Microsoft.OpenAPI currently doesn't support OpenAPI 3.1.0. Converting to OpenAPI 3.0.3. It may not work correctly.");
         }
         
-        var openApiDocument = new OpenApiStringReader().Read(yamlOrJson, out var diagnostics);
-        if (diagnostics.Errors.Any())
+        var openApiDocument = new OpenApiStringReader(new OpenApiReaderSettings
+        {
+            RuleSet = ValidationRuleSet.GetDefaultRuleSet(),
+        }).Read(yamlOrJson, out var diagnostics);
+        if (!settings.IgnoreOpenApiErrors && diagnostics.Errors.Any())
         {
             throw new AggregateException(diagnostics.Errors.Select(x => new InvalidOperationException(x.Message)));
         }
-        // if (diagnostics.Warnings.Any())
-        // {
-        //     throw new AggregateException(diagnostics.Warnings.Select(x => new InvalidOperationException(x.Message)));
-        // }
+        if (!settings.IgnoreOpenApiWarnings && diagnostics.Warnings.Any())
+        {
+            throw new AggregateException(diagnostics.Warnings.Select(x => new InvalidOperationException(x.Message)));
+        }
 
         openApiDocument.Components ??= new OpenApiComponents();
         openApiDocument.Components.Schemas ??= new Dictionary<string, OpenApiSchema>();
