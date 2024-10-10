@@ -93,12 +93,23 @@ public readonly record struct EndPoint(
         {
             requestMediaType = "application/octet-stream";
         }
-        
+
         var responses = (operation.Operation.Responses ?? [])
             .SelectMany(x => x.Value?.ResolveIfRequired().Content?.Select(y => (Response: x, MediaType: y)) ?? [])
             .ToArray();
+        var contentType = responses
+            .Any(x => x.MediaType.Key.Contains("application/octet-stream"))
+            ? ContentType.ByteArray
+            : ContentType.String;
         var responseContext = operation.Schemas.FirstOrDefault(x => x.Hint == Hint.Response);
-        TypeData? responseType = responseContext?.TypeData;
+        TypeData? responseType = contentType switch
+        {
+            ContentType.ByteArray => TypeData.Default with
+            {
+                CSharpTypeRaw = "byte[]",
+            },
+            _ => responseContext?.TypeData,
+        };
 
         foreach (var requestProperty in requestContext?.ResolvedReference?.ClassData?.Properties ??
                                         requestContext?.ClassData?.Properties ??
@@ -147,10 +158,7 @@ public readonly record struct EndPoint(
             QueryParameters: queryParameters.ToImmutableArray(),
             Authorizations: authorizations,
             HttpMethod: operation.OperationType,
-            ContentType: responses
-                .Any(x => x.MediaType.Key.Contains("application/octet-stream"))
-                ? ContentType.ByteArray
-                : ContentType.String,
+            ContentType: contentType,
             Summary: operation.Operation.GetXmlDocumentationSummary(),
             BaseUrlSummary: string.Empty,
             Settings: operation.Settings,
