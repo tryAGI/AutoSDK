@@ -2,6 +2,7 @@ using System.CommandLine;
 using Microsoft.OpenApi;
 using Microsoft.OpenApi.Extensions;
 using AutoSDK.Extensions;
+using AutoSDK.Models;
 
 namespace AutoSDK.CLI.Commands;
 
@@ -36,7 +37,7 @@ public class SimplifyCommand : Command
         var yamlOrJson = inputPath.StartsWith("http", StringComparison.OrdinalIgnoreCase)
             ? await client.GetStringAsync(new Uri(inputPath)).ConfigureAwait(false)
             : await File.ReadAllTextAsync(inputPath).ConfigureAwait(false);
-        var openApiDocument = yamlOrJson.GetOpenApiDocument();
+        var openApiDocument = yamlOrJson.GetOpenApiDocument(settings: Settings.Default);
         
         Console.WriteLine("Simplifying...");
         
