@@ -26,7 +26,7 @@ namespace G
         /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.Metadata? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// A collection of resolved package dependencies.

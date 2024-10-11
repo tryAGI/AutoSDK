@@ -187,7 +187,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CustomDimensions? Type42 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>

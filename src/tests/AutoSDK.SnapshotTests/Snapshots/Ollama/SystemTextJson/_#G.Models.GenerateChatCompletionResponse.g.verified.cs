@@ -13,28 +13,32 @@ namespace G
         /// A message in the chat endpoint
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public global::G.Message? Message { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.Message Message { get; set; }
 
         /// <summary>
         /// The model name. <br/>
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
-        /// Example: llama3:8b
+        /// Example: llama3.2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        public string? Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Model { get; set; }
 
         /// <summary>
         /// Date on which a model was created.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public global::System.DateTime? CreatedAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.DateTime CreatedAt { get; set; }
 
         /// <summary>
         /// Whether the response has completed.<br/>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("done")]
-        public bool? Done { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Done { get; set; }
 
         /// <summary>
         /// Reason why the model is done generating a response.

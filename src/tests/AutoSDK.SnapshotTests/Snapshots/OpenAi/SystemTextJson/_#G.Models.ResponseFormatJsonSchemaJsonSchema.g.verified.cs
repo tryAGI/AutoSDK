@@ -26,7 +26,7 @@ namespace G
         /// The schema for the response format, described as a JSON Schema object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
-        public global::G.ResponseFormatJsonSchemaSchema? Schema { get; set; }
+        public object? Schema { get; set; }
 
         /// <summary>
         /// Whether to enable strict schema adherence when generating the output. If set to true, the model will always follow the exact schema defined in the `schema` field. Only a subset of JSON Schema is supported when `strict` is `true`. To learn more, read the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>

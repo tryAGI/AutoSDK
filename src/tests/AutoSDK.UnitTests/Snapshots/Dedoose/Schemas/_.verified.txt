@@ -2321,6 +2321,7 @@
   GetBytesFromFileStorageResponse(string),
   GetBytesFromFileStorageResponse(string),
   GetClientVersionsResponse(class),
+    GetClientVersionsResponse(string),
   GetConnectionKeyResponse(string),
   GetConnectionKeyResponse(string),
   GetConnectionKeyResponse(string),

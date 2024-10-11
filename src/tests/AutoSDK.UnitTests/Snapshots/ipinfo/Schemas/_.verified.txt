@@ -110,6 +110,7 @@
   FullResponse(ref),
   Error(ref),
   BatchResponse(class),
+    BatchResponse2(class),
   Error(ref),
   FullResponse(ref),
   Error(ref),

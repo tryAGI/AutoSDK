@@ -23,11 +23,14 @@ namespace G
         /// <param name="model">
         /// The model name. <br/>
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
-        /// Example: llama3:8b
+        /// Example: llama3.2
         /// </param>
         /// <param name="prompt">
         /// The prompt to generate a response.<br/>
         /// Example: Why is the sky blue?
+        /// </param>
+        /// <param name="suffix">
+        /// The text that comes after the inserted text.
         /// </param>
         /// <param name="images">
         /// (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)
@@ -69,6 +72,7 @@ namespace G
         global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateCompletionResponse> GenerateCompletionAsync(
             string model,
             string prompt,
+            string? suffix = default,
             global::System.Collections.Generic.IList<string>? images = default,
             string? system = default,
             string? template = default,

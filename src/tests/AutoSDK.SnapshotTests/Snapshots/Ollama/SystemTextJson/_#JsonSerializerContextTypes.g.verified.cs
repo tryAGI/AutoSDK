@@ -87,130 +87,162 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateChatCompletionResponse? Type17 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolCall>? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneReason? Type18 { get; set; }
+        public global::G.ToolCall? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DoneReasonEnum? Type19 { get; set; }
+        public global::G.ToolCallFunction? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateEmbeddingRequest? Type20 { get; set; }
+        public object? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateEmbeddingResponse? Type21 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Tool>? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type22 { get; set; }
+        public global::G.Tool? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type23 { get; set; }
+        public global::G.ToolType? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelRequest? Type24 { get; set; }
+        public global::G.ToolFunction? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelResponse? Type25 { get; set; }
+        public global::G.GenerateChatCompletionResponse? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelStatus? Type26 { get; set; }
+        public global::G.DoneReason? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateModelStatusEnum? Type27 { get; set; }
+        public global::G.DoneReasonEnum? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelsResponse? Type28 { get; set; }
+        public global::G.GenerateEmbeddingRequest? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Model>? Type29 { get; set; }
+        public global::G.GenerateEmbeddingResponse? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Model? Type30 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelDetails? Type31 { get; set; }
+        public double? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelInformation? Type32 { get; set; }
+        public global::G.CreateModelRequest? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProcessResponse? Type33 { get; set; }
+        public global::G.CreateModelResponse? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ProcessModel>? Type34 { get; set; }
+        public global::G.CreateModelStatus? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ProcessModel? Type35 { get; set; }
+        public global::G.CreateModelStatusEnum? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelInfoRequest? Type36 { get; set; }
+        public global::G.ModelsResponse? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelInfo? Type37 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Model>? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CopyModelRequest? Type38 { get; set; }
+        public global::G.Model? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeleteModelRequest? Type39 { get; set; }
+        public global::G.ModelDetails? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelRequest? Type40 { get; set; }
+        public global::G.ModelInformation? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelResponse? Type41 { get; set; }
+        public global::G.ProcessResponse? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelStatus? Type42 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ProcessModel>? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PullModelStatusEnum? Type43 { get; set; }
+        public global::G.ProcessModel? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PushModelRequest? Type44 { get; set; }
+        public global::G.ModelInfoRequest? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PushModelResponse? Type45 { get; set; }
+        public global::G.ModelInfo? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PushModelStatus? Type46 { get; set; }
+        public global::G.CopyModelRequest? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PushModelStatusEnum? Type47 { get; set; }
+        public global::G.DeleteModelRequest? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public byte[]? Type48 { get; set; }
+        public global::G.PullModelRequest? Type48 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PullModelResponse? Type49 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PullModelStatus? Type50 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PullModelStatusEnum? Type51 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PushModelRequest? Type52 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PushModelResponse? Type53 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AnyOf<string, global::G.PushModelResponseStatus?>? Type54 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PushModelResponseStatus? Type55 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public byte[]? Type56 { get; set; }
     }
 }

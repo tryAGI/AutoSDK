@@ -10,7 +10,7 @@ namespace G
     public sealed partial class VersionResponse
     {
         /// <summary>
-        /// 
+        /// The version of the Ollama server.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("version")]
         public string? Version { get; set; }

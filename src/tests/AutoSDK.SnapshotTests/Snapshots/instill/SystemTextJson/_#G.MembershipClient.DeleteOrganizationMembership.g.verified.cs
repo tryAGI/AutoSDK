@@ -32,7 +32,7 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DeleteOrganizationMembershipResponse> DeleteOrganizationMembershipAsync(
+        public async global::System.Threading.Tasks.Task<object> DeleteOrganizationMembershipAsync(
             string organizationId,
             string userId,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -110,7 +110,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteOrganizationMembershipResponse?>(__content, JsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

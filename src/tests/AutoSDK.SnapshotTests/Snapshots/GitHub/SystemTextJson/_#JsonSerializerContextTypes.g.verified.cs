@@ -3131,7 +3131,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Metadata? Type778 { get; set; }
+        public object? Type778 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -3631,7 +3631,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Language? Type903 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, int>? Type903 { get; set; }
         /// <summary>
         /// 
         /// </summary>

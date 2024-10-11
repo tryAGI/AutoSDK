@@ -32,7 +32,7 @@ namespace G
         /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectorIndexConfig")]
-        public global::G.VectorIndexConfig? VectorIndexConfig { get; set; }
+        public object? VectorIndexConfig { get; set; }
 
         /// <summary>
         /// Specify how the index should be sharded and distributed in the cluster

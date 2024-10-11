@@ -23,7 +23,7 @@ namespace G
         /// <param name="model">
         /// The model name. <br/>
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
-        /// Example: llama3:8b
+        /// Example: llama3.2
         /// </param>
         /// <param name="messages">
         /// The messages of the chat, this can be used to keep a chat memory
@@ -47,6 +47,9 @@ namespace G
         /// - If set to 0, the model will be unloaded immediately once finished.<br/>
         /// - If not set, the model will stay loaded for 5 minutes by default
         /// </param>
+        /// <param name="tools">
+        /// A list of tools the model may call.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.GenerateChatCompletionResponse> GenerateChatCompletionAsync(
@@ -56,6 +59,7 @@ namespace G
             global::G.RequestOptions? options = default,
             bool? stream = true,
             int? keepAlive = default,
+            global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

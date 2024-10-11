@@ -2071,7 +2071,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RootModelDictStrListStr? Type513 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Type513 { get; set; }
         /// <summary>
         /// 
         /// </summary>

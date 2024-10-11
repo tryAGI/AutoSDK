@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.PushModelStatusEnum.g.cs
+﻿//HintName: G.Models.PushModelResponseStatus.g.cs
 
 #nullable enable
 
@@ -7,7 +7,7 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public enum PushModelStatusEnum
+    public enum PushModelResponseStatus
     {
         /// <summary>
         /// 
@@ -30,33 +30,33 @@ namespace G
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class PushModelStatusEnumExtensions
+    public static class PushModelResponseStatusExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this PushModelStatusEnum value)
+        public static string ToValueString(this PushModelResponseStatus value)
         {
             return value switch
             {
-                PushModelStatusEnum.RetrievingManifest => "retrieving manifest",
-                PushModelStatusEnum.StartingUpload => "starting upload",
-                PushModelStatusEnum.PushingManifest => "pushing manifest",
-                PushModelStatusEnum.Success => "success",
+                PushModelResponseStatus.RetrievingManifest => "retrieving manifest",
+                PushModelResponseStatus.StartingUpload => "starting upload",
+                PushModelResponseStatus.PushingManifest => "pushing manifest",
+                PushModelResponseStatus.Success => "success",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static PushModelStatusEnum? ToEnum(string value)
+        public static PushModelResponseStatus? ToEnum(string value)
         {
             return value switch
             {
-                "retrieving manifest" => PushModelStatusEnum.RetrievingManifest,
-                "starting upload" => PushModelStatusEnum.StartingUpload,
-                "pushing manifest" => PushModelStatusEnum.PushingManifest,
-                "success" => PushModelStatusEnum.Success,
+                "retrieving manifest" => PushModelResponseStatus.RetrievingManifest,
+                "starting upload" => PushModelResponseStatus.StartingUpload,
+                "pushing manifest" => PushModelResponseStatus.PushingManifest,
+                "success" => PushModelResponseStatus.Success,
                 _ => null,
             };
         }

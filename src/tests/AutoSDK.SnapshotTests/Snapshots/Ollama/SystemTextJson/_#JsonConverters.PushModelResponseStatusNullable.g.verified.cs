@@ -1,13 +1,13 @@
-﻿//HintName: JsonConverters.PushModelStatusEnumNullable.g.cs
+﻿//HintName: JsonConverters.PushModelResponseStatusNullable.g.cs
 #nullable enable
 
 namespace G.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class PushModelStatusEnumNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PushModelStatusEnum?>
+    public sealed class PushModelResponseStatusNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PushModelResponseStatus?>
     {
         /// <inheritdoc />
-        public override global::G.PushModelStatusEnum? Read(
+        public override global::G.PushModelResponseStatus? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace G.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.PushModelStatusEnumExtensions.ToEnum(stringValue);
+                        return global::G.PushModelResponseStatusExtensions.ToEnum(stringValue);
                     }
                     
                     break;
@@ -27,7 +27,7 @@ namespace G.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.PushModelStatusEnum)numValue;
+                    return (global::G.PushModelResponseStatus)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -39,7 +39,7 @@ namespace G.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.PushModelStatusEnum? value,
+            global::G.PushModelResponseStatus? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -50,7 +50,7 @@ namespace G.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::G.PushModelStatusEnumExtensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::G.PushModelResponseStatusExtensions.ToValueString(value.Value));
             }
         }
     }

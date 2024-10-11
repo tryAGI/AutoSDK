@@ -143,6 +143,7 @@
     Id(string),
     Content(string),
     DocumentSchemaMetadata(class),
+      Metadata(string),
   DocumentType(enum),
   EmbedType(enum),
   EmbeddingsBody(class),

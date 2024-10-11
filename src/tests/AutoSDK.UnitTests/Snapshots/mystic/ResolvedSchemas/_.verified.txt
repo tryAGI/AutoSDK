@@ -391,6 +391,7 @@
     CurrentReplicas(int)[Pipelines],
     DesiredReplicas(int)[Pipelines],
     PipelineScalingInfoCurrentPipelineStates(class)[Pipelines],
+      CurrentPipelineStates(int)[Pipelines],
   PipelineWarmup(class)[Pipelines],
     MinimumNodes(int)[Pipelines],
     Duration(int)[Pipelines],

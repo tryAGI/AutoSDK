@@ -222,14 +222,11 @@ public readonly record struct TypeData(
             (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>",
             (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>",
 
-            ("object", _) or (null, _) when context.Schema.Reference != null =>
+            ("object", _) or (null, _) when
+                context.Schema.Reference != null &&
+                (context.Schema.ResolveIfRequired().Properties.Count > 0 ||
+                 !context.Schema.ResolveIfRequired().AdditionalPropertiesAllowed) =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
-                
-            // ("object", _) or (null, _) when
-            //     context.Schema.Reference != null &&
-            //     (context.Schema.ResolveIfRequired().Properties.Count > 0 ||
-            //      !context.Schema.ResolveIfRequired().AdditionalPropertiesAllowed) =>
-            //     $"global::{context.Settings.Namespace}.{context.Id}",
             
             ("object", _) or (null, "object") when context.Schema.Reference == null =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
@@ -240,10 +237,9 @@ public readonly record struct TypeData(
             //     !context.Schema.AdditionalPropertiesAllowed) =>
             //     $"global::{context.Settings.Namespace}.{context.Id}",
             
-            // ("object", _) when
-            //     context.Schema.Reference == null &&
-            //     context.Schema.AdditionalProperties?.Type is not (null or "object") =>
-            //     $"global::System.Collections.Generic.Dictionary<string, {context.Children.FirstOrDefault(x => x.Hint == Hint.AdditionalProperties)?.TypeData?.CSharpType}>",
+            ("object", _) when
+                context.Schema.AdditionalProperties?.Type is not null =>
+                $"global::System.Collections.Generic.Dictionary<string, {context.Children.FirstOrDefault(x => x.Hint == Hint.AdditionalProperties)?.TypeData?.CSharpType}>",
             
             ("string", _) when context.Schema.Enum.Any() =>
                 $"global::{context.Settings.Namespace}.{context.Id}",

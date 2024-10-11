@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.PushModelResponse.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -13,7 +15,7 @@ namespace G
         /// Status pushing the model.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.PushModelStatus? Status { get; set; }
+        public global::G.AnyOf<string, global::G.PushModelResponseStatus?>? Status { get; set; }
 
         /// <summary>
         /// the model's digest<br/>

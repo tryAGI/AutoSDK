@@ -21,7 +21,7 @@ namespace G
         /// <param name="model">
         /// The model name. <br/>
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
-        /// Example: llama3:8b
+        /// Example: llama3.2
         /// </param>
         /// <param name="prompt">
         /// Text to generate embeddings for.<br/>

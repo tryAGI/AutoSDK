@@ -1,13 +1,13 @@
-﻿//HintName: JsonConverters.PushModelStatusEnum.g.cs
+﻿//HintName: JsonConverters.ToolType.g.cs
 #nullable enable
 
 namespace G.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class PushModelStatusEnumJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PushModelStatusEnum>
+    public sealed class ToolTypeJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.ToolType>
     {
         /// <inheritdoc />
-        public override global::G.PushModelStatusEnum Read(
+        public override global::G.ToolType Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace G.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.PushModelStatusEnumExtensions.ToEnum(stringValue) ?? default;
+                        return global::G.ToolTypeExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -27,7 +27,7 @@ namespace G.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.PushModelStatusEnum)numValue;
+                    return (global::G.ToolType)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -39,12 +39,12 @@ namespace G.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.PushModelStatusEnum value,
+            global::G.ToolType value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            writer.WriteStringValue(global::G.PushModelStatusEnumExtensions.ToValueString(value));
+            writer.WriteStringValue(global::G.ToolTypeExtensions.ToValueString(value));
         }
     }
 }

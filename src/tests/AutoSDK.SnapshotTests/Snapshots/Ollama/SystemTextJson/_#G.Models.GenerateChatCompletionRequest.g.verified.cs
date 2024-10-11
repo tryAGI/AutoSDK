@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// The model name. <br/>
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
-        /// Example: llama3:8b
+        /// Example: llama3.2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -56,6 +56,12 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keep_alive")]
         public int? KeepAlive { get; set; }
+
+        /// <summary>
+        /// A list of tools the model may call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
+        public global::System.Collections.Generic.IList<global::G.Tool>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

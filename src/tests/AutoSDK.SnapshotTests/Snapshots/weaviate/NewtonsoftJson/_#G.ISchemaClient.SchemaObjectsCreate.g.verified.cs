@@ -63,7 +63,7 @@ namespace G
             string class1,
             global::G.ClassVectorConfig? vectorConfig = default,
             global::G.VectorIndexType? vectorIndexType = global::G.VectorIndexType.Hnsw,
-            global::G.VectorIndexConfig? vectorIndexConfig = default,
+            object? vectorIndexConfig = default,
             global::G.ShardingConfig? shardingConfig = default,
             global::G.ReplicationConfig? replicationConfig = default,
             global::G.InvertedIndexConfig? invertedIndexConfig = default,

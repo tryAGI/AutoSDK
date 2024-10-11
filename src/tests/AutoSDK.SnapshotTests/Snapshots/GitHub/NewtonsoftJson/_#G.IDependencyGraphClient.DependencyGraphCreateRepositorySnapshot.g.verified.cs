@@ -65,7 +65,7 @@ namespace G
             string @ref,
             global::G.SnapshotDetector detector,
             global::System.DateTime scanned,
-            global::G.Metadata? metadata = default,
+            object? metadata = default,
             global::G.SnapshotManifests? manifests = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

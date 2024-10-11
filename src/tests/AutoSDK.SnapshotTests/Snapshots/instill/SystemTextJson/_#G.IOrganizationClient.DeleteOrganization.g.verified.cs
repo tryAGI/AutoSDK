@@ -12,7 +12,7 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DeleteOrganizationResponse> DeleteOrganizationAsync(
+        global::System.Threading.Tasks.Task<object> DeleteOrganizationAsync(
             string organizationId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

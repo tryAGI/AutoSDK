@@ -21,6 +21,10 @@ namespace G
         /// 
         /// </summary>
         Assistant,
+        /// <summary>
+        /// 
+        /// </summary>
+        Tool,
     }
 
     /// <summary>
@@ -38,6 +42,7 @@ namespace G
                 MessageRole.System => "system",
                 MessageRole.User => "user",
                 MessageRole.Assistant => "assistant",
+                MessageRole.Tool => "tool",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,6 +56,7 @@ namespace G
                 "system" => MessageRole.System,
                 "user" => MessageRole.User,
                 "assistant" => MessageRole.Assistant,
+                "tool" => MessageRole.Tool,
                 _ => null,
             };
         }

@@ -32,18 +32,20 @@ namespace G
                     new global::G.JsonConverters.ResponseFormatNullableJsonConverter(),
                     new global::G.JsonConverters.MessageRoleJsonConverter(),
                     new global::G.JsonConverters.MessageRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.ToolTypeJsonConverter(),
+                    new global::G.JsonConverters.ToolTypeNullableJsonConverter(),
                     new global::G.JsonConverters.DoneReasonEnumJsonConverter(),
                     new global::G.JsonConverters.DoneReasonEnumNullableJsonConverter(),
                     new global::G.JsonConverters.CreateModelStatusEnumJsonConverter(),
                     new global::G.JsonConverters.CreateModelStatusEnumNullableJsonConverter(),
                     new global::G.JsonConverters.PullModelStatusEnumJsonConverter(),
                     new global::G.JsonConverters.PullModelStatusEnumNullableJsonConverter(),
-                    new global::G.JsonConverters.PushModelStatusEnumJsonConverter(),
-                    new global::G.JsonConverters.PushModelStatusEnumNullableJsonConverter(),
+                    new global::G.JsonConverters.PushModelResponseStatusJsonConverter(),
+                    new global::G.JsonConverters.PushModelResponseStatusNullableJsonConverter(),
                     new global::G.JsonConverters.DoneReasonJsonConverter(),
                     new global::G.JsonConverters.CreateModelStatusJsonConverter(),
                     new global::G.JsonConverters.PullModelStatusJsonConverter(),
-                    new global::G.JsonConverters.PushModelStatusJsonConverter(),
+                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
                 }
             };
 

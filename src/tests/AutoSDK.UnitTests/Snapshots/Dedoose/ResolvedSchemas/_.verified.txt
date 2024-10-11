@@ -2321,6 +2321,7 @@
   GetBytesFromFileStorageResponse(string)[FileStorage],
   GetBytesFromFileStorageResponse(string)[FileStorage],
   GetClientVersionsResponse(class)[Login],
+    GetClientVersionsResponse(string)[Login],
   GetConnectionKeyResponse(string)[Users],
   GetConnectionKeyResponse(string)[Users],
   GetConnectionKeyResponse(string)[Users],

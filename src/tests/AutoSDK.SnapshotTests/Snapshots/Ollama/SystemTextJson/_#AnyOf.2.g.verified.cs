@@ -1,23 +1,22 @@
-﻿//HintName: G.Models.PushModelStatus.g.cs
+﻿//HintName: AnyOf.2.g.cs
 using System.Linq;
-#pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// Status pushing the model.
+    /// 
     /// </summary>
-    public readonly partial struct PushModelStatus : global::System.IEquatable<PushModelStatus>
+    public readonly partial struct AnyOf<T1, T2> : global::System.IEquatable<AnyOf<T1, T2>>
     {
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public string? Value1 { get; init; }
+        public T1? Value1 { get; init; }
 #else
-        public string? Value1 { get; }
+        public T1? Value1 { get; }
 #endif
 
         /// <summary>
@@ -31,17 +30,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator PushModelStatus(string value) => new PushModelStatus(value);
+        public static implicit operator AnyOf<T1, T2>(T1 value) => new AnyOf<T1, T2>(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator string?(PushModelStatus @this) => @this.Value1;
+        public static implicit operator T1?(AnyOf<T1, T2> @this) => @this.Value1;
 
         /// <summary>
         /// 
         /// </summary>
-        public PushModelStatus(string? value)
+        public AnyOf(T1? value)
         {
             Value1 = value;
         }
@@ -50,9 +49,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PushModelStatusEnum? Value2 { get; init; }
+        public T2? Value2 { get; init; }
 #else
-        public global::G.PushModelStatusEnum? Value2 { get; }
+        public T2? Value2 { get; }
 #endif
 
         /// <summary>
@@ -66,17 +65,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator PushModelStatus(global::G.PushModelStatusEnum value) => new PushModelStatus(value);
+        public static implicit operator AnyOf<T1, T2>(T2 value) => new AnyOf<T1, T2>(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PushModelStatusEnum?(PushModelStatus @this) => @this.Value2;
+        public static implicit operator T2?(AnyOf<T1, T2> @this) => @this.Value2;
 
         /// <summary>
         /// 
         /// </summary>
-        public PushModelStatus(global::G.PushModelStatusEnum? value)
+        public AnyOf(T2? value)
         {
             Value2 = value;
         }
@@ -84,9 +83,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PushModelStatus(
-            string? value1,
-            global::G.PushModelStatusEnum? value2
+        public AnyOf(
+            T1? value1,
+            T2? value2
             )
         {
             Value1 = value1;
@@ -113,8 +112,8 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<string?, TResult>? value1 = null,
-            global::System.Func<global::G.PushModelStatusEnum?, TResult>? value2 = null,
+            global::System.Func<T1, TResult>? value1 = null,
+            global::System.Func<T2, TResult>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -138,8 +137,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<string?>? value1 = null,
-            global::System.Action<global::G.PushModelStatusEnum?>? value2 = null,
+            global::System.Action<T1>? value1 = null,
+            global::System.Action<T2>? value2 = null,
             bool validate = true)
         {
             if (validate)
@@ -165,9 +164,9 @@ namespace G
             var fields = new object?[]
             {
                 Value1,
-                typeof(string),
+                typeof(T1),
                 Value2,
-                typeof(global::G.PushModelStatusEnum),
+                typeof(T2),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -180,26 +179,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public bool Equals(PushModelStatus other)
+        public bool Equals(AnyOf<T1, T2> other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<string?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PushModelStatusEnum?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<T1?>.Default.Equals(Value1, other.Value1) &&
+                global::System.Collections.Generic.EqualityComparer<T2?>.Default.Equals(Value2, other.Value2) 
                 ;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator ==(PushModelStatus obj1, PushModelStatus obj2)
+        public static bool operator ==(AnyOf<T1, T2> obj1, AnyOf<T1, T2> obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<PushModelStatus>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<AnyOf<T1, T2>>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public static bool operator !=(PushModelStatus obj1, PushModelStatus obj2)
+        public static bool operator !=(AnyOf<T1, T2> obj1, AnyOf<T1, T2> obj2)
         {
             return !(obj1 == obj2);
         }
@@ -209,7 +208,7 @@ namespace G
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is PushModelStatus o && Equals(o);
+            return obj is AnyOf<T1, T2> o && Equals(o);
         }
     }
 }

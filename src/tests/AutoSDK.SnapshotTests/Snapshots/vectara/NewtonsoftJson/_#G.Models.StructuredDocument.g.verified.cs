@@ -48,7 +48,7 @@ namespace G
         /// The custom dimensions as additional weights.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("custom_dimensions")]
-        public global::G.CustomDimensions? CustomDimensions { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? CustomDimensions { get; set; }
 
         /// <summary>
         /// The subsection of the document.

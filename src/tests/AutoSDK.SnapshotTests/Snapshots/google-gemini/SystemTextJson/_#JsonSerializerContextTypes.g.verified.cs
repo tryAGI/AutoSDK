@@ -219,34 +219,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Empty? Type50 { get; set; }
+        public global::G.EmbedContentResponse? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CancelOperationRequest? Type51 { get; set; }
+        public global::G.CountTokensResponse? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EmbedContentResponse? Type52 { get; set; }
+        public global::G.GenerateContentResponse? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CountTokensResponse? Type53 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Candidate>? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerateContentResponse? Type54 { get; set; }
+        public global::G.GenerateContentRequest? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Candidate>? Type55 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.GenerateContentRequest? Type56 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SafetySetting>? Type57 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SafetySetting>? Type55 { get; set; }
     }
 }

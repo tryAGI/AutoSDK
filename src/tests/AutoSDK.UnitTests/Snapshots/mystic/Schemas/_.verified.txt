@@ -319,6 +319,7 @@
     CurrentReplicas(int),
     DesiredReplicas(int),
     PipelineScalingInfoCurrentPipelineStates(class),
+      CurrentPipelineStates(int),
   PipelineState(enum),
   PipelineWarmup(class),
     MinimumNodes(int),

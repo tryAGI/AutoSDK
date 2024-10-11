@@ -192,15 +192,15 @@ namespace G
             global::System.Guid id,
             global::G.ObjectsClassPatchConsistencyLevel? consistencyLevel = global::G.ObjectsClassPatchConsistencyLevel.QUORUM,
             string? @class = default,
-            global::G.VectorWeights? vectorWeights = default,
-            global::G.PropertySchema? properties = default,
+            object? vectorWeights = default,
+            object? properties = default,
             global::System.Guid? requestId = default,
             long? creationTimeUnix = default,
             long? lastUpdateTimeUnix = default,
             global::System.Collections.Generic.IList<float>? vector = default,
-            global::G.Vectors? vectors = default,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<float>>? vectors = default,
             string? tenant = default,
-            global::G.AdditionalProperties? additional = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.AdditionalProperties2>? additional = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.Object

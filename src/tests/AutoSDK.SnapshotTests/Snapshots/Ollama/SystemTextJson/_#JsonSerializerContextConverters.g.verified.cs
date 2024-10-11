@@ -15,18 +15,20 @@ namespace G
             typeof(global::G.JsonConverters.ResponseFormatNullableJsonConverter),
             typeof(global::G.JsonConverters.MessageRoleJsonConverter),
             typeof(global::G.JsonConverters.MessageRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ToolTypeJsonConverter),
+            typeof(global::G.JsonConverters.ToolTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.DoneReasonEnumJsonConverter),
             typeof(global::G.JsonConverters.DoneReasonEnumNullableJsonConverter),
             typeof(global::G.JsonConverters.CreateModelStatusEnumJsonConverter),
             typeof(global::G.JsonConverters.CreateModelStatusEnumNullableJsonConverter),
             typeof(global::G.JsonConverters.PullModelStatusEnumJsonConverter),
             typeof(global::G.JsonConverters.PullModelStatusEnumNullableJsonConverter),
-            typeof(global::G.JsonConverters.PushModelStatusEnumJsonConverter),
-            typeof(global::G.JsonConverters.PushModelStatusEnumNullableJsonConverter),
+            typeof(global::G.JsonConverters.PushModelResponseStatusJsonConverter),
+            typeof(global::G.JsonConverters.PushModelResponseStatusNullableJsonConverter),
             typeof(global::G.JsonConverters.DoneReasonJsonConverter),
             typeof(global::G.JsonConverters.CreateModelStatusJsonConverter),
             typeof(global::G.JsonConverters.PullModelStatusJsonConverter),
-            typeof(global::G.JsonConverters.PushModelStatusJsonConverter),
+            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
         };
     }
 }

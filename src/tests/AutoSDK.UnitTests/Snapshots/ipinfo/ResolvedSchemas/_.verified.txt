@@ -110,6 +110,7 @@
   FullResponse(ref)[general],
   Error(ref)[general],
   BatchResponse(class)[general],
+    BatchResponse2(class)[general],
   Error(ref)[general],
   FullResponse(ref)[general],
   Error(ref)[general],

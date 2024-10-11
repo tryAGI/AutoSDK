@@ -32,6 +32,12 @@ namespace G
         public global::System.Collections.Generic.IList<string>? Images { get; set; }
 
         /// <summary>
+        /// A list of tools the model wants to call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
+        public global::System.Collections.Generic.IList<global::G.ToolCall>? ToolCalls { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

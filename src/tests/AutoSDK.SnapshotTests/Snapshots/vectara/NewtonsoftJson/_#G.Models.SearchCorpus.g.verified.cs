@@ -13,7 +13,7 @@ namespace G
         /// The custom dimensions as additional weights.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("custom_dimensions")]
-        public global::G.CustomDimensions? CustomDimensions { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? CustomDimensions { get; set; }
 
         /// <summary>
         /// The filter string to narrow the search to according to metadata attributes. The query against this<br/>

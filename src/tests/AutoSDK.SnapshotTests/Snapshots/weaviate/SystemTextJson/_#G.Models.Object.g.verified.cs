@@ -19,13 +19,13 @@ namespace G
         /// Allow custom overrides of vector weights as math expressions in word-based vectorization models. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectorWeights")]
-        public global::G.VectorWeights? VectorWeights { get; set; }
+        public object? VectorWeights { get; set; }
 
         /// <summary>
         /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
-        public global::G.PropertySchema? Properties { get; set; }
+        public object? Properties { get; set; }
 
         /// <summary>
         /// ID of the object.
@@ -55,7 +55,7 @@ namespace G
         /// A map of named vectors for multi-vector representations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("vectors")]
-        public global::G.Vectors? Vectors { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<float>>? Vectors { get; set; }
 
         /// <summary>
         /// Name of the tenant.
@@ -67,7 +67,7 @@ namespace G
         /// (Response only) Additional meta information about a single object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("additional")]
-        public global::G.AdditionalProperties? Additional { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.AdditionalProperties2>? Additional { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

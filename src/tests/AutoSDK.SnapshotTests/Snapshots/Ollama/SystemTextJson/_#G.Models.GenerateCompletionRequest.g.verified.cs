@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// The model name. <br/>
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
-        /// Example: llama3:8b
+        /// Example: llama3.2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -25,6 +25,12 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; }
+
+        /// <summary>
+        /// The text that comes after the inserted text.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
+        public string? Suffix { get; set; }
 
         /// <summary>
         /// (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)

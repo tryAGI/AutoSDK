@@ -31,7 +31,7 @@ namespace G
         /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DeleteFinetunedModelResponse> DeleteFinetunedModelAsync(
+        public async global::System.Threading.Tasks.Task<object> DeleteFinetunedModelAsync(
             string id,
             string? xClientName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -115,7 +115,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeleteFinetunedModelResponse?>(__content, JsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

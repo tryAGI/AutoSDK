@@ -181,6 +181,7 @@
     Id(string)[Jamba Complete],
     Content(string)[Jamba Complete],
     DocumentSchemaMetadata(class)[Jamba Complete],
+      Metadata(string)[Jamba Complete],
   DocumentType(enum)[summarize, segmentation],
   EmbedType(enum)[],
   EmbeddingsBody(class)[],

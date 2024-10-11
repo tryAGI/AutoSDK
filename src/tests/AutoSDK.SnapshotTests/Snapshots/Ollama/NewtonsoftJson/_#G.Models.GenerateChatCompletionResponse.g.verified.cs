@@ -12,29 +12,29 @@ namespace G
         /// <summary>
         /// A message in the chat endpoint
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("message")]
-        public global::G.Message? Message { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Message Message { get; set; } = default!;
 
         /// <summary>
         /// The model name. <br/>
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
-        /// Example: llama3:8b
+        /// Example: llama3.2
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("model")]
-        public string? Model { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Model { get; set; } = default!;
 
         /// <summary>
         /// Date on which a model was created.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::System.DateTime? CreatedAt { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTime CreatedAt { get; set; } = default!;
 
         /// <summary>
         /// Whether the response has completed.<br/>
         /// Example: true
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("done")]
-        public bool? Done { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("done", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Done { get; set; } = default!;
 
         /// <summary>
         /// Reason why the model is done generating a response.

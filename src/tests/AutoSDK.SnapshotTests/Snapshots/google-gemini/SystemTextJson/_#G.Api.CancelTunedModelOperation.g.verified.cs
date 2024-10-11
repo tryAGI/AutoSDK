@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string tunedModelId,
             ref string operationId,
-            global::G.CancelOperationRequest request);
+            object request);
         partial void PrepareCancelTunedModelOperationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string tunedModelId,
             string operationId,
-            global::G.CancelOperationRequest request);
+            object request);
         partial void ProcessCancelTunedModelOperationResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -34,10 +34,10 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Empty> CancelTunedModelOperationAsync(
+        public async global::System.Threading.Tasks.Task<object> CancelTunedModelOperationAsync(
             string tunedModelId,
             string operationId,
-            global::G.CancelOperationRequest request,
+            object request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -115,7 +115,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.Empty?>(__content, JsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -126,12 +126,12 @@ namespace G
         /// <param name="operationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Empty> CancelTunedModelOperationAsync(
+        public async global::System.Threading.Tasks.Task<object> CancelTunedModelOperationAsync(
             string tunedModelId,
             string operationId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.CancelOperationRequest
+            var request = new object
             {
             };
 
