@@ -284,6 +284,7 @@ public readonly record struct TypeData(
                 $"global::{context.Settings.Namespace}.{context.Id}",
             (null, null)  => "object",
             ("null", _)  => "object",
+            ("any", _)  => "object",
             _ => throw new NotSupportedException($"Type {context.Schema.Type} is not supported."),
         };
 
