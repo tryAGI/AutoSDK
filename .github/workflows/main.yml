@@ -67,7 +67,6 @@ jobs:
           TestCompany
           --output TestProject
           --add-tests false
-          --ignore-openapi-errors
 
       - name: Generate code
         run: dotnet run --project src/libs/AutoSDK.CLI
@@ -75,6 +74,7 @@ jobs:
           --namespace TestSolution
           --targetFramework net8.0
           --output TestProject/src/libs/TestSolution/Generated
+          --ignore-openapi-errors
 
       - name: Build
         run: dotnet build TestProject
