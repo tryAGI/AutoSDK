@@ -1,0 +1,30 @@
+﻿//HintName: G.Models.GistsUpdateRequestFiles2.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class GistsUpdateRequestFiles2
+    {
+        /// <summary>
+        /// The new content of the file.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
+        public string? Content { get; set; }
+
+        /// <summary>
+        /// The new filename for the file.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        public string? Filename { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    }
+}

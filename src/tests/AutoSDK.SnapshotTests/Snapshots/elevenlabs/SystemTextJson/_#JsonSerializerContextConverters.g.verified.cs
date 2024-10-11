@@ -39,6 +39,8 @@ namespace G
             typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelBillingPeriodNullableJsonConverter),
             typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelCharacterRefreshPeriodJsonConverter),
             typeof(global::G.JsonConverters.ExtendedSubscriptionResponseModelCharacterRefreshPeriodNullableJsonConverter),
+            typeof(global::G.JsonConverters.FineTuningResponseModelState2JsonConverter),
+            typeof(global::G.JsonConverters.FineTuningResponseModelState2NullableJsonConverter),
             typeof(global::G.JsonConverters.LibraryVoiceResponseModelCategoryJsonConverter),
             typeof(global::G.JsonConverters.LibraryVoiceResponseModelCategoryNullableJsonConverter),
             typeof(global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategoryJsonConverter),

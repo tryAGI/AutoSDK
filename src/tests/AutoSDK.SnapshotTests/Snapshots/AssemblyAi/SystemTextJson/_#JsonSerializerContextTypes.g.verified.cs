@@ -355,111 +355,111 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptIabCategories? Type84 { get; set; }
+        public global::G.SeverityScoreSummary? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.TopicDetectionModelResult, object>? Type85 { get; set; }
+        public global::G.TranscriptIabCategories? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionModelResult? Type86 { get; set; }
+        public global::G.OneOf<global::G.TopicDetectionModelResult, object>? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TopicDetectionResult>? Type87 { get; set; }
+        public global::G.TopicDetectionModelResult? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionResult? Type88 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicDetectionResult>? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TopicDetectionResultLabel>? Type89 { get; set; }
+        public global::G.TopicDetectionResult? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionResultLabel? Type90 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicDetectionResultLabel>? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionModelResultSummary? Type91 { get; set; }
+        public global::G.TopicDetectionResultLabel? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptCustomSpelling2? Type92 { get; set; }
+        public global::G.TopicDetectionModelResultSummary? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptAutoChapters? Type93 { get; set; }
+        public global::G.TranscriptCustomSpelling2? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptChapters? Type94 { get; set; }
+        public global::G.TranscriptAutoChapters? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Chapter? Type95 { get; set; }
+        public global::G.TranscriptChapters? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSummaryType? Type96 { get; set; }
+        public global::G.Chapter? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSummaryModel? Type97 { get; set; }
+        public global::G.TranscriptSummaryType? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSummary? Type98 { get; set; }
+        public global::G.TranscriptSummaryModel? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptCustomTopics? Type99 { get; set; }
+        public global::G.TranscriptSummary? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSentimentAnalysis? Type100 { get; set; }
+        public global::G.TranscriptCustomTopics? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSentimentAnalysisResults? Type101 { get; set; }
+        public global::G.TranscriptSentimentAnalysis? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SentimentAnalysisResult? Type102 { get; set; }
+        public global::G.TranscriptSentimentAnalysisResults? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Sentiment? Type103 { get; set; }
+        public global::G.SentimentAnalysisResult? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SentimentAnalysisResultSpeaker? Type104 { get; set; }
+        public global::G.Sentiment? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptEntityDetection? Type105 { get; set; }
+        public global::G.SentimentAnalysisResultSpeaker? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptEntities? Type106 { get; set; }
+        public global::G.TranscriptEntityDetection? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Entity? Type107 { get; set; }
+        public global::G.TranscriptEntities? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EntityType? Type108 { get; set; }
+        public global::G.Entity? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptThrottled? Type109 { get; set; }
+        public global::G.EntityType? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SeverityScoreSummary? Type110 { get; set; }
+        public global::G.TranscriptThrottled? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>

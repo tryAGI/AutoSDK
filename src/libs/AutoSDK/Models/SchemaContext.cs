@@ -266,15 +266,15 @@ public class SchemaContext
                 hint: Models.Hint.ArrayItem,
                 depth: depth + 1));
         }
-        // if (schema.AdditionalProperties != null)
-        // {
-        //     children.AddRange(FromSchema(
-        //         schema: schema.AdditionalProperties,
-        //         settings: settings,
-        //         parent: context,
-        //         hint: Models.Hint.AdditionalProperties,
-        //         depth: depth + 1));
-        // }
+        if (schema.AdditionalProperties != null)
+        {
+            children.AddRange(FromSchema(
+                schema: schema.AdditionalProperties,
+                settings: settings,
+                parent: context,
+                hint: Models.Hint.AdditionalProperties,
+                depth: depth + 1));
+        }
         
         var i = 0;
         foreach (var property in schema.Properties)

@@ -56,6 +56,8 @@ namespace G
                     new global::G.JsonConverters.ExtendedSubscriptionResponseModelBillingPeriodNullableJsonConverter(),
                     new global::G.JsonConverters.ExtendedSubscriptionResponseModelCharacterRefreshPeriodJsonConverter(),
                     new global::G.JsonConverters.ExtendedSubscriptionResponseModelCharacterRefreshPeriodNullableJsonConverter(),
+                    new global::G.JsonConverters.FineTuningResponseModelState2JsonConverter(),
+                    new global::G.JsonConverters.FineTuningResponseModelState2NullableJsonConverter(),
                     new global::G.JsonConverters.LibraryVoiceResponseModelCategoryJsonConverter(),
                     new global::G.JsonConverters.LibraryVoiceResponseModelCategoryNullableJsonConverter(),
                     new global::G.JsonConverters.SpeechHistoryItemResponseModelVoiceCategoryJsonConverter(),

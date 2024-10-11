@@ -100,5 +100,9 @@ namespace G
         /// 
         /// </summary>
         public global::G.BatchResponse? Type20 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BatchResponse2? Type21 { get; set; }
     }
 }
