@@ -67,7 +67,7 @@ namespace G
         /// (Response only) Additional meta information about a single object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("additional")]
-        public global::System.Collections.Generic.Dictionary<string, global::G.AdditionalProperties2>? Additional { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, object>? Additional { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

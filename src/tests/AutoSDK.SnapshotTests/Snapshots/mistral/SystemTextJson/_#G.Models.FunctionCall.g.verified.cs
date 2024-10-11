@@ -17,7 +17,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("arguments")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<global::G.FunctionCallArguments, string> Arguments { get; set; }
+        public required global::G.AnyOf<object, string> Arguments { get; set; }
 
         /// <summary>
         /// 

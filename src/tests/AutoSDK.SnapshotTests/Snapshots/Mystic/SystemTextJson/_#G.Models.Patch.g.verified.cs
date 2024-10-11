@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extras")]
-        public global::G.PatchExtras? Extras { get; set; }
+        public object? Extras { get; set; }
 
         /// <summary>
         /// 

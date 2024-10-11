@@ -13,7 +13,7 @@ namespace G
         /// The errors that relate to specific fields in the request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("field_errors")]
-        public global::G.BadRequestErrorFieldErrors? FieldErrors { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? FieldErrors { get; set; }
 
         /// <summary>
         /// 

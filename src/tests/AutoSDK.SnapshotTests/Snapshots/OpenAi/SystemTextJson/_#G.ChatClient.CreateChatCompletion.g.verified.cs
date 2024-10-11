@@ -219,7 +219,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> messages,
             global::G.AnyOf<string, global::G.CreateChatCompletionRequestModel?> model,
             double? frequencyPenalty = 0,
-            global::G.CreateChatCompletionRequestLogitBias? logitBias = default,
+            global::System.Collections.Generic.Dictionary<string, int>? logitBias = default,
             bool? logprobs = false,
             int? topLogprobs = default,
             int? maxTokens = default,

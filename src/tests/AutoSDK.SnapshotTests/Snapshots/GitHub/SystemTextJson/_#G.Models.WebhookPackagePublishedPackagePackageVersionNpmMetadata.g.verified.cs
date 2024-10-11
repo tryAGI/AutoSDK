@@ -31,37 +31,37 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataAuthor? Author { get; set; }
+        public object? Author { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bugs")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataBugs? Bugs { get; set; }
+        public object? Bugs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependencies")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDependencies? Dependencies { get; set; }
+        public object? Dependencies { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dev_dependencies")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDevDependencies? DevDependencies { get; set; }
+        public object? DevDependencies { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("peer_dependencies")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataPeerDependencies? PeerDependencies { get; set; }
+        public object? PeerDependencies { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("optional_dependencies")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataOptionalDependencies? OptionalDependencies { get; set; }
+        public object? OptionalDependencies { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dist")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDist? Dist { get; set; }
+        public object? Dist { get; set; }
 
         /// <summary>
         /// 
@@ -103,13 +103,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataRepository? Repository { get; set; }
+        public object? Repository { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("scripts")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataScripts? Scripts { get; set; }
+        public object? Scripts { get; set; }
 
         /// <summary>
         /// 
@@ -139,19 +139,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintainers")]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataMaintainer>? Maintainers { get; set; }
+        public global::System.Collections.Generic.IList<object>? Maintainers { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("contributors")]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataContributor>? Contributors { get; set; }
+        public global::System.Collections.Generic.IList<object>? Contributors { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("engines")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataEngines? Engines { get; set; }
+        public object? Engines { get; set; }
 
         /// <summary>
         /// 
@@ -169,19 +169,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bin")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataBin? Bin { get; set; }
+        public object? Bin { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("man")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataMan? Man { get; set; }
+        public object? Man { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("directories")]
-        public global::G.WebhookPackagePublishedPackagePackageVersionNpmMetadataDirectories? Directories { get; set; }
+        public object? Directories { get; set; }
 
         /// <summary>
         /// 

@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("properties")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ToolParametersProperties Properties { get; set; }
+        public required object Properties { get; set; }
 
         /// <summary>
         /// List of required properties

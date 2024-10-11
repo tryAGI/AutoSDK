@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees")]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentEditedIssueVariant2Assignee2>? Assignees { get; set; }
+        public global::System.Collections.Generic.IList<object>? Assignees { get; set; }
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("milestone")]
-        public global::G.WebhookIssueCommentEditedIssueVariant2Milestone? Milestone { get; set; }
+        public object? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -121,7 +121,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("performed_via_github_app")]
-        public global::G.WebhookIssueCommentEditedIssueVariant2PerformedViaGithubApp? PerformedViaGithubApp { get; set; }
+        public object? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 

@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cursors", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ListPublicDatasetRunsResponseCursors Cursors { get; set; } = default!;
+        public object Cursors { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -147,7 +147,7 @@ namespace G
             global::G.ReposCreateInOrgRequestSquashMergeCommitMessage? squashMergeCommitMessage = default,
             global::G.ReposCreateInOrgRequestMergeCommitTitle? mergeCommitTitle = default,
             global::G.ReposCreateInOrgRequestMergeCommitMessage? mergeCommitMessage = default,
-            global::G.ReposCreateInOrgRequestCustomProperties? customProperties = default,
+            object? customProperties = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

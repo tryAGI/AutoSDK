@@ -289,7 +289,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
-        public global::G.WebhookForkForkeeVariant2License? License { get; set; }
+        public object? License { get; set; }
 
         /// <summary>
         /// 

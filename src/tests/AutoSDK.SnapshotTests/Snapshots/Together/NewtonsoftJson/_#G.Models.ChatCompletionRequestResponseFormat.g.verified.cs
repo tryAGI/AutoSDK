@@ -20,7 +20,7 @@ namespace G
         /// The schema of the response format.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema")]
-        public global::G.ChatCompletionRequestResponseFormatSchema? Schema { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Schema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

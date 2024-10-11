@@ -43,14 +43,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.DatasetInputsSchemaDefinition, object>? InputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_schema_definition")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.DatasetOutputsSchemaDefinition, object>? OutputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, object>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: false

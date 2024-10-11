@@ -84,7 +84,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("registry")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookRegistryPackageUpdatedRegistryPackageRegistry? Registry { get; set; }
+        public required object? Registry { get; set; }
 
         /// <summary>
         /// 

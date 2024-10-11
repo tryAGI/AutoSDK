@@ -13,7 +13,7 @@ namespace G
         /// GraphQL data object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::G.GraphQLResponseData? Data { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, object>? Data { get; set; }
 
         /// <summary>
         /// Array with errors.

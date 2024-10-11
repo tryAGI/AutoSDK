@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateRepoCommitRequestManifest Manifest { get; set; } = default!;
+        public object Manifest { get; set; } = default!;
 
         /// <summary>
         /// 

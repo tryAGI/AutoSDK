@@ -134,7 +134,7 @@ namespace G
         /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("custom_properties")]
-        public global::G.WebhookTeamRemovedFromRepositoryRepositoryCustomProperties? CustomProperties { get; set; }
+        public object? CustomProperties { get; set; }
 
         /// <summary>
         /// The default branch of the repository.

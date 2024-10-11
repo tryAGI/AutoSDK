@@ -29,7 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("condition")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateEventSubSubscriptionBodyCondition Condition { get; set; }
+        public required object Condition { get; set; }
 
         /// <summary>
         /// The transport details that you want Twitch to use when sending you notifications.

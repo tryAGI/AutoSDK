@@ -46,7 +46,7 @@ namespace G
             global::G.RestoreConfig? config = default,
             global::System.Collections.Generic.IList<string>? include = default,
             global::System.Collections.Generic.IList<string>? exclude = default,
-            global::G.BackupRestoreRequestNodeMapping? nodeMapping = default,
+            global::System.Collections.Generic.Dictionary<string, string>? nodeMapping = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

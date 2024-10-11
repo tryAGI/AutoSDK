@@ -69,7 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("experiment_metadata")]
-        public global::G.AnyOf<global::G.ExperimentResultsUploadExperimentMetadata, object>? ExperimentMetadata { get; set; }
+        public global::G.AnyOf<object, object>? ExperimentMetadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

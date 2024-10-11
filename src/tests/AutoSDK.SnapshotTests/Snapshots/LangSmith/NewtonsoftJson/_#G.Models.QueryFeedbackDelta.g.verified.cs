@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
-        public global::G.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? Filters { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>, object>? Filters { get; set; }
 
         /// <summary>
         /// Default Value: 0

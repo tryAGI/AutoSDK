@@ -88,7 +88,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionMetadataItem> Metadata { get; set; }
+        public required global::System.Collections.Generic.IList<object> Metadata { get; set; }
 
         /// <summary>
         /// 

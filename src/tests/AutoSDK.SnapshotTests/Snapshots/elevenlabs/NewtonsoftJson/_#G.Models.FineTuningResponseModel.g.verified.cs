@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FineTuningResponseModelState State { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::G.FineTuningResponseModelState2> State { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("progress")]
-        public global::G.FineTuningResponseModelProgress? Progress { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Progress { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("message")]
-        public global::G.FineTuningResponseModelMessage? Message { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Message { get; set; }
 
         /// <summary>
         /// 

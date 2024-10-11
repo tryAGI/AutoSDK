@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<string, global::G.LemurBaseParamsContext>? Context { get; set; }
+        public global::G.OneOf<string, object>? Context { get; set; }
 
         /// <summary>
         /// The model that is used for the final prompt after compression is performed.<br/>

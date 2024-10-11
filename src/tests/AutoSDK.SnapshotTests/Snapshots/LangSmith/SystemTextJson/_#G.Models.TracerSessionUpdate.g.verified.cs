@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.TracerSessionUpdateExtra, object>? Extra { get; set; }
+        public global::G.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 

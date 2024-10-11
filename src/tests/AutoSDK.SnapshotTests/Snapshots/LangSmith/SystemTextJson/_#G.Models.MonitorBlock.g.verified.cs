@@ -51,7 +51,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chart_spec")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MonitorBlockChartSpec ChartSpec { get; set; }
+        public required object ChartSpec { get; set; }
 
         /// <summary>
         /// 
@@ -65,7 +65,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("toggleable_marks")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.MonitorBlockToggleableMarks, object>? ToggleableMarks { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>, object>? ToggleableMarks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

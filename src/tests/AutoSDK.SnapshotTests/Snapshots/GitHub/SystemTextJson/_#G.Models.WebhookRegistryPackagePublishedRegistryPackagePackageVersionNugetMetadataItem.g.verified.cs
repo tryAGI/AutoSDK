@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory3))]
-        public global::G.OneOf<string, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemId, int?>? Id { get; set; }
+        public global::G.OneOf<string, object, int?>? Id { get; set; }
 
         /// <summary>
         /// 

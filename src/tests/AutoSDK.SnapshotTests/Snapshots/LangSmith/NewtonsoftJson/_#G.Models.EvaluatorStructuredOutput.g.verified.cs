@@ -33,19 +33,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema")]
-        public global::G.AnyOf<global::G.EvaluatorStructuredOutputSchema, object>? Schema { get; set; }
+        public global::G.AnyOf<object, object>? Schema { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("variable_mapping")]
-        public global::G.AnyOf<global::G.EvaluatorStructuredOutputVariableMapping, object>? VariableMapping { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, object>? VariableMapping { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.EvaluatorStructuredOutputModel Model { get; set; } = default!;
+        public object Model { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -142,7 +142,7 @@ namespace G
             string? scalingConfig = default,
             string? description = default,
             string? readme = default,
-            global::G.PipelineCreateExtras? extras = default,
+            object? extras = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.PipelineCreate

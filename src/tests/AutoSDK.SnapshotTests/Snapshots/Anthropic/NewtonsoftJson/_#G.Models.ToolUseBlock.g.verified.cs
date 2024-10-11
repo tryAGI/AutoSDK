@@ -28,7 +28,7 @@ namespace G
         /// An object containing the input being passed to the tool, conforming to the tool’s `input_schema`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ToolUseBlockInput Input { get; set; } = default!;
+        public object Input { get; set; } = default!;
 
         /// <summary>
         /// The type of content block.<br/>

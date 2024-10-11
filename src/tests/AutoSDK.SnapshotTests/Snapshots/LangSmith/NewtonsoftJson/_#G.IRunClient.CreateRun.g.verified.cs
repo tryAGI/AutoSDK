@@ -45,15 +45,15 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CreateRunApiV1RunsPostResponse> CreateRunAsync(
             string name,
             global::G.CreateRunRequestRunType runType,
-            global::G.OneOf<global::G.CreateRunRequestInputs, object>? inputs = default,
+            global::G.OneOf<object, object>? inputs = default,
             global::G.OneOf<string, double?, object>? startTime = default,
             global::G.OneOf<string, double?, object>? endTime = default,
-            global::G.OneOf<global::G.CreateRunRequestExtra, object>? extra = default,
+            global::G.OneOf<object, object>? extra = default,
             global::G.OneOf<string, object>? error = default,
-            global::G.OneOf<global::G.CreateRunRequestSerialized, object>? serialized = default,
-            global::G.OneOf<global::G.CreateRunRequestOutputs, object>? outputs = default,
+            global::G.OneOf<object, object>? serialized = default,
+            global::G.OneOf<object, object>? outputs = default,
             global::G.OneOf<global::System.Guid?, object>? parentRunId = default,
-            global::G.OneOf<global::System.Collections.Generic.IList<global::G.CreateRunRequestEventsVariant1Item>, object>? events = default,
+            global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events = default,
             global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
             global::G.OneOf<global::System.Guid?, object>? traceId = default,
             global::G.OneOf<string, object>? dottedOrder = default,
@@ -61,8 +61,8 @@ namespace G
             global::G.OneOf<global::System.Guid?, object>? sessionId = default,
             global::G.OneOf<string, object>? sessionName = default,
             global::G.OneOf<global::System.Guid?, object>? referenceExampleId = default,
-            global::G.OneOf<global::G.CreateRunRequestInputAttachments, object>? inputAttachments = default,
-            global::G.OneOf<global::G.CreateRunRequestOutputAttachments, object>? outputAttachments = default,
+            global::G.OneOf<object, object>? inputAttachments = default,
+            global::G.OneOf<object, object>? outputAttachments = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

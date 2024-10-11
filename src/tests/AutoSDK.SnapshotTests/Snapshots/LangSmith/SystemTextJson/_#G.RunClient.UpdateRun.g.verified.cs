@@ -148,13 +148,13 @@ namespace G
             global::G.OneOf<global::System.Guid?, object>? parentRunId = default,
             global::G.OneOf<string, double?, object>? endTime = default,
             global::G.OneOf<string, object>? error = default,
-            global::G.OneOf<global::G.UpdateRunRequestInputs, object>? inputs = default,
-            global::G.OneOf<global::G.UpdateRunRequestOutputs, object>? outputs = default,
-            global::G.OneOf<global::System.Collections.Generic.IList<global::G.UpdateRunRequestEventsVariant1Item>, object>? events = default,
+            global::G.OneOf<object, object>? inputs = default,
+            global::G.OneOf<object, object>? outputs = default,
+            global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? events = default,
             global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
-            global::G.OneOf<global::G.UpdateRunRequestExtra, object>? extra = default,
-            global::G.OneOf<global::G.UpdateRunRequestInputAttachments, object>? inputAttachments = default,
-            global::G.OneOf<global::G.UpdateRunRequestOutputAttachments, object>? outputAttachments = default,
+            global::G.OneOf<object, object>? extra = default,
+            global::G.OneOf<object, object>? inputAttachments = default,
+            global::G.OneOf<object, object>? outputAttachments = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpdateRunRequest

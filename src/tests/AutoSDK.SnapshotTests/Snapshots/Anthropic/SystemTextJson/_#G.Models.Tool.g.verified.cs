@@ -33,7 +33,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_schema")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ToolInputSchema InputSchema { get; set; }
+        public required object InputSchema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

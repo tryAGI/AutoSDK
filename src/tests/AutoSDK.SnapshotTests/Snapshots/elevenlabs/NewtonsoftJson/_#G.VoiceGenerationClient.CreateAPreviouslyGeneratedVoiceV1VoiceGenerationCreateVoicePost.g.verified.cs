@@ -148,7 +148,7 @@ namespace G
             string generatedVoiceId,
             string? xiApiKey = default,
             global::System.Collections.Generic.IList<string>? playedNotSelectedVoiceIds = default,
-            global::G.BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePostLabels? labels = default,
+            global::System.Collections.Generic.Dictionary<string, string>? labels = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePost

@@ -25,7 +25,7 @@ namespace G
         /// Additional variables for the query.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variables")]
-        public global::G.GraphQLQueryVariables? Variables { get; set; }
+        public object? Variables { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

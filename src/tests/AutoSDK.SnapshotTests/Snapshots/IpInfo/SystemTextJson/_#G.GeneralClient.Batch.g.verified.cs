@@ -29,7 +29,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BatchResponse> BatchAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, object>> BatchAsync(
             global::System.Collections.Generic.IList<string> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -120,7 +120,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.BatchResponse?>(__content, JsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.Dictionary<string, object>?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

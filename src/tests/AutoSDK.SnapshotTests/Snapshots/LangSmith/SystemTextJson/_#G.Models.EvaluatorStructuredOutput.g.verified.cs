@@ -37,21 +37,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("schema")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.EvaluatorStructuredOutputSchema, object>? Schema { get; set; }
+        public global::G.AnyOf<object, object>? Schema { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("variable_mapping")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.EvaluatorStructuredOutputVariableMapping, object>? VariableMapping { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, object>? VariableMapping { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.EvaluatorStructuredOutputModel Model { get; set; }
+        public required object Model { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

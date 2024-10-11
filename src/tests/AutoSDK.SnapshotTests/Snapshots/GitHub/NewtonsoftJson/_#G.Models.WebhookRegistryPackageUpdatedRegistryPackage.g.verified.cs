@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("registry", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookRegistryPackageUpdatedRegistryPackageRegistry? Registry { get; set; } = default!;
+        public object? Registry { get; set; } = default!;
 
         /// <summary>
         /// 

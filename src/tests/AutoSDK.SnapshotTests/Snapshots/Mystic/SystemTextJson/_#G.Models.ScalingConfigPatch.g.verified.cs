@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("args")]
-        public global::G.ScalingConfigPatchArgs? Args { get; set; }
+        public object? Args { get; set; }
 
         /// <summary>
         /// 

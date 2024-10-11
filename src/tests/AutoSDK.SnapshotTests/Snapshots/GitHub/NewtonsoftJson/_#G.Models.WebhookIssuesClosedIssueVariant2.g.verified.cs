@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignee")]
-        public global::G.WebhookIssuesClosedIssueVariant2Assignee? Assignee { get; set; }
+        public object? Assignee { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignees")]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesClosedIssueVariant2Assignee2>? Assignees { get; set; }
+        public global::System.Collections.Generic.IList<object>? Assignees { get; set; }
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssuesClosedIssueVariant2Label>? Labels { get; set; }
+        public global::System.Collections.Generic.IList<object>? Labels { get; set; }
 
         /// <summary>
         /// 
@@ -103,7 +103,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("milestone")]
-        public global::G.WebhookIssuesClosedIssueVariant2Milestone? Milestone { get; set; }
+        public object? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -121,7 +121,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("performed_via_github_app")]
-        public global::G.WebhookIssuesClosedIssueVariant2PerformedViaGithubApp? PerformedViaGithubApp { get; set; }
+        public object? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 

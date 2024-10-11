@@ -33,7 +33,7 @@ namespace G
         /// A collection of resolved package dependencies.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolved")]
-        public global::G.ManifestResolved? Resolved { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.Dependency>? Resolved { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

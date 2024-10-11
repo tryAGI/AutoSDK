@@ -40,7 +40,7 @@ namespace G
             global::G.CreateMessageRequestRole role,
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>> content,
             global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachment>? attachments = default,
-            global::G.CreateMessageRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

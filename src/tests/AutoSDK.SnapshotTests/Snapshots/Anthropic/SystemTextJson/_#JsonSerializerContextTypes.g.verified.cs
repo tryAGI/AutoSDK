@@ -79,7 +79,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolUseBlockInput? Type15 { get; set; }
+        public object? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -135,62 +135,58 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolInputSchema? Type29 { get; set; }
+        public global::G.MessageStreamEvent? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEvent? Type30 { get; set; }
+        public global::G.MessageStartEvent? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStartEvent? Type31 { get; set; }
+        public global::G.MessageStreamEventType? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventType? Type32 { get; set; }
+        public global::G.MessageDeltaEvent? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaEvent? Type33 { get; set; }
+        public global::G.MessageDelta? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDelta? Type34 { get; set; }
+        public global::G.MessageDeltaUsage? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaUsage? Type35 { get; set; }
+        public global::G.MessageStopEvent? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStopEvent? Type36 { get; set; }
+        public global::G.ContentBlockStartEvent? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStartEvent? Type37 { get; set; }
+        public global::G.ContentBlockDeltaEvent? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockDeltaEvent? Type38 { get; set; }
+        public global::G.BlockDelta? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BlockDelta? Type39 { get; set; }
+        public global::G.TextBlockDelta? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextBlockDelta? Type40 { get; set; }
+        public global::G.InputJsonBlockDelta? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputJsonBlockDelta? Type41 { get; set; }
+        public global::G.ContentBlockStopEvent? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStopEvent? Type42 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.PingEvent? Type43 { get; set; }
+        public global::G.PingEvent? Type42 { get; set; }
     }
 }

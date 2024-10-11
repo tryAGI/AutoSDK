@@ -35,7 +35,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ScalingConfigGet> CreateAsync(
             string name,
-            global::G.ScalingConfigCreateArgs args,
+            object args,
             int? minimumNodes = 0,
             int? maximumNodes = 100,
             global::G.ScalingConfigType type = default,

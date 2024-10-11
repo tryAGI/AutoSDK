@@ -15,7 +15,7 @@ namespace G
         /// A relevant documents that the model can cite to generate a more accurate reply. Each document is a string-string dictionary.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.DocumentData Data { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, string> Data { get; set; } = default!;
 
         /// <summary>
         /// Unique identifier for this document which will be referenced in citations. If not provided an ID will be automatically generated

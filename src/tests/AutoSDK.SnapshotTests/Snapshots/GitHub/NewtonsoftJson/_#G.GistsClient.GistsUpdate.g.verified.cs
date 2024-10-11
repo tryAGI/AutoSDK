@@ -138,7 +138,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GistSimple> GistsUpdateAsync(
             string gistId,
             string? description = default,
-            global::G.GistsUpdateRequestFiles? files = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.GistsUpdateRequestFiles2?>? files = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.GistsUpdateRequest

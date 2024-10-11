@@ -767,7 +767,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GetClientVersionsResponse? Type187 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>

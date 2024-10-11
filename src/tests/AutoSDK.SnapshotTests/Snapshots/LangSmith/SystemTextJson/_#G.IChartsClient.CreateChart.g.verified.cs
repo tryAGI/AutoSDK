@@ -39,7 +39,7 @@ namespace G
             global::G.AnyOf<string, object>? description = default,
             global::G.AnyOf<int?, object>? index = default,
             global::G.AnyOf<global::System.Guid?, object>? sectionId = default,
-            global::G.AnyOf<global::G.CustomChartCreateMetadata, object>? metadata = default,
+            global::G.AnyOf<object, object>? metadata = default,
             global::G.AnyOf<global::G.CustomChartSeriesFilters, object>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

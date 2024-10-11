@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.SingleCustomChartResponseMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<object, object>? Metadata { get; set; }
 
         /// <summary>
         /// 

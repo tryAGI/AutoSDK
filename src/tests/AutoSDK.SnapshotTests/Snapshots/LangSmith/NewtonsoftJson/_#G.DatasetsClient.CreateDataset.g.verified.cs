@@ -140,11 +140,11 @@ namespace G
             global::G.AnyOf<string, object>? description = default,
             global::System.DateTime? createdAt = default,
             global::G.AnyOf<global::G.DataType?, object>? dataType = default,
-            global::G.AnyOf<global::G.DatasetCreateInputsSchemaDefinition, object>? inputsSchemaDefinition = default,
-            global::G.AnyOf<global::G.DatasetCreateOutputsSchemaDefinition, object>? outputsSchemaDefinition = default,
+            global::G.AnyOf<object, object>? inputsSchemaDefinition = default,
+            global::G.AnyOf<object, object>? outputsSchemaDefinition = default,
             global::G.AnyOf<bool?, object>? externallyManaged = default,
             global::G.AnyOf<global::System.Guid?, object>? id = default,
-            global::G.AnyOf<global::G.DatasetCreateExtra, object>? extra = default,
+            global::G.AnyOf<object, object>? extra = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.DatasetCreate

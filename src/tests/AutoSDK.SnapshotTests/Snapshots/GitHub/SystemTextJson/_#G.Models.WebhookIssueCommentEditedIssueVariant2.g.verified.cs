@@ -26,7 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees")]
-        public global::System.Collections.Generic.IList<global::G.WebhookIssueCommentEditedIssueVariant2Assignee2>? Assignees { get; set; }
+        public global::System.Collections.Generic.IList<object>? Assignees { get; set; }
 
         /// <summary>
         /// 
@@ -106,7 +106,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
-        public global::G.WebhookIssueCommentEditedIssueVariant2Milestone? Milestone { get; set; }
+        public object? Milestone { get; set; }
 
         /// <summary>
         /// 
@@ -124,7 +124,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("performed_via_github_app")]
-        public global::G.WebhookIssueCommentEditedIssueVariant2PerformedViaGithubApp? PerformedViaGithubApp { get; set; }
+        public object? PerformedViaGithubApp { get; set; }
 
         /// <summary>
         /// 

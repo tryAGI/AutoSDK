@@ -25,13 +25,13 @@ namespace G
         /// The metadata for the document part.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("part_metadata")]
-        public global::G.IndividualSearchResultPartMetadata? PartMetadata { get; set; }
+        public object? PartMetadata { get; set; }
 
         /// <summary>
         /// The metadata for the document that contains the document part.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("document_metadata")]
-        public global::G.IndividualSearchResultDocumentMetadata? DocumentMetadata { get; set; }
+        public object? DocumentMetadata { get; set; }
 
         /// <summary>
         /// The ID of the document that contains the document part.

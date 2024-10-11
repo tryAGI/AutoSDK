@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("document")]
-        public global::G.DocumentSourceDocument? Document { get; set; }
+        public object? Document { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

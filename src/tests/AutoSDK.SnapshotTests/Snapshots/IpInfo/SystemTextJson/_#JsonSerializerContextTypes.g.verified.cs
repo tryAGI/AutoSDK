@@ -99,10 +99,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchResponse? Type20 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, object>? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BatchResponse2? Type21 { get; set; }
+        public object? Type21 { get; set; }
     }
 }

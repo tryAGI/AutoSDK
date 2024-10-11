@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_pipeline_states")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.PipelineScalingInfoCurrentPipelineStates CurrentPipelineStates { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, int> CurrentPipelineStates { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

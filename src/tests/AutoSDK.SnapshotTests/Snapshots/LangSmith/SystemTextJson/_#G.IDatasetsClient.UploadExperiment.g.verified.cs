@@ -42,7 +42,7 @@ namespace G
             global::G.AnyOf<string, object>? datasetName = default,
             global::G.AnyOf<string, object>? datasetDescription = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>, object>? summaryExperimentScores = default,
-            global::G.AnyOf<global::G.ExperimentResultsUploadExperimentMetadata, object>? experimentMetadata = default,
+            global::G.AnyOf<object, object>? experimentMetadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

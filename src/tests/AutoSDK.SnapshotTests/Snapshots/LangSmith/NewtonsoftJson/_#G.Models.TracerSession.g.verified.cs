@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.AnyOf<global::G.TracerSessionExtra, object>? Extra { get; set; }
+        public global::G.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -153,19 +153,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_stats")]
-        public global::G.AnyOf<global::G.TracerSessionFeedbackStats, object>? FeedbackStats { get; set; }
+        public global::G.AnyOf<object, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_feedback_stats")]
-        public global::G.AnyOf<global::G.TracerSessionSessionFeedbackStats, object>? SessionFeedbackStats { get; set; }
+        public global::G.AnyOf<object, object>? SessionFeedbackStats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_facets")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.TracerSessionRunFacetsVariant1Item>, object>? RunFacets { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? RunFacets { get; set; }
 
         /// <summary>
         /// 

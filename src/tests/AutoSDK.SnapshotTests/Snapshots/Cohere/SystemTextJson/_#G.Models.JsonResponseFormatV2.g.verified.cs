@@ -34,7 +34,7 @@ namespace G
         /// **Note**: This field must not be specified when the `type` is set to `"text"`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("json_schema")]
-        public global::G.JsonResponseFormatV2JsonSchema? JsonSchema { get; set; }
+        public object? JsonSchema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

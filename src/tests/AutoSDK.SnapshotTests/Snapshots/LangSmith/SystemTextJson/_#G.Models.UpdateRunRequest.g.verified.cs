@@ -51,21 +51,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::G.UpdateRunRequestInputs, object>? Inputs { get; set; }
+        public global::G.OneOf<object, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::G.UpdateRunRequestOutputs, object>? Outputs { get; set; }
+        public global::G.OneOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.UpdateRunRequestEventsVariant1Item>, object>? Events { get; set; }
+        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -79,21 +79,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::G.UpdateRunRequestExtra, object>? Extra { get; set; }
+        public global::G.OneOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_attachments")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::G.UpdateRunRequestInputAttachments, object>? InputAttachments { get; set; }
+        public global::G.OneOf<object, object>? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_attachments")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::G.UpdateRunRequestOutputAttachments, object>? OutputAttachments { get; set; }
+        public global::G.OneOf<object, object>? OutputAttachments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -44,7 +44,7 @@ namespace G
             string owner,
             string repo,
             string eventType,
-            global::G.ReposCreateDispatchEventRequestClientPayload? clientPayload = default,
+            object? clientPayload = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

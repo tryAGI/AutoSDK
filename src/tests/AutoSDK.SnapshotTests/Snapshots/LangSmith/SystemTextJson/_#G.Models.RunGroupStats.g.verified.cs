@@ -86,14 +86,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_stats")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunGroupStatsFeedbackStats, object>? FeedbackStats { get; set; }
+        public global::G.AnyOf<object, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_facets")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunGroupStatsRunFacetsVariant1Item>, object>? RunFacets { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? RunFacets { get; set; }
 
         /// <summary>
         /// 

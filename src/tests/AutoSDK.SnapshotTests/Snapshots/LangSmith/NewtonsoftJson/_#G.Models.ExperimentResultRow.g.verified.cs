@@ -21,19 +21,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ExperimentResultRowInputs Inputs { get; set; } = default!;
+        public object Inputs { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expected_outputs")]
-        public global::G.AnyOf<global::G.ExperimentResultRowExpectedOutputs, object>? ExpectedOutputs { get; set; }
+        public global::G.AnyOf<object, object>? ExpectedOutputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actual_outputs")]
-        public global::G.AnyOf<global::G.ExperimentResultRowActualOutputs, object>? ActualOutputs { get; set; }
+        public global::G.AnyOf<object, object>? ActualOutputs { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_metadata")]
-        public global::G.AnyOf<global::G.ExperimentResultRowRunMetadata, object>? RunMetadata { get; set; }
+        public global::G.AnyOf<object, object>? RunMetadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<string, global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionBody>? Body { get; set; }
+        public global::G.OneOf<string, object>? Body { get; set; }
 
         /// <summary>
         /// 
@@ -93,7 +93,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.WebhookRegistryPackagePublishedRegistryPackagePackageVersionMetadataItem> Metadata { get; set; }
+        public required global::System.Collections.Generic.IList<object> Metadata { get; set; }
 
         /// <summary>
         /// 

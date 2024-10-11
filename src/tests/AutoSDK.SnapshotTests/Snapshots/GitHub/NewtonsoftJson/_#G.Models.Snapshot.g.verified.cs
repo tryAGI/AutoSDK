@@ -51,7 +51,7 @@ namespace G
         /// A collection of package manifests, which are a collection of related dependencies declared in a file or representing a logical group of dependencies.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifests")]
-        public global::G.SnapshotManifests? Manifests { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.Manifest>? Manifests { get; set; }
 
         /// <summary>
         /// The time at which the snapshot was scanned.

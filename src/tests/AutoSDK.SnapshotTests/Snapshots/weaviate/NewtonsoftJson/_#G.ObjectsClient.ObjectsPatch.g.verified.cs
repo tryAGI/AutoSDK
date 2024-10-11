@@ -194,7 +194,7 @@ namespace G
             global::System.Collections.Generic.IList<float>? vector = default,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<float>>? vectors = default,
             string? tenant = default,
-            global::System.Collections.Generic.Dictionary<string, global::G.AdditionalProperties2>? additional = default,
+            global::System.Collections.Generic.Dictionary<string, object>? additional = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.Object

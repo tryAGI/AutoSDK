@@ -25,7 +25,7 @@ namespace G
         /// The parameters of the function as a JSON schema.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parameters")]
-        public global::G.ToolV2FunctionParameters? Parameters { get; set; }
+        public object? Parameters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("settings", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SpeechHistoryItemResponseModelSettings Settings { get; set; } = default!;
+        public object Settings { get; set; } = default!;
 
         /// <summary>
         /// 

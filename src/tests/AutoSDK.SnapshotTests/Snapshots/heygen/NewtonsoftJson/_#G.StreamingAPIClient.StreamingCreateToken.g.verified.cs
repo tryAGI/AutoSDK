@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareStreamingCreateTokenArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.StreamingCreateTokenRequest request);
+            object request);
         partial void PrepareStreamingCreateTokenRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.StreamingCreateTokenRequest request);
+            object request);
         partial void ProcessStreamingCreateTokenResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -25,7 +25,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task StreamingCreateTokenAsync(
-            global::G.StreamingCreateTokenRequest request,
+            object request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -97,7 +97,7 @@ namespace G
         public async global::System.Threading.Tasks.Task StreamingCreateTokenAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.StreamingCreateTokenRequest
+            var request = new object
             {
             };
 

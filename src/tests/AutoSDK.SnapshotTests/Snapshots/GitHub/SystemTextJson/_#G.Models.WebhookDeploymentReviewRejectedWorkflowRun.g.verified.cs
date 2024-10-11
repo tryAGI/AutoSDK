@@ -81,7 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_commit")]
-        public global::G.WebhookDeploymentReviewRejectedWorkflowRunHeadCommit? HeadCommit { get; set; }
+        public object? HeadCommit { get; set; }
 
         /// <summary>
         /// 

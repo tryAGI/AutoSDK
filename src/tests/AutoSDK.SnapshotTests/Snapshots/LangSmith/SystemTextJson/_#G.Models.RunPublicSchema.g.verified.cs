@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunPublicSchemaInputs, object>? Inputs { get; set; }
+        public global::G.AnyOf<object, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -58,7 +58,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunPublicSchemaExtra, object>? Extra { get; set; }
+        public global::G.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -78,14 +78,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("serialized")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunPublicSchemaSerialized, object>? Serialized { get; set; }
+        public global::G.AnyOf<object, object>? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunPublicSchemaOutputs, object>? Outputs { get; set; }
+        public global::G.AnyOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -120,7 +120,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunPublicSchemaEventsVariant1Item>, object>? Events { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -134,21 +134,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_s3_urls")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunPublicSchemaInputsS3Urls, object>? InputsS3Urls { get; set; }
+        public global::G.AnyOf<object, object>? InputsS3Urls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_s3_urls")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunPublicSchemaOutputsS3Urls, object>? OutputsS3Urls { get; set; }
+        public global::G.AnyOf<object, object>? OutputsS3Urls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("s3_urls")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunPublicSchemaS3Urls, object>? S3Urls { get; set; }
+        public global::G.AnyOf<object, object>? S3Urls { get; set; }
 
         /// <summary>
         /// 
@@ -204,7 +204,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_stats")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunPublicSchemaFeedbackStats, object>? FeedbackStats { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, object>, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// 

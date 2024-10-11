@@ -122,7 +122,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RunStepObjectMetadata? Metadata { get; set; }
+        public required object? Metadata { get; set; }
 
         /// <summary>
         /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_deltas")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SessionFeedbackDeltaFeedbackDeltas FeedbackDeltas { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.FeedbackDelta> FeedbackDeltas { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

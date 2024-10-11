@@ -30,7 +30,7 @@ namespace G
         /// Example: [, , , ]
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.RerankRequestDocumentsVariant1Item>, global::System.Collections.Generic.IList<string>> Documents { get; set; } = default!;
+        public global::G.OneOf<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>> Documents { get; set; } = default!;
 
         /// <summary>
         /// The number of top results to return.<br/>

@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("correction")]
-        public global::G.AnyOf<global::G.FeedbackCreateWithTokenExtendedSchemaCorrection, string, object>? Correction { get; set; }
+        public global::G.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<global::G.FeedbackCreateWithTokenExtendedSchemaMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<object, object>? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

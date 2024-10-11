@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("meta")]
-        public global::G.ChatCompletionVllmStreamingMessageMeta? Meta { get; set; }
+        public object? Meta { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

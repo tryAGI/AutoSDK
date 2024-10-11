@@ -25,7 +25,7 @@ namespace G
         /// A list of messages that carry the error details. There is a common set of message types for APIs to use.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        public global::System.Collections.Generic.IList<global::G.StatusDetail>? Details { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, object>>? Details { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -185,7 +185,7 @@ namespace G
             string? instructions = default,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>? tools = default,
             global::G.CreateThreadAndRunRequestToolResources? toolResources = default,
-            global::G.CreateThreadAndRunRequestMetadata? metadata = default,
+            object? metadata = default,
             double? temperature = 1,
             double? topP = 1,
             bool? stream = default,

@@ -13,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
-        public global::G.PersonalAccessTokenRequestPermissionsResultOrganization? Organization { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Organization { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository")]
-        public global::G.PersonalAccessTokenRequestPermissionsResultRepository? Repository { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Repository { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("other")]
-        public global::G.PersonalAccessTokenRequestPermissionsResultOther? Other { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Other { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

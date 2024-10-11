@@ -85,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extras")]
-        public global::G.GetDetailedPatchExtras? Extras { get; set; }
+        public object? Extras { get; set; }
 
         /// <summary>
         /// 

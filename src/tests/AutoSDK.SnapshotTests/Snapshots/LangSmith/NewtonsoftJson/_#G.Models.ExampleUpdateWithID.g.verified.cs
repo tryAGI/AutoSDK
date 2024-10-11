@@ -21,19 +21,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.AnyOf<global::G.ExampleUpdateWithIDInputs, object>? Inputs { get; set; }
+        public global::G.AnyOf<object, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.AnyOf<global::G.ExampleUpdateWithIDOutputs, object>? Outputs { get; set; }
+        public global::G.AnyOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<global::G.ExampleUpdateWithIDMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<object, object>? Metadata { get; set; }
 
         /// <summary>
         /// 

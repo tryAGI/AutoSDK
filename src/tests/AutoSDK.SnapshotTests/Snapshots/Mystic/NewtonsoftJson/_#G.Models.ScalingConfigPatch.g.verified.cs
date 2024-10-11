@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("args")]
-        public global::G.ScalingConfigPatchArgs? Args { get; set; }
+        public object? Args { get; set; }
 
         /// <summary>
         /// 

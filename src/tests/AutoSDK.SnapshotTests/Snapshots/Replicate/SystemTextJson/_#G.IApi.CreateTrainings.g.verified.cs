@@ -144,7 +144,7 @@ namespace G
             string modelName,
             string versionId,
             string destination,
-            global::G.TrainingRequestInput input,
+            object input,
             string? webhook = default,
             global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilterItem>? webhookEventsFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default);

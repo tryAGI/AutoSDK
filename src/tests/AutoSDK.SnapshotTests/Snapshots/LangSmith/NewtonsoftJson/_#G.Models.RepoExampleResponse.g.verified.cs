@@ -27,13 +27,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.AnyOf<global::G.RepoExampleResponseInputs, object>? Inputs { get; set; }
+        public global::G.AnyOf<object, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.AnyOf<global::G.RepoExampleResponseOutputs, object>? Outputs { get; set; }
+        public global::G.AnyOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 

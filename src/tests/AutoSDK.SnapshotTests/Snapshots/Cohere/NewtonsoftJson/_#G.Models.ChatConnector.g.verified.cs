@@ -33,7 +33,7 @@ namespace G
         /// For example, the connector `web-search` supports the `site` option, which limits search results to the specified domain.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("options")]
-        public global::G.ChatConnectorOptions? Options { get; set; }
+        public object? Options { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

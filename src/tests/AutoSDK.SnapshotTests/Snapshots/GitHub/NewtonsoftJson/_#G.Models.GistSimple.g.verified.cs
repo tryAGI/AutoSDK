@@ -81,7 +81,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files")]
-        public global::G.GistSimpleFiles? Files { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.GistSimpleFiles2?>? Files { get; set; }
 
         /// <summary>
         /// 

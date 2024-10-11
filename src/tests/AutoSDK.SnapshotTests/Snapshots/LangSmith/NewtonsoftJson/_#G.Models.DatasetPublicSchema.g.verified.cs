@@ -41,13 +41,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::G.AnyOf<global::G.DatasetPublicSchemaInputsSchemaDefinition, object>? InputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::G.AnyOf<global::G.DatasetPublicSchemaOutputsSchemaDefinition, object>? OutputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, object>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: false

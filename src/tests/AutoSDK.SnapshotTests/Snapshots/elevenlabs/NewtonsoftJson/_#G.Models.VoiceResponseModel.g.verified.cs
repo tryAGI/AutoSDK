@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.VoiceResponseModelLabels Labels { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, string> Labels { get; set; } = default!;
 
         /// <summary>
         /// 

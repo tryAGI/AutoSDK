@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.BatchIngestRunsRequestPostItemInputs? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.OneOf<global::G.BatchIngestRunsRequestPostItemExtra, object>? Extra { get; set; }
+        public global::G.OneOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -57,13 +57,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("serialized")]
-        public global::G.OneOf<global::G.BatchIngestRunsRequestPostItemSerialized, object>? Serialized { get; set; }
+        public global::G.OneOf<object, object>? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.OneOf<global::G.BatchIngestRunsRequestPostItemOutputs, object>? Outputs { get; set; }
+        public global::G.OneOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +75,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::G.OneOf<global::System.Collections.Generic.IList<global::G.BatchIngestRunsRequestPostItemEventsVariant1Item>, object>? Events { get; set; }
+        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -123,13 +123,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_attachments")]
-        public global::G.OneOf<global::G.BatchIngestRunsRequestPostItemInputAttachments, object>? InputAttachments { get; set; }
+        public global::G.OneOf<object, object>? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_attachments")]
-        public global::G.OneOf<global::G.BatchIngestRunsRequestPostItemOutputAttachments, object>? OutputAttachments { get; set; }
+        public global::G.OneOf<object, object>? OutputAttachments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

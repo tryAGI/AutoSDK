@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.FineTuningResponseModelState State { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.FineTuningResponseModelState2> State { get; set; }
 
         /// <summary>
         /// 
@@ -54,13 +54,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("progress")]
-        public global::G.FineTuningResponseModelProgress? Progress { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Progress { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public global::G.FineTuningResponseModelMessage? Message { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Message { get; set; }
 
         /// <summary>
         /// 

@@ -34,7 +34,7 @@ namespace G
         /// The value to be used within the operations.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public global::G.PatchDocumentActionValue? Value { get; set; }
+        public object? Value { get; set; }
 
         /// <summary>
         /// 

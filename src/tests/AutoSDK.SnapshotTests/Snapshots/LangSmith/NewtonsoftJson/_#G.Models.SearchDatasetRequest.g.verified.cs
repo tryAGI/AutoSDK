@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SearchDatasetRequestInputs Inputs { get; set; } = default!;
+        public object Inputs { get; set; } = default!;
 
         /// <summary>
         /// Default Value: 5

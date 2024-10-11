@@ -42,7 +42,7 @@ namespace G
         /// can be used by document level filter attributes.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.StructuredDocumentMetadata? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// The custom dimensions as additional weights.

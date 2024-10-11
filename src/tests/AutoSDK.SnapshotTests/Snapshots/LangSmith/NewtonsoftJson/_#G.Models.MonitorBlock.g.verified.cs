@@ -45,7 +45,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chart_spec", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MonitorBlockChartSpec ChartSpec { get; set; } = default!;
+        public object ChartSpec { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("toggleable_marks")]
-        public global::G.AnyOf<global::G.MonitorBlockToggleableMarks, object>? ToggleableMarks { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>, object>? ToggleableMarks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

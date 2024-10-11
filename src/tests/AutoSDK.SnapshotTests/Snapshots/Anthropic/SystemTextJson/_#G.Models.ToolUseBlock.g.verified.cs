@@ -31,7 +31,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ToolUseBlockInput Input { get; set; }
+        public required object Input { get; set; }
 
         /// <summary>
         /// The type of content block.<br/>

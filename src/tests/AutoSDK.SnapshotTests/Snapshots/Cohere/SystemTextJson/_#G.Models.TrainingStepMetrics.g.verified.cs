@@ -25,7 +25,7 @@ namespace G
         /// Map of names and values for each evaluation metrics.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metrics")]
-        public global::G.TrainingStepMetricsMetrics? Metrics { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Metrics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -66,7 +66,7 @@ namespace G
             double? minP = 0,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
             int? topKReturn = 0,
-            global::G.CompletionBodyLogitBias? logitBias = default,
+            object? logitBias = default,
             global::G.Penalty? frequencyPenalty = default,
             global::G.Penalty? presencePenalty = default,
             global::G.Penalty? countPenalty = default,

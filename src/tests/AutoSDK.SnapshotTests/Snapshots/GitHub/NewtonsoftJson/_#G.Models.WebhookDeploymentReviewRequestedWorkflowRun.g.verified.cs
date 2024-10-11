@@ -73,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_commit")]
-        public global::G.WebhookDeploymentReviewRequestedWorkflowRunHeadCommit? HeadCommit { get; set; }
+        public object? HeadCommit { get; set; }
 
         /// <summary>
         /// 

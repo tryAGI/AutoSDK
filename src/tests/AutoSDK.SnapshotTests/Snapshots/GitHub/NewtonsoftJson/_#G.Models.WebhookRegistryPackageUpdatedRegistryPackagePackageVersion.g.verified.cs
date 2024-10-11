@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionMetadataItem> Metadata { get; set; } = default!;
+        public global::System.Collections.Generic.IList<object> Metadata { get; set; } = default!;
 
         /// <summary>
         /// 

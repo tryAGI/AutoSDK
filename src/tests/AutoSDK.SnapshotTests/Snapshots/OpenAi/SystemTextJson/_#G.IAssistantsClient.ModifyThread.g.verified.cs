@@ -32,7 +32,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ThreadObject> ModifyThreadAsync(
             string threadId,
             global::G.ModifyThreadRequestToolResources? toolResources = default,
-            global::G.ModifyThreadRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

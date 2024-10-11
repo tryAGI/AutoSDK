@@ -33,7 +33,7 @@ namespace G
         /// filters if defined as a corpus filter attribute.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.StructuredDocumentSectionMetadata? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// The sections that this section contains.

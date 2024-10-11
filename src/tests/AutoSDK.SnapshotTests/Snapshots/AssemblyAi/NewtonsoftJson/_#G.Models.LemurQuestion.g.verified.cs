@@ -21,7 +21,7 @@ namespace G
         /// Any context about the transcripts you wish to provide. This can be a string or any object.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("context")]
-        public global::G.OneOf<string, global::G.LemurQuestionContext>? Context { get; set; }
+        public global::G.OneOf<string, object>? Context { get; set; }
 
         /// <summary>
         /// How you want the answer to be returned. This can be any text. Can't be used with answer_options. Examples: "short sentence", "bullet points"

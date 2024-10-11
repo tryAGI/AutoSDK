@@ -25,7 +25,7 @@ namespace G
         /// A JSON object that contains the parameter values that are specific to the specified subscription type. For the object’s required and optional fields, see the subscription type’s documentation.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("condition", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.CreateEventSubSubscriptionBodyCondition Condition { get; set; } = default!;
+        public object Condition { get; set; } = default!;
 
         /// <summary>
         /// The transport details that you want Twitch to use when sending you notifications.

@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.AnyOf<global::G.ExampleOutputs, object>? Outputs { get; set; }
+        public global::G.AnyOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -33,13 +33,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<global::G.ExampleMetadata, object>? Metadata { get; set; }
+        public global::G.AnyOf<object, object>? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ExampleInputs Inputs { get; set; } = default!;
+        public object Inputs { get; set; } = default!;
 
         /// <summary>
         /// 

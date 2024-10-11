@@ -36,7 +36,7 @@ namespace G
         /// <param name="codespaceName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.CodespacesDeleteFromOrganizationResponse> CodespacesDeleteFromOrganizationAsync(
+        public async global::System.Threading.Tasks.Task<object> CodespacesDeleteFromOrganizationAsync(
             string org,
             string username,
             string codespaceName,
@@ -101,7 +101,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CodespacesDeleteFromOrganizationResponse?>(__content, JsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<object?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

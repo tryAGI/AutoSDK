@@ -139,7 +139,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("steps")]
-        public global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2Step>? Steps { get; set; }
+        public global::System.Collections.Generic.IList<object>? Steps { get; set; }
 
         /// <summary>
         /// 

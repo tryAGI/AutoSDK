@@ -32,7 +32,7 @@ namespace G
         /// **Note**: This field must not be specified when the `type` is set to `"text"`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema")]
-        public global::G.JSONResponseFormatSchema? Schema { get; set; }
+        public object? Schema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

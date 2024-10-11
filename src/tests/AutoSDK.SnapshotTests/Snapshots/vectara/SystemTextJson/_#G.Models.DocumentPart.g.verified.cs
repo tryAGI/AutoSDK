@@ -21,7 +21,7 @@ namespace G
         /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::G.DocumentPartMetadata? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// The context text for the document part.

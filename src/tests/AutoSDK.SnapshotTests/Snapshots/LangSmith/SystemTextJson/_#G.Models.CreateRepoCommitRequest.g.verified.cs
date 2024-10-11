@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.CreateRepoCommitRequestManifest Manifest { get; set; }
+        public required object Manifest { get; set; }
 
         /// <summary>
         /// 

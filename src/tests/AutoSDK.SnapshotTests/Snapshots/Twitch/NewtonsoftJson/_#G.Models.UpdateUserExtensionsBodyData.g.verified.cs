@@ -17,19 +17,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("panel")]
-        public global::G.UpdateUserExtensionsBodyDataPanel? Panel { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionPanelUpdate>? Panel { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("overlay")]
-        public global::G.UpdateUserExtensionsBodyDataOverlay? Overlay { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionOverlayUpdate>? Overlay { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("component")]
-        public global::G.UpdateUserExtensionsBodyDataComponent? Component { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionComponentUpdate>? Component { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -31,7 +31,7 @@ namespace G
         /// Allows overriding the node names stored in the backup with different ones. Useful when restoring backups to a different environment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("node_mapping")]
-        public global::G.BackupRestoreRequestNodeMapping? NodeMapping { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? NodeMapping { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

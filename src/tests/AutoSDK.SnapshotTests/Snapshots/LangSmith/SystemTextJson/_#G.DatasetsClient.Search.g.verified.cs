@@ -138,7 +138,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchDatasetResponse> SearchAsync(
             global::System.Guid datasetId,
-            global::G.SearchDatasetRequestInputs inputs,
+            object inputs,
             int? limit = 5,
             bool? debug = false,
             global::System.Threading.CancellationToken cancellationToken = default)

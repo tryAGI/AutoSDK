@@ -228,14 +228,14 @@ public readonly record struct TypeData(
                  !context.Schema.ResolveIfRequired().AdditionalPropertiesAllowed) =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
             
-            ("object", _) or (null, "object") when context.Schema.Reference == null =>
-                $"global::{context.Settings.Namespace}.{context.Id}",
-            
-            // ("object", _) when
-            //     context.Schema.Reference == null &&
-            //     (context.Schema.Properties.Count > 0 ||
-            //     !context.Schema.AdditionalPropertiesAllowed) =>
+            // ("object", _) or (null, "object") when context.Schema.Reference == null =>
             //     $"global::{context.Settings.Namespace}.{context.Id}",
+            
+            ("object", _) or (null, "object") when
+                context.Schema.Reference == null &&
+                (context.Schema.Properties.Count > 0 ||
+                !context.Schema.AdditionalPropertiesAllowed) =>
+                $"global::{context.Settings.Namespace}.{context.Id}",
             
             ("object", _) when
                 context.Schema.AdditionalProperties?.Type is not null =>

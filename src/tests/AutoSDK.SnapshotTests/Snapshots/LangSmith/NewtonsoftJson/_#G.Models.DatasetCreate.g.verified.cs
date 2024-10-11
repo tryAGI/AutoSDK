@@ -39,13 +39,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::G.AnyOf<global::G.DatasetCreateInputsSchemaDefinition, object>? InputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::G.AnyOf<global::G.DatasetCreateOutputsSchemaDefinition, object>? OutputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, object>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -63,7 +63,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.AnyOf<global::G.DatasetCreateExtra, object>? Extra { get; set; }
+        public global::G.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

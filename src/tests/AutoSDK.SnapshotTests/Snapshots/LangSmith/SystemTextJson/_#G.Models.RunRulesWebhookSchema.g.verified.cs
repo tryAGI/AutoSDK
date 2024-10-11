@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunRulesWebhookSchemaHeaders, object>? Headers { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, object>? Headers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

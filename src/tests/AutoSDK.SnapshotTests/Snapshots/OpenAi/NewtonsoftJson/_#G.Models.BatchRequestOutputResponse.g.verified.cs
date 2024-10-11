@@ -25,7 +25,7 @@ namespace G
         /// The JSON body of the response
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public global::G.BatchRequestOutputResponseBody? Body { get; set; }
+        public object? Body { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

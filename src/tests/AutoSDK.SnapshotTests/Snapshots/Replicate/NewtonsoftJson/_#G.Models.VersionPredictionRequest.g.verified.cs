@@ -22,7 +22,7 @@ namespace G
         /// - you don't need to use the file again (Replicate will not store it)
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.VersionPredictionRequestInput Input { get; set; } = default!;
+        public object Input { get; set; } = default!;
 
         /// <summary>
         /// **This field is deprecated.**<br/>

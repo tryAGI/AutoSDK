@@ -142,7 +142,7 @@ namespace G
             global::System.Guid shareToken,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::G.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
-            global::G.AnyOf<global::G.QueryExampleSchemaWithRunsFilters, object>? filters = default,
+            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>, object>? filters = default,
             int? offset = 0,
             int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default)

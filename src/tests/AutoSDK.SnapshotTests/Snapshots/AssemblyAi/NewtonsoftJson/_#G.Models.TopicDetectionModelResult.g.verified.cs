@@ -26,7 +26,7 @@ namespace G
         /// The overall relevance of topic to the entire audio file
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summary", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.TopicDetectionModelResultSummary Summary { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, double> Summary { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

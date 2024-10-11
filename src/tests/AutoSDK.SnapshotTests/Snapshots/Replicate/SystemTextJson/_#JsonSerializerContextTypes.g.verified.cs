@@ -23,7 +23,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PredictionRequestInput? Type1 { get; set; }
+        public object? Type1 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -47,186 +47,174 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrainingRequestInput? Type7 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilterItem>? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TrainingRequestWebhookEventsFilterItem>? Type8 { get; set; }
+        public global::G.TrainingRequestWebhookEventsFilterItem? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TrainingRequestWebhookEventsFilterItem? Type9 { get; set; }
+        public global::G.VersionPredictionRequest? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VersionPredictionRequest? Type10 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilterItem>? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VersionPredictionRequestInput? Type11 { get; set; }
+        public global::G.VersionPredictionRequestWebhookEventsFilterItem? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilterItem>? Type12 { get; set; }
+        public global::G.PredictionResponse? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.VersionPredictionRequestWebhookEventsFilterItem? Type13 { get; set; }
+        public global::G.PredictionResponseInput? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PredictionResponse? Type14 { get; set; }
+        public double? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type15 { get; set; }
+        public global::G.PredictionResponseMetrics? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PredictionResponseInput? Type16 { get; set; }
+        public global::G.PredictionResponseUrls? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type17 { get; set; }
+        public global::G.DeploymentsCreateRequest? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PredictionResponseMetrics? Type18 { get; set; }
+        public int? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PredictionResponseUrls? Type19 { get; set; }
+        public global::G.DeploymentsUpdateRequest? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsCreateRequest? Type20 { get; set; }
+        public global::G.ModelsCreateRequest? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type21 { get; set; }
+        public global::G.ModelsCreateRequestVisibility? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsUpdateRequest? Type22 { get; set; }
+        public global::G.AccountGetResponse? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelsCreateRequest? Type23 { get; set; }
+        public global::G.AccountGetResponseType? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ModelsCreateRequestVisibility? Type24 { get; set; }
+        public global::G.DeploymentsListResponse? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AccountGetResponse? Type25 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DeploymentsListResponseResult>? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AccountGetResponseType? Type26 { get; set; }
+        public global::G.DeploymentsListResponseResult? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsListResponse? Type27 { get; set; }
+        public global::G.DeploymentsListResponseResultCurrentRelease? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DeploymentsListResponseResult>? Type28 { get; set; }
+        public global::G.DeploymentsListResponseResultCurrentReleaseConfiguration? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsListResponseResult? Type29 { get; set; }
+        public global::System.DateTime? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsListResponseResultCurrentRelease? Type30 { get; set; }
+        public global::G.DeploymentsListResponseResultCurrentReleaseCreatedBy? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsListResponseResultCurrentReleaseConfiguration? Type31 { get; set; }
+        public global::G.DeploymentsListResponseResultCurrentReleaseCreatedByType? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type32 { get; set; }
+        public global::G.DeploymentsCreateResponse? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsListResponseResultCurrentReleaseCreatedBy? Type33 { get; set; }
+        public global::G.DeploymentsCreateResponseCurrentRelease? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsListResponseResultCurrentReleaseCreatedByType? Type34 { get; set; }
+        public global::G.DeploymentsCreateResponseCurrentReleaseConfiguration? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsCreateResponse? Type35 { get; set; }
+        public global::G.DeploymentsCreateResponseCurrentReleaseCreatedBy? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsCreateResponseCurrentRelease? Type36 { get; set; }
+        public global::G.DeploymentsCreateResponseCurrentReleaseCreatedByType? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsCreateResponseCurrentReleaseConfiguration? Type37 { get; set; }
+        public global::G.DeploymentsGetResponse? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsCreateResponseCurrentReleaseCreatedBy? Type38 { get; set; }
+        public global::G.DeploymentsGetResponseCurrentRelease? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsCreateResponseCurrentReleaseCreatedByType? Type39 { get; set; }
+        public global::G.DeploymentsGetResponseCurrentReleaseConfiguration? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsGetResponse? Type40 { get; set; }
+        public global::G.DeploymentsGetResponseCurrentReleaseCreatedBy? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsGetResponseCurrentRelease? Type41 { get; set; }
+        public global::G.DeploymentsGetResponseCurrentReleaseCreatedByType? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsGetResponseCurrentReleaseConfiguration? Type42 { get; set; }
+        public global::G.DeploymentsUpdateResponse? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsGetResponseCurrentReleaseCreatedBy? Type43 { get; set; }
+        public global::G.DeploymentsUpdateResponseCurrentRelease? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsGetResponseCurrentReleaseCreatedByType? Type44 { get; set; }
+        public global::G.DeploymentsUpdateResponseCurrentReleaseConfiguration? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsUpdateResponse? Type45 { get; set; }
+        public global::G.DeploymentsUpdateResponseCurrentReleaseCreatedBy? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsUpdateResponseCurrentRelease? Type46 { get; set; }
+        public global::G.DeploymentsUpdateResponseCurrentReleaseCreatedByType? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsUpdateResponseCurrentReleaseConfiguration? Type47 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.HardwareListResponseItem>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsUpdateResponseCurrentReleaseCreatedBy? Type48 { get; set; }
+        public global::G.HardwareListResponseItem? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DeploymentsUpdateResponseCurrentReleaseCreatedByType? Type49 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.HardwareListResponseItem>? Type50 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.HardwareListResponseItem? Type51 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.WebhooksDefaultSecretGetResponse? Type52 { get; set; }
+        public global::G.WebhooksDefaultSecretGetResponse? Type49 { get; set; }
     }
 }

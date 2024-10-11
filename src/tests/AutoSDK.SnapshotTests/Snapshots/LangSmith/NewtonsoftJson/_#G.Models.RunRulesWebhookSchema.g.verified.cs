@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("headers")]
-        public global::G.AnyOf<global::G.RunRulesWebhookSchemaHeaders, object>? Headers { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, object>? Headers { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

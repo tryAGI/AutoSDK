@@ -49,7 +49,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.RerankResponse> RerankAsync(
             string model,
             string query,
-            global::G.OneOf<global::System.Collections.Generic.IList<global::G.RerankRequestDocumentsVariant1Item>, global::System.Collections.Generic.IList<string>> documents,
+            global::G.OneOf<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>> documents,
             int? topN = default,
             bool? returnDocuments = default,
             global::System.Collections.Generic.IList<string>? rankFields = default,

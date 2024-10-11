@@ -19,7 +19,7 @@ namespace G
         /// The name and value of the parameters to use when invoking a tool.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameters", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ToolCallParameters Parameters { get; set; } = default!;
+        public object Parameters { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

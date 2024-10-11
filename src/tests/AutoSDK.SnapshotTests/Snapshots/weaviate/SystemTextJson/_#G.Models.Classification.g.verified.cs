@@ -61,7 +61,7 @@ namespace G
         /// classification-type specific settings
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("settings")]
-        public global::G.ClassificationSettings? Settings { get; set; }
+        public object? Settings { get; set; }
 
         /// <summary>
         /// error message if status == failed<br/>

@@ -61,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.GistSimpleForkOfFiles Files { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::G.GistSimpleForkOfFiles2> Files { get; set; } = default!;
 
         /// <summary>
         /// 

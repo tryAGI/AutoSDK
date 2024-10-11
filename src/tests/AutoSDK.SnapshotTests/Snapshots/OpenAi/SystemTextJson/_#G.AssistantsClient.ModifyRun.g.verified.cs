@@ -140,7 +140,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RunObject> ModifyRunAsync(
             string threadId,
             string runId,
-            global::G.ModifyRunRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ModifyRunRequest

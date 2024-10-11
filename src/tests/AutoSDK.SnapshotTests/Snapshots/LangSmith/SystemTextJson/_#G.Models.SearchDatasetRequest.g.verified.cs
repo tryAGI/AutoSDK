@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SearchDatasetRequestInputs Inputs { get; set; }
+        public required object Inputs { get; set; }
 
         /// <summary>
         /// Default Value: 5

@@ -50,7 +50,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.VoiceResponseModelLabels Labels { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, string> Labels { get; set; }
 
         /// <summary>
         /// 

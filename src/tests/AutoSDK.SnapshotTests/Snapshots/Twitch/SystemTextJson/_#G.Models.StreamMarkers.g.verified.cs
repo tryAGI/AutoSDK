@@ -35,7 +35,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("videos")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.StreamMarkersVideo> Videos { get; set; }
+        public required global::System.Collections.Generic.IList<object> Videos { get; set; }
 
         /// <summary>
         /// An ID that identifies this video.

@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("instance_flags")]
-        public global::G.InfoGetResponseInstanceFlags? InstanceFlags { get; set; }
+        public object? InstanceFlags { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

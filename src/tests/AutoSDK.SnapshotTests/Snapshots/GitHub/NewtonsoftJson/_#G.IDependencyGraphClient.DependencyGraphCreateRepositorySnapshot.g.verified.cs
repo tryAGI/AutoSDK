@@ -66,7 +66,7 @@ namespace G
             global::G.SnapshotDetector detector,
             global::System.DateTime scanned,
             object? metadata = default,
-            global::G.SnapshotManifests? manifests = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.Manifest>? manifests = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

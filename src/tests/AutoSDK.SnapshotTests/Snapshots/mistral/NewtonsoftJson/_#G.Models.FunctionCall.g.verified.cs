@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<global::G.FunctionCallArguments, string> Arguments { get; set; } = default!;
+        public global::G.AnyOf<object, string> Arguments { get; set; } = default!;
 
         /// <summary>
         /// 

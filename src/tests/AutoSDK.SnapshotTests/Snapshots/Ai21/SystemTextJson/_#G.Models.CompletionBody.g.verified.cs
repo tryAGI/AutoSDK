@@ -68,7 +68,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logitBias")]
-        public global::G.CompletionBodyLogitBias? LogitBias { get; set; }
+        public object? LogitBias { get; set; }
 
         /// <summary>
         /// 

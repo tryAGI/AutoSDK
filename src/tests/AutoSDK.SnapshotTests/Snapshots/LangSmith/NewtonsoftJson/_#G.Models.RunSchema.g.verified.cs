@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.AnyOf<global::G.RunSchemaInputs, object>? Inputs { get; set; }
+        public global::G.AnyOf<object, object>? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.AnyOf<global::G.RunSchemaExtra, object>? Extra { get; set; }
+        public global::G.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -69,13 +69,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("serialized")]
-        public global::G.AnyOf<global::G.RunSchemaSerialized, object>? Serialized { get; set; }
+        public global::G.AnyOf<object, object>? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.AnyOf<global::G.RunSchemaOutputs, object>? Outputs { get; set; }
+        public global::G.AnyOf<object, object>? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -105,7 +105,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunSchemaEventsVariant1Item>, object>? Events { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
 
         /// <summary>
         /// 
@@ -117,19 +117,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_s3_urls")]
-        public global::G.AnyOf<global::G.RunSchemaInputsS3Urls, object>? InputsS3Urls { get; set; }
+        public global::G.AnyOf<object, object>? InputsS3Urls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_s3_urls")]
-        public global::G.AnyOf<global::G.RunSchemaOutputsS3Urls, object>? OutputsS3Urls { get; set; }
+        public global::G.AnyOf<object, object>? OutputsS3Urls { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("s3_urls")]
-        public global::G.AnyOf<global::G.RunSchemaS3Urls, object>? S3Urls { get; set; }
+        public global::G.AnyOf<object, object>? S3Urls { get; set; }
 
         /// <summary>
         /// 
@@ -177,7 +177,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_stats")]
-        public global::G.AnyOf<global::G.RunSchemaFeedbackStats, object>? FeedbackStats { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, object>, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// 

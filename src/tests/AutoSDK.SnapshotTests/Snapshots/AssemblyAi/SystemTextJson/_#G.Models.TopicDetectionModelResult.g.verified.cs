@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.TopicDetectionModelResultSummary Summary { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, double> Summary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("headers")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.HookDeliveryResponseHeaders? Headers { get; set; }
+        public required object? Headers { get; set; }
 
         /// <summary>
         /// The response payload received.

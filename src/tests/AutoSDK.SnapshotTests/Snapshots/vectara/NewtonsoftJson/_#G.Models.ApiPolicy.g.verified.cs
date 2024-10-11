@@ -21,7 +21,7 @@ namespace G
         /// map. If the value is null, then the operation is allowed on any resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allowed_operations", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ApiPolicyAllowedOperations AllowedOperations { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::G.ApiOperationPolicy> AllowedOperations { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

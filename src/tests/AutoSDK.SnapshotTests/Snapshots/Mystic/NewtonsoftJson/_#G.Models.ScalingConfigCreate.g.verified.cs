@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("args", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ScalingConfigCreateArgs Args { get; set; } = default!;
+        public object Args { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

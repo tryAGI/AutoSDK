@@ -56,13 +56,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("leaderId")]
-        public global::G.StatisticsLeaderId? LeaderId { get; set; }
+        public object? LeaderId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("leaderAddress")]
-        public global::G.StatisticsLeaderAddress? LeaderAddress { get; set; }
+        public object? LeaderAddress { get; set; }
 
         /// <summary>
         /// 
@@ -80,7 +80,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("candidates")]
-        public global::G.StatisticsCandidates? Candidates { get; set; }
+        public object? Candidates { get; set; }
 
         /// <summary>
         /// The definition of Raft statistics.

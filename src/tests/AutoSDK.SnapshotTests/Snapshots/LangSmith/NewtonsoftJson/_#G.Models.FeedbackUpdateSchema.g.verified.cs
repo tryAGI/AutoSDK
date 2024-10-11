@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::G.AnyOf<double?, int?, bool?, string, global::G.FeedbackUpdateSchemaValue, object>? Value { get; set; }
+        public global::G.AnyOf<double?, int?, bool?, string, object, object>? Value { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("correction")]
-        public global::G.AnyOf<global::G.FeedbackUpdateSchemaCorrection, string, object>? Correction { get; set; }
+        public global::G.AnyOf<object, string, object>? Correction { get; set; }
 
         /// <summary>
         /// 

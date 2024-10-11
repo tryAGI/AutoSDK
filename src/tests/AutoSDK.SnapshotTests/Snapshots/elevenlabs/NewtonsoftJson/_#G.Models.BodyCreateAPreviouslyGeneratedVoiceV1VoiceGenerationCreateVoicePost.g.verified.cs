@@ -41,7 +41,7 @@ namespace G
         /// Optional, metadata to add to the created voice. Defaults to None.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::G.BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePostLabels? Labels { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Labels { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

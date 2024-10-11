@@ -67,7 +67,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extras")]
-        public global::G.PipelineCreateExtras? Extras { get; set; }
+        public object? Extras { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

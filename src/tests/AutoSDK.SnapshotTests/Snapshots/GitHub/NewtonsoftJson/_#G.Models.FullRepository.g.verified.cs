@@ -642,7 +642,7 @@ namespace G
         /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("custom_properties")]
-        public global::G.FullRepositoryCustomProperties? CustomProperties { get; set; }
+        public object? CustomProperties { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

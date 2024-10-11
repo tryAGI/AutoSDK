@@ -149,7 +149,7 @@ namespace G
             bool? upsert = false,
             global::System.DateTime? startTime = default,
             global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::G.AnyOf<global::G.TracerSessionCreateExtra, object>? extra = default,
+            global::G.AnyOf<object, object>? extra = default,
             string? name = default,
             global::G.AnyOf<string, object>? description = default,
             global::G.AnyOf<global::System.Guid?, object>? defaultDatasetId = default,

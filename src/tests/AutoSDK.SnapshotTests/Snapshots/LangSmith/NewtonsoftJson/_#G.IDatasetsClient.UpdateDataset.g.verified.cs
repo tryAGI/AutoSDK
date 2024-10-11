@@ -34,9 +34,9 @@ namespace G
             global::System.Guid datasetId,
             global::G.AnyOf<string, global::G.Missing, object>? name = default,
             global::G.AnyOf<string, global::G.Missing, object>? description = default,
-            global::G.AnyOf<global::G.DatasetUpdateInputsSchemaDefinition, global::G.Missing, object>? inputsSchemaDefinition = default,
-            global::G.AnyOf<global::G.DatasetUpdateOutputsSchemaDefinition, global::G.Missing, object>? outputsSchemaDefinition = default,
-            global::G.AnyOf<global::G.DatasetUpdatePatchExamples, object>? patchExamples = default,
+            global::G.AnyOf<object, global::G.Missing, object>? inputsSchemaDefinition = default,
+            global::G.AnyOf<object, global::G.Missing, object>? outputsSchemaDefinition = default,
+            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>, object>? patchExamples = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -70,7 +70,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.GistSimpleForkOfFiles Files { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.GistSimpleForkOfFiles2> Files { get; set; }
 
         /// <summary>
         /// 

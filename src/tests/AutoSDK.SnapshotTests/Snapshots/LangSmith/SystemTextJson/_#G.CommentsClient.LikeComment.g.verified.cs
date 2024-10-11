@@ -34,7 +34,7 @@ namespace G
         /// <param name="parentCommentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.LikeCommentApiV1CommentsOwnerRepoParentCommentIdLikePostResponse> LikeCommentAsync(
+        public async global::System.Threading.Tasks.Task<object> LikeCommentAsync(
             string owner,
             string repo,
             global::System.Guid parentCommentId,
@@ -115,7 +115,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.LikeCommentApiV1CommentsOwnerRepoParentCommentIdLikePostResponse?>(__content, JsonSerializerOptions) ??
+                global::System.Text.Json.JsonSerializer.Deserialize<object?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

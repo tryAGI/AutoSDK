@@ -46,7 +46,7 @@ namespace G
             string repo,
             global::G.OneOf<int?, string> workflowId,
             string @ref,
-            global::G.ActionsCreateWorkflowDispatchRequestInputs? inputs = default,
+            object? inputs = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

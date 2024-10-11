@@ -40,7 +40,7 @@ namespace G
             string? name = default,
             global::G.VectorStoreExpirationAfter? expiresAfter = default,
             global::G.OneOf<global::G.AutoChunkingStrategyRequestParam, global::G.StaticChunkingStrategyRequestParam>? chunkingStrategy = default,
-            global::G.CreateVectorStoreRequestMetadata? metadata = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

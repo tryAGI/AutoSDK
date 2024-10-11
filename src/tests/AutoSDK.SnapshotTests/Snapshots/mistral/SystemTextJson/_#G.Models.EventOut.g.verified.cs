@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
-        public global::G.EventOutData? Data { get; set; }
+        public object? Data { get; set; }
 
         /// <summary>
         /// The name of the event.

@@ -30,14 +30,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ContentSafetyLabelsResultSummary Summary { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, double> Summary { get; set; }
 
         /// <summary>
         /// A summary of the Content Moderation severity results for the entire audio file
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity_score_summary")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ContentSafetyLabelsResultSeverityScoreSummary SeverityScoreSummary { get; set; }
+        public required global::System.Collections.Generic.Dictionary<string, global::G.SeverityScoreSummary> SeverityScoreSummary { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -138,7 +138,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ScalingConfigGet> PatchAsync(
             string name,
             global::G.ScalingConfigType? type = default,
-            global::G.ScalingConfigPatchArgs? args = default,
+            object? args = default,
             int? minimumNodes = default,
             int? maximumNodes = default,
             global::System.Threading.CancellationToken cancellationToken = default)

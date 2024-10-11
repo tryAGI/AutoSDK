@@ -57,7 +57,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labels")]
-        public global::G.ClassifyResponseClassificationLabels Labels { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, global::G.ClassifyResponseClassificationLabels2> Labels { get; set; } = default!;
 
         /// <summary>
         /// The type of classification performed<br/>

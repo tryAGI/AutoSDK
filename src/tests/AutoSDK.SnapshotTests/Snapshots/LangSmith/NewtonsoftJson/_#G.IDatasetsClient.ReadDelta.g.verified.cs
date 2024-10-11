@@ -41,7 +41,7 @@ namespace G
             global::System.Guid baselineSessionId,
             global::System.Collections.Generic.IList<global::System.Guid> comparisonSessionIds,
             string feedbackKey,
-            global::G.AnyOf<global::G.QueryFeedbackDeltaFilters, object>? filters = default,
+            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>, object>? filters = default,
             int? offset = 0,
             int? limit = 100,
             global::G.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,

@@ -40,7 +40,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("args")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ScalingConfigGetArgs Args { get; set; }
+        public required object Args { get; set; }
 
         /// <summary>
         /// 

@@ -165,7 +165,7 @@ namespace G
             string? instructions = default,
             global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>? tools = default,
             global::G.CreateAssistantRequestToolResources? toolResources = default,
-            global::G.CreateAssistantRequestMetadata? metadata = default,
+            object? metadata = default,
             double? temperature = 1,
             double? topP = 1,
             global::G.AssistantsApiResponseFormatOption? responseFormat = default,

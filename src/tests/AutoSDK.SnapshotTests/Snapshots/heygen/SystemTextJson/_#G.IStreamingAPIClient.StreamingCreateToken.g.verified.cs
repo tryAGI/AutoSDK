@@ -13,7 +13,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task StreamingCreateTokenAsync(
-            global::G.StreamingCreateTokenRequest request,
+            object request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>

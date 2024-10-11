@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::G.EventOutData? Data { get; set; }
+        public object? Data { get; set; }
 
         /// <summary>
         /// The name of the event.

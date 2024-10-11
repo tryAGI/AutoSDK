@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("body")]
-        public global::G.OneOf<string, global::G.WebhookPackagePublishedPackagePackageVersionBody>? Body { get; set; }
+        public global::G.OneOf<string, object>? Body { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +87,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.WebhookPackagePublishedPackagePackageVersionMetadataItem> Metadata { get; set; } = default!;
+        public global::System.Collections.Generic.IList<object> Metadata { get; set; } = default!;
 
         /// <summary>
         /// 

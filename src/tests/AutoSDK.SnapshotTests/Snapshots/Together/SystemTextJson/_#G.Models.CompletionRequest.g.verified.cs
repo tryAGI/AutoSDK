@@ -114,7 +114,7 @@ namespace G
         /// Adjusts the likelihood of specific tokens appearing in the generated output.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logit_bias")]
-        public global::G.CompletionRequestLogitBias? LogitBias { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, float>? LogitBias { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_logprobs")]
-        public global::System.Collections.Generic.IList<global::G.CreateCompletionResponseChoiceLogprobsTopLogprob>? TopLogprobs { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, double>>? TopLogprobs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

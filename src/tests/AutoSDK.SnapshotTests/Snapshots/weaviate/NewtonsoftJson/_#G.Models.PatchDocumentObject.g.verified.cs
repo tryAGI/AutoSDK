@@ -31,7 +31,7 @@ namespace G
         /// The value to be used within the operations.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::G.PatchDocumentObjectValue? Value { get; set; }
+        public object? Value { get; set; }
 
         /// <summary>
         /// 

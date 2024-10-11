@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<global::G.CustomChartUpdateMetadata, global::G.Missing, object>? Metadata { get; set; }
+        public global::G.AnyOf<object, global::G.Missing, object>? Metadata { get; set; }
 
         /// <summary>
         /// 

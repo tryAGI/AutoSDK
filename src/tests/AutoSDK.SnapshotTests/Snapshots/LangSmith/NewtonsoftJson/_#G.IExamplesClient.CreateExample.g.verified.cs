@@ -37,10 +37,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Example> CreateExampleAsync(
             global::System.Guid datasetId,
-            global::G.AnyOf<global::G.ExampleCreateOutputs, object>? outputs = default,
+            global::G.AnyOf<object, object>? outputs = default,
             global::G.AnyOf<global::System.Guid?, object>? sourceRunId = default,
-            global::G.AnyOf<global::G.ExampleCreateMetadata, object>? metadata = default,
-            global::G.AnyOf<global::G.ExampleCreateInputs, object>? inputs = default,
+            global::G.AnyOf<object, object>? metadata = default,
+            global::G.AnyOf<object, object>? inputs = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
             global::G.AnyOf<global::System.Guid?, object>? id = default,
             bool? useSourceRunIo = false,

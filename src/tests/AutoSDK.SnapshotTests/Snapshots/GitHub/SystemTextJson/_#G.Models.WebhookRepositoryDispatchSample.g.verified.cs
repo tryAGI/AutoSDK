@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("client_payload")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookRepositoryDispatchSampleClientPayload? ClientPayload { get; set; }
+        public required object? ClientPayload { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>

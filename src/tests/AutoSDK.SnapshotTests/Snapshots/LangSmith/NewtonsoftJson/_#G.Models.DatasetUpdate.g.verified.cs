@@ -27,19 +27,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::G.AnyOf<global::G.DatasetUpdateInputsSchemaDefinition, global::G.Missing, object>? InputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, global::G.Missing, object>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::G.AnyOf<global::G.DatasetUpdateOutputsSchemaDefinition, global::G.Missing, object>? OutputsSchemaDefinition { get; set; }
+        public global::G.AnyOf<object, global::G.Missing, object>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("patch_examples")]
-        public global::G.AnyOf<global::G.DatasetUpdatePatchExamples, object>? PatchExamples { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>, object>? PatchExamples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -119,7 +119,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamingCreateTokenRequest? Type25 { get; set; }
+        public object? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>

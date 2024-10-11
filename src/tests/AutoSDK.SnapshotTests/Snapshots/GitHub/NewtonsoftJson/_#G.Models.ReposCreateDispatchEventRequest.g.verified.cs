@@ -19,7 +19,7 @@ namespace G
         /// JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("client_payload")]
-        public global::G.ReposCreateDispatchEventRequestClientPayload? ClientPayload { get; set; }
+        public object? ClientPayload { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

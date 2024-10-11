@@ -79,7 +79,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("experiment_metadata")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.ExperimentResultsUploadExperimentMetadata, object>? ExperimentMetadata { get; set; }
+        public global::G.AnyOf<object, object>? ExperimentMetadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

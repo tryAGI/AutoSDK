@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_output")]
-        public global::G.ToolSourceToolOutput? ToolOutput { get; set; }
+        public object? ToolOutput { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

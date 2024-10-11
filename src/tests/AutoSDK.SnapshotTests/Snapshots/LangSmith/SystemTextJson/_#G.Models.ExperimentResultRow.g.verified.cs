@@ -23,21 +23,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ExperimentResultRowInputs Inputs { get; set; }
+        public required object Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expected_outputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.ExperimentResultRowExpectedOutputs, object>? ExpectedOutputs { get; set; }
+        public global::G.AnyOf<object, object>? ExpectedOutputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("actual_outputs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.ExperimentResultRowActualOutputs, object>? ActualOutputs { get; set; }
+        public global::G.AnyOf<object, object>? ActualOutputs { get; set; }
 
         /// <summary>
         /// 
@@ -79,7 +79,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_metadata")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.ExperimentResultRowRunMetadata, object>? RunMetadata { get; set; }
+        public global::G.AnyOf<object, object>? RunMetadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

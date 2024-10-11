@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.AnyOf<global::G.ComparativeExperimentExtra, object>? Extra { get; set; }
+        public global::G.AnyOf<object, object>? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -69,7 +69,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_stats")]
-        public global::G.AnyOf<global::G.ComparativeExperimentFeedbackStats, object>? FeedbackStats { get; set; }
+        public global::G.AnyOf<object, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

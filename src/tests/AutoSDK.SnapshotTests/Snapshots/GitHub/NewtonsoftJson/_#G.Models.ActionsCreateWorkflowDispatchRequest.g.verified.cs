@@ -19,7 +19,7 @@ namespace G
         /// Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.ActionsCreateWorkflowDispatchRequestInputs? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

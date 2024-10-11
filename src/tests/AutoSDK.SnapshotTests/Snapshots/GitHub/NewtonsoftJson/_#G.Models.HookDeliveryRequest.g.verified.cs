@@ -13,13 +13,13 @@ namespace G
         /// The request headers sent with the webhook delivery.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("headers", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.HookDeliveryRequestHeaders? Headers { get; set; } = default!;
+        public object? Headers { get; set; } = default!;
 
         /// <summary>
         /// The webhook payload.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.HookDeliveryRequestPayload? Payload { get; set; } = default!;
+        public object? Payload { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

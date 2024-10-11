@@ -137,9 +137,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.FeedbackSchema> UpdateFeedbackAsync(
             global::System.Guid feedbackId,
             global::G.AnyOf<double?, int?, bool?, object>? score = default,
-            global::G.AnyOf<double?, int?, bool?, string, global::G.FeedbackUpdateSchemaValue, object>? value = default,
+            global::G.AnyOf<double?, int?, bool?, string, object, object>? value = default,
             global::G.AnyOf<string, object>? comment = default,
-            global::G.AnyOf<global::G.FeedbackUpdateSchemaCorrection, string, object>? correction = default,
+            global::G.AnyOf<object, string, object>? correction = default,
             global::G.AnyOf<global::G.FeedbackConfig, object>? feedbackConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

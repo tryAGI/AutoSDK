@@ -25,7 +25,7 @@ namespace G
         /// The `client_payload` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("client_payload", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookRepositoryDispatchSampleClientPayload? ClientPayload { get; set; } = default!;
+        public object? ClientPayload { get; set; } = default!;
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>

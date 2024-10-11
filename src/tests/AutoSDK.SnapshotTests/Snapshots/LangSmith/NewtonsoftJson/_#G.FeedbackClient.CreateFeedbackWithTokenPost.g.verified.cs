@@ -139,8 +139,8 @@ namespace G
             global::G.AnyOf<double?, int?, bool?, object>? score = default,
             global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
             global::G.AnyOf<string, object>? comment = default,
-            global::G.AnyOf<global::G.FeedbackCreateWithTokenExtendedSchemaCorrection, string, object>? correction = default,
-            global::G.AnyOf<global::G.FeedbackCreateWithTokenExtendedSchemaMetadata, object>? metadata = default,
+            global::G.AnyOf<object, string, object>? correction = default,
+            global::G.AnyOf<object, object>? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.FeedbackCreateWithTokenExtendedSchema

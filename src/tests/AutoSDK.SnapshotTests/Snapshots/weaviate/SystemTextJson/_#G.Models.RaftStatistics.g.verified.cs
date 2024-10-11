@@ -61,7 +61,7 @@ namespace G
         /// Weaviate Raft nodes.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("latestConfiguration")]
-        public global::G.RaftStatisticsLatestConfiguration? LatestConfiguration { get; set; }
+        public object? LatestConfiguration { get; set; }
 
         /// <summary>
         /// 

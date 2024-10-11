@@ -59,7 +59,7 @@ namespace G
         /// As an example, you can pass `{"50256": -100}` to prevent the &lt;|endoftext|&gt; token from being generated.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logit_bias")]
-        public global::G.CreateCompletionRequestLogitBias? LogitBias { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, int>? LogitBias { get; set; }
 
         /// <summary>
         /// Include the log probabilities on the `logprobs` most likely output tokens, as well the chosen tokens. For example, if `logprobs` is 5, the API will return a list of the 5 most likely tokens. The API will always return the `logprob` of the sampled token, so there may be up to `logprobs+1` elements in the response.<br/>

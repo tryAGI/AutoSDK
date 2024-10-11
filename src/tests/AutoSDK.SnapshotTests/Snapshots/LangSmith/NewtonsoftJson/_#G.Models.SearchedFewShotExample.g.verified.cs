@@ -15,13 +15,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SearchedFewShotExampleInputs Inputs { get; set; } = default!;
+        public object Inputs { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SearchedFewShotExampleOutputs Outputs { get; set; } = default!;
+        public object Outputs { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("debug_info")]
-        public global::G.AnyOf<global::G.SearchedFewShotExampleDebugInfo, object>? DebugInfo { get; set; }
+        public global::G.AnyOf<object, object>? DebugInfo { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

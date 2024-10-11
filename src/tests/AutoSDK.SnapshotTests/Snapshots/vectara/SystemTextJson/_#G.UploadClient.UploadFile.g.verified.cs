@@ -216,7 +216,7 @@ namespace G
             byte[] file,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
-            global::G.UploadFileRequestMetadata? metadata = default,
+            object? metadata = default,
             string? filename = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

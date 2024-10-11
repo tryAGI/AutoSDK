@@ -31,7 +31,7 @@ namespace G
         /// can be used by document filter if defined as a corpus filter attribute.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.CoreDocumentMetadata? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// Parts of the document that make up the document.

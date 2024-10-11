@@ -31,7 +31,7 @@ namespace G
         /// For now, this is always going to be an empty object.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_search", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObjectFileSearch FileSearch { get; set; } = default!;
+        public object FileSearch { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

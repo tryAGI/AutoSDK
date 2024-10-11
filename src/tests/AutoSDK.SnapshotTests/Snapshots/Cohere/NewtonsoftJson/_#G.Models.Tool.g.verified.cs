@@ -34,7 +34,7 @@ namespace G
         /// ```
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parameter_definitions")]
-        public global::G.ToolParameterDefinitions? ParameterDefinitions { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ToolParameterDefinitions2>? ParameterDefinitions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

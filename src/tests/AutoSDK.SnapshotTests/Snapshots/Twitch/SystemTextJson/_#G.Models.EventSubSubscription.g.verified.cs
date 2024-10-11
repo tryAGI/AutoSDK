@@ -61,7 +61,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("condition")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.EventSubSubscriptionCondition Condition { get; set; }
+        public required object Condition { get; set; }
 
         /// <summary>
         /// The date and time (in RFC3339 format) of when the subscription was created.

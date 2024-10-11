@@ -29,7 +29,7 @@ namespace G
         /// Context to provide the model. This can be a string or a free-form JSON value.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("context")]
-        public global::G.OneOf<string, global::G.LemurBaseParamsContext>? Context { get; set; }
+        public global::G.OneOf<string, object>? Context { get; set; }
 
         /// <summary>
         /// The model that is used for the final prompt after compression is performed.<br/>

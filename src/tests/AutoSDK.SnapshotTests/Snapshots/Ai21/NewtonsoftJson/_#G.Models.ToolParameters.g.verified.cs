@@ -20,7 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("properties", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ToolParametersProperties Properties { get; set; } = default!;
+        public object Properties { get; set; } = default!;
 
         /// <summary>
         /// List of required properties

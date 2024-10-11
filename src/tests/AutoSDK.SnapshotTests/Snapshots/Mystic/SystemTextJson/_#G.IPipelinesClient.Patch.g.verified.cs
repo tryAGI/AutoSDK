@@ -59,7 +59,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.IOVariable>? inputVariables = default,
             global::System.Collections.Generic.IList<global::G.IOVariable>? outputVariables = default,
             global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators = default,
-            global::G.PatchExtras? extras = default,
+            object? extras = default,
             string? scalingConfig = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

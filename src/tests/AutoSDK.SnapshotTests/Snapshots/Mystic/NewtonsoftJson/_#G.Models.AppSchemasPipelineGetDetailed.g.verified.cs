@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extras")]
-        public global::G.AppSchemasPipelineGetDetailedExtras? Extras { get; set; }
+        public object? Extras { get; set; }
 
         /// <summary>
         /// 

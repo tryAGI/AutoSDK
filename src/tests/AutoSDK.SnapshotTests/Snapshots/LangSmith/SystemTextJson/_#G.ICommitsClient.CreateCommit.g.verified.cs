@@ -34,7 +34,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CreateRepoCommitResponse> CreateCommitAsync(
             string owner,
             string repo,
-            global::G.CreateRepoCommitRequestManifest manifest,
+            object manifest,
             global::G.AnyOf<string, object>? parentCommit = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? exampleRunIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -134,7 +134,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GraphQLResponse> GraphqlPostAsync(
             string? operationName = default,
             string? query = default,
-            global::G.GraphQLQueryVariables? variables = default,
+            object? variables = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.GraphQLQuery

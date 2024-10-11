@@ -60,7 +60,7 @@ namespace G
         /// classification-type specific settings
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("settings")]
-        public global::G.ClassificationSettings? Settings { get; set; }
+        public object? Settings { get; set; }
 
         /// <summary>
         /// error message if status == failed<br/>

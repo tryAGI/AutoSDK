@@ -75,13 +75,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_stats")]
-        public global::G.AnyOf<global::G.RunGroupStatsFeedbackStats, object>? FeedbackStats { get; set; }
+        public global::G.AnyOf<object, object>? FeedbackStats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_facets")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunGroupStatsRunFacetsVariant1Item>, object>? RunFacets { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? RunFacets { get; set; }
 
         /// <summary>
         /// 

@@ -110,7 +110,7 @@ namespace G
             int? bestOf = 1,
             bool? echo = false,
             double? frequencyPenalty = 0,
-            global::G.CreateCompletionRequestLogitBias? logitBias = default,
+            global::System.Collections.Generic.Dictionary<string, int>? logitBias = default,
             int? logprobs = default,
             int? maxTokens = 16,
             int? n = 1,

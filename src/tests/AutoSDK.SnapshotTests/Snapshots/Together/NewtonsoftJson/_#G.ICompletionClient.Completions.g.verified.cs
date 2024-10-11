@@ -93,7 +93,7 @@ namespace G
             float? minP = default,
             float? presencePenalty = default,
             float? frequencyPenalty = default,
-            global::G.CompletionRequestLogitBias? logitBias = default,
+            global::System.Collections.Generic.Dictionary<string, float>? logitBias = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

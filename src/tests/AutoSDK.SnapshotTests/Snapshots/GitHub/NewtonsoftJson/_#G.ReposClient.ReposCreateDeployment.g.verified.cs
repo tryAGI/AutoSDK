@@ -222,7 +222,7 @@ namespace G
             string? task = "deploy",
             bool? autoMerge = true,
             global::System.Collections.Generic.IList<string>? requiredContexts = default,
-            global::G.OneOf<global::G.ReposCreateDeploymentRequestPayload, string>? payload = default,
+            global::G.OneOf<object, string>? payload = default,
             string? environment = "production",
             string? description = default,
             bool? transientEnvironment = false,

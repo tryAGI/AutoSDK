@@ -164,7 +164,7 @@ namespace G
             global::G.ClassificationStatus? status = default,
             global::G.ClassificationMeta? meta = default,
             string? type = default,
-            global::G.ClassificationSettings? settings = default,
+            object? settings = default,
             string? error = default,
             global::G.ClassificationFilters? filters = default,
             global::System.Threading.CancellationToken cancellationToken = default)

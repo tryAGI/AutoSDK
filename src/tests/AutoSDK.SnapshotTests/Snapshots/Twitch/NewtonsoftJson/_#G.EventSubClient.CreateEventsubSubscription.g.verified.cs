@@ -145,7 +145,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateEventSubSubscriptionResponse> CreateEventsubSubscriptionAsync(
             global::G.CreateEventSubSubscriptionBodyType type,
             string version,
-            global::G.CreateEventSubSubscriptionBodyCondition condition,
+            object condition,
             global::G.CreateEventSubSubscriptionBodyTransport transport,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

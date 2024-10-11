@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cursors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ListRunsResponseCursors Cursors { get; set; }
+        public required object Cursors { get; set; }
 
         /// <summary>
         /// 

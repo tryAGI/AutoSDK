@@ -78,7 +78,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("flags")]
-        public global::G.OrganizationConfigFlags? Flags { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, bool>? Flags { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
