@@ -14,7 +14,7 @@ public partial class DataTests
     [DataRow("github.yaml")]
     [DataRow("huggingface.yaml")]
     [DataRow("ipinfo.yaml")]
-    [DataRow("langsmith.yaml")]
+    [DataRow("langsmith.json")]
     [DataRow("leonardo.yaml")]
     [DataRow("ollama.yaml")]
     [DataRow("openai.yaml")]

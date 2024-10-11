@@ -8,7 +8,7 @@ public class CliTests
     // [DataTestMethod]
     // [DataRow("github.yaml")]
     [DataRow("ipinfo.yaml")]
-    [DataRow("langsmith.yaml")]
+    [DataRow("langsmith.json")]
     [DataRow("ollama.yaml")]
     [DataRow("openai.yaml")]
     [DataRow("petstore.yaml")]

@@ -32,7 +32,7 @@ jobs:
           #- github.yaml
           - huggingface.yaml
           - ipinfo.yaml
-          - langsmith.yaml
+          - langsmith.json
           - leonardo.yaml
           - mystic.yaml
           - ollama.yaml
