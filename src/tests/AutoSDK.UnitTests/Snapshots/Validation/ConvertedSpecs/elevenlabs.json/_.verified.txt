@@ -5209,25 +5209,19 @@
             "type": "string",
             "title": "Voice Name",
             "description": "Name to use for the created voice.",
-            "examples": [
-              "Little squeaky mouse"
-            ]
+            "example": "Little squeaky mouse"
           },
           "voice_description": {
             "type": "string",
             "title": "Voice Description",
             "description": "Description to use for the created voice.",
-            "examples": [
-              "A sassy little squeaky mouse"
-            ]
+            "example": "A sassy little squeaky mouse"
           },
           "generated_voice_id": {
             "type": "string",
             "title": "Generated Voice Id",
             "description": "The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don\u0027t have one yet.",
-            "examples": [
-              "37HceQefKmEi3bGovXjL"
-            ]
+            "example": "37HceQefKmEi3bGovXjL"
           },
           "played_not_selected_voice_ids": {
             "items": {
@@ -5245,12 +5239,10 @@
             "type": "object",
             "title": "Labels",
             "description": "Optional, metadata to add to the created voice. Defaults to None.",
-            "examples": [
-              {
-                "language": "en"
-              }
-            ],
-            "name": "Voice metadata"
+            "name": "Voice metadata",
+            "example": {
+              "language": "en"
+            }
           }
         },
         "type": "object",
@@ -5560,9 +5552,7 @@
             "minLength": 100,
             "title": "Text",
             "description": "Text to generate, text length has to be between 100 and 1000.",
-            "examples": [
-              "Every act of kindness, no matter how small, carries value and can make a difference, as no gesture of goodwill is ever wasted."
-            ]
+            "example": "Every act of kindness, no matter how small, carries value and can make a difference, as no gesture of goodwill is ever wasted."
           }
         },
         "type": "object",

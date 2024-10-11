@@ -40,7 +40,8 @@ namespace G
         /// The strength of the accent of the generated voice. Has to be between 0.3 and 2.0.
         /// </param>
         /// <param name="text">
-        /// Text to generate, text length has to be between 100 and 1000.
+        /// Text to generate, text length has to be between 100 and 1000.<br/>
+        /// Example: Every act of kindness, no matter how small, carries value and can make a difference, as no gesture of goodwill is ever wasted.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>

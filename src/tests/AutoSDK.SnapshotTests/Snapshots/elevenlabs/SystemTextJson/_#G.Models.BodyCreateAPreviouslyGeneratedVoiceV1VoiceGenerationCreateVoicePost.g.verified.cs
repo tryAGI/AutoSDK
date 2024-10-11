@@ -10,21 +10,24 @@ namespace G
     public sealed partial class BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePost
     {
         /// <summary>
-        /// Name to use for the created voice.
+        /// Name to use for the created voice.<br/>
+        /// Example: Little squeaky mouse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string VoiceName { get; set; }
 
         /// <summary>
-        /// Description to use for the created voice.
+        /// Description to use for the created voice.<br/>
+        /// Example: A sassy little squeaky mouse
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string VoiceDescription { get; set; }
 
         /// <summary>
-        /// The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don't have one yet.
+        /// The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don't have one yet.<br/>
+        /// Example: 37HceQefKmEi3bGovXjL
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("generated_voice_id")]
         [global::System.Text.Json.Serialization.JsonRequired]

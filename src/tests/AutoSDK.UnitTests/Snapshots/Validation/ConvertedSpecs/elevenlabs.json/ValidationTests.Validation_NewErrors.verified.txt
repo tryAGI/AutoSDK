@@ -16,31 +16,11 @@
     Pointer: 
   },
   {
-    Message: examples is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/voice_name,
-    Pointer: 
-  },
-  {
-    Message: examples is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/voice_description,
-    Pointer: 
-  },
-  {
-    Message: examples is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/generated_voice_id,
-    Pointer: 
-  },
-  {
-    Message: examples is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/labels,
-    Pointer: 
-  },
-  {
     Message: name is not a valid property at #/components/schemas/Body_Create_a_previously_generated_voice_v1_voice_generation_create_voice_post/properties/labels,
     Pointer: 
   },
   {
     Message: emded is not a valid property at #/components/schemas/Body_Dub_a_video_or_an_audio_file_v1_dubbing_post/properties/use_profanity_filter,
-    Pointer: 
-  },
-  {
-    Message: examples is not a valid property at #/components/schemas/Body_Generate_a_random_voice_v1_voice_generation_generate_voice_post/properties/text,
     Pointer: 
   },
   {

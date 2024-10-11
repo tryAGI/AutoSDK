@@ -74,94 +74,97 @@ public static class OpenApi31Support
             }
 
             string keyString = entry.Key;
-            // if (keyString == "anyOf" &&
-            //     entry.Value is JsonArray anyOfList && anyOfList.Count == 2 &&
-            //     anyOfList.Any(v =>
-            //         v is JsonObject objects &&
-            //         objects.ContainsKey("type") &&
-            //         objects["type"] == null))
-            // {
-            //     var first = anyOfList[0] as JsonObject;
-            //     var second = anyOfList[1] as JsonObject;
-            //     var firstType = first?["type"];
-            //     var secondType = second?["type"];
-            //
-            //     if (firstType == null || secondType == null)
-            //     {
-            //         // Replace "anyOf" with "type: string, nullable: true"
-            //         node["type"] = firstType?.ToString() ?? secondType?.ToString();
-            //         node["nullable"] = true;
-            //
-            //         var nonNullObject = firstType != null ? first : second;
-            //         foreach (var kvp in nonNullObject)
-            //         {
-            //             node[kvp.Key] = kvp.Value;
-            //         }
-            //         
-            //         node.Remove(keyString);
-            //     }
-            // }
             if (keyString == "openapi")
             {
                 node["openapi"] = "3.0.3";
             }
-            // if (keyString == "exclusiveMinimum" && entry.Value is not JsonValue)
-            // {
-            //     node["minimum"] = entry.Value;
-            //     node["exclusiveMinimum"] = true;
-            // }
-            // if (keyString == "exclusiveMaximum" && entry.Value is not JsonValue)
-            // {
-            //     node["maximum"] = entry.Value;
-            //     node["exclusiveMaximum"] = true;
-            // }
-            //
-            // // Identify "type" that is a list containing "string" and "null"
-            // if (keyString == "type" &&
-            //     entry.Value is JsonArray typeList &&
-            //     typeList.Contains(null))
-            // {
-            //     // Replace "type" with "string" and add "nullable: true"
-            //     node["type"] = typeList.First(v => v != null).ToString();
-            //     node["nullable"] = true;
-            //
-            //     // If there's an "enum", remove the "null" from its values
-            //     if (node.TryGetPropertyValue("enum", out var enumValue) && enumValue is JsonArray enumList)
-            //     {
-            //         node["enum"] = new JsonArray(enumList.Where(v => v != null).ToArray());
-            //     }
-            // }
-            //
-            // // Replace "examples" with single "example"
-            // if (keyString == "examples" && entry.Value is JsonArray { Count: > 0 } examplesList)
-            // {
-            //     node.Remove(keyString);
-            //     node["example"] = examplesList[0];
-            // }
-            //
-            // // Fix "example" node when "items" is missing and "example" is a list
-            // if (keyString == "example" && entry.Value is JsonArray { Count: > 0 } exampleList && !node.ContainsKey("items"))
-            // {
-            //     node["example"] = exampleList[0];
-            // }
-            //
-            // // Identify "const" node for removal and convert to "enum" if "enum" is missing
-            // if (keyString == "const")
-            // {
-            //     if (!node.ContainsKey("enum"))
-            //     {
-            //         node["enum"] = new JsonArray(entry.Value);
-            //     }
-            //     node.Remove(keyString);
-            // }
-            //
-            // // Fix "items" node when "$ref" is present and "items" is a list
-            // if (keyString == "items" && entry.Value is JsonArray itemsNode &&
-            //     itemsNode.ElementAtOrDefault(0) is JsonObject itemsValue &&
-            //     itemsValue.ElementAtOrDefault(0).Key == "$ref")
-            // {
-            //     node["items"] = itemsValue;
-            // }
+            
+            if (keyString == "anyOf" &&
+                entry.Value is JsonArray anyOfList && anyOfList.Count == 2 &&
+                anyOfList.Any(v =>
+                    v is JsonObject objects &&
+                    objects.ContainsKey("type") &&
+                    objects["type"] == null))
+            {
+                var first = anyOfList[0] as JsonObject;
+                var second = anyOfList[1] as JsonObject;
+                var firstType = first?["type"];
+                var secondType = second?["type"];
+            
+                if (firstType == null || secondType == null)
+                {
+                    // Replace "anyOf" with "type: string, nullable: true"
+                    node["type"] = firstType?.ToString() ?? secondType?.ToString();
+                    node["nullable"] = true;
+            
+                    var nonNullObject = firstType != null ? first : second;
+                    foreach (var kvp in nonNullObject!)
+                    {
+                        node[kvp.Key] = kvp.Value;
+                    }
+                    
+                    node.Remove(keyString);
+                }
+            }
+            
+            if (keyString == "exclusiveMinimum" && entry.Value is not JsonValue)
+            {
+                node["minimum"] = entry.Value;
+                node["exclusiveMinimum"] = true;
+            }
+            
+            if (keyString == "exclusiveMaximum" && entry.Value is not JsonValue)
+            {
+                node["maximum"] = entry.Value;
+                node["exclusiveMaximum"] = true;
+            }
+            
+            // Identify "type" that is a list containing "string" and "null"
+            if (keyString == "type" &&
+                entry.Value is JsonArray typeList &&
+                typeList.Contains(null))
+            {
+                // Replace "type" with "string" and add "nullable: true"
+                node["type"] = typeList.First(v => v != null)?.ToString();
+                node["nullable"] = true;
+            
+                // If there's an "enum", remove the "null" from its values
+                if (node.TryGetPropertyValue("enum", out var enumValue) && enumValue is JsonArray enumList)
+                {
+                    node["enum"] = new JsonArray(enumList.Where(v => v != null).ToArray());
+                }
+            }
+            
+            // Replace "examples" with single "example"
+            if (keyString == "examples" && entry.Value is JsonArray { Count: > 0 } examplesList)
+            {
+                node.Remove(keyString);
+                node["example"] = examplesList[0]?.DeepClone();
+            }
+            
+            // Fix "example" node when "items" is missing and "example" is a list
+            if (keyString == "example" && entry.Value is JsonArray { Count: > 0 } exampleList && !node.ContainsKey("items"))
+            {
+                node["example"] = exampleList[0]?.DeepClone();
+            }
+            
+            // Identify "const" node for removal and convert to "enum" if "enum" is missing
+            if (keyString == "const")
+            {
+                if (!node.ContainsKey("enum"))
+                {
+                    node["enum"] = new JsonArray(entry.Value);
+                }
+                node.Remove(keyString);
+            }
+            
+            // Fix "items" node when "$ref" is present and "items" is a list
+            if (keyString == "items" && entry.Value is JsonArray itemsNode &&
+                itemsNode.ElementAtOrDefault(0) is JsonObject itemsValue &&
+                itemsValue.ElementAtOrDefault(0).Key == "$ref")
+            {
+                node["items"] = itemsValue.DeepClone();
+            }
         }
     }
     

@@ -10,19 +10,22 @@ namespace G
     public sealed partial class BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePost
     {
         /// <summary>
-        /// Name to use for the created voice.
+        /// Name to use for the created voice.<br/>
+        /// Example: Little squeaky mouse
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string VoiceName { get; set; } = default!;
 
         /// <summary>
-        /// Description to use for the created voice.
+        /// Description to use for the created voice.<br/>
+        /// Example: A sassy little squeaky mouse
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("voice_description", Required = global::Newtonsoft.Json.Required.Always)]
         public string VoiceDescription { get; set; } = default!;
 
         /// <summary>
-        /// The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don't have one yet.
+        /// The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don't have one yet.<br/>
+        /// Example: 37HceQefKmEi3bGovXjL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generated_voice_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string GeneratedVoiceId { get; set; } = default!;
