@@ -43,6 +43,12 @@ jobs:
           - together.yaml
           - heygen.yaml
           - instill.yaml
+          - ideogram.yaml
+          - google-gemini.yaml
+          - vectara.yaml
+          - mistral.yaml
+          - weaviate.yaml
+          - elevenlabs.json
     steps:
       - name: Checkout
         uses: actions/checkout@v4
