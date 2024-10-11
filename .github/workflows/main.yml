@@ -67,6 +67,7 @@ jobs:
           TestCompany
           --output TestProject
           --add-tests false
+          --ignore-openapi-errors
 
       - name: Generate code
         run: dotnet run --project src/libs/AutoSDK.CLI
