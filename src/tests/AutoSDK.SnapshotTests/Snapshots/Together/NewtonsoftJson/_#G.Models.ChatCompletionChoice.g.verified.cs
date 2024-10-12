@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FinishReason2 FinishReason { get; set; } = default!;
+        public global::G.FinishReason FinishReason { get; set; } = default!;
 
         /// <summary>
         /// 

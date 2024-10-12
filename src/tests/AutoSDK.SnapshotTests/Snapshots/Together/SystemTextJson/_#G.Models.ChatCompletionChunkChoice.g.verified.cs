@@ -20,9 +20,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReason2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.FinishReason2 FinishReason { get; set; }
+        public required global::G.FinishReason FinishReason { get; set; }
 
         /// <summary>
         /// 

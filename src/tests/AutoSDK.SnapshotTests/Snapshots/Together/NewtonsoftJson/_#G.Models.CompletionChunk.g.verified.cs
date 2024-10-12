@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CompletionChunk.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.FinishReason2?, object> FinishReason { get; set; } = default!;
+        public global::G.FinishReason FinishReason { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -45,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AllOf<global::G.UsageData, object> Usage { get; set; } = default!;
+        public global::G.UsageData? Usage { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

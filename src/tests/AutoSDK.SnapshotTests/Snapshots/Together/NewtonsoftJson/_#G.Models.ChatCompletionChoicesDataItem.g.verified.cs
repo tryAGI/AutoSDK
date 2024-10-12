@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ChatCompletionChoicesDataItem.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
-        public global::G.FinishReason2? FinishReason { get; set; }
+        public global::G.FinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// 
@@ -27,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logprobs")]
-        public global::G.AllOf<object, global::G.LogprobsPart>? Logprobs { get; set; }
+        public global::G.LogprobsPart? Logprobs { get; set; }
 
         /// <summary>
         /// 

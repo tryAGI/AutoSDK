@@ -302,6 +302,34 @@ public static class OpenApi31Support
                 node[new string("exclusiveMaximum".ToCharArray())] = true;
             }
             
+            if (keyString == "allOf" &&
+                entry.Value is List<object?> { Count: 2 } allOfItems &&
+                allOfItems.Any(v =>
+                    v is Dictionary<object, object?> objects &&
+                    objects.ContainsKey("nullable") &&
+                    objects["nullable"] is true))
+            {
+                var first = allOfItems[0] as Dictionary<object, object?>;
+                var second = allOfItems[1] as Dictionary<object, object?>;
+                
+                if (first?.ContainsKey("nullable") != true)
+                {
+                    foreach (var key in first ?? new Dictionary<object, object?>())
+                    {
+                        node[key.Key] = key.Value;
+                    }
+                }
+                else
+                {
+                    foreach (var key in second ?? new Dictionary<object, object?>())
+                    {
+                        node[key.Key] = key.Value;
+                    }
+                }
+
+                node.Remove(keyString);
+            }
+            
             // Remove "prefixItems"
             if (keyString == "prefixItems" && entry.Value is List<object?> { Count: > 0 } prefixItemsList)
             {

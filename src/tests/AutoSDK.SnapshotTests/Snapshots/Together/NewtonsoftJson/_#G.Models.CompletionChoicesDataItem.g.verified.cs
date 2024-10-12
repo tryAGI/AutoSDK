@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("finish_reason")]
-        public global::G.FinishReason2? FinishReason { get; set; }
+        public global::G.FinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// 

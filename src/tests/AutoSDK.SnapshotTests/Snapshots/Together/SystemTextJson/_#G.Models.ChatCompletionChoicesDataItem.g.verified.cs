@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ChatCompletionChoicesDataItem.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,8 +13,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReason2JsonConverter))]
-        public global::G.FinishReason2? FinishReason { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
+        public global::G.FinishReason? FinishReason { get; set; }
 
         /// <summary>
         /// 
@@ -28,8 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logprobs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
-        public global::G.AllOf<object, global::G.LogprobsPart>? Logprobs { get; set; }
+        public global::G.LogprobsPart? Logprobs { get; set; }
 
         /// <summary>
         /// 

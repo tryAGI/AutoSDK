@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CompletionChunk.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -22,9 +20,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.FinishReason2?, object> FinishReason { get; set; }
+        public required global::G.FinishReason FinishReason { get; set; }
 
         /// <summary>
         /// 
@@ -50,9 +48,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AllOf<global::G.UsageData, object> Usage { get; set; }
+        public required global::G.UsageData? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

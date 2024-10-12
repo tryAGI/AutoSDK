@@ -1,13 +1,13 @@
-﻿//HintName: JsonConverters.FinishReason2Nullable.g.cs
+﻿//HintName: JsonConverters.FinishReason.g.cs
 #nullable enable
 
 namespace G.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class FinishReason2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FinishReason2?>
+    public sealed class FinishReasonJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.FinishReason>
     {
         /// <inheritdoc />
-        public override global::G.FinishReason2? Read(
+        public override global::G.FinishReason Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -19,7 +19,7 @@ namespace G.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::G.FinishReason2Extensions.ToEnum(stringValue);
+                        return global::G.FinishReasonExtensions.ToEnum(stringValue) ?? default;
                     }
                     
                     break;
@@ -27,7 +27,7 @@ namespace G.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::G.FinishReason2)numValue;
+                    return (global::G.FinishReason)numValue;
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -39,19 +39,12 @@ namespace G.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::G.FinishReason2? value,
+            global::G.FinishReason value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
 
-            if (value == null)
-            {
-                writer.WriteNullValue();
-            }
-            else
-            {
-                writer.WriteStringValue(global::G.FinishReason2Extensions.ToValueString(value.Value));
-            }
+            writer.WriteStringValue(global::G.FinishReasonExtensions.ToValueString(value));
         }
     }
 }

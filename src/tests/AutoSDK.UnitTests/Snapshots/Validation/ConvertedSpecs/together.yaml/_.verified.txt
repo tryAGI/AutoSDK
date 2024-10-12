@@ -85,9 +85,7 @@
           index:
             type: integer
           logprobs:
-            allOf:
-              - nullable: true
-              - $ref: '#/components/schemas/LogprobsPart'
+            $ref: '#/components/schemas/LogprobsPart'
           message:
             $ref: '#/components/schemas/ChatCompletionMessage'
           seed:
@@ -168,9 +166,7 @@
         system_fingerprint:
           type: string
         usage:
-          allOf:
-            - $ref: '#/components/schemas/UsageData'
-            - nullable: true
+          $ref: '#/components/schemas/UsageData'
       required:
         - id
         - object
@@ -515,9 +511,7 @@
           title: CompletionChoices
           type: array
         finish_reason:
-          allOf:
-            - $ref: '#/components/schemas/FinishReason'
-            - nullable: true
+          $ref: '#/components/schemas/FinishReason'
         id:
           type: string
         seed:
@@ -525,9 +519,7 @@
         token:
           $ref: '#/components/schemas/CompletionToken'
         usage:
-          allOf:
-            - $ref: '#/components/schemas/UsageData'
-            - nullable: true
+          $ref: '#/components/schemas/UsageData'
       required:
         - id
         - token
