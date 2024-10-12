@@ -132,7 +132,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.PatchCurrentWorkspaceMemberApiV1WorkspacesCurrentMembersIdentityIdPatchResponse> PatchCurrentWorkspaceMemberAsync(
             global::System.Guid identityId,
             global::System.Guid roleId,
-            global::G.AnyOf<bool?, object>? readOnly = default,
+            bool? readOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.IdentityPatch

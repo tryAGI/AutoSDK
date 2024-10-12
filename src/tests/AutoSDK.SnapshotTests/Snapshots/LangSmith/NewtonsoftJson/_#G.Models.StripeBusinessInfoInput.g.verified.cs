@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.StripeBusinessInfoInput.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,22 +10,22 @@ namespace G
     public sealed partial class StripeBusinessInfoInput
     {
         /// <summary>
-        /// 
+        /// Stripe customer billing information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("company_info")]
-        public global::G.AnyOf<global::G.StripeBusinessBillingInfo, object>? CompanyInfo { get; set; }
+        public global::G.StripeBusinessBillingInfo? CompanyInfo { get; set; }
 
         /// <summary>
-        /// 
+        /// Stripe tax ID.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tax_id")]
-        public global::G.AnyOf<global::G.StripeTaxId, object>? TaxId { get; set; }
+        public global::G.StripeTaxId? TaxId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("invoice_email")]
-        public global::G.AnyOf<string, object>? InvoiceEmail { get; set; }
+        public string? InvoiceEmail { get; set; }
 
         /// <summary>
         /// Default Value: false

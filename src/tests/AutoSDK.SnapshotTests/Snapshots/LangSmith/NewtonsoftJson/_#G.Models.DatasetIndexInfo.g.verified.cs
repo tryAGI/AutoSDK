@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.DatasetIndexInfo.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,13 +19,13 @@ namespace G
         /// Default Value: latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag")]
-        public global::G.AnyOf<string, object>? Tag { get; set; } = "latest";
+        public string? Tag { get; set; } = "latest";
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_updated_version")]
-        public global::G.AnyOf<global::System.DateTime?, object>? LastUpdatedVersion { get; set; }
+        public global::System.DateTime? LastUpdatedVersion { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

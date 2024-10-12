@@ -15,36 +15,35 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::G.AnyOf<string, global::G.Missing, object>? Name { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<string, global::G.Missing>? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::G.AnyOf<object, global::G.Missing, object>? InputsSchemaDefinition { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<object, global::G.Missing>? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_schema_definition")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::G.AnyOf<object, global::G.Missing, object>? OutputsSchemaDefinition { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<object, global::G.Missing>? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("patch_examples")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>, object>? PatchExamples { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? PatchExamples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

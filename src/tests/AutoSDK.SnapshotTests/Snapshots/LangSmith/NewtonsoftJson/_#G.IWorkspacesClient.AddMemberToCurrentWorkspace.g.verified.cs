@@ -27,8 +27,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Identity> AddMemberToCurrentWorkspaceAsync(
             global::System.Guid userId,
-            global::G.AnyOf<bool?, object>? readOnly = default,
-            global::G.AnyOf<global::System.Guid?, object>? roleId = default,
+            bool? readOnly = default,
+            global::System.Guid? roleId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

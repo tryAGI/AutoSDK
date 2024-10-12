@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RunGroupRequest.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,19 +25,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
-        public global::G.AnyOf<string, object>? Filter { get; set; }
+        public string? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         /// Default Value: 0

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CommitManifestResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("examples")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RepoExampleResponse>, object>? Examples { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepoExampleResponse>? Examples { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

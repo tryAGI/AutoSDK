@@ -30,9 +30,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CreateRepoResponse> CreateRepoAsync(
             string repoHandle,
             bool isPublic,
-            global::G.AnyOf<string, object>? description = default,
-            global::G.AnyOf<string, object>? readme = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
+            string? description = default,
+            string? readme = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

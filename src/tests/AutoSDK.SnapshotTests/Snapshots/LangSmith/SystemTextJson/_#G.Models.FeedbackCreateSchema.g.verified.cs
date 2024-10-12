@@ -34,57 +34,52 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory4))]
-        public global::G.AnyOf<double?, int?, bool?, object>? Score { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
+        public global::G.AnyOf<double?, int?, bool?>? Score { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory6))]
-        public global::G.AnyOf<double?, int?, bool?, string, object, object>? Value { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory5))]
+        public global::G.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Comment { get; set; }
+        public string? Comment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("correction")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::G.AnyOf<object, string, object>? Correction { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<object, string>? Correction { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_group_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? FeedbackGroupId { get; set; }
+        public global::System.Guid? FeedbackGroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("comparative_experiment_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? ComparativeExperimentId { get; set; }
+        public global::System.Guid? ComparativeExperimentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? RunId { get; set; }
+        public global::System.Guid? RunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
@@ -96,15 +91,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory5))]
-        public global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource, object>? FeedbackSource { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory4))]
+        public global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource>? FeedbackSource { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.FeedbackConfig, object>? FeedbackConfig { get; set; }
+        public global::G.FeedbackConfig? FeedbackConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -130,8 +130,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SSOProvider> CreateSsoSettingsAsync(
             global::System.Guid defaultWorkspaceRoleId,
             global::System.Collections.Generic.IList<global::System.Guid> defaultWorkspaceIds,
-            global::G.AnyOf<string, object>? metadataXml = default,
-            global::G.AnyOf<string, object>? metadataUrl = default,
+            string? metadataXml = default,
+            string? metadataUrl = default,
             global::System.Collections.Generic.Dictionary<string, string>? attributeMapping = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

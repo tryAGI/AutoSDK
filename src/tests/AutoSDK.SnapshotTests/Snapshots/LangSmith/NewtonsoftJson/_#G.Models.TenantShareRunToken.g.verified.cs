@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.TenantShareRunToken.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -39,25 +37,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_name")]
-        public global::G.AnyOf<string, object>? RunName { get; set; }
+        public string? RunName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type")]
-        public global::G.AnyOf<string, object>? RunType { get; set; }
+        public string? RunType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_name")]
-        public global::G.AnyOf<string, object>? SessionName { get; set; }
+        public string? SessionName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

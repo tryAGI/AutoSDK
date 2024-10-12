@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.PlaygroundRunOverDatasetRequestSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,25 +25,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_id")]
-        public global::G.AnyOf<string, object>? RunId { get; set; }
+        public string? RunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repo_id")]
-        public global::G.AnyOf<string, object>? RepoId { get; set; }
+        public string? RepoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>, object>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PlaygroundRunOverDatasetRequestSchemaTool>? Tools { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::G.AnyOf<string, object>? ToolChoice { get; set; }
+        public string? ToolChoice { get; set; }
 
         /// <summary>
         /// Configuration for a Runnable.
@@ -57,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("project_name")]
-        public global::G.AnyOf<string, object>? ProjectName { get; set; }
+        public string? ProjectName { get; set; }
 
         /// <summary>
         /// 

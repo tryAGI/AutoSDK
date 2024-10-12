@@ -121,7 +121,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="trace"></param>
         /// <param name="parentRun"></param>
-        /// <param name="runType"></param>
+        /// <param name="runType">
+        /// Enum for run types.
+        /// </param>
         /// <param name="session"></param>
         /// <param name="referenceExample"></param>
         /// <param name="executionOrder"></param>
@@ -133,7 +135,9 @@ namespace G
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
         /// <param name="isRoot"></param>
-        /// <param name="dataSourceType"></param>
+        /// <param name="dataSourceType">
+        /// Enum for run data source types.
+        /// </param>
         /// <param name="cursor"></param>
         /// <param name="limit">
         /// Default Value: 100
@@ -147,23 +151,23 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListRunsResponse> QueryRunsAsync(
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::G.AnyOf<global::System.Guid?, object>? trace = default,
-            global::G.AnyOf<global::System.Guid?, object>? parentRun = default,
-            global::G.AnyOf<global::G.RunTypeEnum?, object>? runType = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? session = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? referenceExample = default,
-            global::G.AnyOf<int?, object>? executionOrder = default,
-            global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
-            global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::G.AnyOf<bool?, object>? error = default,
-            global::G.AnyOf<string, object>? query = default,
-            global::G.AnyOf<string, object>? filter = default,
-            global::G.AnyOf<string, object>? traceFilter = default,
-            global::G.AnyOf<string, object>? treeFilter = default,
-            global::G.AnyOf<bool?, object>? isRoot = default,
-            global::G.AnyOf<global::G.RunsFilterDataSourceTypeEnum?, object>? dataSourceType = default,
-            global::G.AnyOf<string, object>? cursor = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            global::System.Guid? trace = default,
+            global::System.Guid? parentRun = default,
+            global::G.RunTypeEnum? runType = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? session = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? referenceExample = default,
+            int? executionOrder = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
+            bool? error = default,
+            string? query = default,
+            string? filter = default,
+            string? traceFilter = default,
+            string? treeFilter = default,
+            bool? isRoot = default,
+            global::G.RunsFilterDataSourceTypeEnum? dataSourceType = default,
+            string? cursor = default,
             int? limit = 100,
             global::System.Collections.Generic.IList<global::G.RunSelect>? select = default,
             global::G.RunDateOrder? order = default,

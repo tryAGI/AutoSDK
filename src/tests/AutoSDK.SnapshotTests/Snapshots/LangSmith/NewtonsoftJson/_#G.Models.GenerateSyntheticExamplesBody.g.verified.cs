@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.GenerateSyntheticExamplesBody.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("example_ids")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? ExampleIds { get; set; }
 
         /// <summary>
         /// 

@@ -120,11 +120,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
-            global::G.AnyOf<double?, int?, bool?, object>? score = default,
-            global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
-            global::G.AnyOf<string, object>? comment = default,
-            global::G.AnyOf<object, string, object>? correction = default,
-            global::G.AnyOf<object, object>? metadata = default,
+            global::G.AnyOf<double?, int?, bool?>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string>? value = default,
+            string? comment = default,
+            global::G.AnyOf<object, string>? correction = default,
+            object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.FeedbackCreateWithTokenExtendedSchema

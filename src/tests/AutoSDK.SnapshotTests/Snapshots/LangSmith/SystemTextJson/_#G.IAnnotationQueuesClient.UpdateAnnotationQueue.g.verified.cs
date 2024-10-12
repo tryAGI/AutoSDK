@@ -35,12 +35,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
             global::System.Guid queueId,
-            global::G.AnyOf<string, object>? name = default,
-            global::G.AnyOf<string, object>? description = default,
-            global::G.AnyOf<global::System.Guid?, object>? defaultDataset = default,
-            global::G.AnyOf<int?, object>? numReviewersPerItem = default,
+            string? name = default,
+            string? description = default,
+            global::System.Guid? defaultDataset = default,
+            int? numReviewersPerItem = 1,
             bool? enableReservations = true,
-            global::G.AnyOf<int?, object>? reservationMinutes = default,
+            int? reservationMinutes = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.OneOf<object, object>? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -33,103 +33,103 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::G.OneOf<string, double?, object>? StartTime { get; set; }
+        public global::G.OneOf<string, double?>? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::G.OneOf<string, double?, object>? EndTime { get; set; }
+        public global::G.OneOf<string, double?>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.OneOf<object, object>? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::G.OneOf<string, object>? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("serialized")]
-        public global::G.OneOf<object, object>? Serialized { get; set; }
+        public object? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.OneOf<object, object>? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
+        public global::System.Guid? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_id")]
-        public global::G.OneOf<global::System.Guid?, object>? TraceId { get; set; }
+        public global::System.Guid? TraceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dotted_order")]
-        public global::G.OneOf<string, object>? DottedOrder { get; set; }
+        public string? DottedOrder { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::G.OneOf<global::System.Guid?, object>? Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::G.OneOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_name")]
-        public global::G.OneOf<string, object>? SessionName { get; set; }
+        public string? SessionName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example_id")]
-        public global::G.OneOf<global::System.Guid?, object>? ReferenceExampleId { get; set; }
+        public global::System.Guid? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_attachments")]
-        public global::G.OneOf<object, object>? InputAttachments { get; set; }
+        public object? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_attachments")]
-        public global::G.OneOf<object, object>? OutputAttachments { get; set; }
+        public object? OutputAttachments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

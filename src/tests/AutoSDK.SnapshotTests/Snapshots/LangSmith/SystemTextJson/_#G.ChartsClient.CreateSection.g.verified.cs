@@ -127,8 +127,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CustomChartsSectionResponse> CreateSectionAsync(
             string title,
-            global::G.AnyOf<string, object>? description = default,
-            global::G.AnyOf<int?, object>? index = default,
+            string? description = default,
+            int? index = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CustomChartsSectionCreate

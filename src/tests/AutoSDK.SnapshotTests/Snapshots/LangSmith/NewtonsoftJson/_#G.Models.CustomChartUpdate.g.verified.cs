@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -51,13 +51,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<object, global::G.Missing, object>? Metadata { get; set; }
+        public global::G.AnyOf<object, global::G.Missing>? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("common_filters")]
-        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? CommonFilters { get; set; }
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing>? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

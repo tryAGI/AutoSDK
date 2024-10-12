@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.OrganizationConfig.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -39,22 +37,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("startup_plan_approval_date")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? StartupPlanApprovalDate { get; set; }
+        public string? StartupPlanApprovalDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("partner_plan_approval_date")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? PartnerPlanApprovalDate { get; set; }
+        public string? PartnerPlanApprovalDate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("premier_plan_approval_date")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? PremierPlanApprovalDate { get; set; }
+        public string? PremierPlanApprovalDate { get; set; }
 
         /// <summary>
         /// Default Value: false

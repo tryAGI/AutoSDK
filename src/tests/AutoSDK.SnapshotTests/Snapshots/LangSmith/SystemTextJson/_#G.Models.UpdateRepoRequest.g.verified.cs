@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.UpdateRepoRequest.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,36 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("readme")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Readme { get; set; }
+        public string? Readme { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_public")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<bool?, object>? IsPublic { get; set; }
+        public bool? IsPublic { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_archived")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<bool?, object>? IsArchived { get; set; }
+        public bool? IsArchived { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

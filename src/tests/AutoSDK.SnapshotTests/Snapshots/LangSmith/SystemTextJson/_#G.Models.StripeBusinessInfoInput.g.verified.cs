@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.StripeBusinessInfoInput.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,25 +10,22 @@ namespace G
     public sealed partial class StripeBusinessInfoInput
     {
         /// <summary>
-        /// 
+        /// Stripe customer billing information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("company_info")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.StripeBusinessBillingInfo, object>? CompanyInfo { get; set; }
+        public global::G.StripeBusinessBillingInfo? CompanyInfo { get; set; }
 
         /// <summary>
-        /// 
+        /// Stripe tax ID.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tax_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.StripeTaxId, object>? TaxId { get; set; }
+        public global::G.StripeTaxId? TaxId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("invoice_email")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? InvoiceEmail { get; set; }
+        public string? InvoiceEmail { get; set; }
 
         /// <summary>
         /// Default Value: false

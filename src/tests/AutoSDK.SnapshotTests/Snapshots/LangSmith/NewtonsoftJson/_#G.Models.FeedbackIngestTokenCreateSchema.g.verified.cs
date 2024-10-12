@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.FeedbackIngestTokenCreateSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,16 +10,16 @@ namespace G
     public sealed partial class FeedbackIngestTokenCreateSchema
     {
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_in")]
-        public global::G.AnyOf<global::G.TimedeltaInput, object>? ExpiresIn { get; set; }
+        public global::G.TimedeltaInput? ExpiresIn { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expires_at")]
-        public global::G.AnyOf<global::System.DateTime?, object>? ExpiresAt { get; set; }
+        public global::System.DateTime? ExpiresAt { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_config")]
-        public global::G.AnyOf<global::G.FeedbackConfig, object>? FeedbackConfig { get; set; }
+        public global::G.FeedbackConfig? FeedbackConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

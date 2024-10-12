@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.StripeBusinessBillingInfo.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -18,10 +16,10 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Stripe customer address.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("address")]
-        public global::G.AnyOf<global::G.StripeCustomerAddress, object>? Address { get; set; }
+        public global::G.StripeCustomerAddress? Address { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

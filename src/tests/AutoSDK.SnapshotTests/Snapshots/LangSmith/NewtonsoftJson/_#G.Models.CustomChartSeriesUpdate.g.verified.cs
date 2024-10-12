@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CustomChartSeriesUpdate.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filters")]
-        public global::G.AnyOf<global::G.CustomChartSeriesFilters, object>? Filters { get; set; }
+        public global::G.CustomChartSeriesFilters? Filters { get; set; }
 
         /// <summary>
         /// Metrics you can chart.
@@ -33,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_key")]
-        public global::G.AnyOf<string, object>? FeedbackKey { get; set; }
+        public string? FeedbackKey { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::G.AnyOf<global::System.Guid?, object>? Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -135,7 +135,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CustomChartsSectionResponse> UpdateSectionAsync(
             global::System.Guid sectionId,
             global::G.AnyOf<string, global::G.Missing>? title = default,
-            global::G.AnyOf<string, global::G.Missing, object>? description = default,
+            global::G.AnyOf<string, global::G.Missing>? description = default,
             global::G.AnyOf<int?, global::G.Missing>? index = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CustomChartsRequestBase.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         /// Timedelta input.

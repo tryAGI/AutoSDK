@@ -22,8 +22,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<object, object>? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// 
@@ -37,120 +36,105 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory3))]
-        public global::G.OneOf<string, double?, object>? StartTime { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::G.OneOf<string, double?>? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory3))]
-        public global::G.OneOf<string, double?, object>? EndTime { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::G.OneOf<string, double?>? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<object, object>? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<string, object>? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("serialized")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<object, object>? Serialized { get; set; }
+        public object? Serialized { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<object, object>? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parent_run_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
+        public global::System.Guid? ParentRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::System.Guid?, object>? TraceId { get; set; }
+        public global::System.Guid? TraceId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dotted_order")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<string, object>? DottedOrder { get; set; }
+        public string? DottedOrder { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::System.Guid?, object>? Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<string, object>? SessionName { get; set; }
+        public string? SessionName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_example_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::System.Guid?, object>? ReferenceExampleId { get; set; }
+        public global::System.Guid? ReferenceExampleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_attachments")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<object, object>? InputAttachments { get; set; }
+        public object? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output_attachments")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<object, object>? OutputAttachments { get; set; }
+        public object? OutputAttachments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

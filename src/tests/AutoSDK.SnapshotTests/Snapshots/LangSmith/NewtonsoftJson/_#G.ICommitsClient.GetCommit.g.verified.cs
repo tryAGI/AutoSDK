@@ -29,7 +29,7 @@ namespace G
             string commit,
             bool? getExamples = false,
             bool? isView = false,
-            global::G.AnyOf<bool?, object>? includeModel = default,
+            bool? includeModel = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

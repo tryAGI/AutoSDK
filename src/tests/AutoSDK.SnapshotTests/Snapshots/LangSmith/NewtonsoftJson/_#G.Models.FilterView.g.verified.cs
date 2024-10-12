@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.FilterView.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,19 +13,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter_string")]
-        public global::G.AnyOf<string, object>? FilterString { get; set; }
+        public string? FilterString { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_filter_string")]
-        public global::G.AnyOf<string, object>? TraceFilterString { get; set; }
+        public string? TraceFilterString { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree_filter_string")]
-        public global::G.AnyOf<string, object>? TreeFilterString { get; set; }
+        public string? TreeFilterString { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 

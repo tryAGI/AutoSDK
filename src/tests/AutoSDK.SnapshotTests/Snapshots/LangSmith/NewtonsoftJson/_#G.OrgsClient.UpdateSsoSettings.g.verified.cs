@@ -135,10 +135,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SSOProvider> UpdateSsoSettingsAsync(
             global::System.Guid id,
-            global::G.AnyOf<global::System.Guid?, object>? defaultWorkspaceRoleId = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? defaultWorkspaceIds = default,
-            global::G.AnyOf<string, object>? metadataUrl = default,
-            global::G.AnyOf<string, object>? metadataXml = default,
+            global::System.Guid? defaultWorkspaceRoleId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? defaultWorkspaceIds = default,
+            string? metadataUrl = default,
+            string? metadataXml = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.SSOSettingsUpdate

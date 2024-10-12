@@ -134,7 +134,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.GenerateApiV1DatasetsDatasetIdGeneratePostResponse> GenerateAsync(
             global::System.Guid datasetId,
             int numExamples,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? exampleIds = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleIds = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.GenerateSyntheticExamplesBody

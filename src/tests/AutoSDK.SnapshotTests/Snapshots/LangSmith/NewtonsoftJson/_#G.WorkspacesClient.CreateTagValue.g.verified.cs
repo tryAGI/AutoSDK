@@ -132,7 +132,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TagValue> CreateTagValueAsync(
             global::System.Guid tagKeyId,
             string value,
-            global::G.AnyOf<string, object>? description = default,
+            string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TagValueCreate

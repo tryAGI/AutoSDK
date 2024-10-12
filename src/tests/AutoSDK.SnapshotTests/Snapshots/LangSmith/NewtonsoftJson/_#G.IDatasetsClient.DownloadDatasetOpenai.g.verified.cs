@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DownloadDatasetOpenaiApiV1DatasetsDatasetIdOpenaiGetResponse> DownloadDatasetOpenaiAsync(
             global::System.Guid datasetId,
-            global::G.AnyOf<global::System.DateTime?, object>? asOf = default,
+            global::System.DateTime? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

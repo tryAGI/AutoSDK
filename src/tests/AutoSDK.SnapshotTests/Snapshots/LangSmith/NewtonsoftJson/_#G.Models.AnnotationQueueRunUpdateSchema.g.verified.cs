@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.AnnotationQueueRunUpdateSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_reviewed_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? LastReviewedTime { get; set; }
+        public global::System.DateTime? LastReviewedTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("added_at")]
-        public global::G.AnyOf<global::System.DateTime?, object>? AddedAt { get; set; }
+        public global::System.DateTime? AddedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

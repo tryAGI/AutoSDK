@@ -128,7 +128,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UsageLimit> UpsertUsageLimitAsync(
-            global::G.UsageLimitType2 limitType,
+            global::G.UsageLimitType limitType,
             int limitValue,
             global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)

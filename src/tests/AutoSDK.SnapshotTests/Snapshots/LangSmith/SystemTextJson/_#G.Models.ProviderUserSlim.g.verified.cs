@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ProviderUserSlim.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -22,8 +20,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.AuthProvider?, object>? Provider { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthProviderJsonConverter))]
+        public global::G.AuthProvider? Provider { get; set; }
 
         /// <summary>
         /// 
@@ -36,15 +34,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("saml_provider_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? SamlProviderId { get; set; }
+        public global::System.Guid? SamlProviderId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider_user_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? ProviderUserId { get; set; }
+        public global::System.Guid? ProviderUserId { get; set; }
 
         /// <summary>
         /// 
@@ -64,22 +60,19 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? FullName { get; set; }
+        public string? FullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("email_confirmed_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? EmailConfirmedAt { get; set; }
+        public global::System.DateTime? EmailConfirmedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -78,33 +78,51 @@ public static class OpenApi31Support
             {
                 node["openapi"] = "3.0.3";
             }
-            
-            if (keyString == "anyOf" &&
-                entry.Value is JsonArray anyOfList && anyOfList.Count == 2 &&
+
+            if (keyString is "anyOf" or "oneOf" &&
+                entry.Value is JsonArray { Count: 2 } anyOfList &&
                 anyOfList.Any(v =>
                     v is JsonObject objects &&
                     objects.ContainsKey("type") &&
-                    objects["type"] == null))
+                    objects["type"]?.ToJsonString() == "\"null\""))
             {
                 var first = anyOfList[0] as JsonObject;
                 var second = anyOfList[1] as JsonObject;
                 var firstType = first?["type"];
                 var secondType = second?["type"];
             
-                if (firstType == null || secondType == null)
+                // Replace "anyOf" with "type: string, nullable: true"
+                node["type"] =  firstType?.ToJsonString() == "\"null\""
+                    ? secondType?.DeepClone()
+                    : firstType?.DeepClone();
+                node["nullable"] = true;
+        
+                var nonNullObject = firstType?.ToJsonString() == "\"null\""
+                    ? second
+                    : first;
+                foreach (var kvp in nonNullObject!)
                 {
-                    // Replace "anyOf" with "type: string, nullable: true"
-                    node["type"] = firstType?.ToString() ?? secondType?.ToString();
-                    node["nullable"] = true;
-            
-                    var nonNullObject = firstType != null ? first : second;
-                    foreach (var kvp in nonNullObject!)
-                    {
-                        node[kvp.Key] = kvp.Value;
-                    }
-                    
-                    node.Remove(keyString);
+                    node[kvp.Key] = kvp.Value?.DeepClone();
                 }
+                
+                node.Remove(keyString);
+            }
+            
+            if (keyString is "anyOf" or "oneOf" &&
+                entry.Value is JsonArray { Count: > 2 } anyOfList3 &&
+                anyOfList3.Any(v =>
+                    v is JsonObject objects &&
+                    objects.ContainsKey("type") &&
+                    objects["type"]?.ToJsonString() == "\"null\""))
+            {
+                node[keyString] = new JsonArray(anyOfList3
+                    .Where(v =>
+                        v is JsonObject objects &&
+                        (!objects.ContainsKey("type") ||
+                        objects["type"]?.ToJsonString() != "\"null\""))
+                    .Select(v => v?.DeepClone())
+                    .ToArray());
+                node["nullable"] = true;
             }
             
             if (keyString == "exclusiveMinimum" && entry.Value is not JsonValue)
@@ -233,7 +251,7 @@ public static class OpenApi31Support
             }
             
             var keyString = entry.Key as string;
-            if (keyString == "anyOf" &&
+            if (keyString is "anyOf" or "oneOf" &&
                 entry.Value is List<object?> anyOfList && anyOfList.Count == 2 &&
                 anyOfList.Any(v =>
                     v is Dictionary<object, object?> objects &&
@@ -284,6 +302,16 @@ public static class OpenApi31Support
                 node[new string("exclusiveMaximum".ToCharArray())] = true;
             }
             
+            // Remove "prefixItems"
+            if (keyString == "prefixItems" && entry.Value is List<object?> { Count: > 0 } prefixItemsList)
+            {
+                node.Remove(keyString);
+                if (!node.ContainsKey("items"))
+                {
+                    node[new string("items".ToCharArray())] = prefixItemsList[0];
+                }
+            }
+
             // Identify "type" that is a list containing "string" and "null"
             if (keyString == "type" &&
                 entry.Value is List<object?> typeList &&

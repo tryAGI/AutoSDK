@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.AnnotationQueueCreateSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -39,25 +37,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_dataset")]
-        public global::G.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
+        public global::System.Guid? DefaultDataset { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_reviewers_per_item")]
-        public global::G.AnyOf<int?, object>? NumReviewersPerItem { get; set; } = 1;
+        public int? NumReviewersPerItem { get; set; } = 1;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enable_reservations")]
-        public global::G.AnyOf<bool?, object>? EnableReservations { get; set; } = true;
+        public bool? EnableReservations { get; set; } = true;
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reservation_minutes")]
-        public global::G.AnyOf<int?, object>? ReservationMinutes { get; set; } = 1;
+        public int? ReservationMinutes { get; set; } = 1;
 
         /// <summary>
         /// 

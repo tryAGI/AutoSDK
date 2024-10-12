@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("callbacks")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunnableConfigCallback>, global::G.RunnableConfigCallbacks, object>? Callbacks { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunnableConfigCallback>, global::G.RunnableConfigCallbacks>? Callbacks { get; set; }
 
         /// <summary>
         /// 
@@ -39,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_concurrency")]
-        public global::G.AnyOf<int?, object>? MaxConcurrency { get; set; }
+        public int? MaxConcurrency { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? RunId { get; set; }
+        public global::System.Guid? RunId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

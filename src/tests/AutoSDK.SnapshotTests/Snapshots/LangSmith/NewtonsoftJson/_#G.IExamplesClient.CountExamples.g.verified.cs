@@ -22,13 +22,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<int> CountExamplesAsync(
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::G.AnyOf<global::System.DateTime?, string>? asOf = default,
-            global::G.AnyOf<string, object>? metadata = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? fullTextContains = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? splits = default,
-            global::G.AnyOf<global::System.Guid?, object>? dataset = default,
-            global::G.AnyOf<string, object>? filter = default,
+            string? metadata = default,
+            global::System.Collections.Generic.IList<string>? fullTextContains = default,
+            global::System.Collections.Generic.IList<string>? splits = default,
+            global::System.Guid? dataset = default,
+            string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

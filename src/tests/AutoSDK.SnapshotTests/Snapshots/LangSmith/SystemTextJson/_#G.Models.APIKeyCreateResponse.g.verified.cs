@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.APIKeyCreateResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
@@ -49,8 +46,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_used_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? LastUsedAt { get; set; }
+        public global::System.DateTime? LastUsedAt { get; set; }
 
         /// <summary>
         /// 

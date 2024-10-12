@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.TTLSettings.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,16 +13,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
+        public global::System.Guid? TenantId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_trace_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TraceTier3JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TraceTierJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.TraceTier3 DefaultTraceTier { get; set; }
+        public required global::G.TraceTier DefaultTraceTier { get; set; }
 
         /// <summary>
         /// Default Value: false

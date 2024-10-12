@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.Role.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -39,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
+        public global::System.Guid? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -51,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
-        public global::G.AnyOf<global::G.AccessScope?, object>? AccessScope { get; set; }
+        public global::G.AccessScope? AccessScope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

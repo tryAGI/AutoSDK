@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.AppHubCrudTenantsTenant.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -36,8 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_handle")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? TenantHandle { get; set; }
+        public string? TenantHandle { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

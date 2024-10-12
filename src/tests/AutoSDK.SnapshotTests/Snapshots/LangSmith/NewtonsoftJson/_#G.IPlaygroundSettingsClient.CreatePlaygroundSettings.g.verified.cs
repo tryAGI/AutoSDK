@@ -26,7 +26,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PlaygroundSettingsResponse> CreatePlaygroundSettingsAsync(
             object settings,
-            global::G.AnyOf<string, object>? name = default,
+            string? name = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.MonitorGroupSpec.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -22,15 +20,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Tag { get; set; }
+        public string? Tag { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.MetadataKeyValue, object>? Metadata { get; set; }
+        public global::G.MetadataKeyValue? Metadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

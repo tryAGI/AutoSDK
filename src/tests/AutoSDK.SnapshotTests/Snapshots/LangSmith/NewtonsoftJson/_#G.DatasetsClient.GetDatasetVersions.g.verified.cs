@@ -9,16 +9,16 @@ namespace G
         partial void PrepareGetDatasetVersionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::G.AnyOf<string, object>? search,
-            ref global::G.AnyOf<global::System.Guid?, object>? example,
+            ref string? search,
+            ref global::System.Guid? example,
             ref int? limit,
             ref int? offset);
         partial void PrepareGetDatasetVersionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
-            global::G.AnyOf<string, object>? search,
-            global::G.AnyOf<global::System.Guid?, object>? example,
+            string? search,
+            global::System.Guid? example,
             int? limit,
             int? offset);
         partial void ProcessGetDatasetVersionsResponse(
@@ -47,8 +47,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.DatasetVersion>> GetDatasetVersionsAsync(
             global::System.Guid datasetId,
-            global::G.AnyOf<string, object>? search = default,
-            global::G.AnyOf<global::System.Guid?, object>? example = default,
+            string? search = default,
+            global::System.Guid? example = default,
             int? limit = 100,
             int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -67,8 +67,8 @@ namespace G
                 path: $"/api/v1/datasets/{datasetId}/versions",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("search", search?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("example", example?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("search", search) 
+                .AddOptionalParameter("example", example?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 ; 

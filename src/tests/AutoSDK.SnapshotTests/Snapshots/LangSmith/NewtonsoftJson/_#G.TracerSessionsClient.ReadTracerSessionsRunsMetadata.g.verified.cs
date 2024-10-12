@@ -9,16 +9,16 @@ namespace G
         partial void PrepareReadTracerSessionsRunsMetadataArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid sessionId,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
-            ref global::G.AnyOf<global::System.DateTime?, object>? startTime,
+            global::System.Collections.Generic.IList<string>? metadataKeys,
+            ref global::System.DateTime? startTime,
             ref int? k,
             ref bool? rootRunsOnly);
         partial void PrepareReadTracerSessionsRunsMetadataRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid sessionId,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys,
-            global::G.AnyOf<global::System.DateTime?, object>? startTime,
+            global::System.Collections.Generic.IList<string>? metadataKeys,
+            global::System.DateTime? startTime,
             int? k,
             bool? rootRunsOnly);
         partial void ProcessReadTracerSessionsRunsMetadataResponse(
@@ -47,8 +47,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>> ReadTracerSessionsRunsMetadataAsync(
             global::System.Guid sessionId,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys = default,
-            global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
+            global::System.Collections.Generic.IList<string>? metadataKeys = default,
+            global::System.DateTime? startTime = default,
             int? k = 10,
             bool? rootRunsOnly = false,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -58,7 +58,7 @@ namespace G
             PrepareReadTracerSessionsRunsMetadataArguments(
                 httpClient: _httpClient,
                 sessionId: ref sessionId,
-                metadataKeys: ref metadataKeys,
+                metadataKeys: metadataKeys,
                 startTime: ref startTime,
                 k: ref k,
                 rootRunsOnly: ref rootRunsOnly);
@@ -67,8 +67,8 @@ namespace G
                 path: $"/api/v1/sessions/{sessionId}/metadata",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("metadata_keys", metadataKeys?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("start_time", startTime?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("metadata_keys", metadataKeys, delimiter: ",", explode: true) 
+                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 .AddOptionalParameter("k", k?.ToString()) 
                 .AddOptionalParameter("root_runs_only", rootRunsOnly?.ToString()) 
                 ; 

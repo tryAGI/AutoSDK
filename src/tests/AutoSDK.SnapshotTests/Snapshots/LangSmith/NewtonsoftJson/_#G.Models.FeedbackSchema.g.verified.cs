@@ -33,49 +33,49 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("score")]
-        public global::G.AnyOf<double?, int?, bool?, object>? Score { get; set; }
+        public global::G.AnyOf<double?, int?, bool?>? Score { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::G.AnyOf<double?, int?, bool?, string, object, object>? Value { get; set; }
+        public global::G.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment")]
-        public global::G.AnyOf<string, object>? Comment { get; set; }
+        public string? Comment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("correction")]
-        public global::G.AnyOf<object, string, object>? Correction { get; set; }
+        public global::G.AnyOf<object, string>? Correction { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_group_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? FeedbackGroupId { get; set; }
+        public global::System.Guid? FeedbackGroupId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comparative_experiment_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? ComparativeExperimentId { get; set; }
+        public global::System.Guid? ComparativeExperimentId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? RunId { get; set; }
+        public global::System.Guid? RunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// 
@@ -84,10 +84,10 @@ namespace G
         public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The feedback source loaded from the database.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_source")]
-        public global::G.AnyOf<global::G.FeedbackSource4, object>? FeedbackSource { get; set; }
+        public global::G.FeedbackSource3? FeedbackSource { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

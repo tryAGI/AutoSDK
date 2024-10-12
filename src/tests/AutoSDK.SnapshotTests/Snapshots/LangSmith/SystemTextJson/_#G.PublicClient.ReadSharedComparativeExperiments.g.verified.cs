@@ -9,8 +9,8 @@ namespace G
         partial void PrepareReadSharedComparativeExperimentsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
-            ref global::G.AnyOf<string, object>? name,
-            ref global::G.AnyOf<string, object>? nameContains,
+            ref string? name,
+            ref string? nameContains,
             ref int? offset,
             ref int? limit,
             ref global::G.SortByComparativeExperimentColumn? sortBy,
@@ -19,8 +19,8 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
-            global::G.AnyOf<string, object>? name,
-            global::G.AnyOf<string, object>? nameContains,
+            string? name,
+            string? nameContains,
             int? offset,
             int? limit,
             global::G.SortByComparativeExperimentColumn? sortBy,
@@ -57,8 +57,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PublicComparativeExperiment>> ReadSharedComparativeExperimentsAsync(
             global::System.Guid shareToken,
-            global::G.AnyOf<string, object>? name = default,
-            global::G.AnyOf<string, object>? nameContains = default,
+            string? name = default,
+            string? nameContains = default,
             int? offset = 0,
             int? limit = 100,
             global::G.SortByComparativeExperimentColumn? sortBy = default,
@@ -81,8 +81,8 @@ namespace G
                 path: $"/api/v1/public/{shareToken}/datasets/comparative",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name", name) 
+                .AddOptionalParameter("name_contains", nameContains) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 

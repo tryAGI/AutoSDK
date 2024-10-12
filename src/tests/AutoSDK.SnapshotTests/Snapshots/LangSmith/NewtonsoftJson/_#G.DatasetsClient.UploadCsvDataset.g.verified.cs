@@ -81,7 +81,7 @@ namespace G
             if (request.Name != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent(request.Name?.Value1?.ToString() ?? request.Name?.Value2?.ToString() ?? string.Empty),
+                    content: new global::System.Net.Http.StringContent($"{request.Name}"),
                     name: "name");
             } 
             if (request.DataType != default)
@@ -99,7 +99,7 @@ namespace G
             if (request.Description != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent(request.Description?.Value1?.ToString() ?? request.Description?.Value2?.ToString() ?? string.Empty),
+                    content: new global::System.Net.Http.StringContent($"{request.Description}"),
                     name: "description");
             }
             httpRequest.Content = __httpRequestContent;
@@ -170,10 +170,10 @@ namespace G
             byte[] file,
             string filename,
             global::System.Collections.Generic.IList<string> inputKeys,
-            global::G.AnyOf<string, object>? name = default,
+            string? name = default,
             global::G.DataType? dataType = default,
             global::System.Collections.Generic.IList<string>? outputKeys = default,
-            global::G.AnyOf<string, object>? description = default,
+            string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.BodyUploadCsvDatasetApiV1DatasetsUploadPost

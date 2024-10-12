@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.TracerSessionWithoutVirtualFields.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,15 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("extra")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<object, object>? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -41,29 +37,26 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_dataset_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? DefaultDatasetId { get; set; }
+        public global::System.Guid? DefaultDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reference_dataset_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? ReferenceDatasetId { get; set; }
+        public global::System.Guid? ReferenceDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("trace_tier")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.TraceTier3?, object>? TraceTier { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TraceTierJsonConverter))]
+        public global::G.TraceTier? TraceTier { get; set; }
 
         /// <summary>
         /// 
@@ -83,8 +76,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_run_start_time_live")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? LastRunStartTimeLive { get; set; }
+        public global::System.DateTime? LastRunStartTimeLive { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

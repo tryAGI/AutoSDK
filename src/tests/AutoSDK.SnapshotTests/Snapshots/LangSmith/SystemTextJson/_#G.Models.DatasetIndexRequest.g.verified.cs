@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.DatasetIndexRequest.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,8 +13,7 @@ namespace G
         /// Default Value: latest
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Tag { get; set; } = "latest";
+        public string? Tag { get; set; } = "latest";
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

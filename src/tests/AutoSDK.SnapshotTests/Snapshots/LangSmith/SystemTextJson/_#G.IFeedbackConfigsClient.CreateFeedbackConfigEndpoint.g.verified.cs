@@ -28,7 +28,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.FeedbackConfigSchema> CreateFeedbackConfigEndpointAsync(
             string feedbackKey,
             global::G.FeedbackConfig feedbackConfig,
-            global::G.AnyOf<bool?, object>? isLowerScoreBetter = default,
+            bool? isLowerScoreBetter = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

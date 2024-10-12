@@ -137,12 +137,12 @@ namespace G
             global::System.Collections.Generic.IList<global::G.ExperimentResultRow> results,
             global::System.DateTime experimentStartTime,
             global::System.DateTime experimentEndTime,
-            global::G.AnyOf<string, object>? experimentDescription = default,
-            global::G.AnyOf<global::System.Guid?, object>? datasetId = default,
-            global::G.AnyOf<string, object>? datasetName = default,
-            global::G.AnyOf<string, object>? datasetDescription = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>, object>? summaryExperimentScores = default,
-            global::G.AnyOf<object, object>? experimentMetadata = default,
+            string? experimentDescription = default,
+            global::System.Guid? datasetId = default,
+            string? datasetName = default,
+            string? datasetDescription = default,
+            global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>? summaryExperimentScores = default,
+            object? experimentMetadata = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ExperimentResultsUpload

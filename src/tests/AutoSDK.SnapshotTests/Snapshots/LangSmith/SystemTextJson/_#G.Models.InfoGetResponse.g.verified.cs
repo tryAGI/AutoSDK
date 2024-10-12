@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.InfoGetResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -22,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("license_expiration_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? LicenseExpirationTime { get; set; }
+        public global::System.DateTime? LicenseExpirationTime { get; set; }
 
         /// <summary>
         /// Batch ingest config.

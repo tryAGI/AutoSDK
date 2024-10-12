@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.Identity.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -29,8 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tenant_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
+        public global::System.Guid? TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -50,8 +47,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
+        public global::System.Guid? LsUserId { get; set; }
 
         /// <summary>
         /// 
@@ -64,15 +60,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
+        public global::System.Guid? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? RoleName { get; set; }
+        public string? RoleName { get; set; }
 
         /// <summary>
         /// 

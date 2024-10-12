@@ -142,7 +142,7 @@ namespace G
             object inputs,
             int? limit = 5,
             bool? debug = false,
-            global::G.AnyOf<string, object>? filter = default,
+            string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.SearchDatasetRequest

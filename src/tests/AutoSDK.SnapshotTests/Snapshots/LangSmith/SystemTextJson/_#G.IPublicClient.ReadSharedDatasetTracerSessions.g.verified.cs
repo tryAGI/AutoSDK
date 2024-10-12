@@ -33,17 +33,17 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
             global::System.Guid shareToken,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::G.AnyOf<string, object>? name = default,
-            global::G.AnyOf<string, object>? nameContains = default,
-            global::G.AnyOf<string, object>? datasetVersion = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            string? name = default,
+            string? nameContains = default,
+            string? datasetVersion = default,
             global::G.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
-            global::G.AnyOf<string, object>? sortByFeedbackKey = default,
+            string? sortByFeedbackKey = default,
             int? offset = 0,
             int? limit = 100,
             bool? facets = false,
-            global::G.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

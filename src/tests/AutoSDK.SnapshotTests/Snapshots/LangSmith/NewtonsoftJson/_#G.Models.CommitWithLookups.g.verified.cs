@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CommitWithLookups.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -33,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? ParentId { get; set; }
+        public global::System.Guid? ParentId { get; set; }
 
         /// <summary>
         /// 
@@ -75,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_commit_hash")]
-        public global::G.AnyOf<string, object>? ParentCommitHash { get; set; }
+        public string? ParentCommitHash { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

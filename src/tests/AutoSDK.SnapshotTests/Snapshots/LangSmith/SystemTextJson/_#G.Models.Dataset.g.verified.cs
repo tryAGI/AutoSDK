@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.Dataset.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -22,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -35,29 +32,26 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs_schema_definition")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<object, object>? InputsSchemaDefinition { get; set; }
+        public object? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs_schema_definition")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<object, object>? OutputsSchemaDefinition { get; set; }
+        public object? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("externally_managed")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<bool?, object>? ExternallyManaged { get; set; } = false;
+        public bool? ExternallyManaged { get; set; } = false;
 
         /// <summary>
-        /// Default Value: kv
+        /// Enum for dataset data types.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.DataType?, object>? DataType { get; set; } = global::G.DataType.Kv;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DataTypeJsonConverter))]
+        public global::G.DataType? DataType { get; set; }
 
         /// <summary>
         /// 
@@ -98,8 +92,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_session_start_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? LastSessionStartTime { get; set; }
+        public global::System.DateTime? LastSessionStartTime { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ListPublicRunsResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cursors", Required = global::Newtonsoft.Json.Required.Always)]
-        public object Cursors { get; set; } = default!;
+        public global::System.Collections.Generic.Dictionary<string, string?> Cursors { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parsed_query")]
-        public global::G.AnyOf<string, object>? ParsedQuery { get; set; }
+        public string? ParsedQuery { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

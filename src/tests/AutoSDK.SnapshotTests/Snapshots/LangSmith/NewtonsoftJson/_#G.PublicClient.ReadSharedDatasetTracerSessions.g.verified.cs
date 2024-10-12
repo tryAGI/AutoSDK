@@ -9,32 +9,32 @@ namespace G
         partial void PrepareReadSharedDatasetTracerSessionsArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            ref global::G.AnyOf<string, object>? name,
-            ref global::G.AnyOf<string, object>? nameContains,
-            ref global::G.AnyOf<string, object>? datasetVersion,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            ref string? name,
+            ref string? nameContains,
+            ref string? datasetVersion,
             ref global::G.SessionSortableColumns? sortBy,
             ref bool? sortByDesc,
-            ref global::G.AnyOf<string, object>? sortByFeedbackKey,
+            ref string? sortByFeedbackKey,
             ref int? offset,
             ref int? limit,
             ref bool? facets,
-            ref global::G.AnyOf<string, object>? accept);
+            ref string? accept);
         partial void PrepareReadSharedDatasetTracerSessionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
-            global::G.AnyOf<string, object>? name,
-            global::G.AnyOf<string, object>? nameContains,
-            global::G.AnyOf<string, object>? datasetVersion,
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            string? name,
+            string? nameContains,
+            string? datasetVersion,
             global::G.SessionSortableColumns? sortBy,
             bool? sortByDesc,
-            global::G.AnyOf<string, object>? sortByFeedbackKey,
+            string? sortByFeedbackKey,
             int? offset,
             int? limit,
             bool? facets,
-            global::G.AnyOf<string, object>? accept);
+            string? accept);
         partial void ProcessReadSharedDatasetTracerSessionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -72,17 +72,17 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadSharedDatasetTracerSessionsAsync(
             global::System.Guid shareToken,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
-            global::G.AnyOf<string, object>? name = default,
-            global::G.AnyOf<string, object>? nameContains = default,
-            global::G.AnyOf<string, object>? datasetVersion = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? id = default,
+            string? name = default,
+            string? nameContains = default,
+            string? datasetVersion = default,
             global::G.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
-            global::G.AnyOf<string, object>? sortByFeedbackKey = default,
+            string? sortByFeedbackKey = default,
             int? offset = 0,
             int? limit = 100,
             bool? facets = false,
-            global::G.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -90,7 +90,7 @@ namespace G
             PrepareReadSharedDatasetTracerSessionsArguments(
                 httpClient: _httpClient,
                 shareToken: ref shareToken,
-                id: ref id,
+                id: id,
                 name: ref name,
                 nameContains: ref nameContains,
                 datasetVersion: ref datasetVersion,
@@ -117,13 +117,13 @@ namespace G
                 path: $"/api/v1/public/{shareToken}/datasets/sessions",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("dataset_version", datasetVersion?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("id", id, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("name", name) 
+                .AddOptionalParameter("name_contains", nameContains) 
+                .AddOptionalParameter("dataset_version", datasetVersion) 
                 .AddOptionalParameter("sort_by", sortByValue?.ToString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
-                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("facets", facets?.ToString()) 

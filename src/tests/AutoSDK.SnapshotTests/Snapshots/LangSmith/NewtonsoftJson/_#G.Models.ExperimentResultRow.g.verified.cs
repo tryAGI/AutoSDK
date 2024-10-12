@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ExperimentResultRow.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("row_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? RowId { get; set; }
+        public global::System.Guid? RowId { get; set; }
 
         /// <summary>
         /// 
@@ -27,19 +25,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("expected_outputs")]
-        public global::G.AnyOf<object, object>? ExpectedOutputs { get; set; }
+        public object? ExpectedOutputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("actual_outputs")]
-        public global::G.AnyOf<object, object>? ActualOutputs { get; set; }
+        public object? ActualOutputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluation_scores")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>, object>? EvaluationScores { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>? EvaluationScores { get; set; }
 
         /// <summary>
         /// 
@@ -57,19 +55,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_name")]
-        public global::G.AnyOf<string, object>? RunName { get; set; }
+        public string? RunName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::G.AnyOf<string, object>? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_metadata")]
-        public global::G.AnyOf<object, object>? RunMetadata { get; set; }
+        public object? RunMetadata { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

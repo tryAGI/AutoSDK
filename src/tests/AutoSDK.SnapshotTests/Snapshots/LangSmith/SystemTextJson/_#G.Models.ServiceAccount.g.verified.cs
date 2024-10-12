@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ServiceAccount.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -50,9 +48,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_workspace_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<global::System.Guid?, object> DefaultWorkspaceId { get; set; }
+        public required global::System.Guid? DefaultWorkspaceId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

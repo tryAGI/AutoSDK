@@ -22,8 +22,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>> ReadTracerSessionsRunsMetadataAsync(
             global::System.Guid sessionId,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? metadataKeys = default,
-            global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
+            global::System.Collections.Generic.IList<string>? metadataKeys = default,
+            global::System.DateTime? startTime = default,
             int? k = 10,
             bool? rootRunsOnly = false,
             global::System.Threading.CancellationToken cancellationToken = default);

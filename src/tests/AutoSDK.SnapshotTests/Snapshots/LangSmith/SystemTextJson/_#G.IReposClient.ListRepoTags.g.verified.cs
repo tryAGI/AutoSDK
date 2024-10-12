@@ -33,17 +33,17 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ListTagsResponse> ListRepoTagsAsync(
             int? limit = 20,
             int? offset = 0,
-            global::G.AnyOf<string, object>? tenantHandle = default,
-            global::G.AnyOf<global::System.Guid?, object>? tenantId = default,
-            global::G.AnyOf<string, object>? query = default,
-            global::G.AnyOf<bool?, object>? hasCommits = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
-            global::G.AnyOf<global::G.ListRepoTagsApiV1ReposTagsGetIsArchived2?, object>? isArchived = default,
-            global::G.AnyOf<global::G.ListRepoTagsApiV1ReposTagsGetIsPublic2?, object>? isPublic = default,
-            global::G.AnyOf<string, object>? upstreamRepoOwner = default,
-            global::G.AnyOf<string, object>? upstreamRepoHandle = default,
-            global::G.AnyOf<bool?, object>? matchPrefix = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
+            string? tenantHandle = default,
+            global::System.Guid? tenantId = default,
+            string? query = default,
+            bool? hasCommits = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsArchived? isArchived = default,
+            global::G.ListRepoTagsApiV1ReposTagsGetIsPublic? isPublic = default,
+            string? upstreamRepoOwner = default,
+            string? upstreamRepoHandle = default,
+            bool? matchPrefix = false,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.TracerSession.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.AnyOf<object, object>? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
@@ -39,25 +37,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_dataset_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? DefaultDatasetId { get; set; }
+        public global::System.Guid? DefaultDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_dataset_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? ReferenceDatasetId { get; set; }
+        public global::System.Guid? ReferenceDatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_tier")]
-        public global::G.AnyOf<global::G.TraceTier3?, object>? TraceTier { get; set; }
+        public global::G.TraceTier? TraceTier { get; set; }
 
         /// <summary>
         /// 
@@ -69,67 +67,67 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_count")]
-        public global::G.AnyOf<int?, object>? RunCount { get; set; }
+        public int? RunCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("latency_p50")]
-        public global::G.AnyOf<double?, object>? LatencyP50 { get; set; }
+        public double? LatencyP50 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("latency_p99")]
-        public global::G.AnyOf<double?, object>? LatencyP99 { get; set; }
+        public double? LatencyP99 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("first_token_p50")]
-        public global::G.AnyOf<double?, object>? FirstTokenP50 { get; set; }
+        public double? FirstTokenP50 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("first_token_p99")]
-        public global::G.AnyOf<double?, object>? FirstTokenP99 { get; set; }
+        public double? FirstTokenP99 { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_tokens")]
-        public global::G.AnyOf<int?, object>? TotalTokens { get; set; }
+        public int? TotalTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_tokens")]
-        public global::G.AnyOf<int?, object>? PromptTokens { get; set; }
+        public int? PromptTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_tokens")]
-        public global::G.AnyOf<int?, object>? CompletionTokens { get; set; }
+        public int? CompletionTokens { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_cost")]
-        public global::G.AnyOf<string, object>? TotalCost { get; set; }
+        public string? TotalCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt_cost")]
-        public global::G.AnyOf<string, object>? PromptCost { get; set; }
+        public string? PromptCost { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_cost")]
-        public global::G.AnyOf<string, object>? CompletionCost { get; set; }
+        public string? CompletionCost { get; set; }
 
         /// <summary>
         /// 
@@ -141,49 +139,49 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_run_start_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? LastRunStartTime { get; set; }
+        public global::System.DateTime? LastRunStartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_run_start_time_live")]
-        public global::G.AnyOf<global::System.DateTime?, object>? LastRunStartTimeLive { get; set; }
+        public global::System.DateTime? LastRunStartTimeLive { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_stats")]
-        public global::G.AnyOf<object, object>? FeedbackStats { get; set; }
+        public object? FeedbackStats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_feedback_stats")]
-        public global::G.AnyOf<object, object>? SessionFeedbackStats { get; set; }
+        public object? SessionFeedbackStats { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_facets")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? RunFacets { get; set; }
+        public global::System.Collections.Generic.IList<object>? RunFacets { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error_rate")]
-        public global::G.AnyOf<double?, object>? ErrorRate { get; set; }
+        public double? ErrorRate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("streaming_rate")]
-        public global::G.AnyOf<double?, object>? StreamingRate { get; set; }
+        public double? StreamingRate { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("test_run_number")]
-        public global::G.AnyOf<int?, object>? TestRunNumber { get; set; }
+        public int? TestRunNumber { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

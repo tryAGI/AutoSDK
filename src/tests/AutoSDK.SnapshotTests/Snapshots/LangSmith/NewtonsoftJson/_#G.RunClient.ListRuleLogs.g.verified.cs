@@ -11,16 +11,16 @@ namespace G
             ref global::System.Guid ruleId,
             ref int? limit,
             ref int? offset,
-            ref global::G.AnyOf<global::System.DateTime?, object>? startTime,
-            ref global::G.AnyOf<global::System.DateTime?, object>? endTime);
+            ref global::System.DateTime? startTime,
+            ref global::System.DateTime? endTime);
         partial void PrepareListRuleLogsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid ruleId,
             int? limit,
             int? offset,
-            global::G.AnyOf<global::System.DateTime?, object>? startTime,
-            global::G.AnyOf<global::System.DateTime?, object>? endTime);
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime);
         partial void ProcessListRuleLogsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -49,8 +49,8 @@ namespace G
             global::System.Guid ruleId,
             int? limit = 720,
             int? offset = 0,
-            global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
-            global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -69,8 +69,8 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("start_time", startTime?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("end_time", endTime?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("start_time", startTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
+                .AddOptionalParameter("end_time", endTime?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

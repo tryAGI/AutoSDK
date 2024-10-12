@@ -142,9 +142,9 @@ namespace G
             string matchPattern,
             global::G.AnyOf<double?, string> promptCost,
             global::G.AnyOf<double?, string> completionCost,
-            global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
+            global::System.DateTime? startTime = default,
             global::System.Collections.Generic.IList<string>? matchPath = default,
-            global::G.AnyOf<string, object>? provider = default,
+            string? provider = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ModelPriceMapUpdateSchema

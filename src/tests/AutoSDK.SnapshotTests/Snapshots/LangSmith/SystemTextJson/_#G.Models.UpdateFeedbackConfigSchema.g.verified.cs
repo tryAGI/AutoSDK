@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.UpdateFeedbackConfigSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -22,15 +20,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_config")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.FeedbackConfig, object>? FeedbackConfig { get; set; }
+        public global::G.FeedbackConfig? FeedbackConfig { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_lower_score_better")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<bool?, object>? IsLowerScoreBetter { get; set; }
+        public bool? IsLowerScoreBetter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

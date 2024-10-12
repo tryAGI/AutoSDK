@@ -13,7 +13,7 @@ namespace G
         /// Type of usage limit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit_type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.UsageLimitType2 LimitType { get; set; } = default!;
+        public global::G.UsageLimitType LimitType { get; set; } = default!;
 
         /// <summary>
         /// 

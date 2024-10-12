@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RepoWithLookups.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("readme")]
-        public global::G.AnyOf<string, object>? Readme { get; set; }
+        public string? Readme { get; set; }
 
         /// <summary>
         /// 
@@ -75,19 +73,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("original_repo_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? OriginalRepoId { get; set; }
+        public global::System.Guid? OriginalRepoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upstream_repo_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? UpstreamRepoId { get; set; }
+        public global::System.Guid? UpstreamRepoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owner", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<string, object> Owner { get; set; } = default!;
+        public string? Owner { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -117,13 +115,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("liked_by_auth_user")]
-        public global::G.AnyOf<bool?, object>? LikedByAuthUser { get; set; }
+        public bool? LikedByAuthUser { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_commit_hash")]
-        public global::G.AnyOf<string, object>? LastCommitHash { get; set; }
+        public string? LastCommitHash { get; set; }
 
         /// <summary>
         /// 
@@ -135,19 +133,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("original_repo_full_name")]
-        public global::G.AnyOf<string, object>? OriginalRepoFullName { get; set; }
+        public string? OriginalRepoFullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upstream_repo_full_name")]
-        public global::G.AnyOf<string, object>? UpstreamRepoFullName { get; set; }
+        public string? UpstreamRepoFullName { get; set; }
 
         /// <summary>
-        /// 
+        /// Response model for get_commit_manifest.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("latest_commit_manifest")]
-        public global::G.AnyOf<global::G.CommitManifestResponse, object>? LatestCommitManifest { get; set; }
+        public global::G.CommitManifestResponse? LatestCommitManifest { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

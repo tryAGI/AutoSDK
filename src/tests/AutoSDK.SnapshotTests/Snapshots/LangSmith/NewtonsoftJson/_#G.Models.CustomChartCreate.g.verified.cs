@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CustomChartCreate.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index")]
-        public global::G.AnyOf<int?, object>? Index { get; set; }
+        public int? Index { get; set; }
 
         /// <summary>
         /// Enum for custom chart types.
@@ -45,19 +43,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("section_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? SectionId { get; set; }
+        public global::System.Guid? SectionId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<object, object>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("common_filters")]
-        public global::G.AnyOf<global::G.CustomChartSeriesFilters, object>? CommonFilters { get; set; }
+        public global::G.CustomChartSeriesFilters? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

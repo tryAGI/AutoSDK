@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.AnnotationQueueSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -22,8 +20,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -41,29 +38,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_dataset")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? DefaultDataset { get; set; }
+        public global::System.Guid? DefaultDataset { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_reviewers_per_item")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<int?, object>? NumReviewersPerItem { get; set; } = 1;
+        public int? NumReviewersPerItem { get; set; } = 1;
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_reservations")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<bool?, object>? EnableReservations { get; set; } = true;
+        public bool? EnableReservations { get; set; } = true;
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reservation_minutes")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<int?, object>? ReservationMinutes { get; set; } = 1;
+        public int? ReservationMinutes { get; set; } = 1;
 
         /// <summary>
         /// 

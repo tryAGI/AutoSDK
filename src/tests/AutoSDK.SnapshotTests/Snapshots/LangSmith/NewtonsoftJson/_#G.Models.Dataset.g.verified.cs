@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.Dataset.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -33,25 +31,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::G.AnyOf<object, object>? InputsSchemaDefinition { get; set; }
+        public object? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::G.AnyOf<object, object>? OutputsSchemaDefinition { get; set; }
+        public object? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("externally_managed")]
-        public global::G.AnyOf<bool?, object>? ExternallyManaged { get; set; } = false;
+        public bool? ExternallyManaged { get; set; } = false;
 
         /// <summary>
-        /// Default Value: kv
+        /// Enum for dataset data types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
-        public global::G.AnyOf<global::G.DataType?, object>? DataType { get; set; } = global::G.DataType.Kv;
+        public global::G.DataType? DataType { get; set; }
 
         /// <summary>
         /// 
@@ -87,7 +85,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("last_session_start_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? LastSessionStartTime { get; set; }
+        public global::System.DateTime? LastSessionStartTime { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -29,11 +29,11 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CustomChartsSectionResponse>> ReadSectionsAsync(
             int? limit = 100,
             int? offset = 0,
-            global::G.AnyOf<string, object>? titleContains = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ids = default,
-            global::G.AnyOf<string, object>? sortBy = default,
-            global::G.AnyOf<bool?, object>? sortByDesc = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
+            string? titleContains = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? ids = default,
+            string? sortBy = "created_at",
+            bool? sortByDesc = true,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -22,8 +22,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.DatasetVersion>> GetDatasetVersionsAsync(
             global::System.Guid datasetId,
-            global::G.AnyOf<string, object>? search = default,
-            global::G.AnyOf<global::System.Guid?, object>? example = default,
+            string? search = default,
+            global::System.Guid? example = default,
             int? limit = 100,
             int? offset = 0,
             global::System.Threading.CancellationToken cancellationToken = default);

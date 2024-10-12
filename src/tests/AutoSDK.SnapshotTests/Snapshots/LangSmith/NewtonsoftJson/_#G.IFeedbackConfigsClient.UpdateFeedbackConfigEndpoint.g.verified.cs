@@ -25,8 +25,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FeedbackConfigSchema> UpdateFeedbackConfigEndpointAsync(
             string feedbackKey,
-            global::G.AnyOf<global::G.FeedbackConfig, object>? feedbackConfig = default,
-            global::G.AnyOf<bool?, object>? isLowerScoreBetter = default,
+            global::G.FeedbackConfig? feedbackConfig = default,
+            bool? isLowerScoreBetter = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

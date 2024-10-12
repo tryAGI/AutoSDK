@@ -125,8 +125,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TriggerRulesApiV1RunsRulesTriggerPostResponse> TriggerRulesAsync(
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ruleIds = default,
-            global::G.AnyOf<global::System.Guid?, object>? datasetId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? ruleIds = default,
+            global::System.Guid? datasetId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TriggerRulesRequest

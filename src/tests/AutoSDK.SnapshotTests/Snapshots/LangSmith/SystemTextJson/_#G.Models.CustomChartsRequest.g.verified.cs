@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CustomChartsRequest.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -28,8 +26,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         /// Timedelta input.
@@ -41,15 +38,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("after_index")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<int?, object>? AfterIndex { get; set; }
+        public int? AfterIndex { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag_value_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? TagValueId { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? TagValueId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

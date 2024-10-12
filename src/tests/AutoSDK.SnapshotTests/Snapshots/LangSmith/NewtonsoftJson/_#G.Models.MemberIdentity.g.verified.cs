@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.MemberIdentity.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
+        public global::System.Guid? TenantId { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ls_user_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
+        public global::System.Guid? LsUserId { get; set; }
 
         /// <summary>
         /// 
@@ -57,13 +55,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
+        public global::System.Guid? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_name")]
-        public global::G.AnyOf<string, object>? RoleName { get; set; }
+        public string? RoleName { get; set; }
 
         /// <summary>
         /// 
@@ -75,19 +73,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email")]
-        public global::G.AnyOf<string, object>? Email { get; set; }
+        public string? Email { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name")]
-        public global::G.AnyOf<string, object>? FullName { get; set; }
+        public string? FullName { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("avatar_url")]
-        public global::G.AnyOf<string, object>? AvatarUrl { get; set; }
+        public string? AvatarUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

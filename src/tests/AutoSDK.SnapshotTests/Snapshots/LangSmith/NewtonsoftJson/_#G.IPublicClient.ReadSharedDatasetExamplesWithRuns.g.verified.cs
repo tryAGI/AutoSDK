@@ -37,8 +37,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>> ReadSharedDatasetExamplesWithRunsAsync(
             global::System.Guid shareToken,
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
-            global::G.AnyOf<global::System.Guid?, object>? comparativeExperimentId = default,
-            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>, object>? filters = default,
+            global::System.Guid? comparativeExperimentId = default,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters = default,
             int? offset = 0,
             int? limit = 20,
             global::System.Threading.CancellationToken cancellationToken = default);

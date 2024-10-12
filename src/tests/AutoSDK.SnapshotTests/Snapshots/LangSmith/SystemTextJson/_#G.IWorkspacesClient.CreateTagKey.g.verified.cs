@@ -24,7 +24,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TagKey> CreateTagKeyAsync(
             string key,
-            global::G.AnyOf<string, object>? description = default,
+            string? description = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

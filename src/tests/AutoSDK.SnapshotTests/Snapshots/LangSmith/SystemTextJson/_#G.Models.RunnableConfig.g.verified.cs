@@ -27,8 +27,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callbacks")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunnableConfigCallback>, global::G.RunnableConfigCallbacks, object>? Callbacks { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunnableConfigCallback>, global::G.RunnableConfigCallbacks>? Callbacks { get; set; }
 
         /// <summary>
         /// 
@@ -40,8 +40,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_concurrency")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<int?, object>? MaxConcurrency { get; set; }
+        public int? MaxConcurrency { get; set; }
 
         /// <summary>
         /// 
@@ -59,8 +58,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? RunId { get; set; }
+        public global::System.Guid? RunId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

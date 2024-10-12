@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.AnnotationQueueRunUpdateSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_reviewed_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? LastReviewedTime { get; set; }
+        public global::System.DateTime? LastReviewedTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("added_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? AddedAt { get; set; }
+        public global::System.DateTime? AddedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

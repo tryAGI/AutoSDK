@@ -33,12 +33,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TracerSessionWithoutVirtualFields> UpdateTracerSessionAsync(
             global::System.Guid sessionId,
-            global::G.AnyOf<string, object>? name = default,
-            global::G.AnyOf<string, object>? description = default,
-            global::G.AnyOf<global::System.Guid?, object>? defaultDatasetId = default,
-            global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::G.AnyOf<object, object>? extra = default,
-            global::G.AnyOf<global::G.TraceTier3?, object>? traceTier = default,
+            string? name = default,
+            string? description = default,
+            global::System.Guid? defaultDatasetId = default,
+            global::System.DateTime? endTime = default,
+            object? extra = default,
+            global::G.TraceTier? traceTier = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

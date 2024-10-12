@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.OrganizationBillingInfo.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::G.AnyOf<global::System.Guid?, object>? Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
@@ -51,31 +49,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tier")]
-        public global::G.AnyOf<global::G.PaymentPlanTier?, object>? Tier { get; set; }
+        public global::G.PaymentPlanTier? Tier { get; set; }
 
         /// <summary>
-        /// 
+        /// Stripe customer billing info.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("payment_method")]
-        public global::G.AnyOf<global::G.StripePaymentMethodInfo, object>? PaymentMethod { get; set; }
+        public global::G.StripePaymentMethodInfo? PaymentMethod { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_of_billing_period")]
-        public global::G.AnyOf<global::System.DateTime?, object>? EndOfBillingPeriod { get; set; }
+        public global::System.DateTime? EndOfBillingPeriod { get; set; }
 
         /// <summary>
-        /// 
+        /// Customer visible plan information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("current_plan")]
-        public global::G.AnyOf<global::G.CustomerVisiblePlanInfo, object>? CurrentPlan { get; set; }
+        public global::G.CustomerVisiblePlanInfo? CurrentPlan { get; set; }
 
         /// <summary>
-        /// 
+        /// Customer visible plan information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upcoming_plan")]
-        public global::G.AnyOf<global::G.CustomerVisiblePlanInfo, object>? UpcomingPlan { get; set; }
+        public global::G.CustomerVisiblePlanInfo? UpcomingPlan { get; set; }
 
         /// <summary>
         /// Default Value: false

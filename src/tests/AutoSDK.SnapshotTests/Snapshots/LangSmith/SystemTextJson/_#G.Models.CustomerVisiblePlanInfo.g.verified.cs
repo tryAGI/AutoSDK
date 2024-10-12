@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CustomerVisiblePlanInfo.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -30,8 +28,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ends_on")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? EndsOn { get; set; }
+        public global::System.DateTime? EndsOn { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

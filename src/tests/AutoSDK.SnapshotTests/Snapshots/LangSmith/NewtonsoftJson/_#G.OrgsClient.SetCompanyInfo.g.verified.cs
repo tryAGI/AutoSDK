@@ -118,8 +118,12 @@ namespace G
         /// <summary>
         /// Set Company Info
         /// </summary>
-        /// <param name="companyInfo"></param>
-        /// <param name="taxId"></param>
+        /// <param name="companyInfo">
+        /// Stripe customer billing information.
+        /// </param>
+        /// <param name="taxId">
+        /// Stripe tax ID.
+        /// </param>
         /// <param name="invoiceEmail"></param>
         /// <param name="isBusiness">
         /// Default Value: false
@@ -127,9 +131,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
-            global::G.AnyOf<global::G.StripeBusinessBillingInfo, object>? companyInfo = default,
-            global::G.AnyOf<global::G.StripeTaxId, object>? taxId = default,
-            global::G.AnyOf<string, object>? invoiceEmail = default,
+            global::G.StripeBusinessBillingInfo? companyInfo = default,
+            global::G.StripeTaxId? taxId = default,
+            string? invoiceEmail = default,
             bool? isBusiness = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

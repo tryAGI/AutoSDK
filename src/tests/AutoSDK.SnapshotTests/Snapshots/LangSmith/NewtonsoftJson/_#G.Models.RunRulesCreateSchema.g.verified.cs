@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RunRulesCreateSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? SessionId { get; set; }
+        public global::System.Guid? SessionId { get; set; }
 
         /// <summary>
         /// Default Value: true
@@ -33,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? DatasetId { get; set; }
+        public global::System.Guid? DatasetId { get; set; }
 
         /// <summary>
         /// 
@@ -45,25 +43,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
-        public global::G.AnyOf<string, object>? Filter { get; set; }
+        public string? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_filter")]
-        public global::G.AnyOf<string, object>? TraceFilter { get; set; }
+        public string? TraceFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree_filter")]
-        public global::G.AnyOf<string, object>? TreeFilter { get; set; }
+        public string? TreeFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("backfill_from")]
-        public global::G.AnyOf<global::System.DateTime?, object>? BackfillFrom { get; set; }
+        public global::System.DateTime? BackfillFrom { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -75,7 +73,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_few_shot_examples")]
-        public global::G.AnyOf<int?, object>? NumFewShotExamples { get; set; }
+        public int? NumFewShotExamples { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -87,13 +85,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_annotation_queue_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? AddToAnnotationQueueId { get; set; }
+        public global::System.Guid? AddToAnnotationQueueId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("add_to_dataset_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? AddToDatasetId { get; set; }
+        public global::System.Guid? AddToDatasetId { get; set; }
 
         /// <summary>
         /// Default Value: false
@@ -105,25 +103,25 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluators")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>, object>? Evaluators { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>? Evaluators { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_evaluators")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CodeEvaluatorTopLevel>, object>? CodeEvaluators { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CodeEvaluatorTopLevel>? CodeEvaluators { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("alerts")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>, object>? Alerts { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>? Alerts { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("webhooks")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>, object>? Webhooks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? Webhooks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

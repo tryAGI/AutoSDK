@@ -137,12 +137,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Example> CreateExampleAsync(
             global::System.Guid datasetId,
-            global::G.AnyOf<object, object>? outputs = default,
-            global::G.AnyOf<global::System.Guid?, object>? sourceRunId = default,
-            global::G.AnyOf<object, object>? metadata = default,
-            global::G.AnyOf<object, object>? inputs = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
-            global::G.AnyOf<global::System.Guid?, object>? id = default,
+            object? outputs = default,
+            global::System.Guid? sourceRunId = default,
+            object? metadata = default,
+            object? inputs = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
+            global::System.Guid? id = default,
             bool? useSourceRunIo = false,
             global::System.DateTime? createdAt = default,
             global::System.Threading.CancellationToken cancellationToken = default)

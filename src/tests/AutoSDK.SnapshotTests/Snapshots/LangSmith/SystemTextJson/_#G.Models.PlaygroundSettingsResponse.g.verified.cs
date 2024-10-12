@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.PlaygroundSettingsResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -29,8 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Name { get; set; }
+        public string? Name { get; set; }
 
         /// <summary>
         /// 

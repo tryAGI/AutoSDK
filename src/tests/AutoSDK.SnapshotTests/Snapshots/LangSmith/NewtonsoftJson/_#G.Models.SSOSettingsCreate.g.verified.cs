@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.SSOSettingsCreate.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata_xml")]
-        public global::G.AnyOf<string, object>? MetadataXml { get; set; }
+        public string? MetadataXml { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata_url")]
-        public global::G.AnyOf<string, object>? MetadataUrl { get; set; }
+        public string? MetadataUrl { get; set; }
 
         /// <summary>
         /// 

@@ -37,13 +37,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.AnnotationQueueSchema> CreateAnnotationQueueAsync(
             string name,
-            global::G.AnyOf<string, object>? description = default,
+            string? description = default,
             global::System.DateTime? createdAt = default,
             global::System.DateTime? updatedAt = default,
-            global::G.AnyOf<global::System.Guid?, object>? defaultDataset = default,
-            global::G.AnyOf<int?, object>? numReviewersPerItem = default,
-            global::G.AnyOf<bool?, object>? enableReservations = default,
-            global::G.AnyOf<int?, object>? reservationMinutes = default,
+            global::System.Guid? defaultDataset = default,
+            int? numReviewersPerItem = 1,
+            bool? enableReservations = true,
+            int? reservationMinutes = 1,
             global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

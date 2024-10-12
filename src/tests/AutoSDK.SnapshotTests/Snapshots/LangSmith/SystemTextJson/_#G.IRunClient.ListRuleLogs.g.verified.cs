@@ -24,8 +24,8 @@ namespace G
             global::System.Guid ruleId,
             int? limit = 720,
             int? offset = 0,
-            global::G.AnyOf<global::System.DateTime?, object>? startTime = default,
-            global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
+            global::System.DateTime? startTime = default,
+            global::System.DateTime? endTime = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -136,11 +136,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UpdateExampleApiV1ExamplesExampleIdPatchResponse> UpdateExampleAsync(
             global::System.Guid exampleId,
-            global::G.AnyOf<global::System.Guid?, object>? datasetId = default,
-            global::G.AnyOf<object, object>? inputs = default,
-            global::G.AnyOf<object, object>? outputs = default,
-            global::G.AnyOf<object, object>? metadata = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? split = default,
+            global::System.Guid? datasetId = default,
+            object? inputs = default,
+            object? outputs = default,
+            object? metadata = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? split = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.ExampleUpdate

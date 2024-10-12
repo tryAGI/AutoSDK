@@ -22,8 +22,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
 
         /// <summary>
         /// 
@@ -57,15 +57,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::G.AnyOf<object, global::G.Missing, object>? Metadata { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<object, global::G.Missing>? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("common_filters")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
-        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? CommonFilters { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing>? CommonFilters { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

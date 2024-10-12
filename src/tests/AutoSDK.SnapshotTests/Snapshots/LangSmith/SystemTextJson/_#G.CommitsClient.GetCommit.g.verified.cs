@@ -13,7 +13,7 @@ namespace G
             ref string commit,
             ref bool? getExamples,
             ref bool? isView,
-            ref global::G.AnyOf<bool?, object>? includeModel);
+            ref bool? includeModel);
         partial void PrepareGetCommitRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +22,7 @@ namespace G
             string commit,
             bool? getExamples,
             bool? isView,
-            global::G.AnyOf<bool?, object>? includeModel);
+            bool? includeModel);
         partial void ProcessGetCommitResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -56,7 +56,7 @@ namespace G
             string commit,
             bool? getExamples = false,
             bool? isView = false,
-            global::G.AnyOf<bool?, object>? includeModel = default,
+            bool? includeModel = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -76,7 +76,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("get_examples", getExamples?.ToString()) 
                 .AddOptionalParameter("is_view", isView?.ToString()) 
-                .AddOptionalParameter("include_model", includeModel?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("include_model", includeModel?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

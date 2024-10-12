@@ -16,8 +16,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetVersion> GetDatasetVersionAsync(
             global::System.Guid datasetId,
-            global::G.AnyOf<global::System.DateTime?, object>? asOf = default,
-            global::G.AnyOf<string, object>? tag = default,
+            global::System.DateTime? asOf = default,
+            string? tag = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

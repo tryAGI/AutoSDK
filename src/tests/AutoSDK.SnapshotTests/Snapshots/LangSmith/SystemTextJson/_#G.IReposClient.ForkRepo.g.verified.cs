@@ -37,10 +37,10 @@ namespace G
             string owner,
             string repo,
             string repoHandle,
-            global::G.AnyOf<string, object>? readme = default,
-            global::G.AnyOf<string, object>? description = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
-            global::G.AnyOf<bool?, object>? isPublic = default,
+            string? readme = default,
+            string? description = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            bool? isPublic = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

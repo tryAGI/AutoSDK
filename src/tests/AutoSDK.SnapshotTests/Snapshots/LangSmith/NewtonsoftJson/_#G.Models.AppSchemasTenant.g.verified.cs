@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.AppSchemasTenant.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
+        public global::System.Guid? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -45,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_handle")]
-        public global::G.AnyOf<string, object>? TenantHandle { get; set; }
+        public string? TenantHandle { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

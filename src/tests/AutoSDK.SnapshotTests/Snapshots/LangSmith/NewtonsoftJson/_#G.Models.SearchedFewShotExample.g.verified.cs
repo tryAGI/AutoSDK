@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.SearchedFewShotExample.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -33,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("debug_info")]
-        public global::G.AnyOf<object, object>? DebugInfo { get; set; }
+        public object? DebugInfo { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

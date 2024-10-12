@@ -12,7 +12,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TenantStats> GetCurrentWorkspaceStatsAsync(
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

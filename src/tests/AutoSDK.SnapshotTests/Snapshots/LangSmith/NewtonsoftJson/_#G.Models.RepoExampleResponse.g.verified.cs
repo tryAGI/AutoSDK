@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RepoExampleResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,19 +19,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.AnyOf<object, object>? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.AnyOf<object, object>? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 

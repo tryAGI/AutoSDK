@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.OrgPendingIdentity.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,31 +25,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? RoleId { get; set; }
+        public global::System.Guid? RoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_ids")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? WorkspaceIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? WorkspaceIds { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workspace_role_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? WorkspaceRoleId { get; set; }
+        public global::System.Guid? WorkspaceRoleId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("password")]
-        public global::G.AnyOf<string, object>? Password { get; set; }
+        public string? Password { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("full_name")]
-        public global::G.AnyOf<string, object>? FullName { get; set; }
+        public string? FullName { get; set; }
 
         /// <summary>
         /// 
@@ -69,19 +67,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("user_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? UserId { get; set; }
+        public global::System.Guid? UserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? TenantId { get; set; }
+        public global::System.Guid? TenantId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("organization_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
+        public global::System.Guid? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -93,7 +91,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role_name")]
-        public global::G.AnyOf<string, object>? RoleName { get; set; }
+        public string? RoleName { get; set; }
 
         /// <summary>
         /// Default Value: []

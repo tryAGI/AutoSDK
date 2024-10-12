@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.PlaygroundRunOverDatasetRequestSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -29,29 +27,25 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? RunId { get; set; }
+        public string? RunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repo_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? RepoId { get; set; }
+        public string? RepoId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.PlaygroundRunOverDatasetRequestSchemaToolsVariant1Item>, object>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PlaygroundRunOverDatasetRequestSchemaTool>? Tools { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? ToolChoice { get; set; }
+        public string? ToolChoice { get; set; }
 
         /// <summary>
         /// Configuration for a Runnable.
@@ -64,8 +58,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_name")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? ProjectName { get; set; }
+        public string? ProjectName { get; set; }
 
         /// <summary>
         /// 

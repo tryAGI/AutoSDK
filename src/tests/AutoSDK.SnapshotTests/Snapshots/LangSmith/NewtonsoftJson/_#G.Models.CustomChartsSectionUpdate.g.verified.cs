@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, global::G.Missing, object>? Description { get; set; }
+        public global::G.AnyOf<string, global::G.Missing>? Description { get; set; }
 
         /// <summary>
         /// 

@@ -9,30 +9,30 @@ namespace G
         partial void PrepareReadSharedFeedbacksArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid shareToken,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? run,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? session,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source,
+            global::System.Collections.Generic.IList<global::System.Guid>? run,
+            global::System.Collections.Generic.IList<string>? key,
+            global::System.Collections.Generic.IList<global::System.Guid>? session,
+            global::System.Collections.Generic.IList<global::G.SourceType>? source,
             ref int? limit,
             ref int? offset,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? user,
-            ref global::G.AnyOf<bool?, object>? hasComment,
-            ref global::G.AnyOf<bool?, object>? hasScore,
-            ref global::G.AnyOf<global::G.FeedbackLevel?, object>? level);
+            global::System.Collections.Generic.IList<global::System.Guid>? user,
+            ref bool? hasComment,
+            ref bool? hasScore,
+            ref global::G.FeedbackLevel? level);
         partial void PrepareReadSharedFeedbacksRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid shareToken,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? run,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? session,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source,
+            global::System.Collections.Generic.IList<global::System.Guid>? run,
+            global::System.Collections.Generic.IList<string>? key,
+            global::System.Collections.Generic.IList<global::System.Guid>? session,
+            global::System.Collections.Generic.IList<global::G.SourceType>? source,
             int? limit,
             int? offset,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? user,
-            global::G.AnyOf<bool?, object>? hasComment,
-            global::G.AnyOf<bool?, object>? hasScore,
-            global::G.AnyOf<global::G.FeedbackLevel?, object>? level);
+            global::System.Collections.Generic.IList<global::System.Guid>? user,
+            bool? hasComment,
+            bool? hasScore,
+            global::G.FeedbackLevel? level);
         partial void ProcessReadSharedFeedbacksResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -59,21 +59,23 @@ namespace G
         /// <param name="user"></param>
         /// <param name="hasComment"></param>
         /// <param name="hasScore"></param>
-        /// <param name="level"></param>
+        /// <param name="level">
+        /// Enum for feedback levels.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackSchema>> ReadSharedFeedbacksAsync(
             global::System.Guid shareToken,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? run = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? session = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? run = default,
+            global::System.Collections.Generic.IList<string>? key = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? session = default,
+            global::System.Collections.Generic.IList<global::G.SourceType>? source = default,
             int? limit = 100,
             int? offset = 0,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? user = default,
-            global::G.AnyOf<bool?, object>? hasComment = default,
-            global::G.AnyOf<bool?, object>? hasScore = default,
-            global::G.AnyOf<global::G.FeedbackLevel?, object>? level = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? user = default,
+            bool? hasComment = default,
+            bool? hasScore = default,
+            global::G.FeedbackLevel? level = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -81,31 +83,36 @@ namespace G
             PrepareReadSharedFeedbacksArguments(
                 httpClient: _httpClient,
                 shareToken: ref shareToken,
-                run: ref run,
-                key: ref key,
-                session: ref session,
-                source: ref source,
+                run: run,
+                key: key,
+                session: session,
+                source: source,
                 limit: ref limit,
                 offset: ref offset,
-                user: ref user,
+                user: user,
                 hasComment: ref hasComment,
                 hasScore: ref hasScore,
                 level: ref level);
 
+            var levelValue = level switch
+            {
+                global::G.FeedbackLevel.Run => "run",
+                global::G.FeedbackLevel.Session => "session",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/public/{shareToken}/feedbacks",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("run", run?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("key", key?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("session", session?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("source", source?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("run", run, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
+                .AddOptionalParameter("session", session, selector: static x => x.ToString(), delimiter: ",", explode: true) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
-                .AddOptionalParameter("user", user?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("has_comment", hasComment?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("has_score", hasScore?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("level", level?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("user", user, selector: static x => x.ToString(), delimiter: ",", explode: true) 
+                .AddOptionalParameter("has_comment", hasComment?.ToString()) 
+                .AddOptionalParameter("has_score", hasScore?.ToString()) 
+                .AddOptionalParameter("level", levelValue?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

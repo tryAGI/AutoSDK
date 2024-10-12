@@ -22,24 +22,26 @@ namespace G
         /// <param name="user"></param>
         /// <param name="hasComment"></param>
         /// <param name="hasScore"></param>
-        /// <param name="level"></param>
+        /// <param name="level">
+        /// Enum for feedback levels.
+        /// </param>
         /// <param name="maxCreatedAt"></param>
         /// <param name="minCreatedAt"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackSchema>> ReadFeedbacksAsync(
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? run = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? session = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SourceType>, object>? source = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? run = default,
+            global::System.Collections.Generic.IList<string>? key = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? session = default,
+            global::System.Collections.Generic.IList<global::G.SourceType>? source = default,
             int? limit = 100,
             int? offset = 0,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? user = default,
-            global::G.AnyOf<bool?, object>? hasComment = default,
-            global::G.AnyOf<bool?, object>? hasScore = default,
-            global::G.AnyOf<global::G.FeedbackLevel?, object>? level = default,
-            global::G.AnyOf<global::System.DateTime?, object>? maxCreatedAt = default,
-            global::G.AnyOf<global::System.DateTime?, object>? minCreatedAt = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? user = default,
+            bool? hasComment = default,
+            bool? hasScore = default,
+            global::G.FeedbackLevel? level = default,
+            global::System.DateTime? maxCreatedAt = default,
+            global::System.DateTime? minCreatedAt = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

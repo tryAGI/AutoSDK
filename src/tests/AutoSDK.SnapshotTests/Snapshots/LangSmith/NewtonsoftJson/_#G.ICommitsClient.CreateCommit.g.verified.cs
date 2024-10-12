@@ -35,8 +35,8 @@ namespace G
             string owner,
             string repo,
             object manifest,
-            global::G.AnyOf<string, object>? parentCommit = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? exampleRunIds = default,
+            string? parentCommit = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleRunIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

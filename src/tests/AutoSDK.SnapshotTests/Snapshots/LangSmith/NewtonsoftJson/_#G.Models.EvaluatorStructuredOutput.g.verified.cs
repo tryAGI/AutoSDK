@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.EvaluatorStructuredOutput.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,31 +13,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hub_ref")]
-        public global::G.AnyOf<string, object>? HubRef { get; set; }
+        public string? HubRef { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>, object>? Prompt { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? Prompt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("template_format")]
-        public global::G.AnyOf<string, object>? TemplateFormat { get; set; }
+        public string? TemplateFormat { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("schema")]
-        public global::G.AnyOf<object, object>? Schema { get; set; }
+        public object? Schema { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("variable_mapping")]
-        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, string>, object>? VariableMapping { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? VariableMapping { get; set; }
 
         /// <summary>
         /// 

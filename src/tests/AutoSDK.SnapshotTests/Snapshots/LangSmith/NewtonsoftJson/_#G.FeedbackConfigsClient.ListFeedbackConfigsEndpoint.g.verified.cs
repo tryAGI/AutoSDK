@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareListFeedbackConfigsEndpointArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key);
+            global::System.Collections.Generic.IList<string>? key);
         partial void PrepareListFeedbackConfigsEndpointRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key);
+            global::System.Collections.Generic.IList<string>? key);
         partial void ProcessListFeedbackConfigsEndpointResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,20 +29,20 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.FeedbackConfigSchema>> ListFeedbackConfigsEndpointAsync(
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? key = default,
+            global::System.Collections.Generic.IList<string>? key = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareListFeedbackConfigsEndpointArguments(
                 httpClient: _httpClient,
-                key: ref key);
+                key: key);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/feedback-configs",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("key", key?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("key", key, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

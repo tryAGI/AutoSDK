@@ -32,11 +32,11 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.PendingIdentity> AddMemberToCurrentOrgAsync(
             string email,
             bool? readOnly = false,
-            global::G.AnyOf<global::System.Guid?, object>? roleId = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? workspaceIds = default,
-            global::G.AnyOf<global::System.Guid?, object>? workspaceRoleId = default,
-            global::G.AnyOf<string, object>? password = default,
-            global::G.AnyOf<string, object>? fullName = default,
+            global::System.Guid? roleId = default,
+            global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds = default,
+            global::System.Guid? workspaceRoleId = default,
+            string? password = default,
+            string? fullName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

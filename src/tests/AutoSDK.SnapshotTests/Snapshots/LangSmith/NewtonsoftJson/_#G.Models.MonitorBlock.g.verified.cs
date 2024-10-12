@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.MonitorBlock.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -33,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subtitle")]
-        public global::G.AnyOf<string, object>? Subtitle { get; set; }
+        public string? Subtitle { get; set; }
 
         /// <summary>
         /// 
@@ -51,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("click_target")]
-        public global::G.AnyOf<string, object>? ClickTarget { get; set; }
+        public string? ClickTarget { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("toggleable_marks")]
-        public global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>, object>? ToggleableMarks { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>>? ToggleableMarks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

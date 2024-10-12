@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.BodyParamsForRunSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,103 +13,103 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? Id { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace")]
-        public global::G.AnyOf<global::System.Guid?, object>? Trace { get; set; }
+        public global::System.Guid? Trace { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run")]
-        public global::G.AnyOf<global::System.Guid?, object>? ParentRun { get; set; }
+        public global::System.Guid? ParentRun { get; set; }
 
         /// <summary>
-        /// 
+        /// Enum for run types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("run_type")]
-        public global::G.AnyOf<global::G.RunTypeEnum?, object>? RunType { get; set; }
+        public global::G.RunTypeEnum? RunType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("session")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? Session { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Session { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reference_example")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ReferenceExample { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? ReferenceExample { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_order")]
-        public global::G.AnyOf<int?, object>? ExecutionOrder { get; set; }
+        public int? ExecutionOrder { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("end_time")]
-        public global::G.AnyOf<global::System.DateTime?, object>? EndTime { get; set; }
+        public global::System.DateTime? EndTime { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::G.AnyOf<bool?, object>? Error { get; set; }
+        public bool? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query")]
-        public global::G.AnyOf<string, object>? Query { get; set; }
+        public string? Query { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter")]
-        public global::G.AnyOf<string, object>? Filter { get; set; }
+        public string? Filter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("trace_filter")]
-        public global::G.AnyOf<string, object>? TraceFilter { get; set; }
+        public string? TraceFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tree_filter")]
-        public global::G.AnyOf<string, object>? TreeFilter { get; set; }
+        public string? TreeFilter { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_root")]
-        public global::G.AnyOf<bool?, object>? IsRoot { get; set; }
+        public bool? IsRoot { get; set; }
 
         /// <summary>
-        /// 
+        /// Enum for run data source types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_source_type")]
-        public global::G.AnyOf<global::G.RunsFilterDataSourceTypeEnum?, object>? DataSourceType { get; set; }
+        public global::G.RunsFilterDataSourceTypeEnum? DataSourceType { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cursor")]
-        public global::G.AnyOf<string, object>? Cursor { get; set; }
+        public string? Cursor { get; set; }
 
         /// <summary>
         /// Default Value: 100

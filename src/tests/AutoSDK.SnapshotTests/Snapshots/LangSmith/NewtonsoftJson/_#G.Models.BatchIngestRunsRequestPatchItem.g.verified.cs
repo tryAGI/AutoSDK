@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_run_id")]
-        public global::G.OneOf<global::System.Guid?, object>? ParentRunId { get; set; }
+        public global::System.Guid? ParentRunId { get; set; }
 
         /// <summary>
         /// 
@@ -39,49 +39,49 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error")]
-        public global::G.OneOf<string, object>? Error { get; set; }
+        public string? Error { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.OneOf<object, object>? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.OneOf<object, object>? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::G.OneOf<global::System.Collections.Generic.IList<object>, object>? Events { get; set; }
+        public global::System.Collections.Generic.IList<object>? Events { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::G.OneOf<global::System.Collections.Generic.IList<string>, object>? Tags { get; set; }
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.OneOf<object, object>? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_attachments")]
-        public global::G.OneOf<object, object>? InputAttachments { get; set; }
+        public object? InputAttachments { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_attachments")]
-        public global::G.OneOf<object, object>? OutputAttachments { get; set; }
+        public object? OutputAttachments { get; set; }
 
         /// <summary>
         /// 

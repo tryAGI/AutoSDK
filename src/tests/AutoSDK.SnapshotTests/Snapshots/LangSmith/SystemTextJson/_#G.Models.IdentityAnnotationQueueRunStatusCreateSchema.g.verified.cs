@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.IdentityAnnotationQueueRunStatusCreateSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,15 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Status { get; set; }
+        public string? Status { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("override_added_at")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? OverrideAddedAt { get; set; }
+        public global::System.DateTime? OverrideAddedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.OrganizationPGSchemaSlim.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,19 +25,19 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public global::G.AnyOf<global::System.DateTime?, object>? CreatedAt { get; set; }
+        public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("created_by_user_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? CreatedByUserId { get; set; }
+        public global::System.Guid? CreatedByUserId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modified_at")]
-        public global::G.AnyOf<global::System.DateTime?, object>? ModifiedAt { get; set; }
+        public global::System.DateTime? ModifiedAt { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sso_login_slug")]
-        public global::G.AnyOf<string, object>? SsoLoginSlug { get; set; }
+        public string? SsoLoginSlug { get; set; }
 
         /// <summary>
         /// Default Value: false

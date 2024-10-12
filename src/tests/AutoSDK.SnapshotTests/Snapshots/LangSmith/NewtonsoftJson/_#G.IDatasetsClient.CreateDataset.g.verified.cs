@@ -37,13 +37,13 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.Dataset> CreateDatasetAsync(
             string name,
-            global::G.AnyOf<string, object>? description = default,
+            string? description = default,
             global::System.DateTime? createdAt = default,
-            global::G.AnyOf<object, object>? inputsSchemaDefinition = default,
-            global::G.AnyOf<object, object>? outputsSchemaDefinition = default,
-            global::G.AnyOf<bool?, object>? externallyManaged = default,
-            global::G.AnyOf<global::System.Guid?, object>? id = default,
-            global::G.AnyOf<object, object>? extra = default,
+            object? inputsSchemaDefinition = default,
+            object? outputsSchemaDefinition = default,
+            bool? externallyManaged = false,
+            global::System.Guid? id = default,
+            object? extra = default,
             global::G.DataType? dataType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

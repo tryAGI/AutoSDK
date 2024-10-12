@@ -32,8 +32,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> CreateTenantAsync(
             string displayName,
             global::System.Guid? id = default,
-            global::G.AnyOf<global::System.Guid?, object>? organizationId = default,
-            global::G.AnyOf<string, object>? tenantHandle = default,
+            global::System.Guid? organizationId = default,
+            string? tenantHandle = default,
             bool? isPersonal = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.Role.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -43,8 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? OrganizationId { get; set; }
+        public global::System.Guid? OrganizationId { get; set; }
 
         /// <summary>
         /// 
@@ -57,8 +54,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_scope")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.AccessScope?, object>? AccessScope { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AccessScopeJsonConverter))]
+        public global::G.AccessScope? AccessScope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.SecretUpsert.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<string, object> Value { get; set; } = default!;
+        public string? Value { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

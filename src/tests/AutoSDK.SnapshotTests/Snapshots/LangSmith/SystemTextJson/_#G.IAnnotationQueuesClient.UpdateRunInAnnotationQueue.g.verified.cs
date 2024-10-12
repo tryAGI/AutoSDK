@@ -31,8 +31,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UpdateRunInAnnotationQueueApiV1AnnotationQueuesQueueIdRunsQueueRunIdPatchResponse> UpdateRunInAnnotationQueueAsync(
             global::System.Guid queueId,
             global::System.Guid queueRunId,
-            global::G.AnyOf<global::System.DateTime?, object>? lastReviewedTime = default,
-            global::G.AnyOf<global::System.DateTime?, object>? addedAt = default,
+            global::System.DateTime? lastReviewedTime = default,
+            global::System.DateTime? addedAt = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

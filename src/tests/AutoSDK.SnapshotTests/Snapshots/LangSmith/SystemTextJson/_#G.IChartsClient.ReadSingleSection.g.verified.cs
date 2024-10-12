@@ -37,7 +37,7 @@ namespace G
             global::System.Guid sectionId,
             global::System.DateTime startTime,
             string? timezone = "UTC",
-            global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
+            global::System.DateTime? endTime = default,
             global::G.TimedeltaInput? stride = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

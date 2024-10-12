@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.BodyCloneDatasetApiV1DatasetsClonePost.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -24,10 +22,10 @@ namespace G
         public global::System.Guid SourceDatasetId { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("as_of")]
-        public global::G.AnyOf<global::G.AnyOf<global::System.DateTime?, string>?, object>? AsOf { get; set; }
+        public object? AsOf { get; set; }
 
         /// <summary>
         /// Default Value: []

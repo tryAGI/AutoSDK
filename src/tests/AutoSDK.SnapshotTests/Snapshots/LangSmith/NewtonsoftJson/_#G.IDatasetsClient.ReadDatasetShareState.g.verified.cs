@@ -12,7 +12,7 @@ namespace G
         /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.DatasetShareSchema, object>> ReadDatasetShareStateAsync(
+        global::System.Threading.Tasks.Task<global::G.DatasetShareSchema> ReadDatasetShareStateAsync(
             global::System.Guid datasetId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

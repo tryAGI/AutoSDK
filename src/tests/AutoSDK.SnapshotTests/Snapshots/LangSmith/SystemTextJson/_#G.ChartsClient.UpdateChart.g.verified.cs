@@ -140,13 +140,13 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CustomChartResponse> UpdateChartAsync(
             global::System.Guid chartId,
             global::G.AnyOf<string, global::G.Missing>? title = default,
-            global::G.AnyOf<string, global::G.Missing, object>? description = default,
+            global::G.AnyOf<string, global::G.Missing>? description = default,
             global::G.AnyOf<int?, global::G.Missing>? index = default,
             global::G.AnyOf<global::G.CustomChartType?, global::G.Missing>? chartType = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeriesUpdate>, global::G.Missing>? series = default,
             global::G.AnyOf<global::System.Guid?, global::G.Missing>? sectionId = default,
-            global::G.AnyOf<object, global::G.Missing, object>? metadata = default,
-            global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing, object>? commonFilters = default,
+            global::G.AnyOf<object, global::G.Missing>? metadata = default,
+            global::G.AnyOf<global::G.CustomChartSeriesFilters, global::G.Missing>? commonFilters = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.CustomChartUpdate

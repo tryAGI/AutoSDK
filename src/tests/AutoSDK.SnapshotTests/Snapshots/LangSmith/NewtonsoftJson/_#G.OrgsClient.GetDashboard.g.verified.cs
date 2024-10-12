@@ -9,12 +9,12 @@ namespace G
         partial void PrepareGetDashboardArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.OrganizationDashboardType type,
-            ref global::G.AnyOf<global::G.OrganizationDashboardColorScheme?, object> colorScheme);
+            ref global::G.OrganizationDashboardColorScheme colorScheme);
         partial void PrepareGetDashboardRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.OrganizationDashboardType type,
-            global::G.AnyOf<global::G.OrganizationDashboardColorScheme?, object> colorScheme);
+            global::G.OrganizationDashboardColorScheme colorScheme);
         partial void ProcessGetDashboardResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,12 +30,14 @@ namespace G
         /// <param name="type">
         /// Enum for acceptable types of dashboards.
         /// </param>
-        /// <param name="colorScheme"></param>
+        /// <param name="colorScheme">
+        /// Enum for acceptable color schemes of dashboards.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OrganizationDashboardSchema> GetDashboardAsync(
             global::G.OrganizationDashboardType type,
-            global::G.AnyOf<global::G.OrganizationDashboardColorScheme?, object> colorScheme,
+            global::G.OrganizationDashboardColorScheme colorScheme,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -52,12 +54,18 @@ namespace G
                 global::G.OrganizationDashboardType.Credits => "credits",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
+            var colorSchemeValue = colorScheme switch
+            {
+                global::G.OrganizationDashboardColorScheme.Light => "light",
+                global::G.OrganizationDashboardColorScheme.Dark => "dark",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/orgs/current/dashboard",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
                 .AddRequiredParameter("type", typeValue.ToString()) 
-                .AddRequiredParameter("color_scheme", colorScheme.ToString() ?? string.Empty) 
+                .AddRequiredParameter("color_scheme", colorSchemeValue.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

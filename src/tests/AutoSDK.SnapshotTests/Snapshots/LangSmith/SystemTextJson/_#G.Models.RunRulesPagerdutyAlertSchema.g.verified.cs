@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RunRulesPagerdutyAlertSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -12,11 +10,11 @@ namespace G
     public sealed partial class RunRulesPagerdutyAlertSchema
     {
         /// <summary>
-        /// Default Value: pagerduty
+        /// Enum for alert types.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.RunRulesAlertType?, object>? Type { get; set; } = global::G.RunRulesAlertType.Pagerduty;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunRulesAlertTypeJsonConverter))]
+        public global::G.RunRulesAlertType? Type { get; set; }
 
         /// <summary>
         /// 
@@ -29,15 +27,14 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("summary")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Summary { get; set; }
+        public string? Summary { get; set; }
 
         /// <summary>
-        /// Default Value: warning
+        /// Enum for severity.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.PagerdutySeverity?, object>? Severity { get; set; } = global::G.PagerdutySeverity.Warning;
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PagerdutySeverityJsonConverter))]
+        public global::G.PagerdutySeverity? Severity { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

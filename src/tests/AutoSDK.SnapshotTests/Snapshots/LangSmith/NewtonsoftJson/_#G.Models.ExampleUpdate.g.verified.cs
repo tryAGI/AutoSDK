@@ -15,31 +15,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dataset_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? DatasetId { get; set; }
+        public global::System.Guid? DatasetId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.AnyOf<object, object>? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.AnyOf<object, object>? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<object, object>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

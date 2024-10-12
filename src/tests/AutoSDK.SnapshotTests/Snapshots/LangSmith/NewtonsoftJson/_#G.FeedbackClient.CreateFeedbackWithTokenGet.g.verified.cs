@@ -9,18 +9,18 @@ namespace G
         partial void PrepareCreateFeedbackWithTokenGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid token,
-            ref global::G.AnyOf<double?, int?, bool?, object>? score,
-            ref global::G.AnyOf<double?, int?, bool?, string, object>? value,
-            ref global::G.AnyOf<string, object>? comment,
-            ref global::G.AnyOf<string, object>? correction);
+            ref global::G.AnyOf<double?, int?, bool?>? score,
+            ref global::G.AnyOf<double?, int?, bool?, string>? value,
+            ref string? comment,
+            ref string? correction);
         partial void PrepareCreateFeedbackWithTokenGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid token,
-            global::G.AnyOf<double?, int?, bool?, object>? score,
-            global::G.AnyOf<double?, int?, bool?, string, object>? value,
-            global::G.AnyOf<string, object>? comment,
-            global::G.AnyOf<string, object>? correction);
+            global::G.AnyOf<double?, int?, bool?>? score,
+            global::G.AnyOf<double?, int?, bool?, string>? value,
+            string? comment,
+            string? correction);
         partial void ProcessCreateFeedbackWithTokenGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -43,10 +43,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::G.AnyOf<double?, int?, bool?, object>? score = default,
-            global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
-            global::G.AnyOf<string, object>? comment = default,
-            global::G.AnyOf<string, object>? correction = default,
+            global::G.AnyOf<double?, int?, bool?>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string>? value = default,
+            string? comment = default,
+            string? correction = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -65,8 +65,8 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("score", score?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("value", value?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("comment", comment?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("correction", correction?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("comment", comment) 
+                .AddOptionalParameter("correction", correction) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

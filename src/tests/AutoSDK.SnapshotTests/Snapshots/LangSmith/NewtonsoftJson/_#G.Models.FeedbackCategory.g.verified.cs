@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.FeedbackCategory.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("label")]
-        public global::G.AnyOf<string, object>? Label { get; set; }
+        public string? Label { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

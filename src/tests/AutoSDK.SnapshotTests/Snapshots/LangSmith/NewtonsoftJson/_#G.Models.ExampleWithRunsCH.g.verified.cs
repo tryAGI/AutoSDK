@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ExampleWithRunsCH.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.AnyOf<object, object>? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -27,13 +25,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_run_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? SourceRunId { get; set; }
+        public global::System.Guid? SourceRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<object, object>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// 
@@ -63,7 +61,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modified_at")]
-        public global::G.AnyOf<global::System.DateTime?, object>? ModifiedAt { get; set; }
+        public global::System.DateTime? ModifiedAt { get; set; }
 
         /// <summary>
         /// 

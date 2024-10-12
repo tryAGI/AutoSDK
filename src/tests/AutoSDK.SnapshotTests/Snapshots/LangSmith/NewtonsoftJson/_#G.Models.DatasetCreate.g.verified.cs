@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.DatasetCreate.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -33,31 +31,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
-        public global::G.AnyOf<object, object>? InputsSchemaDefinition { get; set; }
+        public object? InputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs_schema_definition")]
-        public global::G.AnyOf<object, object>? OutputsSchemaDefinition { get; set; }
+        public object? OutputsSchemaDefinition { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("externally_managed")]
-        public global::G.AnyOf<bool?, object>? ExternallyManaged { get; set; } = false;
+        public bool? ExternallyManaged { get; set; } = false;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::G.AnyOf<global::System.Guid?, object>? Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
-        public global::G.AnyOf<object, object>? Extra { get; set; }
+        public object? Extra { get; set; }
 
         /// <summary>
         /// Enum for dataset data types.

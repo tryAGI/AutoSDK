@@ -144,11 +144,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CreateRepoResponse> UpdateRepoAsync(
             string owner,
             string repo,
-            global::G.AnyOf<string, object>? description = default,
-            global::G.AnyOf<string, object>? readme = default,
-            global::G.AnyOf<global::System.Collections.Generic.IList<string>, object>? tags = default,
-            global::G.AnyOf<bool?, object>? isPublic = default,
-            global::G.AnyOf<bool?, object>? isArchived = default,
+            string? description = default,
+            string? readme = default,
+            global::System.Collections.Generic.IList<string>? tags = default,
+            bool? isPublic = default,
+            bool? isArchived = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.UpdateRepoRequest

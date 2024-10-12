@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CustomChartResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -27,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.AnyOf<string, object>? Description { get; set; }
+        public string? Description { get; set; }
 
         /// <summary>
         /// 
@@ -51,13 +49,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<object, object>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("series", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CustomChartSeries>, object> Series { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.CustomChartSeries>? Series { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.CreateRepoCommitRequest.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("parent_commit")]
-        public global::G.AnyOf<string, object>? ParentCommit { get; set; }
+        public string? ParentCommit { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("example_run_ids")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? ExampleRunIds { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? ExampleRunIds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

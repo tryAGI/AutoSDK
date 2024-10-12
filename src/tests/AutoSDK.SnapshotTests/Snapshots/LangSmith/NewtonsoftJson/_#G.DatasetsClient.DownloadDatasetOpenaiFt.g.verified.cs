@@ -9,12 +9,12 @@ namespace G
         partial void PrepareDownloadDatasetOpenaiFtArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid datasetId,
-            ref global::G.AnyOf<global::System.DateTime?, object>? asOf);
+            ref global::System.DateTime? asOf);
         partial void PrepareDownloadDatasetOpenaiFtRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid datasetId,
-            global::G.AnyOf<global::System.DateTime?, object>? asOf);
+            global::System.DateTime? asOf);
         partial void ProcessDownloadDatasetOpenaiFtResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DownloadDatasetOpenaiFtApiV1DatasetsDatasetIdOpenaiFtGetResponse> DownloadDatasetOpenaiFtAsync(
             global::System.Guid datasetId,
-            global::G.AnyOf<global::System.DateTime?, object>? asOf = default,
+            global::System.DateTime? asOf = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -50,7 +50,7 @@ namespace G
                 path: $"/api/v1/datasets/{datasetId}/openai_ft",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("as_of", asOf?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("as_of", asOf?.ToString("yyyy-MM-ddTHH:mm:ssZ")) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

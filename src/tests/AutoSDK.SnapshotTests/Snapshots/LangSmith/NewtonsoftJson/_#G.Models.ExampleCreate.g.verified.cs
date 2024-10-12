@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::G.AnyOf<object, object>? Outputs { get; set; }
+        public object? Outputs { get; set; }
 
         /// <summary>
         /// 
@@ -27,31 +27,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_run_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? SourceRunId { get; set; }
+        public global::System.Guid? SourceRunId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata")]
-        public global::G.AnyOf<object, object>? Metadata { get; set; }
+        public object? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs")]
-        public global::G.AnyOf<object, object>? Inputs { get; set; }
+        public object? Inputs { get; set; }
 
         /// <summary>
         /// Default Value: base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, object>? Split { get; set; } = "base";
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; } = "base";
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public global::G.AnyOf<global::System.Guid?, object>? Id { get; set; }
+        public global::System.Guid? Id { get; set; }
 
         /// <summary>
         /// Default Value: false

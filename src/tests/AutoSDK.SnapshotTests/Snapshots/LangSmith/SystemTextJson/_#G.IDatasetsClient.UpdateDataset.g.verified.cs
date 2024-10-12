@@ -32,11 +32,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetSchemaForUpdate> UpdateDatasetAsync(
             global::System.Guid datasetId,
-            global::G.AnyOf<string, global::G.Missing, object>? name = default,
-            global::G.AnyOf<string, global::G.Missing, object>? description = default,
-            global::G.AnyOf<object, global::G.Missing, object>? inputsSchemaDefinition = default,
-            global::G.AnyOf<object, global::G.Missing, object>? outputsSchemaDefinition = default,
-            global::G.AnyOf<global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>, object>? patchExamples = default,
+            global::G.AnyOf<string, global::G.Missing>? name = default,
+            global::G.AnyOf<string, global::G.Missing>? description = default,
+            global::G.AnyOf<object, global::G.Missing>? inputsSchemaDefinition = default,
+            global::G.AnyOf<object, global::G.Missing>? outputsSchemaDefinition = default,
+            global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

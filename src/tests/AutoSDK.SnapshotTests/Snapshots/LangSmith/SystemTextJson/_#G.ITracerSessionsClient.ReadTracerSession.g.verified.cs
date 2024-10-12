@@ -19,7 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.TracerSession> ReadTracerSessionAsync(
             global::System.Guid sessionId,
             bool? includeStats = false,
-            global::G.AnyOf<string, object>? accept = default,
+            string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

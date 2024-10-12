@@ -30,7 +30,7 @@ namespace G
             string prompt,
             object metaprompt,
             global::System.Collections.Generic.IList<global::G.ExampleRunWithFeedback> examples,
-            global::G.AnyOf<string, object> overallFeedback,
+            string? overallFeedback,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

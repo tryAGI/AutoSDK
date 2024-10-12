@@ -22,8 +22,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.DateTime?, object>? StartTime { get; set; }
+        public global::System.DateTime? StartTime { get; set; }
 
         /// <summary>
         /// Default Value: [model, model_name, model_id, model_path, endpoint_name]
@@ -58,8 +57,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<string, object>? Provider { get; set; }
+        public string? Provider { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

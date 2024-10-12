@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.QueryParamsForPublicRunSchema.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,8 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? Id { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

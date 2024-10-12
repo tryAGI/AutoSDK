@@ -18,10 +18,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenGetApiV1FeedbackTokensTokenGetResponse> CreateFeedbackWithTokenGetAsync(
             global::System.Guid token,
-            global::G.AnyOf<double?, int?, bool?, object>? score = default,
-            global::G.AnyOf<double?, int?, bool?, string, object>? value = default,
-            global::G.AnyOf<string, object>? comment = default,
-            global::G.AnyOf<string, object>? correction = default,
+            global::G.AnyOf<double?, int?, bool?>? score = default,
+            global::G.AnyOf<double?, int?, bool?, string>? value = default,
+            string? comment = default,
+            string? correction = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

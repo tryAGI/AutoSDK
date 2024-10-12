@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.StripeCustomerAddress.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("line2")]
-        public global::G.AnyOf<string, object>? Line2 { get; set; }
+        public string? Line2 { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
-        public global::G.AnyOf<string, object>? State { get; set; }
+        public string? State { get; set; }
 
         /// <summary>
         /// 

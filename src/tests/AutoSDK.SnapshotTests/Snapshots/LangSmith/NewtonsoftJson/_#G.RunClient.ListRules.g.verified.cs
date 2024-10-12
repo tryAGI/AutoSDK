@@ -8,17 +8,17 @@ namespace G
     {
         partial void PrepareListRulesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::G.AnyOf<global::System.Guid?, object>? datasetId,
-            ref global::G.AnyOf<global::System.Guid?, object>? sessionId,
-            ref global::G.AnyOf<global::G.ListRulesApiV1RunsRulesGetType2?, object>? type,
-            ref global::G.AnyOf<string, object>? nameContains);
+            ref global::System.Guid? datasetId,
+            ref global::System.Guid? sessionId,
+            ref global::G.ListRulesApiV1RunsRulesGetType? type,
+            ref string? nameContains);
         partial void PrepareListRulesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.AnyOf<global::System.Guid?, object>? datasetId,
-            global::G.AnyOf<global::System.Guid?, object>? sessionId,
-            global::G.AnyOf<global::G.ListRulesApiV1RunsRulesGetType2?, object>? type,
-            global::G.AnyOf<string, object>? nameContains);
+            global::System.Guid? datasetId,
+            global::System.Guid? sessionId,
+            global::G.ListRulesApiV1RunsRulesGetType? type,
+            string? nameContains);
         partial void ProcessListRulesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -39,10 +39,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RunRulesSchema>> ListRulesAsync(
-            global::G.AnyOf<global::System.Guid?, object>? datasetId = default,
-            global::G.AnyOf<global::System.Guid?, object>? sessionId = default,
-            global::G.AnyOf<global::G.ListRulesApiV1RunsRulesGetType2?, object>? type = default,
-            global::G.AnyOf<string, object>? nameContains = default,
+            global::System.Guid? datasetId = default,
+            global::System.Guid? sessionId = default,
+            global::G.ListRulesApiV1RunsRulesGetType? type = default,
+            string? nameContains = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -54,14 +54,20 @@ namespace G
                 type: ref type,
                 nameContains: ref nameContains);
 
+            var typeValue = type switch
+            {
+                global::G.ListRulesApiV1RunsRulesGetType.Session => "session",
+                global::G.ListRulesApiV1RunsRulesGetType.Dataset => "dataset",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/runs/rules",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("dataset_id", datasetId?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("session_id", sessionId?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("type", type?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("dataset_id", datasetId?.ToString()) 
+                .AddOptionalParameter("session_id", sessionId?.ToString()) 
+                .AddOptionalParameter("type", typeValue?.ToString()) 
+                .AddOptionalParameter("name_contains", nameContains) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(

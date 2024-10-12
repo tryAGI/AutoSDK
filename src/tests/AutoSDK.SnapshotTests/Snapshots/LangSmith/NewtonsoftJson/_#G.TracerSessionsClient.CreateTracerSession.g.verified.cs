@@ -148,14 +148,14 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
             bool? upsert = false,
             global::System.DateTime? startTime = default,
-            global::G.AnyOf<global::System.DateTime?, object>? endTime = default,
-            global::G.AnyOf<object, object>? extra = default,
+            global::System.DateTime? endTime = default,
+            object? extra = default,
             string? name = default,
-            global::G.AnyOf<string, object>? description = default,
-            global::G.AnyOf<global::System.Guid?, object>? defaultDatasetId = default,
-            global::G.AnyOf<global::System.Guid?, object>? referenceDatasetId = default,
-            global::G.AnyOf<global::G.TraceTier3?, object>? traceTier = default,
-            global::G.AnyOf<global::System.Guid?, object>? id = default,
+            string? description = default,
+            global::System.Guid? defaultDatasetId = default,
+            global::System.Guid? referenceDatasetId = default,
+            global::G.TraceTier? traceTier = default,
+            global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TracerSessionCreate

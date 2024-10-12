@@ -15,31 +15,31 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("score")]
-        public global::G.AnyOf<double?, int?, bool?, object>? Score { get; set; }
+        public global::G.AnyOf<double?, int?, bool?>? Score { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::G.AnyOf<double?, int?, bool?, string, object, object>? Value { get; set; }
+        public global::G.AnyOf<double?, int?, bool?, string, object>? Value { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment")]
-        public global::G.AnyOf<string, object>? Comment { get; set; }
+        public string? Comment { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("correction")]
-        public global::G.AnyOf<object, string, object>? Correction { get; set; }
+        public global::G.AnyOf<object, string>? Correction { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("feedback_config")]
-        public global::G.AnyOf<global::G.FeedbackConfig, object>? FeedbackConfig { get; set; }
+        public global::G.FeedbackConfig? FeedbackConfig { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
