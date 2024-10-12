@@ -29,7 +29,7 @@ namespace G
         /// <param name="runId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetRunLogsV4LogsRunRunIdGetResponse> GetRunLogsAsync(
+        public async global::System.Threading.Tasks.Task<string> GetRunLogsAsync(
             string runId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -103,9 +103,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetRunLogsV4LogsRunRunIdGetResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

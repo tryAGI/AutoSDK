@@ -35,7 +35,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models { get; }
+        public FilesClient Files { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FineTuningClient FineTuning { get; }
 
         /// <summary>
         /// 
@@ -45,12 +50,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FineTuningClient FineTuning { get; }
+        public ModelsClient Models { get; }
 
         /// <summary>
         /// 

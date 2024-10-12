@@ -15,7 +15,7 @@ namespace G
         /// <param name="dynamicValues"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DescriptorAddDescriptorLinkResponse> DescriptorAddDescriptorLinkAsync(
+        global::System.Threading.Tasks.Task<string> DescriptorAddDescriptorLinkAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Guid? resourceId = default,

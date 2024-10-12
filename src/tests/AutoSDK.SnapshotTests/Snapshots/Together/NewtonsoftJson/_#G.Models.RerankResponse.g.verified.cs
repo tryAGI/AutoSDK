@@ -10,13 +10,6 @@ namespace G
     public sealed partial class RerankResponse
     {
         /// <summary>
-        /// Object type<br/>
-        /// Example: rerank
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.RerankResponseObject Object { get; set; }
-
-        /// <summary>
         /// Request ID<br/>
         /// Example: 9dfa1a09-5ebc-4a40-970f-586cb8f4ae47
         /// </summary>
@@ -29,6 +22,13 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
+
+        /// <summary>
+        /// Object type<br/>
+        /// Example: rerank
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.RerankResponseObject Object { get; set; }
 
         /// <summary>
         /// Example: [, ]

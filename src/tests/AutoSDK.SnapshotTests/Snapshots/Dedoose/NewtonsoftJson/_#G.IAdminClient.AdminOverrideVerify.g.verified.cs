@@ -12,7 +12,7 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminOverrideVerifyResponse> AdminOverrideVerifyAsync(
+        global::System.Threading.Tasks.Task<string> AdminOverrideVerifyAsync(
             string? token = default,
             global::System.Guid? userId = default,
             global::System.Threading.CancellationToken cancellationToken = default);

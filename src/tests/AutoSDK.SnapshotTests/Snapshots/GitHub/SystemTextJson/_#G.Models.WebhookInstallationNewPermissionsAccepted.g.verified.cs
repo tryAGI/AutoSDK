@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requester")]
-        public global::G.WebhookInstallationNewPermissionsAcceptedRequester? Requester { get; set; }
+        public object? Requester { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.

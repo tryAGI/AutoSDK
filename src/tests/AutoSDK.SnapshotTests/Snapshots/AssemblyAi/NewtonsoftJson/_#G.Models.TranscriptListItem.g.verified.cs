@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.TranscriptListItemCompleted Completed { get; set; } = default!;
+        public object Completed { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// Error message of why the transcript failed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.TranscriptListItemError Error { get; set; } = default!;
+        public object Error { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

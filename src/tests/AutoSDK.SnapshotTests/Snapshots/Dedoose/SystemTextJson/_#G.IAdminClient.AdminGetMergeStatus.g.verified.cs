@@ -12,7 +12,7 @@ namespace G
         /// <param name="mergedProjectId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminGetMergeStatusResponse> AdminGetMergeStatusAsync(
+        global::System.Threading.Tasks.Task<string> AdminGetMergeStatusAsync(
             string? token = default,
             global::System.Guid? mergedProjectId = default,
             global::System.Threading.CancellationToken cancellationToken = default);

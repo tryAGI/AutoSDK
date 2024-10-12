@@ -11,7 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ConvertDocumentFileStudioV1ChatFilesConvertPostResponse> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
+        global::System.Threading.Tasks.Task<string> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
             global::G.BodyConvertDocumentFileStudioV1ChatFilesConvertPost request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -21,7 +21,7 @@ namespace G
         /// <param name="files"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ConvertDocumentFileStudioV1ChatFilesConvertPostResponse> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
+        global::System.Threading.Tasks.Task<string> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
             global::System.Collections.Generic.IList<byte[]> files,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

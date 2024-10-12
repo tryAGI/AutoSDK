@@ -34,7 +34,7 @@ namespace G
         /// <param name="exportInfo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ExportStartExportSingleSeriesChartJobResponse> ExportStartExportSingleSeriesChartJobAsync(
+        public async global::System.Threading.Tasks.Task<string> ExportStartExportSingleSeriesChartJobAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::G.ChartExportInfo>? exportInfo = default,
@@ -107,9 +107,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ExportStartExportSingleSeriesChartJobResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

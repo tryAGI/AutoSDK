@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.WebhookDeploymentStatusCreatedWorkflowRunHeadRepositoryDescription? Description { get; set; }
+        public object? Description { get; set; }
 
         /// <summary>
         /// 

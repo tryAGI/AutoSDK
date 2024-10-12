@@ -18,14 +18,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionSystemMessageParamRole Role { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public string? Name { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.ChatCompletionSystemMessageParamRole Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

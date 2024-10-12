@@ -14,7 +14,7 @@ namespace G
         /// <param name="pointer"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GetPipelineStartupLogsV4LogsPipelineStartupPipelineIdOrPointerGetResponse> GetPipelineStartupLogsAsync(
+        global::System.Threading.Tasks.Task<string> GetPipelineStartupLogsAsync(
             string pipelineIdOrPointer,
             string? pipelineId = default,
             string? pointer = default,

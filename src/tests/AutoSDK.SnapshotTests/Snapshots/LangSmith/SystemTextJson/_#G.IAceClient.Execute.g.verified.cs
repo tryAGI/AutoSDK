@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> ExecuteAsync(
+        global::System.Threading.Tasks.Task<string> ExecuteAsync(
             global::G.BodyExecuteApiV1AceExecutePost request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -24,8 +24,8 @@ namespace G
         /// <param name="code"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> ExecuteAsync(
-            global::System.Collections.Generic.IList<global::G.BodyExecuteApiV1AceExecutePostArg> args,
+        global::System.Threading.Tasks.Task<string> ExecuteAsync(
+            global::System.Collections.Generic.IList<object> args,
             string code,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

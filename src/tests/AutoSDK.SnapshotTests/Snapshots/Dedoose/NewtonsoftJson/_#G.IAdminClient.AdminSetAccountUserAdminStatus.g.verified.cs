@@ -14,7 +14,7 @@ namespace G
         /// <param name="isAdmin"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminSetAccountUserAdminStatusResponse> AdminSetAccountUserAdminStatusAsync(
+        global::System.Threading.Tasks.Task<string> AdminSetAccountUserAdminStatusAsync(
             string? token = default,
             global::System.Guid? accountId = default,
             global::System.Guid? userId = default,

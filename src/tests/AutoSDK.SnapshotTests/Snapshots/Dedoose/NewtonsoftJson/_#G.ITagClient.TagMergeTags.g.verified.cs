@@ -14,7 +14,7 @@ namespace G
         /// <param name="tag2Id"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.TagMergeTagsResponse> TagMergeTagsAsync(
+        global::System.Threading.Tasks.Task<string> TagMergeTagsAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Guid? tag1Id = default,

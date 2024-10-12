@@ -29,7 +29,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TriggerRulesApiV1RunsRulesTriggerPostResponse> TriggerRulesAsync(
+        public async global::System.Threading.Tasks.Task<string> TriggerRulesAsync(
             global::G.TriggerRulesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -111,9 +111,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.TriggerRulesApiV1RunsRulesTriggerPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -124,7 +122,7 @@ namespace G
         /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TriggerRulesApiV1RunsRulesTriggerPostResponse> TriggerRulesAsync(
+        public async global::System.Threading.Tasks.Task<string> TriggerRulesAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? ruleIds = default,
             global::System.Guid? datasetId = default,
             global::System.Threading.CancellationToken cancellationToken = default)

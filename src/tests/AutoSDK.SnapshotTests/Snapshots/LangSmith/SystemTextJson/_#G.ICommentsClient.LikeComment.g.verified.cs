@@ -13,7 +13,7 @@ namespace G
         /// <param name="parentCommentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> LikeCommentAsync(
+        global::System.Threading.Tasks.Task<string> LikeCommentAsync(
             string owner,
             string repo,
             global::System.Guid parentCommentId,

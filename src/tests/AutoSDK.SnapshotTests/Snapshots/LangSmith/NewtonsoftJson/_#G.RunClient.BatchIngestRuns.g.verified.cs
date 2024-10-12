@@ -29,7 +29,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BatchIngestRunsApiV1RunsBatchPostResponse> BatchIngestRunsAsync(
+        public async global::System.Threading.Tasks.Task<string> BatchIngestRunsAsync(
             global::G.BatchIngestRunsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -111,9 +111,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.BatchIngestRunsApiV1RunsBatchPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -124,7 +122,7 @@ namespace G
         /// <param name="patch"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BatchIngestRunsApiV1RunsBatchPostResponse> BatchIngestRunsAsync(
+        public async global::System.Threading.Tasks.Task<string> BatchIngestRunsAsync(
             global::System.Collections.Generic.IList<global::G.BatchIngestRunsRequestPostItem>? post = default,
             global::System.Collections.Generic.IList<global::G.BatchIngestRunsRequestPatchItem>? patch = default,
             global::System.Threading.CancellationToken cancellationToken = default)

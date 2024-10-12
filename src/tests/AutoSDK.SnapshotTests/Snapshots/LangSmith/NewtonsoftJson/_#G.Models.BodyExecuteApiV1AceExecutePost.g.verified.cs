@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("args", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.BodyExecuteApiV1AceExecutePostArg> Args { get; set; } = default!;
+        public global::System.Collections.Generic.IList<object> Args { get; set; } = default!;
 
         /// <summary>
         /// 

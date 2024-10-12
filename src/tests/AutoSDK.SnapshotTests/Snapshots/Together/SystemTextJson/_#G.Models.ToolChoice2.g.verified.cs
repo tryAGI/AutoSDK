@@ -12,9 +12,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Index { get; set; }
+        public required global::G.ToolChoiceFunction Function { get; set; }
 
         /// <summary>
         /// 
@@ -26,16 +26,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolChoiceTypeJsonConverter))]
-        public global::G.ToolChoiceType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Index { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ToolChoiceFunction Function { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolChoiceTypeJsonConverter))]
+        public global::G.ToolChoiceType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

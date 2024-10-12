@@ -18,12 +18,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Text { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logprob", Required = global::Newtonsoft.Json.Required.Always)]
         public float Logprob { get; set; } = default!;
 
@@ -32,6 +26,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("special", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Special { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Text { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

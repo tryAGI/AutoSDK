@@ -43,7 +43,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("subkeys")]
-        public global::System.Collections.Generic.IList<global::G.GpgKeySubkeySubkey>? Subkeys { get; set; }
+        public global::System.Collections.Generic.IList<object>? Subkeys { get; set; }
 
         /// <summary>
         /// 

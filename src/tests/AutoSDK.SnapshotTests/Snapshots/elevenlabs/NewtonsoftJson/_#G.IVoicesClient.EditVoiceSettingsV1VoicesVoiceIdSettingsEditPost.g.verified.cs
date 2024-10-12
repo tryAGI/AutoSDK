@@ -18,7 +18,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.EditVoiceSettingsV1VoicesVoiceIdSettingsEditPostResponse> EditVoiceSettingsV1VoicesVoiceIdSettingsEditPostAsync(
+        global::System.Threading.Tasks.Task<string> EditVoiceSettingsV1VoicesVoiceIdSettingsEditPostAsync(
             string voiceId,
             global::G.AllOf<global::G.VoiceSettingsResponseModel> request,
             string? xiApiKey = default,
@@ -36,7 +36,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.EditVoiceSettingsV1VoicesVoiceIdSettingsEditPostResponse> EditVoiceSettingsV1VoicesVoiceIdSettingsEditPostAsync(
+        global::System.Threading.Tasks.Task<string> EditVoiceSettingsV1VoicesVoiceIdSettingsEditPostAsync(
             string voiceId,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

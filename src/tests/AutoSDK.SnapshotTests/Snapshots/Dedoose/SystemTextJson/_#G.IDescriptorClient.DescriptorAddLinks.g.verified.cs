@@ -13,7 +13,7 @@ namespace G
         /// <param name="links"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DescriptorAddLinksResponse> DescriptorAddLinksAsync(
+        global::System.Threading.Tasks.Task<string> DescriptorAddLinksAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::G.DescriptorLinkVO>? links = default,

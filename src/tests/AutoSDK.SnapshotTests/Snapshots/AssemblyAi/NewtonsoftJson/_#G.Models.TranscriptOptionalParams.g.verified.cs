@@ -82,13 +82,13 @@ namespace G
         /// The header name to be sent with the transcript completed or failed webhook requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("webhook_auth_header_name")]
-        public global::G.TranscriptOptionalParamsWebhookAuthHeaderName? WebhookAuthHeaderName { get; set; }
+        public object? WebhookAuthHeaderName { get; set; }
 
         /// <summary>
         /// The header value to send back with the transcript completed or failed webhook requests for added security
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("webhook_auth_header_value")]
-        public global::G.TranscriptOptionalParamsWebhookAuthHeaderValue? WebhookAuthHeaderValue { get; set; }
+        public object? WebhookAuthHeaderValue { get; set; }
 
         /// <summary>
         /// Enable Key Phrases, either true or false<br/>
@@ -173,7 +173,7 @@ namespace G
         /// Tells the speaker label model how many speakers it should attempt to identify, up to 10. See [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization) for more details.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speakers_expected")]
-        public global::G.TranscriptOptionalParamsSpeakersExpected? SpeakersExpected { get; set; }
+        public object? SpeakersExpected { get; set; }
 
         /// <summary>
         /// Enable [Content Moderation](https://www.assemblyai.com/docs/models/content-moderation), can be true or false<br/>

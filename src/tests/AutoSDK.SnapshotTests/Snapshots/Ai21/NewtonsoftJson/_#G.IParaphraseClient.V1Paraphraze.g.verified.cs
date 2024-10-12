@@ -11,7 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1ParaphrazeResponse> V1ParaphrazeAsync(
+        global::System.Threading.Tasks.Task<string> V1ParaphrazeAsync(
             global::G.ParaphraseBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -28,7 +28,7 @@ namespace G
         /// <param name="endIndex"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1ParaphrazeResponse> V1ParaphrazeAsync(
+        global::System.Threading.Tasks.Task<string> V1ParaphrazeAsync(
             string text,
             global::G.StyleType? style = global::G.StyleType.General,
             int? startIndex = 0,

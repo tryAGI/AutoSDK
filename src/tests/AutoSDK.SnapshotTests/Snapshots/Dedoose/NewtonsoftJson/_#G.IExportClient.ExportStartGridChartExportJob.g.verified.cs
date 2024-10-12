@@ -19,7 +19,7 @@ namespace G
         /// <param name="extension"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ExportStartGridChartExportJobResponse> ExportStartGridChartExportJobAsync(
+        global::System.Threading.Tasks.Task<string> ExportStartGridChartExportJobAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             string? title = default,

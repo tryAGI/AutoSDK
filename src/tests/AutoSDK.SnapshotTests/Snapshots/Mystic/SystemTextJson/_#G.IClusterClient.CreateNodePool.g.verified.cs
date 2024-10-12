@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.CreateNodePoolV4ClustersClusterIdNodePoolsPostResponse> CreateNodePoolAsync(
+        global::System.Threading.Tasks.Task<string> CreateNodePoolAsync(
             string clusterId,
             global::G.NodePoolCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -27,7 +27,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.CreateNodePoolV4ClustersClusterIdNodePoolsPostResponse> CreateNodePoolAsync(
+        global::System.Threading.Tasks.Task<string> CreateNodePoolAsync(
             string clusterId,
             global::System.Collections.Generic.IList<global::G.Accelerator> accelerators,
             bool? spot = true,

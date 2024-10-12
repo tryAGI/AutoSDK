@@ -40,7 +40,7 @@ namespace G
         /// <param name="subject"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.FileEmailFileResponse> FileEmailFileAsync(
+        public async global::System.Threading.Tasks.Task<string> FileEmailFileAsync(
             string? token = default,
             string? fileURI = default,
             string? attachmentFileName = default,
@@ -122,9 +122,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.FileEmailFileResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

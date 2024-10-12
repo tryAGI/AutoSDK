@@ -13,7 +13,7 @@ namespace G
         /// <param name="message"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminSendAllClientsMessageResponse> AdminSendAllClientsMessageAsync(
+        global::System.Threading.Tasks.Task<string> AdminSendAllClientsMessageAsync(
             string? token = default,
             string? title = default,
             string? message = default,

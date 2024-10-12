@@ -13,7 +13,7 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.SecurityUnlinkUserFromProjectResponse> SecurityUnlinkUserFromProjectAsync(
+        global::System.Threading.Tasks.Task<string> SecurityUnlinkUserFromProjectAsync(
             string? token = default,
             global::System.Guid? userId = default,
             global::System.Guid? projectId = default,

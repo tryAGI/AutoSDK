@@ -17,7 +17,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DeleteProjectV1ProjectsProjectIdDeleteResponse> DeleteProjectV1ProjectsProjectIdDeleteAsync(
+        global::System.Threading.Tasks.Task<string> DeleteProjectV1ProjectsProjectIdDeleteAsync(
             string projectId,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -49,7 +49,7 @@ namespace G
         /// <param name="created"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ResourceDeleteTranscriptResponse> ResourceDeleteTranscriptAsync(
+        public async global::System.Threading.Tasks.Task<string> ResourceDeleteTranscriptAsync(
             string? token = default,
             string? projectIdKey = default,
             global::System.Guid? id = default,
@@ -143,9 +143,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ResourceDeleteTranscriptResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

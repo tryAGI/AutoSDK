@@ -28,7 +28,7 @@ namespace G
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OauthProviderAuthApiV1OauthProviderGetResponse> OauthProviderAuthAsync(
+        public async global::System.Threading.Tasks.Task<string> OauthProviderAuthAsync(
             global::G.OAuthProvider provider = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -86,9 +86,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.OauthProviderAuthApiV1OauthProviderGetResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

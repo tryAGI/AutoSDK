@@ -32,7 +32,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
+        public async global::System.Threading.Tasks.Task<string> IndexAsync(
             global::System.Guid datasetId,
             global::G.DatasetIndexRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -117,9 +117,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.IndexApiV1DatasetsDatasetIdIndexPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -132,7 +130,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
+        public async global::System.Threading.Tasks.Task<string> IndexAsync(
             global::System.Guid datasetId,
             string? tag = "latest",
             global::System.Threading.CancellationToken cancellationToken = default)

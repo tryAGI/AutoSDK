@@ -29,7 +29,7 @@ namespace G
         /// <param name="feedbackId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DeleteFeedbackApiV1FeedbackFeedbackIdDeleteResponse> DeleteFeedbackAsync(
+        public async global::System.Threading.Tasks.Task<string> DeleteFeedbackAsync(
             global::System.Guid feedbackId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -103,9 +103,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteFeedbackApiV1FeedbackFeedbackIdDeleteResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

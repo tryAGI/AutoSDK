@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public double Index { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ToolChoiceFunction Function { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -24,14 +24,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ToolChoiceType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Index { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ToolChoiceFunction Function { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ToolChoiceType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

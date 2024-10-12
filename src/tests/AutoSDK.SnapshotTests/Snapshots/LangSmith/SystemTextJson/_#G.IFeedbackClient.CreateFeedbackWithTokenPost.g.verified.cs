@@ -13,7 +13,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
+        global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
             global::G.FeedbackCreateWithTokenExtendedSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.CreateFeedbackWithTokenPostApiV1FeedbackTokensTokenPostResponse> CreateFeedbackWithTokenPostAsync(
+        global::System.Threading.Tasks.Task<string> CreateFeedbackWithTokenPostAsync(
             global::System.Guid token,
             global::G.AnyOf<double?, int?, bool?>? score = default,
             global::G.AnyOf<double?, int?, bool?, string>? value = default,

@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.UpsertCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsPostResponse> UpsertCurrentWorkspaceSecretsAsync(
+        public async global::System.Threading.Tasks.Task<string> UpsertCurrentWorkspaceSecretsAsync(
             global::System.Collections.Generic.IList<global::G.SecretUpsert> request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UpsertCurrentWorkspaceSecretsApiV1WorkspacesCurrentSecretsPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

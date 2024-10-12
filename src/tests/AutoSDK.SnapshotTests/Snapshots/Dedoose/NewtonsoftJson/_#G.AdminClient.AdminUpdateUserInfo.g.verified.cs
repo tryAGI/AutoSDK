@@ -40,7 +40,7 @@ namespace G
         /// <param name="phone"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AdminUpdateUserInfoResponse> AdminUpdateUserInfoAsync(
+        public async global::System.Threading.Tasks.Task<string> AdminUpdateUserInfoAsync(
             string? token = default,
             global::System.Guid? userId = default,
             string? username = default,
@@ -122,9 +122,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AdminUpdateUserInfoResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

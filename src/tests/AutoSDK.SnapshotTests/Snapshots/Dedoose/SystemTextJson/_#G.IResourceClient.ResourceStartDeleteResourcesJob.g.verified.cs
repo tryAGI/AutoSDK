@@ -13,7 +13,7 @@ namespace G
         /// <param name="resourceIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ResourceStartDeleteResourcesJobResponse> ResourceStartDeleteResourcesJobAsync(
+        global::System.Threading.Tasks.Task<string> ResourceStartDeleteResourcesJobAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::System.Guid>? resourceIds = default,

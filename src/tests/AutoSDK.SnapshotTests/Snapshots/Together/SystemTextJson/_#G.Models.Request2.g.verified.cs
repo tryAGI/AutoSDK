@@ -10,58 +10,62 @@ namespace G
     public sealed partial class Request2
     {
         /// <summary>
-        /// File-ID of a file uploaded to the Together API
+        /// Height of the image to generate in number of pixels.<br/>
+        /// Default Value: 1024
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("training_file")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string TrainingFile { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("height")]
+        public int? Height { get; set; } = 1024;
 
         /// <summary>
-        /// Name of the base model to run fine-tune job on
+        /// The model to use for image generation.<br/>
+        /// Default Value: stabilityai/stable-diffusion-xl-base-1.0<br/>
+        /// Example: stabilityai/stable-diffusion-xl-base-1.0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
 
         /// <summary>
-        /// Number of epochs for fine-tuning<br/>
+        /// Number of image results to generate.<br/>
         /// Default Value: 1
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
-        public int? NEpochs { get; set; } = 1;
+        [global::System.Text.Json.Serialization.JsonPropertyName("n")]
+        public int? N { get; set; } = 1;
 
         /// <summary>
-        /// Number of checkpoints to save during fine-tuning<br/>
-        /// Default Value: 1
+        /// The prompt or prompts not to guide the image generation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("n_checkpoints")]
-        public int? NCheckpoints { get; set; } = 1;
+        [global::System.Text.Json.Serialization.JsonPropertyName("negative_prompt")]
+        public string? NegativePrompt { get; set; }
 
         /// <summary>
-        /// Batch size for fine-tuning<br/>
-        /// Default Value: 32
+        /// A description of the desired images. Maximum length varies by model.<br/>
+        /// Default Value: cat floating in space, cinematic<br/>
+        /// Example: cat floating in space, cinematic
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
-        public int? BatchSize { get; set; } = 32;
+        [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Prompt { get; set; }
 
         /// <summary>
-        /// Learning rate multiplier to use for training<br/>
-        /// Default Value: 1E-05F
+        /// Seed used for generation. Can be used to reproduce image generations.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate")]
-        public float? LearningRate { get; set; } = 1E-05F;
+        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
+        public int? Seed { get; set; }
 
         /// <summary>
-        /// Suffix that will be added to your fine-tuned model name
+        /// Number of generation steps.<br/>
+        /// Default Value: 20
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
-        public string? Suffix { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("steps")]
+        public int? Steps { get; set; } = 20;
 
         /// <summary>
-        /// API key for Weights &amp; Biases integration
+        /// Width of the image to generate in number of pixels.<br/>
+        /// Default Value: 1024
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("wandb_api_key")]
-        public string? WandbApiKey { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("width")]
+        public int? Width { get; set; } = 1024;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

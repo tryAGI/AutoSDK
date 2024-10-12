@@ -11,7 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AuthAzureV4CloudProviderAzureAuthPostResponse> AuthAzureAsync(
+        global::System.Threading.Tasks.Task<string> AuthAzureAsync(
             global::G.AzureAuthCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -24,7 +24,7 @@ namespace G
         /// <param name="subscriptionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AuthAzureV4CloudProviderAzureAuthPostResponse> AuthAzureAsync(
+        global::System.Threading.Tasks.Task<string> AuthAzureAsync(
             string clientId,
             string clientSecret,
             string tenantId,

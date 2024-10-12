@@ -49,7 +49,7 @@ namespace G
         /// <param name="intervalValue"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TopPipelinesUsageV4MetricsTopPipelinesUsageGetResponse> TopPipelinesUsageAsync(
+        public async global::System.Threading.Tasks.Task<string> TopPipelinesUsageAsync(
             global::System.DateTime start,
             global::System.DateTime end,
             global::G.DurationUnit intervalUnit,
@@ -155,9 +155,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.TopPipelinesUsageV4MetricsTopPipelinesUsageGetResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

@@ -13,13 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionFunctionMessageParamRole Role { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
         [global::System.Obsolete("This property marked as deprecated.")]
         public string Content { get; set; } = default!;
@@ -30,6 +23,13 @@ namespace G
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         [global::System.Obsolete("This property marked as deprecated.")]
         public string Name { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionFunctionMessageParamRole Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -79,7 +79,7 @@ public static class OpenApi31Support
                 node["openapi"] = "3.0.3";
             }
 
-            if (keyString is "anyOf" or "oneOf" &&
+            if (keyString is "anyOf" or "oneOf" or "allOf" &&
                 entry.Value is JsonArray { Count: 2 } anyOfList &&
                 anyOfList.Any(v =>
                     v is JsonObject objects &&
@@ -108,7 +108,7 @@ public static class OpenApi31Support
                 node.Remove(keyString);
             }
             
-            if (keyString is "anyOf" or "oneOf" &&
+            if (keyString is "anyOf" or "oneOf" or "allOf" &&
                 entry.Value is JsonArray { Count: > 2 } anyOfList3 &&
                 anyOfList3.Any(v =>
                     v is JsonObject objects &&
@@ -251,7 +251,7 @@ public static class OpenApi31Support
             }
             
             var keyString = entry.Key as string;
-            if (keyString is "anyOf" or "oneOf" &&
+            if (keyString is "anyOf" or "oneOf" or "allOf" &&
                 entry.Value is List<object?> anyOfList && anyOfList.Count == 2 &&
                 anyOfList.Any(v =>
                     v is Dictionary<object, object?> objects &&

@@ -18,8 +18,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionAssistantMessageParamRole Role { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("function_call")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionAssistantMessageParamFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// 
@@ -30,15 +31,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.ChatCompletionAssistantMessageParamRole Role { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function_call")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionAssistantMessageParamFunctionCall? FunctionCall { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("tool_calls")]
+        public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

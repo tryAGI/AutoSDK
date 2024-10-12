@@ -14,16 +14,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionChunkObjectJsonConverter))]
-        public global::G.ChatCompletionChunkObject Object { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ChatCompletionChunkChoice> Choices { get; set; }
 
         /// <summary>
         /// 
@@ -35,8 +28,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("system_fingerprint")]
-        public string? SystemFingerprint { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Id { get; set; }
 
         /// <summary>
         /// Example: mistralai/Mixtral-8x7B-Instruct-v0.1
@@ -48,16 +42,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ChatCompletionChunkChoice> Choices { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionChunkObjectJsonConverter))]
+        public global::G.ChatCompletionChunkObject Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("system_fingerprint")]
+        public string? SystemFingerprint { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
-        public global::G.AllOf<global::G.UsageData, global::G.ChatCompletionChunkUsage>? Usage { get; set; }
+        public global::G.AllOf<global::G.UsageData, object>? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

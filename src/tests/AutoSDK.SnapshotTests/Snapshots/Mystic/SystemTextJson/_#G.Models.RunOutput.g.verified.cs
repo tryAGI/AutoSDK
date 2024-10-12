@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public global::G.RunOutputValue? Value { get; set; }
+        public object? Value { get; set; }
 
         /// <summary>
         /// Base model for schemas.

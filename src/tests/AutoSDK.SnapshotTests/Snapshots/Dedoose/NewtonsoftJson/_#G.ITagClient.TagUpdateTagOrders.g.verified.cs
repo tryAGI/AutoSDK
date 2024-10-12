@@ -13,7 +13,7 @@ namespace G
         /// <param name="tags"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.TagUpdateTagOrdersResponse> TagUpdateTagOrdersAsync(
+        global::System.Threading.Tasks.Task<string> TagUpdateTagOrdersAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::G.Tag>? tags = default,

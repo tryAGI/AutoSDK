@@ -14,7 +14,7 @@ namespace G
         /// <param name="connectionKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UserValidateUserResponse> UserValidateUserAsync(
+        global::System.Threading.Tasks.Task<string> UserValidateUserAsync(
             string? token = default,
             string? username = default,
             string? passSalt = default,

@@ -1,7 +1,8 @@
-openapi: 3.0.1
+openapi: 3.1.0
 info:
   title: Together APIs
   description: The Together REST API. Please see https://docs.together.ai for more details.
+  version: '2.0.0'
   termsOfService: https://www.together.ai/terms-of-service
   contact:
     name: Together Support
@@ -9,14 +10,14 @@ info:
   license:
     name: MIT
     url: https://github.com/togethercomputer/openapi/blob/main/LICENSE
-  version: 2.0.0
 servers:
   - url: https://api.together.xyz/v1
+security:
+  - bearerAuth: []
 paths:
   /chat/completions:
     post:
-      tags:
-        - Chat
+      tags: ['Chat']
       summary: Create chat completion
       description: Query a chat model.
       operationId: chat-completions
@@ -36,47 +37,47 @@ paths:
               schema:
                 $ref: '#/components/schemas/ChatCompletionStream'
         '400':
-          description: BadRequest
+          description: 'BadRequest'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '401':
-          description: Unauthorized
+          description: 'Unauthorized'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '404':
-          description: NotFound
+          description: 'NotFound'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '429':
-          description: RateLimit
+          description: 'RateLimit'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '503':
-          description: Overloaded
+          description: 'Overloaded'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '504':
-          description: Timeout
+          description: 'Timeout'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
+      deprecated: false
   /completions:
     post:
-      tags:
-        - Completion
+      tags: ['Completion']
       summary: Create completion
-      description: 'Query a language, code, or image model.'
+      description: Query a language, code, or image model.
       operationId: completions
       requestBody:
         content:
@@ -94,45 +95,45 @@ paths:
               schema:
                 $ref: '#/components/schemas/CompletionStream'
         '400':
-          description: BadRequest
+          description: 'BadRequest'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '401':
-          description: Unauthorized
+          description: 'Unauthorized'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '404':
-          description: NotFound
+          description: 'NotFound'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '429':
-          description: RateLimit
+          description: 'RateLimit'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '503':
-          description: Overloaded
+          description: 'Overloaded'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '504':
-          description: Timeout
+          description: 'Timeout'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
+      deprecated: false
   /embeddings:
     post:
-      tags:
-        - Embeddings
+      tags: ['Embeddings']
       summary: Create embedding
       description: Query an embedding model for a given string of text.
       operationId: embeddings
@@ -149,45 +150,45 @@ paths:
               schema:
                 $ref: '#/components/schemas/EmbeddingsResponse'
         '400':
-          description: BadRequest
+          description: 'BadRequest'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '401':
-          description: Unauthorized
+          description: 'Unauthorized'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '404':
-          description: NotFound
+          description: 'NotFound'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '429':
-          description: RateLimit
+          description: 'RateLimit'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '503':
-          description: Overloaded
+          description: 'Overloaded'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '504':
-          description: Timeout
+          description: 'Timeout'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
+      deprecated: false
   /models:
     get:
-      tags:
-        - Models
+      tags: ['Models']
       summary: List all models
       description: Lists all of Together's open-source models
       operationId: models
@@ -199,81 +200,83 @@ paths:
               schema:
                 $ref: '#/components/schemas/ModelInfoList'
         '400':
-          description: BadRequest
+          description: 'BadRequest'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '401':
-          description: Unauthorized
+          description: 'Unauthorized'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '404':
-          description: NotFound
+          description: 'NotFound'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '429':
-          description: RateLimit
+          description: 'RateLimit'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '504':
-          description: Timeout
+          description: 'Timeout'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
+      deprecated: false
   /images/generations:
     post:
-      tags:
-        - Images
+      tags: ['Images']
       summary: Create image
       description: Use an image model to generate an image for a given prompt.
       requestBody:
+        required: true
         content:
           application/json:
             schema:
+              type: object
               required:
                 - prompt
                 - model
-              type: object
               properties:
                 prompt:
                   type: string
                   description: A description of the desired images. Maximum length varies by model.
-                  example: 'cat floating in space, cinematic'
+                  example: cat floating in space, cinematic
+                  default: cat floating in space, cinematic
                 model:
                   type: string
                   description: The model to use for image generation.
                   example: stabilityai/stable-diffusion-xl-base-1.0
+                  default: stabilityai/stable-diffusion-xl-base-1.0
                 steps:
                   type: integer
-                  description: Number of generation steps.
                   default: 20
+                  description: Number of generation steps.
                 seed:
                   type: integer
                   description: Seed used for generation. Can be used to reproduce image generations.
                 n:
                   type: integer
-                  description: Number of image results to generate.
                   default: 1
+                  description: Number of image results to generate.
                 height:
                   type: integer
-                  description: Height of the image to generate in number of pixels.
                   default: 1024
+                  description: Height of the image to generate in number of pixels.
                 width:
                   type: integer
-                  description: Width of the image to generate in number of pixels.
                   default: 1024
+                  description: Width of the image to generate in number of pixels.
                 negative_prompt:
                   type: string
                   description: The prompt or prompts not to guide the image generation.
-        required: true
       responses:
         '200':
           description: Image generated successfully
@@ -283,8 +286,7 @@ paths:
                 $ref: '#/components/schemas/ImageResponse'
   /files:
     get:
-      tags:
-        - Files
+      tags: ['Files']
       summary: List all files
       description: List the metadata for all uploaded data files.
       responses:
@@ -294,10 +296,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FileList'
-  '/files/{id}':
+  /files/{id}:
     get:
-      tags:
-        - Files
+      tags: ['Files']
       summary: List file
       description: List the metadata for a single uploaded data file.
       parameters:
@@ -314,8 +315,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FileResponse'
     delete:
-      tags:
-        - Files
+      tags: ['Files']
       summary: Delete a file
       description: Delete a previously uploaded data file.
       parameters:
@@ -331,10 +331,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FileDeleteResponse'
-  '/files/{id}/content':
+  /files/{id}/content:
     get:
-      tags:
-        - Files
+      tags: ['Files']
       summary: Get file contents
       description: Get the contents of a single uploaded data file.
       parameters:
@@ -358,49 +357,60 @@ paths:
                 $ref: '#/components/schemas/ErrorData'
   /fine-tunes:
     post:
-      tags:
-        - Fine-tuning
+      tags: ['Fine-tuning']
       summary: Create job
       description: Use a model to create a fine-tuning job.
       requestBody:
+        required: true
         content:
           application/json:
             schema:
+              type: object
               required:
                 - training_file
                 - model
-              type: object
               properties:
                 training_file:
                   type: string
-                  description: File-ID of a file uploaded to the Together API
+                  description: File-ID of a training file uploaded to the Together API
+                validation_file:
+                  type: string
+                  description: File-ID of a validation file uploaded to the Together API
                 model:
                   type: string
                   description: Name of the base model to run fine-tune job on
                 n_epochs:
                   type: integer
-                  description: Number of epochs for fine-tuning
                   default: 1
+                  description: Number of epochs for fine-tuning
                 n_checkpoints:
                   type: integer
-                  description: Number of checkpoints to save during fine-tuning
                   default: 1
+                  description: Number of checkpoints to save during fine-tuning
+                n_evals:
+                  type: integer
+                  default: 0
+                  description: Number of evaluations to be run on a given validation set during training
                 batch_size:
                   type: integer
-                  description: Batch size for fine-tuning
                   default: 32
+                  description: Batch size for fine-tuning
                 learning_rate:
                   type: number
-                  description: Learning rate multiplier to use for training
                   format: float
-                  default: 1E-05
+                  default: 0.00001
+                  description: Learning rate multiplier to use for training
                 suffix:
                   type: string
                   description: Suffix that will be added to your fine-tuned model name
                 wandb_api_key:
                   type: string
                   description: API key for Weights & Biases integration
-        required: true
+                training_type:
+                  type: object
+                  oneOf:
+                    - $ref: '#/components/schemas/FullTrainingType'
+                    - $ref: '#/components/schemas/LoRATrainingType'
       responses:
         '200':
           description: Fine-tuning job initiated successfully
@@ -409,8 +419,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/FinetuneResponse'
     get:
-      tags:
-        - Fine-tuning
+      tags: ['Fine-tuning']
       summary: List all jobs
       description: List the metadata for all fine-tuning jobs.
       responses:
@@ -420,10 +429,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FinetuneList'
-  '/fine-tunes/{id}':
+  /fine-tunes/{id}:
     get:
-      tags:
-        - Fine-tuning
+      tags: ['Fine-tuning']
       summary: List job
       description: List the metadata for a single fine-tuning job.
       parameters:
@@ -439,10 +447,9 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/FinetuneResponse'
-  '/fine-tunes/{id}/events':
+  /fine-tunes/{id}/events:
     get:
-      tags:
-        - Fine-tuning
+      tags: ['Fine-tuning']
       summary: List job events
       description: List the events for a single fine-tuning job.
       parameters:
@@ -460,27 +467,28 @@ paths:
                 $ref: '#/components/schemas/FinetuneListEvents'
   /finetune/download:
     get:
-      tags:
-        - Fine-tuning
+      tags: ['Fine-tuning']
       summary: Download model
       description: Download a compressed fine-tuned model or checkpoint to local disk.
       parameters:
-        - name: ft_id
-          in: query
-          description: Fine-tune ID to download. A string that starts with `ft-`.
-          required: true
+        - in: query
+          name: ft_id
           schema:
             type: string
-        - name: checkpoint_step
-          in: query
-          description: Specifies step number for checkpoint to download.
+          required: true
+          description: Fine-tune ID to download. A string that starts with `ft-`.
+        - in: query
+          name: checkpoint_step
           schema:
             type: integer
-        - name: output
-          in: query
-          description: 'Specifies output file name for downloaded model. Defaults to `$PWD/{model_name}.{extension}`.'
+          required: false
+          description: Specifies step number for checkpoint to download.
+        - in: query
+          name: output
           schema:
             type: string
+          required: false
+          description: Specifies output file name for downloaded model. Defaults to `$PWD/{model_name}.{extension}`.
       responses:
         '200':
           description: Successfully downloaded the fine-tuned model or checkpoint.
@@ -492,19 +500,18 @@ paths:
           description: Invalid request parameters.
         '404':
           description: Fine-tune ID not found.
-  '/fine-tunes/{id}/cancel':
+  /fine-tunes/{id}/cancel:
     post:
-      tags:
-        - Fine-tuning
+      tags: ['Fine-tuning']
       summary: Cancel job
       description: Cancel a currently running fine-tuning job.
       parameters:
-        - name: id
-          in: path
-          description: Fine-tune ID to cancel. A string that starts with `ft-`.
-          required: true
+        - in: path
+          name: id
           schema:
             type: string
+          required: true
+          description: Fine-tune ID to cancel. A string that starts with `ft-`.
       responses:
         '200':
           description: Successfully cancelled the fine-tuning job.
@@ -518,8 +525,7 @@ paths:
           description: Fine-tune ID not found.
   /rerank:
     post:
-      tags:
-        - Rerank
+      tags: ['Rerank']
       summary: Create a rerank request
       description: Query a reranker model
       operationId: rerank
@@ -536,77 +542,109 @@ paths:
               schema:
                 $ref: '#/components/schemas/RerankResponse'
         '400':
-          description: BadRequest
+          description: 'BadRequest'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '401':
-          description: Unauthorized
+          description: 'Unauthorized'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '404':
-          description: NotFound
+          description: 'NotFound'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '429':
-          description: RateLimit
+          description: 'RateLimit'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '503':
-          description: Overloaded
+          description: 'Overloaded'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
         '504':
-          description: Timeout
+          description: 'Timeout'
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorData'
+      deprecated: false
 components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      x-bearer-format: bearer
+      x-default: default
+
   schemas:
     RerankRequest:
-      required:
-        - model
-        - query
-        - documents
       type: object
       properties:
         model:
           type: string
           description: The model to be used for the rerank request.
           example: Salesforce/Llama-Rank-V1
+          default: Salesforce/Llama-Rank-V1
         query:
           type: string
           description: The search query to be used for ranking.
           example: What animals can I find near Peru?
+          default: What animals can I find near Peru?
         documents:
+          description: List of documents, which can be either strings or objects.
           oneOf:
             - type: array
               items:
                 type: object
+                additionalProperties: true
             - type: array
               items:
                 type: string
-                example: 'Our solar system orbits the Milky Way galaxy at about 515,000 mph'
-          description: 'List of documents, which can be either strings or objects.'
+                example: Our solar system orbits the Milky Way galaxy at about 515,000 mph
           example:
-            - title: Llama
-              text: 'The llama is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era.'
-            - title: Panda
-              text: 'The giant panda (Ailuropoda melanoleuca), also known as the panda bear or simply panda, is a bear species endemic to China.'
-            - title: Guanaco
-              text: 'The guanaco is a camelid native to South America, closely related to the llama. Guanacos are one of two wild South American camelids; the other species is the vicuña, which lives at higher elevations.'
-            - title: Wild Bactrian camel
-              text: The wild Bactrian camel (Camelus ferus) is an endangered species of camel endemic to Northwest China and southwestern Mongolia.
+            - {
+                'title': 'Llama',
+                'text': 'The llama is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era.',
+              }
+            - {
+                'title': 'Panda',
+                'text': 'The giant panda (Ailuropoda melanoleuca), also known as the panda bear or simply panda, is a bear species endemic to China.',
+              }
+            - {
+                'title': 'Guanaco',
+                'text': 'The guanaco is a camelid native to South America, closely related to the llama. Guanacos are one of two wild South American camelids; the other species is the vicuña, which lives at higher elevations.',
+              }
+            - {
+                'title': 'Wild Bactrian camel',
+                'text': 'The wild Bactrian camel (Camelus ferus) is an endangered species of camel endemic to Northwest China and southwestern Mongolia.',
+              }
+          default:
+            - {
+                'title': 'Llama',
+                'text': 'The llama is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era.',
+              }
+            - {
+                'title': 'Panda',
+                'text': 'The giant panda (Ailuropoda melanoleuca), also known as the panda bear or simply panda, is a bear species endemic to China.',
+              }
+            - {
+                'title': 'Guanaco',
+                'text': 'The guanaco is a camelid native to South America, closely related to the llama. Guanacos are one of two wild South American camelids; the other species is the vicuña, which lives at higher elevations.',
+              }
+            - {
+                'title': 'Wild Bactrian camel',
+                'text': 'The wild Bactrian camel (Camelus ferus) is an endangered species of camel endemic to Northwest China and southwestern Mongolia.',
+              }
         top_n:
           type: integer
           description: The number of top results to return.
@@ -620,22 +658,25 @@ components:
           items:
             type: string
           description: List of keys in the JSON Object document to rank by. Defaults to use all supplied keys for ranking.
-          example:
-            - title
-            - text
+          example: ['title', 'text']
+      required:
+        - model
+        - query
+        - documents
       additionalProperties: false
+
     RerankResponse:
+      type: object
       required:
         - object
         - model
         - results
-      type: object
       properties:
         object:
-          enum:
-            - rerank
           type: string
           description: Object type
+          enum:
+            - rerank
           example: rerank
         id:
           type: string
@@ -648,11 +689,8 @@ components:
         results:
           type: array
           items:
-            required:
-              - index
-              - relevance_score
-              - document
             type: object
+            required: [index, relevance_score, document]
             properties:
               index:
                 type: integer
@@ -665,49 +703,68 @@ components:
                     type: string
                     nullable: true
           example:
-            - index: 0
-              relevance_score: 0.29980177813003117
-              document:
-                text: '{"title":"Llama","text":"The llama is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era."}'
-            - index: 2
-              relevance_score: 0.2752447527354349
-              document:
-                text: '{"title":"Guanaco","text":"The guanaco is a camelid native to South America, closely related to the llama. Guanacos are one of two wild South American camelids; the other species is the vicuña, which lives at higher elevations."}'
+            - {
+                'index': 0,
+                'relevance_score': 0.29980177813003117,
+                'document':
+                  {
+                    'text': '{"title":"Llama","text":"The llama is a domesticated South American camelid, widely used as a meat and pack animal by Andean cultures since the pre-Columbian era."}',
+                  },
+              }
+            - {
+                'index': 2,
+                'relevance_score': 0.2752447527354349,
+                'document':
+                  {
+                    'text': '{"title":"Guanaco","text":"The guanaco is a camelid native to South America, closely related to the llama. Guanacos are one of two wild South American camelids; the other species is the vicuña, which lives at higher elevations."}',
+                  },
+              }
         usage:
           $ref: '#/components/schemas/UsageData'
+          example:
+            {
+              'prompt_tokens': 1837,
+              'completion_tokens': 0,
+              'total_tokens': 1837,
+            }
+
     ErrorData:
+      type: object
       required:
         - error
-      type: object
       properties:
         error:
+          type: object
+          properties:
+            message:
+              type: string
+              nullable: false
+            type:
+              type: string
+              nullable: false
+            param:
+              type: string
+              nullable: true
+              default: null
+            code:
+              type: string
+              nullable: true
+              default: null
           required:
             - type
             - message
             - param
             - code
-          type: object
-          properties:
-            message:
-              type: string
-            type:
-              type: string
-            param:
-              type: string
-              default:
-              nullable: true
-            code:
-              type: string
-              default:
-              nullable: true
+
     FinishReason:
+      type: string
       enum:
         - stop
         - eos
         - length
         - tool_calls
         - function_call
-      type: string
+
     LogprobsPart:
       type: object
       properties:
@@ -726,6 +783,7 @@ components:
           items:
             type: number
           description: List of token log probabilities
+
     PromptPart:
       type: array
       items:
@@ -733,14 +791,11 @@ components:
         properties:
           text:
             type: string
-            example: '<s>[INST] What is the capital of France? [/INST]'
+            example: <s>[INST] What is the capital of France? [/INST]
           logprobs:
             $ref: '#/components/schemas/LogprobsPart'
+
     UsageData:
-      required:
-        - prompt_tokens
-        - completion_tokens
-        - total_tokens
       type: object
       properties:
         prompt_tokens:
@@ -749,7 +804,12 @@ components:
           type: integer
         total_tokens:
           type: integer
+      required:
+        - prompt_tokens
+        - completion_tokens
+        - total_tokens
       nullable: true
+
     CompletionChoicesData:
       type: array
       items:
@@ -757,33 +817,39 @@ components:
         properties:
           text:
             type: string
-            example: 'The capital of France is Paris. It''s located in the north-central part of the country and is one of the most populous and visited cities in the world, known for its iconic landmarks like the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and more. Paris is also the capital of the Île-de-France region and is a major global center for art, fashion, gastronomy, and culture.'
+            example: The capital of France is Paris. It's located in the north-central part of the country and is one of the most populous and visited cities in the world, known for its iconic landmarks like the Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, and more. Paris is also the capital of the Île-de-France region and is a major global center for art, fashion, gastronomy, and culture.
+          seed:
+            type: integer
           finish_reason:
             $ref: '#/components/schemas/FinishReason'
           logprobs:
+            type: object
             $ref: '#/components/schemas/LogprobsPart'
+
     CompletionRequest:
+      type: object
       required:
         - model
         - prompt
-      type: object
       properties:
         prompt:
           type: string
           description: A string providing context for the model to complete.
-          example: '<s>[INST] What is the capital of France? [/INST]'
+          example: <s>[INST] What is the capital of France? [/INST]
+          default: <s>[INST] What is the capital of France? [/INST]
         model:
           type: string
           description: The name of the model to query.
           example: mistralai/Mixtral-8x7B-Instruct-v0.1
+          default: mistralai/Mixtral-8x7B-Instruct-v0.1
         max_tokens:
           type: integer
           description: The maximum number of tokens to generate.
         stop:
           type: array
+          description: A list of string sequences that will truncate (stop) inference text output. For example, "</s>" will stop generation as soon as the model generates the given token.
           items:
             type: string
-          description: 'A list of string sequences that will truncate (stop) inference text output. For example, "</s>" will stop generation as soon as the model generates the given token.'
         temperature:
           type: number
           description: A decimal number from 0-1 that determines the degree of randomness in the response. A temperature less than 1 favors more correctness and is appropriate for question answering or summarization. A value closer to 1 introduces more randomness in the output.
@@ -794,7 +860,7 @@ components:
           format: float
         top_k:
           type: integer
-          description: 'An integer that''s used to limit the number of choices for the next predicted word or token. It specifies the maximum number of tokens to consider at each step, based on their probability of occurrence. This technique helps to speed up the generation process and can improve the quality of the generated text by focusing on the most likely options.'
+          description: An integer that's used to limit the number of choices for the next predicted word or token. It specifies the maximum number of tokens to consider at each step, based on their probability of occurrence. This technique helps to speed up the generation process and can improve the quality of the generated text by focusing on the most likely options.
           format: int32
         repetition_penalty:
           type: number
@@ -804,22 +870,22 @@ components:
           type: boolean
           description: 'If true, stream tokens as Server-Sent Events as the model generates them instead of waiting for the full model response. The stream terminates with `data: [DONE]`. If false, return a single JSON object containing the results.'
         logprobs:
-          maximum: 1
-          minimum: 0
           type: integer
+          minimum: 0
+          maximum: 1
           description: Determines the number of most likely tokens to return at each token position log probabilities to return.
         echo:
           type: boolean
-          description: 'If true, the response will contain the prompt. Can be used with `logprobs` to return prompt logprobs.'
+          description: If true, the response will contain the prompt. Can be used with `logprobs` to return prompt logprobs.
         n:
-          maximum: 128
-          minimum: 1
           type: integer
           description: The number of completions to generate for each prompt.
+          minimum: 1
+          maximum: 128
         safety_model:
           type: string
-          description: 'The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).'
-          example: safety_model_name
+          description: The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).
+          example: 'safety_model_name'
         min_p:
           type: number
           description: A number between 0 and 1 that can be used as an alternative to top-p and top-k.
@@ -836,19 +902,15 @@ components:
           type: object
           additionalProperties:
             type: number
+
             format: float
           description: Adjusts the likelihood of specific tokens appearing in the generated output.
-          example:
-            '1024': -10.5
-            '105': 21.4
+          example: { '1024': -10.5, '105': 21.4 }
+        seed:
+          type: integer
+          description: Seed value for reproducibility.
+          example: 42
     CompletionResponse:
-      required:
-        - id
-        - choices
-        - usage
-        - created
-        - model
-        - object
       type: object
       properties:
         id:
@@ -864,28 +926,32 @@ components:
         model:
           type: string
         object:
+          type: string
           enum:
             - text_completion
-          type: string
+      required:
+        - id
+        - choices
+        - usage
+        - created
+        - model
+        - object
+
     CompletionStream:
       oneOf:
         - $ref: '#/components/schemas/CompletionEvent'
         - $ref: '#/components/schemas/StreamSentinel'
+
     CompletionEvent:
-      required:
-        - data
       type: object
+      required: [data]
       properties:
         data:
           $ref: '#/components/schemas/CompletionChunk'
+
     CompletionChunk:
-      required:
-        - id
-        - token
-        - choices
-        - usage
-        - finish_reason
       type: object
+      required: [id, token, choices, usage, finish_reason]
       properties:
         id:
           type: string
@@ -900,24 +966,23 @@ components:
           allOf:
             - $ref: '#/components/schemas/UsageData'
             - nullable: true
+        seed:
+          type: integer
         finish_reason:
           allOf:
             - $ref: '#/components/schemas/FinishReason'
             - nullable: true
+
     CompletionChoice:
-      required:
-        - index
       type: object
+      required: [index]
       properties:
         text:
           type: string
+
     CompletionToken:
-      required:
-        - id
-        - text
-        - logprob
-        - special
       type: object
+      required: [id, text, logprob, special]
       properties:
         id:
           type: integer
@@ -927,6 +992,7 @@ components:
           type: number
         special:
           type: boolean
+
     ChatCompletionChoicesData:
       type: array
       items:
@@ -947,47 +1013,38 @@ components:
               - nullable: true
               - $ref: '#/components/schemas/LogprobsPart'
     ChatCompletionMessage:
-      required:
-        - role
-        - content
       type: object
+      required: [role, content]
       properties:
         content:
           type: string
           nullable: true
         role:
-          enum:
-            - assistant
           type: string
+          enum: [assistant]
         tool_calls:
           type: array
           items:
             $ref: '#/components/schemas/ToolChoice'
         function_call:
-          required:
-            - arguments
-            - name
           type: object
+          deprecated: true
+          required: [arguments, name]
           properties:
             arguments:
               type: string
             name:
               type: string
-          deprecated: true
     ChatCompletionTool:
-      required:
-        - type
-        - function
       type: object
+      required: [type, function]
       properties:
         type:
-          enum:
-            - function
           type: string
+          enum: ['function']
         function:
-          required:
-            - name
           type: object
+          required: [name]
           properties:
             description:
               type: string
@@ -995,44 +1052,52 @@ components:
               type: string
             parameters:
               type: object
+              additionalProperties: true
+
     ChatCompletionRequest:
+      type: object
       required:
         - model
         - messages
-      type: object
       properties:
         messages:
           type: array
+          description: A list of messages comprising the conversation so far.
           items:
-            required:
-              - role
-              - content
             type: object
             properties:
               role:
+                type: string
+                description: 'The role of the messages author. Choice between: system, user, or assistant.'
                 enum:
                   - system
                   - user
                   - assistant
                   - tool
-                type: string
-                description: 'The role of the messages author. Choice between: system, user, or assistant.'
               content:
                 type: string
                 description: The contents of the message.
-          description: A list of messages comprising the conversation so far.
+            required:
+              - role
+              - content
+          default:
+            - role: system
+              content: You are a helpful assistant
+            - role: user
+              content: What is 1 + 1?
         model:
           type: string
           description: The name of the model to query.
           example: mistralai/Mixtral-8x7B-Instruct-v0.1
+          default: mistralai/Mixtral-8x7B-Instruct-v0.1
         max_tokens:
           type: integer
           description: The maximum number of tokens to generate.
         stop:
           type: array
+          description: A list of string sequences that will truncate (stop) inference text output. For example, "</s>" will stop generation as soon as the model generates the given token.
           items:
             type: string
-          description: 'A list of string sequences that will truncate (stop) inference text output. For example, "</s>" will stop generation as soon as the model generates the given token.'
         temperature:
           type: number
           description: A decimal number from 0-1 that determines the degree of randomness in the response. A temperature less than 1 favors more correctness and is appropriate for question answering or summarization. A value closer to 1 introduces more randomness in the output.
@@ -1043,7 +1108,7 @@ components:
           format: float
         top_k:
           type: integer
-          description: 'An integer that''s used to limit the number of choices for the next predicted word or token. It specifies the maximum number of tokens to consider at each step, based on their probability of occurrence. This technique helps to speed up the generation process and can improve the quality of the generated text by focusing on the most likely options.'
+          description: An integer that's used to limit the number of choices for the next predicted word or token. It specifies the maximum number of tokens to consider at each step, based on their probability of occurrence. This technique helps to speed up the generation process and can improve the quality of the generated text by focusing on the most likely options.
           format: int32
         repetition_penalty:
           type: number
@@ -1052,18 +1117,18 @@ components:
           type: boolean
           description: 'If true, stream tokens as Server-Sent Events as the model generates them instead of waiting for the full model response. The stream terminates with `data: [DONE]`. If false, return a single JSON object containing the results.'
         logprobs:
-          maximum: 1
-          minimum: 0
           type: integer
+          minimum: 0
+          maximum: 1
           description: Determines the number of most likely tokens to return at each token position log probabilities to return.
         echo:
           type: boolean
-          description: 'If true, the response will contain the prompt. Can be used with `logprobs` to return prompt logprobs.'
+          description: If true, the response will contain the prompt. Can be used with `logprobs` to return prompt logprobs.
         n:
-          maximum: 128
-          minimum: 1
           type: integer
           description: The number of completions to generate for each prompt.
+          minimum: 1
+          maximum: 128
         min_p:
           type: number
           description: A number between 0 and 1 that can be used as an alternative to top_p and top-k.
@@ -1082,23 +1147,23 @@ components:
             type: number
             format: float
           description: Adjusts the likelihood of specific tokens appearing in the generated output.
-          example:
-            '1024': -10.5
-            '105': 21.4
+          example: { '1024': -10.5, '105': 21.4 }
+        seed:
+          type: integer
+          description: Seed value for reproducibility.
+          example: 42
         function_call:
           oneOf:
-            - enum:
-                - none
-                - auto
-              type: string
-            - required:
-                - name
-              type: object
+            - type: string
+              enum: [none, auto]
+            - type: object
+              required: [name]
               properties:
                 name:
                   type: string
         response_format:
           type: object
+          description: An object specifying the format that the model must output.
           properties:
             type:
               type: string
@@ -1109,22 +1174,22 @@ components:
               additionalProperties:
                 type: string
               description: The schema of the response format.
-          description: An object specifying the format that the model must output.
         tools:
           type: array
+          description: A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for.
           items:
             $ref: '#/components/schemas/ToolsPart'
-          description: 'A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for.'
         tool_choice:
+          description: Controls which (if any) function is called by the model. By default uses `auto`, which lets the model pick between generating a message or calling a function.
           oneOf:
             - type: string
-              example: tool_name
+              example: 'tool_name'
             - $ref: '#/components/schemas/ToolChoice'
-          description: 'Controls which (if any) function is called by the model. By default uses `auto`, which lets the model pick between generating a message or calling a function.'
         safety_model:
           type: string
-          description: 'The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).'
-          example: safety_model_name
+          description: The name of the moderation model used to validate tokens. Choose from the available moderation models found [here](https://docs.together.ai/docs/inference-models#moderation-models).
+          example: 'safety_model_name'
+
     ChatCompletionMessageParam:
       oneOf:
         - $ref: '#/components/schemas/ChatCompletionSystemMessageParam'
@@ -1132,46 +1197,44 @@ components:
         - $ref: '#/components/schemas/ChatCompletionAssistantMessageParam'
         - $ref: '#/components/schemas/ChatCompletionToolMessageParam'
         - $ref: '#/components/schemas/ChatCompletionFunctionMessageParam'
+
+    # Start Message Params
+
     ChatCompletionSystemMessageParam:
-      required:
-        - content
-        - role
       type: object
+      required: [content, role]
       properties:
         content:
           type: string
         role:
-          enum:
-            - system
           type: string
+          enum: ['system']
         name:
           type: string
+
     ChatCompletionUserMessageParam:
-      required:
-        - content
-        - role
       type: object
+      required: [content, role]
       properties:
         content:
           type: string
+          # TODO: more comple content?
         role:
-          enum:
-            - user
           type: string
+          enum: ['user']
         name:
           type: string
+
     ChatCompletionAssistantMessageParam:
-      required:
-        - role
       type: object
+      required: [role]
       properties:
         content:
           type: string
           nullable: true
         role:
-          enum:
-            - assistant
           type: string
+          enum: ['assistant']
         name:
           type: string
         tool_calls:
@@ -1179,54 +1242,43 @@ components:
           items:
             $ref: '#/components/schemas/ToolChoice'
         function_call:
-          required:
-            - arguments
-            - name
           type: object
+          deprecated: true
           properties:
             arguments:
               type: string
             name:
               type: string
-          deprecated: true
+          required: [arguments, name]
+
     ChatCompletionFunctionMessageParam:
-      required:
-        - content
-        - role
-        - name
       type: object
+      deprecated: true
+      required: [content, role, name]
       properties:
         role:
-          enum:
-            - function
           type: string
+          enum: ['function']
         content:
           type: string
         name:
           type: string
-      deprecated: true
+
     ChatCompletionToolMessageParam:
-      required:
-        - role
-        - content
-        - tool_call_id
       type: object
       properties:
         role:
-          enum:
-            - tool
           type: string
+          enum: ['tool']
         content:
           type: string
         tool_call_id:
           type: string
+      required: [role, content, tool_call_id]
+
+    # End Message Params
+
     ChatCompletionResponse:
-      required:
-        - choices
-        - id
-        - created
-        - model
-        - object
       type: object
       properties:
         id:
@@ -1240,35 +1292,33 @@ components:
         model:
           type: string
         object:
+          type: string
           enum:
             - chat.completion
-          type: string
+      required: [choices, id, created, model, object]
+
     ChatCompletionStream:
       oneOf:
         - $ref: '#/components/schemas/ChatCompletionEvent'
         - $ref: '#/components/schemas/StreamSentinel'
+
     ChatCompletionEvent:
-      required:
-        - data
       type: object
+      required: [data]
       properties:
         data:
           $ref: '#/components/schemas/ChatCompletionChunk'
+
     ChatCompletionChunk:
-      required:
-        - id
-        - object
-        - created
-        - choices
-        - model
       type: object
+      required: [id, object, created, choices, model]
       properties:
         id:
           type: string
         object:
+          type: string
           enum:
             - chat.completion.chunk
-          type: string
         created:
           type: integer
         system_fingerprint:
@@ -1280,35 +1330,30 @@ components:
           title: ChatCompletionChoices
           type: array
           items:
-            required:
-              - index
-              - delta
-              - finish_reason
             type: object
+            required: [index, delta, finish_reason]
             properties:
               index:
                 type: integer
               finish_reason:
                 $ref: '#/components/schemas/FinishReason'
+                nullable: true
               logprobs:
                 type: number
                 nullable: true
+              seed:
+                type: integer
+                nullable: true
               delta:
                 title: ChatCompletionChoiceDelta
-                required:
-                  - role
                 type: object
+                required: [role]
                 properties:
                   token_id:
                     type: integer
                   role:
-                    enum:
-                      - system
-                      - user
-                      - assistant
-                      - function
-                      - tool
                     type: string
+                    enum: ['system', 'user', 'assistant', 'function', 'tool']
                   content:
                     type: string
                     nullable: true
@@ -1317,38 +1362,35 @@ components:
                     items:
                       $ref: '#/components/schemas/ToolChoice'
                   function_call:
-                    required:
-                      - arguments
-                      - name
                     type: object
+                    deprecated: true
+                    nullable: true
                     properties:
                       arguments:
                         type: string
                       name:
                         type: string
-                    nullable: true
-                    deprecated: true
+                    required:
+                      - arguments
+                      - name
         usage:
           allOf:
             - $ref: '#/components/schemas/UsageData'
             - nullable: true
+
     StreamSentinel:
-      required:
-        - data
       type: object
+      required: [data]
       properties:
         data:
           title: stream_signal
+          type: string
           enum:
             - '[DONE]'
-          type: string
+
     ChatCompletionToken:
-      required:
-        - id
-        - text
-        - logprob
-        - special
       type: object
+      required: [id, text, logprob, special]
       properties:
         id:
           type: integer
@@ -1359,12 +1401,10 @@ components:
           format: float
         special:
           type: boolean
+
     ChatCompletionChoice:
-      required:
-        - index
-        - delta
-        - finish_reason
       type: object
+      required: [index, delta, finish_reason]
       properties:
         index:
           type: integer
@@ -1374,20 +1414,14 @@ components:
           $ref: '#/components/schemas/LogprobsPart'
         delta:
           title: ChatCompletionChoiceDelta
-          required:
-            - role
           type: object
+          required: [role]
           properties:
             token_id:
               type: integer
             role:
-              enum:
-                - system
-                - user
-                - assistant
-                - function
-                - tool
               type: string
+              enum: ['system', 'user', 'assistant', 'function', 'tool']
             content:
               type: string
               nullable: true
@@ -1396,87 +1430,85 @@ components:
               items:
                 $ref: '#/components/schemas/ToolChoice'
             function_call:
-              required:
-                - arguments
-                - name
               type: object
+              deprecated: true
+              nullable: true
               properties:
                 arguments:
                   type: string
                 name:
                   type: string
-              nullable: true
-              deprecated: true
+              required:
+                - arguments
+                - name
+
     EmbeddingsRequest:
+      type: object
       required:
         - model
         - input
-      type: object
       properties:
         model:
           type: string
           description: The name of the embedding model to use.
           example: togethercomputer/m2-bert-80M-8k-retrieval
+          default: togethercomputer/m2-bert-80M-8k-retrieval
         input:
           oneOf:
             - type: string
               description: A string providing the text for the model to embed.
-              example: 'Our solar system orbits the Milky Way galaxy at about 515,000 mph'
+              example: Our solar system orbits the Milky Way galaxy at about 515,000 mph
             - type: array
               items:
                 type: string
                 description: A string providing the text for the model to embed.
-                example: 'Our solar system orbits the Milky Way galaxy at about 515,000 mph'
+                example: Our solar system orbits the Milky Way galaxy at about 515,000 mph
+          default: Our solar system orbits the Milky Way galaxy at about 515,000 mph
+
     EmbeddingsResponse:
+      type: object
       required:
         - object
         - model
         - data
-      type: object
       properties:
         object:
+          type: string
           enum:
             - list
-          type: string
         model:
           type: string
         data:
           type: array
           items:
-            required:
-              - index
-              - object
-              - embedding
             type: object
+            required: [index, object, embedding]
             properties:
               object:
+                type: string
                 enum:
                   - embedding
-                type: string
               embedding:
                 type: array
                 items:
                   type: number
               index:
                 type: integer
+
     ModelInfoList:
       type: array
       items:
         $ref: '#/components/schemas/ModelInfo'
     ModelInfo:
-      required:
-        - id
-        - object
-        - created
-        - type
       type: object
+      required: [id, object, created, type]
       properties:
         id:
           type: string
-          example: Austism/chronos-hermes-13b
+          example: 'Austism/chronos-hermes-13b'
         object:
           type: string
-          example: model
+          example: 'model'
         created:
           type: integer
           example: 1692896905
@@ -1489,29 +1521,24 @@ components:
             - embedding
             - moderation
             - rerank
-          example: chat
+          example: 'chat'
         display_name:
           type: string
-          example: Chronos Hermes (13B)
+          example: 'Chronos Hermes (13B)'
         organization:
           type: string
-          example: Austism
+          example: 'Austism'
         link:
           type: string
         license:
           type: string
-          example: other
+          example: 'other'
         context_length:
           type: integer
           example: 2048
         pricing:
           $ref: '#/components/schemas/Pricing'
     ImageResponse:
-      required:
-        - id
-        - model
-        - object
-        - data
       type: object
       properties:
         id:
@@ -1521,27 +1548,27 @@ components:
         object:
           enum:
             - list
-          example: list
+          example: 'list'
         data:
           type: array
           items:
-            required:
-              - b64_json
-              - index
             type: object
             properties:
               index:
                 type: integer
               b64_json:
                 type: string
-    Pricing:
+            required:
+              - b64_json
+              - index
       required:
-        - hourly
-        - input
-        - output
-        - base
-        - finetune
+        - id
+        - model
+        - object
+        - data
+    Pricing:
       type: object
+      required: [hourly, input, output, base, finetune]
       properties:
         hourly:
           type: number
@@ -1558,52 +1585,50 @@ components:
         finetune:
           type: number
           example: 0
+
     ToolsPart:
       type: object
       properties:
         type:
           type: string
-          example: tool_type
+          example: 'tool_type'
         function:
           type: object
           properties:
             description:
               type: string
-              example: A description of the function.
+              example: 'A description of the function.'
             name:
               type: string
-              example: function_name
+              example: 'function_name'
             parameters:
               type: object
-              description: A map of parameter names to their values.
+              additionalProperties: true
+              description: 'A map of parameter names to their values.'
     ToolChoice:
-      required:
-        - id
-        - type
-        - function
-        - index
       type: object
+      required: [id, type, function, index]
       properties:
+        # TODO: is this the right place for index?
         index:
           type: number
         id:
           type: string
         type:
-          enum:
-            - function
           type: string
+          enum: ['function']
         function:
-          required:
-            - name
-            - arguments
           type: object
+          required: [name, arguments]
           properties:
             name:
               type: string
-              example: function_name
+              example: 'function_name'
             arguments:
               type: string
+
     FileResponse:
+      type: object
       required:
         - id
         - object
@@ -1614,33 +1639,32 @@ components:
         - FileType
         - Processed
         - LineCount
-      type: object
       properties:
         id:
           type: string
         object:
           type: string
-          example: file
+          example: 'file'
         created_at:
           type: integer
           example: 1715021438
         filename:
           type: string
-          example: my_file.jsonl
+          example: 'my_file.jsonl'
         bytes:
           type: integer
           example: 2664
         purpose:
           enum:
             - fine-tune
-          example: fine-tune
+          example: 'fine-tune'
         Processed:
           type: boolean
         FileType:
           enum:
             - jsonl
             - parquet
-          example: jsonl
+          example: 'jsonl'
         LineCount:
           type: integer
     FileList:
@@ -1671,10 +1695,10 @@ components:
         deleted:
           type: boolean
     FinetuneResponse:
+      type: object
       required:
         - id
         - status
-      type: object
       properties:
         id:
           type: string
@@ -1689,9 +1713,9 @@ components:
           type: string
         model_output_path:
           type: string
-        TrainingFileNumLines:
+        trainingfile_numlines:
           type: integer
-        TrainingFileSize:
+        trainingfile_size:
           type: integer
         created_at:
           type: string
@@ -1701,20 +1725,19 @@ components:
           type: integer
         n_checkpoints:
           type: integer
+        n_evals:
+          type: integer
         batch_size:
           type: integer
         learning_rate:
           type: number
         eval_steps:
           type: integer
-        lora:
-          type: boolean
-        lora_r:
-          type: integer
-        lora_alpha:
-          type: integer
-        lora_dropout:
-          type: integer
+        training_type:
+          type: object
+          oneOf:
+            - $ref: '#/components/schemas/FullTrainingType'
+            - $ref: '#/components/schemas/LoRATrainingType'
         status:
           $ref: '#/components/schemas/FinetuneJobStatus'
         job_id:
@@ -1737,7 +1760,9 @@ components:
           type: string
         wandb_url:
           type: string
+
     FinetuneJobStatus:
+      type: string
       enum:
         - pending
         - queued
@@ -1748,14 +1773,14 @@ components:
         - cancelled
         - error
         - completed
-      type: string
+
     FinetuneEvent:
       type: object
       properties:
         object:
-          enum:
-            - FinetuneEvent
           type: string
+          enum:
+            - 'FinetuneEvent'
         created_at:
           type: string
         level:
@@ -1774,16 +1799,17 @@ components:
         hash:
           type: string
     FinetuneEventLevels:
+      type: string
       enum:
-        -
+        - null
         - info
         - warning
         - error
         - legacy_info
         - legacy_iwarning
         - legacy_ierror
-      type: string
     FinetuneEventType:
+      type: string
       enum:
         - job_pending
         - job_start
@@ -1810,26 +1836,27 @@ components:
         - job_restarted
         - refund
         - warning
-      type: string
+
     FinetuneList:
+      type: object
       required:
         - data
-      type: object
       properties:
         data:
           type: array
           items:
             $ref: '#/components/schemas/FinetuneResponse'
     FinetuneListEvents:
+      type: object
       required:
         - data
-      type: object
       properties:
         data:
           type: array
           items:
             $ref: '#/components/schemas/FineTuneEvent'
     FineTuneEvent:
+      type: object
       required:
         - object
         - created_at
@@ -1844,27 +1871,26 @@ components:
         - model_path
         - training_offset
         - hash
-      type: object
       properties:
         object:
-          enum:
-            - fine-tune-event
           type: string
+          enum: [fine-tune-event]
         created_at:
           type: string
         level:
+          type: string
           enum:
-            -
+            - null
             - info
             - warning
             - error
             - legacy_info
             - legacy_iwarning
             - legacy_ierror
-          type: string
         message:
           type: string
         type:
+          type: string
           enum:
             - job_pending
             - job_start
@@ -1891,7 +1917,6 @@ components:
             - job_restarted
             - refund
             - warning
-          type: string
         param_count:
           type: integer
         token_count:
@@ -1910,12 +1935,13 @@ components:
           type: integer
         hash:
           type: string
+
     FinetuneDownloadResult:
       type: object
       properties:
         object:
           enum:
-            -
+            - null
             - local
         id:
           type: string
@@ -1925,11 +1951,33 @@ components:
           type: string
         size:
           type: integer
-  securitySchemes:
-    bearerAuth:
-      type: http
-      scheme: bearer
-      x-bearer-format: bearer
-      x-default: default
-security:
-  - bearerAuth: [ ]
+
+    FullTrainingType:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: ['Full']
+      required:
+        - type
+    LoRATrainingType:
+      type: object
+      properties:
+        type:
+          type: string
+          enum: ['Lora']
+        lora_r:
+          type: integer
+        lora_alpha:
+          type: integer
+        lora_dropout:
+          type: number
+          format: float
+          default: 0.0
+        lora_trainable_modules:
+          type: string
+          default: 'all-linear'
+      required:
+        - type
+        - lora_r
+        - lora_alpha

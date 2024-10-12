@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.StreamRunV4RunsStreamPostResponse> StreamRunAsync(
+        global::System.Threading.Tasks.Task<string> StreamRunAsync(
             global::G.RunCreate request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -33,7 +33,7 @@ namespace G
         /// <param name="runId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.StreamRunV4RunsStreamPostResponse> StreamRunAsync(
+        global::System.Threading.Tasks.Task<string> StreamRunAsync(
             string pipeline,
             global::System.Collections.Generic.IList<global::G.RunInput> inputs,
             bool? asyncRun = false,

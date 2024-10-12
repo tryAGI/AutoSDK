@@ -48,7 +48,7 @@ namespace G
         /// The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speaker")]
-        public global::G.TranscriptParagraphSpeaker? Speaker { get; set; }
+        public object? Speaker { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookRegistryPackageUpdatedRegistryPackageDescription? Description { get; set; } = default!;
+        public object? Description { get; set; } = default!;
 
         /// <summary>
         /// 

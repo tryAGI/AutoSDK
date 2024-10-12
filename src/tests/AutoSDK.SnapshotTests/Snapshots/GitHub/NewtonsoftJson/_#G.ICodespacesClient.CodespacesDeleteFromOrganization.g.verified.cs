@@ -15,7 +15,7 @@ namespace G
         /// <param name="codespaceName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> CodespacesDeleteFromOrganizationAsync(
+        global::System.Threading.Tasks.Task<string> CodespacesDeleteFromOrganizationAsync(
             string org,
             string username,
             string codespaceName,

@@ -277,7 +277,7 @@ public readonly record struct TypeData(
             (null, "string") => "string",
             ("object", _) => "object",
             
-            (null, null) when context.IsClass || context.IsEnum =>
+            (null, null) when (context.IsClass && context.ClassData?.Properties.Length > 0) || context.IsEnum =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
             (null, null)  => "object",
             ("null", _)  => "object",

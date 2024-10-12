@@ -31,7 +31,7 @@ namespace G
         /// <param name="relativeFileURL"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DescriptorGetDesFieldImportDataFromFileResponse> DescriptorGetDesFieldImportDataFromFileAsync(
+        public async global::System.Threading.Tasks.Task<string> DescriptorGetDesFieldImportDataFromFileAsync(
             string? token = default,
             string? relativeFileURL = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -101,9 +101,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DescriptorGetDesFieldImportDataFromFileResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

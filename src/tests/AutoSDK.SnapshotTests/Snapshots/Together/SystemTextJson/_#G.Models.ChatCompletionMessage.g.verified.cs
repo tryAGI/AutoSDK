@@ -19,6 +19,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionMessageFunctionCall? FunctionCall { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionMessageRoleJsonConverter))]
         public global::G.ChatCompletionMessageRole Role { get; set; }
@@ -28,13 +35,6 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionMessageFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,7 +14,7 @@ namespace G
         /// <param name="parentItems"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ExportStartExportHierarchicalChartJobResponse> ExportStartExportHierarchicalChartJobAsync(
+        global::System.Threading.Tasks.Task<string> ExportStartExportHierarchicalChartJobAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             string? title = default,

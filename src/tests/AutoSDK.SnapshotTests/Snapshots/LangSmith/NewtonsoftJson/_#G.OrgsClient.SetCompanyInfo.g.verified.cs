@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
+        public async global::System.Threading.Tasks.Task<string> SetCompanyInfoAsync(
             global::G.StripeBusinessInfoInput request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -130,7 +128,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
+        public async global::System.Threading.Tasks.Task<string> SetCompanyInfoAsync(
             global::G.StripeBusinessBillingInfo? companyInfo = default,
             global::G.StripeTaxId? taxId = default,
             string? invoiceEmail = default,

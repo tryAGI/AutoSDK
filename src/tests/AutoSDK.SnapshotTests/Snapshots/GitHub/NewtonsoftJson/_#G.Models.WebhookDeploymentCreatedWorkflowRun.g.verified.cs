@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("head_commit")]
-        public global::G.WebhookDeploymentCreatedWorkflowRunHeadCommit? HeadCommit { get; set; }
+        public object? HeadCommit { get; set; }
 
         /// <summary>
         /// 
@@ -139,7 +139,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("previous_attempt_url")]
-        public global::G.WebhookDeploymentCreatedWorkflowRunPreviousAttemptUrl? PreviousAttemptUrl { get; set; }
+        public object? PreviousAttemptUrl { get; set; }
 
         /// <summary>
         /// 

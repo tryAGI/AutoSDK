@@ -18,7 +18,7 @@ namespace G
         /// <param name="stacktrace"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ErrorProcessUIErrorResponse> ErrorProcessUIErrorAsync(
+        global::System.Threading.Tasks.Task<string> ErrorProcessUIErrorAsync(
             string? token = default,
             string? projectId = default,
             string? userId = default,

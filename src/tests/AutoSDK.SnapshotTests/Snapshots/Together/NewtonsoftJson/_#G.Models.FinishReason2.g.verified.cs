@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.FinishReason.g.cs
+﻿//HintName: G.Models.FinishReason2.g.cs
 
 #nullable enable
 
@@ -8,7 +8,7 @@ namespace G
     /// 
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
-    public enum FinishReason
+    public enum FinishReason2
     {
         /// <summary>
         /// 
@@ -40,35 +40,35 @@ namespace G
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class FinishReasonExtensions
+    public static class FinishReason2Extensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this FinishReason value)
+        public static string ToValueString(this FinishReason2 value)
         {
             return value switch
             {
-                FinishReason.Stop => "stop",
-                FinishReason.Eos => "eos",
-                FinishReason.Length => "length",
-                FinishReason.ToolCalls => "tool_calls",
-                FinishReason.FunctionCall => "function_call",
+                FinishReason2.Stop => "stop",
+                FinishReason2.Eos => "eos",
+                FinishReason2.Length => "length",
+                FinishReason2.ToolCalls => "tool_calls",
+                FinishReason2.FunctionCall => "function_call",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static FinishReason? ToEnum(string value)
+        public static FinishReason2? ToEnum(string value)
         {
             return value switch
             {
-                "stop" => FinishReason.Stop,
-                "eos" => FinishReason.Eos,
-                "length" => FinishReason.Length,
-                "tool_calls" => FinishReason.ToolCalls,
-                "function_call" => FinishReason.FunctionCall,
+                "stop" => FinishReason2.Stop,
+                "eos" => FinishReason2.Eos,
+                "length" => FinishReason2.Length,
+                "tool_calls" => FinishReason2.ToolCalls,
+                "function_call" => FinishReason2.FunctionCall,
                 _ => null,
             };
         }

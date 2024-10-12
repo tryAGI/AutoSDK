@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
-        public global::G.WebhookInstallationTargetRenamedAccountDescription? Description { get; set; }
+        public object? Description { get; set; }
 
         /// <summary>
         /// 
@@ -223,7 +223,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("website_url")]
-        public global::G.WebhookInstallationTargetRenamedAccountWebsiteUrl? WebsiteUrl { get; set; }
+        public object? WebsiteUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

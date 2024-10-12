@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ConvertDocumentFileStudioV1ChatFilesConvertPostResponse> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
+        public async global::System.Threading.Tasks.Task<string> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
             global::G.BodyConvertDocumentFileStudioV1ChatFilesConvertPost request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -109,9 +109,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ConvertDocumentFileStudioV1ChatFilesConvertPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -120,7 +118,7 @@ namespace G
         /// <param name="files"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ConvertDocumentFileStudioV1ChatFilesConvertPostResponse> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
+        public async global::System.Threading.Tasks.Task<string> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
             global::System.Collections.Generic.IList<byte[]> files,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

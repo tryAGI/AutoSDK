@@ -23,7 +23,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetResponse> GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetAsync(
+        global::System.Threading.Tasks.Task<string> GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetAsync(
             string dubbingId,
             string languageCode,
             global::G.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetFormatType? formatType = default,

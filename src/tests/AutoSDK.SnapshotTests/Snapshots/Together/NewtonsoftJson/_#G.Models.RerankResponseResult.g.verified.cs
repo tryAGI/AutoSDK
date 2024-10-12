@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("document", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RerankResponseResultDocument Document { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
         public int Index { get; set; } = default!;
 
@@ -20,12 +26,6 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("relevance_score", Required = global::Newtonsoft.Json.Required.Always)]
         public double RelevanceScore { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("document", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RerankResponseResultDocument Document { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

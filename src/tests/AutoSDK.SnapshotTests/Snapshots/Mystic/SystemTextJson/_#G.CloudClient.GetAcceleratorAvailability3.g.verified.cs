@@ -25,7 +25,7 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetAcceleratorAvailabilityV4CloudProviderAzureAcceleratorAvailabilityGetResponse> GetAcceleratorAvailability3Async(
+        public async global::System.Threading.Tasks.Task<string> GetAcceleratorAvailability3Async(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -80,9 +80,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetAcceleratorAvailabilityV4CloudProviderAzureAcceleratorAvailabilityGetResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

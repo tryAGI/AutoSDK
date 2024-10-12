@@ -11,7 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
+        global::System.Threading.Tasks.Task<string> SetCompanyInfoAsync(
             global::G.StripeBusinessInfoInput request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -30,7 +30,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.SetCompanyInfoApiV1OrgsCurrentBusinessInfoPostResponse> SetCompanyInfoAsync(
+        global::System.Threading.Tasks.Task<string> SetCompanyInfoAsync(
             global::G.StripeBusinessBillingInfo? companyInfo = default,
             global::G.StripeTaxId? taxId = default,
             string? invoiceEmail = default,

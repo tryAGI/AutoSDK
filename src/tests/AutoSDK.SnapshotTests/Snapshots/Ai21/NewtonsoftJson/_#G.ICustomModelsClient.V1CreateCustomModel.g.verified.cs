@@ -11,7 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1CreateCustomModelResponse> V1CreateCustomModelAsync(
+        global::System.Threading.Tasks.Task<string> V1CreateCustomModelAsync(
             global::G.CustomModelInput request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -27,7 +27,7 @@ namespace G
         /// <param name="modelName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1CreateCustomModelResponse> V1CreateCustomModelAsync(
+        global::System.Threading.Tasks.Task<string> V1CreateCustomModelAsync(
             global::G.CustomModelType modelType,
             string datasetId,
             string modelName,

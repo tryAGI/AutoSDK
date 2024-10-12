@@ -13,7 +13,7 @@ namespace G
         /// <param name="accountId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminAddUserToAccountResponse> AdminAddUserToAccountAsync(
+        global::System.Threading.Tasks.Task<string> AdminAddUserToAccountAsync(
             string? token = default,
             global::System.Guid? userId = default,
             global::System.Guid? accountId = default,

@@ -28,75 +28,79 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
-                    new global::G.JsonConverters.RerankResponseObjectJsonConverter(),
-                    new global::G.JsonConverters.RerankResponseObjectNullableJsonConverter(),
-                    new global::G.JsonConverters.FinishReasonJsonConverter(),
-                    new global::G.JsonConverters.FinishReasonNullableJsonConverter(),
-                    new global::G.JsonConverters.CompletionResponseObjectJsonConverter(),
-                    new global::G.JsonConverters.CompletionResponseObjectNullableJsonConverter(),
-                    new global::G.JsonConverters.StreamSentinelDataJsonConverter(),
-                    new global::G.JsonConverters.StreamSentinelDataNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionMessageRoleJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionMessageRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionAssistantMessageParamRoleJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionAssistantMessageParamRoleNullableJsonConverter(),
                     new global::G.JsonConverters.ToolChoiceTypeJsonConverter(),
                     new global::G.JsonConverters.ToolChoiceTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionToolTypeJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionToolTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionRequestFunctionCallEnumJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionRequestFunctionCallEnumNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionChoiceDeltaRoleJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionChoiceDeltaRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.FinishReason2JsonConverter(),
+                    new global::G.JsonConverters.FinishReason2NullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionMessageRoleJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionMessageRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionChunkChoiceDeltaRoleJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionChunkChoiceDeltaRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionChunkObjectJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionChunkObjectNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionFunctionMessageParamRoleJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionFunctionMessageParamRoleNullableJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionSystemMessageParamRoleJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionSystemMessageParamRoleNullableJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionUserMessageParamRoleJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionUserMessageParamRoleNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionAssistantMessageParamRoleJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionAssistantMessageParamRoleNullableJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionToolMessageParamRoleJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionToolMessageParamRoleNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionFunctionMessageParamRoleJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionFunctionMessageParamRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionRequestFunctionCallEnumJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionRequestFunctionCallEnumNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionRequestMessageRoleNullableJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionResponseObjectJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionResponseObjectNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionChunkObjectJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionChunkObjectNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionChunkChoiceDeltaRoleJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionChunkChoiceDeltaRoleNullableJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionChoiceDeltaRoleJsonConverter(),
-                    new global::G.JsonConverters.ChatCompletionChoiceDeltaRoleNullableJsonConverter(),
-                    new global::G.JsonConverters.EmbeddingsResponseObjectJsonConverter(),
-                    new global::G.JsonConverters.EmbeddingsResponseObjectNullableJsonConverter(),
+                    new global::G.JsonConverters.StreamSentinelDataJsonConverter(),
+                    new global::G.JsonConverters.StreamSentinelDataNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionToolTypeJsonConverter(),
+                    new global::G.JsonConverters.ChatCompletionToolTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.CompletionResponseObjectJsonConverter(),
+                    new global::G.JsonConverters.CompletionResponseObjectNullableJsonConverter(),
                     new global::G.JsonConverters.EmbeddingsResponseDataItemObjectJsonConverter(),
                     new global::G.JsonConverters.EmbeddingsResponseDataItemObjectNullableJsonConverter(),
-                    new global::G.JsonConverters.ModelInfoTypeJsonConverter(),
-                    new global::G.JsonConverters.ModelInfoTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.ImageResponseObjectJsonConverter(),
-                    new global::G.JsonConverters.ImageResponseObjectNullableJsonConverter(),
-                    new global::G.JsonConverters.FileResponsePurposeJsonConverter(),
-                    new global::G.JsonConverters.FileResponsePurposeNullableJsonConverter(),
+                    new global::G.JsonConverters.EmbeddingsResponseObjectJsonConverter(),
+                    new global::G.JsonConverters.EmbeddingsResponseObjectNullableJsonConverter(),
                     new global::G.JsonConverters.FileResponseFileTypeJsonConverter(),
                     new global::G.JsonConverters.FileResponseFileTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.FinetuneJobStatusJsonConverter(),
-                    new global::G.JsonConverters.FinetuneJobStatusNullableJsonConverter(),
-                    new global::G.JsonConverters.FinetuneEventObjectJsonConverter(),
-                    new global::G.JsonConverters.FinetuneEventObjectNullableJsonConverter(),
-                    new global::G.JsonConverters.FinetuneEventLevelsJsonConverter(),
-                    new global::G.JsonConverters.FinetuneEventLevelsNullableJsonConverter(),
-                    new global::G.JsonConverters.FinetuneEventTypeJsonConverter(),
-                    new global::G.JsonConverters.FinetuneEventTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.FineTuneEventObject2JsonConverter(),
-                    new global::G.JsonConverters.FineTuneEventObject2NullableJsonConverter(),
+                    new global::G.JsonConverters.FileResponsePurposeJsonConverter(),
+                    new global::G.JsonConverters.FileResponsePurposeNullableJsonConverter(),
                     new global::G.JsonConverters.FineTuneEventLevelJsonConverter(),
                     new global::G.JsonConverters.FineTuneEventLevelNullableJsonConverter(),
-                    new global::G.JsonConverters.FineTuneEventType2JsonConverter(),
-                    new global::G.JsonConverters.FineTuneEventType2NullableJsonConverter(),
+                    new global::G.JsonConverters.FineTuneEventObjectJsonConverter(),
+                    new global::G.JsonConverters.FineTuneEventObjectNullableJsonConverter(),
+                    new global::G.JsonConverters.FineTuneEventTypeJsonConverter(),
+                    new global::G.JsonConverters.FineTuneEventTypeNullableJsonConverter(),
                     new global::G.JsonConverters.FinetuneDownloadResultObjectJsonConverter(),
                     new global::G.JsonConverters.FinetuneDownloadResultObjectNullableJsonConverter(),
-                    new global::G.JsonConverters.OneOfJsonConverterFactory2(),
-                    new global::G.JsonConverters.CompletionStreamJsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventLevelsJsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventLevelsNullableJsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventObject2JsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventObject2NullableJsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventType2JsonConverter(),
+                    new global::G.JsonConverters.FinetuneEventType2NullableJsonConverter(),
+                    new global::G.JsonConverters.FinetuneJobStatusJsonConverter(),
+                    new global::G.JsonConverters.FinetuneJobStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.FullTrainingTypeTypeJsonConverter(),
+                    new global::G.JsonConverters.FullTrainingTypeTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.LoRATrainingTypeTypeJsonConverter(),
+                    new global::G.JsonConverters.LoRATrainingTypeTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ImageResponseObjectJsonConverter(),
+                    new global::G.JsonConverters.ImageResponseObjectNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelInfoTypeJsonConverter(),
+                    new global::G.JsonConverters.ModelInfoTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.RerankResponseObjectJsonConverter(),
+                    new global::G.JsonConverters.RerankResponseObjectNullableJsonConverter(),
                     new global::G.JsonConverters.AllOfJsonConverterFactory2(),
                     new global::G.JsonConverters.ChatCompletionMessageParamJsonConverter(),
+                    new global::G.JsonConverters.OneOfJsonConverterFactory2(),
                     new global::G.JsonConverters.ChatCompletionStreamJsonConverter(),
+                    new global::G.JsonConverters.CompletionStreamJsonConverter(),
                 }
             };
 
@@ -128,7 +132,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient, authorizations: _authorizations)
+        public FilesClient Files => new FilesClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FineTuningClient FineTuning => new FineTuningClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -144,15 +156,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files => new FilesClient(_httpClient, authorizations: _authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(_httpClient, authorizations: _authorizations)
+        public ModelsClient Models => new ModelsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };

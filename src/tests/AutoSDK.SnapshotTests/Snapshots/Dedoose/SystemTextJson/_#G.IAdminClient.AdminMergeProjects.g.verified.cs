@@ -17,7 +17,7 @@ namespace G
         /// <param name="mergeCodes"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminMergeProjectsResponse> AdminMergeProjectsAsync(
+        global::System.Threading.Tasks.Task<string> AdminMergeProjectsAsync(
             string? token = default,
             global::System.Guid? project1Id = default,
             global::System.Guid? project2Id = default,

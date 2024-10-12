@@ -79,7 +79,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public global::G.WebhookDeploymentStatusCreatedWorkflowRunHeadRepositoryDescription? Description { get; set; }
+        public object? Description { get; set; }
 
         /// <summary>
         /// 

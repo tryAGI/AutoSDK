@@ -35,7 +35,7 @@ namespace G
         /// <param name="pointer"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetPipelineStartupLogsV4LogsPipelineStartupPipelineIdOrPointerGetResponse> GetPipelineStartupLogsAsync(
+        public async global::System.Threading.Tasks.Task<string> GetPipelineStartupLogsAsync(
             string pipelineIdOrPointer,
             string? pipelineId = default,
             string? pointer = default,
@@ -119,9 +119,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetPipelineStartupLogsV4LogsPipelineStartupPipelineIdOrPointerGetResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

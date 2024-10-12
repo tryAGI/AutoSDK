@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> SendSsoEmailConfirmationAsync(
+        global::System.Threading.Tasks.Task<string> SendSsoEmailConfirmationAsync(
             global::G.SSOEmailVerificationSendRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -24,7 +24,7 @@ namespace G
         /// <param name="samlProviderId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> SendSsoEmailConfirmationAsync(
+        global::System.Threading.Tasks.Task<string> SendSsoEmailConfirmationAsync(
             string email,
             global::System.Guid samlProviderId,
             global::System.Threading.CancellationToken cancellationToken = default);

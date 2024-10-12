@@ -59,7 +59,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("starred_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookStarDeletedStarredAt? StarredAt { get; set; }
+        public required object? StarredAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

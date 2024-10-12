@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
-        public global::G.V2VideoGenerateRequestAspectRatio? AspectRatio { get; set; }
+        public object? AspectRatio { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("callback_id")]
-        public global::G.V2VideoGenerateRequestCallbackId? CallbackId { get; set; }
+        public object? CallbackId { get; set; }
 
         /// <summary>
         /// 

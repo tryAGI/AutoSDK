@@ -46,7 +46,7 @@ namespace G
         /// <param name="comments"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.UserSendContactRequestEmailResponse> UserSendContactRequestEmailAsync(
+        public async global::System.Threading.Tasks.Task<string> UserSendContactRequestEmailAsync(
             string? token = default,
             string? firstname = default,
             string? lastname = default,
@@ -136,9 +136,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UserSendContactRequestEmailResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

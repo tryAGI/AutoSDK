@@ -14,7 +14,7 @@ namespace G
         /// <param name="memo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminProcessPaymentResponse> AdminProcessPaymentAsync(
+        global::System.Threading.Tasks.Task<string> AdminProcessPaymentAsync(
             string? token = default,
             global::System.Guid? accountId = default,
             double? amount = default,

@@ -31,7 +31,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.StreamRunV4RunsStreamPostResponse> StreamRunAsync(
+        public async global::System.Threading.Tasks.Task<string> StreamRunAsync(
             global::G.RunCreate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -113,9 +113,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.StreamRunV4RunsStreamPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -133,7 +131,7 @@ namespace G
         /// <param name="runId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.StreamRunV4RunsStreamPostResponse> StreamRunAsync(
+        public async global::System.Threading.Tasks.Task<string> StreamRunAsync(
             string pipeline,
             global::System.Collections.Generic.IList<global::G.RunInput> inputs,
             bool? asyncRun = false,

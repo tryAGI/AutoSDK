@@ -55,7 +55,7 @@ namespace G
         /// The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("starred_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookStarDeletedStarredAt? StarredAt { get; set; } = default!;
+        public object? StarredAt { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

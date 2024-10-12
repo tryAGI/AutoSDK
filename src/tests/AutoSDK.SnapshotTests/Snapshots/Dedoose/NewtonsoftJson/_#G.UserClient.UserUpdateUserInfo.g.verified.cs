@@ -58,7 +58,7 @@ namespace G
         /// <param name="zip"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.UserUpdateUserInfoResponse> UserUpdateUserInfoAsync(
+        public async global::System.Threading.Tasks.Task<string> UserUpdateUserInfoAsync(
             string? token = default,
             global::System.Guid? userId = default,
             string? firstName = default,
@@ -164,9 +164,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UserUpdateUserInfoResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

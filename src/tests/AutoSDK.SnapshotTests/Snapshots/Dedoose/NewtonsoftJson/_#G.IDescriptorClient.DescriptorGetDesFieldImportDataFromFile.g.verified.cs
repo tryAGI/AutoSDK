@@ -12,7 +12,7 @@ namespace G
         /// <param name="relativeFileURL"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DescriptorGetDesFieldImportDataFromFileResponse> DescriptorGetDesFieldImportDataFromFileAsync(
+        global::System.Threading.Tasks.Task<string> DescriptorGetDesFieldImportDataFromFileAsync(
             string? token = default,
             string? relativeFileURL = default,
             global::System.Threading.CancellationToken cancellationToken = default);

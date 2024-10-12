@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ChatCompletionToolType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ChatCompletionToolFunction Function { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatCompletionToolFunction Function { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ChatCompletionToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

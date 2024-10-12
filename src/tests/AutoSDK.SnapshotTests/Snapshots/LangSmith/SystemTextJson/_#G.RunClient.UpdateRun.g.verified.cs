@@ -32,7 +32,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
+        public async global::System.Threading.Tasks.Task<string> UpdateRunAsync(
             global::System.Guid runId,
             global::G.UpdateRunRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -117,9 +117,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UpdateRunApiV1RunsRunIdPatchResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -143,7 +141,7 @@ namespace G
         /// <param name="sessionName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
+        public async global::System.Threading.Tasks.Task<string> UpdateRunAsync(
             global::System.Guid runId,
             global::System.Guid? traceId = default,
             string? dottedOrder = default,

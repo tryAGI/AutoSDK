@@ -13,7 +13,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
+        global::System.Threading.Tasks.Task<string> IndexAsync(
             global::System.Guid datasetId,
             global::G.DatasetIndexRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,7 +28,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.IndexApiV1DatasetsDatasetIdIndexPostResponse> IndexAsync(
+        global::System.Threading.Tasks.Task<string> IndexAsync(
             global::System.Guid datasetId,
             string? tag = "latest",
             global::System.Threading.CancellationToken cancellationToken = default);

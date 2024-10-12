@@ -12,6 +12,20 @@ namespace G
         /// <summary>
         /// Example: 0
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("base")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Base { get; set; }
+
+        /// <summary>
+        /// Example: 0
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("finetune")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Finetune { get; set; }
+
+        /// <summary>
+        /// Example: 0
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("hourly")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Hourly { get; set; }
@@ -29,20 +43,6 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Output { get; set; }
-
-        /// <summary>
-        /// Example: 0
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("base")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Base { get; set; }
-
-        /// <summary>
-        /// Example: 0
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finetune")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required double Finetune { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

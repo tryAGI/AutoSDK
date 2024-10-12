@@ -12,8 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token_id")]
-        public int? TokenId { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public string? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("function_call")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionChunkChoiceDeltaFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// 
@@ -24,21 +31,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content")]
-        public string? Content { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("token_id")]
+        public int? TokenId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_calls")]
         public global::System.Collections.Generic.IList<global::G.ToolChoice2>? ToolCalls { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function_call")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionChunkChoiceDeltaFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

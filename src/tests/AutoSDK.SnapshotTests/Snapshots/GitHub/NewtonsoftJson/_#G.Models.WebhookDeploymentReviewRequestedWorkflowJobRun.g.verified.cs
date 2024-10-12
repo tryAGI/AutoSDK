@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookDeploymentReviewRequestedWorkflowJobRunConclusion? Conclusion { get; set; } = default!;
+        public object? Conclusion { get; set; } = default!;
 
         /// <summary>
         /// 

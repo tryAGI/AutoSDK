@@ -14,7 +14,7 @@ namespace G
         /// <param name="adminId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminUpdateProjectResponse> AdminUpdateProjectAsync(
+        global::System.Threading.Tasks.Task<string> AdminUpdateProjectAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             string? title = default,

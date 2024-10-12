@@ -11,7 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.InvokePromptApiV1PromptsInvokePromptPostResponse> InvokePromptAsync(
+        global::System.Threading.Tasks.Task<string> InvokePromptAsync(
             global::G.InvokePromptPayload request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -23,7 +23,7 @@ namespace G
         /// <param name="inputs"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.InvokePromptApiV1PromptsInvokePromptPostResponse> InvokePromptAsync(
+        global::System.Threading.Tasks.Task<string> InvokePromptAsync(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> messages,
             string templateFormat,
             object inputs,

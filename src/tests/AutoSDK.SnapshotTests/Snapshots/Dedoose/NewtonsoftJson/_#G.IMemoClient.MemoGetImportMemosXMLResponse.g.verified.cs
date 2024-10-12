@@ -12,7 +12,7 @@ namespace G
         /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.MemoGetImportMemosXMLResponseResponse> MemoGetImportMemosXMLResponseAsync(
+        global::System.Threading.Tasks.Task<string> MemoGetImportMemosXMLResponseAsync(
             string? token = default,
             string? jobId = default,
             global::System.Threading.CancellationToken cancellationToken = default);

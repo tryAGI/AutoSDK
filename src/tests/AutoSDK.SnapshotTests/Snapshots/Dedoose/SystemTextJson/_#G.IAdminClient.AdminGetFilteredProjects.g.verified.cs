@@ -13,7 +13,7 @@ namespace G
         /// <param name="maxResults"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminGetFilteredProjectsResponse> AdminGetFilteredProjectsAsync(
+        global::System.Threading.Tasks.Task<string> AdminGetFilteredProjectsAsync(
             string? token = default,
             string? filter = default,
             int? maxResults = default,

@@ -21,7 +21,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        public global::G.RunInputValue? Value { get; set; }
+        public object? Value { get; set; }
 
         /// <summary>
         /// 

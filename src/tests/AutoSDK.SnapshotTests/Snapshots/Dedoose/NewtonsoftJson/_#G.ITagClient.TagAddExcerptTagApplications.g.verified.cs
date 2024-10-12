@@ -16,7 +16,7 @@ namespace G
         /// <param name="tagApps"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.TagAddExcerptTagApplicationsResponse> TagAddExcerptTagApplicationsAsync(
+        global::System.Threading.Tasks.Task<string> TagAddExcerptTagApplicationsAsync(
             string? token = default,
             global::System.Guid? userId = default,
             global::System.Guid? projectId = default,

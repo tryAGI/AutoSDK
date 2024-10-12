@@ -13,7 +13,7 @@ namespace G
         /// <param name="accountIdToMoveTo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminMigrateUserToAccountResponse> AdminMigrateUserToAccountAsync(
+        global::System.Threading.Tasks.Task<string> AdminMigrateUserToAccountAsync(
             string? token = default,
             global::System.Guid? userToBeMovedId = default,
             global::System.Guid? accountIdToMoveTo = default,

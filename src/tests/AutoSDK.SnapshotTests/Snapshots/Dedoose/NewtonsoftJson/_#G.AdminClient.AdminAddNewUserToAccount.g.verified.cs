@@ -49,7 +49,7 @@ namespace G
         /// <param name="encryptedPass"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AdminAddNewUserToAccountResponse> AdminAddNewUserToAccountAsync(
+        public async global::System.Threading.Tasks.Task<string> AdminAddNewUserToAccountAsync(
             string? token = default,
             global::System.Guid? accountId = default,
             string? username = default,
@@ -143,9 +143,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AdminAddNewUserToAccountResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

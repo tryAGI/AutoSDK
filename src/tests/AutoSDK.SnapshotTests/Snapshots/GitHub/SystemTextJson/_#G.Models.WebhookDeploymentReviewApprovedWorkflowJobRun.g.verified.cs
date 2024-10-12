@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
-        public global::G.WebhookDeploymentReviewApprovedWorkflowJobRunConclusion? Conclusion { get; set; }
+        public object? Conclusion { get; set; }
 
         /// <summary>
         /// 

@@ -12,7 +12,7 @@ namespace G
         /// <param name="accountId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminGetAccountTransactionsResponse> AdminGetAccountTransactionsAsync(
+        global::System.Threading.Tasks.Task<string> AdminGetAccountTransactionsAsync(
             string? token = default,
             global::System.Guid? accountId = default,
             global::System.Threading.CancellationToken cancellationToken = default);

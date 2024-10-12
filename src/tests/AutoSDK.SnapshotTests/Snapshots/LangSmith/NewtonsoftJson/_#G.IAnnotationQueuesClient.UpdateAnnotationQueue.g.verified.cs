@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
+        global::System.Threading.Tasks.Task<string> UpdateAnnotationQueueAsync(
             global::System.Guid queueId,
             global::G.AnnotationQueueUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -33,7 +33,7 @@ namespace G
         /// <param name="reservationMinutes"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdateAnnotationQueueApiV1AnnotationQueuesQueueIdPatchResponse> UpdateAnnotationQueueAsync(
+        global::System.Threading.Tasks.Task<string> UpdateAnnotationQueueAsync(
             global::System.Guid queueId,
             string? name = default,
             string? description = default,

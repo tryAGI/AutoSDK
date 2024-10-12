@@ -88,7 +88,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_commit")]
-        public global::G.WebhookDeploymentCreatedWorkflowRunHeadCommit? HeadCommit { get; set; }
+        public object? HeadCommit { get; set; }
 
         /// <summary>
         /// 
@@ -154,7 +154,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("previous_attempt_url")]
-        public global::G.WebhookDeploymentCreatedWorkflowRunPreviousAttemptUrl? PreviousAttemptUrl { get; set; }
+        public object? PreviousAttemptUrl { get; set; }
 
         /// <summary>
         /// 

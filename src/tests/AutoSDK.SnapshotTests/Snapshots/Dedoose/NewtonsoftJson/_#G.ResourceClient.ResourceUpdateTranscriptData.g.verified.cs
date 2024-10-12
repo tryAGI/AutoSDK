@@ -55,7 +55,7 @@ namespace G
         /// <param name="syncItems"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ResourceUpdateTranscriptDataResponse> ResourceUpdateTranscriptDataAsync(
+        public async global::System.Threading.Tasks.Task<string> ResourceUpdateTranscriptDataAsync(
             string? token = default,
             string? projectIdKey = default,
             global::System.Guid? id = default,
@@ -156,9 +156,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ResourceUpdateTranscriptDataResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

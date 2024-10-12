@@ -11,7 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1TokenizeResponse> V1TokenizeAsync(
+        global::System.Threading.Tasks.Task<string> V1TokenizeAsync(
             global::G.TokenizeBody request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -21,7 +21,7 @@ namespace G
         /// <param name="text"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1TokenizeResponse> V1TokenizeAsync(
+        global::System.Threading.Tasks.Task<string> V1TokenizeAsync(
             string text,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

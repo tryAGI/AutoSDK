@@ -13,7 +13,7 @@ namespace G
         /// <param name="fields"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DescriptorUpdateFieldOrdersResponse> DescriptorUpdateFieldOrdersAsync(
+        global::System.Threading.Tasks.Task<string> DescriptorUpdateFieldOrdersAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Collections.Generic.IList<global::G.FieldVO>? fields = default,

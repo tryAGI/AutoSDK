@@ -119,538 +119,382 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptOptionalParamsWebhookAuthHeaderName? Type25 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptOptionalParamsWebhookAuthHeaderValue? Type26 { get; set; }
+        public global::G.TranscriptBoostParam? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type27 { get; set; }
+        public global::G.RedactPiiAudioQuality? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptBoostParam? Type28 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.PiiPolicy>? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RedactPiiAudioQuality? Type29 { get; set; }
+        public global::G.PiiPolicy? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PiiPolicy>? Type30 { get; set; }
+        public global::G.OneOf<global::G.SubstitutionPolicy?, object>? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PiiPolicy? Type31 { get; set; }
+        public global::G.SubstitutionPolicy? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.SubstitutionPolicy?, object>? Type32 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TranscriptCustomSpelling>? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SubstitutionPolicy? Type33 { get; set; }
+        public global::G.TranscriptCustomSpelling? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptOptionalParamsSpeakersExpected? Type34 { get; set; }
+        public global::G.SummaryModel? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TranscriptCustomSpelling>? Type35 { get; set; }
+        public global::G.SummaryType? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptCustomSpelling? Type36 { get; set; }
+        public global::G.TranscriptParams? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SummaryModel? Type37 { get; set; }
+        public global::G.TranscriptParamsVariant1? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SummaryType? Type38 { get; set; }
+        public global::G.TranscriptUtterance? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptParams? Type39 { get; set; }
+        public double? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptParamsVariant1? Type40 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TranscriptWord>? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptUtterance? Type41 { get; set; }
+        public global::G.TranscriptWord? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type42 { get; set; }
+        public global::G.TranscriptStatus? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TranscriptWord>? Type43 { get; set; }
+        public global::G.Transcript? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptWord? Type44 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TranscriptUtterance>? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptWordSpeaker? Type45 { get; set; }
+        public global::G.OneOf<global::G.AutoHighlightsResult2, object>? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptStatus? Type46 { get; set; }
+        public global::G.AutoHighlightsResult2? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Transcript? Type47 { get; set; }
+        public global::G.AudioIntelligenceModelStatus? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptLanguageDetection? Type48 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.AutoHighlightResult>? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptText? Type49 { get; set; }
+        public global::G.AutoHighlightResult? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptWords? Type50 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Timestamp>? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptUtterances? Type51 { get; set; }
+        public global::G.OneOf<global::G.RedactPiiAudioQuality?, object>? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptAudioDuration? Type52 { get; set; }
+        public global::G.OneOf<global::G.ContentSafetyLabelsResult, object>? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptPunctuate? Type53 { get; set; }
+        public global::G.ContentSafetyLabelsResult? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptFormatText? Type54 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentSafetyLabelResult>? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptDisfluencies? Type55 { get; set; }
+        public global::G.ContentSafetyLabelResult? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptDualChannel? Type56 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentSafetyLabel>? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptWebhookStatusCode? Type57 { get; set; }
+        public global::G.ContentSafetyLabel? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptWebhookAuthHeaderName? Type58 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSpeedBoost? Type59 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::G.SeverityScoreSummary>? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.AutoHighlightsResult2, object>? Type60 { get; set; }
+        public global::G.SeverityScoreSummary? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoHighlightsResult2? Type61 { get; set; }
+        public global::G.OneOf<global::G.TopicDetectionModelResult, object>? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AudioIntelligenceModelStatus? Type62 { get; set; }
+        public global::G.TopicDetectionModelResult? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.AutoHighlightResult>? Type63 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicDetectionResult>? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AutoHighlightResult? Type64 { get; set; }
+        public global::G.TopicDetectionResult? Type64 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Timestamp>? Type65 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TopicDetectionResultLabel>? Type65 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptAudioStartFrom? Type66 { get; set; }
+        public global::G.TopicDetectionResultLabel? Type66 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptAudioEndAt? Type67 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Chapter>? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptBoostParam2? Type68 { get; set; }
+        public global::G.Chapter? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptFilterProfanity? Type69 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SentimentAnalysisResult>? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptRedactPiiAudio? Type70 { get; set; }
+        public global::G.SentimentAnalysisResult? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.RedactPiiAudioQuality?, object>? Type71 { get; set; }
+        public global::G.Sentiment? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptRedactPiiPolicies? Type72 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Entity>? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSpeakerLabels? Type73 { get; set; }
+        public global::G.Entity? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSpeakersExpected? Type74 { get; set; }
+        public global::G.EntityType? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptContentSafety? Type75 { get; set; }
+        public global::G.TranscriptSentence? Type75 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.ContentSafetyLabelsResult, object>? Type76 { get; set; }
+        public global::G.SentencesResponse? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSafetyLabelsResult? Type77 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TranscriptSentence>? Type77 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentSafetyLabelResult>? Type78 { get; set; }
+        public global::G.TranscriptParagraph? Type78 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSafetyLabelResult? Type79 { get; set; }
+        public global::G.ParagraphsResponse? Type79 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentSafetyLabel>? Type80 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TranscriptParagraph>? Type80 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentSafetyLabel? Type81 { get; set; }
+        public global::G.PageDetails? Type81 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type82 { get; set; }
+        public global::G.ListTranscriptParams? Type82 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::G.SeverityScoreSummary>? Type83 { get; set; }
+        public long? Type83 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SeverityScoreSummary? Type84 { get; set; }
+        public global::System.DateTime? Type84 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptIabCategories? Type85 { get; set; }
+        public global::G.TranscriptListItem? Type85 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.TopicDetectionModelResult, object>? Type86 { get; set; }
+        public global::G.TranscriptList? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionModelResult? Type87 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TranscriptListItem>? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TopicDetectionResult>? Type88 { get; set; }
+        public global::G.UploadedFile? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionResult? Type89 { get; set; }
+        public global::G.CreateRealtimeTemporaryTokenParams? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TopicDetectionResultLabel>? Type90 { get; set; }
+        public global::G.RealtimeTemporaryTokenResponse? Type90 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TopicDetectionResultLabel? Type91 { get; set; }
+        public global::G.PurgeLemurRequestDataResponse? Type91 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptCustomSpelling2? Type92 { get; set; }
+        public global::G.LemurBaseResponse? Type92 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptAutoChapters? Type93 { get; set; }
+        public global::G.LemurUsage? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptChapters? Type94 { get; set; }
+        public global::G.LemurStringResponse? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Chapter? Type95 { get; set; }
+        public global::G.LemurStringResponseVariant1? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSummaryType? Type96 { get; set; }
+        public global::G.LemurTaskResponse? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSummaryModel? Type97 { get; set; }
+        public global::G.LemurSummaryResponse? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSummary? Type98 { get; set; }
+        public global::G.LemurActionItemsResponse? Type98 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptCustomTopics? Type99 { get; set; }
+        public global::G.LemurQuestionAnswerResponse? Type99 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSentimentAnalysis? Type100 { get; set; }
+        public global::G.LemurQuestionAnswerResponseVariant2? Type100 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSentimentAnalysisResults? Type101 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.LemurQuestionAnswer>? Type101 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SentimentAnalysisResult? Type102 { get; set; }
+        public global::G.LemurQuestionAnswer? Type102 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Sentiment? Type103 { get; set; }
+        public global::G.LemurResponse? Type103 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SentimentAnalysisResultSpeaker? Type104 { get; set; }
+        public global::G.LemurBaseParams? Type104 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptEntityDetection? Type105 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Guid>? Type105 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptEntities? Type106 { get; set; }
+        public global::G.OneOf<string, object>? Type106 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Entity? Type107 { get; set; }
+        public global::G.AnyOf<global::G.LemurModel?, string>? Type107 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.EntityType? Type108 { get; set; }
+        public global::G.LemurModel? Type108 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptThrottled? Type109 { get; set; }
+        public global::G.LemurTaskParams? Type109 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSentence? Type110 { get; set; }
+        public global::G.LemurTaskParamsVariant1? Type110 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptSentenceSpeaker? Type111 { get; set; }
+        public global::G.LemurSummaryParams? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SentencesResponse? Type112 { get; set; }
+        public global::G.LemurSummaryParamsVariant2? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TranscriptSentence>? Type113 { get; set; }
+        public global::G.LemurQuestionAnswerParams? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptParagraph? Type114 { get; set; }
+        public global::G.LemurQuestionAnswerParamsVariant2? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TranscriptParagraphSpeaker? Type115 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.LemurQuestion>? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ParagraphsResponse? Type116 { get; set; }
+        public global::G.LemurQuestion? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TranscriptParagraph>? Type117 { get; set; }
+        public global::G.LemurActionItemsParams? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PageDetails? Type118 { get; set; }
+        public global::G.LemurActionItemsParamsVariant2? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ListTranscriptParams? Type119 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public long? Type120 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.DateTime? Type121 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TranscriptListItem? Type122 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TranscriptListItemCompleted? Type123 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TranscriptListItemError? Type124 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.TranscriptList? Type125 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TranscriptListItem>? Type126 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.UploadedFile? Type127 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.CreateRealtimeTemporaryTokenParams? Type128 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.RealtimeTemporaryTokenResponse? Type129 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.PurgeLemurRequestDataResponse? Type130 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurBaseResponse? Type131 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurUsage? Type132 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurStringResponse? Type133 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurStringResponseVariant1? Type134 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurTaskResponse? Type135 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurSummaryResponse? Type136 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurActionItemsResponse? Type137 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurQuestionAnswerResponse? Type138 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurQuestionAnswerResponseVariant2? Type139 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.LemurQuestionAnswer>? Type140 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurQuestionAnswer? Type141 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurResponse? Type142 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurBaseParams? Type143 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Guid>? Type144 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.OneOf<string, object>? Type145 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.AnyOf<global::G.LemurModel?, string>? Type146 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurModel? Type147 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurTaskParams? Type148 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurTaskParamsVariant1? Type149 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurSummaryParams? Type150 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurSummaryParamsVariant2? Type151 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurQuestionAnswerParams? Type152 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurQuestionAnswerParamsVariant2? Type153 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.LemurQuestion>? Type154 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurQuestion? Type155 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurActionItemsParams? Type156 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.LemurActionItemsParamsVariant2? Type157 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.Error? Type158 { get; set; }
+        public global::G.Error? Type119 { get; set; }
     }
 }

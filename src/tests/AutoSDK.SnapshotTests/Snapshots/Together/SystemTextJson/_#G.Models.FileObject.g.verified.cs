@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        public string? Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
+        public string? Filename { get; set; }
 
         /// <summary>
         /// 
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
-        public string? Filename { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        public string? Object { get; set; }
 
         /// <summary>
         /// 

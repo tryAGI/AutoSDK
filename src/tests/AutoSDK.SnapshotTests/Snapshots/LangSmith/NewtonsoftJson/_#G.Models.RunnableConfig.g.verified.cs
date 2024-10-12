@@ -27,7 +27,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("callbacks")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunnableConfigCallback>, global::G.RunnableConfigCallbacks>? Callbacks { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? Callbacks { get; set; }
 
         /// <summary>
         /// 

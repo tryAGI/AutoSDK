@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.TriggerRulesApiV1RunsRulesTriggerPostResponse> TriggerRulesAsync(
+        global::System.Threading.Tasks.Task<string> TriggerRulesAsync(
             global::G.TriggerRulesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -24,7 +24,7 @@ namespace G
         /// <param name="datasetId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.TriggerRulesApiV1RunsRulesTriggerPostResponse> TriggerRulesAsync(
+        global::System.Threading.Tasks.Task<string> TriggerRulesAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? ruleIds = default,
             global::System.Guid? datasetId = default,
             global::System.Threading.CancellationToken cancellationToken = default);

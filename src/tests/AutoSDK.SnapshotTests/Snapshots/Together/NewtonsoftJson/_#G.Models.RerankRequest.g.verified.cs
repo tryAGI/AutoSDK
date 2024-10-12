@@ -12,7 +12,15 @@ namespace G
     public sealed partial class RerankRequest
     {
         /// <summary>
+        /// List of documents, which can be either strings or objects.<br/>
+        /// Default Value: [, , , ]
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("documents", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.OneOf<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>> Documents { get; set; } = default!;
+
+        /// <summary>
         /// The model to be used for the rerank request.<br/>
+        /// Default Value: Salesforce/Llama-Rank-V1<br/>
         /// Example: Salesforce/Llama-Rank-V1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
@@ -20,24 +28,18 @@ namespace G
 
         /// <summary>
         /// The search query to be used for ranking.<br/>
+        /// Default Value: What animals can I find near Peru?<br/>
         /// Example: What animals can I find near Peru?
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("query", Required = global::Newtonsoft.Json.Required.Always)]
         public string Query { get; set; } = default!;
 
         /// <summary>
-        /// List of documents, which can be either strings or objects.<br/>
-        /// Example: [, , , ]
+        /// List of keys in the JSON Object document to rank by. Defaults to use all supplied keys for ranking.<br/>
+        /// Example: [title, text]
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("documents", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>> Documents { get; set; } = default!;
-
-        /// <summary>
-        /// The number of top results to return.<br/>
-        /// Example: 2
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("top_n")]
-        public int? TopN { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("rank_fields")]
+        public global::System.Collections.Generic.IList<string>? RankFields { get; set; }
 
         /// <summary>
         /// Whether to return supplied documents with the response.<br/>
@@ -47,11 +49,11 @@ namespace G
         public bool? ReturnDocuments { get; set; }
 
         /// <summary>
-        /// List of keys in the JSON Object document to rank by. Defaults to use all supplied keys for ranking.<br/>
-        /// Example: [title, text]
+        /// The number of top results to return.<br/>
+        /// Example: 2
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("rank_fields")]
-        public global::System.Collections.Generic.IList<string>? RankFields { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("top_n")]
+        public int? TopN { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

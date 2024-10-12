@@ -10,7 +10,7 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1GetDatasetsResponse> V1GetDatasetsAsync(
+        global::System.Threading.Tasks.Task<string> V1GetDatasetsAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

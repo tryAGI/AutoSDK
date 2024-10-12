@@ -29,7 +29,7 @@ namespace G
         /// <param name="sectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DeleteSectionApiV1ChartsSectionSectionIdDeleteResponse> DeleteSectionAsync(
+        public async global::System.Threading.Tasks.Task<string> DeleteSectionAsync(
             global::System.Guid sectionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -103,9 +103,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeleteSectionApiV1ChartsSectionSectionIdDeleteResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

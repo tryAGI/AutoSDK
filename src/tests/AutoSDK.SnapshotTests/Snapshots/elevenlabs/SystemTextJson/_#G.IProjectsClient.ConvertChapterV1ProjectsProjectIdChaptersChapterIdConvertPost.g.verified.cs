@@ -20,7 +20,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ConvertChapterV1ProjectsProjectIdChaptersChapterIdConvertPostResponse> ConvertChapterV1ProjectsProjectIdChaptersChapterIdConvertPostAsync(
+        global::System.Threading.Tasks.Task<string> ConvertChapterV1ProjectsProjectIdChaptersChapterIdConvertPostAsync(
             string projectId,
             string chapterId,
             string? xiApiKey = default,

@@ -13,7 +13,7 @@ namespace G
         /// <param name="rsaEncrptedPass"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminSetUserPasswordResponse> AdminSetUserPasswordAsync(
+        global::System.Threading.Tasks.Task<string> AdminSetUserPasswordAsync(
             string? token = default,
             global::System.Guid? userId = default,
             string? rsaEncrptedPass = default,

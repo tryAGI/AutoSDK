@@ -16,7 +16,7 @@ namespace G
         /// <param name="newSetTitle"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DescriptorImportFieldsResponse> DescriptorImportFieldsAsync(
+        global::System.Threading.Tasks.Task<string> DescriptorImportFieldsAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Guid? userId = default,

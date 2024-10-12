@@ -53,7 +53,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("requester")]
-        public global::G.WebhookInstallationDeletedRequester? Requester { get; set; }
+        public object? Requester { get; set; }
 
         /// <summary>
         /// The GitHub user that triggered the event. This property is included in every webhook payload.

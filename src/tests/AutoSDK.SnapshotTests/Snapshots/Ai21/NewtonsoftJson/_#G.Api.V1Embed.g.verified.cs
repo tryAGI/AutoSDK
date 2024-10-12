@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.V1EmbedResponse> V1EmbedAsync(
+        public async global::System.Threading.Tasks.Task<string> V1EmbedAsync(
             global::G.EmbeddingsBody request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.V1EmbedResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -124,7 +122,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.V1EmbedResponse> V1EmbedAsync(
+        public async global::System.Threading.Tasks.Task<string> V1EmbedAsync(
             global::System.Collections.Generic.IList<string> texts,
             global::G.EmbedType? type = global::G.EmbedType.Segment,
             global::System.Threading.CancellationToken cancellationToken = default)

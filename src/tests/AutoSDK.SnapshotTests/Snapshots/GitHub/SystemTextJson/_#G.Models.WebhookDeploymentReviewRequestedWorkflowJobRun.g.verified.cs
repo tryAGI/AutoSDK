@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookDeploymentReviewRequestedWorkflowJobRunConclusion? Conclusion { get; set; }
+        public required object? Conclusion { get; set; }
 
         /// <summary>
         /// 

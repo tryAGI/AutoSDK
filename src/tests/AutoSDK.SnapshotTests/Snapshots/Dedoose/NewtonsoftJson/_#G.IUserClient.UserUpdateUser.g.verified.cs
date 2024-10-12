@@ -17,7 +17,7 @@ namespace G
         /// <param name="password"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UserUpdateUserResponse> UserUpdateUserAsync(
+        global::System.Threading.Tasks.Task<string> UserUpdateUserAsync(
             string? token = default,
             global::System.Guid? userId = default,
             string? firstName = default,

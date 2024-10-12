@@ -12,16 +12,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionToolTypeJsonConverter))]
-        public global::G.ChatCompletionToolType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.ChatCompletionToolFunction Function { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.ChatCompletionToolFunction Function { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionToolTypeJsonConverter))]
+        public global::G.ChatCompletionToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

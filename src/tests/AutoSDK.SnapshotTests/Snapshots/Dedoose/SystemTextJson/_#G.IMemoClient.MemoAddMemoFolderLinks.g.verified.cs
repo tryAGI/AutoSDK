@@ -14,7 +14,7 @@ namespace G
         /// <param name="folderIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.MemoAddMemoFolderLinksResponse> MemoAddMemoFolderLinksAsync(
+        global::System.Threading.Tasks.Task<string> MemoAddMemoFolderLinksAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             string? memoId = default,

@@ -12,26 +12,26 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ChatCompletionChoiceDelta Delta { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FinishReason2 FinishReason { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
         public int Index { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FinishReason FinishReason { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logprobs")]
         public global::G.LogprobsPart? Logprobs { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.ChatCompletionChoiceDelta Delta { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

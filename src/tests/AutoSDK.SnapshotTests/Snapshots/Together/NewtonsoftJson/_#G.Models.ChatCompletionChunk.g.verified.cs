@@ -14,14 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.ChatCompletionChunkObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionChunkChoice> Choices { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -32,8 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("system_fingerprint")]
-        public string? SystemFingerprint { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Id { get; set; } = default!;
 
         /// <summary>
         /// Example: mistralai/Mixtral-8x7B-Instruct-v0.1
@@ -44,14 +38,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("choices", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ChatCompletionChunkChoice> Choices { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ChatCompletionChunkObject Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("system_fingerprint")]
+        public string? SystemFingerprint { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("usage")]
-        public global::G.AllOf<global::G.UsageData, global::G.ChatCompletionChunkUsage>? Usage { get; set; }
+        public global::G.AllOf<global::G.UsageData, object>? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

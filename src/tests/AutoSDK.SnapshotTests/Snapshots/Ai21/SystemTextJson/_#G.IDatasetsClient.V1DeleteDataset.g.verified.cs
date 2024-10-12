@@ -11,7 +11,7 @@ namespace G
         /// <param name="datasetPid"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1DeleteDatasetResponse> V1DeleteDatasetAsync(
+        global::System.Threading.Tasks.Task<string> V1DeleteDatasetAsync(
             string datasetPid,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

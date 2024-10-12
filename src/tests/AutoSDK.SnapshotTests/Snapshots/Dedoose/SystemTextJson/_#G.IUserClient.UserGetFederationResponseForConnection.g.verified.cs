@@ -12,7 +12,7 @@ namespace G
         /// <param name="connectionKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UserGetFederationResponseForConnectionResponse> UserGetFederationResponseForConnectionAsync(
+        global::System.Threading.Tasks.Task<string> UserGetFederationResponseForConnectionAsync(
             string? token = default,
             global::System.Guid? connectionKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

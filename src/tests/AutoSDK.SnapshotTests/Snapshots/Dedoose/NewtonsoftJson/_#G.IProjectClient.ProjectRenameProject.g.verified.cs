@@ -13,7 +13,7 @@ namespace G
         /// <param name="newTitle"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ProjectRenameProjectResponse> ProjectRenameProjectAsync(
+        global::System.Threading.Tasks.Task<string> ProjectRenameProjectAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             string? newTitle = default,

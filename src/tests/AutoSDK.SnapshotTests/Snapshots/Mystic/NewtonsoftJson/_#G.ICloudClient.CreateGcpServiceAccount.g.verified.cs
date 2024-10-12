@@ -11,7 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.CreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPostResponse> CreateGcpServiceAccountAsync(
+        global::System.Threading.Tasks.Task<string> CreateGcpServiceAccountAsync(
             global::G.BodyCreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPost request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -23,7 +23,7 @@ namespace G
         /// <param name="serviceAccountFilename"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.CreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPostResponse> CreateGcpServiceAccountAsync(
+        global::System.Threading.Tasks.Task<string> CreateGcpServiceAccountAsync(
             byte[] serviceAccountFile,
             string serviceAccountFilename,
             string? credentialId = default,

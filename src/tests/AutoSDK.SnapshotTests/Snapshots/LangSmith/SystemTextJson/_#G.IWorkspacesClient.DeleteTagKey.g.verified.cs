@@ -11,7 +11,7 @@ namespace G
         /// <param name="tagKeyId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DeleteTagKeyApiV1WorkspacesCurrentTagKeysTagKeyIdDeleteResponse> DeleteTagKeyAsync(
+        global::System.Threading.Tasks.Task<string> DeleteTagKeyAsync(
             global::System.Guid tagKeyId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

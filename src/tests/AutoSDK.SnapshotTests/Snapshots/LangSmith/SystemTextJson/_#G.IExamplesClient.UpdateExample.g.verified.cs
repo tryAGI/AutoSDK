@@ -13,7 +13,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdateExampleApiV1ExamplesExampleIdPatchResponse> UpdateExampleAsync(
+        global::System.Threading.Tasks.Task<string> UpdateExampleAsync(
             global::System.Guid exampleId,
             global::G.ExampleUpdate request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -30,7 +30,7 @@ namespace G
         /// <param name="split"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdateExampleApiV1ExamplesExampleIdPatchResponse> UpdateExampleAsync(
+        global::System.Threading.Tasks.Task<string> UpdateExampleAsync(
             global::System.Guid exampleId,
             global::System.Guid? datasetId = default,
             object? inputs = default,

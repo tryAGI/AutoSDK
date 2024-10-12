@@ -12,7 +12,7 @@ namespace G
         /// <param name="jobId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DescriptorGetDesDataFromFileJobResultResponse> DescriptorGetDesDataFromFileJobResultAsync(
+        global::System.Threading.Tasks.Task<string> DescriptorGetDesDataFromFileJobResultAsync(
             string? token = default,
             global::System.Guid? jobId = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -14,7 +14,7 @@ namespace G
         /// <param name="reason"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminAddCreditsToAccountResponse> AdminAddCreditsToAccountAsync(
+        global::System.Threading.Tasks.Task<string> AdminAddCreditsToAccountAsync(
             string? token = default,
             global::System.Guid? accountId = default,
             double? credits = default,

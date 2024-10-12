@@ -14,7 +14,7 @@ namespace G
         /// <param name="groupACLId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminAddGroupToProjectResponse> AdminAddGroupToProjectAsync(
+        global::System.Threading.Tasks.Task<string> AdminAddGroupToProjectAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             string? groupTitle = default,

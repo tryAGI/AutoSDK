@@ -46,7 +46,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetResponse> GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetAsync(
+        public async global::System.Threading.Tasks.Task<string> GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetAsync(
             string dubbingId,
             string languageCode,
             global::G.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetFormatType? formatType = default,
@@ -128,9 +128,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

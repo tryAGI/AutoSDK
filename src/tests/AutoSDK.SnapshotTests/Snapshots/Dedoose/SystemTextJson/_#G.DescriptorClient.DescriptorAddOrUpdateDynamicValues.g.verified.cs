@@ -43,7 +43,7 @@ namespace G
         /// <param name="values"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DescriptorAddOrUpdateDynamicValuesResponse> DescriptorAddOrUpdateDynamicValuesAsync(
+        public async global::System.Threading.Tasks.Task<string> DescriptorAddOrUpdateDynamicValuesAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Guid? resourceId = default,
@@ -128,9 +128,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DescriptorAddOrUpdateDynamicValuesResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

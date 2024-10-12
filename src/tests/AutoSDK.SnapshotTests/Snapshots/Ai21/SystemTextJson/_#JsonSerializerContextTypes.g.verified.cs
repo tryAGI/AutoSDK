@@ -523,134 +523,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ConvertDocumentFileStudioV1ChatFilesConvertPostResponse? Type126 { get; set; }
+        public global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>? Type127 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>? Type128 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2LightCompleteResponse? Type129 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2LightCustomModelCompleteResponse? Type130 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2MidCompleteResponse? Type131 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2MidCustomModelCompleteResponse? Type132 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2UltraCompleteResponse? Type133 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2UltraCompleteResponse2? Type134 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2LargeCompleteResponse? Type135 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2LargeInstructCompleteResponse? Type136 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2GrandeCompleteResponse? Type137 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2GrandeInstructCompleteResponse? Type138 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2JumboCompleteResponse? Type139 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2JumboInstructCompleteResponse? Type140 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2LargeCustomModelCompleteResponse? Type141 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2GrandeCustomModelCompleteResponse? Type142 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1J2JumboCompleteResponse2? Type143 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1GetCustomModelsResponse? Type144 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1CreateCustomModelResponse? Type145 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1GetCustomModelResponse? Type146 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1UpdateCustomModelResponse? Type147 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1GetDatasetsResponse? Type148 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1UploadDatasetResponse? Type149 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1GetDatasetResponse? Type150 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1DeleteDatasetResponse? Type151 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1GetDatasetDownloadUrlResponse? Type152 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1ParaphrazeResponse? Type153 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1EmbedResponse? Type154 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FileResponse>? Type155 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1LibraryManagementResponse? Type156 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1AnswerResponse? Type157 { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        public global::G.V1TokenizeResponse? Type158 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.FileResponse>? Type128 { get; set; }
     }
 }

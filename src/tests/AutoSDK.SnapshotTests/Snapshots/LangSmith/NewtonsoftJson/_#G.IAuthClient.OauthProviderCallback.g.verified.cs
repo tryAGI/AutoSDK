@@ -11,7 +11,7 @@ namespace G
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> OauthProviderCallbackAsync(
+        global::System.Threading.Tasks.Task<string> OauthProviderCallbackAsync(
             global::G.OAuthProvider provider = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

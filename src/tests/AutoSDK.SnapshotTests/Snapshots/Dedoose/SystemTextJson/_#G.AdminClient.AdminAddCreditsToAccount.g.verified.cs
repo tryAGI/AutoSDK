@@ -37,7 +37,7 @@ namespace G
         /// <param name="reason"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AdminAddCreditsToAccountResponse> AdminAddCreditsToAccountAsync(
+        public async global::System.Threading.Tasks.Task<string> AdminAddCreditsToAccountAsync(
             string? token = default,
             global::System.Guid? accountId = default,
             double? credits = default,
@@ -115,9 +115,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminAddCreditsToAccountResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

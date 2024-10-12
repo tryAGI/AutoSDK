@@ -277,7 +277,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
-        public global::G.WebhookForkForkeeVariant2Language? Language { get; set; }
+        public object? Language { get; set; }
 
         /// <summary>
         /// 
@@ -307,7 +307,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mirror_url")]
-        public global::G.WebhookForkForkeeVariant2MirrorUrl? MirrorUrl { get; set; }
+        public object? MirrorUrl { get; set; }
 
         /// <summary>
         /// 
@@ -439,7 +439,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topics")]
-        public global::System.Collections.Generic.IList<global::G.WebhookForkForkeeVariant2Topic>? Topics { get; set; }
+        public global::System.Collections.Generic.IList<object>? Topics { get; set; }
 
         /// <summary>
         /// 

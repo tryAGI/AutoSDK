@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1J2MidCompleteResponse> V1J2MidCompleteAsync(
+        global::System.Threading.Tasks.Task<string> V1J2MidCompleteAsync(
             global::G.CompletionBody request,
             string? model = "j2-mid",
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -55,7 +55,7 @@ namespace G
         /// <param name="epoch"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1J2MidCompleteResponse> V1J2MidCompleteAsync(
+        global::System.Threading.Tasks.Task<string> V1J2MidCompleteAsync(
             string prompt,
             string? model = "j2-mid",
             int? numResults = 1,

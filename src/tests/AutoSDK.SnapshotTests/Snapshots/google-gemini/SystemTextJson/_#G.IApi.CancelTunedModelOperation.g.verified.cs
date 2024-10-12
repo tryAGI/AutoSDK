@@ -13,7 +13,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> CancelTunedModelOperationAsync(
+        global::System.Threading.Tasks.Task<string> CancelTunedModelOperationAsync(
             string tunedModelId,
             string operationId,
             object request,
@@ -26,7 +26,7 @@ namespace G
         /// <param name="operationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> CancelTunedModelOperationAsync(
+        global::System.Threading.Tasks.Task<string> CancelTunedModelOperationAsync(
             string tunedModelId,
             string operationId,
             global::System.Threading.CancellationToken cancellationToken = default);

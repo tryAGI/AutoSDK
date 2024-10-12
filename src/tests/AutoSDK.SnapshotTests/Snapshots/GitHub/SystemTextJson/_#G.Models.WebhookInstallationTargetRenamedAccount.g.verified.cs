@@ -32,7 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public global::G.WebhookInstallationTargetRenamedAccountDescription? Description { get; set; }
+        public object? Description { get; set; }
 
         /// <summary>
         /// 
@@ -227,7 +227,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("website_url")]
-        public global::G.WebhookInstallationTargetRenamedAccountWebsiteUrl? WebsiteUrl { get; set; }
+        public object? WebsiteUrl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

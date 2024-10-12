@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("free_trial_ends_on", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookMarketplacePurchasePendingChangeCancelledMarketplacePurchaseFreeTrialEndsOn? FreeTrialEndsOn { get; set; } = default!;
+        public object? FreeTrialEndsOn { get; set; } = default!;
 
         /// <summary>
         /// 

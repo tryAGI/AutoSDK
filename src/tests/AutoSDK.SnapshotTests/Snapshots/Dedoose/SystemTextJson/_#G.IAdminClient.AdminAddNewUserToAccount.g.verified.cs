@@ -18,7 +18,7 @@ namespace G
         /// <param name="encryptedPass"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminAddNewUserToAccountResponse> AdminAddNewUserToAccountAsync(
+        global::System.Threading.Tasks.Task<string> AdminAddNewUserToAccountAsync(
             string? token = default,
             global::System.Guid? accountId = default,
             string? username = default,

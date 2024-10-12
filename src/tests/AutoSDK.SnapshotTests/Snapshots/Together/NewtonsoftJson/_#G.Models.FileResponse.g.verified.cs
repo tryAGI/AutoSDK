@@ -10,16 +10,28 @@ namespace G
     public sealed partial class FileResponse
     {
         /// <summary>
-        /// 
+        /// Example: jsonl
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Id { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("FileType", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FileResponseFileType FileType { get; set; } = default!;
 
         /// <summary>
-        /// Example: file
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Object { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("LineCount", Required = global::Newtonsoft.Json.Required.Always)]
+        public int LineCount { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("Processed", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Processed { get; set; } = default!;
+
+        /// <summary>
+        /// Example: 2664
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("bytes", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Bytes { get; set; } = default!;
 
         /// <summary>
         /// Example: 1715021438
@@ -34,34 +46,22 @@ namespace G
         public string Filename { get; set; } = default!;
 
         /// <summary>
-        /// Example: 2664
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("bytes", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Bytes { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// Example: file
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Object { get; set; } = default!;
 
         /// <summary>
         /// Example: fine-tune
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose")]
         public global::G.FileResponsePurpose Purpose { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("Processed", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool Processed { get; set; } = default!;
-
-        /// <summary>
-        /// Example: jsonl
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("FileType", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FileResponseFileType FileType { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("LineCount", Required = global::Newtonsoft.Json.Required.Always)]
-        public int LineCount { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

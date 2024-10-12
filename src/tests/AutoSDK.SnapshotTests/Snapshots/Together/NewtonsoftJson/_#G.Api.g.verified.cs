@@ -52,7 +52,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient, authorizations: _authorizations)
+        public FilesClient Files => new FilesClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FineTuningClient FineTuning => new FineTuningClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -68,15 +76,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FilesClient Files => new FilesClient(_httpClient, authorizations: _authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public FineTuningClient FineTuning => new FineTuningClient(_httpClient, authorizations: _authorizations)
+        public ModelsClient Models => new ModelsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };

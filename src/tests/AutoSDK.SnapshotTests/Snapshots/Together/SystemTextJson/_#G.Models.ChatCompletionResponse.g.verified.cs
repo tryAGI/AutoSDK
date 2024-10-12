@@ -12,13 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("choices")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.ChatCompletionChoicesDataItem> Choices { get; set; }
@@ -26,15 +19,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
-        public global::G.UsageData? Usage { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("created")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Created { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Created { get; set; }
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
@@ -49,6 +43,12 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionResponseObjectJsonConverter))]
         public global::G.ChatCompletionResponseObject Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("usage")]
+        public global::G.UsageData? Usage { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

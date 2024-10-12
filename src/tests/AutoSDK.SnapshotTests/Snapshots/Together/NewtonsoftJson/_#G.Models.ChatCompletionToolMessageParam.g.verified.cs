@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionToolMessageParamRole Role { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Content { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Content { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.ChatCompletionToolMessageParamRole Role { get; set; }
 
         /// <summary>
         /// 

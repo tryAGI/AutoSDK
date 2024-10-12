@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rows", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::G.MonitorBlockRowItem>> Rows { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<object>> Rows { get; set; } = default!;
 
         /// <summary>
         /// 

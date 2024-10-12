@@ -14,8 +14,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text")]
-        public string? Text { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("finish_reason")]
+        public global::G.FinishReason2? FinishReason { get; set; }
 
         /// <summary>
         /// 
@@ -26,14 +26,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("seed")]
-        public int? Seed { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("finish_reason")]
-        public global::G.FinishReason? FinishReason { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("logprobs")]
+        public global::G.AllOf<object, global::G.LogprobsPart>? Logprobs { get; set; }
 
         /// <summary>
         /// 
@@ -44,8 +38,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("logprobs")]
-        public global::G.AllOf<global::G.ChatCompletionChoicesDataItemLogprobs, global::G.LogprobsPart>? Logprobs { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("seed")]
+        public int? Seed { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public string? Text { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

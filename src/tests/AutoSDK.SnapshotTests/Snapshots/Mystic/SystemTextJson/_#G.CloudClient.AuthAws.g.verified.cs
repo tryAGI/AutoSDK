@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AuthAwsV4CloudProviderAwsAuthPostResponse> AuthAwsAsync(
+        public async global::System.Threading.Tasks.Task<string> AuthAwsAsync(
             global::G.AWSAuthCreate request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AuthAwsV4CloudProviderAwsAuthPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -121,7 +119,7 @@ namespace G
         /// <param name="roleArn"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AuthAwsV4CloudProviderAwsAuthPostResponse> AuthAwsAsync(
+        public async global::System.Threading.Tasks.Task<string> AuthAwsAsync(
             string roleArn,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

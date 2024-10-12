@@ -13,7 +13,7 @@ namespace G
         /// <param name="pdfURI"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.FileStartConvertPDF2SwfResponse> FileStartConvertPDF2SwfAsync(
+        global::System.Threading.Tasks.Task<string> FileStartConvertPDF2SwfAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             string? pdfURI = default,

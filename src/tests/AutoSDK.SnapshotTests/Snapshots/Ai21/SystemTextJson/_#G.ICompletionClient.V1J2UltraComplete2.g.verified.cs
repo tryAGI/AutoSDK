@@ -15,7 +15,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1J2UltraCompleteResponse2> V1J2UltraComplete2Async(
+        global::System.Threading.Tasks.Task<string> V1J2UltraComplete2Async(
             string customModelName,
             global::G.CompletionBody request,
             string? customModelType = "j2-ultra",
@@ -58,7 +58,7 @@ namespace G
         /// <param name="epoch"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1J2UltraCompleteResponse2> V1J2UltraComplete2Async(
+        global::System.Threading.Tasks.Task<string> V1J2UltraComplete2Async(
             string customModelName,
             string prompt,
             string? customModelType = "j2-ultra",

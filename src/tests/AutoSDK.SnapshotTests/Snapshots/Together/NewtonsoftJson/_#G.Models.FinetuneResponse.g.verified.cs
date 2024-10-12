@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.FinetuneResponse.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -12,20 +14,50 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("batch_size")]
+        public int? BatchSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public string? CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("epochs_completed")]
+        public int? EpochsCompleted { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("eval_steps")]
+        public int? EvalSteps { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("events")]
+        public global::System.Collections.Generic.IList<global::G.FinetuneEvent2>? Events { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Guid Id { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("training_file")]
-        public string? TrainingFile { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("job_id")]
+        public string? JobId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("validation_file")]
-        public string? ValidationFile { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("learning_rate")]
+        public double? LearningRate { get; set; }
 
         /// <summary>
         /// 
@@ -48,26 +80,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("TrainingFileNumLines")]
-        public int? TrainingFileNumLines { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("TrainingFileSize")]
-        public int? TrainingFileSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at")]
-        public string? CreatedAt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("updated_at")]
-        public string? UpdatedAt { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("n_checkpoints")]
+        public int? NCheckpoints { get; set; }
 
         /// <summary>
         /// 
@@ -78,74 +92,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("n_checkpoints")]
-        public int? NCheckpoints { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("batch_size")]
-        public int? BatchSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("learning_rate")]
-        public double? LearningRate { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("eval_steps")]
-        public int? EvalSteps { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("lora")]
-        public bool? Lora { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("lora_r")]
-        public int? LoraR { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("lora_alpha")]
-        public int? LoraAlpha { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("lora_dropout")]
-        public int? LoraDropout { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.FinetuneJobStatus Status { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("job_id")]
-        public string? JobId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("events")]
-        public global::System.Collections.Generic.IList<global::G.FinetuneEvent>? Events { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("token_count")]
-        public int? TokenCount { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("n_evals")]
+        public int? NEvals { get; set; }
 
         /// <summary>
         /// 
@@ -156,20 +104,62 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("queue_depth")]
+        public int? QueueDepth { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FinetuneJobStatus Status { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("token_count")]
+        public int? TokenCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("total_price")]
         public int? TotalPrice { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("epochs_completed")]
-        public int? EpochsCompleted { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("training_file")]
+        public string? TrainingFile { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("queue_depth")]
-        public int? QueueDepth { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("training_type")]
+        public global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? TrainingType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("trainingfile_numlines")]
+        public int? TrainingfileNumlines { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("trainingfile_size")]
+        public int? TrainingfileSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("updated_at")]
+        public string? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("validation_file")]
+        public string? ValidationFile { get; set; }
 
         /// <summary>
         /// 

@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse> StreamDatasetHandlerAsync(
+        public async global::System.Threading.Tasks.Task<string> StreamDatasetHandlerAsync(
             global::G.PlaygroundRunOverDatasetRequestSchema request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -110,9 +110,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -134,14 +132,14 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.StreamDatasetHandlerApiV1DatasetsPlaygroundExperimentStreamPostResponse> StreamDatasetHandlerAsync(
-            global::G.PlaygroundRunOverDatasetRequestSchemaManifest manifest,
+        public async global::System.Threading.Tasks.Task<string> StreamDatasetHandlerAsync(
+            object manifest,
             global::System.Collections.Generic.Dictionary<string, string> secrets,
             global::G.RunnableConfig options,
             global::System.Guid datasetId,
             string? runId = default,
             string? repoId = default,
-            global::System.Collections.Generic.IList<global::G.PlaygroundRunOverDatasetRequestSchemaTool>? tools = default,
+            global::System.Collections.Generic.IList<object>? tools = default,
             string? toolChoice = default,
             string? projectName = default,
             int? repetitions = 1,

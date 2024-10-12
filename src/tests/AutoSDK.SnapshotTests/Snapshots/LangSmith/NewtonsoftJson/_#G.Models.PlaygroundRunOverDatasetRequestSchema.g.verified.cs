@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("manifest", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.PlaygroundRunOverDatasetRequestSchemaManifest Manifest { get; set; } = default!;
+        public object Manifest { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
-        public global::System.Collections.Generic.IList<global::G.PlaygroundRunOverDatasetRequestSchemaTool>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<object>? Tools { get; set; }
 
         /// <summary>
         /// 

@@ -12,6 +12,13 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("document")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.RerankResponseResultDocument Document { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Index { get; set; }
@@ -22,13 +29,6 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("relevance_score")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double RelevanceScore { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("document")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RerankResponseResultDocument Document { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

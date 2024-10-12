@@ -110,6 +110,15 @@ public readonly record struct EndPoint(
             },
             _ => responseContext?.TypeData,
         };
+        if (responseType?.CSharpTypeWithoutNullability == "object")
+        {
+            contentType = ContentType.String;
+            responseType = TypeData.Default with
+            {
+                CSharpTypeRaw = "string",
+                IsNullable = true,
+            };
+        }
 
         foreach (var requestProperty in requestContext?.ResolvedReference?.ClassData?.Properties ??
                                         requestContext?.ClassData?.Properties ??

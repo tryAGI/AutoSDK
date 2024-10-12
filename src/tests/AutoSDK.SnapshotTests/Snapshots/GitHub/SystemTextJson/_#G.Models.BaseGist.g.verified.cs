@@ -137,13 +137,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forks")]
-        public global::System.Collections.Generic.IList<global::G.BaseGistFork>? Forks { get; set; }
+        public global::System.Collections.Generic.IList<object>? Forks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("history")]
-        public global::System.Collections.Generic.IList<global::G.BaseGistHistoryItem>? History { get; set; }
+        public global::System.Collections.Generic.IList<object>? History { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

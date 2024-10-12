@@ -34,7 +34,7 @@ namespace G
         /// <param name="email"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.SecurityImpersonateUserResponse> SecurityImpersonateUserAsync(
+        public async global::System.Threading.Tasks.Task<string> SecurityImpersonateUserAsync(
             string? token = default,
             string? username = default,
             string? email = default,
@@ -108,9 +108,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.SecurityImpersonateUserResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

@@ -28,7 +28,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.CreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPostResponse> CreateGcpServiceAccountAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateGcpServiceAccountAsync(
             global::G.BodyCreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPost request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -122,9 +122,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPostResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -135,7 +133,7 @@ namespace G
         /// <param name="serviceAccountFilename"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.CreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPostResponse> CreateGcpServiceAccountAsync(
+        public async global::System.Threading.Tasks.Task<string> CreateGcpServiceAccountAsync(
             byte[] serviceAccountFile,
             string serviceAccountFilename,
             string? credentialId = default,

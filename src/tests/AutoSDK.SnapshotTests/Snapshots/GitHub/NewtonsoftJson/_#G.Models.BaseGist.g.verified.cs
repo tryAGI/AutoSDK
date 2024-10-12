@@ -121,13 +121,13 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("forks")]
-        public global::System.Collections.Generic.IList<global::G.BaseGistFork>? Forks { get; set; }
+        public global::System.Collections.Generic.IList<object>? Forks { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("history")]
-        public global::System.Collections.Generic.IList<global::G.BaseGistHistoryItem>? History { get; set; }
+        public global::System.Collections.Generic.IList<object>? History { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdateModelPriceApiV1ModelPriceMapIdPutResponse> UpdateModelPriceAsync(
+        global::System.Threading.Tasks.Task<string> UpdateModelPriceAsync(
             global::System.Guid id,
             global::G.ModelPriceMapUpdateSchema request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -32,7 +32,7 @@ namespace G
         /// <param name="provider"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdateModelPriceApiV1ModelPriceMapIdPutResponse> UpdateModelPriceAsync(
+        global::System.Threading.Tasks.Task<string> UpdateModelPriceAsync(
             global::System.Guid id,
             string name,
             string matchPattern,

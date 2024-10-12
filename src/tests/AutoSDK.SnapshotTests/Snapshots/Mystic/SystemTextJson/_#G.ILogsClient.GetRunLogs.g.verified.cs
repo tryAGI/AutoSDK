@@ -12,7 +12,7 @@ namespace G
         /// <param name="runId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GetRunLogsV4LogsRunRunIdGetResponse> GetRunLogsAsync(
+        global::System.Threading.Tasks.Task<string> GetRunLogsAsync(
             string runId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

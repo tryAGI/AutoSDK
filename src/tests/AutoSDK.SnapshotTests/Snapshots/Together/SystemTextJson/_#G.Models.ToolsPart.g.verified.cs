@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ToolsPart
     {
         /// <summary>
-        /// Example: tool_type
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function")]
         public global::G.ToolsPartFunction? Function { get; set; }
+
+        /// <summary>
+        /// Example: tool_type
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

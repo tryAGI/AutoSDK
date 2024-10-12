@@ -19,13 +19,13 @@ namespace G
         /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCodeScanningAlertCreatedAlertDismissedAt? DismissedAt { get; set; } = default!;
+        public object? DismissedAt { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_by", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCodeScanningAlertCreatedAlertDismissedBy? DismissedBy { get; set; } = default!;
+        public object? DismissedBy { get; set; } = default!;
 
         /// <summary>
         /// The dismissal comment associated with the dismissal of the alert.
@@ -37,13 +37,13 @@ namespace G
         /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dismissed_reason", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.WebhookCodeScanningAlertCreatedAlertDismissedReason? DismissedReason { get; set; } = default!;
+        public object? DismissedReason { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fixed_at")]
-        public global::G.WebhookCodeScanningAlertCreatedAlertFixedAt? FixedAt { get; set; }
+        public object? FixedAt { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.

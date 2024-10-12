@@ -14,7 +14,7 @@ namespace G
         /// <param name="newWeight"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.TagUpdateTagAppWeightResponse> TagUpdateTagAppWeightAsync(
+        global::System.Threading.Tasks.Task<string> TagUpdateTagAppWeightAsync(
             string? token = default,
             global::System.Guid? currentProjectId = default,
             global::System.Guid? tagAppId = default,

@@ -17,7 +17,7 @@ namespace G
         /// <param name="deliveryId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<object> OrgsRedeliverWebhookDeliveryAsync(
+        global::System.Threading.Tasks.Task<string> OrgsRedeliverWebhookDeliveryAsync(
             string org,
             int hookId,
             int deliveryId,

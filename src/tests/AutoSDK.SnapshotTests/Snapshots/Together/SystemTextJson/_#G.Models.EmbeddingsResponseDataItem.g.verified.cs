@@ -12,13 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbeddingsResponseDataItemObjectJsonConverter))]
-        public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<double> Embedding { get; set; }
@@ -29,6 +22,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Index { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbeddingsResponseDataItemObjectJsonConverter))]
+        public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

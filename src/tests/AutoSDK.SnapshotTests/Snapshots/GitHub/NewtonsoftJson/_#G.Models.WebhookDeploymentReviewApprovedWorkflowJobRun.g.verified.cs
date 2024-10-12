@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
-        public global::G.WebhookDeploymentReviewApprovedWorkflowJobRunConclusion? Conclusion { get; set; }
+        public object? Conclusion { get; set; }
 
         /// <summary>
         /// 

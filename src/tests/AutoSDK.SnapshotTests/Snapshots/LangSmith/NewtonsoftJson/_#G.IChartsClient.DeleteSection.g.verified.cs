@@ -12,7 +12,7 @@ namespace G
         /// <param name="sectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DeleteSectionApiV1ChartsSectionSectionIdDeleteResponse> DeleteSectionAsync(
+        global::System.Threading.Tasks.Task<string> DeleteSectionAsync(
             global::System.Guid sectionId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

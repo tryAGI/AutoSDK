@@ -33,7 +33,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.V1J2GrandeInstructCompleteResponse> V1J2GrandeInstructCompleteAsync(
+        public async global::System.Threading.Tasks.Task<string> V1J2GrandeInstructCompleteAsync(
             global::G.CompletionBody request,
             string? model = "j2-grande-instruct",
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -121,9 +121,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.V1J2GrandeInstructCompleteResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
 
         /// <summary>
@@ -162,7 +160,7 @@ namespace G
         /// <param name="epoch"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.V1J2GrandeInstructCompleteResponse> V1J2GrandeInstructCompleteAsync(
+        public async global::System.Threading.Tasks.Task<string> V1J2GrandeInstructCompleteAsync(
             string prompt,
             string? model = "j2-grande-instruct",
             int? numResults = 1,

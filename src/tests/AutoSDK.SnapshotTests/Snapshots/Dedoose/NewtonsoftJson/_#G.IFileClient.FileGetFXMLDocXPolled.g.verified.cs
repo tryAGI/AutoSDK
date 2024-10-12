@@ -13,7 +13,7 @@ namespace G
         /// <param name="fileURL"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.FileGetFXMLDocXPolledResponse> FileGetFXMLDocXPolledAsync(
+        global::System.Threading.Tasks.Task<string> FileGetFXMLDocXPolledAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             string? fileURL = default,

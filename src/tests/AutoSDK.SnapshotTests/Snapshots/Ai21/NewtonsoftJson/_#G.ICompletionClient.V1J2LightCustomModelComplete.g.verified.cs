@@ -15,7 +15,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1J2LightCustomModelCompleteResponse> V1J2LightCustomModelCompleteAsync(
+        global::System.Threading.Tasks.Task<string> V1J2LightCustomModelCompleteAsync(
             string customModelName,
             global::G.CompletionBody request,
             string? customModelType = "j2-light",
@@ -58,7 +58,7 @@ namespace G
         /// <param name="epoch"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1J2LightCustomModelCompleteResponse> V1J2LightCustomModelCompleteAsync(
+        global::System.Threading.Tasks.Task<string> V1J2LightCustomModelCompleteAsync(
             string customModelName,
             string prompt,
             string? customModelType = "j2-light",

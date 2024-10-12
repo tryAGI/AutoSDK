@@ -13,7 +13,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.V1GetCustomModelsResponse> V1GetCustomModelsAsync(
+        global::System.Threading.Tasks.Task<string> V1GetCustomModelsAsync(
             bool? includeMetadata = false,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

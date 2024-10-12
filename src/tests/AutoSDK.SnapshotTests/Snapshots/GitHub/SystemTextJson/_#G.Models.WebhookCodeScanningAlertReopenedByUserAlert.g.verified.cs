@@ -21,21 +21,21 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertReopenedByUserAlertDismissedAt? DismissedAt { get; set; }
+        public required object? DismissedAt { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertReopenedByUserAlertDismissedBy? DismissedBy { get; set; }
+        public required object? DismissedBy { get; set; }
 
         /// <summary>
         /// The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismissed_reason")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhookCodeScanningAlertReopenedByUserAlertDismissedReason? DismissedReason { get; set; }
+        public required object? DismissedReason { get; set; }
 
         /// <summary>
         /// The GitHub URL of the alert resource.

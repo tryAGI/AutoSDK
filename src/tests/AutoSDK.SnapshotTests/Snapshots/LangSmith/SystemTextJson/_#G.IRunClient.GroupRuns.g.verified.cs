@@ -13,7 +13,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
+        global::System.Threading.Tasks.Task<string> GroupRunsAsync(
             global::G.RunGroupRequest request,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -36,7 +36,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.GroupRunsApiV1RunsGroupPostResponse> GroupRunsAsync(
+        global::System.Threading.Tasks.Task<string> GroupRunsAsync(
             global::System.Guid sessionId,
             string? accept = default,
             global::G.RunGroupBy groupBy = default,

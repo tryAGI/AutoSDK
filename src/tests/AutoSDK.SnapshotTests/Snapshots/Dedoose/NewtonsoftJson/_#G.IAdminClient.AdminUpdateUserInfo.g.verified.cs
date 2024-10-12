@@ -15,7 +15,7 @@ namespace G
         /// <param name="phone"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.AdminUpdateUserInfoResponse> AdminUpdateUserInfoAsync(
+        global::System.Threading.Tasks.Task<string> AdminUpdateUserInfoAsync(
             string? token = default,
             global::System.Guid? userId = default,
             string? username = default,

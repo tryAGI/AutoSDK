@@ -12,12 +12,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<double> Embedding { get; set; } = default!;
 
@@ -26,6 +20,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
         public int Index { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.EmbeddingsResponseDataItemObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

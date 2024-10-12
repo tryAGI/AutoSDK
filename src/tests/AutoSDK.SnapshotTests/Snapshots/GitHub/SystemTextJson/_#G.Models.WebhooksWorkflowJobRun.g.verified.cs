@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksWorkflowJobRunConclusion? Conclusion { get; set; }
+        public required object? Conclusion { get; set; }
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.WebhooksWorkflowJobRunName? Name { get; set; }
+        public required object? Name { get; set; }
 
         /// <summary>
         /// 

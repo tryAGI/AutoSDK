@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.FinetuneResponse.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -12,6 +14,36 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
+        public int? BatchSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
+        public string? CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("epochs_completed")]
+        public int? EpochsCompleted { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("eval_steps")]
+        public int? EvalSteps { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("events")]
+        public global::System.Collections.Generic.IList<global::G.FinetuneEvent2>? Events { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
@@ -19,14 +51,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("training_file")]
-        public string? TrainingFile { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
+        public string? JobId { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("validation_file")]
-        public string? ValidationFile { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate")]
+        public double? LearningRate { get; set; }
 
         /// <summary>
         /// 
@@ -49,26 +81,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("TrainingFileNumLines")]
-        public int? TrainingFileNumLines { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("TrainingFileSize")]
-        public int? TrainingFileSize { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
-        public string? CreatedAt { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
-        public string? UpdatedAt { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("n_checkpoints")]
+        public int? NCheckpoints { get; set; }
 
         /// <summary>
         /// 
@@ -79,50 +93,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("n_checkpoints")]
-        public int? NCheckpoints { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("n_evals")]
+        public int? NEvals { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
-        public int? BatchSize { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("param_count")]
+        public int? ParamCount { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate")]
-        public double? LearningRate { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("eval_steps")]
-        public int? EvalSteps { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("lora")]
-        public bool? Lora { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("lora_r")]
-        public int? LoraR { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("lora_alpha")]
-        public int? LoraAlpha { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("lora_dropout")]
-        public int? LoraDropout { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("queue_depth")]
+        public int? QueueDepth { get; set; }
 
         /// <summary>
         /// 
@@ -135,26 +119,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("job_id")]
-        public string? JobId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("events")]
-        public global::System.Collections.Generic.IList<global::G.FinetuneEvent>? Events { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("token_count")]
         public int? TokenCount { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("param_count")]
-        public int? ParamCount { get; set; }
 
         /// <summary>
         /// 
@@ -165,14 +131,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("epochs_completed")]
-        public int? EpochsCompleted { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("training_file")]
+        public string? TrainingFile { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("queue_depth")]
-        public int? QueueDepth { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("training_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? TrainingType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trainingfile_numlines")]
+        public int? TrainingfileNumlines { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("trainingfile_size")]
+        public int? TrainingfileSize { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
+        public string? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("validation_file")]
+        public string? ValidationFile { get; set; }
 
         /// <summary>
         /// 

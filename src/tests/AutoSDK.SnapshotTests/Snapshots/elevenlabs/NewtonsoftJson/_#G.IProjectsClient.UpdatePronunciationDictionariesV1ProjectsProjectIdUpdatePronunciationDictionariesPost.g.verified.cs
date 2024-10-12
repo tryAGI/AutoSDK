@@ -18,7 +18,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdatePronunciationDictionariesV1ProjectsProjectIdUpdatePronunciationDictionariesPostResponse> UpdatePronunciationDictionariesV1ProjectsProjectIdUpdatePronunciationDictionariesPostAsync(
+        global::System.Threading.Tasks.Task<string> UpdatePronunciationDictionariesV1ProjectsProjectIdUpdatePronunciationDictionariesPostAsync(
             string projectId,
             global::G.BodyUpdatePronunciationDictionariesV1ProjectsProjectIdUpdatePronunciationDictionariesPost request,
             string? xiApiKey = default,
@@ -39,7 +39,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdatePronunciationDictionariesV1ProjectsProjectIdUpdatePronunciationDictionariesPostResponse> UpdatePronunciationDictionariesV1ProjectsProjectIdUpdatePronunciationDictionariesPostAsync(
+        global::System.Threading.Tasks.Task<string> UpdatePronunciationDictionariesV1ProjectsProjectIdUpdatePronunciationDictionariesPostAsync(
             string projectId,
             global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionLocatorDBModel> pronunciationDictionaryLocators,
             string? xiApiKey = default,

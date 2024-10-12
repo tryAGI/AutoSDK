@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("value")]
-        public global::G.RunInputValue? Value { get; set; }
+        public object? Value { get; set; }
 
         /// <summary>
         /// 

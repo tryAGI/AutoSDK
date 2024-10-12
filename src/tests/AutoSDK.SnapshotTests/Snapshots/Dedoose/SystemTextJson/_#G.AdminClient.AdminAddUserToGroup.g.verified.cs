@@ -37,7 +37,7 @@ namespace G
         /// <param name="groupId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AdminAddUserToGroupResponse> AdminAddUserToGroupAsync(
+        public async global::System.Threading.Tasks.Task<string> AdminAddUserToGroupAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Guid? userId = default,
@@ -115,9 +115,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminAddUserToGroupResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

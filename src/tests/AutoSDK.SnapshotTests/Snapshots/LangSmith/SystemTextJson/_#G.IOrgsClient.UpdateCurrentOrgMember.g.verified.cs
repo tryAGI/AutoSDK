@@ -13,7 +13,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
+        global::System.Threading.Tasks.Task<string> UpdateCurrentOrgMemberAsync(
             global::System.Guid identityId,
             global::G.OrgIdentityPatch request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -28,7 +28,7 @@ namespace G
         /// <param name="roleId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UpdateCurrentOrgMemberApiV1OrgsCurrentMembersIdentityIdPatchResponse> UpdateCurrentOrgMemberAsync(
+        global::System.Threading.Tasks.Task<string> UpdateCurrentOrgMemberAsync(
             global::System.Guid identityId,
             string? password = default,
             string? fullName = default,

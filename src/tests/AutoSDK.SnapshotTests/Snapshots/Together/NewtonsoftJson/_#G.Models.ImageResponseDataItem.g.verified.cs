@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Index { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("b64_json", Required = global::Newtonsoft.Json.Required.Always)]
+        public string B64Json { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("b64_json", Required = global::Newtonsoft.Json.Required.Always)]
-        public string B64Json { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Index { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

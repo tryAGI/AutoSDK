@@ -10,17 +10,17 @@ namespace G
     public sealed partial class ChatCompletionRequestResponseFormat
     {
         /// <summary>
+        /// The schema of the response format.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("schema")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Schema { get; set; }
+
+        /// <summary>
         /// The type of the response format.<br/>
         /// Example: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public string? Type { get; set; }
-
-        /// <summary>
-        /// The schema of the response format.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("schema")]
-        public global::System.Collections.Generic.Dictionary<string, string>? Schema { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

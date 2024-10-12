@@ -20,7 +20,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.DeleteChapterV1ProjectsProjectIdChaptersChapterIdDeleteResponse> DeleteChapterV1ProjectsProjectIdChaptersChapterIdDeleteAsync(
+        global::System.Threading.Tasks.Task<string> DeleteChapterV1ProjectsProjectIdChaptersChapterIdDeleteAsync(
             string projectId,
             string chapterId,
             string? xiApiKey = default,

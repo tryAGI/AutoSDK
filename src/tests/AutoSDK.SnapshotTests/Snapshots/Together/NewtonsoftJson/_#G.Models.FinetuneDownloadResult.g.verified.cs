@@ -12,8 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.FinetuneDownloadResultObject? Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("checkpoint_step")]
+        public int? CheckpointStep { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("filename")]
+        public string? Filename { get; set; }
 
         /// <summary>
         /// 
@@ -24,14 +30,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("checkpoint_step")]
-        public int? CheckpointStep { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("filename")]
-        public string? Filename { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.FinetuneDownloadResultObject? Object { get; set; }
 
         /// <summary>
         /// 

@@ -31,7 +31,7 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseItem>> AccountGetProjectAccessDetailsForUserAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<object>> AccountGetProjectAccessDetailsForUserAsync(
             string? token = default,
             global::System.Guid? userId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -102,7 +102,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.AccountGetProjectAccessDetailsForUserResponseItem>?>(__content, JsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<object>?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -34,7 +34,7 @@ namespace G
         /// <param name="resourceId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ResourceGetAudioSampleResponse> ResourceGetAudioSampleAsync(
+        public async global::System.Threading.Tasks.Task<string> ResourceGetAudioSampleAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Guid? resourceId = default,
@@ -108,9 +108,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ResourceGetAudioSampleResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

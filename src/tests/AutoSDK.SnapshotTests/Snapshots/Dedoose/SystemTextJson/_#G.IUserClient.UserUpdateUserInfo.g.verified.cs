@@ -21,7 +21,7 @@ namespace G
         /// <param name="zip"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.UserUpdateUserInfoResponse> UserUpdateUserInfoAsync(
+        global::System.Threading.Tasks.Task<string> UserUpdateUserInfoAsync(
             string? token = default,
             global::System.Guid? userId = default,
             string? firstName = default,

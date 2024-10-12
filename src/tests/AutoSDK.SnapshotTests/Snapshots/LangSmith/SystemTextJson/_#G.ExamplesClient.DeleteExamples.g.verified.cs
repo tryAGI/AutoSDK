@@ -29,7 +29,7 @@ namespace G
         /// <param name="exampleIds"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.DeleteExamplesApiV1ExamplesDeleteResponse> DeleteExamplesAsync(
+        public async global::System.Threading.Tasks.Task<string> DeleteExamplesAsync(
             global::System.Collections.Generic.IList<global::System.Guid> exampleIds,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -106,9 +106,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DeleteExamplesApiV1ExamplesDeleteResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

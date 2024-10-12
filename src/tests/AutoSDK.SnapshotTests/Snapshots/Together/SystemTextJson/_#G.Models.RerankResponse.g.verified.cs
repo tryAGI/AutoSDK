@@ -10,14 +10,6 @@ namespace G
     public sealed partial class RerankResponse
     {
         /// <summary>
-        /// Object type<br/>
-        /// Example: rerank
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RerankResponseObjectJsonConverter))]
-        public global::G.RerankResponseObject Object { get; set; }
-
-        /// <summary>
         /// Request ID<br/>
         /// Example: 9dfa1a09-5ebc-4a40-970f-586cb8f4ae47
         /// </summary>
@@ -31,6 +23,14 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
+
+        /// <summary>
+        /// Object type<br/>
+        /// Example: rerank
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RerankResponseObjectJsonConverter))]
+        public global::G.RerankResponseObject Object { get; set; }
 
         /// <summary>
         /// Example: [, ]

@@ -31,7 +31,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("examples")]
-        public global::System.Collections.Generic.IList<global::G.IOVariableExample>? Examples { get; set; }
+        public global::System.Collections.Generic.IList<object>? Examples { get; set; }
 
         /// <summary>
         /// 
@@ -97,7 +97,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("choices")]
-        public global::System.Collections.Generic.IList<global::G.IOVariableChoice>? Choices { get; set; }
+        public global::System.Collections.Generic.IList<object>? Choices { get; set; }
 
         /// <summary>
         /// 
@@ -109,7 +109,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default")]
-        public global::G.IOVariableDefault? Default { get; set; }
+        public object? Default { get; set; }
 
         /// <summary>
         /// 

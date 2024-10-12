@@ -31,7 +31,7 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.AdminGetProjectSecurityInfoResponse> AdminGetProjectSecurityInfoAsync(
+        public async global::System.Threading.Tasks.Task<string> AdminGetProjectSecurityInfoAsync(
             string? token = default,
             global::System.Guid? projectId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -101,9 +101,7 @@ namespace G
                 throw new global::System.InvalidOperationException(__content, ex);
             }
 
-            return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AdminGetProjectSecurityInfoResponse?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            return __content;
         }
     }
 }

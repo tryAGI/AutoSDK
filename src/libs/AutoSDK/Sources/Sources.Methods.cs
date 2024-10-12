@@ -211,7 +211,8 @@ namespace {endPoint.Namespace}
             Process{endPoint.NotAsyncMethodName}Response(
                 httpClient: _httpClient,
                 httpResponseMessage: response);
-{(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) || endPoint.Stream ? @" 
+{(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) ||
+  endPoint.Stream ? @" 
             response.EnsureSuccessStatusCode();
  " : $@"
             var __content = await response.Content.ReadAs{contentType}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);

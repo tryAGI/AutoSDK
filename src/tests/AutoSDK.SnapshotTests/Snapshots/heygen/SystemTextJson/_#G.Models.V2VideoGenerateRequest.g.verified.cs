@@ -13,13 +13,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("aspect_ratio")]
-        public global::G.V2VideoGenerateRequestAspectRatio? AspectRatio { get; set; }
+        public object? AspectRatio { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callback_id")]
-        public global::G.V2VideoGenerateRequestCallbackId? CallbackId { get; set; }
+        public object? CallbackId { get; set; }
 
         /// <summary>
         /// 

@@ -109,8 +109,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task V2VideoGenerateAsync(
-            global::G.V2VideoGenerateRequestAspectRatio? aspectRatio = default,
-            global::G.V2VideoGenerateRequestCallbackId? callbackId = default,
+            object? aspectRatio = default,
+            object? callbackId = default,
             global::G.V2VideoGenerateRequestDimension? dimension = default,
             bool? test = default,
             string? title = default,

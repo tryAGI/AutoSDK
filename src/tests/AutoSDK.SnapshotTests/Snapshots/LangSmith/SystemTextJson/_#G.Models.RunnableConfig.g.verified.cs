@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("callbacks")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunnableConfigCallback>, global::G.RunnableConfigCallbacks>? Callbacks { get; set; }
+        public global::G.AnyOf<global::System.Collections.Generic.IList<object>, object>? Callbacks { get; set; }
 
         /// <summary>
         /// 
