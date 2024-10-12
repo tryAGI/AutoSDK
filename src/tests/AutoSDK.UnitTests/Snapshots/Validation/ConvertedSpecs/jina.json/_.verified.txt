@@ -1,0 +1,1291 @@
+﻿{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "The Jina Embedding Serving API",
+    "description": "This is the UniversalAPI to access all the Jina embedding models",
+    "version": "0.1.71"
+  },
+  "paths": {
+    "/v1/embeddings": {
+      "post": {
+        "tags": [
+          "embeddings"
+        ],
+        "summary": "Create Embedding",
+        "description": "Create embedding representations of the given input texts.",
+        "operationId": "create_embedding_v1_embeddings_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EmbeddingInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Create embeddings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ModelEmbeddingOutput"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/v1/bulk-embeddings": {
+      "post": {
+        "tags": [
+          "bulk-embeddings"
+        ],
+        "summary": "Start Bulk Embedding",
+        "description": "Upload a file and get embeddings for each row",
+        "operationId": "start_bulk_embedding_v1_bulk_embeddings_post",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_start_bulk_embedding_v1_bulk_embeddings_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Start a bulk embedding job",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkEmbeddingJobResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/v1/bulk-embeddings/{job_id}": {
+      "get": {
+        "tags": [
+          "bulk-embeddings"
+        ],
+        "summary": "Retrieve Job",
+        "operationId": "retrieve_job_v1_bulk_embeddings__job_id__get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            },
+            "name": "job_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get information about a bulk embedding job",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkEmbeddingJobResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/bulk-embeddings/{job_id}/download-result": {
+      "post": {
+        "tags": [
+          "bulk-embeddings"
+        ],
+        "summary": "Download Result",
+        "operationId": "download_result_v1_bulk_embeddings__job_id__download_result_post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            },
+            "name": "job_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Download the result of a bulk embedding job",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DownloadResultResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/rerank": {
+      "post": {
+        "tags": [
+          "rerank"
+        ],
+        "summary": "Rank",
+        "description": "Rank pairs.",
+        "operationId": "rank_v1_rerank_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RankAPIInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Rank output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RankingOutput"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/v1/multi-vector": {
+      "post": {
+        "tags": [
+          "multi-vector"
+        ],
+        "summary": "Create Multi Vector",
+        "description": "Create multiple vector representations of the given input texts. One vector representation for each token in the input text.",
+        "operationId": "create_multi_vector_v1_multi_vector_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TextEmbeddingAPIInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Create multi vector embeddings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ColbertModelEmbeddingsOutput"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/v1/multi-embeddings": {
+      "post": {
+        "tags": [
+          "multi-vector"
+        ],
+        "summary": "Create Multi Vector",
+        "description": "Create multiple vector representations of the given input texts. One vector representation for each token in the input text.",
+        "operationId": "create_multi_vector_v1_multi_embeddings_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TextEmbeddingAPIInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Create multi vector embeddings",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ColbertModelEmbeddingsOutput"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "deprecated": true,
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/": {
+      "get": {
+        "summary": "Get the health of Universal API service",
+        "description": "Get the health of this Gateway service.\n.. # noqa: DAR201",
+        "operationId": "_gateway_health__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthModel"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Body_start_bulk_embedding_v1_bulk_embeddings_post": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "title": "File"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "title": "Email"
+          },
+          "model": {
+            "type": "string",
+            "title": "Model"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file",
+          "model"
+        ],
+        "title": "Body_start_bulk_embedding_v1_bulk_embeddings_post"
+      },
+      "BulkEmbeddingJobResponse": {
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "title": "User Id",
+            "description": "The user ID of the user who created the job"
+          },
+          "model_name": {
+            "type": "string",
+            "title": "Model Name",
+            "description": "The name of the model to use"
+          },
+          "model_package_arn": {
+            "type": "string",
+            "title": "Model Package Arn",
+            "description": "The model package ARN"
+          },
+          "status": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/BulkEmbeddingJobStatus"
+              }
+            ],
+            "description": "The status of the job"
+          },
+          "file_name": {
+            "type": "string",
+            "title": "File Name",
+            "description": "The name of the input file"
+          },
+          "user_email": {
+            "type": "string",
+            "format": "email",
+            "title": "User Email",
+            "description": "The email of the user who created the job"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Created At",
+            "description": "Time of creation of the job.",
+            "nullable": false
+          },
+          "completed_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Completed At",
+            "description": "Time of completion of the job."
+          },
+          "error": {
+            "type": "string",
+            "title": "Error",
+            "description": "The error message of the job"
+          },
+          "_id": {
+            "type": "string",
+            "title": " Id",
+            "description": "The ID of the job"
+          },
+          "used_token_count": {
+            "type": "integer",
+            "title": "Used Token Count",
+            "description": "The number of tokens used for the job"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user_id",
+          "model_name",
+          "status",
+          "file_name",
+          "_id"
+        ],
+        "title": "BulkEmbeddingJobResponse",
+        "example": {
+          "id": "000000000000000000000000",
+          "model_name": "model_1",
+          "status": "in-progress",
+          "file_name": "input.csv",
+          "used_token_count": 1000
+        }
+      },
+      "BulkEmbeddingJobStatus": {
+        "type": "string",
+        "enum": [
+          "waiting",
+          "in-progress",
+          "failed",
+          "completed"
+        ],
+        "title": "BulkEmbeddingJobStatus",
+        "description": "An enumeration."
+      },
+      "ColbertModelEmbeddingsOutput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-embedding-t-en-v1\u0060,\t14m,\t312\n- \u0060jina-embedding-s-en-v1\u0060,\t35m,\t512 (default)\n- \u0060jina-embedding-b-en-v1\u0060,\t110m,\t768\n- \u0060jina-embedding-l-en-v1\u0060,\t330,\t1024\n\nFor more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).\n"
+          },
+          "object": {
+            "type": "string",
+            "title": "Object",
+            "default": "list"
+          },
+          "data": {
+            "items": {},
+            "type": "array",
+            "title": "Data",
+            "description": "A list of Embedding Objects returned by the embedding service"
+          },
+          "usage": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/api_schemas__embedding__Usage"
+              }
+            ],
+            "title": "Usage",
+            "description": "Total usage of the request. Sums up the usage from each individual input"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model",
+          "data",
+          "usage"
+        ],
+        "title": "ColbertModelEmbeddingsOutput",
+        "description": "Output of the embedding service",
+        "example": {
+          "data": [
+            {
+              "index": 0,
+              "embeddings": [
+                [
+                  0.1,
+                  0.2,
+                  0.3
+                ],
+                [
+                  0.4,
+                  0.5,
+                  0.6
+                ]
+              ],
+              "object": "embeddings"
+            },
+            {
+              "index": 1,
+              "embeddings": [
+                [
+                  0.6,
+                  0.5,
+                  0.4
+                ],
+                [
+                  0.3,
+                  0.2,
+                  0.1
+                ]
+              ],
+              "object": "embeddings"
+            }
+          ],
+          "usage": {
+            "total_tokens": 15,
+            "prompt_tokens": 15
+          }
+        }
+      },
+      "DownloadResultResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The ID of the job"
+          },
+          "download_url": {
+            "type": "string",
+            "title": "Download Url",
+            "description": "The URL to download the result file"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "download_url"
+        ],
+        "title": "DownloadResultResponse",
+        "example": {
+          "id": "000000000000000000000000",
+          "download_url": "https://example.com"
+        }
+      },
+      "EmbeddingInput": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TextEmbeddingInput"
+          },
+          {
+            "$ref": "#/components/schemas/ImageEmbeddingInput"
+          },
+          {
+            "$ref": "#/components/schemas/MixedEmbeddingInput"
+          }
+        ],
+        "title": "EmbeddingInput"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthModel": {
+        "properties": {},
+        "type": "object",
+        "title": "HealthModel",
+        "description": "Pydantic BaseModel for Jina health check, used as the response model in REST app."
+      },
+      "ImageDoc": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
+            "example": "3d19548f30d939fdf8d1f970b47ec824"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 65536,
+            "minLength": 1,
+            "format": "uri",
+            "title": "Url",
+            "description": "URL of an image file"
+          },
+          "bytes": {
+            "type": "string",
+            "format": "binary",
+            "title": "Bytes",
+            "description": "base64 representation of the Image."
+          },
+          "image": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 65536,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "string",
+                "format": "binary"
+              }
+            ],
+            "title": "Image",
+            "description": "Image representation that can hold URL of an image or a base64 representation"
+          }
+        },
+        "type": "object",
+        "title": "ImageDoc",
+        "description": "ImageDoc with fields"
+      },
+      "ImageEmbeddingInput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-clip-v1\u0060,\t223M,\t768\n\nFor more information, please checkout our [technical blog](https://arxiv.org/abs/2405.20204).\n"
+          },
+          "input": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ImageDoc"
+              },
+              {
+                "items": {
+                  "$ref": "#/components/schemas/ImageDoc"
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Input",
+            "description": "List of images to embed"
+          },
+          "embedding_type": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "float",
+                  "base64",
+                  "binary",
+                  "ubinary"
+                ]
+              },
+              {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "float",
+                    "base64",
+                    "binary",
+                    "ubinary"
+                  ]
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Embedding Type",
+            "description": "The format in which you want the embeddings to be returned.Possible value are \u0060float\u0060, \u0060base64\u0060, \u0060binary\u0060, \u0060ubinary\u0060 or a list containing any of them. Defaults to \u0060float\u0060"
+          },
+          "normalized": {
+            "type": "boolean",
+            "title": "Normalized",
+            "description": "Flag to determine if the embeddings should be normalized to have a unit L2 norm"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "title": "ImageEmbeddingInput",
+        "description": "The input to the API for text embedding. OpenAI compatible",
+        "example": {
+          "model": "clip",
+          "input": [
+            "bytes or URL"
+          ]
+        }
+      },
+      "MixedEmbeddingInput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-clip-v1\u0060,\t223M,\t768\n\nFor more information, please checkout our [technical blog](https://arxiv.org/abs/2405.20204).\n"
+          },
+          "input": {
+            "items": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/ImageDoc"
+                },
+                {
+                  "$ref": "#/components/schemas/api_schemas__embedding__TextDoc"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Input",
+            "description": "List of text and images to embed"
+          },
+          "embedding_type": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "float",
+                  "base64",
+                  "binary",
+                  "ubinary"
+                ]
+              },
+              {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "float",
+                    "base64",
+                    "binary",
+                    "ubinary"
+                  ]
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Embedding Type",
+            "description": "The format in which you want the embeddings to be returned.Possible value are \u0060float\u0060, \u0060base64\u0060, \u0060binary\u0060, \u0060ubinary\u0060 or a list containing any of them. Defaults to \u0060float\u0060"
+          },
+          "normalized": {
+            "type": "boolean",
+            "title": "Normalized",
+            "description": "Flag to determine if the embeddings should be normalized to have a unit L2 norm"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "title": "MixedEmbeddingInput",
+        "description": "The input to the API for text embedding. OpenAI compatible",
+        "example": {
+          "model": "clip",
+          "input": [
+            "bytes or URL"
+          ]
+        }
+      },
+      "ModelEmbeddingOutput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-embedding-t-en-v1\u0060,\t14m,\t312\n- \u0060jina-embedding-s-en-v1\u0060,\t35m,\t512 (default)\n- \u0060jina-embedding-b-en-v1\u0060,\t110m,\t768\n- \u0060jina-embedding-l-en-v1\u0060,\t330,\t1024\n\nFor more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).\n"
+          },
+          "object": {
+            "type": "string",
+            "title": "Object",
+            "default": "list"
+          },
+          "data": {
+            "items": {},
+            "type": "array",
+            "title": "Data",
+            "description": "A list of Embedding Objects returned by the embedding service"
+          },
+          "usage": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/api_schemas__embedding__Usage"
+              }
+            ],
+            "title": "Usage",
+            "description": "Total usage of the request. Sums up the usage from each individual input"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model",
+          "data",
+          "usage"
+        ],
+        "title": "ModelEmbeddingOutput",
+        "description": "Output of the embedding service",
+        "example": {
+          "data": [
+            {
+              "index": 0,
+              "embedding": [
+                0.1,
+                0.2,
+                0.3
+              ],
+              "object": "embedding"
+            },
+            {
+              "index": 1,
+              "embedding": [
+                0.3,
+                0.2,
+                0.1
+              ],
+              "object": "embedding"
+            }
+          ],
+          "usage": {
+            "total_tokens": 15,
+            "prompt_tokens": 15
+          }
+        }
+      },
+      "RankAPIInput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-reranker-v2-base-multilingual\u0060,\t278M\n- \u0060jina-reranker-v1-base-en\u0060,\t137M\n- \u0060jina-reranker-v1-tiny-en\u0060,\t33M\n- \u0060jina-reranker-v1-turbo-en\u0060,\t38M\n- \u0060jina-colbert-v1-en\u0060,\t137M\n"
+          },
+          "query": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "$ref": "#/components/schemas/api_schemas__rank__TextDoc"
+              }
+            ],
+            "title": "Query",
+            "description": "The search query"
+          },
+          "documents": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "items": {
+                  "$ref": "#/components/schemas/api_schemas__rank__TextDoc"
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Documents",
+            "description": "A list of text documents or strings to rerank. If a document is provided the text fields is required and all other fields will be preserved in the response."
+          },
+          "top_n": {
+            "type": "integer",
+            "title": "Top N",
+            "description": "The number of most relevant documents or indices to return, defaults to the length of \u0060documents\u0060"
+          },
+          "return_documents": {
+            "type": "boolean",
+            "title": "Return Documents",
+            "description": "If false, returns results without the doc text - the api will return a list of {index, relevance score} where index is inferred from the list passed into the request. If true, returns results with the doc text passed in - the api will return an ordered list of {index, text, relevance score} where index \u002B text refers to the list passed into the request. Defaults to true",
+            "default": true
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "model",
+          "query",
+          "documents"
+        ],
+        "title": "RankAPIInput",
+        "description": "The input to the API for text embedding. OpenAI compatible",
+        "example": {
+          "model": "jina-reranker-v1-base-en",
+          "query": "Search query",
+          "documents": [
+            "Document to rank 1",
+            "Document to rank 2"
+          ]
+        }
+      },
+      "RankingOutput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-embedding-t-en-v1\u0060,\t14m,\t312\n- \u0060jina-embedding-s-en-v1\u0060,\t35m,\t512 (default)\n- \u0060jina-embedding-b-en-v1\u0060,\t110m,\t768\n- \u0060jina-embedding-l-en-v1\u0060,\t330,\t1024\n\nFor more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).\n"
+          },
+          "results": {
+            "items": {},
+            "type": "array",
+            "title": "Results",
+            "description": "An ordered list of ranked documents"
+          },
+          "usage": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/api_schemas__rank__Usage"
+              }
+            ],
+            "title": "Usage",
+            "description": "Total usage of the request."
+          }
+        },
+        "type": "object",
+        "required": [
+          "model",
+          "results",
+          "usage"
+        ],
+        "title": "RankingOutput",
+        "description": "Output of the embedding service",
+        "example": {
+          "results": [
+            {
+              "index": 0,
+              "document": {
+                "text": "Document to rank 1"
+              },
+              "relevance_score": 0.9
+            },
+            {
+              "index": 1,
+              "document": {
+                "text": "Document to rank 2"
+              },
+              "relevance_score": 0.8
+            }
+          ],
+          "usage": {
+            "total_tokens": 15,
+            "prompt_tokens": 15
+          }
+        }
+      },
+      "TextEmbeddingAPIInput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-colbert-v1-en\u0060,\t137\n"
+          },
+          "input": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "$ref": "#/components/schemas/api_schemas__embedding__TextDoc"
+                },
+                "type": "array"
+              },
+              {
+                "$ref": "#/components/schemas/api_schemas__embedding__TextDoc"
+              }
+            ],
+            "title": "Input",
+            "description": "List of texts to embed"
+          },
+          "input_type": {
+            "type": "string",
+            "enum": [
+              "query",
+              "document"
+            ],
+            "title": "Input Type",
+            "description": "Type of the embedding to compute, query or document",
+            "default": "document"
+          },
+          "embedding_type": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "float",
+                  "base64",
+                  "binary",
+                  "ubinary"
+                ]
+              },
+              {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "float",
+                    "base64",
+                    "binary",
+                    "ubinary"
+                  ]
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Embedding Type",
+            "description": "The format in which you want the embeddings to be returned.Possible value are \u0060float\u0060, \u0060base64\u0060, \u0060binary\u0060, \u0060ubinary\u0060 or a list containing any of them. Defaults to \u0060float\u0060"
+          },
+          "dimensions": {
+            "type": "integer",
+            "enum": [
+              64,
+              96,
+              128
+            ],
+            "title": "Dimensions",
+            "description": "Dimensions of the vectors to be returned. Only valid for v2 colbert models. Defaults to 128"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "model",
+          "input"
+        ],
+        "title": "TextEmbeddingAPIInput",
+        "description": "The input to the API for text embedding. OpenAI compatible",
+        "example": {
+          "model": "jina-colbert-v1-en",
+          "input": [
+            "Hello, world!"
+          ]
+        }
+      },
+      "TextEmbeddingInput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-clip-v1\u0060,\t223M,\t768\n- \u0060jina-embeddings-v2-base-en\u0060,\t137M,\t768\n- \u0060jina-embeddings-v2-base-es\u0060,\t161M,\t768\n- \u0060jina-embeddings-v2-base-de\u0060,\t161M,\t768\n- \u0060jina-embeddings-v2-base-zh\u0060,\t161M,\t768\n- \u0060jina-embeddings-v2-base-code\u0060,\t137M,\t768\n- \u0060jina-embeddings-v3\u0060,\t570M,\t1024\n\nFor more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).\n"
+          },
+          "input": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "$ref": "#/components/schemas/api_schemas__embedding__TextDoc"
+                },
+                "type": "array"
+              },
+              {
+                "$ref": "#/components/schemas/api_schemas__embedding__TextDoc"
+              }
+            ],
+            "title": "Input",
+            "description": "List of texts to embed"
+          },
+          "embedding_type": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "float",
+                  "base64",
+                  "binary",
+                  "ubinary"
+                ]
+              },
+              {
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "float",
+                    "base64",
+                    "binary",
+                    "ubinary"
+                  ]
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Embedding Type",
+            "description": "The format in which you want the embeddings to be returned.Possible value are \u0060float\u0060, \u0060base64\u0060, \u0060binary\u0060, \u0060ubinary\u0060 or a list containing any of them. Defaults to \u0060float\u0060"
+          },
+          "task": {
+            "type": "string",
+            "enum": [
+              "retrieval.query",
+              "retrieval.passage",
+              "text-matching",
+              "classification",
+              "separation"
+            ],
+            "title": "Task",
+            "description": "Used to convey intended downstream application to help the model produce better embeddings. Must be one of the following values:\n- \u0022retrieval.query\u0022: Specifies the given text is a query in a search or retrieval setting.\n- \u0022retrieval.passage\u0022: Specifies the given text is a document in a search or retrieval setting.\n- \u0022text-matching\u0022: Specifies the given text is used for Semantic Textual Similarity.\n- \u0022classification\u0022: Specifies that the embedding is used for classification.\n- \u0022separation\u0022: Specifies that the embedding is used for clustering.\n"
+          },
+          "dimensions": {
+            "type": "integer",
+            "title": "Dimensions",
+            "description": "Used to specify output embedding size. If set, output embeddings will be truncated to the size specified."
+          },
+          "normalized": {
+            "type": "boolean",
+            "title": "Normalized",
+            "description": "Flag to determine if the embeddings should be normalized to have a unit L2 norm"
+          },
+          "late_chunking": {
+            "type": "boolean",
+            "title": "Late Chunking",
+            "description": "Flag to determine if late chunking is applied. If True, all the sentences in inputs will be concatenated and used as input for late chunking."
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "model"
+        ],
+        "title": "TextEmbeddingInput",
+        "description": "The input to the API for text embedding. OpenAI compatible",
+        "example": {
+          "model": "jina-embeddings-v2-base-en",
+          "input": [
+            "Hello, world!"
+          ]
+        }
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "api_schemas__embedding__TextDoc": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
+            "example": "3d19548f30d939fdf8d1f970b47ec824"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "TextDoc",
+        "description": "Document containing a text field"
+      },
+      "api_schemas__embedding__Usage": {
+        "properties": {
+          "total_tokens": {
+            "type": "integer",
+            "title": "Total Tokens",
+            "description": "The number of tokens used by all the texts in the input"
+          },
+          "prompt_tokens": {
+            "type": "integer",
+            "title": "Prompt Tokens",
+            "description": "Same as total_tokens"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_tokens",
+          "prompt_tokens"
+        ],
+        "title": "Usage"
+      },
+      "api_schemas__rank__TextDoc": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
+            "example": "3d19548f30d939fdf8d1f970b47ec824"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "TextDoc",
+        "description": "Document containing a text field"
+      },
+      "api_schemas__rank__Usage": {
+        "properties": {
+          "total_tokens": {
+            "type": "integer",
+            "title": "Total Tokens",
+            "description": "The number of tokens used by all the texts in the input"
+          },
+          "prompt_tokens": {
+            "type": "integer",
+            "title": "Prompt Tokens",
+            "description": "Same as total_tokens"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_tokens",
+          "prompt_tokens"
+        ],
+        "title": "Usage",
+        "example": {
+          "total_tokens": 15,
+          "prompt_tokens": 15
+        }
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

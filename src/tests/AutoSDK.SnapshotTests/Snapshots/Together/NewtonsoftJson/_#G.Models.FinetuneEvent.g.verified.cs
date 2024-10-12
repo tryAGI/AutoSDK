@@ -1,6 +1,4 @@
-﻿//HintName: G.Models.FineTuneEvent.g.cs
-
-#nullable enable
+﻿#nullable enable
 
 namespace G
 {
