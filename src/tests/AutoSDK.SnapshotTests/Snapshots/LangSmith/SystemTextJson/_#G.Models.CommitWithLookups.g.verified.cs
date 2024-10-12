@@ -21,9 +21,9 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("manifest_id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Guid ManifestId { get; set; }
+        public required object Manifest { get; set; }
 
         /// <summary>
         /// 

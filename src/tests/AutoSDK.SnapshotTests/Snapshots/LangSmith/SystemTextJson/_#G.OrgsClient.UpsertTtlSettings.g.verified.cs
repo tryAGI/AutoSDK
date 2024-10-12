@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareUpsertTtlSettingsArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.UpsertOrgOrWorkspaceTTLSettingsRequest request);
+            global::G.UpsertTTLSettingsRequest request);
         partial void PrepareUpsertTtlSettingsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.UpsertOrgOrWorkspaceTTLSettingsRequest request);
+            global::G.UpsertTTLSettingsRequest request);
         partial void ProcessUpsertTtlSettingsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -29,7 +29,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettingsAsync(
-            global::G.UpsertOrgOrWorkspaceTTLSettingsRequest request,
+            global::G.UpsertTTLSettingsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -118,16 +118,24 @@ namespace G
         /// <summary>
         /// Upsert Ttl Settings
         /// </summary>
+        /// <param name="tenantId"></param>
         /// <param name="defaultTraceTier"></param>
+        /// <param name="applyToAllProjects">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettingsAsync(
             global::G.TraceTier3 defaultTraceTier,
+            global::G.AnyOf<global::System.Guid?, object>? tenantId = default,
+            bool? applyToAllProjects = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.UpsertOrgOrWorkspaceTTLSettingsRequest
+            var request = new global::G.UpsertTTLSettingsRequest
             {
+                TenantId = tenantId,
                 DefaultTraceTier = defaultTraceTier,
+                ApplyToAllProjects = applyToAllProjects,
             };
 
             return await UpsertTtlSettingsAsync(

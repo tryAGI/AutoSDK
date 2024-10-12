@@ -20697,8 +20697,8 @@
             "default": {
               "__missing__": "__missing__"
             },
-            "ge": 0,
-            "le": 100
+            "minimum": 0,
+            "maximum": 100
           },
           "chart_type": {
             "anyOf": [
@@ -21153,8 +21153,8 @@
             "default": {
               "__missing__": "__missing__"
             },
-            "ge": 0,
-            "le": 100
+            "minimum": 0,
+            "maximum": 100
           }
         },
         "type": "object",
@@ -21828,17 +21828,12 @@
             "anyOf": [
               {
                 "items": {
-                  "prefixItems": [
-                    {
-                      "type": "string"
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ],
                   "type": "array",
                   "maxItems": 2,
-                  "minItems": 2
+                  "minItems": 2,
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "type": "array"
               },
@@ -24465,17 +24460,12 @@
         "properties": {
           "messages": {
             "items": {
-              "prefixItems": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "string"
-                }
-              ],
               "type": "array",
               "maxItems": 2,
-              "minItems": 2
+              "minItems": 2,
+              "items": {
+                "type": "string"
+              }
             },
             "type": "array",
             "title": "Messages"

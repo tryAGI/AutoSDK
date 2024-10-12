@@ -140,6 +140,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("code_evaluators")]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CodeEvaluatorTopLevel>, object>? CodeEvaluators { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("alerts")]
         public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>, object>? Alerts { get; set; }
 

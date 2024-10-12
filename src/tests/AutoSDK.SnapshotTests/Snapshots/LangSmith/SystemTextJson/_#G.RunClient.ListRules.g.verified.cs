@@ -9,12 +9,16 @@ namespace G
         partial void PrepareListRulesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::G.AnyOf<global::System.Guid?, object>? datasetId,
-            ref global::G.AnyOf<global::System.Guid?, object>? sessionId);
+            ref global::G.AnyOf<global::System.Guid?, object>? sessionId,
+            ref global::G.AnyOf<global::G.ListRulesApiV1RunsRulesGetType2?, object>? type,
+            ref global::G.AnyOf<string, object>? nameContains);
         partial void PrepareListRulesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::G.AnyOf<global::System.Guid?, object>? datasetId,
-            global::G.AnyOf<global::System.Guid?, object>? sessionId);
+            global::G.AnyOf<global::System.Guid?, object>? sessionId,
+            global::G.AnyOf<global::G.ListRulesApiV1RunsRulesGetType2?, object>? type,
+            global::G.AnyOf<string, object>? nameContains);
         partial void ProcessListRulesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,11 +34,15 @@ namespace G
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="sessionId"></param>
+        /// <param name="type"></param>
+        /// <param name="nameContains"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RunRulesSchema>> ListRulesAsync(
             global::G.AnyOf<global::System.Guid?, object>? datasetId = default,
             global::G.AnyOf<global::System.Guid?, object>? sessionId = default,
+            global::G.AnyOf<global::G.ListRulesApiV1RunsRulesGetType2?, object>? type = default,
+            global::G.AnyOf<string, object>? nameContains = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -42,7 +50,9 @@ namespace G
             PrepareListRulesArguments(
                 httpClient: _httpClient,
                 datasetId: ref datasetId,
-                sessionId: ref sessionId);
+                sessionId: ref sessionId,
+                type: ref type,
+                nameContains: ref nameContains);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/runs/rules",
@@ -50,6 +60,8 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("dataset_id", datasetId?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("session_id", sessionId?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("type", type?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -79,7 +91,9 @@ namespace G
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 datasetId: datasetId,
-                sessionId: sessionId);
+                sessionId: sessionId,
+                type: type,
+                nameContains: nameContains);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

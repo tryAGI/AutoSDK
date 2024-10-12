@@ -13,7 +13,7 @@ namespace G
             ref global::G.AnyOf<string, object>? name,
             ref global::G.AnyOf<string, object>? nameContains,
             ref global::G.AnyOf<string, object>? datasetVersion,
-            ref global::G.AllOf<global::G.SessionSortableColumns?>? sortBy,
+            ref global::G.SessionSortableColumns? sortBy,
             ref bool? sortByDesc,
             ref global::G.AnyOf<string, object>? sortByFeedbackKey,
             ref int? offset,
@@ -28,7 +28,7 @@ namespace G
             global::G.AnyOf<string, object>? name,
             global::G.AnyOf<string, object>? nameContains,
             global::G.AnyOf<string, object>? datasetVersion,
-            global::G.AllOf<global::G.SessionSortableColumns?>? sortBy,
+            global::G.SessionSortableColumns? sortBy,
             bool? sortByDesc,
             global::G.AnyOf<string, object>? sortByFeedbackKey,
             int? offset,
@@ -53,9 +53,7 @@ namespace G
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="datasetVersion"></param>
-        /// <param name="sortBy">
-        /// Default Value: start_time
-        /// </param>
+        /// <param name="sortBy"></param>
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
@@ -78,7 +76,7 @@ namespace G
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<string, object>? datasetVersion = default,
-            global::G.AllOf<global::G.SessionSortableColumns?>? sortBy = default,
+            global::G.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
             global::G.AnyOf<string, object>? sortByFeedbackKey = default,
             int? offset = 0,
@@ -104,6 +102,17 @@ namespace G
                 facets: ref facets,
                 accept: ref accept);
 
+            var sortByValue = sortBy switch
+            {
+                global::G.SessionSortableColumns.Name => "name",
+                global::G.SessionSortableColumns.StartTime => "start_time",
+                global::G.SessionSortableColumns.LastRunStartTime => "last_run_start_time",
+                global::G.SessionSortableColumns.LatencyP50 => "latency_p50",
+                global::G.SessionSortableColumns.LatencyP99 => "latency_p99",
+                global::G.SessionSortableColumns.ErrorRate => "error_rate",
+                global::G.SessionSortableColumns.Feedback => "feedback",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var __pathBuilder = new PathBuilder(
                 path: $"/api/v1/public/{shareToken}/datasets/sessions",
                 baseUri: _httpClient.BaseAddress); 
@@ -112,7 +121,7 @@ namespace G
                 .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("dataset_version", datasetVersion?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortByValue?.ToString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
@@ -123,22 +132,6 @@ namespace G
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var _authorization in _authorizations)
-            {
-                if (_authorization.Type == "Http" ||
-                    _authorization.Type == "OAuth2")
-                {
-                    httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: _authorization.Name,
-                        parameter: _authorization.Value);
-                }
-                else if (_authorization.Type == "ApiKey" &&
-                         _authorization.Location == "Header")
-                {
-                    httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
-                }
-            }
 
             if (accept != default)
             {

@@ -24,6 +24,12 @@ namespace G
         public global::G.TraceTier3 DefaultTraceTier { get; set; } = default!;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("apply_to_all_projects")]
+        public bool? ApplyToAllProjects { get; set; } = false;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

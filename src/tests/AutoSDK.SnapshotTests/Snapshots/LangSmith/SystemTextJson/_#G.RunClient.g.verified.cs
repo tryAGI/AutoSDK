@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https://api.smith.langchain.com";
+        public const string BaseUrl = "";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;

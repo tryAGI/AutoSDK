@@ -32,12 +32,6 @@ namespace G
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// Default Value: kv
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data_type")]
-        public global::G.AnyOf<global::G.DataType?, object>? DataType { get; set; } = global::G.DataType.Kv;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
@@ -54,6 +48,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("externally_managed")]
         public global::G.AnyOf<bool?, object>? ExternallyManaged { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: kv
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data_type")]
+        public global::G.AnyOf<global::G.DataType?, object>? DataType { get; set; } = global::G.DataType.Kv;
 
         /// <summary>
         /// 

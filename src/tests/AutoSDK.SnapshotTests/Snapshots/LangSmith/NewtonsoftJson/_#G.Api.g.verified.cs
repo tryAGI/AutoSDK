@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https://api.smith.langchain.com";
+        public const string BaseUrl = "";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
@@ -100,6 +100,22 @@ namespace G
         /// 
         /// </summary>
         public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AceClient Ace => new AceClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BulkExportsClient BulkExports => new BulkExportsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };

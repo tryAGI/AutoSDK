@@ -66,10 +66,10 @@ namespace G
         public global::G.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
-        /// Default Value: workspace
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
-        public global::G.AccessScope? AccessScope { get; set; } = global::G.AccessScope.Workspace;
+        public global::G.AccessScope? AccessScope { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

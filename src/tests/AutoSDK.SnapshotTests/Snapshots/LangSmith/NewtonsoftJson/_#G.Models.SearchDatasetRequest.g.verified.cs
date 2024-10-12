@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.SearchDatasetRequest.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -26,6 +28,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("debug")]
         public bool? Debug { get; set; } = false;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("filter")]
+        public global::G.AnyOf<string, object>? Filter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -44,6 +44,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("last_used_at")]
+        public global::G.AnyOf<global::System.DateTime?, object>? LastUsedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("key", Required = global::Newtonsoft.Json.Required.Always)]
         public string Key { get; set; } = default!;
 

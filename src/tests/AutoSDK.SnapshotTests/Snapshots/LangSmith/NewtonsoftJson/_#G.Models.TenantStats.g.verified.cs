@@ -42,8 +42,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("charts_count", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ChartsCount { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("deployment_count", Required = global::Newtonsoft.Json.Required.Always)]
+        public int DeploymentCount { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("dashboards_count", Required = global::Newtonsoft.Json.Required.Always)]
+        public int DashboardsCount { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

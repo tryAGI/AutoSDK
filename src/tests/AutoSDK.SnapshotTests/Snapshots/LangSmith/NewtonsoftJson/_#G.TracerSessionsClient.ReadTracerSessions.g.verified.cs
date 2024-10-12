@@ -14,7 +14,7 @@ namespace G
             ref global::G.AnyOf<string, object>? name,
             ref global::G.AnyOf<string, object>? nameContains,
             ref global::G.AnyOf<string, object>? datasetVersion,
-            ref global::G.AllOf<global::G.SessionSortableColumns?>? sortBy,
+            ref global::G.SessionSortableColumns? sortBy,
             ref bool? sortByDesc,
             ref global::G.AnyOf<string, object>? metadata,
             ref global::G.AnyOf<string, object>? sortByFeedbackKey,
@@ -32,7 +32,7 @@ namespace G
             global::G.AnyOf<string, object>? name,
             global::G.AnyOf<string, object>? nameContains,
             global::G.AnyOf<string, object>? datasetVersion,
-            global::G.AllOf<global::G.SessionSortableColumns?>? sortBy,
+            global::G.SessionSortableColumns? sortBy,
             bool? sortByDesc,
             global::G.AnyOf<string, object>? metadata,
             global::G.AnyOf<string, object>? sortByFeedbackKey,
@@ -60,9 +60,7 @@ namespace G
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="datasetVersion"></param>
-        /// <param name="sortBy">
-        /// Default Value: start_time
-        /// </param>
+        /// <param name="sortBy"></param>
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
@@ -88,7 +86,7 @@ namespace G
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<string, object>? datasetVersion = default,
-            global::G.AllOf<global::G.SessionSortableColumns?>? sortBy = default,
+            global::G.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
             global::G.AnyOf<string, object>? metadata = default,
             global::G.AnyOf<string, object>? sortByFeedbackKey = default,
@@ -119,6 +117,17 @@ namespace G
                 facets: ref facets,
                 accept: ref accept);
 
+            var sortByValue = sortBy switch
+            {
+                global::G.SessionSortableColumns.Name => "name",
+                global::G.SessionSortableColumns.StartTime => "start_time",
+                global::G.SessionSortableColumns.LastRunStartTime => "last_run_start_time",
+                global::G.SessionSortableColumns.LatencyP50 => "latency_p50",
+                global::G.SessionSortableColumns.LatencyP99 => "latency_p99",
+                global::G.SessionSortableColumns.ErrorRate => "error_rate",
+                global::G.SessionSortableColumns.Feedback => "feedback",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/sessions",
                 baseUri: _httpClient.BaseAddress); 
@@ -129,7 +138,7 @@ namespace G
                 .AddOptionalParameter("name", name?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("dataset_version", datasetVersion?.ToString() ?? string.Empty) 
-                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortByValue?.ToString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 .AddOptionalParameter("metadata", metadata?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("sort_by_feedback_key", sortByFeedbackKey?.ToString() ?? string.Empty) 

@@ -38,8 +38,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("is_at_capacity")]
-        public global::G.AnyOf<bool?, object>? IsAtCapacity { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("chart_count")]
+        public global::G.AnyOf<int?, object>? ChartCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created_at")]
+        public global::G.AnyOf<global::System.DateTime?, object>? CreatedAt { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("modified_at")]
+        public global::G.AnyOf<global::System.DateTime?, object>? ModifiedAt { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

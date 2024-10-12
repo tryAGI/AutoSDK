@@ -66,10 +66,10 @@ namespace G
         public global::G.AnyOf<string, object>? RoleName { get; set; }
 
         /// <summary>
-        /// Default Value: workspace
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("access_scope")]
-        public global::G.AccessScope? AccessScope { get; set; } = global::G.AccessScope.Workspace;
+        public global::G.AccessScope? AccessScope { get; set; }
 
         /// <summary>
         /// 
@@ -90,7 +90,7 @@ namespace G
         public global::G.AnyOf<string, object>? AvatarUrl { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tenant_ids")]
         public global::System.Collections.Generic.IList<global::System.Guid>? TenantIds { get; set; }

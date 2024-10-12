@@ -124,6 +124,9 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="displayName"></param>
         /// <param name="tenantHandle"></param>
+        /// <param name="isPersonal">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AppSchemasTenant> CreateTenantAsync(
@@ -131,6 +134,7 @@ namespace G
             global::System.Guid? id = default,
             global::G.AnyOf<global::System.Guid?, object>? organizationId = default,
             global::G.AnyOf<string, object>? tenantHandle = default,
+            bool? isPersonal = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.TenantCreate
@@ -139,6 +143,7 @@ namespace G
                 OrganizationId = organizationId,
                 DisplayName = displayName,
                 TenantHandle = tenantHandle,
+                IsPersonal = isPersonal,
             };
 
             return await CreateTenantAsync(

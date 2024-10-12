@@ -10,6 +10,12 @@ namespace G
     public sealed partial class BatchIngestConfig
     {
         /// <summary>
+        /// Default Value: true
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("use_multipart_endpoint")]
+        public bool? UseMultipartEndpoint { get; set; } = true;
+
+        /// <summary>
         /// Default Value: 1000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scale_up_qsize_trigger")]

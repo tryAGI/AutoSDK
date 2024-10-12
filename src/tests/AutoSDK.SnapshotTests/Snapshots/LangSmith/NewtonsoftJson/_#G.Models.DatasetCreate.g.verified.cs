@@ -30,12 +30,6 @@ namespace G
         public global::System.DateTime? CreatedAt { get; set; }
 
         /// <summary>
-        /// Default Value: kv
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data_type")]
-        public global::G.AnyOf<global::G.DataType?, object>? DataType { get; set; } = global::G.DataType.Kv;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("inputs_schema_definition")]
@@ -64,6 +58,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extra")]
         public global::G.AnyOf<object, object>? Extra { get; set; }
+
+        /// <summary>
+        /// Enum for dataset data types.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data_type")]
+        public global::G.DataType? DataType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

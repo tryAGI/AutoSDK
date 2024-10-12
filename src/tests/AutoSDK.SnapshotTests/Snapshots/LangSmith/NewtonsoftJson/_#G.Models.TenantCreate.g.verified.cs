@@ -36,6 +36,12 @@ namespace G
         public global::G.AnyOf<string, object>? TenantHandle { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("is_personal")]
+        public bool? IsPersonal { get; set; } = false;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

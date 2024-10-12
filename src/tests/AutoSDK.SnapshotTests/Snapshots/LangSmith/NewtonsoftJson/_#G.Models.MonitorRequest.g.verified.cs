@@ -22,13 +22,13 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.MonitorGroupSpec> Groups { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("interval")]
         public global::G.TimedeltaInput? Interval { get; set; }
 
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stride")]
         public global::G.TimedeltaInput? Stride { get; set; }

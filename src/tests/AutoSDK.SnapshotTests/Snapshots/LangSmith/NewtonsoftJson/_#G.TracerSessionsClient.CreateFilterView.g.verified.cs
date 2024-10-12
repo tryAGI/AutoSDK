@@ -128,20 +128,26 @@ namespace G
         /// </summary>
         /// <param name="sessionId"></param>
         /// <param name="filterString"></param>
+        /// <param name="traceFilterString"></param>
+        /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FilterView> CreateFilterViewAsync(
             global::System.Guid sessionId,
-            string filterString,
             string displayName,
+            global::G.AnyOf<string, object>? filterString = default,
+            global::G.AnyOf<string, object>? traceFilterString = default,
+            global::G.AnyOf<string, object>? treeFilterString = default,
             global::G.AnyOf<string, object>? description = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.FilterViewCreate
             {
                 FilterString = filterString,
+                TraceFilterString = traceFilterString,
+                TreeFilterString = treeFilterString,
                 DisplayName = displayName,
                 Description = description,
             };

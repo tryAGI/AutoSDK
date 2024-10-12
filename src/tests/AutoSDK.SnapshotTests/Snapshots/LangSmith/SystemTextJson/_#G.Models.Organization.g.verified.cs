@@ -102,7 +102,7 @@ namespace G
         public bool? ReachedMaxWorkspaces { get; set; } = false;
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         public global::System.Collections.Generic.IList<string>? Permissions { get; set; }

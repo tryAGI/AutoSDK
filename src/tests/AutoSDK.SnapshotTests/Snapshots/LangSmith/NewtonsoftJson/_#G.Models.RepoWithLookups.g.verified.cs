@@ -144,6 +144,12 @@ namespace G
         public global::G.AnyOf<string, object>? UpstreamRepoFullName { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("latest_commit_manifest")]
+        public global::G.AnyOf<global::G.CommitManifestResponse, object>? LatestCommitManifest { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

@@ -151,6 +151,7 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="evaluators"></param>
+        /// <param name="codeEvaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -173,6 +174,7 @@ namespace G
             global::G.AnyOf<global::System.Guid?, object>? addToDatasetId = default,
             bool? addToDatasetPreferCorrection = false,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>, object>? evaluators = default,
+            global::G.AnyOf<global::System.Collections.Generic.IList<global::G.CodeEvaluatorTopLevel>, object>? codeEvaluators = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>, object>? alerts = default,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>, object>? webhooks = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -195,6 +197,7 @@ namespace G
                 AddToDatasetId = addToDatasetId,
                 AddToDatasetPreferCorrection = addToDatasetPreferCorrection,
                 Evaluators = evaluators,
+                CodeEvaluators = codeEvaluators,
                 Alerts = alerts,
                 Webhooks = webhooks,
             };

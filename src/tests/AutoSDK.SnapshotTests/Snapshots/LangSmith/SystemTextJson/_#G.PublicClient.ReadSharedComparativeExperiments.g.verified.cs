@@ -13,7 +13,7 @@ namespace G
             ref global::G.AnyOf<string, object>? nameContains,
             ref int? offset,
             ref int? limit,
-            ref global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
+            ref global::G.SortByComparativeExperimentColumn? sortBy,
             ref bool? sortByDesc);
         partial void PrepareReadSharedComparativeExperimentsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -23,7 +23,7 @@ namespace G
             global::G.AnyOf<string, object>? nameContains,
             int? offset,
             int? limit,
-            global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
+            global::G.SortByComparativeExperimentColumn? sortBy,
             bool? sortByDesc);
         partial void ProcessReadSharedComparativeExperimentsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -48,7 +48,7 @@ namespace G
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Default Value: created_at
+        /// Enum for available comparative experiment columns to sort by.
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -61,7 +61,7 @@ namespace G
             global::G.AnyOf<string, object>? nameContains = default,
             int? offset = 0,
             int? limit = 100,
-            global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy = default,
+            global::G.SortByComparativeExperimentColumn? sortBy = default,
             bool? sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -85,29 +85,13 @@ namespace G
                 .AddOptionalParameter("name_contains", nameContains?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var _authorization in _authorizations)
-            {
-                if (_authorization.Type == "Http" ||
-                    _authorization.Type == "OAuth2")
-                {
-                    httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: _authorization.Name,
-                        parameter: _authorization.Value);
-                }
-                else if (_authorization.Type == "ApiKey" &&
-                         _authorization.Location == "Header")
-                {
-                    httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
-                }
-            }
 
             PrepareRequest(
                 client: _httpClient,

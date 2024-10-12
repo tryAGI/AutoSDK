@@ -88,6 +88,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        EventsOrSignedUrl,
+        /// <summary>
+        /// 
+        /// </summary>
         ParentRunId,
         /// <summary>
         /// 
@@ -230,6 +234,7 @@ namespace G
                 RunSelect.OutputsOrSignedUrl => "outputs_or_signed_url",
                 RunSelect.S3Urls => "s3_urls",
                 RunSelect.ErrorOrSignedUrl => "error_or_signed_url",
+                RunSelect.EventsOrSignedUrl => "events_or_signed_url",
                 RunSelect.ParentRunId => "parent_run_id",
                 RunSelect.ManifestId => "manifest_id",
                 RunSelect.ManifestS3Id => "manifest_s3_id",
@@ -287,6 +292,7 @@ namespace G
                 "outputs_or_signed_url" => RunSelect.OutputsOrSignedUrl,
                 "s3_urls" => RunSelect.S3Urls,
                 "error_or_signed_url" => RunSelect.ErrorOrSignedUrl,
+                "events_or_signed_url" => RunSelect.EventsOrSignedUrl,
                 "parent_run_id" => RunSelect.ParentRunId,
                 "manifest_id" => RunSelect.ManifestId,
                 "manifest_s3_id" => RunSelect.ManifestS3Id,

@@ -51,7 +51,7 @@ namespace G
                 global::G.ResourceType.Deployment => "deployment",
                 global::G.ResourceType.Experiment => "experiment",
                 global::G.ResourceType.Dataset => "dataset",
-                global::G.ResourceType.ChartsSection => "charts_section",
+                global::G.ResourceType.Dashboard => "dashboard",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new PathBuilder(

@@ -20,6 +20,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("ls_user_id")]
+        public global::G.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
         public string Email { get; set; } = default!;
 

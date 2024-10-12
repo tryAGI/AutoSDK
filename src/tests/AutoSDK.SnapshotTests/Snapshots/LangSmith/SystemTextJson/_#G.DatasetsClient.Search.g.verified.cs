@@ -134,6 +134,7 @@ namespace G
         /// <param name="debug">
         /// Default Value: false
         /// </param>
+        /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SearchDatasetResponse> SearchAsync(
@@ -141,6 +142,7 @@ namespace G
             object inputs,
             int? limit = 5,
             bool? debug = false,
+            global::G.AnyOf<string, object>? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var request = new global::G.SearchDatasetRequest
@@ -148,6 +150,7 @@ namespace G
                 Inputs = inputs,
                 Limit = limit,
                 Debug = debug,
+                Filter = filter,
             };
 
             return await SearchAsync(

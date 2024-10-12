@@ -30,6 +30,18 @@ namespace G
         public global::G.AnyOf<string, object>? Description { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("trace_filter_string")]
+        public global::G.AnyOf<string, object>? TraceFilterString { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tree_filter_string")]
+        public global::G.AnyOf<string, object>? TreeFilterString { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

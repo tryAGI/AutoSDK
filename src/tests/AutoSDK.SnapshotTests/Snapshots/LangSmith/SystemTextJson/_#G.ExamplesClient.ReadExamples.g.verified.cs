@@ -16,7 +16,7 @@ namespace G
             ref global::G.AnyOf<global::System.Guid?, object>? dataset,
             ref int? offset,
             ref int? limit,
-            ref global::G.AllOf<global::G.ExampleListOrder?>? order,
+            ref global::G.ExampleListOrder? order,
             ref global::G.AnyOf<double?, object>? randomSeed,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
             ref global::G.AnyOf<string, object>? filter);
@@ -31,7 +31,7 @@ namespace G
             global::G.AnyOf<global::System.Guid?, object>? dataset,
             int? offset,
             int? limit,
-            global::G.AllOf<global::G.ExampleListOrder?>? order,
+            global::G.ExampleListOrder? order,
             global::G.AnyOf<double?, object>? randomSeed,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select,
             global::G.AnyOf<string, object>? filter);
@@ -63,9 +63,7 @@ namespace G
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
-        /// <param name="order">
-        /// Default Value: recent
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="randomSeed"></param>
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]
@@ -82,7 +80,7 @@ namespace G
             global::G.AnyOf<global::System.Guid?, object>? dataset = default,
             int? offset = 0,
             int? limit = 100,
-            global::G.AllOf<global::G.ExampleListOrder?>? order = default,
+            global::G.ExampleListOrder? order = default,
             global::G.AnyOf<double?, object>? randomSeed = default,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select = default,
             global::G.AnyOf<string, object>? filter = default,
@@ -117,7 +115,7 @@ namespace G
                 .AddOptionalParameter("dataset", dataset?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("order", order?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("order", order?.ToValueString()) 
                 .AddOptionalParameter("random_seed", randomSeed?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("filter", filter?.ToString() ?? string.Empty) 
                 ; 

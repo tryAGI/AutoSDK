@@ -54,6 +54,18 @@ namespace G
         public bool Disabled { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sso_login_slug")]
+        public global::G.AnyOf<string, object>? SsoLoginSlug { get; set; }
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sso_only")]
+        public bool? SsoOnly { get; set; } = false;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

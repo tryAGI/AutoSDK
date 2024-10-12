@@ -23,13 +23,13 @@ namespace G
         public required global::System.Collections.Generic.IList<global::G.MonitorGroupSpec> Groups { get; set; }
 
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("interval")]
         public global::G.TimedeltaInput? Interval { get; set; }
 
         /// <summary>
-        /// 
+        /// Timedelta input.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stride")]
         public global::G.TimedeltaInput? Stride { get; set; }

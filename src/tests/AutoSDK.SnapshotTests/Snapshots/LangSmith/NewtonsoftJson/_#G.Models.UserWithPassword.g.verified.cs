@@ -20,8 +20,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ls_user_id")]
-        public global::G.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("ls_user_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Guid LsUserId { get; set; } = default!;
 
         /// <summary>
         /// 

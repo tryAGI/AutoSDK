@@ -36,7 +36,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ChartsSection,
+        Dashboard,
     }
 
     /// <summary>
@@ -57,7 +57,7 @@ namespace G
                 ResourceType.Deployment => "deployment",
                 ResourceType.Experiment => "experiment",
                 ResourceType.Dataset => "dataset",
-                ResourceType.ChartsSection => "charts_section",
+                ResourceType.Dashboard => "dashboard",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -74,7 +74,7 @@ namespace G
                 "deployment" => ResourceType.Deployment,
                 "experiment" => ResourceType.Experiment,
                 "dataset" => ResourceType.Dataset,
-                "charts_section" => ResourceType.ChartsSection,
+                "dashboard" => ResourceType.Dashboard,
                 _ => null,
             };
         }

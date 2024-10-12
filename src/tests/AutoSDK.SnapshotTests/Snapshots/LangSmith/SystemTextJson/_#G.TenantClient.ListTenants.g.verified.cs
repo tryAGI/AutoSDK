@@ -7,10 +7,12 @@ namespace G
     public partial class TenantClient
     {
         partial void PrepareListTenantsArguments(
-            global::System.Net.Http.HttpClient httpClient);
+            global::System.Net.Http.HttpClient httpClient,
+            ref bool? skipCreate);
         partial void PrepareListTenantsRequest(
             global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpRequestMessage httpRequestMessage);
+            global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            bool? skipCreate);
         partial void ProcessListTenantsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -24,19 +26,27 @@ namespace G
         /// List Tenants<br/>
         /// Get all tenants visible to this auth
         /// </summary>
+        /// <param name="skipCreate">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TenantForUser>> ListTenantsAsync(
+            bool? skipCreate = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: _httpClient);
             PrepareListTenantsArguments(
-                httpClient: _httpClient);
+                httpClient: _httpClient,
+                skipCreate: ref skipCreate);
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/tenants",
                 baseUri: _httpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("skip_create", skipCreate?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -63,7 +73,8 @@ namespace G
                 request: httpRequest);
             PrepareListTenantsRequest(
                 httpClient: _httpClient,
-                httpRequestMessage: httpRequest);
+                httpRequestMessage: httpRequest,
+                skipCreate: skipCreate);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

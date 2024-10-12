@@ -31,7 +31,7 @@ public static class OpenApiExtensions
         
         var openApiDocument = new OpenApiStringReader(new OpenApiReaderSettings
         {
-            RuleSet = ValidationRuleSet.GetDefaultRuleSet(),
+            RuleSet = ValidationRuleSet.GetEmptyRuleSet(),
         }).Read(yamlOrJson, out var diagnostics);
         if (!settings.IgnoreOpenApiErrors && diagnostics.Errors.Any())
         {

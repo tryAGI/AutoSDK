@@ -48,7 +48,7 @@ namespace G
         public bool? ReachedMaxWorkspaces { get; set; } = false;
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
         public global::System.Collections.Generic.IList<string>? Permissions { get; set; }
@@ -58,6 +58,18 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disabled")]
         public bool? Disabled { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sso_only")]
+        public bool? SsoOnly { get; set; } = false;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("sso_login_slug")]
+        public global::G.AnyOf<string, object>? SsoLoginSlug { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

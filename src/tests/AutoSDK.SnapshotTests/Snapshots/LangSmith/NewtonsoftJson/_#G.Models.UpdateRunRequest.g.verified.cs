@@ -84,6 +84,18 @@ namespace G
         public global::G.OneOf<object, object>? OutputAttachments { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("session_id")]
+        public global::G.OneOf<global::System.Guid?, object>? SessionId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("session_name")]
+        public global::G.OneOf<string, object>? SessionName { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

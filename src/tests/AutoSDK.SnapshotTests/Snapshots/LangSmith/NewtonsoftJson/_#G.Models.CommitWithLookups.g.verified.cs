@@ -20,8 +20,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("manifest_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Guid ManifestId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("manifest", Required = global::Newtonsoft.Json.Required.Always)]
+        public object Manifest { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -69,6 +69,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public AceClient Ace { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BulkExportsClient BulkExports { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public TenantClient Tenant { get; }
 
         /// <summary>

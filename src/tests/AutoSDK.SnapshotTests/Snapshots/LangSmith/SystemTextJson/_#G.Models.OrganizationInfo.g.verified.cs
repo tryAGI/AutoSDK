@@ -53,7 +53,7 @@ namespace G
         public bool? ReachedMaxWorkspaces { get; set; } = false;
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         public global::System.Collections.Generic.IList<string>? Permissions { get; set; }
@@ -63,6 +63,19 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disabled")]
         public bool? Disabled { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_only")]
+        public bool? SsoOnly { get; set; } = false;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("sso_login_slug")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        public global::G.AnyOf<string, object>? SsoLoginSlug { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

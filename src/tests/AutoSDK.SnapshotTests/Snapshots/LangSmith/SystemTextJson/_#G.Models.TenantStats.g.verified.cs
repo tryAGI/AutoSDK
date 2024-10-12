@@ -47,9 +47,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("charts_count")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("deployment_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int ChartsCount { get; set; }
+        public required int DeploymentCount { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("dashboards_count")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int DashboardsCount { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

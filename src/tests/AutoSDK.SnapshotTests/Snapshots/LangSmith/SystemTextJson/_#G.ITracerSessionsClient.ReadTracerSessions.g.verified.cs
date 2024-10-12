@@ -15,9 +15,7 @@ namespace G
         /// <param name="name"></param>
         /// <param name="nameContains"></param>
         /// <param name="datasetVersion"></param>
-        /// <param name="sortBy">
-        /// Default Value: start_time
-        /// </param>
+        /// <param name="sortBy"></param>
         /// <param name="sortByDesc">
         /// Default Value: true
         /// </param>
@@ -43,7 +41,7 @@ namespace G
             global::G.AnyOf<string, object>? name = default,
             global::G.AnyOf<string, object>? nameContains = default,
             global::G.AnyOf<string, object>? datasetVersion = default,
-            global::G.AllOf<global::G.SessionSortableColumns?>? sortBy = default,
+            global::G.SessionSortableColumns? sortBy = default,
             bool? sortByDesc = true,
             global::G.AnyOf<string, object>? metadata = default,
             global::G.AnyOf<string, object>? sortByFeedbackKey = default,

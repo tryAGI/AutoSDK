@@ -14,8 +14,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("filter_string", Required = global::Newtonsoft.Json.Required.Always)]
-        public string FilterString { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("filter_string")]
+        public global::G.AnyOf<string, object>? FilterString { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("trace_filter_string")]
+        public global::G.AnyOf<string, object>? TraceFilterString { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tree_filter_string")]
+        public global::G.AnyOf<string, object>? TreeFilterString { get; set; }
 
         /// <summary>
         /// 

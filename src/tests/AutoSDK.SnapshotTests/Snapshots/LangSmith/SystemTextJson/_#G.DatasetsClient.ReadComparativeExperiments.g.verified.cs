@@ -14,7 +14,7 @@ namespace G
             ref global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             ref int? offset,
             ref int? limit,
-            ref global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
+            ref global::G.SortByComparativeExperimentColumn? sortBy,
             ref bool? sortByDesc);
         partial void PrepareReadComparativeExperimentsRequest(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,7 +25,7 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id,
             int? offset,
             int? limit,
-            global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy,
+            global::G.SortByComparativeExperimentColumn? sortBy,
             bool? sortByDesc);
         partial void ProcessReadComparativeExperimentsResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -51,7 +51,7 @@ namespace G
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Default Value: created_at
+        /// Enum for available comparative experiment columns to sort by.
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -65,7 +65,7 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? id = default,
             int? offset = 0,
             int? limit = 100,
-            global::G.AllOf<global::G.SortByComparativeExperimentColumn?>? sortBy = default,
+            global::G.SortByComparativeExperimentColumn? sortBy = default,
             bool? sortByDesc = true,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -91,7 +91,7 @@ namespace G
                 .AddOptionalParameter("id", id?.ToString() ?? string.Empty) 
                 .AddOptionalParameter("offset", offset?.ToString()) 
                 .AddOptionalParameter("limit", limit?.ToString()) 
-                .AddOptionalParameter("sort_by", sortBy?.ToString() ?? string.Empty) 
+                .AddOptionalParameter("sort_by", sortBy?.ToValueString()) 
                 .AddOptionalParameter("sort_by_desc", sortByDesc?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();

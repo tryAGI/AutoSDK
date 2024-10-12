@@ -33,7 +33,7 @@ namespace G
         public global::G.AnyOf<global::G.AnyOf<global::System.DateTime?, string>?, object>? AsOf { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("examples")]
         public global::System.Collections.Generic.IList<global::System.Guid>? Examples { get; set; }

@@ -72,6 +72,24 @@ namespace G
         public int? MaxLanggraphCloudDeployments { get; set; } = 1;
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("can_use_saml_sso")]
+        public bool? CanUseSamlSso { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("can_use_bulk_export")]
+        public bool? CanUseBulkExport { get; set; } = false;
+
+        /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("use_python_playground_service")]
+        public bool? UsePythonPlaygroundService { get; set; } = false;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("flags")]

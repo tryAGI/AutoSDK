@@ -21,7 +21,7 @@ namespace G
         /// Default Value: 100
         /// </param>
         /// <param name="sortBy">
-        /// Default Value: last_session_start_time
+        /// Enum for available dataset columns to sort by.
         /// </param>
         /// <param name="sortByDesc">
         /// Default Value: true
@@ -37,7 +37,7 @@ namespace G
             global::G.AnyOf<string, object>? metadata = default,
             int? offset = 0,
             int? limit = 100,
-            global::G.AllOf<global::G.SortByDatasetColumn?>? sortBy = default,
+            global::G.SortByDatasetColumn? sortBy = default,
             bool? sortByDesc = true,
             global::G.AnyOf<global::System.Collections.Generic.IList<global::System.Guid>, object>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -13,11 +13,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="playground_runnables")]
-        PlaygroundRunnables,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="hosted_langserve_enabled")]
         HostedLangserveEnabled,
         /// <summary>
@@ -83,11 +78,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="consolidate_playground_comparative")]
-        ConsolidatePlaygroundComparative,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="resource_tags")]
         ResourceTags,
         /// <summary>
@@ -95,6 +85,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="langgraph_deploy_own_cloud_enabled")]
         LanggraphDeployOwnCloudEnabled,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="arbitrary_code_execution_enabled")]
+        ArbitraryCodeExecutionEnabled,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="prompt_optimization")]
+        PromptOptimization,
     }
 
     /// <summary>
@@ -109,7 +109,6 @@ namespace G
         {
             return value switch
             {
-                OrgFeatureFlags.PlaygroundRunnables => "playground_runnables",
                 OrgFeatureFlags.HostedLangserveEnabled => "hosted_langserve_enabled",
                 OrgFeatureFlags.PaymentEnabled => "payment_enabled",
                 OrgFeatureFlags.RunRulesEnabled => "run_rules_enabled",
@@ -123,9 +122,10 @@ namespace G
                 OrgFeatureFlags.PlaygroundComparative => "playground_comparative",
                 OrgFeatureFlags.ShowDatasetSchemas => "show_dataset_schemas",
                 OrgFeatureFlags.CompareTraceEnabled => "compare_trace_enabled",
-                OrgFeatureFlags.ConsolidatePlaygroundComparative => "consolidate_playground_comparative",
                 OrgFeatureFlags.ResourceTags => "resource_tags",
                 OrgFeatureFlags.LanggraphDeployOwnCloudEnabled => "langgraph_deploy_own_cloud_enabled",
+                OrgFeatureFlags.ArbitraryCodeExecutionEnabled => "arbitrary_code_execution_enabled",
+                OrgFeatureFlags.PromptOptimization => "prompt_optimization",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -136,7 +136,6 @@ namespace G
         {
             return value switch
             {
-                "playground_runnables" => OrgFeatureFlags.PlaygroundRunnables,
                 "hosted_langserve_enabled" => OrgFeatureFlags.HostedLangserveEnabled,
                 "payment_enabled" => OrgFeatureFlags.PaymentEnabled,
                 "run_rules_enabled" => OrgFeatureFlags.RunRulesEnabled,
@@ -150,9 +149,10 @@ namespace G
                 "playground_comparative" => OrgFeatureFlags.PlaygroundComparative,
                 "show_dataset_schemas" => OrgFeatureFlags.ShowDatasetSchemas,
                 "compare_trace_enabled" => OrgFeatureFlags.CompareTraceEnabled,
-                "consolidate_playground_comparative" => OrgFeatureFlags.ConsolidatePlaygroundComparative,
                 "resource_tags" => OrgFeatureFlags.ResourceTags,
                 "langgraph_deploy_own_cloud_enabled" => OrgFeatureFlags.LanggraphDeployOwnCloudEnabled,
+                "arbitrary_code_execution_enabled" => OrgFeatureFlags.ArbitraryCodeExecutionEnabled,
+                "prompt_optimization" => OrgFeatureFlags.PromptOptimization,
                 _ => null,
             };
         }

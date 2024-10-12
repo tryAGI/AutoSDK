@@ -42,6 +42,12 @@ namespace G
         public bool? ReadOnly { get; set; } = false;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("last_used_at")]
+        public global::G.AnyOf<global::System.DateTime?, object>? LastUsedAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

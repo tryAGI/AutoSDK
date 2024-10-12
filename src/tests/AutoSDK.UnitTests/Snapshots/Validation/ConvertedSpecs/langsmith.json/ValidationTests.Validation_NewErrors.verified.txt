@@ -1,29 +1,5 @@
 ﻿[
   {
-    Message: ge is not a valid property at #/components/schemas/CustomChartUpdate/properties/index,
-    Pointer: 
-  },
-  {
-    Message: le is not a valid property at #/components/schemas/CustomChartUpdate/properties/index,
-    Pointer: 
-  },
-  {
-    Message: ge is not a valid property at #/components/schemas/CustomChartsSectionUpdate/properties/index,
-    Pointer: 
-  },
-  {
-    Message: le is not a valid property at #/components/schemas/CustomChartsSectionUpdate/properties/index,
-    Pointer: 
-  },
-  {
-    Message: prefixItems is not a valid property at #/components/schemas/EvaluatorStructuredOutput/properties/prompt/anyOf/items,
-    Pointer: 
-  },
-  {
-    Message: prefixItems is not a valid property at #/components/schemas/InvokePromptPayload/properties/messages/items,
-    Pointer: 
-  },
-  {
     RuleName: KeyMustBeRegularExpression,
     Message: The key 'API Key' in 'securitySchemes' of components MUST match the regular expression '^[a-zA-Z0-9\.\-_]+$'.,
     Pointer: #/components

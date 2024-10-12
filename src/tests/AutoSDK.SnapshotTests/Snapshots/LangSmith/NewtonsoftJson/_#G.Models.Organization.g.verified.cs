@@ -90,7 +90,7 @@ namespace G
         public bool? ReachedMaxWorkspaces { get; set; } = false;
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permissions")]
         public global::System.Collections.Generic.IList<string>? Permissions { get; set; }

@@ -8,11 +8,11 @@ namespace G
     {
         partial void PrepareGenerateApiKeyArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::G.AllOf<global::G.APIKeyCreateRequest> request);
+            global::G.APIKeyCreateRequest request);
         partial void PrepareGenerateApiKeyRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::G.AllOf<global::G.APIKeyCreateRequest> request);
+            global::G.APIKeyCreateRequest request);
         partial void ProcessGenerateApiKeyResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -30,9 +30,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.APIKeyCreateResponse> GenerateApiKeyAsync(
-            global::G.AllOf<global::G.APIKeyCreateRequest> request,
+            global::G.APIKeyCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: _httpClient);
             PrepareGenerateApiKeyArguments(
@@ -118,13 +120,23 @@ namespace G
         /// Generate Api Key<br/>
         /// Generate an api key for the user
         /// </summary>
+        /// <param name="description">
+        /// Default Value: Default API key
+        /// </param>
+        /// <param name="readOnly">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.APIKeyCreateResponse> GenerateApiKeyAsync(
+            string? description = "Default API key",
+            bool? readOnly = false,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.AllOf<global::G.APIKeyCreateRequest>
+            var request = new global::G.APIKeyCreateRequest
             {
+                Description = description,
+                ReadOnly = readOnly,
             };
 
             return await GenerateApiKeyAsync(

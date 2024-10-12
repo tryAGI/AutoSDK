@@ -36,13 +36,13 @@ namespace G
         public global::G.AnyOf<string, object>? Name { get; set; }
 
         /// <summary>
-        /// Default Value: kv
+        /// Enum for dataset data types.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data_type")]
-        public global::G.DataType? DataType { get; set; } = global::G.DataType.Kv;
+        public global::G.DataType? DataType { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output_keys")]
         public global::System.Collections.Generic.IList<string>? OutputKeys { get; set; }

@@ -137,17 +137,17 @@ namespace G
         public int? Limit { get; set; } = 100;
 
         /// <summary>
-        /// Default Value: [id, name, run_type, start_time, end_time, status, error, extra, events, inputs, outputs, parent_run_id, manifest_id, manifest_s3_id, session_id, serialized, reference_example_id, total_tokens, prompt_tokens, completion_tokens, total_cost, prompt_cost, completion_cost, price_model_id, first_token_time, trace_id, dotted_order, last_queued_at, feedback_stats, child_run_ids, parent_run_ids, tags, in_dataset, app_path, share_token, trace_tier, trace_first_received_at, ttl_seconds, trace_upgrade]
+        /// Default Value: [id, name, run_type, start_time, end_time, status, error, extra, events, inputs, outputs, parent_run_id, manifest_id, manifest_s3_id, session_id, serialized, reference_example_id, total_tokens, prompt_tokens, completion_tokens, total_cost, prompt_cost, completion_cost, price_model_id, first_token_time, trace_id, dotted_order, last_queued_at, feedback_stats, parent_run_ids, tags, in_dataset, app_path, share_token, trace_tier, trace_first_received_at, ttl_seconds, trace_upgrade]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("select")]
         public global::System.Collections.Generic.IList<global::G.RunSelect>? Select { get; set; }
 
         /// <summary>
-        /// Default Value: desc
+        /// Enum for run start date order.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("order")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunDateOrderJsonConverter))]
-        public global::G.RunDateOrder? Order { get; set; } = global::G.RunDateOrder.Desc;
+        public global::G.RunDateOrder? Order { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

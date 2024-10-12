@@ -35,6 +35,8 @@ namespace G
         /// <param name="extra"></param>
         /// <param name="inputAttachments"></param>
         /// <param name="outputAttachments"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.UpdateRunApiV1RunsRunIdPatchResponse> UpdateRunAsync(
@@ -51,6 +53,8 @@ namespace G
             global::G.OneOf<object, object>? extra = default,
             global::G.OneOf<object, object>? inputAttachments = default,
             global::G.OneOf<object, object>? outputAttachments = default,
+            global::G.OneOf<global::System.Guid?, object>? sessionId = default,
+            global::G.OneOf<string, object>? sessionName = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

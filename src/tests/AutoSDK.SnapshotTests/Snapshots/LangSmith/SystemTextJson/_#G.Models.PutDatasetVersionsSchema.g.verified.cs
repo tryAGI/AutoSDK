@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.PutDatasetVersionsSchema.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -10,11 +12,12 @@ namespace G
     public sealed partial class PutDatasetVersionsSchema
     {
         /// <summary>
-        /// 
+        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("as_of")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.DateTime AsOf { get; set; }
+        public required global::G.AnyOf<global::System.DateTime?, string> AsOf { get; set; }
 
         /// <summary>
         /// 

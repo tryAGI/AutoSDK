@@ -39,6 +39,12 @@ namespace G
         public global::G.AnyOf<string, object>? TenantHandle { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("is_personal")]
+        public bool? IsPersonal { get; set; } = false;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

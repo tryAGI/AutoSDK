@@ -22,8 +22,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ls_user_id")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::System.Guid?, object>? LsUserId { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid LsUserId { get; set; }
 
         /// <summary>
         /// 

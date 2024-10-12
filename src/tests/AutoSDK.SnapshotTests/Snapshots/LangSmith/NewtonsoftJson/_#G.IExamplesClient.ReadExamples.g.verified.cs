@@ -24,9 +24,7 @@ namespace G
         /// <param name="limit">
         /// Default Value: 100
         /// </param>
-        /// <param name="order">
-        /// Default Value: recent
-        /// </param>
+        /// <param name="order"></param>
         /// <param name="randomSeed"></param>
         /// <param name="select">
         /// Default Value: [id, created_at, modified_at, name, dataset_id, source_run_id, metadata, inputs, outputs]
@@ -43,7 +41,7 @@ namespace G
             global::G.AnyOf<global::System.Guid?, object>? dataset = default,
             int? offset = 0,
             int? limit = 100,
-            global::G.AllOf<global::G.ExampleListOrder?>? order = default,
+            global::G.ExampleListOrder? order = default,
             global::G.AnyOf<double?, object>? randomSeed = default,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select = default,
             global::G.AnyOf<string, object>? filter = default,

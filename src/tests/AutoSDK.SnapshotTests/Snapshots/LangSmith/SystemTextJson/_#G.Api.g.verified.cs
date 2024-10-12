@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https://api.smith.langchain.com";
+        public const string BaseUrl = "";
 
         private readonly global::System.Net.Http.HttpClient _httpClient;
         private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
@@ -29,6 +29,8 @@ namespace G
                 {
                     new global::G.JsonConverters.AccessScopeJsonConverter(),
                     new global::G.JsonConverters.AccessScopeNullableJsonConverter(),
+                    new global::G.JsonConverters.AuthProviderJsonConverter(),
+                    new global::G.JsonConverters.AuthProviderNullableJsonConverter(),
                     new global::G.JsonConverters.RunTypeEnumJsonConverter(),
                     new global::G.JsonConverters.RunTypeEnumNullableJsonConverter(),
                     new global::G.JsonConverters.RunsFilterDataSourceTypeEnumJsonConverter(),
@@ -39,6 +41,18 @@ namespace G
                     new global::G.JsonConverters.RunDateOrderNullableJsonConverter(),
                     new global::G.JsonConverters.DataTypeJsonConverter(),
                     new global::G.JsonConverters.DataTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.BulkExportFormatJsonConverter(),
+                    new global::G.JsonConverters.BulkExportFormatNullableJsonConverter(),
+                    new global::G.JsonConverters.BulkExportCompressionJsonConverter(),
+                    new global::G.JsonConverters.BulkExportCompressionNullableJsonConverter(),
+                    new global::G.JsonConverters.BulkExportStatusJsonConverter(),
+                    new global::G.JsonConverters.BulkExportStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.BulkExportDestinationTypeJsonConverter(),
+                    new global::G.JsonConverters.BulkExportDestinationTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.BulkExportRunStatusJsonConverter(),
+                    new global::G.JsonConverters.BulkExportRunStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.BulkExportUpdateStatusJsonConverter(),
+                    new global::G.JsonConverters.BulkExportUpdateStatusNullableJsonConverter(),
                     new global::G.JsonConverters.ChangePaymentPlanReqJsonConverter(),
                     new global::G.JsonConverters.ChangePaymentPlanReqNullableJsonConverter(),
                     new global::G.JsonConverters.ConfiguredByJsonConverter(),
@@ -63,6 +77,8 @@ namespace G
                     new global::G.JsonConverters.TraceTier3NullableJsonConverter(),
                     new global::G.JsonConverters.FeedbackLevelJsonConverter(),
                     new global::G.JsonConverters.FeedbackLevelNullableJsonConverter(),
+                    new global::G.JsonConverters.OAuthProviderJsonConverter(),
+                    new global::G.JsonConverters.OAuthProviderNullableJsonConverter(),
                     new global::G.JsonConverters.OrgFeatureFlagsJsonConverter(),
                     new global::G.JsonConverters.OrgFeatureFlagsNullableJsonConverter(),
                     new global::G.JsonConverters.OrganizationDashboardColorSchemeJsonConverter(),
@@ -101,6 +117,8 @@ namespace G
                     new global::G.JsonConverters.CreateRunRequestRunTypeNullableJsonConverter(),
                     new global::G.JsonConverters.BatchIngestRunsRequestPostItemRunTypeJsonConverter(),
                     new global::G.JsonConverters.BatchIngestRunsRequestPostItemRunTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ListRulesApiV1RunsRulesGetType2JsonConverter(),
+                    new global::G.JsonConverters.ListRulesApiV1RunsRulesGetType2NullableJsonConverter(),
                     new global::G.JsonConverters.ListReposApiV1ReposGetIsArchived2JsonConverter(),
                     new global::G.JsonConverters.ListReposApiV1ReposGetIsArchived2NullableJsonConverter(),
                     new global::G.JsonConverters.ListReposApiV1ReposGetIsPublic2JsonConverter(),
@@ -120,7 +138,6 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverterFactory5(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory2(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory3(),
-                    new global::G.JsonConverters.AllOfJsonConverterFactory1(),
                 }
             };
 
@@ -201,6 +218,22 @@ namespace G
         /// 
         /// </summary>
         public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public AceClient Ace => new AceClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BulkExportsClient BulkExports => new BulkExportsClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };

@@ -135,6 +135,27 @@ public static class OpenApi31Support
                 }
             }
             
+            if (keyString == "ge")
+            {
+                node.Remove(keyString);
+                node["minimum"] = entry.Value?.DeepClone();
+            }
+            if (keyString == "le")
+            {
+                node.Remove(keyString);
+                node["maximum"] = entry.Value?.DeepClone();
+            }
+            
+            // Remove "prefixItems"
+            if (keyString == "prefixItems" && entry.Value is JsonArray { Count: > 0 } prefixItemsList)
+            {
+                node.Remove(keyString);
+                if (!node.ContainsKey("items"))
+                {
+                    node["items"] = prefixItemsList[0]?.DeepClone();
+                }
+            }
+            
             // Replace "examples" with single "example"
             if (keyString == "examples" && entry.Value is JsonArray { Count: > 0 } examplesList)
             {
