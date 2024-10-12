@@ -323,7 +323,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LLMPrompts? Type76 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Prompt>? Type76 { get; set; }
         /// <summary>
         /// 
         /// </summary>

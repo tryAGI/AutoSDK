@@ -214,6 +214,9 @@ public readonly record struct TypeData(
         {
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
             
+            (_, _) when context.Schema.IsArray() =>
+                $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpTypeWithoutNullability}".AsArray(),
+
             (_, _) when context.Schema.IsAnyOf() && context.IsComponent => $"global::{context.Settings.Namespace}.{context.Id}",
             (_, _) when context.Schema.IsOneOf() && context.IsComponent => $"global::{context.Settings.Namespace}.{context.Id}",
             (_, _) when context.Schema.IsAllOf() && context.IsComponent => $"global::{context.Settings.Namespace}.{context.Id}",
@@ -273,8 +276,6 @@ public readonly record struct TypeData(
             ("string", _) => "string",
             (null, "string") => "string",
             ("object", _) => "object",
-            ("array", _) =>
-                $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpTypeWithoutNullability}".AsArray(),
             
             (null, null) when context.IsClass || context.IsEnum =>
                 $"global::{context.Settings.Namespace}.{context.Id}",

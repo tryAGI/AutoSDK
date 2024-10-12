@@ -40,7 +40,8 @@ public static class OpenApiSchemaExtensions
     {
         schema = schema ?? throw new ArgumentNullException(nameof(schema));
 
-        return schema.Type == "array";
+        return schema.Type == "array" ||
+               schema.Type == null && schema.Items != null;
     }
     
     public static bool IsEnum(

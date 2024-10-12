@@ -46,7 +46,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompts")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.LLMPrompts? Prompts { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Prompt>? Prompts { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
