@@ -823,13 +823,13 @@
           type: string
         level:
           enum:
-            - null
             - info
             - warning
             - error
             - legacy_info
             - legacy_iwarning
             - legacy_ierror
+          nullable: true
           type: string
         message:
           type: string
@@ -904,8 +904,8 @@
           type: string
         object:
           enum:
-            - null
             - local
+          nullable: true
         size:
           type: integer
       type: object
@@ -935,13 +935,13 @@
       type: object
     FinetuneEventLevels:
       enum:
-        - null
         - info
         - warning
         - error
         - legacy_info
         - legacy_iwarning
         - legacy_ierror
+      nullable: true
       type: string
     FinetuneEventType:
       enum:

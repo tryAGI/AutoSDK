@@ -330,6 +330,14 @@ public static class OpenApi31Support
                 node.Remove(keyString);
             }
             
+            if (keyString == "enum" &&
+                entry.Value is List<object?> { Count: > 0 } enumItems &&
+                enumItems.Contains(null))
+            {
+                node[new string("enum".ToCharArray())] = enumItems.Where(v => v != null).ToList();
+                node[new string("nullable".ToCharArray())] = true;
+            }
+            
             // Remove "prefixItems"
             if (keyString == "prefixItems" && entry.Value is List<object?> { Count: > 0 } prefixItemsList)
             {
