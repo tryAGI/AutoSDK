@@ -77,7 +77,7 @@ namespace G
                 httpRequest.Headers.TryAddWithoutValidation("X-Client-Name", xClientName.ToString());
             }
 
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -126,7 +126,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.OneOf<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>?>(__content, JsonSerializerOptions) ??
+                global::G.OneOf<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

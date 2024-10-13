@@ -82,7 +82,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.Root?>(__content, JsonSerializerOptions) ??
+                global::G.Root.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

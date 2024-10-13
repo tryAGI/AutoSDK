@@ -110,7 +110,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ActionsGetActionsCacheUsageByRepoForOrgResponse?>(__content, JsonSerializerOptions) ??
+                global::G.ActionsGetActionsCacheUsageByRepoForOrgResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -145,7 +145,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.TranscriptList?>(__content, JsonSerializerOptions) ??
+                global::G.TranscriptList.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

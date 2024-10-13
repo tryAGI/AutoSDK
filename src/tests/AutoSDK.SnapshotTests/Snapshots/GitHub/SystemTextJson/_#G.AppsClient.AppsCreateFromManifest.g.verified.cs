@@ -88,7 +88,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AllOf<global::G.Integration, global::G.AppsCreateFromManifestResponse2>?>(__content, JsonSerializerOptions) ??
+                global::G.AllOf<global::G.Integration, global::G.AppsCreateFromManifestResponse2>.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

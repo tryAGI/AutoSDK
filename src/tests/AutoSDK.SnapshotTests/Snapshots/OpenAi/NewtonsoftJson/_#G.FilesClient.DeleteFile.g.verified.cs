@@ -103,7 +103,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.DeleteFileResponse?>(__content, JsonSerializerOptions) ??
+                global::G.DeleteFileResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

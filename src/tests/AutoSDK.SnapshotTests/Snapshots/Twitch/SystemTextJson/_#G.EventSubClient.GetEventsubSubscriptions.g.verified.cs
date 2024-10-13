@@ -133,7 +133,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetEventSubSubscriptionsResponse?>(__content, JsonSerializerOptions) ??
+                global::G.GetEventSubSubscriptionsResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

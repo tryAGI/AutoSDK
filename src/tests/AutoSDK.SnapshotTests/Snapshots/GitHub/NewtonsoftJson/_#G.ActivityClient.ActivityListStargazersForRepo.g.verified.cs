@@ -116,7 +116,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>?>(__content, JsonSerializerOptions) ??
+                global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

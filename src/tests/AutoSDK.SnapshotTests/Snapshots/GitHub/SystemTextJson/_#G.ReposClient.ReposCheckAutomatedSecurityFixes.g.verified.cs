@@ -94,7 +94,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.CheckAutomatedSecurityFixes?>(__content, JsonSerializerOptions) ??
+                global::G.CheckAutomatedSecurityFixes.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -108,7 +108,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.TeamDiscussionComment?>(__content, JsonSerializerOptions) ??
+                global::G.TeamDiscussionComment.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

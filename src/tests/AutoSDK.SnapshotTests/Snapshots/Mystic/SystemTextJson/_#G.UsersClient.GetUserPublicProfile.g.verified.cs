@@ -88,7 +88,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.UserPublicGet?>(__content, JsonSerializerOptions) ??
+                global::G.UserPublicGet.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

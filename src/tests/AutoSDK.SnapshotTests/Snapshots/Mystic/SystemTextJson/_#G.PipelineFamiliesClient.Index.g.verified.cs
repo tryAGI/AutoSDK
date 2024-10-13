@@ -160,7 +160,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.PaginatedPipelineFamilyGet?>(__content, JsonSerializerOptions) ??
+                global::G.PaginatedPipelineFamilyGet.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

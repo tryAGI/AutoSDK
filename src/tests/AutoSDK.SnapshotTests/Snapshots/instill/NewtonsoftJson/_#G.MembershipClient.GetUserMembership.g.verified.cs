@@ -126,7 +126,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetUserMembershipResponse?>(__content, JsonSerializerOptions) ??
+                global::G.GetUserMembershipResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

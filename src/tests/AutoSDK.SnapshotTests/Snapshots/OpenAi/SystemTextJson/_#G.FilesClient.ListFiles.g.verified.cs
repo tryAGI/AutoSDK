@@ -106,7 +106,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::G.ListFilesResponse), JsonSerializerContext) as global::G.ListFilesResponse ??
+                global::G.ListFilesResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

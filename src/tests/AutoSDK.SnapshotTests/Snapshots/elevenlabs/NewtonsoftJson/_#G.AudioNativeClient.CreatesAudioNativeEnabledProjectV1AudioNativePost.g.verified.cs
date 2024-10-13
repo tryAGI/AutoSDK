@@ -188,7 +188,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.AudioNativeCreateProjectResponseModel?>(__content, JsonSerializerOptions) ??
+                global::G.AudioNativeCreateProjectResponseModel.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

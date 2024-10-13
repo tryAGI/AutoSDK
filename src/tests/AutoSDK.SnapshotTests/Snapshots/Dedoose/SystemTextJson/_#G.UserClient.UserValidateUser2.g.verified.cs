@@ -116,7 +116,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ValidateUserResult?>(__content, JsonSerializerOptions) ??
+                global::G.ValidateUserResult.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

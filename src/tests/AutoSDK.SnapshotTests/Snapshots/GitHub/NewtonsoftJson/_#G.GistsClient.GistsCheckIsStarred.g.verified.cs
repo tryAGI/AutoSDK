@@ -87,7 +87,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GistsCheckIsStarredResponse?>(__content, JsonSerializerOptions) ??
+                global::G.GistsCheckIsStarredResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

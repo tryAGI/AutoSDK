@@ -94,7 +94,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ProjectCollaboratorPermission?>(__content, JsonSerializerOptions) ??
+                global::G.ProjectCollaboratorPermission.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

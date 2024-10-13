@@ -137,7 +137,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetBannedUsersResponse?>(__content, JsonSerializerOptions) ??
+                global::G.GetBannedUsersResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -138,7 +138,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::G.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>?), JsonSerializerContext) as global::G.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>? ??
+                global::G.OneOf<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

@@ -102,7 +102,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.MemosFoldersAndLinks?>(__content, JsonSerializerOptions) ??
+                global::G.MemosFoldersAndLinks.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -138,7 +138,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetBroadcasterSubscriptionsResponse?>(__content, JsonSerializerOptions) ??
+                global::G.GetBroadcasterSubscriptionsResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -104,7 +104,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.RedactedAudioResponse?>(__content, JsonSerializerOptions) ??
+                global::G.RedactedAudioResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

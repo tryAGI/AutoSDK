@@ -124,7 +124,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::G.OpenAIFile), JsonSerializerContext) as global::G.OpenAIFile ??
+                global::G.OpenAIFile.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

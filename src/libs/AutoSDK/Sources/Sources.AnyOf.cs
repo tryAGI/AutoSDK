@@ -51,6 +51,7 @@ public static partial class Sources
             {x.Name} = {x.ParameterName};
 ").Inject()}
         }}" : " ";
+        var json = GenerateFromToJsonMethods(anyOfData.Namespace, className, anyOfData.Settings, isValueType: true, cancellationToken);
         
         return $@"using System.Linq;
 {(fixedTypes.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
@@ -192,6 +193,8 @@ namespace {@namespace}
         {{
             return obj is {className} o && Equals(o);
         }}
+
+{json}
     }}
 }}
 ".RemoveBlankLinesWhereOnlyWhitespaces();

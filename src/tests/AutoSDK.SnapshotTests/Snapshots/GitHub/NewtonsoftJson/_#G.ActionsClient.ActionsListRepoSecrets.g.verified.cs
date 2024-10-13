@@ -117,7 +117,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ActionsListRepoSecretsResponse?>(__content, JsonSerializerOptions) ??
+                global::G.ActionsListRepoSecretsResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -151,7 +151,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UserServiceAddNewUserToAccountControllerOutput?>(__content, JsonSerializerOptions) ??
+                global::G.UserServiceAddNewUserToAccountControllerOutput.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

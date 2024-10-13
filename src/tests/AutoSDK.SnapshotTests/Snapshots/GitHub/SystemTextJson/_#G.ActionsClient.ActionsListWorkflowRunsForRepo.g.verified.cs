@@ -175,7 +175,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ActionsListWorkflowRunsForRepoResponse?>(__content, JsonSerializerOptions) ??
+                global::G.ActionsListWorkflowRunsForRepoResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

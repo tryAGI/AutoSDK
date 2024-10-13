@@ -115,7 +115,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::G.RunStepObject), JsonSerializerContext) as global::G.RunStepObject ??
+                global::G.RunStepObject.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

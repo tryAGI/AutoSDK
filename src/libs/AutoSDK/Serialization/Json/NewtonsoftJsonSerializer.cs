@@ -39,11 +39,21 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
     
     public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)
     {
+        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        {
+            return "request.ToJson(JsonSerializerOptions)";
+        }
+
         return "global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions)";
     }
     
     public string GenerateDeserializeCall(TypeData type, string jsonSerializerContext)
     {
+        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        {
+            return $"{type.CSharpTypeWithoutNullability}.FromJson(__content, JsonSerializerOptions)";
+        }
+        
         return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type.CSharpTypeWithNullability}>(__content, JsonSerializerOptions)";
     }
 }

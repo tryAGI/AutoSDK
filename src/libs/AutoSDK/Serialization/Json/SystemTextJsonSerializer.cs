@@ -93,6 +93,13 @@ public class SystemTextJsonSerializer : IJsonSerializer
     
     public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)
     {
+        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        {
+            return string.IsNullOrWhiteSpace(jsonSerializerContext)
+                ? "request.ToJson(JsonSerializerOptions)"
+                : "request.ToJson(JsonSerializerContext)";
+        }
+        
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? "global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions)"
             : $"global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext)";
@@ -100,6 +107,13 @@ public class SystemTextJsonSerializer : IJsonSerializer
     
     public string GenerateDeserializeCall(TypeData type, string jsonSerializerContext)
     {
+        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        {
+            return string.IsNullOrWhiteSpace(jsonSerializerContext)
+                ? $"{type.CSharpTypeWithoutNullability}.FromJson(__content, JsonSerializerOptions)"
+                : $"{type.CSharpTypeWithoutNullability}.FromJson(__content, JsonSerializerContext)";
+        }
+        
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
             ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type.CSharpTypeWithNullability}>(__content, JsonSerializerOptions)"
             : $"global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof({type.CSharpTypeWithNullabilityForValueTypes}), JsonSerializerContext) as {type.CSharpTypeWithNullabilityForValueTypes}";

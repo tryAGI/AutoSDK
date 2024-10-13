@@ -115,7 +115,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.NodesStatusResponse?>(__content, JsonSerializerOptions) ??
+                global::G.NodesStatusResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

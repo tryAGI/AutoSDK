@@ -109,7 +109,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::G.VectorStoreFileBatchObject), JsonSerializerContext) as global::G.VectorStoreFileBatchObject ??
+                global::G.VectorStoreFileBatchObject.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

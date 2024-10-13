@@ -79,6 +79,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
         var additionalPropertiesPostfix = modelData.ClassName == "AdditionalProperties"
             ? "2"
             : string.Empty;
+        var json = GenerateFromToJsonMethods(modelData.Namespace, modelData.ClassName, modelData.Settings, isValueType: false, cancellationToken);
         
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
@@ -97,6 +98,92 @@ public sealed partial class {modelData.Parents[level].ClassName}
         {"Additional properties that are not explicitly defined in the schema".ToXmlDocumentationSummary(level: 8)}
         {jsonSerializer.GenerateExtensionDataAttribute()}
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
+
+{json}
     }}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+    
+    
+    public static string GenerateFromToJsonMethods(
+        string @namespace,
+        string className,
+        Settings settings,
+        bool isValueType,
+        CancellationToken cancellationToken = default)
+    {
+        var typeName = $"global::{@namespace}.{@className}";
+        
+        return settings.JsonSerializerType == JsonSerializerType.SystemTextJson
+            ? @$"
+        public string ToJson(
+            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        {{
+            return global::System.Text.Json.JsonSerializer.Serialize(
+                this,
+                this.GetType(),
+                jsonSerializerContext);
+        }}
+
+    #if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
+        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
+    #endif
+        public string ToJson(
+            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        {{
+            return global::System.Text.Json.JsonSerializer.Serialize(
+                this,
+                jsonSerializerOptions);
+        }}
+
+        public static {typeName}? FromJson(
+            string json,
+            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
+        {{
+            return global::System.Text.Json.JsonSerializer.Deserialize(
+                json,
+                typeof({typeName}),
+                jsonSerializerContext) as {typeName}{(isValueType ? "?" : "")};
+        }}
+
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
+        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
+#endif
+        public static {typeName}? FromJson(
+            string json,
+            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+        {{
+            return global::System.Text.Json.JsonSerializer.Deserialize<{typeName}>(
+                json,
+                jsonSerializerOptions);
+        }}
+"
+            : @$"
+    #if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
+        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
+    #endif
+        public string ToJson(
+            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
+        {{
+            return global::Newtonsoft.Json.JsonConvert.SerializeObject(
+                this,
+                jsonSerializerOptions);
+        }}
+
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
+        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
+#endif
+        public static {typeName}? FromJson(
+            string json,
+            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
+        {{
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<{typeName}>(
+                json,
+                jsonSerializerOptions);
+        }}
+";
     }
 }

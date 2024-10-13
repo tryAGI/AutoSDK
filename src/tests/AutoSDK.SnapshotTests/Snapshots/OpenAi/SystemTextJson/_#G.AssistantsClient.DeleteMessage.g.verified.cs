@@ -109,7 +109,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::G.DeleteMessageResponse), JsonSerializerContext) as global::G.DeleteMessageResponse ??
+                global::G.DeleteMessageResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -116,7 +116,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CancelEmbedJobResponse?>(__content, JsonSerializerOptions) ??
+                global::G.CancelEmbedJobResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -106,7 +106,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.FileDeleteResponse?>(__content, JsonSerializerOptions) ??
+                global::G.FileDeleteResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

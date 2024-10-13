@@ -102,7 +102,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ReposGetAllDeploymentProtectionRulesResponse?>(__content, JsonSerializerOptions) ??
+                global::G.ReposGetAllDeploymentProtectionRulesResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

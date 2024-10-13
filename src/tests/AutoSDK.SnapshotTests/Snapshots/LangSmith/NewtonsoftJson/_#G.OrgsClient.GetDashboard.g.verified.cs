@@ -130,7 +130,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.OrganizationDashboardSchema?>(__content, JsonSerializerOptions) ??
+                global::G.OrganizationDashboardSchema.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -85,7 +85,7 @@ namespace G
                 httpRequest.Headers.TryAddWithoutValidation("Accepts", accepts?.ToValueString() ?? string.Empty);
             }
 
-            var __httpRequestContentBody = global::System.Text.Json.JsonSerializer.Serialize(request, JsonSerializerOptions);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -135,7 +135,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>?>(__content, JsonSerializerOptions) ??
+                global::G.OneOf<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

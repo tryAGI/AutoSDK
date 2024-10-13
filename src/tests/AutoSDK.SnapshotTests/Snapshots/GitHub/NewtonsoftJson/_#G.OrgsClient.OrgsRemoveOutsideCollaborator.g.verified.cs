@@ -94,7 +94,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.OrgsRemoveOutsideCollaboratorResponse?>(__content, JsonSerializerOptions) ??
+                global::G.OrgsRemoveOutsideCollaboratorResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

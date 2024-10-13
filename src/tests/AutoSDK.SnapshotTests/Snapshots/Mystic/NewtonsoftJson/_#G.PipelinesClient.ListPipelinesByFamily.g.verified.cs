@@ -177,7 +177,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.PaginatedGetMetaAndPointers?>(__content, JsonSerializerOptions) ??
+                global::G.PaginatedGetMetaAndPointers.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -69,7 +69,7 @@ namespace G
                     httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
                 }
             }
-            var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -118,7 +118,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.UploadDatasetImageResponse?>(__content, JsonSerializerOptions) ??
+                global::G.UploadDatasetImageResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

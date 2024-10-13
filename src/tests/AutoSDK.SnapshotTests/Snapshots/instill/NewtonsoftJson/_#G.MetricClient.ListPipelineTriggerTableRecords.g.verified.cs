@@ -122,7 +122,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ListPipelineTriggerTableRecordsResponse?>(__content, JsonSerializerOptions) ??
+                global::G.ListPipelineTriggerTableRecordsResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -123,7 +123,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::G.ListFineTuningJobEventsResponse), JsonSerializerContext) as global::G.ListFineTuningJobEventsResponse ??
+                global::G.ListFineTuningJobEventsResponse.FromJson(__content, JsonSerializerContext) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

@@ -100,7 +100,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.OrganizationFull?>(__content, JsonSerializerOptions) ??
+                global::G.OrganizationFull.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

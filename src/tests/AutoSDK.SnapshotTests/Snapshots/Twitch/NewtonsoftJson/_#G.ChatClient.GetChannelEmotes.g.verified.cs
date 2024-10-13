@@ -111,7 +111,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetChannelEmotesResponse?>(__content, JsonSerializerOptions) ??
+                global::G.GetChannelEmotesResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

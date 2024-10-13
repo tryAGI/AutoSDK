@@ -136,7 +136,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.TrainingTestResult?>(__content, JsonSerializerOptions) ??
+                global::G.TrainingTestResult.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

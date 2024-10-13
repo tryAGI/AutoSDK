@@ -148,7 +148,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ListGenerationPresetsResponse?>(__content, JsonSerializerOptions) ??
+                global::G.ListGenerationPresetsResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

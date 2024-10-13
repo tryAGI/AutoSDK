@@ -102,7 +102,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.ProjectDescriptorProps?>(__content, JsonSerializerOptions) ??
+                global::G.ProjectDescriptorProps.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

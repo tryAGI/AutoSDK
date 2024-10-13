@@ -97,7 +97,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.PostApiReactivateResponse?>(__content, JsonSerializerOptions) ??
+                global::G.PostApiReactivateResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

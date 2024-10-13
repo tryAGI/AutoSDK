@@ -68,7 +68,7 @@ namespace G
                 httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
             }
 
-            var __httpRequestContentBody = global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions);
+            var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
@@ -118,7 +118,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.EditProjectResponseModel?>(__content, JsonSerializerOptions) ??
+                global::G.EditProjectResponseModel.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

@@ -144,7 +144,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.GetGameAnalyticsResponse?>(__content, JsonSerializerOptions) ??
+                global::G.GetGameAnalyticsResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

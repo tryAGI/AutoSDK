@@ -136,7 +136,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.AddVoiceResponseModel?>(__content, JsonSerializerOptions) ??
+                global::G.AddVoiceResponseModel.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 

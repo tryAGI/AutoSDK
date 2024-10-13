@@ -126,7 +126,7 @@ namespace G
             }
 
             return
-                global::System.Text.Json.JsonSerializer.Deserialize<global::G.DatasetPublicSchema?>(__content, JsonSerializerOptions) ??
+                global::G.DatasetPublicSchema.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

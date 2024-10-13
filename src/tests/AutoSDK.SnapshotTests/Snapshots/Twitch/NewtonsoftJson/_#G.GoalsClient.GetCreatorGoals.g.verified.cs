@@ -110,7 +110,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.GetCreatorGoalsResponse?>(__content, JsonSerializerOptions) ??
+                global::G.GetCreatorGoalsResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }
