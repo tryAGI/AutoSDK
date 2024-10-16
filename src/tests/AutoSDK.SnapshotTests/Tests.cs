@@ -121,6 +121,7 @@ public partial class Tests
             "elevenlabs" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
+                ["build_property.AutoSDK_MethodNamingConvention"] = "MethodAndPath",
             },
             _ => new Dictionary<string, string>(),
         };
