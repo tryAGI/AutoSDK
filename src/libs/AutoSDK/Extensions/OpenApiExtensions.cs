@@ -184,6 +184,14 @@ public static class OpenApiExtensions
         return openApiDocument;
     }
     
+    public static OpenApiDocument ComputeDiscriminators(
+        this OpenApiDocument openApiDocument)
+    {
+        openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
+        
+        return openApiDocument;
+    }
+    
     /// <summary>
     /// https://swagger.io/docs/specification/describing-parameters/
     /// https://swagger.io/docs/specification/serialization/
