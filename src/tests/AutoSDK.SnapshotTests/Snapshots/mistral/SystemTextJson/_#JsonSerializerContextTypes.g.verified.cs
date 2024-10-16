@@ -39,107 +39,107 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentsCompletionRequestMessageDiscriminator? Type5 { get; set; }
+        public global::G.UserMessage? Type5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AgentsCompletionRequestMessageDiscriminatorRole? Type6 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Type6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserMessage? Type7 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentChunk>? Type7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>? Type8 { get; set; }
+        public global::G.ContentChunk? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ContentChunk>? Type9 { get; set; }
+        public global::G.TextChunk? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentChunk? Type10 { get; set; }
+        public global::G.TextChunkType? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentChunkDiscriminator? Type11 { get; set; }
+        public global::G.ImageURLChunk? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentChunkDiscriminatorType? Type12 { get; set; }
+        public global::G.AnyOf<global::G.ImageURL, string>? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextChunk? Type13 { get; set; }
+        public global::G.ImageURL? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextChunkType? Type14 { get; set; }
+        public global::G.ImageURLChunkType? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageURLChunk? Type15 { get; set; }
+        public global::G.ContentChunkDiscriminator? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ImageURL, string>? Type16 { get; set; }
+        public global::G.ContentChunkDiscriminatorType? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageURL? Type17 { get; set; }
+        public global::G.UserMessageRole? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageURLChunkType? Type18 { get; set; }
+        public global::G.AssistantMessage? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserMessageRole? Type19 { get; set; }
+        public bool? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantMessage? Type20 { get; set; }
+        public global::G.AssistantMessageRole? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type21 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolCall>? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AssistantMessageRole? Type22 { get; set; }
+        public global::G.ToolCall? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolCall>? Type23 { get; set; }
+        public global::G.FunctionCall? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolCall? Type24 { get; set; }
+        public global::G.AnyOf<object, string>? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FunctionCall? Type25 { get; set; }
+        public object? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<object, string>? Type26 { get; set; }
+        public global::G.ToolTypes? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type27 { get; set; }
+        public global::G.ToolMessage? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolTypes? Type28 { get; set; }
+        public global::G.ToolMessageRole? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolMessage? Type29 { get; set; }
+        public global::G.AgentsCompletionRequestMessageDiscriminator? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolMessageRole? Type30 { get; set; }
+        public global::G.AgentsCompletionRequestMessageDiscriminatorRole? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -231,27 +231,27 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageDiscriminator? Type53 { get; set; }
+        public global::G.SystemMessage? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatCompletionRequestMessageDiscriminatorRole? Type54 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.TextChunk>>? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SystemMessage? Type55 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.TextChunk>? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.TextChunk>>? Type56 { get; set; }
+        public global::G.SystemMessageRole? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.TextChunk>? Type57 { get; set; }
+        public global::G.ChatCompletionRequestMessageDiscriminator? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SystemMessageRole? Type58 { get; set; }
+        public global::G.ChatCompletionRequestMessageDiscriminatorRole? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -363,19 +363,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DetailedJobOutIntegrationDiscriminator? Type86 { get; set; }
+        public global::G.WandbIntegrationOut? Type86 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DetailedJobOutIntegrationDiscriminatorType? Type87 { get; set; }
+        public global::G.WandbIntegrationOutType? Type87 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegrationOut? Type88 { get; set; }
+        public global::G.DetailedJobOutIntegrationDiscriminator? Type88 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegrationOutType? Type89 { get; set; }
+        public global::G.DetailedJobOutIntegrationDiscriminatorType? Type89 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -395,19 +395,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DetailedJobOutRepositorieDiscriminator? Type94 { get; set; }
+        public global::G.GithubRepositoryOut? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.DetailedJobOutRepositorieDiscriminatorType? Type95 { get; set; }
+        public global::G.GithubRepositoryOutType? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GithubRepositoryOut? Type96 { get; set; }
+        public global::G.DetailedJobOutRepositorieDiscriminator? Type96 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GithubRepositoryOutType? Type97 { get; set; }
+        public global::G.DetailedJobOutRepositorieDiscriminatorType? Type97 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -539,19 +539,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobInIntegrationDiscriminator? Type130 { get; set; }
+        public global::G.WandbIntegration? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.JobInIntegrationDiscriminatorType? Type131 { get; set; }
+        public global::G.WandbIntegrationType? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegration? Type132 { get; set; }
+        public global::G.JobInIntegrationDiscriminator? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.WandbIntegrationType? Type133 { get; set; }
+        public global::G.JobInIntegrationDiscriminatorType? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>

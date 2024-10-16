@@ -19,6 +19,7 @@ public readonly record struct TypeData(
     int OneOfCount,
     int AllOfCount,
     bool IsComponent,
+    bool HasDiscriminator,
     ImmutableArray<string> Properties,
     ImmutableArray<string> EnumValues,
     ImmutableArray<TypeData> SubTypes,
@@ -42,6 +43,7 @@ public readonly record struct TypeData(
         OneOfCount: 0,
         AllOfCount: 0,
         IsComponent: false,
+        HasDiscriminator: false,
         Properties: [],
         EnumValues: [],
         SubTypes: [],
@@ -70,7 +72,7 @@ public readonly record struct TypeData(
     public string ConverterType =>
         IsUnixTimestamp
             ? $"global::{Settings.Namespace}.JsonConverters.UnixTimestampJsonConverter"
-            : IsEnum || (IsAnyOfLike && IsComponent)
+            : IsEnum || (IsAnyOfLike && (IsComponent || HasDiscriminator))
                 ? $"global::{Settings.Namespace}.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
                 : AnyOfCount > 0
                     ? $"global::{Settings.Namespace}.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
@@ -175,6 +177,7 @@ public readonly record struct TypeData(
                 ? context.Schema.AllOf?.Count ?? 0
                 : 0,
             IsComponent: context.IsComponent,
+            HasDiscriminator: context.Schema.Discriminator != null,
             Properties: properties,
             EnumValues: enumValues,
             SubTypes: subTypes,

@@ -278,29 +278,6 @@ public class SchemaContext
                 hint: Models.Hint.AdditionalProperties,
                 depth: depth + 1));
         }
-        if (schema.Discriminator != null)
-        {
-            children.AddRange(FromSchema(
-                schema: new OpenApiSchema
-                {
-                    Type = "object",
-                    Properties =
-                    {
-                        [schema.Discriminator.PropertyName] = new OpenApiSchema
-                        {
-                            Type = "string",
-                            Enum = schema.Discriminator.Mapping?.Keys
-                                .Select(x => new OpenApiString(x))
-                                .Cast<IOpenApiAny>()
-                                .ToList(),
-                        }
-                    }
-                },
-                settings: settings,
-                parent: context,
-                hint: Models.Hint.Discriminator,
-                depth: depth + 1));
-        }
         
         var i = 0;
         foreach (var property in schema.Properties)
@@ -346,6 +323,54 @@ public class SchemaContext
                 parent: context,
                 hint: Models.Hint.AllOf,
                 index: i++,
+                depth: depth + 1));
+        }
+        
+        // Auto-detection in OpenAI-like specs
+        // var anyOfLikeChildren = children
+        //     .Where(x => x.Hint is Models.Hint.AnyOf or Models.Hint.OneOf or Models.Hint.AllOf)
+        //     .ToList();
+        // if (context.Schema.Discriminator == null &&
+        //     anyOfLikeChildren.Count > 1 &&
+        //     anyOfLikeChildren.All(y => y.Schema.Properties.Any(z => z.Value.Enum is { Count: 1 })))
+        // {
+        //     var discriminatorPropertyName = anyOfLikeChildren.First().Schema.Properties
+        //         .FirstOrDefault(y => y.Value.Enum is { Count: 1 }).Key;
+        //     var uniqueKeys = new HashSet<string>(anyOfLikeChildren
+        //         .Select(x => x.Schema.Properties[discriminatorPropertyName].Enum.First().GetString() ?? string.Empty));
+        //     if (discriminatorPropertyName != null && uniqueKeys.Count == anyOfLikeChildren.Count)
+        //     {
+        //         schema.Discriminator = new OpenApiDiscriminator
+        //         {
+        //             PropertyName = discriminatorPropertyName,
+        //             Mapping = new HashSet<(string, string)>(anyOfLikeChildren
+        //                     .Select(x => (x.Schema.Properties[discriminatorPropertyName].Enum.First().GetString() ?? string.Empty, x.Id))
+        //                     .Where(x => !string.IsNullOrWhiteSpace(x.Item1)))
+        //                 .ToDictionary(x => x.Item1, x => x.Item2),
+        //         };
+        //     }
+        // }
+        if (schema.Discriminator != null)
+        {
+            children.AddRange(FromSchema(
+                schema: new OpenApiSchema
+                {
+                    Type = "object",
+                    Properties =
+                    {
+                        [schema.Discriminator.PropertyName] = new OpenApiSchema
+                        {
+                            Type = "string",
+                            Enum = schema.Discriminator.Mapping?.Keys
+                                .Select(x => new OpenApiString(x))
+                                .Cast<IOpenApiAny>()
+                                .ToList(),
+                        }
+                    }
+                },
+                settings: settings,
+                parent: context,
+                hint: Models.Hint.Discriminator,
                 depth: depth + 1));
         }
         

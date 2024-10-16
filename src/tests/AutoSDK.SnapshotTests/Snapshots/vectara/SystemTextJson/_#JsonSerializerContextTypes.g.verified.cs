@@ -115,39 +115,39 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchRerankerDiscriminator? Type24 { get; set; }
+        public global::G.CustomerSpecificReranker? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SearchRerankerDiscriminatorType? Type25 { get; set; }
+        public float? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CustomerSpecificReranker? Type26 { get; set; }
+        public global::G.UserFunctionReranker? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public float? Type27 { get; set; }
+        public global::G.MMRReranker? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.UserFunctionReranker? Type28 { get; set; }
+        public global::G.ChainReranker? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MMRReranker? Type29 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.SearchReranker>? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChainReranker? Type30 { get; set; }
+        public global::G.NoneReranker? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.SearchReranker>? Type31 { get; set; }
+        public global::G.SearchRerankerDiscriminator? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NoneReranker? Type32 { get; set; }
+        public global::G.SearchRerankerDiscriminatorType? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -235,43 +235,43 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryStreamedResponseDiscriminator? Type54 { get; set; }
+        public global::G.StreamSearchResponse? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.QueryStreamedResponseDiscriminatorType? Type55 { get; set; }
+        public global::G.StreamGenerationChunk? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamSearchResponse? Type56 { get; set; }
+        public global::G.StreamGenerationEnd? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamGenerationChunk? Type57 { get; set; }
+        public global::G.StreamResponseEnd? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamGenerationEnd? Type58 { get; set; }
+        public global::G.FactualConsistencyScore? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamResponseEnd? Type59 { get; set; }
+        public global::G.GenerationInfo? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.FactualConsistencyScore? Type60 { get; set; }
+        public global::G.StreamError? Type60 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationInfo? Type61 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type61 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StreamError? Type62 { get; set; }
+        public global::G.QueryStreamedResponseDiscriminator? Type62 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type63 { get; set; }
+        public global::G.QueryStreamedResponseDiscriminatorType? Type63 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -287,35 +287,35 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateDocumentRequestDiscriminator? Type67 { get; set; }
+        public global::G.CoreDocument? Type67 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateDocumentRequestDiscriminatorType? Type68 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.CoreDocumentPart>? Type68 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CoreDocument? Type69 { get; set; }
+        public global::G.CoreDocumentPart? Type69 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.CoreDocumentPart>? Type70 { get; set; }
+        public global::G.StructuredDocument? Type70 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CoreDocumentPart? Type71 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.StructuredDocumentSection>? Type71 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StructuredDocument? Type72 { get; set; }
+        public global::G.StructuredDocumentSection? Type72 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.StructuredDocumentSection>? Type73 { get; set; }
+        public global::G.CreateDocumentRequestDiscriminator? Type73 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StructuredDocumentSection? Type74 { get; set; }
+        public global::G.CreateDocumentRequestDiscriminatorType? Type74 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -391,15 +391,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamedResponseDiscriminator? Type93 { get; set; }
+        public global::G.ChatInfoResponse? Type93 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatStreamedResponseDiscriminatorType? Type94 { get; set; }
+        public global::G.ChatStreamedResponseDiscriminator? Type94 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ChatInfoResponse? Type95 { get; set; }
+        public global::G.ChatStreamedResponseDiscriminatorType? Type95 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -487,23 +487,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAppClientRequestDiscriminator? Type117 { get; set; }
+        public global::G.CreateClientCredentialsRequest? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateAppClientRequestDiscriminatorType? Type118 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ApiRole>? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateClientCredentialsRequest? Type119 { get; set; }
+        public global::G.ApiRole? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ApiRole>? Type120 { get; set; }
+        public global::G.CreateAppClientRequestDiscriminator? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ApiRole? Type121 { get; set; }
+        public global::G.CreateAppClientRequestDiscriminatorType? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>

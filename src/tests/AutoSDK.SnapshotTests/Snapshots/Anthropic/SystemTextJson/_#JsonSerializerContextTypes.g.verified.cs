@@ -55,47 +55,47 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BlockDiscriminator? Type9 { get; set; }
+        public global::G.TextBlock? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BlockDiscriminatorType? Type10 { get; set; }
+        public global::G.ImageBlock? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextBlock? Type11 { get; set; }
+        public global::G.ImageBlockSource? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageBlock? Type12 { get; set; }
+        public global::G.ImageBlockSourceMediaType? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageBlockSource? Type13 { get; set; }
+        public global::G.ImageBlockSourceType? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageBlockSourceMediaType? Type14 { get; set; }
+        public global::G.ToolUseBlock? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageBlockSourceType? Type15 { get; set; }
+        public object? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolUseBlock? Type16 { get; set; }
+        public global::G.ToolResultBlock? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type17 { get; set; }
+        public global::G.BlockDiscriminator? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolResultBlock? Type18 { get; set; }
+        public bool? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type19 { get; set; }
+        public global::G.BlockDiscriminatorType? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -147,47 +147,47 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventDiscriminator? Type32 { get; set; }
+        public global::G.MessageStartEvent? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventDiscriminatorType? Type33 { get; set; }
+        public global::G.MessageStreamEventType? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStartEvent? Type34 { get; set; }
+        public global::G.MessageDeltaEvent? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventType? Type35 { get; set; }
+        public global::G.MessageDelta? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaEvent? Type36 { get; set; }
+        public global::G.MessageDeltaUsage? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDelta? Type37 { get; set; }
+        public global::G.MessageStopEvent? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaUsage? Type38 { get; set; }
+        public global::G.ContentBlockStartEvent? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStopEvent? Type39 { get; set; }
+        public global::G.ContentBlockDeltaEvent? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStartEvent? Type40 { get; set; }
+        public global::G.BlockDelta? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockDeltaEvent? Type41 { get; set; }
+        public global::G.TextBlockDelta? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BlockDelta? Type42 { get; set; }
+        public global::G.InputJsonBlockDelta? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -199,18 +199,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextBlockDelta? Type45 { get; set; }
+        public global::G.ContentBlockStopEvent? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputJsonBlockDelta? Type46 { get; set; }
+        public global::G.PingEvent? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStopEvent? Type47 { get; set; }
+        public global::G.MessageStreamEventDiscriminator? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PingEvent? Type48 { get; set; }
+        public global::G.MessageStreamEventDiscriminatorType? Type48 { get; set; }
     }
 }
