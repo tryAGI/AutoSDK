@@ -3886,6 +3886,14 @@ components:
         - $ref: '#/components/schemas/ChatCompletionRequestAssistantMessage'
         - $ref: '#/components/schemas/ChatCompletionRequestToolMessage'
         - $ref: '#/components/schemas/ChatCompletionRequestFunctionMessage'
+      discriminator:
+        propertyName: role
+        mapping:
+          system: '#/components/schemas/ChatCompletionRequestSystemMessage'
+          user: '#/components/schemas/ChatCompletionRequestUserMessage'
+          assistant: '#/components/schemas/ChatCompletionRequestAssistantMessage'
+          tool: '#/components/schemas/ChatCompletionRequestToolMessage'
+          function: '#/components/schemas/ChatCompletionRequestFunctionMessage'
       x-oaiExpandable: true
     ChatCompletionRequestSystemMessageContentPart:
       oneOf:
@@ -3895,11 +3903,21 @@ components:
       oneOf:
         - $ref: '#/components/schemas/ChatCompletionRequestMessageContentPartText'
         - $ref: '#/components/schemas/ChatCompletionRequestMessageContentPartImage'
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/ChatCompletionRequestMessageContentPartText'
+          image_url: '#/components/schemas/ChatCompletionRequestMessageContentPartImage'
       x-oaiExpandable: true
     ChatCompletionRequestAssistantMessageContentPart:
       oneOf:
         - $ref: '#/components/schemas/ChatCompletionRequestMessageContentPartText'
         - $ref: '#/components/schemas/ChatCompletionRequestMessageContentPartRefusal'
+      discriminator:
+        propertyName: type
+        mapping:
+          text: '#/components/schemas/ChatCompletionRequestMessageContentPartText'
+          refusal: '#/components/schemas/ChatCompletionRequestMessageContentPartRefusal'
       x-oaiExpandable: true
     ChatCompletionRequestToolMessageContentPart:
       oneOf:
@@ -4458,6 +4476,12 @@ components:
             - $ref: '#/components/schemas/ResponseFormatJsonObject'
             - $ref: '#/components/schemas/ResponseFormatJsonSchema'
           description: "An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4o mini](/docs/models/gpt-4o-mini), [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.\n\nSetting to `{ \"type\": \"json_schema\", \"json_schema\": {...} }` enables Structured Outputs which guarantees the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).\n\nSetting to `{ \"type\": \"json_object\" }` enables JSON mode, which guarantees the message the model generates is valid JSON.\n\n**Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly \"stuck\" request. Also note that the message content may be partially cut off if `finish_reason=\"length\"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.\n"
+          discriminator:
+            propertyName: type
+            mapping:
+              text: '#/components/schemas/ResponseFormatText'
+              json_object: '#/components/schemas/ResponseFormatJsonObject'
+              json_schema: '#/components/schemas/ResponseFormatJsonSchema'
           x-oaiExpandable: true
         seed:
           maximum: 9223372036854775807
@@ -6436,6 +6460,12 @@ components:
               - $ref: '#/components/schemas/AssistantToolsCode'
               - $ref: '#/components/schemas/AssistantToolsFileSearch'
               - $ref: '#/components/schemas/AssistantToolsFunction'
+            discriminator:
+              propertyName: type
+              mapping:
+                code_interpreter: '#/components/schemas/AssistantToolsCode'
+                file_search: '#/components/schemas/AssistantToolsFileSearch'
+                function: '#/components/schemas/AssistantToolsFunction'
             x-oaiExpandable: true
           description: "A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.\n"
         tool_resources:
@@ -6548,6 +6578,12 @@ components:
               - $ref: '#/components/schemas/AssistantToolsCode'
               - $ref: '#/components/schemas/AssistantToolsFileSearch'
               - $ref: '#/components/schemas/AssistantToolsFunction'
+            discriminator:
+              propertyName: type
+              mapping:
+                code_interpreter: '#/components/schemas/AssistantToolsCode'
+                file_search: '#/components/schemas/AssistantToolsFileSearch'
+                function: '#/components/schemas/AssistantToolsFunction'
             x-oaiExpandable: true
           description: "A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.\n"
         tool_resources:
@@ -6631,6 +6667,11 @@ components:
                                 additionalProperties: false
                             additionalProperties: false
                         description: 'The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.'
+                        discriminator:
+                          propertyName: type
+                          mapping:
+                            auto: '#/components/schemas/CreateAssistantRequest/properties/tool_resources/properties/file_search/properties/vector_stores/items/properties/chunking_strategy/oneOf/0'
+                            static: '#/components/schemas/CreateAssistantRequest/properties/tool_resources/properties/file_search/properties/vector_stores/items/properties/chunking_strategy/oneOf/1'
                         x-oaiExpandable: true
                       metadata:
                         type: object
@@ -6693,6 +6734,12 @@ components:
               - $ref: '#/components/schemas/AssistantToolsCode'
               - $ref: '#/components/schemas/AssistantToolsFileSearch'
               - $ref: '#/components/schemas/AssistantToolsFunction'
+            discriminator:
+              propertyName: type
+              mapping:
+                code_interpreter: '#/components/schemas/AssistantToolsCode'
+                file_search: '#/components/schemas/AssistantToolsFileSearch'
+                function: '#/components/schemas/AssistantToolsFunction'
             x-oaiExpandable: true
           description: "A list of tool enabled on the assistant. There can be a maximum of 128 tools per assistant. Tools can be of types `code_interpreter`, `file_search`, or `function`.\n"
         tool_resources:
@@ -7039,6 +7086,12 @@ components:
               - $ref: '#/components/schemas/AssistantToolsCode'
               - $ref: '#/components/schemas/AssistantToolsFileSearch'
               - $ref: '#/components/schemas/AssistantToolsFunction'
+            discriminator:
+              propertyName: type
+              mapping:
+                code_interpreter: '#/components/schemas/AssistantToolsCode'
+                file_search: '#/components/schemas/AssistantToolsFileSearch'
+                function: '#/components/schemas/AssistantToolsFunction'
             x-oaiExpandable: true
           description: 'The list of tools that the [assistant](/docs/api-reference/assistants) used for this run.'
         metadata:
@@ -7142,6 +7195,12 @@ components:
               - $ref: '#/components/schemas/AssistantToolsCode'
               - $ref: '#/components/schemas/AssistantToolsFileSearch'
               - $ref: '#/components/schemas/AssistantToolsFunction'
+            discriminator:
+              propertyName: type
+              mapping:
+                code_interpreter: '#/components/schemas/AssistantToolsCode'
+                file_search: '#/components/schemas/AssistantToolsFileSearch'
+                function: '#/components/schemas/AssistantToolsFunction'
             x-oaiExpandable: true
           description: Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
           nullable: true
@@ -7329,6 +7388,12 @@ components:
               - $ref: '#/components/schemas/AssistantToolsCode'
               - $ref: '#/components/schemas/AssistantToolsFileSearch'
               - $ref: '#/components/schemas/AssistantToolsFunction'
+            discriminator:
+              propertyName: type
+              mapping:
+                code_interpreter: '#/components/schemas/AssistantToolsCode'
+                file_search: '#/components/schemas/AssistantToolsFileSearch'
+                function: '#/components/schemas/AssistantToolsFunction'
           description: Override the tools the assistant can use for this run. This is useful for modifying the behavior on a per-run basis.
           nullable: true
         tool_resources:
@@ -7541,6 +7606,11 @@ components:
                                 additionalProperties: false
                             additionalProperties: false
                         description: 'The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.'
+                        discriminator:
+                          propertyName: type
+                          mapping:
+                            auto: '#/components/schemas/CreateThreadRequest/properties/tool_resources/properties/file_search/properties/vector_stores/items/properties/chunking_strategy/oneOf/0'
+                            static: '#/components/schemas/CreateThreadRequest/properties/tool_resources/properties/file_search/properties/vector_stores/items/properties/chunking_strategy/oneOf/1'
                         x-oaiExpandable: true
                       metadata:
                         type: object
@@ -7705,6 +7775,13 @@ components:
               - $ref: '#/components/schemas/MessageContentImageUrlObject'
               - $ref: '#/components/schemas/MessageContentTextObject'
               - $ref: '#/components/schemas/MessageContentRefusalObject'
+            discriminator:
+              propertyName: type
+              mapping:
+                image_file: '#/components/schemas/MessageContentImageFileObject'
+                image_url: '#/components/schemas/MessageContentImageUrlObject'
+                text: '#/components/schemas/MessageContentTextObject'
+                refusal: '#/components/schemas/MessageContentRefusalObject'
             x-oaiExpandable: true
           description: The content of the message in array of text and/or images.
         assistant_id:
@@ -7729,6 +7806,11 @@ components:
                   oneOf:
                     - $ref: '#/components/schemas/AssistantToolsCode'
                     - $ref: '#/components/schemas/AssistantToolsFileSearchTypeOnly'
+                  discriminator:
+                    propertyName: type
+                    mapping:
+                      code_interpreter: '#/components/schemas/AssistantToolsCode'
+                      file_search: '#/components/schemas/AssistantToolsFileSearchTypeOnly'
                   x-oaiExpandable: true
                 description: The tools to add this file to.
           description: 'A list of files attached to the message, and the tools they were added to.'
@@ -7776,6 +7858,13 @@ components:
                   - $ref: '#/components/schemas/MessageDeltaContentTextObject'
                   - $ref: '#/components/schemas/MessageDeltaContentRefusalObject'
                   - $ref: '#/components/schemas/MessageDeltaContentImageUrlObject'
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    image_file: '#/components/schemas/MessageDeltaContentImageFileObject'
+                    text: '#/components/schemas/MessageDeltaContentTextObject'
+                    refusal: '#/components/schemas/MessageDeltaContentRefusalObject'
+                    image_url: '#/components/schemas/MessageDeltaContentImageUrlObject'
                 x-oaiExpandable: true
               description: The content of the message in array of text and/or images.
           description: The delta containing the fields that have changed on the Message.
@@ -7809,6 +7898,12 @@ components:
                   - $ref: '#/components/schemas/MessageContentImageFileObject'
                   - $ref: '#/components/schemas/MessageContentImageUrlObject'
                   - $ref: '#/components/schemas/MessageRequestContentTextObject'
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    image_file: '#/components/schemas/MessageContentImageFileObject'
+                    image_url: '#/components/schemas/MessageContentImageUrlObject'
+                    text: '#/components/schemas/MessageRequestContentTextObject'
                 x-oaiExpandable: true
               description: 'An array of content parts with a defined type, each can be of type `text` or images can be passed with `image_url` or `image_file`. Image types are only supported on [Vision-compatible models](/docs/models/overview).'
           x-oaiExpandable: true
@@ -7829,6 +7924,11 @@ components:
                   oneOf:
                     - $ref: '#/components/schemas/AssistantToolsCode'
                     - $ref: '#/components/schemas/AssistantToolsFileSearchTypeOnly'
+                  discriminator:
+                    propertyName: type
+                    mapping:
+                      code_interpreter: '#/components/schemas/AssistantToolsCode'
+                      file_search: '#/components/schemas/AssistantToolsFileSearchTypeOnly'
                   x-oaiExpandable: true
                 description: The tools to add this file to.
           description: 'A list of files attached to the message, and the tools they should be added to.'
@@ -8033,6 +8133,11 @@ components:
                 oneOf:
                   - $ref: '#/components/schemas/MessageContentTextAnnotationsFileCitationObject'
                   - $ref: '#/components/schemas/MessageContentTextAnnotationsFilePathObject'
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    file_citation: '#/components/schemas/MessageContentTextAnnotationsFileCitationObject'
+                    file_path: '#/components/schemas/MessageContentTextAnnotationsFilePathObject'
                 x-oaiExpandable: true
       description: The text content that is part of a message.
     MessageContentRefusalObject:
@@ -8159,6 +8264,11 @@ components:
                 oneOf:
                   - $ref: '#/components/schemas/MessageDeltaContentTextAnnotationsFileCitationObject'
                   - $ref: '#/components/schemas/MessageDeltaContentTextAnnotationsFilePathObject'
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    file_citation: '#/components/schemas/MessageDeltaContentTextAnnotationsFileCitationObject'
+                    file_path: '#/components/schemas/MessageDeltaContentTextAnnotationsFilePathObject'
                 x-oaiExpandable: true
       description: The text content that is part of a message.
     MessageDeltaContentRefusalObject:
@@ -8306,6 +8416,11 @@ components:
             - $ref: '#/components/schemas/RunStepDetailsMessageCreationObject'
             - $ref: '#/components/schemas/RunStepDetailsToolCallsObject'
           description: The details of the run step.
+          discriminator:
+            propertyName: type
+            mapping:
+              message_creation: '#/components/schemas/RunStepDetailsMessageCreationObject'
+              tool_calls: '#/components/schemas/RunStepDetailsToolCallsObject'
           x-oaiExpandable: true
         last_error:
           required:
@@ -8377,6 +8492,11 @@ components:
                 - $ref: '#/components/schemas/RunStepDeltaStepDetailsMessageCreationObject'
                 - $ref: '#/components/schemas/RunStepDeltaStepDetailsToolCallsObject'
               description: The details of the run step.
+              discriminator:
+                propertyName: type
+                mapping:
+                  message_creation: '#/components/schemas/RunStepDeltaStepDetailsMessageCreationObject'
+                  tool_calls: '#/components/schemas/RunStepDeltaStepDetailsToolCallsObject'
               x-oaiExpandable: true
           description: The delta containing the fields that have changed on the run step.
       description: "Represents a run step delta i.e. any changed fields on a run step during streaming.\n"
@@ -8466,6 +8586,12 @@ components:
               - $ref: '#/components/schemas/RunStepDetailsToolCallsCodeObject'
               - $ref: '#/components/schemas/RunStepDetailsToolCallsFileSearchObject'
               - $ref: '#/components/schemas/RunStepDetailsToolCallsFunctionObject'
+            discriminator:
+              propertyName: type
+              mapping:
+                code_interpreter: '#/components/schemas/RunStepDetailsToolCallsCodeObject'
+                file_search: '#/components/schemas/RunStepDetailsToolCallsFileSearchObject'
+                function: '#/components/schemas/RunStepDetailsToolCallsFunctionObject'
             x-oaiExpandable: true
           description: "An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.\n"
       description: Details of the tool call.
@@ -8487,6 +8613,12 @@ components:
               - $ref: '#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeObject'
               - $ref: '#/components/schemas/RunStepDeltaStepDetailsToolCallsFileSearchObject'
               - $ref: '#/components/schemas/RunStepDeltaStepDetailsToolCallsFunctionObject'
+            discriminator:
+              propertyName: type
+              mapping:
+                code_interpreter: '#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeObject'
+                file_search: '#/components/schemas/RunStepDeltaStepDetailsToolCallsFileSearchObject'
+                function: '#/components/schemas/RunStepDeltaStepDetailsToolCallsFunctionObject'
             x-oaiExpandable: true
           description: "An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.\n"
       description: Details of the tool call.
@@ -8522,6 +8654,11 @@ components:
                 oneOf:
                   - $ref: '#/components/schemas/RunStepDetailsToolCallsCodeOutputLogsObject'
                   - $ref: '#/components/schemas/RunStepDetailsToolCallsCodeOutputImageObject'
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    logs: '#/components/schemas/RunStepDetailsToolCallsCodeOutputLogsObject'
+                    image: '#/components/schemas/RunStepDetailsToolCallsCodeOutputImageObject'
                 x-oaiExpandable: true
               description: 'The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items, including text (`logs`) or images (`image`). Each of these are represented by a different object type.'
           description: The Code Interpreter tool call definition.
@@ -8557,6 +8694,11 @@ components:
                 oneOf:
                   - $ref: '#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject'
                   - $ref: '#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputImageObject'
+                discriminator:
+                  propertyName: type
+                  mapping:
+                    logs: '#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject'
+                    image: '#/components/schemas/RunStepDeltaStepDetailsToolCallsCodeOutputImageObject'
                 x-oaiExpandable: true
               description: 'The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items, including text (`logs`) or images (`image`). Each of these are represented by a different object type.'
           description: The Code Interpreter tool call definition.
@@ -8866,6 +9008,11 @@ components:
             - $ref: '#/components/schemas/AutoChunkingStrategyRequestParam'
             - $ref: '#/components/schemas/StaticChunkingStrategyRequestParam'
           description: 'The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.'
+          discriminator:
+            propertyName: type
+            mapping:
+              auto: '#/components/schemas/AutoChunkingStrategyRequestParam'
+              static: '#/components/schemas/StaticChunkingStrategyRequestParam'
           x-oaiExpandable: true
         metadata:
           type: object
@@ -8988,6 +9135,11 @@ components:
             - $ref: '#/components/schemas/StaticChunkingStrategyResponseParam'
             - $ref: '#/components/schemas/OtherChunkingStrategyResponseParam'
           description: The strategy used to chunk the file.
+          discriminator:
+            propertyName: type
+            mapping:
+              static: '#/components/schemas/StaticChunkingStrategyResponseParam'
+              other: '#/components/schemas/OtherChunkingStrategyResponseParam'
           x-oaiExpandable: true
       description: A list of files attached to a vector store.
       x-oaiMeta:
@@ -9071,6 +9223,11 @@ components:
         - $ref: '#/components/schemas/AutoChunkingStrategyRequestParam'
         - $ref: '#/components/schemas/StaticChunkingStrategyRequestParam'
       description: 'The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.'
+      discriminator:
+        propertyName: type
+        mapping:
+          auto: '#/components/schemas/AutoChunkingStrategyRequestParam'
+          static: '#/components/schemas/StaticChunkingStrategyRequestParam'
       x-oaiExpandable: true
     CreateVectorStoreFileRequest:
       required:
@@ -9369,6 +9526,19 @@ components:
           description: 'Occurs when a [run](/docs/api-reference/runs/object) expires.'
           x-oaiMeta:
             dataDescription: '`data` is a [run](/docs/api-reference/runs/object)'
+      discriminator:
+        propertyName: event
+        mapping:
+          thread.run.created: '#/components/schemas/RunStreamEvent/oneOf/0'
+          thread.run.queued: '#/components/schemas/RunStreamEvent/oneOf/1'
+          thread.run.in_progress: '#/components/schemas/RunStreamEvent/oneOf/2'
+          thread.run.requires_action: '#/components/schemas/RunStreamEvent/oneOf/3'
+          thread.run.completed: '#/components/schemas/RunStreamEvent/oneOf/4'
+          thread.run.incomplete: '#/components/schemas/RunStreamEvent/oneOf/5'
+          thread.run.failed: '#/components/schemas/RunStreamEvent/oneOf/6'
+          thread.run.cancelling: '#/components/schemas/RunStreamEvent/oneOf/7'
+          thread.run.cancelled: '#/components/schemas/RunStreamEvent/oneOf/8'
+          thread.run.expired: '#/components/schemas/RunStreamEvent/oneOf/9'
     RunStepStreamEvent:
       oneOf:
         - required:
@@ -9469,6 +9639,16 @@ components:
           description: 'Occurs when a [run step](/docs/api-reference/runs/step-object) expires.'
           x-oaiMeta:
             dataDescription: '`data` is a [run step](/docs/api-reference/runs/step-object)'
+      discriminator:
+        propertyName: event
+        mapping:
+          thread.run.step.created: '#/components/schemas/RunStepStreamEvent/oneOf/0'
+          thread.run.step.in_progress: '#/components/schemas/RunStepStreamEvent/oneOf/1'
+          thread.run.step.delta: '#/components/schemas/RunStepStreamEvent/oneOf/2'
+          thread.run.step.completed: '#/components/schemas/RunStepStreamEvent/oneOf/3'
+          thread.run.step.failed: '#/components/schemas/RunStepStreamEvent/oneOf/4'
+          thread.run.step.cancelled: '#/components/schemas/RunStepStreamEvent/oneOf/5'
+          thread.run.step.expired: '#/components/schemas/RunStepStreamEvent/oneOf/6'
     MessageStreamEvent:
       oneOf:
         - required:
@@ -9541,6 +9721,14 @@ components:
           description: 'Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.'
           x-oaiMeta:
             dataDescription: '`data` is a [message](/docs/api-reference/messages/object)'
+      discriminator:
+        propertyName: event
+        mapping:
+          thread.message.created: '#/components/schemas/MessageStreamEvent/oneOf/0'
+          thread.message.in_progress: '#/components/schemas/MessageStreamEvent/oneOf/1'
+          thread.message.delta: '#/components/schemas/MessageStreamEvent/oneOf/2'
+          thread.message.completed: '#/components/schemas/MessageStreamEvent/oneOf/3'
+          thread.message.incomplete: '#/components/schemas/MessageStreamEvent/oneOf/4'
     ErrorEvent:
       required:
         - event

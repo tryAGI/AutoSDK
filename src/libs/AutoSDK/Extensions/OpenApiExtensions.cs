@@ -189,9 +189,67 @@ public static class OpenApiExtensions
     {
         openApiDocument = openApiDocument ?? throw new ArgumentNullException(nameof(openApiDocument));
         
+        foreach (var schema in openApiDocument.Components.Schemas)
+        {
+            ProcessSchema(schema.Value, path: $"#/components/schemas/{schema.Key}");
+        }
+        
         return openApiDocument;
     }
-    
+
+    private static void ProcessSchema(OpenApiSchema schema, string path)
+    {
+        if (schema.Reference?.Id != null)
+        {
+            path = $"#/components/schemas/{schema.Reference?.Id}";
+        }
+            
+        foreach (var property in schema.Properties)
+        {
+            ProcessSchema(property.Value, path: path + "/properties/" + property.Key);
+        }
+        foreach (var value in schema.OneOf)
+        {
+            ProcessSchema(value, path: path + "/oneOf");
+        }
+        foreach (var value in schema.AllOf)
+        {
+            ProcessSchema(value, path: path + "/allOf");
+        }
+        foreach (var value in schema.AnyOf)
+        {
+            ProcessSchema(value, path: path + "/anyOf");
+        }
+        if (schema.Items != null)
+        {
+            ProcessSchema(schema.Items, path: path + "/items");
+        }
+            
+        // Auto-detection in OpenAI-like specs
+        if (schema.Discriminator == null &&
+            schema.OneOf.Count > 1 &&
+            schema.OneOf.All(y => y.ResolveIfRequired().Properties.Any(z => z.Value.Enum is { Count: 1 })))
+        {
+            var discriminatorPropertyName = schema.OneOf.First().Properties
+                .FirstOrDefault(y => y.Value.Enum is { Count: 1 }).Key;
+            var uniqueKeys = new HashSet<string>(schema.OneOf
+                .Select(x => x.Properties[discriminatorPropertyName].Enum.First().GetString() ?? string.Empty));
+            if (discriminatorPropertyName != null && uniqueKeys.Count == schema.OneOf.Count)
+            {
+                schema.Discriminator = new OpenApiDiscriminator
+                {
+                    PropertyName = discriminatorPropertyName,
+                    Mapping = new HashSet<(string Key, string Path)>(schema.OneOf
+                            .Select((x, i) => (
+                                x.Properties[discriminatorPropertyName].Enum.First().GetString() ?? string.Empty,
+                                x.Reference?.Id != null ? $"#/components/schemas/{x.Reference?.Id}" : path + "/oneOf/" + i))
+                            .Where(x => !string.IsNullOrWhiteSpace(x.Item1)))
+                        .ToDictionary(x => x.Key, x => x.Path),
+                };
+            }
+        }
+    }
+
     /// <summary>
     /// https://swagger.io/docs/specification/describing-parameters/
     /// https://swagger.io/docs/specification/serialization/
