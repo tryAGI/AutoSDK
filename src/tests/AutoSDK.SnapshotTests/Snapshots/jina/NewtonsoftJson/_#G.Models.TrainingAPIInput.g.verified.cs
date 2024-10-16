@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.ImageDoc.g.cs
+﻿//HintName: G.Models.TrainingAPIInput.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -7,40 +7,44 @@
 namespace G
 {
     /// <summary>
-    /// ImageDoc with fields
+    /// The input to the API for train the classifier. OpenAI compatible
     /// </summary>
-    public sealed partial class ImageDoc
+    public sealed partial class TrainingAPIInput
     {
         /// <summary>
-        /// The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value<br/>
-        /// Example: 3d19548f30d939fdf8d1f970b47ec824
+        /// The identifier of the model.<br/>
+        /// Available models and corresponding param size and dimension:<br/>
+        /// - `jina-clip-v1`,	223M,	768<br/>
+        /// - `jina-embeddings-v2-base-en`,	137M,	768<br/>
+        /// - `jina-embeddings-v2-base-es`,	161M,	768<br/>
+        /// - `jina-embeddings-v2-base-de`,	161M,	768<br/>
+        /// - `jina-embeddings-v2-base-zh`,	161M,	768<br/>
+        /// - `jina-embeddings-v2-base-code`,	137M,	768<br/>
+        /// For more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).<br/>
+        /// You can provide only either `model` or `classifier_id`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("model")]
+        public string? Model { get; set; }
 
         /// <summary>
-        /// URL of an image file
+        /// The identifier of the classifier. If not provided, a new classifier will be created.<br/>
+        /// You can provide only either `model` or `classifier_id`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("url")]
-        public string? Url { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("classifier_id")]
+        public string? ClassifierId { get; set; }
 
         /// <summary>
-        /// base64 representation of the Image.
+        /// The visibility of the classifier when created. Will be ignored if `classifier_id` is provided<br/>
+        /// Default Value: public
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("bytes")]
-        public byte[]? Bytes { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("visibility")]
+        public global::G.TrainingAPIInputVisibility? Visibility { get; set; } = global::G.TrainingAPIInputVisibility.Public;
 
         /// <summary>
-        /// base64 representation of the Image.
+        /// List of text and images and labels or a single text and image and label to train the classifier
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("bytesname")]
-        public string? Bytesname { get; set; }
-
-        /// <summary>
-        /// Image representation that can hold URL of an image or a base64 representation
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("image")]
-        public global::G.AnyOf<string, byte[]>? Image { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextExampleDoc, global::G.ImageExampleDoc>>, global::G.TextExampleDoc, global::G.ImageExampleDoc> Input { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -71,11 +75,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.ImageDoc? FromJson(
+        public static global::G.TrainingAPIInput? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ImageDoc>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.TrainingAPIInput>(
                 json,
                 jsonSerializerOptions);
         }

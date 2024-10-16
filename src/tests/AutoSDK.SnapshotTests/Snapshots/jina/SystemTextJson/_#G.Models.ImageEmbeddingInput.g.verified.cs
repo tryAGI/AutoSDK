@@ -27,7 +27,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AnyOf<global::G.ImageDoc, global::System.Collections.Generic.IList<global::G.ImageDoc>> Input { get; set; }
+        public required global::G.AnyOf<global::G.ApiSchemasEmbeddingImageDoc, global::System.Collections.Generic.IList<global::G.ApiSchemasEmbeddingImageDoc>> Input { get; set; }
 
         /// <summary>
         /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`

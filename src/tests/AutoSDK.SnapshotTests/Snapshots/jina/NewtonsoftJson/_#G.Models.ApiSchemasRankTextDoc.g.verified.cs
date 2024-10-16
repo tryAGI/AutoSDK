@@ -11,7 +11,7 @@ namespace G
     {
         /// <summary>
         /// The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value<br/>
-        /// Example: 3d19548f30d939fdf8d1f970b47ec824
+        /// Example: e10b550cf99e2e072e22420af5c6eb47
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }

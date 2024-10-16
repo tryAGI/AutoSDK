@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MixedEmbeddingInput.g.cs
+﻿//HintName: G.Models.TrainingAPIInput.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -7,39 +7,47 @@
 namespace G
 {
     /// <summary>
-    /// The input to the API for text embedding. OpenAI compatible
+    /// The input to the API for train the classifier. OpenAI compatible
     /// </summary>
-    public sealed partial class MixedEmbeddingInput
+    public sealed partial class TrainingAPIInput
     {
         /// <summary>
         /// The identifier of the model.<br/>
         /// Available models and corresponding param size and dimension:<br/>
         /// - `jina-clip-v1`,	223M,	768<br/>
-        /// For more information, please checkout our [technical blog](https://arxiv.org/abs/2405.20204).
+        /// - `jina-embeddings-v2-base-en`,	137M,	768<br/>
+        /// - `jina-embeddings-v2-base-es`,	161M,	768<br/>
+        /// - `jina-embeddings-v2-base-de`,	161M,	768<br/>
+        /// - `jina-embeddings-v2-base-zh`,	161M,	768<br/>
+        /// - `jina-embeddings-v2-base-code`,	137M,	768<br/>
+        /// For more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).<br/>
+        /// You can provide only either `model` or `classifier_id`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        public string? Model { get; set; }
 
         /// <summary>
-        /// List of text and images to embed
+        /// The identifier of the classifier. If not provided, a new classifier will be created.<br/>
+        /// You can provide only either `model` or `classifier_id`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("classifier_id")]
+        public string? ClassifierId { get; set; }
+
+        /// <summary>
+        /// The visibility of the classifier when created. Will be ignored if `classifier_id` is provided<br/>
+        /// Default Value: public
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TrainingAPIInputVisibilityJsonConverter))]
+        public global::G.TrainingAPIInputVisibility? Visibility { get; set; } = global::G.TrainingAPIInputVisibility.Public;
+
+        /// <summary>
+        /// List of text and images and labels or a single text and image and label to train the classifier
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ApiSchemasEmbeddingImageDoc, global::G.ApiSchemasEmbeddingTextDoc, string>> Input { get; set; }
-
-        /// <summary>
-        /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("embedding_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.MixedEmbeddingInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.MixedEmbeddingInputEmbeddingTypeItem>>? EmbeddingType { get; set; }
-
-        /// <summary>
-        /// Flag to determine if the embeddings should be normalized to have a unit L2 norm
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("normalized")]
-        public bool? Normalized { get; set; }
+        public required global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextExampleDoc, global::G.ImageExampleDoc>>, global::G.TextExampleDoc, global::G.ImageExampleDoc> Input { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -78,14 +86,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.MixedEmbeddingInput? FromJson(
+        public static global::G.TrainingAPIInput? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.MixedEmbeddingInput),
-                jsonSerializerContext) as global::G.MixedEmbeddingInput;
+                typeof(global::G.TrainingAPIInput),
+                jsonSerializerContext) as global::G.TrainingAPIInput;
         }
 
         /// <summary>
@@ -95,11 +103,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.MixedEmbeddingInput? FromJson(
+        public static global::G.TrainingAPIInput? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.MixedEmbeddingInput>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.TrainingAPIInput>(
                 json,
                 jsonSerializerOptions);
         }

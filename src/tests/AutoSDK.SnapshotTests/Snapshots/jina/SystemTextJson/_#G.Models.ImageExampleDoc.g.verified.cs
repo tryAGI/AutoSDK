@@ -1,4 +1,4 @@
-﻿//HintName: G.Models.MixedEmbeddingInput.g.cs
+﻿//HintName: G.Models.ImageExampleDoc.g.cs
 
 #pragma warning disable CS0618 // Type or member is obsolete
 
@@ -7,39 +7,49 @@
 namespace G
 {
     /// <summary>
-    /// The input to the API for text embedding. OpenAI compatible
+    /// ImageDoc with fields and a label
     /// </summary>
-    public sealed partial class MixedEmbeddingInput
+    public sealed partial class ImageExampleDoc
     {
         /// <summary>
-        /// The identifier of the model.<br/>
-        /// Available models and corresponding param size and dimension:<br/>
-        /// - `jina-clip-v1`,	223M,	768<br/>
-        /// For more information, please checkout our [technical blog](https://arxiv.org/abs/2405.20204).
+        /// The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value<br/>
+        /// Example: e10b550cf99e2e072e22420af5c6eb47
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Model { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
-        /// List of text and images to embed
+        /// URL of an image file
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ApiSchemasEmbeddingImageDoc, global::G.ApiSchemasEmbeddingTextDoc, string>> Input { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        public string? Url { get; set; }
 
         /// <summary>
-        /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`
+        /// base64 representation of the Image.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("embedding_type")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
+        public byte[]? Bytes { get; set; }
+
+        /// <summary>
+        /// base64 representation of the Image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("bytesname")]
+        public string? Bytesname { get; set; }
+
+        /// <summary>
+        /// Image representation that can hold URL of an image or a base64 representation
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
-        public global::G.AnyOf<global::G.MixedEmbeddingInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.MixedEmbeddingInputEmbeddingTypeItem>>? EmbeddingType { get; set; }
+        public global::G.AnyOf<string, byte[]>? Image { get; set; }
 
         /// <summary>
-        /// Flag to determine if the embeddings should be normalized to have a unit L2 norm
+        /// The label of the image
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("normalized")]
-        public bool? Normalized { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("label")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.AnyOf<bool?, string> Label { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -78,14 +88,14 @@ namespace G
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::G.MixedEmbeddingInput? FromJson(
+        public static global::G.ImageExampleDoc? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::G.MixedEmbeddingInput),
-                jsonSerializerContext) as global::G.MixedEmbeddingInput;
+                typeof(global::G.ImageExampleDoc),
+                jsonSerializerContext) as global::G.ImageExampleDoc;
         }
 
         /// <summary>
@@ -95,11 +105,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.MixedEmbeddingInput? FromJson(
+        public static global::G.ImageExampleDoc? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.MixedEmbeddingInput>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.ImageExampleDoc>(
                 json,
                 jsonSerializerOptions);
         }

@@ -50,10 +50,12 @@ namespace G
                     new global::G.JsonConverters.TextEmbeddingAPIInputEmbeddingTypeNullableJsonConverter(),
                     new global::G.JsonConverters.TextEmbeddingAPIInputEmbeddingTypeItemJsonConverter(),
                     new global::G.JsonConverters.TextEmbeddingAPIInputEmbeddingTypeItemNullableJsonConverter(),
-                    new global::G.JsonConverters.EmbeddingInputJsonConverter(),
+                    new global::G.JsonConverters.TrainingAPIInputVisibilityJsonConverter(),
+                    new global::G.JsonConverters.TrainingAPIInputVisibilityNullableJsonConverter(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory4(),
-                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory3(),
+                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
+                    new global::G.JsonConverters.EmbeddingInputJsonConverter(),
                 }
             };
 
@@ -78,6 +80,14 @@ namespace G
         /// 
         /// </summary>
         public RerankClient Rerank => new RerankClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ClassificationClient Classification => new ClassificationClient(_httpClient, authorizations: _authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };

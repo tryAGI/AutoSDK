@@ -1,15 +1,14 @@
-﻿//HintName: G.Api.g.cs
+﻿//HintName: G.ClassificationClient.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// This is the UniversalAPI to access all the Jina embedding models<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
-    public sealed partial class Api : global::G.IApi, global::System.IDisposable
+    public sealed partial class ClassificationClient : global::G.IClassificationClient, global::System.IDisposable
     {
         /// <summary>
         /// 
@@ -26,54 +25,14 @@ namespace G
 
 
         /// <summary>
-        /// 
-        /// </summary>
-        public EmbeddingsClient Embeddings => new EmbeddingsClient(_httpClient, authorizations: _authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public BulkEmbeddingsClient BulkEmbeddings => new BulkEmbeddingsClient(_httpClient, authorizations: _authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public RerankClient Rerank => new RerankClient(_httpClient, authorizations: _authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ClassificationClient Classification => new ClassificationClient(_httpClient, authorizations: _authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MultiVectorClient MultiVector => new MultiVectorClient(_httpClient, authorizations: _authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Creates a new instance of the Api.
+        /// Creates a new instance of the ClassificationClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
         /// <param name="httpClient"></param>
         /// <param name="baseUri"></param>
         /// <param name="authorizations"></param>
-        public Api(
+        public ClassificationClient(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)

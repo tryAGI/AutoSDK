@@ -24,7 +24,7 @@ namespace G
         /// List of images to embed
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<global::G.ImageDoc, global::System.Collections.Generic.IList<global::G.ImageDoc>> Input { get; set; } = default!;
+        public global::G.AnyOf<global::G.ApiSchemasEmbeddingImageDoc, global::System.Collections.Generic.IList<global::G.ApiSchemasEmbeddingImageDoc>> Input { get; set; } = default!;
 
         /// <summary>
         /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`

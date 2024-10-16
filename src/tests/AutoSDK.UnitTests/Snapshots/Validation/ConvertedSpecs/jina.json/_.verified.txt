@@ -231,6 +231,100 @@
         ]
       }
     },
+    "/v1/train": {
+      "post": {
+        "tags": [
+          "classification"
+        ],
+        "summary": "Train",
+        "description": "Rank pairs.",
+        "operationId": "train_v1_train_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TrainingAPIInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Training output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TrainingOutput"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/v1/classify": {
+      "post": {
+        "tags": [
+          "classification"
+        ],
+        "summary": "Classify",
+        "description": "Classify.",
+        "operationId": "classify_v1_classify_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClassificationAPIInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Classification output",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ClassificationOutput"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
     "/v1/multi-vector": {
       "post": {
         "tags": [
@@ -465,6 +559,123 @@
         "title": "BulkEmbeddingJobStatus",
         "description": "An enumeration."
       },
+      "ClassificationAPIInput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-clip-v1\u0060,\t223M,\t768\n- \u0060jina-embeddings-v2-base-en\u0060,\t137M,\t768\n- \u0060jina-embeddings-v2-base-es\u0060,\t161M,\t768\n- \u0060jina-embeddings-v2-base-de\u0060,\t161M,\t768\n- \u0060jina-embeddings-v2-base-zh\u0060,\t161M,\t768\n- \u0060jina-embeddings-v2-base-code\u0060,\t137M,\t768\n- \u0060jina-embeddings-v3\u0060,\t570M,\t1024\n\nFor more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).\n"
+          },
+          "classifier_id": {
+            "type": "string",
+            "title": "Classifier Id",
+            "description": "The identifier of the classifier. If not provided, a new classifier will be created.\nYou can provide only either \u0060model\u0060 or \u0060classifier_id\u0060"
+          },
+          "input": {
+            "anyOf": [
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/api_schemas__classification__TextDoc"
+                    },
+                    {
+                      "$ref": "#/components/schemas/api_schemas__classification__ImageDoc"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "$ref": "#/components/schemas/api_schemas__classification__TextDoc"
+              },
+              {
+                "$ref": "#/components/schemas/api_schemas__classification__ImageDoc"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "Input",
+            "description": "List of text and images or a single text and image for classification"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels",
+            "description": "List of labels used for classification"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "input"
+        ],
+        "title": "ClassificationAPIInput",
+        "description": "The input to the API for classify endpoint. OpenAI compatible",
+        "example": {
+          "classifier_id": "classifier_id",
+          "input": [
+            {
+              "text": "text1"
+            },
+            {
+              "text": "text2"
+            }
+          ]
+        }
+      },
+      "ClassificationOutput": {
+        "properties": {
+          "data": {
+            "items": {},
+            "type": "array",
+            "title": "Data",
+            "description": "A list of Classification Objects returned by the classification service"
+          },
+          "usage": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/api_schemas__classification__Usage"
+              }
+            ],
+            "title": "Usage",
+            "description": "Total usage of the request. Sums up the usage from each individual input"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data",
+          "usage"
+        ],
+        "title": "ClassificationOutput",
+        "description": "Output of the classification service",
+        "example": {
+          "data": [
+            {
+              "index": 0,
+              "prediction": "label1",
+              "object": "classification",
+              "score": 0.75
+            },
+            {
+              "index": 1,
+              "prediction": "label2",
+              "object": "classification",
+              "score": 0.54
+            }
+          ],
+          "usage": {
+            "total_tokens": 15,
+            "prompt_tokens": 15
+          }
+        }
+      },
       "ColbertModelEmbeddingsOutput": {
         "properties": {
           "model": {
@@ -599,49 +810,6 @@
         "title": "HealthModel",
         "description": "Pydantic BaseModel for Jina health check, used as the response model in REST app."
       },
-      "ImageDoc": {
-        "properties": {
-          "id": {
-            "type": "string",
-            "title": "Id",
-            "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
-            "example": "3d19548f30d939fdf8d1f970b47ec824"
-          },
-          "url": {
-            "type": "string",
-            "maxLength": 65536,
-            "minLength": 1,
-            "format": "uri",
-            "title": "Url",
-            "description": "URL of an image file"
-          },
-          "bytes": {
-            "type": "string",
-            "format": "binary",
-            "title": "Bytes",
-            "description": "base64 representation of the Image."
-          },
-          "image": {
-            "anyOf": [
-              {
-                "type": "string",
-                "maxLength": 65536,
-                "minLength": 1,
-                "format": "uri"
-              },
-              {
-                "type": "string",
-                "format": "binary"
-              }
-            ],
-            "title": "Image",
-            "description": "Image representation that can hold URL of an image or a base64 representation"
-          }
-        },
-        "type": "object",
-        "title": "ImageDoc",
-        "description": "ImageDoc with fields"
-      },
       "ImageEmbeddingInput": {
         "properties": {
           "model": {
@@ -652,11 +820,11 @@
           "input": {
             "anyOf": [
               {
-                "$ref": "#/components/schemas/ImageDoc"
+                "$ref": "#/components/schemas/api_schemas__embedding__ImageDoc"
               },
               {
                 "items": {
-                  "$ref": "#/components/schemas/ImageDoc"
+                  "$ref": "#/components/schemas/api_schemas__embedding__ImageDoc"
                 },
                 "type": "array"
               }
@@ -712,6 +880,64 @@
           ]
         }
       },
+      "ImageExampleDoc": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
+            "example": "e10b550cf99e2e072e22420af5c6eb47"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 65536,
+            "minLength": 1,
+            "format": "uri",
+            "title": "Url",
+            "description": "URL of an image file"
+          },
+          "bytes": {
+            "type": "string",
+            "format": "binary",
+            "title": "Bytes",
+            "description": "base64 representation of the Image."
+          },
+          "image": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 65536,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "string",
+                "format": "binary"
+              }
+            ],
+            "title": "Image",
+            "description": "Image representation that can hold URL of an image or a base64 representation"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "Label",
+            "description": "The label of the image"
+          }
+        },
+        "type": "object",
+        "required": [
+          "label"
+        ],
+        "title": "ImageExampleDoc",
+        "description": "ImageDoc with fields and a label"
+      },
       "MixedEmbeddingInput": {
         "properties": {
           "model": {
@@ -723,7 +949,7 @@
             "items": {
               "anyOf": [
                 {
-                  "$ref": "#/components/schemas/ImageDoc"
+                  "$ref": "#/components/schemas/api_schemas__embedding__ImageDoc"
                 },
                 {
                   "$ref": "#/components/schemas/api_schemas__embedding__TextDoc"
@@ -1163,6 +1389,149 @@
           ]
         }
       },
+      "TextExampleDoc": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
+            "example": "e10b550cf99e2e072e22420af5c6eb47"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text",
+            "description": "The example text"
+          },
+          "label": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "title": "Label",
+            "description": "The label of the text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "label"
+        ],
+        "title": "TextExampleDoc",
+        "description": "Document containing a text field and a label"
+      },
+      "TrainingAPIInput": {
+        "properties": {
+          "model": {
+            "type": "string",
+            "title": "Model",
+            "description": "The identifier of the model.\n\nAvailable models and corresponding param size and dimension:\n- \u0060jina-clip-v1\u0060,\t223M,\t768\n- \u0060jina-embeddings-v2-base-en\u0060,\t137M,\t768\n- \u0060jina-embeddings-v2-base-es\u0060,\t161M,\t768\n- \u0060jina-embeddings-v2-base-de\u0060,\t161M,\t768\n- \u0060jina-embeddings-v2-base-zh\u0060,\t161M,\t768\n- \u0060jina-embeddings-v2-base-code\u0060,\t137M,\t768\n\nFor more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).\n\nYou can provide only either \u0060model\u0060 or \u0060classifier_id\u0060"
+          },
+          "classifier_id": {
+            "type": "string",
+            "title": "Classifier Id",
+            "description": "The identifier of the classifier. If not provided, a new classifier will be created.\nYou can provide only either \u0060model\u0060 or \u0060classifier_id\u0060"
+          },
+          "visibility": {
+            "type": "string",
+            "enum": [
+              "public",
+              "private"
+            ],
+            "title": "Visibility",
+            "description": "The visibility of the classifier when created. Will be ignored if \u0060classifier_id\u0060 is provided",
+            "default": "public"
+          },
+          "input": {
+            "anyOf": [
+              {
+                "items": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/TextExampleDoc"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ImageExampleDoc"
+                    }
+                  ]
+                },
+                "type": "array"
+              },
+              {
+                "$ref": "#/components/schemas/TextExampleDoc"
+              },
+              {
+                "$ref": "#/components/schemas/ImageExampleDoc"
+              }
+            ],
+            "title": "Input",
+            "description": "List of text and images and labels or a single text and image and label to train the classifier"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "input"
+        ],
+        "title": "TrainingAPIInput",
+        "description": "The input to the API for train the classifier. OpenAI compatible",
+        "example": {
+          "model": "jina-embeddings-v2-base-en",
+          "visibility": "public",
+          "input": [
+            {
+              "text": "text1",
+              "label": "label1"
+            },
+            {
+              "text": "text2",
+              "label": "label2"
+            }
+          ]
+        }
+      },
+      "TrainingOutput": {
+        "properties": {
+          "classifier_id": {
+            "type": "string",
+            "title": "Classifier Id",
+            "description": "The identifier of the classifier that was trained"
+          },
+          "num_samples": {
+            "type": "integer",
+            "title": "Num Samples",
+            "description": "The number of samples that were used to train the classifier"
+          },
+          "usage": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/api_schemas__training__Usage"
+              }
+            ],
+            "title": "Usage",
+            "description": "Total usage of the request. Sums up the usage from each individual input"
+          }
+        },
+        "type": "object",
+        "required": [
+          "classifier_id",
+          "num_samples",
+          "usage"
+        ],
+        "title": "TrainingOutput",
+        "description": "Output of the training service",
+        "example": {
+          "classifier_id": "classifier_id",
+          "num_samples": 10,
+          "usage": {
+            "total_tokens": 15,
+            "prompt_tokens": 15
+          }
+        }
+      },
       "ValidationError": {
         "properties": {
           "loc": {
@@ -1196,13 +1565,139 @@
         ],
         "title": "ValidationError"
       },
+      "api_schemas__classification__ImageDoc": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
+            "example": "e10b550cf99e2e072e22420af5c6eb47"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 65536,
+            "minLength": 1,
+            "format": "uri",
+            "title": "Url",
+            "description": "URL of an image file"
+          },
+          "bytes": {
+            "type": "string",
+            "format": "binary",
+            "title": "Bytes",
+            "description": "base64 representation of the Image."
+          },
+          "image": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 65536,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "string",
+                "format": "binary"
+              }
+            ],
+            "title": "Image",
+            "description": "Image representation that can hold URL of an image or a base64 representation"
+          }
+        },
+        "type": "object",
+        "title": "ImageDoc",
+        "description": "ImageDoc with fields"
+      },
+      "api_schemas__classification__TextDoc": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
+            "example": "e10b550cf99e2e072e22420af5c6eb47"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "TextDoc",
+        "description": "Document containing a text field"
+      },
+      "api_schemas__classification__Usage": {
+        "properties": {
+          "total_tokens": {
+            "type": "integer",
+            "title": "Total Tokens",
+            "description": "The number of tokens used by all the texts in the input"
+          },
+          "prompt_tokens": {
+            "type": "integer",
+            "title": "Prompt Tokens",
+            "description": "Same as total_tokens"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_tokens",
+          "prompt_tokens"
+        ],
+        "title": "Usage"
+      },
+      "api_schemas__embedding__ImageDoc": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
+            "example": "e10b550cf99e2e072e22420af5c6eb47"
+          },
+          "url": {
+            "type": "string",
+            "maxLength": 65536,
+            "minLength": 1,
+            "format": "uri",
+            "title": "Url",
+            "description": "URL of an image file"
+          },
+          "bytes": {
+            "type": "string",
+            "format": "binary",
+            "title": "Bytes",
+            "description": "base64 representation of the Image."
+          },
+          "image": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 65536,
+                "minLength": 1,
+                "format": "uri"
+              },
+              {
+                "type": "string",
+                "format": "binary"
+              }
+            ],
+            "title": "Image",
+            "description": "Image representation that can hold URL of an image or a base64 representation"
+          }
+        },
+        "type": "object",
+        "title": "ImageDoc",
+        "description": "ImageDoc with fields"
+      },
       "api_schemas__embedding__TextDoc": {
         "properties": {
           "id": {
             "type": "string",
             "title": "Id",
             "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
-            "example": "3d19548f30d939fdf8d1f970b47ec824"
+            "example": "e10b550cf99e2e072e22420af5c6eb47"
           },
           "text": {
             "type": "string",
@@ -1242,7 +1737,7 @@
             "type": "string",
             "title": "Id",
             "description": "The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value",
-            "example": "3d19548f30d939fdf8d1f970b47ec824"
+            "example": "e10b550cf99e2e072e22420af5c6eb47"
           },
           "text": {
             "type": "string",
@@ -1279,6 +1774,26 @@
           "total_tokens": 15,
           "prompt_tokens": 15
         }
+      },
+      "api_schemas__training__Usage": {
+        "properties": {
+          "total_tokens": {
+            "type": "integer",
+            "title": "Total Tokens",
+            "description": "The number of tokens used by all the texts in the input"
+          },
+          "prompt_tokens": {
+            "type": "integer",
+            "title": "Prompt Tokens",
+            "description": "Same as total_tokens"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_tokens",
+          "prompt_tokens"
+        ],
+        "title": "Usage"
       }
     },
     "securitySchemes": {

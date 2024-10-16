@@ -33,10 +33,12 @@ namespace G
             typeof(global::G.JsonConverters.TextEmbeddingAPIInputEmbeddingTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.TextEmbeddingAPIInputEmbeddingTypeItemJsonConverter),
             typeof(global::G.JsonConverters.TextEmbeddingAPIInputEmbeddingTypeItemNullableJsonConverter),
-            typeof(global::G.JsonConverters.EmbeddingInputJsonConverter),
+            typeof(global::G.JsonConverters.TrainingAPIInputVisibilityJsonConverter),
+            typeof(global::G.JsonConverters.TrainingAPIInputVisibilityNullableJsonConverter),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory4),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3),
+            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
+            typeof(global::G.JsonConverters.EmbeddingInputJsonConverter),
         };
     }
 }
