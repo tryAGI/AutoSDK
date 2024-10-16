@@ -13,4 +13,5 @@ public enum Hint
     Property,
     Component,
     AdditionalProperties,
+    Discriminator,
 }

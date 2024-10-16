@@ -32,6 +32,7 @@ public static class ModelNameGenerator
             Hint.Response => operation?.OperationId + "Response",
             Hint.Parameter => operation?.OperationId + "_" + parameter?.Name,
             Hint.AnyOf or Hint.OneOf or Hint.AllOf => $"Variant{(index != null ? $"{index + 1}" : "")}",
+            Hint.Discriminator => "Discriminator",
             //_ when propertyName != null => propertyName,
             _ => null,
         };
@@ -55,6 +56,7 @@ public static class ModelNameGenerator
             Hint.Response => context.Operation?.OperationId + "Response",
             Hint.Parameter => context.Operation?.OperationId + "_" + context.Parameter?.Name,
             Hint.AnyOf or Hint.OneOf or Hint.AllOf => $"Variant{(context.Index != null ? $"{context.Index + 1}" : "")}",
+            Hint.Discriminator => "Discriminator",
             _ when context.PropertyName != null => context.PropertyName,
             _ => null,
         })?.ToCSharpName(context.Settings, context.Parent);

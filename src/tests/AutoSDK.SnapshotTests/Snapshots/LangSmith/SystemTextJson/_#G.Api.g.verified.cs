@@ -109,6 +109,8 @@ namespace G
                     new global::G.JsonConverters.TenantShareDatasetTokenTypeNullableJsonConverter(),
                     new global::G.JsonConverters.TenantShareRunTokenTypeJsonConverter(),
                     new global::G.JsonConverters.TenantShareRunTokenTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.TenantUsageLimitTypeJsonConverter(),
                     new global::G.JsonConverters.TenantUsageLimitTypeNullableJsonConverter(),
                     new global::G.JsonConverters.UsageLimitTypeJsonConverter(),

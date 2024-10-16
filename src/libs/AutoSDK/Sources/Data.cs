@@ -162,7 +162,12 @@ public static class Data
             .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: true })
             .Select(x => x.AnyOfData)
             .Where(x => x is not null)
-            .Select(x => x!.Value)
+            .Select(x => x!.Value with
+            {
+                DiscriminatorType = null,
+                DiscriminatorMapping = null,
+                DiscriminatorPropertyName = null,
+            })
             .Distinct()
             .ToImmutableArray();
 
@@ -210,7 +215,7 @@ public static class Data
                 $"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter"
             })
             .Concat(anyOfDatas
-                .Where(x => x.JsonSerializerType == JsonSerializerType.SystemTextJson)
+                .Where(x => x.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson)
                 .Select(x => string.IsNullOrWhiteSpace(x.Name)
                     ? $"global::{settings.Namespace}.JsonConverters.{x.SubType}JsonConverterFactory{x.Count}"
                     : $"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter"))

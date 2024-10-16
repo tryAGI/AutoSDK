@@ -2031,6 +2031,8 @@
   TenantShareTokensResponse(class)[tenant, workspaces],
     Entities(array)[tenant, workspaces],
       EntitiesItem(oneOf)[tenant, workspaces],
+        TenantShareTokensResponseEntitieDiscriminator(class)[tenant, workspaces],
+          TenantShareTokensResponseEntitieDiscriminatorType(enum)[tenant, workspaces],
         TenantShareRunToken(ref)[tenant, workspaces],
         TenantShareDatasetToken(ref)[tenant, workspaces],
   TenantStats(class)[tenant, workspaces],

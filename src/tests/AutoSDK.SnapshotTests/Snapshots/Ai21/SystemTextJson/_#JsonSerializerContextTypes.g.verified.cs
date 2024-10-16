@@ -503,34 +503,42 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ToolDefinition>? Type121 { get; set; }
+        public global::G.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminator? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type122 { get; set; }
+        public global::G.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.DocumentSchema>? Type123 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolDefinition>? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.LanguageStudioApiServerDataTypesJ2ChatChatRequest? Type124 { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChatMessage>? Type125 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DocumentSchema>? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>? Type126 { get; set; }
+        public global::G.LanguageStudioApiServerDataTypesJ2ChatChatRequest? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>? Type127 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ChatMessage>? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.FileResponse>? Type128 { get; set; }
+        public global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>? Type128 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>? Type129 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.FileResponse>? Type130 { get; set; }
     }
 }

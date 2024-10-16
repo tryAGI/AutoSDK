@@ -41,7 +41,7 @@ public static partial class Sources
         AnyOfData data,
         CancellationToken cancellationToken = default)
     {
-        if (data.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
+        if (data.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
         {
             return FileWithName.Empty;
         }
@@ -89,7 +89,7 @@ public static partial class Sources
         AnyOfData anyOf,
         CancellationToken cancellationToken = default)
     {
-        if (anyOf.JsonSerializerType == JsonSerializerType.NewtonsoftJson ||
+        if (anyOf.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ||
             !anyOf.Properties.IsEmpty)
         {
             return FileWithName.Empty;

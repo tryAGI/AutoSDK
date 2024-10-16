@@ -74,6 +74,8 @@ namespace G
                     new global::G.JsonConverters.ToolMessageRoleNullableJsonConverter(),
                     new global::G.JsonConverters.UserMessageRoleJsonConverter(),
                     new global::G.JsonConverters.UserMessageRoleNullableJsonConverter(),
+                    new global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleJsonConverter(),
+                    new global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleNullableJsonConverter(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory4(),
                 }

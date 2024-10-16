@@ -358,6 +358,8 @@
     ModelName(ref),
     Messages(array),
       MessagesItem(oneOf),
+        LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminator(class),
+          LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole(enum),
         UserMessage(ref),
         AssistantMessage(ref),
         ToolMessage(ref),

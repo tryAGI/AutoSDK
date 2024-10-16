@@ -10,17 +10,16 @@ public static partial class Sources
         AnyOfData anyOfData,
         CancellationToken cancellationToken = default)
     {
-        var (subType, count, _, _, @namespace, className, summary, fixedTypes, _) = anyOfData;
-        var types = $"<{string.Join(", ", Enumerable.Range(1, count).Select(x => $"T{x}"))}>";
-        var classNameWithoutTypes = string.IsNullOrWhiteSpace(className)
-            ? $"{subType}"
-            : className;
-        className = string.IsNullOrWhiteSpace(className)
-            ? $"{subType}{types}"
-            : className;
-        var allTypes = fixedTypes.IsEmpty
+        var types = $"<{string.Join(", ", Enumerable.Range(1, anyOfData.Count).Select(x => $"T{x}"))}>";
+        var classNameWithoutTypes = string.IsNullOrWhiteSpace(anyOfData.Name)
+            ? $"{anyOfData.SubType}"
+            : anyOfData.Name;
+        var className = string.IsNullOrWhiteSpace(anyOfData.Name)
+            ? $"{anyOfData.SubType}{types}"
+            : anyOfData.Name;
+        var allTypes = anyOfData.Properties.IsEmpty
             ? Enumerable
-                .Range(1, count)
+                .Range(1, anyOfData.Count)
                 .Select(i => PropertyData.Default with
                 {
                     Name = $"Value{i}",
@@ -30,8 +29,8 @@ public static partial class Sources
                     },
                 })
                 .ToImmutableArray()
-            : fixedTypes;
-        var validation = subType switch
+            : anyOfData.Properties;
+        var validation = anyOfData.SubType switch
         {
             "AnyOf" => string.Join(" || ", allTypes.Select(x => $"Is{x.Name}")),
             "OneOf" => string.Join(" || ", allTypes.Select((x, xi) =>
@@ -39,7 +38,7 @@ public static partial class Sources
             "AllOf" => string.Join(" && ", allTypes.Select(x => $"Is{x.Name}")),
             _ => throw new NotImplementedException(),
         };
-        var constructorWithAllValues = count > 1 ? $@"
+        var constructorWithAllValues = anyOfData.Count > 1 ? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {classNameWithoutTypes}(
 {allTypes.Select(x => $@" 
@@ -54,13 +53,13 @@ public static partial class Sources
         var json = GenerateFromToJsonMethods(anyOfData.Namespace, className, anyOfData.Settings, isValueType: true, cancellationToken);
         
         return $@"using System.Linq;
-{(fixedTypes.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
+{(anyOfData.Properties.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
 ")}
 #nullable enable
 
-namespace {@namespace}
+namespace {anyOfData.Namespace}
 {{
-    {summary.ToXmlDocumentationSummary(level: 4)}
+    {anyOfData.Summary.ToXmlDocumentationSummary(level: 4)}
     public readonly partial struct {className} : global::System.IEquatable<{className}>
     {{
 {allTypes.Select(x => $@"

@@ -93,6 +93,8 @@ namespace G
             typeof(global::G.JsonConverters.TenantShareDatasetTokenTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.TenantShareRunTokenTypeJsonConverter),
             typeof(global::G.JsonConverters.TenantShareRunTokenTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeJsonConverter),
+            typeof(global::G.JsonConverters.TenantShareTokensResponseEntitieDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.TenantUsageLimitTypeJsonConverter),
             typeof(global::G.JsonConverters.TenantUsageLimitTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.UsageLimitTypeJsonConverter),

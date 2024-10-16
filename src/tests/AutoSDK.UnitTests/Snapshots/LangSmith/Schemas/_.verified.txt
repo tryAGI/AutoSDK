@@ -1988,6 +1988,8 @@
   TenantShareTokensResponse(class),
     Entities(array),
       EntitiesItem(oneOf),
+        TenantShareTokensResponseEntitieDiscriminator(class),
+          TenantShareTokensResponseEntitieDiscriminatorType(enum),
         TenantShareRunToken(ref),
         TenantShareDatasetToken(ref),
   TenantStats(class),

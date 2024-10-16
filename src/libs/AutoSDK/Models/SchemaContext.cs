@@ -1,6 +1,7 @@
 using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Naming.Models;
+using Microsoft.OpenApi.Any;
 
 namespace AutoSDK.Models;
 
@@ -273,6 +274,29 @@ public class SchemaContext
                 settings: settings,
                 parent: context,
                 hint: Models.Hint.AdditionalProperties,
+                depth: depth + 1));
+        }
+        if (schema.Discriminator != null)
+        {
+            children.AddRange(FromSchema(
+                schema: new OpenApiSchema
+                {
+                    Type = "object",
+                    Properties =
+                    {
+                        [schema.Discriminator.PropertyName] = new OpenApiSchema
+                        {
+                            Type = "string",
+                            Enum = schema.Discriminator.Mapping?.Keys
+                                .Select(x => new OpenApiString(x))
+                                .Cast<IOpenApiAny>()
+                                .ToList(),
+                        }
+                    }
+                },
+                settings: settings,
+                parent: context,
+                hint: Models.Hint.Discriminator,
                 depth: depth + 1));
         }
         

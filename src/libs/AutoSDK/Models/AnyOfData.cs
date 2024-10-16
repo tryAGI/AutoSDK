@@ -8,7 +8,9 @@ namespace AutoSDK.Models;
 public readonly record struct AnyOfData(
     string SubType,
     int Count,
-    JsonSerializerType JsonSerializerType,
+    TypeData? DiscriminatorType,
+    string? DiscriminatorPropertyName,
+    IDictionary<string, string>? DiscriminatorMapping,
     bool IsTrimming,
     string Namespace,
     string Name,
@@ -34,6 +36,16 @@ public readonly record struct AnyOfData(
             !string.IsNullOrWhiteSpace(SmartNamedAnyOfNames.ComputeSmartName(
                 (x.TypeData ?? TypeData.Default).ShortCSharpTypeWithoutNullability,
                 className)));
+        TypeData? discriminatorType = null;
+        string? discriminatorPropertyName = null;
+        IDictionary<string, string>? discriminatorMapping = null;
+        
+        if (context.Schema.Discriminator != null)
+        {
+            discriminatorType = children.FirstOrDefault(x => x.Hint == Hint.Discriminator)?.TypeData;
+            discriminatorPropertyName = context.Schema.Discriminator.PropertyName;
+            discriminatorMapping = context.Schema.Discriminator.Mapping;
+        }
         
         return new AnyOfData(
             SubType: context.IsAnyOf
@@ -46,7 +58,9 @@ public readonly record struct AnyOfData(
                 : context.IsOneOf
                     ? context.Schema.OneOf.Count
                     : context.Schema.AllOf.Count,
-            JsonSerializerType: context.Settings.JsonSerializerType,
+            DiscriminatorType: discriminatorType,
+            DiscriminatorPropertyName: discriminatorPropertyName,
+            DiscriminatorMapping: discriminatorMapping,
             IsTrimming:
                 context.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
                 (!string.IsNullOrWhiteSpace(context.Settings.JsonSerializerContext) ||

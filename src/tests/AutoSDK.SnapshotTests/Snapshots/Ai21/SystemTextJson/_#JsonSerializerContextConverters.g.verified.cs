@@ -57,6 +57,8 @@ namespace G
             typeof(global::G.JsonConverters.ToolMessageRoleNullableJsonConverter),
             typeof(global::G.JsonConverters.UserMessageRoleJsonConverter),
             typeof(global::G.JsonConverters.UserMessageRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleJsonConverter),
+            typeof(global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleNullableJsonConverter),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory4),
         };
