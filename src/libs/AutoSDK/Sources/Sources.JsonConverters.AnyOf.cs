@@ -36,24 +36,7 @@ public static partial class Sources
                 })
                 .ToImmutableArray()
             : anyOfData.Properties;
-        
-        return $@"#nullable enable
-{(anyOfData.Properties.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
-")}
-namespace {anyOfData.Namespace}.JsonConverters
-{{
-    /// <inheritdoc />
-    public class {classNameWithTypes} : global::System.Text.Json.Serialization.JsonConverter<{typeNameWithTypes}>
-    {{
-        /// <inheritdoc />
-        public override {typeNameWithTypes} Read(
-            ref global::System.Text.Json.Utf8JsonReader reader,
-            global::System.Type typeToConvert,
-            global::System.Text.Json.JsonSerializerOptions options)
-        {{
-            options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(anyOfData.IsTrimming ? @"
-            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
-
+        var read = anyOfData.DiscriminatorType != null ? $@" 
             var
 {allTypes.Select(x => $@"
             readerCopy = reader;
@@ -95,7 +78,68 @@ namespace {anyOfData.Namespace}.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref reader, options);
  ")}
             }}
+").Inject().TrimEnd(',')}" : $@" 
+            var
+{allTypes.Select(x => $@"
+            readerCopy = reader;
+            {x.Type.CSharpTypeWithNullability} {x.ParameterName} = default;
+            try
+            {{
+{(anyOfData.IsTrimming ? $@" 
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
+                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
+                {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+ " : $@" 
+                {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref readerCopy, options);
+ ")}
+            }}
+            catch (global::System.Text.Json.JsonException)
+            {{
+            }}
+").Inject()}
+
+            var result = new {typeNameWithTypes}(
+{allTypes.Select(x => $@" 
+                {x.ParameterName},
 ").Inject().TrimEnd(',')}
+                );
+{(anyOfData.Settings.ValidateAnyOfs ? @$" 
+            if (!result.Validate())
+            {{
+                throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", allTypes.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}>"");
+            }}" : " ")}
+
+{allTypes.Select((x, i) => $@" 
+            {(i == 0 ? "" : "else ")}if ({x.ParameterName} != null)
+            {{
+{(anyOfData.IsTrimming ? $@" 
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
+                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+ " : $@" 
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref reader, options);
+ ")}
+            }}
+").Inject().TrimEnd(',')}";
+        
+        return $@"#nullable enable
+{(anyOfData.Properties.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
+")}
+namespace {anyOfData.Namespace}.JsonConverters
+{{
+    /// <inheritdoc />
+    public class {classNameWithTypes} : global::System.Text.Json.Serialization.JsonConverter<{typeNameWithTypes}>
+    {{
+        /// <inheritdoc />
+        public override {typeNameWithTypes} Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {{
+            options = options ?? throw new global::System.ArgumentNullException(nameof(options));{(anyOfData.IsTrimming ? @"
+            var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException(""TypeInfoResolver is not set."");" : " ")}
+
+{read}
 
             return result;
         }}

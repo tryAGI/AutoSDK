@@ -109,16 +109,16 @@ public class AnimalConverterSystemTextJson : global::System.Text.Json.Serializat
         global::System.Text.Json.JsonSerializerOptions options)
     {
         options = options ?? throw new global::System.ArgumentNullException(nameof(options));
-        //options.TypeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
+        var typeInfoResolver = options.TypeInfoResolver;// ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
         Pet? discriminator = default;
         try
         {
             var readerCopy = reader;
-            if (options.TypeInfoResolver != null)
+            if (typeInfoResolver != null)
             {
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(Pet), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<Pet> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(Pet).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(Pet), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<Pet> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(Pet)}");
                 discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             else
@@ -133,9 +133,9 @@ public class AnimalConverterSystemTextJson : global::System.Text.Json.Serializat
         Cat? value1 = default;
         if (discriminator?.pet_type == "Cat")
         {
-            if (options.TypeInfoResolver != null)
+            if (typeInfoResolver != null)
             {
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(Cat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<Cat?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(Cat), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<Cat?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(Cat).Name}");
                 value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
@@ -148,9 +148,9 @@ public class AnimalConverterSystemTextJson : global::System.Text.Json.Serializat
         Dog? value2 = default;
         if (discriminator?.pet_type == "Dog")
         {
-            if (options.TypeInfoResolver != null)
+            if (typeInfoResolver != null)
             {
-                var typeInfo = options.TypeInfoResolver.GetTypeInfo(typeof(Dog), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<Dog> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(Dog), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<Dog> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(Dog).Name}");
                 value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
