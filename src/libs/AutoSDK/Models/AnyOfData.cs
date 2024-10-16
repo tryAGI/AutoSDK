@@ -10,12 +10,12 @@ public readonly record struct AnyOfData(
     int Count,
     TypeData? DiscriminatorType,
     string? DiscriminatorPropertyName,
-    IDictionary<string, string>? DiscriminatorMapping,
+    //EquatableArray<(string, string)>? DiscriminatorMapping,
     bool IsTrimming,
     string Namespace,
     string Name,
     string Summary,
-    ImmutableArray<PropertyData> Properties,
+    EquatableArray<PropertyData> Properties,
     Settings Settings
 )
 {
@@ -38,13 +38,26 @@ public readonly record struct AnyOfData(
                 className)));
         TypeData? discriminatorType = null;
         string? discriminatorPropertyName = null;
-        IDictionary<string, string>? discriminatorMapping = null;
+        //IDictionary<string, string>? discriminatorMapping = null;
         
-        if (context.Schema.Discriminator != null)
+        if (context.Schema.Discriminator != null &&
+            context.Schema.Discriminator.Mapping.Count != 0)
         {
-            discriminatorType = children.FirstOrDefault(x => x.Hint == Hint.Discriminator)?.TypeData;
-            discriminatorPropertyName = context.Schema.Discriminator.PropertyName;
-            discriminatorMapping = context.Schema.Discriminator.Mapping;
+            discriminatorType = context.Children.FirstOrDefault(x => x.Hint == Hint.Discriminator)?.TypeData;
+            discriminatorPropertyName = context.Schema.Discriminator.PropertyName.ToPropertyName();
+            
+            // if (context.Schema.Discriminator.Mapping.Count == 0)
+            // {
+            //     if (children.All(x => 
+            //         x.Children.FirstOrDefault(y => y.PropertyName == discriminatorPropertyName)?.GetDefaultValue() != null &&
+            //         x.ClassName != null))
+            //     {
+            //         context.Schema.Discriminator.Mapping = children
+            //             .ToDictionary(
+            //                 x => x.GetDefaultValue()!,
+            //                 x => x.ClassName);
+            //     }
+            // }
         }
         
         return new AnyOfData(
@@ -60,19 +73,21 @@ public readonly record struct AnyOfData(
                     : context.Schema.AllOf.Count,
             DiscriminatorType: discriminatorType,
             DiscriminatorPropertyName: discriminatorPropertyName,
-            DiscriminatorMapping: discriminatorMapping,
+            //DiscriminatorMapping: discriminatorMapping?
+            //    .Select(x => (x.Key, x.Value))
+            //    .ToImmutableArray(),
             IsTrimming:
                 context.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
                 (!string.IsNullOrWhiteSpace(context.Settings.JsonSerializerContext) ||
                  context.Settings.GenerateJsonSerializerContextTypes),
             Namespace: context.Settings.Namespace,
-            Name: context.IsComponent
+            Name: context.IsNamedAnyOfLike
                 ? context.Id
                 : string.Empty,
-            Summary: context.IsComponent
+            Summary: context.IsNamedAnyOfLike
                 ? context.Schema.GetSummary()
                 : string.Empty,
-            Properties: context.IsComponent
+            Properties: context.IsNamedAnyOfLike
                 ? children.Select((x, i) => PropertyData.Default with
                 {
                     Type = x.TypeData ?? TypeData.Default,
@@ -82,6 +97,9 @@ public readonly record struct AnyOfData(
                             className)
                         : $"Value{i + 1}",
                     Summary = x.Schema.GetSummary(),
+                    DiscriminatorValue = context.Schema.Discriminator?.Mapping?
+                        .FirstOrDefault(y => y.Value.Contains(x.Id))
+                        .Key?.ToEnumValue(string.Empty, context.Settings).Name ?? string.Empty,
                 }).ToImmutableArray()
                 : ImmutableArray<PropertyData>.Empty,
             Settings: context.Settings);

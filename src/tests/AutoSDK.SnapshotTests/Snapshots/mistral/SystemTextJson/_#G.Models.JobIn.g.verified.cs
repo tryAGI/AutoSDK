@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.JobIn.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -28,7 +26,7 @@ namespace G
         /// A list of integrations to enable for your fine-tuning job.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("integrations")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WandbIntegration>>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsItem2>? Integrations { get; set; }
 
         /// <summary>
         /// The name of the model to fine-tune.
@@ -42,7 +40,7 @@ namespace G
         /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.GithubRepositoryIn>>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoriesItem2>? Repositories { get; set; }
 
         /// <summary>
         /// A string that will be added to your fine-tuning model name. For example, a suffix of "my-great-model" would produce a model name like `ft:open-mistral-7b:my-great-model:xxx...`

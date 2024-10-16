@@ -16,48 +16,32 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
+
+            global::G.CreateDocumentRequestDiscriminator? discriminator = default;
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateDocumentRequestDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateDocumentRequestDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateDocumentRequestDiscriminator)}");
+            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
             global::G.CoreDocument? core = default;
-            try
+            if (discriminator?.Type == global::G.CreateDocumentRequestDiscriminatorType.Core)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CoreDocument), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CoreDocument> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CoreDocument).Name}");
-                core = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CoreDocument)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::G.StructuredDocument? structured = default;
-            try
+            if (discriminator?.Type == global::G.CreateDocumentRequestDiscriminatorType.Structured)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StructuredDocument), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StructuredDocument> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StructuredDocument).Name}");
-                structured = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StructuredDocument)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.CreateDocumentRequest(
                 core,
                 structured
                 );
-
-            if (core != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CoreDocument), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CoreDocument> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CoreDocument).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (structured != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StructuredDocument), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StructuredDocument> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StructuredDocument).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return result;
         }

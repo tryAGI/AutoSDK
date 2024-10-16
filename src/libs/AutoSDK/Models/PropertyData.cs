@@ -15,7 +15,8 @@ public readonly record struct PropertyData(
     string? DefaultValue,
     bool IsDeprecated,
     string Summary,
-    string ConverterType)
+    string ConverterType,
+    string DiscriminatorValue)
 {
     public static PropertyData Default => new(
         Id: string.Empty,
@@ -29,7 +30,8 @@ public readonly record struct PropertyData(
         IsDeprecated: false,
         Settings: Settings.Default,
         Summary: string.Empty,
-        ConverterType: string.Empty);
+        ConverterType: string.Empty,
+        DiscriminatorValue: string.Empty);
 
     public static PropertyData FromSchemaContext(SchemaContext context)
     {
@@ -88,7 +90,8 @@ public readonly record struct PropertyData(
                 ? "default!"
                 : context.GetDefaultValue(),
             Summary: context.Schema.GetSummary(),
-            ConverterType: type.ConverterType);
+            ConverterType: type.ConverterType,
+            DiscriminatorValue: string.Empty);
     }
     
     internal static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)

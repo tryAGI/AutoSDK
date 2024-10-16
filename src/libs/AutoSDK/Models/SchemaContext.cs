@@ -79,6 +79,8 @@ public class SchemaContext
     public bool IsOneOf => Schema.IsOneOf();
     public bool IsAllOf => Schema.IsAllOf();
     public bool IsAnyOfLikeStructure => IsAnyOf || IsOneOf || IsAllOf;
+    public bool IsNamedAnyOfLike => IsAnyOfLikeStructure &&
+                                    (IsComponent || Schema.Discriminator != null);
     
     public IReadOnlyList<PropertyData> ComputedProperties
     {

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.ModelList.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.BaseModelCard, global::G.FTModelCard>>? Data { get; set; }
+        public global::System.Collections.Generic.IList<global::G.DataItem>? Data { get; set; }
 
         /// <summary>
         /// Default Value: list

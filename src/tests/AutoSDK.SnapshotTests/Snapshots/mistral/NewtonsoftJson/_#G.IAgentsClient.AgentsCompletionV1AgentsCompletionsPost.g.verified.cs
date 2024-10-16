@@ -50,7 +50,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> AgentsCompletionV1AgentsCompletionsPostAsync(
             string agentId,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage>> messages,
+            global::System.Collections.Generic.IList<global::G.MessagesItem> messages,
             int? maxTokens = default,
             int? minTokens = default,
             int? randomSeed = default,

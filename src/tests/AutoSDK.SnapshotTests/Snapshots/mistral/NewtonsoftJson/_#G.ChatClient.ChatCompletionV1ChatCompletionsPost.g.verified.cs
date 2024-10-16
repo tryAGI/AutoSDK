@@ -162,7 +162,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ChatCompletionResponse> ChatCompletionV1ChatCompletionsPostAsync(
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.SystemMessage, global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage>> messages,
+            global::System.Collections.Generic.IList<global::G.MessagesItem2> messages,
             string? model,
             int? maxTokens = default,
             int? minTokens = default,

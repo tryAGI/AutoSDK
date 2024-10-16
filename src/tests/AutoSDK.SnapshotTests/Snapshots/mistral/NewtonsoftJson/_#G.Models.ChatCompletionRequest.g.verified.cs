@@ -22,7 +22,7 @@ namespace G
         /// Example: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.SystemMessage, global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage>> Messages { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.MessagesItem2> Messages { get; set; } = default!;
 
         /// <summary>
         /// The minimum number of tokens to generate in the completion.

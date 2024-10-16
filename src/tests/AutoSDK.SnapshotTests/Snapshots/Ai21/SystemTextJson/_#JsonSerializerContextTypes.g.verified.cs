@@ -495,11 +495,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage, global::G.SystemMessage>>? Type119 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MessagesItem>? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage, global::G.SystemMessage>? Type120 { get; set; }
+        public global::G.MessagesItem? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>

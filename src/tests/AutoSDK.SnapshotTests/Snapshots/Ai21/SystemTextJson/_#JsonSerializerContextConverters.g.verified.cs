@@ -60,7 +60,7 @@ namespace G
             typeof(global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleJsonConverter),
             typeof(global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleNullableJsonConverter),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
-            typeof(global::G.JsonConverters.OneOfJsonConverterFactory4),
+            typeof(global::G.JsonConverters.MessagesItemJsonConverter),
         };
     }
 }

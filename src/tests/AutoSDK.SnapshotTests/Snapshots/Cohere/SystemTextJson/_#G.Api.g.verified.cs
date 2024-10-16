@@ -162,6 +162,7 @@ namespace G
                     new global::G.JsonConverters.ToolContentJsonConverter(),
                     new global::G.JsonConverters.ChatMessageV2JsonConverter(),
                     new global::G.JsonConverters.ResponseFormatV2JsonConverter(),
+                    new global::G.JsonConverters.ContentItemJsonConverter(),
                     new global::G.JsonConverters.ChatMessageStartEventJsonConverter(),
                     new global::G.JsonConverters.ChatContentStartEventJsonConverter(),
                     new global::G.JsonConverters.ChatContentDeltaEventJsonConverter(),

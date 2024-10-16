@@ -121,6 +121,7 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory5),
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory4),
+            typeof(global::G.JsonConverters.EntitiesItemJsonConverter),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
         };
     }

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.AssistantMessageResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -34,7 +32,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.TextContent>>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentItem>? Content { get; set; }
 
         /// <summary>
         /// 

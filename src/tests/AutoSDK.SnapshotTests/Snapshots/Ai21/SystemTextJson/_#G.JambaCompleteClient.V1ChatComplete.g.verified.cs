@@ -172,7 +172,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(
             string authorization,
             global::G.ModelName model,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage, global::G.SystemMessage>> messages,
+            global::System.Collections.Generic.IList<global::G.MessagesItem> messages,
             global::System.Collections.Generic.IList<global::G.ToolDefinition>? tools = default,
             int? n = 1,
             int? maxTokens = 4096,

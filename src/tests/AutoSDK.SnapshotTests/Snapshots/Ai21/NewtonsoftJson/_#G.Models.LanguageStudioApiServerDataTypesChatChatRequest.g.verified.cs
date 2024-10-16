@@ -21,7 +21,7 @@ namespace G
         /// messages
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("messages", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage, global::G.SystemMessage>> Messages { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.MessagesItem> Messages { get; set; } = default!;
 
         /// <summary>
         /// 

@@ -34,27 +34,33 @@ public static partial class Sources
                         CSharpTypeRaw = $"T{i}",
                     },
                 })
-                .ToImmutableArray()
+                .ToImmutableArray().AsEquatableArray()
             : anyOfData.Properties;
         var read = anyOfData.DiscriminatorType != null ? $@" 
-            var
-{allTypes.Select(x => $@"
-            readerCopy = reader;
+
+            {anyOfData.DiscriminatorType.Value.CSharpTypeWithNullability} discriminator = default;
+            var readerCopy = reader;
+{(anyOfData.IsTrimming ? $@" 
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof({anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}> ??
+                            throw new global::System.InvalidOperationException($""Cannot get type info for {{nameof({anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability})}}"");
+            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+ " : $@" 
+            discriminator = global::System.Text.Json.JsonSerializer.Deserialize<{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}>(ref readerCopy, options);
+ ")}
+
+{allTypes.Select((x, i) => $@" 
             {x.Type.CSharpTypeWithNullability} {x.ParameterName} = default;
-            try
+            if (discriminator?.{anyOfData.DiscriminatorPropertyName} == {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}.{x.DiscriminatorValue})
             {{
 {(anyOfData.IsTrimming ? $@" 
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
-                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
-                {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($""Cannot get type info for {{nameof({x.Type.CSharpTypeWithoutNullability})}}"");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
  " : $@" 
-                {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref readerCopy, options);
+                _ = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref reader, options);
  ")}
             }}
-            catch (global::System.Text.Json.JsonException)
-            {{
-            }}
-").Inject()}
+").Inject().TrimEnd(',')}
 
             var result = new {typeNameWithTypes}(
 {allTypes.Select(x => $@" 
@@ -64,21 +70,8 @@ public static partial class Sources
 {(anyOfData.Settings.ValidateAnyOfs ? @$" 
             if (!result.Validate())
             {{
-                throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", allTypes.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}>"");
-            }}" : " ")}
-
-{allTypes.Select((x, i) => $@" 
-            {(i == 0 ? "" : "else ")}if ({x.ParameterName} != null)
-            {{
-{(anyOfData.IsTrimming ? $@" 
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
-                               throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
- " : $@" 
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref reader, options);
- ")}
-            }}
-").Inject().TrimEnd(',')}" : $@" 
+                throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", allTypes.Select(x => $"{{nameof({x.Type.CSharpTypeWithoutNullability})}}"))}>"");
+            }}" : " ")}" : $@" 
             var
 {allTypes.Select(x => $@"
             readerCopy = reader;

@@ -1463,11 +1463,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.TenantShareRunToken, global::G.TenantShareDatasetToken>>? Type361 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.EntitiesItem>? Type361 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<global::G.TenantShareRunToken, global::G.TenantShareDatasetToken>? Type362 { get; set; }
+        public global::G.EntitiesItem? Type362 { get; set; }
         /// <summary>
         /// 
         /// </summary>

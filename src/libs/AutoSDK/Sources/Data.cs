@@ -162,12 +162,7 @@ public static class Data
             .Where(x => x is { IsReference: false, IsAnyOfLikeStructure: true })
             .Select(x => x.AnyOfData)
             .Where(x => x is not null)
-            .Select(x => x!.Value with
-            {
-                DiscriminatorType = null,
-                DiscriminatorMapping = null,
-                DiscriminatorPropertyName = null,
-            })
+            .Select(x => x!.Value)
             .Distinct()
             .ToImmutableArray();
 

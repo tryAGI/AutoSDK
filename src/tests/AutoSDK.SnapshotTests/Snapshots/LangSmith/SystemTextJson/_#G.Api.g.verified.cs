@@ -137,6 +137,7 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverterFactory3(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory5(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory4(),
+                    new global::G.JsonConverters.EntitiesItemJsonConverter(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory2(),
                 }
             };

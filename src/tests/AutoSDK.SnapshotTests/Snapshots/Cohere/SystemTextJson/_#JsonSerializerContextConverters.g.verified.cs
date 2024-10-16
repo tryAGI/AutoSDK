@@ -143,6 +143,7 @@ namespace G
             typeof(global::G.JsonConverters.ToolContentJsonConverter),
             typeof(global::G.JsonConverters.ChatMessageV2JsonConverter),
             typeof(global::G.JsonConverters.ResponseFormatV2JsonConverter),
+            typeof(global::G.JsonConverters.ContentItemJsonConverter),
             typeof(global::G.JsonConverters.ChatMessageStartEventJsonConverter),
             typeof(global::G.JsonConverters.ChatContentStartEventJsonConverter),
             typeof(global::G.JsonConverters.ChatContentDeltaEventJsonConverter),

@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.TenantShareTokensResponse.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -16,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("entities")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.TenantShareRunToken, global::G.TenantShareDatasetToken>> Entities { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.EntitiesItem> Entities { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

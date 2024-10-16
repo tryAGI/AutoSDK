@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.JobOut.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -45,7 +43,7 @@ namespace G
         /// A list of integrations enabled for your fine-tuning job.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integrations")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WandbIntegrationOut>>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsItem3>? Integrations { get; set; }
 
         /// <summary>
         /// The type of job (`FT` for fine-tuning).
@@ -82,7 +80,7 @@ namespace G
         /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.GithubRepositoryOut>>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoriesItem3>? Repositories { get; set; }
 
         /// <summary>
         /// The current status of the fine-tuning job.

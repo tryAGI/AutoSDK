@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.UserMessage, global::G.AssistantMessage, global::G.ToolMessage>> Messages { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.MessagesItem> Messages { get; set; }
 
         /// <summary>
         /// The minimum number of tokens to generate in the completion.

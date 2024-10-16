@@ -29,7 +29,7 @@ namespace G
         /// <param name="modelId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OneOf<global::G.BaseModelCard, global::G.FTModelCard>> RetrieveModelV1ModelsModelIdGetAsync(
+        public async global::System.Threading.Tasks.Task<global::G.RetrieveModelV1ModelsModelIdGetResponse> RetrieveModelV1ModelsModelIdGetAsync(
             string modelId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -104,7 +104,7 @@ namespace G
             }
 
             return
-                global::G.OneOf<global::G.BaseModelCard, global::G.FTModelCard>.FromJson(__content, JsonSerializerOptions) ??
+                global::G.RetrieveModelV1ModelsModelIdGetResponse.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

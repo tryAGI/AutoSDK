@@ -77,7 +77,7 @@ namespace G
                     new global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleJsonConverter(),
                     new global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleNullableJsonConverter(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
-                    new global::G.JsonConverters.OneOfJsonConverterFactory4(),
+                    new global::G.JsonConverters.MessagesItemJsonConverter(),
                 }
             };
 

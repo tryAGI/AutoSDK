@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.DetailedJobOut.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -58,7 +56,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("integrations")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.WandbIntegrationOut>>? Integrations { get; set; }
+        public global::System.Collections.Generic.IList<global::G.IntegrationsItem>? Integrations { get; set; }
 
         /// <summary>
         /// 
@@ -94,7 +92,7 @@ namespace G
         /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repositories")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.GithubRepositoryOut>>? Repositories { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RepositoriesItem>? Repositories { get; set; }
 
         /// <summary>
         /// 

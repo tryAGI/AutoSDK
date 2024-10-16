@@ -28,7 +28,7 @@ public static partial class Sources
                         CSharpTypeRaw = $"T{i}",
                     },
                 })
-                .ToImmutableArray()
+                .ToImmutableArray().AsEquatableArray()
             : anyOfData.Properties;
         var validation = anyOfData.SubType switch
         {
