@@ -208,6 +208,28 @@ public static class OpenApiExtensions
         {
             ProcessSchema(property.Value, path: path + "/properties/" + property.Key);
         }
+
+        // Remove any nested OneOfs
+        var schemasToRemove = new List<OpenApiSchema>();
+        var schemasToAdd = new List<OpenApiSchema>();
+        foreach (var value in schema.OneOf.Where(x => x.OneOf.Count > 0))
+        {
+            foreach (var child in value.OneOf)
+            {
+                schemasToAdd.Add(child);
+            }
+            schemasToRemove.Add(value);
+        }
+        schemasToRemove.ForEach(x =>
+        {
+            schema.OneOf.Remove(x);
+            if (x.Reference?.Id != null)
+            {
+                x.Reference?.HostDocument?.Components.Schemas.Remove(x.Reference.Id);
+            }
+        });
+        schemasToAdd.ForEach(x => schema.OneOf.Add(x));
+        
         foreach (var value in schema.OneOf)
         {
             ProcessSchema(value, path: path + "/oneOf");

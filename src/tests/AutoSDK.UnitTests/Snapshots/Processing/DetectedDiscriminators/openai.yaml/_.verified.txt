@@ -9358,18 +9358,8 @@ components:
       additionalProperties: false
     AssistantStreamEvent:
       oneOf:
-        - $ref: '#/components/schemas/ThreadStreamEvent'
-        - $ref: '#/components/schemas/RunStreamEvent'
-        - $ref: '#/components/schemas/RunStepStreamEvent'
-        - $ref: '#/components/schemas/MessageStreamEvent'
         - $ref: '#/components/schemas/ErrorEvent'
         - $ref: '#/components/schemas/DoneEvent'
-      description: "Represents an event emitted when streaming a Run.\n\nEach event in a server-sent events stream has an `event` and `data` property:\n\n```\nevent: thread.created\ndata: {\"id\": \"thread_123\", \"object\": \"thread\", ...}\n```\n\nWe emit events whenever a new object is created, transitions to a new state, or is being\nstreamed in parts (deltas). For example, we emit `thread.run.created` when a new run\nis created, `thread.run.completed` when a run completes, and so on. When an Assistant chooses\nto create a message during a run, we emit a `thread.message.created event`, a\n`thread.message.in_progress` event, many `thread.message.delta` events, and finally a\n`thread.message.completed` event.\n\nWe may add additional events over time, so we recommend handling unknown events gracefully\nin your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to\nintegrate the Assistants API with streaming.\n"
-      x-oaiMeta:
-        name: Assistant stream events
-        beta: true
-    ThreadStreamEvent:
-      oneOf:
         - required:
             - event
             - data
@@ -9384,8 +9374,6 @@ components:
           description: 'Occurs when a new [thread](/docs/api-reference/threads/object) is created.'
           x-oaiMeta:
             dataDescription: '`data` is a [thread](/docs/api-reference/threads/object)'
-    RunStreamEvent:
-      oneOf:
         - required:
             - event
             - data
@@ -9526,21 +9514,6 @@ components:
           description: 'Occurs when a [run](/docs/api-reference/runs/object) expires.'
           x-oaiMeta:
             dataDescription: '`data` is a [run](/docs/api-reference/runs/object)'
-      discriminator:
-        propertyName: event
-        mapping:
-          thread.run.created: '#/components/schemas/RunStreamEvent/oneOf/0'
-          thread.run.queued: '#/components/schemas/RunStreamEvent/oneOf/1'
-          thread.run.in_progress: '#/components/schemas/RunStreamEvent/oneOf/2'
-          thread.run.requires_action: '#/components/schemas/RunStreamEvent/oneOf/3'
-          thread.run.completed: '#/components/schemas/RunStreamEvent/oneOf/4'
-          thread.run.incomplete: '#/components/schemas/RunStreamEvent/oneOf/5'
-          thread.run.failed: '#/components/schemas/RunStreamEvent/oneOf/6'
-          thread.run.cancelling: '#/components/schemas/RunStreamEvent/oneOf/7'
-          thread.run.cancelled: '#/components/schemas/RunStreamEvent/oneOf/8'
-          thread.run.expired: '#/components/schemas/RunStreamEvent/oneOf/9'
-    RunStepStreamEvent:
-      oneOf:
         - required:
             - event
             - data
@@ -9639,18 +9612,6 @@ components:
           description: 'Occurs when a [run step](/docs/api-reference/runs/step-object) expires.'
           x-oaiMeta:
             dataDescription: '`data` is a [run step](/docs/api-reference/runs/step-object)'
-      discriminator:
-        propertyName: event
-        mapping:
-          thread.run.step.created: '#/components/schemas/RunStepStreamEvent/oneOf/0'
-          thread.run.step.in_progress: '#/components/schemas/RunStepStreamEvent/oneOf/1'
-          thread.run.step.delta: '#/components/schemas/RunStepStreamEvent/oneOf/2'
-          thread.run.step.completed: '#/components/schemas/RunStepStreamEvent/oneOf/3'
-          thread.run.step.failed: '#/components/schemas/RunStepStreamEvent/oneOf/4'
-          thread.run.step.cancelled: '#/components/schemas/RunStepStreamEvent/oneOf/5'
-          thread.run.step.expired: '#/components/schemas/RunStepStreamEvent/oneOf/6'
-    MessageStreamEvent:
-      oneOf:
         - required:
             - event
             - data
@@ -9721,14 +9682,38 @@ components:
           description: 'Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.'
           x-oaiMeta:
             dataDescription: '`data` is a [message](/docs/api-reference/messages/object)'
+      description: "Represents an event emitted when streaming a Run.\n\nEach event in a server-sent events stream has an `event` and `data` property:\n\n```\nevent: thread.created\ndata: {\"id\": \"thread_123\", \"object\": \"thread\", ...}\n```\n\nWe emit events whenever a new object is created, transitions to a new state, or is being\nstreamed in parts (deltas). For example, we emit `thread.run.created` when a new run\nis created, `thread.run.completed` when a run completes, and so on. When an Assistant chooses\nto create a message during a run, we emit a `thread.message.created event`, a\n`thread.message.in_progress` event, many `thread.message.delta` events, and finally a\n`thread.message.completed` event.\n\nWe may add additional events over time, so we recommend handling unknown events gracefully\nin your code. See the [Assistants API quickstart](/docs/assistants/overview) to learn how to\nintegrate the Assistants API with streaming.\n"
       discriminator:
         propertyName: event
         mapping:
-          thread.message.created: '#/components/schemas/MessageStreamEvent/oneOf/0'
-          thread.message.in_progress: '#/components/schemas/MessageStreamEvent/oneOf/1'
-          thread.message.delta: '#/components/schemas/MessageStreamEvent/oneOf/2'
-          thread.message.completed: '#/components/schemas/MessageStreamEvent/oneOf/3'
-          thread.message.incomplete: '#/components/schemas/MessageStreamEvent/oneOf/4'
+          error: '#/components/schemas/ErrorEvent'
+          done: '#/components/schemas/DoneEvent'
+          thread.created: '#/components/schemas/AssistantStreamEvent/oneOf/2'
+          thread.run.created: '#/components/schemas/AssistantStreamEvent/oneOf/3'
+          thread.run.queued: '#/components/schemas/AssistantStreamEvent/oneOf/4'
+          thread.run.in_progress: '#/components/schemas/AssistantStreamEvent/oneOf/5'
+          thread.run.requires_action: '#/components/schemas/AssistantStreamEvent/oneOf/6'
+          thread.run.completed: '#/components/schemas/AssistantStreamEvent/oneOf/7'
+          thread.run.incomplete: '#/components/schemas/AssistantStreamEvent/oneOf/8'
+          thread.run.failed: '#/components/schemas/AssistantStreamEvent/oneOf/9'
+          thread.run.cancelling: '#/components/schemas/AssistantStreamEvent/oneOf/10'
+          thread.run.cancelled: '#/components/schemas/AssistantStreamEvent/oneOf/11'
+          thread.run.expired: '#/components/schemas/AssistantStreamEvent/oneOf/12'
+          thread.run.step.created: '#/components/schemas/AssistantStreamEvent/oneOf/13'
+          thread.run.step.in_progress: '#/components/schemas/AssistantStreamEvent/oneOf/14'
+          thread.run.step.delta: '#/components/schemas/AssistantStreamEvent/oneOf/15'
+          thread.run.step.completed: '#/components/schemas/AssistantStreamEvent/oneOf/16'
+          thread.run.step.failed: '#/components/schemas/AssistantStreamEvent/oneOf/17'
+          thread.run.step.cancelled: '#/components/schemas/AssistantStreamEvent/oneOf/18'
+          thread.run.step.expired: '#/components/schemas/AssistantStreamEvent/oneOf/19'
+          thread.message.created: '#/components/schemas/AssistantStreamEvent/oneOf/20'
+          thread.message.in_progress: '#/components/schemas/AssistantStreamEvent/oneOf/21'
+          thread.message.delta: '#/components/schemas/AssistantStreamEvent/oneOf/22'
+          thread.message.completed: '#/components/schemas/AssistantStreamEvent/oneOf/23'
+          thread.message.incomplete: '#/components/schemas/AssistantStreamEvent/oneOf/24'
+      x-oaiMeta:
+        name: Assistant stream events
+        beta: true
     ErrorEvent:
       required:
         - event
