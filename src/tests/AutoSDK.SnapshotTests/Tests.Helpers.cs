@@ -100,7 +100,7 @@ namespace G
             Verify(driver)
                 .UseDirectory($"Snapshots/{callerName}/{jsonSerializerType:G}")
                 .UseFileName("_")
-                //.AutoVerify()
+                .AutoVerify()
                 );
     }
 }

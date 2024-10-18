@@ -72,10 +72,10 @@ public readonly record struct MethodParameter(
             parameter.Required ||
             parameter.In == ParameterLocation.Path;
         // Special case for enums with a single value.
-        if (isRequired && type is { IsEnum: true, EnumValues.Length: 1 })
-        {
-            isRequired = false;
-        }
+        // if (isRequired && type is { IsEnum: true, EnumValues.Length: 1 })
+        // {
+        //     isRequired = false;
+        // }
         
         return new MethodParameter(
             Id: parameterName,

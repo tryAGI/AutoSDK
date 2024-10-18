@@ -1,0 +1,189 @@
+openapi: 3.0.3
+info:
+  title: Runway API
+  version: 1.0.0
+  description: API for generating videos from images and managing tasks. Generated from https://docs.dev.runwayml.com/api/
+
+servers:
+  - url: https://api.dev.runwayml.com
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  parameters:
+    X-Runway-Version:
+      in: header
+      name: X-Runway-Version
+      required: true
+      schema:
+        type: string
+        enum: ["2024-09-13"]
+      description: API version header.
+    TaskId:
+      in: path
+      name: id
+      required: true
+      schema:
+        type: string
+        format: uuid
+      description: The ID of the task.
+
+paths:
+  /v1/image_to_video:
+    post:
+      summary: Generate a video from an image.
+      description: Start a new task to generate a video from an image prompt.
+      operationId: createVideoFromImage
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/X-Runway-Version'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - promptImage
+                - model
+              properties:
+                promptImage:
+                  type: string
+                  format: uri
+                  description: HTTPS URL of an image (JPEG, PNG, WebP, max 16MB).
+                model:
+                  type: string
+                  enum: ["gen3a_turbo"]
+                  description: The model variant to use.
+                seed:
+                  type: integer
+                  minimum: 0
+                  maximum: 999999999
+                  description: Seed value for generating consistent results.
+                promptText:
+                  type: string
+                  maxLength: 512
+                  description: A detailed description of the output.
+                watermark:
+                  type: boolean
+                  default: false
+                  description: Add a Runway watermark to the output.
+                duration:
+                  type: integer
+                  enum: [5, 10]
+                  default: 10
+                  description: Duration of the video in seconds.
+                ratio:
+                  type: string
+                  enum: ["16:9", "9:16"]
+                  default: "16:9"
+                  description: Aspect ratio of the video.
+      responses:
+        '200':
+          description: Task successfully created.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+        '429':
+          description: Rate limit exceeded.
+
+  /v1/tasks/{id}:
+    get:
+      summary: Get task detail.
+      description: Return details about a task. Updates every 5 seconds.
+      operationId: getTaskDetail
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/X-Runway-Version'
+        - $ref: '#/components/parameters/TaskId'
+      responses:
+        '200':
+          description: Task status.
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - id
+                  - status
+                  - createdAt
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    description: Unique identifier of the task.
+                  status:
+                    type: string
+                    enum:
+                      - PENDING
+                      - THROTTLED
+                      - RUNNING
+                      - SUCCEEDED
+                      - FAILED
+                      - CANCELLED
+                    description: |
+                      Current status of the task:
+                      - **PENDING**: The task is waiting in the queue.
+                      - **THROTTLED**: The task is waiting to be enqueued due to other running jobs.
+                      - **RUNNING**: The task is currently being processed.
+                      - **SUCCEEDED**: The task completed successfully.
+                      - **FAILED**: The task failed.
+                      - **CANCELLED**: The task was aborted.
+                  createdAt:
+                    type: string
+                    format: date-time
+                    description: Timestamp when the task was submitted.
+                  progress:
+                    type: number
+                    format: float
+                    minimum: 0
+                    maximum: 1
+                    description: |
+                      Progress of the task. Only present when the task is in **RUNNING** state.
+                  output:
+                    type: array
+                    items:
+                      type: string
+                      format: uri
+                    description: |
+                      URLs to the task's output. Only present when the task is in **SUCCEEDED** state. These URLs expire within 24-48 hours; fetch the task again to get fresh URLs.
+                  failure:
+                    type: string
+                    description: |
+                      Reason for the task's failure. Only present when the task is in **FAILED** state.
+                  failureCode:
+                    type: string
+                    description: |
+                      Machine-readable error code for the failure. Only present when the task is in **FAILED** state. The code follows a dot-separated structure, with the most generic part on the left and the most specific part on the right (e.g., `SAFETY.INPUT.IMAGE`).
+        
+        '404':
+          description: Task not found or deleted.
+
+    delete:
+      summary: Cancel or delete a task.
+      description: Cancel a running task or delete a completed one.
+      operationId: cancelOrDeleteTask
+      security:
+        - bearerAuth: []
+      parameters:
+        - $ref: '#/components/parameters/X-Runway-Version'
+        - $ref: '#/components/parameters/TaskId'
+      responses:
+        '204':
+          description: Task canceled or deleted successfully.
+        '404':
+          description: Task not found or already deleted.
+
+security:
+  - bearerAuth: []

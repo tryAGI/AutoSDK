@@ -65,6 +65,8 @@ public partial class Tests
     [DataRow("elevenlabs", "elevenlabs.json", JsonSerializerType.SystemTextJson)]
     [DataRow("", "jina.json", JsonSerializerType.NewtonsoftJson)]
     [DataRow("", "jina.json", JsonSerializerType.SystemTextJson)]
+    [DataRow("", "runway.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("", "runway.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string callerName, string fileName, JsonSerializerType jsonSerializerType)
     {
         if (callerName == "Empty")
