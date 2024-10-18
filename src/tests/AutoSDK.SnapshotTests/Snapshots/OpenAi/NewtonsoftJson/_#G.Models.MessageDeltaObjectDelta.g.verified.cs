@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.MessageDeltaObjectDelta.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageDeltaContentImageFileObject, global::G.MessageDeltaContentTextObject, global::G.MessageDeltaContentRefusalObject, global::G.MessageDeltaContentImageUrlObject>>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentItem2>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

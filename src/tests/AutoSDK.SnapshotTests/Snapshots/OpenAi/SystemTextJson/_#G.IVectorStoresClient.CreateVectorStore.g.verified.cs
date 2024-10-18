@@ -39,7 +39,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? fileIds = default,
             string? name = default,
             global::G.VectorStoreExpirationAfter? expiresAfter = default,
-            global::G.OneOf<global::G.AutoChunkingStrategyRequestParam, global::G.StaticChunkingStrategyRequestParam>? chunkingStrategy = default,
+            global::G.CreateVectorStoreRequestChunkingStrategy? chunkingStrategy = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

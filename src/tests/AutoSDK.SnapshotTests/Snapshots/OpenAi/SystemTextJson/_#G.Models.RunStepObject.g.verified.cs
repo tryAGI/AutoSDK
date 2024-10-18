@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RunStepObject.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -74,9 +72,9 @@ namespace G
         /// The details of the run step.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("step_details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepObjectStepDetailsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.RunStepDetailsMessageCreationObject, global::G.RunStepDetailsToolCallsObject> StepDetails { get; set; }
+        public required global::G.RunStepObjectStepDetails StepDetails { get; set; }
 
         /// <summary>
         /// The last error associated with this run step. Will be `null` if there are no errors.

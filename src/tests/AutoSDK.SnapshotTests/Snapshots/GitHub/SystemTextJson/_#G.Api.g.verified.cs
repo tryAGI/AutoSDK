@@ -334,6 +334,8 @@ namespace G
                     new global::G.JsonConverters.RepositoryRuleVariant17TypeNullableJsonConverter(),
                     new global::G.JsonConverters.RepositoryRuleVariant18TypeJsonConverter(),
                     new global::G.JsonConverters.RepositoryRuleVariant18TypeNullableJsonConverter(),
+                    new global::G.JsonConverters.RepositoryRuleDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.RepositoryRuleDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.RepositoryRulesetTargetJsonConverter(),
                     new global::G.JsonConverters.RepositoryRulesetTargetNullableJsonConverter(),
                     new global::G.JsonConverters.RepositoryRulesetSourceTypeJsonConverter(),

@@ -90,7 +90,7 @@ namespace G
             string? instructions = default,
             string? additionalInstructions = default,
             global::System.Collections.Generic.IList<global::G.CreateMessageRequest>? additionalMessages = default,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>? tools = default,
+            global::System.Collections.Generic.IList<global::G.ToolsItem5>? tools = default,
             object? metadata = default,
             double? temperature = 1,
             double? topP = 1,

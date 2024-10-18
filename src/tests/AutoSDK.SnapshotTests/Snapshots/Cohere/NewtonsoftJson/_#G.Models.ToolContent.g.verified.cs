@@ -12,6 +12,11 @@ namespace G
     public readonly partial struct ToolContent : global::System.IEquatable<ToolContent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ToolContentDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Text content of the message.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -85,10 +90,13 @@ namespace G
         /// 
         /// </summary>
         public ToolContent(
+            global::G.ToolContentDiscriminatorType? type,
             global::G.TextContent? text,
             global::G.DocumentContent? document
             )
         {
+            Type = type;
+
             Text = text;
             Document = document;
         }

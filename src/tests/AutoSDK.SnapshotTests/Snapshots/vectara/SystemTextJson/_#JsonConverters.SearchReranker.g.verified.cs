@@ -17,11 +17,10 @@ namespace G.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::G.SearchRerankerDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.SearchRerankerDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.SearchRerankerDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SearchRerankerDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.CustomerSpecificReranker? customerSpecific = default;
             if (discriminator?.Type == global::G.SearchRerankerDiscriminatorType.CustomerReranker)
@@ -60,6 +59,7 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.SearchReranker(
+                discriminator?.Type,
                 customerSpecific,
                 userFunction,
                 mR,

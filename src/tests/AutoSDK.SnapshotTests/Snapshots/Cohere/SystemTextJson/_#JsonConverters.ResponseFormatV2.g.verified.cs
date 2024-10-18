@@ -17,11 +17,10 @@ namespace G.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::G.ResponseFormatV2Discriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseFormatV2Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseFormatV2Discriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResponseFormatV2Discriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.TextResponseFormatV2? text = default;
             if (discriminator?.Type == global::G.ResponseFormatV2DiscriminatorType.Text)
@@ -31,7 +30,7 @@ namespace G.JsonConverters
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.JsonResponseFormatV2? json = default;
-            if (discriminator?.Type == global::G.ResponseFormatV2DiscriminatorType.JsonObject)
+            if (discriminator?.Type == global::G.ResponseFormatV2DiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JsonResponseFormatV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JsonResponseFormatV2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JsonResponseFormatV2)}");
@@ -39,6 +38,7 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.ResponseFormatV2(
+                discriminator?.Type,
                 text,
                 json
                 );

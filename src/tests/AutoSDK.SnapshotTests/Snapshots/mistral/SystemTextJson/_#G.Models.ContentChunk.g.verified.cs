@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ContentChunkDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextChunk? Text { get; init; }
 #else
@@ -85,10 +90,13 @@ namespace G
         /// 
         /// </summary>
         public ContentChunk(
+            global::G.ContentChunkDiscriminatorType? type,
             global::G.TextChunk? text,
             global::G.ImageURLChunk? imageURL
             )
         {
+            Type = type;
+
             Text = text;
             ImageURL = imageURL;
         }

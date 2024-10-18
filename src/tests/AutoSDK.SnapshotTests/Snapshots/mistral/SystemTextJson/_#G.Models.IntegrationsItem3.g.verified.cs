@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.JobOutIntegrationDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.WandbIntegrationOut? WandbIntegrationOut { get; init; }
 #else
@@ -44,6 +49,19 @@ namespace G
         public IntegrationsItem3(global::G.WandbIntegrationOut? value)
         {
             WandbIntegrationOut = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public IntegrationsItem3(
+            global::G.JobOutIntegrationDiscriminatorType? type,
+            global::G.WandbIntegrationOut? wandbIntegrationOut
+            )
+        {
+            Type = type;
+
+            WandbIntegrationOut = wandbIntegrationOut;
         }
 
         /// <summary>

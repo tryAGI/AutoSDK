@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.MessageObject.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -69,7 +67,7 @@ namespace G
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageContentTextObject, global::G.MessageContentRefusalObject>> Content { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ContentItem> Content { get; set; } = default!;
 
         /// <summary>
         /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.

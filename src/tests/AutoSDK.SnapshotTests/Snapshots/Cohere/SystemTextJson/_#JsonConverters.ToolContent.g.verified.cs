@@ -16,48 +16,32 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            var
-            readerCopy = reader;
+
+            var readerCopy = reader;
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolContentDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolContentDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolContentDiscriminator)}");
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+
             global::G.TextContent? text = default;
-            try
+            if (discriminator?.Type == global::G.ToolContentDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextContent).Name}");
-                text = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextContent)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            catch (global::System.Text.Json.JsonException)
-            {
-            }
-
-            readerCopy = reader;
             global::G.DocumentContent? document = default;
-            try
+            if (discriminator?.Type == global::G.ToolContentDiscriminatorType.Document)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DocumentContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DocumentContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DocumentContent).Name}");
-                document = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
-            }
-            catch (global::System.Text.Json.JsonException)
-            {
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DocumentContent)}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ToolContent(
+                discriminator?.Type,
                 text,
                 document
                 );
-
-            if (text != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextContent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            else if (document != null)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DocumentContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DocumentContent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.DocumentContent).Name}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             return result;
         }

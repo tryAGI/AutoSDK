@@ -38,7 +38,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.MessageObject> CreateMessageAsync(
             string threadId,
             global::G.CreateMessageRequestRole role,
-            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.MessageContentImageFileObject, global::G.MessageContentImageUrlObject, global::G.MessageRequestContentTextObject>>> content,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item>> content,
             global::System.Collections.Generic.IList<global::G.CreateMessageRequestAttachment>? attachments = default,
             object? metadata = default,
             global::System.Threading.CancellationToken cancellationToken = default);

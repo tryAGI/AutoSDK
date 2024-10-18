@@ -17,11 +17,10 @@ namespace G.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::G.ContentChunkDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentChunkDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentChunkDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ContentChunkDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.TextChunk? text = default;
             if (discriminator?.Type == global::G.ContentChunkDiscriminatorType.Text)
@@ -39,6 +38,7 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.ContentChunk(
+                discriminator?.Type,
                 text,
                 imageURL
                 );

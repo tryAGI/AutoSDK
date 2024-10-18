@@ -17,11 +17,10 @@ namespace G.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::G.AgentsCompletionRequestMessageDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AgentsCompletionRequestMessageDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AgentsCompletionRequestMessageDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AgentsCompletionRequestMessageDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.UserMessage? userMessage = default;
             if (discriminator?.Role == global::G.AgentsCompletionRequestMessageDiscriminatorRole.User)
@@ -46,6 +45,7 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.MessagesItem(
+                discriminator?.Role,
                 userMessage,
                 assistantMessage,
                 toolMessage

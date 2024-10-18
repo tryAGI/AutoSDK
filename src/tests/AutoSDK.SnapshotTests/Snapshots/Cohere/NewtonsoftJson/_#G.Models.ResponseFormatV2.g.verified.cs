@@ -18,6 +18,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ResponseFormatV2DiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TextResponseFormatV2? Text { get; init; }
 #else
@@ -89,10 +94,13 @@ namespace G
         /// 
         /// </summary>
         public ResponseFormatV2(
+            global::G.ResponseFormatV2DiscriminatorType? type,
             global::G.TextResponseFormatV2? text,
             global::G.JsonResponseFormatV2? json
             )
         {
+            Type = type;
+
             Text = text;
             Json = json;
         }

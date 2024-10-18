@@ -313,6 +313,8 @@ components:
         models.Select(x => x.ClassName).Should().BeEquivalentTo([
             "CreateAssistantRequest",
             "CreateAssistantRequestModel", // Optimized name
+            "CreateAssistantRequestToolDiscriminator",
+            "CreateAssistantRequestToolDiscriminatorType",
             "CreateAssistantRequestToolResources",
             "CreateAssistantRequestToolResourcesCodeInterpreter",
             "CreateAssistantRequestToolResourcesFileSearch",
@@ -323,6 +325,8 @@ components:
             "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2",
             "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type",
             "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static",
+            "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminator",
+            "CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminatorType",
             "CreateAssistantRequestToolResourcesFileSearchVectorStoreMetadata",
             "CreateAssistantRequestToolResourcesFileSearchVariant1",
             "CreateAssistantRequestToolResourcesFileSearchVariant2",

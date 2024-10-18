@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -21,7 +19,7 @@ namespace G
         /// The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items, including text (`logs`) or images (`image`). Each of these are represented by a different object type.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("outputs")]
-        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObject>>? Outputs { get; set; }
+        public global::System.Collections.Generic.IList<global::G.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutput>? Outputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

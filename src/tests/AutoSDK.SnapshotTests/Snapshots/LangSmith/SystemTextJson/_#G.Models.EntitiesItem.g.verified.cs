@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.TenantShareTokensResponseEntitieDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.TenantShareRunToken? TenantShareRunToken { get; init; }
 #else
@@ -85,10 +90,13 @@ namespace G
         /// 
         /// </summary>
         public EntitiesItem(
+            global::G.TenantShareTokensResponseEntitieDiscriminatorType? type,
             global::G.TenantShareRunToken? tenantShareRunToken,
             global::G.TenantShareDatasetToken? tenantShareDatasetToken
             )
         {
+            Type = type;
+
             TenantShareRunToken = tenantShareRunToken;
             TenantShareDatasetToken = tenantShareDatasetToken;
         }

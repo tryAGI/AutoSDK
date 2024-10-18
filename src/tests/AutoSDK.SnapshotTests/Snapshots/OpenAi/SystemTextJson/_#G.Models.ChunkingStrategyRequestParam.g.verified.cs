@@ -12,6 +12,11 @@ namespace G
     public readonly partial struct ChunkingStrategyRequestParam : global::System.IEquatable<ChunkingStrategyRequestParam>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChunkingStrategyRequestParamDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -85,10 +90,13 @@ namespace G
         /// 
         /// </summary>
         public ChunkingStrategyRequestParam(
+            global::G.ChunkingStrategyRequestParamDiscriminatorType? type,
             global::G.AutoChunkingStrategyRequestParam? auto,
             global::G.StaticChunkingStrategyRequestParam? @static
             )
         {
+            Type = type;
+
             Auto = auto;
             Static = @static;
         }

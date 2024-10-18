@@ -63,7 +63,7 @@ namespace G
             string? name = default,
             string? description = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>? tools = default,
+            global::System.Collections.Generic.IList<global::G.ToolsItem2>? tools = default,
             global::G.CreateAssistantRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,

@@ -317,6 +317,8 @@ namespace G
             typeof(global::G.JsonConverters.RepositoryRuleVariant17TypeNullableJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRuleVariant18TypeJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRuleVariant18TypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.RepositoryRuleDiscriminatorTypeJsonConverter),
+            typeof(global::G.JsonConverters.RepositoryRuleDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRulesetTargetJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRulesetTargetNullableJsonConverter),
             typeof(global::G.JsonConverters.RepositoryRulesetSourceTypeJsonConverter),

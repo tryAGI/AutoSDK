@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionRequestMessageDiscriminatorRole? Role { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestSystemMessage? System { get; init; }
 #else
@@ -190,6 +195,7 @@ namespace G
         /// 
         /// </summary>
         public ChatCompletionRequestMessage(
+            global::G.ChatCompletionRequestMessageDiscriminatorRole? role,
             global::G.ChatCompletionRequestSystemMessage? system,
             global::G.ChatCompletionRequestUserMessage? user,
             global::G.ChatCompletionRequestAssistantMessage? assistant,
@@ -197,6 +203,8 @@ namespace G
             global::G.ChatCompletionRequestFunctionMessage? function
             )
         {
+            Role = role;
+
             System = system;
             User = user;
             Assistant = assistant;

@@ -38,14 +38,13 @@ public static partial class Sources
             : anyOfData.Properties;
         var read = anyOfData.DiscriminatorType != null ? $@" 
 
-            {anyOfData.DiscriminatorType.Value.CSharpTypeWithNullability} discriminator = default;
             var readerCopy = reader;
 {(anyOfData.IsTrimming ? $@" 
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof({anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}> ??
                             throw new global::System.InvalidOperationException($""Cannot get type info for {{nameof({anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability})}}"");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
  " : $@" 
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize<{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}>(ref readerCopy, options);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}>(ref readerCopy, options);
  ")}
 
 {allTypes.Select((x, i) => $@" 
@@ -63,6 +62,7 @@ public static partial class Sources
 ").Inject().TrimEnd(',')}
 
             var result = new {typeNameWithTypes}(
+                discriminator?.{anyOfData.DiscriminatorPropertyName},
 {allTypes.Select(x => $@" 
                 {x.ParameterName},
 ").Inject().TrimEnd(',')}

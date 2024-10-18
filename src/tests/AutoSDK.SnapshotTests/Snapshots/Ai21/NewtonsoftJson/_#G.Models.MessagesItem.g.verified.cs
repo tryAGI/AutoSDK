@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole? Role { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.UserMessage? UserMessage { get; init; }
 #else
@@ -155,12 +160,15 @@ namespace G
         /// 
         /// </summary>
         public MessagesItem(
+            global::G.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole? role,
             global::G.UserMessage? userMessage,
             global::G.AssistantMessage? assistantMessage,
             global::G.ToolMessage? toolMessage,
             global::G.SystemMessage? systemMessage
             )
         {
+            Role = role;
+
             UserMessage = userMessage;
             AssistantMessage = assistantMessage;
             ToolMessage = toolMessage;

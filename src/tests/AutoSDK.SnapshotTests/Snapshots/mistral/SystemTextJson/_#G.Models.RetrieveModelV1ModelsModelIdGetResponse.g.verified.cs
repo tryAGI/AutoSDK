@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseModelCard? BaseCard { get; init; }
 #else
@@ -85,10 +90,13 @@ namespace G
         /// 
         /// </summary>
         public RetrieveModelV1ModelsModelIdGetResponse(
+            global::G.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorType? type,
             global::G.BaseModelCard? baseCard,
             global::G.FTModelCard? fTCard
             )
         {
+            Type = type;
+
             BaseCard = baseCard;
             FTCard = fTCard;
         }

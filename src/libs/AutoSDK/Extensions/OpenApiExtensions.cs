@@ -49,6 +49,8 @@ public static class OpenApiExtensions
         openApiDocument.SecurityRequirements ??= new List<OpenApiSecurityRequirement>();
         openApiDocument.Servers ??= new List<OpenApiServer>();
 
+        openApiDocument = openApiDocument.ComputeDiscriminators();
+
         return openApiDocument;
     }
     
@@ -191,14 +193,19 @@ public static class OpenApiExtensions
         
         foreach (var schema in openApiDocument.Components.Schemas)
         {
-            ProcessSchema(schema.Value, path: $"#/components/schemas/{schema.Key}");
+            ProcessSchema(schema.Value, path: $"#/components/schemas/{schema.Key}", depth: 0);
         }
         
         return openApiDocument;
     }
 
-    private static void ProcessSchema(OpenApiSchema schema, string path)
+    private static void ProcessSchema(OpenApiSchema schema, string path, int depth)
     {
+        if (depth > 10)
+        {
+            return;
+        }
+        
         if (schema.Reference?.Id != null)
         {
             path = $"#/components/schemas/{schema.Reference?.Id}";
@@ -206,7 +213,7 @@ public static class OpenApiExtensions
             
         foreach (var property in schema.Properties)
         {
-            ProcessSchema(property.Value, path: path + "/properties/" + property.Key);
+            ProcessSchema(property.Value, path: path + "/properties/" + property.Key, depth: depth + 1);
         }
 
         // Remove any nested OneOfs
@@ -232,19 +239,19 @@ public static class OpenApiExtensions
         
         foreach (var value in schema.OneOf)
         {
-            ProcessSchema(value, path: path + "/oneOf");
+            ProcessSchema(value, path: path + "/oneOf", depth: depth + 1);
         }
         foreach (var value in schema.AllOf)
         {
-            ProcessSchema(value, path: path + "/allOf");
+            ProcessSchema(value, path: path + "/allOf", depth: depth + 1);
         }
         foreach (var value in schema.AnyOf)
         {
-            ProcessSchema(value, path: path + "/anyOf");
+            ProcessSchema(value, path: path + "/anyOf", depth: depth + 1);
         }
         if (schema.Items != null)
         {
-            ProcessSchema(schema.Items, path: path + "/items");
+            ProcessSchema(schema.Items, path: path + "/items", depth: depth + 1);
         }
             
         // Auto-detection in OpenAI-like specs

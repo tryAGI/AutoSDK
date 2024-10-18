@@ -38,14 +38,28 @@ public static partial class Sources
             "AllOf" => string.Join(" && ", allTypes.Select(x => $"Is{x.Name}")),
             _ => throw new NotImplementedException(),
         };
-        var constructorWithAllValues = anyOfData.Count > 1 ? $@"
+        var constructorWithAllValues =
+            anyOfData.Count > 1 ||
+            (!string.IsNullOrWhiteSpace(anyOfData.Name) &&
+            anyOfData.DiscriminatorType != null &&
+            anyOfData.DiscriminatorPropertyName != null) ? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {classNameWithoutTypes}(
+{(string.IsNullOrWhiteSpace(anyOfData.Name) ||
+  anyOfData.DiscriminatorType == null ||
+  anyOfData.DiscriminatorPropertyName == null ? " " : $@" 
+            {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName.ToParameterName()},
+ ")}
 {allTypes.Select(x => $@" 
             {x.Type.CSharpTypeWithNullability} {x.ParameterName},
 ").Inject().TrimEnd(',', '\n')}
             )
         {{
+{(string.IsNullOrWhiteSpace(anyOfData.Name) ||
+  anyOfData.DiscriminatorType == null ||
+  anyOfData.DiscriminatorPropertyName == null ? " " : $@" 
+            {anyOfData.DiscriminatorPropertyName} = {anyOfData.DiscriminatorPropertyName.ToParameterName()};
+")}
 {allTypes.Select(x => $@" 
             {x.Name} = {x.ParameterName};
 ").Inject()}
@@ -62,6 +76,12 @@ namespace {anyOfData.Namespace}
     {anyOfData.Summary.ToXmlDocumentationSummary(level: 4)}
     public readonly partial struct {className} : global::System.IEquatable<{className}>
     {{
+{(string.IsNullOrWhiteSpace(anyOfData.Name) ||
+  anyOfData.DiscriminatorType == null ||
+  anyOfData.DiscriminatorPropertyName == null ? " " : $@" 
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName} {{ get; }}
+")}
 {allTypes.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
 #if NET6_0_OR_GREATER

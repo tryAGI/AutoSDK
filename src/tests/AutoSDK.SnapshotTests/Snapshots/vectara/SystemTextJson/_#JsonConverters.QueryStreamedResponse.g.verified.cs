@@ -17,11 +17,10 @@ namespace G.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::G.QueryStreamedResponseDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.QueryStreamedResponseDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.QueryStreamedResponseDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.QueryStreamedResponseDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.StreamSearchResponse? streamSearch = default;
             if (discriminator?.Type == global::G.QueryStreamedResponseDiscriminatorType.SearchResults)
@@ -74,6 +73,7 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.QueryStreamedResponse(
+                discriminator?.Type,
                 streamSearch,
                 streamGenerationChunk,
                 streamGenerationEnd,

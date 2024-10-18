@@ -33,6 +33,8 @@ namespace G
             typeof(global::G.JsonConverters.SystemMessageRoleNullableJsonConverter),
             typeof(global::G.JsonConverters.DocumentContentTypeJsonConverter),
             typeof(global::G.JsonConverters.DocumentContentTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.ToolContentDiscriminatorTypeJsonConverter),
+            typeof(global::G.JsonConverters.ToolContentDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ToolMessageV2RoleJsonConverter),
             typeof(global::G.JsonConverters.ToolMessageV2RoleNullableJsonConverter),
             typeof(global::G.JsonConverters.ChatMessageV2DiscriminatorRoleJsonConverter),

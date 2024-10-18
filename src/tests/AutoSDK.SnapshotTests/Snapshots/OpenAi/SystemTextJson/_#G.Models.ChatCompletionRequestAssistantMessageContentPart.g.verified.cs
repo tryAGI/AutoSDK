@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestMessageContentPartText? Text { get; init; }
 #else
@@ -85,10 +90,13 @@ namespace G
         /// 
         /// </summary>
         public ChatCompletionRequestAssistantMessageContentPart(
+            global::G.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? type,
             global::G.ChatCompletionRequestMessageContentPartText? text,
             global::G.ChatCompletionRequestMessageContentPartRefusal? refusal
             )
         {
+            Type = type;
+
             Text = text;
             Refusal = refusal;
         }

@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.DetailedJobOutRepositorieDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GithubRepositoryOut? GithubRepositoryOut { get; init; }
 #else
@@ -44,6 +49,19 @@ namespace G
         public RepositoriesItem(global::G.GithubRepositoryOut? value)
         {
             GithubRepositoryOut = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RepositoriesItem(
+            global::G.DetailedJobOutRepositorieDiscriminatorType? type,
+            global::G.GithubRepositoryOut? githubRepositoryOut
+            )
+        {
+            Type = type;
+
+            GithubRepositoryOut = githubRepositoryOut;
         }
 
         /// <summary>

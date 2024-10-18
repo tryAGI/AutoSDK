@@ -12,6 +12,11 @@ namespace G
     public readonly partial struct QueryStreamedResponse : global::System.IEquatable<QueryStreamedResponse>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.QueryStreamedResponseDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// The search response results.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -261,6 +266,7 @@ namespace G
         /// 
         /// </summary>
         public QueryStreamedResponse(
+            global::G.QueryStreamedResponseDiscriminatorType? type,
             global::G.StreamSearchResponse? streamSearch,
             global::G.StreamGenerationChunk? streamGenerationChunk,
             global::G.StreamGenerationEnd? streamGenerationEnd,
@@ -270,6 +276,8 @@ namespace G
             global::G.StreamError? streamError
             )
         {
+            Type = type;
+
             StreamSearch = streamSearch;
             StreamGenerationChunk = streamGenerationChunk;
             StreamGenerationEnd = streamGenerationEnd;

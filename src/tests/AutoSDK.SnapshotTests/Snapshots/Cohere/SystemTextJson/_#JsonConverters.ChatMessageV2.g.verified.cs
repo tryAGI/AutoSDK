@@ -17,11 +17,10 @@ namespace G.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::G.ChatMessageV2Discriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatMessageV2Discriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatMessageV2Discriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChatMessageV2Discriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.UserMessage? user = default;
             if (discriminator?.Role == global::G.ChatMessageV2DiscriminatorRole.User)
@@ -53,6 +52,7 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.ChatMessageV2(
+                discriminator?.Role,
                 user,
                 assistant,
                 system,

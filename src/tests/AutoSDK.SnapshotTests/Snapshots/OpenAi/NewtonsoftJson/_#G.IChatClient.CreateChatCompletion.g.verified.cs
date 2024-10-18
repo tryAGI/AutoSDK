@@ -125,7 +125,7 @@ namespace G
             int? maxTokens = default,
             int? n = 1,
             double? presencePenalty = 0,
-            global::G.OneOf<global::G.ResponseFormatText, global::G.ResponseFormatJsonObject, global::G.ResponseFormatJsonSchema>? responseFormat = default,
+            global::G.ResponseFormat? responseFormat = default,
             int? seed = default,
             global::G.CreateChatCompletionRequestServiceTier? serviceTier = default,
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,

@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.JobInRepositorieDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.GithubRepositoryIn? GithubRepositoryIn { get; init; }
 #else
@@ -44,6 +49,19 @@ namespace G
         public RepositoriesItem2(global::G.GithubRepositoryIn? value)
         {
             GithubRepositoryIn = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RepositoriesItem2(
+            global::G.JobInRepositorieDiscriminatorType? type,
+            global::G.GithubRepositoryIn? githubRepositoryIn
+            )
+        {
+            Type = type;
+
+            GithubRepositoryIn = githubRepositoryIn;
         }
 
         /// <summary>

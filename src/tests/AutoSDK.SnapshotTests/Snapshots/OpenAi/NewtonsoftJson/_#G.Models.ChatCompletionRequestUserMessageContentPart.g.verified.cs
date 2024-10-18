@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionRequestUserMessageContentPartDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestMessageContentPartText? Text { get; init; }
 #else
@@ -85,10 +90,13 @@ namespace G
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(
+            global::G.ChatCompletionRequestUserMessageContentPartDiscriminatorType? type,
             global::G.ChatCompletionRequestMessageContentPartText? text,
             global::G.ChatCompletionRequestMessageContentPartImage? image
             )
         {
+            Type = type;
+
             Text = text;
             Image = image;
         }

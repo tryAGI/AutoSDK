@@ -12,6 +12,11 @@ namespace G
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStreamEventDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A start event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -260,6 +265,7 @@ namespace G
         /// 
         /// </summary>
         public MessageStreamEvent(
+            global::G.MessageStreamEventDiscriminatorType? type,
             global::G.MessageStartEvent? start,
             global::G.MessageDeltaEvent? delta,
             global::G.MessageStopEvent? stop,
@@ -269,6 +275,8 @@ namespace G
             global::G.PingEvent? ping
             )
         {
+            Type = type;
+
             Start = start;
             Delta = delta;
             Stop = stop;

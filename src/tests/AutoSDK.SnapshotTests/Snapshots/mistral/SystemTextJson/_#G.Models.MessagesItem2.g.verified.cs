@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ChatCompletionRequestMessageDiscriminatorRole? Role { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.SystemMessage? SystemMessage { get; init; }
 #else
@@ -155,12 +160,15 @@ namespace G
         /// 
         /// </summary>
         public MessagesItem2(
+            global::G.ChatCompletionRequestMessageDiscriminatorRole? role,
             global::G.SystemMessage? systemMessage,
             global::G.UserMessage? userMessage,
             global::G.AssistantMessage? assistantMessage,
             global::G.ToolMessage? toolMessage
             )
         {
+            Role = role;
+
             SystemMessage = systemMessage;
             UserMessage = userMessage;
             AssistantMessage = assistantMessage;

@@ -83,7 +83,7 @@ namespace G
             global::G.CreateThreadRequest? thread = default,
             global::G.AnyOf<string, global::G.CreateThreadAndRunRequestModel?>? model = default,
             string? instructions = default,
-            global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearch, global::G.AssistantToolsFunction>>? tools = default,
+            global::System.Collections.Generic.IList<global::G.ToolsItem6>? tools = default,
             global::G.CreateThreadAndRunRequestToolResources? toolResources = default,
             object? metadata = default,
             double? temperature = 1,

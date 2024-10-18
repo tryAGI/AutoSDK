@@ -17,11 +17,10 @@ namespace G.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::G.TenantShareTokensResponseEntitieDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TenantShareTokensResponseEntitieDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TenantShareTokensResponseEntitieDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TenantShareTokensResponseEntitieDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.TenantShareRunToken? tenantShareRunToken = default;
             if (discriminator?.Type == global::G.TenantShareTokensResponseEntitieDiscriminatorType.Run)
@@ -39,6 +38,7 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.EntitiesItem(
+                discriminator?.Type,
                 tenantShareRunToken,
                 tenantShareDatasetToken
                 );

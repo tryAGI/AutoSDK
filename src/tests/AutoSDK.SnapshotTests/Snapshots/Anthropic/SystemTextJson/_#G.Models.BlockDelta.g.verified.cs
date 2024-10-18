@@ -12,6 +12,11 @@ namespace G
     public readonly partial struct BlockDelta : global::System.IEquatable<BlockDelta>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BlockDeltaDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A delta in a streaming text block.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -85,10 +90,13 @@ namespace G
         /// 
         /// </summary>
         public BlockDelta(
+            global::G.BlockDeltaDiscriminatorType? type,
             global::G.TextBlockDelta? text,
             global::G.InputJsonBlockDelta? inputJson
             )
         {
+            Type = type;
+
             Text = text;
             InputJson = inputJson;
         }

@@ -12,6 +12,11 @@ namespace G
     public readonly partial struct RepositoryRule : global::System.IEquatable<RepositoryRule>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.RepositoryRuleDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Only allow users with bypass permission to create matching refs.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -719,6 +724,7 @@ namespace G
         /// 
         /// </summary>
         public RepositoryRule(
+            global::G.RepositoryRuleDiscriminatorType? type,
             global::G.RepositoryRuleCreation? value1,
             global::G.RepositoryRuleUpdate? value2,
             global::G.RepositoryRuleDeletion? value3,
@@ -741,6 +747,8 @@ namespace G
             global::G.RepositoryRuleCodeScanning? value20
             )
         {
+            Type = type;
+
             Value1 = value1;
             Value2 = value2;
             Value3 = value3;

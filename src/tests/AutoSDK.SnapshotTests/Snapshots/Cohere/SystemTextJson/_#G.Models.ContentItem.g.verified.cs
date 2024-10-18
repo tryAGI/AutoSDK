@@ -12,6 +12,11 @@ namespace G
     public readonly partial struct ContentItem : global::System.IEquatable<ContentItem>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.AssistantMessageResponseContentItemDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Text content of the message.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -44,6 +49,19 @@ namespace G
         public ContentItem(global::G.TextContent? value)
         {
             Text = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentItem(
+            global::G.AssistantMessageResponseContentItemDiscriminatorType? type,
+            global::G.TextContent? text
+            )
+        {
+            Type = type;
+
+            Text = text;
         }
 
         /// <summary>

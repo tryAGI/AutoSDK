@@ -17,11 +17,10 @@ namespace G.JsonConverters
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
 
-            global::G.JobOutRepositorieDiscriminator? discriminator = default;
             var readerCopy = reader;
             var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JobOutRepositorieDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JobOutRepositorieDiscriminator> ??
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JobOutRepositorieDiscriminator)}");
-            discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
+            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.GithubRepositoryOut? githubRepositoryOut = default;
             if (discriminator?.Type == global::G.JobOutRepositorieDiscriminatorType.Github)
@@ -32,6 +31,7 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.RepositoriesItem3(
+                discriminator?.Type,
                 githubRepositoryOut
                 );
 

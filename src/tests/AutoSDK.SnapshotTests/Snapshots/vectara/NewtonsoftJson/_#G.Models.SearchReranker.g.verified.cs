@@ -14,6 +14,11 @@ namespace G
     public readonly partial struct SearchReranker : global::System.IEquatable<SearchReranker>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.SearchRerankerDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// Reranker that is specific to the customer.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -192,6 +197,7 @@ namespace G
         /// 
         /// </summary>
         public SearchReranker(
+            global::G.SearchRerankerDiscriminatorType? type,
             global::G.CustomerSpecificReranker? customerSpecific,
             global::G.UserFunctionReranker? userFunction,
             global::G.MMRReranker? mR,
@@ -199,6 +205,8 @@ namespace G
             global::G.NoneReranker? none
             )
         {
+            Type = type;
+
             CustomerSpecific = customerSpecific;
             UserFunction = userFunction;
             MR = mR;

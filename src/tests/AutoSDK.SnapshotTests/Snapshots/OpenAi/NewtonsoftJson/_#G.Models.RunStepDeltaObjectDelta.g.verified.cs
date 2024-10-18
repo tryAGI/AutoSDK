@@ -1,7 +1,5 @@
 ﻿//HintName: G.Models.RunStepDeltaObjectDelta.g.cs
 
-#pragma warning disable CS0618 // Type or member is obsolete
-
 #nullable enable
 
 namespace G
@@ -15,7 +13,7 @@ namespace G
         /// The details of the run step.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step_details")]
-        public global::G.OneOf<global::G.RunStepDeltaStepDetailsMessageCreationObject, global::G.RunStepDeltaStepDetailsToolCallsObject>? StepDetails { get; set; }
+        public global::G.RunStepDeltaObjectDeltaStepDetails? StepDetails { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

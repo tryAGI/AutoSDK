@@ -52,6 +52,8 @@ namespace G
                     new global::G.JsonConverters.SystemMessageRoleNullableJsonConverter(),
                     new global::G.JsonConverters.DocumentContentTypeJsonConverter(),
                     new global::G.JsonConverters.DocumentContentTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ToolContentDiscriminatorTypeJsonConverter(),
+                    new global::G.JsonConverters.ToolContentDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ToolMessageV2RoleJsonConverter(),
                     new global::G.JsonConverters.ToolMessageV2RoleNullableJsonConverter(),
                     new global::G.JsonConverters.ChatMessageV2DiscriminatorRoleJsonConverter(),

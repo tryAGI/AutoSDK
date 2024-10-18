@@ -12,6 +12,11 @@ namespace G
     public readonly partial struct Block : global::System.IEquatable<Block>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BlockDiscriminatorType? Type { get; }
+
+        /// <summary>
         /// A block of text content.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -155,12 +160,15 @@ namespace G
         /// 
         /// </summary>
         public Block(
+            global::G.BlockDiscriminatorType? type,
             global::G.TextBlock? text,
             global::G.ImageBlock? image,
             global::G.ToolUseBlock? toolUse,
             global::G.ToolResultBlock? toolResult
             )
         {
+            Type = type;
+
             Text = text;
             Image = image;
             ToolUse = toolUse;

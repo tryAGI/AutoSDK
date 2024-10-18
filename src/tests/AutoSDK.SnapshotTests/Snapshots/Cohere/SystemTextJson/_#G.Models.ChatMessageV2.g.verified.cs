@@ -12,6 +12,11 @@ namespace G
     public readonly partial struct ChatMessageV2 : global::System.IEquatable<ChatMessageV2>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatMessageV2DiscriminatorRole? Role { get; }
+
+        /// <summary>
         /// A message from the user.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -155,12 +160,15 @@ namespace G
         /// 
         /// </summary>
         public ChatMessageV2(
+            global::G.ChatMessageV2DiscriminatorRole? role,
             global::G.UserMessage? user,
             global::G.AssistantMessage? assistant,
             global::G.SystemMessage? system,
             global::G.ToolMessageV2? tool
             )
         {
+            Role = role;
+
             User = user;
             Assistant = assistant;
             System = system;

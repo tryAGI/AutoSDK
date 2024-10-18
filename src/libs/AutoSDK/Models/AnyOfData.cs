@@ -98,7 +98,10 @@ public readonly record struct AnyOfData(
                         : $"Value{i + 1}",
                     Summary = x.Schema.GetSummary(),
                     DiscriminatorValue = context.Schema.Discriminator?.Mapping?
-                        .FirstOrDefault(y => y.Value.Contains(x.Id))
+                        .FirstOrDefault(y =>
+                            y.Value.Contains(x.Id) ||
+                            (x.Schema.Properties.ContainsKey(context.Schema.Discriminator.PropertyName) &&
+                            x.Schema.Properties[context.Schema.Discriminator.PropertyName].Enum.FirstOrDefault()?.GetString() == y.Key))
                         .Key?.ToEnumValue(string.Empty, context.Settings).Name ?? string.Empty,
                 }).ToImmutableArray()
                 : ImmutableArray<PropertyData>.Empty,

@@ -14,6 +14,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public global::G.ModelListDataItemDiscriminatorType? Type { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.BaseModelCard? BaseModelCard { get; init; }
 #else
@@ -85,10 +90,13 @@ namespace G
         /// 
         /// </summary>
         public DataItem(
+            global::G.ModelListDataItemDiscriminatorType? type,
             global::G.BaseModelCard? baseModelCard,
             global::G.FTModelCard? fTModelCard
             )
         {
+            Type = type;
+
             BaseModelCard = baseModelCard;
             FTModelCard = fTModelCard;
         }
