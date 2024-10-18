@@ -18,6 +18,14 @@ namespace G
         /// 
         /// </summary>
         SingleSelect,
+        /// <summary>
+        /// 
+        /// </summary>
+        MultiSelect,
+        /// <summary>
+        /// 
+        /// </summary>
+        TrueFalse,
     }
 
     /// <summary>
@@ -34,6 +42,8 @@ namespace G
             {
                 OrgsCreateOrUpdateCustomPropertyRequestValueType.String => "string",
                 OrgsCreateOrUpdateCustomPropertyRequestValueType.SingleSelect => "single_select",
+                OrgsCreateOrUpdateCustomPropertyRequestValueType.MultiSelect => "multi_select",
+                OrgsCreateOrUpdateCustomPropertyRequestValueType.TrueFalse => "true_false",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -46,6 +56,8 @@ namespace G
             {
                 "string" => OrgsCreateOrUpdateCustomPropertyRequestValueType.String,
                 "single_select" => OrgsCreateOrUpdateCustomPropertyRequestValueType.SingleSelect,
+                "multi_select" => OrgsCreateOrUpdateCustomPropertyRequestValueType.MultiSelect,
+                "true_false" => OrgsCreateOrUpdateCustomPropertyRequestValueType.TrueFalse,
                 _ => null,
             };
         }

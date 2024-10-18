@@ -17,7 +17,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OrgCustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
+        global::System.Threading.Tasks.Task<global::G.CustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
             string org,
             string customPropertyName,
             global::G.OrgsCreateOrUpdateCustomPropertyRequest request,
@@ -51,7 +51,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OrgCustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
+        global::System.Threading.Tasks.Task<global::G.CustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
             string org,
             string customPropertyName,
             global::G.OrgsCreateOrUpdateCustomPropertyRequestValueType valueType,

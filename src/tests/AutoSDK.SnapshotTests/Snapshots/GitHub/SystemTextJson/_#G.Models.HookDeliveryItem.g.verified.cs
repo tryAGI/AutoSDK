@@ -97,6 +97,12 @@ namespace G
         public required int? RepositoryId { get; set; }
 
         /// <summary>
+        /// Time when the webhook delivery was throttled.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("throttled_at")]
+        public global::System.DateTime? ThrottledAt { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

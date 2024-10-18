@@ -123,7 +123,7 @@ namespace G
         /// </param>
         /// <param name="target">
         /// The target of the ruleset<br/>
-        /// **Note**: The `push` target is in beta and is subject to change.
+        /// Default Value: branch
         /// </param>
         /// <param name="enforcement">
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
@@ -144,7 +144,7 @@ namespace G
             string repo,
             string name,
             global::G.RepositoryRuleEnforcement enforcement,
-            global::G.ReposCreateRepoRulesetRequestTarget? target = default,
+            global::G.ReposCreateRepoRulesetRequestTarget? target = global::G.ReposCreateRepoRulesetRequestTarget.Branch,
             global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? bypassActors = default,
             global::G.RepositoryRulesetConditions? conditions = default,
             global::System.Collections.Generic.IList<global::G.RepositoryRule>? rules = default,

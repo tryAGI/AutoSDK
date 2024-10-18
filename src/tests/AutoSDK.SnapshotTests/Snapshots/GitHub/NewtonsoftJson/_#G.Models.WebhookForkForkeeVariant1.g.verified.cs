@@ -131,12 +131,6 @@ namespace G
         public global::G.OneOf<int?, global::System.DateTime?> CreatedAt { get; set; } = default!;
 
         /// <summary>
-        /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("custom_properties")]
-        public object? CustomProperties { get; set; }
-
-        /// <summary>
         /// The default branch of the repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default_branch", Required = global::Newtonsoft.Json.Required.Always)]
@@ -289,7 +283,7 @@ namespace G
         /// Unique identifier of the repository
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// 

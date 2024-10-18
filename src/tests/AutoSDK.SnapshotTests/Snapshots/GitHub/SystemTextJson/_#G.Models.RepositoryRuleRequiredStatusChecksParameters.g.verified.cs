@@ -10,6 +10,12 @@ namespace G
     public sealed partial class RepositoryRuleRequiredStatusChecksParameters
     {
         /// <summary>
+        /// Allow repositories and branches to be created if a check would otherwise prohibit it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("do_not_enforce_on_create")]
+        public bool? DoNotEnforceOnCreate { get; set; }
+
+        /// <summary>
         /// Status checks that are required.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_status_checks")]

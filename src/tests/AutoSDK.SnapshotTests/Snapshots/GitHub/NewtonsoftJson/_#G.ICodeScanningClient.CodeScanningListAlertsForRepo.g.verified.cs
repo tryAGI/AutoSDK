@@ -31,9 +31,12 @@ namespace G
         /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
         /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
         /// </param>
+        /// <param name="pr"></param>
         /// <param name="direction">
         /// Default Value: desc
         /// </param>
+        /// <param name="before"></param>
+        /// <param name="after"></param>
         /// <param name="sort">
         /// Default Value: created
         /// </param>
@@ -53,7 +56,10 @@ namespace G
             int? page = 1,
             int? perPage = 30,
             string? @ref = default,
+            int? pr = default,
             global::G.CodeScanningListAlertsForRepoDirection? direction = global::G.CodeScanningListAlertsForRepoDirection.Desc,
+            string? before = default,
+            string? after = default,
             global::G.CodeScanningListAlertsForRepoSort? sort = global::G.CodeScanningListAlertsForRepoSort.Created,
             global::G.CodeScanningAlertStateQuery? state = default,
             global::G.CodeScanningAlertSeverity? severity = default,

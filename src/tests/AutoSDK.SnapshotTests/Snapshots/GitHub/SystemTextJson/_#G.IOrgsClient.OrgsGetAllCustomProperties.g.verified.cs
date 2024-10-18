@@ -13,7 +13,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrgCustomProperty>> OrgsGetAllCustomPropertiesAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CustomProperty>> OrgsGetAllCustomPropertiesAsync(
             string org,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

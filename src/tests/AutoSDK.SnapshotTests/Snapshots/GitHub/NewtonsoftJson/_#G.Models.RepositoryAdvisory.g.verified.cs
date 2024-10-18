@@ -134,6 +134,12 @@ namespace G
         public global::G.RepositoryAdvisoryCvss? Cvss { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cvss_severities")]
+        public global::G.CvssSeverities? CvssSeverities { get; set; }
+
+        /// <summary>
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwes")]

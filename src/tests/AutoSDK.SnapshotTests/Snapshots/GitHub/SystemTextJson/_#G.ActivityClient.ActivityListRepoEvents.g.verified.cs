@@ -30,7 +30,8 @@ namespace G
 
         /// <summary>
         /// List repository events<br/>
-        /// **Note**: This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

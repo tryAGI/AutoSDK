@@ -9,13 +9,13 @@ namespace G
         partial void PrepareGistsUpdateCommentArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string gistId,
-            ref int commentId,
+            ref long commentId,
             global::G.GistsUpdateCommentRequest request);
         partial void PrepareGistsUpdateCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string gistId,
-            int commentId,
+            long commentId,
             global::G.GistsUpdateCommentRequest request);
         partial void ProcessGistsUpdateCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GistComment> GistsUpdateCommentAsync(
             string gistId,
-            int commentId,
+            long commentId,
             global::G.GistsUpdateCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -132,7 +132,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GistComment> GistsUpdateCommentAsync(
             string gistId,
-            int commentId,
+            long commentId,
             string body,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

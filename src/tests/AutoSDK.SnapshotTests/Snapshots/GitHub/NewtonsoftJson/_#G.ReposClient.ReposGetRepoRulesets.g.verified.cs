@@ -12,7 +12,8 @@ namespace G
             ref string repo,
             ref int? perPage,
             ref int? page,
-            ref bool? includesParents);
+            ref bool? includesParents,
+            ref string? targets);
         partial void PrepareReposGetRepoRulesetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -20,7 +21,8 @@ namespace G
             string repo,
             int? perPage,
             int? page,
-            bool? includesParents);
+            bool? includesParents,
+            string? targets);
         partial void ProcessReposGetRepoRulesetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,6 +47,9 @@ namespace G
         /// <param name="includesParents">
         /// Default Value: true
         /// </param>
+        /// <param name="targets">
+        /// Example: branch,tag,push
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryRuleset>> ReposGetRepoRulesetsAsync(
@@ -53,6 +58,7 @@ namespace G
             int? perPage = 30,
             int? page = 1,
             bool? includesParents = true,
+            string? targets = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -63,7 +69,8 @@ namespace G
                 repo: ref repo,
                 perPage: ref perPage,
                 page: ref page,
-                includesParents: ref includesParents);
+                includesParents: ref includesParents,
+                targets: ref targets);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/repos/{owner}/{repo}/rulesets",
@@ -72,6 +79,7 @@ namespace G
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("includes_parents", includesParents?.ToString()) 
+                .AddOptionalParameter("targets", targets) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -88,7 +96,8 @@ namespace G
                 repo: repo,
                 perPage: perPage,
                 page: page,
-                includesParents: includesParents);
+                includesParents: includesParents,
+                targets: targets);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

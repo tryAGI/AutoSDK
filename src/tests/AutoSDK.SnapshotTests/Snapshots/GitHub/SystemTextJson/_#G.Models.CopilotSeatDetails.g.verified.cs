@@ -12,18 +12,24 @@ namespace G
     public sealed partial class CopilotSeatDetails
     {
         /// <summary>
-        /// The assignee that has been granted access to GitHub Copilot.
+        /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignee")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory3))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<global::G.SimpleUser, global::G.Team, global::G.Organization> Assignee { get; set; }
+        public required global::G.SimpleUser Assignee { get; set; }
 
         /// <summary>
-        /// The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually.
+        /// A GitHub organization.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
+        public global::G.NullableOrganizationSimple? Organization { get; set; }
+
+        /// <summary>
+        /// The team through which the assignee is granted access to GitHub Copilot, if applicable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigning_team")]
-        public global::G.Team? AssigningTeam { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::G.OneOf<global::G.Team, global::G.EnterpriseTeam>? AssigningTeam { get; set; }
 
         /// <summary>
         /// The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
@@ -55,6 +61,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// The Copilot plan of the organization, or the parent enterprise, when applicable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("plan_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CopilotSeatDetailsPlanTypeJsonConverter))]
+        public global::G.CopilotSeatDetailsPlanType? PlanType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

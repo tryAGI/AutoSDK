@@ -22,12 +22,6 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// A set of tags applicable for the rule.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("tags")]
-        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
-
-        /// <summary>
         /// The severity of the alert.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("severity")]
@@ -44,6 +38,30 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
+
+        /// <summary>
+        /// A description of the rule used to detect the alert.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("full_description")]
+        public string? FullDescription { get; set; }
+
+        /// <summary>
+        /// A set of tags applicable for the rule.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("tags")]
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+
+        /// <summary>
+        /// Detailed documentation for the rule as GitHub Flavored Markdown.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("help")]
+        public string? Help { get; set; }
+
+        /// <summary>
+        /// A link to the documentation for the rule used to detect the alert.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("help_uri")]
+        public string? HelpUri { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

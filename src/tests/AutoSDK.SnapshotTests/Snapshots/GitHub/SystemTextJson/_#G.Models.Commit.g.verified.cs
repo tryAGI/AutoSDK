@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.Commit.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -52,18 +54,20 @@ namespace G
         public required global::G.CommitCommit1 Commit1 { get; set; }
 
         /// <summary>
-        /// A GitHub user.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("author")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Author { get; set; }
+        public required global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Author { get; set; }
 
         /// <summary>
-        /// A GitHub user.
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("committer")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.NullableSimpleUser? Committer { get; set; }
+        public required global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Committer { get; set; }
 
         /// <summary>
         /// 

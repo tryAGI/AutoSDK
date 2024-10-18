@@ -45,10 +45,10 @@ namespace G
         public global::G.WebhookTeamDeletedRepository? Repository { get; set; }
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender")]
-        public global::G.SimpleUserWebhooks? Sender { get; set; }
+        public global::G.SimpleUser? Sender { get; set; }
 
         /// <summary>
         /// Groups of organization members that gives permissions on specified repositories.

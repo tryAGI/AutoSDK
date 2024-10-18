@@ -29,10 +29,7 @@ namespace G
         /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specify<br/>
         /// which repositories the token can access and which permissions are granted to the<br/>
         /// token.<br/>
-        /// Invalid tokens will return `404 NOT FOUND`.<br/>
-        /// You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)<br/>
-        /// when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App<br/>
-        /// as the username and password.
+        /// Invalid tokens will return `404 NOT FOUND`.
         /// </summary>
         /// <param name="clientId"></param>
         /// <param name="request"></param>
@@ -117,10 +114,7 @@ namespace G
         /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specify<br/>
         /// which repositories the token can access and which permissions are granted to the<br/>
         /// token.<br/>
-        /// Invalid tokens will return `404 NOT FOUND`.<br/>
-        /// You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication)<br/>
-        /// when accessing this endpoint, using the `client_id` and `client_secret` of the GitHub App<br/>
-        /// as the username and password.
+        /// Invalid tokens will return `404 NOT FOUND`.
         /// </summary>
         /// <param name="clientId"></param>
         /// <param name="accessToken">

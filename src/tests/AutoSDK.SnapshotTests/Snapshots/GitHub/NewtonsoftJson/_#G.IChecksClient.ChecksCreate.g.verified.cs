@@ -10,7 +10,8 @@ namespace G
         /// Creates a new check run for a specific commit in a repository.<br/>
         /// To create a check run, you must use a GitHub App. OAuth apps and authenticated users are not able to create a check suite.<br/>
         /// In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.<br/>
-        /// **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -28,7 +29,8 @@ namespace G
         /// Creates a new check run for a specific commit in a repository.<br/>
         /// To create a check run, you must use a GitHub App. OAuth apps and authenticated users are not able to create a check suite.<br/>
         /// In a check suite, GitHub limits the number of check runs with the same name to 1000. Once these check runs exceed 1000, GitHub will start to automatically delete older check runs.<br/>
-        /// **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

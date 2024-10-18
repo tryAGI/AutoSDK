@@ -19,7 +19,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GistComment> GistsUpdateCommentAsync(
             string gistId,
-            int commentId,
+            long commentId,
             global::G.GistsUpdateCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -40,7 +40,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GistComment> GistsUpdateCommentAsync(
             string gistId,
-            int commentId,
+            long commentId,
             string body,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

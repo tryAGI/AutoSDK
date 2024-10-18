@@ -10,6 +10,7 @@ namespace G
     public sealed partial class Label
     {
         /// <summary>
+        /// Unique identifier for the label.<br/>
         /// Example: 208045946L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
@@ -40,6 +41,7 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
+        /// Optional description of the label, such as its purpose.<br/>
         /// Example: Something isn't working
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
@@ -55,6 +57,7 @@ namespace G
         public required string Color { get; set; }
 
         /// <summary>
+        /// Whether this label comes by default in a new repository.<br/>
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default")]

@@ -32,11 +32,19 @@ namespace G
         public required global::G.OrganizationSimpleWebhooks Organization { get; set; }
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
+        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enterprise")]
+        public global::G.EnterpriseWebhooks? Enterprise { get; set; }
+
+        /// <summary>
+        /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUser Sender { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>

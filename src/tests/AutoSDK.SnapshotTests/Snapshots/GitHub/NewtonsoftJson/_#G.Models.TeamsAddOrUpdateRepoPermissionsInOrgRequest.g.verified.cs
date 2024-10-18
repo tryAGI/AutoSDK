@@ -10,11 +10,10 @@ namespace G
     public sealed partial class TeamsAddOrUpdateRepoPermissionsInOrgRequest
     {
         /// <summary>
-        /// The permission to grant the team on this repository. We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.<br/>
-        /// Default Value: push
+        /// The permission to grant the team on this repository. We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
-        public string? Permission { get; set; } = "push";
+        public string? Permission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

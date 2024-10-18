@@ -16,12 +16,16 @@ namespace G
         /// <param name="page">
         /// Default Value: 1
         /// </param>
+        /// <param name="targets">
+        /// Example: branch,tag,push
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryRuleset>> ReposGetOrgRulesetsAsync(
             string org,
             int? perPage = 30,
             int? page = 1,
+            string? targets = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

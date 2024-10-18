@@ -14,6 +14,7 @@ namespace G
             ref string? toolGuid,
             ref int? page,
             ref int? perPage,
+            ref int? pr,
             ref string? @ref,
             ref string? sarifId,
             ref global::G.CodeScanningListRecentAnalysesDirection? direction,
@@ -27,6 +28,7 @@ namespace G
             string? toolGuid,
             int? page,
             int? perPage,
+            int? pr,
             string? @ref,
             string? sarifId,
             global::G.CodeScanningListRecentAnalysesDirection? direction,
@@ -51,8 +53,8 @@ namespace G
         /// that were run in the analysis.<br/>
         /// For very old analyses this data is not available,<br/>
         /// and `0` is returned in this field.<br/>
-        /// **Deprecation notice**:<br/>
-        /// The `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** The `tool_name` field is deprecated and will, in future, not be included in the response for this endpoint. The example response reflects this change. The tool name can now be found inside the `tool` field.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint with private or public repositories, or the `public_repo` scope to use this endpoint with only public repositories.
         /// </summary>
         /// <param name="owner"></param>
@@ -69,6 +71,7 @@ namespace G
         /// <param name="perPage">
         /// Default Value: 30
         /// </param>
+        /// <param name="pr"></param>
         /// <param name="ref">
         /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
         /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
@@ -92,6 +95,7 @@ namespace G
             string? toolGuid = default,
             int? page = 1,
             int? perPage = 30,
+            int? pr = default,
             string? @ref = default,
             string? sarifId = default,
             global::G.CodeScanningListRecentAnalysesDirection? direction = global::G.CodeScanningListRecentAnalysesDirection.Desc,
@@ -108,6 +112,7 @@ namespace G
                 toolGuid: ref toolGuid,
                 page: ref page,
                 perPage: ref perPage,
+                pr: ref pr,
                 @ref: ref @ref,
                 sarifId: ref sarifId,
                 direction: ref direction,
@@ -121,6 +126,7 @@ namespace G
                 .AddOptionalParameter("tool_guid", toolGuid) 
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
+                .AddOptionalParameter("pr", pr?.ToString()) 
                 .AddOptionalParameter("ref", @ref) 
                 .AddOptionalParameter("sarif_id", sarifId) 
                 .AddOptionalParameter("direction", direction?.ToValueString()) 
@@ -143,6 +149,7 @@ namespace G
                 toolGuid: toolGuid,
                 page: page,
                 perPage: perPage,
+                pr: pr,
                 @ref: @ref,
                 sarifId: sarifId,
                 direction: direction,

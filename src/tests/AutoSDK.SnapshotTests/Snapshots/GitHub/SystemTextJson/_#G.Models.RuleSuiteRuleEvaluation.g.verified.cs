@@ -36,7 +36,7 @@ namespace G
         public string? RuleType { get; set; }
 
         /// <summary>
-        /// Any associated details with the rule evaluation.
+        /// The detailed failure message for the rule. Null if the rule passed.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
         public string? Details { get; set; }

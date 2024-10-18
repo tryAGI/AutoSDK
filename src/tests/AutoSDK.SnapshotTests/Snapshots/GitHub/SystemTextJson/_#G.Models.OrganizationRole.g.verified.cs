@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// The name of the role.

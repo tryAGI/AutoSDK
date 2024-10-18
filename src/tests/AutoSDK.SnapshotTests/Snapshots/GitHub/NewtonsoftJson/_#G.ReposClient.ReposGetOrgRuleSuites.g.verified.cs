@@ -9,6 +9,7 @@ namespace G
         partial void PrepareReposGetOrgRuleSuitesArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
+            ref string? @ref,
             ref int? repositoryName,
             ref global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod,
             ref string? actorName,
@@ -19,6 +20,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
+            string? @ref,
             int? repositoryName,
             global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod,
             string? actorName,
@@ -40,6 +42,7 @@ namespace G
         /// For more information, see "[Managing rulesets for repositories in your organization](https://docs.github.com/organizations/managing-organization-settings/managing-rulesets-for-repositories-in-your-organization#viewing-insights-for-rulesets)."
         /// </summary>
         /// <param name="org"></param>
+        /// <param name="ref"></param>
         /// <param name="repositoryName"></param>
         /// <param name="timePeriod">
         /// Default Value: day
@@ -58,6 +61,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RuleSuite>> ReposGetOrgRuleSuitesAsync(
             string org,
+            string? @ref = default,
             int? repositoryName = default,
             global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod = global::G.ReposGetOrgRuleSuitesTimePeriod.Day,
             string? actorName = default,
@@ -71,6 +75,7 @@ namespace G
             PrepareReposGetOrgRuleSuitesArguments(
                 httpClient: _httpClient,
                 org: ref org,
+                @ref: ref @ref,
                 repositoryName: ref repositoryName,
                 timePeriod: ref timePeriod,
                 actorName: ref actorName,
@@ -98,6 +103,7 @@ namespace G
                 path: $"/orgs/{org}/rulesets/rule-suites",
                 baseUri: _httpClient.BaseAddress); 
             __pathBuilder 
+                .AddOptionalParameter("ref", @ref) 
                 .AddOptionalParameter("repository_name", repositoryName?.ToString()) 
                 .AddOptionalParameter("time_period", timePeriodValue?.ToString()) 
                 .AddOptionalParameter("actor_name", actorName) 
@@ -117,6 +123,7 @@ namespace G
                 httpClient: _httpClient,
                 httpRequestMessage: httpRequest,
                 org: org,
+                @ref: @ref,
                 repositoryName: repositoryName,
                 timePeriod: timePeriod,
                 actorName: actorName,

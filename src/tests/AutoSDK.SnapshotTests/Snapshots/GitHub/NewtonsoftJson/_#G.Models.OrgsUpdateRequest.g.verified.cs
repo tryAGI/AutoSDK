@@ -144,51 +144,63 @@ namespace G
         public string? Blog { get; set; }
 
         /// <summary>
-        /// Whether GitHub Advanced Security is automatically enabled for new repositories.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advanced_security_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? AdvancedSecurityEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether Dependabot alerts is automatically enabled for new repositories.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_alerts_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DependabotAlertsEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether Dependabot security updates is automatically enabled for new repositories.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_security_updates_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DependabotSecurityUpdatesEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether dependency graph is automatically enabled for new repositories.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DependencyGraphEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether secret scanning is automatically enabled for new repositories.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? SecretScanningEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether secret scanning push protection is automatically enabled for new repositories.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
         /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? SecretScanningPushProtectionEnabledForNewRepositories { get; set; }
 
         /// <summary>

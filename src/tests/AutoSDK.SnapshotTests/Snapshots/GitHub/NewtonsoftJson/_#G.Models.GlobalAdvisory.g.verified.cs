@@ -138,8 +138,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cvss_severities")]
+        public global::G.CvssSeverities? CvssSeverities { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwe>? Cwes { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("epss")]
+        public global::G.GlobalAdvisoryEpss? Epss { get; set; }
 
         /// <summary>
         /// The users who contributed to the advisory.<br/>

@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int? Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// 

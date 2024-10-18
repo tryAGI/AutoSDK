@@ -7,7 +7,8 @@ namespace G
     {
         /// <summary>
         /// List public events<br/>
-        /// We delay the public events feed by five minutes, which means the most recent event returned by the public events API actually occurred at least five minutes ago.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         /// <param name="perPage">
         /// Default Value: 30

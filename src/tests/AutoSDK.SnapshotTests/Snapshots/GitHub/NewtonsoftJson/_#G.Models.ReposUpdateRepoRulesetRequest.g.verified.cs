@@ -16,8 +16,7 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// The target of the ruleset<br/>
-        /// **Note**: The `push` target is in beta and is subject to change.
+        /// The target of the ruleset
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target")]
         public global::G.ReposUpdateRepoRulesetRequestTarget? Target { get; set; }

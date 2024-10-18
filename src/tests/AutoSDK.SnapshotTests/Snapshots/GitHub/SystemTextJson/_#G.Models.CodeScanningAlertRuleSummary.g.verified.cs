@@ -22,12 +22,6 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// A set of tags applicable for the rule.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
-        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
-
-        /// <summary>
         /// The severity of the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
@@ -46,6 +40,30 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
+
+        /// <summary>
+        /// A description of the rule used to detect the alert.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("full_description")]
+        public string? FullDescription { get; set; }
+
+        /// <summary>
+        /// A set of tags applicable for the rule.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("tags")]
+        public global::System.Collections.Generic.IList<string>? Tags { get; set; }
+
+        /// <summary>
+        /// Detailed documentation for the rule as GitHub Flavored Markdown.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("help")]
+        public string? Help { get; set; }
+
+        /// <summary>
+        /// A link to the documentation for the rule used to detect the alert.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("help_uri")]
+        public string? HelpUri { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -17,18 +17,18 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// Example: 42
+        /// Example: 42L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_review_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? PullRequestReviewId { get; set; }
+        public required long? PullRequestReviewId { get; set; }
 
         /// <summary>
-        /// Example: 10
+        /// Example: 10L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// Example: MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEw

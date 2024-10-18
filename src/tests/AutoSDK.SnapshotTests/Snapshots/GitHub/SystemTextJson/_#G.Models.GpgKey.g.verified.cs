@@ -10,11 +10,11 @@ namespace G
     public sealed partial class GpgKey
     {
         /// <summary>
-        /// Example: 3
+        /// Example: 3L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// Example: Octocat's GPG Key

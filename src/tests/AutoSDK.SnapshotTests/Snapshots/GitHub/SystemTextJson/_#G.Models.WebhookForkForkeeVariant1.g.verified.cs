@@ -145,12 +145,6 @@ namespace G
         public required global::G.OneOf<int?, global::System.DateTime?> CreatedAt { get; set; }
 
         /// <summary>
-        /// The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("custom_properties")]
-        public object? CustomProperties { get; set; }
-
-        /// <summary>
         /// The default branch of the repository.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_branch")]
@@ -326,7 +320,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// 

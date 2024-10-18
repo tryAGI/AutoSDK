@@ -26,7 +26,8 @@ namespace G
 
         /// <summary>
         /// Get team membership for a user (Legacy)<br/>
-        /// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get team membership for a user](https://docs.github.com/rest/teams/members#get-team-membership-for-a-user) endpoint.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Get team membership for a user](https://docs.github.com/rest/teams/members#get-team-membership-for-a-user) endpoint.<br/>
         /// Team members will include the members of child teams.<br/>
         /// To get a user's membership with a team, the team must be visible to the authenticated user.<br/>
         /// **Note:**<br/>

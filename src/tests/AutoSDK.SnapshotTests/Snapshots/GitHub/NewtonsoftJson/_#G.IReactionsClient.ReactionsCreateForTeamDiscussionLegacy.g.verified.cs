@@ -7,7 +7,8 @@ namespace G
     {
         /// <summary>
         /// Create reaction for a team discussion (Legacy)<br/>
-        /// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion`](https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-team-discussion) endpoint.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion`](https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-team-discussion) endpoint.<br/>
         /// Create a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).<br/>
         /// A response with an HTTP `200` status means that you already added the reaction type to this team discussion.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
@@ -26,7 +27,8 @@ namespace G
 
         /// <summary>
         /// Create reaction for a team discussion (Legacy)<br/>
-        /// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion`](https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-team-discussion) endpoint.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`Create reaction for a team discussion`](https://docs.github.com/rest/reactions/reactions#create-reaction-for-a-team-discussion) endpoint.<br/>
         /// Create a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).<br/>
         /// A response with an HTTP `200` status means that you already added the reaction type to this team discussion.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.

@@ -32,7 +32,8 @@ namespace G
 
         /// <summary>
         /// List reactions for a team discussion (Legacy)<br/>
-        /// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion`](https://docs.github.com/rest/reactions/reactions#list-reactions-for-a-team-discussion) endpoint.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [`List reactions for a team discussion`](https://docs.github.com/rest/reactions/reactions#list-reactions-for-a-team-discussion) endpoint.<br/>
         /// List the reactions to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>

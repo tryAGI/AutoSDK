@@ -90,8 +90,20 @@ namespace G
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("codespaces")]
+        public global::System.Collections.Generic.IList<string>? Codespaces { get; set; }
+
+        /// <summary>
+        /// Example: [192.0.2.1]
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot")]
         public global::System.Collections.Generic.IList<string>? Dependabot { get; set; }
+
+        /// <summary>
+        /// Example: [192.0.2.1]
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("copilot")]
+        public global::System.Collections.Generic.IList<string>? Copilot { get; set; }
 
         /// <summary>
         /// 

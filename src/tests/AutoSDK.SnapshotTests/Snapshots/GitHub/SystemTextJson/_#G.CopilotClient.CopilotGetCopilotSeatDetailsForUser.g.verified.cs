@@ -26,10 +26,11 @@ namespace G
 
         /// <summary>
         /// Get Copilot seat assignment details for a user<br/>
-        /// **Note**: This endpoint is in beta and is subject to change.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; This endpoint is in beta and is subject to change.<br/>
         /// Gets the GitHub Copilot seat assignment details for a member of an organization who currently has access to GitHub Copilot.<br/>
-        /// Organization owners can view GitHub Copilot seat assignment details for members in their organization.<br/>
-        /// OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+        /// Only organization owners can view Copilot seat assignment details for members of their organization.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="username"></param>

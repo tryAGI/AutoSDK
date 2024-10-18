@@ -19,19 +19,19 @@ namespace G
 
         /// <summary>
         /// The ID of the pull request review to which the comment belongs.<br/>
-        /// Example: 42
+        /// Example: 42L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_review_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int? PullRequestReviewId { get; set; }
+        public required long? PullRequestReviewId { get; set; }
 
         /// <summary>
         /// The ID of the pull request review comment.<br/>
-        /// Example: 1
+        /// Example: 1L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// The node ID of the pull request review comment.<br/>

@@ -26,7 +26,8 @@ namespace G
         /// Gets a redirect URL to download a tar archive for a repository. If you omit `:ref`, the repository’s default branch (usually<br/>
         /// `main`) will be used. Please make sure your HTTP framework is configured to follow redirects or you will need to use<br/>
         /// the `Location` header to make a second `GET` request.<br/>
-        /// **Note**: For private repositories, these links are temporary and expire after five minutes.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; For private repositories, these links are temporary and expire after five minutes.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

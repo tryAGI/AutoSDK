@@ -36,7 +36,7 @@ public static partial class Sources
                 })
                 .ToImmutableArray().AsEquatableArray()
             : anyOfData.Properties;
-        var read = anyOfData.DiscriminatorType != null ? $@" 
+        var read = anyOfData.DiscriminatorType != null && allTypes.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? $@" 
 
             var readerCopy = reader;
 {(anyOfData.IsTrimming ? $@" 

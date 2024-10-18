@@ -42,6 +42,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public string? Content { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 

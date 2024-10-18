@@ -13,10 +13,10 @@ namespace G
     {
         /// <summary>
         /// The id of the environment.<br/>
-        /// Example: 56780428
+        /// Example: 56780428L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=

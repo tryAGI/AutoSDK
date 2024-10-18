@@ -20,7 +20,7 @@ namespace G
             string owner,
             string repo,
             string branch,
-            global::G.OneOf<global::G.ReposSetAppAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request,
+            global::G.ReposSetAppAccessRestrictionsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -31,12 +31,16 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="branch"></param>
+        /// <param name="apps">
+        /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Integration>> ReposSetAppAccessRestrictionsAsync(
             string owner,
             string repo,
             string branch,
+            global::System.Collections.Generic.IList<string> apps,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

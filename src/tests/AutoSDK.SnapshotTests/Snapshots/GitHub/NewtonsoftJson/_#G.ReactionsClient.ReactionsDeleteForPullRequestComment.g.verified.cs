@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int commentId,
+            ref long commentId,
             ref int reactionId);
         partial void PrepareReactionsDeleteForPullRequestCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             int reactionId);
         partial void ProcessReactionsDeleteForPullRequestCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,7 +25,8 @@ namespace G
 
         /// <summary>
         /// Delete a pull request comment reaction<br/>
-        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/pulls/comments/:comment_id/reactions/:reaction_id.`<br/>
         /// Delete a reaction to a [pull request review comment](https://docs.github.com/rest/pulls/comments#get-a-review-comment-for-a-pull-request).
         /// </summary>
         /// <param name="owner"></param>
@@ -37,7 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ReactionsDeleteForPullRequestCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             int reactionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -17,10 +17,10 @@ namespace G
 
         /// <summary>
         /// The target of the ruleset<br/>
-        /// **Note**: The `push` target is in beta and is subject to change.
+        /// Default Value: branch
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target")]
-        public global::G.ReposCreateOrgRulesetRequestTarget? Target { get; set; }
+        public global::G.ReposCreateOrgRulesetRequestTarget? Target { get; set; } = global::G.ReposCreateOrgRulesetRequestTarget.Branch;
 
         /// <summary>
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
@@ -35,7 +35,9 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? BypassActors { get; set; }
 
         /// <summary>
-        /// Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.
+        /// Conditions for an organization ruleset.<br/>
+        /// The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.<br/>
+        /// The push rulesets conditions object does not require the `ref_name` property.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("conditions")]
         public global::G.OrgRulesetConditions? Conditions { get; set; }

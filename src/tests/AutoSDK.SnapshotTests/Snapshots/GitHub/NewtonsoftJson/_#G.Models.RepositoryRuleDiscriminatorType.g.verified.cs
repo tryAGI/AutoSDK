@@ -33,6 +33,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="merge_queue")]
+        MergeQueue,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="required_deployments")]
         RequiredDeployments,
         /// <summary>
@@ -128,6 +133,7 @@ namespace G
                 RepositoryRuleDiscriminatorType.Update => "update",
                 RepositoryRuleDiscriminatorType.Deletion => "deletion",
                 RepositoryRuleDiscriminatorType.RequiredLinearHistory => "required_linear_history",
+                RepositoryRuleDiscriminatorType.MergeQueue => "merge_queue",
                 RepositoryRuleDiscriminatorType.RequiredDeployments => "required_deployments",
                 RepositoryRuleDiscriminatorType.RequiredSignatures => "required_signatures",
                 RepositoryRuleDiscriminatorType.PullRequest => "pull_request",
@@ -158,6 +164,7 @@ namespace G
                 "update" => RepositoryRuleDiscriminatorType.Update,
                 "deletion" => RepositoryRuleDiscriminatorType.Deletion,
                 "required_linear_history" => RepositoryRuleDiscriminatorType.RequiredLinearHistory,
+                "merge_queue" => RepositoryRuleDiscriminatorType.MergeQueue,
                 "required_deployments" => RepositoryRuleDiscriminatorType.RequiredDeployments,
                 "required_signatures" => RepositoryRuleDiscriminatorType.RequiredSignatures,
                 "pull_request" => RepositoryRuleDiscriminatorType.PullRequest,

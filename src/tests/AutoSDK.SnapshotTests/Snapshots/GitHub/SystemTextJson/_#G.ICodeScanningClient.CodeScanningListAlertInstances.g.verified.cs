@@ -26,6 +26,7 @@ namespace G
         /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
         /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
         /// </param>
+        /// <param name="pr"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningAlertInstance>> CodeScanningListAlertInstancesAsync(
@@ -35,6 +36,7 @@ namespace G
             int? page = 1,
             int? perPage = 30,
             string? @ref = default,
+            int? pr = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

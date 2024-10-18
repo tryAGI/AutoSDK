@@ -32,6 +32,21 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1advisories/get/responses/200/content/application~1json/examples/default/value/0/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1advisories/get/responses/200/content/application~1json/examples/default/value/0/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1advisories/get/responses/200/content/application~1json/examples/default/value/0/epss
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1advisories/get/responses/200/content/application~1json/examples/default/value/0/credits/0/user/id
   },
   {
@@ -68,6 +83,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1advisories~1{ghsa_id}/get/responses/200/content/application~1json/examples/default/value/cvss/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1advisories~1{ghsa_id}/get/responses/200/content/application~1json/examples/default/value/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1advisories~1{ghsa_id}/get/responses/200/content/application~1json/examples/default/value/cvss_severities/cvss_v4/score
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -142,6 +167,11 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1app~1hook~1deliveries/get/responses/200/content/application~1json/examples/default/value/0/throttled_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1app~1hook~1deliveries/get/responses/200/content/application~1json/examples/default/value/1/id
   },
   {
@@ -177,6 +207,11 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1app~1hook~1deliveries/get/responses/200/content/application~1json/examples/default/value/1/throttled_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1app~1hook~1deliveries~1{delivery_id}/get/responses/200/content/application~1json/examples/default/value/id
   },
   {
@@ -208,6 +243,11 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1app~1hook~1deliveries~1{delivery_id}/get/responses/200/content/application~1json/examples/default/value/repository_id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1app~1hook~1deliveries~1{delivery_id}/get/responses/200/content/application~1json/examples/default/value/throttled_at
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -707,6 +747,71 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/total_seats
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/0/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/0/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/0/pending_cancellation_date
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/0/last_activity_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/0/assignee/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/0/assignee/site_admin
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/pending_cancellation_date
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/last_activity_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/assignee/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/assignee/site_admin
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1enterprises~1{enterprise}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/day
   },
   {
@@ -957,6 +1062,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/0/security_advisory/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/0/security_advisory/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1enterprises~1{enterprise}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/0/security_advisory/published_at
   },
   {
@@ -1033,6 +1148,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1enterprises~1{enterprise}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/1/security_advisory/cvss/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/1/security_advisory/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/1/security_advisory/cvss_severities/cvss_v4/score
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -1213,6 +1338,246 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1enterprises~1{enterprise}~1secret-scanning~1alerts/get/responses/200/content/application~1json/examples/default/value/1/push_protection_bypassed_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/day
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_chat_acceptances
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_chat_turns
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_active_chat_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/day
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_chat_acceptances
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_chat_turns
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_active_chat_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1enterprises~1{enterprise}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/active_users
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -2947,11 +3312,6 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
-    Pointer: #/paths/~1orgs~1{org}/get/responses/200/content/application~1json/examples/default-response/value/collaborators
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}/get/responses/200/content/application~1json/examples/default-response/value/plan/space
   },
   {
@@ -3123,11 +3483,6 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}/patch/responses/200/content/application~1json/examples/default/value/disk_usage
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1orgs~1{org}/patch/responses/200/content/application~1json/examples/default/value/collaborators
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -3472,6 +3827,406 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/total_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/0/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/0/default
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/0/inherited
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/0/allows_public_repositories
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/0/restricted_to_workflows
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/0/workflow_restrictions_read_only
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/1/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/1/default
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/1/inherited
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/1/allows_public_repositories
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/1/restricted_to_workflows
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/1/workflow_restrictions_read_only
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/2/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/2/default
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/2/inherited
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/2/allows_public_repositories
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/2/restricted_to_workflows
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/get/responses/200/content/application~1json/examples/default/value/runner_groups/2/workflow_restrictions_read_only
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/post/responses/201/content/application~1json/examples/default/value/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/post/responses/201/content/application~1json/examples/default/value/default
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/post/responses/201/content/application~1json/examples/default/value/inherited
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/post/responses/201/content/application~1json/examples/default/value/allows_public_repositories
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/post/responses/201/content/application~1json/examples/default/value/restricted_to_workflows
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups/post/responses/201/content/application~1json/examples/default/value/workflow_restrictions_read_only
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/get/responses/200/content/application~1json/examples/default/value/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/get/responses/200/content/application~1json/examples/default/value/default
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/get/responses/200/content/application~1json/examples/default/value/inherited
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/get/responses/200/content/application~1json/examples/default/value/allows_public_repositories
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/get/responses/200/content/application~1json/examples/default/value/restricted_to_workflows
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/get/responses/200/content/application~1json/examples/default/value/workflow_restrictions_read_only
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/patch/responses/200/content/application~1json/examples/default/value/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/patch/responses/200/content/application~1json/examples/default/value/default
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/patch/responses/200/content/application~1json/examples/default/value/inherited
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/patch/responses/200/content/application~1json/examples/default/value/allows_public_repositories
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/patch/responses/200/content/application~1json/examples/default/value/restricted_to_workflows
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}/patch/responses/200/content/application~1json/examples/default/value/workflow_restrictions_read_only
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/total_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/owner/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/owner/site_admin
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/private
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/fork
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/forks_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/stargazers_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/watchers_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/size
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/open_issues_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/is_template
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/has_issues
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/has_projects
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/has_wiki
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/has_pages
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/has_downloads
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/archived
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/disabled
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/pushed_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/permissions/admin
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/permissions/push
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/permissions/pull
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/delete_branch_on_merge
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/subscribers_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/network_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/forks
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/open_issues
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1repositories/get/responses/200/content/application~1json/examples/default/value/repositories/0/watchers
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/total_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/0/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/0/busy
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/0/labels/0/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/0/labels/1/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/0/labels/2/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/1/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/1/busy
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/1/labels/0/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/1/labels/1/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/1/labels/2/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1actions~1runner-groups~1{runner_group_id}~1runners/get/responses/200/content/application~1json/examples/default/value/runners/1/labels/3/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1actions~1runners/get/responses/200/content/application~1json/examples/default/value/total_count
   },
   {
@@ -3722,6 +4477,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1attestations~1{subject_digest}/get/responses/200/content/application~1json/examples/default/value/attestations/0/repository_id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1attestations~1{subject_digest}/get/responses/200/content/application~1json/examples/default/value/attestations/1/repository_id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1blocks/get/responses/200/content/application~1json/examples/default/value/0/id
   },
   {
@@ -3858,6 +4623,146 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1code-scanning~1alerts/get/responses/200/content/application~1json/examples/default/value/1/repository/fork
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/get/responses/200/content/application~1json/examples/default/value/0/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/get/responses/200/content/application~1json/examples/default/value/0/dependency_graph_autosubmit_action_options/labeled_runners
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/get/responses/200/content/application~1json/examples/default/value/0/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/get/responses/200/content/application~1json/examples/default/value/0/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/get/responses/200/content/application~1json/examples/default/value/1/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/get/responses/200/content/application~1json/examples/default/value/1/dependency_graph_autosubmit_action_options/labeled_runners
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/get/responses/200/content/application~1json/examples/default/value/1/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/get/responses/200/content/application~1json/examples/default/value/1/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/post/responses/201/content/application~1json/examples/default/value/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/post/responses/201/content/application~1json/examples/default/value/dependency_graph_autosubmit_action_options/labeled_runners
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/post/responses/201/content/application~1json/examples/default/value/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations/post/responses/201/content/application~1json/examples/default/value/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1defaults/get/responses/200/content/application~1json/examples/default/value/0/configuration/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1defaults/get/responses/200/content/application~1json/examples/default/value/0/configuration/dependency_graph_autosubmit_action_options/labeled_runners
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1defaults/get/responses/200/content/application~1json/examples/default/value/0/configuration/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1defaults/get/responses/200/content/application~1json/examples/default/value/0/configuration/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1defaults/get/responses/200/content/application~1json/examples/default/value/1/configuration/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1defaults/get/responses/200/content/application~1json/examples/default/value/1/configuration/dependency_graph_autosubmit_action_options/labeled_runners
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1defaults/get/responses/200/content/application~1json/examples/default/value/1/configuration/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1defaults/get/responses/200/content/application~1json/examples/default/value/1/configuration/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1{configuration_id}/get/responses/200/content/application~1json/examples/default/value/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1{configuration_id}/get/responses/200/content/application~1json/examples/default/value/dependency_graph_autosubmit_action_options/labeled_runners
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1{configuration_id}/get/responses/200/content/application~1json/examples/default/value/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1{configuration_id}/get/responses/200/content/application~1json/examples/default/value/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1{configuration_id}/patch/responses/200/content/application~1json/examples/default/value/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1{configuration_id}/patch/responses/200/content/application~1json/examples/default/value/dependency_graph_autosubmit_action_options/labeled_runners
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1{configuration_id}/patch/responses/200/content/application~1json/examples/default/value/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1code-security~1configurations~1{configuration_id}/patch/responses/200/content/application~1json/examples/default/value/updated_at
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -4317,6 +5222,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/0/assignee/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/0/assignee/site_admin
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/created_at
   },
   {
@@ -4333,6 +5248,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/last_activity_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/assignee/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1copilot~1billing~1seats/get/responses/200/content/application~1json/examples/default/value/seats/1/assignee/site_admin
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -4587,6 +5512,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/0/security_advisory/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/0/security_advisory/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/0/security_advisory/published_at
   },
   {
@@ -4663,6 +5598,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/1/security_advisory/cvss/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/1/security_advisory/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/1/security_advisory/cvss_severities/cvss_v4/score
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -5037,6 +5982,11 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1hooks~1{hook_id}~1deliveries/get/responses/200/content/application~1json/examples/default/value/0/throttled_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1hooks~1{hook_id}~1deliveries/get/responses/200/content/application~1json/examples/default/value/1/id
   },
   {
@@ -5072,6 +6022,11 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1hooks~1{hook_id}~1deliveries/get/responses/200/content/application~1json/examples/default/value/1/throttled_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1hooks~1{hook_id}~1deliveries~1{delivery_id}/get/responses/200/content/application~1json/examples/default/value/id
   },
   {
@@ -5103,6 +6058,11 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1hooks~1{hook_id}~1deliveries~1{delivery_id}/get/responses/200/content/application~1json/examples/default/value/repository_id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1hooks~1{hook_id}~1deliveries~1{delivery_id}/get/responses/200/content/application~1json/examples/default/value/throttled_at
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -5988,6 +6948,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1members~1{username}~1copilot/get/responses/200/content/application~1json/examples/default/value/last_activity_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1members~1{username}~1copilot/get/responses/200/content/application~1json/examples/default/value/assignee/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1members~1{username}~1copilot/get/responses/200/content/application~1json/examples/default/value/assignee/site_admin
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -8492,6 +9462,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/0/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/0/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/0/credits_detailed/0/user/id
   },
   {
@@ -8548,6 +9528,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/1/cvss/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/1/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/1/cvss_severities/cvss_v4/score
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -8638,6 +9628,246 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1orgs~1{org}~1settings~1billing~1shared-storage/get/responses/200/content/application~1json/examples/default/value/estimated_storage_for_month
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/day
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_chat_acceptances
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_chat_turns
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/total_active_chat_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/0/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/1/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/0/breakdown/2/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/day
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_chat_acceptances
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_chat_turns
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/total_active_chat_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/0/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/1/active_users
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/suggestions_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/acceptances_count
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/lines_suggested
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/lines_accepted
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1orgs~1{org}~1team~1{team_slug}~1copilot~1usage/get/responses/200/content/application~1json/examples/default/value/1/breakdown/2/active_users
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -13797,6 +15027,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1attestations~1{subject_digest}/get/responses/200/content/application~1json/examples/default/value/attestations/0/repository_id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1attestations~1{subject_digest}/get/responses/200/content/application~1json/examples/default/value/attestations/1/repository_id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1autolinks/get/responses/200/content/application~1json/examples/default/value/0/id
   },
   {
@@ -13838,26 +15078,6 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}/get/responses/200/content/application~1json/examples/default/value/commit/commit/verification/verified
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}/get/responses/200/content/application~1json/examples/default/value/commit/author/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}/get/responses/200/content/application~1json/examples/default/value/commit/author/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}/get/responses/200/content/application~1json/examples/default/value/commit/committer/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}/get/responses/200/content/application~1json/examples/default/value/commit/committer/site_admin
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -14393,26 +15613,6 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}~1rename/post/responses/201/content/application~1json/examples/default/value/commit/commit/comment_count
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}~1rename/post/responses/201/content/application~1json/examples/default/value/commit/author/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}~1rename/post/responses/201/content/application~1json/examples/default/value/commit/author/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}~1rename/post/responses/201/content/application~1json/examples/default/value/commit/committer/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1branches~1{branch}~1rename/post/responses/201/content/application~1json/examples/default/value/commit/committer/site_admin
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -16092,6 +17292,26 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1code-security-configuration/get/responses/200/content/application~1json/examples/default/value/configuration/id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1code-security-configuration/get/responses/200/content/application~1json/examples/default/value/configuration/dependency_graph_autosubmit_action_options/labeled_runners
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1code-security-configuration/get/responses/200/content/application~1json/examples/default/value/configuration/created_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1code-security-configuration/get/responses/200/content/application~1json/examples/default/value/configuration/updated_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1codeowners~1errors/get/responses/200/content/application~1json/examples/default/value/errors/0/line
   },
   {
@@ -16942,26 +18162,6 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits/get/responses/200/content/application~1json/examples/default/value/0/author/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits/get/responses/200/content/application~1json/examples/default/value/0/author/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits/get/responses/200/content/application~1json/examples/default/value/0/committer/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits/get/responses/200/content/application~1json/examples/default/value/0/committer/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits~1{commit_sha}~1branches-where-head/get/responses/200/content/application~1json/examples/default/value/0/protected
   },
   {
@@ -17542,26 +18742,6 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits~1{ref}/get/responses/200/content/application~1json/examples/default/value/author/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits~1{ref}/get/responses/200/content/application~1json/examples/default/value/author/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits~1{ref}/get/responses/200/content/application~1json/examples/default/value/committer/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits~1{ref}/get/responses/200/content/application~1json/examples/default/value/committer/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1commits~1{ref}/get/responses/200/content/application~1json/examples/default/value/stats/additions
   },
   {
@@ -17957,52 +19137,12 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/base_commit/author/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/base_commit/author/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/base_commit/committer/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/base_commit/committer/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/merge_base_commit/commit/comment_count
   },
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/merge_base_commit/commit/verification/verified
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/merge_base_commit/author/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/merge_base_commit/author/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/merge_base_commit/committer/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/merge_base_commit/committer/site_admin
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -18028,26 +19168,6 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/commits/0/commit/verification/verified
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/commits/0/author/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/commits/0/author/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/commits/0/committer/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1compare~1{basehead}/get/responses/200/content/application~1json/examples/default/value/commits/0/committer/site_admin
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -18137,6 +19257,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/0/security_advisory/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/0/security_advisory/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/0/security_advisory/published_at
   },
   {
@@ -18192,6 +19322,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/1/security_advisory/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/1/security_advisory/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts/get/responses/200/content/application~1json/examples/default/value/1/security_advisory/published_at
   },
   {
@@ -18237,6 +19377,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts~1{alert_number}/get/responses/200/content/application~1json/examples/default/value/security_advisory/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts~1{alert_number}/get/responses/200/content/application~1json/examples/default/value/security_advisory/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts~1{alert_number}/get/responses/200/content/application~1json/examples/default/value/security_advisory/published_at
   },
   {
@@ -18278,6 +19428,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts~1{alert_number}/patch/responses/200/content/application~1json/examples/default/value/security_advisory/cvss/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts~1{alert_number}/patch/responses/200/content/application~1json/examples/default/value/security_advisory/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1dependabot~1alerts~1{alert_number}/patch/responses/200/content/application~1json/examples/default/value/security_advisory/cvss_severities/cvss_v4/score
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -19847,6 +21007,11 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1hooks~1{hook_id}~1deliveries/get/responses/200/content/application~1json/examples/default/value/0/throttled_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1hooks~1{hook_id}~1deliveries/get/responses/200/content/application~1json/examples/default/value/1/id
   },
   {
@@ -19882,6 +21047,11 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1hooks~1{hook_id}~1deliveries/get/responses/200/content/application~1json/examples/default/value/1/throttled_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1hooks~1{hook_id}~1deliveries~1{delivery_id}/get/responses/200/content/application~1json/examples/default/value/id
   },
   {
@@ -19913,6 +21083,11 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1hooks~1{hook_id}~1deliveries~1{delivery_id}/get/responses/200/content/application~1json/examples/default/value/repository_id
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1hooks~1{hook_id}~1deliveries~1{delivery_id}/get/responses/200/content/application~1json/examples/default/value/throttled_at
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -21733,26 +22908,6 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1merges/post/responses/201/content/application~1json/examples/default/value/commit/verification/verified
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1merges/post/responses/201/content/application~1json/examples/default/value/author/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1merges/post/responses/201/content/application~1json/examples/default/value/author/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1merges/post/responses/201/content/application~1json/examples/default/value/committer/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1merges/post/responses/201/content/application~1json/examples/default/value/committer/site_admin
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -25257,26 +26412,6 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1pulls~1{pull_number}~1commits/get/responses/200/content/application~1json/examples/default/value/0/author/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1pulls~1{pull_number}~1commits/get/responses/200/content/application~1json/examples/default/value/0/author/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1pulls~1{pull_number}~1commits/get/responses/200/content/application~1json/examples/default/value/0/committer/id
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/paths/~1repos~1{owner}~1{repo}~1pulls~1{pull_number}~1commits/get/responses/200/content/application~1json/examples/default/value/0/committer/site_admin
-  },
-  {
-    RuleName: MediaTypeMismatchedDataType,
-    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1pulls~1{pull_number}~1files/get/responses/200/content/application~1json/examples/default/value/0/additions
   },
   {
@@ -27432,6 +28567,11 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1secret-scanning~1push-protection-bypasses/post/responses/200/content/application~1json/examples/default/value/expire_at
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/0/created_at
   },
   {
@@ -27458,6 +28598,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/0/cvss/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/0/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/0/cvss_severities/cvss_v4/score
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -27522,6 +28672,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/1/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/1/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/get/responses/200/content/application~1json/examples/default/value/1/credits_detailed/0/user/id
   },
   {
@@ -27573,6 +28733,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/post/responses/201/content/application~1json/examples/default/value/cvss/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/post/responses/201/content/application~1json/examples/default/value/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories/post/responses/201/content/application~1json/examples/default/value/cvss_severities/cvss_v4/score
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -27687,6 +28857,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories~1{ghsa_id}/get/responses/200/content/application~1json/examples/default/value/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories~1{ghsa_id}/get/responses/200/content/application~1json/examples/default/value/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories~1{ghsa_id}/get/responses/200/content/application~1json/examples/default/value/credits_detailed/0/user/id
   },
   {
@@ -27747,6 +28927,16 @@
   {
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories~1{ghsa_id}/patch/responses/200/content/application~1json/examples/default/value/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories~1{ghsa_id}/patch/responses/200/content/application~1json/examples/default/value/cvss_severities/cvss_v4/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories~1{ghsa_id}/patch/responses/200/content/application~1json/examples/default/value/credits_detailed/0/user/id
   },
   {
@@ -27798,6 +28988,16 @@
     RuleName: MediaTypeMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories~1{ghsa_id}/patch/responses/200/content/application~1json/examples/add_credit/value/cvss/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories~1{ghsa_id}/patch/responses/200/content/application~1json/examples/add_credit/value/cvss_severities/cvss_v3/score
+  },
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1repos~1{owner}~1{repo}~1security-advisories~1{ghsa_id}/patch/responses/200/content/application~1json/examples/add_credit/value/cvss_severities/cvss_v4/score
   },
   {
     RuleName: MediaTypeMismatchedDataType,
@@ -39358,6 +40558,16 @@
     RuleName: SchemaMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/components/schemas/api-overview/properties/domains/properties/actions/items/example
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/api-overview/properties/domains/properties/artifact_attestations/properties/trust_domain/example
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/api-overview/properties/domains/properties/artifact_attestations/properties/services/items/example
   },
   {
     RuleName: SchemaMismatchedDataType,

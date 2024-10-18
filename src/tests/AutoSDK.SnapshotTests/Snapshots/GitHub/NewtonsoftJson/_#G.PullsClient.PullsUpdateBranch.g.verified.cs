@@ -30,7 +30,8 @@ namespace G
 
         /// <summary>
         /// Update a pull request branch<br/>
-        /// Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
+        /// Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.<br/>
+        /// Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -120,7 +121,8 @@ namespace G
 
         /// <summary>
         /// Update a pull request branch<br/>
-        /// Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
+        /// Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.<br/>
+        /// Note: If making a request on behalf of a GitHub App you must also have permissions to write the contents of the head repository.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

@@ -33,7 +33,8 @@ namespace G
         /// Some servers (e.g. TFS servers) can have several projects at a single URL. In those cases the import progress will<br/>
         /// have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array.<br/>
         /// You can select the project to import by providing one of the objects in the `project_choices` array in the update request.<br/>
-        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -125,7 +126,8 @@ namespace G
         /// Some servers (e.g. TFS servers) can have several projects at a single URL. In those cases the import progress will<br/>
         /// have the status `detection_found_multiple` and the Import Progress response will include a `project_choices` array.<br/>
         /// You can select the project to import by providing one of the objects in the `project_choices` array in the update request.<br/>
-        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

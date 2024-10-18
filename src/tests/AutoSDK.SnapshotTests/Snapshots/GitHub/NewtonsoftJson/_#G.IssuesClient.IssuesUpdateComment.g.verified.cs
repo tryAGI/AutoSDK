@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int commentId,
+            ref long commentId,
             global::G.IssuesUpdateCommentRequest request);
         partial void PrepareIssuesUpdateCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.IssuesUpdateCommentRequest request);
         partial void ProcessIssuesUpdateCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -46,7 +46,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.IssueComment> IssuesUpdateCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.IssuesUpdateCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -143,7 +143,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.IssueComment> IssuesUpdateCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             string body,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

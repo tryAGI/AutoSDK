@@ -22,6 +22,14 @@ namespace G
         public global::G.PersonalAccessTokenRequest PersonalAccessTokenRequest { get; set; } = default!;
 
         /// <summary>
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
+        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("enterprise")]
+        public global::G.EnterpriseWebhooks? Enterprise { get; set; }
+
+        /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
@@ -29,10 +37,10 @@ namespace G
         public global::G.OrganizationSimpleWebhooks Organization { get; set; } = default!;
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUser Sender { get; set; } = default!;
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>

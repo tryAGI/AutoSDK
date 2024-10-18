@@ -29,7 +29,8 @@ namespace G
         /// <summary>
         /// Create a temporary private fork<br/>
         /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.<br/>
-        /// **Note**: Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Forking a repository happens asynchronously. You may have to wait up to 5 minutes before you can access the fork.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

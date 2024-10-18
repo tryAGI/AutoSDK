@@ -8,7 +8,8 @@ namespace G
         /// <summary>
         /// List organizations<br/>
         /// Lists all organizations, in the order that they were created.<br/>
-        /// **Note:** Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Pagination is powered exclusively by the `since` parameter. Use the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers) to get the URL for the next page of organizations.
         /// </summary>
         /// <param name="since"></param>
         /// <param name="perPage">

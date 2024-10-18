@@ -24,12 +24,12 @@ namespace G
         public required global::G.RepositoryRulesetBypassActorActorType ActorType { get; set; }
 
         /// <summary>
-        /// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.
+        /// When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.<br/>
+        /// Default Value: always
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bypass_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetBypassActorBypassModeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RepositoryRulesetBypassActorBypassMode BypassMode { get; set; }
+        public global::G.RepositoryRulesetBypassActorBypassMode? BypassMode { get; set; } = global::G.RepositoryRulesetBypassActorBypassMode.Always;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -207,5 +207,10 @@ namespace G
         /// </summary>
         public EnterpriseTeamsClient EnterpriseTeams { get; }
 
+        /// <summary>
+        /// Endpoints to manage Code security using the REST API.
+        /// </summary>
+        public CodeSecurityClient CodeSecurity { get; }
+
     }
 }

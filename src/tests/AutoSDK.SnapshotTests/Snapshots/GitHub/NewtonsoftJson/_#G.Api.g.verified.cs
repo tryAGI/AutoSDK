@@ -330,6 +330,14 @@ namespace G
         };
 
         /// <summary>
+        /// Endpoints to manage Code security using the REST API.
+        /// </summary>
+        public CodeSecurityClient CodeSecurity => new CodeSecurityClient(_httpClient, authorizations: _authorizations)
+        {
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
         /// Creates a new instance of the Api.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.

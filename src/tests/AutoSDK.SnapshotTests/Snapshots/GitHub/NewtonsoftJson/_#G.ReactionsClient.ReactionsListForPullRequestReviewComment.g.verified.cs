@@ -10,7 +10,7 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int commentId,
+            ref long commentId,
             ref global::G.ReactionsListForPullRequestReviewCommentContent? content,
             ref int? perPage,
             ref int? page);
@@ -19,7 +19,7 @@ namespace G
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.ReactionsListForPullRequestReviewCommentContent? content,
             int? perPage,
             int? page);
@@ -51,7 +51,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Reaction>> ReactionsListForPullRequestReviewCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.ReactionsListForPullRequestReviewCommentContent? content = default,
             int? perPage = 30,
             int? page = 1,

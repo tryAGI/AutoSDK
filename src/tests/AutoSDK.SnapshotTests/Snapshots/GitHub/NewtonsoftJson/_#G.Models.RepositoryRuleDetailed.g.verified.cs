@@ -155,9 +155,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? Value5 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>? Value5 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? Value5 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>? Value5 { get; }
 #endif
 
         /// <summary>
@@ -171,17 +171,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value5;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value5;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value5 = value;
         }
@@ -190,9 +190,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? Value6 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? Value6 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? Value6 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? Value6 { get; }
 #endif
 
         /// <summary>
@@ -206,17 +206,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value6;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value6;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value6 = value;
         }
@@ -225,9 +225,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? Value7 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? Value7 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? Value7 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? Value7 { get; }
 #endif
 
         /// <summary>
@@ -241,17 +241,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value7;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value7;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value7 = value;
         }
@@ -260,9 +260,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? Value8 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? Value8 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? Value8 { get; }
+        public global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? Value8 { get; }
 #endif
 
         /// <summary>
@@ -276,17 +276,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value8;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value8;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value8 = value;
         }
@@ -295,9 +295,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? Value9 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? Value9 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? Value9 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? Value9 { get; }
 #endif
 
         /// <summary>
@@ -311,17 +311,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value9;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value9;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value9 = value;
         }
@@ -330,9 +330,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? Value10 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? Value10 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? Value10 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? Value10 { get; }
 #endif
 
         /// <summary>
@@ -346,17 +346,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value10;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value10;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value10 = value;
         }
@@ -365,9 +365,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? Value11 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? Value11 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? Value11 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? Value11 { get; }
 #endif
 
         /// <summary>
@@ -381,17 +381,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value11;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value11;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value11 = value;
         }
@@ -400,9 +400,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? Value12 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? Value12 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? Value12 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? Value12 { get; }
 #endif
 
         /// <summary>
@@ -416,17 +416,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value12;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value12;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value12 = value;
         }
@@ -435,9 +435,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? Value13 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? Value13 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? Value13 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? Value13 { get; }
 #endif
 
         /// <summary>
@@ -451,17 +451,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value13;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value13;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value13 = value;
         }
@@ -470,9 +470,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? Value14 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? Value14 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? Value14 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? Value14 { get; }
 #endif
 
         /// <summary>
@@ -486,17 +486,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value14;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value14;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value14 = value;
         }
@@ -505,9 +505,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? Value15 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? Value15 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? Value15 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? Value15 { get; }
 #endif
 
         /// <summary>
@@ -521,17 +521,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value15;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value15;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? value)
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? value)
         {
             Value15 = value;
         }
@@ -540,9 +540,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? Value16 { get; init; }
+        public global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? Value16 { get; init; }
 #else
-        public global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? Value16 { get; }
+        public global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? Value16 { get; }
 #endif
 
         /// <summary>
@@ -556,19 +556,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value16;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? value)
+        {
+            Value16 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? Value17 { get; init; }
+#else
+        public global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? Value17 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value17))]
+#endif
+        public bool IsValue17 => Value17 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo> value) => new RepositoryRuleDetailed(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value16;
+        public static implicit operator global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?(RepositoryRuleDetailed @this) => @this.Value17;
 
         /// <summary>
         /// 
         /// </summary>
         public RepositoryRuleDetailed(global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? value)
         {
-            Value16 = value;
+            Value17 = value;
         }
 
         /// <summary>
@@ -579,18 +614,19 @@ namespace G
             global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>? value2,
             global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>? value3,
             global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>? value4,
-            global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? value5,
-            global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? value6,
-            global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? value7,
-            global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? value8,
-            global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? value9,
-            global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? value10,
-            global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? value11,
-            global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? value12,
-            global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? value13,
-            global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? value14,
-            global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? value15,
-            global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? value16
+            global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>? value5,
+            global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>? value6,
+            global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>? value7,
+            global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>? value8,
+            global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>? value9,
+            global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>? value10,
+            global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>? value11,
+            global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>? value12,
+            global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>? value13,
+            global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>? value14,
+            global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>? value15,
+            global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>? value16,
+            global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>? value17
             )
         {
             Value1 = value1;
@@ -609,12 +645,14 @@ namespace G
             Value14 = value14;
             Value15 = value15;
             Value16 = value16;
+            Value17 = value17;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Value17 as object ??
             Value16 as object ??
             Value15 as object ??
             Value14 as object ??
@@ -638,7 +676,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && IsValue14 && !IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && IsValue15 && !IsValue16 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && IsValue16;
+            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && IsValue15 && !IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && IsValue16 && !IsValue17 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && IsValue17;
         }
 
         /// <summary>
@@ -649,18 +687,19 @@ namespace G
             global::System.Func<global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>?, TResult>? value2 = null,
             global::System.Func<global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>?, TResult>? value3 = null,
             global::System.Func<global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>?, TResult>? value4 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?, TResult>? value5 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?, TResult>? value6 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?, TResult>? value7 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?, TResult>? value8 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?, TResult>? value9 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value10 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value11 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value12 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value13 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value14 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?, TResult>? value15 = null,
-            global::System.Func<global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?, TResult>? value16 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>?, TResult>? value5 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?, TResult>? value6 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?, TResult>? value7 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?, TResult>? value8 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?, TResult>? value9 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?, TResult>? value10 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value11 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value12 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value13 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value14 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?, TResult>? value15 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?, TResult>? value16 = null,
+            global::System.Func<global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?, TResult>? value17 = null,
             bool validate = true)
         {
             if (validate)
@@ -732,6 +771,10 @@ namespace G
             {
                 return value16(Value16!);
             }
+            else if (IsValue17 && value17 != null)
+            {
+                return value17(Value17!);
+            }
 
             return default(TResult);
         }
@@ -744,18 +787,19 @@ namespace G
             global::System.Action<global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>?>? value2 = null,
             global::System.Action<global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>?>? value3 = null,
             global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>?>? value4 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?>? value5 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?>? value6 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?>? value7 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?>? value8 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?>? value9 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?>? value10 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?>? value11 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?>? value12 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?>? value13 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?>? value14 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?>? value15 = null,
-            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?>? value16 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>?>? value5 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?>? value6 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?>? value7 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?>? value8 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?>? value9 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?>? value10 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?>? value11 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?>? value12 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?>? value13 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?>? value14 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?>? value15 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?>? value16 = null,
+            global::System.Action<global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?>? value17 = null,
             bool validate = true)
         {
             if (validate)
@@ -827,6 +871,10 @@ namespace G
             {
                 value16?.Invoke(Value16!);
             }
+            else if (IsValue17)
+            {
+                value17?.Invoke(Value17!);
+            }
         }
 
         /// <summary>
@@ -845,28 +893,30 @@ namespace G
                 Value4,
                 typeof(global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>),
                 Value5,
-                typeof(global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>),
                 Value6,
-                typeof(global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>),
                 Value7,
-                typeof(global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>),
                 Value8,
-                typeof(global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>),
                 Value9,
-                typeof(global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>),
                 Value10,
-                typeof(global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>),
                 Value11,
-                typeof(global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>),
                 Value12,
-                typeof(global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>),
                 Value13,
-                typeof(global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>),
                 Value14,
-                typeof(global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>),
                 Value15,
-                typeof(global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>),
+                typeof(global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>),
                 Value16,
+                typeof(global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>),
+                Value17,
                 typeof(global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>),
             };
             const int offset = unchecked((int)2166136261);
@@ -887,18 +937,19 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleUpdate, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value2, other.Value2) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleDeletion, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value3, other.Value3) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleRequiredLinearHistory, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value13, other.Value13) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value14, other.Value14) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value15, other.Value15) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value16, other.Value16) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleMergeQueue, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value5, other.Value5) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleRequiredDeployments, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value6, other.Value6) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleRequiredSignatures, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value7, other.Value7) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRulePullRequest, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value8, other.Value8) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleRequiredStatusChecks, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value9, other.Value9) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleNonFastForward, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value10, other.Value10) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleCommitMessagePattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value11, other.Value11) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleCommitAuthorEmailPattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value12, other.Value12) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleCommitterEmailPattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value13, other.Value13) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleBranchNamePattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value14, other.Value14) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleTagNamePattern, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value15, other.Value15) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleWorkflows, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value16, other.Value16) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AllOf<global::G.RepositoryRuleCodeScanning, global::G.RepositoryRuleRulesetInfo>?>.Default.Equals(Value17, other.Value17) 
                 ;
         }
 

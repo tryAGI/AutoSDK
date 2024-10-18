@@ -14,7 +14,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.BasicError> GistsDeleteCommentAsync(
             string gistId,
-            int commentId,
+            long commentId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -13,7 +13,7 @@ namespace G
         /// The unique identifier of the role.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// The name of the role.

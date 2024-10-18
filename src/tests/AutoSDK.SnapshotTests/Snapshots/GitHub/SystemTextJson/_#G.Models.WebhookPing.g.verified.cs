@@ -36,10 +36,10 @@ namespace G
         public global::G.RepositoryWebhooks? Repository { get; set; }
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
-        public global::G.SimpleUserWebhooks? Sender { get; set; }
+        public global::G.SimpleUser? Sender { get; set; }
 
         /// <summary>
         /// Random string of GitHub zen.

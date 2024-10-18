@@ -42,6 +42,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("client_id")]
+        public string? ClientId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 

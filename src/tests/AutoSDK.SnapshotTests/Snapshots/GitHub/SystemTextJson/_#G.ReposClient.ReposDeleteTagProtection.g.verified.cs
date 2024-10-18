@@ -27,7 +27,9 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Delete a tag protection state for a repository<br/>
+        /// Deprecated - Delete a tag protection state for a repository<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#delete-a-repository-ruleset)" endpoint instead.<br/>
         /// This deletes a tag protection state for a repository.<br/>
         /// This endpoint is only available to repository administrators.
         /// </summary>
@@ -36,6 +38,7 @@ namespace G
         /// <param name="tagProtectionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.BasicError> ReposDeleteTagProtectionAsync(
             string owner,
             string repo,

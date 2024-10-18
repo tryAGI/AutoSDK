@@ -26,16 +26,11 @@ namespace G
 
         /// <summary>
         /// Update an organization<br/>
-        /// **Parameter Deprecation Notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Parameter deprecation notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Parameter deprecation notice:** Code security product enablement for new repositories through the organization API is deprecated. Please use [code security configurations](https://docs.github.com/rest/code-security/configurations#set-a-code-security-configuration-as-a-default-for-an-organization) to set defaults instead. For more information on setting a default security configuration, see the [changelog](https://github.blog/changelog/2024-07-09-sunsetting-security-settings-defaults-parameters-in-the-organizations-rest-api/).<br/>
         /// Updates the organization's profile and member privileges.<br/>
-        /// With security configurations (beta), your organization can choose a default security configuration which will automatically apply a set of security enablement settings to new repositories in your organization based on their visibility. For targeted repositories, the following attributes will be overridden by the default security configuration:<br/>
-        /// - advanced_security_enabled_for_new_repositories<br/>
-        /// - dependabot_alerts_enabled_for_new_repositories<br/>
-        /// - dependabot_security_updates_enabled_for_new_repositories<br/>
-        /// - dependency_graph_enabled_for_new_repositories<br/>
-        /// - secret_scanning_enabled_for_new_repositories<br/>
-        /// - secret_scanning_push_protection_enabled_for_new_repositories<br/>
-        /// For more information on setting a default security configuration, see "[Enabling security features at scale](https://docs.github.com/code-security/securing-your-organization/introduction-to-securing-your-organization-at-scale/about-enabling-security-features-at-scale)."<br/>
         /// The authenticated user must be an organization owner to use this endpoint.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// </summary>
@@ -119,16 +114,11 @@ namespace G
 
         /// <summary>
         /// Update an organization<br/>
-        /// **Parameter Deprecation Notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Parameter deprecation notice:** GitHub will replace and discontinue `members_allowed_repository_creation_type` in favor of more granular permissions. The new input parameters are `members_can_create_public_repositories`, `members_can_create_private_repositories` for all organizations and `members_can_create_internal_repositories` for organizations associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see the [blog post](https://developer.github.com/changes/2019-12-03-internal-visibility-changes).<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Parameter deprecation notice:** Code security product enablement for new repositories through the organization API is deprecated. Please use [code security configurations](https://docs.github.com/rest/code-security/configurations#set-a-code-security-configuration-as-a-default-for-an-organization) to set defaults instead. For more information on setting a default security configuration, see the [changelog](https://github.blog/changelog/2024-07-09-sunsetting-security-settings-defaults-parameters-in-the-organizations-rest-api/).<br/>
         /// Updates the organization's profile and member privileges.<br/>
-        /// With security configurations (beta), your organization can choose a default security configuration which will automatically apply a set of security enablement settings to new repositories in your organization based on their visibility. For targeted repositories, the following attributes will be overridden by the default security configuration:<br/>
-        /// - advanced_security_enabled_for_new_repositories<br/>
-        /// - dependabot_alerts_enabled_for_new_repositories<br/>
-        /// - dependabot_security_updates_enabled_for_new_repositories<br/>
-        /// - dependency_graph_enabled_for_new_repositories<br/>
-        /// - secret_scanning_enabled_for_new_repositories<br/>
-        /// - secret_scanning_push_protection_enabled_for_new_repositories<br/>
-        /// For more information on setting a default security configuration, see "[Enabling security features at scale](https://docs.github.com/code-security/securing-your-organization/introduction-to-securing-your-organization-at-scale/about-enabling-security-features-at-scale)."<br/>
         /// The authenticated user must be an organization owner to use this endpoint.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` or `repo` scope to use this endpoint.
         /// </summary>
@@ -204,36 +194,6 @@ namespace G
         /// <param name="blog">
         /// Example: "http://github.blog"
         /// </param>
-        /// <param name="advancedSecurityEnabledForNewRepositories">
-        /// Whether GitHub Advanced Security is automatically enabled for new repositories.<br/>
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
-        /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-        /// </param>
-        /// <param name="dependabotAlertsEnabledForNewRepositories">
-        /// Whether Dependabot alerts is automatically enabled for new repositories.<br/>
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
-        /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-        /// </param>
-        /// <param name="dependabotSecurityUpdatesEnabledForNewRepositories">
-        /// Whether Dependabot security updates is automatically enabled for new repositories.<br/>
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
-        /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-        /// </param>
-        /// <param name="dependencyGraphEnabledForNewRepositories">
-        /// Whether dependency graph is automatically enabled for new repositories.<br/>
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
-        /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-        /// </param>
-        /// <param name="secretScanningEnabledForNewRepositories">
-        /// Whether secret scanning is automatically enabled for new repositories.<br/>
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
-        /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-        /// </param>
-        /// <param name="secretScanningPushProtectionEnabledForNewRepositories">
-        /// Whether secret scanning push protection is automatically enabled for new repositories.<br/>
-        /// To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."<br/>
-        /// You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-        /// </param>
         /// <param name="secretScanningPushProtectionCustomLinkEnabled">
         /// Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
         /// </param>
@@ -265,12 +225,6 @@ namespace G
             bool? membersCanForkPrivateRepositories = false,
             bool? webCommitSignoffRequired = false,
             string? blog = default,
-            bool? advancedSecurityEnabledForNewRepositories = default,
-            bool? dependabotAlertsEnabledForNewRepositories = default,
-            bool? dependabotSecurityUpdatesEnabledForNewRepositories = default,
-            bool? dependencyGraphEnabledForNewRepositories = default,
-            bool? secretScanningEnabledForNewRepositories = default,
-            bool? secretScanningPushProtectionEnabledForNewRepositories = default,
             bool? secretScanningPushProtectionCustomLinkEnabled = default,
             string? secretScanningPushProtectionCustomLink = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -298,12 +252,6 @@ namespace G
                 MembersCanForkPrivateRepositories = membersCanForkPrivateRepositories,
                 WebCommitSignoffRequired = webCommitSignoffRequired,
                 Blog = blog,
-                AdvancedSecurityEnabledForNewRepositories = advancedSecurityEnabledForNewRepositories,
-                DependabotAlertsEnabledForNewRepositories = dependabotAlertsEnabledForNewRepositories,
-                DependabotSecurityUpdatesEnabledForNewRepositories = dependabotSecurityUpdatesEnabledForNewRepositories,
-                DependencyGraphEnabledForNewRepositories = dependencyGraphEnabledForNewRepositories,
-                SecretScanningEnabledForNewRepositories = secretScanningEnabledForNewRepositories,
-                SecretScanningPushProtectionEnabledForNewRepositories = secretScanningPushProtectionEnabledForNewRepositories,
                 SecretScanningPushProtectionCustomLinkEnabled = secretScanningPushProtectionCustomLinkEnabled,
                 SecretScanningPushProtectionCustomLink = secretScanningPushProtectionCustomLink,
             };

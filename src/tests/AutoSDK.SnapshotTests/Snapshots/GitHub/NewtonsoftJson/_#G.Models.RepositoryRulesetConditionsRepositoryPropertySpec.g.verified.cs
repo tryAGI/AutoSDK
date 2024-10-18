@@ -22,6 +22,12 @@ namespace G
         public global::System.Collections.Generic.IList<string> PropertyValues { get; set; } = default!;
 
         /// <summary>
+        /// The source of the repository property. Defaults to 'custom' if not specified.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("source")]
+        public global::G.RepositoryRulesetConditionsRepositoryPropertySpecSource? Source { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

@@ -147,6 +147,7 @@ namespace G
         public bool? UseSquashPrTitleAsDefault { get; set; } = false;
 
         /// <summary>
+        /// Required when using `squash_merge_commit_message`.<br/>
         /// The default value for a squash merge commit title:<br/>
         /// - `PR_TITLE` - default to the pull request's title.<br/>
         /// - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
@@ -166,6 +167,7 @@ namespace G
         public global::G.ReposCreateInOrgRequestSquashMergeCommitMessage? SquashMergeCommitMessage { get; set; }
 
         /// <summary>
+        /// Required when using `merge_commit_message`.<br/>
         /// The default value for a merge commit title.<br/>
         /// - `PR_TITLE` - default to the pull request's title.<br/>
         /// - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).

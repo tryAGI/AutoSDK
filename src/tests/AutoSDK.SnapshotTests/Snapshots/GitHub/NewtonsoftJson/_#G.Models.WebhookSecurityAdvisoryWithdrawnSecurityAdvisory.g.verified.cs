@@ -18,6 +18,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cvss_severities")]
+        public global::G.CvssSeverities? CvssSeverities { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cwes", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwe> Cwes { get; set; } = default!;
 

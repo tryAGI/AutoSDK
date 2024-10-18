@@ -17,10 +17,10 @@ namespace G
 
         /// <summary>
         /// The project card's ID<br/>
-        /// Example: 42
+        /// Example: 42L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDExOlByb2plY3RDYXJkMTQ3OA==

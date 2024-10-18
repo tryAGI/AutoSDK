@@ -131,7 +131,9 @@ namespace G
         /// The state of the status. When you set a transient deployment to `inactive`, the deployment will be shown as `destroyed` in GitHub.
         /// </param>
         /// <param name="targetUrl">
-        /// The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. **Note:** It's recommended to use the `log_url` parameter, which replaces `target_url`.
+        /// The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; It's recommended to use the `log_url` parameter, which replaces `target_url`.
         /// </param>
         /// <param name="logUrl">
         /// The full URL of the deployment's output. This parameter replaces `target_url`. We will continue to accept `target_url` to support legacy uses, but we recommend replacing `target_url` with `log_url`. Setting `log_url` will automatically set `target_url` to the same value. Default: `""`

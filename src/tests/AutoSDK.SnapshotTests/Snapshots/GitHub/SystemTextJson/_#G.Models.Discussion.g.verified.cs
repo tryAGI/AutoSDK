@@ -168,6 +168,12 @@ namespace G
         public required global::G.DiscussionUser? User { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
+        public global::System.Collections.Generic.IList<global::G.Label>? Labels { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

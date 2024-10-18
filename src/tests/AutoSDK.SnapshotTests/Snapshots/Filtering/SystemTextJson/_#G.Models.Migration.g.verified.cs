@@ -10,11 +10,11 @@ namespace G
     public sealed partial class Migration
     {
         /// <summary>
-        /// Example: 79
+        /// Example: 79L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// A GitHub user.

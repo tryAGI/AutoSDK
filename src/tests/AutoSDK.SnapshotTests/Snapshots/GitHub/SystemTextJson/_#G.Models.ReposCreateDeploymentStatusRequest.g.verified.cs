@@ -18,7 +18,9 @@ namespace G
         public required global::G.ReposCreateDeploymentStatusRequestState State { get; set; }
 
         /// <summary>
-        /// The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. **Note:** It's recommended to use the `log_url` parameter, which replaces `target_url`.
+        /// The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; It's recommended to use the `log_url` parameter, which replaces `target_url`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_url")]
         public string? TargetUrl { get; set; }

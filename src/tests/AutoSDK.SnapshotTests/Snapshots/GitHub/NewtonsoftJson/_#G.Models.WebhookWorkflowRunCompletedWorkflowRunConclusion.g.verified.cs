@@ -50,6 +50,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="timed_out")]
         TimedOut,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="startup_failure")]
+        StartupFailure,
     }
 
     /// <summary>
@@ -72,6 +77,7 @@ namespace G
                 WebhookWorkflowRunCompletedWorkflowRunConclusion.Stale => "stale",
                 WebhookWorkflowRunCompletedWorkflowRunConclusion.Success => "success",
                 WebhookWorkflowRunCompletedWorkflowRunConclusion.TimedOut => "timed_out",
+                WebhookWorkflowRunCompletedWorkflowRunConclusion.StartupFailure => "startup_failure",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -90,6 +96,7 @@ namespace G
                 "stale" => WebhookWorkflowRunCompletedWorkflowRunConclusion.Stale,
                 "success" => WebhookWorkflowRunCompletedWorkflowRunConclusion.Success,
                 "timed_out" => WebhookWorkflowRunCompletedWorkflowRunConclusion.TimedOut,
+                "startup_failure" => WebhookWorkflowRunCompletedWorkflowRunConclusion.StartupFailure,
                 _ => null,
             };
         }

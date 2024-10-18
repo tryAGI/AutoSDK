@@ -40,12 +40,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Sha { get; set; }

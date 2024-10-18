@@ -32,8 +32,10 @@ namespace G
         /// Update branch protection<br/>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.<br/>
         /// Protecting a branch requires admin or owner permissions to the repository.<br/>
-        /// **Note**: Passing new arrays of `users` and `teams` replaces their previous values.<br/>
-        /// **Note**: The list of users, apps, and teams in total is limited to 100 items.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Passing new arrays of `users` and `teams` replaces their previous values.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The list of users, apps, and teams in total is limited to 100 items.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -125,8 +127,10 @@ namespace G
         /// Update branch protection<br/>
         /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.<br/>
         /// Protecting a branch requires admin or owner permissions to the repository.<br/>
-        /// **Note**: Passing new arrays of `users` and `teams` replaces their previous values.<br/>
-        /// **Note**: The list of users, apps, and teams in total is limited to 100 items.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Passing new arrays of `users` and `teams` replaces their previous values.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The list of users, apps, and teams in total is limited to 100 items.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

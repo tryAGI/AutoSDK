@@ -10,13 +10,15 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string org,
             ref int? perPage,
-            ref int? page);
+            ref int? page,
+            ref string? targets);
         partial void PrepareReposGetOrgRulesetsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string org,
             int? perPage,
-            int? page);
+            int? page,
+            string? targets);
         partial void ProcessReposGetOrgRulesetsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -37,12 +39,16 @@ namespace G
         /// <param name="page">
         /// Default Value: 1
         /// </param>
+        /// <param name="targets">
+        /// Example: branch,tag,push
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryRuleset>> ReposGetOrgRulesetsAsync(
             string org,
             int? perPage = 30,
             int? page = 1,
+            string? targets = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -51,7 +57,8 @@ namespace G
                 httpClient: _httpClient,
                 org: ref org,
                 perPage: ref perPage,
-                page: ref page);
+                page: ref page,
+                targets: ref targets);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/orgs/{org}/rulesets",
@@ -59,6 +66,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
+                .AddOptionalParameter("targets", targets) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -73,7 +81,8 @@ namespace G
                 httpRequestMessage: httpRequest,
                 org: org,
                 perPage: perPage,
-                page: page);
+                page: page,
+                targets: targets);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

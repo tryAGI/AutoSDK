@@ -81,6 +81,13 @@ namespace G
         public string? SecretType { get; set; }
 
         /// <summary>
+        /// User-friendly name for the detected secret, matching the `secret_type`.<br/>
+        /// For a list of built-in patterns, see "[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("secret_type_display_name")]
+        public string? SecretTypeDisplayName { get; set; }
+
+        /// <summary>
         /// The token status as of the latest validity check.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("validity")]

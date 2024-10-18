@@ -196,12 +196,6 @@ namespace G
         public int? DiskUsage { get; set; }
 
         /// <summary>
-        /// Example: 8
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("collaborators")]
-        public int? Collaborators { get; set; }
-
-        /// <summary>
         /// Example: org@example.com
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("billing_email")]
@@ -286,56 +280,63 @@ namespace G
         public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
         /// Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.<br/>
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advanced_security_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? AdvancedSecurityEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to<br/>
-        /// this organization.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_alerts_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DependabotAlertsEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether dependabot security updates are automatically enabled for new repositories and repositories transferred<br/>
-        /// to this organization.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_security_updates_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DependabotSecurityUpdatesEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether dependency graph is automatically enabled for new repositories and repositories transferred to this<br/>
-        /// organization.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DependencyGraphEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether secret scanning is automatically enabled for new repositories and repositories transferred to this<br/>
-        /// organization.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? SecretScanningEnabledForNewRepositories { get; set; }
 
         /// <summary>
-        /// Whether secret scanning push protection is automatically enabled for new repositories and repositories<br/>
-        /// transferred to this organization.<br/>
+        /// **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.<br/>
+        /// Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.<br/>
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection_enabled_for_new_repositories")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public bool? SecretScanningPushProtectionEnabledForNewRepositories { get; set; }
 
         /// <summary>

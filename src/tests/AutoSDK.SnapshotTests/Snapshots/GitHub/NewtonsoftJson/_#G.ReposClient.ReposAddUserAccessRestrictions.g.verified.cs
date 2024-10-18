@@ -11,14 +11,14 @@ namespace G
             ref string owner,
             ref string repo,
             ref string branch,
-            global::G.OneOf<global::G.ReposAddUserAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request);
+            global::G.ReposAddUserAccessRestrictionsRequest request);
         partial void PrepareReposAddUserAccessRestrictionsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
             string branch,
-            global::G.OneOf<global::G.ReposAddUserAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request);
+            global::G.ReposAddUserAccessRestrictionsRequest request);
         partial void ProcessReposAddUserAccessRestrictionsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -46,9 +46,11 @@ namespace G
             string owner,
             string repo,
             string branch,
-            global::G.OneOf<global::G.ReposAddUserAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request,
+            global::G.ReposAddUserAccessRestrictionsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            request = request ?? throw new global::System.ArgumentNullException(nameof(request));
+
             PrepareArguments(
                 client: _httpClient);
             PrepareReposAddUserAccessRestrictionsArguments(
@@ -131,16 +133,21 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="branch"></param>
+        /// <param name="users">
+        /// The username for users
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> ReposAddUserAccessRestrictionsAsync(
             string owner,
             string repo,
             string branch,
+            global::System.Collections.Generic.IList<string> users,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.OneOf<global::G.ReposAddUserAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>>
+            var request = new global::G.ReposAddUserAccessRestrictionsRequest
             {
+                Users = users,
             };
 
             return await ReposAddUserAccessRestrictionsAsync(

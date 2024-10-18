@@ -7,7 +7,8 @@ namespace G
     {
         /// <summary>
         /// Delete team discussion reaction<br/>
-        /// **Note:** You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a team or organization with `team_id` and `org_id` using the route `DELETE /organizations/:org_id/team/:team_id/discussions/:discussion_number/reactions/:reaction_id`.<br/>
         /// Delete a reaction to a [team discussion](https://docs.github.com/rest/teams/discussions#get-a-discussion).<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `write:discussion` scope to use this endpoint.
         /// </summary>

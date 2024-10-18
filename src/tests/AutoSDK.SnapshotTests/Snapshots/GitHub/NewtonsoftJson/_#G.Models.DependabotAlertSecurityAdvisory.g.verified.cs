@@ -60,6 +60,12 @@ namespace G
         public global::G.DependabotAlertSecurityAdvisoryCvss Cvss { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cvss_severities")]
+        public global::G.CvssSeverities? CvssSeverities { get; set; }
+
+        /// <summary>
         /// Details for the advisory pertaining to Common Weakness Enumeration.<br/>
         /// Included only in responses
         /// </summary>

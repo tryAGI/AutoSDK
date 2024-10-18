@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// The target of the ruleset<br/>
-    /// **Note**: The `push` target is in beta and is subject to change.
+    /// Default Value: branch
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ReposCreateRepoRulesetRequestTarget
@@ -22,7 +22,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="tag")]
         Tag,
         /// <summary>
-        /// The `push` target is in beta and is subject to change.
+        /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="push")]
         Push,

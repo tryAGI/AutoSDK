@@ -16,7 +16,7 @@ namespace G
         /// When calling this endpoint without any paging parameter (`per_page` or `page`), the returned list is limited to 250 commits, and the last commit in the list is the most recent of the entire comparison.<br/>
         /// **Working with large comparisons**<br/>
         /// To process a response with a large number of commits, use a query parameter (`per_page` or `page`) to paginate the results. When using pagination:<br/>
-        /// - The list of changed files is only shown on the first page of results, but it includes all changed files for the entire comparison.<br/>
+        /// - The list of changed files is only shown on the first page of results, and it includes up to 300 changed files for the entire comparison.<br/>
         /// - The results are returned in chronological order, but the last commit in the returned list may not be the most recent one in the entire set if there are more pages of results.<br/>
         /// For more information on working with pagination, see "[Using pagination in the REST API](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api)."<br/>
         /// **Signature verification object**<br/>

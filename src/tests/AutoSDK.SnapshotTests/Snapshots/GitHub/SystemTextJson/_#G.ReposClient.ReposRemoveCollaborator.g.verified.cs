@@ -40,7 +40,8 @@ namespace G
         ///  - If the user had access to a fork through their membership to this repository, the user will also be removed from the fork.<br/>
         ///  - If the user had their own fork of the repository, the fork will be deleted.<br/>
         ///  - If the user still has read access to the repository, open pull requests by this user from a fork will be denied.<br/>
-        /// **Note**: A user can still have access to the repository through organization permissions like base repository permissions.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; A user can still have access to the repository through organization permissions like base repository permissions.<br/>
         /// Although the API responds immediately, the additional permission updates might take some extra time to complete in the background.<br/>
         /// For more information on fork permissions, see "[About permissions and visibility of forks](https://docs.github.com/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks)".
         /// </summary>

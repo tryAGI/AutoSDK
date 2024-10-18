@@ -16,7 +16,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrgCustomProperty>> OrgsCreateOrUpdateCustomPropertiesAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CustomProperty>> OrgsCreateOrUpdateCustomPropertiesAsync(
             string org,
             global::G.OrgsCreateOrUpdateCustomPropertiesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -34,9 +34,9 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrgCustomProperty>> OrgsCreateOrUpdateCustomPropertiesAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CustomProperty>> OrgsCreateOrUpdateCustomPropertiesAsync(
             string org,
-            global::System.Collections.Generic.IList<global::G.OrgCustomProperty> properties,
+            global::System.Collections.Generic.IList<global::G.CustomProperty> properties,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

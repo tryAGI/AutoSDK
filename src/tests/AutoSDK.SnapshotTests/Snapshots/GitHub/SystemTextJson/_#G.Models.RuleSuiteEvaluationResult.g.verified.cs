@@ -17,6 +17,10 @@ namespace G
         /// 
         /// </summary>
         Fail,
+        /// <summary>
+        /// 
+        /// </summary>
+        Bypass,
     }
 
     /// <summary>
@@ -33,6 +37,7 @@ namespace G
             {
                 RuleSuiteEvaluationResult.Pass => "pass",
                 RuleSuiteEvaluationResult.Fail => "fail",
+                RuleSuiteEvaluationResult.Bypass => "bypass",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,6 +50,7 @@ namespace G
             {
                 "pass" => RuleSuiteEvaluationResult.Pass,
                 "fail" => RuleSuiteEvaluationResult.Fail,
+                "bypass" => RuleSuiteEvaluationResult.Bypass,
                 _ => null,
             };
         }

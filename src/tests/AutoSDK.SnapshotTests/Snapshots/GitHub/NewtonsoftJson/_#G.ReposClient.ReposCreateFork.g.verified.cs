@@ -29,8 +29,10 @@ namespace G
         /// <summary>
         /// Create a fork<br/>
         /// Create a fork for the authenticated user.<br/>
-        /// **Note**: Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).<br/>
-        /// **Note**: Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -117,8 +119,10 @@ namespace G
         /// <summary>
         /// Create a fork<br/>
         /// Create a fork for the authenticated user.<br/>
-        /// **Note**: Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).<br/>
-        /// **Note**: Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Forking a Repository happens asynchronously. You may have to wait a short period of time before you can access the git objects. If this takes longer than 5 minutes, be sure to contact [GitHub Support](https://support.github.com/contact?tags=dotcom-rest-api).<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Although this endpoint works with GitHub Apps, the GitHub App must be installed on the destination account with access to all repositories and on the source account with access to the source repository.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

@@ -24,6 +24,14 @@ namespace G
         public required global::G.PersonalAccessTokenRequest PersonalAccessTokenRequest { get; set; }
 
         /// <summary>
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
+        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enterprise")]
+        public global::G.EnterpriseWebhooks? Enterprise { get; set; }
+
+        /// <summary>
         /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
@@ -32,11 +40,11 @@ namespace G
         public required global::G.OrganizationSimpleWebhooks Organization { get; set; }
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUser Sender { get; set; }
 
         /// <summary>
         /// The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured<br/>
@@ -44,8 +52,7 @@ namespace G
         /// see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("installation")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleInstallation Installation { get; set; }
+        public global::G.SimpleInstallation? Installation { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

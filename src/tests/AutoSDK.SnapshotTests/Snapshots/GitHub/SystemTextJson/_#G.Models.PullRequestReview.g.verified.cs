@@ -11,11 +11,11 @@ namespace G
     {
         /// <summary>
         /// Unique identifier of the review<br/>
-        /// Example: 42
+        /// Example: 42L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// Example: MDE3OlB1bGxSZXF1ZXN0UmV2aWV3ODA=

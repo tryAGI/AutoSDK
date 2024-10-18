@@ -10,10 +10,10 @@ namespace G
     public sealed partial class GpgKey
     {
         /// <summary>
-        /// Example: 3
+        /// Example: 3L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: Octocat's GPG Key

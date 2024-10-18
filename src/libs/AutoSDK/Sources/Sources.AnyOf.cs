@@ -42,12 +42,14 @@ public static partial class Sources
             anyOfData.Count > 1 ||
             (!string.IsNullOrWhiteSpace(anyOfData.Name) &&
             anyOfData.DiscriminatorType != null &&
-            anyOfData.DiscriminatorPropertyName != null) ? $@"
+            anyOfData.DiscriminatorPropertyName != null &&
+            allTypes.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue))) ? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {classNameWithoutTypes}(
 {(string.IsNullOrWhiteSpace(anyOfData.Name) ||
   anyOfData.DiscriminatorType == null ||
-  anyOfData.DiscriminatorPropertyName == null ? " " : $@" 
+  anyOfData.DiscriminatorPropertyName == null ||
+  allTypes.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
             {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName.ToParameterName()},
  ")}
 {allTypes.Select(x => $@" 
@@ -57,7 +59,8 @@ public static partial class Sources
         {{
 {(string.IsNullOrWhiteSpace(anyOfData.Name) ||
   anyOfData.DiscriminatorType == null ||
-  anyOfData.DiscriminatorPropertyName == null ? " " : $@" 
+  anyOfData.DiscriminatorPropertyName == null ||
+  allTypes.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
             {anyOfData.DiscriminatorPropertyName} = {anyOfData.DiscriminatorPropertyName.ToParameterName()};
 ")}
 {allTypes.Select(x => $@" 
@@ -78,7 +81,8 @@ namespace {anyOfData.Namespace}
     {{
 {(string.IsNullOrWhiteSpace(anyOfData.Name) ||
   anyOfData.DiscriminatorType == null ||
-  anyOfData.DiscriminatorPropertyName == null ? " " : $@" 
+  anyOfData.DiscriminatorPropertyName == null ||
+  allTypes.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName} {{ get; }}
 ")}
@@ -95,7 +99,7 @@ namespace {anyOfData.Namespace}
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof({x.Name}))]
 #endif
         public bool Is{x.Name} => {x.Name} != null;
-{(className != x.Type.CSharpTypeWithoutNullability ? $@"
+{(className != x.Type.CSharpTypeWithoutNullability && x.Type.CSharpTypeWithoutNullability.StartsWith("global::System.Collections.Generic.IList", StringComparison.Ordinal) != true ? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static implicit operator {className}({x.Type.CSharpTypeWithoutNullability} value) => new {className}(value);
 

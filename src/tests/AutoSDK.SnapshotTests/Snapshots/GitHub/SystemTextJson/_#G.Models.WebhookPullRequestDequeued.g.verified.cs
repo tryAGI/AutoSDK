@@ -57,8 +57,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reason")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WebhookPullRequestDequeuedReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Reason { get; set; }
+        public required global::G.WebhookPullRequestDequeuedReason Reason { get; set; }
 
         /// <summary>
         /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
@@ -69,11 +70,11 @@ namespace G
         public required global::G.RepositoryWebhooks Repository { get; set; }
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.SimpleUserWebhooks Sender { get; set; }
+        public required global::G.SimpleUser Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

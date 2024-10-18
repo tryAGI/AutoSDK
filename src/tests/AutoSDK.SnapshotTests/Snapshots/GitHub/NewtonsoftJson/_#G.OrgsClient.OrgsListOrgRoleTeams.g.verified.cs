@@ -30,7 +30,7 @@ namespace G
 
         /// <summary>
         /// List teams that are assigned to an organization role<br/>
-        /// Lists the teams that are assigned to an organization role. For more information on organization roles, see "[Managing people's access to your organization with roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/about-custom-organization-roles)."<br/>
+        /// Lists the teams that are assigned to an organization role. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."<br/>
         /// To use this endpoint, you must be an administrator for the organization.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `admin:org` scope to use this endpoint.
         /// </summary>
@@ -44,7 +44,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Team>> OrgsListOrgRoleTeamsAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TeamRoleAssignment>> OrgsListOrgRoleTeamsAsync(
             string org,
             int roleId,
             int? perPage = 30,
@@ -116,7 +116,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.Team>?>(__content, JsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.TeamRoleAssignment>?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

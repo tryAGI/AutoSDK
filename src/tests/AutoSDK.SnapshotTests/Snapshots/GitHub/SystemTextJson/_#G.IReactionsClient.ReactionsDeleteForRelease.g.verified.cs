@@ -7,7 +7,8 @@ namespace G
     {
         /// <summary>
         /// Delete a release reaction<br/>
-        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/releases/:release_id/reactions/:reaction_id`.<br/>
         /// Delete a reaction to a [release](https://docs.github.com/rest/releases/releases#get-a-release).
         /// </summary>
         /// <param name="owner"></param>

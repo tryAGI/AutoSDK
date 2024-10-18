@@ -82,6 +82,18 @@ namespace G
         public global::G.WebhooksRuleLinearHistoryRequirementEnforcementLevel LinearHistoryRequirementEnforcementLevel { get; set; } = default!;
 
         /// <summary>
+        /// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("lock_branch_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.WebhooksRuleLockBranchEnforcementLevel LockBranchEnforcementLevel { get; set; } = default!;
+
+        /// <summary>
+        /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow users to pull changes from upstream when the branch is locked. This setting is only applicable for forks.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("lock_allows_fork_sync")]
+        public bool? LockAllowsForkSync { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("merge_queue_enforcement_level", Required = global::Newtonsoft.Json.Required.Always)]

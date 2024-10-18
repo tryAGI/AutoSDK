@@ -7,7 +7,9 @@ namespace G
     {
         /// <summary>
         /// Get a repository ruleset<br/>
-        /// Get a ruleset for a repository.
+        /// Get a ruleset for a repository.<br/>
+        /// **Note:** To prevent leaking sensitive information, the `bypass_actors` property is only returned if the user<br/>
+        /// making the API request has write access to the ruleset.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

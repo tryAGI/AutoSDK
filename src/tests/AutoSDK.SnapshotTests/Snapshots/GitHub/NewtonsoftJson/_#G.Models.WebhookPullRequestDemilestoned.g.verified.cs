@@ -56,10 +56,10 @@ namespace G
         public global::G.RepositoryWebhooks Repository { get; set; } = default!;
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender")]
-        public global::G.SimpleUserWebhooks? Sender { get; set; }
+        public global::G.SimpleUser? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

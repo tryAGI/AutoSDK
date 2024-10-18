@@ -11,10 +11,10 @@ namespace G
     {
         /// <summary>
         /// The id of the check.<br/>
-        /// Example: 21
+        /// Example: 21L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// The SHA of the commit that is being checked.<br/>

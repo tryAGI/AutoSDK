@@ -7,7 +7,10 @@ namespace G
     {
         /// <summary>
         /// List pending organization invitations<br/>
-        /// The return hash contains a `role` field which refers to the Organization Invitation role and will be one of the following values: `direct_member`, `admin`, `billing_manager`, or `hiring_manager`. If the invitee is not a GitHub member, the `login` field in the return hash will be `null`.
+        /// The return hash contains a `role` field which refers to the Organization<br/>
+        /// Invitation role and will be one of the following values: `direct_member`, `admin`,<br/>
+        /// `billing_manager`, or `hiring_manager`. If the invitee is not a GitHub<br/>
+        /// member, the `login` field in the return hash will be `null`.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="perPage">

@@ -18,11 +18,11 @@ namespace G
 
         /// <summary>
         /// The target of the ruleset<br/>
-        /// **Note**: The `push` target is in beta and is subject to change.
+        /// Default Value: branch
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReposCreateRepoRulesetRequestTargetJsonConverter))]
-        public global::G.ReposCreateRepoRulesetRequestTarget? Target { get; set; }
+        public global::G.ReposCreateRepoRulesetRequestTarget? Target { get; set; } = global::G.ReposCreateRepoRulesetRequestTarget.Branch;
 
         /// <summary>
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).

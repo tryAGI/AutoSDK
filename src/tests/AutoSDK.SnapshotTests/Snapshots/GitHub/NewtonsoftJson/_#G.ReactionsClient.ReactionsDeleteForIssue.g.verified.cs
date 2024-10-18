@@ -25,7 +25,8 @@ namespace G
 
         /// <summary>
         /// Delete an issue reaction<br/>
-        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/issues/:issue_number/reactions/:reaction_id`.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/issues/:issue_number/reactions/:reaction_id`.<br/>
         /// Delete a reaction to an [issue](https://docs.github.com/rest/issues/issues#get-an-issue).
         /// </summary>
         /// <param name="owner"></param>

@@ -6,7 +6,7 @@ namespace G
 {
     /// <summary>
     /// The target of the ruleset<br/>
-    /// **Note**: The `push` target is in beta and is subject to change.
+    /// Default Value: branch
     /// </summary>
     public enum ReposCreateRepoRulesetRequestTarget
     {
@@ -19,7 +19,7 @@ namespace G
         /// </summary>
         Tag,
         /// <summary>
-        /// The `push` target is in beta and is subject to change.
+        /// 
         /// </summary>
         Push,
     }

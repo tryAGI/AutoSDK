@@ -17,7 +17,7 @@ namespace G
         global::System.Threading.Tasks.Task IssuesDeleteCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

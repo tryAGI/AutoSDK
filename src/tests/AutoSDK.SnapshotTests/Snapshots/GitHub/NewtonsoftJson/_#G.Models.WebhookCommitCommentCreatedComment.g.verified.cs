@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment) resource.
+    /// The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
     /// </summary>
     public sealed partial class WebhookCommitCommentCreatedComment
     {

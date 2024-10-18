@@ -23,7 +23,8 @@ namespace G
 
         /// <summary>
         /// Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, `monalisa/octocat@*`, `monalisa/octocat@v2`, `monalisa/*`.<br/>
-        /// **Note**: The `patterns_allowed` setting only applies to public repositories.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The `patterns_allowed` setting only applies to public repositories.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("patterns_allowed")]
         public global::System.Collections.Generic.IList<string>? PatternsAllowed { get; set; }

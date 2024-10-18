@@ -24,7 +24,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Reaction>> ReactionsListForCommitCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.ReactionsListForCommitCommentContent? content = default,
             int? perPage = 30,
             int? page = 1,

@@ -21,6 +21,16 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="single_select")]
         SingleSelect,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="multi_select")]
+        MultiSelect,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="true_false")]
+        TrueFalse,
     }
 
     /// <summary>
@@ -37,6 +47,8 @@ namespace G
             {
                 OrgsCreateOrUpdateCustomPropertyRequestValueType.String => "string",
                 OrgsCreateOrUpdateCustomPropertyRequestValueType.SingleSelect => "single_select",
+                OrgsCreateOrUpdateCustomPropertyRequestValueType.MultiSelect => "multi_select",
+                OrgsCreateOrUpdateCustomPropertyRequestValueType.TrueFalse => "true_false",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -49,6 +61,8 @@ namespace G
             {
                 "string" => OrgsCreateOrUpdateCustomPropertyRequestValueType.String,
                 "single_select" => OrgsCreateOrUpdateCustomPropertyRequestValueType.SingleSelect,
+                "multi_select" => OrgsCreateOrUpdateCustomPropertyRequestValueType.MultiSelect,
+                "true_false" => OrgsCreateOrUpdateCustomPropertyRequestValueType.TrueFalse,
                 _ => null,
             };
         }

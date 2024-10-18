@@ -30,7 +30,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrgCustomProperty>> OrgsGetAllCustomPropertiesAsync(
+        public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CustomProperty>> OrgsGetAllCustomPropertiesAsync(
             string org,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -89,7 +89,7 @@ namespace G
             }
 
             return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.OrgCustomProperty>?>(__content, JsonSerializerOptions) ??
+                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.CustomProperty>?>(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
     }

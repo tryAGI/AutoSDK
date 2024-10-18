@@ -11,7 +11,8 @@ namespace G
         /// is powered by [Git LFS](https://git-lfs.com).<br/>
         /// You can learn more about our LFS feature and working with large files [on our help<br/>
         /// site](https://docs.github.com/repositories/working-with-files/managing-large-files).<br/>
-        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
@@ -31,7 +32,8 @@ namespace G
         /// is powered by [Git LFS](https://git-lfs.com).<br/>
         /// You can learn more about our LFS feature and working with large files [on our help<br/>
         /// site](https://docs.github.com/repositories/working-with-files/managing-large-files).<br/>
-        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

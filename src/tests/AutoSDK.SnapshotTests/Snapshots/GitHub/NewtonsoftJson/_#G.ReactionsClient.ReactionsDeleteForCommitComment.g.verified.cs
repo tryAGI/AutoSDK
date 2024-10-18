@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int commentId,
+            ref long commentId,
             ref int reactionId);
         partial void PrepareReactionsDeleteForCommitCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             int reactionId);
         partial void ProcessReactionsDeleteForCommitCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,7 +25,8 @@ namespace G
 
         /// <summary>
         /// Delete a commit comment reaction<br/>
-        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/comments/:comment_id/reactions/:reaction_id`.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a repository by `repository_id` using the route `DELETE /repositories/:repository_id/comments/:comment_id/reactions/:reaction_id`.<br/>
         /// Delete a reaction to a [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment).
         /// </summary>
         /// <param name="owner"></param>
@@ -37,7 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ReactionsDeleteForCommitCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             int reactionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

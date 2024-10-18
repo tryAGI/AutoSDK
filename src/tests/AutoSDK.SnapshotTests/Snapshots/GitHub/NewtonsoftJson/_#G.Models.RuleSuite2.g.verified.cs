@@ -70,7 +70,7 @@ namespace G
         public global::G.RuleSuiteResult2? Result { get; set; }
 
         /// <summary>
-        /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+        /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("evaluation_result")]
         public global::G.RuleSuiteEvaluationResult2? EvaluationResult { get; set; }

@@ -8,7 +8,8 @@ namespace G
         /// <summary>
         /// List check suites for a Git reference<br/>
         /// Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.<br/>
-        /// **Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array and a `null` value for `head_branch`.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
         /// </summary>
         /// <param name="owner"></param>

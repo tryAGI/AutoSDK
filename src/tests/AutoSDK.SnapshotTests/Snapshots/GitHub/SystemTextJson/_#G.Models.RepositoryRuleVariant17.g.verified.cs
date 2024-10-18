@@ -5,8 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Note: file_extension_restriction is in beta and subject to change.<br/>
-    /// Prevent commits that include files with specified file extensions from being pushed to the commit graph.
+    /// Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.
     /// </summary>
     public sealed partial class RepositoryRuleVariant17
     {

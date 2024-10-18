@@ -29,7 +29,8 @@ namespace G
         /// <summary>
         /// Get a check run<br/>
         /// Gets a single check run using its `id`.<br/>
-        /// **Note:** The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The Checks API only looks for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint on a private repository.
         /// </summary>
         /// <param name="owner"></param>

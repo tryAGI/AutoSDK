@@ -86,6 +86,12 @@ namespace G
         public int? RepositoryId { get; set; } = default!;
 
         /// <summary>
+        /// Time when the webhook delivery was throttled.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("throttled_at")]
+        public global::System.DateTime? ThrottledAt { get; set; }
+
+        /// <summary>
         /// The URL target of the delivery.<br/>
         /// Example: https://www.example.com
         /// </summary>

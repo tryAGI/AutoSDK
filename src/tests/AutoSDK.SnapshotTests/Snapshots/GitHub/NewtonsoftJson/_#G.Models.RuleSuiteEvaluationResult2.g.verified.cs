@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+    /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum RuleSuiteEvaluationResult2
@@ -20,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="fail")]
         Fail,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="bypass")]
+        Bypass,
     }
 
     /// <summary>
@@ -36,6 +41,7 @@ namespace G
             {
                 RuleSuiteEvaluationResult2.Pass => "pass",
                 RuleSuiteEvaluationResult2.Fail => "fail",
+                RuleSuiteEvaluationResult2.Bypass => "bypass",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -48,6 +54,7 @@ namespace G
             {
                 "pass" => RuleSuiteEvaluationResult2.Pass,
                 "fail" => RuleSuiteEvaluationResult2.Fail,
+                "bypass" => RuleSuiteEvaluationResult2.Bypass,
                 _ => null,
             };
         }

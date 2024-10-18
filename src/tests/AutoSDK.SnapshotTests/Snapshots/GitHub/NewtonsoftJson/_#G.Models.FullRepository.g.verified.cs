@@ -10,10 +10,10 @@ namespace G
     public sealed partial class FullRepository
     {
         /// <summary>
-        /// Example: 1296269
+        /// Example: 1296269L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5

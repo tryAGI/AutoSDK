@@ -32,7 +32,8 @@ namespace G
 
         /// <summary>
         /// List discussion comments (Legacy)<br/>
-        /// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [List discussion comments](https://docs.github.com/rest/teams/discussion-comments#list-discussion-comments) endpoint.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [List discussion comments](https://docs.github.com/rest/teams/discussion-comments#list-discussion-comments) endpoint.<br/>
         /// List all comments on a team discussion.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>

@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("definition")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OrgCustomProperty Definition { get; set; }
+        public required global::G.CustomProperty Definition { get; set; }
 
         /// <summary>
         /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
@@ -44,14 +44,13 @@ namespace G
         /// organization, or when the event occurs from activity in a repository owned by an organization.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OrganizationSimpleWebhooks Organization { get; set; }
+        public global::G.OrganizationSimpleWebhooks? Organization { get; set; }
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
-        public global::G.SimpleUserWebhooks? Sender { get; set; }
+        public global::G.SimpleUser? Sender { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

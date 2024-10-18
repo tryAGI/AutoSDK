@@ -30,7 +30,7 @@ namespace G
 
         /// <summary>
         /// Update an issue<br/>
-        /// Issue owners and users with push access can edit an issue.<br/>
+        /// Issue owners and users with push access or Triage role can edit an issue.<br/>
         /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
         /// - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.<br/>
         /// - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.<br/>
@@ -125,7 +125,7 @@ namespace G
 
         /// <summary>
         /// Update an issue<br/>
-        /// Issue owners and users with push access can edit an issue.<br/>
+        /// Issue owners and users with push access or Triage role can edit an issue.<br/>
         /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
         /// - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.<br/>
         /// - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.<br/>

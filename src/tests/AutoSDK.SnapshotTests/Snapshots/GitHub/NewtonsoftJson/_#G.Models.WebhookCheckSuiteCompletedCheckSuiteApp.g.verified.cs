@@ -46,6 +46,12 @@ namespace G
         public int? Id { get; set; } = default!;
 
         /// <summary>
+        /// The client ID of the GitHub app
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("client_id")]
+        public string? ClientId { get; set; }
+
+        /// <summary>
         /// The name of the GitHub app
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]

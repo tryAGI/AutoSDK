@@ -46,10 +46,10 @@ namespace G
         public global::G.RepositoryWebhooks Repository { get; set; } = default!;
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUser Sender { get; set; } = default!;
 
         /// <summary>
         /// The time the star was created. This is a timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`. Will be `null` for the `deleted` action.

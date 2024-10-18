@@ -8,7 +8,8 @@ namespace G
         /// <summary>
         /// List child teams<br/>
         /// Lists the child teams of the team specified by `{team_slug}`.<br/>
-        /// **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/teams`.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="teamSlug"></param>

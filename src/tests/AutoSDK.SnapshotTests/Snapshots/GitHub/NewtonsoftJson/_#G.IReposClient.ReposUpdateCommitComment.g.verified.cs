@@ -23,7 +23,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CommitComment> ReposUpdateCommitCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.ReposUpdateCommitCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -47,7 +47,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CommitComment> ReposUpdateCommitCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             string body,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

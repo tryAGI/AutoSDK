@@ -13,7 +13,8 @@ namespace G
             ref int alertNumber,
             ref int? page,
             ref int? perPage,
-            ref string? @ref);
+            ref string? @ref,
+            ref int? pr);
         partial void PrepareCodeScanningListAlertInstancesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +23,8 @@ namespace G
             int alertNumber,
             int? page,
             int? perPage,
-            string? @ref);
+            string? @ref,
+            int? pr);
         partial void ProcessCodeScanningListAlertInstancesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -53,6 +55,7 @@ namespace G
         /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
         /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
         /// </param>
+        /// <param name="pr"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeScanningAlertInstance>> CodeScanningListAlertInstancesAsync(
@@ -62,6 +65,7 @@ namespace G
             int? page = 1,
             int? perPage = 30,
             string? @ref = default,
+            int? pr = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -73,7 +77,8 @@ namespace G
                 alertNumber: ref alertNumber,
                 page: ref page,
                 perPage: ref perPage,
-                @ref: ref @ref);
+                @ref: ref @ref,
+                pr: ref pr);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/repos/{owner}/{repo}/code-scanning/alerts/{alertNumber}/instances",
@@ -82,6 +87,7 @@ namespace G
                 .AddOptionalParameter("page", page?.ToString()) 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("ref", @ref) 
+                .AddOptionalParameter("pr", pr?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -99,7 +105,8 @@ namespace G
                 alertNumber: alertNumber,
                 page: page,
                 perPage: perPage,
-                @ref: @ref);
+                @ref: @ref,
+                pr: pr);
 
             using var response = await _httpClient.SendAsync(
                 request: httpRequest,

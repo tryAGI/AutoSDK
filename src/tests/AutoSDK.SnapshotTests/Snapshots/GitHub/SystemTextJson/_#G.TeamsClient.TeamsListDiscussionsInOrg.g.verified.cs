@@ -35,7 +35,8 @@ namespace G
         /// <summary>
         /// List discussions<br/>
         /// List all discussions on a team's page.<br/>
-        /// **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions`.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}/discussions`.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `read:discussion` scope to use this endpoint.
         /// </summary>
         /// <param name="org"></param>

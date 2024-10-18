@@ -143,6 +143,12 @@ namespace G
         public required global::G.RepositoryAdvisoryCvss? Cvss { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cvss_severities")]
+        public global::G.CvssSeverities? CvssSeverities { get; set; }
+
+        /// <summary>
         /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cwes")]

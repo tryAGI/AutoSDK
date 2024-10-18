@@ -16,7 +16,7 @@ namespace G
         public global::G.WebhookCommitCommentCreatedAction Action { get; set; }
 
         /// <summary>
-        /// The [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment) resource.
+        /// The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("comment", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.WebhookCommitCommentCreatedComment Comment { get; set; } = default!;
@@ -52,10 +52,10 @@ namespace G
         public global::G.RepositoryWebhooks Repository { get; set; } = default!;
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUser Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -23,7 +23,7 @@ namespace G
             string owner,
             string repo,
             string branch,
-            global::G.OneOf<global::G.ReposRemoveUserAccessRestrictionsRequest2, global::System.Collections.Generic.IList<string>> request,
+            global::G.ReposRemoveUserAccessRestrictionsRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -37,12 +37,16 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="branch"></param>
+        /// <param name="users">
+        /// The username for users
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> ReposRemoveUserAccessRestrictionsAsync(
             string owner,
             string repo,
             string branch,
+            global::System.Collections.Generic.IList<string> users,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

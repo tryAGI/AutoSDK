@@ -12,16 +12,22 @@ namespace G
     public sealed partial class CopilotSeatDetails
     {
         /// <summary>
-        /// The assignee that has been granted access to GitHub Copilot.
+        /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assignee", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<global::G.SimpleUser, global::G.Team, global::G.Organization> Assignee { get; set; } = default!;
+        public global::G.SimpleUser Assignee { get; set; } = default!;
 
         /// <summary>
-        /// The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually.
+        /// A GitHub organization.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("organization")]
+        public global::G.NullableOrganizationSimple? Organization { get; set; }
+
+        /// <summary>
+        /// The team through which the assignee is granted access to GitHub Copilot, if applicable.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("assigning_team")]
-        public global::G.Team? AssigningTeam { get; set; }
+        public global::G.OneOf<global::G.Team, global::G.EnterpriseTeam>? AssigningTeam { get; set; }
 
         /// <summary>
         /// The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
@@ -52,6 +58,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime? UpdatedAt { get; set; }
+
+        /// <summary>
+        /// The Copilot plan of the organization, or the parent enterprise, when applicable.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("plan_type")]
+        public global::G.CopilotSeatDetailsPlanType? PlanType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

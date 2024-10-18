@@ -6,7 +6,9 @@ namespace G
     public partial interface IActivityClient
     {
         /// <summary>
-        /// List public events received by a user
+        /// List public events received by a user<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; This API is not built to serve real-time use cases. Depending on the time of day, event latency can be anywhere from 30s to 6h.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="perPage">

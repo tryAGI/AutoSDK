@@ -24,6 +24,13 @@ namespace G
         public required global::System.Collections.Generic.IList<string> PropertyValues { get; set; }
 
         /// <summary>
+        /// The source of the repository property. Defaults to 'custom' if not specified.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetConditionsRepositoryPropertySpecSourceJsonConverter))]
+        public global::G.RepositoryRulesetConditionsRepositoryPropertySpecSource? Source { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

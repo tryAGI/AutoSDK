@@ -84,7 +84,7 @@ namespace G
 
         /// <summary>
         /// User-friendly name for the detected secret, matching the `secret_type`.<br/>
-        /// For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
+        /// For a list of built-in patterns, see "[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_type_display_name")]
         public string? SecretTypeDisplayName { get; set; }

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Information about the seat breakdown and policies set for an organization with a Copilot Business subscription.
+    /// Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.
     /// </summary>
     public sealed partial class CopilotOrganizationDetails
     {
@@ -52,6 +52,13 @@ namespace G
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CopilotOrganizationDetailsSeatManagementSettingJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.CopilotOrganizationDetailsSeatManagementSetting SeatManagementSetting { get; set; }
+
+        /// <summary>
+        /// The Copilot plan of the organization, or the parent enterprise, when applicable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("plan_type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CopilotOrganizationDetailsPlanTypeJsonConverter))]
+        public global::G.CopilotOrganizationDetailsPlanType? PlanType { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

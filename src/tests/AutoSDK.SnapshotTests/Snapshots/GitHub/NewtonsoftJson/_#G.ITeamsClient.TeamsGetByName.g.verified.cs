@@ -8,7 +8,8 @@ namespace G
         /// <summary>
         /// Get a team by name<br/>
         /// Gets a team using the team's `slug`. To create the `slug`, GitHub replaces special characters in the `name` string, changes all words to lowercase, and replaces spaces with a `-` separator. For example, `"My TEam Näme"` would become `my-team-name`.<br/>
-        /// **Note:** You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a team by `org_id` and `team_id` using the route `GET /organizations/{org_id}/team/{team_id}`.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="teamSlug"></param>

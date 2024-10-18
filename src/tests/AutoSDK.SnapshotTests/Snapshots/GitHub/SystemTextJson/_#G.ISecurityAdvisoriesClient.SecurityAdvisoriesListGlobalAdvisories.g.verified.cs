@@ -25,6 +25,8 @@ namespace G
         /// <param name="published"></param>
         /// <param name="updated"></param>
         /// <param name="modified"></param>
+        /// <param name="epssPercentage"></param>
+        /// <param name="epssPercentile"></param>
         /// <param name="before"></param>
         /// <param name="after"></param>
         /// <param name="direction">
@@ -50,6 +52,8 @@ namespace G
             string? published = default,
             string? updated = default,
             string? modified = default,
+            string? epssPercentage = default,
+            string? epssPercentile = default,
             string? before = default,
             string? after = default,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction = global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection.Desc,

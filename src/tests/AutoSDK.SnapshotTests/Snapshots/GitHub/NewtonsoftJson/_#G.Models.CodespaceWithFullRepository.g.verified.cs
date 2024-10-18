@@ -10,10 +10,10 @@ namespace G
     public sealed partial class CodespaceWithFullRepository
     {
         /// <summary>
-        /// Example: 1
+        /// Example: 1L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// Automatically generated name of this codespace.<br/>

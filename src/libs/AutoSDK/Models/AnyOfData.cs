@@ -91,7 +91,7 @@ public readonly record struct AnyOfData(
                 ? children.Select((x, i) => PropertyData.Default with
                 {
                     Type = x.TypeData ?? TypeData.Default,
-                    Name = useSmartNames
+                    Name = useSmartNames && (x.TypeData ?? TypeData.Default).CSharpTypeWithoutNullability.StartsWith("global::System.", StringComparison.Ordinal) != true
                         ? SmartNamedAnyOfNames.ComputeSmartName(
                             (x.TypeData ?? TypeData.Default).ShortCSharpTypeWithoutNullability,
                             className)

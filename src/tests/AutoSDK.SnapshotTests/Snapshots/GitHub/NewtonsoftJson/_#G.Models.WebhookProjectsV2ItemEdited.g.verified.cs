@@ -18,7 +18,8 @@ namespace G
         public global::G.WebhookProjectsV2ItemEditedAction Action { get; set; }
 
         /// <summary>
-        /// 
+        /// The changes made to the item may involve modifications in the item's fields and draft issue body.<br/>
+        /// It includes altered values for text, number, date, single select, and iteration fields, along with the GraphQL node ID of the changed field.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changes")]
         public global::G.OneOf<global::G.WebhookProjectsV2ItemEditedChangesVariant1, global::G.WebhookProjectsV2ItemEditedChangesVariant2>? Changes { get; set; }
@@ -45,10 +46,10 @@ namespace G
         public global::G.ProjectsV2Item ProjectsV2Item { get; set; } = default!;
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sender", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.SimpleUserWebhooks Sender { get; set; } = default!;
+        public global::G.SimpleUser Sender { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

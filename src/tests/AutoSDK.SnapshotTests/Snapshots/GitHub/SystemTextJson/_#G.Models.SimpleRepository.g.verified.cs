@@ -11,11 +11,11 @@ namespace G
     {
         /// <summary>
         /// A unique identifier of the repository.<br/>
-        /// Example: 1296269
+        /// Example: 1296269L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// The GraphQL identifier of the repository.<br/>

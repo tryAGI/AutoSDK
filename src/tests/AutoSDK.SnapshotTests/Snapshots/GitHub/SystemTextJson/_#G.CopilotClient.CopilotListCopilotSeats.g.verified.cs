@@ -28,10 +28,11 @@ namespace G
 
         /// <summary>
         /// List all Copilot seat assignments for an organization<br/>
-        /// **Note**: This endpoint is in beta and is subject to change.<br/>
-        /// Lists all Copilot seat assignments for an organization that are currently being billed (either active or pending cancellation at the start of the next billing cycle).<br/>
-        /// Only organization owners can configure and view details about the organization's Copilot Business or Enterprise subscription.<br/>
-        /// OAuth app tokens and personal access tokens (classic) need the `manage_billing:copilot` scope to use this endpoint.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; This endpoint is in beta and is subject to change.<br/>
+        /// Lists all active Copilot seats for an organization with a Copilot Business or Copilot Enterprise subscription.<br/>
+        /// Only organization owners can view assigned seats.<br/>
+        /// OAuth app tokens and personal access tokens (classic) need either the `manage_billing:copilot` or `read:org` scopes to use this endpoint.
         /// </summary>
         /// <param name="org"></param>
         /// <param name="page">

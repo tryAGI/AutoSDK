@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int commentId,
+            ref long commentId,
             global::G.ReactionsCreateForCommitCommentRequest request);
         partial void PrepareReactionsCreateForCommitCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.ReactionsCreateForCommitCommentRequest request);
         partial void ProcessReactionsCreateForCommitCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -41,7 +41,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Reaction> ReactionsCreateForCommitCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.ReactionsCreateForCommitCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -133,7 +133,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Reaction> ReactionsCreateForCommitCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.ReactionsCreateForCommitCommentRequestContent content,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

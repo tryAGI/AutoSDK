@@ -7,7 +7,7 @@ namespace G
     {
         /// <summary>
         /// Delete an app token<br/>
-        /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the application's `client_id` and `client_secret` as the username and password.
+        /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization.
         /// </summary>
         /// <param name="clientId"></param>
         /// <param name="request"></param>
@@ -20,7 +20,7 @@ namespace G
 
         /// <summary>
         /// Delete an app token<br/>
-        /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization. You must use [Basic Authentication](https://docs.github.com/rest/overview/other-authentication-methods#basic-authentication) when accessing this endpoint, using the application's `client_id` and `client_secret` as the username and password.
+        /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization.
         /// </summary>
         /// <param name="clientId"></param>
         /// <param name="accessToken">

@@ -8,8 +8,8 @@ namespace G
         /// <summary>
         /// List pull requests files<br/>
         /// Lists the files in a specified pull request.<br/>
-        /// **Note:** Responses include a maximum of 3000 files. The paginated response<br/>
-        /// returns 30 files per page by default.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Responses include a maximum of 3000 files. The paginated response returns 30 files per page by default.<br/>
         /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
         /// - **`application/vnd.github.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.<br/>
         /// - **`application/vnd.github.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.<br/>

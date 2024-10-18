@@ -16,8 +16,7 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// The target of the ruleset<br/>
-        /// **Note**: The `push` target is in beta and is subject to change.
+        /// The target of the ruleset
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReposUpdateOrgRulesetRequestTargetJsonConverter))]
@@ -37,7 +36,9 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? BypassActors { get; set; }
 
         /// <summary>
-        /// Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.
+        /// Conditions for an organization ruleset.<br/>
+        /// The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.<br/>
+        /// The push rulesets conditions object does not require the `ref_name` property.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("conditions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgRulesetConditionsJsonConverter))]

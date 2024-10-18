@@ -10,6 +10,12 @@ namespace G
     public sealed partial class RepositoryRuleWorkflowsParameters
     {
         /// <summary>
+        /// Allow repositories and branches to be created if a check would otherwise prohibit it.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("do_not_enforce_on_create")]
+        public bool? DoNotEnforceOnCreate { get; set; }
+
+        /// <summary>
         /// Workflows that must pass for this rule to pass.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflows")]

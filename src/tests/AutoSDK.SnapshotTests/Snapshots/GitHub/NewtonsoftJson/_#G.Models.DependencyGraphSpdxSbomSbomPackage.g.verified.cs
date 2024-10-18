@@ -70,6 +70,13 @@ namespace G
         public string? Supplier { get; set; }
 
         /// <summary>
+        /// The copyright holders of the package, and any dates present with those notices, if available.<br/>
+        /// Example: Copyright (c) 1985 GitHub.com
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("copyrightText")]
+        public string? CopyrightText { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("externalRefs")]

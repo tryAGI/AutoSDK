@@ -19,6 +19,8 @@ namespace G
             ref string? published,
             ref string? updated,
             ref string? modified,
+            ref string? epssPercentage,
+            ref string? epssPercentile,
             ref string? before,
             ref string? after,
             ref global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction,
@@ -38,6 +40,8 @@ namespace G
             string? published,
             string? updated,
             string? modified,
+            string? epssPercentage,
+            string? epssPercentile,
             string? before,
             string? after,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction,
@@ -72,6 +76,8 @@ namespace G
         /// <param name="published"></param>
         /// <param name="updated"></param>
         /// <param name="modified"></param>
+        /// <param name="epssPercentage"></param>
+        /// <param name="epssPercentile"></param>
         /// <param name="before"></param>
         /// <param name="after"></param>
         /// <param name="direction">
@@ -97,6 +103,8 @@ namespace G
             string? published = default,
             string? updated = default,
             string? modified = default,
+            string? epssPercentage = default,
+            string? epssPercentile = default,
             string? before = default,
             string? after = default,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction = global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection.Desc,
@@ -119,6 +127,8 @@ namespace G
                 published: ref published,
                 updated: ref updated,
                 modified: ref modified,
+                epssPercentage: ref epssPercentage,
+                epssPercentile: ref epssPercentile,
                 before: ref before,
                 after: ref after,
                 direction: ref direction,
@@ -168,6 +178,8 @@ namespace G
             {
                 global::G.SecurityAdvisoriesListGlobalAdvisoriesSort.Updated => "updated",
                 global::G.SecurityAdvisoriesListGlobalAdvisoriesSort.Published => "published",
+                global::G.SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentage => "epss_percentage",
+                global::G.SecurityAdvisoriesListGlobalAdvisoriesSort.EpssPercentile => "epss_percentile",
                 _ => throw new global::System.NotImplementedException("Enum value not implemented."),
             };
             var __pathBuilder = new PathBuilder(
@@ -185,6 +197,8 @@ namespace G
                 .AddOptionalParameter("published", published) 
                 .AddOptionalParameter("updated", updated) 
                 .AddOptionalParameter("modified", modified) 
+                .AddOptionalParameter("epss_percentage", epssPercentage) 
+                .AddOptionalParameter("epss_percentile", epssPercentile) 
                 .AddOptionalParameter("before", before) 
                 .AddOptionalParameter("after", after) 
                 .AddOptionalParameter("direction", directionValue?.ToString()) 
@@ -213,6 +227,8 @@ namespace G
                 published: published,
                 updated: updated,
                 modified: modified,
+                epssPercentage: epssPercentage,
+                epssPercentile: epssPercentile,
                 before: before,
                 after: after,
                 direction: direction,

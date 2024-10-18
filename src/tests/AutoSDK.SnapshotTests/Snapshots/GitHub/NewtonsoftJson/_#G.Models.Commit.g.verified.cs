@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.Commit.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -46,16 +48,16 @@ namespace G
         public global::G.CommitCommit1 Commit1 { get; set; } = default!;
 
         /// <summary>
-        /// A GitHub user.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("author", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Author { get; set; } = default!;
+        public global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Author { get; set; } = default!;
 
         /// <summary>
-        /// A GitHub user.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("committer", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.NullableSimpleUser? Committer { get; set; } = default!;
+        public global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? Committer { get; set; } = default!;
 
         /// <summary>
         /// 

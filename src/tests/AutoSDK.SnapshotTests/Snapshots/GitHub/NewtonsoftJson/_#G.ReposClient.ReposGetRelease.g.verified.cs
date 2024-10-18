@@ -29,9 +29,8 @@ namespace G
         /// <summary>
         /// Get a release<br/>
         /// Gets a public release with the specified release ID.<br/>
-        /// **Note:** This returns an `upload_url` key corresponding to the endpoint<br/>
-        /// for uploading release assets. This key is a hypermedia resource. For more information, see<br/>
-        /// "[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
+        /// &gt; [!NOTE]<br/>
+        /// &gt; This returns an `upload_url` key corresponding to the endpoint for uploading release assets. This key is a hypermedia resource. For more information, see "[Getting started with the REST API](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia)."
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>

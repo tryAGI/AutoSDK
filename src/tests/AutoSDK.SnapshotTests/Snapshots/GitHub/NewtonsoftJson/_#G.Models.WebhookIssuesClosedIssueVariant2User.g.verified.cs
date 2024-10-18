@@ -55,7 +55,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id")]
-        public int? Id { get; set; }
+        public long? Id { get; set; }
 
         /// <summary>
         /// 

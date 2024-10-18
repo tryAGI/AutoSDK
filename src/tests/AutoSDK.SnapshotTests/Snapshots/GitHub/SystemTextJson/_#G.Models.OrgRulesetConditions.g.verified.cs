@@ -7,7 +7,9 @@ using System.Linq;
 namespace G
 {
     /// <summary>
-    /// Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.
+    /// Conditions for an organization ruleset.<br/>
+    /// The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.<br/>
+    /// The push rulesets conditions object does not require the `ref_name` property.
     /// </summary>
     public readonly partial struct OrgRulesetConditions : global::System.IEquatable<OrgRulesetConditions>
     {

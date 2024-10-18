@@ -36,12 +36,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content")]
-        public string? Content { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string Sha { get; set; } = default!;
 

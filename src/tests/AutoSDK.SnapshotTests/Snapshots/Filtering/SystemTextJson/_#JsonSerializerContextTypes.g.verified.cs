@@ -27,7 +27,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public int? Type2 { get; set; }
+        public long? Type2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -55,210 +55,230 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.OneOf<string, int?, global::System.Collections.Generic.IList<string>>? Type9 { get; set; }
+        public int? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type10 { get; set; }
+        public global::G.OneOf<string, int?, global::System.Collections.Generic.IList<string>>? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.NullableLicenseSimple? Type11 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Repository? Type12 { get; set; }
+        public global::G.NullableLicenseSimple? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryPermissions? Type13 { get; set; }
+        public global::G.Repository? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type14 { get; set; }
+        public global::G.RepositoryPermissions? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositorySquashMergeCommitTitle? Type15 { get; set; }
+        public global::System.DateTime? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositorySquashMergeCommitMessage? Type16 { get; set; }
+        public global::G.RepositorySquashMergeCommitTitle? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryMergeCommitTitle? Type17 { get; set; }
+        public global::G.RepositorySquashMergeCommitMessage? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RepositoryMergeCommitMessage? Type18 { get; set; }
+        public global::G.RepositoryMergeCommitTitle? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CodeOfConduct? Type19 { get; set; }
+        public global::G.RepositoryMergeCommitMessage? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SecurityAndAnalysis? Type20 { get; set; }
+        public global::G.CodeOfConduct? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SecurityAndAnalysisAdvancedSecurity? Type21 { get; set; }
+        public global::G.SecurityAndAnalysis? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SecurityAndAnalysisAdvancedSecurityStatus? Type22 { get; set; }
+        public global::G.SecurityAndAnalysisAdvancedSecurity? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SecurityAndAnalysisDependabotSecurityUpdates? Type23 { get; set; }
+        public global::G.SecurityAndAnalysisAdvancedSecurityStatus? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SecurityAndAnalysisDependabotSecurityUpdatesStatus? Type24 { get; set; }
+        public global::G.SecurityAndAnalysisDependabotSecurityUpdates? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SecurityAndAnalysisSecretScanning? Type25 { get; set; }
+        public global::G.SecurityAndAnalysisDependabotSecurityUpdatesStatus? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SecurityAndAnalysisSecretScanningStatus? Type26 { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanning? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SecurityAndAnalysisSecretScanningPushProtection? Type27 { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanningStatus? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.SecurityAndAnalysisSecretScanningPushProtectionStatus? Type28 { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanningPushProtection? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MinimalRepository? Type29 { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanningPushProtectionStatus? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MinimalRepositoryPermissions? Type30 { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanningNonProviderPatterns? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MinimalRepositoryLicense? Type31 { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanningNonProviderPatternsStatus? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Migration? Type32 { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanningAiDetection? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Repository>? Type33 { get; set; }
+        public global::G.SecurityAndAnalysisSecretScanningAiDetectionStatus? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Import? Type34 { get; set; }
+        public global::G.MinimalRepository? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImportStatus? Type35 { get; set; }
+        public global::G.MinimalRepositoryPermissions? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.ImportProjectChoice>? Type36 { get; set; }
+        public global::G.MinimalRepositoryLicense? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImportProjectChoice? Type37 { get; set; }
+        public global::G.Migration? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PorterAuthor? Type38 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Repository>? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PorterLargeFile? Type39 { get; set; }
+        public global::G.Import? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsStartForOrgRequest? Type40 { get; set; }
+        public global::G.ImportStatus? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExcludeItem>? Type41 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ImportProjectChoice>? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsStartForOrgRequestExcludeItem? Type42 { get; set; }
+        public global::G.ImportProjectChoice? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsStartImportRequest? Type43 { get; set; }
+        public global::G.PorterAuthor? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsStartImportRequestVcs? Type44 { get; set; }
+        public global::G.PorterLargeFile? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsUpdateImportRequest? Type45 { get; set; }
+        public global::G.MigrationsStartForOrgRequest? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsUpdateImportRequestVcs? Type46 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExcludeItem>? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsMapCommitAuthorRequest? Type47 { get; set; }
+        public global::G.MigrationsStartForOrgRequestExcludeItem? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsSetLfsPreferenceRequest? Type48 { get; set; }
+        public global::G.MigrationsStartImportRequest? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsSetLfsPreferenceRequestUseLfs? Type49 { get; set; }
+        public global::G.MigrationsStartImportRequestVcs? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsStartForAuthenticatedUserRequest? Type50 { get; set; }
+        public global::G.MigrationsUpdateImportRequest? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>? Type51 { get; set; }
+        public global::G.MigrationsUpdateImportRequestVcs? Type51 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem? Type52 { get; set; }
+        public global::G.MigrationsMapCommitAuthorRequest? Type52 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExcludeItem>? Type53 { get; set; }
+        public global::G.MigrationsSetLfsPreferenceRequest? Type53 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsListForOrgExcludeItem? Type54 { get; set; }
+        public global::G.MigrationsSetLfsPreferenceRequestUseLfs? Type54 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MigrationsGetStatusForOrgExcludeItem>? Type55 { get; set; }
+        public global::G.MigrationsStartForAuthenticatedUserRequest? Type55 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MigrationsGetStatusForOrgExcludeItem? Type56 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>? Type56 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Migration>? Type57 { get; set; }
+        public global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem? Type57 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.MinimalRepository>? Type58 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExcludeItem>? Type58 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PorterAuthor>? Type59 { get; set; }
+        public global::G.MigrationsListForOrgExcludeItem? Type59 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.PorterLargeFile>? Type60 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.MigrationsGetStatusForOrgExcludeItem>? Type60 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MigrationsGetStatusForOrgExcludeItem? Type61 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.Migration>? Type62 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.MinimalRepository>? Type63 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.PorterAuthor>? Type64 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::G.PorterLargeFile>? Type65 { get; set; }
     }
 }

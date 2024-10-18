@@ -7,7 +7,8 @@ namespace G
     {
         /// <summary>
         /// Get an environment<br/>
-        /// **Note:** To get information about name patterns that branches must match in order to deploy to this environment, see "[Get a deployment branch policy](/rest/deployments/branch-policies#get-a-deployment-branch-policy)."<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; To get information about name patterns that branches must match in order to deploy to this environment, see "[Get a deployment branch policy](/rest/deployments/branch-policies#get-a-deployment-branch-policy)."<br/>
         /// Anyone with read access to the repository can use this endpoint.<br/>
         /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint with a private repository.
         /// </summary>

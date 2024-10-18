@@ -42,7 +42,7 @@ namespace G
         public string? Description { get; set; }
 
         /// <summary>
-        /// description of the rule used to detect the alert.
+        /// A description of the rule used to detect the alert.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_description")]
         public string? FullDescription { get; set; }

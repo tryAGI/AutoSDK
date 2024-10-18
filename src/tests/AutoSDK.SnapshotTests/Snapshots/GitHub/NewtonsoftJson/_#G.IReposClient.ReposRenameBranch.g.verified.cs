@@ -8,7 +8,8 @@ namespace G
         /// <summary>
         /// Rename a branch<br/>
         /// Renames a branch in a repository.<br/>
-        /// **Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".<br/>
         /// The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.<br/>
         /// In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
         /// </summary>
@@ -28,7 +29,8 @@ namespace G
         /// <summary>
         /// Rename a branch<br/>
         /// Renames a branch in a repository.<br/>
-        /// **Note:** Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Although the API responds immediately, the branch rename process might take some extra time to complete in the background. You won't be able to push to the old branch name while the rename process is in progress. For more information, see "[Renaming a branch](https://docs.github.com/github/administering-a-repository/renaming-a-branch)".<br/>
         /// The authenticated user must have push access to the branch. If the branch is the default branch, the authenticated user must also have admin or owner permissions.<br/>
         /// In order to rename the default branch, fine-grained access tokens also need the `administration:write` repository permission.
         /// </summary>

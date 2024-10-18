@@ -8,7 +8,8 @@ namespace G
         /// <summary>
         /// Update a check run<br/>
         /// Updates a check run for a specific commit in a repository.<br/>
-        /// **Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.<br/>
         /// OAuth apps and personal access tokens (classic) cannot use this endpoint.
         /// </summary>
         /// <param name="owner"></param>
@@ -27,7 +28,8 @@ namespace G
         /// <summary>
         /// Update a check run<br/>
         /// Updates a check run for a specific commit in a repository.<br/>
-        /// **Note:** The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; The endpoints to manage checks only look for pushes in the repository where the check suite or check run were created. Pushes to a branch in a forked repository are not detected and return an empty `pull_requests` array.<br/>
         /// OAuth apps and personal access tokens (classic) cannot use this endpoint.
         /// </summary>
         /// <param name="owner"></param>

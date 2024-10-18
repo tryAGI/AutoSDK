@@ -38,7 +38,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OrgCustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
             string org,
             string customPropertyName,
             global::G.OrgsCreateOrUpdateCustomPropertyRequest request,
@@ -111,7 +111,7 @@ namespace G
             }
 
             return
-                global::G.OrgCustomProperty.FromJson(__content, JsonSerializerOptions) ??
+                global::G.CustomProperty.FromJson(__content, JsonSerializerOptions) ??
                 throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
         }
 
@@ -143,7 +143,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.OrgCustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
+        public async global::System.Threading.Tasks.Task<global::G.CustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
             string org,
             string customPropertyName,
             global::G.OrgsCreateOrUpdateCustomPropertyRequestValueType valueType,

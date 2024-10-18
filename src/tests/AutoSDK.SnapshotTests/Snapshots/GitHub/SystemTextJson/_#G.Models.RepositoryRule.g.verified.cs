@@ -157,12 +157,12 @@ namespace G
         }
 
         /// <summary>
-        /// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
+        /// Merges must be performed via a merge queue.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleRequiredDeployments? Value5 { get; init; }
+        public global::G.RepositoryRuleMergeQueue? Value5 { get; init; }
 #else
-        public global::G.RepositoryRuleRequiredDeployments? Value5 { get; }
+        public global::G.RepositoryRuleMergeQueue? Value5 { get; }
 #endif
 
         /// <summary>
@@ -176,28 +176,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredDeployments value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleMergeQueue value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleRequiredDeployments?(RepositoryRule @this) => @this.Value5;
+        public static implicit operator global::G.RepositoryRuleMergeQueue?(RepositoryRule @this) => @this.Value5;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleRequiredDeployments? value)
+        public RepositoryRule(global::G.RepositoryRuleMergeQueue? value)
         {
             Value5 = value;
         }
 
         /// <summary>
-        /// Commits pushed to matching refs must have verified signatures.
+        /// Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleRequiredSignatures? Value6 { get; init; }
+        public global::G.RepositoryRuleRequiredDeployments? Value6 { get; init; }
 #else
-        public global::G.RepositoryRuleRequiredSignatures? Value6 { get; }
+        public global::G.RepositoryRuleRequiredDeployments? Value6 { get; }
 #endif
 
         /// <summary>
@@ -211,28 +211,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredSignatures value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredDeployments value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleRequiredSignatures?(RepositoryRule @this) => @this.Value6;
+        public static implicit operator global::G.RepositoryRuleRequiredDeployments?(RepositoryRule @this) => @this.Value6;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleRequiredSignatures? value)
+        public RepositoryRule(global::G.RepositoryRuleRequiredDeployments? value)
         {
             Value6 = value;
         }
 
         /// <summary>
-        /// Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.
+        /// Commits pushed to matching refs must have verified signatures.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRulePullRequest? Value7 { get; init; }
+        public global::G.RepositoryRuleRequiredSignatures? Value7 { get; init; }
 #else
-        public global::G.RepositoryRulePullRequest? Value7 { get; }
+        public global::G.RepositoryRuleRequiredSignatures? Value7 { get; }
 #endif
 
         /// <summary>
@@ -246,28 +246,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRulePullRequest value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredSignatures value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRulePullRequest?(RepositoryRule @this) => @this.Value7;
+        public static implicit operator global::G.RepositoryRuleRequiredSignatures?(RepositoryRule @this) => @this.Value7;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRulePullRequest? value)
+        public RepositoryRule(global::G.RepositoryRuleRequiredSignatures? value)
         {
             Value7 = value;
         }
 
         /// <summary>
-        /// Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.
+        /// Require all commits be made to a non-target branch and submitted via a pull request before they can be merged.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleRequiredStatusChecks? Value8 { get; init; }
+        public global::G.RepositoryRulePullRequest? Value8 { get; init; }
 #else
-        public global::G.RepositoryRuleRequiredStatusChecks? Value8 { get; }
+        public global::G.RepositoryRulePullRequest? Value8 { get; }
 #endif
 
         /// <summary>
@@ -281,28 +281,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredStatusChecks value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRulePullRequest value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleRequiredStatusChecks?(RepositoryRule @this) => @this.Value8;
+        public static implicit operator global::G.RepositoryRulePullRequest?(RepositoryRule @this) => @this.Value8;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleRequiredStatusChecks? value)
+        public RepositoryRule(global::G.RepositoryRulePullRequest? value)
         {
             Value8 = value;
         }
 
         /// <summary>
-        /// Prevent users with push access from force pushing to refs.
+        /// Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleNonFastForward? Value9 { get; init; }
+        public global::G.RepositoryRuleRequiredStatusChecks? Value9 { get; init; }
 #else
-        public global::G.RepositoryRuleNonFastForward? Value9 { get; }
+        public global::G.RepositoryRuleRequiredStatusChecks? Value9 { get; }
 #endif
 
         /// <summary>
@@ -316,28 +316,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleNonFastForward value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleRequiredStatusChecks value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleNonFastForward?(RepositoryRule @this) => @this.Value9;
+        public static implicit operator global::G.RepositoryRuleRequiredStatusChecks?(RepositoryRule @this) => @this.Value9;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleNonFastForward? value)
+        public RepositoryRule(global::G.RepositoryRuleRequiredStatusChecks? value)
         {
             Value9 = value;
         }
 
         /// <summary>
-        /// Parameters to be used for the commit_message_pattern rule
+        /// Prevent users with push access from force pushing to refs.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleCommitMessagePattern? Value10 { get; init; }
+        public global::G.RepositoryRuleNonFastForward? Value10 { get; init; }
 #else
-        public global::G.RepositoryRuleCommitMessagePattern? Value10 { get; }
+        public global::G.RepositoryRuleNonFastForward? Value10 { get; }
 #endif
 
         /// <summary>
@@ -351,28 +351,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitMessagePattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleNonFastForward value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleCommitMessagePattern?(RepositoryRule @this) => @this.Value10;
+        public static implicit operator global::G.RepositoryRuleNonFastForward?(RepositoryRule @this) => @this.Value10;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleCommitMessagePattern? value)
+        public RepositoryRule(global::G.RepositoryRuleNonFastForward? value)
         {
             Value10 = value;
         }
 
         /// <summary>
-        /// Parameters to be used for the commit_author_email_pattern rule
+        /// Parameters to be used for the commit_message_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleCommitAuthorEmailPattern? Value11 { get; init; }
+        public global::G.RepositoryRuleCommitMessagePattern? Value11 { get; init; }
 #else
-        public global::G.RepositoryRuleCommitAuthorEmailPattern? Value11 { get; }
+        public global::G.RepositoryRuleCommitMessagePattern? Value11 { get; }
 #endif
 
         /// <summary>
@@ -386,28 +386,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitAuthorEmailPattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitMessagePattern value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleCommitAuthorEmailPattern?(RepositoryRule @this) => @this.Value11;
+        public static implicit operator global::G.RepositoryRuleCommitMessagePattern?(RepositoryRule @this) => @this.Value11;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleCommitAuthorEmailPattern? value)
+        public RepositoryRule(global::G.RepositoryRuleCommitMessagePattern? value)
         {
             Value11 = value;
         }
 
         /// <summary>
-        /// Parameters to be used for the committer_email_pattern rule
+        /// Parameters to be used for the commit_author_email_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleCommitterEmailPattern? Value12 { get; init; }
+        public global::G.RepositoryRuleCommitAuthorEmailPattern? Value12 { get; init; }
 #else
-        public global::G.RepositoryRuleCommitterEmailPattern? Value12 { get; }
+        public global::G.RepositoryRuleCommitAuthorEmailPattern? Value12 { get; }
 #endif
 
         /// <summary>
@@ -421,28 +421,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitterEmailPattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitAuthorEmailPattern value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleCommitterEmailPattern?(RepositoryRule @this) => @this.Value12;
+        public static implicit operator global::G.RepositoryRuleCommitAuthorEmailPattern?(RepositoryRule @this) => @this.Value12;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleCommitterEmailPattern? value)
+        public RepositoryRule(global::G.RepositoryRuleCommitAuthorEmailPattern? value)
         {
             Value12 = value;
         }
 
         /// <summary>
-        /// Parameters to be used for the branch_name_pattern rule
+        /// Parameters to be used for the committer_email_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleBranchNamePattern? Value13 { get; init; }
+        public global::G.RepositoryRuleCommitterEmailPattern? Value13 { get; init; }
 #else
-        public global::G.RepositoryRuleBranchNamePattern? Value13 { get; }
+        public global::G.RepositoryRuleCommitterEmailPattern? Value13 { get; }
 #endif
 
         /// <summary>
@@ -456,28 +456,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleBranchNamePattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleCommitterEmailPattern value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleBranchNamePattern?(RepositoryRule @this) => @this.Value13;
+        public static implicit operator global::G.RepositoryRuleCommitterEmailPattern?(RepositoryRule @this) => @this.Value13;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleBranchNamePattern? value)
+        public RepositoryRule(global::G.RepositoryRuleCommitterEmailPattern? value)
         {
             Value13 = value;
         }
 
         /// <summary>
-        /// Parameters to be used for the tag_name_pattern rule
+        /// Parameters to be used for the branch_name_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleTagNamePattern? Value14 { get; init; }
+        public global::G.RepositoryRuleBranchNamePattern? Value14 { get; init; }
 #else
-        public global::G.RepositoryRuleTagNamePattern? Value14 { get; }
+        public global::G.RepositoryRuleBranchNamePattern? Value14 { get; }
 #endif
 
         /// <summary>
@@ -491,29 +491,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleTagNamePattern value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleBranchNamePattern value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleTagNamePattern?(RepositoryRule @this) => @this.Value14;
+        public static implicit operator global::G.RepositoryRuleBranchNamePattern?(RepositoryRule @this) => @this.Value14;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleTagNamePattern? value)
+        public RepositoryRule(global::G.RepositoryRuleBranchNamePattern? value)
         {
             Value14 = value;
         }
 
         /// <summary>
-        /// Note: file_path_restriction is in beta and subject to change.<br/>
-        /// Prevent commits that include changes in specified file paths from being pushed to the commit graph.
+        /// Parameters to be used for the tag_name_pattern rule
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleVariant15? Value15 { get; init; }
+        public global::G.RepositoryRuleTagNamePattern? Value15 { get; init; }
 #else
-        public global::G.RepositoryRuleVariant15? Value15 { get; }
+        public global::G.RepositoryRuleTagNamePattern? Value15 { get; }
 #endif
 
         /// <summary>
@@ -527,24 +526,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant15 value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleTagNamePattern value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleVariant15?(RepositoryRule @this) => @this.Value15;
+        public static implicit operator global::G.RepositoryRuleTagNamePattern?(RepositoryRule @this) => @this.Value15;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleVariant15? value)
+        public RepositoryRule(global::G.RepositoryRuleTagNamePattern? value)
         {
             Value15 = value;
         }
 
         /// <summary>
-        /// Note: max_file_path_length is in beta and subject to change.<br/>
-        /// Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.
+        /// Prevent commits that include changes in specified file paths from being pushed to the commit graph.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleVariant16? Value16 { get; init; }
@@ -579,8 +577,7 @@ namespace G
         }
 
         /// <summary>
-        /// Note: file_extension_restriction is in beta and subject to change.<br/>
-        /// Prevent commits that include files with specified file extensions from being pushed to the commit graph.
+        /// Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleVariant17? Value17 { get; init; }
@@ -615,8 +612,7 @@ namespace G
         }
 
         /// <summary>
-        /// Note: max_file_size is in beta and subject to change.<br/>
-        /// Prevent commits that exceed a specified file size limit from being pushed to the commit.
+        /// Prevent commits that include files with specified file extensions from being pushed to the commit graph.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.RepositoryRuleVariant18? Value18 { get; init; }
@@ -651,12 +647,12 @@ namespace G
         }
 
         /// <summary>
-        /// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
+        /// Prevent commits that exceed a specified file size limit from being pushed to the commit.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleWorkflows? Value19 { get; init; }
+        public global::G.RepositoryRuleVariant19? Value19 { get; init; }
 #else
-        public global::G.RepositoryRuleWorkflows? Value19 { get; }
+        public global::G.RepositoryRuleVariant19? Value19 { get; }
 #endif
 
         /// <summary>
@@ -670,28 +666,28 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator RepositoryRule(global::G.RepositoryRuleWorkflows value) => new RepositoryRule(value);
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleVariant19 value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleWorkflows?(RepositoryRule @this) => @this.Value19;
+        public static implicit operator global::G.RepositoryRuleVariant19?(RepositoryRule @this) => @this.Value19;
 
         /// <summary>
         /// 
         /// </summary>
-        public RepositoryRule(global::G.RepositoryRuleWorkflows? value)
+        public RepositoryRule(global::G.RepositoryRuleVariant19? value)
         {
             Value19 = value;
         }
 
         /// <summary>
-        /// Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated.
+        /// Require all changes made to a targeted branch to pass the specified workflows before they can be merged.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RepositoryRuleCodeScanning? Value20 { get; init; }
+        public global::G.RepositoryRuleWorkflows? Value20 { get; init; }
 #else
-        public global::G.RepositoryRuleCodeScanning? Value20 { get; }
+        public global::G.RepositoryRuleWorkflows? Value20 { get; }
 #endif
 
         /// <summary>
@@ -705,19 +701,54 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public static implicit operator RepositoryRule(global::G.RepositoryRuleWorkflows value) => new RepositoryRule(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.RepositoryRuleWorkflows?(RepositoryRule @this) => @this.Value20;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public RepositoryRule(global::G.RepositoryRuleWorkflows? value)
+        {
+            Value20 = value;
+        }
+
+        /// <summary>
+        /// Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.RepositoryRuleCodeScanning? Value21 { get; init; }
+#else
+        public global::G.RepositoryRuleCodeScanning? Value21 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value21))]
+#endif
+        public bool IsValue21 => Value21 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator RepositoryRule(global::G.RepositoryRuleCodeScanning value) => new RepositoryRule(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RepositoryRuleCodeScanning?(RepositoryRule @this) => @this.Value20;
+        public static implicit operator global::G.RepositoryRuleCodeScanning?(RepositoryRule @this) => @this.Value21;
 
         /// <summary>
         /// 
         /// </summary>
         public RepositoryRule(global::G.RepositoryRuleCodeScanning? value)
         {
-            Value20 = value;
+            Value21 = value;
         }
 
         /// <summary>
@@ -729,22 +760,23 @@ namespace G
             global::G.RepositoryRuleUpdate? value2,
             global::G.RepositoryRuleDeletion? value3,
             global::G.RepositoryRuleRequiredLinearHistory? value4,
-            global::G.RepositoryRuleRequiredDeployments? value5,
-            global::G.RepositoryRuleRequiredSignatures? value6,
-            global::G.RepositoryRulePullRequest? value7,
-            global::G.RepositoryRuleRequiredStatusChecks? value8,
-            global::G.RepositoryRuleNonFastForward? value9,
-            global::G.RepositoryRuleCommitMessagePattern? value10,
-            global::G.RepositoryRuleCommitAuthorEmailPattern? value11,
-            global::G.RepositoryRuleCommitterEmailPattern? value12,
-            global::G.RepositoryRuleBranchNamePattern? value13,
-            global::G.RepositoryRuleTagNamePattern? value14,
-            global::G.RepositoryRuleVariant15? value15,
+            global::G.RepositoryRuleMergeQueue? value5,
+            global::G.RepositoryRuleRequiredDeployments? value6,
+            global::G.RepositoryRuleRequiredSignatures? value7,
+            global::G.RepositoryRulePullRequest? value8,
+            global::G.RepositoryRuleRequiredStatusChecks? value9,
+            global::G.RepositoryRuleNonFastForward? value10,
+            global::G.RepositoryRuleCommitMessagePattern? value11,
+            global::G.RepositoryRuleCommitAuthorEmailPattern? value12,
+            global::G.RepositoryRuleCommitterEmailPattern? value13,
+            global::G.RepositoryRuleBranchNamePattern? value14,
+            global::G.RepositoryRuleTagNamePattern? value15,
             global::G.RepositoryRuleVariant16? value16,
             global::G.RepositoryRuleVariant17? value17,
             global::G.RepositoryRuleVariant18? value18,
-            global::G.RepositoryRuleWorkflows? value19,
-            global::G.RepositoryRuleCodeScanning? value20
+            global::G.RepositoryRuleVariant19? value19,
+            global::G.RepositoryRuleWorkflows? value20,
+            global::G.RepositoryRuleCodeScanning? value21
             )
         {
             Type = type;
@@ -769,12 +801,14 @@ namespace G
             Value18 = value18;
             Value19 = value19;
             Value20 = value20;
+            Value21 = value21;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Value21 as object ??
             Value20 as object ??
             Value19 as object ??
             Value18 as object ??
@@ -802,7 +836,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && IsValue18 && !IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && IsValue19 && !IsValue20 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && IsValue20;
+            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && IsValue19 && !IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && IsValue20 && !IsValue21 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && IsValue21;
         }
 
         /// <summary>
@@ -813,22 +847,23 @@ namespace G
             global::System.Func<global::G.RepositoryRuleUpdate?, TResult>? value2 = null,
             global::System.Func<global::G.RepositoryRuleDeletion?, TResult>? value3 = null,
             global::System.Func<global::G.RepositoryRuleRequiredLinearHistory?, TResult>? value4 = null,
-            global::System.Func<global::G.RepositoryRuleRequiredDeployments?, TResult>? value5 = null,
-            global::System.Func<global::G.RepositoryRuleRequiredSignatures?, TResult>? value6 = null,
-            global::System.Func<global::G.RepositoryRulePullRequest?, TResult>? value7 = null,
-            global::System.Func<global::G.RepositoryRuleRequiredStatusChecks?, TResult>? value8 = null,
-            global::System.Func<global::G.RepositoryRuleNonFastForward?, TResult>? value9 = null,
-            global::System.Func<global::G.RepositoryRuleCommitMessagePattern?, TResult>? value10 = null,
-            global::System.Func<global::G.RepositoryRuleCommitAuthorEmailPattern?, TResult>? value11 = null,
-            global::System.Func<global::G.RepositoryRuleCommitterEmailPattern?, TResult>? value12 = null,
-            global::System.Func<global::G.RepositoryRuleBranchNamePattern?, TResult>? value13 = null,
-            global::System.Func<global::G.RepositoryRuleTagNamePattern?, TResult>? value14 = null,
-            global::System.Func<global::G.RepositoryRuleVariant15?, TResult>? value15 = null,
+            global::System.Func<global::G.RepositoryRuleMergeQueue?, TResult>? value5 = null,
+            global::System.Func<global::G.RepositoryRuleRequiredDeployments?, TResult>? value6 = null,
+            global::System.Func<global::G.RepositoryRuleRequiredSignatures?, TResult>? value7 = null,
+            global::System.Func<global::G.RepositoryRulePullRequest?, TResult>? value8 = null,
+            global::System.Func<global::G.RepositoryRuleRequiredStatusChecks?, TResult>? value9 = null,
+            global::System.Func<global::G.RepositoryRuleNonFastForward?, TResult>? value10 = null,
+            global::System.Func<global::G.RepositoryRuleCommitMessagePattern?, TResult>? value11 = null,
+            global::System.Func<global::G.RepositoryRuleCommitAuthorEmailPattern?, TResult>? value12 = null,
+            global::System.Func<global::G.RepositoryRuleCommitterEmailPattern?, TResult>? value13 = null,
+            global::System.Func<global::G.RepositoryRuleBranchNamePattern?, TResult>? value14 = null,
+            global::System.Func<global::G.RepositoryRuleTagNamePattern?, TResult>? value15 = null,
             global::System.Func<global::G.RepositoryRuleVariant16?, TResult>? value16 = null,
             global::System.Func<global::G.RepositoryRuleVariant17?, TResult>? value17 = null,
             global::System.Func<global::G.RepositoryRuleVariant18?, TResult>? value18 = null,
-            global::System.Func<global::G.RepositoryRuleWorkflows?, TResult>? value19 = null,
-            global::System.Func<global::G.RepositoryRuleCodeScanning?, TResult>? value20 = null,
+            global::System.Func<global::G.RepositoryRuleVariant19?, TResult>? value19 = null,
+            global::System.Func<global::G.RepositoryRuleWorkflows?, TResult>? value20 = null,
+            global::System.Func<global::G.RepositoryRuleCodeScanning?, TResult>? value21 = null,
             bool validate = true)
         {
             if (validate)
@@ -916,6 +951,10 @@ namespace G
             {
                 return value20(Value20!);
             }
+            else if (IsValue21 && value21 != null)
+            {
+                return value21(Value21!);
+            }
 
             return default(TResult);
         }
@@ -928,22 +967,23 @@ namespace G
             global::System.Action<global::G.RepositoryRuleUpdate?>? value2 = null,
             global::System.Action<global::G.RepositoryRuleDeletion?>? value3 = null,
             global::System.Action<global::G.RepositoryRuleRequiredLinearHistory?>? value4 = null,
-            global::System.Action<global::G.RepositoryRuleRequiredDeployments?>? value5 = null,
-            global::System.Action<global::G.RepositoryRuleRequiredSignatures?>? value6 = null,
-            global::System.Action<global::G.RepositoryRulePullRequest?>? value7 = null,
-            global::System.Action<global::G.RepositoryRuleRequiredStatusChecks?>? value8 = null,
-            global::System.Action<global::G.RepositoryRuleNonFastForward?>? value9 = null,
-            global::System.Action<global::G.RepositoryRuleCommitMessagePattern?>? value10 = null,
-            global::System.Action<global::G.RepositoryRuleCommitAuthorEmailPattern?>? value11 = null,
-            global::System.Action<global::G.RepositoryRuleCommitterEmailPattern?>? value12 = null,
-            global::System.Action<global::G.RepositoryRuleBranchNamePattern?>? value13 = null,
-            global::System.Action<global::G.RepositoryRuleTagNamePattern?>? value14 = null,
-            global::System.Action<global::G.RepositoryRuleVariant15?>? value15 = null,
+            global::System.Action<global::G.RepositoryRuleMergeQueue?>? value5 = null,
+            global::System.Action<global::G.RepositoryRuleRequiredDeployments?>? value6 = null,
+            global::System.Action<global::G.RepositoryRuleRequiredSignatures?>? value7 = null,
+            global::System.Action<global::G.RepositoryRulePullRequest?>? value8 = null,
+            global::System.Action<global::G.RepositoryRuleRequiredStatusChecks?>? value9 = null,
+            global::System.Action<global::G.RepositoryRuleNonFastForward?>? value10 = null,
+            global::System.Action<global::G.RepositoryRuleCommitMessagePattern?>? value11 = null,
+            global::System.Action<global::G.RepositoryRuleCommitAuthorEmailPattern?>? value12 = null,
+            global::System.Action<global::G.RepositoryRuleCommitterEmailPattern?>? value13 = null,
+            global::System.Action<global::G.RepositoryRuleBranchNamePattern?>? value14 = null,
+            global::System.Action<global::G.RepositoryRuleTagNamePattern?>? value15 = null,
             global::System.Action<global::G.RepositoryRuleVariant16?>? value16 = null,
             global::System.Action<global::G.RepositoryRuleVariant17?>? value17 = null,
             global::System.Action<global::G.RepositoryRuleVariant18?>? value18 = null,
-            global::System.Action<global::G.RepositoryRuleWorkflows?>? value19 = null,
-            global::System.Action<global::G.RepositoryRuleCodeScanning?>? value20 = null,
+            global::System.Action<global::G.RepositoryRuleVariant19?>? value19 = null,
+            global::System.Action<global::G.RepositoryRuleWorkflows?>? value20 = null,
+            global::System.Action<global::G.RepositoryRuleCodeScanning?>? value21 = null,
             bool validate = true)
         {
             if (validate)
@@ -1031,6 +1071,10 @@ namespace G
             {
                 value20?.Invoke(Value20!);
             }
+            else if (IsValue21)
+            {
+                value21?.Invoke(Value21!);
+            }
         }
 
         /// <summary>
@@ -1049,27 +1093,27 @@ namespace G
                 Value4,
                 typeof(global::G.RepositoryRuleRequiredLinearHistory),
                 Value5,
-                typeof(global::G.RepositoryRuleRequiredDeployments),
+                typeof(global::G.RepositoryRuleMergeQueue),
                 Value6,
-                typeof(global::G.RepositoryRuleRequiredSignatures),
+                typeof(global::G.RepositoryRuleRequiredDeployments),
                 Value7,
-                typeof(global::G.RepositoryRulePullRequest),
+                typeof(global::G.RepositoryRuleRequiredSignatures),
                 Value8,
-                typeof(global::G.RepositoryRuleRequiredStatusChecks),
+                typeof(global::G.RepositoryRulePullRequest),
                 Value9,
-                typeof(global::G.RepositoryRuleNonFastForward),
+                typeof(global::G.RepositoryRuleRequiredStatusChecks),
                 Value10,
-                typeof(global::G.RepositoryRuleCommitMessagePattern),
+                typeof(global::G.RepositoryRuleNonFastForward),
                 Value11,
-                typeof(global::G.RepositoryRuleCommitAuthorEmailPattern),
+                typeof(global::G.RepositoryRuleCommitMessagePattern),
                 Value12,
-                typeof(global::G.RepositoryRuleCommitterEmailPattern),
+                typeof(global::G.RepositoryRuleCommitAuthorEmailPattern),
                 Value13,
-                typeof(global::G.RepositoryRuleBranchNamePattern),
+                typeof(global::G.RepositoryRuleCommitterEmailPattern),
                 Value14,
-                typeof(global::G.RepositoryRuleTagNamePattern),
+                typeof(global::G.RepositoryRuleBranchNamePattern),
                 Value15,
-                typeof(global::G.RepositoryRuleVariant15),
+                typeof(global::G.RepositoryRuleTagNamePattern),
                 Value16,
                 typeof(global::G.RepositoryRuleVariant16),
                 Value17,
@@ -1077,8 +1121,10 @@ namespace G
                 Value18,
                 typeof(global::G.RepositoryRuleVariant18),
                 Value19,
-                typeof(global::G.RepositoryRuleWorkflows),
+                typeof(global::G.RepositoryRuleVariant19),
                 Value20,
+                typeof(global::G.RepositoryRuleWorkflows),
+                Value21,
                 typeof(global::G.RepositoryRuleCodeScanning),
             };
             const int offset = unchecked((int)2166136261);
@@ -1099,22 +1145,23 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleUpdate?>.Default.Equals(Value2, other.Value2) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleDeletion?>.Default.Equals(Value3, other.Value3) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleRequiredLinearHistory?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleRequiredDeployments?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleRequiredSignatures?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRulePullRequest?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleRequiredStatusChecks?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleNonFastForward?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleCommitMessagePattern?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleCommitAuthorEmailPattern?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleCommitterEmailPattern?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleBranchNamePattern?>.Default.Equals(Value13, other.Value13) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleTagNamePattern?>.Default.Equals(Value14, other.Value14) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleVariant15?>.Default.Equals(Value15, other.Value15) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleMergeQueue?>.Default.Equals(Value5, other.Value5) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleRequiredDeployments?>.Default.Equals(Value6, other.Value6) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleRequiredSignatures?>.Default.Equals(Value7, other.Value7) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRulePullRequest?>.Default.Equals(Value8, other.Value8) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleRequiredStatusChecks?>.Default.Equals(Value9, other.Value9) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleNonFastForward?>.Default.Equals(Value10, other.Value10) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleCommitMessagePattern?>.Default.Equals(Value11, other.Value11) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleCommitAuthorEmailPattern?>.Default.Equals(Value12, other.Value12) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleCommitterEmailPattern?>.Default.Equals(Value13, other.Value13) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleBranchNamePattern?>.Default.Equals(Value14, other.Value14) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleTagNamePattern?>.Default.Equals(Value15, other.Value15) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleVariant16?>.Default.Equals(Value16, other.Value16) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleVariant17?>.Default.Equals(Value17, other.Value17) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleVariant18?>.Default.Equals(Value18, other.Value18) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleWorkflows?>.Default.Equals(Value19, other.Value19) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleCodeScanning?>.Default.Equals(Value20, other.Value20) 
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleVariant19?>.Default.Equals(Value19, other.Value19) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleWorkflows?>.Default.Equals(Value20, other.Value20) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RepositoryRuleCodeScanning?>.Default.Equals(Value21, other.Value21) 
                 ;
         }
 

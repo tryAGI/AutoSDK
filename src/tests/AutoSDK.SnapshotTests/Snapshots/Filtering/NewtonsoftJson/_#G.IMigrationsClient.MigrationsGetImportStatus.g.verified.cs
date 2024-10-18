@@ -8,7 +8,8 @@ namespace G
         /// <summary>
         /// Get an import status<br/>
         /// View the progress of an import.<br/>
-        /// **Warning:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** Due to very low levels of usage and available alternatives, this endpoint is deprecated and will no longer be available from 00:00 UTC on April 12, 2024. For more details and alternatives, see the [changelog](https://gh.io/source-imports-api-deprecation).<br/>
         /// **Import status**<br/>
         /// This section includes details about the possible values of the `status` field of the Import Progress response.<br/>
         /// An import that does not have errors will progress through these steps:<br/>

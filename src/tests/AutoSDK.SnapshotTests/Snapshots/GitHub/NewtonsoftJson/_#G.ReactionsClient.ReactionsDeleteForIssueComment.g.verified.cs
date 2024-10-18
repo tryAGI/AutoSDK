@@ -10,14 +10,14 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int commentId,
+            ref long commentId,
             ref int reactionId);
         partial void PrepareReactionsDeleteForIssueCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             int reactionId);
         partial void ProcessReactionsDeleteForIssueCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,7 +25,8 @@ namespace G
 
         /// <summary>
         /// Delete an issue comment reaction<br/>
-        /// **Note:** You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; You can also specify a repository by `repository_id` using the route `DELETE delete /repositories/:repository_id/issues/comments/:comment_id/reactions/:reaction_id`.<br/>
         /// Delete a reaction to an [issue comment](https://docs.github.com/rest/issues/comments#get-an-issue-comment).
         /// </summary>
         /// <param name="owner"></param>
@@ -37,7 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task ReactionsDeleteForIssueCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             int reactionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

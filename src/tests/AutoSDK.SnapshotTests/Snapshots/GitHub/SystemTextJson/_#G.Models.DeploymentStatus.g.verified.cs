@@ -17,11 +17,11 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// Example: 1
+        /// Example: 1L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// Example: MDE2OkRlcGxveW1lbnRTdGF0dXMx

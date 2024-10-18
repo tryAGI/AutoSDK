@@ -8,7 +8,8 @@ namespace G
         /// <summary>
         /// Create a gist<br/>
         /// Allows you to add a new gist with one or more files.<br/>
-        /// **Note:** Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -20,7 +21,8 @@ namespace G
         /// <summary>
         /// Create a gist<br/>
         /// Allows you to add a new gist with one or more files.<br/>
-        /// **Note:** Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; Don't name your files "gistfile" with a numerical suffix. This is the format of the automatic naming scheme that Gist uses internally.
         /// </summary>
         /// <param name="description">
         /// Description of the gist<br/>

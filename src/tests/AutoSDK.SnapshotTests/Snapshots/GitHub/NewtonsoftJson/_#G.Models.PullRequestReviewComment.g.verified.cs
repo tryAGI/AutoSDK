@@ -18,17 +18,17 @@ namespace G
 
         /// <summary>
         /// The ID of the pull request review to which the comment belongs.<br/>
-        /// Example: 42
+        /// Example: 42L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("pull_request_review_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int? PullRequestReviewId { get; set; } = default!;
+        public long? PullRequestReviewId { get; set; } = default!;
 
         /// <summary>
         /// The ID of the pull request review comment.<br/>
-        /// Example: 1
+        /// Example: 1L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// The node ID of the pull request review comment.<br/>

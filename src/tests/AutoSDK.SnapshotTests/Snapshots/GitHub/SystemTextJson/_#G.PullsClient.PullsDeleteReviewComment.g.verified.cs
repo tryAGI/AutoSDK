@@ -10,13 +10,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string owner,
             ref string repo,
-            ref int commentId);
+            ref long commentId);
         partial void PreparePullsDeleteReviewCommentRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string owner,
             string repo,
-            int commentId);
+            long commentId);
         partial void ProcessPullsDeleteReviewCommentResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -38,7 +38,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.BasicError> PullsDeleteReviewCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

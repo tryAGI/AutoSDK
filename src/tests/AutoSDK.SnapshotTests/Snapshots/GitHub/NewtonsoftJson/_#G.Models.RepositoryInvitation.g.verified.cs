@@ -11,10 +11,10 @@ namespace G
     {
         /// <summary>
         /// Unique identifier of the repository invitation.<br/>
-        /// Example: 42
+        /// Example: 42L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// Minimal Repository

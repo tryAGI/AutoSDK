@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.WebhookProjectsV2ItemEditedChangesVariant1FieldValue.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -20,6 +22,30 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("field_type")]
         public string? FieldType { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("field_name")]
+        public string? FieldName { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("project_number")]
+        public int? ProjectNumber { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("from")]
+        public global::G.OneOf<string, int?, global::G.ProjectsV2SingleSelectOption, global::G.ProjectsV2IterationSetting>? From { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("to")]
+        public global::G.OneOf<string, int?, global::G.ProjectsV2SingleSelectOption, global::G.ProjectsV2IterationSetting>? To { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

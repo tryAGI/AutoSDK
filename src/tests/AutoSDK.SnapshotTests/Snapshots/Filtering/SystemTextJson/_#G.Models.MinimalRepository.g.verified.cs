@@ -10,11 +10,11 @@ namespace G
     public sealed partial class MinimalRepository
     {
         /// <summary>
-        /// Example: 1296269
+        /// Example: 1296269L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5

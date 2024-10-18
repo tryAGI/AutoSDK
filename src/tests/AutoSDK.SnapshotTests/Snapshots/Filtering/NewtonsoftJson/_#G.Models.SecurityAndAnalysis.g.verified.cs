@@ -34,6 +34,18 @@ namespace G
         public global::G.SecurityAndAnalysisSecretScanningPushProtection? SecretScanningPushProtection { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("secret_scanning_non_provider_patterns")]
+        public global::G.SecurityAndAnalysisSecretScanningNonProviderPatterns? SecretScanningNonProviderPatterns { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("secret_scanning_ai_detection")]
+        public global::G.SecurityAndAnalysisSecretScanningAiDetection? SecretScanningAiDetection { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

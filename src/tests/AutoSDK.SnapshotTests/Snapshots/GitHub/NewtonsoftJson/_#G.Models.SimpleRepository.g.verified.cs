@@ -11,10 +11,10 @@ namespace G
     {
         /// <summary>
         /// A unique identifier of the repository.<br/>
-        /// Example: 1296269
+        /// Example: 1296269L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Id { get; set; } = default!;
+        public long Id { get; set; } = default!;
 
         /// <summary>
         /// The GraphQL identifier of the repository.<br/>

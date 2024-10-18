@@ -7,9 +7,11 @@ namespace G
     {
         /// <summary>
         /// Update a team (Legacy)<br/>
-        /// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint.<br/>
         /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.<br/>
-        /// **Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; With nested teams, the `privacy` for parent teams cannot be `secret`.
         /// </summary>
         /// <param name="teamId"></param>
         /// <param name="request"></param>
@@ -23,9 +25,11 @@ namespace G
 
         /// <summary>
         /// Update a team (Legacy)<br/>
-        /// **Deprecation Notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint.<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This endpoint route is deprecated and will be removed from the Teams API. We recommend migrating your existing code to use the new [Update a team](https://docs.github.com/rest/teams/teams#update-a-team) endpoint.<br/>
         /// To edit a team, the authenticated user must either be an organization owner or a team maintainer.<br/>
-        /// **Note:** With nested teams, the `privacy` for parent teams cannot be `secret`.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; With nested teams, the `privacy` for parent teams cannot be `secret`.
         /// </summary>
         /// <param name="teamId"></param>
         /// <param name="name">

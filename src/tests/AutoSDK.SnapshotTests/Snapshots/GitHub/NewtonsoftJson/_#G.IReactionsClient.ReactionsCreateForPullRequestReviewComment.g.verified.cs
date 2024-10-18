@@ -18,7 +18,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Reaction> ReactionsCreateForPullRequestReviewCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.ReactionsCreateForPullRequestReviewCommentRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -37,7 +37,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Reaction> ReactionsCreateForPullRequestReviewCommentAsync(
             string owner,
             string repo,
-            int commentId,
+            long commentId,
             global::G.ReactionsCreateForPullRequestReviewCommentRequestContent content,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

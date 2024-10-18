@@ -7,7 +7,8 @@ namespace G
     {
         /// <summary>
         /// Add a repository to an app installation<br/>
-        /// Add a single repository to an installation. The authenticated user must have admin access to the repository.
+        /// Add a single repository to an installation. The authenticated user must have admin access to the repository.    <br/>
+        /// This endpoint only works for PATs (classic) with the `repo` scope.
         /// </summary>
         /// <param name="installationId"></param>
         /// <param name="repositoryId"></param>

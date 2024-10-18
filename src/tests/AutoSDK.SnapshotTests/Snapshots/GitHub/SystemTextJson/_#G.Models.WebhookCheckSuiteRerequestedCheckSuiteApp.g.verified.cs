@@ -51,6 +51,12 @@ namespace G
         public required int? Id { get; set; }
 
         /// <summary>
+        /// The Client ID for the GitHub app
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("client_id")]
+        public string? ClientId { get; set; }
+
+        /// <summary>
         /// The name of the GitHub app
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]

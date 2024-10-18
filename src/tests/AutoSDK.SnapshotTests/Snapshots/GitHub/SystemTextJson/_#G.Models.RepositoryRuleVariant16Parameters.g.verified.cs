@@ -10,11 +10,11 @@ namespace G
     public sealed partial class RepositoryRuleVariant16Parameters
     {
         /// <summary>
-        /// The maximum amount of characters allowed in file paths
+        /// The file paths that are restricted from being pushed to the commit graph.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("max_file_path_length")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("restricted_file_paths")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int MaxFilePathLength { get; set; }
+        public required global::System.Collections.Generic.IList<string> RestrictedFilePaths { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

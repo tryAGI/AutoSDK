@@ -10,6 +10,7 @@ namespace G
     public sealed partial class Label
     {
         /// <summary>
+        /// Unique identifier for the label.<br/>
         /// Example: 208045946L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
@@ -36,6 +37,7 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
+        /// Optional description of the label, such as its purpose.<br/>
         /// Example: Something isn't working
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
@@ -49,6 +51,7 @@ namespace G
         public string Color { get; set; } = default!;
 
         /// <summary>
+        /// Whether this label comes by default in a new repository.<br/>
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("default", Required = global::Newtonsoft.Json.Required.Always)]

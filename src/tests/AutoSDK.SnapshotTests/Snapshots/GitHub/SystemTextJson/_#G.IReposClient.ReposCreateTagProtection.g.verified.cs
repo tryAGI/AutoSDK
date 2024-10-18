@@ -6,7 +6,9 @@ namespace G
     public partial interface IReposClient
     {
         /// <summary>
-        /// Create a tag protection state for a repository<br/>
+        /// Deprecated - Create a tag protection state for a repository<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)" endpoint instead.<br/>
         /// This creates a tag protection state for a repository.<br/>
         /// This endpoint is only available to repository administrators.
         /// </summary>
@@ -15,6 +17,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.TagProtection> ReposCreateTagProtectionAsync(
             string owner,
             string repo,
@@ -22,7 +25,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Create a tag protection state for a repository<br/>
+        /// Deprecated - Create a tag protection state for a repository<br/>
+        /// &gt; [!WARNING]<br/>
+        /// &gt; **Deprecation notice:** This operation is deprecated and will be removed after August 30, 2024. Use the "[Repository Rulesets](https://docs.github.com/rest/repos/rules#create-a-repository-ruleset)" endpoint instead.<br/>
         /// This creates a tag protection state for a repository.<br/>
         /// This endpoint is only available to repository administrators.
         /// </summary>
@@ -33,6 +38,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.TagProtection> ReposCreateTagProtectionAsync(
             string owner,
             string repo,

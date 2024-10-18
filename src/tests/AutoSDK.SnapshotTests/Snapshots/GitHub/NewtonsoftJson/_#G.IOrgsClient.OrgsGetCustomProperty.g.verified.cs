@@ -14,7 +14,7 @@ namespace G
         /// <param name="customPropertyName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.OrgCustomProperty> OrgsGetCustomPropertyAsync(
+        global::System.Threading.Tasks.Task<global::G.CustomProperty> OrgsGetCustomPropertyAsync(
             string org,
             string customPropertyName,
             global::System.Threading.CancellationToken cancellationToken = default);

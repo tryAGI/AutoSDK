@@ -11,11 +11,11 @@ namespace G
     {
         /// <summary>
         /// The id of the check.<br/>
-        /// Example: 21
+        /// Example: 21L
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Id { get; set; }
+        public required long Id { get; set; }
 
         /// <summary>
         /// The SHA of the commit that is being checked.<br/>

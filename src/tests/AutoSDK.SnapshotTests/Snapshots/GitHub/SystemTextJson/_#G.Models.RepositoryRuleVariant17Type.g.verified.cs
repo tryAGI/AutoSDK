@@ -12,7 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        FileExtensionRestriction,
+        MaxFilePathLength,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleVariant17Type.FileExtensionRestriction => "file_extension_restriction",
+                RepositoryRuleVariant17Type.MaxFilePathLength => "max_file_path_length",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "file_extension_restriction" => RepositoryRuleVariant17Type.FileExtensionRestriction,
+                "max_file_path_length" => RepositoryRuleVariant17Type.MaxFilePathLength,
                 _ => null,
             };
         }

@@ -145,6 +145,12 @@ namespace G
         public global::G.DiscussionUser? User { get; set; } = default!;
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("labels")]
+        public global::System.Collections.Generic.IList<global::G.Label>? Labels { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

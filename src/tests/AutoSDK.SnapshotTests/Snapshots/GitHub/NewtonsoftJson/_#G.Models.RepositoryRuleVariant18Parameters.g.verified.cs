@@ -10,10 +10,10 @@ namespace G
     public sealed partial class RepositoryRuleVariant18Parameters
     {
         /// <summary>
-        /// The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).
+        /// The file extensions that are restricted from being pushed to the commit graph.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_file_size", Required = global::Newtonsoft.Json.Required.Always)]
-        public int MaxFileSize { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("restricted_file_extensions", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<string> RestrictedFileExtensions { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

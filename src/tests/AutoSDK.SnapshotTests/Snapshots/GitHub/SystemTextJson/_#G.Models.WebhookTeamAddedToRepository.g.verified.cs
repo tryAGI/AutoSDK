@@ -47,10 +47,10 @@ namespace G
         public global::G.WebhookTeamAddedToRepositoryRepository? Repository { get; set; }
 
         /// <summary>
-        /// The GitHub user that triggered the event. This property is included in every webhook payload.
+        /// A GitHub user.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sender")]
-        public global::G.SimpleUserWebhooks? Sender { get; set; }
+        public global::G.SimpleUser? Sender { get; set; }
 
         /// <summary>
         /// Groups of organization members that gives permissions on specified repositories.

@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="max_file_path_length")]
-        MaxFilePathLength,
+        [global::System.Runtime.Serialization.EnumMember(Value="file_path_restriction")]
+        FilePathRestriction,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                RepositoryRuleVariant16Type.MaxFilePathLength => "max_file_path_length",
+                RepositoryRuleVariant16Type.FilePathRestriction => "file_path_restriction",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "max_file_path_length" => RepositoryRuleVariant16Type.MaxFilePathLength,
+                "file_path_restriction" => RepositoryRuleVariant16Type.FilePathRestriction,
                 _ => null,
             };
         }

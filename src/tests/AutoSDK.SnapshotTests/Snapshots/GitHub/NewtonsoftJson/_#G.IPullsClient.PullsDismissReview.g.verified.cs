@@ -8,9 +8,8 @@ namespace G
         /// <summary>
         /// Dismiss a review for a pull request<br/>
         /// Dismisses a specified review on a pull request.<br/>
-        /// **Note:** To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/branches/branch-protection),<br/>
-        /// you must be a repository administrator or be included in the list of people or teams<br/>
-        /// who can dismiss pull request reviews.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/branches/branch-protection), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.<br/>
         /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
         /// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.<br/>
         /// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.<br/>
@@ -35,9 +34,8 @@ namespace G
         /// <summary>
         /// Dismiss a review for a pull request<br/>
         /// Dismisses a specified review on a pull request.<br/>
-        /// **Note:** To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/branches/branch-protection),<br/>
-        /// you must be a repository administrator or be included in the list of people or teams<br/>
-        /// who can dismiss pull request reviews.<br/>
+        /// &gt; [!NOTE]<br/>
+        /// &gt; To dismiss a pull request review on a [protected branch](https://docs.github.com/rest/branches/branch-protection), you must be a repository administrator or be included in the list of people or teams who can dismiss pull request reviews.<br/>
         /// This endpoint supports the following custom media types. For more information, see "[Media types](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types)."<br/>
         /// - **`application/vnd.github-commitcomment.raw+json`**: Returns the raw markdown body. Response will include `body`. This is the default if you do not pass any specific media type.<br/>
         /// - **`application/vnd.github-commitcomment.text+json`**: Returns a text only representation of the markdown body. Response will include `body_text`.<br/>

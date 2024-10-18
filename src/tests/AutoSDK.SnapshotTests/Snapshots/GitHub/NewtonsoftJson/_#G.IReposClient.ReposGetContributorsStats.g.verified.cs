@@ -12,7 +12,8 @@ namespace G
         /// *   `a` - Number of additions<br/>
         /// *   `d` - Number of deletions<br/>
         /// *   `c` - Number of commits<br/>
-        /// **Note:** This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
+        /// &gt; [!NOTE]<br/>
+        /// &gt; This endpoint will return `0` values for all addition and deletion counts in repositories with 10,000 or more commits.
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="repo"></param>
