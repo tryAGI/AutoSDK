@@ -39,25 +39,25 @@ namespace G
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareGenerateContentTunedModelArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 tunedModelId: ref tunedModelId,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/tunedModels/{tunedModelId}:generateContent",
-                baseUri: _httpClient.BaseAddress);
-            foreach (var _authorization in _authorizations)
+                baseUri: HttpClient.BaseAddress);
+            foreach (var __authorization in Authorizations)
             {
-                if (_authorization.Type == "ApiKey" &&
-                    _authorization.Location == "Query")
+                if (__authorization.Type == "ApiKey" &&
+                    __authorization.Location == "Query")
                 {
-                    __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+                    __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }
             } 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
@@ -65,47 +65,47 @@ namespace G
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
-            httpRequest.Content = __httpRequestContent;
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareGenerateContentTunedModelRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 tunedModelId: tunedModelId,
                 request: request);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessGenerateContentTunedModelResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             ProcessResponseContent(
-                client: _httpClient,
-                response: response,
+                client: HttpClient,
+                response: __response,
                 content: ref __content);
             ProcessGenerateContentTunedModelResponseContent(
-                httpClient: _httpClient,
-                httpResponseMessage: response,
+                httpClient: HttpClient,
+                httpResponseMessage: __response,
                 content: ref __content);
 
             try
             {
-                response.EnsureSuccessStatusCode();
+                __response.EnsureSuccessStatusCode();
             }
-            catch (global::System.Net.Http.HttpRequestException ex)
+            catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, ex);
+                throw new global::System.InvalidOperationException(__content, __ex);
             }
 
             return
@@ -135,7 +135,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.SafetySetting>? safetySettings = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.GenerateContentRequest
+            var __request = new global::G.GenerateContentRequest
             {
                 GenerationConfig = generationConfig,
                 Contents = contents,
@@ -144,7 +144,7 @@ namespace G
 
             return await GenerateContentTunedModelAsync(
                 tunedModelId: tunedModelId,
-                request: request,
+                request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

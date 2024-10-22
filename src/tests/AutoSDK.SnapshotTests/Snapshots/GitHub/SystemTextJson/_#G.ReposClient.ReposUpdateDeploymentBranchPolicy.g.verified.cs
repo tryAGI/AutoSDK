@@ -53,9 +53,9 @@ namespace G
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareReposUpdateDeploymentBranchPolicyArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 owner: ref owner,
                 repo: ref repo,
                 environmentName: ref environmentName,
@@ -64,9 +64,9 @@ namespace G
 
             var __pathBuilder = new PathBuilder(
                 path: $"/repos/{owner}/{repo}/environments/{environmentName}/deployment-branch-policies/{branchPolicyId}",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
@@ -74,50 +74,50 @@ namespace G
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
-            httpRequest.Content = __httpRequestContent;
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareReposUpdateDeploymentBranchPolicyRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 owner: owner,
                 repo: repo,
                 environmentName: environmentName,
                 branchPolicyId: branchPolicyId,
                 request: request);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessReposUpdateDeploymentBranchPolicyResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
 
-            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
             ProcessResponseContent(
-                client: _httpClient,
-                response: response,
+                client: HttpClient,
+                response: __response,
                 content: ref __content);
             ProcessReposUpdateDeploymentBranchPolicyResponseContent(
-                httpClient: _httpClient,
-                httpResponseMessage: response,
+                httpClient: HttpClient,
+                httpResponseMessage: __response,
                 content: ref __content);
 
             try
             {
-                response.EnsureSuccessStatusCode();
+                __response.EnsureSuccessStatusCode();
             }
-            catch (global::System.Net.Http.HttpRequestException ex)
+            catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, ex);
+                throw new global::System.InvalidOperationException(__content, __ex);
             }
 
             return
@@ -150,7 +150,7 @@ namespace G
             string name,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.DeploymentBranchPolicyNamePattern
+            var __request = new global::G.DeploymentBranchPolicyNamePattern
             {
                 Name = name,
             };
@@ -160,7 +160,7 @@ namespace G
                 repo: repo,
                 environmentName: environmentName,
                 branchPolicyId: branchPolicyId,
-                request: request,
+                request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

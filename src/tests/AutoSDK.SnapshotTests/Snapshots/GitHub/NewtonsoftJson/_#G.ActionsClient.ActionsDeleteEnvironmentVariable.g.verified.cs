@@ -43,9 +43,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareActionsDeleteEnvironmentVariableArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 owner: ref owner,
                 repo: ref repo,
                 name: ref name,
@@ -53,35 +53,35 @@ namespace G
 
             var __pathBuilder = new PathBuilder(
                 path: $"/repos/{owner}/{repo}/environments/{environmentName}/variables/{name}",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Delete,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareActionsDeleteEnvironmentVariableRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 owner: owner,
                 repo: repo,
                 name: name,
                 environmentName: environmentName);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessActionsDeleteEnvironmentVariableResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
-            response.EnsureSuccessStatusCode();
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            __response.EnsureSuccessStatusCode();
         }
     }
 }

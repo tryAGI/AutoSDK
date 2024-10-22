@@ -13,10 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "";
+        public const string DefaultBaseUrl = "";
 
-        private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
+        private bool _disposeHttpClient = true;
+
+        /// <inheritdoc/>
+        public global::System.Net.Http.HttpClient HttpClient { get; }
+
+        /// <inheritdoc/>
+        public System.Uri? BaseUri => HttpClient.BaseAddress;
+
+        /// <inheritdoc/>
+        public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
 
         /// <summary>
         /// 
@@ -146,7 +154,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TracerSessionsClient TracerSessions => new TracerSessionsClient(_httpClient, authorizations: _authorizations)
+        public TracerSessionsClient TracerSessions => new TracerSessionsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -154,7 +162,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public OrgsClient Orgs => new OrgsClient(_httpClient, authorizations: _authorizations)
+        public OrgsClient Orgs => new OrgsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -162,7 +170,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AuthClient Auth => new AuthClient(_httpClient, authorizations: _authorizations)
+        public AuthClient Auth => new AuthClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -170,7 +178,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ApiKeyClient ApiKey => new ApiKeyClient(_httpClient, authorizations: _authorizations)
+        public ApiKeyClient ApiKey => new ApiKeyClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -178,7 +186,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ExamplesClient Examples => new ExamplesClient(_httpClient, authorizations: _authorizations)
+        public ExamplesClient Examples => new ExamplesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -186,7 +194,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(_httpClient, authorizations: _authorizations)
+        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -194,7 +202,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public RunClient Run => new RunClient(_httpClient, authorizations: _authorizations)
+        public RunClient Run => new RunClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -202,7 +210,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackClient Feedback => new FeedbackClient(_httpClient, authorizations: _authorizations)
+        public FeedbackClient Feedback => new FeedbackClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -210,7 +218,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PublicClient Public => new PublicClient(_httpClient, authorizations: _authorizations)
+        public PublicClient Public => new PublicClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -218,7 +226,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(_httpClient, authorizations: _authorizations)
+        public AnnotationQueuesClient AnnotationQueues => new AnnotationQueuesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -226,7 +234,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AceClient Ace => new AceClient(_httpClient, authorizations: _authorizations)
+        public AceClient Ace => new AceClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -234,7 +242,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public BulkExportsClient BulkExports => new BulkExportsClient(_httpClient, authorizations: _authorizations)
+        public BulkExportsClient BulkExports => new BulkExportsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -242,7 +250,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TenantClient Tenant => new TenantClient(_httpClient, authorizations: _authorizations)
+        public TenantClient Tenant => new TenantClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -250,7 +258,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public InfoClient Info => new InfoClient(_httpClient, authorizations: _authorizations)
+        public InfoClient Info => new InfoClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -258,7 +266,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(_httpClient, authorizations: _authorizations)
+        public FeedbackConfigsClient FeedbackConfigs => new FeedbackConfigsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -266,7 +274,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(_httpClient, authorizations: _authorizations)
+        public ModelPriceMapClient ModelPriceMap => new ModelPriceMapClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -274,7 +282,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UsageLimitsClient UsageLimits => new UsageLimitsClient(_httpClient, authorizations: _authorizations)
+        public UsageLimitsClient UsageLimits => new UsageLimitsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -282,7 +290,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public TtlSettingsClient TtlSettings => new TtlSettingsClient(_httpClient, authorizations: _authorizations)
+        public TtlSettingsClient TtlSettings => new TtlSettingsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -290,7 +298,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PromptsClient Prompts => new PromptsClient(_httpClient, authorizations: _authorizations)
+        public PromptsClient Prompts => new PromptsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -298,7 +306,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public WorkspacesClient Workspaces => new WorkspacesClient(_httpClient, authorizations: _authorizations)
+        public WorkspacesClient Workspaces => new WorkspacesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -306,7 +314,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(_httpClient, authorizations: _authorizations)
+        public PlaygroundSettingsClient PlaygroundSettings => new PlaygroundSettingsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -314,7 +322,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(_httpClient, authorizations: _authorizations)
+        public ServiceAccountsClient ServiceAccounts => new ServiceAccountsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -322,7 +330,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ChartsClient Charts => new ChartsClient(_httpClient, authorizations: _authorizations)
+        public ChartsClient Charts => new ChartsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -330,7 +338,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ReposClient Repos => new ReposClient(_httpClient, authorizations: _authorizations)
+        public ReposClient Repos => new ReposClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -338,7 +346,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public LikesClient Likes => new LikesClient(_httpClient, authorizations: _authorizations)
+        public LikesClient Likes => new LikesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -346,7 +354,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CommitsClient Commits => new CommitsClient(_httpClient, authorizations: _authorizations)
+        public CommitsClient Commits => new CommitsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -354,7 +362,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SettingsClient Settings => new SettingsClient(_httpClient, authorizations: _authorizations)
+        public SettingsClient Settings => new SettingsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -362,7 +370,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public EventsClient Events => new EventsClient(_httpClient, authorizations: _authorizations)
+        public EventsClient Events => new EventsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -370,7 +378,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public CommentsClient Comments => new CommentsClient(_httpClient, authorizations: _authorizations)
+        public CommentsClient Comments => new CommentsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -380,25 +388,31 @@ namespace G
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
-        /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param>
-        /// <param name="authorizations"></param>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true)
         {
-            _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
+            Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            _disposeHttpClient = disposeHttpClient;
 
-            Initialized(_httpClient);
+            Initialized(HttpClient);
         }
 
         /// <inheritdoc/>
         public void Dispose()
         {
-            _httpClient.Dispose();
+            if (_disposeHttpClient)
+            {
+                HttpClient.Dispose();
+            }
         }
 
         partial void Initialized(

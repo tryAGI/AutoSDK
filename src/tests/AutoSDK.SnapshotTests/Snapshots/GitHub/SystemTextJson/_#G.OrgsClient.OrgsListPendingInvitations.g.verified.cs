@@ -61,9 +61,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareOrgsListPendingInvitationsArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 org: ref org,
                 perPage: ref perPage,
                 page: ref page,
@@ -72,7 +72,7 @@ namespace G
 
             var __pathBuilder = new PathBuilder(
                 path: $"/orgs/{org}/invitations",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 .AddOptionalParameter("page", page?.ToString()) 
@@ -80,52 +80,52 @@ namespace G
                 .AddOptionalParameter("invitation_source", invitationSource?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareOrgsListPendingInvitationsRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 org: org,
                 perPage: perPage,
                 page: page,
                 role: role,
                 invitationSource: invitationSource);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessOrgsListPendingInvitationsResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
 
-            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
             ProcessResponseContent(
-                client: _httpClient,
-                response: response,
+                client: HttpClient,
+                response: __response,
                 content: ref __content);
             ProcessOrgsListPendingInvitationsResponseContent(
-                httpClient: _httpClient,
-                httpResponseMessage: response,
+                httpClient: HttpClient,
+                httpResponseMessage: __response,
                 content: ref __content);
 
             try
             {
-                response.EnsureSuccessStatusCode();
+                __response.EnsureSuccessStatusCode();
             }
-            catch (global::System.Net.Http.HttpRequestException ex)
+            catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, ex);
+                throw new global::System.InvalidOperationException(__content, __ex);
             }
 
             return

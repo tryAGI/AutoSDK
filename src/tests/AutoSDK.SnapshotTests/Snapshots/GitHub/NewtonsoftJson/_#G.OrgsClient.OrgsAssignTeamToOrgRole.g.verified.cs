@@ -39,43 +39,43 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareOrgsAssignTeamToOrgRoleArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 org: ref org,
                 teamSlug: ref teamSlug,
                 roleId: ref roleId);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/orgs/{org}/organization-roles/teams/{teamSlug}/{roleId}",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareOrgsAssignTeamToOrgRoleRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 org: org,
                 teamSlug: teamSlug,
                 roleId: roleId);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessOrgsAssignTeamToOrgRoleResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
-            response.EnsureSuccessStatusCode();
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            __response.EnsureSuccessStatusCode();
         }
     }
 }

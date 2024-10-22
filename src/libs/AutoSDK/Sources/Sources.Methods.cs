@@ -130,9 +130,9 @@ namespace {endPoint.Namespace}
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 ")}
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             Prepare{endPoint.NotAsyncMethodName}Arguments(
-                httpClient: _httpClient{endPoint.Parameters
+                httpClient: HttpClient{endPoint.Parameters
                     .Where(x => x.Location != null)
                     .Select(x => $@",
                 {x.ParameterName}: {(x.Type.IsReferenceable ? "ref " : "")}{x.ParameterName}").Inject(emptyValue: "")}{
@@ -150,93 +150,93 @@ namespace {endPoint.Namespace}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
             }};").Inject() : " ")}
 {GeneratePathAndQuery(endPoint)}
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: {GetHttpMethod(endPoint.Settings.TargetFramework, endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 {(endPoint.Authorizations.Any(x => x is
     { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Header } or
     { Type: SecuritySchemeType.Http } or
     { Type: SecuritySchemeType.OAuth2 }) ? @$"
-            foreach (var _authorization in _authorizations)
+            foreach (var __authorization in Authorizations)
             {{
-                if (_authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
-                    _authorization.Type == ""{SecuritySchemeType.OAuth2:G}"")
+                if (__authorization.Type == ""{SecuritySchemeType.Http:G}"" ||
+                    __authorization.Type == ""{SecuritySchemeType.OAuth2:G}"")
                 {{
-                    httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: _authorization.Name,
-                        parameter: _authorization.Value);
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
                 }}
-                else if (_authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
-                         _authorization.Location == ""{ParameterLocation.Header:G}"")
+                else if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
+                         __authorization.Location == ""{ParameterLocation.Header:G}"")
                 {{
-                    httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }}
             }}" : " ")}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: true })
     .Select(x => $@"
-            httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? ".ToValueString()" : ".ToString()")});").Inject()}
+            __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? ".ToValueString()" : ".ToString()")});").Inject()}
 {endPoint.Parameters
     .Where(x => x is { Location: ParameterLocation.Header, IsRequired: false })
     .Select(x => $@"
             if ({x.ParameterName} != default)
             {{
-                httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
+                __httpRequest.Headers.TryAddWithoutValidation(""{x.Id}"", {x.ParameterName}{(x.Type.IsEnum ? "?.ToValueString() ?? string.Empty" : ".ToString()")});
             }}").Inject()}
 {(endPoint.Parameters.Any(x => x is { Location: ParameterLocation.Header }) ? "" : " ")}
  
 {GenerateRequestData(endPoint)}
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             Prepare{endPoint.NotAsyncMethodName}Request(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest{endPoint.Parameters
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest{endPoint.Parameters
                     .Where(x => x.Location != null)
                     .Select(x => $@",
                 {x.ParameterName}: {x.ParameterName}").Inject(emptyValue: "")}{
                 (string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? "" : @",
                 request: request")});
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.{httpCompletionOption},
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             Process{endPoint.NotAsyncMethodName}Response(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
 {(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) ||
   endPoint.Stream ? @" 
-            response.EnsureSuccessStatusCode();
+            __response.EnsureSuccessStatusCode();
  " : $@"
-            var __content = await response.Content.ReadAs{contentType}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+            var __content = await __response.Content.ReadAs{contentType}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
 
 {(endPoint.ContentType == ContentType.String ? @" 
             ProcessResponseContent(
-                client: _httpClient,
-                response: response,
+                client: HttpClient,
+                response: __response,
                 content: ref __content);" : " ")}
             Process{endPoint.NotAsyncMethodName}ResponseContent(
-                httpClient: _httpClient,
-                httpResponseMessage: response,
+                httpClient: HttpClient,
+                httpResponseMessage: __response,
                 content: ref __content);
 
 {(endPoint.ContentType == ContentType.String ? @" 
             try
             {
-                response.EnsureSuccessStatusCode();
+                __response.EnsureSuccessStatusCode();
             }
-            catch (global::System.Net.Http.HttpRequestException ex)
+            catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, ex);
+                throw new global::System.InvalidOperationException(__content, __ex);
             }" : @"
-            response.EnsureSuccessStatusCode();")}
+            __response.EnsureSuccessStatusCode();")}
 
 {(endPoint.ContentType == ContentType.String && endPoint.ResponseType.CSharpTypeWithoutNullability is not "string" ? $@" 
             return
@@ -244,7 +244,7 @@ namespace {endPoint.Namespace}
                 throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
             return __content;")}")}
 {(endPoint.Stream ? $@"
-            using var stream = await response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+            using var stream = await __response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
             using var reader = new global::System.IO.StreamReader(stream);
 
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
@@ -309,16 +309,16 @@ namespace {endPoint.Namespace}
         var code = @$" 
             var __pathBuilder = new PathBuilder(
                 path: {endPoint.Path},
-                baseUri: _httpClient.BaseAddress);";
+                baseUri: HttpClient.BaseAddress);";
         if (endPoint.Authorizations.Any(x => x is { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Query }))
         {
             code += $@"
-            foreach (var _authorization in _authorizations)
+            foreach (var __authorization in Authorizations)
             {{
-                if (_authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
-                    _authorization.Location == ""{ParameterLocation.Query:G}"")
+                if (__authorization.Type == ""{SecuritySchemeType.ApiKey:G}"" &&
+                    __authorization.Location == ""{ParameterLocation.Query:G}"")
                 {{
-                    __pathBuilder = __pathBuilder.AddRequiredParameter(_authorization.Name, _authorization.Value);
+                    __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }}
             }}";
         }
@@ -411,7 +411,7 @@ namespace {endPoint.Namespace}
             }}";
 }).Inject()}
             
-            httpRequest.Content = __httpRequestContent;
+            __httpRequest.Content = __httpRequestContent;
  ".RemoveBlankLinesWhereOnlyWhitespaces();
         }
         
@@ -425,7 +425,7 @@ namespace {endPoint.Namespace}
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: ""{endPoint.RequestMediaType}"");
-            httpRequest.Content = __httpRequestContent;
+            __httpRequest.Content = __httpRequestContent;
  ".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
@@ -452,7 +452,7 @@ namespace {endPoint.Namespace}
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
         var response = endPoint.Stream
-            ? "var enumerable = "
+            ? "var __enumerable = "
             : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? "await "
                 : "return await ";
@@ -463,7 +463,7 @@ namespace {endPoint.Namespace}
             ? ";"
             : @$"
         {{
-            var request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
+            var __request = new {endPoint.RequestType.CSharpTypeWithoutNullability}
             {{
 {endPoint.Parameters.Where(x => x.Location == null && (x.IsRequired || !x.IsDeprecated)).Select(x => $@"
                 {(x.Name.StartsWith("request", StringComparison.Ordinal) ? x.Name.Replace("request", string.Empty) : x.Name)} = {x.ParameterName},").Inject()}
@@ -472,13 +472,13 @@ namespace {endPoint.Namespace}
             {response}{endPoint.MethodName}(
 {endPoint.Parameters.Where(x => x.Location != null).Select(x => $@"
                 {x.ParameterName}: {x.ParameterName},").Inject()}
-                request: request,
+                request: __request,
                 cancellationToken: cancellationToken){configureAwaitResponse};
 {(endPoint.Stream ? @"
             
-            await foreach (var response in enumerable)
+            await foreach (var __response in __enumerable)
             {
-                yield return response;
+                yield return __response;
             }" : " ")}
         }}";
         

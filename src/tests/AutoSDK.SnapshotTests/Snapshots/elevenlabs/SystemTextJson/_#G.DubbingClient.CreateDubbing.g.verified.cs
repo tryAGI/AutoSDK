@@ -42,23 +42,23 @@ namespace G
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareCreateDubbingArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 xiApiKey: ref xiApiKey,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/v1/dubbing",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             if (xiApiKey != default)
             {
-                httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("xi-api-key", xiApiKey.ToString());
             }
 
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
@@ -147,47 +147,47 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.UseProfanityFilter}"),
                     name: "use_profanity_filter");
             }
-            httpRequest.Content = __httpRequestContent;
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareCreateDubbingRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 xiApiKey: xiApiKey,
                 request: request);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessCreateDubbingResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
 
-            var __content = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+            var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
 
             ProcessResponseContent(
-                client: _httpClient,
-                response: response,
+                client: HttpClient,
+                response: __response,
                 content: ref __content);
             ProcessCreateDubbingResponseContent(
-                httpClient: _httpClient,
-                httpResponseMessage: response,
+                httpClient: HttpClient,
+                httpResponseMessage: __response,
                 content: ref __content);
 
             try
             {
-                response.EnsureSuccessStatusCode();
+                __response.EnsureSuccessStatusCode();
             }
-            catch (global::System.Net.Http.HttpRequestException ex)
+            catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, ex);
+                throw new global::System.InvalidOperationException(__content, __ex);
             }
 
             return
@@ -265,7 +265,7 @@ namespace G
             bool? useProfanityFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.BodyDubAVideoOrAnAudioFileV1DubbingPost
+            var __request = new global::G.BodyDubAVideoOrAnAudioFileV1DubbingPost
             {
                 File = file,
                 Filename = filename,
@@ -284,7 +284,7 @@ namespace G
 
             return await CreateDubbingAsync(
                 xiApiKey: xiApiKey,
-                request: request,
+                request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

@@ -32,10 +32,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https://api.vectara.io";
+        public const string DefaultBaseUrl = "https://api.vectara.io";
 
-        private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
+        private bool _disposeHttpClient = true;
+
+        /// <inheritdoc/>
+        public global::System.Net.Http.HttpClient HttpClient { get; }
+
+        /// <inheritdoc/>
+        public System.Uri? BaseUri => HttpClient.BaseAddress;
+
+        /// <inheritdoc/>
+        public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
 
         /// <summary>
         /// 
@@ -46,7 +54,7 @@ namespace G
         /// <summary>
         /// Perform search and Retrieval Augmented Generation (RAG) operations on one or more corpora
         /// </summary>
-        public QueriesClient Queries => new QueriesClient(_httpClient, authorizations: _authorizations)
+        public QueriesClient Queries => new QueriesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -54,7 +62,7 @@ namespace G
         /// <summary>
         /// Upload files to a corpus for automatic parsing, text extraction, chunking, and indexing
         /// </summary>
-        public UploadClient Upload => new UploadClient(_httpClient, authorizations: _authorizations)
+        public UploadClient Upload => new UploadClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -62,7 +70,7 @@ namespace G
         /// <summary>
         /// Index and manage core and structured documents for efficient search and retrieval
         /// </summary>
-        public IndexClient Index => new IndexClient(_httpClient, authorizations: _authorizations)
+        public IndexClient Index => new IndexClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -70,7 +78,7 @@ namespace G
         /// <summary>
         /// Create, manage, and update corpora and their associated settings
         /// </summary>
-        public CorporaClient Corpora => new CorporaClient(_httpClient, authorizations: _authorizations)
+        public CorporaClient Corpora => new CorporaClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -78,7 +86,7 @@ namespace G
         /// <summary>
         /// Retrieve and manage documents stored in a corpus for administrative tasks
         /// </summary>
-        public DocumentsClient Documents => new DocumentsClient(_httpClient, authorizations: _authorizations)
+        public DocumentsClient Documents => new DocumentsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -86,7 +94,7 @@ namespace G
         /// <summary>
         /// Create, manage, and interact with chat sessions for conversational AI
         /// </summary>
-        public ChatsClient Chats => new ChatsClient(_httpClient, authorizations: _authorizations)
+        public ChatsClient Chats => new ChatsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -94,7 +102,7 @@ namespace G
         /// <summary>
         /// List LLMs for text summarization, chat, and other generation tasks
         /// </summary>
-        public LargeLanguageModelsClient LargeLanguageModels => new LargeLanguageModelsClient(_httpClient, authorizations: _authorizations)
+        public LargeLanguageModelsClient LargeLanguageModels => new LargeLanguageModelsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -102,7 +110,7 @@ namespace G
         /// <summary>
         /// List available encoders (such as Boomerang) that turn text into vectors
         /// </summary>
-        public EncodersClient Encoders => new EncodersClient(_httpClient, authorizations: _authorizations)
+        public EncodersClient Encoders => new EncodersClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -110,7 +118,7 @@ namespace G
         /// <summary>
         /// List rerankers for reranking search results
         /// </summary>
-        public RerankersClient Rerankers => new RerankersClient(_httpClient, authorizations: _authorizations)
+        public RerankersClient Rerankers => new RerankersClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -118,7 +126,7 @@ namespace G
         /// <summary>
         /// Monitor background jobs such as rebuilding indexes or updating corpus settings
         /// </summary>
-        public JobsClient Jobs => new JobsClient(_httpClient, authorizations: _authorizations)
+        public JobsClient Jobs => new JobsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -126,7 +134,7 @@ namespace G
         /// <summary>
         /// Create, manage, and authenticate users within the platform for user administration
         /// </summary>
-        public UsersClient Users => new UsersClient(_httpClient, authorizations: _authorizations)
+        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -134,7 +142,7 @@ namespace G
         /// <summary>
         /// Manage app clients, and perform authentication operations for admin-level access control
         /// </summary>
-        public ApplicationClientsClient ApplicationClients => new ApplicationClientsClient(_httpClient, authorizations: _authorizations)
+        public ApplicationClientsClient ApplicationClients => new ApplicationClientsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -142,7 +150,7 @@ namespace G
         /// <summary>
         /// Manage API keys for the account
         /// </summary>
-        public APIKeysClient APIKeys => new APIKeysClient(_httpClient, authorizations: _authorizations)
+        public APIKeysClient APIKeys => new APIKeysClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -150,7 +158,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GenerationPresetsClient GenerationPresets => new GenerationPresetsClient(_httpClient, authorizations: _authorizations)
+        public GenerationPresetsClient GenerationPresets => new GenerationPresetsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -160,25 +168,31 @@ namespace G
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
-        /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param>
-        /// <param name="authorizations"></param>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true)
         {
-            _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
+            Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            _disposeHttpClient = disposeHttpClient;
 
-            Initialized(_httpClient);
+            Initialized(HttpClient);
         }
 
         /// <inheritdoc/>
         public void Dispose()
         {
-            _httpClient.Dispose();
+            if (_disposeHttpClient)
+            {
+                HttpClient.Dispose();
+            }
         }
 
         partial void Initialized(

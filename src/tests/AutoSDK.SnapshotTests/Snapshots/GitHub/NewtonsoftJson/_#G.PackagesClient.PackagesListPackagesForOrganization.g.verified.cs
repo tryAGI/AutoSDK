@@ -55,9 +55,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PreparePackagesListPackagesForOrganizationArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 packageType: ref packageType,
                 org: ref org,
                 visibility: ref visibility,
@@ -83,7 +83,7 @@ namespace G
             };
             var __pathBuilder = new PathBuilder(
                 path: $"/orgs/{org}/packages",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddRequiredParameter("package_type", packageTypeValue.ToString()) 
                 .AddOptionalParameter("visibility", visibilityValue?.ToString()) 
@@ -91,52 +91,52 @@ namespace G
                 .AddOptionalParameter("per_page", perPage?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PreparePackagesListPackagesForOrganizationRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 packageType: packageType,
                 org: org,
                 visibility: visibility,
                 page: page,
                 perPage: perPage);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessPackagesListPackagesForOrganizationResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             ProcessResponseContent(
-                client: _httpClient,
-                response: response,
+                client: HttpClient,
+                response: __response,
                 content: ref __content);
             ProcessPackagesListPackagesForOrganizationResponseContent(
-                httpClient: _httpClient,
-                httpResponseMessage: response,
+                httpClient: HttpClient,
+                httpResponseMessage: __response,
                 content: ref __content);
 
             try
             {
-                response.EnsureSuccessStatusCode();
+                __response.EnsureSuccessStatusCode();
             }
-            catch (global::System.Net.Http.HttpRequestException ex)
+            catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, ex);
+                throw new global::System.InvalidOperationException(__content, __ex);
             }
 
             return

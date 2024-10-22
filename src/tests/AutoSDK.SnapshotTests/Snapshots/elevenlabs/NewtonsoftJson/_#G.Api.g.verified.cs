@@ -14,10 +14,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "";
+        public const string DefaultBaseUrl = "";
 
-        private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
+        private bool _disposeHttpClient = true;
+
+        /// <inheritdoc/>
+        public global::System.Net.Http.HttpClient HttpClient { get; }
+
+        /// <inheritdoc/>
+        public System.Uri? BaseUri => HttpClient.BaseAddress;
+
+        /// <inheritdoc/>
+        public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
 
         /// <summary>
         /// 
@@ -28,7 +36,7 @@ namespace G
         /// <summary>
         /// Convert text into lifelike speech using a voice of your choice.
         /// </summary>
-        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(_httpClient, authorizations: _authorizations)
+        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -36,7 +44,7 @@ namespace G
         /// <summary>
         /// Create speech by combining the style and content of an audio file you upload with a voice of your choice.
         /// </summary>
-        public SpeechToSpeechClient SpeechToSpeech => new SpeechToSpeechClient(_httpClient, authorizations: _authorizations)
+        public SpeechToSpeechClient SpeechToSpeech => new SpeechToSpeechClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -44,7 +52,7 @@ namespace G
         /// <summary>
         /// Access the different models of the platform.
         /// </summary>
-        public ModelsClient Models => new ModelsClient(_httpClient, authorizations: _authorizations)
+        public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -52,7 +60,7 @@ namespace G
         /// <summary>
         /// Access to voices created either by you or us.
         /// </summary>
-        public VoicesClient Voices => new VoicesClient(_httpClient, authorizations: _authorizations)
+        public VoicesClient Voices => new VoicesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -60,7 +68,7 @@ namespace G
         /// <summary>
         /// Access to your samples. A sample is any audio file you attached to a voice. A voice can have one or more samples.
         /// </summary>
-        public SamplesClient Samples => new SamplesClient(_httpClient, authorizations: _authorizations)
+        public SamplesClient Samples => new SamplesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -68,7 +76,7 @@ namespace G
         /// <summary>
         /// Accesses your speech history. Your speech history is a list of all your created audio including its metadata using our text-to-speech and speech-to-speech models.
         /// </summary>
-        public SpeechHistoryClient SpeechHistory => new SpeechHistoryClient(_httpClient, authorizations: _authorizations)
+        public SpeechHistoryClient SpeechHistory => new SpeechHistoryClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -76,7 +84,7 @@ namespace G
         /// <summary>
         /// Access, create and convert Projects programmatically, only specifically whitelisted accounts can access the Projects API. If you need access please contact our sales team.
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(_httpClient, authorizations: _authorizations)
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -84,7 +92,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public SoundGenerationClient SoundGeneration => new SoundGenerationClient(_httpClient, authorizations: _authorizations)
+        public SoundGenerationClient SoundGeneration => new SoundGenerationClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -92,7 +100,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AudioIsolationClient AudioIsolation => new AudioIsolationClient(_httpClient, authorizations: _authorizations)
+        public AudioIsolationClient AudioIsolation => new AudioIsolationClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -100,7 +108,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VoiceGenerationClient VoiceGeneration => new VoiceGenerationClient(_httpClient, authorizations: _authorizations)
+        public VoiceGenerationClient VoiceGeneration => new VoiceGenerationClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -108,7 +116,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UserClient User => new UserClient(_httpClient, authorizations: _authorizations)
+        public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -116,7 +124,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DubbingClient Dubbing => new DubbingClient(_httpClient, authorizations: _authorizations)
+        public DubbingClient Dubbing => new DubbingClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -124,7 +132,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public WorkspaceClient Workspace => new WorkspaceClient(_httpClient, authorizations: _authorizations)
+        public WorkspaceClient Workspace => new WorkspaceClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -132,7 +140,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public AudioNativeClient AudioNative => new AudioNativeClient(_httpClient, authorizations: _authorizations)
+        public AudioNativeClient AudioNative => new AudioNativeClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -140,7 +148,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public UsageClient Usage => new UsageClient(_httpClient, authorizations: _authorizations)
+        public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -148,7 +156,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public PronunciationDictionaryClient PronunciationDictionary => new PronunciationDictionaryClient(_httpClient, authorizations: _authorizations)
+        public PronunciationDictionaryClient PronunciationDictionary => new PronunciationDictionaryClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -158,25 +166,31 @@ namespace G
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
-        /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param>
-        /// <param name="authorizations"></param>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true)
         {
-            _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
+            Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            _disposeHttpClient = disposeHttpClient;
 
-            Initialized(_httpClient);
+            Initialized(HttpClient);
         }
 
         /// <inheritdoc/>
         public void Dispose()
         {
-            _httpClient.Dispose();
+            if (_disposeHttpClient)
+            {
+                HttpClient.Dispose();
+            }
         }
 
         partial void Initialized(

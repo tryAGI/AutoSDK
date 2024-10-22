@@ -60,9 +60,9 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareUpdateGuestStarSlotSettingsArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 broadcasterId: ref broadcasterId,
                 moderatorId: ref moderatorId,
                 sessionId: ref sessionId,
@@ -74,7 +74,7 @@ namespace G
 
             var __pathBuilder = new PathBuilder(
                 path: "/guest_star/slot_settings",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddRequiredParameter("broadcaster_id", broadcasterId) 
                 .AddRequiredParameter("moderator_id", moderatorId) 
@@ -86,16 +86,16 @@ namespace G
                 .AddOptionalParameter("volume", volume?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: new global::System.Net.Http.HttpMethod("PATCH"),
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareUpdateGuestStarSlotSettingsRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 broadcasterId: broadcasterId,
                 moderatorId: moderatorId,
                 sessionId: sessionId,
@@ -105,18 +105,18 @@ namespace G
                 isLive: isLive,
                 volume: volume);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessUpdateGuestStarSlotSettingsResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
-            response.EnsureSuccessStatusCode();
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            __response.EnsureSuccessStatusCode();
         }
     }
 }

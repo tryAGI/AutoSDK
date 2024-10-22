@@ -51,9 +51,9 @@ namespace G
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareUploadToFileStorageArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 token: ref token,
                 name: ref name,
                 projectId: ref projectId,
@@ -62,20 +62,20 @@ namespace G
 
             var __pathBuilder = new PathBuilder(
                 path: "/api/v1/uploadtofilestorage",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("name", name) 
                 .AddOptionalParameter("projectId", projectId?.ToString()) 
                 .AddOptionalParameter("uploadType", uploadType?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
             if (token != default)
             {
-                httpRequest.Headers.TryAddWithoutValidation("token", token.ToString());
+                __httpRequest.Headers.TryAddWithoutValidation("token", token.ToString());
             }
 
             var __httpRequestContentBody = global::System.Convert.ToBase64String(request);
@@ -83,50 +83,50 @@ namespace G
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/octet-stream");
-            httpRequest.Content = __httpRequestContent;
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareUploadToFileStorageRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 token: token,
                 name: name,
                 projectId: projectId,
                 uploadType: uploadType,
                 request: request);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessUploadToFileStorageResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
 
-            var __content = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
             ProcessResponseContent(
-                client: _httpClient,
-                response: response,
+                client: HttpClient,
+                response: __response,
                 content: ref __content);
             ProcessUploadToFileStorageResponseContent(
-                httpClient: _httpClient,
-                httpResponseMessage: response,
+                httpClient: HttpClient,
+                httpResponseMessage: __response,
                 content: ref __content);
 
             try
             {
-                response.EnsureSuccessStatusCode();
+                __response.EnsureSuccessStatusCode();
             }
-            catch (global::System.Net.Http.HttpRequestException ex)
+            catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                throw new global::System.InvalidOperationException(__content, ex);
+                throw new global::System.InvalidOperationException(__content, __ex);
             }
 
             return __content;

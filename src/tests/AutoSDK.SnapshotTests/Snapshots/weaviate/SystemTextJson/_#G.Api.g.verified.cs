@@ -23,10 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https:///v1";
+        public const string DefaultBaseUrl = "https:///v1";
 
-        private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
+        private bool _disposeHttpClient = true;
+
+        /// <inheritdoc/>
+        public global::System.Net.Http.HttpClient HttpClient { get; }
+
+        /// <inheritdoc/>
+        public System.Uri? BaseUri => HttpClient.BaseAddress;
+
+        /// <inheritdoc/>
+        public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
 
         /// <summary>
         /// 
@@ -132,7 +140,7 @@ namespace G
         /// <summary>
         /// The root of the API. Note the base url is `/v1`.
         /// </summary>
-        public RootClient Root => new RootClient(_httpClient, authorizations: _authorizations)
+        public RootClient Root => new RootClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -140,7 +148,7 @@ namespace G
         /// <summary>
         /// Operate on the database schema. &lt;br/&gt;&lt;br/&gt;Note an 'Object class' in Weaviate is being renamed to a 'collection'. &lt;br/&gt;&lt;br/&gt;See &lt;a href='https://weaviate.io/developers/weaviate/manage-data/collections'&gt;this page&lt;/a&gt; for client code examples.
         /// </summary>
-        public SchemaClient Schema => new SchemaClient(_httpClient, authorizations: _authorizations)
+        public SchemaClient Schema => new SchemaClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -148,7 +156,7 @@ namespace G
         /// <summary>
         /// Create, update and delete objects and cross-references.
         /// </summary>
-        public ObjectsClient Objects => new ObjectsClient(_httpClient, authorizations: _authorizations)
+        public ObjectsClient Objects => new ObjectsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -156,7 +164,7 @@ namespace G
         /// <summary>
         /// Create, update and delete multiple objects and references at once. &lt;br/&gt;&lt;br/&gt;Note that object-level errors may be reported even in a successful batch request. Accordingly, we recommend you check the response body for errors.
         /// </summary>
-        public BatchClient Batch => new BatchClient(_httpClient, authorizations: _authorizations)
+        public BatchClient Batch => new BatchClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -164,7 +172,7 @@ namespace G
         /// <summary>
         /// Create, restore and check the status of backups. &lt;br/&gt;&lt;br/&gt;See the [backups page](https://weaviate.io/developers/weaviate/configuration/backups) for a general introduction, configuration, and tech background of backups.
         /// </summary>
-        public BackupsClient Backups => new BackupsClient(_httpClient, authorizations: _authorizations)
+        public BackupsClient Backups => new BackupsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -172,7 +180,7 @@ namespace G
         /// <summary>
         /// Retrieve information about the server such as the hostname, location, versions and modules.
         /// </summary>
-        public MetaClient Meta => new MetaClient(_httpClient, authorizations: _authorizations)
+        public MetaClient Meta => new MetaClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -180,7 +188,7 @@ namespace G
         /// <summary>
         /// Retrieve information about the cluster.
         /// </summary>
-        public ClusterClient Cluster => new ClusterClient(_httpClient, authorizations: _authorizations)
+        public ClusterClient Cluster => new ClusterClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -188,7 +196,7 @@ namespace G
         /// <summary>
         /// Retrieve information about relevant nodes in the cluster. The query can be for the entire cluster, or for a particular collection.
         /// </summary>
-        public NodesClient Nodes => new NodesClient(_httpClient, authorizations: _authorizations)
+        public NodesClient Nodes => new NodesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -196,7 +204,7 @@ namespace G
         /// <summary>
         /// `.well-known` endpoints. If OpenID Connect (OIDC) authentication is enabled, this endpoint includes OIDC configuration details.
         /// </summary>
-        public WellKnownClient WellKnown => new WellKnownClient(_httpClient, authorizations: _authorizations)
+        public WellKnownClient WellKnown => new WellKnownClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -204,7 +212,7 @@ namespace G
         /// <summary>
         /// Query data using the GraphQL query language. See the [Weaviate GraphQL documentation](https://weaviate.io/developers/weaviate/api/graphql) for query syntax details.
         /// </summary>
-        public GraphqlClient Graphql => new GraphqlClient(_httpClient, authorizations: _authorizations)
+        public GraphqlClient Graphql => new GraphqlClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -212,7 +220,7 @@ namespace G
         /// <summary>
         /// Perform classification operations
         /// </summary>
-        public ClassificationsClient Classifications => new ClassificationsClient(_httpClient, authorizations: _authorizations)
+        public ClassificationsClient Classifications => new ClassificationsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -222,25 +230,31 @@ namespace G
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
-        /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param>
-        /// <param name="authorizations"></param>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true)
         {
-            _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
+            Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            _disposeHttpClient = disposeHttpClient;
 
-            Initialized(_httpClient);
+            Initialized(HttpClient);
         }
 
         /// <inheritdoc/>
         public void Dispose()
         {
-            _httpClient.Dispose();
+            if (_disposeHttpClient)
+            {
+                HttpClient.Dispose();
+            }
         }
 
         partial void Initialized(

@@ -40,64 +40,64 @@ namespace G
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareBlockUserArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 targetUserId: ref targetUserId,
                 sourceContext: ref sourceContext,
                 reason: ref reason);
 
             var __pathBuilder = new PathBuilder(
                 path: "/users/blocks",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddRequiredParameter("target_user_id", targetUserId) 
                 .AddOptionalParameter("source_context", sourceContext?.ToValueString()) 
                 .AddOptionalParameter("reason", reason?.ToValueString()) 
                 ; 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
-            foreach (var _authorization in _authorizations)
+            foreach (var __authorization in Authorizations)
             {
-                if (_authorization.Type == "Http" ||
-                    _authorization.Type == "OAuth2")
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
                 {
-                    httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: _authorization.Name,
-                        parameter: _authorization.Value);
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
                 }
-                else if (_authorization.Type == "ApiKey" &&
-                         _authorization.Location == "Header")
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
                 {
-                    httpRequest.Headers.Add(_authorization.Name, _authorization.Value);
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareBlockUserRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 targetUserId: targetUserId,
                 sourceContext: sourceContext,
                 reason: reason);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessBlockUserResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
-            response.EnsureSuccessStatusCode();
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            __response.EnsureSuccessStatusCode();
         }
     }
 }

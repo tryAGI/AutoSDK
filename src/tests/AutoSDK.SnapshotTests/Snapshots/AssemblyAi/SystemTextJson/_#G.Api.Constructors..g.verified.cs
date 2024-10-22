@@ -13,11 +13,11 @@ namespace G
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null) : this(httpClient, baseUri, authorizations)
         {
-            Authorizing(_httpClient, ref apiKey);
+            Authorizing(HttpClient, ref apiKey);
 
             AuthorizeUsingApiKeyInHeader(apiKey);
 
-            Authorized(_httpClient);
+            Authorized(HttpClient);
         }
 
         partial void Authorizing(

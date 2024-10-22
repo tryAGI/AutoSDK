@@ -31,16 +31,16 @@ namespace G
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
-                client: _httpClient);
+                client: HttpClient);
             PrepareCreateModelArguments(
-                httpClient: _httpClient,
+                httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/create",
-                baseUri: _httpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
-            using var httpRequest = new global::System.Net.Http.HttpRequestMessage(
+            using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
@@ -48,30 +48,30 @@ namespace G
                 content: __httpRequestContentBody,
                 encoding: global::System.Text.Encoding.UTF8,
                 mediaType: "application/json");
-            httpRequest.Content = __httpRequestContent;
+            __httpRequest.Content = __httpRequestContent;
 
             PrepareRequest(
-                client: _httpClient,
-                request: httpRequest);
+                client: HttpClient,
+                request: __httpRequest);
             PrepareCreateModelRequest(
-                httpClient: _httpClient,
-                httpRequestMessage: httpRequest,
+                httpClient: HttpClient,
+                httpRequestMessage: __httpRequest,
                 request: request);
 
-            using var response = await _httpClient.SendAsync(
-                request: httpRequest,
+            using var __response = await HttpClient.SendAsync(
+                request: __httpRequest,
                 completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
-                client: _httpClient,
-                response: response);
+                client: HttpClient,
+                response: __response);
             ProcessCreateModelResponse(
-                httpClient: _httpClient,
-                httpResponseMessage: response);
-            response.EnsureSuccessStatusCode();
+                httpClient: HttpClient,
+                httpResponseMessage: __response);
+            __response.EnsureSuccessStatusCode();
 
-            using var stream = await response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+            using var stream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
             using var reader = new global::System.IO.StreamReader(stream);
 
             while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
@@ -117,7 +117,7 @@ namespace G
             bool? stream = true,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = new global::G.CreateModelRequest
+            var __request = new global::G.CreateModelRequest
             {
                 Model = model,
                 Modelfile = modelfile,
@@ -126,13 +126,13 @@ namespace G
                 Stream = stream,
             };
 
-            var enumerable = CreateModelAsync(
-                request: request,
+            var __enumerable = CreateModelAsync(
+                request: __request,
                 cancellationToken: cancellationToken);
 
-            await foreach (var response in enumerable)
+            await foreach (var __response in __enumerable)
             {
-                yield return response;
+                yield return __response;
             }
         }
     }

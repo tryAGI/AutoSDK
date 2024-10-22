@@ -45,7 +45,7 @@ namespace {authorization.Settings.Namespace}
             clientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
             scope = scope ?? throw new global::System.ArgumentNullException(nameof(scope));
 
-            var response = await _httpClient.PostAsync(new global::System.Uri(""{authorization.Flows}""), new global::System.Net.Http.FormUrlEncodedContent(new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<string, string>>
+            var response = await HttpClient.PostAsync(new global::System.Uri(""{authorization.Flows}""), new global::System.Net.Http.FormUrlEncodedContent(new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<string, string>>
             {{
                 new global::System.Collections.Generic.KeyValuePair<string, string>(""client_id"", clientId),
                 new global::System.Collections.Generic.KeyValuePair<string, string>(""client_secret"", clientSecret),
@@ -61,8 +61,8 @@ namespace {authorization.Settings.Namespace}
 
             var accessToken = dictionary[""access_token""];
 
-            _authorizations.Clear();
-            _authorizations.Add(new global::{authorization.Settings.Namespace}.EndPointAuthorization
+            Authorizations.Clear();
+            Authorizations.Add(new global::{authorization.Settings.Namespace}.EndPointAuthorization
             {{
                 Type = ""{SecuritySchemeType.OAuth2:G}"",
                 Location = ""{ParameterLocation.Header:G}"",
@@ -119,8 +119,8 @@ namespace {authorization.Settings.Namespace}
 {authorization.Parameters.Select(x => $@"
             {x} = {x} ?? throw new global::System.ArgumentNullException(nameof({x}));").Inject()}
 
-            _authorizations.Clear();
-            _authorizations.Add(new global::{authorization.Settings.Namespace}.EndPointAuthorization
+            Authorizations.Clear();
+            Authorizations.Add(new global::{authorization.Settings.Namespace}.EndPointAuthorization
             {{
                 Type = ""{authorization.Type:G}"",
                 Location = ""{authorization.In:G}"",
@@ -155,11 +155,11 @@ namespace {authorization.Settings.Namespace}
             global::System.Uri? baseUri = null,
             global::System.Collections.Generic.List<global::{authorization.Settings.Namespace}.EndPointAuthorization>? authorizations = null) : this(httpClient, baseUri, authorizations)
         {{
-            Authorizing(_httpClient, {string.Join(", ", authorization.Parameters.Select(x => $"ref {x}"))});
+            Authorizing(HttpClient, {string.Join(", ", authorization.Parameters.Select(x => $"ref {x}"))});
 
             {authorization.MethodName}({string.Join(", ", authorization.Parameters.Select(x => $"{x}"))});
 
-            Authorized(_httpClient);
+            Authorized(HttpClient);
         }}
 
         partial void Authorizing(

@@ -14,10 +14,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string BaseUrl = "https://ipinfo.io/";
+        public const string DefaultBaseUrl = "https://ipinfo.io/";
 
-        private readonly global::System.Net.Http.HttpClient _httpClient;
-        private global::System.Collections.Generic.List<global::G.EndPointAuthorization> _authorizations;
+        private bool _disposeHttpClient = true;
+
+        /// <inheritdoc/>
+        public global::System.Net.Http.HttpClient HttpClient { get; }
+
+        /// <inheritdoc/>
+        public System.Uri? BaseUri => HttpClient.BaseAddress;
+
+        /// <inheritdoc/>
+        public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
 
         /// <summary>
         /// 
@@ -39,7 +47,7 @@ namespace G
         /// <summary>
         /// General API.
         /// </summary>
-        public GeneralClient General => new GeneralClient(_httpClient, authorizations: _authorizations)
+        public GeneralClient General => new GeneralClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -47,7 +55,7 @@ namespace G
         /// <summary>
         /// Single info API.
         /// </summary>
-        public SingleClient Single => new SingleClient(_httpClient, authorizations: _authorizations)
+        public SingleClient Single => new SingleClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -55,7 +63,7 @@ namespace G
         /// <summary>
         /// Privacy Detection API.
         /// </summary>
-        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(_httpClient, authorizations: _authorizations)
+        public PrivacyDetectionClient PrivacyDetection => new PrivacyDetectionClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -63,7 +71,7 @@ namespace G
         /// <summary>
         /// ASN API.
         /// </summary>
-        public AsnClient Asn => new AsnClient(_httpClient, authorizations: _authorizations)
+        public AsnClient Asn => new AsnClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -71,7 +79,7 @@ namespace G
         /// <summary>
         /// IP Ranges API.
         /// </summary>
-        public RangesClient Ranges => new RangesClient(_httpClient, authorizations: _authorizations)
+        public RangesClient Ranges => new RangesClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -79,7 +87,7 @@ namespace G
         /// <summary>
         /// Hosted Domains API.
         /// </summary>
-        public DomainsClient Domains => new DomainsClient(_httpClient, authorizations: _authorizations)
+        public DomainsClient Domains => new DomainsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -87,7 +95,7 @@ namespace G
         /// <summary>
         /// Abuse Contact API.
         /// </summary>
-        public AbuseClient Abuse => new AbuseClient(_httpClient, authorizations: _authorizations)
+        public AbuseClient Abuse => new AbuseClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -97,25 +105,31 @@ namespace G
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
         /// </summary>
-        /// <param name="httpClient"></param>
-        /// <param name="baseUri"></param>
-        /// <param name="authorizations"></param>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="baseUri">The base URL for the API. If not provided, the default baseUri from OpenAPI spec will be used.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public Api(
             global::System.Net.Http.HttpClient? httpClient = null,
             global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null)
+            global::System.Collections.Generic.List<global::G.EndPointAuthorization>? authorizations = null,
+            bool disposeHttpClient = true)
         {
-            _httpClient = httpClient ?? new global::System.Net.Http.HttpClient();
-            _httpClient.BaseAddress ??= baseUri ?? new global::System.Uri(BaseUrl);
-            _authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            HttpClient = httpClient ?? new global::System.Net.Http.HttpClient();
+            HttpClient.BaseAddress ??= baseUri ?? new global::System.Uri(DefaultBaseUrl);
+            Authorizations = authorizations ?? new global::System.Collections.Generic.List<global::G.EndPointAuthorization>();
+            _disposeHttpClient = disposeHttpClient;
 
-            Initialized(_httpClient);
+            Initialized(HttpClient);
         }
 
         /// <inheritdoc/>
         public void Dispose()
         {
-            _httpClient.Dispose();
+            if (_disposeHttpClient)
+            {
+                HttpClient.Dispose();
+            }
         }
 
         partial void Initialized(
