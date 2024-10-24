@@ -29,7 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("advanced_security")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestAdvancedSecurityJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestAdvancedSecurity? AdvancedSecurity { get; set; } = global::G.CodeSecurityCreateConfigurationRequestAdvancedSecurity.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestAdvancedSecurity? AdvancedSecurity { get; set; }
 
         /// <summary>
         /// The enablement status of Dependency Graph<br/>
@@ -37,7 +37,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependency_graph")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestDependencyGraphJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestDependencyGraph? DependencyGraph { get; set; } = global::G.CodeSecurityCreateConfigurationRequestDependencyGraph.Enabled;
+        public global::G.CodeSecurityCreateConfigurationRequestDependencyGraph? DependencyGraph { get; set; }
 
         /// <summary>
         /// The enablement status of Automatic dependency submission<br/>
@@ -45,7 +45,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependency_graph_autosubmit_action")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitActionJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction? DependencyGraphAutosubmitAction { get; set; } = global::G.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction? DependencyGraphAutosubmitAction { get; set; }
 
         /// <summary>
         /// Feature options for Automatic dependency submission
@@ -59,7 +59,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependabot_alerts")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestDependabotAlertsJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestDependabotAlerts? DependabotAlerts { get; set; } = global::G.CodeSecurityCreateConfigurationRequestDependabotAlerts.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestDependabotAlerts? DependabotAlerts { get; set; }
 
         /// <summary>
         /// The enablement status of Dependabot security updates<br/>
@@ -67,7 +67,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependabot_security_updates")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdatesJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates? DependabotSecurityUpdates { get; set; } = global::G.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates? DependabotSecurityUpdates { get; set; }
 
         /// <summary>
         /// The enablement status of code scanning default setup<br/>
@@ -75,7 +75,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code_scanning_default_setup")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetupJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup? CodeScanningDefaultSetup { get; set; } = global::G.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup? CodeScanningDefaultSetup { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning<br/>
@@ -83,7 +83,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_scanning")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestSecretScanningJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestSecretScanning? SecretScanning { get; set; } = global::G.CodeSecurityCreateConfigurationRequestSecretScanning.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestSecretScanning? SecretScanning { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning push protection<br/>
@@ -91,7 +91,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_scanning_push_protection")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestSecretScanningPushProtectionJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningPushProtection? SecretScanningPushProtection { get; set; } = global::G.CodeSecurityCreateConfigurationRequestSecretScanningPushProtection.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningPushProtection? SecretScanningPushProtection { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning validity checks<br/>
@@ -99,7 +99,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_scanning_validity_checks")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecksJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks? SecretScanningValidityChecks { get; set; } = global::G.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks? SecretScanningValidityChecks { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning non provider patterns<br/>
@@ -107,7 +107,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret_scanning_non_provider_patterns")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatternsJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns? SecretScanningNonProviderPatterns { get; set; } = global::G.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns? SecretScanningNonProviderPatterns { get; set; }
 
         /// <summary>
         /// The enablement status of private vulnerability reporting<br/>
@@ -115,7 +115,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private_vulnerability_reporting")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReportingJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting? PrivateVulnerabilityReporting { get; set; } = global::G.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting? PrivateVulnerabilityReporting { get; set; }
 
         /// <summary>
         /// The enforcement status for a security configuration<br/>
@@ -123,7 +123,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enforcement")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodeSecurityCreateConfigurationRequestEnforcementJsonConverter))]
-        public global::G.CodeSecurityCreateConfigurationRequestEnforcement? Enforcement { get; set; } = global::G.CodeSecurityCreateConfigurationRequestEnforcement.Enforced;
+        public global::G.CodeSecurityCreateConfigurationRequestEnforcement? Enforcement { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

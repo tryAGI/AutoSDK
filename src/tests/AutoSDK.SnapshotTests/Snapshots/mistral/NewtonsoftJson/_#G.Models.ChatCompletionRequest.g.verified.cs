@@ -54,7 +54,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("safe_prompt")]
-        public bool? SafePrompt { get; set; } = false;
+        public bool? SafePrompt { get; set; }
 
         /// <summary>
         /// Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
@@ -67,20 +67,20 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool? Stream { get; set; } = false;
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// What sampling temperature to use, between 0.0 and 1.0. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both.<br/>
         /// Default Value: 0.7
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double? Temperature { get; set; } = 0.7;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::G.AnyOf<global::G.ToolChoice3, global::G.ToolChoiceEnum?>? ToolChoice { get; set; } = global::G.ToolChoiceEnum.Auto;
+        public global::G.AnyOf<global::G.ToolChoice3, global::G.ToolChoiceEnum?>? ToolChoice { get; set; }
 
         /// <summary>
         /// 
@@ -93,7 +93,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
-        public double? TopP { get; set; } = 1;
+        public double? TopP { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

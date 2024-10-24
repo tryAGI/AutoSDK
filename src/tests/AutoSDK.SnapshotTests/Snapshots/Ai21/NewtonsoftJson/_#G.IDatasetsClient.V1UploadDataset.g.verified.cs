@@ -36,7 +36,7 @@ namespace G
             string? selectedColumns = default,
             bool? approveWhitespaceCorrection = default,
             bool? deleteLongRows = default,
-            double? splitRatio = 0.1,
+            double? splitRatio = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

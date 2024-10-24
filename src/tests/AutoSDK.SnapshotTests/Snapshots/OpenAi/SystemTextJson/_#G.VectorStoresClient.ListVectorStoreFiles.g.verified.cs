@@ -49,8 +49,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListVectorStoreFilesResponse> ListVectorStoreFilesAsync(
             string vectorStoreId,
-            int? limit = 20,
-            global::G.ListVectorStoreFilesOrder? order = global::G.ListVectorStoreFilesOrder.Desc,
+            int? limit = default,
+            global::G.ListVectorStoreFilesOrder? order = default,
             string? after = default,
             string? before = default,
             global::G.ListVectorStoreFilesFilter? filter = default,

@@ -51,8 +51,8 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? ids = default,
             string? name = default,
             string? nameContains = default,
-            int? offset = 0,
-            int? limit = 100,
+            int? offset = default,
+            int? limit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -20,7 +20,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
-        public bool? Private { get; set; } = false;
+        public bool? Private { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

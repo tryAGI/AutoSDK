@@ -29,7 +29,7 @@ namespace G
         /// Example: V_2_TURBO
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        public global::G.ModelEnum? Model { get; set; } = global::G.ModelEnum.V2;
+        public global::G.ModelEnum? Model { get; set; }
 
         /// <summary>
         /// Determine if MagicPrompt should be used in generating the request or not<br/>
@@ -37,7 +37,7 @@ namespace G
         /// Example: ON
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("magic_prompt_option")]
-        public global::G.MagicPromptOption? MagicPromptOption { get; set; } = global::G.MagicPromptOption.AUTO;
+        public global::G.MagicPromptOption? MagicPromptOption { get; set; }
 
         /// <summary>
         /// Example: 12345

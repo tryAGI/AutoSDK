@@ -44,7 +44,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetPronunciationDictionariesMetadataResponseModel> GetPronunciationDictionariesAsync(
             string? cursor = default,
-            int? pageSize = 30,
+            int? pageSize = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

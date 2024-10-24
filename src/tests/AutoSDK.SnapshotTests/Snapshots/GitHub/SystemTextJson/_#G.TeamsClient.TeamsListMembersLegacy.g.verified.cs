@@ -49,9 +49,9 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> TeamsListMembersLegacyAsync(
             int teamId,
-            global::G.TeamsListMembersLegacyRole? role = global::G.TeamsListMembersLegacyRole.All,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.TeamsListMembersLegacyRole? role = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

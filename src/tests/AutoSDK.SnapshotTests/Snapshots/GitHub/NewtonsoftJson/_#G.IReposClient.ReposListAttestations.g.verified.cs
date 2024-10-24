@@ -25,7 +25,7 @@ namespace G
             string owner,
             string repo,
             string subjectDigest,
-            int? perPage = 30,
+            int? perPage = default,
             string? before = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);

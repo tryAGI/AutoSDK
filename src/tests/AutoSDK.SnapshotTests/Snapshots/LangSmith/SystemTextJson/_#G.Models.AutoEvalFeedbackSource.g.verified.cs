@@ -13,7 +13,7 @@ namespace G
         /// Default Value: auto_eval
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "auto_eval";
+        public string? Type { get; set; }
 
         /// <summary>
         /// 

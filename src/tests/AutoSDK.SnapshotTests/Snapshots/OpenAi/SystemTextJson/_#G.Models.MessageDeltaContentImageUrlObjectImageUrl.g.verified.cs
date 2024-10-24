@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageDeltaContentImageUrlObjectImageUrlDetailJsonConverter))]
-        public global::G.MessageDeltaContentImageUrlObjectImageUrlDetail? Detail { get; set; } = global::G.MessageDeltaContentImageUrlObjectImageUrlDetail.Auto;
+        public global::G.MessageDeltaContentImageUrlObjectImageUrlDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

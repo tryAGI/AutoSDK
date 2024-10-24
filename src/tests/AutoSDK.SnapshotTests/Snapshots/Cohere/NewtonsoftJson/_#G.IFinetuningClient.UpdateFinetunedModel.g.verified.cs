@@ -50,7 +50,7 @@ namespace G
             string name,
             global::G.Settings settings,
             string? xClientName = default,
-            global::G.Status? status = global::G.Status.UNSPECIFIED,
+            global::G.Status? status = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

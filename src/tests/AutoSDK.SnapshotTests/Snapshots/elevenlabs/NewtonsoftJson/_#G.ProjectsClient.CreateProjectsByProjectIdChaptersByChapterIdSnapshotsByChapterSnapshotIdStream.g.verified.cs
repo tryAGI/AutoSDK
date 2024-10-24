@@ -165,7 +165,7 @@ namespace G
             string chapterId,
             string chapterSnapshotId,
             string? xiApiKey = default,
-            bool? convertToMpeg = false,
+            bool? convertToMpeg = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyStreamChapterAudioV1ProjectsProjectIdChaptersChapterIdSnapshotsChapterSnapshotIdStreamPost

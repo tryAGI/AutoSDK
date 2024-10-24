@@ -31,7 +31,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsCreateInvitationRequestRoleJsonConverter))]
-        public global::G.OrgsCreateInvitationRequestRole? Role { get; set; } = global::G.OrgsCreateInvitationRequestRole.DirectMember;
+        public global::G.OrgsCreateInvitationRequestRole? Role { get; set; }
 
         /// <summary>
         /// Specify IDs for the teams you want to invite new members to.

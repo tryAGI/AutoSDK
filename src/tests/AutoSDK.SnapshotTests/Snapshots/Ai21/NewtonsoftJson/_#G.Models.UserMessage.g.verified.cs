@@ -23,7 +23,7 @@ namespace G
         /// Default Value: user
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.UserMessageRole? Role { get; set; } = global::G.UserMessageRole.User;
+        public global::G.UserMessageRole? Role { get; set; }
 
         /// <summary>
         /// 

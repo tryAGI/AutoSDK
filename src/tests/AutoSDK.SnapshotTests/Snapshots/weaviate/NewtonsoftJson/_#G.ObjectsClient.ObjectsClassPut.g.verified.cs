@@ -44,7 +44,7 @@ namespace G
             string className,
             global::System.Guid id,
             global::G.Object request,
-            global::G.ObjectsClassPutConsistencyLevel? consistencyLevel = global::G.ObjectsClassPutConsistencyLevel.QUORUM,
+            global::G.ObjectsClassPutConsistencyLevel? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -190,7 +190,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Object> ObjectsClassPutAsync(
             string className,
             global::System.Guid id,
-            global::G.ObjectsClassPutConsistencyLevel? consistencyLevel = global::G.ObjectsClassPutConsistencyLevel.QUORUM,
+            global::G.ObjectsClassPutConsistencyLevel? consistencyLevel = default,
             string? @class = default,
             object? vectorWeights = default,
             object? properties = default,

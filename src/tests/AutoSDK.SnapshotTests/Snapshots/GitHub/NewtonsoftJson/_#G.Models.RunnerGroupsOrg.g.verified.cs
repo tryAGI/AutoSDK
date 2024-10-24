@@ -74,14 +74,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("workflow_restrictions_read_only")]
-        public bool? WorkflowRestrictionsReadOnly { get; set; } = false;
+        public bool? WorkflowRestrictionsReadOnly { get; set; }
 
         /// <summary>
         /// If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("restricted_to_workflows")]
-        public bool? RestrictedToWorkflows { get; set; } = false;
+        public bool? RestrictedToWorkflows { get; set; }
 
         /// <summary>
         /// List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.

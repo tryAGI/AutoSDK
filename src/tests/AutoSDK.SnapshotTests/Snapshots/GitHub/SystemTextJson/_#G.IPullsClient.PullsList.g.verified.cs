@@ -41,13 +41,13 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PullRequestSimple>> PullsListAsync(
             string owner,
             string repo,
-            global::G.PullsListState? state = global::G.PullsListState.Open,
+            global::G.PullsListState? state = default,
             string? head = default,
             string? @base = default,
-            global::G.PullsListSort? sort = global::G.PullsListSort.Created,
+            global::G.PullsListSort? sort = default,
             global::G.PullsListDirection? direction = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

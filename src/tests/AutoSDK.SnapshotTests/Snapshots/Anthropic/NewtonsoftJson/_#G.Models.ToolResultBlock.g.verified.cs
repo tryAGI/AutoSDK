@@ -36,7 +36,7 @@ namespace G
         /// Default Value: tool_result
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; } = "tool_result";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The cache control settings.

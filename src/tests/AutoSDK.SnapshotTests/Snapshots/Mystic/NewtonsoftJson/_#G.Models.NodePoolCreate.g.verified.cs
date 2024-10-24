@@ -19,7 +19,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("spot")]
-        public bool? Spot { get; set; } = true;
+        public bool? Spot { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

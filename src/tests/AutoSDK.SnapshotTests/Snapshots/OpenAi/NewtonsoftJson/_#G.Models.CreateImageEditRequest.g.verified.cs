@@ -48,7 +48,7 @@ namespace G
         /// Example: dall-e-2
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model")]
-        public global::G.AnyOf<string, global::G.CreateImageEditRequestModel?>? Model { get; set; } = global::G.CreateImageEditRequestModel.DallE2;
+        public global::G.AnyOf<string, global::G.CreateImageEditRequestModel?>? Model { get; set; }
 
         /// <summary>
         /// The number of images to generate. Must be between 1 and 10.<br/>
@@ -56,7 +56,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n")]
-        public int? N { get; set; } = 1;
+        public int? N { get; set; }
 
         /// <summary>
         /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
@@ -64,7 +64,7 @@ namespace G
         /// Example: 1024x1024
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size")]
-        public global::G.CreateImageEditRequestSize? Size { get; set; } = global::G.CreateImageEditRequestSize.x1024x1024;
+        public global::G.CreateImageEditRequestSize? Size { get; set; }
 
         /// <summary>
         /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
@@ -72,7 +72,7 @@ namespace G
         /// Example: url
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; } = global::G.CreateImageEditRequestResponseFormat.Url;
+        public global::G.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>

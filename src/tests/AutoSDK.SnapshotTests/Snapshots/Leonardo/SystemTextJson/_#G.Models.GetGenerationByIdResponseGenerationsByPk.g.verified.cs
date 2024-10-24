@@ -93,7 +93,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presetStyle")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SdGenerationStyleJsonConverter))]
-        public global::G.SdGenerationStyle? PresetStyle { get; set; } = global::G.SdGenerationStyle.DYNAMIC;
+        public global::G.SdGenerationStyle? PresetStyle { get; set; }
 
         /// <summary>
         /// 

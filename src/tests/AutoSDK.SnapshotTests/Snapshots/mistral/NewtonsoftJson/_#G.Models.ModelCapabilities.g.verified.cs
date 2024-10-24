@@ -13,31 +13,31 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_chat")]
-        public bool? CompletionChat { get; set; } = true;
+        public bool? CompletionChat { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completion_fim")]
-        public bool? CompletionFim { get; set; } = false;
+        public bool? CompletionFim { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fine_tuning")]
-        public bool? FineTuning { get; set; } = false;
+        public bool? FineTuning { get; set; }
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function_calling")]
-        public bool? FunctionCalling { get; set; } = true;
+        public bool? FunctionCalling { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vision")]
-        public bool? Vision { get; set; } = false;
+        public bool? Vision { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

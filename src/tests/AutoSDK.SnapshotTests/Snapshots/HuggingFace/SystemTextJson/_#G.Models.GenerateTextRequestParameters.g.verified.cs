@@ -33,7 +33,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; } = 1;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// The more a token is used within generation the more it is penalized to not be picked in successive generation passes.<br/>
@@ -70,7 +70,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_return_sequences")]
-        public int? NumReturnSequences { get; set; } = 1;
+        public int? NumReturnSequences { get; set; }
 
         /// <summary>
         /// Whether or not to use sampling, use greedy decoding otherwise.<br/>

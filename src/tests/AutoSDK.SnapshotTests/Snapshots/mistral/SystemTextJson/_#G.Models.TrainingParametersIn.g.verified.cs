@@ -19,14 +19,14 @@ namespace G
         /// Default Value: 0.9
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fim_ratio")]
-        public double? FimRatio { get; set; } = 0.9;
+        public double? FimRatio { get; set; }
 
         /// <summary>
         /// A parameter describing how much to adjust the pre-trained model's weights in response to the estimated error each time the weights are updated during the fine-tuning process.<br/>
         /// Default Value: 0.0001
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate")]
-        public double? LearningRate { get; set; } = 0.0001;
+        public double? LearningRate { get; set; }
 
         /// <summary>
         /// The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.
@@ -39,14 +39,14 @@ namespace G
         /// Default Value: 0.05
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warmup_fraction")]
-        public double? WarmupFraction { get; set; } = 0.05;
+        public double? WarmupFraction { get; set; }
 
         /// <summary>
         /// (Advanced Usage) Weight decay adds a term to the loss function that is proportional to the sum of the squared weights. This term reduces the magnitude of the weights and prevents them from growing too large.<br/>
         /// Default Value: 0.1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight_decay")]
-        public double? WeightDecay { get; set; } = 0.1;
+        public double? WeightDecay { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

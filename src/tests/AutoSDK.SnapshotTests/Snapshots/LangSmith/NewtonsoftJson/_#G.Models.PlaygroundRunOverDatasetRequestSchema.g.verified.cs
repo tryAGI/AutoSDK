@@ -67,7 +67,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("repetitions")]
-        public int? Repetitions { get; set; } = 1;
+        public int? Repetitions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

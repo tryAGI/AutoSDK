@@ -46,8 +46,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsListSelfHostedRunnersInGroupForOrgResponse> ActionsListSelfHostedRunnersInGroupForOrgAsync(
             string org,
             int runnerGroupId,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

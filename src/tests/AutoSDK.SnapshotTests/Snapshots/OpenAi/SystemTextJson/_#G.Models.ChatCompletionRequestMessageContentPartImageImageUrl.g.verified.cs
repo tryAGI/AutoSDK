@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestMessageContentPartImageImageUrlDetailJsonConverter))]
-        public global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail? Detail { get; set; } = global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail.Auto;
+        public global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail? Detail { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

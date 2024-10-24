@@ -28,7 +28,7 @@ namespace G
         /// Default Value: eleven_english_sts_v2
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_id")]
-        public string? ModelId { get; set; } = "eleven_english_sts_v2";
+        public string? ModelId { get; set; }
 
         /// <summary>
         /// Voice settings overriding stored setttings for the given voice. They are applied only on the given request. Needs to be send as a JSON encoded string.

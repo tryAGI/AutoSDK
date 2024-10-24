@@ -27,21 +27,21 @@ namespace G
         /// Default Value: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("min_cluster_size")]
-        public int? MinClusterSize { get; set; } = 10;
+        public int? MinClusterSize { get; set; }
 
         /// <summary>
         /// Parameter for UMAP. A scalar governing how to balance global vs local structure in the data.<br/>
         /// Default Value: 15
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_neighbors")]
-        public int? NNeighbors { get; set; } = 15;
+        public int? NNeighbors { get; set; }
 
         /// <summary>
         /// Parameter for UMAP. A boolean governing whether the embeddings from UMAP (that will be clustered with HDBSCAN) are deterministic.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_deterministic")]
-        public bool? IsDeterministic { get; set; } = true;
+        public bool? IsDeterministic { get; set; }
 
         /// <summary>
         /// 

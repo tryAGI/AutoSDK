@@ -25,7 +25,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("apply_to_all_projects")]
-        public bool? ApplyToAllProjects { get; set; } = false;
+        public bool? ApplyToAllProjects { get; set; }
 
         /// <summary>
         /// 

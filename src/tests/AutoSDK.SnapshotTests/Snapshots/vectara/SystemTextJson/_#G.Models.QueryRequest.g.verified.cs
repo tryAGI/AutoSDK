@@ -36,7 +36,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_response")]
-        public bool? StreamResponse { get; set; } = false;
+        public bool? StreamResponse { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

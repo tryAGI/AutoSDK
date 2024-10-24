@@ -14,7 +14,7 @@ namespace G
         /// Default Value: push
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
-        public string? Permission { get; set; } = "push";
+        public string? Permission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

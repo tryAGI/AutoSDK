@@ -51,7 +51,7 @@ namespace G
             string projectId,
             string projectSnapshotId,
             string? xiApiKey = default,
-            bool? convertToMpeg = false,
+            bool? convertToMpeg = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -37,13 +37,13 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("offset")]
-        public int? Offset { get; set; } = 0;
+        public int? Offset { get; set; }
 
         /// <summary>
         /// Default Value: 100
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
-        public int? Limit { get; set; } = 100;
+        public int? Limit { get; set; }
 
         /// <summary>
         /// 

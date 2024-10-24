@@ -24,7 +24,7 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             string? filter = default,
-            int? limit = 10,
+            int? limit = default,
             string? pageKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

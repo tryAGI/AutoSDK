@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("setting")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Setting { get; set; }
+        public required bool Setting { get; set; } = true;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

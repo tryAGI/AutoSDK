@@ -35,7 +35,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.EmbeddingResponse> EmbeddingsV1EmbeddingsPostAsync(
             global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
             string model,
-            string? encodingFormat = "float",
+            string? encodingFormat = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -25,7 +25,7 @@ namespace G
         /// Default Value: list
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public string? Object { get; set; } = "list";
+        public string? Object { get; set; }
 
         /// <summary>
         /// A list of Embedding Objects returned by the embedding service

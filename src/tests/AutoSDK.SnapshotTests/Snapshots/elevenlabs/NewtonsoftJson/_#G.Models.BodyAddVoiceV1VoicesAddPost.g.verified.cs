@@ -26,7 +26,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("remove_background_noise")]
-        public bool? RemoveBackgroundNoise { get; set; } = false;
+        public bool? RemoveBackgroundNoise { get; set; }
 
         /// <summary>
         /// How would you describe the voice?

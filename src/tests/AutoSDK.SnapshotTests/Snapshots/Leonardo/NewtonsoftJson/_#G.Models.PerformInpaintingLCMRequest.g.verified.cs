@@ -62,14 +62,14 @@ namespace G
         /// Default Value: 512
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("width")]
-        public int? Width { get; set; } = 512;
+        public int? Width { get; set; }
 
         /// <summary>
         /// The output width of the image. Must be 512, 640 or 1024.<br/>
         /// Default Value: 512
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("height")]
-        public int? Height { get; set; } = 512;
+        public int? Height { get; set; }
 
         /// <summary>
         /// 

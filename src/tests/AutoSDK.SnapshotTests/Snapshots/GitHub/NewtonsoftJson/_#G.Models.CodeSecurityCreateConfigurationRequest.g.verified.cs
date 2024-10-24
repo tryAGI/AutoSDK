@@ -26,21 +26,21 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("advanced_security")]
-        public global::G.CodeSecurityCreateConfigurationRequestAdvancedSecurity? AdvancedSecurity { get; set; } = global::G.CodeSecurityCreateConfigurationRequestAdvancedSecurity.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestAdvancedSecurity? AdvancedSecurity { get; set; }
 
         /// <summary>
         /// The enablement status of Dependency Graph<br/>
         /// Default Value: enabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph")]
-        public global::G.CodeSecurityCreateConfigurationRequestDependencyGraph? DependencyGraph { get; set; } = global::G.CodeSecurityCreateConfigurationRequestDependencyGraph.Enabled;
+        public global::G.CodeSecurityCreateConfigurationRequestDependencyGraph? DependencyGraph { get; set; }
 
         /// <summary>
         /// The enablement status of Automatic dependency submission<br/>
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph_autosubmit_action")]
-        public global::G.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction? DependencyGraphAutosubmitAction { get; set; } = global::G.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction? DependencyGraphAutosubmitAction { get; set; }
 
         /// <summary>
         /// Feature options for Automatic dependency submission
@@ -53,63 +53,63 @@ namespace G
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_alerts")]
-        public global::G.CodeSecurityCreateConfigurationRequestDependabotAlerts? DependabotAlerts { get; set; } = global::G.CodeSecurityCreateConfigurationRequestDependabotAlerts.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestDependabotAlerts? DependabotAlerts { get; set; }
 
         /// <summary>
         /// The enablement status of Dependabot security updates<br/>
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dependabot_security_updates")]
-        public global::G.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates? DependabotSecurityUpdates { get; set; } = global::G.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates? DependabotSecurityUpdates { get; set; }
 
         /// <summary>
         /// The enablement status of code scanning default setup<br/>
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code_scanning_default_setup")]
-        public global::G.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup? CodeScanningDefaultSetup { get; set; } = global::G.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup? CodeScanningDefaultSetup { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning<br/>
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning")]
-        public global::G.CodeSecurityCreateConfigurationRequestSecretScanning? SecretScanning { get; set; } = global::G.CodeSecurityCreateConfigurationRequestSecretScanning.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestSecretScanning? SecretScanning { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning push protection<br/>
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection")]
-        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningPushProtection? SecretScanningPushProtection { get; set; } = global::G.CodeSecurityCreateConfigurationRequestSecretScanningPushProtection.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningPushProtection? SecretScanningPushProtection { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning validity checks<br/>
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_validity_checks")]
-        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks? SecretScanningValidityChecks { get; set; } = global::G.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks? SecretScanningValidityChecks { get; set; }
 
         /// <summary>
         /// The enablement status of secret scanning non provider patterns<br/>
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_non_provider_patterns")]
-        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns? SecretScanningNonProviderPatterns { get; set; } = global::G.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns? SecretScanningNonProviderPatterns { get; set; }
 
         /// <summary>
         /// The enablement status of private vulnerability reporting<br/>
         /// Default Value: disabled
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private_vulnerability_reporting")]
-        public global::G.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting? PrivateVulnerabilityReporting { get; set; } = global::G.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting.Disabled;
+        public global::G.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting? PrivateVulnerabilityReporting { get; set; }
 
         /// <summary>
         /// The enforcement status for a security configuration<br/>
         /// Default Value: enforced
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enforcement")]
-        public global::G.CodeSecurityCreateConfigurationRequestEnforcement? Enforcement { get; set; } = global::G.CodeSecurityCreateConfigurationRequestEnforcement.Enforced;
+        public global::G.CodeSecurityCreateConfigurationRequestEnforcement? Enforcement { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -19,13 +19,13 @@ namespace G
         /// Default Value: 5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
-        public int? Limit { get; set; } = 5;
+        public int? Limit { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("debug")]
-        public bool? Debug { get; set; } = false;
+        public bool? Debug { get; set; }
 
         /// <summary>
         /// 

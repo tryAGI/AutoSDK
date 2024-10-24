@@ -15,7 +15,7 @@ namespace G
         /// Default Value: search_results
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; } = "search_results";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The ranked search results.

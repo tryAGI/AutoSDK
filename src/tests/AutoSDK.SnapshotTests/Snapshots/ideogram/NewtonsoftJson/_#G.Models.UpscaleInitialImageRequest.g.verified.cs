@@ -21,14 +21,14 @@ namespace G
         /// Example: 50
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resemblance")]
-        public int? Resemblance { get; set; } = 50;
+        public int? Resemblance { get; set; }
 
         /// <summary>
         /// Default Value: 50<br/>
         /// Example: 50
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("detail")]
-        public int? Detail { get; set; } = 50;
+        public int? Detail { get; set; }
 
         /// <summary>
         /// Determine if MagicPrompt should be used in generating the request or not<br/>
@@ -36,7 +36,7 @@ namespace G
         /// Example: ON
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("magic_prompt_option")]
-        public global::G.MagicPromptOption? MagicPromptOption { get; set; } = global::G.MagicPromptOption.AUTO;
+        public global::G.MagicPromptOption? MagicPromptOption { get; set; }
 
         /// <summary>
         /// Example: 12345

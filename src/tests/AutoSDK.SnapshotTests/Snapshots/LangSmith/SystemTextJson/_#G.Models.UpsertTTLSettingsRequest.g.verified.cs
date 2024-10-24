@@ -27,7 +27,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("apply_to_all_projects")]
-        public bool? ApplyToAllProjects { get; set; } = false;
+        public bool? ApplyToAllProjects { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

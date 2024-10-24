@@ -73,7 +73,7 @@ namespace G
             int? requestTimeoutMillis = default,
             global::G.AllOf<global::G.SearchCorpus, global::G.SearchParameters>? search = default,
             global::G.GenerationParameters? generation = default,
-            bool? streamResponse = false,
+            bool? streamResponse = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

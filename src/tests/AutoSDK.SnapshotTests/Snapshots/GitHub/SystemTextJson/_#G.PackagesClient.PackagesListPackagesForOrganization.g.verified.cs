@@ -50,8 +50,8 @@ namespace G
             global::G.PackagesListPackagesForOrganizationPackageType packageType,
             string org,
             global::G.PackagesListPackagesForOrganizationVisibility? visibility = default,
-            int? page = 1,
-            int? perPage = 30,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

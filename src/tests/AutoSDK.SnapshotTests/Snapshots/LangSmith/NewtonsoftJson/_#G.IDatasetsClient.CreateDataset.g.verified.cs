@@ -41,7 +41,7 @@ namespace G
             global::System.DateTime? createdAt = default,
             object? inputsSchemaDefinition = default,
             object? outputsSchemaDefinition = default,
-            bool? externallyManaged = false,
+            bool? externallyManaged = default,
             global::System.Guid? id = default,
             object? extra = default,
             global::G.DataType? dataType = default,

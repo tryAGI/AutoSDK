@@ -17,7 +17,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsSetMembershipForUserRequestRoleJsonConverter))]
-        public global::G.OrgsSetMembershipForUserRequestRole? Role { get; set; } = global::G.OrgsSetMembershipForUserRequestRole.Member;
+        public global::G.OrgsSetMembershipForUserRequestRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

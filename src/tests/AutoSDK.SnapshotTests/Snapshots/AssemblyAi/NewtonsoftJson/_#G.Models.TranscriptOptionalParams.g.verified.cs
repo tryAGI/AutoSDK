@@ -17,14 +17,14 @@ namespace G
         /// Default Value: en_us
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_code")]
-        public global::G.OneOf<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>? LanguageCode { get; set; } = "en_us";
+        public global::G.OneOf<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>? LanguageCode { get; set; }
 
         /// <summary>
         /// Enable [Automatic language detection](https://www.assemblyai.com/docs/models/speech-recognition#automatic-language-detection), either true or false.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_detection")]
-        public bool? LanguageDetection { get; set; } = false;
+        public bool? LanguageDetection { get; set; }
 
         /// <summary>
         /// The confidence threshold for the automatically detected language.<br/>
@@ -33,42 +33,42 @@ namespace G
         /// Default Value: 0F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("language_confidence_threshold")]
-        public float? LanguageConfidenceThreshold { get; set; } = 0F;
+        public float? LanguageConfidenceThreshold { get; set; }
 
         /// <summary>
         /// The speech model to use for the transcription. When `null`, the "best" model is used.<br/>
         /// Default Value: best
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speech_model")]
-        public global::G.OneOf<global::G.SpeechModel2?, object>? SpeechModel { get; set; } = global::G.SpeechModel2.Best;
+        public global::G.OneOf<global::G.SpeechModel2?, object>? SpeechModel { get; set; }
 
         /// <summary>
         /// Enable Automatic Punctuation, can be true or false<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("punctuate")]
-        public bool? Punctuate { get; set; } = true;
+        public bool? Punctuate { get; set; }
 
         /// <summary>
         /// Enable Text Formatting, can be true or false<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format_text")]
-        public bool? FormatText { get; set; } = true;
+        public bool? FormatText { get; set; }
 
         /// <summary>
         /// Transcribe Filler Words, like "umm", in your media file; can be true or false<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disfluencies")]
-        public bool? Disfluencies { get; set; } = false;
+        public bool? Disfluencies { get; set; }
 
         /// <summary>
         /// Enable [Dual Channel](https://www.assemblyai.com/docs/models/speech-recognition#dual-channel-transcription) transcription, can be true or false.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dual_channel")]
-        public bool? DualChannel { get; set; } = false;
+        public bool? DualChannel { get; set; }
 
         /// <summary>
         /// The URL to which we send webhook requests.<br/>
@@ -95,7 +95,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auto_highlights")]
-        public bool? AutoHighlights { get; set; } = false;
+        public bool? AutoHighlights { get; set; }
 
         /// <summary>
         /// The point in time, in milliseconds, to begin transcribing in your media file
@@ -126,21 +126,21 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("filter_profanity")]
-        public bool? FilterProfanity { get; set; } = false;
+        public bool? FilterProfanity { get; set; }
 
         /// <summary>
         /// Redact PII from the transcribed text using the Redact PII model, can be true or false<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("redact_pii")]
-        public bool? RedactPii { get; set; } = false;
+        public bool? RedactPii { get; set; }
 
         /// <summary>
         /// Generate a copy of the original media file with spoken PII "beeped" out, can be true or false. See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("redact_pii_audio")]
-        public bool? RedactPiiAudio { get; set; } = false;
+        public bool? RedactPiiAudio { get; set; }
 
         /// <summary>
         /// Controls the filetype of the audio created by redact_pii_audio. Currently supports mp3 (default) and wav. See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.<br/>
@@ -160,14 +160,14 @@ namespace G
         /// Default Value: hash
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("redact_pii_sub")]
-        public global::G.OneOf<global::G.SubstitutionPolicy?, object>? RedactPiiSub { get; set; } = global::G.SubstitutionPolicy.Hash;
+        public global::G.OneOf<global::G.SubstitutionPolicy?, object>? RedactPiiSub { get; set; }
 
         /// <summary>
         /// Enable [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization), can be true or false<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speaker_labels")]
-        public bool? SpeakerLabels { get; set; } = false;
+        public bool? SpeakerLabels { get; set; }
 
         /// <summary>
         /// Tells the speaker label model how many speakers it should attempt to identify, up to 10. See [Speaker diarization](https://www.assemblyai.com/docs/models/speaker-diarization) for more details.
@@ -180,21 +180,21 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_safety")]
-        public bool? ContentSafety { get; set; } = false;
+        public bool? ContentSafety { get; set; }
 
         /// <summary>
         /// The confidence threshold for the Content Moderation model. Values must be between 25 and 100.<br/>
         /// Default Value: 50
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_safety_confidence")]
-        public int? ContentSafetyConfidence { get; set; } = 50;
+        public int? ContentSafetyConfidence { get; set; }
 
         /// <summary>
         /// Enable [Topic Detection](https://www.assemblyai.com/docs/models/topic-detection), can be true or false<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("iab_categories")]
-        public bool? IabCategories { get; set; } = false;
+        public bool? IabCategories { get; set; }
 
         /// <summary>
         /// Customize how words are spelled and formatted using to and from values
@@ -207,21 +207,21 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sentiment_analysis")]
-        public bool? SentimentAnalysis { get; set; } = false;
+        public bool? SentimentAnalysis { get; set; }
 
         /// <summary>
         /// Enable [Auto Chapters](https://www.assemblyai.com/docs/models/auto-chapters), can be true or false<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auto_chapters")]
-        public bool? AutoChapters { get; set; } = false;
+        public bool? AutoChapters { get; set; }
 
         /// <summary>
         /// Enable [Entity Detection](https://www.assemblyai.com/docs/models/entity-detection), can be true or false<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("entity_detection")]
-        public bool? EntityDetection { get; set; } = false;
+        public bool? EntityDetection { get; set; }
 
         /// <summary>
         /// Reject audio files that contain less than this fraction of speech.<br/>
@@ -229,14 +229,14 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("speech_threshold")]
-        public float? SpeechThreshold { get; set; } = 0;
+        public float? SpeechThreshold { get; set; }
 
         /// <summary>
         /// Enable [Summarization](https://www.assemblyai.com/docs/models/summarization), can be true or false<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("summarization")]
-        public bool? Summarization { get; set; } = false;
+        public bool? Summarization { get; set; }
 
         /// <summary>
         /// The model to summarize the transcript
@@ -255,7 +255,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("custom_topics")]
-        public bool? CustomTopics { get; set; } = false;
+        public bool? CustomTopics { get; set; }
 
         /// <summary>
         /// The list of custom topics

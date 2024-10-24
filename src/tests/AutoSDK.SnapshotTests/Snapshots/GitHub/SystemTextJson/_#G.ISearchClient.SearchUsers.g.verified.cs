@@ -30,9 +30,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SearchUsersResponse> SearchUsersAsync(
             string q,
             global::G.SearchUsersSort? sort = default,
-            global::G.SearchUsersOrder? order = global::G.SearchUsersOrder.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.SearchUsersOrder? order = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

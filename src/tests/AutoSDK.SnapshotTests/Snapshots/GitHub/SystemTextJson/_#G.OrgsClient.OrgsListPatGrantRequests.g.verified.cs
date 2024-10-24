@@ -73,10 +73,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BasicError> OrgsListPatGrantRequestsAsync(
             string org,
-            int? perPage = 30,
-            int? page = 1,
-            global::G.OrgsListPatGrantRequestsSort? sort = global::G.OrgsListPatGrantRequestsSort.CreatedAt,
-            global::G.OrgsListPatGrantRequestsDirection? direction = global::G.OrgsListPatGrantRequestsDirection.Desc,
+            int? perPage = default,
+            int? page = default,
+            global::G.OrgsListPatGrantRequestsSort? sort = default,
+            global::G.OrgsListPatGrantRequestsDirection? direction = default,
             global::System.Collections.Generic.IList<string>? owner = default,
             string? repository = default,
             string? permission = default,

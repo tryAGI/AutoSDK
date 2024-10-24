@@ -46,8 +46,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Package>> PackagesListPackagesForAuthenticatedUserAsync(
             global::G.PackagesListPackagesForAuthenticatedUserPackageType packageType,
             global::G.PackagesListPackagesForAuthenticatedUserVisibility? visibility = default,
-            int? page = 1,
-            int? perPage = 30,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

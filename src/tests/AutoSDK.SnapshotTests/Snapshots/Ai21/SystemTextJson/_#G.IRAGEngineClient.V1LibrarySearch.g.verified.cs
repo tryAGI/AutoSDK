@@ -39,8 +39,8 @@ namespace G
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
-            global::G.RetrievalStrategy? retrievalStrategy = global::G.RetrievalStrategy.Default,
-            int? maxNeighbors = 1,
+            global::G.RetrievalStrategy? retrievalStrategy = default,
+            int? maxNeighbors = default,
             double? retrievalSimilarityThreshold = default,
             double? hybridSearchAlpha = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -147,14 +147,14 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("side")]
-        public global::G.ReviewCommentSide? Side { get; set; } = global::G.ReviewCommentSide.RIGHT;
+        public global::G.ReviewCommentSide? Side { get; set; }
 
         /// <summary>
         /// The side of the first line of the range for a multi-line comment.<br/>
         /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_side")]
-        public global::G.ReviewCommentStartSide? StartSide { get; set; } = global::G.ReviewCommentStartSide.RIGHT;
+        public global::G.ReviewCommentStartSide? StartSide { get; set; }
 
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>

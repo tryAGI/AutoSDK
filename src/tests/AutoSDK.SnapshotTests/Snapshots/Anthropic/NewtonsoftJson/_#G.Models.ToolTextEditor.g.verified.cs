@@ -14,14 +14,14 @@ namespace G
         /// Default Value: text_editor_20241022
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; } = "text_editor_20241022";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The name of the tool.<br/>
         /// Default Value: str_replace_editor
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; } = "str_replace_editor";
+        public string? Name { get; set; }
 
         /// <summary>
         /// The cache control settings.

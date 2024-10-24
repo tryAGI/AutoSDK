@@ -38,14 +38,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("draft")]
-        public bool? Draft { get; set; } = false;
+        public bool? Draft { get; set; }
 
         /// <summary>
         /// `true` to identify the release as a prerelease. `false` to identify the release as a full release.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prerelease")]
-        public bool? Prerelease { get; set; } = false;
+        public bool? Prerelease { get; set; }
 
         /// <summary>
         /// If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see "[Managing categories for discussions in your repository](https://docs.github.com/discussions/managing-discussions-for-your-community/managing-categories-for-discussions-in-your-repository)."
@@ -58,14 +58,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("generate_release_notes")]
-        public bool? GenerateReleaseNotes { get; set; } = false;
+        public bool? GenerateReleaseNotes { get; set; }
 
         /// <summary>
         /// Specifies whether this release should be set as the latest release for the repository. Drafts and prereleases cannot be set as latest. Defaults to `true` for newly published releases. `legacy` specifies that the latest release should be determined based on the release creation date and higher semantic version.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("make_latest")]
-        public global::G.ReposCreateReleaseRequestMakeLatest? MakeLatest { get; set; } = global::G.ReposCreateReleaseRequestMakeLatest.True;
+        public global::G.ReposCreateReleaseRequestMakeLatest? MakeLatest { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

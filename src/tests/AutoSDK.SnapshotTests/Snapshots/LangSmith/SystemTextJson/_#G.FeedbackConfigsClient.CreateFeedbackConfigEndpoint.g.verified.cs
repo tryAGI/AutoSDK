@@ -128,7 +128,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.FeedbackConfigSchema> CreateFeedbackConfigEndpointAsync(
             string feedbackKey,
             global::G.FeedbackConfig feedbackConfig,
-            bool? isLowerScoreBetter = false,
+            bool? isLowerScoreBetter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.CreateFeedbackConfigSchema

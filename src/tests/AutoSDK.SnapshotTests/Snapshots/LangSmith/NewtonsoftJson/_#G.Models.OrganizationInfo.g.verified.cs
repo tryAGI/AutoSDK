@@ -43,7 +43,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reached_max_workspaces")]
-        public bool? ReachedMaxWorkspaces { get; set; } = false;
+        public bool? ReachedMaxWorkspaces { get; set; }
 
         /// <summary>
         /// Default Value: []
@@ -55,13 +55,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("disabled")]
-        public bool? Disabled { get; set; } = false;
+        public bool? Disabled { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sso_only")]
-        public bool? SsoOnly { get; set; } = false;
+        public bool? SsoOnly { get; set; }
 
         /// <summary>
         /// 

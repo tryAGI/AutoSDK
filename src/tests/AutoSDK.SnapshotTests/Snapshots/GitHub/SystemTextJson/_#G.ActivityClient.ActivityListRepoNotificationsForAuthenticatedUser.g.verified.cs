@@ -61,12 +61,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Thread>> ActivityListRepoNotificationsForAuthenticatedUserAsync(
             string owner,
             string repo,
-            bool? all = false,
-            bool? participating = false,
+            bool? all = default,
+            bool? participating = default,
             global::System.DateTime? since = default,
             global::System.DateTime? before = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

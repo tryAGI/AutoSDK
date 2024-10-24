@@ -55,7 +55,7 @@ namespace G
         /// Default Value: 32768
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_context_length")]
-        public int? MaxContextLength { get; set; } = 32768;
+        public int? MaxContextLength { get; set; }
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.FTModelOutObject? Object { get; set; } = global::G.FTModelOutObject.Model;
+        public global::G.FTModelOutObject? Object { get; set; }
 
         /// <summary>
         /// 

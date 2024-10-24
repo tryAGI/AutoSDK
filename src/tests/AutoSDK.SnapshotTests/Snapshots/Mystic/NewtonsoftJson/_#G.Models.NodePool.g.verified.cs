@@ -43,13 +43,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_spot_instances")]
-        public bool? UseSpotInstances { get; set; } = false;
+        public bool? UseSpotInstances { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_pipelines")]
-        public int? NumPipelines { get; set; } = 0;
+        public int? NumPipelines { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

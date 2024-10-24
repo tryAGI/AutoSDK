@@ -14,7 +14,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectorizeClassName")]
-        public bool? VectorizeClassName { get; set; } = true;
+        public bool? VectorizeClassName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -22,7 +22,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("insecure")]
-        public bool? Insecure { get; set; } = false;
+        public bool? Insecure { get; set; }
 
         /// <summary>
         /// Ollama username.
@@ -41,7 +41,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool? Stream { get; set; } = true;
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

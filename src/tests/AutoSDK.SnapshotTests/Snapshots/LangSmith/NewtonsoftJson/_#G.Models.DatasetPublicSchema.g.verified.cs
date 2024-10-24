@@ -45,7 +45,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("externally_managed")]
-        public bool? ExternallyManaged { get; set; } = false;
+        public bool? ExternallyManaged { get; set; }
 
         /// <summary>
         /// Enum for dataset data types.

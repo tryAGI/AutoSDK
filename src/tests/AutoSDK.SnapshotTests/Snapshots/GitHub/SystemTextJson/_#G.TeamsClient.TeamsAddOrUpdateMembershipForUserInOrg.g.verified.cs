@@ -149,7 +149,7 @@ namespace G
             string org,
             string teamSlug,
             string username,
-            global::G.TeamsAddOrUpdateMembershipForUserInOrgRequestRole? role = global::G.TeamsAddOrUpdateMembershipForUserInOrgRequestRole.Member,
+            global::G.TeamsAddOrUpdateMembershipForUserInOrgRequestRole? role = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.TeamsAddOrUpdateMembershipForUserInOrgRequest

@@ -36,9 +36,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SearchCodeResponse> SearchCodeAsync(
             string q,
             global::G.SearchCodeSort? sort = default,
-            global::G.SearchCodeOrder? order = global::G.SearchCodeOrder.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.SearchCodeOrder? order = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

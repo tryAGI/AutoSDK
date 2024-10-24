@@ -23,8 +23,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse> ActionsListRepoAccessToSelfHostedRunnerGroupInOrgAsync(
             string org,
             int runnerGroupId,
-            int? page = 1,
-            int? perPage = 30,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

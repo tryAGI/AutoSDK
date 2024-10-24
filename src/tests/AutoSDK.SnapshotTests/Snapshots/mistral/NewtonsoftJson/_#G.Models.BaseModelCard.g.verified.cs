@@ -49,7 +49,7 @@ namespace G
         /// Default Value: 32768
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_context_length")]
-        public int? MaxContextLength { get; set; } = 32768;
+        public int? MaxContextLength { get; set; }
 
         /// <summary>
         /// 
@@ -61,19 +61,19 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public string? Object { get; set; } = "model";
+        public string? Object { get; set; }
 
         /// <summary>
         /// Default Value: mistralai
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owned_by")]
-        public string? OwnedBy { get; set; } = "mistralai";
+        public string? OwnedBy { get; set; }
 
         /// <summary>
         /// Default Value: base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.BaseModelCardType? Type { get; set; } = global::G.BaseModelCardType.Base;
+        public global::G.BaseModelCardType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

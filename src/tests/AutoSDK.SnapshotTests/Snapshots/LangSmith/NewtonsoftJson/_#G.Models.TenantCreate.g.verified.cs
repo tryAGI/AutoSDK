@@ -37,7 +37,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_personal")]
-        public bool? IsPersonal { get; set; } = false;
+        public bool? IsPersonal { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

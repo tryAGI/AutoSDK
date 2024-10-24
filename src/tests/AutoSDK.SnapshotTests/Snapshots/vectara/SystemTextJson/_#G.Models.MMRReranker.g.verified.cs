@@ -15,7 +15,7 @@ namespace G
         /// Default Value: mmr
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "mmr";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The diversity bias. Higher values indicate more diversity.<br/>

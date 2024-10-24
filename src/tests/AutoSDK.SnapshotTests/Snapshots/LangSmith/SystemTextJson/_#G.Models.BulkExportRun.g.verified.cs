@@ -42,7 +42,7 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retry_number")]
-        public int? RetryNumber { get; set; } = 0;
+        public int? RetryNumber { get; set; }
 
         /// <summary>
         /// 

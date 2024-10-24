@@ -44,10 +44,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Collections.Generic.IAsyncEnumerable<global::G.PullModelResponse> PullModelAsync(
             string model,
-            bool? insecure = false,
+            bool? insecure = default,
             string? username = default,
             string? password = default,
-            bool? stream = true,
+            bool? stream = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

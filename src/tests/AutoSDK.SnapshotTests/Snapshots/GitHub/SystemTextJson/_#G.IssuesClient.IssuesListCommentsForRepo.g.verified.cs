@@ -62,11 +62,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.IssueComment>> IssuesListCommentsForRepoAsync(
             string owner,
             string repo,
-            global::G.IssuesListCommentsForRepoSort? sort = global::G.IssuesListCommentsForRepoSort.Created,
+            global::G.IssuesListCommentsForRepoSort? sort = default,
             global::G.IssuesListCommentsForRepoDirection? direction = default,
             global::System.DateTime? since = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

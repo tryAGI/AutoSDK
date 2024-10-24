@@ -56,13 +56,13 @@ namespace G
             string repo,
             string? toolName = default,
             string? toolGuid = default,
-            int? page = 1,
-            int? perPage = 30,
+            int? page = default,
+            int? perPage = default,
             int? pr = default,
             string? @ref = default,
             string? sarifId = default,
-            global::G.CodeScanningListRecentAnalysesDirection? direction = global::G.CodeScanningListRecentAnalysesDirection.Desc,
-            global::G.CodeScanningListRecentAnalysesSort? sort = global::G.CodeScanningListRecentAnalysesSort.Created,
+            global::G.CodeScanningListRecentAnalysesDirection? direction = default,
+            global::G.CodeScanningListRecentAnalysesSort? sort = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

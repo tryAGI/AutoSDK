@@ -65,7 +65,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("lora_target_modules")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LoraTargetModulesJsonConverter))]
-        public global::G.LoraTargetModules? LoraTargetModules { get; set; } = global::G.LoraTargetModules.UNSPECIFIED;
+        public global::G.LoraTargetModules? LoraTargetModules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

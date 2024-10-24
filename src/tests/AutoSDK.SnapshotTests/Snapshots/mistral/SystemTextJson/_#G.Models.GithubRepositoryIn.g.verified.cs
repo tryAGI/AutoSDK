@@ -41,13 +41,13 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GithubRepositoryInTypeJsonConverter))]
-        public global::G.GithubRepositoryInType? Type { get; set; } = global::G.GithubRepositoryInType.Github;
+        public global::G.GithubRepositoryInType? Type { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
-        public double? Weight { get; set; } = 1;
+        public double? Weight { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

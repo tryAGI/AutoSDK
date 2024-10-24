@@ -14,14 +14,14 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("offset")]
-        public int? Offset { get; set; } = 0;
+        public int? Offset { get; set; }
 
         /// <summary>
         /// The maximum number of results returned.<br/>
         /// Default Value: 10
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
-        public int? Limit { get; set; } = 10;
+        public int? Limit { get; set; }
 
         /// <summary>
         /// Configuration on the presentation of each document part in the result set.

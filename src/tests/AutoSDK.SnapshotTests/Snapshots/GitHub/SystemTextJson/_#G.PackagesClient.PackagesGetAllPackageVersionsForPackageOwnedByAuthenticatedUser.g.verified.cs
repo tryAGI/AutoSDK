@@ -51,9 +51,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.PackageVersion>> PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserAsync(
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserPackageType packageType,
             string packageName,
-            int? page = 1,
-            int? perPage = 30,
-            global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state = global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState.Active,
+            int? page = default,
+            int? perPage = default,
+            global::G.PackagesGetAllPackageVersionsForPackageOwnedByAuthenticatedUserState? state = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

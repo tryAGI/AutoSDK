@@ -19,7 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CloneTraffic> ReposGetClonesAsync(
             string owner,
             string repo,
-            global::G.ReposGetClonesPer? per = global::G.ReposGetClonesPer.Day,
+            global::G.ReposGetClonesPer? per = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

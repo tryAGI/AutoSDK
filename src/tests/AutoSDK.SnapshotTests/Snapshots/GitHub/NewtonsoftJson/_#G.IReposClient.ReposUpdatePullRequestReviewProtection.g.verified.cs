@@ -64,7 +64,7 @@ namespace G
             bool? dismissStaleReviews = default,
             bool? requireCodeOwnerReviews = default,
             int? requiredApprovingReviewCount = default,
-            bool? requireLastPushApproval = false,
+            bool? requireLastPushApproval = default,
             global::G.ReposUpdatePullRequestReviewProtectionRequestBypassPullRequestAllowances? bypassPullRequestAllowances = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

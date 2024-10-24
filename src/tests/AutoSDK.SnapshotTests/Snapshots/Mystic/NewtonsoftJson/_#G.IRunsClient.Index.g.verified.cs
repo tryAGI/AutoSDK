@@ -33,9 +33,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PaginatedRunGet> IndexAsync(
             string? pipelineId = default,
-            bool? includePointers = false,
-            int? skip = 0,
-            int? limit = 20,
+            bool? includePointers = default,
+            int? skip = default,
+            int? limit = default,
             string? orderBy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

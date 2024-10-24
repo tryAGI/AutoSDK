@@ -32,7 +32,7 @@ namespace G
             global::System.Guid datasetId,
             string splitName,
             global::System.Collections.Generic.IList<global::System.Guid> examples,
-            bool? remove = false,
+            bool? remove = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

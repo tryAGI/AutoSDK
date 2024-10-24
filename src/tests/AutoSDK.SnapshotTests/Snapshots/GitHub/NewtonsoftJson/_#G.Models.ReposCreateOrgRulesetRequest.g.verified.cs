@@ -20,7 +20,7 @@ namespace G
         /// Default Value: branch
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("target")]
-        public global::G.ReposCreateOrgRulesetRequestTarget? Target { get; set; } = global::G.ReposCreateOrgRulesetRequestTarget.Branch;
+        public global::G.ReposCreateOrgRulesetRequestTarget? Target { get; set; }
 
         /// <summary>
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).

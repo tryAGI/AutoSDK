@@ -29,9 +29,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SearchReposResponse> SearchReposAsync(
             string q,
             global::G.SearchReposSort? sort = default,
-            global::G.SearchReposOrder? order = global::G.SearchReposOrder.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.SearchReposOrder? order = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

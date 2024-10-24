@@ -132,7 +132,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ClusterRunResult> SubmitRunAsync(
             string pipeline,
             global::System.Collections.Generic.IList<global::G.RunInput> inputs,
-            bool? asyncRun = false,
+            bool? asyncRun = default,
             bool? waitForResources = default,
             string? runId = default,
             global::System.Threading.CancellationToken cancellationToken = default)

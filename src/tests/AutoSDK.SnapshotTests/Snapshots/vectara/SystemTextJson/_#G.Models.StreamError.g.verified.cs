@@ -15,7 +15,7 @@ namespace G
         /// Default Value: error
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "error";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The error messages.

@@ -43,7 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsClassDeleteAsync(
             string className,
             global::System.Guid id,
-            global::G.ObjectsClassDeleteConsistencyLevel? consistencyLevel = global::G.ObjectsClassDeleteConsistencyLevel.QUORUM,
+            global::G.ObjectsClassDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

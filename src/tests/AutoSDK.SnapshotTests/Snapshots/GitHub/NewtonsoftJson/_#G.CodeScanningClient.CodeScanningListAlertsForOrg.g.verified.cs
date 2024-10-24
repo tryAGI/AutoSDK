@@ -83,11 +83,11 @@ namespace G
             string? toolGuid = default,
             string? before = default,
             string? after = default,
-            int? page = 1,
-            int? perPage = 30,
-            global::G.CodeScanningListAlertsForOrgDirection? direction = global::G.CodeScanningListAlertsForOrgDirection.Desc,
+            int? page = default,
+            int? perPage = default,
+            global::G.CodeScanningListAlertsForOrgDirection? direction = default,
             global::G.CodeScanningAlertStateQuery? state = default,
-            global::G.CodeScanningListAlertsForOrgSort? sort = global::G.CodeScanningListAlertsForOrgSort.Created,
+            global::G.CodeScanningListAlertsForOrgSort? sort = default,
             global::G.CodeScanningAlertSeverity? severity = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

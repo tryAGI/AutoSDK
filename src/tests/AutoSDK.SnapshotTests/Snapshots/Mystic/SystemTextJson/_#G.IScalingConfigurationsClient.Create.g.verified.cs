@@ -36,8 +36,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ScalingConfigGet> CreateAsync(
             string name,
             object args,
-            int? minimumNodes = 0,
-            int? maximumNodes = 100,
+            int? minimumNodes = default,
+            int? maximumNodes = default,
             global::G.ScalingConfigType type = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

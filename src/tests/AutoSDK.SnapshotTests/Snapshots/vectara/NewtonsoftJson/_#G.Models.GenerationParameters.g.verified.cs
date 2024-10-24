@@ -39,7 +39,7 @@ namespace G
         /// Default Value: 5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_used_search_results")]
-        public int? MaxUsedSearchResults { get; set; } = 5;
+        public int? MaxUsedSearchResults { get; set; }
 
         /// <summary>
         /// Vectara manages both system and user roles and prompts for the generative<br/>
@@ -94,7 +94,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_language")]
-        public global::G.Language? ResponseLanguage { get; set; } = global::G.Language.Auto;
+        public global::G.Language? ResponseLanguage { get; set; }
 
         /// <summary>
         /// The parameters for the model.  These are currently a Scale-only feature.<br/>
@@ -117,7 +117,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enable_factual_consistency_score")]
-        public bool? EnableFactualConsistencyScore { get; set; } = true;
+        public bool? EnableFactualConsistencyScore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

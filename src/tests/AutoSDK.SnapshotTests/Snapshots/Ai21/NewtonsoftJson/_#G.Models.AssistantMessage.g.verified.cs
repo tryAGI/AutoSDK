@@ -23,7 +23,7 @@ namespace G
         /// Default Value: assistant
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.AssistantMessageRole? Role { get; set; } = global::G.AssistantMessageRole.Assistant;
+        public global::G.AssistantMessageRole? Role { get; set; }
 
         /// <summary>
         /// 

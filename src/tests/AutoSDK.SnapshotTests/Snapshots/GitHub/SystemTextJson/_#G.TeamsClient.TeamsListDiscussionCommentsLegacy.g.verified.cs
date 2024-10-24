@@ -54,9 +54,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TeamDiscussionComment>> TeamsListDiscussionCommentsLegacyAsync(
             int teamId,
             int discussionNumber,
-            global::G.TeamsListDiscussionCommentsLegacyDirection? direction = global::G.TeamsListDiscussionCommentsLegacyDirection.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.TeamsListDiscussionCommentsLegacyDirection? direction = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -123,7 +123,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ThreadSubscription> ActivitySetThreadSubscriptionAsync(
             int threadId,
-            bool? ignored = false,
+            bool? ignored = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.ActivitySetThreadSubscriptionRequest

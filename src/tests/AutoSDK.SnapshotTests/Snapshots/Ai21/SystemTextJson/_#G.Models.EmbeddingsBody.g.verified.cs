@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EmbedTypeJsonConverter))]
-        public global::G.EmbedType? Type { get; set; } = global::G.EmbedType.Segment;
+        public global::G.EmbedType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

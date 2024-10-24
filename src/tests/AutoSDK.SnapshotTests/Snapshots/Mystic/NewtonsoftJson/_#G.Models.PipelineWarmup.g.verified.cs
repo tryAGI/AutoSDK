@@ -19,7 +19,7 @@ namespace G
         /// Default Value: 300
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("duration")]
-        public int? Duration { get; set; } = 300;
+        public int? Duration { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

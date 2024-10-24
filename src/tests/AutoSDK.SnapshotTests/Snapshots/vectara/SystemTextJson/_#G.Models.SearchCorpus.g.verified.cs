@@ -39,7 +39,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("semantics")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SearchSemanticsJsonConverter))]
-        public global::G.SearchSemantics? Semantics { get; set; } = global::G.SearchSemantics.Default;
+        public global::G.SearchSemantics? Semantics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

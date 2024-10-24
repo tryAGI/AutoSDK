@@ -74,7 +74,7 @@ namespace G
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Files, x => x))}]"),
                 name: "files");
-            if (request.RemoveBackgroundNoise != false)
+            if (request.RemoveBackgroundNoise != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.RemoveBackgroundNoise}"),
@@ -169,7 +169,7 @@ namespace G
             string name,
             global::System.Collections.Generic.IList<byte[]> files,
             string? xiApiKey = default,
-            bool? removeBackgroundNoise = false,
+            bool? removeBackgroundNoise = default,
             string? description = default,
             string? labels = default,
             global::System.Threading.CancellationToken cancellationToken = default)

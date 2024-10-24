@@ -74,7 +74,7 @@ namespace G
         /// Default Value: GENERAL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.CustomModelType? Type { get; set; } = global::G.CustomModelType.GENERAL;
+        public global::G.CustomModelType? Type { get; set; }
 
         /// <summary>
         /// 

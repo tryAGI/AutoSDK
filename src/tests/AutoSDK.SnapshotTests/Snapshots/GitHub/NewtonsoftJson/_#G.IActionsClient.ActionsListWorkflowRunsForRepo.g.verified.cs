@@ -39,10 +39,10 @@ namespace G
             string? branch = default,
             string? @event = default,
             global::G.ActionsListWorkflowRunsForRepoStatus? status = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.DateTime? created = default,
-            bool? excludePullRequests = false,
+            bool? excludePullRequests = default,
             int? checkSuiteId = default,
             string? headSha = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -38,7 +38,7 @@ namespace G
         /// Default Value: STARTED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.BackupCreateStatusResponseStatus? Status { get; set; } = global::G.BackupCreateStatusResponseStatus.STARTED;
+        public global::G.BackupCreateStatusResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

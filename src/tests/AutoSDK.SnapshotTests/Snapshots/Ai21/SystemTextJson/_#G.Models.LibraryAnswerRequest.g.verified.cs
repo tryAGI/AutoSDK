@@ -59,7 +59,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("retrievalStrategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RetrievalStrategyJsonConverter))]
-        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; } = global::G.RetrievalStrategy.Default;
+        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; }
 
         /// <summary>
         /// 

@@ -75,7 +75,7 @@ namespace G
             string headSha,
             string? detailsUrl = default,
             string? externalId = default,
-            global::G.ChecksCreateRequestStatus? status = global::G.ChecksCreateRequestStatus.Queued,
+            global::G.ChecksCreateRequestStatus? status = default,
             global::System.DateTime? startedAt = default,
             global::G.ChecksCreateRequestConclusion? conclusion = default,
             global::System.DateTime? completedAt = default,

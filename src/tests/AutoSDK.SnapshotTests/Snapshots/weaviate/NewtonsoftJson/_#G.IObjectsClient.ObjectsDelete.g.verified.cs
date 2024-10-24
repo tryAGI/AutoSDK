@@ -19,7 +19,7 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsDeleteAsync(
             global::System.Guid id,
-            global::G.ObjectsDeleteConsistencyLevel? consistencyLevel = global::G.ObjectsDeleteConsistencyLevel.QUORUM,
+            global::G.ObjectsDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

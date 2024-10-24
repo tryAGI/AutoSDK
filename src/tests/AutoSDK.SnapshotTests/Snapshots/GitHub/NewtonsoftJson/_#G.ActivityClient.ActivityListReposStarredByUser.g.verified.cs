@@ -53,10 +53,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.StarredRepository>, global::System.Collections.Generic.IList<global::G.Repository>>> ActivityListReposStarredByUserAsync(
             string username,
-            global::G.ActivityListReposStarredByUserSort? sort = global::G.ActivityListReposStarredByUserSort.Created,
-            global::G.ActivityListReposStarredByUserDirection? direction = global::G.ActivityListReposStarredByUserDirection.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.ActivityListReposStarredByUserSort? sort = default,
+            global::G.ActivityListReposStarredByUserDirection? direction = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

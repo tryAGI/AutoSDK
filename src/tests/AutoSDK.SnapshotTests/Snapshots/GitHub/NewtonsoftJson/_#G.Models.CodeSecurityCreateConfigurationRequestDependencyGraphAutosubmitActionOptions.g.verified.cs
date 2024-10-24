@@ -14,7 +14,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("labeled_runners")]
-        public bool? LabeledRunners { get; set; } = false;
+        public bool? LabeledRunners { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

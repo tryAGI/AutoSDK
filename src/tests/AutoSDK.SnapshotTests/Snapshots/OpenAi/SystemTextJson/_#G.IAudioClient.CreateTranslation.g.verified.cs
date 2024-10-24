@@ -46,8 +46,8 @@ namespace G
             string filename,
             global::G.AnyOf<string, global::G.CreateTranslationRequestModel?> model,
             string? prompt = default,
-            string? responseFormat = "json",
-            double? temperature = 0,
+            string? responseFormat = default,
+            double? temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

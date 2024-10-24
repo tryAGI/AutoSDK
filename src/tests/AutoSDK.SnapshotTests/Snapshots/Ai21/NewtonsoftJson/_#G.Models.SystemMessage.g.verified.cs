@@ -23,7 +23,7 @@ namespace G
         /// Default Value: system
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.SystemMessageRole? Role { get; set; } = global::G.SystemMessageRole.System;
+        public global::G.SystemMessageRole? Role { get; set; }
 
         /// <summary>
         /// 

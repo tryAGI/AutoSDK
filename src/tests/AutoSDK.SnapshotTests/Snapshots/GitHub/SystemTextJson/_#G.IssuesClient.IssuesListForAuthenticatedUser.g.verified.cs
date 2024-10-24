@@ -70,14 +70,14 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Issue>> IssuesListForAuthenticatedUserAsync(
-            global::G.IssuesListForAuthenticatedUserFilter? filter = global::G.IssuesListForAuthenticatedUserFilter.Assigned,
-            global::G.IssuesListForAuthenticatedUserState? state = global::G.IssuesListForAuthenticatedUserState.Open,
+            global::G.IssuesListForAuthenticatedUserFilter? filter = default,
+            global::G.IssuesListForAuthenticatedUserState? state = default,
             string? labels = default,
-            global::G.IssuesListForAuthenticatedUserSort? sort = global::G.IssuesListForAuthenticatedUserSort.Created,
-            global::G.IssuesListForAuthenticatedUserDirection? direction = global::G.IssuesListForAuthenticatedUserDirection.Desc,
+            global::G.IssuesListForAuthenticatedUserSort? sort = default,
+            global::G.IssuesListForAuthenticatedUserDirection? direction = default,
             global::System.DateTime? since = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -162,7 +162,7 @@ namespace G
             string? body = default,
             bool? draft = default,
             bool? prerelease = default,
-            global::G.ReposUpdateReleaseRequestMakeLatest? makeLatest = global::G.ReposUpdateReleaseRequestMakeLatest.True,
+            global::G.ReposUpdateReleaseRequestMakeLatest? makeLatest = default,
             string? discussionCategoryName = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

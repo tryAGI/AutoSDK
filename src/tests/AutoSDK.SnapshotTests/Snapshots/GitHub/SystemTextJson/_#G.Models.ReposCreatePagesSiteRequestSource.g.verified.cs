@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReposCreatePagesSiteRequestSourcePathJsonConverter))]
-        public global::G.ReposCreatePagesSiteRequestSourcePath? Path { get; set; } = global::G.ReposCreatePagesSiteRequestSourcePath.x;
+        public global::G.ReposCreatePagesSiteRequestSourcePath? Path { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

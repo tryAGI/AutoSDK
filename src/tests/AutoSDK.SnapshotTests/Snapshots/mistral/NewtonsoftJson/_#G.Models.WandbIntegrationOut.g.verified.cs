@@ -31,7 +31,7 @@ namespace G
         /// Default Value: wandb
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.WandbIntegrationOutType? Type { get; set; } = global::G.WandbIntegrationOutType.Wandb;
+        public global::G.WandbIntegrationOutType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

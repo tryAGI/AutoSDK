@@ -30,7 +30,7 @@ namespace G
         /// Default Value: document
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_type")]
-        public global::G.TextEmbeddingAPIInputInputType? InputType { get; set; } = global::G.TextEmbeddingAPIInputInputType.Document;
+        public global::G.TextEmbeddingAPIInputInputType? InputType { get; set; }
 
         /// <summary>
         /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`

@@ -140,7 +140,7 @@ namespace G
             string? xClientName = default,
             bool? stream = default,
             int? seed = default,
-            global::G.GenerateRequestReturnLikelihoods? returnLikelihoods = global::G.GenerateRequestReturnLikelihoods.NONE,
+            global::G.GenerateRequestReturnLikelihoods? returnLikelihoods = default,
             bool? rawPrompting = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

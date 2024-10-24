@@ -43,7 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsClassHeadAsync(
             string className,
             global::System.Guid id,
-            global::G.ObjectsClassHeadConsistencyLevel? consistencyLevel = global::G.ObjectsClassHeadConsistencyLevel.QUORUM,
+            global::G.ObjectsClassHeadConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

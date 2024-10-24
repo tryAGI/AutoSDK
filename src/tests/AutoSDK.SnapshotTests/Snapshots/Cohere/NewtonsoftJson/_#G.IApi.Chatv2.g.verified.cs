@@ -102,8 +102,8 @@ namespace G
             int? seed = default,
             float? frequencyPenalty = default,
             float? presencePenalty = default,
-            float? k = 0F,
-            float? p = 0.75F,
+            float? k = default,
+            float? p = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

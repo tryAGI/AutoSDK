@@ -167,7 +167,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReviewCommentSideJsonConverter))]
-        public global::G.ReviewCommentSide? Side { get; set; } = global::G.ReviewCommentSide.RIGHT;
+        public global::G.ReviewCommentSide? Side { get; set; }
 
         /// <summary>
         /// The side of the first line of the range for a multi-line comment.<br/>
@@ -175,7 +175,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReviewCommentStartSideJsonConverter))]
-        public global::G.ReviewCommentStartSide? StartSide { get; set; } = global::G.ReviewCommentStartSide.RIGHT;
+        public global::G.ReviewCommentStartSide? StartSide { get; set; }
 
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>

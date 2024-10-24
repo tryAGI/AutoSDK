@@ -16,7 +16,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthTokenTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.AuthTokenType Type { get; set; }
+        public required global::G.AuthTokenType Type { get; set; } = global::G.AuthTokenType.Noscheme;
 
         /// <summary>
         /// The token that will be used in the HTTP Authorization header when making requests to the connector. This field is encrypted at rest and never returned in a response.

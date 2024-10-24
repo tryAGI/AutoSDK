@@ -35,8 +35,8 @@ namespace G
             string query,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
-            int? limit = 10,
-            int? offset = 0,
+            int? limit = default,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

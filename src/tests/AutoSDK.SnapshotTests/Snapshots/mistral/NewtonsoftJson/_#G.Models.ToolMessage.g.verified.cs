@@ -25,7 +25,7 @@ namespace G
         /// Default Value: tool
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ToolMessageRole? Role { get; set; } = global::G.ToolMessageRole.Tool;
+        public global::G.ToolMessageRole? Role { get; set; }
 
         /// <summary>
         /// 

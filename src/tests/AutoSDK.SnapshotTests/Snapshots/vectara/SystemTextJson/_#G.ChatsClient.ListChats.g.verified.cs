@@ -43,7 +43,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListChatsResponse> ListChatsAsync(
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
-            int? limit = 1000,
+            int? limit = default,
             string? pageKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

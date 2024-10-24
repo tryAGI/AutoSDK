@@ -62,7 +62,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; } = 1;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// empty<br/>
@@ -70,7 +70,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
-        public double? TopP { get; set; } = 1;
+        public double? TopP { get; set; }
 
         /// <summary>
         /// If `true`, returns a stream of events that happen during the Run as server-sent events, terminating when the Run enters a terminal state with a `data: [DONE]` message.

@@ -41,8 +41,8 @@ namespace G
             global::G.AnyOf<string, global::G.CreateSpeechRequestModel?> model,
             string input,
             global::G.CreateSpeechRequestVoice voice,
-            global::G.CreateSpeechRequestResponseFormat? responseFormat = global::G.CreateSpeechRequestResponseFormat.Mp3,
-            double? speed = 1,
+            global::G.CreateSpeechRequestResponseFormat? responseFormat = default,
+            double? speed = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

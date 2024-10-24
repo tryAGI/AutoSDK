@@ -30,8 +30,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Activity>> ReposListActivitiesAsync(
             string owner,
             string repo,
-            global::G.ReposListActivitiesDirection? direction = global::G.ReposListActivitiesDirection.Desc,
-            int? perPage = 30,
+            global::G.ReposListActivitiesDirection? direction = default,
+            int? perPage = default,
             string? before = default,
             string? after = default,
             string? @ref = default,

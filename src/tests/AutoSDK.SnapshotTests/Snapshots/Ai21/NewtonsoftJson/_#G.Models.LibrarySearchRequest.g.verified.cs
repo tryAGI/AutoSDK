@@ -43,13 +43,13 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrievalStrategy")]
-        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; } = global::G.RetrievalStrategy.Default;
+        public global::G.RetrievalStrategy? RetrievalStrategy { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maxNeighbors")]
-        public int? MaxNeighbors { get; set; } = 1;
+        public int? MaxNeighbors { get; set; }
 
         /// <summary>
         /// 

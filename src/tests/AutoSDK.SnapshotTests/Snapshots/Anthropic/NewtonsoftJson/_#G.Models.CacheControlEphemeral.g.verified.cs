@@ -13,7 +13,7 @@ namespace G
         /// Default Value: ephemeral
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.CacheControlEphemeralType? Type { get; set; } = global::G.CacheControlEphemeralType.Ephemeral;
+        public global::G.CacheControlEphemeralType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

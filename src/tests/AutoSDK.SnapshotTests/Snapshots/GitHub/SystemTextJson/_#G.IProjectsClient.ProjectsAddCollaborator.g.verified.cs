@@ -36,7 +36,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.BasicError> ProjectsAddCollaboratorAsync(
             int projectId,
             string username,
-            global::G.ProjectsAddCollaboratorRequestPermission? permission = global::G.ProjectsAddCollaboratorRequestPermission.Write,
+            global::G.ProjectsAddCollaboratorRequestPermission? permission = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

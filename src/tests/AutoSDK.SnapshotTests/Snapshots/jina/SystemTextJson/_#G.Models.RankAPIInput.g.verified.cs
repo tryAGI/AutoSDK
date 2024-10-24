@@ -51,7 +51,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_documents")]
-        public bool? ReturnDocuments { get; set; } = true;
+        public bool? ReturnDocuments { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

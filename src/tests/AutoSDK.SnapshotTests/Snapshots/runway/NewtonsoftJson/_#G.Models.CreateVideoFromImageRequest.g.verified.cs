@@ -38,21 +38,21 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("watermark")]
-        public bool? Watermark { get; set; } = false;
+        public bool? Watermark { get; set; }
 
         /// <summary>
         /// Duration of the video in seconds.<br/>
         /// Default Value: 10
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("duration")]
-        public int? Duration { get; set; } = 10;
+        public int? Duration { get; set; }
 
         /// <summary>
         /// Aspect ratio of the video.<br/>
         /// Default Value: 16:9
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ratio")]
-        public global::G.CreateVideoFromImageRequestRatio? Ratio { get; set; } = global::G.CreateVideoFromImageRequestRatio.x16_9;
+        public global::G.CreateVideoFromImageRequestRatio? Ratio { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

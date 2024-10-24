@@ -29,8 +29,8 @@ namespace G
             string owner,
             string repo,
             string commitSha,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

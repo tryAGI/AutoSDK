@@ -51,8 +51,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AppSchemasPipelineGetDetailed> RetrieveByPointerAsync(
             string pointer,
-            bool? includePointers = false,
-            bool? includeExtras = false,
+            bool? includePointers = default,
+            bool? includeExtras = default,
             string? pipelineId = default,
             string? pipelineIdOrPointer = default,
             global::System.Threading.CancellationToken cancellationToken = default)

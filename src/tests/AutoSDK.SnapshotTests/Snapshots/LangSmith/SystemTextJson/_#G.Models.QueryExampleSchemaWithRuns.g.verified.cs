@@ -32,13 +32,13 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("offset")]
-        public int? Offset { get; set; } = 0;
+        public int? Offset { get; set; }
 
         /// <summary>
         /// Default Value: 20
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; } = 20;
+        public int? Limit { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

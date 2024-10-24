@@ -33,7 +33,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private")]
-        public bool? Private { get; set; } = false;
+        public bool? Private { get; set; }
 
         /// <summary>
         /// The visibility of the repository.
@@ -56,28 +56,28 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_issues")]
-        public bool? HasIssues { get; set; } = true;
+        public bool? HasIssues { get; set; }
 
         /// <summary>
         /// Either `true` to enable projects for this repository or `false` to disable them. **Note:** If you're creating a repository in an organization that has disabled repository projects, the default is `false`, and if you pass `true`, the API returns an error.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_projects")]
-        public bool? HasProjects { get; set; } = true;
+        public bool? HasProjects { get; set; }
 
         /// <summary>
         /// Either `true` to enable the wiki for this repository or `false` to disable it.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_wiki")]
-        public bool? HasWiki { get; set; } = true;
+        public bool? HasWiki { get; set; }
 
         /// <summary>
         /// Either `true` to make this repo available as a template repository or `false` to prevent it.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_template")]
-        public bool? IsTemplate { get; set; } = false;
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// Updates the default branch for this repository.
@@ -90,42 +90,42 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
-        public bool? AllowSquashMerge { get; set; } = true;
+        public bool? AllowSquashMerge { get; set; }
 
         /// <summary>
         /// Either `true` to allow merging pull requests with a merge commit, or `false` to prevent merging pull requests with merge commits.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
-        public bool? AllowMergeCommit { get; set; } = true;
+        public bool? AllowMergeCommit { get; set; }
 
         /// <summary>
         /// Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
-        public bool? AllowRebaseMerge { get; set; } = true;
+        public bool? AllowRebaseMerge { get; set; }
 
         /// <summary>
         /// Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
-        public bool? AllowAutoMerge { get; set; } = false;
+        public bool? AllowAutoMerge { get; set; }
 
         /// <summary>
         /// Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
-        public bool? DeleteBranchOnMerge { get; set; } = false;
+        public bool? DeleteBranchOnMerge { get; set; }
 
         /// <summary>
         /// Either `true` to always allow a pull request head branch that is behind its base branch to be updated even if it is not required to be up to date before merging, or false otherwise.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_update_branch")]
-        public bool? AllowUpdateBranch { get; set; } = false;
+        public bool? AllowUpdateBranch { get; set; }
 
         /// <summary>
         /// Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.<br/>
@@ -133,7 +133,7 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_squash_pr_title_as_default")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public bool? UseSquashPrTitleAsDefault { get; set; } = false;
+        public bool? UseSquashPrTitleAsDefault { get; set; }
 
         /// <summary>
         /// Required when using `squash_merge_commit_message`.<br/>
@@ -176,21 +176,21 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived")]
-        public bool? Archived { get; set; } = false;
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// Either `true` to allow private forks, or `false` to prevent private forks.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_forking")]
-        public bool? AllowForking { get; set; } = false;
+        public bool? AllowForking { get; set; }
 
         /// <summary>
         /// Either `true` to require contributors to sign off on web-based commits, or `false` to not require contributors to sign off on web-based commits.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
-        public bool? WebCommitSignoffRequired { get; set; } = false;
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

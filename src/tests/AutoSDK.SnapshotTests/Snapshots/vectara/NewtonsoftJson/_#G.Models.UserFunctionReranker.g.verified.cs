@@ -15,7 +15,7 @@ namespace G
         /// Default Value: userfn
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; } = "userfn";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The user defined function.<br/>

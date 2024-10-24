@@ -76,9 +76,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateSpeechToSpeechByVoiceIdAsync(
             string voiceId,
             global::G.BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost request,
-            bool? enableLogging = true,
+            bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            string? outputFormat = "mp3_44100_128",
+            string? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -117,7 +117,7 @@ namespace G
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"{voiceId}"),
                 name: "voice_id");
-            if (enableLogging != true)
+            if (enableLogging != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{enableLogging}"),
@@ -129,7 +129,7 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{optimizeStreamingLatency}"),
                     name: "optimize_streaming_latency");
             } 
-            if (outputFormat != "mp3_44100_128")
+            if (outputFormat != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{outputFormat}"),
@@ -151,7 +151,7 @@ namespace G
                 },
                 name: "audio",
                 fileName: request.Audioname ?? string.Empty);
-            if (request.ModelId != "eleven_english_sts_v2")
+            if (request.ModelId != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ModelId}"),
@@ -281,11 +281,11 @@ namespace G
             string voiceId,
             byte[] audio,
             string audioname,
-            bool? enableLogging = true,
+            bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            string? outputFormat = "mp3_44100_128",
+            string? outputFormat = default,
             string? xiApiKey = default,
-            string? modelId = "eleven_english_sts_v2",
+            string? modelId = default,
             string? voiceSettings = default,
             int? seed = default,
             global::System.Threading.CancellationToken cancellationToken = default)

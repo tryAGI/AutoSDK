@@ -21,7 +21,7 @@ namespace G
         /// Example: markdown
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mode")]
-        public global::G.MarkdownRenderRequestMode? Mode { get; set; } = global::G.MarkdownRenderRequestMode.Markdown;
+        public global::G.MarkdownRenderRequestMode? Mode { get; set; }
 
         /// <summary>
         /// The repository context to use when creating references in `gfm` mode.  For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.

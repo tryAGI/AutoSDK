@@ -21,7 +21,7 @@ namespace G
         /// Default Value: image
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "image";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The cache control settings.

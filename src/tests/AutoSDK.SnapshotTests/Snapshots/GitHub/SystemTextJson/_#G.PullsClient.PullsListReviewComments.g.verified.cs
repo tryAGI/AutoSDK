@@ -66,11 +66,11 @@ namespace G
             string owner,
             string repo,
             int pullNumber,
-            global::G.PullsListReviewCommentsSort? sort = global::G.PullsListReviewCommentsSort.Created,
+            global::G.PullsListReviewCommentsSort? sort = default,
             global::G.PullsListReviewCommentsDirection? direction = default,
             global::System.DateTime? since = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

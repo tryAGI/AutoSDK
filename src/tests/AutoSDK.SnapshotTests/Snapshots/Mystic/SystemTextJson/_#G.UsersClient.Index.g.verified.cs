@@ -40,8 +40,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.PaginatedTeamInviteGet> IndexAsync(
-            int? skip = 0,
-            int? limit = 20,
+            int? skip = default,
+            int? limit = default,
             string? orderBy = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

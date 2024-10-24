@@ -34,7 +34,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TextEmbeddingAPIInputInputTypeJsonConverter))]
-        public global::G.TextEmbeddingAPIInputInputType? InputType { get; set; } = global::G.TextEmbeddingAPIInputInputType.Document;
+        public global::G.TextEmbeddingAPIInputInputType? InputType { get; set; }
 
         /// <summary>
         /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`

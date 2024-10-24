@@ -55,7 +55,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_404")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Custom404 { get; set; }
+        public required bool Custom404 { get; set; } = false;
 
         /// <summary>
         /// The web address the Page can be accessed from.<br/>

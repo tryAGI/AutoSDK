@@ -34,7 +34,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("deprecated")]
-        public bool? Deprecated { get; set; } = true;
+        public bool? Deprecated { get; set; }
 
         /// <summary>
         /// 
@@ -68,7 +68,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LegacyJobMetadataOutObjectJsonConverter))]
-        public global::G.LegacyJobMetadataOutObject? Object { get; set; } = global::G.LegacyJobMetadataOutObject.JobMetadata;
+        public global::G.LegacyJobMetadataOutObject? Object { get; set; }
 
         /// <summary>
         /// The total number of tokens used during the fine-tuning process.<br/>

@@ -14,7 +14,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("async")]
-        public bool? Async { get; set; } = false;
+        public bool? Async { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

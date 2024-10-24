@@ -13,7 +13,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived")]
-        public bool? Archived { get; set; } = false;
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 
@@ -25,7 +25,7 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.UnarchiveFTModelOutObject? Object { get; set; } = global::G.UnarchiveFTModelOutObject.Model;
+        public global::G.UnarchiveFTModelOutObject? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

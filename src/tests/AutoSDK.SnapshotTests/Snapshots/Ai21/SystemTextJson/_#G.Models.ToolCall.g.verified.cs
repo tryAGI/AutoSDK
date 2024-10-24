@@ -23,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolCallTypeJsonConverter))]
-        public global::G.ToolCallType? Type { get; set; } = global::G.ToolCallType.Function;
+        public global::G.ToolCallType? Type { get; set; }
 
         /// <summary>
         /// 

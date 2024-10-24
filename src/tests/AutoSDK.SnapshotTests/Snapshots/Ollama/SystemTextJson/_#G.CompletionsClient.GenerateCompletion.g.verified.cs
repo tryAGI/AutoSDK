@@ -148,7 +148,7 @@ namespace G
             global::G.RequestOptions? options = default,
             global::G.ResponseFormat? format = default,
             bool? raw = default,
-            bool? stream = true,
+            bool? stream = default,
             int? keepAlive = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {

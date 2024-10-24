@@ -143,7 +143,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TeamMembership> TeamsAddOrUpdateMembershipForUserLegacyAsync(
             int teamId,
             string username,
-            global::G.TeamsAddOrUpdateMembershipForUserLegacyRequestRole? role = global::G.TeamsAddOrUpdateMembershipForUserLegacyRequestRole.Member,
+            global::G.TeamsAddOrUpdateMembershipForUserLegacyRequestRole? role = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.TeamsAddOrUpdateMembershipForUserLegacyRequest

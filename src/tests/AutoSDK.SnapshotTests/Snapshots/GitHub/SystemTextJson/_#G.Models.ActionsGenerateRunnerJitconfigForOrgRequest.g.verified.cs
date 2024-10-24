@@ -35,7 +35,7 @@ namespace G
         /// Default Value: _work
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("work_folder")]
-        public string? WorkFolder { get; set; } = "_work";
+        public string? WorkFolder { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

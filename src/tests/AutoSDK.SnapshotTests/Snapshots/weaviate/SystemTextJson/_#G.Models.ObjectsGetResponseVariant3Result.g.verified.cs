@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ObjectsGetResponseVariant3ResultStatusJsonConverter))]
-        public global::G.ObjectsGetResponseVariant3ResultStatus? Status { get; set; } = global::G.ObjectsGetResponseVariant3ResultStatus.SUCCESS;
+        public global::G.ObjectsGetResponseVariant3ResultStatus? Status { get; set; }
 
         /// <summary>
         /// An error response given by Weaviate end-points.

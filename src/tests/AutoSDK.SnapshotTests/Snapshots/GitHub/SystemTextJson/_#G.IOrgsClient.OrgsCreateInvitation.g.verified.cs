@@ -50,7 +50,7 @@ namespace G
             string org,
             int? inviteeId = default,
             string? email = default,
-            global::G.OrgsCreateInvitationRequestRole? role = global::G.OrgsCreateInvitationRequestRole.DirectMember,
+            global::G.OrgsCreateInvitationRequestRole? role = default,
             global::System.Collections.Generic.IList<int>? teamIds = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

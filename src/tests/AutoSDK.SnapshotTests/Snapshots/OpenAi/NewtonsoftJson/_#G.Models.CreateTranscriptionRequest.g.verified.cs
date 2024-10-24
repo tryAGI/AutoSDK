@@ -47,14 +47,14 @@ namespace G
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.CreateTranscriptionRequestResponseFormat? ResponseFormat { get; set; } = global::G.CreateTranscriptionRequestResponseFormat.Json;
+        public global::G.CreateTranscriptionRequestResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double? Temperature { get; set; } = 0;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// The timestamp granularities to populate for this transcription. `response_format` must be set `verbose_json` to use timestamp granularities. Either or both of these options are supported: `word`, or `segment`. Note: There is no additional latency for segment timestamps, but generating word timestamps incurs additional latency.<br/>

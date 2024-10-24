@@ -48,7 +48,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.OrgsListAttestationsResponse> OrgsListAttestationsAsync(
             string org,
             string subjectDigest,
-            int? perPage = 30,
+            int? perPage = default,
             string? before = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)

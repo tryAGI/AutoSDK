@@ -19,7 +19,7 @@ namespace G
         /// Default Value: latest
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tag")]
-        public string? Tag { get; set; } = "latest";
+        public string? Tag { get; set; }
 
         /// <summary>
         /// 

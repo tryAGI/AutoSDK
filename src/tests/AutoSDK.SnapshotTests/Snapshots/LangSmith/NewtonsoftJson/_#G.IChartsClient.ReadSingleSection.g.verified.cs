@@ -36,7 +36,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CustomChartsSection> ReadSingleSectionAsync(
             global::System.Guid sectionId,
             global::System.DateTime startTime,
-            string? timezone = "UTC",
+            string? timezone = default,
             global::System.DateTime? endTime = default,
             global::G.TimedeltaInput? stride = default,
             global::System.Threading.CancellationToken cancellationToken = default);

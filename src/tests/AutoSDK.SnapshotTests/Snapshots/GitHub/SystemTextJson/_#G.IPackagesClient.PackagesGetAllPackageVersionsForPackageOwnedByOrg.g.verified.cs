@@ -28,9 +28,9 @@ namespace G
             global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgPackageType packageType,
             string packageName,
             string org,
-            int? page = 1,
-            int? perPage = 30,
-            global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state = global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState.Active,
+            int? page = default,
+            int? perPage = default,
+            global::G.PackagesGetAllPackageVersionsForPackageOwnedByOrgState? state = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -19,7 +19,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.RunPublicSchema> GetSharedRunByIdAsync(
             global::System.Guid id,
             global::System.Guid shareToken,
-            bool? excludeS3StoredAttributes = false,
+            bool? excludeS3StoredAttributes = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -24,7 +24,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.HookDeliveryItem>> OrgsListWebhookDeliveriesAsync(
             string org,
             int hookId,
-            int? perPage = 30,
+            int? perPage = default,
             string? cursor = default,
             bool? redelivery = default,
             global::System.Threading.CancellationToken cancellationToken = default);

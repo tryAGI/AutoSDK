@@ -13,13 +13,13 @@ namespace G
         /// Default Value: Default API key
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string? Description { get; set; } = "Default API key";
+        public string? Description { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
-        public bool? ReadOnly { get; set; } = false;
+        public bool? ReadOnly { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

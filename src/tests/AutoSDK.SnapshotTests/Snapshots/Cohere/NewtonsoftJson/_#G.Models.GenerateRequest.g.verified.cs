@@ -61,7 +61,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncate")]
-        public global::G.GenerateRequestTruncate? Truncate { get; set; } = global::G.GenerateRequestTruncate.END;
+        public global::G.GenerateRequestTruncate? Truncate { get; set; }
 
         /// <summary>
         /// A non-negative float that tunes the degree of randomness in generation. Lower temperatures mean less random generations. See [Temperature](/temperature-wiki) for more details.<br/>
@@ -144,7 +144,7 @@ namespace G
         /// Default Value: NONE
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("return_likelihoods")]
-        public global::G.GenerateRequestReturnLikelihoods? ReturnLikelihoods { get; set; } = global::G.GenerateRequestReturnLikelihoods.NONE;
+        public global::G.GenerateRequestReturnLikelihoods? ReturnLikelihoods { get; set; }
 
         /// <summary>
         /// When enabled, the user's prompt will be sent to the model without any pre-processing.

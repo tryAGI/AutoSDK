@@ -170,7 +170,7 @@ namespace G
             string className,
             string class1,
             global::G.ClassVectorConfig? vectorConfig = default,
-            global::G.VectorIndexType? vectorIndexType = global::G.VectorIndexType.Hnsw,
+            global::G.VectorIndexType? vectorIndexType = default,
             object? vectorIndexConfig = default,
             global::G.ShardingConfig? shardingConfig = default,
             global::G.ReplicationConfig? replicationConfig = default,

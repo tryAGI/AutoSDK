@@ -21,14 +21,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BatchDeleteOutputJsonConverter))]
-        public global::G.BatchDeleteOutput? Output { get; set; } = global::G.BatchDeleteOutput.Minimal;
+        public global::G.BatchDeleteOutput? Output { get; set; }
 
         /// <summary>
         /// If true, the call will show which objects would be matched using the specified filter without deleting any objects. &lt;br/&gt;&lt;br/&gt;Depending on the configured verbosity, you will either receive a count of affected objects, or a list of IDs.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dryRun")]
-        public bool? DryRun { get; set; } = false;
+        public bool? DryRun { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

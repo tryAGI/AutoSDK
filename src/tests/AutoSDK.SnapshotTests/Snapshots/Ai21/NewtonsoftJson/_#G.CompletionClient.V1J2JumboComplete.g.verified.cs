@@ -35,7 +35,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1J2JumboCompleteAsync(
             global::G.CompletionBody request,
-            string? model = "j2-jumbo",
+            string? model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -162,15 +162,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1J2JumboCompleteAsync(
             string prompt,
-            string? model = "j2-jumbo",
-            int? numResults = 1,
-            int? maxTokens = 16,
-            int? minTokens = 0,
-            double? temperature = 1,
-            double? topP = 1,
-            double? minP = 0,
+            string? model = default,
+            int? numResults = default,
+            int? maxTokens = default,
+            int? minTokens = default,
+            double? temperature = default,
+            double? topP = default,
+            double? minP = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
-            int? topKReturn = 0,
+            int? topKReturn = default,
             object? logitBias = default,
             global::G.Penalty? frequencyPenalty = default,
             global::G.Penalty? presencePenalty = default,

@@ -41,7 +41,7 @@ namespace G
             string owner,
             string repo,
             int jobId,
-            bool? enableDebugLogging = false,
+            bool? enableDebugLogging = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -68,7 +68,7 @@ namespace G
             bool? isRoot = default,
             global::G.RunsFilterDataSourceTypeEnum? dataSourceType = default,
             string? cursor = default,
-            int? limit = 100,
+            int? limit = default,
             global::System.Collections.Generic.IList<global::G.RunSelect>? select = default,
             global::G.RunDateOrder? order = default,
             global::System.Threading.CancellationToken cancellationToken = default);

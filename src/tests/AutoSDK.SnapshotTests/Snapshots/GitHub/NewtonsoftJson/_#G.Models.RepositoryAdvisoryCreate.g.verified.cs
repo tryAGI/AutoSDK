@@ -62,7 +62,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_private_fork")]
-        public bool? StartPrivateFork { get; set; } = false;
+        public bool? StartPrivateFork { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

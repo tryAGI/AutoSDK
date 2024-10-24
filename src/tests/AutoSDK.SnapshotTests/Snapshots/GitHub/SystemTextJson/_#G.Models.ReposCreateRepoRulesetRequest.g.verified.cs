@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReposCreateRepoRulesetRequestTargetJsonConverter))]
-        public global::G.ReposCreateRepoRulesetRequestTarget? Target { get; set; } = global::G.ReposCreateRepoRulesetRequestTarget.Branch;
+        public global::G.ReposCreateRepoRulesetRequestTarget? Target { get; set; }
 
         /// <summary>
         /// The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).

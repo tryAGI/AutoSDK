@@ -129,7 +129,7 @@ namespace G
             string owner,
             string repo,
             string content,
-            string? encoding = "utf-8",
+            string? encoding = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.GitCreateBlobRequest

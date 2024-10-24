@@ -168,10 +168,10 @@ namespace G
             int? minTokens = default,
             int? randomSeed = default,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
-            bool? stream = false,
+            bool? stream = default,
             string? suffix = default,
-            double? temperature = 0.7,
-            double? topP = 1,
+            double? temperature = default,
+            double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.FIMCompletionRequest

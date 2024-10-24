@@ -49,9 +49,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateTextToSpeechByVoiceIdAsync(
             string voiceId,
             global::G.BodyTextToSpeechV1TextToSpeechVoiceIdPost request,
-            bool? enableLogging = true,
+            bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            string? outputFormat = "mp3_44100_128",
+            string? outputFormat = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -132,11 +132,11 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateTextToSpeechByVoiceIdAsync(
             string voiceId,
             string text,
-            bool? enableLogging = true,
+            bool? enableLogging = default,
             int? optimizeStreamingLatency = default,
-            string? outputFormat = "mp3_44100_128",
+            string? outputFormat = default,
             string? xiApiKey = default,
-            string? modelId = "eleven_monolingual_v1",
+            string? modelId = default,
             string? languageCode = default,
             global::G.VoiceSettingsResponseModel? voiceSettings = default,
             global::System.Collections.Generic.IList<global::G.PronunciationDictionaryVersionLocatorDBModel>? pronunciationDictionaryLocators = default,

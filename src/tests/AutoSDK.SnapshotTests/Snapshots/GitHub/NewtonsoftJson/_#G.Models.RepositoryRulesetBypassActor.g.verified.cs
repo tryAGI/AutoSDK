@@ -26,7 +26,7 @@ namespace G
         /// Default Value: always
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("bypass_mode")]
-        public global::G.RepositoryRulesetBypassActorBypassMode? BypassMode { get; set; } = global::G.RepositoryRulesetBypassActorBypassMode.Always;
+        public global::G.RepositoryRulesetBypassActorBypassMode? BypassMode { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

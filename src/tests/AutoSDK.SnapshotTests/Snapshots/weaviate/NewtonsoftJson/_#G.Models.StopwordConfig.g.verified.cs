@@ -14,7 +14,7 @@ namespace G
         /// Default Value: en
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("preset")]
-        public global::G.StopwordConfigPreset? Preset { get; set; } = global::G.StopwordConfigPreset.En;
+        public global::G.StopwordConfigPreset? Preset { get; set; }
 
         /// <summary>
         /// Stopwords to be considered additionally. Can be any array of custom strings.

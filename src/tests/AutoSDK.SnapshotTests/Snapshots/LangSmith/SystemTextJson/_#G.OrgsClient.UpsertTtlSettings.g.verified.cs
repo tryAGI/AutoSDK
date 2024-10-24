@@ -128,7 +128,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.TTLSettings> UpsertTtlSettingsAsync(
             global::G.TraceTier defaultTraceTier,
             global::System.Guid? tenantId = default,
-            bool? applyToAllProjects = false,
+            bool? applyToAllProjects = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.UpsertTTLSettingsRequest

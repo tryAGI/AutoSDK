@@ -13,19 +13,19 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("days")]
-        public int? Days { get; set; } = 0;
+        public int? Days { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("minutes")]
-        public int? Minutes { get; set; } = 0;
+        public int? Minutes { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hours")]
-        public int? Hours { get; set; } = 0;
+        public int? Hours { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

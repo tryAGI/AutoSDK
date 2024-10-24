@@ -39,7 +39,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BatchDeleteResponse> BatchObjectsDeleteAsync(
             global::G.BatchDelete request,
-            global::G.BatchObjectsDeleteConsistencyLevel? consistencyLevel = global::G.BatchObjectsDeleteConsistencyLevel.QUORUM,
+            global::G.BatchObjectsDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -156,11 +156,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.BatchDeleteResponse> BatchObjectsDeleteAsync(
-            global::G.BatchObjectsDeleteConsistencyLevel? consistencyLevel = global::G.BatchObjectsDeleteConsistencyLevel.QUORUM,
+            global::G.BatchObjectsDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::G.BatchDeleteMatch? match = default,
-            global::G.BatchDeleteOutput? output = global::G.BatchDeleteOutput.Minimal,
-            bool? dryRun = false,
+            global::G.BatchDeleteOutput? output = default,
+            bool? dryRun = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BatchDelete

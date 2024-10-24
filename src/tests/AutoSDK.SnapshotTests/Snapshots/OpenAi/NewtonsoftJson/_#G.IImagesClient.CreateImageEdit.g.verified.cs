@@ -67,9 +67,9 @@ namespace G
             byte[]? mask = default,
             string? maskname = default,
             global::G.AnyOf<string, global::G.CreateImageEditRequestModel?>? model = default,
-            int? n = 1,
-            global::G.CreateImageEditRequestSize? size = global::G.CreateImageEditRequestSize.x1024x1024,
-            global::G.CreateImageEditRequestResponseFormat? responseFormat = global::G.CreateImageEditRequestResponseFormat.Url,
+            int? n = default,
+            global::G.CreateImageEditRequestSize? size = default,
+            global::G.CreateImageEditRequestResponseFormat? responseFormat = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

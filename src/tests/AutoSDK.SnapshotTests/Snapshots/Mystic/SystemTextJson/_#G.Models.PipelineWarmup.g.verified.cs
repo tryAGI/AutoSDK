@@ -20,7 +20,7 @@ namespace G
         /// Default Value: 300
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
-        public int? Duration { get; set; } = 300;
+        public int? Duration { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

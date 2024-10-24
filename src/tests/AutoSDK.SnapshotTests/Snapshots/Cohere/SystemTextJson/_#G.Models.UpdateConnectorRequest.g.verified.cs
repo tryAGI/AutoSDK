@@ -37,13 +37,13 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
-        public bool? Active { get; set; } = true;
+        public bool? Active { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("continue_on_failure")]
-        public bool? ContinueOnFailure { get; set; } = false;
+        public bool? ContinueOnFailure { get; set; }
 
         /// <summary>
         /// 

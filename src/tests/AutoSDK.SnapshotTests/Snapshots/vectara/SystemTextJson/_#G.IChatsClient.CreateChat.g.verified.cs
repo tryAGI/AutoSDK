@@ -52,7 +52,7 @@ namespace G
             int? requestTimeoutMillis = default,
             global::G.GenerationParameters? generation = default,
             global::G.ChatParameters? chat = default,
-            bool? streamResponse = false,
+            bool? streamResponse = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

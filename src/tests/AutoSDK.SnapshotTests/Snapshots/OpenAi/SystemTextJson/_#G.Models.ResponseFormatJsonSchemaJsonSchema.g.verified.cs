@@ -33,7 +33,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
-        public bool? Strict { get; set; } = false;
+        public bool? Strict { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

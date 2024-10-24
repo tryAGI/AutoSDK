@@ -16,7 +16,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> V1J2JumboInstructCompleteAsync(
             global::G.CompletionBody request,
-            string? model = "j2-jumbo-instruct",
+            string? model = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -57,15 +57,15 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> V1J2JumboInstructCompleteAsync(
             string prompt,
-            string? model = "j2-jumbo-instruct",
-            int? numResults = 1,
-            int? maxTokens = 16,
-            int? minTokens = 0,
-            double? temperature = 1,
-            double? topP = 1,
-            double? minP = 0,
+            string? model = default,
+            int? numResults = default,
+            int? maxTokens = default,
+            int? minTokens = default,
+            double? temperature = default,
+            double? topP = default,
+            double? minP = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
-            int? topKReturn = 0,
+            int? topKReturn = default,
             object? logitBias = default,
             global::G.Penalty? frequencyPenalty = default,
             global::G.Penalty? presencePenalty = default,

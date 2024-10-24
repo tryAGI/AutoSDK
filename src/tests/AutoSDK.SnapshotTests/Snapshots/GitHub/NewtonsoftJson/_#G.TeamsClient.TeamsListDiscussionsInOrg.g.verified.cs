@@ -56,9 +56,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TeamDiscussion>> TeamsListDiscussionsInOrgAsync(
             string org,
             string teamSlug,
-            global::G.TeamsListDiscussionsInOrgDirection? direction = global::G.TeamsListDiscussionsInOrgDirection.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.TeamsListDiscussionsInOrgDirection? direction = default,
+            int? perPage = default,
+            int? page = default,
             string? pinned = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

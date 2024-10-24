@@ -39,7 +39,7 @@ namespace G
         /// Default Value: 5
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_used_search_results")]
-        public int? MaxUsedSearchResults { get; set; } = 5;
+        public int? MaxUsedSearchResults { get; set; }
 
         /// <summary>
         /// Vectara manages both system and user roles and prompts for the generative<br/>
@@ -95,7 +95,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_language")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LanguageJsonConverter))]
-        public global::G.Language? ResponseLanguage { get; set; } = global::G.Language.Auto;
+        public global::G.Language? ResponseLanguage { get; set; }
 
         /// <summary>
         /// The parameters for the model.  These are currently a Scale-only feature.<br/>
@@ -118,7 +118,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_factual_consistency_score")]
-        public bool? EnableFactualConsistencyScore { get; set; } = true;
+        public bool? EnableFactualConsistencyScore { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

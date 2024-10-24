@@ -138,7 +138,7 @@ namespace G
             string name,
             global::G.OrgsCreateWebhookRequestConfig config,
             global::System.Collections.Generic.IList<string>? events = default,
-            bool? active = true,
+            bool? active = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.OrgsCreateWebhookRequest

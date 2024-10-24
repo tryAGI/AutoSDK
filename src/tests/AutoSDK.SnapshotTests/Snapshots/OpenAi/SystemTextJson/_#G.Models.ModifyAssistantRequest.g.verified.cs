@@ -57,7 +57,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; } = 1;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// empty<br/>
@@ -65,7 +65,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("top_p")]
-        public double? TopP { get; set; } = 1;
+        public double? TopP { get; set; }
 
         /// <summary>
         /// Specifies the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4 Turbo](/docs/models/gpt-4-turbo-and-gpt-4), and all GPT-3.5 Turbo models since `gpt-3.5-turbo-1106`.<br/>

@@ -20,7 +20,7 @@ namespace G
         /// Default Value: utf-8
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoding")]
-        public string? Encoding { get; set; } = "utf-8";
+        public string? Encoding { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

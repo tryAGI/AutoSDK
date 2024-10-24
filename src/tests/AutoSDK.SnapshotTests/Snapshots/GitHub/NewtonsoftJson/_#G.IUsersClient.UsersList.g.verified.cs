@@ -18,7 +18,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> UsersListAsync(
             int? since = default,
-            int? perPage = 30,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

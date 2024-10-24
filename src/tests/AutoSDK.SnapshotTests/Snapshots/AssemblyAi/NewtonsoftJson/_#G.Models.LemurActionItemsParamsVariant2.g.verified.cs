@@ -15,7 +15,7 @@ namespace G
         /// Default Value: Bullet Points
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("answer_format")]
-        public string? AnswerFormat { get; set; } = "Bullet Points";
+        public string? AnswerFormat { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

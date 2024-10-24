@@ -23,9 +23,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> OrgsListOutsideCollaboratorsAsync(
             string org,
-            global::G.OrgsListOutsideCollaboratorsFilter? filter = global::G.OrgsListOutsideCollaboratorsFilter.All,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.OrgsListOutsideCollaboratorsFilter? filter = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

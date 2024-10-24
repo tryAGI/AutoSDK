@@ -158,7 +158,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? repoNames = default,
             global::G.TeamsCreateRequestPrivacy? privacy = default,
             global::G.TeamsCreateRequestNotificationSetting? notificationSetting = default,
-            global::G.TeamsCreateRequestPermission? permission = global::G.TeamsCreateRequestPermission.Pull,
+            global::G.TeamsCreateRequestPermission? permission = default,
             int? parentTeamId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

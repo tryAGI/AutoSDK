@@ -38,21 +38,21 @@ namespace G
         /// Default Value: GENERAL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("modelType")]
-        public global::G.CustomModelType? ModelType { get; set; } = global::G.CustomModelType.GENERAL;
+        public global::G.CustomModelType? ModelType { get; set; }
 
         /// <summary>
         /// Whether or not the model is NSFW.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("nsfw")]
-        public bool? Nsfw { get; set; } = false;
+        public bool? Nsfw { get; set; }
 
         /// <summary>
         /// The resolution for training. Must be 512 or 768.<br/>
         /// Default Value: 512
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
-        public int? Resolution { get; set; } = 512;
+        public int? Resolution { get; set; }
 
         /// <summary>
         /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
@@ -65,7 +65,7 @@ namespace G
         /// Default Value: MEDIUM
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("strength")]
-        public global::G.Strength? Strength { get; set; } = global::G.Strength.MEDIUM;
+        public global::G.Strength? Strength { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

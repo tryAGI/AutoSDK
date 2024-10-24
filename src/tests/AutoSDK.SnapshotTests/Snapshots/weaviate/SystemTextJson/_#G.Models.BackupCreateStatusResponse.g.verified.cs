@@ -39,7 +39,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BackupCreateStatusResponseStatusJsonConverter))]
-        public global::G.BackupCreateStatusResponseStatus? Status { get; set; } = global::G.BackupCreateStatusResponseStatus.STARTED;
+        public global::G.BackupCreateStatusResponseStatus? Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

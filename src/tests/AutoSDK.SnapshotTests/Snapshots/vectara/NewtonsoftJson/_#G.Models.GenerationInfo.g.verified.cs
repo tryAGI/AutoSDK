@@ -15,7 +15,7 @@ namespace G
         /// Default Value: generation_info
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; } = "generation_info";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available<br/>

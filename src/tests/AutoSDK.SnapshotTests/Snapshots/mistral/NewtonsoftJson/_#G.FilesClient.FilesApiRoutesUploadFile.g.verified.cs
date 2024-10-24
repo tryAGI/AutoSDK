@@ -77,7 +77,7 @@ namespace G
                 },
                 name: "file",
                 fileName: request.Filename ?? string.Empty);
-            if (request.Purpose != global::G.FilesApiRoutesUploadFileRequestPurpose.FineTune)
+            if (request.Purpose != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Purpose?.ToValueString()}"),
@@ -166,7 +166,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UploadFileOut> FilesApiRoutesUploadFileAsync(
             byte[] file,
             string filename,
-            global::G.FilesApiRoutesUploadFileRequestPurpose? purpose = global::G.FilesApiRoutesUploadFileRequestPurpose.FineTune,
+            global::G.FilesApiRoutesUploadFileRequestPurpose? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.FilesApiRoutesUploadFileRequest

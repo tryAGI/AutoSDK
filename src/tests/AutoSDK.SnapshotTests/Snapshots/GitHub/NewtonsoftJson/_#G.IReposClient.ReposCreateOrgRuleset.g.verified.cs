@@ -50,7 +50,7 @@ namespace G
             string org,
             string name,
             global::G.RepositoryRuleEnforcement enforcement,
-            global::G.ReposCreateOrgRulesetRequestTarget? target = global::G.ReposCreateOrgRulesetRequestTarget.Branch,
+            global::G.ReposCreateOrgRulesetRequestTarget? target = default,
             global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? bypassActors = default,
             global::G.OrgRulesetConditions? conditions = default,
             global::System.Collections.Generic.IList<global::G.RepositoryRule>? rules = default,

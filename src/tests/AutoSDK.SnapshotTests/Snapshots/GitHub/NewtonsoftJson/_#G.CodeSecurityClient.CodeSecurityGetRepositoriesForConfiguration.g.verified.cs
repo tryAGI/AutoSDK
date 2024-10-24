@@ -53,10 +53,10 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeSecurityConfigurationRepositories>> CodeSecurityGetRepositoriesForConfigurationAsync(
             string org,
             int configurationId,
-            int? perPage = 30,
+            int? perPage = default,
             string? before = default,
             string? after = default,
-            string? status = "all",
+            string? status = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

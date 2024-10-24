@@ -31,11 +31,11 @@ namespace G
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Milestone>> IssuesListMilestonesAsync(
             string owner,
             string repo,
-            global::G.IssuesListMilestonesState? state = global::G.IssuesListMilestonesState.Open,
-            global::G.IssuesListMilestonesSort? sort = global::G.IssuesListMilestonesSort.DueOn,
-            global::G.IssuesListMilestonesDirection? direction = global::G.IssuesListMilestonesDirection.Asc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.IssuesListMilestonesState? state = default,
+            global::G.IssuesListMilestonesSort? sort = default,
+            global::G.IssuesListMilestonesDirection? direction = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -61,11 +61,11 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ImagesResponse> CreateImageAsync(
             string prompt,
             global::G.AnyOf<string, global::G.CreateImageRequestModel?>? model = default,
-            int? n = 1,
-            global::G.CreateImageRequestQuality? quality = global::G.CreateImageRequestQuality.Standard,
-            global::G.CreateImageRequestResponseFormat? responseFormat = global::G.CreateImageRequestResponseFormat.Url,
-            global::G.CreateImageRequestSize? size = global::G.CreateImageRequestSize.x1024x1024,
-            global::G.CreateImageRequestStyle? style = global::G.CreateImageRequestStyle.Vivid,
+            int? n = default,
+            global::G.CreateImageRequestQuality? quality = default,
+            global::G.CreateImageRequestResponseFormat? responseFormat = default,
+            global::G.CreateImageRequestSize? size = default,
+            global::G.CreateImageRequestStyle? style = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

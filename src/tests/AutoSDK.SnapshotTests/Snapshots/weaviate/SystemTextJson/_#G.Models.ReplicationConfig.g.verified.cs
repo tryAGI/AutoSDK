@@ -14,7 +14,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("factor")]
-        public int? Factor { get; set; } = 1;
+        public int? Factor { get; set; }
 
         /// <summary>
         /// Enable asynchronous replication

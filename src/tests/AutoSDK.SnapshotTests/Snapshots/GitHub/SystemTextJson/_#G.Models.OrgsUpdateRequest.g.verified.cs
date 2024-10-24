@@ -69,14 +69,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_repository_permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsUpdateRequestDefaultRepositoryPermissionJsonConverter))]
-        public global::G.OrgsUpdateRequestDefaultRepositoryPermission? DefaultRepositoryPermission { get; set; } = global::G.OrgsUpdateRequestDefaultRepositoryPermission.Read;
+        public global::G.OrgsUpdateRequestDefaultRepositoryPermission? DefaultRepositoryPermission { get; set; }
 
         /// <summary>
         /// Whether of non-admin organization members can create repositories. **Note:** A parameter can override this parameter. See `members_allowed_repository_creation_type` in this table for details.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_repositories")]
-        public bool? MembersCanCreateRepositories { get; set; } = true;
+        public bool? MembersCanCreateRepositories { get; set; }
 
         /// <summary>
         /// Whether organization members can create internal repositories, which are visible to all enterprise members. You can only allow members to create internal repositories if your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
@@ -109,35 +109,35 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_pages")]
-        public bool? MembersCanCreatePages { get; set; } = true;
+        public bool? MembersCanCreatePages { get; set; }
 
         /// <summary>
         /// Whether organization members can create public GitHub Pages sites. Existing published sites will not be impacted.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_public_pages")]
-        public bool? MembersCanCreatePublicPages { get; set; } = true;
+        public bool? MembersCanCreatePublicPages { get; set; }
 
         /// <summary>
         /// Whether organization members can create private GitHub Pages sites. Existing published sites will not be impacted.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_private_pages")]
-        public bool? MembersCanCreatePrivatePages { get; set; } = true;
+        public bool? MembersCanCreatePrivatePages { get; set; }
 
         /// <summary>
         /// Whether organization members can fork private organization repositories.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_fork_private_repositories")]
-        public bool? MembersCanForkPrivateRepositories { get; set; } = false;
+        public bool? MembersCanForkPrivateRepositories { get; set; }
 
         /// <summary>
         /// Whether contributors to organization repositories are required to sign off on commits they make through GitHub's web interface.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_commit_signoff_required")]
-        public bool? WebCommitSignoffRequired { get; set; } = false;
+        public bool? WebCommitSignoffRequired { get; set; }
 
         /// <summary>
         /// Example: "http://github.blog"

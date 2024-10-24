@@ -23,9 +23,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ProjectCard>> ProjectsListCardsAsync(
             int columnId,
-            global::G.ProjectsListCardsArchivedState? archivedState = global::G.ProjectsListCardsArchivedState.NotArchived,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.ProjectsListCardsArchivedState? archivedState = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

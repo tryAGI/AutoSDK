@@ -32,9 +32,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SearchIssuesAndPullRequestsResponse> SearchIssuesAndPullRequestsAsync(
             string q,
             global::G.SearchIssuesAndPullRequestsSort? sort = default,
-            global::G.SearchIssuesAndPullRequestsOrder? order = global::G.SearchIssuesAndPullRequestsOrder.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.SearchIssuesAndPullRequestsOrder? order = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

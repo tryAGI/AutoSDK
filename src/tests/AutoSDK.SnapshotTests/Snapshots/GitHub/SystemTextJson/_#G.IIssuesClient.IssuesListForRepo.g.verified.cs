@@ -45,16 +45,16 @@ namespace G
             string owner,
             string repo,
             string? milestone = default,
-            global::G.IssuesListForRepoState? state = global::G.IssuesListForRepoState.Open,
+            global::G.IssuesListForRepoState? state = default,
             string? assignee = default,
             string? creator = default,
             string? mentioned = default,
             string? labels = default,
-            global::G.IssuesListForRepoSort? sort = global::G.IssuesListForRepoSort.Created,
-            global::G.IssuesListForRepoDirection? direction = global::G.IssuesListForRepoDirection.Desc,
+            global::G.IssuesListForRepoSort? sort = default,
+            global::G.IssuesListForRepoDirection? direction = default,
             global::System.DateTime? since = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

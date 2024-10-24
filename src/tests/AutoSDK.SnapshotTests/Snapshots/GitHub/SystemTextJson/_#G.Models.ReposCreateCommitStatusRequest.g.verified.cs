@@ -36,7 +36,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
-        public string? Context { get; set; } = "default";
+        public string? Context { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

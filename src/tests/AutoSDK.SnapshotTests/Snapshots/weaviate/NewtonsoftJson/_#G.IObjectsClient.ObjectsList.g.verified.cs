@@ -25,8 +25,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ObjectsListResponse> ObjectsListAsync(
             string? after = default,
-            long? offset = 0L,
-            long? limit = 25L,
+            long? offset = default,
+            long? limit = default,
             string? include = default,
             string? sort = default,
             global::G.ObjectsListOrder? order = default,

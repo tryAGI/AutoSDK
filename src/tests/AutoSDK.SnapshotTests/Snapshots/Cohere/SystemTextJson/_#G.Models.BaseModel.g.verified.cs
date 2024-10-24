@@ -34,7 +34,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("base_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BaseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.BaseType BaseType { get; set; }
+        public required global::G.BaseType BaseType { get; set; } = global::G.BaseType.UNSPECIFIED;
 
         /// <summary>
         /// The possible strategy used to serve a fine-tuned models.<br/>
@@ -45,7 +45,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("strategy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StrategyJsonConverter))]
-        public global::G.Strategy? Strategy { get; set; } = global::G.Strategy.UNSPECIFIED;
+        public global::G.Strategy? Strategy { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

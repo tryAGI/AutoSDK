@@ -19,7 +19,7 @@ namespace G
         /// Default Value: SUCCESS
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.BatchDeleteResponseResultsObjectStatus? Status { get; set; } = global::G.BatchDeleteResponseResultsObjectStatus.SUCCESS;
+        public global::G.BatchDeleteResponseResultsObjectStatus? Status { get; set; }
 
         /// <summary>
         /// An error response given by Weaviate end-points.

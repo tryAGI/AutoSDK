@@ -39,7 +39,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("active")]
-        public bool? Active { get; set; } = true;
+        public bool? Active { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

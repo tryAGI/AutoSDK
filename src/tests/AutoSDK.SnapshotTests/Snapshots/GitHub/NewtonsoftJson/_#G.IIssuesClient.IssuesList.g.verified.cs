@@ -45,18 +45,18 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Issue>> IssuesListAsync(
-            global::G.IssuesListFilter? filter = global::G.IssuesListFilter.Assigned,
-            global::G.IssuesListState? state = global::G.IssuesListState.Open,
+            global::G.IssuesListFilter? filter = default,
+            global::G.IssuesListState? state = default,
             string? labels = default,
-            global::G.IssuesListSort? sort = global::G.IssuesListSort.Created,
-            global::G.IssuesListDirection? direction = global::G.IssuesListDirection.Desc,
+            global::G.IssuesListSort? sort = default,
+            global::G.IssuesListDirection? direction = default,
             global::System.DateTime? since = default,
             bool? collab = default,
             bool? orgs = default,
             bool? owned = default,
             bool? pulls = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

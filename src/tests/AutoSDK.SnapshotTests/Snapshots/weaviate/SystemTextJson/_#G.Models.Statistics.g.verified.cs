@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StatisticsStatusJsonConverter))]
-        public global::G.StatisticsStatus? Status { get; set; } = global::G.StatisticsStatus.HEALTHY;
+        public global::G.StatisticsStatus? Status { get; set; }
 
         /// <summary>
         /// 

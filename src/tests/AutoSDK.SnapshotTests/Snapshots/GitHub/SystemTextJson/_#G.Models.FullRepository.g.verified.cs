@@ -703,7 +703,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anonymous_access_enabled")]
-        public bool? AnonymousAccessEnabled { get; set; } = true;
+        public bool? AnonymousAccessEnabled { get; set; }
 
         /// <summary>
         /// Code of Conduct Simple

@@ -38,7 +38,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("require_last_push_approval")]
-        public bool? RequireLastPushApproval { get; set; } = false;
+        public bool? RequireLastPushApproval { get; set; }
 
         /// <summary>
         /// 

@@ -21,7 +21,7 @@ namespace G
         /// Default Value: eleven_monolingual_v1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model_id")]
-        public string? ModelId { get; set; } = "eleven_monolingual_v1";
+        public string? ModelId { get; set; }
 
         /// <summary>
         /// Language code (ISO 639-1) used to enforce a language for the model. Currently only Turbo v2.5 supports language enforcement. For other models, an error will be returned if language code is provided.
@@ -80,7 +80,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("use_pvc_as_ivc")]
         [global::System.Obsolete("This property marked as deprecated.")]
-        public bool? UsePvcAsIvc { get; set; } = false;
+        public bool? UsePvcAsIvc { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

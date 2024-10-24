@@ -63,10 +63,10 @@ namespace G
             string? name = default,
             string? nameContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
-            int? offset = 0,
-            int? limit = 100,
+            int? offset = default,
+            int? limit = default,
             global::G.SortByComparativeExperimentColumn? sortBy = default,
-            bool? sortByDesc = true,
+            bool? sortByDesc = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

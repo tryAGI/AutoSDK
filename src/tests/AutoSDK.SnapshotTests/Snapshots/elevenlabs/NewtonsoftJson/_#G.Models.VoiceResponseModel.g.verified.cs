@@ -103,13 +103,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_legacy")]
-        public bool? IsLegacy { get; set; } = false;
+        public bool? IsLegacy { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_mixed")]
-        public bool? IsMixed { get; set; } = false;
+        public bool? IsMixed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

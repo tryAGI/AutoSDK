@@ -46,13 +46,13 @@ namespace G
             string? package = default,
             string? manifest = default,
             global::G.DependabotListAlertsForRepoScope? scope = default,
-            global::G.DependabotListAlertsForRepoSort? sort = global::G.DependabotListAlertsForRepoSort.Created,
-            global::G.DependabotListAlertsForRepoDirection? direction = global::G.DependabotListAlertsForRepoDirection.Desc,
-            int? page = 1,
-            int? perPage = 30,
+            global::G.DependabotListAlertsForRepoSort? sort = default,
+            global::G.DependabotListAlertsForRepoDirection? direction = default,
+            int? page = default,
+            int? perPage = default,
             string? before = default,
             string? after = default,
-            int? first = 30,
+            int? first = default,
             int? last = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

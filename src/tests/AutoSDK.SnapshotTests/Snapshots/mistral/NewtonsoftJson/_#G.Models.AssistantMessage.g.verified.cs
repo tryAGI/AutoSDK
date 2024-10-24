@@ -20,13 +20,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prefix")]
-        public bool? Prefix { get; set; } = false;
+        public bool? Prefix { get; set; }
 
         /// <summary>
         /// Default Value: assistant
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.AssistantMessageRole? Role { get; set; } = global::G.AssistantMessageRole.Assistant;
+        public global::G.AssistantMessageRole? Role { get; set; }
 
         /// <summary>
         /// 

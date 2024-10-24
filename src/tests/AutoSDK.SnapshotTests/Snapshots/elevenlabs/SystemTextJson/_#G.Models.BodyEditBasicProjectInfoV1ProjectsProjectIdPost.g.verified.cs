@@ -53,7 +53,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("volume_normalization")]
-        public bool? VolumeNormalization { get; set; } = false;
+        public bool? VolumeNormalization { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

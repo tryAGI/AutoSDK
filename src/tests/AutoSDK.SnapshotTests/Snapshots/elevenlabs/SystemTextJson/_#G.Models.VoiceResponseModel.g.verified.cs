@@ -117,13 +117,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_legacy")]
-        public bool? IsLegacy { get; set; } = false;
+        public bool? IsLegacy { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_mixed")]
-        public bool? IsMixed { get; set; } = false;
+        public bool? IsMixed { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

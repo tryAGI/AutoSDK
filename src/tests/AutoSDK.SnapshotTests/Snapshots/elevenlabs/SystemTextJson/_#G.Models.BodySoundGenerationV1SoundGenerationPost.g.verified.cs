@@ -27,7 +27,7 @@ namespace G
         /// Default Value: 0.3
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_influence")]
-        public double? PromptInfluence { get; set; } = 0.3;
+        public double? PromptInfluence { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

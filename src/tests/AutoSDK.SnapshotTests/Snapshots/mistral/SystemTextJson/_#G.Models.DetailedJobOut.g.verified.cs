@@ -95,7 +95,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DetailedJobOutObjectJsonConverter))]
-        public global::G.DetailedJobOutObject? Object { get; set; } = global::G.DetailedJobOutObject.Job;
+        public global::G.DetailedJobOutObject? Object { get; set; }
 
         /// <summary>
         /// Default Value: []

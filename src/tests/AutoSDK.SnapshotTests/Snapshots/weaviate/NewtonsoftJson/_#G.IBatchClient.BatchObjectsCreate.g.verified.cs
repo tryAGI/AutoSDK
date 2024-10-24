@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ObjectsGetResponse>> BatchObjectsCreateAsync(
             global::G.BatchObjectsCreateRequest request,
-            global::G.BatchObjectsCreateConsistencyLevel? consistencyLevel = global::G.BatchObjectsCreateConsistencyLevel.QUORUM,
+            global::G.BatchObjectsCreateConsistencyLevel? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.ObjectsGetResponse>> BatchObjectsCreateAsync(
-            global::G.BatchObjectsCreateConsistencyLevel? consistencyLevel = global::G.BatchObjectsCreateConsistencyLevel.QUORUM,
+            global::G.BatchObjectsCreateConsistencyLevel? consistencyLevel = default,
             global::System.Collections.Generic.IList<global::G.BatchObjectsCreateRequestField>? fields = default,
             global::System.Collections.Generic.IList<global::G.Object>? objects = default,
             global::System.Threading.CancellationToken cancellationToken = default);

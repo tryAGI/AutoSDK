@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.NodeStatusStatusJsonConverter))]
-        public global::G.NodeStatusStatus? Status { get; set; } = global::G.NodeStatusStatus.HEALTHY;
+        public global::G.NodeStatusStatus? Status { get; set; }
 
         /// <summary>
         /// The version of Weaviate.

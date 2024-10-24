@@ -15,7 +15,7 @@ namespace G
         /// Default Value: search_results
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "search_results";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The ranked search results.

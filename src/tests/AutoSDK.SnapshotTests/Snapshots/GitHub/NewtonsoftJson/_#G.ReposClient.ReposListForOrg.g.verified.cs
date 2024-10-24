@@ -56,11 +56,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MinimalRepository>> ReposListForOrgAsync(
             string org,
-            global::G.ReposListForOrgType? type = global::G.ReposListForOrgType.All,
-            global::G.ReposListForOrgSort? sort = global::G.ReposListForOrgSort.Created,
+            global::G.ReposListForOrgType? type = default,
+            global::G.ReposListForOrgSort? sort = default,
             global::G.ReposListForOrgDirection? direction = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

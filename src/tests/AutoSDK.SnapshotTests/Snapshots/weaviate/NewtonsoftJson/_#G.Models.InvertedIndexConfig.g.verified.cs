@@ -14,7 +14,7 @@ namespace G
         /// Default Value: 60
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("cleanupIntervalSeconds")]
-        public double? CleanupIntervalSeconds { get; set; } = 60;
+        public double? CleanupIntervalSeconds { get; set; }
 
         /// <summary>
         /// tuning parameters for the BM25 algorithm
@@ -33,21 +33,21 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("indexTimestamps")]
-        public bool? IndexTimestamps { get; set; } = false;
+        public bool? IndexTimestamps { get; set; }
 
         /// <summary>
         /// Index each object with the null state<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("indexNullState")]
-        public bool? IndexNullState { get; set; } = false;
+        public bool? IndexNullState { get; set; }
 
         /// <summary>
         /// Index length of properties<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("indexPropertyLength")]
-        public bool? IndexPropertyLength { get; set; } = false;
+        public bool? IndexPropertyLength { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

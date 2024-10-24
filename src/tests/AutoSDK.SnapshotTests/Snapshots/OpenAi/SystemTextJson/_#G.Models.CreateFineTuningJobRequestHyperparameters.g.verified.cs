@@ -18,7 +18,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? BatchSize { get; set; } = global::G.CreateFineTuningJobRequestHyperparametersBatchSize.Auto;
+        public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? BatchSize { get; set; }
 
         /// <summary>
         /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid<br/>
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate_multiplier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; } = global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier.Auto;
+        public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; }
 
         /// <summary>
         /// The number of epochs to train the model for. An epoch refers to one full cycle<br/>
@@ -36,7 +36,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
-        public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? NEpochs { get; set; } = global::G.CreateFineTuningJobRequestHyperparametersNEpochs.Auto;
+        public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? NEpochs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

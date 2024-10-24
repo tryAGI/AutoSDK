@@ -40,7 +40,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WandbIntegrationTypeJsonConverter))]
-        public global::G.WandbIntegrationType? Type { get; set; } = global::G.WandbIntegrationType.Wandb;
+        public global::G.WandbIntegrationType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

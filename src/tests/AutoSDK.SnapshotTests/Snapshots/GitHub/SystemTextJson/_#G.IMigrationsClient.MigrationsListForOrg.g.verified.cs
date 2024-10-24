@@ -22,8 +22,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Migration>> MigrationsListForOrgAsync(
             string org,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Collections.Generic.IList<global::G.MigrationsListForOrgExcludeItem>? exclude = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

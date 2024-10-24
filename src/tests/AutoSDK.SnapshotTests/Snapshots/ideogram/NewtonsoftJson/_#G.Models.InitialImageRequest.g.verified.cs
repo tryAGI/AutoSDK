@@ -14,7 +14,7 @@ namespace G
         /// Example: 50
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_weight")]
-        public int? ImageWeight { get; set; } = 50;
+        public int? ImageWeight { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

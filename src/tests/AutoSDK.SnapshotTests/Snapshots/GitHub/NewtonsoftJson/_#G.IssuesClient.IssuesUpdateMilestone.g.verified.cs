@@ -143,7 +143,7 @@ namespace G
             string repo,
             int milestoneNumber,
             string? title = default,
-            global::G.IssuesUpdateMilestoneRequestState? state = global::G.IssuesUpdateMilestoneRequestState.Open,
+            global::G.IssuesUpdateMilestoneRequestState? state = default,
             string? description = default,
             global::System.DateTime? dueOn = default,
             global::System.Threading.CancellationToken cancellationToken = default)

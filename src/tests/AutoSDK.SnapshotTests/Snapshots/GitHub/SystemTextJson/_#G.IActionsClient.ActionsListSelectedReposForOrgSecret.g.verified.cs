@@ -25,8 +25,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ActionsListSelectedReposForOrgSecretResponse> ActionsListSelectedReposForOrgSecretAsync(
             string org,
             string secretName,
-            int? page = 1,
-            int? perPage = 30,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

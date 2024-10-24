@@ -29,7 +29,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("bypass_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryRulesetBypassActorBypassModeJsonConverter))]
-        public global::G.RepositoryRulesetBypassActorBypassMode? BypassMode { get; set; } = global::G.RepositoryRulesetBypassActorBypassMode.Always;
+        public global::G.RepositoryRulesetBypassActorBypassMode? BypassMode { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

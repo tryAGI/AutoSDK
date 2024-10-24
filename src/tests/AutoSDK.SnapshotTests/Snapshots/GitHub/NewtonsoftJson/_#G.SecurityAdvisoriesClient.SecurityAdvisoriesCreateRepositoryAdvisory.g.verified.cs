@@ -163,7 +163,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateCredit>? credits = default,
             global::G.RepositoryAdvisoryCreateSeverity? severity = default,
             string? cvssVectorString = default,
-            bool? startPrivateFork = false,
+            bool? startPrivateFork = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.RepositoryAdvisoryCreate

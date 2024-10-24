@@ -144,7 +144,7 @@ namespace G
             string repo,
             string name,
             global::G.RepositoryRuleEnforcement enforcement,
-            global::G.ReposCreateRepoRulesetRequestTarget? target = global::G.ReposCreateRepoRulesetRequestTarget.Branch,
+            global::G.ReposCreateRepoRulesetRequestTarget? target = default,
             global::System.Collections.Generic.IList<global::G.RepositoryRulesetBypassActor>? bypassActors = default,
             global::G.RepositoryRulesetConditions? conditions = default,
             global::System.Collections.Generic.IList<global::G.RepositoryRule>? rules = default,

@@ -60,7 +60,7 @@ namespace G
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MilestoneStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MilestoneState State { get; set; }
+        public required global::G.MilestoneState State { get; set; } = global::G.MilestoneState.Open;
 
         /// <summary>
         /// The title of the milestone.<br/>

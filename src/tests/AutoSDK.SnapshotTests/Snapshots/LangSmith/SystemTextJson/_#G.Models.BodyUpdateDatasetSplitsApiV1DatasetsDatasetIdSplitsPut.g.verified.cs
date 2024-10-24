@@ -27,7 +27,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("remove")]
-        public bool? Remove { get; set; } = false;
+        public bool? Remove { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

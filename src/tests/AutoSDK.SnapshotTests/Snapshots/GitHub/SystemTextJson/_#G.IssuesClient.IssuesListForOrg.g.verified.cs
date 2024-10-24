@@ -74,14 +74,14 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Issue>> IssuesListForOrgAsync(
             string org,
-            global::G.IssuesListForOrgFilter? filter = global::G.IssuesListForOrgFilter.Assigned,
-            global::G.IssuesListForOrgState? state = global::G.IssuesListForOrgState.Open,
+            global::G.IssuesListForOrgFilter? filter = default,
+            global::G.IssuesListForOrgState? state = default,
             string? labels = default,
-            global::G.IssuesListForOrgSort? sort = global::G.IssuesListForOrgSort.Created,
-            global::G.IssuesListForOrgDirection? direction = global::G.IssuesListForOrgDirection.Desc,
+            global::G.IssuesListForOrgSort? sort = default,
+            global::G.IssuesListForOrgDirection? direction = default,
             global::System.DateTime? since = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

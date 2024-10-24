@@ -56,7 +56,7 @@ namespace G
             int? randomSeed = default,
             global::G.ResponseFormat? responseFormat = default,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
-            bool? stream = false,
+            bool? stream = default,
             global::G.AnyOf<global::G.ToolChoice3, global::G.ToolChoiceEnum?>? toolChoice = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default);

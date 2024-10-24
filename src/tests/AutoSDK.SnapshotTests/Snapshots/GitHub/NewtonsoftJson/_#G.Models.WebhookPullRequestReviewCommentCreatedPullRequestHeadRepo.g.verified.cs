@@ -16,7 +16,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
-        public bool? AllowAutoMerge { get; set; } = false;
+        public bool? AllowAutoMerge { get; set; }
 
         /// <summary>
         /// Whether to allow private forks
@@ -29,21 +29,21 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
-        public bool? AllowMergeCommit { get; set; } = true;
+        public bool? AllowMergeCommit { get; set; }
 
         /// <summary>
         /// Whether to allow rebase merges for pull requests.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
-        public bool? AllowRebaseMerge { get; set; } = true;
+        public bool? AllowRebaseMerge { get; set; }
 
         /// <summary>
         /// Whether to allow squash merges for pull requests.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
-        public bool? AllowSquashMerge { get; set; } = true;
+        public bool? AllowSquashMerge { get; set; }
 
         /// <summary>
         /// 
@@ -141,7 +141,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
-        public bool? DeleteBranchOnMerge { get; set; } = false;
+        public bool? DeleteBranchOnMerge { get; set; }
 
         /// <summary>
         /// 
@@ -266,7 +266,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("has_discussions")]
-        public bool? HasDiscussions { get; set; } = false;
+        public bool? HasDiscussions { get; set; }
 
         /// <summary>
         /// 
@@ -583,7 +583,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_squash_pr_title_as_default")]
-        public bool? UseSquashPrTitleAsDefault { get; set; } = false;
+        public bool? UseSquashPrTitleAsDefault { get; set; }
 
         /// <summary>
         /// 

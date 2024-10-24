@@ -14,7 +14,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("store")]
-        public bool? Store { get; set; } = true;
+        public bool? Store { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

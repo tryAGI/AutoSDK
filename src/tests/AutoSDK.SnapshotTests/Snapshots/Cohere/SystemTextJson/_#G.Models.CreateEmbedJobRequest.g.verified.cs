@@ -65,7 +65,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("truncate")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateEmbedJobRequestTruncateJsonConverter))]
-        public global::G.CreateEmbedJobRequestTruncate? Truncate { get; set; } = global::G.CreateEmbedJobRequestTruncate.END;
+        public global::G.CreateEmbedJobRequestTruncate? Truncate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

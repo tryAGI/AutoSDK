@@ -50,10 +50,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MarketplacePurchase>> AppsListAccountsForPlanStubbedAsync(
             int planId,
-            global::G.AppsListAccountsForPlanStubbedSort? sort = global::G.AppsListAccountsForPlanStubbedSort.Created,
+            global::G.AppsListAccountsForPlanStubbedSort? sort = default,
             global::G.AppsListAccountsForPlanStubbedDirection? direction = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -52,7 +52,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("queries_are_answers")]
-        public bool? QueriesAreAnswers { get; set; } = false;
+        public bool? QueriesAreAnswers { get; set; }
 
         /// <summary>
         /// Documents inside this corpus are considered questions, and not answers.<br/>
@@ -60,7 +60,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documents_are_questions")]
-        public bool? DocumentsAreQuestions { get; set; } = false;
+        public bool? DocumentsAreQuestions { get; set; }
 
         /// <summary>
         /// The encoder used by the corpus.<br/>

@@ -32,7 +32,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_language")]
-        public global::G.Language? ResponseLanguage { get; set; } = global::G.Language.Auto;
+        public global::G.Language? ResponseLanguage { get; set; }
 
         /// <summary>
         /// The ranked search results that the chat model used.

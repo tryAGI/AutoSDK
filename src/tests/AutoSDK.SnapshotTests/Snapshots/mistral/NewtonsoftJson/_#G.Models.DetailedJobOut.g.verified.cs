@@ -86,7 +86,7 @@ namespace G
         /// Default Value: job
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.DetailedJobOutObject? Object { get; set; } = global::G.DetailedJobOutObject.Job;
+        public global::G.DetailedJobOutObject? Object { get; set; }
 
         /// <summary>
         /// Default Value: []

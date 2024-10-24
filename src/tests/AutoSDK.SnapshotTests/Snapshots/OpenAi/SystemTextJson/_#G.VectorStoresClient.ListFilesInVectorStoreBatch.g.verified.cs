@@ -53,8 +53,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListVectorStoreFilesResponse> ListFilesInVectorStoreBatchAsync(
             string vectorStoreId,
             string batchId,
-            int? limit = 20,
-            global::G.ListFilesInVectorStoreBatchOrder? order = global::G.ListFilesInVectorStoreBatchOrder.Desc,
+            int? limit = default,
+            global::G.ListFilesInVectorStoreBatchOrder? order = default,
             string? after = default,
             string? before = default,
             global::G.ListFilesInVectorStoreBatchFilter? filter = default,

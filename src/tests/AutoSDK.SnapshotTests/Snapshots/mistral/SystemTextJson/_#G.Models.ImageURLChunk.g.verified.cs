@@ -24,7 +24,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ImageURLChunkTypeJsonConverter))]
-        public global::G.ImageURLChunkType? Type { get; set; } = global::G.ImageURLChunkType.ImageUrl;
+        public global::G.ImageURLChunkType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

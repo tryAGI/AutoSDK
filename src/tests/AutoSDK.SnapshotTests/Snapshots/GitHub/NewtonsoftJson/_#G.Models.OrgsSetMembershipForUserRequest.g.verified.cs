@@ -16,7 +16,7 @@ namespace G
         /// Default Value: member
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.OrgsSetMembershipForUserRequestRole? Role { get; set; } = global::G.OrgsSetMembershipForUserRequestRole.Member;
+        public global::G.OrgsSetMembershipForUserRequestRole? Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

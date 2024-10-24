@@ -30,10 +30,10 @@ namespace G
             global::System.Guid shareToken,
             string? name = default,
             string? nameContains = default,
-            int? offset = 0,
-            int? limit = 100,
+            int? offset = default,
+            int? limit = default,
             global::G.SortByComparativeExperimentColumn? sortBy = default,
-            bool? sortByDesc = true,
+            bool? sortByDesc = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

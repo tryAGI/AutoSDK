@@ -25,13 +25,13 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
-        public double? Style { get; set; } = 0;
+        public double? Style { get; set; }
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_speaker_boost")]
-        public bool? UseSpeakerBoost { get; set; } = true;
+        public bool? UseSpeakerBoost { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

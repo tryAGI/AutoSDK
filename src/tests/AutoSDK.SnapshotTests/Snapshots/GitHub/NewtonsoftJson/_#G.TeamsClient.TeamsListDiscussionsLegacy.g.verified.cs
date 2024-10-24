@@ -50,9 +50,9 @@ namespace G
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TeamDiscussion>> TeamsListDiscussionsLegacyAsync(
             int teamId,
-            global::G.TeamsListDiscussionsLegacyDirection? direction = global::G.TeamsListDiscussionsLegacyDirection.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.TeamsListDiscussionsLegacyDirection? direction = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

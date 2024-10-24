@@ -127,7 +127,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.OrgsConvertMemberToOutsideCollaboratorResponse> OrgsConvertMemberToOutsideCollaboratorAsync(
             string org,
             string username,
-            bool? async = false,
+            bool? async = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.OrgsConvertMemberToOutsideCollaboratorRequest

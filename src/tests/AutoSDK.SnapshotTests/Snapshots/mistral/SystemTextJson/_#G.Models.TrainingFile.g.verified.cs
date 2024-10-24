@@ -20,7 +20,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight")]
-        public double? Weight { get; set; } = 1;
+        public double? Weight { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

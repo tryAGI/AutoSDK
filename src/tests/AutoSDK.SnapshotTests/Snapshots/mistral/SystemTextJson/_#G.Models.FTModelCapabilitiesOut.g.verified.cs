@@ -13,25 +13,25 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_chat")]
-        public bool? CompletionChat { get; set; } = true;
+        public bool? CompletionChat { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_fim")]
-        public bool? CompletionFim { get; set; } = false;
+        public bool? CompletionFim { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fine_tuning")]
-        public bool? FineTuning { get; set; } = false;
+        public bool? FineTuning { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_calling")]
-        public bool? FunctionCalling { get; set; } = false;
+        public bool? FunctionCalling { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

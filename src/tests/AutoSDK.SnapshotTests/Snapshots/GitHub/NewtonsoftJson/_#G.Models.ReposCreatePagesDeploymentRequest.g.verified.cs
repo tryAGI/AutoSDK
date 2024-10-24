@@ -26,7 +26,7 @@ namespace G
         /// Default Value: github-pages
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("environment")]
-        public string? Environment { get; set; } = "github-pages";
+        public string? Environment { get; set; }
 
         /// <summary>
         /// A unique string that represents the version of the build for this deployment.<br/>

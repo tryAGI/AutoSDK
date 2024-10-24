@@ -60,7 +60,7 @@ namespace G
         /// Default Value: pull
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
-        public global::G.TeamsCreateRequestPermission? Permission { get; set; } = global::G.TeamsCreateRequestPermission.Pull;
+        public global::G.TeamsCreateRequestPermission? Permission { get; set; }
 
         /// <summary>
         /// The ID of a team to set as the parent team.

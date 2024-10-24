@@ -46,7 +46,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("externally_managed")]
-        public bool? ExternallyManaged { get; set; } = false;
+        public bool? ExternallyManaged { get; set; }
 
         /// <summary>
         /// Enum for dataset data types.

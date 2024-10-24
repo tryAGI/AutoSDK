@@ -20,7 +20,7 @@ namespace G
         /// Default Value: /
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("path")]
-        public global::G.ReposCreatePagesSiteRequestSourcePath? Path { get; set; } = global::G.ReposCreatePagesSiteRequestSourcePath.x;
+        public global::G.ReposCreatePagesSiteRequestSourcePath? Path { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -34,7 +34,7 @@ namespace G
             global::G.StripeBusinessBillingInfo? companyInfo = default,
             global::G.StripeTaxId? taxId = default,
             string? invoiceEmail = default,
-            bool? isBusiness = false,
+            bool? isBusiness = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

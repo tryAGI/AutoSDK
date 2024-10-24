@@ -19,13 +19,13 @@ namespace G
         /// Default Value: general
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("style")]
-        public global::G.StyleType? Style { get; set; } = global::G.StyleType.General;
+        public global::G.StyleType? Style { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("startIndex")]
-        public int? StartIndex { get; set; } = 0;
+        public int? StartIndex { get; set; }
 
         /// <summary>
         /// 

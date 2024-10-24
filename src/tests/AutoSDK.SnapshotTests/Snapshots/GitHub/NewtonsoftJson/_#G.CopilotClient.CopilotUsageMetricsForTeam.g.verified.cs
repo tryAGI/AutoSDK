@@ -64,8 +64,8 @@ namespace G
             string teamSlug,
             string? since = default,
             string? until = default,
-            int? page = 1,
-            int? perPage = 28,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

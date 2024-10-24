@@ -144,8 +144,8 @@ namespace G
             int runnerGroupId,
             string name,
             global::G.ActionsUpdateSelfHostedRunnerGroupForOrgRequestVisibility? visibility = default,
-            bool? allowsPublicRepositories = false,
-            bool? restrictedToWorkflows = false,
+            bool? allowsPublicRepositories = default,
+            bool? restrictedToWorkflows = default,
             global::System.Collections.Generic.IList<string>? selectedWorkflows = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

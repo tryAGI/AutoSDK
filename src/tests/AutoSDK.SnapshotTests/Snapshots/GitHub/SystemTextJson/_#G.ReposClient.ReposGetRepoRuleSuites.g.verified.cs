@@ -63,11 +63,11 @@ namespace G
             string owner,
             string repo,
             string? @ref = default,
-            global::G.ReposGetRepoRuleSuitesTimePeriod? timePeriod = global::G.ReposGetRepoRuleSuitesTimePeriod.Day,
+            global::G.ReposGetRepoRuleSuitesTimePeriod? timePeriod = default,
             string? actorName = default,
-            global::G.ReposGetRepoRuleSuitesRuleSuiteResult? ruleSuiteResult = global::G.ReposGetRepoRuleSuitesRuleSuiteResult.All,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.ReposGetRepoRuleSuitesRuleSuiteResult? ruleSuiteResult = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

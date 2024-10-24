@@ -56,8 +56,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.UsageCharactersResponseModel> GetUsageCharacterStatsAsync(
             global::System.DateTimeOffset startUnix,
             global::System.DateTimeOffset endUnix,
-            bool? includeWorkspaceMetrics = false,
-            global::G.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownType? breakdownType = global::G.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownType.None,
+            bool? includeWorkspaceMetrics = default,
+            global::G.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownType? breakdownType = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -36,14 +36,14 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("final_model")]
-        public global::G.AnyOf<global::G.LemurModel?, string>? FinalModel { get; set; } = global::G.LemurModel.Default;
+        public global::G.AnyOf<global::G.LemurModel?, string>? FinalModel { get; set; }
 
         /// <summary>
         /// Max output size in tokens, up to 4000<br/>
         /// Default Value: 2000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_output_size")]
-        public int? MaxOutputSize { get; set; } = 2000;
+        public int? MaxOutputSize { get; set; }
 
         /// <summary>
         /// The temperature to use for the model.<br/>
@@ -52,7 +52,7 @@ namespace G
         /// Default Value: 0F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public float? Temperature { get; set; } = 0F;
+        public float? Temperature { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

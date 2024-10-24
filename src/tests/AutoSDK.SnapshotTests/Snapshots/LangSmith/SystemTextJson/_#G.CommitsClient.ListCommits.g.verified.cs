@@ -45,8 +45,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListCommitsResponse> ListCommitsAsync(
             string owner,
             string repo,
-            int? limit = 20,
-            int? offset = 0,
+            int? limit = default,
+            int? offset = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

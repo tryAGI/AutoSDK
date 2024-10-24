@@ -38,7 +38,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexed")]
-        public bool? Indexed { get; set; } = true;
+        public bool? Indexed { get; set; }
 
         /// <summary>
         /// The value type of the filter.<br/>

@@ -67,7 +67,7 @@ namespace G
             string? description = default,
             global::G.TeamsUpdateLegacyRequestPrivacy? privacy = default,
             global::G.TeamsUpdateLegacyRequestNotificationSetting? notificationSetting = default,
-            global::G.TeamsUpdateLegacyRequestPermission? permission = global::G.TeamsUpdateLegacyRequestPermission.Pull,
+            global::G.TeamsUpdateLegacyRequestPermission? permission = default,
             int? parentTeamId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

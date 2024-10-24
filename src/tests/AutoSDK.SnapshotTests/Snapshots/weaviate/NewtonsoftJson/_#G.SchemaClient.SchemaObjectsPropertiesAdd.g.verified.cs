@@ -169,11 +169,11 @@ namespace G
             string name,
             string? description = default,
             global::G.PropertyModuleConfig? moduleConfig = default,
-            bool? indexInverted = true,
-            bool? indexFilterable = true,
-            bool? indexSearchable = true,
+            bool? indexInverted = default,
+            bool? indexFilterable = default,
+            bool? indexSearchable = default,
             bool? indexRangeFilters = default,
-            global::G.Tokenization? tokenization = global::G.Tokenization.Word,
+            global::G.Tokenization? tokenization = default,
             global::System.Collections.Generic.IList<global::G.NestedProperty>? nestedProperties = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

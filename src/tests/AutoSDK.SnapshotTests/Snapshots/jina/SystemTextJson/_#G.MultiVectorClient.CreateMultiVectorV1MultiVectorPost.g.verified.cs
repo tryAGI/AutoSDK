@@ -143,7 +143,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ColbertModelEmbeddingsOutput> CreateMultiVectorV1MultiVectorPostAsync(
             string model,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, global::System.Collections.Generic.IList<global::G.ApiSchemasEmbeddingTextDoc>, global::G.ApiSchemasEmbeddingTextDoc> input,
-            global::G.TextEmbeddingAPIInputInputType? inputType = global::G.TextEmbeddingAPIInputInputType.Document,
+            global::G.TextEmbeddingAPIInputInputType? inputType = default,
             global::G.AnyOf<global::G.TextEmbeddingAPIInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.TextEmbeddingAPIInputEmbeddingTypeItem>>? embeddingType = default,
             int? dimensions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

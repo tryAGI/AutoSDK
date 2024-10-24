@@ -57,7 +57,7 @@ namespace G
             global::System.Collections.Generic.IList<global::G.Message> messages,
             global::G.ResponseFormat? format = default,
             global::G.RequestOptions? options = default,
-            bool? stream = true,
+            bool? stream = default,
             int? keepAlive = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
             global::System.Threading.CancellationToken cancellationToken = default);

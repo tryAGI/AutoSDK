@@ -13,13 +13,13 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_delay_seconds")]
-        public double? ResponseDelaySeconds { get; set; } = 1;
+        public double? ResponseDelaySeconds { get; set; }
 
         /// <summary>
         /// Default Value: 0.1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream_response_delay_between_deltas_seconds")]
-        public double? StreamResponseDelayBetweenDeltasSeconds { get; set; } = 0.1;
+        public double? StreamResponseDelayBetweenDeltasSeconds { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

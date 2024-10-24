@@ -34,7 +34,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deprecated")]
-        public bool? Deprecated { get; set; } = true;
+        public bool? Deprecated { get; set; }
 
         /// <summary>
         /// 
@@ -66,7 +66,7 @@ namespace G
         /// Default Value: job.metadata
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.LegacyJobMetadataOutObject? Object { get; set; } = global::G.LegacyJobMetadataOutObject.JobMetadata;
+        public global::G.LegacyJobMetadataOutObject? Object { get; set; }
 
         /// <summary>
         /// The total number of tokens used during the fine-tuning process.<br/>

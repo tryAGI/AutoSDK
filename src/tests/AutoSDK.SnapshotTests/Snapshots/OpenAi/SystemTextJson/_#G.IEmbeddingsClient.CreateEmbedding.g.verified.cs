@@ -43,7 +43,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.CreateEmbeddingResponse> CreateEmbeddingAsync(
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>> input,
             global::G.AnyOf<string, global::G.CreateEmbeddingRequestModel?> model,
-            global::G.CreateEmbeddingRequestEncodingFormat? encodingFormat = global::G.CreateEmbeddingRequestEncodingFormat.Float,
+            global::G.CreateEmbeddingRequestEncodingFormat? encodingFormat = default,
             int? dimensions = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default);

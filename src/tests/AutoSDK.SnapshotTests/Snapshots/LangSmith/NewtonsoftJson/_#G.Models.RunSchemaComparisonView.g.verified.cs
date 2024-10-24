@@ -61,7 +61,7 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("execution_order")]
-        public int? ExecutionOrder { get; set; } = 1;
+        public int? ExecutionOrder { get; set; }
 
         /// <summary>
         /// 

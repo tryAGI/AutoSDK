@@ -92,7 +92,7 @@ namespace G
         /// Default Value: DYNAMIC
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("presetStyle")]
-        public global::G.SdGenerationStyle? PresetStyle { get; set; } = global::G.SdGenerationStyle.DYNAMIC;
+        public global::G.SdGenerationStyle? PresetStyle { get; set; }
 
         /// <summary>
         /// 

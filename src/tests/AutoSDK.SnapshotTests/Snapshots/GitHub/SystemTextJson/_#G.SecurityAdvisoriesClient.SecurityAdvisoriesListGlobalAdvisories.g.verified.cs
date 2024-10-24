@@ -93,7 +93,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.GlobalAdvisory>> SecurityAdvisoriesListGlobalAdvisoriesAsync(
             string? ghsaId = default,
-            global::G.SecurityAdvisoriesListGlobalAdvisoriesType? type = global::G.SecurityAdvisoriesListGlobalAdvisoriesType.Reviewed,
+            global::G.SecurityAdvisoriesListGlobalAdvisoriesType? type = default,
             string? cveId = default,
             global::G.SecurityAdvisoryEcosystems? ecosystem = default,
             global::G.SecurityAdvisoriesListGlobalAdvisoriesSeverity? severity = default,
@@ -107,9 +107,9 @@ namespace G
             string? epssPercentile = default,
             string? before = default,
             string? after = default,
-            global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction = global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection.Desc,
-            int? perPage = 30,
-            global::G.SecurityAdvisoriesListGlobalAdvisoriesSort? sort = global::G.SecurityAdvisoriesListGlobalAdvisoriesSort.Published,
+            global::G.SecurityAdvisoriesListGlobalAdvisoriesDirection? direction = default,
+            int? perPage = default,
+            global::G.SecurityAdvisoriesListGlobalAdvisoriesSort? sort = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

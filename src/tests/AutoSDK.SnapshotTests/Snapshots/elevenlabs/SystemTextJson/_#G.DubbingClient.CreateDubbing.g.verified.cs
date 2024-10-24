@@ -93,7 +93,7 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.SourceUrl}"),
                     name: "source_url");
             } 
-            if (request.SourceLang != "auto")
+            if (request.SourceLang != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.SourceLang}"),
@@ -105,13 +105,13 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.TargetLang}"),
                     name: "target_lang");
             } 
-            if (request.NumSpeakers != 0)
+            if (request.NumSpeakers != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.NumSpeakers}"),
                     name: "num_speakers");
             } 
-            if (request.Watermark != false)
+            if (request.Watermark != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Watermark}"),
@@ -129,13 +129,13 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.EndTime}"),
                     name: "end_time");
             } 
-            if (request.HighestResolution != false)
+            if (request.HighestResolution != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.HighestResolution}"),
                     name: "highest_resolution");
             } 
-            if (request.DropBackgroundAudio != false)
+            if (request.DropBackgroundAudio != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.DropBackgroundAudio}"),
@@ -254,14 +254,14 @@ namespace G
             string? filename = default,
             string? name = default,
             string? sourceUrl = default,
-            string? sourceLang = "auto",
+            string? sourceLang = default,
             string? targetLang = default,
-            int? numSpeakers = 0,
-            bool? watermark = false,
+            int? numSpeakers = default,
+            bool? watermark = default,
             int? startTime = default,
             int? endTime = default,
-            bool? highestResolution = false,
-            bool? dropBackgroundAudio = false,
+            bool? highestResolution = default,
+            bool? dropBackgroundAudio = default,
             bool? useProfanityFilter = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -55,7 +55,7 @@ namespace G
             global::System.Collections.Generic.IList<string>? corpusKey = default,
             global::System.DateTime? after = default,
             global::System.Collections.Generic.IList<global::G.JobState>? state = default,
-            int? limit = 10,
+            int? limit = default,
             string? pageKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

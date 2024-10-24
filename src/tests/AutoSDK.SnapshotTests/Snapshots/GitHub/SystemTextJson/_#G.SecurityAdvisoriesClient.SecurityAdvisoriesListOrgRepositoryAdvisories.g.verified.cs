@@ -57,11 +57,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryAdvisory>> SecurityAdvisoriesListOrgRepositoryAdvisoriesAsync(
             string org,
-            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction = global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection.Desc,
-            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort = global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort.Created,
+            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesDirection? direction = default,
+            global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesSort? sort = default,
             string? before = default,
             string? after = default,
-            int? perPage = 30,
+            int? perPage = default,
             global::G.SecurityAdvisoriesListOrgRepositoryAdvisoriesState? state = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

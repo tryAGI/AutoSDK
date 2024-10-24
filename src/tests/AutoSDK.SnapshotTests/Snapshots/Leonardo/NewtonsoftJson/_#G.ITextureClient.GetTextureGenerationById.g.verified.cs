@@ -22,8 +22,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.GetTextureGenerationByIdResponse> GetTextureGenerationByIdAsync(
             string id,
             global::G.GetTextureGenerationByIdRequest request,
-            int? offset = 0,
-            int? limit = 10,
+            int? offset = default,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -42,8 +42,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetTextureGenerationByIdResponse> GetTextureGenerationByIdAsync(
             string id,
-            int? offset = 0,
-            int? limit = 10,
+            int? offset = default,
+            int? limit = default,
             string? requestId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

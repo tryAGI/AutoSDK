@@ -129,8 +129,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.APIKeyCreateResponse> GeneratePersonalAccessTokenAsync(
-            string? description = "Default API key",
-            bool? readOnly = false,
+            string? description = default,
+            bool? readOnly = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.APIKeyCreateRequest

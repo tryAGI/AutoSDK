@@ -30,9 +30,9 @@ namespace G
             string owner,
             string repo,
             int runId,
-            global::G.ActionsListJobsForWorkflowRunFilter? filter = global::G.ActionsListJobsForWorkflowRunFilter.Latest,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.ActionsListJobsForWorkflowRunFilter? filter = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

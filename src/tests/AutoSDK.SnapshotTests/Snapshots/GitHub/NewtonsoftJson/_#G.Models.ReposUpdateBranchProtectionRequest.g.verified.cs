@@ -68,14 +68,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lock_branch")]
-        public bool? LockBranch { get; set; } = false;
+        public bool? LockBranch { get; set; }
 
         /// <summary>
         /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing. Default: `false`.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("allow_fork_syncing")]
-        public bool? AllowForkSyncing { get; set; } = false;
+        public bool? AllowForkSyncing { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

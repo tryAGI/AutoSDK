@@ -37,19 +37,19 @@ namespace G
         /// Default Value: 15
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_segments")]
-        public int? MaxSegments { get; set; } = 15;
+        public int? MaxSegments { get; set; }
 
         /// <summary>
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrieval_strategy")]
-        public global::G.ConversationalRagFlowPublicFieldsRetrievalStrategy? RetrievalStrategy { get; set; } = global::G.ConversationalRagFlowPublicFieldsRetrievalStrategy.Default;
+        public global::G.ConversationalRagFlowPublicFieldsRetrievalStrategy? RetrievalStrategy { get; set; }
 
         /// <summary>
         /// Default Value: 0.8
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("retrieval_similarity_threshold")]
-        public double? RetrievalSimilarityThreshold { get; set; } = 0.8;
+        public double? RetrievalSimilarityThreshold { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// Default Value: 0.98
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("hybrid_search_alpha")]
-        public double? HybridSearchAlpha { get; set; } = 0.98;
+        public double? HybridSearchAlpha { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

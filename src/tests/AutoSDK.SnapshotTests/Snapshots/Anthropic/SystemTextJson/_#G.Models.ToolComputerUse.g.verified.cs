@@ -14,14 +14,14 @@ namespace G
         /// Default Value: computer_20241022
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "computer_20241022";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The name of the tool.<br/>
         /// Default Value: computer
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; } = "computer";
+        public string? Name { get; set; }
 
         /// <summary>
         /// The cache control settings.

@@ -23,9 +23,9 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Project>> ProjectsListForOrgAsync(
             string org,
-            global::G.ProjectsListForOrgState? state = global::G.ProjectsListForOrgState.Open,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.ProjectsListForOrgState? state = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -19,37 +19,37 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("numResults")]
-        public int? NumResults { get; set; } = 1;
+        public int? NumResults { get; set; }
 
         /// <summary>
         /// Default Value: 16
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maxTokens")]
-        public int? MaxTokens { get; set; } = 16;
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("minTokens")]
-        public int? MinTokens { get; set; } = 0;
+        public int? MinTokens { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double? Temperature { get; set; } = 1;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topP")]
-        public double? TopP { get; set; } = 1;
+        public double? TopP { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("minP")]
-        public double? MinP { get; set; } = 0;
+        public double? MinP { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topKReturn")]
-        public int? TopKReturn { get; set; } = 0;
+        public int? TopKReturn { get; set; }
 
         /// <summary>
         /// 

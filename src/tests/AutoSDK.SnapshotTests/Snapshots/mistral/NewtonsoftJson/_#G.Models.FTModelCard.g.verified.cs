@@ -19,7 +19,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("archived")]
-        public bool? Archived { get; set; } = false;
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// Default Value: 32768
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_context_length")]
-        public int? MaxContextLength { get; set; } = 32768;
+        public int? MaxContextLength { get; set; }
 
         /// <summary>
         /// 
@@ -73,13 +73,13 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public string? Object { get; set; } = "model";
+        public string? Object { get; set; }
 
         /// <summary>
         /// Default Value: mistralai
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("owned_by")]
-        public string? OwnedBy { get; set; } = "mistralai";
+        public string? OwnedBy { get; set; }
 
         /// <summary>
         /// 
@@ -91,7 +91,7 @@ namespace G
         /// Default Value: fine-tuned
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.FTModelCardType? Type { get; set; } = global::G.FTModelCardType.FineTuned;
+        public global::G.FTModelCardType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

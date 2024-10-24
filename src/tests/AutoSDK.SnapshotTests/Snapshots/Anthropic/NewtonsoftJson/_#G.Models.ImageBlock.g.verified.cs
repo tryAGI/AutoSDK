@@ -20,7 +20,7 @@ namespace G
         /// Default Value: image
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; } = "image";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The cache control settings.

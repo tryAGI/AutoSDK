@@ -19,7 +19,7 @@ namespace G
         /// Default Value: text
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.TextChunkType? Type { get; set; } = global::G.TextChunkType.Text;
+        public global::G.TextChunkType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

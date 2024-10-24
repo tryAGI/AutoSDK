@@ -55,7 +55,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_api_key_hashed")]
-        public bool? IsApiKeyHashed { get; set; } = false;
+        public bool? IsApiKeyHashed { get; set; }
 
         /// <summary>
         /// 

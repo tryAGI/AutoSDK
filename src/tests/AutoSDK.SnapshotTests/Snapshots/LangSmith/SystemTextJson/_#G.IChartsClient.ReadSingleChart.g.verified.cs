@@ -38,7 +38,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SingleCustomChartResponse> ReadSingleChartAsync(
             global::System.Guid chartId,
             global::System.DateTime startTime,
-            string? timezone = "UTC",
+            string? timezone = default,
             global::System.DateTime? endTime = default,
             global::G.TimedeltaInput? stride = default,
             int? afterIndex = default,

@@ -16,7 +16,7 @@ namespace G
         /// Default Value: float
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("encoding_format")]
-        public string? EncodingFormat { get; set; } = "float";
+        public string? EncodingFormat { get; set; }
 
         /// <summary>
         /// Text to embed.

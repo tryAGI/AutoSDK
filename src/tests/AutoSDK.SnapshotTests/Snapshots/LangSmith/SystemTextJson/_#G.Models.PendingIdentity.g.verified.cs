@@ -20,7 +20,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("read_only")]
-        public bool? ReadOnly { get; set; } = false;
+        public bool? ReadOnly { get; set; }
 
         /// <summary>
         /// 

@@ -83,13 +83,13 @@ namespace G
             string? ecosystem = default,
             string? package = default,
             global::G.DependabotListAlertsForEnterpriseScope? scope = default,
-            global::G.DependabotListAlertsForEnterpriseSort? sort = global::G.DependabotListAlertsForEnterpriseSort.Created,
-            global::G.DependabotListAlertsForEnterpriseDirection? direction = global::G.DependabotListAlertsForEnterpriseDirection.Desc,
+            global::G.DependabotListAlertsForEnterpriseSort? sort = default,
+            global::G.DependabotListAlertsForEnterpriseDirection? direction = default,
             string? before = default,
             string? after = default,
-            int? first = 30,
+            int? first = default,
             int? last = default,
-            int? perPage = 30,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

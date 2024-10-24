@@ -34,14 +34,14 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexFilterable")]
-        public bool? IndexFilterable { get; set; } = true;
+        public bool? IndexFilterable { get; set; }
 
         /// <summary>
         /// Whether to include this property in the searchable, inverted index. Applicable only to properties of data type text and text[]. If `false`, this property cannot be used in `bm25` or `hybrid` searches. &lt;br/&gt;&lt;br/&gt;Unrelated to vectorization behavior.<br/>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexSearchable")]
-        public bool? IndexSearchable { get; set; } = true;
+        public bool? IndexSearchable { get; set; }
 
         /// <summary>
         /// Whether to include this property in the filterable, range-based Roaring Bitmap inverted index. Defaults to false. Provides better performance for range queries compared to filterable index in large datasets. Applicable only to properties of data type int, number, date.
@@ -55,7 +55,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tokenization")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TokenizationJsonConverter))]
-        public global::G.Tokenization? Tokenization { get; set; } = global::G.Tokenization.Word;
+        public global::G.Tokenization? Tokenization { get; set; }
 
         /// <summary>
         /// Specify the properties of the nested object(s) as required.

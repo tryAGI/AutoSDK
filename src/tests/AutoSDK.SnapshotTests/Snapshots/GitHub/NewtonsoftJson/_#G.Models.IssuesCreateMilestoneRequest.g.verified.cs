@@ -20,7 +20,7 @@ namespace G
         /// Default Value: open
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("state")]
-        public global::G.IssuesCreateMilestoneRequestState? State { get; set; } = global::G.IssuesCreateMilestoneRequestState.Open;
+        public global::G.IssuesCreateMilestoneRequestState? State { get; set; }
 
         /// <summary>
         /// A description of the milestone.

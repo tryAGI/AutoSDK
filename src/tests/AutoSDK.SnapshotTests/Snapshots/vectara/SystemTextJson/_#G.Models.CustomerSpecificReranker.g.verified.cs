@@ -15,7 +15,7 @@ namespace G
         /// Default Value: customer_reranker
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "customer_reranker";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The ID of the reranker. The multilingual reranker that may be used by Scale customers is rnk_272725719.<br/>

@@ -51,10 +51,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.SimpleUser>> OrgsListMembersAsync(
             string org,
-            global::G.OrgsListMembersFilter? filter = global::G.OrgsListMembersFilter.All,
-            global::G.OrgsListMembersRole? role = global::G.OrgsListMembersRole.All,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.OrgsListMembersFilter? filter = default,
+            global::G.OrgsListMembersRole? role = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

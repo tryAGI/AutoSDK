@@ -63,7 +63,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("truncate")]
-        public global::G.EmbedRequestTruncate? Truncate { get; set; } = global::G.EmbedRequestTruncate.END;
+        public global::G.EmbedRequestTruncate? Truncate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

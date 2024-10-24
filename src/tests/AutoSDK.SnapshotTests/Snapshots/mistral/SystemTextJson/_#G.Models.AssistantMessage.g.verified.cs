@@ -20,14 +20,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prefix")]
-        public bool? Prefix { get; set; } = false;
+        public bool? Prefix { get; set; }
 
         /// <summary>
         /// Default Value: assistant
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AssistantMessageRoleJsonConverter))]
-        public global::G.AssistantMessageRole? Role { get; set; } = global::G.AssistantMessageRole.Assistant;
+        public global::G.AssistantMessageRole? Role { get; set; }
 
         /// <summary>
         /// 

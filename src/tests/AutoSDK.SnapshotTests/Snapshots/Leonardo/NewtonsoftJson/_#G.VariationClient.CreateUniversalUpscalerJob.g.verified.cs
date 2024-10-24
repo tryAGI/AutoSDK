@@ -150,9 +150,9 @@ namespace G
             string? initImageId = default,
             string? generatedImageId = default,
             string? variationId = default,
-            global::G.UniversalUpscalerStyle? upscalerStyle = global::G.UniversalUpscalerStyle.GENERAL,
-            int? creativityStrength = 5,
-            double? upscaleMultiplier = 1.5,
+            global::G.UniversalUpscalerStyle? upscalerStyle = default,
+            int? creativityStrength = default,
+            double? upscaleMultiplier = default,
             string? prompt = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

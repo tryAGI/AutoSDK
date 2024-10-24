@@ -19,13 +19,13 @@ namespace G
         /// Default Value: 0.9
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fim_ratio")]
-        public double? FimRatio { get; set; } = 0.9;
+        public double? FimRatio { get; set; }
 
         /// <summary>
         /// Default Value: 0.0001
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate")]
-        public double? LearningRate { get; set; } = 0.0001;
+        public double? LearningRate { get; set; }
 
         /// <summary>
         /// 
@@ -37,13 +37,13 @@ namespace G
         /// Default Value: 0.05
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("warmup_fraction")]
-        public double? WarmupFraction { get; set; } = 0.05;
+        public double? WarmupFraction { get; set; }
 
         /// <summary>
         /// Default Value: 0.1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("weight_decay")]
-        public double? WeightDecay { get; set; } = 0.1;
+        public double? WeightDecay { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamsUpdateLegacyRequestPermissionJsonConverter))]
-        public global::G.TeamsUpdateLegacyRequestPermission? Permission { get; set; } = global::G.TeamsUpdateLegacyRequestPermission.Pull;
+        public global::G.TeamsUpdateLegacyRequestPermission? Permission { get; set; }
 
         /// <summary>
         /// The ID of a team to set as the parent team.

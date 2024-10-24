@@ -14,7 +14,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("store")]
-        public bool? Store { get; set; } = true;
+        public bool? Store { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

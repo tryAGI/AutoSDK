@@ -30,7 +30,7 @@ namespace G
         /// Default Value: direct_member
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.OrgsCreateInvitationRequestRole? Role { get; set; } = global::G.OrgsCreateInvitationRequestRole.DirectMember;
+        public global::G.OrgsCreateInvitationRequestRole? Role { get; set; }
 
         /// <summary>
         /// Specify IDs for the teams you want to invite new members to.

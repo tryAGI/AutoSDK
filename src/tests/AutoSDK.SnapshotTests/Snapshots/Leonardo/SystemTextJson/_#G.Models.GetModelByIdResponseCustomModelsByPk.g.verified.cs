@@ -77,7 +77,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CustomModelTypeJsonConverter))]
-        public global::G.CustomModelType? Type { get; set; } = global::G.CustomModelType.GENERAL;
+        public global::G.CustomModelType? Type { get; set; }
 
         /// <summary>
         /// 

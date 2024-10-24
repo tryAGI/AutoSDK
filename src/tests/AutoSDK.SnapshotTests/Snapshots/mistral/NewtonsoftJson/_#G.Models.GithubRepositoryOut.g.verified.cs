@@ -37,13 +37,13 @@ namespace G
         /// Default Value: github
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.GithubRepositoryOutType? Type { get; set; } = global::G.GithubRepositoryOutType.Github;
+        public global::G.GithubRepositoryOutType? Type { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("weight")]
-        public double? Weight { get; set; } = 1;
+        public double? Weight { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

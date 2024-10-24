@@ -15,7 +15,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("preset")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StopwordConfigPresetJsonConverter))]
-        public global::G.StopwordConfigPreset? Preset { get; set; } = global::G.StopwordConfigPreset.En;
+        public global::G.StopwordConfigPreset? Preset { get; set; }
 
         /// <summary>
         /// Stopwords to be considered additionally. Can be any array of custom strings.

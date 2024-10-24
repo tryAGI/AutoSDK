@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DomainsResponse> GetDomainsAsync(
             string ip,
             int? page = default,
-            int? limit = 100,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

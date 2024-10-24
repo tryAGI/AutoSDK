@@ -105,7 +105,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GetLibraryVoicesResponseModel> GetSharedVoicesAsync(
-            int? pageSize = 30,
+            int? pageSize = default,
             string? category = default,
             string? gender = default,
             string? age = default,
@@ -114,11 +114,11 @@ namespace G
             string? search = default,
             global::System.Collections.Generic.IList<string>? useCases = default,
             global::System.Collections.Generic.IList<string>? descriptives = default,
-            bool? featured = false,
-            bool? readerAppEnabled = false,
+            bool? featured = default,
+            bool? readerAppEnabled = default,
             string? ownerId = default,
             string? sort = default,
-            int? page = 0,
+            int? page = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

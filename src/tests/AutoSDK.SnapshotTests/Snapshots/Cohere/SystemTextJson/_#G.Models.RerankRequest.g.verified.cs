@@ -52,14 +52,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("return_documents")]
-        public bool? ReturnDocuments { get; set; } = false;
+        public bool? ReturnDocuments { get; set; }
 
         /// <summary>
         /// The maximum number of chunks to produce internally from a document<br/>
         /// Default Value: 10
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_chunks_per_doc")]
-        public int? MaxChunksPerDoc { get; set; } = 10;
+        public int? MaxChunksPerDoc { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

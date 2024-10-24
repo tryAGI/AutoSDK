@@ -53,8 +53,8 @@ namespace G
             string environmentName,
             string repo,
             string owner,
-            int? page = 1,
-            int? perPage = 30,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

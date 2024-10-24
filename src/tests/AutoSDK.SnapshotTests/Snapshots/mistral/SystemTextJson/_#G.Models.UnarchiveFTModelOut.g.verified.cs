@@ -13,7 +13,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
-        public bool? Archived { get; set; } = false;
+        public bool? Archived { get; set; }
 
         /// <summary>
         /// 
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnarchiveFTModelOutObjectJsonConverter))]
-        public global::G.UnarchiveFTModelOutObject? Object { get; set; } = global::G.UnarchiveFTModelOutObject.Model;
+        public global::G.UnarchiveFTModelOutObject? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

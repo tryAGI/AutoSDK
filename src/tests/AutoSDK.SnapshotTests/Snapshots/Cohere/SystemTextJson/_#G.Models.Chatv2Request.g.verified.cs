@@ -116,7 +116,7 @@ namespace G
         /// Default Value: 0F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("k")]
-        public float? K { get; set; } = 0F;
+        public float? K { get; set; }
 
         /// <summary>
         /// Ensures that only the most likely tokens, with total probability mass of `p`, are considered for generation at each step. If both `k` and `p` are enabled, `p` acts after `k`.<br/>
@@ -124,7 +124,7 @@ namespace G
         /// Default Value: 0.75F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("p")]
-        public float? P { get; set; } = 0.75F;
+        public float? P { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -14,14 +14,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("skip")]
-        public bool? Skip { get; set; } = false;
+        public bool? Skip { get; set; }
 
         /// <summary>
         /// Whether the name of the property is used in determining the object vector.<br/>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectorizePropertyName")]
-        public bool? VectorizePropertyName { get; set; } = true;
+        public bool? VectorizePropertyName { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

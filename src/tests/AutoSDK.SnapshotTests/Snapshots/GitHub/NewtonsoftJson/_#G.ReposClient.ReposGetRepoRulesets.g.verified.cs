@@ -55,9 +55,9 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.RepositoryRuleset>> ReposGetRepoRulesetsAsync(
             string owner,
             string repo,
-            int? perPage = 30,
-            int? page = 1,
-            bool? includesParents = true,
+            int? perPage = default,
+            int? page = default,
+            bool? includesParents = default,
             string? targets = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

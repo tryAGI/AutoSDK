@@ -30,7 +30,7 @@ namespace G
         global::System.Threading.Tasks.Task<string> CreateNodePoolAsync(
             string clusterId,
             global::System.Collections.Generic.IList<global::G.Accelerator> accelerators,
-            bool? spot = true,
+            bool? spot = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

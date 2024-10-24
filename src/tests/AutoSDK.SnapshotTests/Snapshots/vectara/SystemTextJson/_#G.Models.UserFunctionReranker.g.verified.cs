@@ -15,7 +15,7 @@ namespace G
         /// Default Value: userfn
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "userfn";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The user defined function.<br/>

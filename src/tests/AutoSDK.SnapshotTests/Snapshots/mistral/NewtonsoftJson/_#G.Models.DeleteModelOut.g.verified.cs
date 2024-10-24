@@ -15,7 +15,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("deleted")]
-        public bool? Deleted { get; set; } = true;
+        public bool? Deleted { get; set; }
 
         /// <summary>
         /// The ID of the deleted model.<br/>
@@ -29,7 +29,7 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public string? Object { get; set; } = "model";
+        public string? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

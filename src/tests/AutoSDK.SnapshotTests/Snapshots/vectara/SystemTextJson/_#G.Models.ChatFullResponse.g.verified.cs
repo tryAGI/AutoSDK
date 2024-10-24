@@ -33,7 +33,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_language")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LanguageJsonConverter))]
-        public global::G.Language? ResponseLanguage { get; set; } = global::G.Language.Auto;
+        public global::G.Language? ResponseLanguage { get; set; }
 
         /// <summary>
         /// The ranked search results that the chat model used.

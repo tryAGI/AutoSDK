@@ -13,7 +13,7 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; } = "model";
+        public string? Type { get; set; }
 
         /// <summary>
         /// 

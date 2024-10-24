@@ -49,8 +49,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListMessagesResponse> ListMessagesAsync(
             string threadId,
-            int? limit = 20,
-            global::G.ListMessagesOrder? order = global::G.ListMessagesOrder.Desc,
+            int? limit = default,
+            global::G.ListMessagesOrder? order = default,
             string? after = default,
             string? before = default,
             string? runId = default,

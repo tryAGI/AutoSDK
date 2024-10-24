@@ -38,7 +38,7 @@ namespace G
             int minimumNodes,
             string? pipelineId = default,
             string? pointer = default,
-            int? duration = 300,
+            int? duration = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

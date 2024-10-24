@@ -54,7 +54,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.UploadFileOut> FilesApiRoutesUploadFileAsync(
             byte[] file,
             string filename,
-            global::G.FilesApiRoutesUploadFileRequestPurpose? purpose = global::G.FilesApiRoutesUploadFileRequestPurpose.FineTune,
+            global::G.FilesApiRoutesUploadFileRequestPurpose? purpose = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

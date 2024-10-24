@@ -15,7 +15,7 @@ namespace G
         /// Example: write
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
-        public global::G.ProjectsAddCollaboratorRequestPermission? Permission { get; set; } = global::G.ProjectsAddCollaboratorRequestPermission.Write;
+        public global::G.ProjectsAddCollaboratorRequestPermission? Permission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

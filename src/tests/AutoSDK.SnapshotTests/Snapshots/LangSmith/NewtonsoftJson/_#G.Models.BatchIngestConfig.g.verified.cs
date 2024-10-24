@@ -13,37 +13,37 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_multipart_endpoint")]
-        public bool? UseMultipartEndpoint { get; set; } = true;
+        public bool? UseMultipartEndpoint { get; set; }
 
         /// <summary>
         /// Default Value: 1000
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scale_up_qsize_trigger")]
-        public int? ScaleUpQsizeTrigger { get; set; } = 1000;
+        public int? ScaleUpQsizeTrigger { get; set; }
 
         /// <summary>
         /// Default Value: 16
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scale_up_nthreads_limit")]
-        public int? ScaleUpNthreadsLimit { get; set; } = 16;
+        public int? ScaleUpNthreadsLimit { get; set; }
 
         /// <summary>
         /// Default Value: 4
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("scale_down_nempty_trigger")]
-        public int? ScaleDownNemptyTrigger { get; set; } = 4;
+        public int? ScaleDownNemptyTrigger { get; set; }
 
         /// <summary>
         /// Default Value: 100
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_limit")]
-        public int? SizeLimit { get; set; } = 100;
+        public int? SizeLimit { get; set; }
 
         /// <summary>
         /// Default Value: 20971520
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("size_limit_bytes")]
-        public int? SizeLimitBytes { get; set; } = 20971520;
+        public int? SizeLimitBytes { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

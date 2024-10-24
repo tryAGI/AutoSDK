@@ -60,7 +60,7 @@ namespace G
         /// Default Value: standard
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("quality_preset")]
-        public string? QualityPreset { get; set; } = "standard";
+        public string? QualityPreset { get; set; }
 
         /// <summary>
         /// An optional name of the author of the project, this will be added as metadata to the mp3 file on project / chapter download.
@@ -115,7 +115,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mature_content")]
-        public bool? MatureContent { get; set; } = false;
+        public bool? MatureContent { get; set; }
 
         /// <summary>
         /// An optional ISBN number of the project you want to create, this will be added as metadata to the mp3 file on project / chapter download.
@@ -128,14 +128,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("acx_volume_normalization")]
-        public bool? AcxVolumeNormalization { get; set; } = false;
+        public bool? AcxVolumeNormalization { get; set; }
 
         /// <summary>
         /// When the project is downloaded, should the returned audio have postprocessing in order to make it compliant with audiobook normalized volume requirements<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("volume_normalization")]
-        public bool? VolumeNormalization { get; set; } = false;
+        public bool? VolumeNormalization { get; set; }
 
         /// <summary>
         /// A list of pronunciation dictionary locators (pronunciation_dictionary_id, version_id) encoded as a list of JSON strings for pronunciation dictionaries to be applied to the text.  A list of json encoded strings is required as adding projects may occur through formData as opposed to jsonBody. To specify multiple dictionaries use multiple --form lines in your curl, such as --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"Vmd4Zor6fplcA7WrINey\",\"version_id\":\"hRPaxjlTdR7wFMhV4w0b\"}"' --form 'pronunciation_dictionary_locators="{\"pronunciation_dictionary_id\":\"JzWtcGQMJ6bnlWwyMo7e\",\"version_id\":\"lbmwxiLu4q6txYxgdZqn\"}"'. Note that multiple dictionaries are not currently supported by our UI which will only show the first.

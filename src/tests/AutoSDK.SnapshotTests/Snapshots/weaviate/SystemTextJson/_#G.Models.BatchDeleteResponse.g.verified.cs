@@ -21,14 +21,14 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BatchDeleteResponseOutputJsonConverter))]
-        public global::G.BatchDeleteResponseOutput? Output { get; set; } = global::G.BatchDeleteResponseOutput.Minimal;
+        public global::G.BatchDeleteResponseOutput? Output { get; set; }
 
         /// <summary>
         /// If true, objects will not be deleted yet, but merely listed. Defaults to false.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("dryRun")]
-        public bool? DryRun { get; set; } = false;
+        public bool? DryRun { get; set; }
 
         /// <summary>
         /// 

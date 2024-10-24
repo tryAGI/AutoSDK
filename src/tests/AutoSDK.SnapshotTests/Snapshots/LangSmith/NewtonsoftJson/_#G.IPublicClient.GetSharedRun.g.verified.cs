@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.RunPublicSchema> GetSharedRunAsync(
             global::System.Guid shareToken,
-            bool? excludeS3StoredAttributes = false,
+            bool? excludeS3StoredAttributes = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -29,10 +29,10 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.OrganizationInvitation>> OrgsListPendingInvitationsAsync(
             string org,
-            int? perPage = 30,
-            int? page = 1,
-            global::G.OrgsListPendingInvitationsRole? role = global::G.OrgsListPendingInvitationsRole.All,
-            global::G.OrgsListPendingInvitationsInvitationSource? invitationSource = global::G.OrgsListPendingInvitationsInvitationSource.All,
+            int? perPage = default,
+            int? page = default,
+            global::G.OrgsListPendingInvitationsRole? role = default,
+            global::G.OrgsListPendingInvitationsInvitationSource? invitationSource = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

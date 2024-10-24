@@ -39,8 +39,8 @@ namespace G
             string? filter = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
-            int? offset = 0,
-            int? limit = 10,
+            int? offset = default,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

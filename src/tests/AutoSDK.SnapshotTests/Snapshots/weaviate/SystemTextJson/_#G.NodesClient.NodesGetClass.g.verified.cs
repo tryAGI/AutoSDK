@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.NodesStatusResponse> NodesGetClassAsync(
             string className,
-            global::G.NodesGetClassOutput? output = global::G.NodesGetClassOutput.Minimal,
+            global::G.NodesGetClassOutput? output = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

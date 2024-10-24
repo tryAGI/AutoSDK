@@ -32,11 +32,11 @@ namespace G
             string org,
             string? @ref = default,
             int? repositoryName = default,
-            global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod = global::G.ReposGetOrgRuleSuitesTimePeriod.Day,
+            global::G.ReposGetOrgRuleSuitesTimePeriod? timePeriod = default,
             string? actorName = default,
-            global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult = global::G.ReposGetOrgRuleSuitesRuleSuiteResult.All,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.ReposGetOrgRuleSuitesRuleSuiteResult? ruleSuiteResult = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

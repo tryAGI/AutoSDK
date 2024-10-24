@@ -80,19 +80,19 @@ namespace G
                     content: new global::System.Net.Http.StringContent(request.Model?.Value1?.ToString() ?? request.Model?.Value2?.ToValueString() ?? string.Empty),
                     name: "model");
             } 
-            if (request.N != 1)
+            if (request.N != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
                     name: "n");
             } 
-            if (request.ResponseFormat != global::G.CreateImageVariationRequestResponseFormat.Url)
+            if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
                     name: "response_format");
             } 
-            if (request.Size != global::G.CreateImageVariationRequestSize.x1024x1024)
+            if (request.Size != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
@@ -190,9 +190,9 @@ namespace G
             byte[] image,
             string imagename,
             global::G.AnyOf<string, global::G.CreateImageVariationRequestModel?>? model = default,
-            int? n = 1,
-            global::G.CreateImageVariationRequestResponseFormat? responseFormat = global::G.CreateImageVariationRequestResponseFormat.Url,
-            global::G.CreateImageVariationRequestSize? size = global::G.CreateImageVariationRequestSize.x1024x1024,
+            int? n = default,
+            global::G.CreateImageVariationRequestResponseFormat? responseFormat = default,
+            global::G.CreateImageVariationRequestSize? size = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

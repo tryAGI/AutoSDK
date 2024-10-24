@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MODELASSETTEXTURETYPESJsonConverter))]
-        public global::G.MODELASSETTEXTURETYPES? Type { get; set; } = global::G.MODELASSETTEXTURETYPES.NORMAL;
+        public global::G.MODELASSETTEXTURETYPES? Type { get; set; }
 
         /// <summary>
         /// 

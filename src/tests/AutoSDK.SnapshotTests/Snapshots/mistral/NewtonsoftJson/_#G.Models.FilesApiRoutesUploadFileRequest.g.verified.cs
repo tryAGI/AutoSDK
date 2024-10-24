@@ -41,7 +41,7 @@ namespace G
         /// Default Value: fine-tune
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("purpose")]
-        public global::G.FilesApiRoutesUploadFileRequestPurpose? Purpose { get; set; } = global::G.FilesApiRoutesUploadFileRequestPurpose.FineTune;
+        public global::G.FilesApiRoutesUploadFileRequestPurpose? Purpose { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

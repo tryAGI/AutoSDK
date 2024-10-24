@@ -14,7 +14,7 @@ namespace G
         /// Default Value: object
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ToolParametersType? Type { get; set; } = global::G.ToolParametersType.Object;
+        public global::G.ToolParametersType? Type { get; set; }
 
         /// <summary>
         /// 

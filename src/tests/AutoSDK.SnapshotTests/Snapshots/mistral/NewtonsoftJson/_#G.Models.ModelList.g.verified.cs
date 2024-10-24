@@ -19,7 +19,7 @@ namespace G
         /// Default Value: list
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
-        public string? Object { get; set; } = "list";
+        public string? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

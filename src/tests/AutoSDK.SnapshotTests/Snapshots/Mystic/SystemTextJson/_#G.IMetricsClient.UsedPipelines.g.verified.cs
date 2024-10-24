@@ -22,8 +22,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PaginatedPipelineMetrics> UsedPipelinesAsync(
             string? search = default,
-            int? skip = 0,
-            int? limit = 20,
+            int? skip = default,
+            int? limit = default,
             string? orderBy = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

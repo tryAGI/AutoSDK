@@ -20,14 +20,14 @@ namespace G
         /// Default Value: minimal
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output")]
-        public global::G.BatchDeleteOutput? Output { get; set; } = global::G.BatchDeleteOutput.Minimal;
+        public global::G.BatchDeleteOutput? Output { get; set; }
 
         /// <summary>
         /// If true, the call will show which objects would be matched using the specified filter without deleting any objects. &lt;br/&gt;&lt;br/&gt;Depending on the configured verbosity, you will either receive a count of affected objects, or a list of IDs.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dryRun")]
-        public bool? DryRun { get; set; } = false;
+        public bool? DryRun { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

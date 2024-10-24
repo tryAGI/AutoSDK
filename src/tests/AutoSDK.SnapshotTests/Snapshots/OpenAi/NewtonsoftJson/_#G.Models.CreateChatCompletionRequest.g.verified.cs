@@ -30,7 +30,7 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("frequency_penalty")]
-        public double? FrequencyPenalty { get; set; } = 0;
+        public double? FrequencyPenalty { get; set; }
 
         /// <summary>
         /// Modify the likelihood of specified tokens appearing in the completion.<br/>
@@ -44,7 +44,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("logprobs")]
-        public bool? Logprobs { get; set; } = false;
+        public bool? Logprobs { get; set; }
 
         /// <summary>
         /// An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability. `logprobs` must be set to `true` if this parameter is used.
@@ -65,7 +65,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n")]
-        public int? N { get; set; } = 1;
+        public int? N { get; set; }
 
         /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
@@ -73,7 +73,7 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("presence_penalty")]
-        public double? PresencePenalty { get; set; } = 0;
+        public double? PresencePenalty { get; set; }
 
         /// <summary>
         /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4o mini](/docs/models/gpt-4o-mini), [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
@@ -113,7 +113,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool? Stream { get; set; } = false;
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// Options for streaming response. Only set this when you set `stream: true`.
@@ -128,7 +128,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double? Temperature { get; set; } = 1;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.<br/>
@@ -137,7 +137,7 @@ namespace G
         /// Example: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
-        public double? TopP { get; set; } = 1;
+        public double? TopP { get; set; }
 
         /// <summary>
         /// A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.

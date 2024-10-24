@@ -20,7 +20,7 @@ namespace G
         /// Default Value: HEALTHY
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.StatisticsStatus? Status { get; set; } = global::G.StatisticsStatus.HEALTHY;
+        public global::G.StatisticsStatus? Status { get; set; }
 
         /// <summary>
         /// 

@@ -14,7 +14,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("alchemy")]
-        public bool? Alchemy { get; set; } = true;
+        public bool? Alchemy { get; set; }
 
         /// <summary>
         /// Contrast Ratio to use with Alchemy. Must be a float between 0 and 1 inclusive.
@@ -57,7 +57,7 @@ namespace G
         /// Default Value: 768
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("height")]
-        public int? Height { get; set; } = 768;
+        public int? Height { get; set; }
 
         /// <summary>
         /// Enable to use the High Contrast feature of Prompt Magic. Note: Controls RAW mode. Set to false to enable RAW mode.
@@ -106,7 +106,7 @@ namespace G
         /// Default Value: b24e16ff-06e3-43eb-8d33-4416c2d75876
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("modelId")]
-        public string? ModelId { get; set; } = "b24e16ff-06e3-43eb-8d33-4416c2d75876";
+        public string? ModelId { get; set; }
 
         /// <summary>
         /// The negative prompt used for the image generation
@@ -119,7 +119,7 @@ namespace G
         /// Default Value: 4
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_images")]
-        public int? NumImages { get; set; } = 4;
+        public int? NumImages { get; set; }
 
         /// <summary>
         /// The Step Count to use for the generation. Must be between 10 and 60. Default is 15.
@@ -151,7 +151,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presetStyle")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SdGenerationStyleJsonConverter))]
-        public global::G.SdGenerationStyle? PresetStyle { get; set; } = global::G.SdGenerationStyle.DYNAMIC;
+        public global::G.SdGenerationStyle? PresetStyle { get; set; }
 
         /// <summary>
         /// The prompt used to generate images<br/>
@@ -159,7 +159,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; }
+        public required string Prompt { get; set; } = "A majestic cat in the snow";
 
         /// <summary>
         /// Enable to use Prompt Magic.
@@ -241,7 +241,7 @@ namespace G
         /// Default Value: 1024
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("width")]
-        public int? Width { get; set; } = 1024;
+        public int? Width { get; set; }
 
         /// <summary>
         /// This parameter will be deprecated in September 2024. Please use the controlnets array instead.

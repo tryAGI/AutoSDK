@@ -35,7 +35,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("indexed")]
-        public bool? Indexed { get; set; } = true;
+        public bool? Indexed { get; set; }
 
         /// <summary>
         /// The value type of the filter.<br/>

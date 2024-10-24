@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
             global::G.TracerSessionCreate request,
-            bool? upsert = false,
+            bool? upsert = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.TracerSessionWithoutVirtualFields> CreateTracerSessionAsync(
-            bool? upsert = false,
+            bool? upsert = default,
             global::System.DateTime? startTime = default,
             global::System.DateTime? endTime = default,
             object? extra = default,

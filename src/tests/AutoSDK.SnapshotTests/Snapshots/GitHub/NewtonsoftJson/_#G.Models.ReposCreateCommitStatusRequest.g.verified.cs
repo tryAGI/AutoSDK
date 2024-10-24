@@ -34,7 +34,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("context")]
-        public string? Context { get; set; } = "default";
+        public string? Context { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

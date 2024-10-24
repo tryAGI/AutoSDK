@@ -20,7 +20,7 @@ namespace G
         /// Default Value: NORMAL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.MODELASSETTEXTURETYPES? Type { get; set; } = global::G.MODELASSETTEXTURETYPES.NORMAL;
+        public global::G.MODELASSETTEXTURETYPES? Type { get; set; }
 
         /// <summary>
         /// 

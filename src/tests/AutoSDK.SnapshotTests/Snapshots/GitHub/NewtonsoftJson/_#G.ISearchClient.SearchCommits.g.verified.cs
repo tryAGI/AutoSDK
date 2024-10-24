@@ -29,9 +29,9 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SearchCommitsResponse> SearchCommitsAsync(
             string q,
             global::G.SearchCommitsSort? sort = default,
-            global::G.SearchCommitsOrder? order = global::G.SearchCommitsOrder.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.SearchCommitsOrder? order = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

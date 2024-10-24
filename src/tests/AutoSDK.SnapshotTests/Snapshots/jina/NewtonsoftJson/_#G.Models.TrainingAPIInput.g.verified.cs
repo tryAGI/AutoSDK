@@ -38,7 +38,7 @@ namespace G
         /// Default Value: public
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("visibility")]
-        public global::G.TrainingAPIInputVisibility? Visibility { get; set; } = global::G.TrainingAPIInputVisibility.Public;
+        public global::G.TrainingAPIInputVisibility? Visibility { get; set; }
 
         /// <summary>
         /// List of text and images and labels or a single text and image and label to train the classifier

@@ -68,13 +68,13 @@ namespace G
             int? minTokens = default,
             int? randomSeed = default,
             global::G.ResponseFormat? responseFormat = default,
-            bool? safePrompt = false,
+            bool? safePrompt = default,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
-            bool? stream = false,
-            double? temperature = 0.7,
+            bool? stream = default,
+            double? temperature = default,
             global::G.AnyOf<global::G.ToolChoice3, global::G.ToolChoiceEnum?>? toolChoice = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,
-            double? topP = 1,
+            double? topP = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

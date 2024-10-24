@@ -13,7 +13,7 @@ namespace G
         /// Default Value: model
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; } = "model";
+        public string? Type { get; set; }
 
         /// <summary>
         /// 

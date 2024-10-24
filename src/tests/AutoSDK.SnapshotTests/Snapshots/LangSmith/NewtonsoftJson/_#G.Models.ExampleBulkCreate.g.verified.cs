@@ -45,7 +45,7 @@ namespace G
         /// Default Value: base
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("split")]
-        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; } = "base";
+        public global::G.AnyOf<global::System.Collections.Generic.IList<string>, string>? Split { get; set; }
 
         /// <summary>
         /// 
@@ -57,7 +57,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("use_source_run_io")]
-        public bool? UseSourceRunIo { get; set; } = false;
+        public bool? UseSourceRunIo { get; set; }
 
         /// <summary>
         /// 

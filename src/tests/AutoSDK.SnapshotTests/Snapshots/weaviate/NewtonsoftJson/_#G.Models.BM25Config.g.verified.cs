@@ -14,14 +14,14 @@ namespace G
         /// Default Value: 1.2F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("k1")]
-        public float? K1 { get; set; } = 1.2F;
+        public float? K1 { get; set; }
 
         /// <summary>
         /// Calibrates term-weight scaling based on the document length<br/>
         /// Default Value: 0.75F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("b")]
-        public float? B { get; set; } = 0.75F;
+        public float? B { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

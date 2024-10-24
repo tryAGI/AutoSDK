@@ -44,7 +44,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilesApiRoutesUploadFileRequestPurposeJsonConverter))]
-        public global::G.FilesApiRoutesUploadFileRequestPurpose? Purpose { get; set; } = global::G.FilesApiRoutesUploadFileRequestPurpose.FineTune;
+        public global::G.FilesApiRoutesUploadFileRequestPurpose? Purpose { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

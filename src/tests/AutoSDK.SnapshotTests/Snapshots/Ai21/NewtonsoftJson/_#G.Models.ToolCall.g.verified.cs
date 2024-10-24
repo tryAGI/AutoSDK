@@ -21,7 +21,7 @@ namespace G
         /// Default Value: function
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ToolCallType? Type { get; set; } = global::G.ToolCallType.Function;
+        public global::G.ToolCallType? Type { get; set; }
 
         /// <summary>
         /// 

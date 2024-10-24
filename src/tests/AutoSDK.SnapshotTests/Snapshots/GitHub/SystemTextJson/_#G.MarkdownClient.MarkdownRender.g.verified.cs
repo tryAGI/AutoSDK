@@ -115,7 +115,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> MarkdownRenderAsync(
             string text,
-            global::G.MarkdownRenderRequestMode? mode = global::G.MarkdownRenderRequestMode.Markdown,
+            global::G.MarkdownRenderRequestMode? mode = default,
             string? context = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

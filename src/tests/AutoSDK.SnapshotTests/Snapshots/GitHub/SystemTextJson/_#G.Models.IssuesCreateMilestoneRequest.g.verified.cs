@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.IssuesCreateMilestoneRequestStateJsonConverter))]
-        public global::G.IssuesCreateMilestoneRequestState? State { get; set; } = global::G.IssuesCreateMilestoneRequestState.Open;
+        public global::G.IssuesCreateMilestoneRequestState? State { get; set; }
 
         /// <summary>
         /// A description of the milestone.

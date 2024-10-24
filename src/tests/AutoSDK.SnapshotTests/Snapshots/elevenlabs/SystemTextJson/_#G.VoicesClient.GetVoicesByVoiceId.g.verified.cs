@@ -44,7 +44,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.VoiceResponseModel> GetVoicesByVoiceIdAsync(
             string voiceId,
-            bool? withSettings = false,
+            bool? withSettings = default,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

@@ -24,8 +24,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CodeSecurityConfiguration>> CodeSecurityGetConfigurationsForOrgAsync(
             string org,
-            global::G.CodeSecurityGetConfigurationsForOrgTargetType? targetType = global::G.CodeSecurityGetConfigurationsForOrgTargetType.All,
-            int? perPage = 30,
+            global::G.CodeSecurityGetConfigurationsForOrgTargetType? targetType = default,
+            int? perPage = default,
             string? before = default,
             string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default);

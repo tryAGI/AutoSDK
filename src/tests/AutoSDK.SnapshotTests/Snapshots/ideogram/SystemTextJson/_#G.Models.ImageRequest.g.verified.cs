@@ -32,7 +32,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ModelEnumJsonConverter))]
-        public global::G.ModelEnum? Model { get; set; } = global::G.ModelEnum.V2;
+        public global::G.ModelEnum? Model { get; set; }
 
         /// <summary>
         /// Determine if MagicPrompt should be used in generating the request or not<br/>
@@ -41,7 +41,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("magic_prompt_option")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MagicPromptOptionJsonConverter))]
-        public global::G.MagicPromptOption? MagicPromptOption { get; set; } = global::G.MagicPromptOption.AUTO;
+        public global::G.MagicPromptOption? MagicPromptOption { get; set; }
 
         /// <summary>
         /// Example: 12345

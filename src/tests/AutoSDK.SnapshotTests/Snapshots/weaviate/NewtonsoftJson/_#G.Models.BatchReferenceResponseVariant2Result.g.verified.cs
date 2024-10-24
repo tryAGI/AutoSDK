@@ -13,7 +13,7 @@ namespace G
         /// Default Value: SUCCESS
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.BatchReferenceResponseVariant2ResultStatus? Status { get; set; } = global::G.BatchReferenceResponseVariant2ResultStatus.SUCCESS;
+        public global::G.BatchReferenceResponseVariant2ResultStatus? Status { get; set; }
 
         /// <summary>
         /// An error response given by Weaviate end-points.

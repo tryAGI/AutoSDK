@@ -80,7 +80,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool? Stream { get; set; } = true;
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// How long (in minutes) to keep the model loaded in memory.<br/>

@@ -38,7 +38,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("small")]
-        public bool? Small { get; set; } = false;
+        public bool? Small { get; set; }
 
         /// <summary>
         /// Text color used in the player. If not provided, default text color set in the Player settings is used.
@@ -57,7 +57,7 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("sessionization")]
-        public int? Sessionization { get; set; } = 0;
+        public int? Sessionization { get; set; }
 
         /// <summary>
         /// Voice ID used to voice the content. If not provided, default voice ID set in the Player settings is used.
@@ -88,7 +88,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("auto_convert")]
-        public bool? AutoConvert { get; set; } = false;
+        public bool? AutoConvert { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

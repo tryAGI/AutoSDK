@@ -52,7 +52,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StatusJsonConverter))]
-        public global::G.Status? Status { get; set; } = global::G.Status.UNSPECIFIED;
+        public global::G.Status? Status { get; set; }
 
         /// <summary>
         /// Creation timestamp.<br/>

@@ -145,8 +145,8 @@ namespace G
             string name,
             string? owner = default,
             string? description = default,
-            bool? includeAllBranches = false,
-            bool? @private = false,
+            bool? includeAllBranches = default,
+            bool? @private = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.ReposCreateUsingTemplateRequest

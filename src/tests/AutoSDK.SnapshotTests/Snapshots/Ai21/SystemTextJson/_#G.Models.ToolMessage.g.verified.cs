@@ -24,7 +24,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolMessageRoleJsonConverter))]
-        public global::G.ToolMessageRole? Role { get; set; } = global::G.ToolMessageRole.Tool;
+        public global::G.ToolMessageRole? Role { get; set; }
 
         /// <summary>
         /// 

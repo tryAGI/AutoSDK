@@ -14,7 +14,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BatchReferenceResponseVariant2ResultStatusJsonConverter))]
-        public global::G.BatchReferenceResponseVariant2ResultStatus? Status { get; set; } = global::G.BatchReferenceResponseVariant2ResultStatus.SUCCESS;
+        public global::G.BatchReferenceResponseVariant2ResultStatus? Status { get; set; }
 
         /// <summary>
         /// An error response given by Weaviate end-points.

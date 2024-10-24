@@ -25,7 +25,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("async_run")]
-        public bool? AsyncRun { get; set; } = false;
+        public bool? AsyncRun { get; set; }
 
         /// <summary>
         /// 

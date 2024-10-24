@@ -43,19 +43,19 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_reviewers_per_item")]
-        public int? NumReviewersPerItem { get; set; } = 1;
+        public int? NumReviewersPerItem { get; set; }
 
         /// <summary>
         /// Default Value: true
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("enable_reservations")]
-        public bool? EnableReservations { get; set; } = true;
+        public bool? EnableReservations { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reservation_minutes")]
-        public int? ReservationMinutes { get; set; } = 1;
+        public int? ReservationMinutes { get; set; }
 
         /// <summary>
         /// 

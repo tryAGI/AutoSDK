@@ -20,8 +20,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.PaginatedClusterDeployedPipelineGet> ListPipelinesAsync(
             string clusterId,
-            int? skip = 0,
-            int? limit = 20,
+            int? skip = default,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

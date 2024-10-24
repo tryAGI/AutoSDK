@@ -42,13 +42,13 @@ namespace G
             string? nameContains = default,
             string? datasetVersion = default,
             global::G.SessionSortableColumns? sortBy = default,
-            bool? sortByDesc = true,
+            bool? sortByDesc = default,
             string? metadata = default,
             string? sortByFeedbackKey = default,
-            int? offset = 0,
-            int? limit = 100,
+            int? offset = default,
+            int? limit = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
-            bool? facets = false,
+            bool? facets = default,
             string? accept = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

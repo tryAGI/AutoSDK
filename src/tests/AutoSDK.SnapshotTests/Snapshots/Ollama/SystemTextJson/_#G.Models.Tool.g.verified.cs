@@ -15,7 +15,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ToolTypeJsonConverter))]
-        public global::G.ToolType? Type { get; set; } = global::G.ToolType.Function;
+        public global::G.ToolType? Type { get; set; }
 
         /// <summary>
         /// A function that the model may call.

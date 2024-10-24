@@ -64,7 +64,7 @@ namespace G
         /// Default Value: LORA_TARGET_MODULES_UNSPECIFIED
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lora_target_modules")]
-        public global::G.LoraTargetModules? LoraTargetModules { get; set; } = global::G.LoraTargetModules.UNSPECIFIED;
+        public global::G.LoraTargetModules? LoraTargetModules { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

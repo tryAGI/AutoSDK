@@ -19,7 +19,7 @@ namespace G
         /// Default Value: segment
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.EmbedType? Type { get; set; } = global::G.EmbedType.Segment;
+        public global::G.EmbedType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

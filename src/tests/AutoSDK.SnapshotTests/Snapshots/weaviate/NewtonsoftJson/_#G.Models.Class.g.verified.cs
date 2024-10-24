@@ -26,7 +26,7 @@ namespace G
         /// Default Value: hnsw
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("vectorIndexType")]
-        public global::G.VectorIndexType? VectorIndexType { get; set; } = global::G.VectorIndexType.Hnsw;
+        public global::G.VectorIndexType? VectorIndexType { get; set; }
 
         /// <summary>
         /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details

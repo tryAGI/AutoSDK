@@ -55,7 +55,7 @@ namespace G
             global::G.ReposCreateCommitStatusRequestState state,
             string? targetUrl = default,
             string? description = default,
-            string? context = "default",
+            string? context = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -65,7 +65,7 @@ namespace G
             string? description = default,
             global::G.TeamsUpdateInOrgRequestPrivacy? privacy = default,
             global::G.TeamsUpdateInOrgRequestNotificationSetting? notificationSetting = default,
-            global::G.TeamsUpdateInOrgRequestPermission? permission = global::G.TeamsUpdateInOrgRequestPermission.Pull,
+            global::G.TeamsUpdateInOrgRequestPermission? permission = default,
             int? parentTeamId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

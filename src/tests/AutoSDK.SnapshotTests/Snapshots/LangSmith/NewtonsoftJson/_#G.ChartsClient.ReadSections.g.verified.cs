@@ -56,12 +56,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.CustomChartsSectionResponse>> ReadSectionsAsync(
-            int? limit = 100,
-            int? offset = 0,
+            int? limit = default,
+            int? offset = default,
             string? titleContains = default,
             global::System.Collections.Generic.IList<global::System.Guid>? ids = default,
-            string? sortBy = "created_at",
-            bool? sortByDesc = true,
+            string? sortBy = default,
+            bool? sortByDesc = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

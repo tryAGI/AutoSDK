@@ -23,7 +23,7 @@ namespace G
             string className,
             global::System.Guid id,
             string? include = default,
-            global::G.ObjectsClassGetConsistencyLevel? consistencyLevel = global::G.ObjectsClassGetConsistencyLevel.QUORUM,
+            global::G.ObjectsClassGetConsistencyLevel? consistencyLevel = default,
             string? nodeName = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);

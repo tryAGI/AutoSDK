@@ -15,7 +15,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_any_resource")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool AllowAnyResource { get; set; }
+        public required bool AllowAnyResource { get; set; } = true;
 
         /// <summary>
         /// Object with keys of resource paths to a list of allowed resources.<br/>

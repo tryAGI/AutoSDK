@@ -149,7 +149,7 @@ namespace G
             global::G.AnyOf<string, global::G.ApiSchemasRankTextDoc> query,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.ApiSchemasRankTextDoc>> documents,
             int? topN = default,
-            bool? returnDocuments = true,
+            bool? returnDocuments = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.RankAPIInput

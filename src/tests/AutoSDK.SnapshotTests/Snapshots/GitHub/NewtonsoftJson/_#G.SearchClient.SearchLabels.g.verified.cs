@@ -58,9 +58,9 @@ namespace G
             int repositoryId,
             string q,
             global::G.SearchLabelsSort? sort = default,
-            global::G.SearchLabelsOrder? order = global::G.SearchLabelsOrder.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.SearchLabelsOrder? order = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

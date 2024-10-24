@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Tenant>> TenantsGetAsync(
             string className,
-            bool? consistency = true,
+            bool? consistency = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

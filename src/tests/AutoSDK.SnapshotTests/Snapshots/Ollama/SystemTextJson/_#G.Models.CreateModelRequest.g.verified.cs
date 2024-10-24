@@ -43,7 +43,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream")]
-        public bool? Stream { get; set; } = true;
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -43,37 +43,37 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("numResults")]
-        public int? NumResults { get; set; } = 1;
+        public int? NumResults { get; set; }
 
         /// <summary>
         /// Default Value: 0.7
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double? Temperature { get; set; } = 0.7;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// Default Value: 300
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("maxTokens")]
-        public int? MaxTokens { get; set; } = 300;
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("minTokens")]
-        public int? MinTokens { get; set; } = 0;
+        public int? MinTokens { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topP")]
-        public double? TopP { get; set; } = 1;
+        public double? TopP { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("topKReturn")]
-        public int? TopKReturn { get; set; } = 0;
+        public int? TopKReturn { get; set; }
 
         /// <summary>
         /// 

@@ -25,7 +25,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetSpeechHistoryResponseModel> GetHistoryAsync(
-            int? pageSize = 100,
+            int? pageSize = default,
             string? startAfterHistoryItemId = default,
             string? voiceId = default,
             string? xiApiKey = default,

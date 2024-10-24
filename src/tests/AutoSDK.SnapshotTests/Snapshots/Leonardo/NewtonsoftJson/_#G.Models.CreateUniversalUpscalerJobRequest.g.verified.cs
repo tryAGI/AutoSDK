@@ -32,21 +32,21 @@ namespace G
         /// Default Value: GENERAL
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upscalerStyle")]
-        public global::G.UniversalUpscalerStyle? UpscalerStyle { get; set; } = global::G.UniversalUpscalerStyle.GENERAL;
+        public global::G.UniversalUpscalerStyle? UpscalerStyle { get; set; }
 
         /// <summary>
         /// The creativity strength of the universal upscaler, must be integer between 1 and 10<br/>
         /// Default Value: 5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("creativityStrength")]
-        public int? CreativityStrength { get; set; } = 5;
+        public int? CreativityStrength { get; set; }
 
         /// <summary>
         /// The upscale multiplier of the universal upscaler, must be number between 1.00 and 2.00<br/>
         /// Default Value: 1.5
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("upscaleMultiplier")]
-        public double? UpscaleMultiplier { get; set; } = 1.5;
+        public double? UpscaleMultiplier { get; set; }
 
         /// <summary>
         /// The prompt for the universal upscaler

@@ -62,12 +62,12 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ActionsCacheList> ActionsGetActionsCacheListAsync(
             string owner,
             string repo,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             string? @ref = default,
             string? key = default,
-            global::G.ActionsGetActionsCacheListSort? sort = global::G.ActionsGetActionsCacheListSort.LastAccessedAt,
-            global::G.ActionsGetActionsCacheListDirection? direction = global::G.ActionsGetActionsCacheListDirection.Desc,
+            global::G.ActionsGetActionsCacheListSort? sort = default,
+            global::G.ActionsGetActionsCacheListDirection? direction = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

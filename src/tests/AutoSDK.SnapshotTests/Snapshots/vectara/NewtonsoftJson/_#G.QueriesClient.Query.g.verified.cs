@@ -182,7 +182,7 @@ namespace G
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
             global::G.GenerationParameters? generation = default,
-            bool? streamResponse = false,
+            bool? streamResponse = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.QueryRequest

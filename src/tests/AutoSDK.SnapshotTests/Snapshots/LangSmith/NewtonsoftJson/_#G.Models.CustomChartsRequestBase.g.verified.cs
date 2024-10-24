@@ -13,7 +13,7 @@ namespace G
         /// Default Value: UTC
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("timezone")]
-        public string? Timezone { get; set; } = "UTC";
+        public string? Timezone { get; set; }
 
         /// <summary>
         /// 

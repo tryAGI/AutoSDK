@@ -60,7 +60,7 @@ namespace G
         /// Default Value: 32768
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_context_length")]
-        public int? MaxContextLength { get; set; } = 32768;
+        public int? MaxContextLength { get; set; }
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FTModelOutObjectJsonConverter))]
-        public global::G.FTModelOutObject? Object { get; set; } = global::G.FTModelOutObject.Model;
+        public global::G.FTModelOutObject? Object { get; set; }
 
         /// <summary>
         /// 

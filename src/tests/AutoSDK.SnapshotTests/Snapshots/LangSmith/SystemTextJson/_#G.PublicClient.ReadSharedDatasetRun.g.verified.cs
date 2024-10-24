@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RunPublicDatasetSchema> ReadSharedDatasetRunAsync(
             global::System.Guid runId,
             global::System.Guid shareToken,
-            bool? excludeS3StoredAttributes = false,
+            bool? excludeS3StoredAttributes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

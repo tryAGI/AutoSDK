@@ -36,14 +36,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("queries_are_answers")]
-        public bool? QueriesAreAnswers { get; set; } = false;
+        public bool? QueriesAreAnswers { get; set; }
 
         /// <summary>
         /// Documents inside this corpus are considered questions, and not answers.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents_are_questions")]
-        public bool? DocumentsAreQuestions { get; set; } = false;
+        public bool? DocumentsAreQuestions { get; set; }
 
         /// <summary>
         /// *Deprecated*: Use `encoder_name` instead.<br/>

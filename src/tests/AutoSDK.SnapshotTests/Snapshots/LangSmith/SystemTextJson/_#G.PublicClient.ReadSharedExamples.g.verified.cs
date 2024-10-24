@@ -64,8 +64,8 @@ namespace G
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::G.AnyOf<global::System.DateTime?, string>? asOf = default,
             string? metadata = default,
-            int? offset = 0,
-            int? limit = 100,
+            int? offset = default,
+            int? limit = default,
             global::System.Collections.Generic.IList<global::G.ExampleSelect>? select = default,
             string? filter = default,
             global::System.Threading.CancellationToken cancellationToken = default)

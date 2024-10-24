@@ -36,9 +36,9 @@ namespace G
             string @ref,
             string? checkName = default,
             global::G.ChecksListForRefStatus? status = default,
-            global::G.ChecksListForRefFilter? filter = global::G.ChecksListForRefFilter.Latest,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.ChecksListForRefFilter? filter = default,
+            int? perPage = default,
+            int? page = default,
             int? appId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

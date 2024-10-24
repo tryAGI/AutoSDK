@@ -83,9 +83,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListReposResponse> ListReposAsync(
-            bool? withLatestManifest = false,
-            int? limit = 20,
-            int? offset = 0,
+            bool? withLatestManifest = default,
+            int? limit = default,
+            int? offset = default,
             string? tenantHandle = default,
             global::System.Guid? tenantId = default,
             string? query = default,
@@ -95,7 +95,7 @@ namespace G
             global::G.ListReposApiV1ReposGetIsPublic? isPublic = default,
             string? upstreamRepoOwner = default,
             string? upstreamRepoHandle = default,
-            bool? matchPrefix = false,
+            bool? matchPrefix = default,
             global::System.Collections.Generic.IList<global::System.Guid>? tagValueId = default,
             string? sortField = default,
             global::G.AnyOf<global::G.ListReposApiV1ReposGetSortDirectionVariant1?, global::G.ListReposApiV1ReposGetSortDirectionVariant2?>? sortDirection = default,

@@ -27,7 +27,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("async_run")]
-        public bool? AsyncRun { get; set; } = false;
+        public bool? AsyncRun { get; set; }
 
         /// <summary>
         /// 

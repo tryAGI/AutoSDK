@@ -26,7 +26,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Type { get; set; }
+        public required string Type { get; set; } = "core";
 
         /// <summary>
         /// Arbitrary object of document level metadata. Properties of this object<br/>

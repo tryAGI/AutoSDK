@@ -27,11 +27,11 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MinimalRepository>> ReposListForUserAsync(
             string username,
-            global::G.ReposListForUserType? type = global::G.ReposListForUserType.Owner,
-            global::G.ReposListForUserSort? sort = global::G.ReposListForUserSort.FullName,
+            global::G.ReposListForUserType? type = default,
+            global::G.ReposListForUserSort? sort = default,
             global::G.ReposListForUserDirection? direction = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

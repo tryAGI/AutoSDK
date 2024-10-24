@@ -57,7 +57,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_metadata_only")]
-        public bool? OrgMetadataOnly { get; set; } = false;
+        public bool? OrgMetadataOnly { get; set; }
 
         /// <summary>
         /// Exclude attributes from the API response to improve performance<br/>

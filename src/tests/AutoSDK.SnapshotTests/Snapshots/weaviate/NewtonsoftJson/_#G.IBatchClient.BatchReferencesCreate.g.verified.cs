@@ -17,7 +17,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.BatchReferenceResponse>> BatchReferencesCreateAsync(
             global::System.Collections.Generic.IList<global::G.BatchReference> request,
-            global::G.BatchReferencesCreateConsistencyLevel? consistencyLevel = global::G.BatchReferencesCreateConsistencyLevel.QUORUM,
+            global::G.BatchReferencesCreateConsistencyLevel? consistencyLevel = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

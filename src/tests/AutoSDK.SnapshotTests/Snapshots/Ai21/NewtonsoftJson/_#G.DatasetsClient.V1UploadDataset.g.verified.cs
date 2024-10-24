@@ -95,7 +95,7 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.DeleteLongRows}"),
                     name: "delete_long_rows");
             } 
-            if (request.SplitRatio != 0.1)
+            if (request.SplitRatio != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.SplitRatio}"),
@@ -167,7 +167,7 @@ namespace G
             string? selectedColumns = default,
             bool? approveWhitespaceCorrection = default,
             bool? deleteLongRows = default,
-            double? splitRatio = 0.1,
+            double? splitRatio = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyV1UploadDataset

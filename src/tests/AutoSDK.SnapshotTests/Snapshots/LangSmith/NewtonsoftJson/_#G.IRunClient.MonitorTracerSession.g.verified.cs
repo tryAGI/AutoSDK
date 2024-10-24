@@ -34,7 +34,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.MonitorResponse> MonitorTracerSessionAsync(
             global::System.Collections.Generic.IList<global::G.MonitorGroupSpec> groups,
-            string? timezone = "UTC",
+            string? timezone = default,
             global::G.TimedeltaInput? interval = default,
             global::G.TimedeltaInput? stride = default,
             global::System.Threading.CancellationToken cancellationToken = default);

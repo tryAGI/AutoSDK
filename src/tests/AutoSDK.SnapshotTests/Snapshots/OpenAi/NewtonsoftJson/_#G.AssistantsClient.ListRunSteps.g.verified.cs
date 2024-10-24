@@ -50,8 +50,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ListRunStepsResponse> ListRunStepsAsync(
             string threadId,
             string runId,
-            int? limit = 20,
-            global::G.ListRunStepsOrder? order = global::G.ListRunStepsOrder.Desc,
+            int? limit = default,
+            global::G.ListRunStepsOrder? order = default,
             string? after = default,
             string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)

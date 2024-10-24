@@ -62,7 +62,7 @@ namespace G
         /// Default Value: not_reviewed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_status")]
-        public string? ReviewStatus { get; set; } = "not_reviewed";
+        public string? ReviewStatus { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

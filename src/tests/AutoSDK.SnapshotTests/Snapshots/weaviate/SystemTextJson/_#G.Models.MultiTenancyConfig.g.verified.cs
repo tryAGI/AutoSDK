@@ -14,7 +14,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
-        public bool? Enabled { get; set; } = false;
+        public bool? Enabled { get; set; }
 
         /// <summary>
         /// Nonexistent tenants should (not) be created implicitly

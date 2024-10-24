@@ -47,7 +47,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.OrgMembership> OrgsSetMembershipForUserAsync(
             string org,
             string username,
-            global::G.OrgsSetMembershipForUserRequestRole? role = global::G.OrgsSetMembershipForUserRequestRole.Member,
+            global::G.OrgsSetMembershipForUserRequestRole? role = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

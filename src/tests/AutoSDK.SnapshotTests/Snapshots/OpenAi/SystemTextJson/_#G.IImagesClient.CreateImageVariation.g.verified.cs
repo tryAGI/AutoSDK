@@ -54,9 +54,9 @@ namespace G
             byte[] image,
             string imagename,
             global::G.AnyOf<string, global::G.CreateImageVariationRequestModel?>? model = default,
-            int? n = 1,
-            global::G.CreateImageVariationRequestResponseFormat? responseFormat = global::G.CreateImageVariationRequestResponseFormat.Url,
-            global::G.CreateImageVariationRequestSize? size = global::G.CreateImageVariationRequestSize.x1024x1024,
+            int? n = default,
+            global::G.CreateImageVariationRequestResponseFormat? responseFormat = default,
+            global::G.CreateImageVariationRequestSize? size = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -177,7 +177,7 @@ namespace G
             string? xClientName = default,
             string? name = default,
             global::System.Collections.Generic.IList<global::G.EmbeddingType>? embeddingTypes = default,
-            global::G.CreateEmbedJobRequestTruncate? truncate = global::G.CreateEmbedJobRequestTruncate.END,
+            global::G.CreateEmbedJobRequestTruncate? truncate = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.CreateEmbedJobRequest

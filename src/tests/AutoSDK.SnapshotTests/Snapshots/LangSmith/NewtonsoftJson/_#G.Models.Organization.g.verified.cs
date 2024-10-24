@@ -85,7 +85,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("reached_max_workspaces")]
-        public bool? ReachedMaxWorkspaces { get; set; } = false;
+        public bool? ReachedMaxWorkspaces { get; set; }
 
         /// <summary>
         /// Default Value: []

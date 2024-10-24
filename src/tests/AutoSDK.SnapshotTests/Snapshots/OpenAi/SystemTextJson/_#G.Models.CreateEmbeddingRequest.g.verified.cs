@@ -36,7 +36,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoding_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateEmbeddingRequestEncodingFormatJsonConverter))]
-        public global::G.CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; } = global::G.CreateEmbeddingRequestEncodingFormat.Float;
+        public global::G.CreateEmbeddingRequestEncodingFormat? EncodingFormat { get; set; }
 
         /// <summary>
         /// The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.

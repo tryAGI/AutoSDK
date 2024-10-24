@@ -24,7 +24,7 @@ namespace G
             global::System.Guid id,
             string propertyName,
             global::G.SingleRef request,
-            global::G.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = global::G.ObjectsClassReferencesDeleteConsistencyLevel.QUORUM,
+            global::G.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -60,7 +60,7 @@ namespace G
             string className,
             global::System.Guid id,
             string propertyName,
-            global::G.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = global::G.ObjectsClassReferencesDeleteConsistencyLevel.QUORUM,
+            global::G.ObjectsClassReferencesDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,
             string? @class = default,
             object? schema = default,

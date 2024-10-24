@@ -134,7 +134,7 @@ namespace G
             global::System.Guid? id = default,
             global::System.Guid? organizationId = default,
             string? tenantHandle = default,
-            bool? isPersonal = false,
+            bool? isPersonal = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.TenantCreate

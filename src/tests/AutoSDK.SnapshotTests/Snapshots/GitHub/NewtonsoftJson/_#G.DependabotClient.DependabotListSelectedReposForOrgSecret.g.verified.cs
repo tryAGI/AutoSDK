@@ -47,8 +47,8 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.DependabotListSelectedReposForOrgSecretResponse> DependabotListSelectedReposForOrgSecretAsync(
             string org,
             string secretName,
-            int? page = 1,
-            int? perPage = 30,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

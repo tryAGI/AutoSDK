@@ -58,11 +58,11 @@ namespace G
             string datasetId,
             string instancePrompt,
             string? description = default,
-            global::G.CustomModelType? modelType = global::G.CustomModelType.GENERAL,
-            bool? nsfw = false,
-            int? resolution = 512,
+            global::G.CustomModelType? modelType = default,
+            bool? nsfw = default,
+            int? resolution = default,
             global::G.SdVersions? sdVersion = default,
-            global::G.Strength? strength = global::G.Strength.MEDIUM,
+            global::G.Strength? strength = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

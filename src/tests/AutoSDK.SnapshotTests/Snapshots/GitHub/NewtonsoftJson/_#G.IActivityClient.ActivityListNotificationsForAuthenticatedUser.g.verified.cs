@@ -26,12 +26,12 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Thread>> ActivityListNotificationsForAuthenticatedUserAsync(
-            bool? all = false,
-            bool? participating = false,
+            bool? all = default,
+            bool? participating = default,
             global::System.DateTime? since = default,
             global::System.DateTime? before = default,
-            int? page = 1,
-            int? perPage = 50,
+            int? page = default,
+            int? perPage = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

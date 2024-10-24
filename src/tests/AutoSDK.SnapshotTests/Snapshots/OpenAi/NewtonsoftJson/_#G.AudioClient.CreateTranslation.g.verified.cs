@@ -83,13 +83,13 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
                     name: "prompt");
             } 
-            if (request.ResponseFormat != "json")
+            if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat}"),
                     name: "response_format");
             } 
-            if (request.Temperature != 0)
+            if (request.Temperature != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Temperature}"),
@@ -173,8 +173,8 @@ namespace G
             string filename,
             global::G.AnyOf<string, global::G.CreateTranslationRequestModel?> model,
             string? prompt = default,
-            string? responseFormat = "json",
-            double? temperature = 0,
+            string? responseFormat = default,
+            double? temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.CreateTranslationRequest

@@ -67,13 +67,13 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Repository>> ReposListForAuthenticatedUserAsync(
-            global::G.ReposListForAuthenticatedUserVisibility? visibility = global::G.ReposListForAuthenticatedUserVisibility.All,
-            string? affiliation = "owner,collaborator,organization_member",
-            global::G.ReposListForAuthenticatedUserType? type = global::G.ReposListForAuthenticatedUserType.All,
-            global::G.ReposListForAuthenticatedUserSort? sort = global::G.ReposListForAuthenticatedUserSort.FullName,
+            global::G.ReposListForAuthenticatedUserVisibility? visibility = default,
+            string? affiliation = default,
+            global::G.ReposListForAuthenticatedUserType? type = default,
+            global::G.ReposListForAuthenticatedUserSort? sort = default,
             global::G.ReposListForAuthenticatedUserDirection? direction = default,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.DateTime? since = default,
             global::System.DateTime? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)

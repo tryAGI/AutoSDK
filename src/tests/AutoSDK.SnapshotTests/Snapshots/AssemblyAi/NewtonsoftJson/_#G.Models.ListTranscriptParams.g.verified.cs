@@ -14,7 +14,7 @@ namespace G
         /// Default Value: 10L
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
-        public long? Limit { get; set; } = 10L;
+        public long? Limit { get; set; }
 
         /// <summary>
         /// The status of your transcript. Possible values are queued, processing, completed, or error.
@@ -45,7 +45,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("throttled_only")]
-        public bool? ThrottledOnly { get; set; } = false;
+        public bool? ThrottledOnly { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

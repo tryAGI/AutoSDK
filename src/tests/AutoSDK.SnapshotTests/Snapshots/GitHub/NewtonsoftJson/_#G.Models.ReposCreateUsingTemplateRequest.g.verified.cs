@@ -32,14 +32,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("include_all_branches")]
-        public bool? IncludeAllBranches { get; set; } = false;
+        public bool? IncludeAllBranches { get; set; }
 
         /// <summary>
         /// Either `true` to create a new private repository or `false` to create a new public one.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("private")]
-        public bool? Private { get; set; } = false;
+        public bool? Private { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

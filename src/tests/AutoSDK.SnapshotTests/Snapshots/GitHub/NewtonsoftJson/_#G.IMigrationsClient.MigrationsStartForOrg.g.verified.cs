@@ -67,13 +67,13 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.Migration> MigrationsStartForOrgAsync(
             string org,
             global::System.Collections.Generic.IList<string> repositories,
-            bool? lockRepositories = false,
-            bool? excludeMetadata = false,
-            bool? excludeGitData = false,
-            bool? excludeAttachments = false,
-            bool? excludeReleases = false,
-            bool? excludeOwnerProjects = false,
-            bool? orgMetadataOnly = false,
+            bool? lockRepositories = default,
+            bool? excludeMetadata = default,
+            bool? excludeGitData = default,
+            bool? excludeAttachments = default,
+            bool? excludeReleases = default,
+            bool? excludeOwnerProjects = default,
+            bool? orgMetadataOnly = default,
             global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExcludeItem>? exclude = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

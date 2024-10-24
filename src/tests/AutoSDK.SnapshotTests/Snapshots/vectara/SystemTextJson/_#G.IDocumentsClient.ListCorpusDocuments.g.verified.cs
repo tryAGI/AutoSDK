@@ -25,7 +25,7 @@ namespace G
             string corpusKey,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,
-            int? limit = 10,
+            int? limit = default,
             string? metadataFilter = default,
             string? pageKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);

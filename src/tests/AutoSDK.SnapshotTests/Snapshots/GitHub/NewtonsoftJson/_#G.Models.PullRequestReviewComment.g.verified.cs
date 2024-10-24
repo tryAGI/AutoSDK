@@ -157,7 +157,7 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_side")]
-        public global::G.PullRequestReviewCommentStartSide? StartSide { get; set; } = global::G.PullRequestReviewCommentStartSide.RIGHT;
+        public global::G.PullRequestReviewCommentStartSide? StartSide { get; set; }
 
         /// <summary>
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
@@ -178,7 +178,7 @@ namespace G
         /// Default Value: RIGHT
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("side")]
-        public global::G.PullRequestReviewCommentSide? Side { get; set; } = global::G.PullRequestReviewCommentSide.RIGHT;
+        public global::G.PullRequestReviewCommentSide? Side { get; set; }
 
         /// <summary>
         /// The level at which the comment is targeted, can be a diff line or a file.

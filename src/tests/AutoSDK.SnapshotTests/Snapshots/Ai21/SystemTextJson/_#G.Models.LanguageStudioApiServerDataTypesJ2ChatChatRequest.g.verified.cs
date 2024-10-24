@@ -45,37 +45,37 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("numResults")]
-        public int? NumResults { get; set; } = 1;
+        public int? NumResults { get; set; }
 
         /// <summary>
         /// Default Value: 0.7
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; } = 0.7;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// Default Value: 300
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("maxTokens")]
-        public int? MaxTokens { get; set; } = 300;
+        public int? MaxTokens { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("minTokens")]
-        public int? MinTokens { get; set; } = 0;
+        public int? MinTokens { get; set; }
 
         /// <summary>
         /// Default Value: 1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topP")]
-        public double? TopP { get; set; } = 1;
+        public double? TopP { get; set; }
 
         /// <summary>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("topKReturn")]
-        public int? TopKReturn { get; set; } = 0;
+        public int? TopKReturn { get; set; }
 
         /// <summary>
         /// 

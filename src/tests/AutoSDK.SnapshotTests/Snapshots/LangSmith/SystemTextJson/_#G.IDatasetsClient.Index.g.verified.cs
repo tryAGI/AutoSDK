@@ -30,7 +30,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> IndexAsync(
             global::System.Guid datasetId,
-            string? tag = "latest",
+            string? tag = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

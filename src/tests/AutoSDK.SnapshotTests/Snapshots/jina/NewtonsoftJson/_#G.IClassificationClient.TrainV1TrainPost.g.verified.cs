@@ -49,7 +49,7 @@ namespace G
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextExampleDoc, global::G.ImageExampleDoc>>, global::G.TextExampleDoc, global::G.ImageExampleDoc> input,
             string? model = default,
             string? classifierId = default,
-            global::G.TrainingAPIInputVisibility? visibility = global::G.TrainingAPIInputVisibility.Public,
+            global::G.TrainingAPIInputVisibility? visibility = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

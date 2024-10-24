@@ -20,7 +20,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.ListFineTuningJobCheckpointsResponse> ListFineTuningJobCheckpointsAsync(
             string fineTuningJobId,
             string? after = default,
-            int? limit = 10,
+            int? limit = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

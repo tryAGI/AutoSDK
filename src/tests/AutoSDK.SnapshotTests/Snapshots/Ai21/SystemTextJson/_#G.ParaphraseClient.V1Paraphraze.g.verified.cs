@@ -128,8 +128,8 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1ParaphrazeAsync(
             string text,
-            global::G.StyleType? style = global::G.StyleType.General,
-            int? startIndex = 0,
+            global::G.StyleType? style = default,
+            int? startIndex = default,
             int? endIndex = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

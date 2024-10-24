@@ -142,11 +142,11 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.RunnerGroupsOrg> ActionsCreateSelfHostedRunnerGroupForOrgAsync(
             string org,
             string name,
-            global::G.ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility? visibility = global::G.ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility.All,
+            global::G.ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility? visibility = default,
             global::System.Collections.Generic.IList<int>? selectedRepositoryIds = default,
             global::System.Collections.Generic.IList<int>? runners = default,
-            bool? allowsPublicRepositories = false,
-            bool? restrictedToWorkflows = false,
+            bool? allowsPublicRepositories = default,
+            bool? restrictedToWorkflows = default,
             global::System.Collections.Generic.IList<string>? selectedWorkflows = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

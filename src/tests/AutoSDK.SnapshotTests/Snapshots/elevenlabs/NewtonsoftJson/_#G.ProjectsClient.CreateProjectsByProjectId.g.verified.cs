@@ -165,7 +165,7 @@ namespace G
             string? title = default,
             string? author = default,
             string? isbnNumber = default,
-            bool? volumeNormalization = false,
+            bool? volumeNormalization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyEditBasicProjectInfoV1ProjectsProjectIdPost

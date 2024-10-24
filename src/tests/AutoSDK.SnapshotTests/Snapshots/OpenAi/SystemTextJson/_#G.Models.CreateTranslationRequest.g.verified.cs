@@ -45,14 +45,14 @@ namespace G
         /// Default Value: json
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
-        public string? ResponseFormat { get; set; } = "json";
+        public string? ResponseFormat { get; set; }
 
         /// <summary>
         /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("temperature")]
-        public double? Temperature { get; set; } = 0;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

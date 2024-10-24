@@ -38,7 +38,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_last_push_approval")]
-        public bool? RequireLastPushApproval { get; set; } = false;
+        public bool? RequireLastPushApproval { get; set; }
 
         /// <summary>
         /// Allow specific users, teams, or apps to bypass pull request requirements.

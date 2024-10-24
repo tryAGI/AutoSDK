@@ -22,7 +22,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("length")]
-        public global::G.SummarizeRequestLength? Length { get; set; } = global::G.SummarizeRequestLength.Medium;
+        public global::G.SummarizeRequestLength? Length { get; set; }
 
         /// <summary>
         /// One of `paragraph`, `bullets`, or `auto`, defaults to `auto`. Indicates the style in which the summary will be delivered - in a free form paragraph or in bullet points. If `auto` is selected, the best option will be picked based on the input text.<br/>
@@ -30,7 +30,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("format")]
-        public global::G.SummarizeRequestFormat? Format { get; set; } = global::G.SummarizeRequestFormat.Paragraph;
+        public global::G.SummarizeRequestFormat? Format { get; set; }
 
         /// <summary>
         /// The identifier of the model to generate the summary with. Currently available models are `command` (default), `command-nightly` (experimental), `command-light`, and `command-light-nightly` (experimental). Smaller, "light" models are faster, while larger models will perform better.<br/>
@@ -45,7 +45,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("extractiveness")]
-        public global::G.SummarizeRequestExtractiveness? Extractiveness { get; set; } = global::G.SummarizeRequestExtractiveness.Low;
+        public global::G.SummarizeRequestExtractiveness? Extractiveness { get; set; }
 
         /// <summary>
         /// Ranges from 0 to 5. Controls the randomness of the output. Lower values tend to generate more “predictable” output, while higher values tend to generate more “creative” output. The sweet spot is typically between 0 and 1.<br/>
@@ -53,7 +53,7 @@ namespace G
         /// Included only in requests
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
-        public double? Temperature { get; set; } = 0.3;
+        public double? Temperature { get; set; }
 
         /// <summary>
         /// A free-form instruction for modifying how the summaries get generated. Should complete the sentence "Generate a summary _". Eg. "focusing on the next steps" or "written by Yoda"<br/>

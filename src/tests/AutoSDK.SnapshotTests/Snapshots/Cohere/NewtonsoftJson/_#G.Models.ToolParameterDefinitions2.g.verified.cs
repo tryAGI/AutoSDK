@@ -26,7 +26,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("required")]
-        public bool? Required { get; set; } = false;
+        public bool? Required { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

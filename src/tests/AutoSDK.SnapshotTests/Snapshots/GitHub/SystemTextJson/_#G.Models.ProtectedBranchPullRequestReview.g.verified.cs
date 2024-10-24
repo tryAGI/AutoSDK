@@ -53,7 +53,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_last_push_approval")]
-        public bool? RequireLastPushApproval { get; set; } = false;
+        public bool? RequireLastPushApproval { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

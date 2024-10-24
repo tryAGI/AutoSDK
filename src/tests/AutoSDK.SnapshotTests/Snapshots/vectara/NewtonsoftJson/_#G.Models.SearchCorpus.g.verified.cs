@@ -38,7 +38,7 @@ namespace G
         /// Default Value: default
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("semantics")]
-        public global::G.SearchSemantics? Semantics { get; set; } = global::G.SearchSemantics.Default;
+        public global::G.SearchSemantics? Semantics { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

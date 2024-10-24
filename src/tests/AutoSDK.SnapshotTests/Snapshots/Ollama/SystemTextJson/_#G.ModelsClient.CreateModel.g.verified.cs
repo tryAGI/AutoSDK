@@ -114,7 +114,7 @@ namespace G
             string modelfile,
             string? path = default,
             string? quantize = default,
-            bool? stream = true,
+            bool? stream = default,
             [global::System.Runtime.CompilerServices.EnumeratorCancellation] global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.CreateModelRequest

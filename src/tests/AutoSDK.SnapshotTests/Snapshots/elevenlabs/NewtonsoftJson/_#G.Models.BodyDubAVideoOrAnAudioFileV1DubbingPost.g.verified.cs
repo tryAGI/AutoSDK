@@ -38,7 +38,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source_lang")]
-        public string? SourceLang { get; set; } = "auto";
+        public string? SourceLang { get; set; }
 
         /// <summary>
         /// The Target language to dub the content into.
@@ -51,14 +51,14 @@ namespace G
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("num_speakers")]
-        public int? NumSpeakers { get; set; } = 0;
+        public int? NumSpeakers { get; set; }
 
         /// <summary>
         /// Whether to apply watermark to the output video.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("watermark")]
-        public bool? Watermark { get; set; } = false;
+        public bool? Watermark { get; set; }
 
         /// <summary>
         /// Start time of the source video/audio file.
@@ -77,14 +77,14 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("highest_resolution")]
-        public bool? HighestResolution { get; set; } = false;
+        public bool? HighestResolution { get; set; }
 
         /// <summary>
         /// An advanced setting. Whether to drop background audio from the final dub. This can improve dub quality where it's known that audio shouldn't have a background track such as for speeches or monologues.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("drop_background_audio")]
-        public bool? DropBackgroundAudio { get; set; } = false;
+        public bool? DropBackgroundAudio { get; set; }
 
         /// <summary>
         /// [BETA] Whether transcripts should have profanities censored with the words '[censored]'

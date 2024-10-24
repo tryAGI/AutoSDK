@@ -129,7 +129,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.CodespaceWithFullRepository> CodespacesPublishForAuthenticatedUserAsync(
             string codespaceName,
             string? name = default,
-            bool? @private = false,
+            bool? @private = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.CodespacesPublishForAuthenticatedUserRequest

@@ -40,7 +40,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.ViewTraffic> ReposGetViewsAsync(
             string owner,
             string repo,
-            global::G.ReposGetViewsPer? per = global::G.ReposGetViewsPer.Day,
+            global::G.ReposGetViewsPer? per = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

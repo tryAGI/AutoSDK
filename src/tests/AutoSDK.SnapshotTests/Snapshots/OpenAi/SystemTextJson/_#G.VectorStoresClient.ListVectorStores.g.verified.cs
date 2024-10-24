@@ -42,8 +42,8 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListVectorStoresResponse> ListVectorStoresAsync(
-            int? limit = 20,
-            global::G.ListVectorStoresOrder? order = global::G.ListVectorStoresOrder.Desc,
+            int? limit = default,
+            global::G.ListVectorStoresOrder? order = default,
             string? after = default,
             string? before = default,
             global::System.Threading.CancellationToken cancellationToken = default)

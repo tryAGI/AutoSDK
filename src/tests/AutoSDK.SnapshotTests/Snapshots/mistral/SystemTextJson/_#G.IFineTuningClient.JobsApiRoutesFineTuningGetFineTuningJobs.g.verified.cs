@@ -27,11 +27,11 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.JobsOut> JobsApiRoutesFineTuningGetFineTuningJobsAsync(
-            int? page = 0,
-            int? pageSize = 100,
+            int? page = default,
+            int? pageSize = default,
             string? model = default,
             global::System.DateTime? createdAfter = default,
-            bool? createdByMe = false,
+            bool? createdByMe = default,
             global::G.JobsApiRoutesFineTuningGetFineTuningJobsStatus? status = default,
             string? wandbProject = default,
             string? wandbName = default,

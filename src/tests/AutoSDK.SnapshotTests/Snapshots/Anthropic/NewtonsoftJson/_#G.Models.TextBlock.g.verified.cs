@@ -20,7 +20,7 @@ namespace G
         /// Default Value: text
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; } = "text";
+        public string? Type { get; set; }
 
         /// <summary>
         /// The cache control settings.

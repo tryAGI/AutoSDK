@@ -142,7 +142,7 @@ namespace G
             global::System.Collections.Generic.IList<object>? tools = default,
             string? toolChoice = default,
             string? projectName = default,
-            int? repetitions = 1,
+            int? repetitions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.PlaygroundRunOverDatasetRequestSchema

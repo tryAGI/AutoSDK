@@ -141,9 +141,9 @@ namespace G
             global::System.DateTime? createdAt = default,
             global::System.DateTime? updatedAt = default,
             global::System.Guid? defaultDataset = default,
-            int? numReviewersPerItem = 1,
-            bool? enableReservations = true,
-            int? reservationMinutes = 1,
+            int? numReviewersPerItem = default,
+            bool? enableReservations = default,
+            int? reservationMinutes = default,
             global::System.Guid? id = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

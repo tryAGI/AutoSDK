@@ -21,7 +21,7 @@ namespace G
         /// Default Value: image_url
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ImageURLChunkType? Type { get; set; } = global::G.ImageURLChunkType.ImageUrl;
+        public global::G.ImageURLChunkType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

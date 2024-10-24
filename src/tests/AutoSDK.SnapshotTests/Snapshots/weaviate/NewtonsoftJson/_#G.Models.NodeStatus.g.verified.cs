@@ -20,7 +20,7 @@ namespace G
         /// Default Value: HEALTHY
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.NodeStatusStatus? Status { get; set; } = global::G.NodeStatusStatus.HEALTHY;
+        public global::G.NodeStatusStatus? Status { get; set; }
 
         /// <summary>
         /// The version of Weaviate.

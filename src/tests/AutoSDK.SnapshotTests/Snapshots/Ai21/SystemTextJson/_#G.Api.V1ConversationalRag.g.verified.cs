@@ -144,11 +144,11 @@ namespace G
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             global::System.Collections.Generic.IList<string>? fileIds = default,
-            int? maxSegments = 15,
-            global::G.ConversationalRagFlowPublicFieldsRetrievalStrategy? retrievalStrategy = global::G.ConversationalRagFlowPublicFieldsRetrievalStrategy.Default,
-            double? retrievalSimilarityThreshold = 0.8,
+            int? maxSegments = default,
+            global::G.ConversationalRagFlowPublicFieldsRetrievalStrategy? retrievalStrategy = default,
+            double? retrievalSimilarityThreshold = default,
             int? maxNeighbors = default,
-            double? hybridSearchAlpha = 0.98,
+            double? hybridSearchAlpha = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.ConversationalRagFlowPublicFields

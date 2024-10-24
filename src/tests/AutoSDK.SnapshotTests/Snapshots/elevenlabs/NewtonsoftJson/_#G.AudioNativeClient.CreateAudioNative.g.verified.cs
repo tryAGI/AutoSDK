@@ -89,7 +89,7 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.Title}"),
                     name: "title");
             } 
-            if (request.Small != false)
+            if (request.Small != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Small}"),
@@ -107,7 +107,7 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.BackgroundColor}"),
                     name: "background_color");
             } 
-            if (request.Sessionization != 0)
+            if (request.Sessionization != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.Sessionization}"),
@@ -138,7 +138,7 @@ namespace G
                     name: "file",
                     fileName: request.Filename ?? string.Empty);
             } 
-            if (request.AutoConvert != false)
+            if (request.AutoConvert != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.AutoConvert}"),
@@ -249,15 +249,15 @@ namespace G
             string? image = default,
             string? author = default,
             string? title = default,
-            bool? small = false,
+            bool? small = default,
             string? textColor = default,
             string? backgroundColor = default,
-            int? sessionization = 0,
+            int? sessionization = default,
             string? voiceId = default,
             string? modelId = default,
             byte[]? file = default,
             string? filename = default,
-            bool? autoConvert = false,
+            bool? autoConvert = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyCreatesAudioNativeEnabledProjectV1AudioNativePost

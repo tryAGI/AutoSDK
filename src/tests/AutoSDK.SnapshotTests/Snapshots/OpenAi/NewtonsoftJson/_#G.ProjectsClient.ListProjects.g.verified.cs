@@ -39,9 +39,9 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectListResponse> ListProjectsAsync(
-            int? limit = 20,
+            int? limit = default,
             string? after = default,
-            bool? includeArchived = false,
+            bool? includeArchived = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

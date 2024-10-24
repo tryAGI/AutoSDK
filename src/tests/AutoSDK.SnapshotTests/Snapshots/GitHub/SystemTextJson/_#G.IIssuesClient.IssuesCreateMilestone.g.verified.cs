@@ -45,7 +45,7 @@ namespace G
             string owner,
             string repo,
             string title,
-            global::G.IssuesCreateMilestoneRequestState? state = global::G.IssuesCreateMilestoneRequestState.Open,
+            global::G.IssuesCreateMilestoneRequestState? state = default,
             string? description = default,
             global::System.DateTime? dueOn = default,
             global::System.Threading.CancellationToken cancellationToken = default);

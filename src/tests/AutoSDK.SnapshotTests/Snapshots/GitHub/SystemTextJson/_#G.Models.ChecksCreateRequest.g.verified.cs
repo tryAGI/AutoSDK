@@ -41,7 +41,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChecksCreateRequestStatusJsonConverter))]
-        public global::G.ChecksCreateRequestStatus? Status { get; set; } = global::G.ChecksCreateRequestStatus.Queued;
+        public global::G.ChecksCreateRequestStatus? Status { get; set; }
 
         /// <summary>
         /// The time that the check run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.

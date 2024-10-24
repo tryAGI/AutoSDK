@@ -20,14 +20,14 @@ namespace G
         /// Default Value: minimal
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("output")]
-        public global::G.BatchDeleteResponseOutput? Output { get; set; } = global::G.BatchDeleteResponseOutput.Minimal;
+        public global::G.BatchDeleteResponseOutput? Output { get; set; }
 
         /// <summary>
         /// If true, objects will not be deleted yet, but merely listed. Defaults to false.<br/>
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("dryRun")]
-        public bool? DryRun { get; set; } = false;
+        public bool? DryRun { get; set; }
 
         /// <summary>
         /// 

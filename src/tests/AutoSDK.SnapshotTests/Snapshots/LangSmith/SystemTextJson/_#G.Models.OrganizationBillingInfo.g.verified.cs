@@ -85,13 +85,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("reached_max_workspaces")]
-        public bool? ReachedMaxWorkspaces { get; set; } = false;
+        public bool? ReachedMaxWorkspaces { get; set; }
 
         /// <summary>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("disabled")]
-        public bool? Disabled { get; set; } = false;
+        public bool? Disabled { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -32,7 +32,7 @@ namespace G
         /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("indexing_default")]
-        public double? IndexingDefault { get; set; } = 0;
+        public double? IndexingDefault { get; set; }
 
         /// <summary>
         /// Default value of a custom dimension for a query if the value<br/>
@@ -42,7 +42,7 @@ namespace G
         /// Example: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("querying_default")]
-        public double? QueryingDefault { get; set; } = 0;
+        public double? QueryingDefault { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

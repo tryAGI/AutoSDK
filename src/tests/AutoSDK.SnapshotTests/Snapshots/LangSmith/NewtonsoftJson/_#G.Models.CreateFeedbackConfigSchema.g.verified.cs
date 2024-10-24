@@ -25,7 +25,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("is_lower_score_better")]
-        public bool? IsLowerScoreBetter { get; set; } = false;
+        public bool? IsLowerScoreBetter { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

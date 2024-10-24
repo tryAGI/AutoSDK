@@ -50,7 +50,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("volume_normalization")]
-        public bool? VolumeNormalization { get; set; } = false;
+        public bool? VolumeNormalization { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

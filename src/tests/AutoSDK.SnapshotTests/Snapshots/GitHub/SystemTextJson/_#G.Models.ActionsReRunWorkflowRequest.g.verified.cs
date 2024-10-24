@@ -14,7 +14,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_debug_logging")]
-        public bool? EnableDebugLogging { get; set; } = false;
+        public bool? EnableDebugLogging { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -34,7 +34,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
-        public bool? Private { get; set; } = false;
+        public bool? Private { get; set; }
 
         /// <summary>
         /// Whether issues are enabled.<br/>
@@ -42,7 +42,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_issues")]
-        public bool? HasIssues { get; set; } = true;
+        public bool? HasIssues { get; set; }
 
         /// <summary>
         /// Whether projects are enabled.<br/>
@@ -50,7 +50,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_projects")]
-        public bool? HasProjects { get; set; } = true;
+        public bool? HasProjects { get; set; }
 
         /// <summary>
         /// Whether the wiki is enabled.<br/>
@@ -58,7 +58,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_wiki")]
-        public bool? HasWiki { get; set; } = true;
+        public bool? HasWiki { get; set; }
 
         /// <summary>
         /// Whether discussions are enabled.<br/>
@@ -66,7 +66,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_discussions")]
-        public bool? HasDiscussions { get; set; } = false;
+        public bool? HasDiscussions { get; set; }
 
         /// <summary>
         /// The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization.
@@ -79,7 +79,7 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("auto_init")]
-        public bool? AutoInit { get; set; } = false;
+        public bool? AutoInit { get; set; }
 
         /// <summary>
         /// The desired language or platform to apply to the .gitignore.<br/>
@@ -101,7 +101,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_squash_merge")]
-        public bool? AllowSquashMerge { get; set; } = true;
+        public bool? AllowSquashMerge { get; set; }
 
         /// <summary>
         /// Whether to allow merge commits for pull requests.<br/>
@@ -109,7 +109,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_merge_commit")]
-        public bool? AllowMergeCommit { get; set; } = true;
+        public bool? AllowMergeCommit { get; set; }
 
         /// <summary>
         /// Whether to allow rebase merges for pull requests.<br/>
@@ -117,7 +117,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_rebase_merge")]
-        public bool? AllowRebaseMerge { get; set; } = true;
+        public bool? AllowRebaseMerge { get; set; }
 
         /// <summary>
         /// Whether to allow Auto-merge to be used on pull requests.<br/>
@@ -125,7 +125,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_auto_merge")]
-        public bool? AllowAutoMerge { get; set; } = false;
+        public bool? AllowAutoMerge { get; set; }
 
         /// <summary>
         /// Whether to delete head branches when pull requests are merged<br/>
@@ -133,7 +133,7 @@ namespace G
         /// Example: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("delete_branch_on_merge")]
-        public bool? DeleteBranchOnMerge { get; set; } = false;
+        public bool? DeleteBranchOnMerge { get; set; }
 
         /// <summary>
         /// Required when using `squash_merge_commit_message`.<br/>
@@ -181,7 +181,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_downloads")]
-        public bool? HasDownloads { get; set; } = true;
+        public bool? HasDownloads { get; set; }
 
         /// <summary>
         /// Whether this repository acts as a template that can be used to generate new repositories.<br/>
@@ -189,7 +189,7 @@ namespace G
         /// Example: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_template")]
-        public bool? IsTemplate { get; set; } = false;
+        public bool? IsTemplate { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

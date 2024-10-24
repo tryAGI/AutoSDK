@@ -26,7 +26,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> V1EmbedAsync(
             global::System.Collections.Generic.IList<string> texts,
-            global::G.EmbedType? type = global::G.EmbedType.Segment,
+            global::G.EmbedType? type = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

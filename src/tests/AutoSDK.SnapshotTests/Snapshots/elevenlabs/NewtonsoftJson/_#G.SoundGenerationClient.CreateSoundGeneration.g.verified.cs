@@ -137,7 +137,7 @@ namespace G
             string text,
             string? xiApiKey = default,
             double? durationSeconds = default,
-            double? promptInfluence = 0.3,
+            double? promptInfluence = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodySoundGenerationV1SoundGenerationPost

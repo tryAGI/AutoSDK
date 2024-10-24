@@ -59,13 +59,13 @@ namespace G
         /// Default Value: false
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stream")]
-        public bool? Stream { get; set; } = false;
+        public bool? Stream { get; set; }
 
         /// <summary>
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_choice")]
-        public global::G.AnyOf<global::G.ToolChoice3, global::G.ToolChoiceEnum?>? ToolChoice { get; set; } = global::G.ToolChoiceEnum.Auto;
+        public global::G.AnyOf<global::G.ToolChoice3, global::G.ToolChoiceEnum?>? ToolChoice { get; set; }
 
         /// <summary>
         /// 

@@ -14,7 +14,7 @@ namespace G
         /// Example: 50
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_weight")]
-        public int? ImageWeight { get; set; } = 50;
+        public int? ImageWeight { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

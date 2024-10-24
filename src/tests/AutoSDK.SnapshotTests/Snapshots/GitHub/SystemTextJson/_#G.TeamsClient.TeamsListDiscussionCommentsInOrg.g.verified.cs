@@ -57,9 +57,9 @@ namespace G
             string org,
             string teamSlug,
             int discussionNumber,
-            global::G.TeamsListDiscussionCommentsInOrgDirection? direction = global::G.TeamsListDiscussionCommentsInOrgDirection.Desc,
-            int? perPage = 30,
-            int? page = 1,
+            global::G.TeamsListDiscussionCommentsInOrgDirection? direction = default,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

@@ -24,8 +24,8 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.AnyOf<global::System.Collections.Generic.IList<global::G.SimpleUser>, global::System.Collections.Generic.IList<global::G.Stargazer>>> ActivityListStargazersForRepoAsync(
             string owner,
             string repo,
-            int? perPage = 30,
-            int? page = 1,
+            int? perPage = default,
+            int? page = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

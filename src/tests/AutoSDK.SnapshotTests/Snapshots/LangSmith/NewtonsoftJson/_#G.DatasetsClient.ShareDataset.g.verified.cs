@@ -36,7 +36,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.DatasetShareSchema> ShareDatasetAsync(
             global::System.Guid datasetId,
-            bool? shareProjects = false,
+            bool? shareProjects = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(

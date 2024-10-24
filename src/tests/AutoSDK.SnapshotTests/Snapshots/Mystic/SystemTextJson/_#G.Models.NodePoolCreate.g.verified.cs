@@ -20,7 +20,7 @@ namespace G
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("spot")]
-        public bool? Spot { get; set; } = true;
+        public bool? Spot { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

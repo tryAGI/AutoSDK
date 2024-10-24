@@ -55,9 +55,9 @@ namespace G
             global::G.CreateVideoFromImageRequestModel model = default,
             int? seed = default,
             string? promptText = default,
-            bool? watermark = false,
-            int? duration = 10,
-            global::G.CreateVideoFromImageRequestRatio? ratio = global::G.CreateVideoFromImageRequestRatio.x16_9,
+            bool? watermark = default,
+            int? duration = default,
+            global::G.CreateVideoFromImageRequestRatio? ratio = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
