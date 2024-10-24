@@ -31,6 +31,7 @@ public class SettingsBinder(
             NamingConvention: default,
             JsonSerializerType: default,
             UseRequiredKeyword: default,
+            UseExperimentalAttributes: default,
             GenerateConstructors: false,
             GroupByTags: true,
             GenerateMethods: false,
