@@ -30,7 +30,7 @@ namespace G.JsonConverters
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.JsonResponseFormatV2? json = default;
-            if (discriminator?.Type == global::G.ResponseFormatV2DiscriminatorType.Text)
+            if (discriminator?.Type == global::G.ResponseFormatV2DiscriminatorType.JsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JsonResponseFormatV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JsonResponseFormatV2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JsonResponseFormatV2)}");

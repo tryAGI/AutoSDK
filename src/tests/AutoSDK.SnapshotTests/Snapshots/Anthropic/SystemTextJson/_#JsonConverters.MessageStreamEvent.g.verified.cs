@@ -30,42 +30,42 @@ namespace G.JsonConverters
                 start = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MessageDeltaEvent? delta = default;
-            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.MessageStart)
+            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.MessageDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageDeltaEvent)}");
                 delta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MessageStopEvent? stop = default;
-            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.MessageStart)
+            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.MessageStop)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageStopEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageStopEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageStopEvent)}");
                 stop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ContentBlockStartEvent? contentBlockStart = default;
-            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.MessageStart)
+            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.ContentBlockStart)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentBlockStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentBlockStartEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ContentBlockStartEvent)}");
                 contentBlockStart = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ContentBlockDeltaEvent? contentBlockDelta = default;
-            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.MessageStart)
+            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.ContentBlockDelta)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentBlockDeltaEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentBlockDeltaEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ContentBlockDeltaEvent)}");
                 contentBlockDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ContentBlockStopEvent? contentBlockStop = default;
-            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.MessageStart)
+            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.ContentBlockStop)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentBlockStopEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentBlockStopEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ContentBlockStopEvent)}");
                 contentBlockStop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.PingEvent? ping = default;
-            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.MessageStart)
+            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.Ping)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PingEvent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PingEvent)}");
