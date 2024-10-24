@@ -13,6 +13,8 @@ namespace G
         {
             typeof(global::G.JsonConverters.CreateMessageRequestModelJsonConverter),
             typeof(global::G.JsonConverters.CreateMessageRequestModelNullableJsonConverter),
+            typeof(global::G.JsonConverters.CacheControlEphemeralTypeJsonConverter),
+            typeof(global::G.JsonConverters.CacheControlEphemeralTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ImageBlockSourceMediaTypeJsonConverter),
             typeof(global::G.JsonConverters.ImageBlockSourceMediaTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ImageBlockSourceTypeJsonConverter),
@@ -25,6 +27,10 @@ namespace G
             typeof(global::G.JsonConverters.StopReasonNullableJsonConverter),
             typeof(global::G.JsonConverters.ToolChoiceTypeJsonConverter),
             typeof(global::G.JsonConverters.ToolChoiceTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.MessageBatchProcessingStatusJsonConverter),
+            typeof(global::G.JsonConverters.MessageBatchProcessingStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.MessageBatchTypeJsonConverter),
+            typeof(global::G.JsonConverters.MessageBatchTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.MessageStreamEventTypeJsonConverter),
             typeof(global::G.JsonConverters.MessageStreamEventTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.BlockDeltaDiscriminatorTypeJsonConverter),
@@ -34,6 +40,7 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.BlockJsonConverter),
+            typeof(global::G.JsonConverters.ToolJsonConverter),
             typeof(global::G.JsonConverters.MessageStreamEventJsonConverter),
             typeof(global::G.JsonConverters.BlockDeltaJsonConverter),
         };

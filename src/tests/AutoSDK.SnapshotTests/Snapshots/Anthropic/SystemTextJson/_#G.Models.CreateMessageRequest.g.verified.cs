@@ -15,7 +15,7 @@ namespace G
         /// The model that will complete your prompt.<br/>
         /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional<br/>
         /// details and options.<br/>
-        /// Example: claude-3-5-sonnet-20240620
+        /// Example: claude-3-5-sonnet-20241022
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
@@ -134,7 +134,8 @@ namespace G
         /// [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
-        public string? System { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>>? System { get; set; }
 
         /// <summary>
         /// Amount of randomness injected into the response.<br/>

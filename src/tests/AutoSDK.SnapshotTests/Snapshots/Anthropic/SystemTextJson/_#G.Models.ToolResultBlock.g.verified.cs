@@ -42,6 +42,12 @@ namespace G
         public string? Type { get; set; } = "tool_result";
 
         /// <summary>
+        /// The cache control settings.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

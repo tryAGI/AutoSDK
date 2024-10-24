@@ -59,158 +59,226 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageBlock? Type10 { get; set; }
+        public global::G.CacheControlEphemeral? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageBlockSource? Type11 { get; set; }
+        public global::G.CacheControlEphemeralType? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageBlockSourceMediaType? Type12 { get; set; }
+        public global::G.ImageBlock? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ImageBlockSourceType? Type13 { get; set; }
+        public global::G.ImageBlockSource? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolUseBlock? Type14 { get; set; }
+        public global::G.ImageBlockSourceMediaType? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public object? Type15 { get; set; }
+        public global::G.ImageBlockSourceType? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolResultBlock? Type16 { get; set; }
+        public global::G.ToolUseBlock? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BlockDiscriminator? Type17 { get; set; }
+        public object? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type18 { get; set; }
+        public global::G.ToolResultBlock? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BlockDiscriminatorType? Type19 { get; set; }
+        public global::G.BlockDiscriminator? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageRole? Type20 { get; set; }
+        public bool? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.StopReason? Type21 { get; set; }
+        public global::G.BlockDiscriminatorType? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Usage? Type22 { get; set; }
+        public global::G.MessageRole? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type23 { get; set; }
+        public global::G.StopReason? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateMessageRequestMetadata? Type24 { get; set; }
+        public global::G.Usage? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<string>? Type25 { get; set; }
+        public int? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type26 { get; set; }
+        public global::G.CreateMessageRequestMetadata? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoice? Type27 { get; set; }
+        public global::System.Collections.Generic.IList<string>? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ToolChoiceType? Type28 { get; set; }
+        public double? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::G.Tool>? Type29 { get; set; }
+        public global::G.ToolChoice? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.Tool? Type30 { get; set; }
+        public global::G.ToolChoiceType? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEvent? Type31 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Tool>? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStartEvent? Type32 { get; set; }
+        public global::G.Tool? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventType? Type33 { get; set; }
+        public global::G.ToolCustom? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaEvent? Type34 { get; set; }
+        public global::G.ToolComputerUse? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDelta? Type35 { get; set; }
+        public global::G.ToolTextEditor? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageDeltaUsage? Type36 { get; set; }
+        public global::G.ToolBash? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStopEvent? Type37 { get; set; }
+        public global::G.ToolDiscriminator? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStartEvent? Type38 { get; set; }
+        public global::G.CreateMessageBatchRequest? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockDeltaEvent? Type39 { get; set; }
+        public global::System.Collections.Generic.IList<global::G.BatchMessageRequest>? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BlockDelta? Type40 { get; set; }
+        public global::G.BatchMessageRequest? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.TextBlockDelta? Type41 { get; set; }
+        public global::G.MessageBatch? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputJsonBlockDelta? Type42 { get; set; }
+        public global::System.DateTime? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BlockDeltaDiscriminator? Type43 { get; set; }
+        public global::G.MessageBatchProcessingStatus? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BlockDeltaDiscriminatorType? Type44 { get; set; }
+        public global::G.MessageBatchRequestCounts? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.ContentBlockStopEvent? Type45 { get; set; }
+        public global::G.MessageBatchType? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.PingEvent? Type46 { get; set; }
+        public global::G.MessageStreamEvent? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventDiscriminator? Type47 { get; set; }
+        public global::G.MessageStartEvent? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::G.MessageStreamEventDiscriminatorType? Type48 { get; set; }
+        public global::G.MessageStreamEventType? Type48 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageDeltaEvent? Type49 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageDelta? Type50 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageDeltaUsage? Type51 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStopEvent? Type52 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContentBlockStartEvent? Type53 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContentBlockDeltaEvent? Type54 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BlockDelta? Type55 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.TextBlockDelta? Type56 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.InputJsonBlockDelta? Type57 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BlockDeltaDiscriminator? Type58 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.BlockDeltaDiscriminatorType? Type59 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ContentBlockStopEvent? Type60 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.PingEvent? Type61 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ErrorEvent? Type62 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.Error? Type63 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStreamEventDiscriminator? Type64 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.MessageStreamEventDiscriminatorType? Type65 { get; set; }
     }
 }

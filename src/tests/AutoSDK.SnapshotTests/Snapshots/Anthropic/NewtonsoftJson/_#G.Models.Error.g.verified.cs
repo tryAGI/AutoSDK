@@ -1,16 +1,25 @@
-﻿//HintName: G.Models.ToolInputSchema.g.cs
+﻿//HintName: G.Models.Error.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// [JSON schema](https://json-schema.org/) for this tool's input.<br/>
-    /// This defines the shape of the `input` that your tool accepts and that the model<br/>
-    /// will produce.
+    /// An error object.
     /// </summary>
-    public sealed partial class ToolInputSchema
+    public sealed partial class Error
     {
+        /// <summary>
+        /// The type of error.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Type { get; set; } = default!;
+
+        /// <summary>
+        /// A human-readable error message.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Message { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,11 +50,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.ToolInputSchema? FromJson(
+        public static global::G.Error? FromJson(
             string json,
             global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.ToolInputSchema>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.Error>(
                 json,
                 jsonSerializerOptions);
         }

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// An object containing the input being passed to the tool, conforming to the tool’s `input_schema`.
+    /// An object containing the input being passed to the tool, conforming to the tool's `input_schema`.
     /// </summary>
     public sealed partial class ToolUseBlockInput
     {

@@ -38,6 +38,8 @@ namespace G
                 {
                     new global::G.JsonConverters.CreateMessageRequestModelJsonConverter(),
                     new global::G.JsonConverters.CreateMessageRequestModelNullableJsonConverter(),
+                    new global::G.JsonConverters.CacheControlEphemeralTypeJsonConverter(),
+                    new global::G.JsonConverters.CacheControlEphemeralTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ImageBlockSourceMediaTypeJsonConverter(),
                     new global::G.JsonConverters.ImageBlockSourceMediaTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ImageBlockSourceTypeJsonConverter(),
@@ -50,6 +52,10 @@ namespace G
                     new global::G.JsonConverters.StopReasonNullableJsonConverter(),
                     new global::G.JsonConverters.ToolChoiceTypeJsonConverter(),
                     new global::G.JsonConverters.ToolChoiceTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.MessageBatchProcessingStatusJsonConverter(),
+                    new global::G.JsonConverters.MessageBatchProcessingStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.MessageBatchTypeJsonConverter(),
+                    new global::G.JsonConverters.MessageBatchTypeNullableJsonConverter(),
                     new global::G.JsonConverters.MessageStreamEventTypeJsonConverter(),
                     new global::G.JsonConverters.MessageStreamEventTypeNullableJsonConverter(),
                     new global::G.JsonConverters.BlockDeltaDiscriminatorTypeJsonConverter(),
@@ -59,6 +65,7 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
                     new global::G.JsonConverters.OneOfJsonConverterFactory2(),
                     new global::G.JsonConverters.BlockJsonConverter(),
+                    new global::G.JsonConverters.ToolJsonConverter(),
                     new global::G.JsonConverters.MessageStreamEventJsonConverter(),
                     new global::G.JsonConverters.BlockDeltaJsonConverter(),
                 }

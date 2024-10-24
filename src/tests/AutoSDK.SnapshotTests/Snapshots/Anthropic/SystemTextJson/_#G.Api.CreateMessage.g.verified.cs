@@ -130,7 +130,7 @@ namespace G
         /// The model that will complete your prompt.<br/>
         /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional<br/>
         /// details and options.<br/>
-        /// Example: claude-3-5-sonnet-20240620
+        /// Example: claude-3-5-sonnet-20241022
         /// </param>
         /// <param name="messages">
         /// Input messages.<br/>
@@ -333,7 +333,7 @@ namespace G
             int maxTokens,
             global::G.CreateMessageRequestMetadata? metadata = default,
             global::System.Collections.Generic.IList<string>? stopSequences = default,
-            string? system = default,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>>? system = default,
             double? temperature = default,
             global::G.ToolChoice? toolChoice = default,
             global::System.Collections.Generic.IList<global::G.Tool>? tools = default,

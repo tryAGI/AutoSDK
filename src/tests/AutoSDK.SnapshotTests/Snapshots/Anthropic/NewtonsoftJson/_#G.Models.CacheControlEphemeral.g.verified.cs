@@ -1,35 +1,26 @@
-﻿//HintName: G.Models.ToolInputSchema.g.cs
+﻿//HintName: G.Models.CacheControlEphemeral.g.cs
 
 #nullable enable
 
 namespace G
 {
     /// <summary>
-    /// [JSON schema](https://json-schema.org/) for this tool's input.<br/>
-    /// This defines the shape of the `input` that your tool accepts and that the model<br/>
-    /// will produce.
+    /// The cache control settings.
     /// </summary>
-    public sealed partial class ToolInputSchema
+    public sealed partial class CacheControlEphemeral
     {
+        /// <summary>
+        /// Default Value: ephemeral
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.CacheControlEphemeralType? Type { get; set; } = global::G.CacheControlEphemeralType.Ephemeral;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
+        [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-
-        /// <summary>
-        /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public string ToJson(
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Serialize(
-                this,
-                this.GetType(),
-                jsonSerializerContext);
-        }
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
@@ -39,24 +30,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
         public string ToJson(
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Serialize(
+            return global::Newtonsoft.Json.JsonConvert.SerializeObject(
                 this,
                 jsonSerializerOptions);
-        }
-
-        /// <summary>
-        /// Deserializes a JSON string using the provided JsonSerializerContext.
-        /// </summary>
-        public static global::G.ToolInputSchema? FromJson(
-            string json,
-            global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-        {
-            return global::System.Text.Json.JsonSerializer.Deserialize(
-                json,
-                typeof(global::G.ToolInputSchema),
-                jsonSerializerContext) as global::G.ToolInputSchema;
         }
 
         /// <summary>
@@ -66,11 +44,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::G.ToolInputSchema? FromJson(
+        public static global::G.CacheControlEphemeral? FromJson(
             string json,
-            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
+            global::Newtonsoft.Json.JsonSerializerSettings? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::G.ToolInputSchema>(
+            return global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::G.CacheControlEphemeral>(
                 json,
                 jsonSerializerOptions);
         }

@@ -25,7 +25,7 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// An object containing the input being passed to the tool, conforming to the tool’s `input_schema`.
+        /// An object containing the input being passed to the tool, conforming to the tool's `input_schema`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
         public object Input { get; set; } = default!;
@@ -36,6 +36,12 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public string? Type { get; set; } = "tool_use";
+
+        /// <summary>
+        /// The cache control settings.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cache_control")]
+        public global::G.CacheControlEphemeral? CacheControl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

@@ -45,6 +45,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="ping")]
         Ping,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="error")]
+        Error,
     }
 
     /// <summary>
@@ -66,6 +71,7 @@ namespace G
                 MessageStreamEventDiscriminatorType.ContentBlockDelta => "content_block_delta",
                 MessageStreamEventDiscriminatorType.ContentBlockStop => "content_block_stop",
                 MessageStreamEventDiscriminatorType.Ping => "ping",
+                MessageStreamEventDiscriminatorType.Error => "error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -83,6 +89,7 @@ namespace G
                 "content_block_delta" => MessageStreamEventDiscriminatorType.ContentBlockDelta,
                 "content_block_stop" => MessageStreamEventDiscriminatorType.ContentBlockStop,
                 "ping" => MessageStreamEventDiscriminatorType.Ping,
+                "error" => MessageStreamEventDiscriminatorType.Error,
                 _ => null,
             };
         }

@@ -23,6 +23,12 @@ namespace G
         public string? Type { get; set; } = "text";
 
         /// <summary>
+        /// The cache control settings.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cache_control")]
+        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

@@ -27,7 +27,7 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
-        /// An object containing the input being passed to the tool, conforming to the tool’s `input_schema`.
+        /// An object containing the input being passed to the tool, conforming to the tool's `input_schema`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -39,6 +39,12 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; } = "tool_use";
+
+        /// <summary>
+        /// The cache control settings.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::G.CacheControlEphemeral? CacheControl { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

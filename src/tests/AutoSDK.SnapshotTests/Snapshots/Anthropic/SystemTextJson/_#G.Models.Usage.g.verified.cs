@@ -32,6 +32,18 @@ namespace G
         public required int OutputTokens { get; set; }
 
         /// <summary>
+        /// The number of input tokens read from the cache.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_creation_input_tokens")]
+        public int? CacheCreationInputTokens { get; set; }
+
+        /// <summary>
+        /// The number of input tokens used to create the cache entry.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_read_input_tokens")]
+        public int? CacheReadInputTokens { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]

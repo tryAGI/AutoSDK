@@ -15,7 +15,7 @@ namespace G
         /// The model that will complete your prompt.<br/>
         /// See [models](https://docs.anthropic.com/en/docs/models-overview) for additional<br/>
         /// details and options.<br/>
-        /// Example: claude-3-5-sonnet-20240620
+        /// Example: claude-3-5-sonnet-20241022
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AnyOf<string, global::G.CreateMessageRequestModel?> Model { get; set; } = default!;
@@ -130,7 +130,7 @@ namespace G
         /// [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("system")]
-        public string? System { get; set; }
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>>? System { get; set; }
 
         /// <summary>
         /// Amount of randomness injected into the response.<br/>

@@ -10,6 +10,7 @@ namespace G
     /// - `"end_turn"`: the model reached a natural stopping point<br/>
     /// - `"max_tokens"`: we exceeded the requested `max_tokens` or the model's maximum<br/>
     /// - `"stop_sequence"`: one of your provided custom `stop_sequences` was generated<br/>
+    /// - `"tool_use"`: the model invoked one or more tools<br/>
     /// In non-streaming mode this value is always non-null. In streaming mode, it is<br/>
     /// null in the `message_start` event and non-null otherwise.
     /// </summary>
@@ -32,7 +33,7 @@ namespace G
         [global::System.Runtime.Serialization.EnumMember(Value="stop_sequence")]
         StopSequence,
         /// <summary>
-        /// 
+        /// the model invoked one or more tools
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="tool_use")]
         ToolUse,

@@ -30,6 +30,18 @@ namespace G
         public int OutputTokens { get; set; } = default!;
 
         /// <summary>
+        /// The number of input tokens read from the cache.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cache_creation_input_tokens")]
+        public int? CacheCreationInputTokens { get; set; }
+
+        /// <summary>
+        /// The number of input tokens used to create the cache entry.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cache_read_input_tokens")]
+        public int? CacheReadInputTokens { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
