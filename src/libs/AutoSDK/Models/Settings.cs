@@ -12,6 +12,7 @@ public readonly record struct Settings(
     NamingConvention NamingConvention,
     JsonSerializerType JsonSerializerType,
     SdkFeatureUsage UseRequiredKeyword,
+    SdkFeatureUsage UseExperimentalAttributes,
 
     bool GenerateConstructors,
     bool GroupByTags,
@@ -50,6 +51,7 @@ public readonly record struct Settings(
         NamingConvention: default,
         JsonSerializerType: default,
         UseRequiredKeyword: default,
+        UseExperimentalAttributes: default,
         GenerateConstructors: false,
         GroupByTags: true,
         GenerateMethods: false,

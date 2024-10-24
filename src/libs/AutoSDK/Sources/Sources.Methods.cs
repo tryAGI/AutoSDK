@@ -266,6 +266,10 @@ namespace {endPoint.Namespace}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
+        {(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks &&
+          !string.IsNullOrWhiteSpace(endPoint.ExperimentalStage)
+            ? $"[global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: \"{endPoint.Settings.Namespace.ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001\")]"
+            : " ")}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
 {endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
@@ -489,6 +493,10 @@ namespace {endPoint.Namespace}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
         {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
+        {(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks &&
+          !string.IsNullOrWhiteSpace(endPoint.ExperimentalStage)
+            ? $"[global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: \"{endPoint.Settings.Namespace.ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001\")]"
+            : " ")}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
 {endPoint.Parameters.Where(static x => x.IsRequired).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}

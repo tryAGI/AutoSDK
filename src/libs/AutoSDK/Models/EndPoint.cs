@@ -23,6 +23,7 @@ public readonly record struct EndPoint(
     string BaseUrlSummary,
     Settings Settings,
     bool IsDeprecated,
+    string ExperimentalStage,
     TypeData RequestType,
     TypeData ResponseType
 )
@@ -172,6 +173,7 @@ public readonly record struct EndPoint(
             BaseUrlSummary: string.Empty,
             Settings: operation.Settings,
             IsDeprecated: operation.Operation.Deprecated,
+            ExperimentalStage: operation.Operation.GetExperimentalStage(),
             RequestType: requestType ?? TypeData.Default,
             ResponseType: responseType ?? TypeData.Default);
         

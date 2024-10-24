@@ -11,6 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
         global::System.Threading.Tasks.Task<global::G.AssistantObject> CreateAssistantAsync(
             global::G.CreateAssistantRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -58,6 +59,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
         global::System.Threading.Tasks.Task<global::G.AssistantObject> CreateAssistantAsync(
             global::G.AnyOf<string, global::G.CreateAssistantRequestModel?> model,
             string? name = default,

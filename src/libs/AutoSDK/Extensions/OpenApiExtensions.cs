@@ -496,6 +496,53 @@ public static class OpenApiExtensions
         return summary;
     }
 
+    public static string GetExperimentalStage(this OpenApiOperation operation)
+    {
+        operation = operation ?? throw new ArgumentNullException(nameof(operation));
+
+        foreach (var @object in operation.Extensions
+             .Where(x => x.Value is OpenApiObject)
+             .Select(x => x.Value)
+             .Cast<OpenApiObject>())
+        {
+            if (@object.TryGetValue("stage", out var stage2) &&
+                stage2 is OpenApiString string2)
+            {
+                return string2.Value;
+            }
+            if (@object.TryGetValue("alpha", out var alpha2) &&
+                alpha2 is OpenApiBoolean { Value: true })
+            {
+                return "Alpha";
+            }
+            if (@object.TryGetValue("beta", out var beta2) &&
+                beta2 is OpenApiBoolean { Value: true })
+            {
+                return "Beta";
+            }
+        }
+
+        operation.Extensions.TryGetValue("x-stage", out var stage);
+        if (stage is OpenApiString @string)
+        {
+            return @string.Value;
+        }
+        
+        operation.Extensions.TryGetValue("x-alpha", out var alpha);
+        if (alpha is OpenApiBoolean { Value: true })
+        {
+            return "Alpha";
+        }
+        
+        operation.Extensions.TryGetValue("x-beta", out var beta);
+        if (beta is OpenApiBoolean { Value: true })
+        {
+            return "Beta";
+        }
+
+        return string.Empty;
+    }
+
     public static string ClearForXml(this string text)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));

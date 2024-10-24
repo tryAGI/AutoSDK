@@ -26,6 +26,8 @@
     <CompilerVisibleProperty Include="AutoSDK_JsonSerializerType"/>
     <!-- InSupportedTargetFrameworks/Never/Always. Default: InSupportedTargetFrameworks -->
     <CompilerVisibleProperty Include="AutoSDK_UseRequiredKeyword"/>
+    <!-- InSupportedTargetFrameworks/Never/Always. Default: InSupportedTargetFrameworks -->
+    <CompilerVisibleProperty Include="AutoSDK_UseExperimentalAttributes"/>
 
     <!-- Methods generation -->
     <!-- true/false. Default: false -->
