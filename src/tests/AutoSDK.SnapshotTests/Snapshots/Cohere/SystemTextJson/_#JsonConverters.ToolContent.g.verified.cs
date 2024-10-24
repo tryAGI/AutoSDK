@@ -27,14 +27,14 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextContent)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.DocumentContent? document = default;
             if (discriminator?.Type == global::G.ToolContentDiscriminatorType.Document)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.DocumentContent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.DocumentContent> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DocumentContent)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ToolContent(

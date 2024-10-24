@@ -27,28 +27,28 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextBlock)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ImageBlock? image = default;
             if (discriminator?.Type == global::G.BlockDiscriminatorType.Image)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageBlock)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                image = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ToolUseBlock? toolUse = default;
             if (discriminator?.Type == global::G.BlockDiscriminatorType.ToolUse)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolUseBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolUseBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolUseBlock)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                toolUse = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ToolResultBlock? toolResult = default;
             if (discriminator?.Type == global::G.BlockDiscriminatorType.ToolResult)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ToolResultBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ToolResultBlock> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ToolResultBlock)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                toolResult = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.Block(

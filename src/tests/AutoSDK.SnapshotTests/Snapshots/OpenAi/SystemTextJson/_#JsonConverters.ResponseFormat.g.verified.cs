@@ -27,21 +27,21 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseFormatText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseFormatText> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResponseFormatText)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResponseFormatJsonObject? jsonObject = default;
             if (discriminator?.Type == global::G.CreateChatCompletionRequestResponseFormatDiscriminatorType.JsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseFormatJsonObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseFormatJsonObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResponseFormatJsonObject)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                jsonObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ResponseFormatJsonSchema? jsonSchema = default;
             if (discriminator?.Type == global::G.CreateChatCompletionRequestResponseFormatDiscriminatorType.JsonSchema)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ResponseFormatJsonSchema), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ResponseFormatJsonSchema> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ResponseFormatJsonSchema)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                jsonSchema = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ResponseFormat(

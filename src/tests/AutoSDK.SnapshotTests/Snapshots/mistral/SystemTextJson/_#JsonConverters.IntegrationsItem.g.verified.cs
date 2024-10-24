@@ -27,7 +27,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WandbIntegrationOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WandbIntegrationOut> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WandbIntegrationOut)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                wandbIntegrationOut = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.IntegrationsItem(

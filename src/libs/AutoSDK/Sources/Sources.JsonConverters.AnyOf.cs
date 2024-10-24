@@ -54,9 +54,9 @@ public static partial class Sources
 {(anyOfData.IsTrimming ? $@" 
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithoutNullability}> ??
                                throw new global::System.InvalidOperationException($""Cannot get type info for {{nameof({x.Type.CSharpTypeWithoutNullability})}}"");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
  " : $@" 
-                _ = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref reader, options);
+                {x.ParameterName} = global::System.Text.Json.JsonSerializer.Deserialize<{x.Type.CSharpTypeWithoutNullability}>(ref reader, options);
  ")}
             }}
 ").Inject().TrimEnd(',')}

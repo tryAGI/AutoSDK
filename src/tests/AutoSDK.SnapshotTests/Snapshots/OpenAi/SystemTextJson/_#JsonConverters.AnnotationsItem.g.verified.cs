@@ -27,14 +27,14 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextAnnotationsFileCitationObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextAnnotationsFileCitationObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentTextAnnotationsFileCitationObject)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                messageContentTextFileCitationObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MessageContentTextAnnotationsFilePathObject? messageContentTextFilePathObject = default;
             if (discriminator?.Type == global::G.MessageContentTextObjectTextAnnotationDiscriminatorType.FilePath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextAnnotationsFilePathObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextAnnotationsFilePathObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentTextAnnotationsFilePathObject)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                messageContentTextFilePathObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.AnnotationsItem(

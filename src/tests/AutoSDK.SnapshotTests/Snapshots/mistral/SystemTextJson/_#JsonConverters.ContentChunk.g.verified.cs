@@ -27,14 +27,14 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TextChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TextChunk> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextChunk)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ImageURLChunk? imageURL = default;
             if (discriminator?.Type == global::G.ContentChunkDiscriminatorType.ImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageURLChunk> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageURLChunk)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                imageURL = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ContentChunk(

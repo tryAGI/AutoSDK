@@ -27,14 +27,14 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TenantShareRunToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TenantShareRunToken> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TenantShareRunToken)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                tenantShareRunToken = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.TenantShareDatasetToken? tenantShareDatasetToken = default;
             if (discriminator?.Type == global::G.TenantShareTokensResponseEntitieDiscriminatorType.Dataset)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.TenantShareDatasetToken), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.TenantShareDatasetToken> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TenantShareDatasetToken)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                tenantShareDatasetToken = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.EntitiesItem(

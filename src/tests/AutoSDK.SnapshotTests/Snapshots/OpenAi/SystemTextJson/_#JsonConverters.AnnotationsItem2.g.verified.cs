@@ -27,14 +27,14 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentTextAnnotationsFileCitationObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentTextAnnotationsFileCitationObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageDeltaContentTextAnnotationsFileCitationObject)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                messageDeltaContentTextFileCitationObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.MessageDeltaContentTextAnnotationsFilePathObject? messageDeltaContentTextFilePathObject = default;
             if (discriminator?.Type == global::G.MessageDeltaContentTextObjectTextAnnotationDiscriminatorType.FilePath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentTextAnnotationsFilePathObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentTextAnnotationsFilePathObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageDeltaContentTextAnnotationsFilePathObject)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                messageDeltaContentTextFilePathObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.AnnotationsItem2(

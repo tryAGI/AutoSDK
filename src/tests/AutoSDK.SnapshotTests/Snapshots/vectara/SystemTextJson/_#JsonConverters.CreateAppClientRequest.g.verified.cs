@@ -27,7 +27,7 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateClientCredentialsRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateClientCredentialsRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateClientCredentialsRequest)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                credentials = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.CreateAppClientRequest(

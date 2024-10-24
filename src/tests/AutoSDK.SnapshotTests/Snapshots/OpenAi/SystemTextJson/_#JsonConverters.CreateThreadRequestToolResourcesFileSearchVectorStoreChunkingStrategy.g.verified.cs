@@ -27,14 +27,14 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? value2 = default;
             if (discriminator?.Type == global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminatorType.Static)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.CreateThreadRequestToolResourcesFileSearchVectorStoreChunkingStrategy(

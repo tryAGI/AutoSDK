@@ -27,14 +27,14 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CoreDocument), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CoreDocument> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CoreDocument)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                core = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.StructuredDocument? structured = default;
             if (discriminator?.Type == global::G.CreateDocumentRequestDiscriminatorType.Structured)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StructuredDocument), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StructuredDocument> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StructuredDocument)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                structured = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.CreateDocumentRequest(

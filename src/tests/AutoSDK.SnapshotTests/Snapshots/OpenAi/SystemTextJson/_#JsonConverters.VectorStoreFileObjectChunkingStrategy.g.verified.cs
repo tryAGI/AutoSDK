@@ -27,14 +27,14 @@ namespace G.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyResponseParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StaticChunkingStrategyResponseParam)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                staticResponseParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.OtherChunkingStrategyResponseParam? otherResponseParam = default;
             if (discriminator?.Type == global::G.VectorStoreFileObjectChunkingStrategyDiscriminatorType.Other)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OtherChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OtherChunkingStrategyResponseParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OtherChunkingStrategyResponseParam)}");
-                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                otherResponseParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.VectorStoreFileObjectChunkingStrategy(
