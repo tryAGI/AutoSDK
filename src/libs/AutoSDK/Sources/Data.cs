@@ -265,9 +265,9 @@ public static class Data
             settings.GenerateJsonSerializerContextTypes
                 ? filteredSchemas
                     .Where(x =>
-                        x is { TypeData: not null } &&
-                        !string.IsNullOrWhiteSpace(x.TypeData!.Value.CSharpType))
-                    .Select(x => x.TypeData!.Value)
+                        x.TypeData != TypeData.Default &&
+                        !string.IsNullOrWhiteSpace(x.TypeData.CSharpType))
+                    .Select(x => x.TypeData)
                     .GroupBy(x => x.CSharpTypeWithNullability)
                     .Select(x => x.First())
                     .ToImmutableArray()

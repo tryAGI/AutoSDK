@@ -49,7 +49,7 @@ public class SchemaContext
     public OpenApiResponse? Response { get; init; }
     public bool IsOperation => OperationPath != null;
     
-    public TypeData? TypeData { get; set; }
+    public TypeData TypeData { get; set; } = TypeData.Default;
     
     public bool IsClass => Type == "class";// || ResolvedReference?.IsClass == true;
     //public ModelData? ClassData { get; set; }
@@ -180,8 +180,6 @@ public class SchemaContext
         
         return schema.Type ?? "class";
     }
-
-    public string ShortType => TypeData?.CSharpType ?? Type;
 
     public bool IsRequired =>
         IsProperty && Parent?.Schema.Required.Contains(PropertyName) == true ||
@@ -378,14 +376,15 @@ public class SchemaContext
         }
         
         TypeData = IsReference
-            ? ResolvedReference?.TypeData
-            : Models.TypeData.FromSchemaContext(this);
-        if (IsReference && ResolvedReference != null && TypeData.HasValue)
+            ? ResolvedReference?.TypeData ??
+              throw new InvalidOperationException("Resolved reference must have type data.")
+            : TypeData.FromSchemaContext(this);
+        if (IsReference && ResolvedReference != null && TypeData != TypeData.Default)
         {
-            TypeData = TypeData.Value with
+            TypeData = TypeData with
             {
-                CSharpTypeRaw = global::AutoSDK.Models.TypeData.GetCSharpType(ResolvedReference),
-                CSharpTypeNullability = global::AutoSDK.Models.TypeData.GetCSharpNullability(ResolvedReference, this),
+                CSharpTypeRaw = TypeData.GetCSharpType(ResolvedReference),
+                CSharpTypeNullability = TypeData.GetCSharpNullability(ResolvedReference, this),
             };
         }
         if (IsProperty)

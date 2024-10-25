@@ -1,6 +1,6 @@
 using System.Collections.Immutable;
 using AutoSDK.Extensions;
-using AutoSDK.Helpers;
+using AutoSDK.Naming.AnyOfs;
 using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.Models;
@@ -31,11 +31,6 @@ public readonly record struct AnyOfData(
                     : Hint.AllOf))
             .ToList();
         var className = context.Id.ToClassName();
-        var useSmartNames = children.All(x =>
-            x.Schema.Reference != null &&
-            !string.IsNullOrWhiteSpace(SmartNamedAnyOfNames.ComputeSmartName(
-                (x.TypeData ?? TypeData.Default).ShortCSharpTypeWithoutNullability,
-                className)));
         TypeData? discriminatorType = null;
         string? discriminatorPropertyName = null;
         //IDictionary<string, string>? discriminatorMapping = null;
@@ -90,10 +85,10 @@ public readonly record struct AnyOfData(
             Properties: context.IsNamedAnyOfLike
                 ? children.Select((x, i) => PropertyData.Default with
                 {
-                    Type = x.TypeData ?? TypeData.Default,
-                    Name = useSmartNames && (x.TypeData ?? TypeData.Default).CSharpTypeWithoutNullability.StartsWith("global::System.", StringComparison.Ordinal) != true
+                    Type = x.TypeData,
+                    Name = SmartNamedAnyOfNames.ShouldUseSmartName(children, className)
                         ? SmartNamedAnyOfNames.ComputeSmartName(
-                            (x.TypeData ?? TypeData.Default).ShortCSharpTypeWithoutNullability,
+                            x.TypeData,
                             className)
                         : $"Value{i + 1}",
                     Summary = x.Schema.GetSummary(),

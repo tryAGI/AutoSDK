@@ -30,36 +30,36 @@ namespace G.JsonConverters
             }
 
             readerCopy = reader;
-            global::G.ContentFile? file = default;
+            global::G.ContentFile? value2 = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentFile> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentFile).Name}");
-                file = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.ContentSymlink? symlink = default;
+            global::G.ContentSymlink? value3 = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentSymlink), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentSymlink> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentSymlink).Name}");
-                symlink = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                value3 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
             }
 
             readerCopy = reader;
-            global::G.ContentSubmodule? submodule = default;
+            global::G.ContentSubmodule? value4 = default;
             try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentSubmodule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentSubmodule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentSubmodule).Name}");
-                submodule = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+                value4 = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
             catch (global::System.Text.Json.JsonException)
             {
@@ -67,9 +67,9 @@ namespace G.JsonConverters
 
             var result = new global::G.ReposGetContentResponse(
                 value1,
-                file,
-                symlink,
-                submodule
+                value2,
+                value3,
+                value4
                 );
 
             if (value1 != null)
@@ -78,19 +78,19 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (file != null)
+            else if (value2 != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentFile> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentFile).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (symlink != null)
+            else if (value3 != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentSymlink), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentSymlink> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentSymlink).Name}");
                 _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            else if (submodule != null)
+            else if (value4 != null)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentSubmodule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentSubmodule> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentSubmodule).Name}");
@@ -115,23 +115,23 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::G.ContentDirectoryItem>).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
             }
-            else if (value.IsFile)
+            else if (value.IsValue2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentFile), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentFile?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentFile).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.File, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
             }
-            else if (value.IsSymlink)
+            else if (value.IsValue3)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentSymlink), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentSymlink?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentSymlink).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Symlink, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value3, typeInfo);
             }
-            else if (value.IsSubmodule)
+            else if (value.IsValue4)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentSubmodule), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentSubmodule?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentSubmodule).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Submodule, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value4, typeInfo);
             }
         }
     }

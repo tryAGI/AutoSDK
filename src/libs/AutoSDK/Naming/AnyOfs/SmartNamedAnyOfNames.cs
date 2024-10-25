@@ -1,9 +1,20 @@
-namespace AutoSDK.Helpers;
+using AutoSDK.Models;
+
+namespace AutoSDK.Naming.AnyOfs;
 
 public static class SmartNamedAnyOfNames
 {
-    public static string ComputeSmartName(string typeName, string className)
+    public static bool ShouldUseSmartName(IList<SchemaContext> children, string className)
     {
+        return children.All(x =>
+            x.Schema.Reference != null &&
+            !string.IsNullOrWhiteSpace(ComputeSmartName(x.TypeData, className)) &&
+            x.TypeData.CSharpTypeWithoutNullability.StartsWith("global::System.", StringComparison.Ordinal) != true);
+    }
+    
+    public static string ComputeSmartName(TypeData typeData, string className)
+    {
+        var typeName = typeData.ShortCSharpTypeWithoutNullability;
         var nameWords = SplitToWordsByUpperCharacters(typeName);
         var classNameWords = SplitToWordsByUpperCharacters(className);
 

@@ -342,11 +342,10 @@ public static class OpenApiExtensions
     public static string? GetDefaultValue(this SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        context.TypeData = context.TypeData ?? throw new InvalidOperationException("Invalid state: TypeData is null");
         
-        if (context.TypeData.Value.CSharpType == "object?" ||
+        if (context.TypeData.CSharpType == "object?" ||
             context.Schema.Default is OpenApiArray ||
-            context.TypeData.Value.CSharpTypeNullability)
+            context.TypeData.CSharpTypeNullability)
         {
             return string.Empty;
         }
@@ -364,7 +363,7 @@ public static class OpenApiExtensions
                 return string.Empty;
             }
 
-            return context.TypeData.Value.CSharpTypeWithoutNullability + "." + result.Name;
+            return context.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
         if (context.Schema.AnyOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {
@@ -390,7 +389,7 @@ public static class OpenApiExtensions
                 return null;
             }
             
-            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + value;
+            return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + value;
         }
         if (context.Schema.OneOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {
@@ -403,7 +402,7 @@ public static class OpenApiExtensions
                 return string.Empty;
             }
             
-            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + result.Name;
+            return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
         if (context.Schema.AllOf.Any(x => x.Enum.Any()) && context.Schema.Default != null)
         {
@@ -416,7 +415,7 @@ public static class OpenApiExtensions
                 return string.Empty;
             }
             
-            return enumChildContext.TypeData?.CSharpTypeWithoutNullability + "." + result.Name;
+            return enumChildContext.TypeData.CSharpTypeWithoutNullability + "." + result.Name;
         }
         if (context.Schema.Default is OpenApiString @string && !string.IsNullOrWhiteSpace(@string.Value))
         {

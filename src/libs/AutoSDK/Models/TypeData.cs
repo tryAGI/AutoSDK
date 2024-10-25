@@ -98,29 +98,29 @@ public readonly record struct TypeData(
         if (context.Schema.IsAnyOf())
         {
             subTypes = context.Children
-                .Where(x => x is { Hint: Hint.AnyOf, TypeData: not null })
-                .Select(x => x.TypeData!.Value)
+                .Where(x => x is { Hint: Hint.AnyOf } && x.TypeData != Default)
+                .Select(x => x.TypeData)
                 .ToImmutableArray();
         }
         else if (context.Schema.IsOneOf())
         {
             subTypes = context.Children
-                .Where(x => x is { Hint: Hint.OneOf, TypeData: not null })
-                .Select(x => x.TypeData!.Value)
+                .Where(x => x is { Hint: Hint.OneOf } && x.TypeData != Default)
+                .Select(x => x.TypeData)
                 .ToImmutableArray();
         }
         else if (context.Schema.IsAllOf())
         {
             subTypes = context.Children
-                .Where(x => x is { Hint: Hint.AllOf, TypeData: not null })
-                .Select(x => x.TypeData!.Value)
+                .Where(x => x is { Hint: Hint.AllOf } && x.TypeData != Default)
+                .Select(x => x.TypeData)
                 .ToImmutableArray();
         }
         if (context.Schema.IsArray())
         {
             subTypes = [
                 context.Children
-                    .FirstOrDefault(x => x is { Hint: Hint.ArrayItem, TypeData: not null })
+                    .FirstOrDefault(x => x is { Hint: Hint.ArrayItem } && x.TypeData != Default)
                     ?.TypeData ??
                 Default with
                 {
@@ -218,13 +218,13 @@ public readonly record struct TypeData(
             (_, _) when context.Schema.IsUnixTimestamp() => "global::System.DateTimeOffset",
             
             (_, _) when context.Schema.IsArray() =>
-                $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData?.CSharpTypeWithoutNullability}".AsArray(),
+                $"{context.Children.FirstOrDefault(x => x.Hint == Hint.ArrayItem)?.TypeData.CSharpTypeWithoutNullability}".AsArray(),
 
             (_, _) when context.IsNamedAnyOfLike => $"global::{context.Settings.Namespace}.{context.Id}",
             
-            (_, _) when context.Schema.IsAnyOf() => $"global::{context.Settings.Namespace}.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>",
-            (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>",
-            (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData?.CSharpTypeWithNullabilityForValueTypes))}>",
+            (_, _) when context.Schema.IsAnyOf() => $"global::{context.Settings.Namespace}.AnyOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AnyOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
+            (_, _) when context.Schema.IsOneOf() => $"global::{context.Settings.Namespace}.OneOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.OneOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
+            (_, _) when context.Schema.IsAllOf() => $"global::{context.Settings.Namespace}.AllOf<{string.Join(", ", context.Children.Where(x => x.Hint == Hint.AllOf).Select(x => x.TypeData.CSharpTypeWithNullabilityForValueTypes))}>",
 
             ("object", _) or (null, _) when
                 context.Schema.Reference != null &&
@@ -243,7 +243,7 @@ public readonly record struct TypeData(
             
             ("object", _) when
                 context.Schema.AdditionalProperties?.Type is not null =>
-                $"global::System.Collections.Generic.Dictionary<string, {context.Children.FirstOrDefault(x => x.Hint == Hint.AdditionalProperties)?.TypeData?.CSharpType}>",
+                $"global::System.Collections.Generic.Dictionary<string, {context.Children.FirstOrDefault(x => x.Hint == Hint.AdditionalProperties)?.TypeData.CSharpType}>",
             
             ("string", _) when context.Schema.Enum.Any() =>
                 $"global::{context.Settings.Namespace}.{context.Id}",

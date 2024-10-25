@@ -48,7 +48,7 @@ public readonly record struct MethodParameter(
         context = context ?? throw new ArgumentNullException(nameof(context));
         var parameter = context.Parameter ?? throw new InvalidOperationException("Parameter or parameter data is required.");
         var parameterName = context.ParameterName ?? throw new InvalidOperationException("Property name or parameter name is required.");
-        var type = context.TypeData ?? throw new InvalidOperationException("TypeData is required.");
+        var type = context.TypeData;
         if (parameter.In == ParameterLocation.Query &&
             (context.IsClass || context.ResolvedReference?.IsClass == true) &&
             (context.ResolvedReference?.ClassData ?? context.ClassData)?.Properties.FirstOrDefault(x => x.Id == parameterName) is { } property &&
