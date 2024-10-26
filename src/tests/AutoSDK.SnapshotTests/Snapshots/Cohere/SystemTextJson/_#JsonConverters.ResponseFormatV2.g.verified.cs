@@ -29,18 +29,18 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextResponseFormatV2)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.JsonResponseFormatV2? json = default;
+            global::G.JsonResponseFormatV2? jsonObject = default;
             if (discriminator?.Type == global::G.ResponseFormatV2DiscriminatorType.JsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JsonResponseFormatV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JsonResponseFormatV2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JsonResponseFormatV2)}");
-                json = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                jsonObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ResponseFormatV2(
                 discriminator?.Type,
                 text,
-                json
+                jsonObject
                 );
 
             return result;
@@ -61,11 +61,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextResponseFormatV2).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
-            else if (value.IsJson)
+            else if (value.IsJsonObject)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.JsonResponseFormatV2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.JsonResponseFormatV2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.JsonResponseFormatV2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Json, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.JsonObject, typeInfo);
             }
         }
     }

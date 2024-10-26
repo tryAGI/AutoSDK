@@ -22,41 +22,41 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageObjectContentItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.MessageContentImageFileObject? messageImageFileObject = default;
+            global::G.MessageContentImageFileObject? imageFile = default;
             if (discriminator?.Type == global::G.MessageObjectContentItemDiscriminatorType.ImageFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentImageFileObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentImageFileObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentImageFileObject)}");
-                messageImageFileObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                imageFile = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.MessageContentImageUrlObject? messageImageUrlObject = default;
+            global::G.MessageContentImageUrlObject? imageUrl = default;
             if (discriminator?.Type == global::G.MessageObjectContentItemDiscriminatorType.ImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentImageUrlObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentImageUrlObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentImageUrlObject)}");
-                messageImageUrlObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.MessageContentTextObject? messageTextObject = default;
+            global::G.MessageContentTextObject? text = default;
             if (discriminator?.Type == global::G.MessageObjectContentItemDiscriminatorType.Text)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentTextObject)}");
-                messageTextObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.MessageContentRefusalObject? messageRefusalObject = default;
+            global::G.MessageContentRefusalObject? refusal = default;
             if (discriminator?.Type == global::G.MessageObjectContentItemDiscriminatorType.Refusal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentRefusalObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentRefusalObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentRefusalObject)}");
-                messageRefusalObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                refusal = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ContentItem(
                 discriminator?.Type,
-                messageImageFileObject,
-                messageImageUrlObject,
-                messageTextObject,
-                messageRefusalObject
+                imageFile,
+                imageUrl,
+                text,
+                refusal
                 );
 
             return result;
@@ -71,29 +71,29 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsMessageImageFileObject)
+            if (value.IsImageFile)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentImageFileObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentImageFileObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentImageFileObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageImageFileObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageFile, typeInfo);
             }
-            else if (value.IsMessageImageUrlObject)
+            else if (value.IsImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentImageUrlObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentImageUrlObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentImageUrlObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageImageUrlObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
             }
-            else if (value.IsMessageTextObject)
+            else if (value.IsText)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentTextObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageTextObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
-            else if (value.IsMessageRefusalObject)
+            else if (value.IsRefusal)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentRefusalObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentRefusalObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentRefusalObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageRefusalObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Refusal, typeInfo);
             }
         }
     }

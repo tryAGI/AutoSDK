@@ -22,33 +22,33 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RunStepDeltaStepDetailsToolCallsObjectToolCallDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.RunStepDeltaStepDetailsToolCallsCodeObject? runStepDeltaDetailsCodeObject = default;
+            global::G.RunStepDeltaStepDetailsToolCallsCodeObject? codeInterpreter = default;
             if (discriminator?.Type == global::G.RunStepDeltaStepDetailsToolCallsObjectToolCallDiscriminatorType.CodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDeltaStepDetailsToolCallsCodeObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDeltaStepDetailsToolCallsCodeObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RunStepDeltaStepDetailsToolCallsCodeObject)}");
-                runStepDeltaDetailsCodeObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? runStepDeltaDetailsFileSearchObject = default;
+            global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? fileSearch = default;
             if (discriminator?.Type == global::G.RunStepDeltaStepDetailsToolCallsObjectToolCallDiscriminatorType.FileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject)}");
-                runStepDeltaDetailsFileSearchObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? runStepDeltaDetailsFunctionObject = default;
+            global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? function = default;
             if (discriminator?.Type == global::G.RunStepDeltaStepDetailsToolCallsObjectToolCallDiscriminatorType.Function)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDeltaStepDetailsToolCallsFunctionObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RunStepDeltaStepDetailsToolCallsFunctionObject)}");
-                runStepDeltaDetailsFunctionObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                function = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ToolCallsItem2(
                 discriminator?.Type,
-                runStepDeltaDetailsCodeObject,
-                runStepDeltaDetailsFileSearchObject,
-                runStepDeltaDetailsFunctionObject
+                codeInterpreter,
+                fileSearch,
+                function
                 );
 
             return result;
@@ -63,23 +63,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsRunStepDeltaDetailsCodeObject)
+            if (value.IsCodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDeltaStepDetailsToolCallsCodeObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RunStepDeltaStepDetailsToolCallsCodeObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepDeltaDetailsCodeObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreter, typeInfo);
             }
-            else if (value.IsRunStepDeltaDetailsFileSearchObject)
+            else if (value.IsFileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepDeltaDetailsFileSearchObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearch, typeInfo);
             }
-            else if (value.IsRunStepDeltaDetailsFunctionObject)
+            else if (value.IsFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDeltaStepDetailsToolCallsFunctionObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RunStepDeltaStepDetailsToolCallsFunctionObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepDeltaDetailsFunctionObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function, typeInfo);
             }
         }
     }

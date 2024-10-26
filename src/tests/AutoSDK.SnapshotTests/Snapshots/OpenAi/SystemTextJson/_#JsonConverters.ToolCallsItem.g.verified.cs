@@ -22,33 +22,33 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RunStepDetailsToolCallsObjectToolCallDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.RunStepDetailsToolCallsCodeObject? runStepDetailsCodeObject = default;
+            global::G.RunStepDetailsToolCallsCodeObject? codeInterpreter = default;
             if (discriminator?.Type == global::G.RunStepDetailsToolCallsObjectToolCallDiscriminatorType.CodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDetailsToolCallsCodeObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDetailsToolCallsCodeObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RunStepDetailsToolCallsCodeObject)}");
-                runStepDetailsCodeObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.RunStepDetailsToolCallsFileSearchObject? runStepDetailsFileSearchObject = default;
+            global::G.RunStepDetailsToolCallsFileSearchObject? fileSearch = default;
             if (discriminator?.Type == global::G.RunStepDetailsToolCallsObjectToolCallDiscriminatorType.FileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDetailsToolCallsFileSearchObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDetailsToolCallsFileSearchObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RunStepDetailsToolCallsFileSearchObject)}");
-                runStepDetailsFileSearchObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.RunStepDetailsToolCallsFunctionObject? runStepDetailsFunctionObject = default;
+            global::G.RunStepDetailsToolCallsFunctionObject? function = default;
             if (discriminator?.Type == global::G.RunStepDetailsToolCallsObjectToolCallDiscriminatorType.Function)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDetailsToolCallsFunctionObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDetailsToolCallsFunctionObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RunStepDetailsToolCallsFunctionObject)}");
-                runStepDetailsFunctionObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                function = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ToolCallsItem(
                 discriminator?.Type,
-                runStepDetailsCodeObject,
-                runStepDetailsFileSearchObject,
-                runStepDetailsFunctionObject
+                codeInterpreter,
+                fileSearch,
+                function
                 );
 
             return result;
@@ -63,23 +63,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsRunStepDetailsCodeObject)
+            if (value.IsCodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDetailsToolCallsCodeObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDetailsToolCallsCodeObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RunStepDetailsToolCallsCodeObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepDetailsCodeObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreter, typeInfo);
             }
-            else if (value.IsRunStepDetailsFileSearchObject)
+            else if (value.IsFileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDetailsToolCallsFileSearchObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDetailsToolCallsFileSearchObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RunStepDetailsToolCallsFileSearchObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepDetailsFileSearchObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearch, typeInfo);
             }
-            else if (value.IsRunStepDetailsFunctionObject)
+            else if (value.IsFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RunStepDetailsToolCallsFunctionObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RunStepDetailsToolCallsFunctionObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RunStepDetailsToolCallsFunctionObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RunStepDetailsFunctionObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function, typeInfo);
             }
         }
     }

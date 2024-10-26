@@ -20,18 +20,18 @@ namespace G
         /// The search response results.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StreamSearchResponse? StreamSearch { get; init; }
+        public global::G.StreamSearchResponse? SearchResults { get; init; }
 #else
-        public global::G.StreamSearchResponse? StreamSearch { get; }
+        public global::G.StreamSearchResponse? SearchResults { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamSearch))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SearchResults))]
 #endif
-        public bool IsStreamSearch => StreamSearch != null;
+        public bool IsSearchResults => SearchResults != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StreamSearchResponse?(ChatStreamedResponse @this) => @this.StreamSearch;
+        public static implicit operator global::G.StreamSearchResponse?(ChatStreamedResponse @this) => @this.SearchResults;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatStreamedResponse(global::G.StreamSearchResponse? value)
         {
-            StreamSearch = value;
+            SearchResults = value;
         }
 
         /// <summary>
         /// Information about the chat.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatInfoResponse? Info { get; init; }
+        public global::G.ChatInfoResponse? ChatInfo { get; init; }
 #else
-        public global::G.ChatInfoResponse? Info { get; }
+        public global::G.ChatInfoResponse? ChatInfo { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Info))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ChatInfo))]
 #endif
-        public bool IsInfo => Info != null;
+        public bool IsChatInfo => ChatInfo != null;
 
         /// <summary>
         /// 
@@ -76,32 +76,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatInfoResponse?(ChatStreamedResponse @this) => @this.Info;
+        public static implicit operator global::G.ChatInfoResponse?(ChatStreamedResponse @this) => @this.ChatInfo;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatStreamedResponse(global::G.ChatInfoResponse? value)
         {
-            Info = value;
+            ChatInfo = value;
         }
 
         /// <summary>
         /// The chunk response from the generation, which may be a partial generation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StreamGenerationChunk? StreamGenerationChunk { get; init; }
+        public global::G.StreamGenerationChunk? GenerationChunk { get; init; }
 #else
-        public global::G.StreamGenerationChunk? StreamGenerationChunk { get; }
+        public global::G.StreamGenerationChunk? GenerationChunk { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamGenerationChunk))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationChunk))]
 #endif
-        public bool IsStreamGenerationChunk => StreamGenerationChunk != null;
+        public bool IsGenerationChunk => GenerationChunk != null;
 
         /// <summary>
         /// 
@@ -111,14 +111,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StreamGenerationChunk?(ChatStreamedResponse @this) => @this.StreamGenerationChunk;
+        public static implicit operator global::G.StreamGenerationChunk?(ChatStreamedResponse @this) => @this.GenerationChunk;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatStreamedResponse(global::G.StreamGenerationChunk? value)
         {
-            StreamGenerationChunk = value;
+            GenerationChunk = value;
         }
 
         /// <summary>
@@ -126,18 +126,18 @@ namespace G
         /// factual consistency score, but generation has stopped.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StreamGenerationEnd? StreamGenerationEnd { get; init; }
+        public global::G.StreamGenerationEnd? GenerationEnd { get; init; }
 #else
-        public global::G.StreamGenerationEnd? StreamGenerationEnd { get; }
+        public global::G.StreamGenerationEnd? GenerationEnd { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamGenerationEnd))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationEnd))]
 #endif
-        public bool IsStreamGenerationEnd => StreamGenerationEnd != null;
+        public bool IsGenerationEnd => GenerationEnd != null;
 
         /// <summary>
         /// 
@@ -147,14 +147,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StreamGenerationEnd?(ChatStreamedResponse @this) => @this.StreamGenerationEnd;
+        public static implicit operator global::G.StreamGenerationEnd?(ChatStreamedResponse @this) => @this.GenerationEnd;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatStreamedResponse(global::G.StreamGenerationEnd? value)
         {
-            StreamGenerationEnd = value;
+            GenerationEnd = value;
         }
 
         /// <summary>
@@ -196,18 +196,18 @@ namespace G
         /// The end of a query response stream.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StreamResponseEnd? StreamEnd { get; init; }
+        public global::G.StreamResponseEnd? End { get; init; }
 #else
-        public global::G.StreamResponseEnd? StreamEnd { get; }
+        public global::G.StreamResponseEnd? End { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamEnd))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(End))]
 #endif
-        public bool IsStreamEnd => StreamEnd != null;
+        public bool IsEnd => End != null;
 
         /// <summary>
         /// 
@@ -217,14 +217,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StreamResponseEnd?(ChatStreamedResponse @this) => @this.StreamEnd;
+        public static implicit operator global::G.StreamResponseEnd?(ChatStreamedResponse @this) => @this.End;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatStreamedResponse(global::G.StreamResponseEnd? value)
         {
-            StreamEnd = value;
+            End = value;
         }
 
         /// <summary>
@@ -266,18 +266,18 @@ namespace G
         /// Event signaling there was an error with the request.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StreamError? StreamError { get; init; }
+        public global::G.StreamError? Error { get; init; }
 #else
-        public global::G.StreamError? StreamError { get; }
+        public global::G.StreamError? Error { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamError))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
-        public bool IsStreamError => StreamError != null;
+        public bool IsError => Error != null;
 
         /// <summary>
         /// 
@@ -287,14 +287,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StreamError?(ChatStreamedResponse @this) => @this.StreamError;
+        public static implicit operator global::G.StreamError?(ChatStreamedResponse @this) => @this.Error;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatStreamedResponse(global::G.StreamError? value)
         {
-            StreamError = value;
+            Error = value;
         }
 
         /// <summary>
@@ -302,40 +302,40 @@ namespace G
         /// </summary>
         public ChatStreamedResponse(
             global::G.ChatStreamedResponseDiscriminatorType? type,
-            global::G.StreamSearchResponse? streamSearch,
-            global::G.ChatInfoResponse? info,
-            global::G.StreamGenerationChunk? streamGenerationChunk,
-            global::G.StreamGenerationEnd? streamGenerationEnd,
+            global::G.StreamSearchResponse? searchResults,
+            global::G.ChatInfoResponse? chatInfo,
+            global::G.StreamGenerationChunk? generationChunk,
+            global::G.StreamGenerationEnd? generationEnd,
             global::G.FactualConsistencyScore? factualConsistencyScore,
-            global::G.StreamResponseEnd? streamEnd,
+            global::G.StreamResponseEnd? end,
             global::G.GenerationInfo? generationInfo,
-            global::G.StreamError? streamError
+            global::G.StreamError? error
             )
         {
             Type = type;
 
-            StreamSearch = streamSearch;
-            Info = info;
-            StreamGenerationChunk = streamGenerationChunk;
-            StreamGenerationEnd = streamGenerationEnd;
+            SearchResults = searchResults;
+            ChatInfo = chatInfo;
+            GenerationChunk = generationChunk;
+            GenerationEnd = generationEnd;
             FactualConsistencyScore = factualConsistencyScore;
-            StreamEnd = streamEnd;
+            End = end;
             GenerationInfo = generationInfo;
-            StreamError = streamError;
+            Error = error;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            StreamError as object ??
+            Error as object ??
             GenerationInfo as object ??
-            StreamEnd as object ??
+            End as object ??
             FactualConsistencyScore as object ??
-            StreamGenerationEnd as object ??
-            StreamGenerationChunk as object ??
-            Info as object ??
-            StreamSearch as object 
+            GenerationEnd as object ??
+            GenerationChunk as object ??
+            ChatInfo as object ??
+            SearchResults as object 
             ;
 
         /// <summary>
@@ -343,21 +343,21 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsStreamSearch && !IsInfo && !IsStreamGenerationChunk && !IsStreamGenerationEnd && !IsFactualConsistencyScore && !IsStreamEnd && !IsGenerationInfo && !IsStreamError || !IsStreamSearch && IsInfo && !IsStreamGenerationChunk && !IsStreamGenerationEnd && !IsFactualConsistencyScore && !IsStreamEnd && !IsGenerationInfo && !IsStreamError || !IsStreamSearch && !IsInfo && IsStreamGenerationChunk && !IsStreamGenerationEnd && !IsFactualConsistencyScore && !IsStreamEnd && !IsGenerationInfo && !IsStreamError || !IsStreamSearch && !IsInfo && !IsStreamGenerationChunk && IsStreamGenerationEnd && !IsFactualConsistencyScore && !IsStreamEnd && !IsGenerationInfo && !IsStreamError || !IsStreamSearch && !IsInfo && !IsStreamGenerationChunk && !IsStreamGenerationEnd && IsFactualConsistencyScore && !IsStreamEnd && !IsGenerationInfo && !IsStreamError || !IsStreamSearch && !IsInfo && !IsStreamGenerationChunk && !IsStreamGenerationEnd && !IsFactualConsistencyScore && IsStreamEnd && !IsGenerationInfo && !IsStreamError || !IsStreamSearch && !IsInfo && !IsStreamGenerationChunk && !IsStreamGenerationEnd && !IsFactualConsistencyScore && !IsStreamEnd && IsGenerationInfo && !IsStreamError || !IsStreamSearch && !IsInfo && !IsStreamGenerationChunk && !IsStreamGenerationEnd && !IsFactualConsistencyScore && !IsStreamEnd && !IsGenerationInfo && IsStreamError;
+            return IsSearchResults && !IsChatInfo && !IsGenerationChunk && !IsGenerationEnd && !IsFactualConsistencyScore && !IsEnd && !IsGenerationInfo && !IsError || !IsSearchResults && IsChatInfo && !IsGenerationChunk && !IsGenerationEnd && !IsFactualConsistencyScore && !IsEnd && !IsGenerationInfo && !IsError || !IsSearchResults && !IsChatInfo && IsGenerationChunk && !IsGenerationEnd && !IsFactualConsistencyScore && !IsEnd && !IsGenerationInfo && !IsError || !IsSearchResults && !IsChatInfo && !IsGenerationChunk && IsGenerationEnd && !IsFactualConsistencyScore && !IsEnd && !IsGenerationInfo && !IsError || !IsSearchResults && !IsChatInfo && !IsGenerationChunk && !IsGenerationEnd && IsFactualConsistencyScore && !IsEnd && !IsGenerationInfo && !IsError || !IsSearchResults && !IsChatInfo && !IsGenerationChunk && !IsGenerationEnd && !IsFactualConsistencyScore && IsEnd && !IsGenerationInfo && !IsError || !IsSearchResults && !IsChatInfo && !IsGenerationChunk && !IsGenerationEnd && !IsFactualConsistencyScore && !IsEnd && IsGenerationInfo && !IsError || !IsSearchResults && !IsChatInfo && !IsGenerationChunk && !IsGenerationEnd && !IsFactualConsistencyScore && !IsEnd && !IsGenerationInfo && IsError;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StreamSearchResponse?, TResult>? streamSearch = null,
-            global::System.Func<global::G.ChatInfoResponse?, TResult>? info = null,
-            global::System.Func<global::G.StreamGenerationChunk?, TResult>? streamGenerationChunk = null,
-            global::System.Func<global::G.StreamGenerationEnd?, TResult>? streamGenerationEnd = null,
+            global::System.Func<global::G.StreamSearchResponse?, TResult>? searchResults = null,
+            global::System.Func<global::G.ChatInfoResponse?, TResult>? chatInfo = null,
+            global::System.Func<global::G.StreamGenerationChunk?, TResult>? generationChunk = null,
+            global::System.Func<global::G.StreamGenerationEnd?, TResult>? generationEnd = null,
             global::System.Func<global::G.FactualConsistencyScore?, TResult>? factualConsistencyScore = null,
-            global::System.Func<global::G.StreamResponseEnd?, TResult>? streamEnd = null,
+            global::System.Func<global::G.StreamResponseEnd?, TResult>? end = null,
             global::System.Func<global::G.GenerationInfo?, TResult>? generationInfo = null,
-            global::System.Func<global::G.StreamError?, TResult>? streamError = null,
+            global::System.Func<global::G.StreamError?, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -365,37 +365,37 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamSearch && streamSearch != null)
+            if (IsSearchResults && searchResults != null)
             {
-                return streamSearch(StreamSearch!);
+                return searchResults(SearchResults!);
             }
-            else if (IsInfo && info != null)
+            else if (IsChatInfo && chatInfo != null)
             {
-                return info(Info!);
+                return chatInfo(ChatInfo!);
             }
-            else if (IsStreamGenerationChunk && streamGenerationChunk != null)
+            else if (IsGenerationChunk && generationChunk != null)
             {
-                return streamGenerationChunk(StreamGenerationChunk!);
+                return generationChunk(GenerationChunk!);
             }
-            else if (IsStreamGenerationEnd && streamGenerationEnd != null)
+            else if (IsGenerationEnd && generationEnd != null)
             {
-                return streamGenerationEnd(StreamGenerationEnd!);
+                return generationEnd(GenerationEnd!);
             }
             else if (IsFactualConsistencyScore && factualConsistencyScore != null)
             {
                 return factualConsistencyScore(FactualConsistencyScore!);
             }
-            else if (IsStreamEnd && streamEnd != null)
+            else if (IsEnd && end != null)
             {
-                return streamEnd(StreamEnd!);
+                return end(End!);
             }
             else if (IsGenerationInfo && generationInfo != null)
             {
                 return generationInfo(GenerationInfo!);
             }
-            else if (IsStreamError && streamError != null)
+            else if (IsError && error != null)
             {
-                return streamError(StreamError!);
+                return error(Error!);
             }
 
             return default(TResult);
@@ -405,14 +405,14 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StreamSearchResponse?>? streamSearch = null,
-            global::System.Action<global::G.ChatInfoResponse?>? info = null,
-            global::System.Action<global::G.StreamGenerationChunk?>? streamGenerationChunk = null,
-            global::System.Action<global::G.StreamGenerationEnd?>? streamGenerationEnd = null,
+            global::System.Action<global::G.StreamSearchResponse?>? searchResults = null,
+            global::System.Action<global::G.ChatInfoResponse?>? chatInfo = null,
+            global::System.Action<global::G.StreamGenerationChunk?>? generationChunk = null,
+            global::System.Action<global::G.StreamGenerationEnd?>? generationEnd = null,
             global::System.Action<global::G.FactualConsistencyScore?>? factualConsistencyScore = null,
-            global::System.Action<global::G.StreamResponseEnd?>? streamEnd = null,
+            global::System.Action<global::G.StreamResponseEnd?>? end = null,
             global::System.Action<global::G.GenerationInfo?>? generationInfo = null,
-            global::System.Action<global::G.StreamError?>? streamError = null,
+            global::System.Action<global::G.StreamError?>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -420,37 +420,37 @@ namespace G
                 Validate();
             }
 
-            if (IsStreamSearch)
+            if (IsSearchResults)
             {
-                streamSearch?.Invoke(StreamSearch!);
+                searchResults?.Invoke(SearchResults!);
             }
-            else if (IsInfo)
+            else if (IsChatInfo)
             {
-                info?.Invoke(Info!);
+                chatInfo?.Invoke(ChatInfo!);
             }
-            else if (IsStreamGenerationChunk)
+            else if (IsGenerationChunk)
             {
-                streamGenerationChunk?.Invoke(StreamGenerationChunk!);
+                generationChunk?.Invoke(GenerationChunk!);
             }
-            else if (IsStreamGenerationEnd)
+            else if (IsGenerationEnd)
             {
-                streamGenerationEnd?.Invoke(StreamGenerationEnd!);
+                generationEnd?.Invoke(GenerationEnd!);
             }
             else if (IsFactualConsistencyScore)
             {
                 factualConsistencyScore?.Invoke(FactualConsistencyScore!);
             }
-            else if (IsStreamEnd)
+            else if (IsEnd)
             {
-                streamEnd?.Invoke(StreamEnd!);
+                end?.Invoke(End!);
             }
             else if (IsGenerationInfo)
             {
                 generationInfo?.Invoke(GenerationInfo!);
             }
-            else if (IsStreamError)
+            else if (IsError)
             {
-                streamError?.Invoke(StreamError!);
+                error?.Invoke(Error!);
             }
         }
 
@@ -461,21 +461,21 @@ namespace G
         {
             var fields = new object?[]
             {
-                StreamSearch,
+                SearchResults,
                 typeof(global::G.StreamSearchResponse),
-                Info,
+                ChatInfo,
                 typeof(global::G.ChatInfoResponse),
-                StreamGenerationChunk,
+                GenerationChunk,
                 typeof(global::G.StreamGenerationChunk),
-                StreamGenerationEnd,
+                GenerationEnd,
                 typeof(global::G.StreamGenerationEnd),
                 FactualConsistencyScore,
                 typeof(global::G.FactualConsistencyScore),
-                StreamEnd,
+                End,
                 typeof(global::G.StreamResponseEnd),
                 GenerationInfo,
                 typeof(global::G.GenerationInfo),
-                StreamError,
+                Error,
                 typeof(global::G.StreamError),
             };
             const int offset = unchecked((int)2166136261);
@@ -492,14 +492,14 @@ namespace G
         public bool Equals(ChatStreamedResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.StreamSearchResponse?>.Default.Equals(StreamSearch, other.StreamSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatInfoResponse?>.Default.Equals(Info, other.Info) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.StreamGenerationChunk?>.Default.Equals(StreamGenerationChunk, other.StreamGenerationChunk) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.StreamGenerationEnd?>.Default.Equals(StreamGenerationEnd, other.StreamGenerationEnd) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StreamSearchResponse?>.Default.Equals(SearchResults, other.SearchResults) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatInfoResponse?>.Default.Equals(ChatInfo, other.ChatInfo) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StreamGenerationChunk?>.Default.Equals(GenerationChunk, other.GenerationChunk) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StreamGenerationEnd?>.Default.Equals(GenerationEnd, other.GenerationEnd) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.FactualConsistencyScore?>.Default.Equals(FactualConsistencyScore, other.FactualConsistencyScore) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.StreamResponseEnd?>.Default.Equals(StreamEnd, other.StreamEnd) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.StreamResponseEnd?>.Default.Equals(End, other.End) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.GenerationInfo?>.Default.Equals(GenerationInfo, other.GenerationInfo) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.StreamError?>.Default.Equals(StreamError, other.StreamError) 
+                global::System.Collections.Generic.EqualityComparer<global::G.StreamError?>.Default.Equals(Error, other.Error) 
                 ;
         }
 

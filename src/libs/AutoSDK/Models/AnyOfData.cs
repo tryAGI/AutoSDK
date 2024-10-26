@@ -10,7 +10,6 @@ public readonly record struct AnyOfData(
     int Count,
     TypeData? DiscriminatorType,
     string? DiscriminatorPropertyName,
-    //EquatableArray<(string, string)>? DiscriminatorMapping,
     bool IsTrimming,
     string Namespace,
     string Name,
@@ -19,6 +18,8 @@ public readonly record struct AnyOfData(
     Settings Settings
 )
 {
+    public bool IsNamed => !string.IsNullOrWhiteSpace(Name);
+    
     public static AnyOfData FromSchemaContext(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
@@ -33,26 +34,55 @@ public readonly record struct AnyOfData(
         var className = context.Id.ToClassName();
         TypeData? discriminatorType = null;
         string? discriminatorPropertyName = null;
-        //IDictionary<string, string>? discriminatorMapping = null;
         
         if (context.Schema.Discriminator != null &&
             context.Schema.Discriminator.Mapping.Count != 0)
         {
             discriminatorType = context.Children.FirstOrDefault(x => x.Hint == Hint.Discriminator)?.TypeData;
             discriminatorPropertyName = context.Schema.Discriminator.PropertyName.ToPropertyName();
-            
-            // if (context.Schema.Discriminator.Mapping.Count == 0)
-            // {
-            //     if (children.All(x => 
-            //         x.Children.FirstOrDefault(y => y.PropertyName == discriminatorPropertyName)?.GetDefaultValue() != null &&
-            //         x.ClassName != null))
-            //     {
-            //         context.Schema.Discriminator.Mapping = children
-            //             .ToDictionary(
-            //                 x => x.GetDefaultValue()!,
-            //                 x => x.ClassName);
-            //     }
-            // }
+        }
+        
+        var count = context.IsAnyOf
+            ? context.Schema.AnyOf.Count
+            : context.IsOneOf
+                ? context.Schema.OneOf.Count
+                : context.Schema.AllOf.Count;
+        var properties = context.IsNamedAnyOfLike
+            ? children.Select((x, i) => PropertyData.Default with
+            {
+                Type = x.TypeData,
+                Name = SmartNamedAnyOfNames.ComputePropertyName(children, className, i),
+                Summary = x.Schema.GetSummary(),
+                DiscriminatorValue = context.Schema.Discriminator?.Mapping?
+                    .FirstOrDefault(y =>
+                        y.Value.Contains(x.Id) ||
+                        (x.Schema.Properties.ContainsKey(context.Schema.Discriminator.PropertyName) &&
+                         x.Schema.Properties[context.Schema.Discriminator.PropertyName].Enum.Count == 1 &&
+                         x.Schema.Properties[context.Schema.Discriminator.PropertyName].Enum.FirstOrDefault()
+                             ?.GetString() == y.Key))
+                    .Key?.ToEnumValue(string.Empty, context.Settings).Name ?? string.Empty,
+            }).ToImmutableArray().AsEquatableArray()
+            : Enumerable
+                .Range(1, count)
+                .Select(i => PropertyData.Default with
+                {
+                    Name = $"Value{i}",
+                    Type = TypeData.Default with
+                    {
+                        CSharpTypeRaw = $"T{i}",
+                    },
+                })
+                .ToImmutableArray().AsEquatableArray();
+        if (context.IsNamedAnyOfLike &&
+            !properties.IsEmpty &&
+            properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue)))
+        {
+            properties = properties
+                .Select(x => x with
+                {
+                    Name = x.DiscriminatorValue,
+                })
+                .ToImmutableArray().AsEquatableArray();
         }
         
         return new AnyOfData(
@@ -61,16 +91,9 @@ public readonly record struct AnyOfData(
                 : context.IsOneOf
                     ? "OneOf"
                     : "AllOf",
-            Count: context.IsAnyOf
-                ? context.Schema.AnyOf.Count
-                : context.IsOneOf
-                    ? context.Schema.OneOf.Count
-                    : context.Schema.AllOf.Count,
+            Count: count,
             DiscriminatorType: discriminatorType,
             DiscriminatorPropertyName: discriminatorPropertyName,
-            //DiscriminatorMapping: discriminatorMapping?
-            //    .Select(x => (x.Key, x.Value))
-            //    .ToImmutableArray(),
             IsTrimming:
                 context.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
                 (!string.IsNullOrWhiteSpace(context.Settings.JsonSerializerContext) ||
@@ -82,25 +105,7 @@ public readonly record struct AnyOfData(
             Summary: context.IsNamedAnyOfLike
                 ? context.Schema.GetSummary()
                 : string.Empty,
-            Properties: context.IsNamedAnyOfLike
-                ? children.Select((x, i) => PropertyData.Default with
-                {
-                    Type = x.TypeData,
-                    Name = SmartNamedAnyOfNames.ShouldUseSmartName(children, className)
-                        ? SmartNamedAnyOfNames.ComputeSmartName(
-                            x.TypeData,
-                            className)
-                        : $"Value{i + 1}",
-                    Summary = x.Schema.GetSummary(),
-                    DiscriminatorValue = context.Schema.Discriminator?.Mapping?
-                        .FirstOrDefault(y =>
-                            y.Value.Contains(x.Id) ||
-                            (x.Schema.Properties.ContainsKey(context.Schema.Discriminator.PropertyName) &&
-                             x.Schema.Properties[context.Schema.Discriminator.PropertyName].Enum.Count == 1 &&
-                            x.Schema.Properties[context.Schema.Discriminator.PropertyName].Enum.FirstOrDefault()?.GetString() == y.Key))
-                        .Key?.ToEnumValue(string.Empty, context.Settings).Name ?? string.Empty,
-                }).ToImmutableArray()
-                : ImmutableArray<PropertyData>.Empty,
+            Properties: properties,
             Settings: context.Settings);
     }
 }

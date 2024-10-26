@@ -55,18 +55,18 @@ namespace G
         /// {"type":"image_url","image_url":{"url":"data:image/png;base64,iVBORw0
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ImageURLChunk? ImageURL { get; init; }
+        public global::G.ImageURLChunk? ImageUrl { get; init; }
 #else
-        public global::G.ImageURLChunk? ImageURL { get; }
+        public global::G.ImageURLChunk? ImageUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageURL))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
-        public bool IsImageURL => ImageURL != null;
+        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// 
@@ -76,14 +76,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ImageURLChunk?(ContentChunk @this) => @this.ImageURL;
+        public static implicit operator global::G.ImageURLChunk?(ContentChunk @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentChunk(global::G.ImageURLChunk? value)
         {
-            ImageURL = value;
+            ImageUrl = value;
         }
 
         /// <summary>
@@ -92,20 +92,20 @@ namespace G
         public ContentChunk(
             global::G.ContentChunkDiscriminatorType? type,
             global::G.TextChunk? text,
-            global::G.ImageURLChunk? imageURL
+            global::G.ImageURLChunk? imageUrl
             )
         {
             Type = type;
 
             Text = text;
-            ImageURL = imageURL;
+            ImageUrl = imageUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ImageURL as object ??
+            ImageUrl as object ??
             Text as object 
             ;
 
@@ -114,7 +114,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageURL || !IsText && IsImageURL;
+            return IsText && !IsImageUrl || !IsText && IsImageUrl;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.TextChunk?, TResult>? text = null,
-            global::System.Func<global::G.ImageURLChunk?, TResult>? imageURL = null,
+            global::System.Func<global::G.ImageURLChunk?, TResult>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -134,9 +134,9 @@ namespace G
             {
                 return text(Text!);
             }
-            else if (IsImageURL && imageURL != null)
+            else if (IsImageUrl && imageUrl != null)
             {
-                return imageURL(ImageURL!);
+                return imageUrl(ImageUrl!);
             }
 
             return default(TResult);
@@ -147,7 +147,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.TextChunk?>? text = null,
-            global::System.Action<global::G.ImageURLChunk?>? imageURL = null,
+            global::System.Action<global::G.ImageURLChunk?>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -159,9 +159,9 @@ namespace G
             {
                 text?.Invoke(Text!);
             }
-            else if (IsImageURL)
+            else if (IsImageUrl)
             {
-                imageURL?.Invoke(ImageURL!);
+                imageUrl?.Invoke(ImageUrl!);
             }
         }
 
@@ -174,7 +174,7 @@ namespace G
             {
                 Text,
                 typeof(global::G.TextChunk),
-                ImageURL,
+                ImageUrl,
                 typeof(global::G.ImageURLChunk),
             };
             const int offset = unchecked((int)2166136261);
@@ -192,7 +192,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.TextChunk?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ImageURLChunk?>.Default.Equals(ImageURL, other.ImageURL) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ImageURLChunk?>.Default.Equals(ImageUrl, other.ImageUrl) 
                 ;
         }
 

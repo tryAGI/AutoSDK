@@ -22,18 +22,18 @@ namespace G
         /// Reranker that is specific to the customer.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CustomerSpecificReranker? CustomerSpecific { get; init; }
+        public global::G.CustomerSpecificReranker? CustomerReranker { get; init; }
 #else
-        public global::G.CustomerSpecificReranker? CustomerSpecific { get; }
+        public global::G.CustomerSpecificReranker? CustomerReranker { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomerSpecific))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CustomerReranker))]
 #endif
-        public bool IsCustomerSpecific => CustomerSpecific != null;
+        public bool IsCustomerReranker => CustomerReranker != null;
 
         /// <summary>
         /// 
@@ -43,32 +43,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CustomerSpecificReranker?(SearchReranker @this) => @this.CustomerSpecific;
+        public static implicit operator global::G.CustomerSpecificReranker?(SearchReranker @this) => @this.CustomerReranker;
 
         /// <summary>
         /// 
         /// </summary>
         public SearchReranker(global::G.CustomerSpecificReranker? value)
         {
-            CustomerSpecific = value;
+            CustomerReranker = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UserFunctionReranker? UserFunction { get; init; }
+        public global::G.UserFunctionReranker? Userfn { get; init; }
 #else
-        public global::G.UserFunctionReranker? UserFunction { get; }
+        public global::G.UserFunctionReranker? Userfn { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserFunction))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Userfn))]
 #endif
-        public bool IsUserFunction => UserFunction != null;
+        public bool IsUserfn => Userfn != null;
 
         /// <summary>
         /// 
@@ -78,32 +78,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UserFunctionReranker?(SearchReranker @this) => @this.UserFunction;
+        public static implicit operator global::G.UserFunctionReranker?(SearchReranker @this) => @this.Userfn;
 
         /// <summary>
         /// 
         /// </summary>
         public SearchReranker(global::G.UserFunctionReranker? value)
         {
-            UserFunction = value;
+            Userfn = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MMRReranker? MR { get; init; }
+        public global::G.MMRReranker? Mmr { get; init; }
 #else
-        public global::G.MMRReranker? MR { get; }
+        public global::G.MMRReranker? Mmr { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MR))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mmr))]
 #endif
-        public bool IsMR => MR != null;
+        public bool IsMmr => Mmr != null;
 
         /// <summary>
         /// 
@@ -113,14 +113,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MMRReranker?(SearchReranker @this) => @this.MR;
+        public static implicit operator global::G.MMRReranker?(SearchReranker @this) => @this.Mmr;
 
         /// <summary>
         /// 
         /// </summary>
         public SearchReranker(global::G.MMRReranker? value)
         {
-            MR = value;
+            Mmr = value;
         }
 
         /// <summary>
@@ -198,18 +198,18 @@ namespace G
         /// </summary>
         public SearchReranker(
             global::G.SearchRerankerDiscriminatorType? type,
-            global::G.CustomerSpecificReranker? customerSpecific,
-            global::G.UserFunctionReranker? userFunction,
-            global::G.MMRReranker? mR,
+            global::G.CustomerSpecificReranker? customerReranker,
+            global::G.UserFunctionReranker? userfn,
+            global::G.MMRReranker? mmr,
             global::G.ChainReranker? chain,
             global::G.NoneReranker? none
             )
         {
             Type = type;
 
-            CustomerSpecific = customerSpecific;
-            UserFunction = userFunction;
-            MR = mR;
+            CustomerReranker = customerReranker;
+            Userfn = userfn;
+            Mmr = mmr;
             Chain = chain;
             None = none;
         }
@@ -220,9 +220,9 @@ namespace G
         public object? Object =>
             None as object ??
             Chain as object ??
-            MR as object ??
-            UserFunction as object ??
-            CustomerSpecific as object 
+            Mmr as object ??
+            Userfn as object ??
+            CustomerReranker as object 
             ;
 
         /// <summary>
@@ -230,16 +230,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsCustomerSpecific && !IsUserFunction && !IsMR && !IsChain && !IsNone || !IsCustomerSpecific && IsUserFunction && !IsMR && !IsChain && !IsNone || !IsCustomerSpecific && !IsUserFunction && IsMR && !IsChain && !IsNone || !IsCustomerSpecific && !IsUserFunction && !IsMR && IsChain && !IsNone || !IsCustomerSpecific && !IsUserFunction && !IsMR && !IsChain && IsNone;
+            return IsCustomerReranker && !IsUserfn && !IsMmr && !IsChain && !IsNone || !IsCustomerReranker && IsUserfn && !IsMmr && !IsChain && !IsNone || !IsCustomerReranker && !IsUserfn && IsMmr && !IsChain && !IsNone || !IsCustomerReranker && !IsUserfn && !IsMmr && IsChain && !IsNone || !IsCustomerReranker && !IsUserfn && !IsMmr && !IsChain && IsNone;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CustomerSpecificReranker?, TResult>? customerSpecific = null,
-            global::System.Func<global::G.UserFunctionReranker?, TResult>? userFunction = null,
-            global::System.Func<global::G.MMRReranker?, TResult>? mR = null,
+            global::System.Func<global::G.CustomerSpecificReranker?, TResult>? customerReranker = null,
+            global::System.Func<global::G.UserFunctionReranker?, TResult>? userfn = null,
+            global::System.Func<global::G.MMRReranker?, TResult>? mmr = null,
             global::System.Func<global::G.ChainReranker?, TResult>? chain = null,
             global::System.Func<global::G.NoneReranker?, TResult>? none = null,
             bool validate = true)
@@ -249,17 +249,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCustomerSpecific && customerSpecific != null)
+            if (IsCustomerReranker && customerReranker != null)
             {
-                return customerSpecific(CustomerSpecific!);
+                return customerReranker(CustomerReranker!);
             }
-            else if (IsUserFunction && userFunction != null)
+            else if (IsUserfn && userfn != null)
             {
-                return userFunction(UserFunction!);
+                return userfn(Userfn!);
             }
-            else if (IsMR && mR != null)
+            else if (IsMmr && mmr != null)
             {
-                return mR(MR!);
+                return mmr(Mmr!);
             }
             else if (IsChain && chain != null)
             {
@@ -277,9 +277,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CustomerSpecificReranker?>? customerSpecific = null,
-            global::System.Action<global::G.UserFunctionReranker?>? userFunction = null,
-            global::System.Action<global::G.MMRReranker?>? mR = null,
+            global::System.Action<global::G.CustomerSpecificReranker?>? customerReranker = null,
+            global::System.Action<global::G.UserFunctionReranker?>? userfn = null,
+            global::System.Action<global::G.MMRReranker?>? mmr = null,
             global::System.Action<global::G.ChainReranker?>? chain = null,
             global::System.Action<global::G.NoneReranker?>? none = null,
             bool validate = true)
@@ -289,17 +289,17 @@ namespace G
                 Validate();
             }
 
-            if (IsCustomerSpecific)
+            if (IsCustomerReranker)
             {
-                customerSpecific?.Invoke(CustomerSpecific!);
+                customerReranker?.Invoke(CustomerReranker!);
             }
-            else if (IsUserFunction)
+            else if (IsUserfn)
             {
-                userFunction?.Invoke(UserFunction!);
+                userfn?.Invoke(Userfn!);
             }
-            else if (IsMR)
+            else if (IsMmr)
             {
-                mR?.Invoke(MR!);
+                mmr?.Invoke(Mmr!);
             }
             else if (IsChain)
             {
@@ -318,11 +318,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                CustomerSpecific,
+                CustomerReranker,
                 typeof(global::G.CustomerSpecificReranker),
-                UserFunction,
+                Userfn,
                 typeof(global::G.UserFunctionReranker),
-                MR,
+                Mmr,
                 typeof(global::G.MMRReranker),
                 Chain,
                 typeof(global::G.ChainReranker),
@@ -343,9 +343,9 @@ namespace G
         public bool Equals(SearchReranker other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CustomerSpecificReranker?>.Default.Equals(CustomerSpecific, other.CustomerSpecific) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.UserFunctionReranker?>.Default.Equals(UserFunction, other.UserFunction) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MMRReranker?>.Default.Equals(MR, other.MR) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CustomerSpecificReranker?>.Default.Equals(CustomerReranker, other.CustomerReranker) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.UserFunctionReranker?>.Default.Equals(Userfn, other.Userfn) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MMRReranker?>.Default.Equals(Mmr, other.Mmr) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ChainReranker?>.Default.Equals(Chain, other.Chain) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.NoneReranker?>.Default.Equals(None, other.None) 
                 ;

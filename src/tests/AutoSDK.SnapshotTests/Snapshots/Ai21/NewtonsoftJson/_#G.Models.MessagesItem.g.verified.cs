@@ -20,18 +20,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.UserMessage? UserMessage { get; init; }
+        public global::G.UserMessage? User { get; init; }
 #else
-        public global::G.UserMessage? UserMessage { get; }
+        public global::G.UserMessage? User { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(UserMessage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(User))]
 #endif
-        public bool IsUserMessage => UserMessage != null;
+        public bool IsUser => User != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.UserMessage?(MessagesItem @this) => @this.UserMessage;
+        public static implicit operator global::G.UserMessage?(MessagesItem @this) => @this.User;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesItem(global::G.UserMessage? value)
         {
-            UserMessage = value;
+            User = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantMessage? AssistantMessage { get; init; }
+        public global::G.AssistantMessage? Assistant { get; init; }
 #else
-        public global::G.AssistantMessage? AssistantMessage { get; }
+        public global::G.AssistantMessage? Assistant { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantMessage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Assistant))]
 #endif
-        public bool IsAssistantMessage => AssistantMessage != null;
+        public bool IsAssistant => Assistant != null;
 
         /// <summary>
         /// 
@@ -76,32 +76,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantMessage?(MessagesItem @this) => @this.AssistantMessage;
+        public static implicit operator global::G.AssistantMessage?(MessagesItem @this) => @this.Assistant;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesItem(global::G.AssistantMessage? value)
         {
-            AssistantMessage = value;
+            Assistant = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ToolMessage? ToolMessage { get; init; }
+        public global::G.ToolMessage? Tool { get; init; }
 #else
-        public global::G.ToolMessage? ToolMessage { get; }
+        public global::G.ToolMessage? Tool { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolMessage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Tool))]
 #endif
-        public bool IsToolMessage => ToolMessage != null;
+        public bool IsTool => Tool != null;
 
         /// <summary>
         /// 
@@ -111,32 +111,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ToolMessage?(MessagesItem @this) => @this.ToolMessage;
+        public static implicit operator global::G.ToolMessage?(MessagesItem @this) => @this.Tool;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesItem(global::G.ToolMessage? value)
         {
-            ToolMessage = value;
+            Tool = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.SystemMessage? SystemMessage { get; init; }
+        public global::G.SystemMessage? System { get; init; }
 #else
-        public global::G.SystemMessage? SystemMessage { get; }
+        public global::G.SystemMessage? System { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SystemMessage))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(System))]
 #endif
-        public bool IsSystemMessage => SystemMessage != null;
+        public bool IsSystem => System != null;
 
         /// <summary>
         /// 
@@ -146,14 +146,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.SystemMessage?(MessagesItem @this) => @this.SystemMessage;
+        public static implicit operator global::G.SystemMessage?(MessagesItem @this) => @this.System;
 
         /// <summary>
         /// 
         /// </summary>
         public MessagesItem(global::G.SystemMessage? value)
         {
-            SystemMessage = value;
+            System = value;
         }
 
         /// <summary>
@@ -161,28 +161,28 @@ namespace G
         /// </summary>
         public MessagesItem(
             global::G.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole? role,
-            global::G.UserMessage? userMessage,
-            global::G.AssistantMessage? assistantMessage,
-            global::G.ToolMessage? toolMessage,
-            global::G.SystemMessage? systemMessage
+            global::G.UserMessage? user,
+            global::G.AssistantMessage? assistant,
+            global::G.ToolMessage? tool,
+            global::G.SystemMessage? system
             )
         {
             Role = role;
 
-            UserMessage = userMessage;
-            AssistantMessage = assistantMessage;
-            ToolMessage = toolMessage;
-            SystemMessage = systemMessage;
+            User = user;
+            Assistant = assistant;
+            Tool = tool;
+            System = system;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            SystemMessage as object ??
-            ToolMessage as object ??
-            AssistantMessage as object ??
-            UserMessage as object 
+            System as object ??
+            Tool as object ??
+            Assistant as object ??
+            User as object 
             ;
 
         /// <summary>
@@ -190,17 +190,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsUserMessage && !IsAssistantMessage && !IsToolMessage && !IsSystemMessage || !IsUserMessage && IsAssistantMessage && !IsToolMessage && !IsSystemMessage || !IsUserMessage && !IsAssistantMessage && IsToolMessage && !IsSystemMessage || !IsUserMessage && !IsAssistantMessage && !IsToolMessage && IsSystemMessage;
+            return IsUser && !IsAssistant && !IsTool && !IsSystem || !IsUser && IsAssistant && !IsTool && !IsSystem || !IsUser && !IsAssistant && IsTool && !IsSystem || !IsUser && !IsAssistant && !IsTool && IsSystem;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.UserMessage?, TResult>? userMessage = null,
-            global::System.Func<global::G.AssistantMessage?, TResult>? assistantMessage = null,
-            global::System.Func<global::G.ToolMessage?, TResult>? toolMessage = null,
-            global::System.Func<global::G.SystemMessage?, TResult>? systemMessage = null,
+            global::System.Func<global::G.UserMessage?, TResult>? user = null,
+            global::System.Func<global::G.AssistantMessage?, TResult>? assistant = null,
+            global::System.Func<global::G.ToolMessage?, TResult>? tool = null,
+            global::System.Func<global::G.SystemMessage?, TResult>? system = null,
             bool validate = true)
         {
             if (validate)
@@ -208,21 +208,21 @@ namespace G
                 Validate();
             }
 
-            if (IsUserMessage && userMessage != null)
+            if (IsUser && user != null)
             {
-                return userMessage(UserMessage!);
+                return user(User!);
             }
-            else if (IsAssistantMessage && assistantMessage != null)
+            else if (IsAssistant && assistant != null)
             {
-                return assistantMessage(AssistantMessage!);
+                return assistant(Assistant!);
             }
-            else if (IsToolMessage && toolMessage != null)
+            else if (IsTool && tool != null)
             {
-                return toolMessage(ToolMessage!);
+                return tool(Tool!);
             }
-            else if (IsSystemMessage && systemMessage != null)
+            else if (IsSystem && system != null)
             {
-                return systemMessage(SystemMessage!);
+                return system(System!);
             }
 
             return default(TResult);
@@ -232,10 +232,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.UserMessage?>? userMessage = null,
-            global::System.Action<global::G.AssistantMessage?>? assistantMessage = null,
-            global::System.Action<global::G.ToolMessage?>? toolMessage = null,
-            global::System.Action<global::G.SystemMessage?>? systemMessage = null,
+            global::System.Action<global::G.UserMessage?>? user = null,
+            global::System.Action<global::G.AssistantMessage?>? assistant = null,
+            global::System.Action<global::G.ToolMessage?>? tool = null,
+            global::System.Action<global::G.SystemMessage?>? system = null,
             bool validate = true)
         {
             if (validate)
@@ -243,21 +243,21 @@ namespace G
                 Validate();
             }
 
-            if (IsUserMessage)
+            if (IsUser)
             {
-                userMessage?.Invoke(UserMessage!);
+                user?.Invoke(User!);
             }
-            else if (IsAssistantMessage)
+            else if (IsAssistant)
             {
-                assistantMessage?.Invoke(AssistantMessage!);
+                assistant?.Invoke(Assistant!);
             }
-            else if (IsToolMessage)
+            else if (IsTool)
             {
-                toolMessage?.Invoke(ToolMessage!);
+                tool?.Invoke(Tool!);
             }
-            else if (IsSystemMessage)
+            else if (IsSystem)
             {
-                systemMessage?.Invoke(SystemMessage!);
+                system?.Invoke(System!);
             }
         }
 
@@ -268,13 +268,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                UserMessage,
+                User,
                 typeof(global::G.UserMessage),
-                AssistantMessage,
+                Assistant,
                 typeof(global::G.AssistantMessage),
-                ToolMessage,
+                Tool,
                 typeof(global::G.ToolMessage),
-                SystemMessage,
+                System,
                 typeof(global::G.SystemMessage),
             };
             const int offset = unchecked((int)2166136261);
@@ -291,10 +291,10 @@ namespace G
         public bool Equals(MessagesItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.UserMessage?>.Default.Equals(UserMessage, other.UserMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantMessage?>.Default.Equals(AssistantMessage, other.AssistantMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ToolMessage?>.Default.Equals(ToolMessage, other.ToolMessage) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.SystemMessage?>.Default.Equals(SystemMessage, other.SystemMessage) 
+                global::System.Collections.Generic.EqualityComparer<global::G.UserMessage?>.Default.Equals(User, other.User) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantMessage?>.Default.Equals(Assistant, other.Assistant) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ToolMessage?>.Default.Equals(Tool, other.Tool) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.SystemMessage?>.Default.Equals(System, other.System) 
                 ;
         }
 

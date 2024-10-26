@@ -22,17 +22,17 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JobOutRepositorieDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.GithubRepositoryOut? githubRepositoryOut = default;
+            global::G.GithubRepositoryOut? github = default;
             if (discriminator?.Type == global::G.JobOutRepositorieDiscriminatorType.Github)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GithubRepositoryOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GithubRepositoryOut> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GithubRepositoryOut)}");
-                githubRepositoryOut = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                github = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.RepositoriesItem3(
                 discriminator?.Type,
-                githubRepositoryOut
+                github
                 );
 
             return result;
@@ -47,11 +47,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsGithubRepositoryOut)
+            if (value.IsGithub)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GithubRepositoryOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GithubRepositoryOut?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GithubRepositoryOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GithubRepositoryOut, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Github, typeInfo);
             }
         }
     }

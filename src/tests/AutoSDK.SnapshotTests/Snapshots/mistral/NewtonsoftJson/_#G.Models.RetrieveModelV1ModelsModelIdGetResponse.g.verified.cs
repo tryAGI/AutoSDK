@@ -20,18 +20,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BaseModelCard? BaseCard { get; init; }
+        public global::G.BaseModelCard? Base { get; init; }
 #else
-        public global::G.BaseModelCard? BaseCard { get; }
+        public global::G.BaseModelCard? Base { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BaseCard))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Base))]
 #endif
-        public bool IsBaseCard => BaseCard != null;
+        public bool IsBase => Base != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BaseModelCard?(RetrieveModelV1ModelsModelIdGetResponse @this) => @this.BaseCard;
+        public static implicit operator global::G.BaseModelCard?(RetrieveModelV1ModelsModelIdGetResponse @this) => @this.Base;
 
         /// <summary>
         /// 
         /// </summary>
         public RetrieveModelV1ModelsModelIdGetResponse(global::G.BaseModelCard? value)
         {
-            BaseCard = value;
+            Base = value;
         }
 
         /// <summary>
         /// Extra fields for fine-tuned models.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.FTModelCard? FTCard { get; init; }
+        public global::G.FTModelCard? FineTuned { get; init; }
 #else
-        public global::G.FTModelCard? FTCard { get; }
+        public global::G.FTModelCard? FineTuned { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FTCard))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FineTuned))]
 #endif
-        public bool IsFTCard => FTCard != null;
+        public bool IsFineTuned => FineTuned != null;
 
         /// <summary>
         /// 
@@ -76,14 +76,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.FTModelCard?(RetrieveModelV1ModelsModelIdGetResponse @this) => @this.FTCard;
+        public static implicit operator global::G.FTModelCard?(RetrieveModelV1ModelsModelIdGetResponse @this) => @this.FineTuned;
 
         /// <summary>
         /// 
         /// </summary>
         public RetrieveModelV1ModelsModelIdGetResponse(global::G.FTModelCard? value)
         {
-            FTCard = value;
+            FineTuned = value;
         }
 
         /// <summary>
@@ -91,22 +91,22 @@ namespace G
         /// </summary>
         public RetrieveModelV1ModelsModelIdGetResponse(
             global::G.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorType? type,
-            global::G.BaseModelCard? baseCard,
-            global::G.FTModelCard? fTCard
+            global::G.BaseModelCard? @base,
+            global::G.FTModelCard? fineTuned
             )
         {
             Type = type;
 
-            BaseCard = baseCard;
-            FTCard = fTCard;
+            Base = @base;
+            FineTuned = fineTuned;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            FTCard as object ??
-            BaseCard as object 
+            FineTuned as object ??
+            Base as object 
             ;
 
         /// <summary>
@@ -114,15 +114,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsBaseCard && !IsFTCard || !IsBaseCard && IsFTCard;
+            return IsBase && !IsFineTuned || !IsBase && IsFineTuned;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.BaseModelCard?, TResult>? baseCard = null,
-            global::System.Func<global::G.FTModelCard?, TResult>? fTCard = null,
+            global::System.Func<global::G.BaseModelCard?, TResult>? @base = null,
+            global::System.Func<global::G.FTModelCard?, TResult>? fineTuned = null,
             bool validate = true)
         {
             if (validate)
@@ -130,13 +130,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseCard && baseCard != null)
+            if (IsBase && @base != null)
             {
-                return baseCard(BaseCard!);
+                return @base(Base!);
             }
-            else if (IsFTCard && fTCard != null)
+            else if (IsFineTuned && fineTuned != null)
             {
-                return fTCard(FTCard!);
+                return fineTuned(FineTuned!);
             }
 
             return default(TResult);
@@ -146,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.BaseModelCard?>? baseCard = null,
-            global::System.Action<global::G.FTModelCard?>? fTCard = null,
+            global::System.Action<global::G.BaseModelCard?>? @base = null,
+            global::System.Action<global::G.FTModelCard?>? fineTuned = null,
             bool validate = true)
         {
             if (validate)
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsBaseCard)
+            if (IsBase)
             {
-                baseCard?.Invoke(BaseCard!);
+                @base?.Invoke(Base!);
             }
-            else if (IsFTCard)
+            else if (IsFineTuned)
             {
-                fTCard?.Invoke(FTCard!);
+                fineTuned?.Invoke(FineTuned!);
             }
         }
 
@@ -172,9 +172,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                BaseCard,
+                Base,
                 typeof(global::G.BaseModelCard),
-                FTCard,
+                FineTuned,
                 typeof(global::G.FTModelCard),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(RetrieveModelV1ModelsModelIdGetResponse other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.BaseModelCard?>.Default.Equals(BaseCard, other.BaseCard) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.FTModelCard?>.Default.Equals(FTCard, other.FTCard) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BaseModelCard?>.Default.Equals(Base, other.Base) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.FTModelCard?>.Default.Equals(FineTuned, other.FineTuned) 
                 ;
         }
 

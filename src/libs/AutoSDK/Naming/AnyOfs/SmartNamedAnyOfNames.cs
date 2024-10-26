@@ -4,6 +4,15 @@ namespace AutoSDK.Naming.AnyOfs;
 
 public static class SmartNamedAnyOfNames
 {
+    public static string ComputePropertyName(IList<SchemaContext> children, string className, int i)
+    {
+        return ShouldUseSmartName(children, className)
+            ? ComputeSmartName(
+                children.ElementAt(i).TypeData,
+                className)
+            : $"Value{i + 1}";
+    }
+    
     public static bool ShouldUseSmartName(IList<SchemaContext> children, string className)
     {
         return children.All(x =>

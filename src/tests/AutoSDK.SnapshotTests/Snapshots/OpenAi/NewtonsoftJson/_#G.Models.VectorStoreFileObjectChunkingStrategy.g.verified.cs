@@ -20,18 +20,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.StaticChunkingStrategyResponseParam? StaticResponseParam { get; init; }
+        public global::G.StaticChunkingStrategyResponseParam? Static { get; init; }
 #else
-        public global::G.StaticChunkingStrategyResponseParam? StaticResponseParam { get; }
+        public global::G.StaticChunkingStrategyResponseParam? Static { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StaticResponseParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
 #endif
-        public bool IsStaticResponseParam => StaticResponseParam != null;
+        public bool IsStatic => Static != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.StaticChunkingStrategyResponseParam?(VectorStoreFileObjectChunkingStrategy @this) => @this.StaticResponseParam;
+        public static implicit operator global::G.StaticChunkingStrategyResponseParam?(VectorStoreFileObjectChunkingStrategy @this) => @this.Static;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStoreFileObjectChunkingStrategy(global::G.StaticChunkingStrategyResponseParam? value)
         {
-            StaticResponseParam = value;
+            Static = value;
         }
 
         /// <summary>
         /// This is returned when the chunking strategy is unknown. Typically, this is because the file was indexed before the `chunking_strategy` concept was introduced in the API.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.OtherChunkingStrategyResponseParam? OtherResponseParam { get; init; }
+        public global::G.OtherChunkingStrategyResponseParam? Other { get; init; }
 #else
-        public global::G.OtherChunkingStrategyResponseParam? OtherResponseParam { get; }
+        public global::G.OtherChunkingStrategyResponseParam? Other { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OtherResponseParam))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Other))]
 #endif
-        public bool IsOtherResponseParam => OtherResponseParam != null;
+        public bool IsOther => Other != null;
 
         /// <summary>
         /// 
@@ -76,14 +76,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.OtherChunkingStrategyResponseParam?(VectorStoreFileObjectChunkingStrategy @this) => @this.OtherResponseParam;
+        public static implicit operator global::G.OtherChunkingStrategyResponseParam?(VectorStoreFileObjectChunkingStrategy @this) => @this.Other;
 
         /// <summary>
         /// 
         /// </summary>
         public VectorStoreFileObjectChunkingStrategy(global::G.OtherChunkingStrategyResponseParam? value)
         {
-            OtherResponseParam = value;
+            Other = value;
         }
 
         /// <summary>
@@ -91,22 +91,22 @@ namespace G
         /// </summary>
         public VectorStoreFileObjectChunkingStrategy(
             global::G.VectorStoreFileObjectChunkingStrategyDiscriminatorType? type,
-            global::G.StaticChunkingStrategyResponseParam? staticResponseParam,
-            global::G.OtherChunkingStrategyResponseParam? otherResponseParam
+            global::G.StaticChunkingStrategyResponseParam? @static,
+            global::G.OtherChunkingStrategyResponseParam? other
             )
         {
             Type = type;
 
-            StaticResponseParam = staticResponseParam;
-            OtherResponseParam = otherResponseParam;
+            Static = @static;
+            Other = other;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            OtherResponseParam as object ??
-            StaticResponseParam as object 
+            Other as object ??
+            Static as object 
             ;
 
         /// <summary>
@@ -114,15 +114,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsStaticResponseParam && !IsOtherResponseParam || !IsStaticResponseParam && IsOtherResponseParam;
+            return IsStatic && !IsOther || !IsStatic && IsOther;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.StaticChunkingStrategyResponseParam?, TResult>? staticResponseParam = null,
-            global::System.Func<global::G.OtherChunkingStrategyResponseParam?, TResult>? otherResponseParam = null,
+            global::System.Func<global::G.StaticChunkingStrategyResponseParam?, TResult>? @static = null,
+            global::System.Func<global::G.OtherChunkingStrategyResponseParam?, TResult>? other = null,
             bool validate = true)
         {
             if (validate)
@@ -130,13 +130,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStaticResponseParam && staticResponseParam != null)
+            if (IsStatic && @static != null)
             {
-                return staticResponseParam(StaticResponseParam!);
+                return @static(Static!);
             }
-            else if (IsOtherResponseParam && otherResponseParam != null)
+            else if (IsOther && other != null)
             {
-                return otherResponseParam(OtherResponseParam!);
+                return other(Other!);
             }
 
             return default(TResult);
@@ -146,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.StaticChunkingStrategyResponseParam?>? staticResponseParam = null,
-            global::System.Action<global::G.OtherChunkingStrategyResponseParam?>? otherResponseParam = null,
+            global::System.Action<global::G.StaticChunkingStrategyResponseParam?>? @static = null,
+            global::System.Action<global::G.OtherChunkingStrategyResponseParam?>? other = null,
             bool validate = true)
         {
             if (validate)
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsStaticResponseParam)
+            if (IsStatic)
             {
-                staticResponseParam?.Invoke(StaticResponseParam!);
+                @static?.Invoke(Static!);
             }
-            else if (IsOtherResponseParam)
+            else if (IsOther)
             {
-                otherResponseParam?.Invoke(OtherResponseParam!);
+                other?.Invoke(Other!);
             }
         }
 
@@ -172,9 +172,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                StaticResponseParam,
+                Static,
                 typeof(global::G.StaticChunkingStrategyResponseParam),
-                OtherResponseParam,
+                Other,
                 typeof(global::G.OtherChunkingStrategyResponseParam),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(VectorStoreFileObjectChunkingStrategy other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.StaticChunkingStrategyResponseParam?>.Default.Equals(StaticResponseParam, other.StaticResponseParam) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.OtherChunkingStrategyResponseParam?>.Default.Equals(OtherResponseParam, other.OtherResponseParam) 
+                global::System.Collections.Generic.EqualityComparer<global::G.StaticChunkingStrategyResponseParam?>.Default.Equals(Static, other.Static) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.OtherChunkingStrategyResponseParam?>.Default.Equals(Other, other.Other) 
                 ;
         }
 

@@ -22,26 +22,26 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.SearchRerankerDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.CustomerSpecificReranker? customerSpecific = default;
+            global::G.CustomerSpecificReranker? customerReranker = default;
             if (discriminator?.Type == global::G.SearchRerankerDiscriminatorType.CustomerReranker)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomerSpecificReranker), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomerSpecificReranker> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CustomerSpecificReranker)}");
-                customerSpecific = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                customerReranker = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.UserFunctionReranker? userFunction = default;
+            global::G.UserFunctionReranker? userfn = default;
             if (discriminator?.Type == global::G.SearchRerankerDiscriminatorType.Userfn)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserFunctionReranker), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserFunctionReranker> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.UserFunctionReranker)}");
-                userFunction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                userfn = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.MMRReranker? mR = default;
+            global::G.MMRReranker? mmr = default;
             if (discriminator?.Type == global::G.SearchRerankerDiscriminatorType.Mmr)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MMRReranker), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MMRReranker> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MMRReranker)}");
-                mR = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                mmr = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ChainReranker? chain = default;
             if (discriminator?.Type == global::G.SearchRerankerDiscriminatorType.Chain)
@@ -60,9 +60,9 @@ namespace G.JsonConverters
 
             var result = new global::G.SearchReranker(
                 discriminator?.Type,
-                customerSpecific,
-                userFunction,
-                mR,
+                customerReranker,
+                userfn,
+                mmr,
                 chain,
                 none
                 );
@@ -79,23 +79,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsCustomerSpecific)
+            if (value.IsCustomerReranker)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CustomerSpecificReranker), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CustomerSpecificReranker?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CustomerSpecificReranker).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomerSpecific, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CustomerReranker, typeInfo);
             }
-            else if (value.IsUserFunction)
+            else if (value.IsUserfn)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.UserFunctionReranker), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.UserFunctionReranker?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.UserFunctionReranker).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.UserFunction, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Userfn, typeInfo);
             }
-            else if (value.IsMR)
+            else if (value.IsMmr)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MMRReranker), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MMRReranker?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MMRReranker).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MR, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mmr, typeInfo);
             }
             else if (value.IsChain)
             {

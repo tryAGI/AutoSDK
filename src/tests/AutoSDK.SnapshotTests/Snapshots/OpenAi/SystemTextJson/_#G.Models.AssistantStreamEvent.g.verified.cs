@@ -34,18 +34,18 @@ namespace G
         /// Occurs when an [error](/docs/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ErrorEvent? Value1 { get; init; }
+        public global::G.ErrorEvent? Error { get; init; }
 #else
-        public global::G.ErrorEvent? Value1 { get; }
+        public global::G.ErrorEvent? Error { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsError => Error != null;
 
         /// <summary>
         /// 
@@ -55,32 +55,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ErrorEvent?(AssistantStreamEvent @this) => @this.Value1;
+        public static implicit operator global::G.ErrorEvent?(AssistantStreamEvent @this) => @this.Error;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.ErrorEvent? value)
         {
-            Value1 = value;
+            Error = value;
         }
 
         /// <summary>
         /// Occurs when a stream ends.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.DoneEvent? Value2 { get; init; }
+        public global::G.DoneEvent? Done { get; init; }
 #else
-        public global::G.DoneEvent? Value2 { get; }
+        public global::G.DoneEvent? Done { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Done))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsDone => Done != null;
 
         /// <summary>
         /// 
@@ -90,32 +90,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.DoneEvent?(AssistantStreamEvent @this) => @this.Value2;
+        public static implicit operator global::G.DoneEvent?(AssistantStreamEvent @this) => @this.Done;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.DoneEvent? value)
         {
-            Value2 = value;
+            Done = value;
         }
 
         /// <summary>
         /// Occurs when a new [thread](/docs/api-reference/threads/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant3? Value3 { get; init; }
+        public global::G.AssistantStreamEventVariant3? ThreadCreated { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant3? Value3 { get; }
+        public global::G.AssistantStreamEventVariant3? ThreadCreated { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value3))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadCreated))]
 #endif
-        public bool IsValue3 => Value3 != null;
+        public bool IsThreadCreated => ThreadCreated != null;
 
         /// <summary>
         /// 
@@ -125,32 +125,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant3?(AssistantStreamEvent @this) => @this.Value3;
+        public static implicit operator global::G.AssistantStreamEventVariant3?(AssistantStreamEvent @this) => @this.ThreadCreated;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant3? value)
         {
-            Value3 = value;
+            ThreadCreated = value;
         }
 
         /// <summary>
         /// Occurs when a new [run](/docs/api-reference/runs/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant4? Value4 { get; init; }
+        public global::G.AssistantStreamEventVariant4? ThreadRunCreated { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant4? Value4 { get; }
+        public global::G.AssistantStreamEventVariant4? ThreadRunCreated { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value4))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunCreated))]
 #endif
-        public bool IsValue4 => Value4 != null;
+        public bool IsThreadRunCreated => ThreadRunCreated != null;
 
         /// <summary>
         /// 
@@ -160,32 +160,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant4?(AssistantStreamEvent @this) => @this.Value4;
+        public static implicit operator global::G.AssistantStreamEventVariant4?(AssistantStreamEvent @this) => @this.ThreadRunCreated;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant4? value)
         {
-            Value4 = value;
+            ThreadRunCreated = value;
         }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `queued` status.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant5? Value5 { get; init; }
+        public global::G.AssistantStreamEventVariant5? ThreadRunQueued { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant5? Value5 { get; }
+        public global::G.AssistantStreamEventVariant5? ThreadRunQueued { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value5))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunQueued))]
 #endif
-        public bool IsValue5 => Value5 != null;
+        public bool IsThreadRunQueued => ThreadRunQueued != null;
 
         /// <summary>
         /// 
@@ -195,32 +195,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant5?(AssistantStreamEvent @this) => @this.Value5;
+        public static implicit operator global::G.AssistantStreamEventVariant5?(AssistantStreamEvent @this) => @this.ThreadRunQueued;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant5? value)
         {
-            Value5 = value;
+            ThreadRunQueued = value;
         }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to an `in_progress` status.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant6? Value6 { get; init; }
+        public global::G.AssistantStreamEventVariant6? ThreadRunInProgress { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant6? Value6 { get; }
+        public global::G.AssistantStreamEventVariant6? ThreadRunInProgress { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value6))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunInProgress))]
 #endif
-        public bool IsValue6 => Value6 != null;
+        public bool IsThreadRunInProgress => ThreadRunInProgress != null;
 
         /// <summary>
         /// 
@@ -230,32 +230,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant6?(AssistantStreamEvent @this) => @this.Value6;
+        public static implicit operator global::G.AssistantStreamEventVariant6?(AssistantStreamEvent @this) => @this.ThreadRunInProgress;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant6? value)
         {
-            Value6 = value;
+            ThreadRunInProgress = value;
         }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `requires_action` status.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant7? Value7 { get; init; }
+        public global::G.AssistantStreamEventVariant7? ThreadRunRequiresAction { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant7? Value7 { get; }
+        public global::G.AssistantStreamEventVariant7? ThreadRunRequiresAction { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value7))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunRequiresAction))]
 #endif
-        public bool IsValue7 => Value7 != null;
+        public bool IsThreadRunRequiresAction => ThreadRunRequiresAction != null;
 
         /// <summary>
         /// 
@@ -265,32 +265,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant7?(AssistantStreamEvent @this) => @this.Value7;
+        public static implicit operator global::G.AssistantStreamEventVariant7?(AssistantStreamEvent @this) => @this.ThreadRunRequiresAction;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant7? value)
         {
-            Value7 = value;
+            ThreadRunRequiresAction = value;
         }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant8? Value8 { get; init; }
+        public global::G.AssistantStreamEventVariant8? ThreadRunCompleted { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant8? Value8 { get; }
+        public global::G.AssistantStreamEventVariant8? ThreadRunCompleted { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value8))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunCompleted))]
 #endif
-        public bool IsValue8 => Value8 != null;
+        public bool IsThreadRunCompleted => ThreadRunCompleted != null;
 
         /// <summary>
         /// 
@@ -300,32 +300,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant8?(AssistantStreamEvent @this) => @this.Value8;
+        public static implicit operator global::G.AssistantStreamEventVariant8?(AssistantStreamEvent @this) => @this.ThreadRunCompleted;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant8? value)
         {
-            Value8 = value;
+            ThreadRunCompleted = value;
         }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) ends with status `incomplete`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant9? Value9 { get; init; }
+        public global::G.AssistantStreamEventVariant9? ThreadRunIncomplete { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant9? Value9 { get; }
+        public global::G.AssistantStreamEventVariant9? ThreadRunIncomplete { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunIncomplete))]
 #endif
-        public bool IsValue9 => Value9 != null;
+        public bool IsThreadRunIncomplete => ThreadRunIncomplete != null;
 
         /// <summary>
         /// 
@@ -335,32 +335,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant9?(AssistantStreamEvent @this) => @this.Value9;
+        public static implicit operator global::G.AssistantStreamEventVariant9?(AssistantStreamEvent @this) => @this.ThreadRunIncomplete;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant9? value)
         {
-            Value9 = value;
+            ThreadRunIncomplete = value;
         }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant10? Value10 { get; init; }
+        public global::G.AssistantStreamEventVariant10? ThreadRunFailed { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant10? Value10 { get; }
+        public global::G.AssistantStreamEventVariant10? ThreadRunFailed { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value10))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunFailed))]
 #endif
-        public bool IsValue10 => Value10 != null;
+        public bool IsThreadRunFailed => ThreadRunFailed != null;
 
         /// <summary>
         /// 
@@ -370,32 +370,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant10?(AssistantStreamEvent @this) => @this.Value10;
+        public static implicit operator global::G.AssistantStreamEventVariant10?(AssistantStreamEvent @this) => @this.ThreadRunFailed;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant10? value)
         {
-            Value10 = value;
+            ThreadRunFailed = value;
         }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) moves to a `cancelling` status.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant11? Value11 { get; init; }
+        public global::G.AssistantStreamEventVariant11? ThreadRunCancelling { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant11? Value11 { get; }
+        public global::G.AssistantStreamEventVariant11? ThreadRunCancelling { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value11))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunCancelling))]
 #endif
-        public bool IsValue11 => Value11 != null;
+        public bool IsThreadRunCancelling => ThreadRunCancelling != null;
 
         /// <summary>
         /// 
@@ -405,32 +405,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant11?(AssistantStreamEvent @this) => @this.Value11;
+        public static implicit operator global::G.AssistantStreamEventVariant11?(AssistantStreamEvent @this) => @this.ThreadRunCancelling;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant11? value)
         {
-            Value11 = value;
+            ThreadRunCancelling = value;
         }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant12? Value12 { get; init; }
+        public global::G.AssistantStreamEventVariant12? ThreadRunCancelled { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant12? Value12 { get; }
+        public global::G.AssistantStreamEventVariant12? ThreadRunCancelled { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value12))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunCancelled))]
 #endif
-        public bool IsValue12 => Value12 != null;
+        public bool IsThreadRunCancelled => ThreadRunCancelled != null;
 
         /// <summary>
         /// 
@@ -440,32 +440,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant12?(AssistantStreamEvent @this) => @this.Value12;
+        public static implicit operator global::G.AssistantStreamEventVariant12?(AssistantStreamEvent @this) => @this.ThreadRunCancelled;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant12? value)
         {
-            Value12 = value;
+            ThreadRunCancelled = value;
         }
 
         /// <summary>
         /// Occurs when a [run](/docs/api-reference/runs/object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant13? Value13 { get; init; }
+        public global::G.AssistantStreamEventVariant13? ThreadRunExpired { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant13? Value13 { get; }
+        public global::G.AssistantStreamEventVariant13? ThreadRunExpired { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunExpired))]
 #endif
-        public bool IsValue13 => Value13 != null;
+        public bool IsThreadRunExpired => ThreadRunExpired != null;
 
         /// <summary>
         /// 
@@ -475,32 +475,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant13?(AssistantStreamEvent @this) => @this.Value13;
+        public static implicit operator global::G.AssistantStreamEventVariant13?(AssistantStreamEvent @this) => @this.ThreadRunExpired;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant13? value)
         {
-            Value13 = value;
+            ThreadRunExpired = value;
         }
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/runs/step-object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant14? Value14 { get; init; }
+        public global::G.AssistantStreamEventVariant14? ThreadRunStepCreated { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant14? Value14 { get; }
+        public global::G.AssistantStreamEventVariant14? ThreadRunStepCreated { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunStepCreated))]
 #endif
-        public bool IsValue14 => Value14 != null;
+        public bool IsThreadRunStepCreated => ThreadRunStepCreated != null;
 
         /// <summary>
         /// 
@@ -510,32 +510,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant14?(AssistantStreamEvent @this) => @this.Value14;
+        public static implicit operator global::G.AssistantStreamEventVariant14?(AssistantStreamEvent @this) => @this.ThreadRunStepCreated;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant14? value)
         {
-            Value14 = value;
+            ThreadRunStepCreated = value;
         }
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/runs/step-object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant15? Value15 { get; init; }
+        public global::G.AssistantStreamEventVariant15? ThreadRunStepInProgress { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant15? Value15 { get; }
+        public global::G.AssistantStreamEventVariant15? ThreadRunStepInProgress { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value15))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunStepInProgress))]
 #endif
-        public bool IsValue15 => Value15 != null;
+        public bool IsThreadRunStepInProgress => ThreadRunStepInProgress != null;
 
         /// <summary>
         /// 
@@ -545,32 +545,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant15?(AssistantStreamEvent @this) => @this.Value15;
+        public static implicit operator global::G.AssistantStreamEventVariant15?(AssistantStreamEvent @this) => @this.ThreadRunStepInProgress;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant15? value)
         {
-            Value15 = value;
+            ThreadRunStepInProgress = value;
         }
 
         /// <summary>
         /// Occurs when parts of a [run step](/docs/api-reference/runs/step-object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant16? Value16 { get; init; }
+        public global::G.AssistantStreamEventVariant16? ThreadRunStepDelta { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant16? Value16 { get; }
+        public global::G.AssistantStreamEventVariant16? ThreadRunStepDelta { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value16))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunStepDelta))]
 #endif
-        public bool IsValue16 => Value16 != null;
+        public bool IsThreadRunStepDelta => ThreadRunStepDelta != null;
 
         /// <summary>
         /// 
@@ -580,32 +580,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant16?(AssistantStreamEvent @this) => @this.Value16;
+        public static implicit operator global::G.AssistantStreamEventVariant16?(AssistantStreamEvent @this) => @this.ThreadRunStepDelta;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant16? value)
         {
-            Value16 = value;
+            ThreadRunStepDelta = value;
         }
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/runs/step-object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant17? Value17 { get; init; }
+        public global::G.AssistantStreamEventVariant17? ThreadRunStepCompleted { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant17? Value17 { get; }
+        public global::G.AssistantStreamEventVariant17? ThreadRunStepCompleted { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value17))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunStepCompleted))]
 #endif
-        public bool IsValue17 => Value17 != null;
+        public bool IsThreadRunStepCompleted => ThreadRunStepCompleted != null;
 
         /// <summary>
         /// 
@@ -615,32 +615,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant17?(AssistantStreamEvent @this) => @this.Value17;
+        public static implicit operator global::G.AssistantStreamEventVariant17?(AssistantStreamEvent @this) => @this.ThreadRunStepCompleted;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant17? value)
         {
-            Value17 = value;
+            ThreadRunStepCompleted = value;
         }
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/runs/step-object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant18? Value18 { get; init; }
+        public global::G.AssistantStreamEventVariant18? ThreadRunStepFailed { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant18? Value18 { get; }
+        public global::G.AssistantStreamEventVariant18? ThreadRunStepFailed { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value18))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunStepFailed))]
 #endif
-        public bool IsValue18 => Value18 != null;
+        public bool IsThreadRunStepFailed => ThreadRunStepFailed != null;
 
         /// <summary>
         /// 
@@ -650,32 +650,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant18?(AssistantStreamEvent @this) => @this.Value18;
+        public static implicit operator global::G.AssistantStreamEventVariant18?(AssistantStreamEvent @this) => @this.ThreadRunStepFailed;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant18? value)
         {
-            Value18 = value;
+            ThreadRunStepFailed = value;
         }
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/runs/step-object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant19? Value19 { get; init; }
+        public global::G.AssistantStreamEventVariant19? ThreadRunStepCancelled { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant19? Value19 { get; }
+        public global::G.AssistantStreamEventVariant19? ThreadRunStepCancelled { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value19))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunStepCancelled))]
 #endif
-        public bool IsValue19 => Value19 != null;
+        public bool IsThreadRunStepCancelled => ThreadRunStepCancelled != null;
 
         /// <summary>
         /// 
@@ -685,32 +685,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant19?(AssistantStreamEvent @this) => @this.Value19;
+        public static implicit operator global::G.AssistantStreamEventVariant19?(AssistantStreamEvent @this) => @this.ThreadRunStepCancelled;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant19? value)
         {
-            Value19 = value;
+            ThreadRunStepCancelled = value;
         }
 
         /// <summary>
         /// Occurs when a [run step](/docs/api-reference/runs/step-object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant20? Value20 { get; init; }
+        public global::G.AssistantStreamEventVariant20? ThreadRunStepExpired { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant20? Value20 { get; }
+        public global::G.AssistantStreamEventVariant20? ThreadRunStepExpired { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value20))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadRunStepExpired))]
 #endif
-        public bool IsValue20 => Value20 != null;
+        public bool IsThreadRunStepExpired => ThreadRunStepExpired != null;
 
         /// <summary>
         /// 
@@ -720,32 +720,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant20?(AssistantStreamEvent @this) => @this.Value20;
+        public static implicit operator global::G.AssistantStreamEventVariant20?(AssistantStreamEvent @this) => @this.ThreadRunStepExpired;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant20? value)
         {
-            Value20 = value;
+            ThreadRunStepExpired = value;
         }
 
         /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant21? Value21 { get; init; }
+        public global::G.AssistantStreamEventVariant21? ThreadMessageCreated { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant21? Value21 { get; }
+        public global::G.AssistantStreamEventVariant21? ThreadMessageCreated { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value21))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadMessageCreated))]
 #endif
-        public bool IsValue21 => Value21 != null;
+        public bool IsThreadMessageCreated => ThreadMessageCreated != null;
 
         /// <summary>
         /// 
@@ -755,32 +755,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant21?(AssistantStreamEvent @this) => @this.Value21;
+        public static implicit operator global::G.AssistantStreamEventVariant21?(AssistantStreamEvent @this) => @this.ThreadMessageCreated;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant21? value)
         {
-            Value21 = value;
+            ThreadMessageCreated = value;
         }
 
         /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant22? Value22 { get; init; }
+        public global::G.AssistantStreamEventVariant22? ThreadMessageInProgress { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant22? Value22 { get; }
+        public global::G.AssistantStreamEventVariant22? ThreadMessageInProgress { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value22))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadMessageInProgress))]
 #endif
-        public bool IsValue22 => Value22 != null;
+        public bool IsThreadMessageInProgress => ThreadMessageInProgress != null;
 
         /// <summary>
         /// 
@@ -790,32 +790,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant22?(AssistantStreamEvent @this) => @this.Value22;
+        public static implicit operator global::G.AssistantStreamEventVariant22?(AssistantStreamEvent @this) => @this.ThreadMessageInProgress;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant22? value)
         {
-            Value22 = value;
+            ThreadMessageInProgress = value;
         }
 
         /// <summary>
         /// Occurs when parts of a [Message](/docs/api-reference/messages/object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant23? Value23 { get; init; }
+        public global::G.AssistantStreamEventVariant23? ThreadMessageDelta { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant23? Value23 { get; }
+        public global::G.AssistantStreamEventVariant23? ThreadMessageDelta { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value23))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadMessageDelta))]
 #endif
-        public bool IsValue23 => Value23 != null;
+        public bool IsThreadMessageDelta => ThreadMessageDelta != null;
 
         /// <summary>
         /// 
@@ -825,32 +825,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant23?(AssistantStreamEvent @this) => @this.Value23;
+        public static implicit operator global::G.AssistantStreamEventVariant23?(AssistantStreamEvent @this) => @this.ThreadMessageDelta;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant23? value)
         {
-            Value23 = value;
+            ThreadMessageDelta = value;
         }
 
         /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant24? Value24 { get; init; }
+        public global::G.AssistantStreamEventVariant24? ThreadMessageCompleted { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant24? Value24 { get; }
+        public global::G.AssistantStreamEventVariant24? ThreadMessageCompleted { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value24))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadMessageCompleted))]
 #endif
-        public bool IsValue24 => Value24 != null;
+        public bool IsThreadMessageCompleted => ThreadMessageCompleted != null;
 
         /// <summary>
         /// 
@@ -860,32 +860,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant24?(AssistantStreamEvent @this) => @this.Value24;
+        public static implicit operator global::G.AssistantStreamEventVariant24?(AssistantStreamEvent @this) => @this.ThreadMessageCompleted;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant24? value)
         {
-            Value24 = value;
+            ThreadMessageCompleted = value;
         }
 
         /// <summary>
         /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantStreamEventVariant25? Value25 { get; init; }
+        public global::G.AssistantStreamEventVariant25? ThreadMessageIncomplete { get; init; }
 #else
-        public global::G.AssistantStreamEventVariant25? Value25 { get; }
+        public global::G.AssistantStreamEventVariant25? ThreadMessageIncomplete { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value25))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThreadMessageIncomplete))]
 #endif
-        public bool IsValue25 => Value25 != null;
+        public bool IsThreadMessageIncomplete => ThreadMessageIncomplete != null;
 
         /// <summary>
         /// 
@@ -895,14 +895,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantStreamEventVariant25?(AssistantStreamEvent @this) => @this.Value25;
+        public static implicit operator global::G.AssistantStreamEventVariant25?(AssistantStreamEvent @this) => @this.ThreadMessageIncomplete;
 
         /// <summary>
         /// 
         /// </summary>
         public AssistantStreamEvent(global::G.AssistantStreamEventVariant25? value)
         {
-            Value25 = value;
+            ThreadMessageIncomplete = value;
         }
 
         /// <summary>
@@ -910,91 +910,91 @@ namespace G
         /// </summary>
         public AssistantStreamEvent(
             global::G.AssistantStreamEventDiscriminatorEvent? @event,
-            global::G.ErrorEvent? value1,
-            global::G.DoneEvent? value2,
-            global::G.AssistantStreamEventVariant3? value3,
-            global::G.AssistantStreamEventVariant4? value4,
-            global::G.AssistantStreamEventVariant5? value5,
-            global::G.AssistantStreamEventVariant6? value6,
-            global::G.AssistantStreamEventVariant7? value7,
-            global::G.AssistantStreamEventVariant8? value8,
-            global::G.AssistantStreamEventVariant9? value9,
-            global::G.AssistantStreamEventVariant10? value10,
-            global::G.AssistantStreamEventVariant11? value11,
-            global::G.AssistantStreamEventVariant12? value12,
-            global::G.AssistantStreamEventVariant13? value13,
-            global::G.AssistantStreamEventVariant14? value14,
-            global::G.AssistantStreamEventVariant15? value15,
-            global::G.AssistantStreamEventVariant16? value16,
-            global::G.AssistantStreamEventVariant17? value17,
-            global::G.AssistantStreamEventVariant18? value18,
-            global::G.AssistantStreamEventVariant19? value19,
-            global::G.AssistantStreamEventVariant20? value20,
-            global::G.AssistantStreamEventVariant21? value21,
-            global::G.AssistantStreamEventVariant22? value22,
-            global::G.AssistantStreamEventVariant23? value23,
-            global::G.AssistantStreamEventVariant24? value24,
-            global::G.AssistantStreamEventVariant25? value25
+            global::G.ErrorEvent? error,
+            global::G.DoneEvent? done,
+            global::G.AssistantStreamEventVariant3? threadCreated,
+            global::G.AssistantStreamEventVariant4? threadRunCreated,
+            global::G.AssistantStreamEventVariant5? threadRunQueued,
+            global::G.AssistantStreamEventVariant6? threadRunInProgress,
+            global::G.AssistantStreamEventVariant7? threadRunRequiresAction,
+            global::G.AssistantStreamEventVariant8? threadRunCompleted,
+            global::G.AssistantStreamEventVariant9? threadRunIncomplete,
+            global::G.AssistantStreamEventVariant10? threadRunFailed,
+            global::G.AssistantStreamEventVariant11? threadRunCancelling,
+            global::G.AssistantStreamEventVariant12? threadRunCancelled,
+            global::G.AssistantStreamEventVariant13? threadRunExpired,
+            global::G.AssistantStreamEventVariant14? threadRunStepCreated,
+            global::G.AssistantStreamEventVariant15? threadRunStepInProgress,
+            global::G.AssistantStreamEventVariant16? threadRunStepDelta,
+            global::G.AssistantStreamEventVariant17? threadRunStepCompleted,
+            global::G.AssistantStreamEventVariant18? threadRunStepFailed,
+            global::G.AssistantStreamEventVariant19? threadRunStepCancelled,
+            global::G.AssistantStreamEventVariant20? threadRunStepExpired,
+            global::G.AssistantStreamEventVariant21? threadMessageCreated,
+            global::G.AssistantStreamEventVariant22? threadMessageInProgress,
+            global::G.AssistantStreamEventVariant23? threadMessageDelta,
+            global::G.AssistantStreamEventVariant24? threadMessageCompleted,
+            global::G.AssistantStreamEventVariant25? threadMessageIncomplete
             )
         {
             Event = @event;
 
-            Value1 = value1;
-            Value2 = value2;
-            Value3 = value3;
-            Value4 = value4;
-            Value5 = value5;
-            Value6 = value6;
-            Value7 = value7;
-            Value8 = value8;
-            Value9 = value9;
-            Value10 = value10;
-            Value11 = value11;
-            Value12 = value12;
-            Value13 = value13;
-            Value14 = value14;
-            Value15 = value15;
-            Value16 = value16;
-            Value17 = value17;
-            Value18 = value18;
-            Value19 = value19;
-            Value20 = value20;
-            Value21 = value21;
-            Value22 = value22;
-            Value23 = value23;
-            Value24 = value24;
-            Value25 = value25;
+            Error = error;
+            Done = done;
+            ThreadCreated = threadCreated;
+            ThreadRunCreated = threadRunCreated;
+            ThreadRunQueued = threadRunQueued;
+            ThreadRunInProgress = threadRunInProgress;
+            ThreadRunRequiresAction = threadRunRequiresAction;
+            ThreadRunCompleted = threadRunCompleted;
+            ThreadRunIncomplete = threadRunIncomplete;
+            ThreadRunFailed = threadRunFailed;
+            ThreadRunCancelling = threadRunCancelling;
+            ThreadRunCancelled = threadRunCancelled;
+            ThreadRunExpired = threadRunExpired;
+            ThreadRunStepCreated = threadRunStepCreated;
+            ThreadRunStepInProgress = threadRunStepInProgress;
+            ThreadRunStepDelta = threadRunStepDelta;
+            ThreadRunStepCompleted = threadRunStepCompleted;
+            ThreadRunStepFailed = threadRunStepFailed;
+            ThreadRunStepCancelled = threadRunStepCancelled;
+            ThreadRunStepExpired = threadRunStepExpired;
+            ThreadMessageCreated = threadMessageCreated;
+            ThreadMessageInProgress = threadMessageInProgress;
+            ThreadMessageDelta = threadMessageDelta;
+            ThreadMessageCompleted = threadMessageCompleted;
+            ThreadMessageIncomplete = threadMessageIncomplete;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value25 as object ??
-            Value24 as object ??
-            Value23 as object ??
-            Value22 as object ??
-            Value21 as object ??
-            Value20 as object ??
-            Value19 as object ??
-            Value18 as object ??
-            Value17 as object ??
-            Value16 as object ??
-            Value15 as object ??
-            Value14 as object ??
-            Value13 as object ??
-            Value12 as object ??
-            Value11 as object ??
-            Value10 as object ??
-            Value9 as object ??
-            Value8 as object ??
-            Value7 as object ??
-            Value6 as object ??
-            Value5 as object ??
-            Value4 as object ??
-            Value3 as object ??
-            Value2 as object ??
-            Value1 as object 
+            ThreadMessageIncomplete as object ??
+            ThreadMessageCompleted as object ??
+            ThreadMessageDelta as object ??
+            ThreadMessageInProgress as object ??
+            ThreadMessageCreated as object ??
+            ThreadRunStepExpired as object ??
+            ThreadRunStepCancelled as object ??
+            ThreadRunStepFailed as object ??
+            ThreadRunStepCompleted as object ??
+            ThreadRunStepDelta as object ??
+            ThreadRunStepInProgress as object ??
+            ThreadRunStepCreated as object ??
+            ThreadRunExpired as object ??
+            ThreadRunCancelled as object ??
+            ThreadRunCancelling as object ??
+            ThreadRunFailed as object ??
+            ThreadRunIncomplete as object ??
+            ThreadRunCompleted as object ??
+            ThreadRunRequiresAction as object ??
+            ThreadRunInProgress as object ??
+            ThreadRunQueued as object ??
+            ThreadRunCreated as object ??
+            ThreadCreated as object ??
+            Done as object ??
+            Error as object 
             ;
 
         /// <summary>
@@ -1002,38 +1002,38 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && IsValue22 && !IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && IsValue23 && !IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && IsValue24 && !IsValue25 || !IsValue1 && !IsValue2 && !IsValue3 && !IsValue4 && !IsValue5 && !IsValue6 && !IsValue7 && !IsValue8 && !IsValue9 && !IsValue10 && !IsValue11 && !IsValue12 && !IsValue13 && !IsValue14 && !IsValue15 && !IsValue16 && !IsValue17 && !IsValue18 && !IsValue19 && !IsValue20 && !IsValue21 && !IsValue22 && !IsValue23 && !IsValue24 && IsValue25;
+            return IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && IsThreadMessageDelta && !IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && IsThreadMessageCompleted && !IsThreadMessageIncomplete || !IsError && !IsDone && !IsThreadCreated && !IsThreadRunCreated && !IsThreadRunQueued && !IsThreadRunInProgress && !IsThreadRunRequiresAction && !IsThreadRunCompleted && !IsThreadRunIncomplete && !IsThreadRunFailed && !IsThreadRunCancelling && !IsThreadRunCancelled && !IsThreadRunExpired && !IsThreadRunStepCreated && !IsThreadRunStepInProgress && !IsThreadRunStepDelta && !IsThreadRunStepCompleted && !IsThreadRunStepFailed && !IsThreadRunStepCancelled && !IsThreadRunStepExpired && !IsThreadMessageCreated && !IsThreadMessageInProgress && !IsThreadMessageDelta && !IsThreadMessageCompleted && IsThreadMessageIncomplete;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.ErrorEvent?, TResult>? value1 = null,
-            global::System.Func<global::G.DoneEvent?, TResult>? value2 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant3?, TResult>? value3 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant4?, TResult>? value4 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant5?, TResult>? value5 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant6?, TResult>? value6 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant7?, TResult>? value7 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant8?, TResult>? value8 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant9?, TResult>? value9 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant10?, TResult>? value10 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant11?, TResult>? value11 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant12?, TResult>? value12 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant13?, TResult>? value13 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant14?, TResult>? value14 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant15?, TResult>? value15 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant16?, TResult>? value16 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant17?, TResult>? value17 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant18?, TResult>? value18 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant19?, TResult>? value19 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant20?, TResult>? value20 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant21?, TResult>? value21 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant22?, TResult>? value22 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant23?, TResult>? value23 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant24?, TResult>? value24 = null,
-            global::System.Func<global::G.AssistantStreamEventVariant25?, TResult>? value25 = null,
+            global::System.Func<global::G.ErrorEvent?, TResult>? error = null,
+            global::System.Func<global::G.DoneEvent?, TResult>? done = null,
+            global::System.Func<global::G.AssistantStreamEventVariant3?, TResult>? threadCreated = null,
+            global::System.Func<global::G.AssistantStreamEventVariant4?, TResult>? threadRunCreated = null,
+            global::System.Func<global::G.AssistantStreamEventVariant5?, TResult>? threadRunQueued = null,
+            global::System.Func<global::G.AssistantStreamEventVariant6?, TResult>? threadRunInProgress = null,
+            global::System.Func<global::G.AssistantStreamEventVariant7?, TResult>? threadRunRequiresAction = null,
+            global::System.Func<global::G.AssistantStreamEventVariant8?, TResult>? threadRunCompleted = null,
+            global::System.Func<global::G.AssistantStreamEventVariant9?, TResult>? threadRunIncomplete = null,
+            global::System.Func<global::G.AssistantStreamEventVariant10?, TResult>? threadRunFailed = null,
+            global::System.Func<global::G.AssistantStreamEventVariant11?, TResult>? threadRunCancelling = null,
+            global::System.Func<global::G.AssistantStreamEventVariant12?, TResult>? threadRunCancelled = null,
+            global::System.Func<global::G.AssistantStreamEventVariant13?, TResult>? threadRunExpired = null,
+            global::System.Func<global::G.AssistantStreamEventVariant14?, TResult>? threadRunStepCreated = null,
+            global::System.Func<global::G.AssistantStreamEventVariant15?, TResult>? threadRunStepInProgress = null,
+            global::System.Func<global::G.AssistantStreamEventVariant16?, TResult>? threadRunStepDelta = null,
+            global::System.Func<global::G.AssistantStreamEventVariant17?, TResult>? threadRunStepCompleted = null,
+            global::System.Func<global::G.AssistantStreamEventVariant18?, TResult>? threadRunStepFailed = null,
+            global::System.Func<global::G.AssistantStreamEventVariant19?, TResult>? threadRunStepCancelled = null,
+            global::System.Func<global::G.AssistantStreamEventVariant20?, TResult>? threadRunStepExpired = null,
+            global::System.Func<global::G.AssistantStreamEventVariant21?, TResult>? threadMessageCreated = null,
+            global::System.Func<global::G.AssistantStreamEventVariant22?, TResult>? threadMessageInProgress = null,
+            global::System.Func<global::G.AssistantStreamEventVariant23?, TResult>? threadMessageDelta = null,
+            global::System.Func<global::G.AssistantStreamEventVariant24?, TResult>? threadMessageCompleted = null,
+            global::System.Func<global::G.AssistantStreamEventVariant25?, TResult>? threadMessageIncomplete = null,
             bool validate = true)
         {
             if (validate)
@@ -1041,105 +1041,105 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsError && error != null)
             {
-                return value1(Value1!);
+                return error(Error!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsDone && done != null)
             {
-                return value2(Value2!);
+                return done(Done!);
             }
-            else if (IsValue3 && value3 != null)
+            else if (IsThreadCreated && threadCreated != null)
             {
-                return value3(Value3!);
+                return threadCreated(ThreadCreated!);
             }
-            else if (IsValue4 && value4 != null)
+            else if (IsThreadRunCreated && threadRunCreated != null)
             {
-                return value4(Value4!);
+                return threadRunCreated(ThreadRunCreated!);
             }
-            else if (IsValue5 && value5 != null)
+            else if (IsThreadRunQueued && threadRunQueued != null)
             {
-                return value5(Value5!);
+                return threadRunQueued(ThreadRunQueued!);
             }
-            else if (IsValue6 && value6 != null)
+            else if (IsThreadRunInProgress && threadRunInProgress != null)
             {
-                return value6(Value6!);
+                return threadRunInProgress(ThreadRunInProgress!);
             }
-            else if (IsValue7 && value7 != null)
+            else if (IsThreadRunRequiresAction && threadRunRequiresAction != null)
             {
-                return value7(Value7!);
+                return threadRunRequiresAction(ThreadRunRequiresAction!);
             }
-            else if (IsValue8 && value8 != null)
+            else if (IsThreadRunCompleted && threadRunCompleted != null)
             {
-                return value8(Value8!);
+                return threadRunCompleted(ThreadRunCompleted!);
             }
-            else if (IsValue9 && value9 != null)
+            else if (IsThreadRunIncomplete && threadRunIncomplete != null)
             {
-                return value9(Value9!);
+                return threadRunIncomplete(ThreadRunIncomplete!);
             }
-            else if (IsValue10 && value10 != null)
+            else if (IsThreadRunFailed && threadRunFailed != null)
             {
-                return value10(Value10!);
+                return threadRunFailed(ThreadRunFailed!);
             }
-            else if (IsValue11 && value11 != null)
+            else if (IsThreadRunCancelling && threadRunCancelling != null)
             {
-                return value11(Value11!);
+                return threadRunCancelling(ThreadRunCancelling!);
             }
-            else if (IsValue12 && value12 != null)
+            else if (IsThreadRunCancelled && threadRunCancelled != null)
             {
-                return value12(Value12!);
+                return threadRunCancelled(ThreadRunCancelled!);
             }
-            else if (IsValue13 && value13 != null)
+            else if (IsThreadRunExpired && threadRunExpired != null)
             {
-                return value13(Value13!);
+                return threadRunExpired(ThreadRunExpired!);
             }
-            else if (IsValue14 && value14 != null)
+            else if (IsThreadRunStepCreated && threadRunStepCreated != null)
             {
-                return value14(Value14!);
+                return threadRunStepCreated(ThreadRunStepCreated!);
             }
-            else if (IsValue15 && value15 != null)
+            else if (IsThreadRunStepInProgress && threadRunStepInProgress != null)
             {
-                return value15(Value15!);
+                return threadRunStepInProgress(ThreadRunStepInProgress!);
             }
-            else if (IsValue16 && value16 != null)
+            else if (IsThreadRunStepDelta && threadRunStepDelta != null)
             {
-                return value16(Value16!);
+                return threadRunStepDelta(ThreadRunStepDelta!);
             }
-            else if (IsValue17 && value17 != null)
+            else if (IsThreadRunStepCompleted && threadRunStepCompleted != null)
             {
-                return value17(Value17!);
+                return threadRunStepCompleted(ThreadRunStepCompleted!);
             }
-            else if (IsValue18 && value18 != null)
+            else if (IsThreadRunStepFailed && threadRunStepFailed != null)
             {
-                return value18(Value18!);
+                return threadRunStepFailed(ThreadRunStepFailed!);
             }
-            else if (IsValue19 && value19 != null)
+            else if (IsThreadRunStepCancelled && threadRunStepCancelled != null)
             {
-                return value19(Value19!);
+                return threadRunStepCancelled(ThreadRunStepCancelled!);
             }
-            else if (IsValue20 && value20 != null)
+            else if (IsThreadRunStepExpired && threadRunStepExpired != null)
             {
-                return value20(Value20!);
+                return threadRunStepExpired(ThreadRunStepExpired!);
             }
-            else if (IsValue21 && value21 != null)
+            else if (IsThreadMessageCreated && threadMessageCreated != null)
             {
-                return value21(Value21!);
+                return threadMessageCreated(ThreadMessageCreated!);
             }
-            else if (IsValue22 && value22 != null)
+            else if (IsThreadMessageInProgress && threadMessageInProgress != null)
             {
-                return value22(Value22!);
+                return threadMessageInProgress(ThreadMessageInProgress!);
             }
-            else if (IsValue23 && value23 != null)
+            else if (IsThreadMessageDelta && threadMessageDelta != null)
             {
-                return value23(Value23!);
+                return threadMessageDelta(ThreadMessageDelta!);
             }
-            else if (IsValue24 && value24 != null)
+            else if (IsThreadMessageCompleted && threadMessageCompleted != null)
             {
-                return value24(Value24!);
+                return threadMessageCompleted(ThreadMessageCompleted!);
             }
-            else if (IsValue25 && value25 != null)
+            else if (IsThreadMessageIncomplete && threadMessageIncomplete != null)
             {
-                return value25(Value25!);
+                return threadMessageIncomplete(ThreadMessageIncomplete!);
             }
 
             return default(TResult);
@@ -1149,31 +1149,31 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.ErrorEvent?>? value1 = null,
-            global::System.Action<global::G.DoneEvent?>? value2 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant3?>? value3 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant4?>? value4 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant5?>? value5 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant6?>? value6 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant7?>? value7 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant8?>? value8 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant9?>? value9 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant10?>? value10 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant11?>? value11 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant12?>? value12 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant13?>? value13 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant14?>? value14 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant15?>? value15 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant16?>? value16 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant17?>? value17 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant18?>? value18 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant19?>? value19 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant20?>? value20 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant21?>? value21 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant22?>? value22 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant23?>? value23 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant24?>? value24 = null,
-            global::System.Action<global::G.AssistantStreamEventVariant25?>? value25 = null,
+            global::System.Action<global::G.ErrorEvent?>? error = null,
+            global::System.Action<global::G.DoneEvent?>? done = null,
+            global::System.Action<global::G.AssistantStreamEventVariant3?>? threadCreated = null,
+            global::System.Action<global::G.AssistantStreamEventVariant4?>? threadRunCreated = null,
+            global::System.Action<global::G.AssistantStreamEventVariant5?>? threadRunQueued = null,
+            global::System.Action<global::G.AssistantStreamEventVariant6?>? threadRunInProgress = null,
+            global::System.Action<global::G.AssistantStreamEventVariant7?>? threadRunRequiresAction = null,
+            global::System.Action<global::G.AssistantStreamEventVariant8?>? threadRunCompleted = null,
+            global::System.Action<global::G.AssistantStreamEventVariant9?>? threadRunIncomplete = null,
+            global::System.Action<global::G.AssistantStreamEventVariant10?>? threadRunFailed = null,
+            global::System.Action<global::G.AssistantStreamEventVariant11?>? threadRunCancelling = null,
+            global::System.Action<global::G.AssistantStreamEventVariant12?>? threadRunCancelled = null,
+            global::System.Action<global::G.AssistantStreamEventVariant13?>? threadRunExpired = null,
+            global::System.Action<global::G.AssistantStreamEventVariant14?>? threadRunStepCreated = null,
+            global::System.Action<global::G.AssistantStreamEventVariant15?>? threadRunStepInProgress = null,
+            global::System.Action<global::G.AssistantStreamEventVariant16?>? threadRunStepDelta = null,
+            global::System.Action<global::G.AssistantStreamEventVariant17?>? threadRunStepCompleted = null,
+            global::System.Action<global::G.AssistantStreamEventVariant18?>? threadRunStepFailed = null,
+            global::System.Action<global::G.AssistantStreamEventVariant19?>? threadRunStepCancelled = null,
+            global::System.Action<global::G.AssistantStreamEventVariant20?>? threadRunStepExpired = null,
+            global::System.Action<global::G.AssistantStreamEventVariant21?>? threadMessageCreated = null,
+            global::System.Action<global::G.AssistantStreamEventVariant22?>? threadMessageInProgress = null,
+            global::System.Action<global::G.AssistantStreamEventVariant23?>? threadMessageDelta = null,
+            global::System.Action<global::G.AssistantStreamEventVariant24?>? threadMessageCompleted = null,
+            global::System.Action<global::G.AssistantStreamEventVariant25?>? threadMessageIncomplete = null,
             bool validate = true)
         {
             if (validate)
@@ -1181,105 +1181,105 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsError)
             {
-                value1?.Invoke(Value1!);
+                error?.Invoke(Error!);
             }
-            else if (IsValue2)
+            else if (IsDone)
             {
-                value2?.Invoke(Value2!);
+                done?.Invoke(Done!);
             }
-            else if (IsValue3)
+            else if (IsThreadCreated)
             {
-                value3?.Invoke(Value3!);
+                threadCreated?.Invoke(ThreadCreated!);
             }
-            else if (IsValue4)
+            else if (IsThreadRunCreated)
             {
-                value4?.Invoke(Value4!);
+                threadRunCreated?.Invoke(ThreadRunCreated!);
             }
-            else if (IsValue5)
+            else if (IsThreadRunQueued)
             {
-                value5?.Invoke(Value5!);
+                threadRunQueued?.Invoke(ThreadRunQueued!);
             }
-            else if (IsValue6)
+            else if (IsThreadRunInProgress)
             {
-                value6?.Invoke(Value6!);
+                threadRunInProgress?.Invoke(ThreadRunInProgress!);
             }
-            else if (IsValue7)
+            else if (IsThreadRunRequiresAction)
             {
-                value7?.Invoke(Value7!);
+                threadRunRequiresAction?.Invoke(ThreadRunRequiresAction!);
             }
-            else if (IsValue8)
+            else if (IsThreadRunCompleted)
             {
-                value8?.Invoke(Value8!);
+                threadRunCompleted?.Invoke(ThreadRunCompleted!);
             }
-            else if (IsValue9)
+            else if (IsThreadRunIncomplete)
             {
-                value9?.Invoke(Value9!);
+                threadRunIncomplete?.Invoke(ThreadRunIncomplete!);
             }
-            else if (IsValue10)
+            else if (IsThreadRunFailed)
             {
-                value10?.Invoke(Value10!);
+                threadRunFailed?.Invoke(ThreadRunFailed!);
             }
-            else if (IsValue11)
+            else if (IsThreadRunCancelling)
             {
-                value11?.Invoke(Value11!);
+                threadRunCancelling?.Invoke(ThreadRunCancelling!);
             }
-            else if (IsValue12)
+            else if (IsThreadRunCancelled)
             {
-                value12?.Invoke(Value12!);
+                threadRunCancelled?.Invoke(ThreadRunCancelled!);
             }
-            else if (IsValue13)
+            else if (IsThreadRunExpired)
             {
-                value13?.Invoke(Value13!);
+                threadRunExpired?.Invoke(ThreadRunExpired!);
             }
-            else if (IsValue14)
+            else if (IsThreadRunStepCreated)
             {
-                value14?.Invoke(Value14!);
+                threadRunStepCreated?.Invoke(ThreadRunStepCreated!);
             }
-            else if (IsValue15)
+            else if (IsThreadRunStepInProgress)
             {
-                value15?.Invoke(Value15!);
+                threadRunStepInProgress?.Invoke(ThreadRunStepInProgress!);
             }
-            else if (IsValue16)
+            else if (IsThreadRunStepDelta)
             {
-                value16?.Invoke(Value16!);
+                threadRunStepDelta?.Invoke(ThreadRunStepDelta!);
             }
-            else if (IsValue17)
+            else if (IsThreadRunStepCompleted)
             {
-                value17?.Invoke(Value17!);
+                threadRunStepCompleted?.Invoke(ThreadRunStepCompleted!);
             }
-            else if (IsValue18)
+            else if (IsThreadRunStepFailed)
             {
-                value18?.Invoke(Value18!);
+                threadRunStepFailed?.Invoke(ThreadRunStepFailed!);
             }
-            else if (IsValue19)
+            else if (IsThreadRunStepCancelled)
             {
-                value19?.Invoke(Value19!);
+                threadRunStepCancelled?.Invoke(ThreadRunStepCancelled!);
             }
-            else if (IsValue20)
+            else if (IsThreadRunStepExpired)
             {
-                value20?.Invoke(Value20!);
+                threadRunStepExpired?.Invoke(ThreadRunStepExpired!);
             }
-            else if (IsValue21)
+            else if (IsThreadMessageCreated)
             {
-                value21?.Invoke(Value21!);
+                threadMessageCreated?.Invoke(ThreadMessageCreated!);
             }
-            else if (IsValue22)
+            else if (IsThreadMessageInProgress)
             {
-                value22?.Invoke(Value22!);
+                threadMessageInProgress?.Invoke(ThreadMessageInProgress!);
             }
-            else if (IsValue23)
+            else if (IsThreadMessageDelta)
             {
-                value23?.Invoke(Value23!);
+                threadMessageDelta?.Invoke(ThreadMessageDelta!);
             }
-            else if (IsValue24)
+            else if (IsThreadMessageCompleted)
             {
-                value24?.Invoke(Value24!);
+                threadMessageCompleted?.Invoke(ThreadMessageCompleted!);
             }
-            else if (IsValue25)
+            else if (IsThreadMessageIncomplete)
             {
-                value25?.Invoke(Value25!);
+                threadMessageIncomplete?.Invoke(ThreadMessageIncomplete!);
             }
         }
 
@@ -1290,55 +1290,55 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Error,
                 typeof(global::G.ErrorEvent),
-                Value2,
+                Done,
                 typeof(global::G.DoneEvent),
-                Value3,
+                ThreadCreated,
                 typeof(global::G.AssistantStreamEventVariant3),
-                Value4,
+                ThreadRunCreated,
                 typeof(global::G.AssistantStreamEventVariant4),
-                Value5,
+                ThreadRunQueued,
                 typeof(global::G.AssistantStreamEventVariant5),
-                Value6,
+                ThreadRunInProgress,
                 typeof(global::G.AssistantStreamEventVariant6),
-                Value7,
+                ThreadRunRequiresAction,
                 typeof(global::G.AssistantStreamEventVariant7),
-                Value8,
+                ThreadRunCompleted,
                 typeof(global::G.AssistantStreamEventVariant8),
-                Value9,
+                ThreadRunIncomplete,
                 typeof(global::G.AssistantStreamEventVariant9),
-                Value10,
+                ThreadRunFailed,
                 typeof(global::G.AssistantStreamEventVariant10),
-                Value11,
+                ThreadRunCancelling,
                 typeof(global::G.AssistantStreamEventVariant11),
-                Value12,
+                ThreadRunCancelled,
                 typeof(global::G.AssistantStreamEventVariant12),
-                Value13,
+                ThreadRunExpired,
                 typeof(global::G.AssistantStreamEventVariant13),
-                Value14,
+                ThreadRunStepCreated,
                 typeof(global::G.AssistantStreamEventVariant14),
-                Value15,
+                ThreadRunStepInProgress,
                 typeof(global::G.AssistantStreamEventVariant15),
-                Value16,
+                ThreadRunStepDelta,
                 typeof(global::G.AssistantStreamEventVariant16),
-                Value17,
+                ThreadRunStepCompleted,
                 typeof(global::G.AssistantStreamEventVariant17),
-                Value18,
+                ThreadRunStepFailed,
                 typeof(global::G.AssistantStreamEventVariant18),
-                Value19,
+                ThreadRunStepCancelled,
                 typeof(global::G.AssistantStreamEventVariant19),
-                Value20,
+                ThreadRunStepExpired,
                 typeof(global::G.AssistantStreamEventVariant20),
-                Value21,
+                ThreadMessageCreated,
                 typeof(global::G.AssistantStreamEventVariant21),
-                Value22,
+                ThreadMessageInProgress,
                 typeof(global::G.AssistantStreamEventVariant22),
-                Value23,
+                ThreadMessageDelta,
                 typeof(global::G.AssistantStreamEventVariant23),
-                Value24,
+                ThreadMessageCompleted,
                 typeof(global::G.AssistantStreamEventVariant24),
-                Value25,
+                ThreadMessageIncomplete,
                 typeof(global::G.AssistantStreamEventVariant25),
             };
             const int offset = unchecked((int)2166136261);
@@ -1355,31 +1355,31 @@ namespace G
         public bool Equals(AssistantStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.ErrorEvent?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.DoneEvent?>.Default.Equals(Value2, other.Value2) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant3?>.Default.Equals(Value3, other.Value3) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant4?>.Default.Equals(Value4, other.Value4) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant5?>.Default.Equals(Value5, other.Value5) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant6?>.Default.Equals(Value6, other.Value6) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant7?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant8?>.Default.Equals(Value8, other.Value8) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant9?>.Default.Equals(Value9, other.Value9) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant10?>.Default.Equals(Value10, other.Value10) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant11?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant12?>.Default.Equals(Value12, other.Value12) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant13?>.Default.Equals(Value13, other.Value13) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant14?>.Default.Equals(Value14, other.Value14) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant15?>.Default.Equals(Value15, other.Value15) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant16?>.Default.Equals(Value16, other.Value16) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant17?>.Default.Equals(Value17, other.Value17) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant18?>.Default.Equals(Value18, other.Value18) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant19?>.Default.Equals(Value19, other.Value19) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant20?>.Default.Equals(Value20, other.Value20) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant21?>.Default.Equals(Value21, other.Value21) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant22?>.Default.Equals(Value22, other.Value22) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant23?>.Default.Equals(Value23, other.Value23) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant24?>.Default.Equals(Value24, other.Value24) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant25?>.Default.Equals(Value25, other.Value25) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ErrorEvent?>.Default.Equals(Error, other.Error) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.DoneEvent?>.Default.Equals(Done, other.Done) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant3?>.Default.Equals(ThreadCreated, other.ThreadCreated) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant4?>.Default.Equals(ThreadRunCreated, other.ThreadRunCreated) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant5?>.Default.Equals(ThreadRunQueued, other.ThreadRunQueued) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant6?>.Default.Equals(ThreadRunInProgress, other.ThreadRunInProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant7?>.Default.Equals(ThreadRunRequiresAction, other.ThreadRunRequiresAction) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant8?>.Default.Equals(ThreadRunCompleted, other.ThreadRunCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant9?>.Default.Equals(ThreadRunIncomplete, other.ThreadRunIncomplete) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant10?>.Default.Equals(ThreadRunFailed, other.ThreadRunFailed) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant11?>.Default.Equals(ThreadRunCancelling, other.ThreadRunCancelling) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant12?>.Default.Equals(ThreadRunCancelled, other.ThreadRunCancelled) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant13?>.Default.Equals(ThreadRunExpired, other.ThreadRunExpired) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant14?>.Default.Equals(ThreadRunStepCreated, other.ThreadRunStepCreated) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant15?>.Default.Equals(ThreadRunStepInProgress, other.ThreadRunStepInProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant16?>.Default.Equals(ThreadRunStepDelta, other.ThreadRunStepDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant17?>.Default.Equals(ThreadRunStepCompleted, other.ThreadRunStepCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant18?>.Default.Equals(ThreadRunStepFailed, other.ThreadRunStepFailed) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant19?>.Default.Equals(ThreadRunStepCancelled, other.ThreadRunStepCancelled) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant20?>.Default.Equals(ThreadRunStepExpired, other.ThreadRunStepExpired) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant21?>.Default.Equals(ThreadMessageCreated, other.ThreadMessageCreated) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant22?>.Default.Equals(ThreadMessageInProgress, other.ThreadMessageInProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant23?>.Default.Equals(ThreadMessageDelta, other.ThreadMessageDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant24?>.Default.Equals(ThreadMessageCompleted, other.ThreadMessageCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantStreamEventVariant25?>.Default.Equals(ThreadMessageIncomplete, other.ThreadMessageIncomplete) 
                 ;
         }
 

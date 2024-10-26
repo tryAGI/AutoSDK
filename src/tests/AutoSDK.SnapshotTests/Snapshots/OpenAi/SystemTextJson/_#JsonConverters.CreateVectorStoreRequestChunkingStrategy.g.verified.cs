@@ -22,25 +22,25 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateVectorStoreRequestChunkingStrategyDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.AutoChunkingStrategyRequestParam? autoParam = default;
+            global::G.AutoChunkingStrategyRequestParam? auto = default;
             if (discriminator?.Type == global::G.CreateVectorStoreRequestChunkingStrategyDiscriminatorType.Auto)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AutoChunkingStrategyRequestParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AutoChunkingStrategyRequestParam)}");
-                autoParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.StaticChunkingStrategyRequestParam? staticParam = default;
+            global::G.StaticChunkingStrategyRequestParam? @static = default;
             if (discriminator?.Type == global::G.CreateVectorStoreRequestChunkingStrategyDiscriminatorType.Static)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyRequestParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StaticChunkingStrategyRequestParam)}");
-                staticParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.CreateVectorStoreRequestChunkingStrategy(
                 discriminator?.Type,
-                autoParam,
-                staticParam
+                auto,
+                @static
                 );
 
             return result;
@@ -55,17 +55,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsAutoParam)
+            if (value.IsAuto)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AutoChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AutoChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AutoParam, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeInfo);
             }
-            else if (value.IsStaticParam)
+            else if (value.IsStatic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyRequestParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StaticChunkingStrategyRequestParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticParam, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static, typeInfo);
             }
         }
     }

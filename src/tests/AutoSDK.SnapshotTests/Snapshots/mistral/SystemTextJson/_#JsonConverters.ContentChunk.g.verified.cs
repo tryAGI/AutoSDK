@@ -29,18 +29,18 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.TextChunk)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.ImageURLChunk? imageURL = default;
+            global::G.ImageURLChunk? imageUrl = default;
             if (discriminator?.Type == global::G.ContentChunkDiscriminatorType.ImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageURLChunk> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageURLChunk)}");
-                imageURL = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ContentChunk(
                 discriminator?.Type,
                 text,
-                imageURL
+                imageUrl
                 );
 
             return result;
@@ -61,11 +61,11 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.TextChunk).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
-            else if (value.IsImageURL)
+            else if (value.IsImageUrl)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageURLChunk), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageURLChunk?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ImageURLChunk).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageURL, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
             }
         }
     }

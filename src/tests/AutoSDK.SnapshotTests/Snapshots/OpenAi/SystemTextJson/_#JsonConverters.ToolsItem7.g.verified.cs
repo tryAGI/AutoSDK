@@ -22,25 +22,25 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageObjectAttachmentToolDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.AssistantToolsCode? assistantCode = default;
+            global::G.AssistantToolsCode? codeInterpreter = default;
             if (discriminator?.Type == global::G.MessageObjectAttachmentToolDiscriminatorType.CodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsCode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsCode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AssistantToolsCode)}");
-                assistantCode = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.AssistantToolsFileSearchTypeOnly? assistantFileSearchTypeOnly = default;
+            global::G.AssistantToolsFileSearchTypeOnly? fileSearch = default;
             if (discriminator?.Type == global::G.MessageObjectAttachmentToolDiscriminatorType.FileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsFileSearchTypeOnly), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsFileSearchTypeOnly> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AssistantToolsFileSearchTypeOnly)}");
-                assistantFileSearchTypeOnly = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ToolsItem7(
                 discriminator?.Type,
-                assistantCode,
-                assistantFileSearchTypeOnly
+                codeInterpreter,
+                fileSearch
                 );
 
             return result;
@@ -55,17 +55,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsAssistantCode)
+            if (value.IsCodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsCode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsCode?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantToolsCode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantCode, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreter, typeInfo);
             }
-            else if (value.IsAssistantFileSearchTypeOnly)
+            else if (value.IsFileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsFileSearchTypeOnly), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsFileSearchTypeOnly?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantToolsFileSearchTypeOnly).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantFileSearchTypeOnly, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearch, typeInfo);
             }
         }
     }

@@ -22,25 +22,25 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.VectorStoreFileObjectChunkingStrategyDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.StaticChunkingStrategyResponseParam? staticResponseParam = default;
+            global::G.StaticChunkingStrategyResponseParam? @static = default;
             if (discriminator?.Type == global::G.VectorStoreFileObjectChunkingStrategyDiscriminatorType.Static)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyResponseParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StaticChunkingStrategyResponseParam)}");
-                staticResponseParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.OtherChunkingStrategyResponseParam? otherResponseParam = default;
+            global::G.OtherChunkingStrategyResponseParam? other = default;
             if (discriminator?.Type == global::G.VectorStoreFileObjectChunkingStrategyDiscriminatorType.Other)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OtherChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OtherChunkingStrategyResponseParam> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.OtherChunkingStrategyResponseParam)}");
-                otherResponseParam = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                other = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.VectorStoreFileObjectChunkingStrategy(
                 discriminator?.Type,
-                staticResponseParam,
-                otherResponseParam
+                @static,
+                other
                 );
 
             return result;
@@ -55,17 +55,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsStaticResponseParam)
+            if (value.IsStatic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyResponseParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StaticChunkingStrategyResponseParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.StaticResponseParam, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static, typeInfo);
             }
-            else if (value.IsOtherResponseParam)
+            else if (value.IsOther)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.OtherChunkingStrategyResponseParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.OtherChunkingStrategyResponseParam?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.OtherChunkingStrategyResponseParam).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.OtherResponseParam, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Other, typeInfo);
             }
         }
     }

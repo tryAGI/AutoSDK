@@ -22,33 +22,33 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateRunRequestToolDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.AssistantToolsCode? assistantCode = default;
+            global::G.AssistantToolsCode? codeInterpreter = default;
             if (discriminator?.Type == global::G.CreateRunRequestToolDiscriminatorType.CodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsCode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsCode> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AssistantToolsCode)}");
-                assistantCode = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                codeInterpreter = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.AssistantToolsFileSearch? assistantFileSearch = default;
+            global::G.AssistantToolsFileSearch? fileSearch = default;
             if (discriminator?.Type == global::G.CreateRunRequestToolDiscriminatorType.FileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsFileSearch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsFileSearch> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AssistantToolsFileSearch)}");
-                assistantFileSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fileSearch = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.AssistantToolsFunction? assistantFunction = default;
+            global::G.AssistantToolsFunction? function = default;
             if (discriminator?.Type == global::G.CreateRunRequestToolDiscriminatorType.Function)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsFunction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsFunction> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AssistantToolsFunction)}");
-                assistantFunction = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                function = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ToolsItem5(
                 discriminator?.Type,
-                assistantCode,
-                assistantFileSearch,
-                assistantFunction
+                codeInterpreter,
+                fileSearch,
+                function
                 );
 
             return result;
@@ -63,23 +63,23 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsAssistantCode)
+            if (value.IsCodeInterpreter)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsCode), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsCode?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantToolsCode).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantCode, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CodeInterpreter, typeInfo);
             }
-            else if (value.IsAssistantFileSearch)
+            else if (value.IsFileSearch)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsFileSearch), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsFileSearch?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantToolsFileSearch).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantFileSearch, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileSearch, typeInfo);
             }
-            else if (value.IsAssistantFunction)
+            else if (value.IsFunction)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AssistantToolsFunction), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AssistantToolsFunction?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AssistantToolsFunction).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.AssistantFunction, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Function, typeInfo);
             }
         }
     }

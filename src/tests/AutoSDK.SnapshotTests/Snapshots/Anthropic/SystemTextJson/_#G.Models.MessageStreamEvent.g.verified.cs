@@ -20,18 +20,18 @@ namespace G
         /// A start event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageStartEvent? Start { get; init; }
+        public global::G.MessageStartEvent? MessageStart { get; init; }
 #else
-        public global::G.MessageStartEvent? Start { get; }
+        public global::G.MessageStartEvent? MessageStart { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Start))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStart))]
 #endif
-        public bool IsStart => Start != null;
+        public bool IsMessageStart => MessageStart != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageStartEvent?(MessageStreamEvent @this) => @this.Start;
+        public static implicit operator global::G.MessageStartEvent?(MessageStreamEvent @this) => @this.MessageStart;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::G.MessageStartEvent? value)
         {
-            Start = value;
+            MessageStart = value;
         }
 
         /// <summary>
         /// A delta event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageDeltaEvent? Delta { get; init; }
+        public global::G.MessageDeltaEvent? MessageDelta { get; init; }
 #else
-        public global::G.MessageDeltaEvent? Delta { get; }
+        public global::G.MessageDeltaEvent? MessageDelta { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Delta))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDelta))]
 #endif
-        public bool IsDelta => Delta != null;
+        public bool IsMessageDelta => MessageDelta != null;
 
         /// <summary>
         /// 
@@ -76,32 +76,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageDeltaEvent?(MessageStreamEvent @this) => @this.Delta;
+        public static implicit operator global::G.MessageDeltaEvent?(MessageStreamEvent @this) => @this.MessageDelta;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::G.MessageDeltaEvent? value)
         {
-            Delta = value;
+            MessageDelta = value;
         }
 
         /// <summary>
         /// A stop event in a streaming conversation.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageStopEvent? Stop { get; init; }
+        public global::G.MessageStopEvent? MessageStop { get; init; }
 #else
-        public global::G.MessageStopEvent? Stop { get; }
+        public global::G.MessageStopEvent? MessageStop { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Stop))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageStop))]
 #endif
-        public bool IsStop => Stop != null;
+        public bool IsMessageStop => MessageStop != null;
 
         /// <summary>
         /// 
@@ -111,14 +111,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageStopEvent?(MessageStreamEvent @this) => @this.Stop;
+        public static implicit operator global::G.MessageStopEvent?(MessageStreamEvent @this) => @this.MessageStop;
 
         /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(global::G.MessageStopEvent? value)
         {
-            Stop = value;
+            MessageStop = value;
         }
 
         /// <summary>
@@ -301,9 +301,9 @@ namespace G
         /// </summary>
         public MessageStreamEvent(
             global::G.MessageStreamEventDiscriminatorType? type,
-            global::G.MessageStartEvent? start,
-            global::G.MessageDeltaEvent? delta,
-            global::G.MessageStopEvent? stop,
+            global::G.MessageStartEvent? messageStart,
+            global::G.MessageDeltaEvent? messageDelta,
+            global::G.MessageStopEvent? messageStop,
             global::G.ContentBlockStartEvent? contentBlockStart,
             global::G.ContentBlockDeltaEvent? contentBlockDelta,
             global::G.ContentBlockStopEvent? contentBlockStop,
@@ -313,9 +313,9 @@ namespace G
         {
             Type = type;
 
-            Start = start;
-            Delta = delta;
-            Stop = stop;
+            MessageStart = messageStart;
+            MessageDelta = messageDelta;
+            MessageStop = messageStop;
             ContentBlockStart = contentBlockStart;
             ContentBlockDelta = contentBlockDelta;
             ContentBlockStop = contentBlockStop;
@@ -332,9 +332,9 @@ namespace G
             ContentBlockStop as object ??
             ContentBlockDelta as object ??
             ContentBlockStart as object ??
-            Stop as object ??
-            Delta as object ??
-            Start as object 
+            MessageStop as object ??
+            MessageDelta as object ??
+            MessageStart as object 
             ;
 
         /// <summary>
@@ -342,16 +342,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && !IsStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop && !IsPing && !IsError || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && IsPing && !IsError || !IsStart && !IsDelta && !IsStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && IsError;
+            return IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && IsError;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessageStartEvent?, TResult>? start = null,
-            global::System.Func<global::G.MessageDeltaEvent?, TResult>? delta = null,
-            global::System.Func<global::G.MessageStopEvent?, TResult>? stop = null,
+            global::System.Func<global::G.MessageStartEvent?, TResult>? messageStart = null,
+            global::System.Func<global::G.MessageDeltaEvent?, TResult>? messageDelta = null,
+            global::System.Func<global::G.MessageStopEvent?, TResult>? messageStop = null,
             global::System.Func<global::G.ContentBlockStartEvent?, TResult>? contentBlockStart = null,
             global::System.Func<global::G.ContentBlockDeltaEvent?, TResult>? contentBlockDelta = null,
             global::System.Func<global::G.ContentBlockStopEvent?, TResult>? contentBlockStop = null,
@@ -364,17 +364,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStart && start != null)
+            if (IsMessageStart && messageStart != null)
             {
-                return start(Start!);
+                return messageStart(MessageStart!);
             }
-            else if (IsDelta && delta != null)
+            else if (IsMessageDelta && messageDelta != null)
             {
-                return delta(Delta!);
+                return messageDelta(MessageDelta!);
             }
-            else if (IsStop && stop != null)
+            else if (IsMessageStop && messageStop != null)
             {
-                return stop(Stop!);
+                return messageStop(MessageStop!);
             }
             else if (IsContentBlockStart && contentBlockStart != null)
             {
@@ -404,9 +404,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessageStartEvent?>? start = null,
-            global::System.Action<global::G.MessageDeltaEvent?>? delta = null,
-            global::System.Action<global::G.MessageStopEvent?>? stop = null,
+            global::System.Action<global::G.MessageStartEvent?>? messageStart = null,
+            global::System.Action<global::G.MessageDeltaEvent?>? messageDelta = null,
+            global::System.Action<global::G.MessageStopEvent?>? messageStop = null,
             global::System.Action<global::G.ContentBlockStartEvent?>? contentBlockStart = null,
             global::System.Action<global::G.ContentBlockDeltaEvent?>? contentBlockDelta = null,
             global::System.Action<global::G.ContentBlockStopEvent?>? contentBlockStop = null,
@@ -419,17 +419,17 @@ namespace G
                 Validate();
             }
 
-            if (IsStart)
+            if (IsMessageStart)
             {
-                start?.Invoke(Start!);
+                messageStart?.Invoke(MessageStart!);
             }
-            else if (IsDelta)
+            else if (IsMessageDelta)
             {
-                delta?.Invoke(Delta!);
+                messageDelta?.Invoke(MessageDelta!);
             }
-            else if (IsStop)
+            else if (IsMessageStop)
             {
-                stop?.Invoke(Stop!);
+                messageStop?.Invoke(MessageStop!);
             }
             else if (IsContentBlockStart)
             {
@@ -460,11 +460,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                Start,
+                MessageStart,
                 typeof(global::G.MessageStartEvent),
-                Delta,
+                MessageDelta,
                 typeof(global::G.MessageDeltaEvent),
-                Stop,
+                MessageStop,
                 typeof(global::G.MessageStopEvent),
                 ContentBlockStart,
                 typeof(global::G.ContentBlockStartEvent),
@@ -491,9 +491,9 @@ namespace G
         public bool Equals(MessageStreamEvent other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageStartEvent?>.Default.Equals(Start, other.Start) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaEvent?>.Default.Equals(Delta, other.Delta) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageStopEvent?>.Default.Equals(Stop, other.Stop) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageStartEvent?>.Default.Equals(MessageStart, other.MessageStart) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaEvent?>.Default.Equals(MessageDelta, other.MessageDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageStopEvent?>.Default.Equals(MessageStop, other.MessageStop) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ContentBlockStartEvent?>.Default.Equals(ContentBlockStart, other.ContentBlockStart) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ContentBlockDeltaEvent?>.Default.Equals(ContentBlockDelta, other.ContentBlockDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ContentBlockStopEvent?>.Default.Equals(ContentBlockStop, other.ContentBlockStop) &&

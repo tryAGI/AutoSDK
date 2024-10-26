@@ -20,18 +20,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TenantShareRunToken? TenantShareRunToken { get; init; }
+        public global::G.TenantShareRunToken? Run { get; init; }
 #else
-        public global::G.TenantShareRunToken? TenantShareRunToken { get; }
+        public global::G.TenantShareRunToken? Run { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TenantShareRunToken))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Run))]
 #endif
-        public bool IsTenantShareRunToken => TenantShareRunToken != null;
+        public bool IsRun => Run != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TenantShareRunToken?(EntitiesItem @this) => @this.TenantShareRunToken;
+        public static implicit operator global::G.TenantShareRunToken?(EntitiesItem @this) => @this.Run;
 
         /// <summary>
         /// 
         /// </summary>
         public EntitiesItem(global::G.TenantShareRunToken? value)
         {
-            TenantShareRunToken = value;
+            Run = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TenantShareDatasetToken? TenantShareDatasetToken { get; init; }
+        public global::G.TenantShareDatasetToken? Dataset { get; init; }
 #else
-        public global::G.TenantShareDatasetToken? TenantShareDatasetToken { get; }
+        public global::G.TenantShareDatasetToken? Dataset { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TenantShareDatasetToken))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Dataset))]
 #endif
-        public bool IsTenantShareDatasetToken => TenantShareDatasetToken != null;
+        public bool IsDataset => Dataset != null;
 
         /// <summary>
         /// 
@@ -76,14 +76,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TenantShareDatasetToken?(EntitiesItem @this) => @this.TenantShareDatasetToken;
+        public static implicit operator global::G.TenantShareDatasetToken?(EntitiesItem @this) => @this.Dataset;
 
         /// <summary>
         /// 
         /// </summary>
         public EntitiesItem(global::G.TenantShareDatasetToken? value)
         {
-            TenantShareDatasetToken = value;
+            Dataset = value;
         }
 
         /// <summary>
@@ -91,22 +91,22 @@ namespace G
         /// </summary>
         public EntitiesItem(
             global::G.TenantShareTokensResponseEntitieDiscriminatorType? type,
-            global::G.TenantShareRunToken? tenantShareRunToken,
-            global::G.TenantShareDatasetToken? tenantShareDatasetToken
+            global::G.TenantShareRunToken? run,
+            global::G.TenantShareDatasetToken? dataset
             )
         {
             Type = type;
 
-            TenantShareRunToken = tenantShareRunToken;
-            TenantShareDatasetToken = tenantShareDatasetToken;
+            Run = run;
+            Dataset = dataset;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            TenantShareDatasetToken as object ??
-            TenantShareRunToken as object 
+            Dataset as object ??
+            Run as object 
             ;
 
         /// <summary>
@@ -114,15 +114,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsTenantShareRunToken && !IsTenantShareDatasetToken || !IsTenantShareRunToken && IsTenantShareDatasetToken;
+            return IsRun && !IsDataset || !IsRun && IsDataset;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TenantShareRunToken?, TResult>? tenantShareRunToken = null,
-            global::System.Func<global::G.TenantShareDatasetToken?, TResult>? tenantShareDatasetToken = null,
+            global::System.Func<global::G.TenantShareRunToken?, TResult>? run = null,
+            global::System.Func<global::G.TenantShareDatasetToken?, TResult>? dataset = null,
             bool validate = true)
         {
             if (validate)
@@ -130,13 +130,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTenantShareRunToken && tenantShareRunToken != null)
+            if (IsRun && run != null)
             {
-                return tenantShareRunToken(TenantShareRunToken!);
+                return run(Run!);
             }
-            else if (IsTenantShareDatasetToken && tenantShareDatasetToken != null)
+            else if (IsDataset && dataset != null)
             {
-                return tenantShareDatasetToken(TenantShareDatasetToken!);
+                return dataset(Dataset!);
             }
 
             return default(TResult);
@@ -146,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TenantShareRunToken?>? tenantShareRunToken = null,
-            global::System.Action<global::G.TenantShareDatasetToken?>? tenantShareDatasetToken = null,
+            global::System.Action<global::G.TenantShareRunToken?>? run = null,
+            global::System.Action<global::G.TenantShareDatasetToken?>? dataset = null,
             bool validate = true)
         {
             if (validate)
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsTenantShareRunToken)
+            if (IsRun)
             {
-                tenantShareRunToken?.Invoke(TenantShareRunToken!);
+                run?.Invoke(Run!);
             }
-            else if (IsTenantShareDatasetToken)
+            else if (IsDataset)
             {
-                tenantShareDatasetToken?.Invoke(TenantShareDatasetToken!);
+                dataset?.Invoke(Dataset!);
             }
         }
 
@@ -172,9 +172,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                TenantShareRunToken,
+                Run,
                 typeof(global::G.TenantShareRunToken),
-                TenantShareDatasetToken,
+                Dataset,
                 typeof(global::G.TenantShareDatasetToken),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(EntitiesItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.TenantShareRunToken?>.Default.Equals(TenantShareRunToken, other.TenantShareRunToken) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.TenantShareDatasetToken?>.Default.Equals(TenantShareDatasetToken, other.TenantShareDatasetToken) 
+                global::System.Collections.Generic.EqualityComparer<global::G.TenantShareRunToken?>.Default.Equals(Run, other.Run) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.TenantShareDatasetToken?>.Default.Equals(Dataset, other.Dataset) 
                 ;
         }
 

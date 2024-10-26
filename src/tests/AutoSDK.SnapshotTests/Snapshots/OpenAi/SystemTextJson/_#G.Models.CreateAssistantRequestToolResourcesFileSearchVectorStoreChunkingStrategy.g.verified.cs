@@ -20,18 +20,18 @@ namespace G
         /// The default strategy. This strategy currently uses a `max_chunk_size_tokens` of `800` and `chunk_overlap_tokens` of `400`.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? Value1 { get; init; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? Auto { get; init; }
 #else
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? Value1 { get; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? Auto { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Auto))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsAuto => Auto != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1?(CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy @this) => @this.Value1;
+        public static implicit operator global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1?(CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy @this) => @this.Auto;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? value)
         {
-            Value1 = value;
+            Auto = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? Value2 { get; init; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? Static { get; init; }
 #else
-        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? Value2 { get; }
+        public global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? Static { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Static))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsStatic => Static != null;
 
         /// <summary>
         /// 
@@ -76,14 +76,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2?(CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy @this) => @this.Value2;
+        public static implicit operator global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2?(CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy @this) => @this.Static;
 
         /// <summary>
         /// 
         /// </summary>
         public CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? value)
         {
-            Value2 = value;
+            Static = value;
         }
 
         /// <summary>
@@ -91,22 +91,22 @@ namespace G
         /// </summary>
         public CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy(
             global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminatorType? type,
-            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? value1,
-            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? value2
+            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? auto,
+            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? @static
             )
         {
             Type = type;
 
-            Value1 = value1;
-            Value2 = value2;
+            Auto = auto;
+            Static = @static;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            Static as object ??
+            Auto as object 
             ;
 
         /// <summary>
@@ -114,15 +114,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && !IsValue2 || !IsValue1 && IsValue2;
+            return IsAuto && !IsStatic || !IsAuto && IsStatic;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1?, TResult>? value1 = null,
-            global::System.Func<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2?, TResult>? value2 = null,
+            global::System.Func<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1?, TResult>? auto = null,
+            global::System.Func<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2?, TResult>? @static = null,
             bool validate = true)
         {
             if (validate)
@@ -130,13 +130,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsAuto && auto != null)
             {
-                return value1(Value1!);
+                return auto(Auto!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsStatic && @static != null)
             {
-                return value2(Value2!);
+                return @static(Static!);
             }
 
             return default(TResult);
@@ -146,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1?>? value1 = null,
-            global::System.Action<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2?>? value2 = null,
+            global::System.Action<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1?>? auto = null,
+            global::System.Action<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2?>? @static = null,
             bool validate = true)
         {
             if (validate)
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsAuto)
             {
-                value1?.Invoke(Value1!);
+                auto?.Invoke(Auto!);
             }
-            else if (IsValue2)
+            else if (IsStatic)
             {
-                value2?.Invoke(Value2!);
+                @static?.Invoke(Static!);
             }
         }
 
@@ -172,9 +172,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Value1,
+                Auto,
                 typeof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1),
-                Value2,
+                Static,
                 typeof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1?>.Default.Equals(Auto, other.Auto) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2?>.Default.Equals(Static, other.Static) 
                 ;
         }
 

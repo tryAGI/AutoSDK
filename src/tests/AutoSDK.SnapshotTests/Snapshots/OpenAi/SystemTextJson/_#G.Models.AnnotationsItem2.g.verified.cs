@@ -20,18 +20,18 @@ namespace G
         /// A citation within the message that points to a specific quote from a specific File associated with the assistant or the message. Generated when the assistant uses the "file_search" tool to search files.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageDeltaContentTextAnnotationsFileCitationObject? MessageDeltaContentTextFileCitationObject { get; init; }
+        public global::G.MessageDeltaContentTextAnnotationsFileCitationObject? FileCitation { get; init; }
 #else
-        public global::G.MessageDeltaContentTextAnnotationsFileCitationObject? MessageDeltaContentTextFileCitationObject { get; }
+        public global::G.MessageDeltaContentTextAnnotationsFileCitationObject? FileCitation { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaContentTextFileCitationObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileCitation))]
 #endif
-        public bool IsMessageDeltaContentTextFileCitationObject => MessageDeltaContentTextFileCitationObject != null;
+        public bool IsFileCitation => FileCitation != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageDeltaContentTextAnnotationsFileCitationObject?(AnnotationsItem2 @this) => @this.MessageDeltaContentTextFileCitationObject;
+        public static implicit operator global::G.MessageDeltaContentTextAnnotationsFileCitationObject?(AnnotationsItem2 @this) => @this.FileCitation;
 
         /// <summary>
         /// 
         /// </summary>
         public AnnotationsItem2(global::G.MessageDeltaContentTextAnnotationsFileCitationObject? value)
         {
-            MessageDeltaContentTextFileCitationObject = value;
+            FileCitation = value;
         }
 
         /// <summary>
         /// A URL for the file that's generated when the assistant used the `code_interpreter` tool to generate a file.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageDeltaContentTextAnnotationsFilePathObject? MessageDeltaContentTextFilePathObject { get; init; }
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObject? FilePath { get; init; }
 #else
-        public global::G.MessageDeltaContentTextAnnotationsFilePathObject? MessageDeltaContentTextFilePathObject { get; }
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObject? FilePath { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaContentTextFilePathObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FilePath))]
 #endif
-        public bool IsMessageDeltaContentTextFilePathObject => MessageDeltaContentTextFilePathObject != null;
+        public bool IsFilePath => FilePath != null;
 
         /// <summary>
         /// 
@@ -76,14 +76,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageDeltaContentTextAnnotationsFilePathObject?(AnnotationsItem2 @this) => @this.MessageDeltaContentTextFilePathObject;
+        public static implicit operator global::G.MessageDeltaContentTextAnnotationsFilePathObject?(AnnotationsItem2 @this) => @this.FilePath;
 
         /// <summary>
         /// 
         /// </summary>
         public AnnotationsItem2(global::G.MessageDeltaContentTextAnnotationsFilePathObject? value)
         {
-            MessageDeltaContentTextFilePathObject = value;
+            FilePath = value;
         }
 
         /// <summary>
@@ -91,22 +91,22 @@ namespace G
         /// </summary>
         public AnnotationsItem2(
             global::G.MessageDeltaContentTextObjectTextAnnotationDiscriminatorType? type,
-            global::G.MessageDeltaContentTextAnnotationsFileCitationObject? messageDeltaContentTextFileCitationObject,
-            global::G.MessageDeltaContentTextAnnotationsFilePathObject? messageDeltaContentTextFilePathObject
+            global::G.MessageDeltaContentTextAnnotationsFileCitationObject? fileCitation,
+            global::G.MessageDeltaContentTextAnnotationsFilePathObject? filePath
             )
         {
             Type = type;
 
-            MessageDeltaContentTextFileCitationObject = messageDeltaContentTextFileCitationObject;
-            MessageDeltaContentTextFilePathObject = messageDeltaContentTextFilePathObject;
+            FileCitation = fileCitation;
+            FilePath = filePath;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessageDeltaContentTextFilePathObject as object ??
-            MessageDeltaContentTextFileCitationObject as object 
+            FilePath as object ??
+            FileCitation as object 
             ;
 
         /// <summary>
@@ -114,15 +114,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsMessageDeltaContentTextFileCitationObject && !IsMessageDeltaContentTextFilePathObject || !IsMessageDeltaContentTextFileCitationObject && IsMessageDeltaContentTextFilePathObject;
+            return IsFileCitation && !IsFilePath || !IsFileCitation && IsFilePath;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessageDeltaContentTextAnnotationsFileCitationObject?, TResult>? messageDeltaContentTextFileCitationObject = null,
-            global::System.Func<global::G.MessageDeltaContentTextAnnotationsFilePathObject?, TResult>? messageDeltaContentTextFilePathObject = null,
+            global::System.Func<global::G.MessageDeltaContentTextAnnotationsFileCitationObject?, TResult>? fileCitation = null,
+            global::System.Func<global::G.MessageDeltaContentTextAnnotationsFilePathObject?, TResult>? filePath = null,
             bool validate = true)
         {
             if (validate)
@@ -130,13 +130,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessageDeltaContentTextFileCitationObject && messageDeltaContentTextFileCitationObject != null)
+            if (IsFileCitation && fileCitation != null)
             {
-                return messageDeltaContentTextFileCitationObject(MessageDeltaContentTextFileCitationObject!);
+                return fileCitation(FileCitation!);
             }
-            else if (IsMessageDeltaContentTextFilePathObject && messageDeltaContentTextFilePathObject != null)
+            else if (IsFilePath && filePath != null)
             {
-                return messageDeltaContentTextFilePathObject(MessageDeltaContentTextFilePathObject!);
+                return filePath(FilePath!);
             }
 
             return default(TResult);
@@ -146,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessageDeltaContentTextAnnotationsFileCitationObject?>? messageDeltaContentTextFileCitationObject = null,
-            global::System.Action<global::G.MessageDeltaContentTextAnnotationsFilePathObject?>? messageDeltaContentTextFilePathObject = null,
+            global::System.Action<global::G.MessageDeltaContentTextAnnotationsFileCitationObject?>? fileCitation = null,
+            global::System.Action<global::G.MessageDeltaContentTextAnnotationsFilePathObject?>? filePath = null,
             bool validate = true)
         {
             if (validate)
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsMessageDeltaContentTextFileCitationObject)
+            if (IsFileCitation)
             {
-                messageDeltaContentTextFileCitationObject?.Invoke(MessageDeltaContentTextFileCitationObject!);
+                fileCitation?.Invoke(FileCitation!);
             }
-            else if (IsMessageDeltaContentTextFilePathObject)
+            else if (IsFilePath)
             {
-                messageDeltaContentTextFilePathObject?.Invoke(MessageDeltaContentTextFilePathObject!);
+                filePath?.Invoke(FilePath!);
             }
         }
 
@@ -172,9 +172,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                MessageDeltaContentTextFileCitationObject,
+                FileCitation,
                 typeof(global::G.MessageDeltaContentTextAnnotationsFileCitationObject),
-                MessageDeltaContentTextFilePathObject,
+                FilePath,
                 typeof(global::G.MessageDeltaContentTextAnnotationsFilePathObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(AnnotationsItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentTextAnnotationsFileCitationObject?>.Default.Equals(MessageDeltaContentTextFileCitationObject, other.MessageDeltaContentTextFileCitationObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentTextAnnotationsFilePathObject?>.Default.Equals(MessageDeltaContentTextFilePathObject, other.MessageDeltaContentTextFilePathObject) 
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentTextAnnotationsFileCitationObject?>.Default.Equals(FileCitation, other.FileCitation) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentTextAnnotationsFilePathObject?>.Default.Equals(FilePath, other.FilePath) 
                 ;
         }
 

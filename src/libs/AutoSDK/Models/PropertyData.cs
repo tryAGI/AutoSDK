@@ -240,17 +240,4 @@ public readonly record struct PropertyData(
         .ReplaceIfEquals("void", "@void")
         .ReplaceIfEquals("volatile", "@volatile")
         .ReplaceIfEquals("while", "@while");
-
-    public string ArgumentName
-    {
-        get
-        {
-            if (Type.EnumValues.Length != 0 && Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson)
-            {
-                return ParameterName + "Value";
-            }
-            
-            return ParameterName;
-        }
-    }
 }

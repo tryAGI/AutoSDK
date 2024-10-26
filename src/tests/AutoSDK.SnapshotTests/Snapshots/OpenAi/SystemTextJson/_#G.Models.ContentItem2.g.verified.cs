@@ -20,18 +20,18 @@ namespace G
         /// References an image [File](/docs/api-reference/files) in the content of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageDeltaContentImageFileObject? MessageDeltaImageFileObject { get; init; }
+        public global::G.MessageDeltaContentImageFileObject? ImageFile { get; init; }
 #else
-        public global::G.MessageDeltaContentImageFileObject? MessageDeltaImageFileObject { get; }
+        public global::G.MessageDeltaContentImageFileObject? ImageFile { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaImageFileObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageFile))]
 #endif
-        public bool IsMessageDeltaImageFileObject => MessageDeltaImageFileObject != null;
+        public bool IsImageFile => ImageFile != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageDeltaContentImageFileObject?(ContentItem2 @this) => @this.MessageDeltaImageFileObject;
+        public static implicit operator global::G.MessageDeltaContentImageFileObject?(ContentItem2 @this) => @this.ImageFile;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentItem2(global::G.MessageDeltaContentImageFileObject? value)
         {
-            MessageDeltaImageFileObject = value;
+            ImageFile = value;
         }
 
         /// <summary>
         /// The text content that is part of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageDeltaContentTextObject? MessageDeltaTextObject { get; init; }
+        public global::G.MessageDeltaContentTextObject? Text { get; init; }
 #else
-        public global::G.MessageDeltaContentTextObject? MessageDeltaTextObject { get; }
+        public global::G.MessageDeltaContentTextObject? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaTextObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsMessageDeltaTextObject => MessageDeltaTextObject != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         /// 
@@ -76,32 +76,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageDeltaContentTextObject?(ContentItem2 @this) => @this.MessageDeltaTextObject;
+        public static implicit operator global::G.MessageDeltaContentTextObject?(ContentItem2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentItem2(global::G.MessageDeltaContentTextObject? value)
         {
-            MessageDeltaTextObject = value;
+            Text = value;
         }
 
         /// <summary>
         /// The refusal content that is part of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageDeltaContentRefusalObject? MessageDeltaRefusalObject { get; init; }
+        public global::G.MessageDeltaContentRefusalObject? Refusal { get; init; }
 #else
-        public global::G.MessageDeltaContentRefusalObject? MessageDeltaRefusalObject { get; }
+        public global::G.MessageDeltaContentRefusalObject? Refusal { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaRefusalObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Refusal))]
 #endif
-        public bool IsMessageDeltaRefusalObject => MessageDeltaRefusalObject != null;
+        public bool IsRefusal => Refusal != null;
 
         /// <summary>
         /// 
@@ -111,32 +111,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageDeltaContentRefusalObject?(ContentItem2 @this) => @this.MessageDeltaRefusalObject;
+        public static implicit operator global::G.MessageDeltaContentRefusalObject?(ContentItem2 @this) => @this.Refusal;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentItem2(global::G.MessageDeltaContentRefusalObject? value)
         {
-            MessageDeltaRefusalObject = value;
+            Refusal = value;
         }
 
         /// <summary>
         /// References an image URL in the content of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageDeltaContentImageUrlObject? MessageDeltaImageUrlObject { get; init; }
+        public global::G.MessageDeltaContentImageUrlObject? ImageUrl { get; init; }
 #else
-        public global::G.MessageDeltaContentImageUrlObject? MessageDeltaImageUrlObject { get; }
+        public global::G.MessageDeltaContentImageUrlObject? ImageUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageDeltaImageUrlObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
-        public bool IsMessageDeltaImageUrlObject => MessageDeltaImageUrlObject != null;
+        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// 
@@ -146,14 +146,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageDeltaContentImageUrlObject?(ContentItem2 @this) => @this.MessageDeltaImageUrlObject;
+        public static implicit operator global::G.MessageDeltaContentImageUrlObject?(ContentItem2 @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentItem2(global::G.MessageDeltaContentImageUrlObject? value)
         {
-            MessageDeltaImageUrlObject = value;
+            ImageUrl = value;
         }
 
         /// <summary>
@@ -161,28 +161,28 @@ namespace G
         /// </summary>
         public ContentItem2(
             global::G.MessageDeltaObjectDeltaContentItemDiscriminatorType? type,
-            global::G.MessageDeltaContentImageFileObject? messageDeltaImageFileObject,
-            global::G.MessageDeltaContentTextObject? messageDeltaTextObject,
-            global::G.MessageDeltaContentRefusalObject? messageDeltaRefusalObject,
-            global::G.MessageDeltaContentImageUrlObject? messageDeltaImageUrlObject
+            global::G.MessageDeltaContentImageFileObject? imageFile,
+            global::G.MessageDeltaContentTextObject? text,
+            global::G.MessageDeltaContentRefusalObject? refusal,
+            global::G.MessageDeltaContentImageUrlObject? imageUrl
             )
         {
             Type = type;
 
-            MessageDeltaImageFileObject = messageDeltaImageFileObject;
-            MessageDeltaTextObject = messageDeltaTextObject;
-            MessageDeltaRefusalObject = messageDeltaRefusalObject;
-            MessageDeltaImageUrlObject = messageDeltaImageUrlObject;
+            ImageFile = imageFile;
+            Text = text;
+            Refusal = refusal;
+            ImageUrl = imageUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessageDeltaImageUrlObject as object ??
-            MessageDeltaRefusalObject as object ??
-            MessageDeltaTextObject as object ??
-            MessageDeltaImageFileObject as object 
+            ImageUrl as object ??
+            Refusal as object ??
+            Text as object ??
+            ImageFile as object 
             ;
 
         /// <summary>
@@ -190,17 +190,17 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsMessageDeltaImageFileObject && !IsMessageDeltaTextObject && !IsMessageDeltaRefusalObject && !IsMessageDeltaImageUrlObject || !IsMessageDeltaImageFileObject && IsMessageDeltaTextObject && !IsMessageDeltaRefusalObject && !IsMessageDeltaImageUrlObject || !IsMessageDeltaImageFileObject && !IsMessageDeltaTextObject && IsMessageDeltaRefusalObject && !IsMessageDeltaImageUrlObject || !IsMessageDeltaImageFileObject && !IsMessageDeltaTextObject && !IsMessageDeltaRefusalObject && IsMessageDeltaImageUrlObject;
+            return IsImageFile && !IsText && !IsRefusal && !IsImageUrl || !IsImageFile && IsText && !IsRefusal && !IsImageUrl || !IsImageFile && !IsText && IsRefusal && !IsImageUrl || !IsImageFile && !IsText && !IsRefusal && IsImageUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessageDeltaContentImageFileObject?, TResult>? messageDeltaImageFileObject = null,
-            global::System.Func<global::G.MessageDeltaContentTextObject?, TResult>? messageDeltaTextObject = null,
-            global::System.Func<global::G.MessageDeltaContentRefusalObject?, TResult>? messageDeltaRefusalObject = null,
-            global::System.Func<global::G.MessageDeltaContentImageUrlObject?, TResult>? messageDeltaImageUrlObject = null,
+            global::System.Func<global::G.MessageDeltaContentImageFileObject?, TResult>? imageFile = null,
+            global::System.Func<global::G.MessageDeltaContentTextObject?, TResult>? text = null,
+            global::System.Func<global::G.MessageDeltaContentRefusalObject?, TResult>? refusal = null,
+            global::System.Func<global::G.MessageDeltaContentImageUrlObject?, TResult>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -208,21 +208,21 @@ namespace G
                 Validate();
             }
 
-            if (IsMessageDeltaImageFileObject && messageDeltaImageFileObject != null)
+            if (IsImageFile && imageFile != null)
             {
-                return messageDeltaImageFileObject(MessageDeltaImageFileObject!);
+                return imageFile(ImageFile!);
             }
-            else if (IsMessageDeltaTextObject && messageDeltaTextObject != null)
+            else if (IsText && text != null)
             {
-                return messageDeltaTextObject(MessageDeltaTextObject!);
+                return text(Text!);
             }
-            else if (IsMessageDeltaRefusalObject && messageDeltaRefusalObject != null)
+            else if (IsRefusal && refusal != null)
             {
-                return messageDeltaRefusalObject(MessageDeltaRefusalObject!);
+                return refusal(Refusal!);
             }
-            else if (IsMessageDeltaImageUrlObject && messageDeltaImageUrlObject != null)
+            else if (IsImageUrl && imageUrl != null)
             {
-                return messageDeltaImageUrlObject(MessageDeltaImageUrlObject!);
+                return imageUrl(ImageUrl!);
             }
 
             return default(TResult);
@@ -232,10 +232,10 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessageDeltaContentImageFileObject?>? messageDeltaImageFileObject = null,
-            global::System.Action<global::G.MessageDeltaContentTextObject?>? messageDeltaTextObject = null,
-            global::System.Action<global::G.MessageDeltaContentRefusalObject?>? messageDeltaRefusalObject = null,
-            global::System.Action<global::G.MessageDeltaContentImageUrlObject?>? messageDeltaImageUrlObject = null,
+            global::System.Action<global::G.MessageDeltaContentImageFileObject?>? imageFile = null,
+            global::System.Action<global::G.MessageDeltaContentTextObject?>? text = null,
+            global::System.Action<global::G.MessageDeltaContentRefusalObject?>? refusal = null,
+            global::System.Action<global::G.MessageDeltaContentImageUrlObject?>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -243,21 +243,21 @@ namespace G
                 Validate();
             }
 
-            if (IsMessageDeltaImageFileObject)
+            if (IsImageFile)
             {
-                messageDeltaImageFileObject?.Invoke(MessageDeltaImageFileObject!);
+                imageFile?.Invoke(ImageFile!);
             }
-            else if (IsMessageDeltaTextObject)
+            else if (IsText)
             {
-                messageDeltaTextObject?.Invoke(MessageDeltaTextObject!);
+                text?.Invoke(Text!);
             }
-            else if (IsMessageDeltaRefusalObject)
+            else if (IsRefusal)
             {
-                messageDeltaRefusalObject?.Invoke(MessageDeltaRefusalObject!);
+                refusal?.Invoke(Refusal!);
             }
-            else if (IsMessageDeltaImageUrlObject)
+            else if (IsImageUrl)
             {
-                messageDeltaImageUrlObject?.Invoke(MessageDeltaImageUrlObject!);
+                imageUrl?.Invoke(ImageUrl!);
             }
         }
 
@@ -268,13 +268,13 @@ namespace G
         {
             var fields = new object?[]
             {
-                MessageDeltaImageFileObject,
+                ImageFile,
                 typeof(global::G.MessageDeltaContentImageFileObject),
-                MessageDeltaTextObject,
+                Text,
                 typeof(global::G.MessageDeltaContentTextObject),
-                MessageDeltaRefusalObject,
+                Refusal,
                 typeof(global::G.MessageDeltaContentRefusalObject),
-                MessageDeltaImageUrlObject,
+                ImageUrl,
                 typeof(global::G.MessageDeltaContentImageUrlObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -291,10 +291,10 @@ namespace G
         public bool Equals(ContentItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentImageFileObject?>.Default.Equals(MessageDeltaImageFileObject, other.MessageDeltaImageFileObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentTextObject?>.Default.Equals(MessageDeltaTextObject, other.MessageDeltaTextObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentRefusalObject?>.Default.Equals(MessageDeltaRefusalObject, other.MessageDeltaRefusalObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentImageUrlObject?>.Default.Equals(MessageDeltaImageUrlObject, other.MessageDeltaImageUrlObject) 
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentImageFileObject?>.Default.Equals(ImageFile, other.ImageFile) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentTextObject?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentRefusalObject?>.Default.Equals(Refusal, other.Refusal) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageDeltaContentImageUrlObject?>.Default.Equals(ImageUrl, other.ImageUrl) 
                 ;
         }
 

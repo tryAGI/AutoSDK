@@ -20,18 +20,18 @@ namespace G
         /// References an image [File](/docs/api-reference/files) in the content of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageContentImageFileObject? MessageImageFileObject { get; init; }
+        public global::G.MessageContentImageFileObject? ImageFile { get; init; }
 #else
-        public global::G.MessageContentImageFileObject? MessageImageFileObject { get; }
+        public global::G.MessageContentImageFileObject? ImageFile { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageImageFileObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageFile))]
 #endif
-        public bool IsMessageImageFileObject => MessageImageFileObject != null;
+        public bool IsImageFile => ImageFile != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageContentImageFileObject?(ContentVariant2Item @this) => @this.MessageImageFileObject;
+        public static implicit operator global::G.MessageContentImageFileObject?(ContentVariant2Item @this) => @this.ImageFile;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentVariant2Item(global::G.MessageContentImageFileObject? value)
         {
-            MessageImageFileObject = value;
+            ImageFile = value;
         }
 
         /// <summary>
         /// References an image URL in the content of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageContentImageUrlObject? MessageImageUrlObject { get; init; }
+        public global::G.MessageContentImageUrlObject? ImageUrl { get; init; }
 #else
-        public global::G.MessageContentImageUrlObject? MessageImageUrlObject { get; }
+        public global::G.MessageContentImageUrlObject? ImageUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageImageUrlObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
-        public bool IsMessageImageUrlObject => MessageImageUrlObject != null;
+        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// 
@@ -76,32 +76,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageContentImageUrlObject?(ContentVariant2Item @this) => @this.MessageImageUrlObject;
+        public static implicit operator global::G.MessageContentImageUrlObject?(ContentVariant2Item @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentVariant2Item(global::G.MessageContentImageUrlObject? value)
         {
-            MessageImageUrlObject = value;
+            ImageUrl = value;
         }
 
         /// <summary>
         /// The text content that is part of a message.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.MessageRequestContentTextObject? MessageRequestTextObject { get; init; }
+        public global::G.MessageRequestContentTextObject? Text { get; init; }
 #else
-        public global::G.MessageRequestContentTextObject? MessageRequestTextObject { get; }
+        public global::G.MessageRequestContentTextObject? Text { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MessageRequestTextObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
 #endif
-        public bool IsMessageRequestTextObject => MessageRequestTextObject != null;
+        public bool IsText => Text != null;
 
         /// <summary>
         /// 
@@ -111,14 +111,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.MessageRequestContentTextObject?(ContentVariant2Item @this) => @this.MessageRequestTextObject;
+        public static implicit operator global::G.MessageRequestContentTextObject?(ContentVariant2Item @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
         public ContentVariant2Item(global::G.MessageRequestContentTextObject? value)
         {
-            MessageRequestTextObject = value;
+            Text = value;
         }
 
         /// <summary>
@@ -126,25 +126,25 @@ namespace G
         /// </summary>
         public ContentVariant2Item(
             global::G.CreateMessageRequestContentVariant2ItemDiscriminatorType? type,
-            global::G.MessageContentImageFileObject? messageImageFileObject,
-            global::G.MessageContentImageUrlObject? messageImageUrlObject,
-            global::G.MessageRequestContentTextObject? messageRequestTextObject
+            global::G.MessageContentImageFileObject? imageFile,
+            global::G.MessageContentImageUrlObject? imageUrl,
+            global::G.MessageRequestContentTextObject? text
             )
         {
             Type = type;
 
-            MessageImageFileObject = messageImageFileObject;
-            MessageImageUrlObject = messageImageUrlObject;
-            MessageRequestTextObject = messageRequestTextObject;
+            ImageFile = imageFile;
+            ImageUrl = imageUrl;
+            Text = text;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            MessageRequestTextObject as object ??
-            MessageImageUrlObject as object ??
-            MessageImageFileObject as object 
+            Text as object ??
+            ImageUrl as object ??
+            ImageFile as object 
             ;
 
         /// <summary>
@@ -152,16 +152,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsMessageImageFileObject && !IsMessageImageUrlObject && !IsMessageRequestTextObject || !IsMessageImageFileObject && IsMessageImageUrlObject && !IsMessageRequestTextObject || !IsMessageImageFileObject && !IsMessageImageUrlObject && IsMessageRequestTextObject;
+            return IsImageFile && !IsImageUrl && !IsText || !IsImageFile && IsImageUrl && !IsText || !IsImageFile && !IsImageUrl && IsText;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.MessageContentImageFileObject?, TResult>? messageImageFileObject = null,
-            global::System.Func<global::G.MessageContentImageUrlObject?, TResult>? messageImageUrlObject = null,
-            global::System.Func<global::G.MessageRequestContentTextObject?, TResult>? messageRequestTextObject = null,
+            global::System.Func<global::G.MessageContentImageFileObject?, TResult>? imageFile = null,
+            global::System.Func<global::G.MessageContentImageUrlObject?, TResult>? imageUrl = null,
+            global::System.Func<global::G.MessageRequestContentTextObject?, TResult>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -169,17 +169,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessageImageFileObject && messageImageFileObject != null)
+            if (IsImageFile && imageFile != null)
             {
-                return messageImageFileObject(MessageImageFileObject!);
+                return imageFile(ImageFile!);
             }
-            else if (IsMessageImageUrlObject && messageImageUrlObject != null)
+            else if (IsImageUrl && imageUrl != null)
             {
-                return messageImageUrlObject(MessageImageUrlObject!);
+                return imageUrl(ImageUrl!);
             }
-            else if (IsMessageRequestTextObject && messageRequestTextObject != null)
+            else if (IsText && text != null)
             {
-                return messageRequestTextObject(MessageRequestTextObject!);
+                return text(Text!);
             }
 
             return default(TResult);
@@ -189,9 +189,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.MessageContentImageFileObject?>? messageImageFileObject = null,
-            global::System.Action<global::G.MessageContentImageUrlObject?>? messageImageUrlObject = null,
-            global::System.Action<global::G.MessageRequestContentTextObject?>? messageRequestTextObject = null,
+            global::System.Action<global::G.MessageContentImageFileObject?>? imageFile = null,
+            global::System.Action<global::G.MessageContentImageUrlObject?>? imageUrl = null,
+            global::System.Action<global::G.MessageRequestContentTextObject?>? text = null,
             bool validate = true)
         {
             if (validate)
@@ -199,17 +199,17 @@ namespace G
                 Validate();
             }
 
-            if (IsMessageImageFileObject)
+            if (IsImageFile)
             {
-                messageImageFileObject?.Invoke(MessageImageFileObject!);
+                imageFile?.Invoke(ImageFile!);
             }
-            else if (IsMessageImageUrlObject)
+            else if (IsImageUrl)
             {
-                messageImageUrlObject?.Invoke(MessageImageUrlObject!);
+                imageUrl?.Invoke(ImageUrl!);
             }
-            else if (IsMessageRequestTextObject)
+            else if (IsText)
             {
-                messageRequestTextObject?.Invoke(MessageRequestTextObject!);
+                text?.Invoke(Text!);
             }
         }
 
@@ -220,11 +220,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                MessageImageFileObject,
+                ImageFile,
                 typeof(global::G.MessageContentImageFileObject),
-                MessageImageUrlObject,
+                ImageUrl,
                 typeof(global::G.MessageContentImageUrlObject),
-                MessageRequestTextObject,
+                Text,
                 typeof(global::G.MessageRequestContentTextObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(ContentVariant2Item other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageContentImageFileObject?>.Default.Equals(MessageImageFileObject, other.MessageImageFileObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageContentImageUrlObject?>.Default.Equals(MessageImageUrlObject, other.MessageImageUrlObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.MessageRequestContentTextObject?>.Default.Equals(MessageRequestTextObject, other.MessageRequestTextObject) 
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageContentImageFileObject?>.Default.Equals(ImageFile, other.ImageFile) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageContentImageUrlObject?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.MessageRequestContentTextObject?>.Default.Equals(Text, other.Text) 
                 ;
         }
 

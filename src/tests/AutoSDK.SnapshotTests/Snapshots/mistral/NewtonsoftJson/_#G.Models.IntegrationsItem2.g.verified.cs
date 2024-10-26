@@ -20,18 +20,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.WandbIntegration? WandbIntegration { get; init; }
+        public global::G.WandbIntegration? Wandb { get; init; }
 #else
-        public global::G.WandbIntegration? WandbIntegration { get; }
+        public global::G.WandbIntegration? Wandb { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WandbIntegration))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Wandb))]
 #endif
-        public bool IsWandbIntegration => WandbIntegration != null;
+        public bool IsWandb => Wandb != null;
 
         /// <summary>
         /// 
@@ -41,14 +41,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.WandbIntegration?(IntegrationsItem2 @this) => @this.WandbIntegration;
+        public static implicit operator global::G.WandbIntegration?(IntegrationsItem2 @this) => @this.Wandb;
 
         /// <summary>
         /// 
         /// </summary>
         public IntegrationsItem2(global::G.WandbIntegration? value)
         {
-            WandbIntegration = value;
+            Wandb = value;
         }
 
         /// <summary>
@@ -56,19 +56,19 @@ namespace G
         /// </summary>
         public IntegrationsItem2(
             global::G.JobInIntegrationDiscriminatorType? type,
-            global::G.WandbIntegration? wandbIntegration
+            global::G.WandbIntegration? wandb
             )
         {
             Type = type;
 
-            WandbIntegration = wandbIntegration;
+            Wandb = wandb;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            WandbIntegration as object 
+            Wandb as object 
             ;
 
         /// <summary>
@@ -76,14 +76,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsWandbIntegration;
+            return IsWandb;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.WandbIntegration?, TResult>? wandbIntegration = null,
+            global::System.Func<global::G.WandbIntegration?, TResult>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -91,9 +91,9 @@ namespace G
                 Validate();
             }
 
-            if (IsWandbIntegration && wandbIntegration != null)
+            if (IsWandb && wandb != null)
             {
-                return wandbIntegration(WandbIntegration!);
+                return wandb(Wandb!);
             }
 
             return default(TResult);
@@ -103,7 +103,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.WandbIntegration?>? wandbIntegration = null,
+            global::System.Action<global::G.WandbIntegration?>? wandb = null,
             bool validate = true)
         {
             if (validate)
@@ -111,9 +111,9 @@ namespace G
                 Validate();
             }
 
-            if (IsWandbIntegration)
+            if (IsWandb)
             {
-                wandbIntegration?.Invoke(WandbIntegration!);
+                wandb?.Invoke(Wandb!);
             }
         }
 
@@ -124,7 +124,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                WandbIntegration,
+                Wandb,
                 typeof(global::G.WandbIntegration),
             };
             const int offset = unchecked((int)2166136261);
@@ -141,7 +141,7 @@ namespace G
         public bool Equals(IntegrationsItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.WandbIntegration?>.Default.Equals(WandbIntegration, other.WandbIntegration) 
+                global::System.Collections.Generic.EqualityComparer<global::G.WandbIntegration?>.Default.Equals(Wandb, other.Wandb) 
                 ;
         }
 

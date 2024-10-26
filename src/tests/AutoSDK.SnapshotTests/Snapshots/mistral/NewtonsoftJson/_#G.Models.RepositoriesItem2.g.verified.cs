@@ -20,18 +20,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.GithubRepositoryIn? GithubRepositoryIn { get; init; }
+        public global::G.GithubRepositoryIn? Github { get; init; }
 #else
-        public global::G.GithubRepositoryIn? GithubRepositoryIn { get; }
+        public global::G.GithubRepositoryIn? Github { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GithubRepositoryIn))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Github))]
 #endif
-        public bool IsGithubRepositoryIn => GithubRepositoryIn != null;
+        public bool IsGithub => Github != null;
 
         /// <summary>
         /// 
@@ -41,14 +41,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.GithubRepositoryIn?(RepositoriesItem2 @this) => @this.GithubRepositoryIn;
+        public static implicit operator global::G.GithubRepositoryIn?(RepositoriesItem2 @this) => @this.Github;
 
         /// <summary>
         /// 
         /// </summary>
         public RepositoriesItem2(global::G.GithubRepositoryIn? value)
         {
-            GithubRepositoryIn = value;
+            Github = value;
         }
 
         /// <summary>
@@ -56,19 +56,19 @@ namespace G
         /// </summary>
         public RepositoriesItem2(
             global::G.JobInRepositorieDiscriminatorType? type,
-            global::G.GithubRepositoryIn? githubRepositoryIn
+            global::G.GithubRepositoryIn? github
             )
         {
             Type = type;
 
-            GithubRepositoryIn = githubRepositoryIn;
+            Github = github;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            GithubRepositoryIn as object 
+            Github as object 
             ;
 
         /// <summary>
@@ -76,14 +76,14 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsGithubRepositoryIn;
+            return IsGithub;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.GithubRepositoryIn?, TResult>? githubRepositoryIn = null,
+            global::System.Func<global::G.GithubRepositoryIn?, TResult>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -91,9 +91,9 @@ namespace G
                 Validate();
             }
 
-            if (IsGithubRepositoryIn && githubRepositoryIn != null)
+            if (IsGithub && github != null)
             {
-                return githubRepositoryIn(GithubRepositoryIn!);
+                return github(Github!);
             }
 
             return default(TResult);
@@ -103,7 +103,7 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.GithubRepositoryIn?>? githubRepositoryIn = null,
+            global::System.Action<global::G.GithubRepositoryIn?>? github = null,
             bool validate = true)
         {
             if (validate)
@@ -111,9 +111,9 @@ namespace G
                 Validate();
             }
 
-            if (IsGithubRepositoryIn)
+            if (IsGithub)
             {
-                githubRepositoryIn?.Invoke(GithubRepositoryIn!);
+                github?.Invoke(Github!);
             }
         }
 
@@ -124,7 +124,7 @@ namespace G
         {
             var fields = new object?[]
             {
-                GithubRepositoryIn,
+                Github,
                 typeof(global::G.GithubRepositoryIn),
             };
             const int offset = unchecked((int)2166136261);
@@ -141,7 +141,7 @@ namespace G
         public bool Equals(RepositoriesItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.GithubRepositoryIn?>.Default.Equals(GithubRepositoryIn, other.GithubRepositoryIn) 
+                global::System.Collections.Generic.EqualityComparer<global::G.GithubRepositoryIn?>.Default.Equals(Github, other.Github) 
                 ;
         }
 

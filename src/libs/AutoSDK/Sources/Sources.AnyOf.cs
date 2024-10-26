@@ -1,4 +1,3 @@
-using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 
@@ -11,67 +10,54 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         var types = $"<{string.Join(", ", Enumerable.Range(1, anyOfData.Count).Select(x => $"T{x}"))}>";
-        var classNameWithoutTypes = string.IsNullOrWhiteSpace(anyOfData.Name)
+        var classNameWithoutTypes = !anyOfData.IsNamed
             ? $"{anyOfData.SubType}"
             : anyOfData.Name;
-        var className = string.IsNullOrWhiteSpace(anyOfData.Name)
+        var className = !anyOfData.IsNamed
             ? $"{anyOfData.SubType}{types}"
             : anyOfData.Name;
-        var allTypes = anyOfData.Properties.IsEmpty
-            ? Enumerable
-                .Range(1, anyOfData.Count)
-                .Select(i => PropertyData.Default with
-                {
-                    Name = $"Value{i}",
-                    Type = TypeData.Default with
-                    {
-                        CSharpTypeRaw = $"T{i}",
-                    },
-                })
-                .ToImmutableArray().AsEquatableArray()
-            : anyOfData.Properties;
         var validation = anyOfData.SubType switch
         {
-            "AnyOf" => string.Join(" || ", allTypes.Select(x => $"Is{x.Name}")),
-            "OneOf" => string.Join(" || ", allTypes.Select((x, xi) =>
-                string.Join(" && ", allTypes.Select((y, yi) => $"{(yi == xi ? "" : "!")}Is{y.Name}")))),
-            "AllOf" => string.Join(" && ", allTypes.Select(x => $"Is{x.Name}")),
+            "AnyOf" => string.Join(" || ", anyOfData.Properties.Select(x => $"Is{x.Name}")),
+            "OneOf" => string.Join(" || ", anyOfData.Properties.Select((x, xi) =>
+                string.Join(" && ", anyOfData.Properties.Select((y, yi) => $"{(yi == xi ? "" : "!")}Is{y.Name}")))),
+            "AllOf" => string.Join(" && ", anyOfData.Properties.Select(x => $"Is{x.Name}")),
             _ => throw new NotImplementedException(),
         };
         var constructorWithAllValues =
             anyOfData.Count > 1 ||
-            (!string.IsNullOrWhiteSpace(anyOfData.Name) &&
+            (anyOfData.IsNamed &&
             anyOfData.DiscriminatorType != null &&
             anyOfData.DiscriminatorPropertyName != null &&
-            allTypes.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue))) ? $@"
+            anyOfData.Properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue))) ? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {classNameWithoutTypes}(
-{(string.IsNullOrWhiteSpace(anyOfData.Name) ||
+{(!anyOfData.IsNamed ||
   anyOfData.DiscriminatorType == null ||
   anyOfData.DiscriminatorPropertyName == null ||
-  allTypes.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
+  anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
             {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName.ToParameterName()},
  ")}
-{allTypes.Select(x => $@" 
+{anyOfData.Properties.Select(x => $@" 
             {x.Type.CSharpTypeWithNullability} {x.ParameterName},
 ").Inject().TrimEnd(',', '\n')}
             )
         {{
-{(string.IsNullOrWhiteSpace(anyOfData.Name) ||
+{(!anyOfData.IsNamed ||
   anyOfData.DiscriminatorType == null ||
   anyOfData.DiscriminatorPropertyName == null ||
-  allTypes.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
+  anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
             {anyOfData.DiscriminatorPropertyName} = {anyOfData.DiscriminatorPropertyName.ToParameterName()};
 ")}
-{allTypes.Select(x => $@" 
+{anyOfData.Properties.Select(x => $@" 
             {x.Name} = {x.ParameterName};
 ").Inject()}
         }}" : " ";
         var json = GenerateFromToJsonMethods(anyOfData.Namespace, className, anyOfData.Settings, isValueType: true, cancellationToken);
         
         return $@"using System.Linq;
-{(anyOfData.Properties.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
-")}
+{(anyOfData.IsNamed ? @"#pragma warning disable CS0618 // Type or member is obsolete
+" : "")}
 #nullable enable
 
 namespace {anyOfData.Namespace}
@@ -79,14 +65,14 @@ namespace {anyOfData.Namespace}
     {anyOfData.Summary.ToXmlDocumentationSummary(level: 4)}
     public readonly partial struct {className} : global::System.IEquatable<{className}>
     {{
-{(string.IsNullOrWhiteSpace(anyOfData.Name) ||
+{(!anyOfData.IsNamed ||
   anyOfData.DiscriminatorType == null ||
   anyOfData.DiscriminatorPropertyName == null ||
-  allTypes.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
+  anyOfData.Properties.Any(x => string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? " " : $@" 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}? {anyOfData.DiscriminatorPropertyName} {{ get; }}
 ")}
-{allTypes.Select(x => $@"
+{anyOfData.Properties.Select(x => $@"
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
 #if NET6_0_OR_GREATER
         public {x.Type.CSharpTypeWithNullability} {x.Name} {{ get; init; }}
@@ -117,7 +103,7 @@ namespace {anyOfData.Namespace}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public object? Object =>
-{allTypes.Reverse().Select(x => $@" 
+{anyOfData.Properties.Reverse().Select(x => $@" 
             {x.Name} as object ??
 ").Inject().TrimEnd('?', '\n')}
             ;
@@ -130,7 +116,7 @@ namespace {anyOfData.Namespace}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public TResult? Match<TResult>(
-{allTypes.Select(x => $@" 
+{anyOfData.Properties.Select(x => $@" 
             global::System.Func<{x.Type.CSharpType}, TResult>? {x.ParameterName} = null,
 ").Inject()}
             bool validate = true)
@@ -140,7 +126,7 @@ namespace {anyOfData.Namespace}
                 Validate();
             }}
 
-{allTypes.Select((x, i) => $@"
+{anyOfData.Properties.Select((x, i) => $@"
             {(i > 0 ? "else " : "")}if (Is{x.Name} && {x.ParameterName} != null)
             {{
                 return {x.ParameterName}({x.Name}!);
@@ -151,7 +137,7 @@ namespace {anyOfData.Namespace}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public void Match(
-{allTypes.Select(x => $@" 
+{anyOfData.Properties.Select(x => $@" 
             global::System.Action<{x.Type.CSharpType}>? {x.ParameterName} = null,
 ").Inject()}
             bool validate = true)
@@ -161,7 +147,7 @@ namespace {anyOfData.Namespace}
                 Validate();
             }}
 
-{allTypes.Select((x, i) => $@"
+{anyOfData.Properties.Select((x, i) => $@"
             {(i > 0 ? "else " : "")}if (Is{x.Name})
             {{
                 {x.ParameterName}?.Invoke({x.Name}!);
@@ -173,7 +159,7 @@ namespace {anyOfData.Namespace}
         {{
             var fields = new object?[]
             {{
-{allTypes.Select(x => $@" 
+{anyOfData.Properties.Select(x => $@" 
                 {x.Name},
                 typeof({x.Type.CSharpTypeWithoutNullability}),
 ").Inject()}
@@ -193,7 +179,7 @@ namespace {anyOfData.Namespace}
         public bool Equals({className} other)
         {{
             return
-{allTypes.Select(x => $@" 
+{anyOfData.Properties.Select(x => $@" 
                 global::System.Collections.Generic.EqualityComparer<{x.Type.CSharpTypeWithNullability}>.Default.Equals({x.Name}, other.{x.Name}) &&
 ").Inject().TrimEnd('&', '\n')}
                 ;

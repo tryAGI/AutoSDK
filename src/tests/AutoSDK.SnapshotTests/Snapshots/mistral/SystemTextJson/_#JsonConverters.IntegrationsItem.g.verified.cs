@@ -22,17 +22,17 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.DetailedJobOutIntegrationDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.WandbIntegrationOut? wandbIntegrationOut = default;
+            global::G.WandbIntegrationOut? wandb = default;
             if (discriminator?.Type == global::G.DetailedJobOutIntegrationDiscriminatorType.Wandb)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WandbIntegrationOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WandbIntegrationOut> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WandbIntegrationOut)}");
-                wandbIntegrationOut = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                wandb = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.IntegrationsItem(
                 discriminator?.Type,
-                wandbIntegrationOut
+                wandb
                 );
 
             return result;
@@ -47,11 +47,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsWandbIntegrationOut)
+            if (value.IsWandb)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WandbIntegrationOut), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WandbIntegrationOut?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WandbIntegrationOut).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WandbIntegrationOut, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Wandb, typeInfo);
             }
         }
     }

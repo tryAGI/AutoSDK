@@ -22,25 +22,25 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentTextObjectTextAnnotationDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.MessageContentTextAnnotationsFileCitationObject? messageContentTextFileCitationObject = default;
+            global::G.MessageContentTextAnnotationsFileCitationObject? fileCitation = default;
             if (discriminator?.Type == global::G.MessageContentTextObjectTextAnnotationDiscriminatorType.FileCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextAnnotationsFileCitationObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextAnnotationsFileCitationObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentTextAnnotationsFileCitationObject)}");
-                messageContentTextFileCitationObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fileCitation = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.MessageContentTextAnnotationsFilePathObject? messageContentTextFilePathObject = default;
+            global::G.MessageContentTextAnnotationsFilePathObject? filePath = default;
             if (discriminator?.Type == global::G.MessageContentTextObjectTextAnnotationDiscriminatorType.FilePath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextAnnotationsFilePathObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextAnnotationsFilePathObject> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentTextAnnotationsFilePathObject)}");
-                messageContentTextFilePathObject = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                filePath = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.AnnotationsItem(
                 discriminator?.Type,
-                messageContentTextFileCitationObject,
-                messageContentTextFilePathObject
+                fileCitation,
+                filePath
                 );
 
             return result;
@@ -55,17 +55,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsMessageContentTextFileCitationObject)
+            if (value.IsFileCitation)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextAnnotationsFileCitationObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextAnnotationsFileCitationObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentTextAnnotationsFileCitationObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageContentTextFileCitationObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FileCitation, typeInfo);
             }
-            else if (value.IsMessageContentTextFilePathObject)
+            else if (value.IsFilePath)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextAnnotationsFilePathObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextAnnotationsFilePathObject?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentTextAnnotationsFilePathObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.MessageContentTextFilePathObject, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FilePath, typeInfo);
             }
         }
     }

@@ -22,25 +22,25 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? value1 = default;
+            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1? auto = default;
             if (discriminator?.Type == global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminatorType.Auto)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1)}");
-                value1 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? value2 = default;
+            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2? @static = default;
             if (discriminator?.Type == global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyDiscriminatorType.Static)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2)}");
-                value2 = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategy(
                 discriminator?.Type,
-                value1,
-                value2
+                auto,
+                @static
                 );
 
             return result;
@@ -55,17 +55,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsAuto)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Auto, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsStatic)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Static, typeInfo);
             }
         }
     }

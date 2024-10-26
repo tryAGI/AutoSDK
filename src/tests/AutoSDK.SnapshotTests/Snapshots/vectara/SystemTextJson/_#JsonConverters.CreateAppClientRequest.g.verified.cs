@@ -22,17 +22,17 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateAppClientRequestDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.CreateClientCredentialsRequest? credentials = default;
+            global::G.CreateClientCredentialsRequest? clientCredentials = default;
             if (discriminator?.Type == global::G.CreateAppClientRequestDiscriminatorType.ClientCredentials)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateClientCredentialsRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateClientCredentialsRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.CreateClientCredentialsRequest)}");
-                credentials = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                clientCredentials = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.CreateAppClientRequest(
                 discriminator?.Type,
-                credentials
+                clientCredentials
                 );
 
             return result;
@@ -47,11 +47,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsCredentials)
+            if (value.IsClientCredentials)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateClientCredentialsRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateClientCredentialsRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateClientCredentialsRequest).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Credentials, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ClientCredentials, typeInfo);
             }
         }
     }

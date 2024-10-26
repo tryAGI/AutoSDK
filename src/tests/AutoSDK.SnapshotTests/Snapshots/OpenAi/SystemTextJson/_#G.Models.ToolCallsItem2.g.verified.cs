@@ -20,18 +20,18 @@ namespace G
         /// Details of the Code Interpreter tool call the run step was involved in.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeObject? RunStepDeltaDetailsCodeObject { get; init; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeObject? CodeInterpreter { get; init; }
 #else
-        public global::G.RunStepDeltaStepDetailsToolCallsCodeObject? RunStepDeltaDetailsCodeObject { get; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeObject? CodeInterpreter { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepDeltaDetailsCodeObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
 #endif
-        public bool IsRunStepDeltaDetailsCodeObject => RunStepDeltaDetailsCodeObject != null;
+        public bool IsCodeInterpreter => CodeInterpreter != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStepDeltaStepDetailsToolCallsCodeObject?(ToolCallsItem2 @this) => @this.RunStepDeltaDetailsCodeObject;
+        public static implicit operator global::G.RunStepDeltaStepDetailsToolCallsCodeObject?(ToolCallsItem2 @this) => @this.CodeInterpreter;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolCallsItem2(global::G.RunStepDeltaStepDetailsToolCallsCodeObject? value)
         {
-            RunStepDeltaDetailsCodeObject = value;
+            CodeInterpreter = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? RunStepDeltaDetailsFileSearchObject { get; init; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? FileSearch { get; init; }
 #else
-        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? RunStepDeltaDetailsFileSearchObject { get; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? FileSearch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepDeltaDetailsFileSearchObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearch))]
 #endif
-        public bool IsRunStepDeltaDetailsFileSearchObject => RunStepDeltaDetailsFileSearchObject != null;
+        public bool IsFileSearch => FileSearch != null;
 
         /// <summary>
         /// 
@@ -76,32 +76,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?(ToolCallsItem2 @this) => @this.RunStepDeltaDetailsFileSearchObject;
+        public static implicit operator global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?(ToolCallsItem2 @this) => @this.FileSearch;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolCallsItem2(global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? value)
         {
-            RunStepDeltaDetailsFileSearchObject = value;
+            FileSearch = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? RunStepDeltaDetailsFunctionObject { get; init; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? Function { get; init; }
 #else
-        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? RunStepDeltaDetailsFunctionObject { get; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? Function { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RunStepDeltaDetailsFunctionObject))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
-        public bool IsRunStepDeltaDetailsFunctionObject => RunStepDeltaDetailsFunctionObject != null;
+        public bool IsFunction => Function != null;
 
         /// <summary>
         /// 
@@ -111,14 +111,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?(ToolCallsItem2 @this) => @this.RunStepDeltaDetailsFunctionObject;
+        public static implicit operator global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?(ToolCallsItem2 @this) => @this.Function;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolCallsItem2(global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? value)
         {
-            RunStepDeltaDetailsFunctionObject = value;
+            Function = value;
         }
 
         /// <summary>
@@ -126,25 +126,25 @@ namespace G
         /// </summary>
         public ToolCallsItem2(
             global::G.RunStepDeltaStepDetailsToolCallsObjectToolCallDiscriminatorType? type,
-            global::G.RunStepDeltaStepDetailsToolCallsCodeObject? runStepDeltaDetailsCodeObject,
-            global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? runStepDeltaDetailsFileSearchObject,
-            global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? runStepDeltaDetailsFunctionObject
+            global::G.RunStepDeltaStepDetailsToolCallsCodeObject? codeInterpreter,
+            global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? fileSearch,
+            global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? function
             )
         {
             Type = type;
 
-            RunStepDeltaDetailsCodeObject = runStepDeltaDetailsCodeObject;
-            RunStepDeltaDetailsFileSearchObject = runStepDeltaDetailsFileSearchObject;
-            RunStepDeltaDetailsFunctionObject = runStepDeltaDetailsFunctionObject;
+            CodeInterpreter = codeInterpreter;
+            FileSearch = fileSearch;
+            Function = function;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            RunStepDeltaDetailsFunctionObject as object ??
-            RunStepDeltaDetailsFileSearchObject as object ??
-            RunStepDeltaDetailsCodeObject as object 
+            Function as object ??
+            FileSearch as object ??
+            CodeInterpreter as object 
             ;
 
         /// <summary>
@@ -152,16 +152,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsRunStepDeltaDetailsCodeObject && !IsRunStepDeltaDetailsFileSearchObject && !IsRunStepDeltaDetailsFunctionObject || !IsRunStepDeltaDetailsCodeObject && IsRunStepDeltaDetailsFileSearchObject && !IsRunStepDeltaDetailsFunctionObject || !IsRunStepDeltaDetailsCodeObject && !IsRunStepDeltaDetailsFileSearchObject && IsRunStepDeltaDetailsFunctionObject;
+            return IsCodeInterpreter && !IsFileSearch && !IsFunction || !IsCodeInterpreter && IsFileSearch && !IsFunction || !IsCodeInterpreter && !IsFileSearch && IsFunction;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?, TResult>? runStepDeltaDetailsCodeObject = null,
-            global::System.Func<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?, TResult>? runStepDeltaDetailsFileSearchObject = null,
-            global::System.Func<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?, TResult>? runStepDeltaDetailsFunctionObject = null,
+            global::System.Func<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?, TResult>? codeInterpreter = null,
+            global::System.Func<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?, TResult>? fileSearch = null,
+            global::System.Func<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?, TResult>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -169,17 +169,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRunStepDeltaDetailsCodeObject && runStepDeltaDetailsCodeObject != null)
+            if (IsCodeInterpreter && codeInterpreter != null)
             {
-                return runStepDeltaDetailsCodeObject(RunStepDeltaDetailsCodeObject!);
+                return codeInterpreter(CodeInterpreter!);
             }
-            else if (IsRunStepDeltaDetailsFileSearchObject && runStepDeltaDetailsFileSearchObject != null)
+            else if (IsFileSearch && fileSearch != null)
             {
-                return runStepDeltaDetailsFileSearchObject(RunStepDeltaDetailsFileSearchObject!);
+                return fileSearch(FileSearch!);
             }
-            else if (IsRunStepDeltaDetailsFunctionObject && runStepDeltaDetailsFunctionObject != null)
+            else if (IsFunction && function != null)
             {
-                return runStepDeltaDetailsFunctionObject(RunStepDeltaDetailsFunctionObject!);
+                return function(Function!);
             }
 
             return default(TResult);
@@ -189,9 +189,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?>? runStepDeltaDetailsCodeObject = null,
-            global::System.Action<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?>? runStepDeltaDetailsFileSearchObject = null,
-            global::System.Action<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?>? runStepDeltaDetailsFunctionObject = null,
+            global::System.Action<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?>? codeInterpreter = null,
+            global::System.Action<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?>? fileSearch = null,
+            global::System.Action<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -199,17 +199,17 @@ namespace G
                 Validate();
             }
 
-            if (IsRunStepDeltaDetailsCodeObject)
+            if (IsCodeInterpreter)
             {
-                runStepDeltaDetailsCodeObject?.Invoke(RunStepDeltaDetailsCodeObject!);
+                codeInterpreter?.Invoke(CodeInterpreter!);
             }
-            else if (IsRunStepDeltaDetailsFileSearchObject)
+            else if (IsFileSearch)
             {
-                runStepDeltaDetailsFileSearchObject?.Invoke(RunStepDeltaDetailsFileSearchObject!);
+                fileSearch?.Invoke(FileSearch!);
             }
-            else if (IsRunStepDeltaDetailsFunctionObject)
+            else if (IsFunction)
             {
-                runStepDeltaDetailsFunctionObject?.Invoke(RunStepDeltaDetailsFunctionObject!);
+                function?.Invoke(Function!);
             }
         }
 
@@ -220,11 +220,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                RunStepDeltaDetailsCodeObject,
+                CodeInterpreter,
                 typeof(global::G.RunStepDeltaStepDetailsToolCallsCodeObject),
-                RunStepDeltaDetailsFileSearchObject,
+                FileSearch,
                 typeof(global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject),
-                RunStepDeltaDetailsFunctionObject,
+                Function,
                 typeof(global::G.RunStepDeltaStepDetailsToolCallsFunctionObject),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(ToolCallsItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?>.Default.Equals(RunStepDeltaDetailsCodeObject, other.RunStepDeltaDetailsCodeObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?>.Default.Equals(RunStepDeltaDetailsFileSearchObject, other.RunStepDeltaDetailsFileSearchObject) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?>.Default.Equals(RunStepDeltaDetailsFunctionObject, other.RunStepDeltaDetailsFunctionObject) 
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?>.Default.Equals(FileSearch, other.FileSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?>.Default.Equals(Function, other.Function) 
                 ;
         }
 

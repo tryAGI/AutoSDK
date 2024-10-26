@@ -1,4 +1,3 @@
-using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
 using AutoSDK.Serialization.Json;
@@ -17,26 +16,13 @@ public static partial class Sources
         }
         
         var types = $"<{string.Join(", ", Enumerable.Range(1, anyOfData.Count).Select(x => $"T{x}"))}>";
-        var classNameWithTypes = string.IsNullOrWhiteSpace(anyOfData.Name)
+        var classNameWithTypes = !anyOfData.IsNamed
             ? $"{anyOfData.SubType}JsonConverter{types}"
             : $"{anyOfData.Name}JsonConverter";
-        var typeNameWithTypes = string.IsNullOrWhiteSpace(anyOfData.Name)
+        var typeNameWithTypes = !anyOfData.IsNamed
             ? $"global::{anyOfData.Namespace}.{anyOfData.SubType}{types}"
             : $"global::{anyOfData.Namespace}.{anyOfData.Name}";
-        var allTypes = anyOfData.Properties.IsEmpty
-            ? Enumerable
-                .Range(1, anyOfData.Count)
-                .Select(i => PropertyData.Default with
-                {
-                    Name = $"Value{i}",
-                    Type = TypeData.Default with
-                    {
-                        CSharpTypeRaw = $"T{i}",
-                    },
-                })
-                .ToImmutableArray().AsEquatableArray()
-            : anyOfData.Properties;
-        var read = anyOfData.DiscriminatorType != null && allTypes.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? $@" 
+        var read = anyOfData.DiscriminatorType != null && anyOfData.Properties.All(x => !string.IsNullOrWhiteSpace(x.DiscriminatorValue)) ? $@" 
 
             var readerCopy = reader;
 {(anyOfData.IsTrimming ? $@" 
@@ -47,7 +33,7 @@ public static partial class Sources
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize<{anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}>(ref readerCopy, options);
  ")}
 
-{allTypes.Select((x, i) => $@" 
+{anyOfData.Properties.Select((x, i) => $@" 
             {x.Type.CSharpTypeWithNullability} {x.ParameterName} = default;
             if (discriminator?.{anyOfData.DiscriminatorPropertyName} == {anyOfData.DiscriminatorType.Value.CSharpTypeWithoutNullability}{anyOfData.DiscriminatorPropertyName}.{x.DiscriminatorValue})
             {{
@@ -63,17 +49,17 @@ public static partial class Sources
 
             var result = new {typeNameWithTypes}(
                 discriminator?.{anyOfData.DiscriminatorPropertyName},
-{allTypes.Select(x => $@" 
+{anyOfData.Properties.Select(x => $@" 
                 {x.ParameterName},
 ").Inject().TrimEnd(',')}
                 );
 {(anyOfData.Settings.ValidateAnyOfs ? @$" 
             if (!result.Validate())
             {{
-                throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", allTypes.Select(x => $"{{nameof({x.Type.CSharpTypeWithoutNullability})}}"))}>"");
+                throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", anyOfData.Properties.Select(x => $"{{nameof({x.Type.CSharpTypeWithoutNullability})}}"))}>"");
             }}" : " ")}" : $@" 
             var
-{allTypes.Select(x => $@"
+{anyOfData.Properties.Select(x => $@"
             readerCopy = reader;
             {x.Type.CSharpTypeWithNullability} {x.ParameterName} = default;
             try
@@ -92,17 +78,17 @@ public static partial class Sources
 ").Inject()}
 
             var result = new {typeNameWithTypes}(
-{allTypes.Select(x => $@" 
+{anyOfData.Properties.Select(x => $@" 
                 {x.ParameterName},
 ").Inject().TrimEnd(',')}
                 );
 {(anyOfData.Settings.ValidateAnyOfs ? @$" 
             if (!result.Validate())
             {{
-                throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", allTypes.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}>"");
+                throw new global::System.Text.Json.JsonException($""Invalid JSON format for {anyOfData.SubType}<{string.Join(", ", anyOfData.Properties.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}>"");
             }}" : " ")}
 
-{allTypes.Select((x, i) => $@" 
+{anyOfData.Properties.Select((x, i) => $@" 
             {(i == 0 ? "" : "else ")}if ({x.ParameterName} != null)
             {{
 {(anyOfData.IsTrimming ? $@" 
@@ -116,8 +102,8 @@ public static partial class Sources
 ").Inject().TrimEnd(',')}";
         
         return $@"#nullable enable
-{(anyOfData.Properties.IsEmpty ? "" : @"#pragma warning disable CS0618 // Type or member is obsolete
-")}
+{(anyOfData.IsNamed ? @"#pragma warning disable CS0618 // Type or member is obsolete
+" : "")}
 namespace {anyOfData.Namespace}.JsonConverters
 {{
     /// <inheritdoc />
@@ -149,10 +135,10 @@ namespace {anyOfData.Namespace}.JsonConverters
 
             if (!value.Validate())
             {{
-                throw new global::System.Text.Json.JsonException($""Invalid {anyOfData.SubType}<{string.Join(", ", allTypes.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}> object."");
+                throw new global::System.Text.Json.JsonException($""Invalid {anyOfData.SubType}<{string.Join(", ", anyOfData.Properties.Select(x => $"{{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"))}> object."");
             }}" : " ")}
 
-{allTypes.Select((x, i) => $@" 
+{anyOfData.Properties.Select((x, i) => $@" 
             {(i == 0 ? "" : "else ")}if (value.Is{x.Name})
             {{
 {(anyOfData.IsTrimming ? $@" 
@@ -174,7 +160,7 @@ namespace {anyOfData.Namespace}.JsonConverters
         CancellationToken cancellationToken = default)
     {
         if (anyOfData.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ||
-            !anyOfData.Properties.IsEmpty)
+            anyOfData.IsNamed)
         {
             return string.Empty;
         }

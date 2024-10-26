@@ -22,25 +22,25 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ModelListDataItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.BaseModelCard? baseModelCard = default;
+            global::G.BaseModelCard? @base = default;
             if (discriminator?.Type == global::G.ModelListDataItemDiscriminatorType.Base)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseModelCard> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BaseModelCard)}");
-                baseModelCard = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                @base = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.FTModelCard? fTModelCard = default;
+            global::G.FTModelCard? fineTuned = default;
             if (discriminator?.Type == global::G.ModelListDataItemDiscriminatorType.FineTuned)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FTModelCard> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.FTModelCard)}");
-                fTModelCard = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                fineTuned = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.DataItem(
                 discriminator?.Type,
-                baseModelCard,
-                fTModelCard
+                @base,
+                fineTuned
                 );
 
             return result;
@@ -55,17 +55,17 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsBaseModelCard)
+            if (value.IsBase)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BaseModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BaseModelCard?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BaseModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.BaseModelCard, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Base, typeInfo);
             }
-            else if (value.IsFTModelCard)
+            else if (value.IsFineTuned)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.FTModelCard), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.FTModelCard?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.FTModelCard).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FTModelCard, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.FineTuned, typeInfo);
             }
         }
     }

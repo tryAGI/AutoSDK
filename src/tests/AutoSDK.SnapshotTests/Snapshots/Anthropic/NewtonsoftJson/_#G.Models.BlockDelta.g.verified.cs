@@ -20,18 +20,18 @@ namespace G
         /// A delta in a streaming text block.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.TextBlockDelta? Text { get; init; }
+        public global::G.TextBlockDelta? TextDelta { get; init; }
 #else
-        public global::G.TextBlockDelta? Text { get; }
+        public global::G.TextBlockDelta? TextDelta { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDelta))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsTextDelta => TextDelta != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.TextBlockDelta?(BlockDelta @this) => @this.Text;
+        public static implicit operator global::G.TextBlockDelta?(BlockDelta @this) => @this.TextDelta;
 
         /// <summary>
         /// 
         /// </summary>
         public BlockDelta(global::G.TextBlockDelta? value)
         {
-            Text = value;
+            TextDelta = value;
         }
 
         /// <summary>
         /// A delta in a streaming input JSON.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.InputJsonBlockDelta? InputJson { get; init; }
+        public global::G.InputJsonBlockDelta? InputJsonDelta { get; init; }
 #else
-        public global::G.InputJsonBlockDelta? InputJson { get; }
+        public global::G.InputJsonBlockDelta? InputJsonDelta { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJson))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputJsonDelta))]
 #endif
-        public bool IsInputJson => InputJson != null;
+        public bool IsInputJsonDelta => InputJsonDelta != null;
 
         /// <summary>
         /// 
@@ -76,14 +76,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.InputJsonBlockDelta?(BlockDelta @this) => @this.InputJson;
+        public static implicit operator global::G.InputJsonBlockDelta?(BlockDelta @this) => @this.InputJsonDelta;
 
         /// <summary>
         /// 
         /// </summary>
         public BlockDelta(global::G.InputJsonBlockDelta? value)
         {
-            InputJson = value;
+            InputJsonDelta = value;
         }
 
         /// <summary>
@@ -91,22 +91,22 @@ namespace G
         /// </summary>
         public BlockDelta(
             global::G.BlockDeltaDiscriminatorType? type,
-            global::G.TextBlockDelta? text,
-            global::G.InputJsonBlockDelta? inputJson
+            global::G.TextBlockDelta? textDelta,
+            global::G.InputJsonBlockDelta? inputJsonDelta
             )
         {
             Type = type;
 
-            Text = text;
-            InputJson = inputJson;
+            TextDelta = textDelta;
+            InputJsonDelta = inputJsonDelta;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            InputJson as object ??
-            Text as object 
+            InputJsonDelta as object ??
+            TextDelta as object 
             ;
 
         /// <summary>
@@ -114,15 +114,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsInputJson || !IsText && IsInputJson;
+            return IsTextDelta && !IsInputJsonDelta || !IsTextDelta && IsInputJsonDelta;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.TextBlockDelta?, TResult>? text = null,
-            global::System.Func<global::G.InputJsonBlockDelta?, TResult>? inputJson = null,
+            global::System.Func<global::G.TextBlockDelta?, TResult>? textDelta = null,
+            global::System.Func<global::G.InputJsonBlockDelta?, TResult>? inputJsonDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -130,13 +130,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText && text != null)
+            if (IsTextDelta && textDelta != null)
             {
-                return text(Text!);
+                return textDelta(TextDelta!);
             }
-            else if (IsInputJson && inputJson != null)
+            else if (IsInputJsonDelta && inputJsonDelta != null)
             {
-                return inputJson(InputJson!);
+                return inputJsonDelta(InputJsonDelta!);
             }
 
             return default(TResult);
@@ -146,8 +146,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.TextBlockDelta?>? text = null,
-            global::System.Action<global::G.InputJsonBlockDelta?>? inputJson = null,
+            global::System.Action<global::G.TextBlockDelta?>? textDelta = null,
+            global::System.Action<global::G.InputJsonBlockDelta?>? inputJsonDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -155,13 +155,13 @@ namespace G
                 Validate();
             }
 
-            if (IsText)
+            if (IsTextDelta)
             {
-                text?.Invoke(Text!);
+                textDelta?.Invoke(TextDelta!);
             }
-            else if (IsInputJson)
+            else if (IsInputJsonDelta)
             {
-                inputJson?.Invoke(InputJson!);
+                inputJsonDelta?.Invoke(InputJsonDelta!);
             }
         }
 
@@ -172,9 +172,9 @@ namespace G
         {
             var fields = new object?[]
             {
-                Text,
+                TextDelta,
                 typeof(global::G.TextBlockDelta),
-                InputJson,
+                InputJsonDelta,
                 typeof(global::G.InputJsonBlockDelta),
             };
             const int offset = unchecked((int)2166136261);
@@ -191,8 +191,8 @@ namespace G
         public bool Equals(BlockDelta other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.TextBlockDelta?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.InputJsonBlockDelta?>.Default.Equals(InputJson, other.InputJson) 
+                global::System.Collections.Generic.EqualityComparer<global::G.TextBlockDelta?>.Default.Equals(TextDelta, other.TextDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.InputJsonBlockDelta?>.Default.Equals(InputJsonDelta, other.InputJsonDelta) 
                 ;
         }
 

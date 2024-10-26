@@ -20,18 +20,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantToolsCode? AssistantCode { get; init; }
+        public global::G.AssistantToolsCode? CodeInterpreter { get; init; }
 #else
-        public global::G.AssistantToolsCode? AssistantCode { get; }
+        public global::G.AssistantToolsCode? CodeInterpreter { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantCode))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreter))]
 #endif
-        public bool IsAssistantCode => AssistantCode != null;
+        public bool IsCodeInterpreter => CodeInterpreter != null;
 
         /// <summary>
         /// 
@@ -41,32 +41,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantToolsCode?(ToolsItem2 @this) => @this.AssistantCode;
+        public static implicit operator global::G.AssistantToolsCode?(ToolsItem2 @this) => @this.CodeInterpreter;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem2(global::G.AssistantToolsCode? value)
         {
-            AssistantCode = value;
+            CodeInterpreter = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantToolsFileSearch? AssistantFileSearch { get; init; }
+        public global::G.AssistantToolsFileSearch? FileSearch { get; init; }
 #else
-        public global::G.AssistantToolsFileSearch? AssistantFileSearch { get; }
+        public global::G.AssistantToolsFileSearch? FileSearch { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantFileSearch))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearch))]
 #endif
-        public bool IsAssistantFileSearch => AssistantFileSearch != null;
+        public bool IsFileSearch => FileSearch != null;
 
         /// <summary>
         /// 
@@ -76,32 +76,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantToolsFileSearch?(ToolsItem2 @this) => @this.AssistantFileSearch;
+        public static implicit operator global::G.AssistantToolsFileSearch?(ToolsItem2 @this) => @this.FileSearch;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem2(global::G.AssistantToolsFileSearch? value)
         {
-            AssistantFileSearch = value;
+            FileSearch = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantToolsFunction? AssistantFunction { get; init; }
+        public global::G.AssistantToolsFunction? Function { get; init; }
 #else
-        public global::G.AssistantToolsFunction? AssistantFunction { get; }
+        public global::G.AssistantToolsFunction? Function { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AssistantFunction))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
 #endif
-        public bool IsAssistantFunction => AssistantFunction != null;
+        public bool IsFunction => Function != null;
 
         /// <summary>
         /// 
@@ -111,14 +111,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantToolsFunction?(ToolsItem2 @this) => @this.AssistantFunction;
+        public static implicit operator global::G.AssistantToolsFunction?(ToolsItem2 @this) => @this.Function;
 
         /// <summary>
         /// 
         /// </summary>
         public ToolsItem2(global::G.AssistantToolsFunction? value)
         {
-            AssistantFunction = value;
+            Function = value;
         }
 
         /// <summary>
@@ -126,25 +126,25 @@ namespace G
         /// </summary>
         public ToolsItem2(
             global::G.CreateAssistantRequestToolDiscriminatorType? type,
-            global::G.AssistantToolsCode? assistantCode,
-            global::G.AssistantToolsFileSearch? assistantFileSearch,
-            global::G.AssistantToolsFunction? assistantFunction
+            global::G.AssistantToolsCode? codeInterpreter,
+            global::G.AssistantToolsFileSearch? fileSearch,
+            global::G.AssistantToolsFunction? function
             )
         {
             Type = type;
 
-            AssistantCode = assistantCode;
-            AssistantFileSearch = assistantFileSearch;
-            AssistantFunction = assistantFunction;
+            CodeInterpreter = codeInterpreter;
+            FileSearch = fileSearch;
+            Function = function;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            AssistantFunction as object ??
-            AssistantFileSearch as object ??
-            AssistantCode as object 
+            Function as object ??
+            FileSearch as object ??
+            CodeInterpreter as object 
             ;
 
         /// <summary>
@@ -152,16 +152,16 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsAssistantCode && !IsAssistantFileSearch && !IsAssistantFunction || !IsAssistantCode && IsAssistantFileSearch && !IsAssistantFunction || !IsAssistantCode && !IsAssistantFileSearch && IsAssistantFunction;
+            return IsCodeInterpreter && !IsFileSearch && !IsFunction || !IsCodeInterpreter && IsFileSearch && !IsFunction || !IsCodeInterpreter && !IsFileSearch && IsFunction;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.AssistantToolsCode?, TResult>? assistantCode = null,
-            global::System.Func<global::G.AssistantToolsFileSearch?, TResult>? assistantFileSearch = null,
-            global::System.Func<global::G.AssistantToolsFunction?, TResult>? assistantFunction = null,
+            global::System.Func<global::G.AssistantToolsCode?, TResult>? codeInterpreter = null,
+            global::System.Func<global::G.AssistantToolsFileSearch?, TResult>? fileSearch = null,
+            global::System.Func<global::G.AssistantToolsFunction?, TResult>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -169,17 +169,17 @@ namespace G
                 Validate();
             }
 
-            if (IsAssistantCode && assistantCode != null)
+            if (IsCodeInterpreter && codeInterpreter != null)
             {
-                return assistantCode(AssistantCode!);
+                return codeInterpreter(CodeInterpreter!);
             }
-            else if (IsAssistantFileSearch && assistantFileSearch != null)
+            else if (IsFileSearch && fileSearch != null)
             {
-                return assistantFileSearch(AssistantFileSearch!);
+                return fileSearch(FileSearch!);
             }
-            else if (IsAssistantFunction && assistantFunction != null)
+            else if (IsFunction && function != null)
             {
-                return assistantFunction(AssistantFunction!);
+                return function(Function!);
             }
 
             return default(TResult);
@@ -189,9 +189,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.AssistantToolsCode?>? assistantCode = null,
-            global::System.Action<global::G.AssistantToolsFileSearch?>? assistantFileSearch = null,
-            global::System.Action<global::G.AssistantToolsFunction?>? assistantFunction = null,
+            global::System.Action<global::G.AssistantToolsCode?>? codeInterpreter = null,
+            global::System.Action<global::G.AssistantToolsFileSearch?>? fileSearch = null,
+            global::System.Action<global::G.AssistantToolsFunction?>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -199,17 +199,17 @@ namespace G
                 Validate();
             }
 
-            if (IsAssistantCode)
+            if (IsCodeInterpreter)
             {
-                assistantCode?.Invoke(AssistantCode!);
+                codeInterpreter?.Invoke(CodeInterpreter!);
             }
-            else if (IsAssistantFileSearch)
+            else if (IsFileSearch)
             {
-                assistantFileSearch?.Invoke(AssistantFileSearch!);
+                fileSearch?.Invoke(FileSearch!);
             }
-            else if (IsAssistantFunction)
+            else if (IsFunction)
             {
-                assistantFunction?.Invoke(AssistantFunction!);
+                function?.Invoke(Function!);
             }
         }
 
@@ -220,11 +220,11 @@ namespace G
         {
             var fields = new object?[]
             {
-                AssistantCode,
+                CodeInterpreter,
                 typeof(global::G.AssistantToolsCode),
-                AssistantFileSearch,
+                FileSearch,
                 typeof(global::G.AssistantToolsFileSearch),
-                AssistantFunction,
+                Function,
                 typeof(global::G.AssistantToolsFunction),
             };
             const int offset = unchecked((int)2166136261);
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(ToolsItem2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsCode?>.Default.Equals(AssistantCode, other.AssistantCode) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsFileSearch?>.Default.Equals(AssistantFileSearch, other.AssistantFileSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsFunction?>.Default.Equals(AssistantFunction, other.AssistantFunction) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsCode?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsFileSearch?>.Default.Equals(FileSearch, other.FileSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsFunction?>.Default.Equals(Function, other.Function) 
                 ;
         }
 

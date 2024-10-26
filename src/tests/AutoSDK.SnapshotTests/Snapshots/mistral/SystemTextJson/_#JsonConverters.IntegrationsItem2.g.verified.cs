@@ -22,17 +22,17 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JobInIntegrationDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.WandbIntegration? wandbIntegration = default;
+            global::G.WandbIntegration? wandb = default;
             if (discriminator?.Type == global::G.JobInIntegrationDiscriminatorType.Wandb)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WandbIntegration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WandbIntegration> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.WandbIntegration)}");
-                wandbIntegration = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                wandb = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.IntegrationsItem2(
                 discriminator?.Type,
-                wandbIntegration
+                wandb
                 );
 
             return result;
@@ -47,11 +47,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsWandbIntegration)
+            if (value.IsWandb)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.WandbIntegration), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.WandbIntegration?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.WandbIntegration).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.WandbIntegration, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Wandb, typeInfo);
             }
         }
     }

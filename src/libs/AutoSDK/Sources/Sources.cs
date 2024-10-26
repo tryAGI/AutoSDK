@@ -90,7 +90,7 @@ public static partial class Sources
         CancellationToken cancellationToken = default)
     {
         if (anyOf.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ||
-            !anyOf.Properties.IsEmpty)
+            anyOf.IsNamed)
         {
             return FileWithName.Empty;
         }

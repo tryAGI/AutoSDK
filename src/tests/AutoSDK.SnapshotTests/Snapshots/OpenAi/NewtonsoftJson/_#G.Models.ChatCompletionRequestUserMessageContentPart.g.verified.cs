@@ -55,18 +55,18 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; init; }
+        public global::G.ChatCompletionRequestMessageContentPartImage? ImageUrl { get; init; }
 #else
-        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; }
+        public global::G.ChatCompletionRequestMessageContentPartImage? ImageUrl { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
 #endif
-        public bool IsImage => Image != null;
+        public bool IsImageUrl => ImageUrl != null;
 
         /// <summary>
         /// 
@@ -76,14 +76,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestMessageContentPartImage?(ChatCompletionRequestUserMessageContentPart @this) => @this.Image;
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartImage?(ChatCompletionRequestUserMessageContentPart @this) => @this.ImageUrl;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartImage? value)
         {
-            Image = value;
+            ImageUrl = value;
         }
 
         /// <summary>
@@ -92,20 +92,20 @@ namespace G
         public ChatCompletionRequestUserMessageContentPart(
             global::G.ChatCompletionRequestUserMessageContentPartDiscriminatorType? type,
             global::G.ChatCompletionRequestMessageContentPartText? text,
-            global::G.ChatCompletionRequestMessageContentPartImage? image
+            global::G.ChatCompletionRequestMessageContentPartImage? imageUrl
             )
         {
             Type = type;
 
             Text = text;
-            Image = image;
+            ImageUrl = imageUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Image as object ??
+            ImageUrl as object ??
             Text as object 
             ;
 
@@ -114,7 +114,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage || !IsText && IsImage;
+            return IsText && !IsImageUrl || !IsText && IsImageUrl;
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartImage?, TResult>? image = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartImage?, TResult>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -134,9 +134,9 @@ namespace G
             {
                 return text(Text!);
             }
-            else if (IsImage && image != null)
+            else if (IsImageUrl && imageUrl != null)
             {
-                return image(Image!);
+                return imageUrl(ImageUrl!);
             }
 
             return default(TResult);
@@ -147,7 +147,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? text = null,
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage?>? image = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage?>? imageUrl = null,
             bool validate = true)
         {
             if (validate)
@@ -159,9 +159,9 @@ namespace G
             {
                 text?.Invoke(Text!);
             }
-            else if (IsImage)
+            else if (IsImageUrl)
             {
-                image?.Invoke(Image!);
+                imageUrl?.Invoke(ImageUrl!);
             }
         }
 
@@ -174,7 +174,7 @@ namespace G
             {
                 Text,
                 typeof(global::G.ChatCompletionRequestMessageContentPartText),
-                Image,
+                ImageUrl,
                 typeof(global::G.ChatCompletionRequestMessageContentPartImage),
             };
             const int offset = unchecked((int)2166136261);
@@ -192,7 +192,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(Image, other.Image) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(ImageUrl, other.ImageUrl) 
                 ;
         }
 

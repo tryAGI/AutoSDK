@@ -22,17 +22,17 @@ namespace G.JsonConverters
                             throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.JobInRepositorieDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.GithubRepositoryIn? githubRepositoryIn = default;
+            global::G.GithubRepositoryIn? github = default;
             if (discriminator?.Type == global::G.JobInRepositorieDiscriminatorType.Github)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GithubRepositoryIn), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GithubRepositoryIn> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GithubRepositoryIn)}");
-                githubRepositoryIn = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                github = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.RepositoriesItem2(
                 discriminator?.Type,
-                githubRepositoryIn
+                github
                 );
 
             return result;
@@ -47,11 +47,11 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsGithubRepositoryIn)
+            if (value.IsGithub)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GithubRepositoryIn), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GithubRepositoryIn?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GithubRepositoryIn).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GithubRepositoryIn, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Github, typeInfo);
             }
         }
     }
