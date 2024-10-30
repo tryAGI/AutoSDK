@@ -106,6 +106,12 @@ namespace G
         public int? TotalTokens { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("externalMetadata")]
+        public object? ExternalMetadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]

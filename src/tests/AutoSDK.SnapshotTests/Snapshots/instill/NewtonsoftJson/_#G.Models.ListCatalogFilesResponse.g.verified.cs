@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// The list of files.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("files")]
-        public global::System.Collections.Generic.IList<global::G.File>? Files { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("files", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.File> Files { get; set; } = default!;
 
         /// <summary>
         /// The total number of files.

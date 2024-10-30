@@ -5,17 +5,15 @@
 namespace G
 {
     /// <summary>
-    /// View defines how a resource is presented. It can be used as a parameter in a<br/>
-    /// method request to allow clients to select the amount of information they<br/>
-    /// want in the response.<br/>
-    ///  - VIEW_BASIC: Default view, only includes basic information.<br/>
+    /// View defines how a model definition is presented.<br/>
+    ///  - VIEW_BASIC: Default view, only includes basic information (omits `model_spec`).<br/>
     ///  - VIEW_FULL: Full representation.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum View
     {
         /// <summary>
-        /// Default view, only includes basic information.
+        /// Default view, only includes basic information (omits `model_spec`).
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="VIEW_BASIC")]
         BASIC,

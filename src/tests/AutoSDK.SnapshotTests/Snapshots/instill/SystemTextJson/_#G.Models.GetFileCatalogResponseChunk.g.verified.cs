@@ -19,8 +19,8 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GetFileCatalogResponseChunkTypeJsonConverter))]
-        public global::G.GetFileCatalogResponseChunkType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChunkTypeJsonConverter))]
+        public global::G.ChunkType? Type { get; set; }
 
         /// <summary>
         /// 

@@ -19,7 +19,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.GetFileCatalogResponseChunkType? Type { get; set; }
+        public global::G.ChunkType? Type { get; set; }
 
         /// <summary>
         /// 

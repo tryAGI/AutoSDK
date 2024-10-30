@@ -13,7 +13,8 @@ namespace G
         /// The file uid.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
-        public global::System.Collections.Generic.IList<global::G.File>? Files { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.File> Files { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

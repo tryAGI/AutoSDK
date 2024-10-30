@@ -5,16 +5,21 @@
 namespace G
 {
     /// <summary>
-    /// Permission defines how a resource can be used.
+    /// Permission defines how a pipeline can be used.
     /// </summary>
     public sealed partial class Permission
     {
         /// <summary>
-        /// Defines whether the resource can be modified.<br/>
-        /// Included only in responses
+        /// Defines whether the pipeline can be modified.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("canEdit")]
         public bool? CanEdit { get; set; }
+
+        /// <summary>
+        /// Defines whether the pipeline can be executed.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("canTrigger")]
+        public bool? CanTrigger { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

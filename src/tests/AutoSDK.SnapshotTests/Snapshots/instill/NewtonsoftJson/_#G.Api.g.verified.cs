@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Core endpoints to manage user resources<br/>
+    /// Interact with Instill AI through its public API<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -34,73 +34,57 @@ namespace G
 
 
         /// <summary>
-        /// User endpoints
+        /// Namespaces (e.g. User, Organization) that structure the resource hierarchy.
         /// </summary>
-        public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
+        public x__NamespaceClient x__Namespace => new x__NamespaceClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Organization endpoints
+        /// Pipeline orchestration in VDP (Versatile Data Pipeline).
         /// </summary>
-        public OrganizationClient Organization => new OrganizationClient(HttpClient, authorizations: Authorizations)
+        public x__VDPClient x__VDP => new x__VDPClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Membership endpoints
+        /// AI Model resources for MLOps/LLMOps.
         /// </summary>
-        public MembershipClient Membership => new MembershipClient(HttpClient, authorizations: Authorizations)
+        public x__ModelClient x__Model => new x__ModelClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Token endpoints
+        /// Data orchestration for unified unstructured data representation.
         /// </summary>
-        public TokenClient Token => new TokenClient(HttpClient, authorizations: Authorizations)
+        public x__ArtifactClient x__Artifact => new x__ArtifactClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Subscription endpoints
+        /// Ready-to-use AI applications.
         /// </summary>
-        public SubscriptionClient Subscription => new SubscriptionClient(HttpClient, authorizations: Authorizations)
+        public x__AppClient x__App => new x__AppClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Credit endpoints
+        /// Resource usage metrics.
         /// </summary>
-        public CreditClient Credit => new CreditClient(HttpClient, authorizations: Authorizations)
+        public x__MetricsClient x__Metrics => new x__MetricsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Metric endpoints
+        /// Pricing plans on Instill Cloud.
         /// </summary>
-        public MetricClient Metric => new MetricClient(HttpClient, authorizations: Authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Util endpoints
-        /// </summary>
-        public UtilsClient Utils => new UtilsClient(HttpClient, authorizations: Authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CatalogClient Catalog => new CatalogClient(HttpClient, authorizations: Authorizations)
+        public x__SubscriptionClient x__Subscription => new x__SubscriptionClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("chunks")]
-        public global::System.Collections.Generic.IList<global::G.Artifactv1alphaChunk>? Chunks { get; set; }
+        public global::System.Collections.Generic.IList<global::G.Chunk>? Chunks { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

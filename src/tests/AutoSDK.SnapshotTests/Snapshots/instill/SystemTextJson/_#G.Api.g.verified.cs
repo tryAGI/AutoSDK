@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Core endpoints to manage user resources<br/>
+    /// Interact with Instill AI through its public API<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -38,34 +38,72 @@ namespace G
                 {
                     new global::G.JsonConverters.ApiTokenStateJsonConverter(),
                     new global::G.JsonConverters.ApiTokenStateNullableJsonConverter(),
-                    new global::G.JsonConverters.Mgmtv1betaStatusJsonConverter(),
-                    new global::G.JsonConverters.Mgmtv1betaStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.AppTypeJsonConverter(),
+                    new global::G.JsonConverters.AppTypeNullableJsonConverter(),
                     new global::G.JsonConverters.OnboardingStatusJsonConverter(),
                     new global::G.JsonConverters.OnboardingStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.CatalogRunActionJsonConverter(),
+                    new global::G.JsonConverters.CatalogRunActionNullableJsonConverter(),
+                    new global::G.JsonConverters.RunStatusJsonConverter(),
+                    new global::G.JsonConverters.RunStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.RunSourceJsonConverter(),
+                    new global::G.JsonConverters.RunSourceNullableJsonConverter(),
                     new global::G.JsonConverters.CheckNamespaceAdminResponseNamespaceJsonConverter(),
                     new global::G.JsonConverters.CheckNamespaceAdminResponseNamespaceNullableJsonConverter(),
                     new global::G.JsonConverters.CheckNamespaceByUIDAdminResponseNamespaceJsonConverter(),
                     new global::G.JsonConverters.CheckNamespaceByUIDAdminResponseNamespaceNullableJsonConverter(),
                     new global::G.JsonConverters.CheckNamespaceResponseNamespaceJsonConverter(),
                     new global::G.JsonConverters.CheckNamespaceResponseNamespaceNullableJsonConverter(),
-                    new global::G.JsonConverters.UserSubscriptionPlanJsonConverter(),
-                    new global::G.JsonConverters.UserSubscriptionPlanNullableJsonConverter(),
-                    new global::G.JsonConverters.StripeSubscriptionDetailStatusJsonConverter(),
-                    new global::G.JsonConverters.StripeSubscriptionDetailStatusNullableJsonConverter(),
-                    new global::G.JsonConverters.MembershipStateJsonConverter(),
-                    new global::G.JsonConverters.MembershipStateNullableJsonConverter(),
-                    new global::G.JsonConverters.OrganizationSubscriptionPlanJsonConverter(),
-                    new global::G.JsonConverters.OrganizationSubscriptionPlanNullableJsonConverter(),
-                    new global::G.JsonConverters.ModeJsonConverter(),
-                    new global::G.JsonConverters.ModeNullableJsonConverter(),
-                    new global::G.JsonConverters.ViewJsonConverter(),
-                    new global::G.JsonConverters.ViewNullableJsonConverter(),
-                    new global::G.JsonConverters.GetFileCatalogResponseChunkTypeJsonConverter(),
-                    new global::G.JsonConverters.GetFileCatalogResponseChunkTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ChunkTypeJsonConverter(),
+                    new global::G.JsonConverters.ChunkTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.RoleJsonConverter(),
+                    new global::G.JsonConverters.RoleNullableJsonConverter(),
+                    new global::G.JsonConverters.ComponentTypeJsonConverter(),
+                    new global::G.JsonConverters.ComponentTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ComponentDefinitionReleaseStageJsonConverter(),
+                    new global::G.JsonConverters.ComponentDefinitionReleaseStageNullableJsonConverter(),
+                    new global::G.JsonConverters.ComponentDefinitionViewJsonConverter(),
+                    new global::G.JsonConverters.ComponentDefinitionViewNullableJsonConverter(),
+                    new global::G.JsonConverters.MethodJsonConverter(),
+                    new global::G.JsonConverters.MethodNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelineV1betaViewJsonConverter(),
+                    new global::G.JsonConverters.PipelineV1betaViewNullableJsonConverter(),
+                    new global::G.JsonConverters.MessageTypeJsonConverter(),
+                    new global::G.JsonConverters.MessageTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.AITaskJsonConverter(),
+                    new global::G.JsonConverters.AITaskNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelVisibilityJsonConverter(),
+                    new global::G.JsonConverters.ModelVisibilityNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelineVisibilityJsonConverter(),
+                    new global::G.JsonConverters.PipelineVisibilityNullableJsonConverter(),
                     new global::G.JsonConverters.FileTypeJsonConverter(),
                     new global::G.JsonConverters.FileTypeNullableJsonConverter(),
                     new global::G.JsonConverters.FileProcessStatusJsonConverter(),
                     new global::G.JsonConverters.FileProcessStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.UserSubscriptionPlanJsonConverter(),
+                    new global::G.JsonConverters.UserSubscriptionPlanNullableJsonConverter(),
+                    new global::G.JsonConverters.StripeSubscriptionDetailStatusJsonConverter(),
+                    new global::G.JsonConverters.StripeSubscriptionDetailStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.ReleaseStageJsonConverter(),
+                    new global::G.JsonConverters.ReleaseStageNullableJsonConverter(),
+                    new global::G.JsonConverters.MembershipStateJsonConverter(),
+                    new global::G.JsonConverters.MembershipStateNullableJsonConverter(),
+                    new global::G.JsonConverters.OrganizationSubscriptionPlanJsonConverter(),
+                    new global::G.JsonConverters.OrganizationSubscriptionPlanNullableJsonConverter(),
+                    new global::G.JsonConverters.StateJsonConverter(),
+                    new global::G.JsonConverters.StateNullableJsonConverter(),
+                    new global::G.JsonConverters.ModeJsonConverter(),
+                    new global::G.JsonConverters.ModeNullableJsonConverter(),
+                    new global::G.JsonConverters.StatusJsonConverter(),
+                    new global::G.JsonConverters.StatusNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelineViewJsonConverter(),
+                    new global::G.JsonConverters.PipelineViewNullableJsonConverter(),
+                    new global::G.JsonConverters.TraceStatusJsonConverter(),
+                    new global::G.JsonConverters.TraceStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.MgmtV1betaViewJsonConverter(),
+                    new global::G.JsonConverters.MgmtV1betaViewNullableJsonConverter(),
+                    new global::G.JsonConverters.ViewJsonConverter(),
+                    new global::G.JsonConverters.ViewNullableJsonConverter(),
                     new global::G.JsonConverters.ListUsersViewJsonConverter(),
                     new global::G.JsonConverters.ListUsersViewNullableJsonConverter(),
                     new global::G.JsonConverters.GetUserViewJsonConverter(),
@@ -78,78 +116,104 @@ namespace G
                     new global::G.JsonConverters.GetUserMembershipViewNullableJsonConverter(),
                     new global::G.JsonConverters.GetOrganizationMembershipViewJsonConverter(),
                     new global::G.JsonConverters.GetOrganizationMembershipViewNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListModelDefinitionsViewJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListModelDefinitionsViewNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetModelDefinitionViewJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetModelDefinitionViewNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListModelsViewJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListModelsViewNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListModelsVisibilityJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListModelsVisibilityNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListNamespaceModelsViewJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListNamespaceModelsViewNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListNamespaceModelsVisibilityJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceListNamespaceModelsVisibilityNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetNamespaceModelViewJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetNamespaceModelViewNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetNamespaceModelOperationViewJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetNamespaceModelOperationViewNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetNamespaceLatestModelOperationViewJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetNamespaceLatestModelOperationViewNullableJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetModelOperationViewJsonConverter(),
+                    new global::G.JsonConverters.ModelPublicServiceGetModelOperationViewNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListPipelinesViewJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListPipelinesViewNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListPipelinesVisibilityJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListPipelinesVisibilityNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListNamespacePipelinesViewJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListNamespacePipelinesViewNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListNamespacePipelinesVisibilityJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListNamespacePipelinesVisibilityNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceGetNamespacePipelineViewJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceGetNamespacePipelineViewNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListNamespacePipelineReleasesViewJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListNamespacePipelineReleasesViewNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceGetNamespacePipelineReleaseViewJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceGetNamespacePipelineReleaseViewNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListComponentDefinitionsViewJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListComponentDefinitionsViewNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListComponentRunsViewJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceListComponentRunsViewNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceGetNamespaceConnectionViewJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceGetNamespaceConnectionViewNullableJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceGetIntegrationViewJsonConverter(),
+                    new global::G.JsonConverters.PipelinePublicServiceGetIntegrationViewNullableJsonConverter(),
                 }
             };
 
 
         /// <summary>
-        /// User endpoints
+        /// Namespaces (e.g. User, Organization) that structure the resource hierarchy.
         /// </summary>
-        public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
+        public x__NamespaceClient x__Namespace => new x__NamespaceClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Organization endpoints
+        /// Pipeline orchestration in VDP (Versatile Data Pipeline).
         /// </summary>
-        public OrganizationClient Organization => new OrganizationClient(HttpClient, authorizations: Authorizations)
+        public x__VDPClient x__VDP => new x__VDPClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Membership endpoints
+        /// AI Model resources for MLOps/LLMOps.
         /// </summary>
-        public MembershipClient Membership => new MembershipClient(HttpClient, authorizations: Authorizations)
+        public x__ModelClient x__Model => new x__ModelClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Token endpoints
+        /// Data orchestration for unified unstructured data representation.
         /// </summary>
-        public TokenClient Token => new TokenClient(HttpClient, authorizations: Authorizations)
+        public x__ArtifactClient x__Artifact => new x__ArtifactClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Subscription endpoints
+        /// Ready-to-use AI applications.
         /// </summary>
-        public SubscriptionClient Subscription => new SubscriptionClient(HttpClient, authorizations: Authorizations)
+        public x__AppClient x__App => new x__AppClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Credit endpoints
+        /// Resource usage metrics.
         /// </summary>
-        public CreditClient Credit => new CreditClient(HttpClient, authorizations: Authorizations)
+        public x__MetricsClient x__Metrics => new x__MetricsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
         /// <summary>
-        /// Metric endpoints
+        /// Pricing plans on Instill Cloud.
         /// </summary>
-        public MetricClient Metric => new MetricClient(HttpClient, authorizations: Authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// Util endpoints
-        /// </summary>
-        public UtilsClient Utils => new UtilsClient(HttpClient, authorizations: Authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CatalogClient Catalog => new CatalogClient(HttpClient, authorizations: Authorizations)
+        public x__SubscriptionClient x__Subscription => new x__SubscriptionClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };

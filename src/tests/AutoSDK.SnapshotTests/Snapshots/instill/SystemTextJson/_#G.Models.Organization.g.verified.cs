@@ -67,7 +67,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
-        public global::G.Permission? Permission { get; set; }
+        public global::G.MgmtV1betaPermission? Permission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

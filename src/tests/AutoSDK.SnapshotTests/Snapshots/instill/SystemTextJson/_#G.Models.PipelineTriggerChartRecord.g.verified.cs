@@ -34,8 +34,8 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Mgmtv1betaStatusJsonConverter))]
-        public global::G.Mgmtv1betaStatus? Status { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.StatusJsonConverter))]
+        public global::G.Status? Status { get; set; }
 
         /// <summary>
         /// Time buckets.<br/>

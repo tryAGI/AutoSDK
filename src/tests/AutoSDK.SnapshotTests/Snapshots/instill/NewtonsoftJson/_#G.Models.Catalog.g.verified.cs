@@ -10,6 +10,12 @@ namespace G
     public sealed partial class Catalog
     {
         /// <summary>
+        /// The catalog uid.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("catalogUid")]
+        public string? CatalogUid { get; set; }
+
+        /// <summary>
         /// The catalog id.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("catalogId", Required = global::Newtonsoft.Json.Required.Always)]

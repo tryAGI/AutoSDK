@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("chunk")]
-        public global::G.Artifactv1alphaChunk? Chunk { get; set; }
+        public global::G.Chunk? Chunk { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

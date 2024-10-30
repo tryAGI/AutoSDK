@@ -33,7 +33,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("status")]
-        public global::G.Mgmtv1betaStatus? Status { get; set; }
+        public global::G.Status? Status { get; set; }
 
         /// <summary>
         /// Time buckets.<br/>

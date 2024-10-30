@@ -66,7 +66,7 @@ namespace G
         /// Included only in responses
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("permission")]
-        public global::G.Permission? Permission { get; set; }
+        public global::G.MgmtV1betaPermission? Permission { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema

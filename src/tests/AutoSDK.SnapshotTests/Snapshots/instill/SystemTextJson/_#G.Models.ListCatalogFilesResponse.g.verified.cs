@@ -13,7 +13,8 @@ namespace G
         /// The list of files.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("files")]
-        public global::System.Collections.Generic.IList<global::G.File>? Files { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.File> Files { get; set; }
 
         /// <summary>
         /// The total number of files.

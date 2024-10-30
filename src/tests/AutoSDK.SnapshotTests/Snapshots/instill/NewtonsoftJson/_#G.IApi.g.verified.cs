@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Core endpoints to manage user resources<br/>
+    /// Interact with Instill AI through its public API<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -33,49 +33,39 @@ namespace G
 
 
         /// <summary>
-        /// User endpoints
+        /// Namespaces (e.g. User, Organization) that structure the resource hierarchy.
         /// </summary>
-        public UserClient User { get; }
+        public x__NamespaceClient x__Namespace { get; }
 
         /// <summary>
-        /// Organization endpoints
+        /// Pipeline orchestration in VDP (Versatile Data Pipeline).
         /// </summary>
-        public OrganizationClient Organization { get; }
+        public x__VDPClient x__VDP { get; }
 
         /// <summary>
-        /// Membership endpoints
+        /// AI Model resources for MLOps/LLMOps.
         /// </summary>
-        public MembershipClient Membership { get; }
+        public x__ModelClient x__Model { get; }
 
         /// <summary>
-        /// Token endpoints
+        /// Data orchestration for unified unstructured data representation.
         /// </summary>
-        public TokenClient Token { get; }
+        public x__ArtifactClient x__Artifact { get; }
 
         /// <summary>
-        /// Subscription endpoints
+        /// Ready-to-use AI applications.
         /// </summary>
-        public SubscriptionClient Subscription { get; }
+        public x__AppClient x__App { get; }
 
         /// <summary>
-        /// Credit endpoints
+        /// Resource usage metrics.
         /// </summary>
-        public CreditClient Credit { get; }
+        public x__MetricsClient x__Metrics { get; }
 
         /// <summary>
-        /// Metric endpoints
+        /// Pricing plans on Instill Cloud.
         /// </summary>
-        public MetricClient Metric { get; }
-
-        /// <summary>
-        /// Util endpoints
-        /// </summary>
-        public UtilsClient Utils { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public CatalogClient Catalog { get; }
+        public x__SubscriptionClient x__Subscription { get; }
 
     }
 }

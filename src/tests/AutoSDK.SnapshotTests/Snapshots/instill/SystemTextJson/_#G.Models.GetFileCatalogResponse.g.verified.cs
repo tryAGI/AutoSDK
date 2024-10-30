@@ -19,13 +19,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
-        public global::G.GetFileCatalogResponseMetadata? Metadata { get; set; }
+        public global::G.Metadata? Metadata { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
-        public global::G.GetFileCatalogResponseText? Text { get; set; }
+        public global::G.Text? Text { get; set; }
 
         /// <summary>
         /// 

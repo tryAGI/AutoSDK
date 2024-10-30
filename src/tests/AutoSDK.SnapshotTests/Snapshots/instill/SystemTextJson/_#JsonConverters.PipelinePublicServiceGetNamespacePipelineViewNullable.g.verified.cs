@@ -1,0 +1,57 @@
+﻿//HintName: JsonConverters.PipelinePublicServiceGetNamespacePipelineViewNullable.g.cs
+#nullable enable
+
+namespace G.JsonConverters
+{
+    /// <inheritdoc />
+    public sealed class PipelinePublicServiceGetNamespacePipelineViewNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::G.PipelinePublicServiceGetNamespacePipelineView?>
+    {
+        /// <inheritdoc />
+        public override global::G.PipelinePublicServiceGetNamespacePipelineView? Read(
+            ref global::System.Text.Json.Utf8JsonReader reader,
+            global::System.Type typeToConvert,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            switch (reader.TokenType)
+            {
+                case global::System.Text.Json.JsonTokenType.String:
+                {
+                    var stringValue = reader.GetString();
+                    if (stringValue != null)
+                    {
+                        return global::G.PipelinePublicServiceGetNamespacePipelineViewExtensions.ToEnum(stringValue);
+                    }
+                    
+                    break;
+                }
+                case global::System.Text.Json.JsonTokenType.Number:
+                {
+                    var numValue = reader.GetInt32();
+                    return (global::G.PipelinePublicServiceGetNamespacePipelineView)numValue;
+                }
+                default:
+                    throw new global::System.ArgumentOutOfRangeException(nameof(reader));
+            }
+
+            return default;
+        }
+
+        /// <inheritdoc />
+        public override void Write(
+            global::System.Text.Json.Utf8JsonWriter writer,
+            global::G.PipelinePublicServiceGetNamespacePipelineView? value,
+            global::System.Text.Json.JsonSerializerOptions options)
+        {
+            writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
+
+            if (value == null)
+            {
+                writer.WriteNullValue();
+            }
+            else
+            {
+                writer.WriteStringValue(global::G.PipelinePublicServiceGetNamespacePipelineViewExtensions.ToValueString(value.Value));
+            }
+        }
+    }
+}
