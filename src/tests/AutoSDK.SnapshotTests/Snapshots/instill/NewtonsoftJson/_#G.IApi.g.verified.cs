@@ -35,37 +35,37 @@ namespace G
         /// <summary>
         /// Namespaces (e.g. User, Organization) that structure the resource hierarchy.
         /// </summary>
-        public x__NamespaceClient x__Namespace { get; }
+        public NamespaceClient Namespace { get; }
 
         /// <summary>
         /// Pipeline orchestration in VDP (Versatile Data Pipeline).
         /// </summary>
-        public x__VDPClient x__VDP { get; }
+        public VDPClient VDP { get; }
 
         /// <summary>
         /// AI Model resources for MLOps/LLMOps.
         /// </summary>
-        public x__ModelClient x__Model { get; }
+        public ModelClient Model { get; }
 
         /// <summary>
         /// Data orchestration for unified unstructured data representation.
         /// </summary>
-        public x__ArtifactClient x__Artifact { get; }
+        public ArtifactClient Artifact { get; }
 
         /// <summary>
         /// Ready-to-use AI applications.
         /// </summary>
-        public x__AppClient x__App { get; }
+        public AppClient App { get; }
 
         /// <summary>
         /// Resource usage metrics.
         /// </summary>
-        public x__MetricsClient x__Metrics { get; }
+        public MetricsClient Metrics { get; }
 
         /// <summary>
         /// Pricing plans on Instill Cloud.
         /// </summary>
-        public x__SubscriptionClient x__Subscription { get; }
+        public SubscriptionClient Subscription { get; }
 
     }
 }

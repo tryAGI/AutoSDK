@@ -21,6 +21,10 @@ public static class ClientNameGenerator
     {
         tag = tag ?? throw new ArgumentNullException(nameof(tag));
 
-        return PropertyData.SanitizeName(tag.Name.ToClassName(), settings.ClsCompliantEnumPrefix);
+        var name = new string(tag.Name
+            .SkipWhile(c => !char.IsDigit(c) && !char.IsLetter(c))
+            .ToArray());
+        
+        return PropertyData.SanitizeName(name.ToClassName(), settings.ClsCompliantEnumPrefix);
     }
 }

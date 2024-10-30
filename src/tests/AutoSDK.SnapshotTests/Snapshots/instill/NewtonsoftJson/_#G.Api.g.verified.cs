@@ -36,7 +36,7 @@ namespace G
         /// <summary>
         /// Namespaces (e.g. User, Organization) that structure the resource hierarchy.
         /// </summary>
-        public x__NamespaceClient x__Namespace => new x__NamespaceClient(HttpClient, authorizations: Authorizations)
+        public NamespaceClient Namespace => new NamespaceClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -44,7 +44,7 @@ namespace G
         /// <summary>
         /// Pipeline orchestration in VDP (Versatile Data Pipeline).
         /// </summary>
-        public x__VDPClient x__VDP => new x__VDPClient(HttpClient, authorizations: Authorizations)
+        public VDPClient VDP => new VDPClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -52,7 +52,7 @@ namespace G
         /// <summary>
         /// AI Model resources for MLOps/LLMOps.
         /// </summary>
-        public x__ModelClient x__Model => new x__ModelClient(HttpClient, authorizations: Authorizations)
+        public ModelClient Model => new ModelClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -60,7 +60,7 @@ namespace G
         /// <summary>
         /// Data orchestration for unified unstructured data representation.
         /// </summary>
-        public x__ArtifactClient x__Artifact => new x__ArtifactClient(HttpClient, authorizations: Authorizations)
+        public ArtifactClient Artifact => new ArtifactClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -68,7 +68,7 @@ namespace G
         /// <summary>
         /// Ready-to-use AI applications.
         /// </summary>
-        public x__AppClient x__App => new x__AppClient(HttpClient, authorizations: Authorizations)
+        public AppClient App => new AppClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -76,7 +76,7 @@ namespace G
         /// <summary>
         /// Resource usage metrics.
         /// </summary>
-        public x__MetricsClient x__Metrics => new x__MetricsClient(HttpClient, authorizations: Authorizations)
+        public MetricsClient Metrics => new MetricsClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
@@ -84,7 +84,7 @@ namespace G
         /// <summary>
         /// Pricing plans on Instill Cloud.
         /// </summary>
-        public x__SubscriptionClient x__Subscription => new x__SubscriptionClient(HttpClient, authorizations: Authorizations)
+        public SubscriptionClient Subscription => new SubscriptionClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };
