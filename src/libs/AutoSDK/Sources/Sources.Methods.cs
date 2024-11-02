@@ -389,13 +389,7 @@ namespace {endPoint.Namespace}
 {
     var add = x.Type.IsBinary ? @$" 
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>())
-                {{
-                    Headers =
-                    {{
-                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse(""{endPoint.RequestMediaType}""),
-                    }},
-                }},
+                content: new global::System.Net.Http.ByteArrayContent(request.{x.Name} ?? global::System.Array.Empty<byte>()),
                 name: ""{x.Id}"",
                 fileName: request.{x.Name + "name"} ?? string.Empty);
  " : @$" 

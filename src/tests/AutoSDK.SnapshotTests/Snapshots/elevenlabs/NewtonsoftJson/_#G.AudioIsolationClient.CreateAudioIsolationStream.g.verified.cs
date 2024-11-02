@@ -69,13 +69,7 @@ namespace G
                     name: "xi-api-key");
             } 
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Audio ?? global::System.Array.Empty<byte>())
-                {
-                    Headers =
-                    {
-                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
-                    },
-                },
+                content: new global::System.Net.Http.ByteArrayContent(request.Audio ?? global::System.Array.Empty<byte>()),
                 name: "audio",
                 fileName: request.Audioname ?? string.Empty);
             __httpRequest.Content = __httpRequestContent;

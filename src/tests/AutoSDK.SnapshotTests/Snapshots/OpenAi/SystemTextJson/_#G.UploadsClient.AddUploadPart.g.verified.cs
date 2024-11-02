@@ -77,13 +77,7 @@ namespace G
                 content: new global::System.Net.Http.StringContent($"{uploadId}"),
                 name: "upload_id");
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>())
-                {
-                    Headers =
-                    {
-                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
-                    },
-                },
+                content: new global::System.Net.Http.ByteArrayContent(request.Data ?? global::System.Array.Empty<byte>()),
                 name: "data",
                 fileName: request.Dataname ?? string.Empty);
             __httpRequest.Content = __httpRequestContent;

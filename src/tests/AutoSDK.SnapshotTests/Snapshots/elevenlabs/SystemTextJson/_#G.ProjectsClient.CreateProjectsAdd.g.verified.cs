@@ -89,13 +89,7 @@ namespace G
             if (request.FromDocument != default)
             {
                 __httpRequestContent.Add(
-                    content: new global::System.Net.Http.ByteArrayContent(request.FromDocument ?? global::System.Array.Empty<byte>())
-                    {
-                        Headers =
-                        {
-                            ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
-                        },
-                    },
+                    content: new global::System.Net.Http.ByteArrayContent(request.FromDocument ?? global::System.Array.Empty<byte>()),
                     name: "from_document",
                     fileName: request.FromDocumentname ?? string.Empty);
             } 

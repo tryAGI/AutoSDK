@@ -101,13 +101,7 @@ namespace G
                     name: "pipeline_id_or_pointer");
             } 
             __httpRequestContent.Add(
-                content: new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>())
-                {
-                    Headers =
-                    {
-                        ContentType = global::System.Net.Http.Headers.MediaTypeHeaderValue.Parse("multipart/form-data"),
-                    },
-                },
+                content: new global::System.Net.Http.ByteArrayContent(request.ImageFile ?? global::System.Array.Empty<byte>()),
                 name: "image_file",
                 fileName: request.ImageFilename ?? string.Empty);
             __httpRequest.Content = __httpRequestContent;
