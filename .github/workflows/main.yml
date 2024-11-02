@@ -50,6 +50,7 @@ jobs:
           #- weaviate.yaml #JsonSerializerContext.g.cs(107,33): error SYSLIB1031: There are multiple types named 'Object'. Source was generated for the first one detected. Use 'JsonSerializableAttribute.TypeInfoPropertyName' to resolve this collision.
           - elevenlabs.json
           - jina.json
+          - recraft.yaml
     steps:
       - name: Checkout
         uses: actions/checkout@v4

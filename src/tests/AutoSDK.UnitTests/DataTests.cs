@@ -33,6 +33,7 @@ public partial class DataTests
     [DataRow("weaviate.yaml")]
     [DataRow("elevenlabs.json")]
     [DataRow("jina.json")]
+    [DataRow("recraft.yaml")]
     public Task PrepareData(string resourceName)
     {
         return VerifyAsync(Data.Prepare((

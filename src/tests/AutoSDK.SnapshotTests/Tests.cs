@@ -67,6 +67,8 @@ public partial class Tests
     [DataRow("", "jina.json", JsonSerializerType.SystemTextJson)]
     [DataRow("", "runway.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("", "runway.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("", "recraft.yaml", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("", "recraft.yaml", JsonSerializerType.SystemTextJson)]
     public Task SdkGenerator(string callerName, string fileName, JsonSerializerType jsonSerializerType)
     {
         if (callerName == "Empty")
