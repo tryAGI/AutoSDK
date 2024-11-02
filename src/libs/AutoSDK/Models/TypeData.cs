@@ -20,9 +20,9 @@ public readonly record struct TypeData(
     int AllOfCount,
     bool IsComponent,
     bool HasDiscriminator,
-    ImmutableArray<string> Properties,
-    ImmutableArray<string> EnumValues,
-    ImmutableArray<TypeData> SubTypes,
+    EquatableArray<string> Properties,
+    EquatableArray<string> EnumValues,
+    EquatableArray<TypeData> SubTypes,
     string Namespace,
     bool IsDeprecated,
     Settings Settings)

@@ -636,6 +636,7 @@ public static class OpenApiExtensions
                 description: description,
                 settings))
             .Where(value => !string.IsNullOrWhiteSpace(value.Name))
+            .Distinct()
             .ToDictionary(x => x.Id, x => x);
 
         if (values.All(x => x.Value.Name.ToUpperInvariant().Contains(enumName.ToUpperInvariant())))

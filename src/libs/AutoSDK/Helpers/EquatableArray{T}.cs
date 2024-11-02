@@ -67,6 +67,15 @@ public readonly struct EquatableArray<T> : IEquatable<EquatableArray<T>>, IEnume
         get => AsImmutableArray().IsEmpty;
     }
 
+    /// <summary>
+    /// Gets a length of the current array.
+    /// </summary>
+    public int Length
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => AsImmutableArray().Length;
+    }
+
     /// <sinheritdoc/>
     public bool Equals(EquatableArray<T> other)
     {
@@ -104,6 +113,11 @@ public readonly struct EquatableArray<T> : IEquatable<EquatableArray<T>>, IEnume
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public ImmutableArray<T> AsImmutableArray()
     {
+        if (_array is null)
+        {
+            return ImmutableArray<T>.Empty;
+        }
+        
         return Unsafe.As<T[]?, ImmutableArray<T>>(ref Unsafe.AsRef(in _array));
     }
 
