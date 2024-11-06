@@ -168,6 +168,25 @@ public static class StringExtensions
 {spaces}/// </summary>";
     }
     
+    public static string ToXmlDocumentationExample(
+        this string text,
+        int level = 4)
+    {
+        text = text ?? throw new ArgumentNullException(nameof(text));
+        
+        var value = ToXmlDocumentation(text, level);
+        if (!value.Contains("\n"))
+        {
+            return $"/// <example>{value}</example>";
+        }
+        
+        var spaces = new string(' ', level);
+        
+        return $@"/// <example>
+{value}
+{spaces}/// </example>";
+    }
+    
     public static string ToXmlDocumentationForParam(
         this string text,
         string parameterName,

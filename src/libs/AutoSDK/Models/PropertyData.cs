@@ -1,5 +1,4 @@
 using AutoSDK.Extensions;
-using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.Models;
 
@@ -13,6 +12,7 @@ public readonly record struct PropertyData(
     bool IsMultiPartFormDataFilename,
     Settings Settings,
     string? DefaultValue,
+    string? Example,
     bool IsDeprecated,
     string Summary,
     string ConverterType,
@@ -27,6 +27,7 @@ public readonly record struct PropertyData(
         IsWriteOnly: false,
         IsMultiPartFormDataFilename: false,
         DefaultValue: null,
+        Example: null,
         IsDeprecated: false,
         Settings: Settings.Default,
         Summary: string.Empty,
@@ -89,6 +90,10 @@ public readonly record struct PropertyData(
             DefaultValue: context.Schema is { ReadOnly: true } && !type.CSharpTypeNullability
                 ? "default!"
                 : context.GetDefaultValue(),
+            Example: context.Schema.Example?.GetString() is {} example &&
+                     !string.IsNullOrWhiteSpace(example)
+                ? example.ClearForXml()
+                : null,
             Summary: context.Schema.GetSummary(),
             ConverterType: type.ConverterType,
             DiscriminatorValue: string.Empty);
