@@ -125,15 +125,14 @@ public static class OpenApi31Support
                 node["nullable"] = true;
             }
             
-            if (keyString == "exclusiveMinimum" && entry.Value is not JsonValue)
+            if (keyString == "exclusiveMinimum")
             {
-                node["minimum"] = entry.Value;
+                node["minimum"] = entry.Value?.DeepClone();
                 node["exclusiveMinimum"] = true;
             }
-            
-            if (keyString == "exclusiveMaximum" && entry.Value is not JsonValue)
+            if (keyString == "exclusiveMaximum")
             {
-                node["maximum"] = entry.Value;
+                node["maximum"] = entry.Value?.DeepClone();
                 node["exclusiveMaximum"] = true;
             }
             

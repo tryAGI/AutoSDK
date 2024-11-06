@@ -4334,9 +4334,10 @@
           "top_p": {
             "type": "number",
             "maximum": 1.0,
-            "minimum": 0.0,
+            "exclusiveMinimum": true,
             "title": "Top P",
-            "default": 1
+            "default": 1,
+            "minimum": 0.0
           },
           "stop": {
             "anyOf": [
