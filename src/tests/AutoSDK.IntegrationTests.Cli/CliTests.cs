@@ -14,7 +14,7 @@ public class CliTests
     [DataRow("petstore.yaml")]
     [DataRow("replicate.yaml")]
     [DataRow("huggingface.yaml")]
-    [DataRow("ai21.yaml")]
+    [DataRow("ai21.json")]
     [DataRow("cohere.yaml")]
     [DataRow("special-cases.yaml")]
     [DataRow("twitch.json")]

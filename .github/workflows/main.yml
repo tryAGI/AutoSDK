@@ -25,7 +25,7 @@ jobs:
     strategy:
       matrix:
         spec:
-          - ai21.yaml
+          - ai21.json
           - anthropic.yaml
           - assemblyai.yaml
           - cohere.yaml

@@ -1,0 +1,4502 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "AI21 Studio API",
+    "description": "Access our powerful language models using an API that makes you smile",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/studio/v1/chat/files/convert": {
+      "post": {
+        "summary": "Convert Document File",
+        "operationId": "convert_document_file_studio_v1_chat_files_convert_post",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_convert_document_file_studio_v1_chat_files_convert_post"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/chat/completions": {
+      "post": {
+        "tags": [
+          "Jamba Complete"
+        ],
+        "summary": "Studio Chat Complete",
+        "description": "This is the endpoint for the [Jamba Instruct model](https://docs.ai21.com/docs/jamba-models).\nThis is a foundation model that supports both single-turn (question answering,\ntext completion) and multi-turn (chat style) interactions.\n\nYou can optionally stream results if you want to get the response as each\ntoken is generated, rather than waiting for the entire response.",
+        "operationId": "v1_chat_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          },
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Authorization"
+            },
+            "name": "Authorization",
+            "in": "header"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/language_studio_api_server__data_types__chat__ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/components/schemas/ChatCompletion"
+                    },
+                    {
+                      "items": {
+                        "$ref": "#/components/schemas/ChatCompletionVllmStreamingMessage"
+                      },
+                      "type": "array"
+                    }
+                  ],
+                  "title": "Response V1 Chat Complete"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-light/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "j2-light complete",
+        "operationId": "v1_j2_light_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-light"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-light/{custom_model_name}/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "Custom j2-light complete",
+        "operationId": "v1_j2_light_custom_model_complete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Name"
+            },
+            "name": "custom_model_name",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Type",
+              "default": "j2-light"
+            },
+            "name": "custom_model_type",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-mid/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "j2-mid complete",
+        "operationId": "v1_j2_mid_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-mid"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-mid/{custom_model_name}/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "Custom j2-mid complete",
+        "operationId": "v1_j2_mid_custom_model_complete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Name"
+            },
+            "name": "custom_model_name",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Type",
+              "default": "j2-mid"
+            },
+            "name": "custom_model_type",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-ultra/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "j2-ultra complete",
+        "operationId": "v1_j2_ultra_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-ultra"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-ultra/{custom_model_name}/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "Custom j2-ultra complete",
+        "operationId": "v1_j2_ultra_complete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Name"
+            },
+            "name": "custom_model_name",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Type",
+              "default": "j2-ultra"
+            },
+            "name": "custom_model_type",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-large/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "j2-large complete",
+        "operationId": "v1_j2_large_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-large"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-large-instruct/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "j2-large-instruct complete",
+        "operationId": "v1_j2_large_instruct_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-large-instruct"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-grande/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "j2-grande complete",
+        "operationId": "v1_j2_grande_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-grande"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-grande-instruct/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "j2-grande-instruct complete",
+        "operationId": "v1_j2_grande_instruct_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-grande-instruct"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-jumbo/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "j2-jumbo complete",
+        "operationId": "v1_j2_jumbo_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-jumbo"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-jumbo-instruct/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "j2-jumbo-instruct complete",
+        "operationId": "v1_j2_jumbo_instruct_complete",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-jumbo-instruct"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-large/{custom_model_name}/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "Custom j2-large complete",
+        "operationId": "v1_j2_large_custom_model_complete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Name"
+            },
+            "name": "custom_model_name",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Type",
+              "default": "j2-large"
+            },
+            "name": "custom_model_type",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-grande/{custom_model_name}/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "Custom j2-grande complete",
+        "operationId": "v1_j2_grande_custom_model_complete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Name"
+            },
+            "name": "custom_model_name",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Type",
+              "default": "j2-grande"
+            },
+            "name": "custom_model_type",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-jumbo/{custom_model_name}/complete": {
+      "post": {
+        "tags": [
+          "completion"
+        ],
+        "summary": "Custom j2-jumbo complete",
+        "operationId": "v1_j2_jumbo_complete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Name"
+            },
+            "name": "custom_model_name",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Type",
+              "default": "j2-jumbo"
+            },
+            "name": "custom_model_type",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CompletionBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/custom-model": {
+      "get": {
+        "tags": [
+          "custom-models"
+        ],
+        "summary": "Get Custom Models List",
+        "operationId": "v1_get_custom_models",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "title": "Includemetadata",
+              "default": false
+            },
+            "name": "includeMetadata",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "custom-models"
+        ],
+        "summary": "Create Custom Model",
+        "operationId": "v1_create_custom_model",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomModelInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/custom-model/{custom_model_pid}": {
+      "get": {
+        "tags": [
+          "custom-models"
+        ],
+        "summary": "Get Custom Model",
+        "operationId": "v1_get_custom_model",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Pid"
+            },
+            "name": "custom_model_pid",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "custom-models"
+        ],
+        "summary": "Update Model",
+        "operationId": "v1_update_custom_model",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Custom Model Pid"
+            },
+            "name": "custom_model_pid",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CustomModelUpdateBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/custom-model/{model_pid}": {
+      "delete": {
+        "tags": [
+          "custom-models"
+        ],
+        "summary": "Delete Model",
+        "operationId": "v1_delete_custom_model",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Model Pid"
+            },
+            "name": "model_pid",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/paraphrase": {
+      "post": {
+        "tags": [
+          "paraphrase"
+        ],
+        "summary": "Paraphrase",
+        "operationId": "v1_paraphraze",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ParaphraseBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/summarize": {
+      "post": {
+        "tags": [
+          "summarize"
+        ],
+        "summary": "Summarize",
+        "operationId": "v1_summarize",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SummarizeBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SummarizationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/summarize-by-segment": {
+      "post": {
+        "tags": [
+          "summarize"
+        ],
+        "summary": "Segmented Summarize",
+        "operationId": "v1_summarize_by_segment",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SegmentedSummaryBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SummarizeBySegmentResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/segmentation": {
+      "post": {
+        "tags": [
+          "segmentation"
+        ],
+        "summary": "Segmentation",
+        "operationId": "v1_segmentation",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SegmentationBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SegmentationResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/conversational-rag": {
+      "post": {
+        "summary": "Conversational Rag",
+        "operationId": "v1_conversational_rag",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ConversationalRagConfig"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversationalRagResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/library/files": {
+      "get": {
+        "tags": [
+          "Library management"
+        ],
+        "summary": "Get Organization Files",
+        "description": "Get metadata about a specific file by file ID. The file ID is generated by\nAI21 when you upload the file.",
+        "operationId": "v1_library_management",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Name"
+            },
+            "name": "name",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Path"
+            },
+            "name": "path",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "$ref": "#/components/schemas/FileStatus"
+            },
+            "name": "status",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array",
+              "title": "Label"
+            },
+            "name": "label",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Limit",
+              "default": 1000
+            },
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Offset"
+            },
+            "name": "offset",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/FileResponse"
+                  },
+                  "type": "array",
+                  "title": "Response V1 Library Management"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Library management"
+        ],
+        "summary": "Upload Organization File",
+        "description": "Upload files to use for [RAG Engine document searches](https://docs.ai21.com/docs/rag-engine-overview).\nYou can assign metadata to your files to limit searches to specific files by file metadata.\nThere is no bulk upload method; files must be loaded one at a time.\n\n- **Max number of files:** No limit. The playground limits bulk uploads to 50 files per request.\n- **Max library size:** 1 GB total size. No limit to individual file size.\n- **Supported file types:** PDF, DocX, HTML, TXT",
+        "operationId": "v1_library_upload",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/Body_v1_library_upload"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileUploadResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/library/files/{file_id}": {
+      "get": {
+        "tags": [
+          "Library management"
+        ],
+        "summary": "Get File By Id",
+        "description": "Retrieve a list of documents in the user's library. Optionally specify a\nfilter to find only files with matching labels or paths. This method\nreturns only metadata about files; to download a file, call\n`GET .../files/{file_id}/download`\n\nWhen specifying qualifiers with your request, only files that match\n_all_ qualifiers will be returns. So, for example, if you specify\n`label='financial'` and `status='UPLOADED'`, only files with the label\n\"financial\" AND status UPLOADED will be returned.",
+        "operationId": "v1_library_management",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "File Id"
+            },
+            "name": "file_id",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Library management"
+        ],
+        "summary": "Update File",
+        "description": "Update the specified parameters of a specific document in the user's library.\nThis operation currently supports updating the publicUrl and labels parameters.\n\n> **This operation overwrites the specified items with the new data you provide.**\n> If you wish to add new labels to the labels list without removing the existing ones,\n> you must submit a labels list that includes both the current and new labels.**\n>\n> For instance, if the current labels are \"Label A\" and \"Label B\", and you wish to\n> add \"New Label C\" and \"New Label D\" to the list, you must specify `\"labels\": [\"Label A\", \"Label B\", \"New Label C\", \"New Label D\"]`.",
+        "operationId": "v1_library_management",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "File Id"
+            },
+            "name": "file_id",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FilesUpdateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Library management"
+        ],
+        "summary": "Delete File",
+        "description": "Delete the specified file from the library.\n\n**Restrictions**:\nFiles in `PROCESSING` status cannot be deleted. Attempts to delete such files will result in a <span style=\"color:red\">422</span> error.",
+        "operationId": "v1_library_delete",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "File Id"
+            },
+            "name": "file_id",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FileDeleteResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/library/answer": {
+      "post": {
+        "tags": [
+          "RAG Engine"
+        ],
+        "summary": "Answer",
+        "operationId": "v1_library_answer",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LibraryAnswerRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibraryAnswerResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/library/search": {
+      "post": {
+        "tags": [
+          "RAG Engine"
+        ],
+        "summary": "Search",
+        "operationId": "v1_library_search",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LibrarySearchRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LibrarySearchResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/library/files/{file_id}/download": {
+      "get": {
+        "tags": [
+          "RAG Engine"
+        ],
+        "summary": "Generate Documents Signed Url",
+        "operationId": "v1_library_management",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "File Id"
+            },
+            "name": "file_id",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "title": "Response V1 Library Management"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/j2-ultra/chat": {
+      "post": {
+        "tags": [
+          "chat"
+        ],
+        "summary": "j2-ultra chat",
+        "operationId": "v1_j2_ultra_chat",
+        "parameters": [
+          {
+            "required": false,
+            "schema": {
+              "type": "string",
+              "title": "Model",
+              "default": "j2-ultra"
+            },
+            "name": "model",
+            "in": "query"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/language_studio_api_server__data_types__j2_chat__ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChatResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/connectors/connected-users/{organization_id}/tokens": {
+      "post": {
+        "summary": "Generate Org Token",
+        "operationId": "generate_org_token_studio_v1_connectors_connected_users__organization_id__tokens_post",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Organization Id"
+            },
+            "name": "organization_id",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectorsToken"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/connectors/connected-users/{organization_id}/data-sources": {
+      "get": {
+        "summary": "Get Org Data Sources Info",
+        "operationId": "get_org_data_sources_info_studio_v1_connectors_connected_users__organization_id__data_sources_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Organization Id"
+            },
+            "name": "organization_id",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectorsDataSources"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/studio/v1/connectors/connected-users/{organization_id}/data-sources/{data_source}/status": {
+      "get": {
+        "summary": "Get Data Source Status",
+        "operationId": "get_data_source_status_studio_v1_connectors_connected_users__organization_id__data_sources__data_source__status_get",
+        "parameters": [
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Organization Id"
+            },
+            "name": "organization_id",
+            "in": "path"
+          },
+          {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Data Source"
+            },
+            "name": "data_source",
+            "in": "path"
+          },
+          {
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "title": "Request Start Time",
+              "default": 1730898830008
+            },
+            "name": "request_start_time",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectorsStatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnswerLength": {
+        "enum": [
+          "short",
+          "medium",
+          "long"
+        ],
+        "title": "AnswerLength",
+        "description": "An enumeration."
+      },
+      "AssistantMessage": {
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "assistant"
+            ],
+            "title": "Role",
+            "default": "assistant",
+            "description": "The role of an individual message.\n- `user`:  Input provided by the user. Any instructions given here that conflict\n  with instructions given in the `system` prompt take precedence over the `system`\n  prompt instructions.\n- `assistant`:  Response generated by the model.\n- `system`:  Initial instructions provided to the system to provide general guidance\n  on the tone and voice of the generated message. An initial system message is\n  optional but recommended to provide guidance on the tone of the chat. For\n  example, \"You are a helpful chatbot with a background in earth sciences and a\n  charming French accent.\"\n"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content"
+          },
+          "tool_calls": {
+            "items": {
+              "$ref": "#/components/schemas/ToolCall"
+            },
+            "type": "array",
+            "title": "Tool Calls"
+          }
+        },
+        "type": "object",
+        "title": "AssistantMessage"
+      },
+      "Body_convert_document_file_studio_v1_chat_files_convert_post": {
+        "properties": {
+          "files": {
+            "items": {
+              "type": "string",
+              "format": "binary"
+            },
+            "type": "array",
+            "title": "Files"
+          }
+        },
+        "type": "object",
+        "required": [
+          "files"
+        ],
+        "title": "Body_convert_document_file_studio_v1_chat_files_convert_post"
+      },
+      "Body_v1_library_upload": {
+        "properties": {
+          "file": {
+            "type": "string",
+            "format": "binary",
+            "title": "File"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels"
+          },
+          "publicUrl": {
+            "type": "string",
+            "title": "Publicurl"
+          },
+          "custom_configs": {
+            "type": "string",
+            "title": "Custom Configs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file"
+        ],
+        "title": "Body_v1_library_upload"
+      },
+      "ChatCompletion": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "choices": {
+            "items": {
+              "$ref": "#/components/schemas/ChatCompletionResponseChoice"
+            },
+            "type": "array",
+            "title": "Choices",
+            "description": "One or more responses, depending on the `n` parameter from the request.\n"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/UsageInfo",
+            "description": "The token counts for this request. Per-token billing is based on the\nprompt token and completion token counts and rates.\n"
+          },
+          "meta": {
+            "type": "object",
+            "title": "Meta"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "choices",
+          "usage"
+        ],
+        "title": "ChatCompletion",
+        "description": "Used for non-streaming responses. Streaming responses return `ChatCompletionVllmStreamingMessage`."
+      },
+      "ChatCompletionResponseChoice": {
+        "properties": {
+          "index": {
+            "type": "integer",
+            "title": "Index",
+            "description": "Zero-based index of the message in the list of messages. Note that this might not\ncorrespond with the position in the response list.\n"
+          },
+          "message": {
+            "$ref": "#/components/schemas/AssistantMessage",
+            "description": "The message generated by the model. Same structure as the request message, with `role` and `content` members.\n"
+          },
+          "logprobs": {
+            "$ref": "#/components/schemas/Logprobs"
+          },
+          "finish_reason": {
+            "type": "string",
+            "title": "Finish Reason",
+            "description": "Why the message ended. Possible reasons:\n  - `stop`: The response ended naturally as a complete answer (due to\n    [end-of-sequence token](https://huggingface.co/docs/transformers/v4.32.1/en/llm_tutorial#generate-text))\n    or because the model generated a stop sequence provided in the request.\n  - `length`:  The response ended by reaching `max_tokens`.\n"
+          }
+        },
+        "type": "object",
+        "required": [
+          "index",
+          "message"
+        ],
+        "title": "ChatCompletionResponseChoice",
+        "description": "A single possible response generated by the system. For non-streaming replies, There\ncan be multiple responses, depending on what `n` value you specified in the request.\n"
+      },
+      "ChatCompletionResponseDeltaChoice": {
+        "properties": {
+          "index": {
+            "type": "integer",
+            "title": "Index",
+            "description": "Always zero in streamed responses."
+          },
+          "delta": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ChatStreamingFirstDelta"
+              },
+              {
+                "$ref": "#/components/schemas/ChatStreamingContentDelta"
+              }
+            ],
+            "title": "Delta",
+            "description": "- **The first message** in the stream will be an object set to `{\"role\":\"assistant\"}`.\n- **Subsequent messages** will have an object `{\"content\": __token__}` with the generated token.\n"
+          },
+          "logprobs": {
+            "$ref": "#/components/schemas/Logprobs"
+          },
+          "finish_reason": {
+            "type": "string",
+            "title": "Finish Reason",
+            "description": "One of the following string values:\n  - `null`: All messages but the last will return null for `finish_reason`.\n  - `stop`: The response ended naturally as a complete answer (due to\n    [end-of-sequence token](https://huggingface.co/docs/transformers/v4.32.1/en/llm_tutorial#generate-text))\n     or because the model generated a stop sequence provided in the request.\n  - `length`:  The response ended by reaching `max_tokens`.\n"
+          }
+        },
+        "type": "object",
+        "required": [
+          "index",
+          "delta"
+        ],
+        "title": "ChatCompletionResponseDeltaChoice"
+      },
+      "ChatCompletionVllmStreamingMessage": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "choices": {
+            "items": {
+              "$ref": "#/components/schemas/ChatCompletionResponseDeltaChoice"
+            },
+            "type": "array",
+            "title": "Choices",
+            "description": "The message"
+          },
+          "usage": {
+            "$ref": "#/components/schemas/UsageInfo",
+            "description": "Included in the last message only. Total token counts for the message."
+          },
+          "meta": {
+            "type": "object",
+            "title": "Meta"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "choices"
+        ],
+        "title": "ChatCompletionVllmStreamingMessage",
+        "description": "Returned for streaming messages. Non-streaming responses return `ChatCompletion`."
+      },
+      "ChatMessage": {
+        "properties": {
+          "role": {
+            "$ref": "#/components/schemas/RoleType",
+            "description": "The role of an individual message.\n- `user`:  Input provided by the user. Any instructions given here that conflict\n  with instructions given in the `system` prompt take precedence over the `system`\n  prompt instructions.\n- `assistant`:  Response generated by the model.\n- `system`:  Initial instructions provided to the system to provide general guidance\n  on the tone and voice of the generated message. An initial system message is\n  optional but recommended to provide guidance on the tone of the chat. For\n  example, \"You are a helpful chatbot with a background in earth sciences and a\n  charming French accent.\"\n"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "role",
+          "text"
+        ],
+        "title": "ChatMessage"
+      },
+      "ChatOutput": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "role": {
+            "$ref": "#/components/schemas/RoleType",
+            "description": "The role of an individual message.\n- `user`:  Input provided by the user. Any instructions given here that conflict\n  with instructions given in the `system` prompt take precedence over the `system`\n  prompt instructions.\n- `assistant`:  Response generated by the model.\n- `system`:  Initial instructions provided to the system to provide general guidance\n  on the tone and voice of the generated message. An initial system message is\n  optional but recommended to provide guidance on the tone of the chat. For\n  example, \"You are a helpful chatbot with a background in earth sciences and a\n  charming French accent.\"\n"
+          },
+          "finishReason": {
+            "$ref": "#/components/schemas/FinishReason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "role",
+          "finishReason"
+        ],
+        "title": "ChatOutput"
+      },
+      "ChatResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "outputs": {
+            "items": {
+              "$ref": "#/components/schemas/ChatOutput"
+            },
+            "type": "array",
+            "title": "Outputs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "outputs"
+        ],
+        "title": "ChatResponse"
+      },
+      "ChatStreamingContentDelta": {
+        "properties": {
+          "content": {
+            "type": "string",
+            "title": "Content"
+          }
+        },
+        "type": "object",
+        "required": [
+          "content"
+        ],
+        "title": "ChatStreamingContentDelta"
+      },
+      "ChatStreamingFirstDelta": {
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "system",
+              "user",
+              "assistant",
+              "tool"
+            ],
+            "title": "Role",
+            "description": "The role of an individual message.\n- `user`:  Input provided by the user. Any instructions given here that conflict\n  with instructions given in the `system` prompt take precedence over the `system`\n  prompt instructions.\n- `assistant`:  Response generated by the model.\n- `system`:  Initial instructions provided to the system to provide general guidance\n  on the tone and voice of the generated message. An initial system message is\n  optional but recommended to provide guidance on the tone of the chat. For\n  example, \"You are a helpful chatbot with a background in earth sciences and a\n  charming French accent.\"\n"
+          }
+        },
+        "type": "object",
+        "required": [
+          "role"
+        ],
+        "title": "ChatStreamingFirstDelta"
+      },
+      "ComparisonOperator": {
+        "type": "object",
+        "title": "ComparisonOperator"
+      },
+      "CompletionBody": {
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "title": "Prompt"
+          },
+          "numResults": {
+            "type": "integer",
+            "title": "Numresults",
+            "default": 1
+          },
+          "maxTokens": {
+            "type": "integer",
+            "title": "Maxtokens",
+            "default": 16
+          },
+          "minTokens": {
+            "type": "integer",
+            "title": "Mintokens",
+            "default": 0
+          },
+          "temperature": {
+            "type": "number",
+            "title": "Temperature",
+            "default": 1.0
+          },
+          "topP": {
+            "type": "number",
+            "title": "Topp",
+            "default": 1.0
+          },
+          "minP": {
+            "type": "number",
+            "title": "Minp",
+            "default": 0.0
+          },
+          "stopSequences": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Stopsequences",
+            "default": []
+          },
+          "topKReturn": {
+            "type": "integer",
+            "title": "Topkreturn",
+            "default": 0
+          },
+          "logitBias": {
+            "type": "object",
+            "title": "Logitbias"
+          },
+          "frequencyPenalty": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Penalty"
+              }
+            ],
+            "title": "Frequencypenalty",
+            "default": {
+              "scale": 0.0,
+              "applyToWhitespaces": true,
+              "applyToPunctuations": true,
+              "applyToNumbers": true,
+              "applyToStopwords": true,
+              "applyToEmojis": true
+            }
+          },
+          "presencePenalty": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Penalty"
+              }
+            ],
+            "title": "Presencepenalty",
+            "default": {
+              "scale": 0.0,
+              "applyToWhitespaces": true,
+              "applyToPunctuations": true,
+              "applyToNumbers": true,
+              "applyToStopwords": true,
+              "applyToEmojis": true
+            }
+          },
+          "countPenalty": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Penalty"
+              }
+            ],
+            "title": "Countpenalty",
+            "default": {
+              "scale": 0.0,
+              "applyToWhitespaces": true,
+              "applyToPunctuations": true,
+              "applyToNumbers": true,
+              "applyToStopwords": true,
+              "applyToEmojis": true
+            }
+          },
+          "epoch": {
+            "type": "integer",
+            "title": "Epoch"
+          }
+        },
+        "type": "object",
+        "required": [
+          "prompt"
+        ],
+        "title": "CompletionBody"
+      },
+      "ConnectorsDataSources": {
+        "properties": {
+          "data_sources": {
+            "items": {
+              "$ref": "#/components/schemas/DataSourceMetadata"
+            },
+            "type": "array",
+            "title": "Data Sources"
+          }
+        },
+        "type": "object",
+        "required": [
+          "data_sources"
+        ],
+        "title": "ConnectorsDataSources"
+      },
+      "ConnectorsStatus": {
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "title": "Created At"
+          },
+          "workflow_status": {
+            "$ref": "#/components/schemas/ConnectorsWorkflowStatus"
+          },
+          "files_successfully_uploaded": {
+            "type": "integer",
+            "title": "Files Successfully Uploaded"
+          },
+          "failed_uploaded_files": {
+            "type": "integer",
+            "title": "Failed Uploaded Files"
+          }
+        },
+        "type": "object",
+        "required": [
+          "created_at",
+          "workflow_status",
+          "files_successfully_uploaded",
+          "failed_uploaded_files"
+        ],
+        "title": "ConnectorsStatus"
+      },
+      "ConnectorsToken": {
+        "properties": {
+          "token": {
+            "type": "string",
+            "title": "Token"
+          }
+        },
+        "type": "object",
+        "required": [
+          "token"
+        ],
+        "title": "ConnectorsToken"
+      },
+      "ConnectorsWorkflowStatus": {
+        "enum": [
+          "IN_PROGRESS",
+          "PARTIALLY_COMPLETED",
+          "FAILED",
+          "SUCCEEDED"
+        ],
+        "title": "ConnectorsWorkflowStatus",
+        "description": "An enumeration."
+      },
+      "ConversationalRagConfig": {
+        "properties": {
+          "messages": {
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            },
+            "type": "array",
+            "title": "Messages",
+            "description": "messages"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels"
+          },
+          "file_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "File Ids"
+          },
+          "max_segments": {
+            "type": "integer",
+            "title": "Max Segments",
+            "default": 15
+          },
+          "retrieval_strategy": {
+            "type": "string",
+            "enum": [
+              "default",
+              "segments",
+              "add_neighbors",
+              "full_doc"
+            ],
+            "title": "Retrieval Strategy",
+            "default": "default"
+          },
+          "retrieval_similarity_threshold": {
+            "type": "number",
+            "title": "Retrieval Similarity Threshold",
+            "default": 0.8
+          },
+          "max_neighbors": {
+            "type": "integer",
+            "title": "Max Neighbors"
+          },
+          "hybrid_search_alpha": {
+            "type": "number",
+            "title": "Hybrid Search Alpha",
+            "default": 0.98
+          }
+        },
+        "type": "object",
+        "required": [
+          "messages"
+        ],
+        "title": "ConversationalRagConfig",
+        "description": "This class is to be used as a common class to all Studio API requests payloads"
+      },
+      "ConversationalRagResult": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "choices": {
+            "items": {
+              "$ref": "#/components/schemas/Message"
+            },
+            "type": "array",
+            "title": "Choices"
+          },
+          "search_queries": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Search Queries"
+          },
+          "context_retrieved": {
+            "type": "boolean",
+            "title": "Context Retrieved"
+          },
+          "answer_in_context": {
+            "type": "boolean",
+            "title": "Answer In Context"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/ConversationalRagSource"
+            },
+            "type": "array",
+            "title": "Sources"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "choices",
+          "context_retrieved",
+          "answer_in_context",
+          "sources"
+        ],
+        "title": "ConversationalRagResult"
+      },
+      "ConversationalRagSource": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "file_id": {
+            "type": "string",
+            "title": "File Id"
+          },
+          "file_name": {
+            "type": "string",
+            "title": "File Name"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "order": {
+            "type": "integer",
+            "title": "Order"
+          },
+          "public_url": {
+            "type": "string",
+            "title": "Public Url"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "file_id",
+          "file_name",
+          "score"
+        ],
+        "title": "ConversationalRagSource"
+      },
+      "CustomModelInput": {
+        "properties": {
+          "model_type": {
+            "$ref": "#/components/schemas/CustomModelType"
+          },
+          "learning_rate": {
+            "type": "number",
+            "title": "Learning Rate"
+          },
+          "num_epochs": {
+            "type": "integer",
+            "title": "Num Epochs"
+          },
+          "dataset_id": {
+            "type": "string",
+            "title": "Dataset Id"
+          },
+          "model_name": {
+            "type": "string",
+            "title": "Model Name"
+          }
+        },
+        "type": "object",
+        "required": [
+          "model_type",
+          "dataset_id",
+          "model_name"
+        ],
+        "title": "CustomModelInput"
+      },
+      "CustomModelType": {
+        "enum": [
+          "j2-large",
+          "j2-grande",
+          "j2-jumbo",
+          "j2-light",
+          "j2-mid",
+          "j2-ultra"
+        ],
+        "title": "CustomModelType",
+        "description": "An enumeration."
+      },
+      "CustomModelUpdateBody": {
+        "properties": {
+          "defaultEpoch": {
+            "type": "integer",
+            "title": "Defaultepoch"
+          }
+        },
+        "type": "object",
+        "title": "CustomModelUpdateBody"
+      },
+      "DataSourceMetadata": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "icon": {
+            "type": "string",
+            "title": "Icon"
+          },
+          "connected": {
+            "type": "boolean",
+            "title": "Connected"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "type",
+          "description",
+          "icon",
+          "connected"
+        ],
+        "title": "DataSourceMetadata"
+      },
+      "DocumentSchema": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content"
+          },
+          "metadata": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Metadata",
+            "default": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "content"
+        ],
+        "title": "DocumentSchema"
+      },
+      "DocumentType": {
+        "type": "string",
+        "enum": [
+          "URL",
+          "TEXT"
+        ],
+        "title": "DocumentType",
+        "description": "An enumeration."
+      },
+      "FileDeleteResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "fileId": {
+            "type": "string",
+            "title": "Fileid",
+            "description": "The RAG library ID of the deleted file."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "fileId"
+        ],
+        "title": "FileDeleteResponse"
+      },
+      "FileResponse": {
+        "properties": {
+          "fileId": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Fileid",
+            "description": "The unique identifier of the file, generated by AI21.\n"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "The name of the file. This is the local file name from when the file was\nuploaded. It cannot be modified.\n"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "description": "An arbitrary file-path-like string to indicate the content of a file. This has\nnothing to do with the location of the file in storage or on disk, and is only\nanother label that you can assign to the file in path-like format to help you\norganize the contents of the file or filter queries against your files. Example\npaths might be `pets/fish` or `pets/dogs`. Then, when searching your library,\nyou can filter files by the full path or path prefix. So to search only files\nin the \"dog folder\", filter by the path `/pets/dogs`. To search all files in\nthe \"pet folder\", filter your search by the path `pets/` when searching by path.\nThere isn't a restriction on whether a path must start or end with a / mark, but\nbe consistent in your usage, and all matches are prefix matching, not substring\nmatching. So filtering by `dog/` matches `dog/` and `dog/setter` but not `pets/dog/`.\n"
+          },
+          "fileType": {
+            "type": "string",
+            "title": "Filetype",
+            "description": "The file type. See the file upload method to learn what file types are supported.\n"
+          },
+          "sizeBytes": {
+            "type": "integer",
+            "title": "Sizebytes",
+            "description": "The size of the file, in bytes."
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels",
+            "description": "Any string labels you have associated with the file. You can apply arbitrary\nstring labels to your files and limit queries to files with one or more labels.\nSimilar to paths, but labels do not prefix match. Labels are case-sensitive.\nThere can be a maximum of 20 unique labels per account.\n"
+          },
+          "publicUrl": {
+            "type": "string",
+            "title": "Publicurl",
+            "description": "The public URL of the file, if any. This URL is not validated by\nAI21 or used in any way. It is strictly a piece of metadata that you can\noptionally attach to a file.\n"
+          },
+          "createdBy": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Createdby",
+            "description": "An internal identifier of the user who uploaded the file.\n"
+          },
+          "creationDate": {
+            "type": "string",
+            "format": "date",
+            "title": "Creationdate",
+            "description": "The date when the file was uploaded."
+          },
+          "lastUpdated": {
+            "type": "string",
+            "format": "date",
+            "title": "Lastupdated",
+            "description": "When the file data or metadata was last changed."
+          },
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "File status. One of the following values: \"DB_RECORD_CREATED\",\n\"UPLOADED\", \"UPLOAD_FAILED\", \"PROCESSED\", \"PROCESSING_FAILED\"\n"
+          }
+        },
+        "type": "object",
+        "required": [
+          "fileId",
+          "name",
+          "fileType",
+          "sizeBytes",
+          "createdBy",
+          "creationDate",
+          "lastUpdated",
+          "status"
+        ],
+        "title": "FileResponse"
+      },
+      "FileStatus": {
+        "type": "string",
+        "enum": [
+          "DB_RECORD_CREATED",
+          "UPLOADED",
+          "UPLOAD_FAILED",
+          "PROCESSED",
+          "PROCESSING_FAILED"
+        ],
+        "title": "FileStatus",
+        "description": "An enumeration."
+      },
+      "FileUploadResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "fileId": {
+            "type": "string",
+            "title": "Fileid",
+            "description": "A unique identifier for the uploaded file. Use this later to request, modify metadata,\nor delete the file. You don't need to store the value though, as it is returned\nalong with all file information in any file GET request. Example: da13301a-14e4-4487-aa2f-cc6048e73cdc\n"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "fileId"
+        ],
+        "title": "FileUploadResponse"
+      },
+      "FilesUpdateRequest": {
+        "properties": {
+          "publicUrl": {
+            "type": "string",
+            "title": "Publicurl",
+            "description": "The public URL of the file, if any. This URL is not validated by\nAI21 or used in any way. It is strictly a piece of metadata that you can\noptionally attach to a file.\n"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels",
+            "description": "Any labels to associate with this file. Separate multiple labels with commas. If\nprovided, will overwrite all existing labels.\n"
+          }
+        },
+        "type": "object",
+        "title": "FilesUpdateRequest"
+      },
+      "FinishReason": {
+        "properties": {
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          },
+          "length": {
+            "type": "integer",
+            "title": "Length"
+          },
+          "sequence": {
+            "type": "string",
+            "title": "Sequence"
+          }
+        },
+        "type": "object",
+        "required": [
+          "reason"
+        ],
+        "title": "FinishReason"
+      },
+      "FunctionToolDefinition": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "description": {
+            "type": "string",
+            "title": "Description"
+          },
+          "parameters": {
+            "$ref": "#/components/schemas/ToolParameters"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "FunctionToolDefinition"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "Highlight": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "startIndex": {
+            "type": "integer",
+            "title": "Startindex"
+          },
+          "endIndex": {
+            "type": "integer",
+            "title": "Endindex"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "startIndex",
+          "endIndex"
+        ],
+        "title": "Highlight"
+      },
+      "LibraryAnswerRequest": {
+        "properties": {
+          "question": {
+            "type": "string",
+            "title": "Question"
+          },
+          "maxSegments": {
+            "type": "integer",
+            "title": "Maxsegments"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels"
+          },
+          "labels_filter": {
+            "$ref": "#/components/schemas/QueryFilter"
+          },
+          "labels_filter_mode": {
+            "type": "string",
+            "enum": [
+              "AND",
+              "OR"
+            ],
+            "title": "Labels Filter Mode",
+            "default": "AND"
+          },
+          "fileIds": {
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "type": "array",
+            "title": "Fileids"
+          },
+          "answerLength": {
+            "$ref": "#/components/schemas/AnswerLength"
+          },
+          "mode": {
+            "$ref": "#/components/schemas/Mode"
+          },
+          "retrievalStrategy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RetrievalStrategy"
+              }
+            ],
+            "default": "default"
+          },
+          "retrievalSimilarityThreshold": {
+            "type": "number",
+            "maximum": 1.5,
+            "minimum": 0.5,
+            "title": "Retrievalsimilaritythreshold"
+          },
+          "hybridSearchAlpha": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Hybridsearchalpha"
+          }
+        },
+        "type": "object",
+        "required": [
+          "question"
+        ],
+        "title": "LibraryAnswerRequest",
+        "description": "This class is to be used as a common class to all Studio API requests payloads"
+      },
+      "LibraryAnswerResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "answerInContext": {
+            "type": "boolean",
+            "title": "Answerincontext"
+          },
+          "answer": {
+            "type": "string",
+            "title": "Answer"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/SourceDocument"
+            },
+            "type": "array",
+            "title": "Sources"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "answerInContext"
+        ],
+        "title": "LibraryAnswerResponse"
+      },
+      "LibrarySearchRequest": {
+        "properties": {
+          "query": {
+            "type": "string",
+            "title": "Query"
+          },
+          "maxSegments": {
+            "type": "integer",
+            "title": "Maxsegments"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels"
+          },
+          "labels_filter": {
+            "$ref": "#/components/schemas/QueryFilter"
+          },
+          "labels_filter_mode": {
+            "type": "string",
+            "enum": [
+              "AND",
+              "OR"
+            ],
+            "title": "Labels Filter Mode",
+            "default": "AND"
+          },
+          "fileIds": {
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "type": "array",
+            "title": "Fileids"
+          },
+          "retrievalStrategy": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RetrievalStrategy"
+              }
+            ],
+            "default": "default"
+          },
+          "maxNeighbors": {
+            "type": "integer",
+            "title": "Maxneighbors",
+            "default": 1
+          },
+          "retrievalSimilarityThreshold": {
+            "type": "number",
+            "maximum": 1.5,
+            "minimum": 0.5,
+            "title": "Retrievalsimilaritythreshold"
+          },
+          "hybridSearchAlpha": {
+            "type": "number",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "title": "Hybridsearchalpha"
+          }
+        },
+        "type": "object",
+        "required": [
+          "query"
+        ],
+        "title": "LibrarySearchRequest",
+        "description": "This class is to be used as a common class to all Studio API requests payloads"
+      },
+      "LibrarySearchResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/LibrarySearchResult"
+            },
+            "type": "array",
+            "title": "Results"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "results"
+        ],
+        "title": "LibrarySearchResponse"
+      },
+      "LibrarySearchResult": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "fileId": {
+            "type": "string",
+            "title": "Fileid"
+          },
+          "fileName": {
+            "type": "string",
+            "title": "Filename"
+          },
+          "score": {
+            "type": "number",
+            "title": "Score"
+          },
+          "order": {
+            "type": "integer",
+            "title": "Order"
+          },
+          "publicUrl": {
+            "type": "string",
+            "title": "Publicurl"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text",
+          "fileId",
+          "fileName",
+          "score"
+        ],
+        "title": "LibrarySearchResult"
+      },
+      "LogicalOperator": {
+        "additionalProperties": {
+          "items": {
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "type": "object",
+        "title": "LogicalOperator"
+      },
+      "Logprobs": {
+        "properties": {
+          "content": {
+            "items": {
+              "$ref": "#/components/schemas/LogprobsData"
+            },
+            "type": "array",
+            "title": "Content"
+          }
+        },
+        "type": "object",
+        "required": [
+          "content"
+        ],
+        "title": "Logprobs"
+      },
+      "LogprobsData": {
+        "properties": {
+          "token": {
+            "type": "string",
+            "title": "Token"
+          },
+          "logprob": {
+            "type": "number",
+            "title": "Logprob"
+          },
+          "top_logprobs": {
+            "items": {
+              "$ref": "#/components/schemas/TopLogprobsData"
+            },
+            "type": "array",
+            "title": "Top Logprobs"
+          }
+        },
+        "type": "object",
+        "required": [
+          "token",
+          "logprob"
+        ],
+        "title": "LogprobsData"
+      },
+      "Message": {
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "assistant",
+              "user"
+            ],
+            "title": "Role",
+            "description": "The role of an individual message.\n- `user`:  Input provided by the user. Any instructions given here that conflict\n  with instructions given in the `system` prompt take precedence over the `system`\n  prompt instructions.\n- `assistant`:  Response generated by the model.\n- `system`:  Initial instructions provided to the system to provide general guidance\n  on the tone and voice of the generated message. An initial system message is\n  optional but recommended to provide guidance on the tone of the chat. For\n  example, \"You are a helpful chatbot with a background in earth sciences and a\n  charming French accent.\"\n"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content"
+          }
+        },
+        "type": "object",
+        "required": [
+          "role",
+          "content"
+        ],
+        "title": "Message"
+      },
+      "MockResponseConfig": {
+        "properties": {
+          "response_delay_seconds": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Response Delay Seconds",
+            "default": 1
+          },
+          "stream_response_delay_between_deltas_seconds": {
+            "type": "number",
+            "minimum": 0.0,
+            "title": "Stream Response Delay Between Deltas Seconds",
+            "default": 0.1
+          }
+        },
+        "type": "object",
+        "title": "MockResponseConfig",
+        "include_in_schema": false
+      },
+      "Mode": {
+        "enum": [
+          "flexible",
+          "strict"
+        ],
+        "title": "Mode",
+        "description": "An enumeration."
+      },
+      "ModelName": {
+        "type": "string",
+        "enum": [
+          "jamba-instruct",
+          "jamba-instruct-preview",
+          "jamba-1.5-mini",
+          "jamba-1.5-large"
+        ],
+        "title": "ModelName",
+        "description": "An enumeration."
+      },
+      "ParaphraseBody": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "title": "Text"
+          },
+          "style": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/StyleType"
+              }
+            ],
+            "default": "general"
+          },
+          "startIndex": {
+            "type": "integer",
+            "title": "Startindex",
+            "default": 0
+          },
+          "endIndex": {
+            "type": "integer",
+            "title": "Endindex"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "ParaphraseBody",
+        "description": "This class is to be used as a common class to all Studio API requests payloads"
+      },
+      "Penalty": {
+        "properties": {
+          "scale": {
+            "type": "number",
+            "title": "Scale"
+          },
+          "applyToWhitespaces": {
+            "type": "boolean",
+            "title": "Applytowhitespaces",
+            "default": true
+          },
+          "applyToPunctuations": {
+            "type": "boolean",
+            "title": "Applytopunctuations",
+            "default": true
+          },
+          "applyToNumbers": {
+            "type": "boolean",
+            "title": "Applytonumbers",
+            "default": true
+          },
+          "applyToStopwords": {
+            "type": "boolean",
+            "title": "Applytostopwords",
+            "default": true
+          },
+          "applyToEmojis": {
+            "type": "boolean",
+            "title": "Applytoemojis",
+            "default": true
+          }
+        },
+        "type": "object",
+        "required": [
+          "scale"
+        ],
+        "title": "Penalty"
+      },
+      "QueryFilter": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ComparisonOperator"
+          },
+          {
+            "$ref": "#/components/schemas/LogicalOperator"
+          },
+          {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ComparisonOperator"
+            },
+            "type": "object"
+          }
+        ],
+        "title": "QueryFilter"
+      },
+      "ResponseFormat": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "text",
+              "json_object"
+            ],
+            "title": "Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "title": "ResponseFormat"
+      },
+      "RetrievalStrategy": {
+        "type": "string",
+        "enum": [
+          "default",
+          "add_neighbors",
+          "full_doc"
+        ],
+        "title": "RetrievalStrategy",
+        "description": "An enumeration."
+      },
+      "RoleType": {
+        "type": "string",
+        "enum": [
+          "user",
+          "assistant"
+        ],
+        "title": "RoleType",
+        "description": "An enumeration."
+      },
+      "Segment": {
+        "properties": {
+          "segmentText": {
+            "type": "string",
+            "title": "Segmenttext"
+          },
+          "segmentType": {
+            "type": "string",
+            "title": "Segmenttype"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segmentText",
+          "segmentType"
+        ],
+        "title": "Segment"
+      },
+      "SegmentSummary": {
+        "properties": {
+          "summary": {
+            "type": "string",
+            "title": "Summary"
+          },
+          "segmentText": {
+            "type": "string",
+            "title": "Segmenttext"
+          },
+          "segmentHtml": {
+            "type": "string",
+            "title": "Segmenthtml"
+          },
+          "segmentType": {
+            "type": "string",
+            "title": "Segmenttype"
+          },
+          "hasSummary": {
+            "type": "boolean",
+            "title": "Hassummary"
+          },
+          "highlights": {
+            "items": {
+              "$ref": "#/components/schemas/Highlight"
+            },
+            "type": "array",
+            "title": "Highlights"
+          }
+        },
+        "type": "object",
+        "required": [
+          "segmentText",
+          "segmentType",
+          "hasSummary",
+          "highlights"
+        ],
+        "title": "SegmentSummary"
+      },
+      "SegmentationBody": {
+        "properties": {
+          "sourceType": {
+            "$ref": "#/components/schemas/DocumentType"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sourceType",
+          "source"
+        ],
+        "title": "SegmentationBody",
+        "description": "This class is to be used as a common class to all Studio API requests payloads"
+      },
+      "SegmentationResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/Segment"
+            },
+            "type": "array",
+            "title": "Segments"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "segments"
+        ],
+        "title": "SegmentationResponse"
+      },
+      "SegmentedSummaryBody": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "sourceType": {
+            "$ref": "#/components/schemas/DocumentType"
+          },
+          "focus": {
+            "type": "string",
+            "title": "Focus"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "sourceType"
+        ],
+        "title": "SegmentedSummaryBody",
+        "description": "This class is to be used as a common class to all Studio API requests payloads"
+      },
+      "SourceDocument": {
+        "properties": {
+          "fileId": {
+            "type": "string",
+            "title": "Fileid"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "highlights": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Highlights"
+          },
+          "publicUrl": {
+            "type": "string",
+            "title": "Publicurl"
+          },
+          "labels": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Labels"
+          }
+        },
+        "type": "object",
+        "required": [
+          "fileId",
+          "name",
+          "highlights"
+        ],
+        "title": "SourceDocument"
+      },
+      "StyleType": {
+        "enum": [
+          "long",
+          "short",
+          "formal",
+          "casual",
+          "general"
+        ],
+        "title": "StyleType",
+        "description": "An enumeration."
+      },
+      "SummarizationResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "summary": {
+            "type": "string",
+            "title": "Summary"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "summary"
+        ],
+        "title": "SummarizationResponse"
+      },
+      "SummarizeBody": {
+        "properties": {
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "sourceType": {
+            "$ref": "#/components/schemas/DocumentType"
+          },
+          "focus": {
+            "type": "string",
+            "title": "Focus"
+          },
+          "summaryMethod": {
+            "$ref": "#/components/schemas/SummaryMethod"
+          }
+        },
+        "type": "object",
+        "required": [
+          "source",
+          "sourceType"
+        ],
+        "title": "SummarizeBody",
+        "description": "This class is to be used as a common class to all Studio API requests payloads"
+      },
+      "SummarizeBySegmentResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/SegmentSummary"
+            },
+            "type": "array",
+            "title": "Segments"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "segments"
+        ],
+        "title": "SummarizeBySegmentResponse"
+      },
+      "SummaryMethod": {
+        "enum": [
+          "segments",
+          "guided",
+          "fullDocument"
+        ],
+        "title": "SummaryMethod",
+        "description": "An enumeration."
+      },
+      "SystemMessage": {
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "system"
+            ],
+            "title": "Role",
+            "default": "system",
+            "description": "The role of an individual message.\n- `user`:  Input provided by the user. Any instructions given here that conflict\n  with instructions given in the `system` prompt take precedence over the `system`\n  prompt instructions.\n- `assistant`:  Response generated by the model.\n- `system`:  Initial instructions provided to the system to provide general guidance\n  on the tone and voice of the generated message. An initial system message is\n  optional but recommended to provide guidance on the tone of the chat. For\n  example, \"You are a helpful chatbot with a background in earth sciences and a\n  charming French accent.\"\n"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content"
+          }
+        },
+        "type": "object",
+        "required": [
+          "content"
+        ],
+        "title": "SystemMessage"
+      },
+      "ToolCall": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "A unique ID for the request (not the message). Repeated identical requests\nget different IDs. However, for a streaming response, the ID will be the same\nfor all responses in the stream.\n"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "function"
+            ],
+            "title": "Type",
+            "default": "function"
+          },
+          "function": {
+            "$ref": "#/components/schemas/ToolFunction"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "function"
+        ],
+        "title": "ToolCall"
+      },
+      "ToolDefinition": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "function"
+            ],
+            "title": "Type"
+          },
+          "function": {
+            "$ref": "#/components/schemas/FunctionToolDefinition"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "function"
+        ],
+        "title": "ToolDefinition"
+      },
+      "ToolFunction": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "arguments": {
+            "type": "string",
+            "title": "Arguments"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name",
+          "arguments"
+        ],
+        "title": "ToolFunction"
+      },
+      "ToolMessage": {
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "tool"
+            ],
+            "title": "Role",
+            "default": "tool",
+            "description": "The role of an individual message.\n- `user`:  Input provided by the user. Any instructions given here that conflict\n  with instructions given in the `system` prompt take precedence over the `system`\n  prompt instructions.\n- `assistant`:  Response generated by the model.\n- `system`:  Initial instructions provided to the system to provide general guidance\n  on the tone and voice of the generated message. An initial system message is\n  optional but recommended to provide guidance on the tone of the chat. For\n  example, \"You are a helpful chatbot with a background in earth sciences and a\n  charming French accent.\"\n"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content"
+          },
+          "tool_call_id": {
+            "type": "string",
+            "title": "Tool Call Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "content",
+          "tool_call_id"
+        ],
+        "title": "ToolMessage"
+      },
+      "ToolParameters": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "object"
+            ],
+            "title": "Type",
+            "description": "Type of the parameter schema, only `object` is supported",
+            "default": "object"
+          },
+          "properties": {
+            "type": "object",
+            "title": "Properties"
+          },
+          "required": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Required",
+            "description": "List of required properties"
+          }
+        },
+        "type": "object",
+        "required": [
+          "properties"
+        ],
+        "title": "ToolParameters"
+      },
+      "TopLogprobsData": {
+        "properties": {
+          "token": {
+            "type": "string",
+            "title": "Token"
+          },
+          "logprob": {
+            "type": "number",
+            "title": "Logprob"
+          }
+        },
+        "type": "object",
+        "required": [
+          "token",
+          "logprob"
+        ],
+        "title": "TopLogprobsData"
+      },
+      "UsageInfo": {
+        "properties": {
+          "prompt_tokens": {
+            "type": "integer",
+            "title": "Prompt Tokens",
+            "description": "Number of tokens in the prompt for this request. Note that the prompt token\nincludes the entire message history, plus extra tokens needed by the system\nwhen combining the list of prompt messages into a single message, as\nrequired by the model. The number of extra tokens is typically proportional\nto the number of messages in the thread, and should be relatively small.\n"
+          },
+          "completion_tokens": {
+            "type": "integer",
+            "title": "Completion Tokens",
+            "description": "Number of tokens in the response message."
+          },
+          "total_tokens": {
+            "type": "integer",
+            "title": "Total Tokens",
+            "description": "`prompt_tokens` + `completion_tokens`.\n"
+          }
+        },
+        "type": "object",
+        "required": [
+          "prompt_tokens",
+          "completion_tokens",
+          "total_tokens"
+        ],
+        "title": "UsageInfo"
+      },
+      "UserMessage": {
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user"
+            ],
+            "title": "Role",
+            "default": "user",
+            "description": "The role of an individual message.\n- `user`:  Input provided by the user. Any instructions given here that conflict\n  with instructions given in the `system` prompt take precedence over the `system`\n  prompt instructions.\n- `assistant`:  Response generated by the model.\n- `system`:  Initial instructions provided to the system to provide general guidance\n  on the tone and voice of the generated message. An initial system message is\n  optional but recommended to provide guidance on the tone of the chat. For\n  example, \"You are a helpful chatbot with a background in earth sciences and a\n  charming French accent.\"\n"
+          },
+          "content": {
+            "type": "string",
+            "title": "Content"
+          }
+        },
+        "type": "object",
+        "required": [
+          "content"
+        ],
+        "title": "UserMessage"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "language_studio_api_server__data_types__chat__ChatRequest": {
+        "properties": {
+          "model": {
+            "$ref": "#/components/schemas/ModelName",
+            "description": "Name of this model"
+          },
+          "messages": {
+            "items": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/UserMessage"
+                },
+                {
+                  "$ref": "#/components/schemas/AssistantMessage"
+                },
+                {
+                  "$ref": "#/components/schemas/ToolMessage"
+                },
+                {
+                  "$ref": "#/components/schemas/SystemMessage"
+                }
+              ],
+              "discriminator": {
+                "propertyName": "role",
+                "mapping": {
+                  "user": "#/components/schemas/UserMessage",
+                  "assistant": "#/components/schemas/AssistantMessage",
+                  "tool": "#/components/schemas/ToolMessage",
+                  "system": "#/components/schemas/SystemMessage"
+                }
+              }
+            },
+            "type": "array",
+            "title": "Messages",
+            "description": "messages"
+          },
+          "tools": {
+            "items": {
+              "$ref": "#/components/schemas/ToolDefinition"
+            },
+            "type": "array",
+            "title": "Tools"
+          },
+          "n": {
+            "type": "integer",
+            "title": "N",
+            "default": 1
+          },
+          "max_tokens": {
+            "type": "integer",
+            "title": "Max Tokens",
+            "default": 4096
+          },
+          "temperature": {
+            "type": "number",
+            "title": "Temperature"
+          },
+          "top_p": {
+            "type": "number",
+            "maximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "title": "Top P",
+            "default": 1
+          },
+          "stop": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            ],
+            "title": "Stop"
+          },
+          "stream": {
+            "type": "boolean",
+            "title": "Stream",
+            "default": false,
+            "description": "Whether or not to stream the result one token at a time using\n[server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events).\nThis can be useful when waiting for long results where a long wait time for an\nanswer can be problematic, such as a chatbot. If set to `True`, then `n` must\nbe 1. A streaming response is different than the non-streaming response.\n"
+          },
+          "mock_response": {
+            "$ref": "#/components/schemas/MockResponseConfig"
+          },
+          "documents": {
+            "items": {
+              "$ref": "#/components/schemas/DocumentSchema"
+            },
+            "type": "array",
+            "title": "Documents",
+            "default": []
+          },
+          "response_format": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/ResponseFormat"
+              }
+            ],
+            "title": "Response Format",
+            "default": {
+              "type": "text"
+            }
+          }
+        },
+        "type": "object",
+        "required": [
+          "model",
+          "messages"
+        ],
+        "title": "ChatRequest"
+      },
+      "language_studio_api_server__data_types__j2_chat__ChatRequest": {
+        "properties": {
+          "messages": {
+            "items": {
+              "$ref": "#/components/schemas/ChatMessage"
+            },
+            "type": "array",
+            "title": "Messages",
+            "description": "messages"
+          },
+          "system": {
+            "type": "string",
+            "title": "System"
+          },
+          "frequencyPenalty": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Penalty"
+              }
+            ],
+            "title": "Frequencypenalty",
+            "default": {
+              "scale": 0.0,
+              "applyToWhitespaces": true,
+              "applyToPunctuations": true,
+              "applyToNumbers": true,
+              "applyToStopwords": true,
+              "applyToEmojis": true
+            }
+          },
+          "presencePenalty": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Penalty"
+              }
+            ],
+            "title": "Presencepenalty",
+            "default": {
+              "scale": 0.0,
+              "applyToWhitespaces": true,
+              "applyToPunctuations": true,
+              "applyToNumbers": true,
+              "applyToStopwords": true,
+              "applyToEmojis": true
+            }
+          },
+          "countPenalty": {
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/Penalty"
+              }
+            ],
+            "title": "Countpenalty",
+            "default": {
+              "scale": 0.0,
+              "applyToWhitespaces": true,
+              "applyToPunctuations": true,
+              "applyToNumbers": true,
+              "applyToStopwords": true,
+              "applyToEmojis": true
+            }
+          },
+          "numResults": {
+            "type": "integer",
+            "title": "Numresults",
+            "default": 1
+          },
+          "temperature": {
+            "type": "number",
+            "title": "Temperature",
+            "default": 0.7
+          },
+          "maxTokens": {
+            "type": "integer",
+            "title": "Maxtokens",
+            "default": 300
+          },
+          "minTokens": {
+            "type": "integer",
+            "title": "Mintokens",
+            "default": 0
+          },
+          "topP": {
+            "type": "number",
+            "title": "Topp",
+            "default": 1.0
+          },
+          "topKReturn": {
+            "type": "integer",
+            "title": "Topkreturn",
+            "default": 0
+          },
+          "stopSequences": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Stopsequences",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "messages",
+          "system"
+        ],
+        "title": "ChatRequest",
+        "description": "This class is to be used as a common class to all Studio API requests payloads"
+      }
+    }
+  }
+}
