@@ -8,10 +8,12 @@ namespace G
     {
         partial void PrepareV1LibraryAnswerArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? requestStartTime,
             global::G.LibraryAnswerRequest request);
         partial void PrepareV1LibraryAnswerRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? requestStartTime,
             global::G.LibraryAnswerRequest request);
         partial void ProcessV1LibraryAnswerResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,11 +27,15 @@ namespace G
         /// <summary>
         /// Answer
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.LibraryAnswerResponse> V1LibraryAnswerAsync(
             global::G.LibraryAnswerRequest request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,31 +44,19 @@ namespace G
                 client: HttpClient);
             PrepareV1LibraryAnswerArguments(
                 httpClient: HttpClient,
+                requestStartTime: ref requestStartTime,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/studio/v1/library/answer",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -76,6 +70,7 @@ namespace G
             PrepareV1LibraryAnswerRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                requestStartTime: requestStartTime,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -118,10 +113,17 @@ namespace G
         /// <summary>
         /// Answer
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="question"></param>
         /// <param name="maxSegments"></param>
         /// <param name="path"></param>
         /// <param name="labels"></param>
+        /// <param name="labelsFilter"></param>
+        /// <param name="labelsFilterMode">
+        /// Default Value: AND
+        /// </param>
         /// <param name="fileIds"></param>
         /// <param name="answerLength">
         /// An enumeration.
@@ -138,9 +140,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.LibraryAnswerResponse> V1LibraryAnswerAsync(
             string question,
+            int? requestStartTime = default,
             int? maxSegments = default,
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
+            global::G.QueryFilter? labelsFilter = default,
+            global::G.LibraryAnswerRequestLabelsFilterMode? labelsFilterMode = default,
             global::System.Collections.Generic.IList<global::System.Guid>? fileIds = default,
             global::G.AnswerLength? answerLength = default,
             global::G.Mode? mode = default,
@@ -155,6 +160,8 @@ namespace G
                 MaxSegments = maxSegments,
                 Path = path,
                 Labels = labels,
+                LabelsFilter = labelsFilter,
+                LabelsFilterMode = labelsFilterMode,
                 FileIds = fileIds,
                 AnswerLength = answerLength,
                 Mode = mode,
@@ -164,6 +171,7 @@ namespace G
             };
 
             return await V1LibraryAnswerAsync(
+                requestStartTime: requestStartTime,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

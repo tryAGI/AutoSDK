@@ -77,7 +77,7 @@ namespace G
         public global::G.MockResponseConfig? MockResponse { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("documents")]
         public global::System.Collections.Generic.IList<global::G.DocumentSchema>? Documents { get; set; }

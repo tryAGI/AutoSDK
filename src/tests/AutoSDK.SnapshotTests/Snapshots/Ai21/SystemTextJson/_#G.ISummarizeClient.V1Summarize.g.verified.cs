@@ -8,16 +8,23 @@ namespace G
         /// <summary>
         /// Summarize
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.SummarizationResponse> V1SummarizeAsync(
             global::G.SummarizeBody request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Summarize
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="source"></param>
         /// <param name="sourceType">
         /// An enumeration.
@@ -31,6 +38,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.SummarizationResponse> V1SummarizeAsync(
             string source,
             global::G.DocumentType sourceType,
+            int? requestStartTime = default,
             string? focus = default,
             global::G.SummaryMethod? summaryMethod = default,
             global::System.Threading.CancellationToken cancellationToken = default);

@@ -78,7 +78,7 @@ namespace G
         public int? TopKReturn { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stopSequences")]
         public global::System.Collections.Generic.IList<string>? StopSequences { get; set; }

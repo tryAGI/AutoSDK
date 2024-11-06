@@ -8,10 +8,12 @@ namespace G
     {
         partial void PrepareV1LibraryUploadArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? requestStartTime,
             global::G.BodyV1LibraryUpload request);
         partial void PrepareV1LibraryUploadRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? requestStartTime,
             global::G.BodyV1LibraryUpload request);
         partial void ProcessV1LibraryUploadResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -31,11 +33,15 @@ namespace G
         /// - **Max library size:** 1 GB total size. No limit to individual file size.<br/>
         /// - **Supported file types:** PDF, DocX, HTML, TXT
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.FileUploadResponse> V1LibraryUploadAsync(
             global::G.BodyV1LibraryUpload request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -44,32 +50,26 @@ namespace G
                 client: HttpClient);
             PrepareV1LibraryUploadArguments(
                 httpClient: HttpClient,
+                requestStartTime: ref requestStartTime,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/studio/v1/library/files",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (requestStartTime != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{requestStartTime}"),
+                    name: "request_start_time");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.ByteArrayContent(request.File ?? global::System.Array.Empty<byte>()),
                 name: "file",
@@ -106,6 +106,7 @@ namespace G
             PrepareV1LibraryUploadRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                requestStartTime: requestStartTime,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -154,6 +155,9 @@ namespace G
         /// - **Max library size:** 1 GB total size. No limit to individual file size.<br/>
         /// - **Supported file types:** PDF, DocX, HTML, TXT
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="file"></param>
         /// <param name="filename"></param>
         /// <param name="path"></param>
@@ -165,6 +169,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.FileUploadResponse> V1LibraryUploadAsync(
             byte[] file,
             string filename,
+            int? requestStartTime = default,
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             string? publicUrl = default,
@@ -182,6 +187,7 @@ namespace G
             };
 
             return await V1LibraryUploadAsync(
+                requestStartTime: requestStartTime,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

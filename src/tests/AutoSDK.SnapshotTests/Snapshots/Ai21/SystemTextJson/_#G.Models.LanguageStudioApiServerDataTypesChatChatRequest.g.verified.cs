@@ -81,7 +81,7 @@ namespace G
         public global::G.MockResponseConfig? MockResponse { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
         public global::System.Collections.Generic.IList<global::G.DocumentSchema>? Documents { get; set; }

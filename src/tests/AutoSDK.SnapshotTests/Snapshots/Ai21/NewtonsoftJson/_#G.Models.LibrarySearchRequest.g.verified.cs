@@ -36,6 +36,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("labels_filter")]
+        public global::G.QueryFilter? LabelsFilter { get; set; }
+
+        /// <summary>
+        /// Default Value: AND
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("labels_filter_mode")]
+        public global::G.LibrarySearchRequestLabelsFilterMode? LabelsFilterMode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("fileIds")]
         public global::System.Collections.Generic.IList<global::System.Guid>? FileIds { get; set; }
 

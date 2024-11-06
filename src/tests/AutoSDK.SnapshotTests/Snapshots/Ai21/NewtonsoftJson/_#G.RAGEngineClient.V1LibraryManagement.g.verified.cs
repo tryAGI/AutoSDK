@@ -8,11 +8,13 @@ namespace G
     {
         partial void PrepareV1LibraryManagementArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref global::System.Guid fileId);
+            ref global::System.Guid fileId,
+            ref int? requestStartTime);
         partial void PrepareV1LibraryManagementRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::System.Guid fileId);
+            global::System.Guid fileId,
+            int? requestStartTime);
         partial void ProcessV1LibraryManagementResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -26,41 +28,33 @@ namespace G
         /// Generate Documents Signed Url
         /// </summary>
         /// <param name="fileId"></param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1LibraryManagementAsync(
             global::System.Guid fileId,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareV1LibraryManagementArguments(
                 httpClient: HttpClient,
-                fileId: ref fileId);
+                fileId: ref fileId,
+                requestStartTime: ref requestStartTime);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/studio/v1/library/files/{fileId}/download",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
 
             PrepareRequest(
                 client: HttpClient,
@@ -68,7 +62,8 @@ namespace G
             PrepareV1LibraryManagementRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                fileId: fileId);
+                fileId: fileId,
+                requestStartTime: requestStartTime);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

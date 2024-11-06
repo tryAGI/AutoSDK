@@ -14,7 +14,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.ai21.com/";
+        public const string DefaultBaseUrl = "";
 
         private bool _disposeHttpClient = true;
 
@@ -38,8 +38,6 @@ namespace G
                 {
                     new global::G.JsonConverters.AnswerLengthJsonConverter(),
                     new global::G.JsonConverters.AnswerLengthNullableJsonConverter(),
-                    new global::G.JsonConverters.ModeJsonConverter(),
-                    new global::G.JsonConverters.ModeNullableJsonConverter(),
                     new global::G.JsonConverters.AssistantMessageRoleJsonConverter(),
                     new global::G.JsonConverters.AssistantMessageRoleNullableJsonConverter(),
                     new global::G.JsonConverters.ToolCallTypeJsonConverter(),
@@ -48,24 +46,28 @@ namespace G
                     new global::G.JsonConverters.ChatStreamingFirstDeltaRoleNullableJsonConverter(),
                     new global::G.JsonConverters.RoleTypeJsonConverter(),
                     new global::G.JsonConverters.RoleTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ConnectorsWorkflowStatusJsonConverter(),
+                    new global::G.JsonConverters.ConnectorsWorkflowStatusNullableJsonConverter(),
                     new global::G.JsonConverters.MessageRoleJsonConverter(),
                     new global::G.JsonConverters.MessageRoleNullableJsonConverter(),
-                    new global::G.JsonConverters.ConversationalRagFlowPublicFieldsRetrievalStrategyJsonConverter(),
-                    new global::G.JsonConverters.ConversationalRagFlowPublicFieldsRetrievalStrategyNullableJsonConverter(),
-                    new global::G.JsonConverters.CorrectionTypeJsonConverter(),
-                    new global::G.JsonConverters.CorrectionTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ConversationalRagConfigRetrievalStrategyJsonConverter(),
+                    new global::G.JsonConverters.ConversationalRagConfigRetrievalStrategyNullableJsonConverter(),
                     new global::G.JsonConverters.CustomModelTypeJsonConverter(),
                     new global::G.JsonConverters.CustomModelTypeNullableJsonConverter(),
                     new global::G.JsonConverters.DocumentTypeJsonConverter(),
                     new global::G.JsonConverters.DocumentTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.EmbedTypeJsonConverter(),
-                    new global::G.JsonConverters.EmbedTypeNullableJsonConverter(),
                     new global::G.JsonConverters.FileStatusJsonConverter(),
                     new global::G.JsonConverters.FileStatusNullableJsonConverter(),
                     new global::G.JsonConverters.ToolParametersTypeJsonConverter(),
                     new global::G.JsonConverters.ToolParametersTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.LibraryAnswerRequestLabelsFilterModeJsonConverter(),
+                    new global::G.JsonConverters.LibraryAnswerRequestLabelsFilterModeNullableJsonConverter(),
+                    new global::G.JsonConverters.ModeJsonConverter(),
+                    new global::G.JsonConverters.ModeNullableJsonConverter(),
                     new global::G.JsonConverters.RetrievalStrategyJsonConverter(),
                     new global::G.JsonConverters.RetrievalStrategyNullableJsonConverter(),
+                    new global::G.JsonConverters.LibrarySearchRequestLabelsFilterModeJsonConverter(),
+                    new global::G.JsonConverters.LibrarySearchRequestLabelsFilterModeNullableJsonConverter(),
                     new global::G.JsonConverters.ModelNameJsonConverter(),
                     new global::G.JsonConverters.ModelNameNullableJsonConverter(),
                     new global::G.JsonConverters.StyleTypeJsonConverter(),
@@ -85,6 +87,7 @@ namespace G
                     new global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleJsonConverter(),
                     new global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleNullableJsonConverter(),
                     new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
+                    new global::G.JsonConverters.QueryFilterJsonConverter(),
                     new global::G.JsonConverters.MessagesItemJsonConverter(),
                 }
             };
@@ -117,14 +120,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets => new DatasetsClient(HttpClient, authorizations: Authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ParaphraseClient Paraphrase => new ParaphraseClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
@@ -149,14 +144,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GrammaticalErrorCorrectionsClient GrammaticalErrorCorrections => new GrammaticalErrorCorrectionsClient(HttpClient, authorizations: Authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public LibraryManagementClient LibraryManagement => new LibraryManagementClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
@@ -174,14 +161,6 @@ namespace G
         /// 
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
-        {
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TokenizeClient Tokenize => new TokenizeClient(HttpClient, authorizations: Authorizations)
         {
             JsonSerializerOptions = JsonSerializerOptions,
         };

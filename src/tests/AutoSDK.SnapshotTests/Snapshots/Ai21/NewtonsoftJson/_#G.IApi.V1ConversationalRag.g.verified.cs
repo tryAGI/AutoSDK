@@ -8,16 +8,23 @@ namespace G
         /// <summary>
         /// Conversational Rag
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ConversationalRagResult> V1ConversationalRagAsync(
-            global::G.ConversationalRagFlowPublicFields request,
+            global::G.ConversationalRagConfig request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Conversational Rag
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="messages">
         /// messages
         /// </param>
@@ -41,11 +48,12 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ConversationalRagResult> V1ConversationalRagAsync(
             global::System.Collections.Generic.IList<global::G.Message> messages,
+            int? requestStartTime = default,
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             global::System.Collections.Generic.IList<string>? fileIds = default,
             int? maxSegments = default,
-            global::G.ConversationalRagFlowPublicFieldsRetrievalStrategy? retrievalStrategy = default,
+            global::G.ConversationalRagConfigRetrievalStrategy? retrievalStrategy = default,
             double? retrievalSimilarityThreshold = default,
             int? maxNeighbors = default,
             double? hybridSearchAlpha = default,

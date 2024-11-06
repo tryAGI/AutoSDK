@@ -11,12 +11,16 @@ namespace G
         /// <param name="model">
         /// Default Value: j2-ultra
         /// </param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatResponse> V1J2UltraChatAsync(
             global::G.LanguageStudioApiServerDataTypesJ2ChatChatRequest request,
             string? model = default,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -24,6 +28,9 @@ namespace G
         /// </summary>
         /// <param name="model">
         /// Default Value: j2-ultra
+        /// </param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
         /// </param>
         /// <param name="messages">
         /// messages
@@ -50,13 +57,16 @@ namespace G
         /// <param name="topKReturn">
         /// Default Value: 0
         /// </param>
-        /// <param name="stopSequences"></param>
+        /// <param name="stopSequences">
+        /// Default Value: []
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.ChatResponse> V1J2UltraChatAsync(
             global::System.Collections.Generic.IList<global::G.ChatMessage> messages,
             string system,
             string? model = default,
+            int? requestStartTime = default,
             global::G.Penalty? frequencyPenalty = default,
             global::G.Penalty? presencePenalty = default,
             global::G.Penalty? countPenalty = default,

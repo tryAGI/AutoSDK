@@ -52,7 +52,7 @@ namespace G
         public double? MinP { get; set; }
 
         /// <summary>
-        /// 
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stopSequences")]
         public global::System.Collections.Generic.IList<string>? StopSequences { get; set; }

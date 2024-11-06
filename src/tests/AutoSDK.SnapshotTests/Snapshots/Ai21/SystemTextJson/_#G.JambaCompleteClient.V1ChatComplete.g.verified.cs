@@ -8,11 +8,13 @@ namespace G
     {
         partial void PrepareV1ChatCompleteArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? requestStartTime,
             ref string authorization,
             global::G.LanguageStudioApiServerDataTypesChatChatRequest request);
         partial void PrepareV1ChatCompleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? requestStartTime,
             string authorization,
             global::G.LanguageStudioApiServerDataTypesChatChatRequest request);
         partial void ProcessV1ChatCompleteResponse(
@@ -25,13 +27,16 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Chat Complete<br/>
+        /// Studio Chat Complete<br/>
         /// This is the endpoint for the [Jamba Instruct model](https://docs.ai21.com/docs/jamba-models).<br/>
         /// This is a foundation model that supports both single-turn (question answering,<br/>
         /// text completion) and multi-turn (chat style) interactions.<br/>
         /// You can optionally stream results if you want to get the response as each<br/>
         /// token is generated, rather than waiting for the entire response.
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="authorization"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -39,6 +44,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.AnyOf<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>> V1ChatCompleteAsync(
             string authorization,
             global::G.LanguageStudioApiServerDataTypesChatChatRequest request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -47,32 +53,20 @@ namespace G
                 client: HttpClient);
             PrepareV1ChatCompleteArguments(
                 httpClient: HttpClient,
+                requestStartTime: ref requestStartTime,
                 authorization: ref authorization,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/studio/v1/chat/completions",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
 
             __httpRequest.Headers.TryAddWithoutValidation("Authorization", authorization.ToString());
 
@@ -89,6 +83,7 @@ namespace G
             PrepareV1ChatCompleteRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                requestStartTime: requestStartTime,
                 authorization: authorization,
                 request: request);
 
@@ -130,13 +125,16 @@ namespace G
         }
 
         /// <summary>
-        /// Chat Complete<br/>
+        /// Studio Chat Complete<br/>
         /// This is the endpoint for the [Jamba Instruct model](https://docs.ai21.com/docs/jamba-models).<br/>
         /// This is a foundation model that supports both single-turn (question answering,<br/>
         /// text completion) and multi-turn (chat style) interactions.<br/>
         /// You can optionally stream results if you want to get the response as each<br/>
         /// token is generated, rather than waiting for the entire response.
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="authorization"></param>
         /// <param name="model">
         /// An enumeration.
@@ -165,7 +163,9 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="mockResponse"></param>
-        /// <param name="documents"></param>
+        /// <param name="documents">
+        /// Default Value: []
+        /// </param>
         /// <param name="responseFormat"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -173,6 +173,7 @@ namespace G
             string authorization,
             global::G.ModelName model,
             global::System.Collections.Generic.IList<global::G.MessagesItem> messages,
+            int? requestStartTime = default,
             global::System.Collections.Generic.IList<global::G.ToolDefinition>? tools = default,
             int? n = default,
             int? maxTokens = default,
@@ -202,6 +203,7 @@ namespace G
             };
 
             return await V1ChatCompleteAsync(
+                requestStartTime: requestStartTime,
                 authorization: authorization,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

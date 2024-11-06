@@ -8,10 +8,12 @@ namespace G
     {
         partial void PrepareV1SegmentationArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? requestStartTime,
             global::G.SegmentationBody request);
         partial void PrepareV1SegmentationRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? requestStartTime,
             global::G.SegmentationBody request);
         partial void ProcessV1SegmentationResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,11 +27,15 @@ namespace G
         /// <summary>
         /// Segmentation
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.SegmentationResponse> V1SegmentationAsync(
             global::G.SegmentationBody request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,31 +44,19 @@ namespace G
                 client: HttpClient);
             PrepareV1SegmentationArguments(
                 httpClient: HttpClient,
+                requestStartTime: ref requestStartTime,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/studio/v1/segmentation",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -76,6 +70,7 @@ namespace G
             PrepareV1SegmentationRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                requestStartTime: requestStartTime,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -118,6 +113,9 @@ namespace G
         /// <summary>
         /// Segmentation
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="sourceType">
         /// An enumeration.
         /// </param>
@@ -127,6 +125,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.SegmentationResponse> V1SegmentationAsync(
             global::G.DocumentType sourceType,
             string source,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.SegmentationBody
@@ -136,6 +135,7 @@ namespace G
             };
 
             return await V1SegmentationAsync(
+                requestStartTime: requestStartTime,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

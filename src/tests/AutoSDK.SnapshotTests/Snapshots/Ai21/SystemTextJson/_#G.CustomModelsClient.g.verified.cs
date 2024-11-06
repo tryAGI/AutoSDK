@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.ai21.com/";
+        public const string DefaultBaseUrl = "";
 
         private bool _disposeHttpClient = true;
 

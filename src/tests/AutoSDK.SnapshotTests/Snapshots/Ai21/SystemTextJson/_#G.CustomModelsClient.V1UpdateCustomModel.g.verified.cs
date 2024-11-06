@@ -9,11 +9,13 @@ namespace G
         partial void PrepareV1UpdateCustomModelArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string customModelPid,
+            ref int? requestStartTime,
             global::G.CustomModelUpdateBody request);
         partial void PrepareV1UpdateCustomModelRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string customModelPid,
+            int? requestStartTime,
             global::G.CustomModelUpdateBody request);
         partial void ProcessV1UpdateCustomModelResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -28,12 +30,16 @@ namespace G
         /// Update Model
         /// </summary>
         /// <param name="customModelPid"></param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1UpdateCustomModelAsync(
             string customModelPid,
             global::G.CustomModelUpdateBody request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -43,31 +49,19 @@ namespace G
             PrepareV1UpdateCustomModelArguments(
                 httpClient: HttpClient,
                 customModelPid: ref customModelPid,
+                requestStartTime: ref requestStartTime,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/studio/v1/custom-model/{customModelPid}",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -82,6 +76,7 @@ namespace G
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 customModelPid: customModelPid,
+                requestStartTime: requestStartTime,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -123,11 +118,15 @@ namespace G
         /// Update Model
         /// </summary>
         /// <param name="customModelPid"></param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="defaultEpoch"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1UpdateCustomModelAsync(
             string customModelPid,
+            int? requestStartTime = default,
             int? defaultEpoch = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -138,6 +137,7 @@ namespace G
 
             return await V1UpdateCustomModelAsync(
                 customModelPid: customModelPid,
+                requestStartTime: requestStartTime,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -50,6 +50,7 @@ public partial class DataTests
                 IgnoreOpenApiErrors = resourceName switch
                 {
                     "elevenlabs.json" => true,
+                    "ai21.json" => true,
                     _ => false,
                 },
             })),

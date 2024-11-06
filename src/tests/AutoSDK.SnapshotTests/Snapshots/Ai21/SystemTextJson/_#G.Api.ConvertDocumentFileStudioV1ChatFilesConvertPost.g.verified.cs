@@ -8,10 +8,12 @@ namespace G
     {
         partial void PrepareConvertDocumentFileStudioV1ChatFilesConvertPostArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref int? requestStartTime,
             global::G.BodyConvertDocumentFileStudioV1ChatFilesConvertPost request);
         partial void PrepareConvertDocumentFileStudioV1ChatFilesConvertPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            int? requestStartTime,
             global::G.BodyConvertDocumentFileStudioV1ChatFilesConvertPost request);
         partial void ProcessConvertDocumentFileStudioV1ChatFilesConvertPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,11 +27,15 @@ namespace G
         /// <summary>
         /// Convert Document File
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
             global::G.BodyConvertDocumentFileStudioV1ChatFilesConvertPost request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -38,32 +44,26 @@ namespace G
                 client: HttpClient);
             PrepareConvertDocumentFileStudioV1ChatFilesConvertPostArguments(
                 httpClient: HttpClient,
+                requestStartTime: ref requestStartTime,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: "/studio/v1/chat/files/convert",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
             using var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
+            if (requestStartTime != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{requestStartTime}"),
+                    name: "request_start_time");
+            } 
             __httpRequestContent.Add(
                 content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.Files, x => x))}]"),
                 name: "files");
@@ -75,6 +75,7 @@ namespace G
             PrepareConvertDocumentFileStudioV1ChatFilesConvertPostRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                requestStartTime: requestStartTime,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -115,11 +116,15 @@ namespace G
         /// <summary>
         /// Convert Document File
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="files"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
             global::System.Collections.Generic.IList<byte[]> files,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.BodyConvertDocumentFileStudioV1ChatFilesConvertPost
@@ -128,6 +133,7 @@ namespace G
             };
 
             return await ConvertDocumentFileStudioV1ChatFilesConvertPostAsync(
+                requestStartTime: requestStartTime,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

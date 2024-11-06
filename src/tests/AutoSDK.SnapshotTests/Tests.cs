@@ -127,6 +127,10 @@ public partial class Tests
                 ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 ["build_property.AutoSDK_MethodNamingConvention"] = "MethodAndPath",
             },
+            "Ai21" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
+            },
             _ => new Dictionary<string, string>(),
         };
         

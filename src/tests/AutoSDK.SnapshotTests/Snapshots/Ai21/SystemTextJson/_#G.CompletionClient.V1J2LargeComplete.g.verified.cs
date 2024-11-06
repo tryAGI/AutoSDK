@@ -9,11 +9,13 @@ namespace G
         partial void PrepareV1J2LargeCompleteArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? model,
+            ref int? requestStartTime,
             global::G.CompletionBody request);
         partial void PrepareV1J2LargeCompleteRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string? model,
+            int? requestStartTime,
             global::G.CompletionBody request);
         partial void ProcessV1J2LargeCompleteResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -30,12 +32,16 @@ namespace G
         /// <param name="model">
         /// Default Value: j2-large
         /// </param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1J2LargeCompleteAsync(
             global::G.CompletionBody request,
             string? model = default,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -45,6 +51,7 @@ namespace G
             PrepareV1J2LargeCompleteArguments(
                 httpClient: HttpClient,
                 model: ref model,
+                requestStartTime: ref requestStartTime,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
@@ -52,27 +59,12 @@ namespace G
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("model", model) 
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -87,6 +79,7 @@ namespace G
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 model: model,
+                requestStartTime: requestStartTime,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -130,6 +123,9 @@ namespace G
         /// <param name="model">
         /// Default Value: j2-large
         /// </param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="prompt"></param>
         /// <param name="numResults">
         /// Default Value: 1
@@ -149,7 +145,9 @@ namespace G
         /// <param name="minP">
         /// Default Value: 0
         /// </param>
-        /// <param name="stopSequences"></param>
+        /// <param name="stopSequences">
+        /// Default Value: []
+        /// </param>
         /// <param name="topKReturn">
         /// Default Value: 0
         /// </param>
@@ -163,6 +161,7 @@ namespace G
         public async global::System.Threading.Tasks.Task<string> V1J2LargeCompleteAsync(
             string prompt,
             string? model = default,
+            int? requestStartTime = default,
             int? numResults = default,
             int? maxTokens = default,
             int? minTokens = default,
@@ -198,6 +197,7 @@ namespace G
 
             return await V1J2LargeCompleteAsync(
                 model: model,
+                requestStartTime: requestStartTime,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -50,11 +50,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public DatasetsClient Datasets { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ParaphraseClient Paraphrase { get; }
 
         /// <summary>
@@ -70,11 +65,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public GrammaticalErrorCorrectionsClient GrammaticalErrorCorrections { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public LibraryManagementClient LibraryManagement { get; }
 
         /// <summary>
@@ -86,11 +76,6 @@ namespace G
         /// 
         /// </summary>
         public ChatClient Chat { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public TokenizeClient Tokenize { get; }
 
     }
 }

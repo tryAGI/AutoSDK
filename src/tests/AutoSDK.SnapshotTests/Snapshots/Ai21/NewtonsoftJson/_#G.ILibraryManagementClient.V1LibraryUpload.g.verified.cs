@@ -14,11 +14,15 @@ namespace G
         /// - **Max library size:** 1 GB total size. No limit to individual file size.<br/>
         /// - **Supported file types:** PDF, DocX, HTML, TXT
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::G.FileUploadResponse> V1LibraryUploadAsync(
             global::G.BodyV1LibraryUpload request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -30,6 +34,9 @@ namespace G
         /// - **Max library size:** 1 GB total size. No limit to individual file size.<br/>
         /// - **Supported file types:** PDF, DocX, HTML, TXT
         /// </summary>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="file"></param>
         /// <param name="filename"></param>
         /// <param name="path"></param>
@@ -41,6 +48,7 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.FileUploadResponse> V1LibraryUploadAsync(
             byte[] file,
             string filename,
+            int? requestStartTime = default,
             string? path = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             string? publicUrl = default,

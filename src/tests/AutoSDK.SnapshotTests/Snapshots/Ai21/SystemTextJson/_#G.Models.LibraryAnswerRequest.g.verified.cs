@@ -37,6 +37,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("labels_filter")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.QueryFilterJsonConverter))]
+        public global::G.QueryFilter? LabelsFilter { get; set; }
+
+        /// <summary>
+        /// Default Value: AND
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("labels_filter_mode")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.LibraryAnswerRequestLabelsFilterModeJsonConverter))]
+        public global::G.LibraryAnswerRequestLabelsFilterMode? LabelsFilterMode { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("fileIds")]
         public global::System.Collections.Generic.IList<global::System.Guid>? FileIds { get; set; }
 

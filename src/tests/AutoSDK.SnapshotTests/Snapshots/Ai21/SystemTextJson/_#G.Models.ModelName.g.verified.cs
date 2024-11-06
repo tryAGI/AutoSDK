@@ -20,18 +20,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        JambaNext,
-        /// <summary>
-        /// 
-        /// </summary>
-        JambaLargeNext,
-        /// <summary>
-        /// 
-        /// </summary>
-        JambaLargeNext2,
-        /// <summary>
-        /// 
-        /// </summary>
         Jamba15Mini,
         /// <summary>
         /// 
@@ -53,9 +41,6 @@ namespace G
             {
                 ModelName.JambaInstruct => "jamba-instruct",
                 ModelName.JambaInstructPreview => "jamba-instruct-preview",
-                ModelName.JambaNext => "jamba-next",
-                ModelName.JambaLargeNext => "jamba-large-next",
-                ModelName.JambaLargeNext2 => "jamba-large-next-2",
                 ModelName.Jamba15Mini => "jamba-1.5-mini",
                 ModelName.Jamba15Large => "jamba-1.5-large",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -70,9 +55,6 @@ namespace G
             {
                 "jamba-instruct" => ModelName.JambaInstruct,
                 "jamba-instruct-preview" => ModelName.JambaInstructPreview,
-                "jamba-next" => ModelName.JambaNext,
-                "jamba-large-next" => ModelName.JambaLargeNext,
-                "jamba-large-next-2" => ModelName.JambaLargeNext2,
                 "jamba-1.5-mini" => ModelName.Jamba15Mini,
                 "jamba-1.5-large" => ModelName.Jamba15Large,
                 _ => null,

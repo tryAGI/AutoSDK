@@ -1,0 +1,197 @@
+﻿[
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1chat~1files~1convert/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1chat~1completions/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-light~1complete/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-light~1{custom_model_name}~1complete/post/parameters/2/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-mid~1complete/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-mid~1{custom_model_name}~1complete/post/parameters/2/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-ultra~1complete/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-ultra~1{custom_model_name}~1complete/post/parameters/2/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-large~1complete/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-large-instruct~1complete/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-grande~1complete/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-grande-instruct~1complete/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-jumbo~1complete/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-jumbo-instruct~1complete/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-large~1{custom_model_name}~1complete/post/parameters/2/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-grande~1{custom_model_name}~1complete/post/parameters/2/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-jumbo~1{custom_model_name}~1complete/post/parameters/2/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1custom-model/get/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1custom-model/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1custom-model~1{custom_model_pid}/get/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1custom-model~1{custom_model_pid}/put/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1custom-model~1{model_pid}/delete/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1paraphrase/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1summarize/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1summarize-by-segment/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1segmentation/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1conversational-rag/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1library~1files/get/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1library~1files/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1library~1files~1{file_id}/get/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1library~1files~1{file_id}/put/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1library~1files~1{file_id}/delete/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1library~1answer/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1library~1search/post/parameters/0/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1library~1files~1{file_id}~1download/get/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1j2-ultra~1chat/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1connectors~1connected-users~1{organization_id}~1tokens/post/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1connectors~1connected-users~1{organization_id}~1data-sources/get/parameters/1/schema/default
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1studio~1v1~1connectors~1connected-users~1{organization_id}~1data-sources~1{data_source}~1status/get/parameters/2/schema/default
+  }
+]

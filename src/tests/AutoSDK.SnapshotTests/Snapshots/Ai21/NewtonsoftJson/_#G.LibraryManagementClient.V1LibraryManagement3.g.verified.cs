@@ -9,11 +9,13 @@ namespace G
         partial void PrepareV1LibraryManagement3Arguments(
             global::System.Net.Http.HttpClient httpClient,
             ref global::System.Guid fileId,
+            ref int? requestStartTime,
             global::G.FilesUpdateRequest request);
         partial void PrepareV1LibraryManagement3Request(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             global::System.Guid fileId,
+            int? requestStartTime,
             global::G.FilesUpdateRequest request);
         partial void ProcessV1LibraryManagement3Response(
             global::System.Net.Http.HttpClient httpClient,
@@ -36,12 +38,16 @@ namespace G
         /// &gt; add "New Label C" and "New Label D" to the list, you must specify `"labels": ["Label A", "Label B", "New Label C", "New Label D"]`.
         /// </summary>
         /// <param name="fileId"></param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1LibraryManagement3Async(
             global::System.Guid fileId,
             global::G.FilesUpdateRequest request,
+            int? requestStartTime = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -51,31 +57,19 @@ namespace G
             PrepareV1LibraryManagement3Arguments(
                 httpClient: HttpClient,
                 fileId: ref fileId,
+                requestStartTime: ref requestStartTime,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/studio/v1/library/files/{fileId}",
                 baseUri: HttpClient.BaseAddress); 
+            __pathBuilder 
+                .AddOptionalParameter("request_start_time", requestStartTime?.ToString()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Put,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -90,6 +84,7 @@ namespace G
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 fileId: fileId,
+                requestStartTime: requestStartTime,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -139,6 +134,9 @@ namespace G
         /// &gt; add "New Label C" and "New Label D" to the list, you must specify `"labels": ["Label A", "Label B", "New Label C", "New Label D"]`.
         /// </summary>
         /// <param name="fileId"></param>
+        /// <param name="requestStartTime">
+        /// Default Value: 1730898830008
+        /// </param>
         /// <param name="publicUrl">
         /// The public URL of the file, if any. This URL is not validated by<br/>
         /// AI21 or used in any way. It is strictly a piece of metadata that you can<br/>
@@ -152,6 +150,7 @@ namespace G
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> V1LibraryManagement3Async(
             global::System.Guid fileId,
+            int? requestStartTime = default,
             string? publicUrl = default,
             global::System.Collections.Generic.IList<string>? labels = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -164,6 +163,7 @@ namespace G
 
             return await V1LibraryManagement3Async(
                 fileId: fileId,
+                requestStartTime: requestStartTime,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -85,7 +85,9 @@ namespace {anyOfData.Namespace}
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof({x.Name}))]
 #endif
         public bool Is{x.Name} => {x.Name} != null;
-{(className != x.Type.CSharpTypeWithoutNullability && x.Type.CSharpTypeWithoutNullability.StartsWith("global::System.Collections.Generic.IList", StringComparison.Ordinal) != true ? $@"
+{(className != x.Type.CSharpTypeWithoutNullability &&
+  x.Type.CSharpTypeWithoutNullability.StartsWith("global::System.Collections.Generic.IList", StringComparison.Ordinal) != true && 
+  x.Type.CSharpTypeWithoutNullability != "object"? $@"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public static implicit operator {className}({x.Type.CSharpTypeWithoutNullability} value) => new {className}(value);
 
