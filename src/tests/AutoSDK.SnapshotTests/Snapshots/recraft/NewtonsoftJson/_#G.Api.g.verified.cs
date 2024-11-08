@@ -26,6 +26,11 @@ namespace G
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString { get; set; }
+#if DEBUG
+            = true;
+#endif
         /// <summary>
         /// 
         /// </summary>
@@ -37,6 +42,7 @@ namespace G
         /// </summary>
         public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -45,6 +51,7 @@ namespace G
         /// </summary>
         public StyleClient Style => new StyleClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -53,6 +60,7 @@ namespace G
         /// </summary>
         public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 

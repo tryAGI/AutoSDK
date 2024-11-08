@@ -99,7 +99,6 @@ namespace {endPoint.Namespace}
     public static string GenerateMethod(
         EndPoint endPoint, bool isInterface = false)
     {
-        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
         var taskType = endPoint.Stream
             ? string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
@@ -113,15 +112,6 @@ namespace {endPoint.Namespace}
         var cancellationTokenAttribute = endPoint.Stream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
-        var cancellationTokenInsideReadAsync = endPoint.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase)
-            ? "cancellationToken"
-            : string.Empty;
-        var contentType = endPoint.ContentType switch
-        {
-            ContentType.String => "String",
-            ContentType.Stream => "Stream",
-            _ => "ByteArray",
-        };
         var body = isInterface
             ? ";"
             : @$"
@@ -211,50 +201,7 @@ namespace {endPoint.Namespace}
             Process{endPoint.NotAsyncMethodName}Response(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-{(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) ||
-  endPoint.Stream ? @" 
-            __response.EnsureSuccessStatusCode();
- " : $@"
-            var __content = await __response.Content.ReadAs{contentType}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
-
-{(endPoint.ContentType == ContentType.String ? @" 
-            ProcessResponseContent(
-                client: HttpClient,
-                response: __response,
-                content: ref __content);" : " ")}
-            Process{endPoint.NotAsyncMethodName}ResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
-
-{(endPoint.ContentType == ContentType.String ? @" 
-            try
-            {
-                __response.EnsureSuccessStatusCode();
-            }
-            catch (global::System.Net.Http.HttpRequestException __ex)
-            {
-                throw new global::System.InvalidOperationException(__content, __ex);
-            }" : @"
-            __response.EnsureSuccessStatusCode();")}
-
-{(endPoint.ContentType == ContentType.String && endPoint.ResponseType.CSharpTypeWithoutNullability is not "string" ? $@" 
-            return
-                {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
-                throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
-            return __content;")}")}
-{(endPoint.Stream ? $@"
-            using var stream = await __response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
-            using var reader = new global::System.IO.StreamReader(stream);
-
-            while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
-            {{
-                var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
-                                       throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
-
-                yield return streamedResponse;
-            }}" : " ")}
+{GenerateResponse(endPoint)}
         }}";
         
         return $@" 
@@ -370,6 +317,94 @@ namespace {endPoint.Namespace}
             var __path = __pathBuilder.ToString();";
         
         return code.RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    public static string GenerateResponse(
+        EndPoint endPoint)
+    {
+        if (string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType))
+        {
+            return @" 
+            __response.EnsureSuccessStatusCode();
+ ";
+        }
+        
+        var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
+        var cancellationTokenInsideReadAsync = endPoint.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase)
+            ? "cancellationToken"
+            : string.Empty;
+        
+        if (endPoint.Stream)
+        {
+            return $@" 
+            __response.EnsureSuccessStatusCode();
+
+            using var __stream = await __response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+            using var __reader = new global::System.IO.StreamReader(__stream);
+
+            while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
+            {{
+                var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                var __streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
+                                       throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
+
+                yield return __streamedResponse;
+            }}
+ ";
+        }
+
+        var contentType = endPoint.ContentType switch
+        {
+            ContentType.String => "String",
+            ContentType.Stream => "Stream",
+            _ => "ByteArray",
+        };
+        
+        return @$"
+            if (ReadResponseAsString)
+            {{
+                var __content = await __response.Content.ReadAs{contentType}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+
+{(endPoint.ContentType == ContentType.String ? @" 
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);" : " ")}
+                Process{endPoint.NotAsyncMethodName}ResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
+
+{(endPoint.ContentType == ContentType.String ? @" 
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::System.InvalidOperationException(__content, __ex);
+                }" : @"
+                __response.EnsureSuccessStatusCode();")}
+
+{(endPoint.ContentType == ContentType.String && endPoint.ResponseType.CSharpTypeWithoutNullability is not "string" ? $@" 
+                return
+                    {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
+                    throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
+                    return __content;")}
+            }}
+            else
+            {{
+                __response.EnsureSuccessStatusCode();
+                
+                using var __responseStream = await __response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+
+                {jsonSerializer.GenerateDeserializeFromStreamCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)}
+
+                return
+                    __responseValue ??
+                    throw new global::System.InvalidOperationException(""Response deserialization failed."");
+            }}
+ ";
     }
     
     public static string GenerateRequestData(

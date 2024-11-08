@@ -71,16 +71,16 @@ namespace G
                 httpResponseMessage: __response);
             __response.EnsureSuccessStatusCode();
 
-            using var stream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
-            using var reader = new global::System.IO.StreamReader(stream);
+            using var __stream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            using var __reader = new global::System.IO.StreamReader(__stream);
 
-            while (!reader.EndOfStream && !cancellationToken.IsCancellationRequested)
+            while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {
-                var __content = await reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var streamedResponse = global::G.GenerateCompletionResponse.FromJson(__content, JsonSerializerOptions) ??
+                var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
+                var __streamedResponse = global::G.GenerateCompletionResponse.FromJson(__content, JsonSerializerOptions) ??
                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
 
-                yield return streamedResponse;
+                yield return __streamedResponse;
             }
         }
 

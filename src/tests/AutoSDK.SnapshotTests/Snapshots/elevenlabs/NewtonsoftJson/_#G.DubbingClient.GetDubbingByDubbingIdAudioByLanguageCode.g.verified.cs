@@ -91,17 +91,34 @@ namespace G
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
-            var __content = await __response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
 
-            ProcessGetDubbingByDubbingIdAudioByLanguageCodeResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
+                ProcessGetDubbingByDubbingIdAudioByLanguageCodeResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
 
 
-            __response.EnsureSuccessStatusCode();
+                __response.EnsureSuccessStatusCode();
 
-            return __content;
+                    return __content;
+            }
+            else
+            {
+                __response.EnsureSuccessStatusCode();
+                using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+
+            using var __streamReader = new global::System.IO.StreamReader(__responseStream);
+            using var __jsonReader = new global::Newtonsoft.Json.JsonTextReader(__streamReader);
+            var __serializer = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions);
+            var __responseValue = __serializer.Deserialize<byte[]?>(__jsonReader);
+
+                return
+                    __responseValue ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+            }
         }
     }
 }

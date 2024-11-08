@@ -36,7 +36,7 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
     {
         return string.Empty;
     }
-    
+
     public string GenerateSerializeCall(TypeData type, string jsonSerializerContext)
     {
         if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
@@ -55,5 +55,19 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
         }
         
         return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type.CSharpTypeWithNullability}>(__content, JsonSerializerOptions)";
+    }
+
+    public string GenerateDeserializeFromStreamCall(TypeData type, string jsonSerializerContext)
+    {
+        if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
+        {
+            return $"var __responseValue = await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);";
+        }
+
+        return $@" 
+            using var __streamReader = new global::System.IO.StreamReader(__responseStream);
+            using var __jsonReader = new global::Newtonsoft.Json.JsonTextReader(__streamReader);
+            var __serializer = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions);
+            var __responseValue = __serializer.Deserialize<{type.CSharpTypeWithNullability}>(__jsonReader);";
     }
 }

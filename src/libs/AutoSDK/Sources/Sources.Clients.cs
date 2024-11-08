@@ -34,6 +34,12 @@ namespace {client.Namespace}
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::{client.Namespace}.EndPointAuthorization> Authorizations {{ get; }}
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString {{ get; set; }}
+#if DEBUG
+            = true;
+#endif
+        
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions ? $@" 
         public {serializer.GetOptionsType()} JsonSerializerOptions {{ get; set; }}{(
@@ -46,6 +52,7 @@ namespace {client.Namespace}
         {x.Summary.ToXmlDocumentationSummary(level: 8)}
         public {x.Type.CSharpType} {x.Name} => new {x.Type.CSharpType}(HttpClient, authorizations: Authorizations)
         {{
+            ReadResponseAsString = ReadResponseAsString,
             {(hasOptions
                 ? "JsonSerializerOptions = JsonSerializerOptions,"
                 : "JsonSerializerContext = JsonSerializerContext,")}
@@ -131,6 +138,12 @@ namespace {client.Namespace}
         /// The authorizations to use for the requests.
         /// </summary>
         public global::System.Collections.Generic.List<global::{client.Namespace}.EndPointAuthorization> Authorizations {{ get; }}
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the response content should be read as a string.
+        /// True by default in debug builds, false otherwise.
+        /// </summary>
+        public bool ReadResponseAsString {{ get; set; }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
 {(hasOptions

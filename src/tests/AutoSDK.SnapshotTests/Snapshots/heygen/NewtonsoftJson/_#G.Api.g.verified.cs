@@ -48,6 +48,11 @@ namespace G
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString { get; set; }
+#if DEBUG
+            = true;
+#endif
         /// <summary>
         /// 
         /// </summary>
@@ -59,6 +64,7 @@ namespace G
         /// </summary>
         public ListsClient Lists => new ListsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -68,6 +74,7 @@ namespace G
         /// </summary>
         public CreateVideoAPIClient CreateVideoAPI => new CreateVideoAPIClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -83,6 +90,7 @@ namespace G
         /// </summary>
         public TemplateAPIClient TemplateAPI => new TemplateAPIClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -92,6 +100,7 @@ namespace G
         /// </summary>
         public VideoTranslateAPIClient VideoTranslateAPI => new VideoTranslateAPIClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -101,6 +110,7 @@ namespace G
         /// </summary>
         public StreamingAPIClient StreamingAPI => new StreamingAPIClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -110,6 +120,7 @@ namespace G
         /// </summary>
         public WebhooksClient Webhooks => new WebhooksClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -119,6 +130,7 @@ namespace G
         /// </summary>
         public TalkingPhotoClient TalkingPhoto => new TalkingPhotoClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -129,6 +141,7 @@ namespace G
         /// </summary>
         public PersonalizedVideoClient PersonalizedVideo => new PersonalizedVideoClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -138,6 +151,7 @@ namespace G
         /// </summary>
         public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -147,6 +161,7 @@ namespace G
         /// </summary>
         public AssetsClient Assets => new AssetsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 

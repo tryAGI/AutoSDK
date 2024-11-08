@@ -89,29 +89,43 @@ namespace G
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
-            var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-            ProcessResponseContent(
-                client: HttpClient,
-                response: __response,
-                content: ref __content);
-            ProcessCreateFeedbackIngestTokenResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessCreateFeedbackIngestTokenResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
 
-            try
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::System.InvalidOperationException(__content, __ex);
+                }
+
+                return
+                    global::G.AnyOf<global::G.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenSchema>>.FromJson(__content, JsonSerializerOptions) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            }
+            else
             {
                 __response.EnsureSuccessStatusCode();
-            }
-            catch (global::System.Net.Http.HttpRequestException __ex)
-            {
-                throw new global::System.InvalidOperationException(__content, __ex);
-            }
+                using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
-            return
-                global::G.AnyOf<global::G.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenSchema>>.FromJson(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                var __responseValue = await global::G.AnyOf<global::G.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenSchema>>.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
+
+                return
+                    __responseValue ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+            }
         }
 
         /// <summary>

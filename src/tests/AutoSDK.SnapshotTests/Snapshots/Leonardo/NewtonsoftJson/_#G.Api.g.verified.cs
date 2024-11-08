@@ -27,6 +27,11 @@ namespace G
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString { get; set; }
+#if DEBUG
+            = true;
+#endif
         /// <summary>
         /// 
         /// </summary>
@@ -38,6 +43,7 @@ namespace G
         /// </summary>
         public DatasetClient Dataset => new DatasetClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -46,6 +52,7 @@ namespace G
         /// </summary>
         public ElementsClient Elements => new ElementsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -54,6 +61,7 @@ namespace G
         /// </summary>
         public ImageClient Image => new ImageClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -62,6 +70,7 @@ namespace G
         /// </summary>
         public InitImagesClient InitImages => new InitImagesClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -70,6 +79,7 @@ namespace G
         /// </summary>
         public MotionClient Motion => new MotionClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -78,6 +88,7 @@ namespace G
         /// </summary>
         public ModelsClient Models => new ModelsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -86,6 +97,7 @@ namespace G
         /// </summary>
         public PricingCalculatorClient PricingCalculator => new PricingCalculatorClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -94,6 +106,7 @@ namespace G
         /// </summary>
         public PromptClient Prompt => new PromptClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -102,6 +115,7 @@ namespace G
         /// </summary>
         public RealtimeCanvasClient RealtimeCanvas => new RealtimeCanvasClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -110,6 +124,7 @@ namespace G
         /// </summary>
         public TextureClient Texture => new TextureClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -118,6 +133,7 @@ namespace G
         /// </summary>
         public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -126,6 +142,7 @@ namespace G
         /// </summary>
         public VariationClient Variation => new VariationClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -134,6 +151,7 @@ namespace G
         /// </summary>
         public x3DModelAssetsClient x3DModelAssets => new x3DModelAssetsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 

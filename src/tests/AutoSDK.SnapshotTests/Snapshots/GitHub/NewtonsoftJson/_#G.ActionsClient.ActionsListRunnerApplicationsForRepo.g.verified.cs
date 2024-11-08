@@ -75,29 +75,46 @@ namespace G
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
-            var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-            ProcessResponseContent(
-                client: HttpClient,
-                response: __response,
-                content: ref __content);
-            ProcessActionsListRunnerApplicationsForRepoResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
+                ProcessResponseContent(
+                    client: HttpClient,
+                    response: __response,
+                    content: ref __content);
+                ProcessActionsListRunnerApplicationsForRepoResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
 
-            try
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::System.InvalidOperationException(__content, __ex);
+                }
+
+                return
+                    global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.RunnerApplication>?>(__content, JsonSerializerOptions) ??
+                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            }
+            else
             {
                 __response.EnsureSuccessStatusCode();
-            }
-            catch (global::System.Net.Http.HttpRequestException __ex)
-            {
-                throw new global::System.InvalidOperationException(__content, __ex);
-            }
+                using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
-            return
-                global::Newtonsoft.Json.JsonConvert.DeserializeObject<global::System.Collections.Generic.IList<global::G.RunnerApplication>?>(__content, JsonSerializerOptions) ??
-                throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+            using var __streamReader = new global::System.IO.StreamReader(__responseStream);
+            using var __jsonReader = new global::Newtonsoft.Json.JsonTextReader(__streamReader);
+            var __serializer = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions);
+            var __responseValue = __serializer.Deserialize<global::System.Collections.Generic.IList<global::G.RunnerApplication>?>(__jsonReader);
+
+                return
+                    __responseValue ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+            }
         }
     }
 }

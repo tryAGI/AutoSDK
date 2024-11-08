@@ -35,6 +35,11 @@ namespace G
         /// <inheritdoc/>
         public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
 
+        /// <inheritdoc/>
+        public bool ReadResponseAsString { get; set; }
+#if DEBUG
+            = true;
+#endif
         /// <summary>
         /// 
         /// </summary>
@@ -203,6 +208,7 @@ namespace G
         /// </summary>
         public AdsClient Ads => new AdsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -211,6 +217,7 @@ namespace G
         /// </summary>
         public AnalyticsClient Analytics => new AnalyticsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -219,6 +226,7 @@ namespace G
         /// </summary>
         public BitsClient Bits => new BitsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -227,6 +235,7 @@ namespace G
         /// </summary>
         public ChannelsClient Channels => new ChannelsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -235,6 +244,7 @@ namespace G
         /// </summary>
         public ChannelPointsClient ChannelPoints => new ChannelPointsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -243,6 +253,7 @@ namespace G
         /// </summary>
         public CharityClient Charity => new CharityClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -251,6 +262,7 @@ namespace G
         /// </summary>
         public ChatClient Chat => new ChatClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -259,6 +271,7 @@ namespace G
         /// </summary>
         public ClipsClient Clips => new ClipsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -267,6 +280,7 @@ namespace G
         /// </summary>
         public ConduitsClient Conduits => new ConduitsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -275,6 +289,7 @@ namespace G
         /// </summary>
         public CCLsClient CCLs => new CCLsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -283,6 +298,7 @@ namespace G
         /// </summary>
         public EntitlementsClient Entitlements => new EntitlementsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -291,6 +307,7 @@ namespace G
         /// </summary>
         public ExtensionsClient Extensions => new ExtensionsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -299,6 +316,7 @@ namespace G
         /// </summary>
         public EventSubClient EventSub => new EventSubClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -307,6 +325,7 @@ namespace G
         /// </summary>
         public GamesClient Games => new GamesClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -315,6 +334,7 @@ namespace G
         /// </summary>
         public GoalsClient Goals => new GoalsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -323,6 +343,7 @@ namespace G
         /// </summary>
         public GuestStarClient GuestStar => new GuestStarClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -331,6 +352,7 @@ namespace G
         /// </summary>
         public HypeTrainClient HypeTrain => new HypeTrainClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -339,6 +361,7 @@ namespace G
         /// </summary>
         public ModerationClient Moderation => new ModerationClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -347,6 +370,7 @@ namespace G
         /// </summary>
         public PollsClient Polls => new PollsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -355,6 +379,7 @@ namespace G
         /// </summary>
         public PredictionsClient Predictions => new PredictionsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -363,6 +388,7 @@ namespace G
         /// </summary>
         public RaidsClient Raids => new RaidsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -371,6 +397,7 @@ namespace G
         /// </summary>
         public ScheduleClient Schedule => new ScheduleClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -379,6 +406,7 @@ namespace G
         /// </summary>
         public SearchClient Search => new SearchClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -387,6 +415,7 @@ namespace G
         /// </summary>
         public StreamsClient Streams => new StreamsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -395,6 +424,7 @@ namespace G
         /// </summary>
         public SubscriptionsClient Subscriptions => new SubscriptionsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -403,6 +433,7 @@ namespace G
         /// </summary>
         public TagsClient Tags => new TagsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -411,6 +442,7 @@ namespace G
         /// </summary>
         public TeamsClient Teams => new TeamsClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -419,6 +451,7 @@ namespace G
         /// </summary>
         public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -427,6 +460,7 @@ namespace G
         /// </summary>
         public VideosClient Videos => new VideosClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 
@@ -435,6 +469,7 @@ namespace G
         /// </summary>
         public WhispersClient Whispers => new WhispersClient(HttpClient, authorizations: Authorizations)
         {
+            ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
         };
 

@@ -90,17 +90,31 @@ namespace G
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
 
-            var __content = await __response.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
+            if (ReadResponseAsString)
+            {
+                var __content = await __response.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
 
-            ProcessCreateSpeechResponseContent(
-                httpClient: HttpClient,
-                httpResponseMessage: __response,
-                content: ref __content);
+                ProcessCreateSpeechResponseContent(
+                    httpClient: HttpClient,
+                    httpResponseMessage: __response,
+                    content: ref __content);
 
 
-            __response.EnsureSuccessStatusCode();
+                __response.EnsureSuccessStatusCode();
 
-            return __content;
+                    return __content;
+            }
+            else
+            {
+                __response.EnsureSuccessStatusCode();
+                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+
+                var __responseValue = await global::System.Text.Json.JsonSerializer.DeserializeAsync(__responseStream, typeof(byte[]), JsonSerializerContext).ConfigureAwait(false) as byte[];
+
+                return
+                    __responseValue ??
+                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+            }
         }
 
         /// <summary>

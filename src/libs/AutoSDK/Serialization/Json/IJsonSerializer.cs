@@ -8,6 +8,7 @@ public interface IJsonSerializer
     string GenerateExtensionDataAttribute();
     string GenerateRequiredAttribute();
     string GenerateDeserializeCall(TypeData type, string jsonSerializerContext);
+    string GenerateDeserializeFromStreamCall(TypeData type, string jsonSerializerContext);
     string GenerateSerializeCall(TypeData type, string jsonSerializerContext);
     string GenerateConverterAttribute(string type);
     string GetOptionsType();
