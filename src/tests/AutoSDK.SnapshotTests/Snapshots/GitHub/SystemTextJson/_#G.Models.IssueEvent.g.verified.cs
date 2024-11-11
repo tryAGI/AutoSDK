@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 1L
         /// </summary>
+        /// <example>1L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: MDEwOklzc3VlRXZlbnQx
         /// </summary>
+        /// <example>MDEwOklzc3VlRXZlbnQx</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/issues/events/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/issues/events/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -40,6 +43,7 @@ namespace G
         /// <summary>
         /// Example: closed
         /// </summary>
+        /// <example>closed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Event { get; set; }
@@ -47,6 +51,7 @@ namespace G
         /// <summary>
         /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
+        /// <example>6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? CommitId { get; set; }
@@ -54,6 +59,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? CommitUrl { get; set; }
@@ -135,6 +141,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         public global::G.AuthorAssociation? AuthorAssociation { get; set; }

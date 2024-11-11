@@ -14,6 +14,7 @@ namespace G
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
         /// Example: llama3.2
         /// </summary>
+        /// <example>llama3.2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }
@@ -22,6 +23,7 @@ namespace G
         /// The prompt to generate a response.<br/>
         /// Example: Why is the sky blue?
         /// </summary>
+        /// <example>Why is the sky blue?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; }

@@ -37,6 +37,7 @@ namespace G
         /// The file name of the asset.<br/>
         /// Example: Team Environment
         /// </summary>
+        /// <example>Team Environment</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 

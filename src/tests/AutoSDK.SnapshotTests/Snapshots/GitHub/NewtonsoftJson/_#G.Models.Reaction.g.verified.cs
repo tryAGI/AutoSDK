@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDg6UmVhY3Rpb24x
         /// </summary>
+        /// <example>MDg6UmVhY3Rpb24x</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -31,6 +33,7 @@ namespace G
         /// The reaction to use<br/>
         /// Example: heart
         /// </summary>
+        /// <example>heart</example>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ReactionContent Content { get; set; } = default!;
 

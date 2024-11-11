@@ -30,18 +30,21 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("test")]
         public bool? Test { get; set; }
 
         /// <summary>
         /// Example: My Title
         /// </summary>
+        /// <example>My Title</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("video_inputs")]
         public global::System.Collections.Generic.IList<global::G.V2VideoGenerateRequestVideoInput>? VideoInputs { get; set; }
 

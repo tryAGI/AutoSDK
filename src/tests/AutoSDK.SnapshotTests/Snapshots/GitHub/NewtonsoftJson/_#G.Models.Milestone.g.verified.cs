@@ -12,30 +12,35 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/milestones/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/milestones/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/milestones/v1.0
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/milestones/v1.0</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/milestones/1/labels
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/milestones/1/labels</example>
         [global::Newtonsoft.Json.JsonProperty("labels_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string LabelsUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: 1002604
         /// </summary>
+        /// <example>1002604</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDk6TWlsZXN0b25lMTAwMjYwNA==
         /// </summary>
+        /// <example>MDk6TWlsZXN0b25lMTAwMjYwNA==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -43,6 +48,7 @@ namespace G
         /// The number of the milestone.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("number", Required = global::Newtonsoft.Json.Required.Always)]
         public int Number { get; set; } = default!;
 
@@ -51,6 +57,8 @@ namespace G
         /// Default Value: open<br/>
         /// Example: open
         /// </summary>
+        /// <default>global::G.MilestoneState.Open</default>
+        /// <example>open</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.MilestoneState State { get; set; } = default!;
 
@@ -58,12 +66,14 @@ namespace G
         /// The title of the milestone.<br/>
         /// Example: v1.0
         /// </summary>
+        /// <example>v1.0</example>
         [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
         public string Title { get; set; } = default!;
 
         /// <summary>
         /// Example: Tracking milestone for version 1.0
         /// </summary>
+        /// <example>Tracking milestone for version 1.0</example>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Description { get; set; } = default!;
 
@@ -76,12 +86,14 @@ namespace G
         /// <summary>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::Newtonsoft.Json.JsonProperty("open_issues", Required = global::Newtonsoft.Json.Required.Always)]
         public int OpenIssues { get; set; } = default!;
 
         /// <summary>
         /// Example: 8
         /// </summary>
+        /// <example>8</example>
         [global::Newtonsoft.Json.JsonProperty("closed_issues", Required = global::Newtonsoft.Json.Required.Always)]
         public int ClosedIssues { get; set; } = default!;
 

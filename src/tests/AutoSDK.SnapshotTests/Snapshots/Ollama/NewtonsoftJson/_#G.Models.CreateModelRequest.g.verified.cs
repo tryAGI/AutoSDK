@@ -14,6 +14,7 @@ namespace G
         /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
         /// Example: mario
         /// </summary>
+        /// <example>mario</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string Model { get; set; } = default!;
 
@@ -21,6 +22,7 @@ namespace G
         /// The contents of the Modelfile.<br/>
         /// Example: FROM llama3\nSYSTEM You are mario from Super Mario Bros.
         /// </summary>
+        /// <example>FROM llama3\nSYSTEM You are mario from Super Mario Bros.</example>
         [global::Newtonsoft.Json.JsonProperty("modelfile", Required = global::Newtonsoft.Json.Required.Always)]
         public string Modelfile { get; set; } = default!;
 

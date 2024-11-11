@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: codestral-latest
         /// </summary>
+        /// <example>codestral-latest</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
         public string? Model { get; set; }
 

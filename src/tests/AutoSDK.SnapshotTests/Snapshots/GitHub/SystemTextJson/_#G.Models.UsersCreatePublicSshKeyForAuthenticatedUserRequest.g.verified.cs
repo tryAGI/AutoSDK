@@ -13,6 +13,7 @@ namespace G
         /// A descriptive name for the new key.<br/>
         /// Example: Personal MacBook Air
         /// </summary>
+        /// <example>Personal MacBook Air</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 

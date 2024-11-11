@@ -19,6 +19,7 @@ namespace G
         /// Unique identifier of the webhook.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -26,6 +27,7 @@ namespace G
         /// The name of a valid service, use 'web' for a webhook.<br/>
         /// Example: web
         /// </summary>
+        /// <example>web</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -33,6 +35,7 @@ namespace G
         /// Determines whether the hook is actually triggered on pushes.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("active", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Active { get; set; } = default!;
 
@@ -40,6 +43,7 @@ namespace G
         /// Determines what events the hook is triggered for. Default: ['push'].<br/>
         /// Example: [push, pull_request]
         /// </summary>
+        /// <example>[push, pull_request]</example>
         [global::Newtonsoft.Json.JsonProperty("events", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> Events { get; set; } = default!;
 
@@ -64,24 +68,28 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/hooks/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/test
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/hooks/1/test</example>
         [global::Newtonsoft.Json.JsonProperty("test_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string TestUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/pings
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/hooks/1/pings</example>
         [global::Newtonsoft.Json.JsonProperty("ping_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PingUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/deliveries
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/hooks/1/deliveries</example>
         [global::Newtonsoft.Json.JsonProperty("deliveries_url")]
         public string? DeliveriesUrl { get; set; }
 

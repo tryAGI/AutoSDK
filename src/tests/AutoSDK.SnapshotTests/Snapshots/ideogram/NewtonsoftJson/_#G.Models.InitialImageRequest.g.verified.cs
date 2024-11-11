@@ -13,6 +13,7 @@ namespace G
         /// Default Value: 50<br/>
         /// Example: 50
         /// </summary>
+        /// <example>50</example>
         [global::Newtonsoft.Json.JsonProperty("image_weight")]
         public int? ImageWeight { get; set; }
 

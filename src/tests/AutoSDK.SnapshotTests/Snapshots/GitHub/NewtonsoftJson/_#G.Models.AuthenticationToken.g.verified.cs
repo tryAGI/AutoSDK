@@ -13,6 +13,7 @@ namespace G
         /// The token used for authentication<br/>
         /// Example: v1.1f699f1069f60xxx
         /// </summary>
+        /// <example>v1.1f699f1069f60xxx</example>
         [global::Newtonsoft.Json.JsonProperty("token", Required = global::Newtonsoft.Json.Required.Always)]
         public string Token { get; set; } = default!;
 
@@ -37,6 +38,7 @@ namespace G
         /// <summary>
         /// Example: config.yaml
         /// </summary>
+        /// <example>config.yaml</example>
         [global::Newtonsoft.Json.JsonProperty("single_file")]
         public string? SingleFile { get; set; }
 

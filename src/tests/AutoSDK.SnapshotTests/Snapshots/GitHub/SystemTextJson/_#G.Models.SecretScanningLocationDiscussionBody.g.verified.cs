@@ -13,6 +13,7 @@ namespace G
         /// The URL to the discussion where the secret was detected.<br/>
         /// Example: https://github.com/community/community/discussions/39082#discussion-4566270
         /// </summary>
+        /// <example>https://github.com/community/community/discussions/39082#discussion-4566270</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("discussion_body_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DiscussionBodyUrl { get; set; }

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: MDM6VGFnOTQwYmQzMzYyNDhlZmFlMGY5ZWU1YmM3YjJkNWM5ODU4ODdiMTZhYw==
         /// </summary>
+        /// <example>MDM6VGFnOTQwYmQzMzYyNDhlZmFlMGY5ZWU1YmM3YjJkNWM5ODU4ODdiMTZhYw==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// Name of the tag<br/>
         /// Example: v0.0.1
         /// </summary>
+        /// <example>v0.0.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("tag")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Tag { get; set; }
@@ -27,6 +29,7 @@ namespace G
         /// <summary>
         /// Example: 940bd336248efae0f9ee5bc7b2d5c985887b16ac
         /// </summary>
+        /// <example>940bd336248efae0f9ee5bc7b2d5c985887b16ac</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Sha { get; set; }
@@ -35,6 +38,7 @@ namespace G
         /// URL for the tag<br/>
         /// Example: https://api.github.com/repositories/42/git/tags/940bd336248efae0f9ee5bc7b2d5c985887b16ac
         /// </summary>
+        /// <example>https://api.github.com/repositories/42/git/tags/940bd336248efae0f9ee5bc7b2d5c985887b16ac</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -43,6 +47,7 @@ namespace G
         /// Message describing the purpose of the tag<br/>
         /// Example: Initial public release
         /// </summary>
+        /// <example>Initial public release</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; }

@@ -79,6 +79,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/orgs/rails/teams/core
         /// </summary>
+        /// <example>https://github.com/orgs/rails/teams/core</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }

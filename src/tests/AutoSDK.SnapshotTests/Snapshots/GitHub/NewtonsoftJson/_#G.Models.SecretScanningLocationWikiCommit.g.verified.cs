@@ -13,6 +13,7 @@ namespace G
         /// The file path of the wiki page<br/>
         /// Example: /example/Home.md
         /// </summary>
+        /// <example>/example/Home.md</example>
         [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
         public string Path { get; set; } = default!;
 
@@ -44,6 +45,7 @@ namespace G
         /// SHA-1 hash ID of the associated blob<br/>
         /// Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
         /// </summary>
+        /// <example>af5626b4a114abcb82d63db7c8082c3c4756e51b</example>
         [global::Newtonsoft.Json.JsonProperty("blob_sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string BlobSha { get; set; } = default!;
 
@@ -51,6 +53,7 @@ namespace G
         /// The GitHub URL to get the associated wiki page<br/>
         /// Example: https://github.com/octocat/Hello-World/wiki/Home/302c0b7e200761c9dd9b57e57db540ee0b4293a5
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/wiki/Home/302c0b7e200761c9dd9b57e57db540ee0b4293a5</example>
         [global::Newtonsoft.Json.JsonProperty("page_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PageUrl { get; set; } = default!;
 
@@ -58,6 +61,7 @@ namespace G
         /// SHA-1 hash ID of the associated commit<br/>
         /// Example: 302c0b7e200761c9dd9b57e57db540ee0b4293a5
         /// </summary>
+        /// <example>302c0b7e200761c9dd9b57e57db540ee0b4293a5</example>
         [global::Newtonsoft.Json.JsonProperty("commit_sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string CommitSha { get; set; } = default!;
 
@@ -65,6 +69,7 @@ namespace G
         /// The GitHub URL to get the associated wiki commit<br/>
         /// Example: https://github.com/octocat/Hello-World/wiki/_compare/302c0b7e200761c9dd9b57e57db540ee0b4293a5
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/wiki/_compare/302c0b7e200761c9dd9b57e57db540ee0b4293a5</example>
         [global::Newtonsoft.Json.JsonProperty("commit_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CommitUrl { get; set; } = default!;
 

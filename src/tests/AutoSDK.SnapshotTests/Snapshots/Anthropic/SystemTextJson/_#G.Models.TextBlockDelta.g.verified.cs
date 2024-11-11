@@ -20,6 +20,7 @@ namespace G
         /// The type of content block.<br/>
         /// Default Value: text_delta
         /// </summary>
+        /// <default>"text_delta"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; } = "text_delta";

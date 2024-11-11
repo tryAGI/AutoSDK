@@ -13,6 +13,7 @@ namespace G
         /// Determines if notifications should be received from this repository.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscribed")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Subscribed { get; set; }
@@ -41,6 +42,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/subscription
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/subscription</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -48,6 +50,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoryUrl { get; set; }

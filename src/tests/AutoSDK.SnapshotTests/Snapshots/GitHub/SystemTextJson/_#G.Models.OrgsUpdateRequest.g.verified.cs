@@ -142,6 +142,7 @@ namespace G
         /// <summary>
         /// Example: "http://github.blog"
         /// </summary>
+        /// <example>"http://github.blog"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("blog")]
         public string? Blog { get; set; }
 

@@ -14,6 +14,7 @@ namespace G
         /// The unique GitHub Security Advisory ID assigned to the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("ghsa_id")]
         public string GhsaId { get; set; } = default!;
 
@@ -28,6 +29,7 @@ namespace G
         /// A short, plain text summary of the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("summary")]
         public string Summary { get; set; } = default!;
 
@@ -35,6 +37,7 @@ namespace G
         /// A long-form Markdown-supported description of the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string Description { get; set; } = default!;
 
@@ -42,6 +45,7 @@ namespace G
         /// Vulnerable version range information for the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("vulnerabilities")]
         public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityVulnerability> Vulnerabilities { get; set; } = default!;
 
@@ -49,6 +53,7 @@ namespace G
         /// The severity of the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("severity")]
         public global::G.DependabotAlertSecurityAdvisorySeverity Severity { get; set; } = default!;
 
@@ -56,6 +61,7 @@ namespace G
         /// Details for the advisory pertaining to the Common Vulnerability Scoring System.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("cvss")]
         public global::G.DependabotAlertSecurityAdvisoryCvss Cvss { get; set; } = default!;
 
@@ -69,6 +75,7 @@ namespace G
         /// Details for the advisory pertaining to Common Weakness Enumeration.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("cwes")]
         public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryCwe> Cwes { get; set; } = default!;
 
@@ -76,6 +83,7 @@ namespace G
         /// Values that identify this advisory among security information sources.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("identifiers")]
         public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryIdentifier> Identifiers { get; set; } = default!;
 
@@ -83,6 +91,7 @@ namespace G
         /// Links to additional advisory information.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("references")]
         public global::System.Collections.Generic.IList<global::G.DependabotAlertSecurityAdvisoryReference> References { get; set; } = default!;
 
@@ -90,6 +99,7 @@ namespace G
         /// The time that the advisory was published in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("published_at")]
         public global::System.DateTime PublishedAt { get; set; } = default!;
 
@@ -97,6 +107,7 @@ namespace G
         /// The time that the advisory was last modified in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 

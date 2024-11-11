@@ -31,6 +31,7 @@ namespace G
         ///  - BASE_TYPE_CHAT: Chat model.<br/>
         /// Default Value: BASE_TYPE_UNSPECIFIED
         /// </summary>
+        /// <default>global::G.BaseType.UNSPECIFIED</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("base_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.BaseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

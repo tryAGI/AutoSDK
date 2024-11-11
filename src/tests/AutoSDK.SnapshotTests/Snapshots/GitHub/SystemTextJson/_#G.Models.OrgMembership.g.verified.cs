@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/octocat/memberships/defunkt
         /// </summary>
+        /// <example>https://api.github.com/orgs/octocat/memberships/defunkt</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.<br/>
         /// Example: active
         /// </summary>
+        /// <example>active</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgMembershipStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -29,6 +31,7 @@ namespace G
         /// The user's membership type in the organization.<br/>
         /// Example: admin
         /// </summary>
+        /// <example>admin</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgMembershipRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -37,6 +40,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/octocat
         /// </summary>
+        /// <example>https://api.github.com/orgs/octocat</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("organization_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OrganizationUrl { get; set; }

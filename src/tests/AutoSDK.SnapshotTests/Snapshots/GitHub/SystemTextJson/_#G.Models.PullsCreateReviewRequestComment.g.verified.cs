@@ -32,24 +32,28 @@ namespace G
         /// <summary>
         /// Example: 28
         /// </summary>
+        /// <example>28</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
         public int? Line { get; set; }
 
         /// <summary>
         /// Example: RIGHT
         /// </summary>
+        /// <example>RIGHT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("side")]
         public string? Side { get; set; }
 
         /// <summary>
         /// Example: 26
         /// </summary>
+        /// <example>26</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
         public int? StartLine { get; set; }
 
         /// <summary>
         /// Example: LEFT
         /// </summary>
+        /// <example>LEFT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_side")]
         public string? StartSide { get; set; }
 

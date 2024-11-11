@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: list
         /// </summary>
+        /// <example>list</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Object { get; set; }
@@ -26,6 +27,7 @@ namespace G
         /// <summary>
         /// Example: file-abc123
         /// </summary>
+        /// <example>file-abc123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FirstId { get; set; }
@@ -33,6 +35,7 @@ namespace G
         /// <summary>
         /// Example: file-abc456
         /// </summary>
+        /// <example>file-abc456</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LastId { get; set; }
@@ -40,6 +43,7 @@ namespace G
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasMore { get; set; }

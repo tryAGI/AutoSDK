@@ -13,6 +13,7 @@ namespace G
         /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.<br/>
         /// Example: collaborators_only
         /// </summary>
+        /// <example>collaborators_only</example>
         [global::Newtonsoft.Json.JsonProperty("limit", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.InteractionGroup Limit { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The duration of the interaction restriction. Default: `one_day`.<br/>
         /// Example: one_month
         /// </summary>
+        /// <example>one_month</example>
         [global::Newtonsoft.Json.JsonProperty("expiry")]
         public global::G.InteractionExpiry? Expiry { get; set; }
 

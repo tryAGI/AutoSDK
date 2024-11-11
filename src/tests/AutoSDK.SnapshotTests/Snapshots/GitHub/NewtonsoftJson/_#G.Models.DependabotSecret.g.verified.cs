@@ -13,6 +13,7 @@ namespace G
         /// The name of the secret.<br/>
         /// Example: MY_ARTIFACTORY_PASSWORD
         /// </summary>
+        /// <example>MY_ARTIFACTORY_PASSWORD</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 

@@ -13,6 +13,7 @@ namespace G
         /// The number of environments in this repository<br/>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("total_count")]
         public int? TotalCount { get; set; }
 

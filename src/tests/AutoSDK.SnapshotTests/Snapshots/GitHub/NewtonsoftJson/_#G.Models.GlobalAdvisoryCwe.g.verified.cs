@@ -19,6 +19,7 @@ namespace G
         /// The name of the CWE.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string Name { get; set; } = default!;
 

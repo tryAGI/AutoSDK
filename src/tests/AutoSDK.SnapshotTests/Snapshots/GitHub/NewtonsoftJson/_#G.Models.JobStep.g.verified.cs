@@ -13,6 +13,7 @@ namespace G
         /// The phase of the lifecycle that the job is currently in.<br/>
         /// Example: queued
         /// </summary>
+        /// <example>queued</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.JobStepStatus Status { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The outcome of the job.<br/>
         /// Example: success
         /// </summary>
+        /// <example>success</example>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Conclusion { get; set; } = default!;
 
@@ -27,12 +29,14 @@ namespace G
         /// The name of the job.<br/>
         /// Example: test-coverage
         /// </summary>
+        /// <example>test-coverage</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("number", Required = global::Newtonsoft.Json.Required.Always)]
         public int Number { get; set; } = default!;
 

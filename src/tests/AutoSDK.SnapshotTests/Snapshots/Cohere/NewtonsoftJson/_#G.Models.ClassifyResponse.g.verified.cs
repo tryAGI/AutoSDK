@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string Id { get; set; } = default!;
 
         /// <summary>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("classifications")]
         public global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> Classifications { get; set; } = default!;
 

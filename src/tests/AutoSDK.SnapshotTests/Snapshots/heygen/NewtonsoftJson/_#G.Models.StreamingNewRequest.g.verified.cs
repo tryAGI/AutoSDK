@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: medium
         /// </summary>
+        /// <example>medium</example>
         [global::Newtonsoft.Json.JsonProperty("quality")]
         public string? Quality { get; set; }
 

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: approved
         /// </summary>
+        /// <example>approved</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PagesHttpsCertificateStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -20,6 +21,7 @@ namespace G
         /// <summary>
         /// Example: Certificate is approved
         /// </summary>
+        /// <example>Certificate is approved</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Description { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// Array of the domain set and its alternate name (if it is configured)<br/>
         /// Example: [example.com, www.example.com]
         /// </summary>
+        /// <example>[example.com, www.example.com]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("domains")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Domains { get; set; }

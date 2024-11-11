@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: MDg6V29ya2Zsb3cxMg==
         /// </summary>
+        /// <example>MDg6V29ya2Zsb3cxMg==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: CI
         /// </summary>
+        /// <example>CI</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: ruby.yaml
         /// </summary>
+        /// <example>ruby.yaml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: active
         /// </summary>
+        /// <example>active</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.WorkflowStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -62,6 +67,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/actions/setup-ruby/workflows/5
         /// </summary>
+        /// <example>https://api.github.com/repos/actions/setup-ruby/workflows/5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -69,6 +75,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/actions/setup-ruby/blob/master/.github/workflows/ruby.yaml
         /// </summary>
+        /// <example>https://github.com/actions/setup-ruby/blob/master/.github/workflows/ruby.yaml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -76,6 +83,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/actions/setup-ruby/workflows/CI/badge.svg
         /// </summary>
+        /// <example>https://github.com/actions/setup-ruby/workflows/CI/badge.svg</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("badge_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BadgeUrl { get; set; }

@@ -14,6 +14,7 @@ namespace G
         /// The type of advisory identifier.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependabotAlertSecurityAdvisoryIdentifierTypeJsonConverter))]
         public global::G.DependabotAlertSecurityAdvisoryIdentifierType Type { get; set; } = default!;
@@ -22,6 +23,7 @@ namespace G
         /// The value of the advisory identifer.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         public string Value { get; set; } = default!;
 

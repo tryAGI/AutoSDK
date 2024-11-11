@@ -32,6 +32,7 @@ namespace G
         /// <summary>
         /// Example: "web"
         /// </summary>
+        /// <example>"web"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 

@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: [0.1, 0.2, 0.3]
         /// </summary>
+        /// <example>[0.1, 0.2, 0.3]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding")]
         public global::System.Collections.Generic.IList<double>? Embedding { get; set; }
 
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         public int? Index { get; set; }
 
         /// <summary>
         /// Example: embedding
         /// </summary>
+        /// <example>embedding</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         public string? Object { get; set; }
 

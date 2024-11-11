@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: Kristin_public_3_20240108
         /// </summary>
+        /// <example>Kristin_public_3_20240108</example>
         [global::Newtonsoft.Json.JsonProperty("avatar_id")]
         public string? AvatarId { get; set; }
 
         /// <summary>
         /// Example: normal
         /// </summary>
+        /// <example>normal</example>
         [global::Newtonsoft.Json.JsonProperty("avatar_style")]
         public string? AvatarStyle { get; set; }
 
         /// <summary>
         /// Example: avatar
         /// </summary>
+        /// <example>avatar</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public string? Type { get; set; }
 

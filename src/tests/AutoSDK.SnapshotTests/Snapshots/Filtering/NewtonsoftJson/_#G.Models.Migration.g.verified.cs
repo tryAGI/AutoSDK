@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 79L
         /// </summary>
+        /// <example>79L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -24,18 +25,21 @@ namespace G
         /// <summary>
         /// Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
         /// </summary>
+        /// <example>0b989ba4-242f-11e5-81e1-c7b6966d2516</example>
         [global::Newtonsoft.Json.JsonProperty("guid", Required = global::Newtonsoft.Json.Required.Always)]
         public string Guid { get; set; } = default!;
 
         /// <summary>
         /// Example: pending
         /// </summary>
+        /// <example>pending</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public string State { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("lock_repositories", Required = global::Newtonsoft.Json.Required.Always)]
         public bool LockRepositories { get; set; } = default!;
 
@@ -84,6 +88,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/octo-org/migrations/79
         /// </summary>
+        /// <example>https://api.github.com/orgs/octo-org/migrations/79</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 

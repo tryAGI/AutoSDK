@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/milestones/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/milestones/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/milestones/v1.0
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/milestones/v1.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/milestones/1/labels
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/milestones/1/labels</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LabelsUrl { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: 1002604
         /// </summary>
+        /// <example>1002604</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: MDk6TWlsZXN0b25lMTAwMjYwNA==
         /// </summary>
+        /// <example>MDk6TWlsZXN0b25lMTAwMjYwNA==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -48,6 +53,7 @@ namespace G
         /// The number of the milestone.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Number { get; set; }
@@ -57,6 +63,8 @@ namespace G
         /// Default Value: open<br/>
         /// Example: open
         /// </summary>
+        /// <default>global::G.MilestoneState.Open</default>
+        /// <example>open</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MilestoneStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -66,6 +74,7 @@ namespace G
         /// The title of the milestone.<br/>
         /// Example: v1.0
         /// </summary>
+        /// <example>v1.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
@@ -73,6 +82,7 @@ namespace G
         /// <summary>
         /// Example: Tracking milestone for version 1.0
         /// </summary>
+        /// <example>Tracking milestone for version 1.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Description { get; set; }
@@ -87,6 +97,7 @@ namespace G
         /// <summary>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("open_issues")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int OpenIssues { get; set; }
@@ -94,6 +105,7 @@ namespace G
         /// <summary>
         /// Example: 8
         /// </summary>
+        /// <example>8</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("closed_issues")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ClosedIssues { get; set; }

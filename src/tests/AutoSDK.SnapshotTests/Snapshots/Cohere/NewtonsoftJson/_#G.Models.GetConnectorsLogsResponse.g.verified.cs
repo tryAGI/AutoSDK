@@ -19,6 +19,7 @@ namespace G
         /// Total number of connector logs<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("total")]
         public double Total { get; set; } = default!;
 

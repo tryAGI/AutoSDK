@@ -13,6 +13,7 @@ namespace G
         /// The unique identifier of the deployment protection rule integration.<br/>
         /// Example: 3515
         /// </summary>
+        /// <example>3515</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The slugified name of the deployment protection rule integration.<br/>
         /// Example: my-custom-app
         /// </summary>
+        /// <example>my-custom-app</example>
         [global::Newtonsoft.Json.JsonProperty("slug", Required = global::Newtonsoft.Json.Required.Always)]
         public string Slug { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// The URL for the endpoint to get details about the app.<br/>
         /// Example: https://api.github.com/apps/custom-app-slug
         /// </summary>
+        /// <example>https://api.github.com/apps/custom-app-slug</example>
         [global::Newtonsoft.Json.JsonProperty("integration_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string IntegrationUrl { get; set; } = default!;
 
@@ -34,6 +37,7 @@ namespace G
         /// The node ID for the deployment protection rule integration.<br/>
         /// Example: MDQ6R2F0ZTM1MTU=
         /// </summary>
+        /// <example>MDQ6R2F0ZTM1MTU=</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 

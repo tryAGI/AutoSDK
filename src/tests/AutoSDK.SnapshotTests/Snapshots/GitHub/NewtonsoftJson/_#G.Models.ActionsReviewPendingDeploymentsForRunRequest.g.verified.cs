@@ -13,6 +13,7 @@ namespace G
         /// The list of environment ids to approve or reject<br/>
         /// Example: [161171787, 161171795]
         /// </summary>
+        /// <example>[161171787, 161171795]</example>
         [global::Newtonsoft.Json.JsonProperty("environment_ids", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<int> EnvironmentIds { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// Whether to approve or reject deployment to the specified environments.<br/>
         /// Example: approved
         /// </summary>
+        /// <example>approved</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ActionsReviewPendingDeploymentsForRunRequestState State { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// A comment to accompany the deployment review<br/>
         /// Example: Ship it!
         /// </summary>
+        /// <example>Ship it!</example>
         [global::Newtonsoft.Json.JsonProperty("comment", Required = global::Newtonsoft.Json.Required.Always)]
         public string Comment { get; set; } = default!;
 

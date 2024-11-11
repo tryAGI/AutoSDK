@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 827efc6d56897b048c772eb4087f854f46256132
         /// </summary>
+        /// <example>827efc6d56897b048c772eb4087f854f46256132</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Sha { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/tree/827efc6d56897b048c772eb4087f854f46256132
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/tree/827efc6d56897b048c772eb4087f854f46256132</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }

@@ -13,6 +13,7 @@ namespace G
         /// The name of the detector used.<br/>
         /// Example: docker buildtime detector
         /// </summary>
+        /// <example>docker buildtime detector</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The version of the detector used.<br/>
         /// Example: 1.0.0
         /// </summary>
+        /// <example>1.0.0</example>
         [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
         public string Version { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// The url of the detector used.<br/>
         /// Example: http://example.com/docker-buildtimer-detector
         /// </summary>
+        /// <example>http://example.com/docker-buildtimer-detector</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 

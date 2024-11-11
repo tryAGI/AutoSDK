@@ -15,6 +15,7 @@ namespace G
         /// Unique identifier of the request installation.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -22,6 +23,7 @@ namespace G
         /// <summary>
         /// Example: MDExOkludGVncmF0aW9uMQ==
         /// </summary>
+        /// <example>MDExOkludGVncmF0aW9uMQ==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         public string? NodeId { get; set; }
 

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions</example>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }
 
@@ -30,18 +31,21 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("dismiss_stale_reviews", Required = global::Newtonsoft.Json.Required.Always)]
         public bool DismissStaleReviews { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("require_code_owner_reviews", Required = global::Newtonsoft.Json.Required.Always)]
         public bool RequireCodeOwnerReviews { get; set; } = default!;
 
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("required_approving_review_count")]
         public int? RequiredApprovingReviewCount { get; set; }
 
@@ -50,6 +54,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("require_last_push_approval")]
         public bool? RequireLastPushApproval { get; set; }
 

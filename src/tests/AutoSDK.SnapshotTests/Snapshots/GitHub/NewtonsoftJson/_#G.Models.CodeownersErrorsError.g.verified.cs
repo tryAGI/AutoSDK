@@ -13,6 +13,7 @@ namespace G
         /// The line number where this errors occurs.<br/>
         /// Example: 7
         /// </summary>
+        /// <example>7</example>
         [global::Newtonsoft.Json.JsonProperty("line", Required = global::Newtonsoft.Json.Required.Always)]
         public int Line { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The column number where this errors occurs.<br/>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::Newtonsoft.Json.JsonProperty("column", Required = global::Newtonsoft.Json.Required.Always)]
         public int Column { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// The contents of the line where the error occurs.<br/>
         /// Example: * user
         /// </summary>
+        /// <example>* user</example>
         [global::Newtonsoft.Json.JsonProperty("source")]
         public string? Source { get; set; }
 
@@ -34,6 +37,7 @@ namespace G
         /// The type of error.<br/>
         /// Example: Invalid owner
         /// </summary>
+        /// <example>Invalid owner</example>
         [global::Newtonsoft.Json.JsonProperty("kind", Required = global::Newtonsoft.Json.Required.Always)]
         public string Kind { get; set; } = default!;
 
@@ -41,6 +45,7 @@ namespace G
         /// Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.<br/>
         /// Example: The pattern `/` will never match anything, did you mean `*` instead?
         /// </summary>
+        /// <example>The pattern `/` will never match anything, did you mean `*` instead?</example>
         [global::Newtonsoft.Json.JsonProperty("suggestion")]
         public string? Suggestion { get; set; }
 
@@ -50,6 +55,11 @@ namespace G
         ///   * user<br/>
         ///     ^
         /// </summary>
+        /// <example>
+        /// Invalid owner on line 7:<br/>
+        ///   * user<br/>
+        ///     ^
+        /// </example>
         [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
         public string Message { get; set; } = default!;
 
@@ -57,6 +67,7 @@ namespace G
         /// The path of the file where the error occured.<br/>
         /// Example: .github/CODEOWNERS
         /// </summary>
+        /// <example>.github/CODEOWNERS</example>
         [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
         public string Path { get; set; } = default!;
 

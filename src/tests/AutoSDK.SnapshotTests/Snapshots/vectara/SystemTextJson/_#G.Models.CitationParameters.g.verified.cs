@@ -28,6 +28,7 @@ namespace G
         /// The default `url_pattern` is an empty string.<br/>
         /// Example: https://vectara.com/documents/{doc.id}
         /// </summary>
+        /// <example>https://vectara.com/documents/{doc.id}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url_pattern")]
         public string? UrlPattern { get; set; }
 
@@ -42,6 +43,7 @@ namespace G
         /// the document's metadata includes `{"title":"Title"}`.<br/>
         /// Example: {doc.title}
         /// </summary>
+        /// <example>{doc.title}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("text_pattern")]
         public string? TextPattern { get; set; }
 

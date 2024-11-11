@@ -67,6 +67,7 @@ namespace G
         /// Body of the status update<br/>
         /// Example: The project is off to a great start!
         /// </summary>
+        /// <example>The project is off to a great start!</example>
         [global::Newtonsoft.Json.JsonProperty("body")]
         public string? Body { get; set; }
 

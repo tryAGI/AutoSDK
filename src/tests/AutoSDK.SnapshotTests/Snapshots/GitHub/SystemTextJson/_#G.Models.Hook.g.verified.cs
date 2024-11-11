@@ -20,6 +20,7 @@ namespace G
         /// Unique identifier of the webhook.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -28,6 +29,7 @@ namespace G
         /// The name of a valid service, use 'web' for a webhook.<br/>
         /// Example: web
         /// </summary>
+        /// <example>web</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -36,6 +38,7 @@ namespace G
         /// Determines whether the hook is actually triggered on pushes.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Active { get; set; }
@@ -44,6 +47,7 @@ namespace G
         /// Determines what events the hook is triggered for. Default: ['push'].<br/>
         /// Example: [push, pull_request]
         /// </summary>
+        /// <example>[push, pull_request]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Events { get; set; }
@@ -72,6 +76,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/hooks/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -79,6 +84,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/test
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/hooks/1/test</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("test_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TestUrl { get; set; }
@@ -86,6 +92,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/pings
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/hooks/1/pings</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ping_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PingUrl { get; set; }
@@ -93,6 +100,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/deliveries
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/hooks/1/deliveries</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deliveries_url")]
         public string? DeliveriesUrl { get; set; }
 

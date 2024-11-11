@@ -21,6 +21,7 @@ namespace G
         /// `refs/tags/&lt;tag&gt;`, `refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.<br/>
         /// Example: refs/heads/main
         /// </summary>
+        /// <example>refs/heads/main</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Ref { get; set; }
@@ -37,6 +38,7 @@ namespace G
         /// This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.<br/>
         /// Example: file:///github/workspace/
         /// </summary>
+        /// <example>file:///github/workspace/</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("checkout_uri")]
         public string? CheckoutUri { get; set; }
 

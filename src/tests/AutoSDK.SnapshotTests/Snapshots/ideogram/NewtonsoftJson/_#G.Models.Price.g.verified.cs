@@ -13,6 +13,7 @@ namespace G
         /// The ISO 4217 currency code for the price object.<br/>
         /// Example: USD
         /// </summary>
+        /// <example>USD</example>
         [global::Newtonsoft.Json.JsonProperty("currency_code", Required = global::Newtonsoft.Json.Required.Always)]
         public string CurrencyCode { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The amount of the currency in the common denomination. For example, in USD this is cents.<br/>
         /// Example: 1050
         /// </summary>
+        /// <example>1050</example>
         [global::Newtonsoft.Json.JsonProperty("amount", Required = global::Newtonsoft.Json.Required.Always)]
         public double Amount { get; set; } = default!;
 

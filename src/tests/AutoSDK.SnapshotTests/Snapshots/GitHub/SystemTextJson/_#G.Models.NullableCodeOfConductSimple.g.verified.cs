@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/docs/community/code_of_conduct
         /// </summary>
+        /// <example>https://api.github.com/repos/github/docs/community/code_of_conduct</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: citizen_code_of_conduct
         /// </summary>
+        /// <example>citizen_code_of_conduct</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Key { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: Citizen Code of Conduct
         /// </summary>
+        /// <example>Citizen Code of Conduct</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md
         /// </summary>
+        /// <example>https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? HtmlUrl { get; set; }

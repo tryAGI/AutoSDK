@@ -13,6 +13,7 @@ namespace G
         /// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).<br/>
         /// Example: 30
         /// </summary>
+        /// <example>30</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("wait_timer")]
         public int? WaitTimer { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// Whether or not a user who created the job is prevented from approving their own job.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prevent_self_review")]
         public bool? PreventSelfReview { get; set; }
 

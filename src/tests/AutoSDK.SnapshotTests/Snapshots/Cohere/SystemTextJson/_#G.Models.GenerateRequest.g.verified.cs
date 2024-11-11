@@ -15,6 +15,7 @@ namespace G
         /// Included only in requests<br/>
         /// Example: Please explain to me how LLMs work
         /// </summary>
+        /// <example>Please explain to me how LLMs work</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         public string? Prompt { get; set; }
 
@@ -88,6 +89,7 @@ namespace G
         /// Included only in requests<br/>
         /// Example: my-preset-a58sbd
         /// </summary>
+        /// <example>my-preset-a58sbd</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("preset")]
         public string? Preset { get; set; }
 

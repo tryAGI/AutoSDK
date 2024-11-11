@@ -13,6 +13,7 @@ namespace G
         /// The project card's note<br/>
         /// Example: Update all gems
         /// </summary>
+        /// <example>Update all gems</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("note")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Note { get; set; }

@@ -21,6 +21,7 @@ namespace G
         /// The user defined function.<br/>
         /// Example: get('$.score') * get('$.document_metadata.boost')
         /// </summary>
+        /// <example>get('$.score') * get('$.document_metadata.boost')</example>
         [global::Newtonsoft.Json.JsonProperty("user_function")]
         public string? UserFunction { get; set; }
 

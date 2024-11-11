@@ -12,30 +12,35 @@ namespace G
         /// <summary>
         /// Example: English - American Accent
         /// </summary>
+        /// <example>English - American Accent</example>
         [global::Newtonsoft.Json.JsonProperty("output_language")]
         public string? OutputLanguage { get; set; }
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("speaker_num")]
         public double? SpeakerNum { get; set; }
 
         /// <summary>
         /// Example: My Title
         /// </summary>
+        /// <example>My Title</example>
         [global::Newtonsoft.Json.JsonProperty("title")]
         public string? Title { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("translate_audio_only")]
         public bool? TranslateAudioOnly { get; set; }
 
         /// <summary>
         /// Example: https://static.heygen.ai/heygen/asset/originalnew.mp4
         /// </summary>
+        /// <example>https://static.heygen.ai/heygen/asset/originalnew.mp4</example>
         [global::Newtonsoft.Json.JsonProperty("video_url")]
         public string? VideoUrl { get; set; }
 

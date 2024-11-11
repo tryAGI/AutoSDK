@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: MDg6UmVhY3Rpb24x
         /// </summary>
+        /// <example>MDg6UmVhY3Rpb24x</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -34,6 +36,7 @@ namespace G
         /// The reaction to use<br/>
         /// Example: heart
         /// </summary>
+        /// <example>heart</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ReactionContentJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

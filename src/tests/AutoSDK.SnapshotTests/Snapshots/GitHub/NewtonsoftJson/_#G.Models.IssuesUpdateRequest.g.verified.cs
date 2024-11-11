@@ -39,6 +39,7 @@ namespace G
         /// The reason for the state change. Ignored unless `state` is changed.<br/>
         /// Example: not_planned
         /// </summary>
+        /// <example>not_planned</example>
         [global::Newtonsoft.Json.JsonProperty("state_reason")]
         public global::G.IssuesUpdateRequestStateReason? StateReason { get; set; }
 

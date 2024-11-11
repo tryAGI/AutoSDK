@@ -13,6 +13,7 @@ namespace G
         /// Whether the user has accepted the permissions defined by the devcontainer config<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("accepted", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Accepted { get; set; } = default!;
 

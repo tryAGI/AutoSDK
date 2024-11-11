@@ -96,12 +96,14 @@ namespace G
         /// <summary>
         /// Example: "actual/actual.md"
         /// </summary>
+        /// <example>"actual/actual.md"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("target")]
         public string? Target { get; set; }
 
         /// <summary>
         /// Example: "git://example.com/defunkt/dotjs.git"
         /// </summary>
+        /// <example>"git://example.com/defunkt/dotjs.git"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("submodule_git_url")]
         public string? SubmoduleGitUrl { get; set; }
 

@@ -13,6 +13,7 @@ namespace G
         /// The access token used to authenticate to the GitHub API.<br/>
         /// Example: e72e16c7e42f292c6912e7710c838347ae178b4a
         /// </summary>
+        /// <example>e72e16c7e42f292c6912e7710c838347ae178b4a</example>
         [global::Newtonsoft.Json.JsonProperty("access_token", Required = global::Newtonsoft.Json.Required.Always)]
         public string AccessToken { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The name of the user or organization to scope the user access token to. **Required** unless `target_id` is specified.<br/>
         /// Example: octocat
         /// </summary>
+        /// <example>octocat</example>
         [global::Newtonsoft.Json.JsonProperty("target")]
         public string? Target { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// The ID of the user or organization to scope the user access token to. **Required** unless `target` is specified.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("target_id")]
         public int? TargetId { get; set; }
 
@@ -40,6 +43,7 @@ namespace G
         /// The list of repository IDs to scope the user access token to. `repository_ids` may not be specified if `repositories` is specified.<br/>
         /// Example: [1]
         /// </summary>
+        /// <example>[1]</example>
         [global::Newtonsoft.Json.JsonProperty("repository_ids")]
         public global::System.Collections.Generic.IList<int>? RepositoryIds { get; set; }
 

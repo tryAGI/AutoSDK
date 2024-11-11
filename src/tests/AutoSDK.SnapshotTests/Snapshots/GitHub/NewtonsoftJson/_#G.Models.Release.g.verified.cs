@@ -61,6 +61,7 @@ namespace G
         /// The name of the tag.<br/>
         /// Example: v1.0.0
         /// </summary>
+        /// <example>v1.0.0</example>
         [global::Newtonsoft.Json.JsonProperty("tag_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string TagName { get; set; } = default!;
 
@@ -68,6 +69,7 @@ namespace G
         /// Specifies the commitish value that determines where the Git tag is created from.<br/>
         /// Example: master
         /// </summary>
+        /// <example>master</example>
         [global::Newtonsoft.Json.JsonProperty("target_commitish", Required = global::Newtonsoft.Json.Required.Always)]
         public string TargetCommitish { get; set; } = default!;
 
@@ -87,6 +89,7 @@ namespace G
         /// true to create a draft (unpublished) release, false to create a published one.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("draft", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Draft { get; set; } = default!;
 
@@ -94,6 +97,7 @@ namespace G
         /// Whether to identify the release as a prerelease or a full release.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("prerelease", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Prerelease { get; set; } = default!;
 

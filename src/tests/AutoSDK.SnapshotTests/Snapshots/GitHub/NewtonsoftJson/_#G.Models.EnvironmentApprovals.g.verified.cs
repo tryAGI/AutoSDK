@@ -19,6 +19,7 @@ namespace G
         /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)<br/>
         /// Example: approved
         /// </summary>
+        /// <example>approved</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.EnvironmentApprovalsState State { get; set; } = default!;
 
@@ -32,6 +33,7 @@ namespace G
         /// The comment submitted with the deployment review<br/>
         /// Example: Ship it!
         /// </summary>
+        /// <example>Ship it!</example>
         [global::Newtonsoft.Json.JsonProperty("comment", Required = global::Newtonsoft.Json.Required.Always)]
         public string Comment { get; set; } = default!;
 

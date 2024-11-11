@@ -13,6 +13,7 @@ namespace G
         /// The id of the runner.<br/>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The id of the runner group.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_group_id")]
         public int? RunnerGroupId { get; set; }
 
@@ -28,6 +30,7 @@ namespace G
         /// The name of the runner.<br/>
         /// Example: iMac
         /// </summary>
+        /// <example>iMac</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -36,6 +39,7 @@ namespace G
         /// The Operating System of the runner.<br/>
         /// Example: macos
         /// </summary>
+        /// <example>macos</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("os")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Os { get; set; }
@@ -44,6 +48,7 @@ namespace G
         /// The status of the runner.<br/>
         /// Example: online
         /// </summary>
+        /// <example>online</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Status { get; set; }

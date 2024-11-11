@@ -13,6 +13,7 @@ namespace G
         /// The API URL to get the issue comment where the secret was detected.<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/issues/comments/1081119451
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/issues/comments/1081119451</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue_comment_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string IssueCommentUrl { get; set; }

@@ -84,66 +84,77 @@ namespace G
         /// <summary>
         /// Example: ""
         /// </summary>
+        /// <example>""</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("gravatar_id")]
         public string? GravatarId { get; set; }
 
         /// <summary>
         /// Example: "https://github.com/testorg-ea8ec76d71c3af4b"
         /// </summary>
+        /// <example>"https://github.com/testorg-ea8ec76d71c3af4b"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/followers"
         /// </summary>
+        /// <example>"https://api.github.com/users/testorg-ea8ec76d71c3af4b/followers"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("followers_url")]
         public string? FollowersUrl { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/following{/other_user}"
         /// </summary>
+        /// <example>"https://api.github.com/users/testorg-ea8ec76d71c3af4b/following{/other_user}"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("following_url")]
         public string? FollowingUrl { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/gists{/gist_id}"
         /// </summary>
+        /// <example>"https://api.github.com/users/testorg-ea8ec76d71c3af4b/gists{/gist_id}"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("gists_url")]
         public string? GistsUrl { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/starred{/owner}{/repo}"
         /// </summary>
+        /// <example>"https://api.github.com/users/testorg-ea8ec76d71c3af4b/starred{/owner}{/repo}"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("starred_url")]
         public string? StarredUrl { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/subscriptions"
         /// </summary>
+        /// <example>"https://api.github.com/users/testorg-ea8ec76d71c3af4b/subscriptions"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscriptions_url")]
         public string? SubscriptionsUrl { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/orgs"
         /// </summary>
+        /// <example>"https://api.github.com/users/testorg-ea8ec76d71c3af4b/orgs"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("organizations_url")]
         public string? OrganizationsUrl { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/received_events"
         /// </summary>
+        /// <example>"https://api.github.com/users/testorg-ea8ec76d71c3af4b/received_events"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("received_events_url")]
         public string? ReceivedEventsUrl { get; set; }
 
         /// <summary>
         /// Example: "Organization"
         /// </summary>
+        /// <example>"Organization"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("site_admin")]
         public bool? SiteAdmin { get; set; }
 

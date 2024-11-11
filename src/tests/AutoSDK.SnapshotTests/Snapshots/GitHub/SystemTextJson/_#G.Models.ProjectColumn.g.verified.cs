@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/columns/367
         /// </summary>
+        /// <example>https://api.github.com/projects/columns/367</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/120
         /// </summary>
+        /// <example>https://api.github.com/projects/120</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectUrl { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/columns/367/cards
         /// </summary>
+        /// <example>https://api.github.com/projects/columns/367/cards</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cards_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CardsUrl { get; set; }
@@ -34,6 +37,7 @@ namespace G
         /// The unique identifier of the project column<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -41,6 +45,7 @@ namespace G
         /// <summary>
         /// Example: MDEzOlByb2plY3RDb2x1bW4zNjc=
         /// </summary>
+        /// <example>MDEzOlByb2plY3RDb2x1bW4zNjc=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -49,6 +54,7 @@ namespace G
         /// Name of the project column<br/>
         /// Example: Remaining tasks
         /// </summary>
+        /// <example>Remaining tasks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }

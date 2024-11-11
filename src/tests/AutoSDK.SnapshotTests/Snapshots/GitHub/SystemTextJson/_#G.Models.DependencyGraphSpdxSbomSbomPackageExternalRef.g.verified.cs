@@ -13,6 +13,7 @@ namespace G
         /// The category of reference to an external resource this reference refers to.<br/>
         /// Example: PACKAGE-MANAGER
         /// </summary>
+        /// <example>PACKAGE-MANAGER</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("referenceCategory")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReferenceCategory { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// A locator for the particular external resource this reference refers to.<br/>
         /// Example: pkg:gem/rails@6.0.1
         /// </summary>
+        /// <example>pkg:gem/rails@6.0.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("referenceLocator")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReferenceLocator { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// The category of reference to an external resource this reference refers to.<br/>
         /// Example: purl
         /// </summary>
+        /// <example>purl</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("referenceType")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReferenceType { get; set; }

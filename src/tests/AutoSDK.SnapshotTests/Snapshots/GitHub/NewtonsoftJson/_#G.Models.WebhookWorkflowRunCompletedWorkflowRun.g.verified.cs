@@ -217,6 +217,7 @@ namespace G
         /// The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.<br/>
         /// Example: Simple Workflow
         /// </summary>
+        /// <example>Simple Workflow</example>
         [global::Newtonsoft.Json.JsonProperty("display_title")]
         public string? DisplayTitle { get; set; }
 

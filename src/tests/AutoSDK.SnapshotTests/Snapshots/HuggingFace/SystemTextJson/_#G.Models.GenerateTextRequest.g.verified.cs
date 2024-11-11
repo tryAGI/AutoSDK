@@ -13,6 +13,7 @@ namespace G
         /// The prompt that you want to complete.<br/>
         /// Example: This is a test.
         /// </summary>
+        /// <example>This is a test.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("inputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Inputs { get; set; }

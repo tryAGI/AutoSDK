@@ -614,6 +614,7 @@ namespace G
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_commit_signoff_required")]
         public bool? WebCommitSignoffRequired { get; set; }
 

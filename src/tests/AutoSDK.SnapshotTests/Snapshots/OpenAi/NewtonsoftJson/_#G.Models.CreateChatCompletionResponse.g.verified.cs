@@ -37,6 +37,7 @@ namespace G
         /// The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.<br/>
         /// Example: scale
         /// </summary>
+        /// <example>scale</example>
         [global::Newtonsoft.Json.JsonProperty("service_tier")]
         public global::G.CreateChatCompletionResponseServiceTier? ServiceTier { get; set; }
 

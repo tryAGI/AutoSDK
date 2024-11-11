@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: Sprint Springfield POP
         /// </summary>
+        /// <example>Sprint Springfield POP</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: sprint.com
         /// </summary>
+        /// <example>sprint.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Domain { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: isp
         /// </summary>
+        /// <example>isp</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CompanyTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

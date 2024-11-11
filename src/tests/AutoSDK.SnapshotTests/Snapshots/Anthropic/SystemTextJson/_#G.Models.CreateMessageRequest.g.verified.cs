@@ -17,6 +17,7 @@ namespace G
         /// details and options.<br/>
         /// Example: claude-3-5-sonnet-20241022
         /// </summary>
+        /// <example>claude-3-5-sonnet-20241022</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]

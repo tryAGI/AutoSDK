@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: Google
         /// </summary>
+        /// <example>Google</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("referrer")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Referrer { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Count { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("uniques")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Uniques { get; set; }

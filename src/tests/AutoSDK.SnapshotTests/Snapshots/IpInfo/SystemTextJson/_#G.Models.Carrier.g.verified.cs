@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: Sprint Corporation
         /// </summary>
+        /// <example>Sprint Corporation</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 310
         /// </summary>
+        /// <example>310</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("mcc")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Mcc { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: 120
         /// </summary>
+        /// <example>120</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("mnc")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Mnc { get; set; }

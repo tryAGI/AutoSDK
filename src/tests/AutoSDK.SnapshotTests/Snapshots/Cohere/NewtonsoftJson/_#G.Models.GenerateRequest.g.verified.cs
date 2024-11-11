@@ -15,6 +15,7 @@ namespace G
         /// Included only in requests<br/>
         /// Example: Please explain to me how LLMs work
         /// </summary>
+        /// <example>Please explain to me how LLMs work</example>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
         public string? Prompt { get; set; }
 
@@ -87,6 +88,7 @@ namespace G
         /// Included only in requests<br/>
         /// Example: my-preset-a58sbd
         /// </summary>
+        /// <example>my-preset-a58sbd</example>
         [global::Newtonsoft.Json.JsonProperty("preset")]
         public string? Preset { get; set; }
 

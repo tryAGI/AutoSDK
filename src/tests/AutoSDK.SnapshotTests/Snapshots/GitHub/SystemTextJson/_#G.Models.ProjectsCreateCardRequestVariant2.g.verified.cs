@@ -13,6 +13,7 @@ namespace G
         /// The unique identifier of the content associated with the card<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ContentId { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The piece of content associated with the card<br/>
         /// Example: PullRequest
         /// </summary>
+        /// <example>PullRequest</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ContentType { get; set; }

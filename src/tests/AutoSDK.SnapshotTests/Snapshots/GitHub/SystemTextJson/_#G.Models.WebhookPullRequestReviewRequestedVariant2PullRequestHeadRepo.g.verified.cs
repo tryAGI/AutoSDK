@@ -62,6 +62,7 @@ namespace G
         /// Whether the repository is archived.<br/>
         /// Default Value: false
         /// </summary>
+        /// <default>false</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Archived { get; set; } = false;
@@ -259,6 +260,7 @@ namespace G
         /// Whether downloads are enabled.<br/>
         /// Default Value: true
         /// </summary>
+        /// <default>true</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_downloads")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasDownloads { get; set; } = true;
@@ -267,6 +269,7 @@ namespace G
         /// Whether issues are enabled.<br/>
         /// Default Value: true
         /// </summary>
+        /// <default>true</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_issues")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasIssues { get; set; } = true;
@@ -282,6 +285,7 @@ namespace G
         /// Whether projects are enabled.<br/>
         /// Default Value: true
         /// </summary>
+        /// <default>true</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasProjects { get; set; } = true;
@@ -290,6 +294,7 @@ namespace G
         /// Whether the wiki is enabled.<br/>
         /// Default Value: true
         /// </summary>
+        /// <default>true</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_wiki")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasWiki { get; set; } = true;
@@ -298,6 +303,7 @@ namespace G
         /// Whether discussions are enabled.<br/>
         /// Default Value: false
         /// </summary>
+        /// <default>false</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_discussions")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasDiscussions { get; set; } = false;

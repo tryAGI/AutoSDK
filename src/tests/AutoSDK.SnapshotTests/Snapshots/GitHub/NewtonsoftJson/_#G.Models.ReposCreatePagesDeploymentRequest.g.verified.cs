@@ -32,6 +32,7 @@ namespace G
         /// A unique string that represents the version of the build for this deployment.<br/>
         /// Default Value: GITHUB_SHA
         /// </summary>
+        /// <default>"GITHUB_SHA"</default>
         [global::Newtonsoft.Json.JsonProperty("pages_build_version", Required = global::Newtonsoft.Json.Required.Always)]
         public string PagesBuildVersion { get; set; } = default!;
 

@@ -13,6 +13,7 @@ namespace G
         /// The date and time the SPDX document was created.<br/>
         /// Example: 2021-11-03T00:00:00Z
         /// </summary>
+        /// <example>2021-11-03T00:00:00Z</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Created { get; set; }

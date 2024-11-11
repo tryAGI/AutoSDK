@@ -13,6 +13,7 @@ namespace G
         /// Package-url (PURL) of dependency. See https://github.com/package-url/purl-spec for more details.<br/>
         /// Example: pkg:/npm/%40actions/http-client@1.0.11
         /// </summary>
+        /// <example>pkg:/npm/%40actions/http-client@1.0.11</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_url")]
         public string? PackageUrl { get; set; }
 
@@ -26,6 +27,7 @@ namespace G
         /// A notation of whether a dependency is requested directly by this manifest or is a dependency of another dependency.<br/>
         /// Example: direct
         /// </summary>
+        /// <example>direct</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("relationship")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependencyRelationshipJsonConverter))]
         public global::G.DependencyRelationship? Relationship { get; set; }
@@ -34,6 +36,7 @@ namespace G
         /// A notation of whether the dependency is required for the primary build artifact (runtime) or is only used for development. Future versions of this specification may allow for more granular scopes.<br/>
         /// Example: runtime
         /// </summary>
+        /// <example>runtime</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("scope")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DependencyScopeJsonConverter))]
         public global::G.DependencyScope? Scope { get; set; }
@@ -42,6 +45,7 @@ namespace G
         /// Array of package-url (PURLs) of direct child dependencies.<br/>
         /// Example: @actions/http-client
         /// </summary>
+        /// <example>@actions/http-client</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("dependencies")]
         public global::System.Collections.Generic.IList<string>? Dependencies { get; set; }
 

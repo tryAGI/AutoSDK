@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the package version.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,30 +21,35 @@ namespace G
         /// The name of the package version.<br/>
         /// Example: latest
         /// </summary>
+        /// <example>latest</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/github/packages/container/super-linter/versions/786068
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/packages/container/super-linter/versions/786068</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/orgs/github/packages/container/package/super-linter
         /// </summary>
+        /// <example>https://github.com/orgs/github/packages/container/package/super-linter</example>
         [global::Newtonsoft.Json.JsonProperty("package_html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PackageHtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/orgs/github/packages/container/super-linter/786068
         /// </summary>
+        /// <example>https://github.com/orgs/github/packages/container/super-linter/786068</example>
         [global::Newtonsoft.Json.JsonProperty("html_url")]
         public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// Example: MIT
         /// </summary>
+        /// <example>MIT</example>
         [global::Newtonsoft.Json.JsonProperty("license")]
         public string? License { get; set; }
 

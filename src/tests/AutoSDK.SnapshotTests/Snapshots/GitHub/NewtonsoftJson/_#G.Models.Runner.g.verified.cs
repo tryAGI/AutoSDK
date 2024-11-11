@@ -13,6 +13,7 @@ namespace G
         /// The id of the runner.<br/>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The id of the runner group.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("runner_group_id")]
         public int? RunnerGroupId { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// The name of the runner.<br/>
         /// Example: iMac
         /// </summary>
+        /// <example>iMac</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -34,6 +37,7 @@ namespace G
         /// The Operating System of the runner.<br/>
         /// Example: macos
         /// </summary>
+        /// <example>macos</example>
         [global::Newtonsoft.Json.JsonProperty("os", Required = global::Newtonsoft.Json.Required.Always)]
         public string Os { get; set; } = default!;
 
@@ -41,6 +45,7 @@ namespace G
         /// The status of the runner.<br/>
         /// Example: online
         /// </summary>
+        /// <example>online</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public string Status { get; set; } = default!;
 

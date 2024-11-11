@@ -14,6 +14,7 @@ namespace G
         /// Enabling a turn is not implemented.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
 

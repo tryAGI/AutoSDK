@@ -13,6 +13,7 @@ namespace G
         /// State of the latest export<br/>
         /// Example: succeeded | failed | in_progress
         /// </summary>
+        /// <example>succeeded | failed | in_progress</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         public string? State { get; set; }
 
@@ -26,6 +27,7 @@ namespace G
         /// Name of the exported branch<br/>
         /// Example: codespace-monalisa-octocat-hello-world-g4wpq6h95q
         /// </summary>
+        /// <example>codespace-monalisa-octocat-hello-world-g4wpq6h95q</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("branch")]
         public string? Branch { get; set; }
 
@@ -33,6 +35,7 @@ namespace G
         /// Git commit SHA of the exported branch<br/>
         /// Example: fd95a81ca01e48ede9f39c799ecbcef817b8a3b2
         /// </summary>
+        /// <example>fd95a81ca01e48ede9f39c799ecbcef817b8a3b2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         public string? Sha { get; set; }
 
@@ -40,6 +43,7 @@ namespace G
         /// Id for the export details<br/>
         /// Example: latest
         /// </summary>
+        /// <example>latest</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
@@ -47,6 +51,7 @@ namespace G
         /// Url for fetching export details<br/>
         /// Example: https://api.github.com/user/codespaces/:name/exports/latest
         /// </summary>
+        /// <example>https://api.github.com/user/codespaces/:name/exports/latest</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("export_url")]
         public string? ExportUrl { get; set; }
 
@@ -54,6 +59,7 @@ namespace G
         /// Web url for the exported branch<br/>
         /// Example: https://github.com/octocat/hello-world/tree/:branch
         /// </summary>
+        /// <example>https://github.com/octocat/hello-world/tree/:branch</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         public string? HtmlUrl { get; set; }
 

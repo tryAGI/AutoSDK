@@ -13,6 +13,7 @@ namespace G
         /// The phase of the lifecycle that the job is currently in.<br/>
         /// Example: queued
         /// </summary>
+        /// <example>queued</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JobStepStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -22,6 +23,7 @@ namespace G
         /// The outcome of the job.<br/>
         /// Example: success
         /// </summary>
+        /// <example>success</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Conclusion { get; set; }
@@ -30,6 +32,7 @@ namespace G
         /// The name of the job.<br/>
         /// Example: test-coverage
         /// </summary>
+        /// <example>test-coverage</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -37,6 +40,7 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Number { get; set; }

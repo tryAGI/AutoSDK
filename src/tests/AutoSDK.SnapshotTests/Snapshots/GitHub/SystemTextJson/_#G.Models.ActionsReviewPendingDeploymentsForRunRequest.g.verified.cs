@@ -13,6 +13,7 @@ namespace G
         /// The list of environment ids to approve or reject<br/>
         /// Example: [161171787, 161171795]
         /// </summary>
+        /// <example>[161171787, 161171795]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment_ids")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<int> EnvironmentIds { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// Whether to approve or reject deployment to the specified environments.<br/>
         /// Example: approved
         /// </summary>
+        /// <example>approved</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ActionsReviewPendingDeploymentsForRunRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -30,6 +32,7 @@ namespace G
         /// A comment to accompany the deployment review<br/>
         /// Example: Ship it!
         /// </summary>
+        /// <example>Ship it!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Comment { get; set; }

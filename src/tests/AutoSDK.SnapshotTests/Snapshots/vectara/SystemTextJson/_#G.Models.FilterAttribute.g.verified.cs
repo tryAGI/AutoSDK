@@ -13,6 +13,7 @@ namespace G
         /// The JSON path of the filter attribute in a document or document part metadata.<br/>
         /// Example: Title
         /// </summary>
+        /// <example>Title</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// Indicates whether this is a document or document part metadata filter.<br/>
         /// Example: document
         /// </summary>
+        /// <example>document</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("level")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilterAttributeLevelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -30,6 +32,7 @@ namespace G
         /// Description of the filter. May be omitted.<br/>
         /// Example: The title of the document.
         /// </summary>
+        /// <example>The title of the document.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -44,6 +47,7 @@ namespace G
         /// The value type of the filter.<br/>
         /// Example: text
         /// </summary>
+        /// <example>text</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FilterAttributeTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

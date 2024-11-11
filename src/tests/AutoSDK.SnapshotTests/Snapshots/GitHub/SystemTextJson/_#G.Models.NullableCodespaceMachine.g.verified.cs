@@ -13,6 +13,7 @@ namespace G
         /// The name of the machine.<br/>
         /// Example: standardLinux
         /// </summary>
+        /// <example>standardLinux</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The display name of the machine includes cores, memory, and storage.<br/>
         /// Example: 4 cores, 16 GB RAM, 64 GB storage
         /// </summary>
+        /// <example>4 cores, 16 GB RAM, 64 GB storage</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DisplayName { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// The operating system of the machine.<br/>
         /// Example: linux
         /// </summary>
+        /// <example>linux</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("operating_system")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OperatingSystem { get; set; }
@@ -37,6 +40,7 @@ namespace G
         /// How much storage is available to the codespace.<br/>
         /// Example: 68719476736
         /// </summary>
+        /// <example>68719476736</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("storage_in_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StorageInBytes { get; set; }
@@ -45,6 +49,7 @@ namespace G
         /// How much memory is available to the codespace.<br/>
         /// Example: 17179869184
         /// </summary>
+        /// <example>17179869184</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("memory_in_bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MemoryInBytes { get; set; }
@@ -53,6 +58,7 @@ namespace G
         /// How many cores are available to the codespace.<br/>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cpus")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Cpus { get; set; }
@@ -61,6 +67,7 @@ namespace G
         /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.<br/>
         /// Example: ready
         /// </summary>
+        /// <example>ready</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prebuild_availability")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.NullableCodespaceMachinePrebuildAvailabilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

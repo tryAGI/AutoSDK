@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/deployments/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/deployments/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// Unique identifier of the deployment<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -27,6 +29,7 @@ namespace G
         /// <summary>
         /// Example: MDEwOkRlcGxveW1lbnQx
         /// </summary>
+        /// <example>MDEwOkRlcGxveW1lbnQx</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -35,6 +38,7 @@ namespace G
         /// Parameter to specify a task to execute<br/>
         /// Example: deploy
         /// </summary>
+        /// <example>deploy</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("task")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Task { get; set; }
@@ -42,6 +46,7 @@ namespace G
         /// <summary>
         /// Example: staging
         /// </summary>
+        /// <example>staging</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_environment")]
         public string? OriginalEnvironment { get; set; }
 
@@ -49,6 +54,7 @@ namespace G
         /// Name for the target deployment environment.<br/>
         /// Example: production
         /// </summary>
+        /// <example>production</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Environment { get; set; }
@@ -56,6 +62,7 @@ namespace G
         /// <summary>
         /// Example: Deploy request from hubot
         /// </summary>
+        /// <example>Deploy request from hubot</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Description { get; set; }
@@ -77,6 +84,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/deployments/1/statuses
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/deployments/1/statuses</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("statuses_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StatusesUrl { get; set; }
@@ -84,6 +92,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoryUrl { get; set; }
@@ -92,6 +101,7 @@ namespace G
         /// Specifies if the given environment is will no longer exist at some point in the future. Default: false.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("transient_environment")]
         public bool? TransientEnvironment { get; set; }
 
@@ -99,6 +109,7 @@ namespace G
         /// Specifies if the given environment is one that end-users directly interact with. Default: false.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("production_environment")]
         public bool? ProductionEnvironment { get; set; }
 

@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: 1.1.1.1
         /// </summary>
+        /// <example>1.1.1.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ip")]
         public string? Ip { get; set; }
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("page")]
         public int? Page { get; set; }
 
         /// <summary>
         /// Example: 17939
         /// </summary>
+        /// <example>17939</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Total { get; set; }

@@ -16,6 +16,7 @@ namespace G
         /// "auto" decides the optimal number of epochs based on the size of the dataset. If setting the number manually, we support any number between 1 and 50 epochs.<br/>
         /// Default Value: auto
         /// </summary>
+        /// <default>global::G.FineTuningJobHyperparametersNEpochs.Auto</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]

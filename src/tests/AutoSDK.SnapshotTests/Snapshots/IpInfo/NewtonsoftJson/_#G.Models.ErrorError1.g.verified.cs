@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: Wrong ip
         /// </summary>
+        /// <example>Wrong ip</example>
         [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
         public string Title { get; set; } = default!;
 
         /// <summary>
         /// Example: Please provide a valid IP address
         /// </summary>
+        /// <example>Please provide a valid IP address</example>
         [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
         public string Message { get; set; } = default!;
 

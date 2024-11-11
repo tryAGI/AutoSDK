@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/1#discussion-diff-1</example>
         [global::Newtonsoft.Json.JsonProperty("href", Required = global::Newtonsoft.Json.Required.Always)]
         public string Href { get; set; } = default!;
 

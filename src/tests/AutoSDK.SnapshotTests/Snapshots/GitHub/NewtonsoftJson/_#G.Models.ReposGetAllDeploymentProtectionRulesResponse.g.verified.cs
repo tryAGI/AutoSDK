@@ -13,6 +13,7 @@ namespace G
         /// The number of enabled custom deployment protection rules for this environment<br/>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::Newtonsoft.Json.JsonProperty("total_count")]
         public int? TotalCount { get; set; }
 

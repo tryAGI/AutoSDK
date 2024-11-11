@@ -13,6 +13,7 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </summary>
+        /// <example>my-corpus</example>
         [global::Newtonsoft.Json.JsonProperty("key", Required = global::Newtonsoft.Json.Required.Always)]
         public string Key { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The name for the corpus. This value defaults to the key.<br/>
         /// Example: My corpus
         /// </summary>
+        /// <example>My corpus</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// Description of the corpus.<br/>
         /// Example: Documents with important information for my prompt.
         /// </summary>
+        /// <example>Documents with important information for my prompt.</example>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -48,6 +51,7 @@ namespace G
         /// *Deprecated*: Use `encoder_name` instead.<br/>
         /// Example: enc_1
         /// </summary>
+        /// <example>enc_1</example>
         [global::Newtonsoft.Json.JsonProperty("encoder_id")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public string? EncoderId { get; set; }
@@ -56,6 +60,7 @@ namespace G
         /// The encoder used by the corpus.<br/>
         /// Example: boomerang
         /// </summary>
+        /// <example>boomerang</example>
         [global::Newtonsoft.Json.JsonProperty("encoder_name")]
         public string? EncoderName { get; set; }
 

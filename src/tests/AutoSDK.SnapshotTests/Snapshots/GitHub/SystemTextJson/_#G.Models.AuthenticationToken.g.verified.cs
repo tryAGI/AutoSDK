@@ -13,6 +13,7 @@ namespace G
         /// The token used for authentication<br/>
         /// Example: v1.1f699f1069f60xxx
         /// </summary>
+        /// <example>v1.1f699f1069f60xxx</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("token")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Token { get; set; }
@@ -39,6 +40,7 @@ namespace G
         /// <summary>
         /// Example: config.yaml
         /// </summary>
+        /// <example>config.yaml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file")]
         public string? SingleFile { get; set; }
 

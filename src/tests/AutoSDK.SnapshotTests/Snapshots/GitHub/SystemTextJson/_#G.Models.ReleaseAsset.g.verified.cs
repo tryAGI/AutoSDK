@@ -41,6 +41,7 @@ namespace G
         /// The file name of the asset.<br/>
         /// Example: Team Environment
         /// </summary>
+        /// <example>Team Environment</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }

@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/columns/367
         /// </summary>
+        /// <example>https://api.github.com/projects/columns/367</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/projects/120
         /// </summary>
+        /// <example>https://api.github.com/projects/120</example>
         [global::Newtonsoft.Json.JsonProperty("project_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ProjectUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/projects/columns/367/cards
         /// </summary>
+        /// <example>https://api.github.com/projects/columns/367/cards</example>
         [global::Newtonsoft.Json.JsonProperty("cards_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CardsUrl { get; set; } = default!;
 
@@ -31,12 +34,14 @@ namespace G
         /// The unique identifier of the project column<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDEzOlByb2plY3RDb2x1bW4zNjc=
         /// </summary>
+        /// <example>MDEzOlByb2plY3RDb2x1bW4zNjc=</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -44,6 +49,7 @@ namespace G
         /// Name of the project column<br/>
         /// Example: Remaining tasks
         /// </summary>
+        /// <example>Remaining tasks</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 

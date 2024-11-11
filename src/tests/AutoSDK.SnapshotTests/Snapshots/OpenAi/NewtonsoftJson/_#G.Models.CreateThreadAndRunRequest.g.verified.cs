@@ -27,6 +27,7 @@ namespace G
         /// The ID of the [Model](/docs/api-reference/models) to be used to execute this run. If a value is provided here, it will override the model associated with the assistant. If not, the model associated with the assistant will be used.<br/>
         /// Example: gpt-4o
         /// </summary>
+        /// <example>gpt-4o</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
         public global::G.AnyOf<string, global::G.CreateThreadAndRunRequestModel?>? Model { get; set; }
 
@@ -59,6 +60,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double? Temperature { get; set; }
 
@@ -67,6 +69,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
         public double? TopP { get; set; }
 

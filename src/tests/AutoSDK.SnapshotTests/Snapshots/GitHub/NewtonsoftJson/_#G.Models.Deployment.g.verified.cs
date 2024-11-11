@@ -14,6 +14,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/deployments/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/deployments/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -21,18 +22,21 @@ namespace G
         /// Unique identifier of the deployment<br/>
         /// Example: 42L
         /// </summary>
+        /// <example>42L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDEwOkRlcGxveW1lbnQx
         /// </summary>
+        /// <example>MDEwOkRlcGxveW1lbnQx</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
         /// Example: a84d88e7554fc1fa21bcbc4efae3c782a70d2b9d
         /// </summary>
+        /// <example>a84d88e7554fc1fa21bcbc4efae3c782a70d2b9d</example>
         [global::Newtonsoft.Json.JsonProperty("sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string Sha { get; set; } = default!;
 
@@ -40,6 +44,7 @@ namespace G
         /// The ref to deploy. This can be a branch, tag, or sha.<br/>
         /// Example: topic-branch
         /// </summary>
+        /// <example>topic-branch</example>
         [global::Newtonsoft.Json.JsonProperty("ref", Required = global::Newtonsoft.Json.Required.Always)]
         public string Ref { get; set; } = default!;
 
@@ -47,6 +52,7 @@ namespace G
         /// Parameter to specify a task to execute<br/>
         /// Example: deploy
         /// </summary>
+        /// <example>deploy</example>
         [global::Newtonsoft.Json.JsonProperty("task", Required = global::Newtonsoft.Json.Required.Always)]
         public string Task { get; set; } = default!;
 
@@ -59,6 +65,7 @@ namespace G
         /// <summary>
         /// Example: staging
         /// </summary>
+        /// <example>staging</example>
         [global::Newtonsoft.Json.JsonProperty("original_environment")]
         public string? OriginalEnvironment { get; set; }
 
@@ -66,12 +73,14 @@ namespace G
         /// Name for the target deployment environment.<br/>
         /// Example: production
         /// </summary>
+        /// <example>production</example>
         [global::Newtonsoft.Json.JsonProperty("environment", Required = global::Newtonsoft.Json.Required.Always)]
         public string Environment { get; set; } = default!;
 
         /// <summary>
         /// Example: Deploy request from hubot
         /// </summary>
+        /// <example>Deploy request from hubot</example>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Description { get; set; } = default!;
 
@@ -96,12 +105,14 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/deployments/1/statuses
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/deployments/1/statuses</example>
         [global::Newtonsoft.Json.JsonProperty("statuses_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string StatusesUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example</example>
         [global::Newtonsoft.Json.JsonProperty("repository_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string RepositoryUrl { get; set; } = default!;
 
@@ -109,6 +120,7 @@ namespace G
         /// Specifies if the given environment is will no longer exist at some point in the future. Default: false.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("transient_environment")]
         public bool? TransientEnvironment { get; set; }
 
@@ -116,6 +128,7 @@ namespace G
         /// Specifies if the given environment is one that end-users directly interact with. Default: false.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("production_environment")]
         public bool? ProductionEnvironment { get; set; }
 

@@ -47,6 +47,7 @@ namespace G
         /// <summary>
         /// Example: error reading field xyz
         /// </summary>
+        /// <example>error reading field xyz</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Error { get; set; }
@@ -55,6 +56,7 @@ namespace G
         /// The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
@@ -83,6 +85,7 @@ namespace G
         /// The REST API URL of the analysis resource.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string Url { get; set; } = default!;
 
@@ -90,6 +93,7 @@ namespace G
         /// An identifier for the upload.<br/>
         /// Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
         /// </summary>
+        /// <example>6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("sarif_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SarifId { get; set; }
@@ -112,6 +116,7 @@ namespace G
         /// Warning generated when processing the analysis<br/>
         /// Example: 123 results were ignored
         /// </summary>
+        /// <example>123 results were ignored</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("warning")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Warning { get; set; }

@@ -15,6 +15,7 @@ namespace G
         /// The id of the environment.<br/>
         /// Example: 56780428L
         /// </summary>
+        /// <example>56780428L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -22,6 +23,7 @@ namespace G
         /// <summary>
         /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=
         /// </summary>
+        /// <example>MDExOkVudmlyb25tZW50NTY3ODA0Mjg=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -30,6 +32,7 @@ namespace G
         /// The name of the environment.<br/>
         /// Example: staging
         /// </summary>
+        /// <example>staging</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -37,6 +40,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/environments/staging
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/environments/staging</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -44,6 +48,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging
         /// </summary>
+        /// <example>https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }

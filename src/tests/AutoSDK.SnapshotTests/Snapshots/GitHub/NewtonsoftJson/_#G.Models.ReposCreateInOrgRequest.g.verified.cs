@@ -66,6 +66,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_downloads")]
         public bool? HasDownloads { get; set; }
 

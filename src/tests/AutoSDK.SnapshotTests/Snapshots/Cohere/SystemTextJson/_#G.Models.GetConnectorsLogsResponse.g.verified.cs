@@ -20,6 +20,7 @@ namespace G
         /// Total number of connector logs<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         public double Total { get; set; } = default!;
 

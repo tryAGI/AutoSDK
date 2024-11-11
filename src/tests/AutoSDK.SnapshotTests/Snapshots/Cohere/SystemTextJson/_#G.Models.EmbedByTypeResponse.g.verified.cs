@@ -27,6 +27,7 @@ namespace G
         /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
         public global::G.EmbedByTypeResponseEmbeddings Embeddings { get; set; } = default!;
 

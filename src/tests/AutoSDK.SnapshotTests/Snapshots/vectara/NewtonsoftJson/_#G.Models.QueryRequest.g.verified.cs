@@ -13,6 +13,7 @@ namespace G
         /// The search query string, which is the question the user is asking.<br/>
         /// Example: Am I allowed to bring pets to work?
         /// </summary>
+        /// <example>Am I allowed to bring pets to work?</example>
         [global::Newtonsoft.Json.JsonProperty("query", Required = global::Newtonsoft.Json.Required.Always)]
         public string Query { get; set; } = default!;
 

@@ -12,30 +12,35 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("vpn", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Vpn { get; set; } = default!;
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("proxy", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Proxy { get; set; } = default!;
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("tor", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Tor { get; set; } = default!;
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("hosting", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Hosting { get; set; } = default!;
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("relay", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Relay { get; set; } = default!;
 

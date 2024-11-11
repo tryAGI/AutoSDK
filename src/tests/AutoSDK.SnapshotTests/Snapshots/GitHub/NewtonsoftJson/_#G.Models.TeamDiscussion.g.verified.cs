@@ -19,12 +19,14 @@ namespace G
         /// The main text of the discussion.<br/>
         /// Example: Please suggest improvements to our workflow in comments.
         /// </summary>
+        /// <example>Please suggest improvements to our workflow in comments.</example>
         [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
         public string Body { get; set; } = default!;
 
         /// <summary>
         /// Example: &lt;p&gt;Hi! This is an area for us to collaborate as a team&lt;/p&gt;
         /// </summary>
+        /// <example>&lt;p&gt;Hi! This is an area for us to collaborate as a team&lt;/p&gt;</example>
         [global::Newtonsoft.Json.JsonProperty("body_html", Required = global::Newtonsoft.Json.Required.Always)]
         public string BodyHtml { get; set; } = default!;
 
@@ -32,18 +34,21 @@ namespace G
         /// The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.<br/>
         /// Example: 0307116bbf7ced493b8d8a346c650b71
         /// </summary>
+        /// <example>0307116bbf7ced493b8d8a346c650b71</example>
         [global::Newtonsoft.Json.JsonProperty("body_version", Required = global::Newtonsoft.Json.Required.Always)]
         public string BodyVersion { get; set; } = default!;
 
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("comments_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int CommentsCount { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1/comments
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/2343027/discussions/1/comments</example>
         [global::Newtonsoft.Json.JsonProperty("comments_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CommentsUrl { get; set; } = default!;
 
@@ -62,12 +67,14 @@ namespace G
         /// <summary>
         /// Example: https://github.com/orgs/github/teams/justice-league/discussions/1
         /// </summary>
+        /// <example>https://github.com/orgs/github/teams/justice-league/discussions/1</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: MDE0OlRlYW1EaXNjdXNzaW9uMQ==
         /// </summary>
+        /// <example>MDE0OlRlYW1EaXNjdXNzaW9uMQ==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -75,6 +82,7 @@ namespace G
         /// The unique sequence number of a team discussion.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("number", Required = global::Newtonsoft.Json.Required.Always)]
         public int Number { get; set; } = default!;
 
@@ -82,6 +90,7 @@ namespace G
         /// Whether or not this discussion should be pinned for easy retrieval.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("pinned", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Pinned { get; set; } = default!;
 
@@ -89,12 +98,14 @@ namespace G
         /// Whether or not this discussion should be restricted to team members and organization owners.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("private", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Private { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/2343027
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/2343027</example>
         [global::Newtonsoft.Json.JsonProperty("team_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string TeamUrl { get; set; } = default!;
 
@@ -102,6 +113,7 @@ namespace G
         /// The title of the discussion.<br/>
         /// Example: How can we improve our workflow?
         /// </summary>
+        /// <example>How can we improve our workflow?</example>
         [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
         public string Title { get; set; } = default!;
 
@@ -114,6 +126,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/2343027/discussions/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 

@@ -13,6 +13,7 @@ namespace G
         /// The Encoder ID.<br/>
         /// Example: enc_1
         /// </summary>
+        /// <example>enc_1</example>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// The encoder name.<br/>
         /// Example: boomerang
         /// </summary>
+        /// <example>boomerang</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -29,6 +31,7 @@ namespace G
         /// the embedding.<br/>
         /// Example: 768
         /// </summary>
+        /// <example>768</example>
         [global::Newtonsoft.Json.JsonProperty("output_dimensions")]
         public int? OutputDimensions { get; set; }
 
@@ -42,6 +45,7 @@ namespace G
         /// Indicates whether the default encoder is used when creating a corpus.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("default")]
         public bool? Default { get; set; }
 
@@ -49,6 +53,7 @@ namespace G
         /// Indicates whether the encoder is enabled.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("enabled")]
         public bool? Enabled { get; set; }
 

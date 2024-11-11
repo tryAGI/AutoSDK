@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 2601::/20
         /// </summary>
+        /// <example>2601::/20</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("netblock")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Netblock { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: COMCAST6NET
         /// </summary>
+        /// <example>COMCAST6NET</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: Comcast Cable Communications, LLC
         /// </summary>
+        /// <example>Comcast Cable Communications, LLC</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: US
         /// </summary>
+        /// <example>US</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Country { get; set; }
@@ -40,18 +44,21 @@ namespace G
         /// <summary>
         /// Example: 20282409603651670423947251286016
         /// </summary>
+        /// <example>20282409603651670423947251286016</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         public string? Size { get; set; }
 
         /// <summary>
         /// Example: ASSIGNMENT
         /// </summary>
+        /// <example>ASSIGNMENT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
         /// <summary>
         /// Example: comcast.com
         /// </summary>
+        /// <example>comcast.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         public string? Domain { get; set; }
 

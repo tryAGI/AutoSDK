@@ -15,12 +15,14 @@ namespace G
         /// Unique identifier of the request installation.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDExOkludGVncmF0aW9uMQ==
         /// </summary>
+        /// <example>MDExOkludGVncmF0aW9uMQ==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id")]
         public string? NodeId { get; set; }
 

@@ -25,6 +25,7 @@ namespace G
         /// The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.<br/>
         /// Example: ddc951f4b1293222421f2c8df679786153acf689
         /// </summary>
+        /// <example>ddc951f4b1293222421f2c8df679786153acf689</example>
         [global::Newtonsoft.Json.JsonProperty("sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string Sha { get; set; } = default!;
 
@@ -32,6 +33,7 @@ namespace G
         /// The repository branch that triggered this snapshot.<br/>
         /// Example: refs/heads/main
         /// </summary>
+        /// <example>refs/heads/main</example>
         [global::Newtonsoft.Json.JsonProperty("ref", Required = global::Newtonsoft.Json.Required.Always)]
         public string Ref { get; set; } = default!;
 

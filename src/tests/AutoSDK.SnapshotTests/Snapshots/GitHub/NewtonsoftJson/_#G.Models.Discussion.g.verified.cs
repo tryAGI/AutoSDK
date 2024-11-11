@@ -117,6 +117,7 @@ namespace G
         /// The reason for the current state<br/>
         /// Example: resolved
         /// </summary>
+        /// <example>resolved</example>
         [global::Newtonsoft.Json.JsonProperty("state_reason", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.DiscussionStateReason? StateReason { get; set; } = default!;
 

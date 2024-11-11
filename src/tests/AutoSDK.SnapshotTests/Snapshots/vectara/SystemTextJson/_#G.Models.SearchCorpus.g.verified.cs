@@ -23,6 +23,7 @@ namespace G
         /// for more information.<br/>
         /// Example: doc.title = 'Charlotte''s Web'
         /// </summary>
+        /// <example>doc.title = 'Charlotte''s Web'</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("metadata_filter")]
         public string? MetadataFilter { get; set; }
 
@@ -30,6 +31,7 @@ namespace G
         /// How much to weigh lexical scores compared to the embedding score. 0 means lexical search is not used at all, and 1 means only lexical search is used.<br/>
         /// Example: 0.025F
         /// </summary>
+        /// <example>0.025F</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("lexical_interpolation")]
         public float? LexicalInterpolation { get; set; }
 

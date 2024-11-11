@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("events")]
         public global::System.Collections.Generic.IList<object>? Events { get; set; }
 
         /// <summary>
         /// Example: &lt;url&gt;
         /// </summary>
+        /// <example>&lt;url&gt;</example>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }
 

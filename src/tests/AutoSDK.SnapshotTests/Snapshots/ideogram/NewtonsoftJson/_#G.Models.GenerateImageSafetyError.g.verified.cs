@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: Prompt provided failed safety check due to the inclusion of prohibited content.
         /// </summary>
+        /// <example>Prompt provided failed safety check due to the inclusion of prohibited content.</example>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
         public string Error { get; set; } = default!;
 

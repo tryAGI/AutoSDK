@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: C
         /// </summary>
+        /// <example>C</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -32,6 +33,22 @@ namespace G
         /// *.out<br/>
         /// *.app
         /// </summary>
+        /// <example>
+        /// # Object files<br/>
+        /// *.o<br/>
+        /// # Libraries<br/>
+        /// *.lib<br/>
+        /// *.a<br/>
+        /// # Shared objects (inc. Windows DLLs)<br/>
+        /// *.dll<br/>
+        /// *.so<br/>
+        /// *.so.*<br/>
+        /// *.dylib<br/>
+        /// # Executables<br/>
+        /// *.exe<br/>
+        /// *.out<br/>
+        /// *.app
+        /// </example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Source { get; set; }

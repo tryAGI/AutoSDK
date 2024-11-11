@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the classroom.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The name of the classroom.<br/>
         /// Example: Programming Elixir
         /// </summary>
+        /// <example>Programming Elixir</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// Whether classroom is archived.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Archived { get; set; }
@@ -44,6 +47,7 @@ namespace G
         /// The URL of the classroom on GitHub Classroom.<br/>
         /// Example: https://classroom.github.com/classrooms/1-programming-elixir
         /// </summary>
+        /// <example>https://classroom.github.com/classrooms/1-programming-elixir</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }

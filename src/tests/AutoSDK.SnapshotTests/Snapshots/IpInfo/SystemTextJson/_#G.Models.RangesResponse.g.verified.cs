@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: comcast.net
         /// </summary>
+        /// <example>comcast.net</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Domain { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 37330
         /// </summary>
+        /// <example>37330</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_ranges")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NumRanges { get; set; }

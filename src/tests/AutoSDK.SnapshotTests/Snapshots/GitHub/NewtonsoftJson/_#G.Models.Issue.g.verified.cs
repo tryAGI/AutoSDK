@@ -27,6 +27,7 @@ namespace G
         /// URL for the issue<br/>
         /// Example: https://api.github.com/repositories/42/issues/1
         /// </summary>
+        /// <example>https://api.github.com/repositories/42/issues/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -64,6 +65,7 @@ namespace G
         /// Number uniquely identifying the issue within its repository<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("number", Required = global::Newtonsoft.Json.Required.Always)]
         public int Number { get; set; } = default!;
 
@@ -71,6 +73,7 @@ namespace G
         /// State of the issue; either 'open' or 'closed'<br/>
         /// Example: open
         /// </summary>
+        /// <example>open</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public string State { get; set; } = default!;
 
@@ -78,6 +81,7 @@ namespace G
         /// The reason for the current state<br/>
         /// Example: not_planned
         /// </summary>
+        /// <example>not_planned</example>
         [global::Newtonsoft.Json.JsonProperty("state_reason")]
         public global::G.IssueStateReason? StateReason { get; set; }
 
@@ -85,6 +89,7 @@ namespace G
         /// Title of the issue<br/>
         /// Example: Widget creation fails in Safari on OS X 10.8
         /// </summary>
+        /// <example>Widget creation fails in Safari on OS X 10.8</example>
         [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
         public string Title { get; set; } = default!;
 
@@ -92,6 +97,7 @@ namespace G
         /// Contents of the issue<br/>
         /// Example: It looks like the new widget form is broken on Safari. When I try and create the widget, Safari crashes. This is reproducible on 10.8, but not 10.9. Maybe a browser bug?
         /// </summary>
+        /// <example>It looks like the new widget form is broken on Safari. When I try and create the widget, Safari crashes. This is reproducible on 10.8, but not 10.9. Maybe a browser bug?</example>
         [global::Newtonsoft.Json.JsonProperty("body")]
         public string? Body { get; set; }
 
@@ -105,6 +111,7 @@ namespace G
         /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository<br/>
         /// Example: [bug, registration]
         /// </summary>
+        /// <example>[bug, registration]</example>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.IssueLabel>> Labels { get; set; } = default!;
 
@@ -214,6 +221,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 

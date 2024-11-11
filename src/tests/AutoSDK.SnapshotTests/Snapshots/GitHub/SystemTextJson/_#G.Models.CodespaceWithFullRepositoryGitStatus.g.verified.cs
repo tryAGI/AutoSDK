@@ -13,6 +13,7 @@ namespace G
         /// The number of commits the local repository is ahead of the remote.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ahead")]
         public int? Ahead { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// The number of commits the local repository is behind the remote.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("behind")]
         public int? Behind { get; set; }
 
@@ -39,6 +41,7 @@ namespace G
         /// The current branch (or SHA if in detached HEAD state) of the local repository.<br/>
         /// Example: main
         /// </summary>
+        /// <example>main</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         public string? Ref { get; set; }
 

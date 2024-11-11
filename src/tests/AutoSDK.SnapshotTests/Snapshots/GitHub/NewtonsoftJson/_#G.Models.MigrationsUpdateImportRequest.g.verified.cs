@@ -25,6 +25,7 @@ namespace G
         /// The type of version control system you are migrating from.<br/>
         /// Example: "git"
         /// </summary>
+        /// <example>"git"</example>
         [global::Newtonsoft.Json.JsonProperty("vcs")]
         public global::G.MigrationsUpdateImportRequestVcs? Vcs { get; set; }
 
@@ -32,6 +33,7 @@ namespace G
         /// For a tfvc import, the name of the project that is being imported.<br/>
         /// Example: "project1"
         /// </summary>
+        /// <example>"project1"</example>
         [global::Newtonsoft.Json.JsonProperty("tfvc_project")]
         public string? TfvcProject { get; set; }
 

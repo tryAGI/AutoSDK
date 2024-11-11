@@ -13,6 +13,7 @@ namespace G
         /// The chat message or question.<br/>
         /// Example: How can I use the Vectara platform?
         /// </summary>
+        /// <example>How can I use the Vectara platform?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Query { get; set; }

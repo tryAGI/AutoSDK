@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 1L
         /// </summary>
+        /// <example>1L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// Automatically generated name of this codespace.<br/>
         /// Example: monalisa-octocat-hello-world-g4wpq6h95q
         /// </summary>
+        /// <example>monalisa-octocat-hello-world-g4wpq6h95q</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// Display name for this codespace.<br/>
         /// Example: bookish space pancake
         /// </summary>
+        /// <example>bookish space pancake</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         public string? DisplayName { get; set; }
 
@@ -35,6 +38,7 @@ namespace G
         /// UUID identifying this codespace's environment.<br/>
         /// Example: 26a7c758-7299-4a73-b978-5a92a7ae98a0
         /// </summary>
+        /// <example>26a7c758-7299-4a73-b978-5a92a7ae98a0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? EnvironmentId { get; set; }
@@ -71,6 +75,7 @@ namespace G
         /// Path to devcontainer.json from repo root used to create Codespace.<br/>
         /// Example: .devcontainer/example/devcontainer.json
         /// </summary>
+        /// <example>.devcontainer/example/devcontainer.json</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("devcontainer_path")]
         public string? DevcontainerPath { get; set; }
 
@@ -78,6 +83,7 @@ namespace G
         /// Whether the codespace was created from a prebuild.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prebuild")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool? Prebuild { get; set; }
@@ -107,6 +113,7 @@ namespace G
         /// State of this codespace.<br/>
         /// Example: Available
         /// </summary>
+        /// <example>Available</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodespaceWithFullRepositoryStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -130,6 +137,7 @@ namespace G
         /// The initally assigned location of a new codespace.<br/>
         /// Example: WestUs2
         /// </summary>
+        /// <example>WestUs2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("location")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CodespaceWithFullRepositoryLocationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -139,6 +147,7 @@ namespace G
         /// The number of minutes of inactivity after which this codespace will be automatically stopped.<br/>
         /// Example: 60
         /// </summary>
+        /// <example>60</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("idle_timeout_minutes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? IdleTimeoutMinutes { get; set; }
@@ -219,6 +228,7 @@ namespace G
         /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).<br/>
         /// Example: 60
         /// </summary>
+        /// <example>60</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("retention_period_minutes")]
         public int? RetentionPeriodMinutes { get; set; }
 

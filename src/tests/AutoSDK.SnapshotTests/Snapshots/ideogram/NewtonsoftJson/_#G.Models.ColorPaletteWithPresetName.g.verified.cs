@@ -13,6 +13,7 @@ namespace G
         /// A color palette preset value<br/>
         /// Example: PASTEL
         /// </summary>
+        /// <example>PASTEL</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ColorPalettePresetName Name { get; set; } = default!;
 

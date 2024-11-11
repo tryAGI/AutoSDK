@@ -12,54 +12,63 @@ namespace G
         /// <summary>
         /// Example: README.md
         /// </summary>
+        /// <example>README.md</example>
         [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
         public string Path { get; set; } = default!;
 
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("start_line", Required = global::Newtonsoft.Json.Required.Always)]
         public int StartLine { get; set; } = default!;
 
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("end_line", Required = global::Newtonsoft.Json.Required.Always)]
         public int EndLine { get; set; } = default!;
 
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("start_column", Required = global::Newtonsoft.Json.Required.Always)]
         public int? StartColumn { get; set; } = default!;
 
         /// <summary>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::Newtonsoft.Json.JsonProperty("end_column", Required = global::Newtonsoft.Json.Required.Always)]
         public int? EndColumn { get; set; } = default!;
 
         /// <summary>
         /// Example: warning
         /// </summary>
+        /// <example>warning</example>
         [global::Newtonsoft.Json.JsonProperty("annotation_level", Required = global::Newtonsoft.Json.Required.Always)]
         public string? AnnotationLevel { get; set; } = default!;
 
         /// <summary>
         /// Example: Spell Checker
         /// </summary>
+        /// <example>Spell Checker</example>
         [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Title { get; set; } = default!;
 
         /// <summary>
         /// Example: Check your spelling for 'banaas'.
         /// </summary>
+        /// <example>Check your spelling for 'banaas'.</example>
         [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Message { get; set; } = default!;
 
         /// <summary>
         /// Example: Do you mean 'bananas' or 'banana'?
         /// </summary>
+        /// <example>Do you mean 'bananas' or 'banana'?</example>
         [global::Newtonsoft.Json.JsonProperty("raw_details", Required = global::Newtonsoft.Json.Required.Always)]
         public string? RawDetails { get; set; } = default!;
 

@@ -13,6 +13,7 @@ namespace G
         /// The text of the document part.<br/>
         /// Example: I'm a nice document part.
         /// </summary>
+        /// <example>I'm a nice document part.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Text { get; set; }

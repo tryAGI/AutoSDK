@@ -13,6 +13,7 @@ namespace G
         /// The GitHub Security Advisory ID.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("ghsa_id")]
         public string GhsaId { get; set; } = default!;
 
@@ -27,6 +28,7 @@ namespace G
         /// The API URL for the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string Url { get; set; } = default!;
 
@@ -34,6 +36,7 @@ namespace G
         /// The URL for the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         public string HtmlUrl { get; set; } = default!;
 
@@ -62,6 +65,7 @@ namespace G
         /// The type of advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.GlobalAdvisoryTypeJsonConverter))]
         public global::G.GlobalAdvisoryType Type { get; set; } = default!;
@@ -98,6 +102,7 @@ namespace G
         /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("published_at")]
         public global::System.DateTime PublishedAt { get; set; } = default!;
 
@@ -105,6 +110,7 @@ namespace G
         /// The date and time of when the advisory was last updated, in ISO 8601 format.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("updated_at")]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 

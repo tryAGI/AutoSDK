@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 3L
         /// </summary>
+        /// <example>3L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: Octocat's GPG Key
         /// </summary>
+        /// <example>Octocat's GPG Key</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
@@ -32,6 +34,7 @@ namespace G
         /// <summary>
         /// Example: 3262EFF25BA0D270
         /// </summary>
+        /// <example>3262EFF25BA0D270</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("key_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string KeyId { get; set; }
@@ -39,6 +42,7 @@ namespace G
         /// <summary>
         /// Example: xsBNBFayYZ...
         /// </summary>
+        /// <example>xsBNBFayYZ...</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PublicKey { get; set; }
@@ -46,6 +50,7 @@ namespace G
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("emails")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.GpgKeyEmail> Emails { get; set; }
@@ -53,6 +58,7 @@ namespace G
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("subkeys")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.GpgKeySubkey> Subkeys { get; set; }
@@ -60,6 +66,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_sign")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool CanSign { get; set; }
@@ -81,6 +88,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("can_certify")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool CanCertify { get; set; }
@@ -102,6 +110,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("revoked")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Revoked { get; set; }

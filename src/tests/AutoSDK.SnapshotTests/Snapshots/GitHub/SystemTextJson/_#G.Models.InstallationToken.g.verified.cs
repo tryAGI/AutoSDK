@@ -45,18 +45,21 @@ namespace G
         /// <summary>
         /// Example: README.md
         /// </summary>
+        /// <example>README.md</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file")]
         public string? SingleFile { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_multiple_single_files")]
         public bool? HasMultipleSingleFiles { get; set; }
 
         /// <summary>
         /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </summary>
+        /// <example>[config.yml, .github/issue_TEMPLATE.md]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_paths")]
         public global::System.Collections.Generic.IList<string>? SingleFilePaths { get; set; }
 

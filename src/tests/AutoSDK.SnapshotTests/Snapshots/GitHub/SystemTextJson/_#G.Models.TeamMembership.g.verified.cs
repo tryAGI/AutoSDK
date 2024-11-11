@@ -21,6 +21,8 @@ namespace G
         /// Default Value: member<br/>
         /// Example: member
         /// </summary>
+        /// <default>global::G.TeamMembershipRole.Member</default>
+        /// <example>member</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamMembershipRoleJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

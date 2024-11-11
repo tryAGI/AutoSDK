@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: octocat@github.com
         /// </summary>
+        /// <example>octocat@github.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email1 { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("primary")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Primary { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("verified")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Verified { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: public
         /// </summary>
+        /// <example>public</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Visibility { get; set; }

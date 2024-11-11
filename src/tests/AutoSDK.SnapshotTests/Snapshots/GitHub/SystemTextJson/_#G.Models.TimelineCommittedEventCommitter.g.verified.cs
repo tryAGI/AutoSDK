@@ -20,6 +20,7 @@ namespace G
         /// Git email address of the user<br/>
         /// Example: monalisa.octocat@example.com
         /// </summary>
+        /// <example>monalisa.octocat@example.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Email { get; set; }
@@ -28,6 +29,7 @@ namespace G
         /// Name of the git user<br/>
         /// Example: Monalisa Octocat
         /// </summary>
+        /// <example>Monalisa Octocat</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }

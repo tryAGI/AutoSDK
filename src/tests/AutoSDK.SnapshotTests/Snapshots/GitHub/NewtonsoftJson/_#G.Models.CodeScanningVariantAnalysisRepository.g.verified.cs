@@ -13,6 +13,7 @@ namespace G
         /// A unique identifier of the repository.<br/>
         /// Example: 1296269
         /// </summary>
+        /// <example>1296269</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The name of the repository.<br/>
         /// Example: Hello-World
         /// </summary>
+        /// <example>Hello-World</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// The full, globally unique, name of the repository.<br/>
         /// Example: octocat/Hello-World
         /// </summary>
+        /// <example>octocat/Hello-World</example>
         [global::Newtonsoft.Json.JsonProperty("full_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string FullName { get; set; } = default!;
 
@@ -39,6 +42,7 @@ namespace G
         /// <summary>
         /// Example: 80
         /// </summary>
+        /// <example>80</example>
         [global::Newtonsoft.Json.JsonProperty("stargazers_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int StargazersCount { get; set; } = default!;
 

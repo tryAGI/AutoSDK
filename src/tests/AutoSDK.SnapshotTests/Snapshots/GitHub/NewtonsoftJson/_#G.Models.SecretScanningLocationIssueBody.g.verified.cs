@@ -13,6 +13,7 @@ namespace G
         /// The API URL to get the issue where the secret was detected.<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/issues/1347
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/issues/1347</example>
         [global::Newtonsoft.Json.JsonProperty("issue_body_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string IssueBodyUrl { get; set; } = default!;
 

@@ -18,12 +18,14 @@ namespace G
         /// <summary>
         /// Example: batch_abc123
         /// </summary>
+        /// <example>batch_abc123</example>
         [global::Newtonsoft.Json.JsonProperty("first_id")]
         public string? FirstId { get; set; }
 
         /// <summary>
         /// Example: batch_abc456
         /// </summary>
+        /// <example>batch_abc456</example>
         [global::Newtonsoft.Json.JsonProperty("last_id")]
         public string? LastId { get; set; }
 

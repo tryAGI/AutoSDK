@@ -26,6 +26,7 @@ namespace G
         /// This will always be the value `client_credentials`.<br/>
         /// Default Value: client_credentials
         /// </summary>
+        /// <default>"client_credentials"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; } = "client_credentials";

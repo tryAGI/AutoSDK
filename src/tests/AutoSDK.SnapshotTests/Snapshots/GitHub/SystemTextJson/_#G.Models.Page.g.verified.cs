@@ -13,6 +13,7 @@ namespace G
         /// The API address for accessing this Page resource.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/pages
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/pages</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The status of the most recent build of the Page.<br/>
         /// Example: built
         /// </summary>
+        /// <example>built</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PageStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -30,6 +32,7 @@ namespace G
         /// The Pages site's custom domain<br/>
         /// Example: example.com
         /// </summary>
+        /// <example>example.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("cname")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Cname { get; set; }
@@ -38,6 +41,7 @@ namespace G
         /// The state if the domain is verified<br/>
         /// Example: pending
         /// </summary>
+        /// <example>pending</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("protected_domain_state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PageProtectedDomainStateJsonConverter))]
         public global::G.PageProtectedDomainState? ProtectedDomainState { get; set; }
@@ -53,6 +57,8 @@ namespace G
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
+        /// <default>false</default>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("custom_404")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Custom404 { get; set; } = false;
@@ -61,6 +67,7 @@ namespace G
         /// The web address the Page can be accessed from.<br/>
         /// Example: https://example.com
         /// </summary>
+        /// <example>https://example.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         public string? HtmlUrl { get; set; }
 
@@ -68,6 +75,7 @@ namespace G
         /// The process in which the Page will be built.<br/>
         /// Example: legacy
         /// </summary>
+        /// <example>legacy</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("build_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PageBuildTypeJsonConverter))]
         public global::G.PageBuildType? BuildType { get; set; }
@@ -82,6 +90,7 @@ namespace G
         /// Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Public { get; set; }
@@ -96,6 +105,7 @@ namespace G
         /// Whether https is enabled on the domain<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("https_enforced")]
         public bool? HttpsEnforced { get; set; }
 

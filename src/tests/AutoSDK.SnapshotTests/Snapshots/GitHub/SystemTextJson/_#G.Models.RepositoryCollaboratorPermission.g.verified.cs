@@ -19,6 +19,7 @@ namespace G
         /// <summary>
         /// Example: admin
         /// </summary>
+        /// <example>admin</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RoleName { get; set; }

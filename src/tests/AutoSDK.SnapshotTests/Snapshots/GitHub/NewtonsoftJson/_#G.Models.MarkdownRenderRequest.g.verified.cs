@@ -20,6 +20,7 @@ namespace G
         /// Default Value: markdown<br/>
         /// Example: markdown
         /// </summary>
+        /// <example>markdown</example>
         [global::Newtonsoft.Json.JsonProperty("mode")]
         public global::G.MarkdownRenderRequestMode? Mode { get; set; }
 

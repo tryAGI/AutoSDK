@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("vpn")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Vpn { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("proxy")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Proxy { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("tor")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Tor { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("hosting")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Hosting { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("relay")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Relay { get; set; }

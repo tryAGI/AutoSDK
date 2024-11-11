@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: approved
         /// </summary>
+        /// <example>approved</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.PagesHttpsCertificateState State { get; set; } = default!;
 
         /// <summary>
         /// Example: Certificate is approved
         /// </summary>
+        /// <example>Certificate is approved</example>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string Description { get; set; } = default!;
 
@@ -25,6 +27,7 @@ namespace G
         /// Array of the domain set and its alternate name (if it is configured)<br/>
         /// Example: [example.com, www.example.com]
         /// </summary>
+        /// <example>[example.com, www.example.com]</example>
         [global::Newtonsoft.Json.JsonProperty("domains", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> Domains { get; set; } = default!;
 

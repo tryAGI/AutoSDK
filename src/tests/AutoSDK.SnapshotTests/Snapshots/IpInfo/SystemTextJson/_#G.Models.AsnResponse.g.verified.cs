@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: AS10507
         /// </summary>
+        /// <example>AS10507</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("asn")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Asn { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: Sprint Personal Communications Systems
         /// </summary>
+        /// <example>Sprint Personal Communications Systems</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -26,24 +28,28 @@ namespace G
         /// <summary>
         /// Example: US
         /// </summary>
+        /// <example>US</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
         public string? Country { get; set; }
 
         /// <summary>
         /// Example: 1997-02-14
         /// </summary>
+        /// <example>1997-02-14</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("allocated")]
         public string? Allocated { get; set; }
 
         /// <summary>
         /// Example: arin
         /// </summary>
+        /// <example>arin</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("registry")]
         public string? Registry { get; set; }
 
         /// <summary>
         /// Example: sprint.net
         /// </summary>
+        /// <example>sprint.net</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Domain { get; set; }
@@ -51,18 +57,21 @@ namespace G
         /// <summary>
         /// Example: 71224576
         /// </summary>
+        /// <example>71224576</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("num_ips")]
         public int? NumIps { get; set; }
 
         /// <summary>
         /// Example: 66.87.125.0/24
         /// </summary>
+        /// <example>66.87.125.0/24</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("route")]
         public string? Route { get; set; }
 
         /// <summary>
         /// Example: isp
         /// </summary>
+        /// <example>isp</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AsnResponseTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

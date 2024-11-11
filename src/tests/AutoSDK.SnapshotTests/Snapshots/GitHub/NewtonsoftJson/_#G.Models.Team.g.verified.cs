@@ -72,6 +72,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/orgs/rails/teams/core
         /// </summary>
+        /// <example>https://github.com/orgs/rails/teams/core</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 

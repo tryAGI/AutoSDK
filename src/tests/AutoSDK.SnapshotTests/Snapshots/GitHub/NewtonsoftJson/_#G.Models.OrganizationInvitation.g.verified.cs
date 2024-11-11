@@ -66,18 +66,21 @@ namespace G
         /// <summary>
         /// Example: "MDIyOk9yZ2FuaXphdGlvbkludml0YXRpb24x"
         /// </summary>
+        /// <example>"MDIyOk9yZ2FuaXphdGlvbkludml0YXRpb24x"</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
         /// Example: "https://api.github.com/organizations/16/invitations/1/teams"
         /// </summary>
+        /// <example>"https://api.github.com/organizations/16/invitations/1/teams"</example>
         [global::Newtonsoft.Json.JsonProperty("invitation_teams_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string InvitationTeamsUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: "member"
         /// </summary>
+        /// <example>"member"</example>
         [global::Newtonsoft.Json.JsonProperty("invitation_source")]
         public string? InvitationSource { get; set; }
 

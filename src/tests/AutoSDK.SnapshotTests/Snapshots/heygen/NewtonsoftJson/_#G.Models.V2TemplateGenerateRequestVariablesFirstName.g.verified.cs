@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: first_name
         /// </summary>
+        /// <example>first_name</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -24,6 +25,7 @@ namespace G
         /// <summary>
         /// Example: text
         /// </summary>
+        /// <example>text</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public string? Type { get; set; }
 

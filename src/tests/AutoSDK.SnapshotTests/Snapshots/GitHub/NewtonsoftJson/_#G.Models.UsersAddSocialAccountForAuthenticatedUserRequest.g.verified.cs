@@ -13,6 +13,7 @@ namespace G
         /// Full URLs for the social media profiles to add.<br/>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("account_urls", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> AccountUrls { get; set; } = default!;
 

@@ -43,6 +43,7 @@ namespace G
         /// The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.<br/>
         /// Example: scale
         /// </summary>
+        /// <example>scale</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionStreamResponseServiceTierJsonConverter))]
         public global::G.CreateChatCompletionStreamResponseServiceTier? ServiceTier { get; set; }

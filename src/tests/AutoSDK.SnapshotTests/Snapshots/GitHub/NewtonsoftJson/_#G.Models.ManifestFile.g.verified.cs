@@ -13,6 +13,7 @@ namespace G
         /// The path of the manifest file relative to the root of the Git repository.<br/>
         /// Example: /src/build/package-lock.json
         /// </summary>
+        /// <example>/src/build/package-lock.json</example>
         [global::Newtonsoft.Json.JsonProperty("source_location")]
         public string? SourceLocation { get; set; }
 

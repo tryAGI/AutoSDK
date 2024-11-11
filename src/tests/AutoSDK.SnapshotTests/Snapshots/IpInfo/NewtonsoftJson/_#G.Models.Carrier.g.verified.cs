@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: Sprint Corporation
         /// </summary>
+        /// <example>Sprint Corporation</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: 310
         /// </summary>
+        /// <example>310</example>
         [global::Newtonsoft.Json.JsonProperty("mcc", Required = global::Newtonsoft.Json.Required.Always)]
         public string Mcc { get; set; } = default!;
 
         /// <summary>
         /// Example: 120
         /// </summary>
+        /// <example>120</example>
         [global::Newtonsoft.Json.JsonProperty("mnc", Required = global::Newtonsoft.Json.Required.Always)]
         public string Mnc { get; set; } = default!;
 

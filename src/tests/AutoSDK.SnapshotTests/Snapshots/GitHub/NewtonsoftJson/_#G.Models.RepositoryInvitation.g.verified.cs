@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the repository invitation.<br/>
         /// Example: 42L
         /// </summary>
+        /// <example>42L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -38,6 +39,7 @@ namespace G
         /// The permission associated with the invitation.<br/>
         /// Example: read
         /// </summary>
+        /// <example>read</example>
         [global::Newtonsoft.Json.JsonProperty("permissions", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.RepositoryInvitationPermissions Permissions { get; set; } = default!;
 
@@ -57,12 +59,14 @@ namespace G
         /// URL for the repository invitation<br/>
         /// Example: https://api.github.com/user/repository-invitations/1
         /// </summary>
+        /// <example>https://api.github.com/user/repository-invitations/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/invitations
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/invitations</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 

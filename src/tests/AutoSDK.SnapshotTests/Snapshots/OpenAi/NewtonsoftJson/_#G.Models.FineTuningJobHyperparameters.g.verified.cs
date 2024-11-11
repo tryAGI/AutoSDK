@@ -16,6 +16,7 @@ namespace G
         /// "auto" decides the optimal number of epochs based on the size of the dataset. If setting the number manually, we support any number between 1 and 50 epochs.<br/>
         /// Default Value: auto
         /// </summary>
+        /// <default>global::G.FineTuningJobHyperparametersNEpochs.Auto</default>
         [global::Newtonsoft.Json.JsonProperty("n_epochs", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.OneOf<global::G.FineTuningJobHyperparametersNEpochs?, int?> NEpochs { get; set; } = default!;
 

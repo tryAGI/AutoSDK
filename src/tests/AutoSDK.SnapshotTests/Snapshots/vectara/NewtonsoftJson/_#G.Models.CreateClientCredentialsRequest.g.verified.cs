@@ -25,6 +25,7 @@ namespace G
         /// This will always be the value `client_credentials`.<br/>
         /// Default Value: client_credentials
         /// </summary>
+        /// <default>"client_credentials"</default>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 

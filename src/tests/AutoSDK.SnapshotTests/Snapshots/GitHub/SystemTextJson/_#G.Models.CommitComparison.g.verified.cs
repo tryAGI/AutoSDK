@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/compare/master...topic
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/compare/master...topic</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/compare/master...topic
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/compare/master...topic</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/compare/octocat:bbcd538c8e72b8c175046e27cc8f907076331401...octocat:0328041d1152db8ae77652d1618a02e57f745f17
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/compare/octocat:bbcd538c8e72b8c175046e27cc8f907076331401...octocat:0328041d1152db8ae77652d1618a02e57f745f17</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("permalink_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PermalinkUrl { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/compare/master...topic.diff
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/compare/master...topic.diff</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("diff_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DiffUrl { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/compare/master...topic.patch
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/compare/master...topic.patch</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("patch_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PatchUrl { get; set; }
@@ -61,6 +66,7 @@ namespace G
         /// <summary>
         /// Example: ahead
         /// </summary>
+        /// <example>ahead</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CommitComparisonStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -69,6 +75,7 @@ namespace G
         /// <summary>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ahead_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int AheadBy { get; set; }
@@ -76,6 +83,7 @@ namespace G
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("behind_by")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int BehindBy { get; set; }
@@ -83,6 +91,7 @@ namespace G
         /// <summary>
         /// Example: 6
         /// </summary>
+        /// <example>6</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_commits")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalCommits { get; set; }

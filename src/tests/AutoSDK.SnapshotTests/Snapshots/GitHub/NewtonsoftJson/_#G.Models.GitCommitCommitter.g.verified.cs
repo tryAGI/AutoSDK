@@ -19,6 +19,7 @@ namespace G
         /// Git email address of the user<br/>
         /// Example: monalisa.octocat@example.com
         /// </summary>
+        /// <example>monalisa.octocat@example.com</example>
         [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
         public string Email { get; set; } = default!;
 
@@ -26,6 +27,7 @@ namespace G
         /// Name of the git user<br/>
         /// Example: Monalisa Octocat
         /// </summary>
+        /// <example>Monalisa Octocat</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 

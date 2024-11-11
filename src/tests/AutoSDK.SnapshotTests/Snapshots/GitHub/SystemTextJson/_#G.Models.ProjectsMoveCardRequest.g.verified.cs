@@ -13,6 +13,7 @@ namespace G
         /// The position of the card in a column. Can be one of: `top`, `bottom`, or `after:&lt;card_id&gt;` to place after the specified card.<br/>
         /// Example: bottom
         /// </summary>
+        /// <example>bottom</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Position { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The unique identifier of the column the card should be moved to<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_id")]
         public int? ColumnId { get; set; }
 

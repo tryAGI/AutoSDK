@@ -13,6 +13,7 @@ namespace G
         /// Set whether or not the corpus is enabled. If unset then the corpus will remain in the same state.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("enabled")]
         public bool? Enabled { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// The name for the corpus. If unset or null, then the corpus will remain in the same state.<br/>
         /// Example: new-name
         /// </summary>
+        /// <example>new-name</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// Description of the corpus. If unset or null, then the corpus will remain in the same state.<br/>
         /// Example: New description of the corpus.
         /// </summary>
+        /// <example>New description of the corpus.</example>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 

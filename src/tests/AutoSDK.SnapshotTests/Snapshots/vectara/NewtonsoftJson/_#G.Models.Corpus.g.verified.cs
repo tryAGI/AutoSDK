@@ -19,6 +19,7 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </summary>
+        /// <example>my-corpus</example>
         [global::Newtonsoft.Json.JsonProperty("key")]
         public string? Key { get; set; }
 
@@ -74,6 +75,7 @@ namespace G
         /// The encoder used by the corpus.<br/>
         /// Example: boomerang
         /// </summary>
+        /// <example>boomerang</example>
         [global::Newtonsoft.Json.JsonProperty("encoder_name")]
         public string? EncoderName { get; set; }
 

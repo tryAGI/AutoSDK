@@ -13,6 +13,7 @@ namespace G
         /// An optional prompt to guide the upscale<br/>
         /// Example: A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.
         /// </summary>
+        /// <example>A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.</example>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
         public string? Prompt { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// Default Value: 50<br/>
         /// Example: 50
         /// </summary>
+        /// <example>50</example>
         [global::Newtonsoft.Json.JsonProperty("resemblance")]
         public int? Resemblance { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// Default Value: 50<br/>
         /// Example: 50
         /// </summary>
+        /// <example>50</example>
         [global::Newtonsoft.Json.JsonProperty("detail")]
         public int? Detail { get; set; }
 
@@ -35,12 +38,14 @@ namespace G
         /// Default Value: AUTO<br/>
         /// Example: ON
         /// </summary>
+        /// <example>ON</example>
         [global::Newtonsoft.Json.JsonProperty("magic_prompt_option")]
         public global::G.MagicPromptOption? MagicPromptOption { get; set; }
 
         /// <summary>
         /// Example: 12345
         /// </summary>
+        /// <example>12345</example>
         [global::Newtonsoft.Json.JsonProperty("seed")]
         public int? Seed { get; set; }
 

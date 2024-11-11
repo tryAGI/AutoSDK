@@ -13,6 +13,7 @@ namespace G
         /// The project card's note<br/>
         /// Example: Update all gems
         /// </summary>
+        /// <example>Update all gems</example>
         [global::Newtonsoft.Json.JsonProperty("note")]
         public string? Note { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// Whether or not the card is archived<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("archived")]
         public bool? Archived { get; set; }
 

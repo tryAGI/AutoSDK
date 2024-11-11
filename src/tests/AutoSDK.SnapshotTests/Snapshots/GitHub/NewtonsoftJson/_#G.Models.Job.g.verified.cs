@@ -13,6 +13,7 @@ namespace G
         /// The id of the job.<br/>
         /// Example: 21
         /// </summary>
+        /// <example>21</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,12 +21,14 @@ namespace G
         /// The id of the associated workflow run.<br/>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("run_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int RunId { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/runs/5</example>
         [global::Newtonsoft.Json.JsonProperty("run_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string RunUrl { get; set; } = default!;
 
@@ -33,12 +36,14 @@ namespace G
         /// Attempt number of the associated workflow run, 1 for first attempt and higher if the workflow was re-run.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("run_attempt")]
         public int? RunAttempt { get; set; }
 
         /// <summary>
         /// Example: MDg6Q2hlY2tSdW40
         /// </summary>
+        /// <example>MDg6Q2hlY2tSdW40</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -46,18 +51,21 @@ namespace G
         /// The SHA of the commit that is being run.<br/>
         /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
         /// </summary>
+        /// <example>009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d</example>
         [global::Newtonsoft.Json.JsonProperty("head_sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string HeadSha { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/actions/jobs/21
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/jobs/21</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/github/hello-world/runs/4
         /// </summary>
+        /// <example>https://github.com/github/hello-world/runs/4</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string? HtmlUrl { get; set; } = default!;
 
@@ -65,6 +73,7 @@ namespace G
         /// The phase of the lifecycle that the job is currently in.<br/>
         /// Example: queued
         /// </summary>
+        /// <example>queued</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.JobStatus Status { get; set; } = default!;
 
@@ -72,6 +81,7 @@ namespace G
         /// The outcome of the job.<br/>
         /// Example: success
         /// </summary>
+        /// <example>success</example>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.JobConclusion? Conclusion { get; set; } = default!;
 
@@ -97,6 +107,7 @@ namespace G
         /// The name of the job.<br/>
         /// Example: test-coverage
         /// </summary>
+        /// <example>test-coverage</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -109,6 +120,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/check-runs/4</example>
         [global::Newtonsoft.Json.JsonProperty("check_run_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CheckRunUrl { get; set; } = default!;
 
@@ -116,6 +128,7 @@ namespace G
         /// Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow file.<br/>
         /// Example: [self-hosted, foo, bar]
         /// </summary>
+        /// <example>[self-hosted, foo, bar]</example>
         [global::Newtonsoft.Json.JsonProperty("labels", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> Labels { get; set; } = default!;
 
@@ -123,6 +136,7 @@ namespace G
         /// The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("runner_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int? RunnerId { get; set; } = default!;
 
@@ -130,6 +144,7 @@ namespace G
         /// The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: my runner
         /// </summary>
+        /// <example>my runner</example>
         [global::Newtonsoft.Json.JsonProperty("runner_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string? RunnerName { get; set; } = default!;
 
@@ -137,6 +152,7 @@ namespace G
         /// The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("runner_group_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int? RunnerGroupId { get; set; } = default!;
 
@@ -144,6 +160,7 @@ namespace G
         /// The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: my runner group
         /// </summary>
+        /// <example>my runner group</example>
         [global::Newtonsoft.Json.JsonProperty("runner_group_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string? RunnerGroupName { get; set; } = default!;
 
@@ -151,6 +168,7 @@ namespace G
         /// The name of the workflow.<br/>
         /// Example: Build
         /// </summary>
+        /// <example>Build</example>
         [global::Newtonsoft.Json.JsonProperty("workflow_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string? WorkflowName { get; set; } = default!;
 
@@ -158,6 +176,7 @@ namespace G
         /// The name of the current branch.<br/>
         /// Example: main
         /// </summary>
+        /// <example>main</example>
         [global::Newtonsoft.Json.JsonProperty("head_branch", Required = global::Newtonsoft.Json.Required.Always)]
         public string? HeadBranch { get; set; } = default!;
 

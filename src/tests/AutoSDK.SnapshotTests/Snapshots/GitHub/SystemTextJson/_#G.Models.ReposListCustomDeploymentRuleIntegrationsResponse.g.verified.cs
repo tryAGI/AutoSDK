@@ -13,6 +13,7 @@ namespace G
         /// The total number of custom deployment protection rule integrations available for this environment.<br/>
         /// Example: 35
         /// </summary>
+        /// <example>35</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
         public int? TotalCount { get; set; }
 

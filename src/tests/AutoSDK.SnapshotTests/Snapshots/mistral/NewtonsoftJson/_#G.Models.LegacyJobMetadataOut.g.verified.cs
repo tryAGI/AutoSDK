@@ -13,6 +13,7 @@ namespace G
         /// The cost of the fine-tuning job.<br/>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::Newtonsoft.Json.JsonProperty("cost")]
         public double? Cost { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// The currency used for the fine-tuning job cost.<br/>
         /// Example: EUR
         /// </summary>
+        /// <example>EUR</example>
         [global::Newtonsoft.Json.JsonProperty("cost_currency")]
         public string? CostCurrency { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// The total number of tokens in the training dataset.<br/>
         /// Example: 305375
         /// </summary>
+        /// <example>305375</example>
         [global::Newtonsoft.Json.JsonProperty("data_tokens")]
         public int? DataTokens { get; set; }
 
@@ -46,6 +49,7 @@ namespace G
         /// The number of complete passes through the entire training dataset.<br/>
         /// Example: 4.2922
         /// </summary>
+        /// <example>4.2922</example>
         [global::Newtonsoft.Json.JsonProperty("epochs")]
         public double? Epochs { get; set; }
 
@@ -59,6 +63,7 @@ namespace G
         /// The approximated time (in seconds) for the fine-tuning process to complete.<br/>
         /// Example: 220
         /// </summary>
+        /// <example>220</example>
         [global::Newtonsoft.Json.JsonProperty("expected_duration_seconds")]
         public int? ExpectedDurationSeconds { get; set; }
 
@@ -72,6 +77,7 @@ namespace G
         /// The total number of tokens used during the fine-tuning process.<br/>
         /// Example: 1310720
         /// </summary>
+        /// <example>1310720</example>
         [global::Newtonsoft.Json.JsonProperty("train_tokens")]
         public int? TrainTokens { get; set; }
 
@@ -79,6 +85,7 @@ namespace G
         /// The number of tokens consumed by one training step.<br/>
         /// Example: 131072
         /// </summary>
+        /// <example>131072</example>
         [global::Newtonsoft.Json.JsonProperty("train_tokens_per_step")]
         public int? TrainTokensPerStep { get; set; }
 
@@ -86,6 +93,7 @@ namespace G
         /// The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.<br/>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::Newtonsoft.Json.JsonProperty("training_steps")]
         public int? TrainingSteps { get; set; }
 

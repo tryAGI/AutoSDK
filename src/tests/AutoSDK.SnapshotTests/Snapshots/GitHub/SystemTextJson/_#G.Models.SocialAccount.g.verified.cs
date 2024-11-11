@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: linkedin
         /// </summary>
+        /// <example>linkedin</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("provider")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Provider { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://www.linkedin.com/company/github/
         /// </summary>
+        /// <example>https://www.linkedin.com/company/github/</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }

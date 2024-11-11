@@ -14,6 +14,7 @@ namespace G
         /// The name of the custom dimension.<br/>
         /// Example: importance
         /// </summary>
+        /// <example>importance</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -21,6 +22,7 @@ namespace G
         /// Description of the custom dimension.<br/>
         /// Example: Product importance.
         /// </summary>
+        /// <example>Product importance.</example>
         [global::Newtonsoft.Json.JsonProperty("description")]
         public string? Description { get; set; }
 
@@ -31,6 +33,7 @@ namespace G
         /// Default Value: 0<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("indexing_default")]
         public double? IndexingDefault { get; set; }
 
@@ -41,6 +44,7 @@ namespace G
         /// Default Value: 0<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("querying_default")]
         public double? QueryingDefault { get; set; }
 

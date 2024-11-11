@@ -13,12 +13,14 @@ namespace G
         /// The id of the environment.<br/>
         /// Example: 56780428
         /// </summary>
+        /// <example>56780428</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public int? Id { get; set; }
 
         /// <summary>
         /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=
         /// </summary>
+        /// <example>MDExOkVudmlyb25tZW50NTY3ODA0Mjg=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         public string? NodeId { get; set; }
 
@@ -26,18 +28,21 @@ namespace G
         /// The name of the environment.<br/>
         /// Example: staging
         /// </summary>
+        /// <example>staging</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/environments/staging
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/environments/staging</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
 
         /// <summary>
         /// Example: https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging
         /// </summary>
+        /// <example>https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         public string? HtmlUrl { get; set; }
 

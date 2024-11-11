@@ -13,6 +13,7 @@ namespace G
         /// SHA for the commit<br/>
         /// Example: 7638417db6d59f3c431d3e1f261cc637155684cd
         /// </summary>
+        /// <example>7638417db6d59f3c431d3e1f261cc637155684cd</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -28,6 +29,7 @@ namespace G
         /// Message describing the purpose of the commit<br/>
         /// Example: Fix #42
         /// </summary>
+        /// <example>Fix #42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; }

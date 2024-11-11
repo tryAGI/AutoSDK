@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the repository.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// Whether an accepted assignment creates a public repository.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("public_repo", Required = global::Newtonsoft.Json.Required.Always)]
         public bool PublicRepo { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// Assignment title.<br/>
         /// Example: Intro to Binaries
         /// </summary>
+        /// <example>Intro to Binaries</example>
         [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
         public string Title { get; set; } = default!;
 
@@ -34,6 +37,7 @@ namespace G
         /// Whether it's a group assignment or individual assignment.<br/>
         /// Example: individual
         /// </summary>
+        /// <example>individual</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ClassroomAssignmentType Type { get; set; } = default!;
 
@@ -41,6 +45,7 @@ namespace G
         /// The link that a student can use to accept the assignment.<br/>
         /// Example: https://classroom.github.com/a/Lx7jiUgx
         /// </summary>
+        /// <example>https://classroom.github.com/a/Lx7jiUgx</example>
         [global::Newtonsoft.Json.JsonProperty("invite_link", Required = global::Newtonsoft.Json.Required.Always)]
         public string InviteLink { get; set; } = default!;
 
@@ -48,6 +53,7 @@ namespace G
         /// Whether the invitation link is enabled. Visiting an enabled invitation link will accept the assignment.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("invitations_enabled", Required = global::Newtonsoft.Json.Required.Always)]
         public bool InvitationsEnabled { get; set; } = default!;
 
@@ -55,6 +61,7 @@ namespace G
         /// Sluggified name of the assignment.<br/>
         /// Example: intro-to-binaries
         /// </summary>
+        /// <example>intro-to-binaries</example>
         [global::Newtonsoft.Json.JsonProperty("slug", Required = global::Newtonsoft.Json.Required.Always)]
         public string Slug { get; set; } = default!;
 
@@ -62,6 +69,7 @@ namespace G
         /// Whether students are admins on created repository when a student accepts the assignment.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("students_are_repo_admins", Required = global::Newtonsoft.Json.Required.Always)]
         public bool StudentsAreRepoAdmins { get; set; } = default!;
 
@@ -69,6 +77,7 @@ namespace G
         /// Whether feedback pull request will be created when a student accepts the assignment.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("feedback_pull_requests_enabled", Required = global::Newtonsoft.Json.Required.Always)]
         public bool FeedbackPullRequestsEnabled { get; set; } = default!;
 
@@ -76,6 +85,7 @@ namespace G
         /// The maximum allowable teams for the assignment.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("max_teams", Required = global::Newtonsoft.Json.Required.Always)]
         public int? MaxTeams { get; set; } = default!;
 
@@ -83,6 +93,7 @@ namespace G
         /// The maximum allowable members per team.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("max_members", Required = global::Newtonsoft.Json.Required.Always)]
         public int? MaxMembers { get; set; } = default!;
 
@@ -90,6 +101,7 @@ namespace G
         /// The selected editor for the assignment.<br/>
         /// Example: codespaces
         /// </summary>
+        /// <example>codespaces</example>
         [global::Newtonsoft.Json.JsonProperty("editor", Required = global::Newtonsoft.Json.Required.Always)]
         public string Editor { get; set; } = default!;
 
@@ -97,6 +109,7 @@ namespace G
         /// The number of students that have accepted the assignment.<br/>
         /// Example: 25
         /// </summary>
+        /// <example>25</example>
         [global::Newtonsoft.Json.JsonProperty("accepted", Required = global::Newtonsoft.Json.Required.Always)]
         public int Accepted { get; set; } = default!;
 
@@ -104,6 +117,7 @@ namespace G
         /// The number of students that have submitted the assignment.<br/>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::Newtonsoft.Json.JsonProperty("submitted", Required = global::Newtonsoft.Json.Required.Always)]
         public int Submitted { get; set; } = default!;
 
@@ -111,6 +125,7 @@ namespace G
         /// The number of students that have passed the assignment.<br/>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::Newtonsoft.Json.JsonProperty("passing", Required = global::Newtonsoft.Json.Required.Always)]
         public int Passing { get; set; } = default!;
 
@@ -118,6 +133,7 @@ namespace G
         /// The programming language used in the assignment.<br/>
         /// Example: elixir
         /// </summary>
+        /// <example>elixir</example>
         [global::Newtonsoft.Json.JsonProperty("language", Required = global::Newtonsoft.Json.Required.Always)]
         public string Language { get; set; } = default!;
 

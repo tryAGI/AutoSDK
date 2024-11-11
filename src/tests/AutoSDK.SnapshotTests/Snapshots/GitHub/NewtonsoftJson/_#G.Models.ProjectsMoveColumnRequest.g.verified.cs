@@ -13,6 +13,7 @@ namespace G
         /// The position of the column in a project. Can be one of: `first`, `last`, or `after:&lt;column_id&gt;` to place after the specified column.<br/>
         /// Example: last
         /// </summary>
+        /// <example>last</example>
         [global::Newtonsoft.Json.JsonProperty("position", Required = global::Newtonsoft.Json.Required.Always)]
         public string Position { get; set; } = default!;
 

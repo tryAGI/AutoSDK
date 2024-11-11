@@ -33,6 +33,7 @@ namespace G
         /// <summary>
         /// Example: neutral
         /// </summary>
+        /// <example>neutral</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckRunWithSimpleCheckSuiteConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -47,6 +48,7 @@ namespace G
         /// <summary>
         /// Example: https://example.com
         /// </summary>
+        /// <example>https://example.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("details_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DetailsUrl { get; set; }
@@ -54,6 +56,7 @@ namespace G
         /// <summary>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("external_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ExternalId { get; set; }
@@ -62,6 +65,7 @@ namespace G
         /// The SHA of the commit that is being checked.<br/>
         /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
         /// </summary>
+        /// <example>009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HeadSha { get; set; }
@@ -69,6 +73,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/github/hello-world/runs/4
         /// </summary>
+        /// <example>https://github.com/github/hello-world/runs/4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -77,6 +82,7 @@ namespace G
         /// The id of the check.<br/>
         /// Example: 21
         /// </summary>
+        /// <example>21</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -85,6 +91,7 @@ namespace G
         /// The name of the check.<br/>
         /// Example: test-coverage
         /// </summary>
+        /// <example>test-coverage</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -92,6 +99,7 @@ namespace G
         /// <summary>
         /// Example: MDg6Q2hlY2tSdW40
         /// </summary>
+        /// <example>MDg6Q2hlY2tSdW40</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -121,6 +129,7 @@ namespace G
         /// The phase of the lifecycle that the check is currently in.<br/>
         /// Example: queued
         /// </summary>
+        /// <example>queued</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckRunWithSimpleCheckSuiteStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -129,6 +138,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/check-runs/4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }

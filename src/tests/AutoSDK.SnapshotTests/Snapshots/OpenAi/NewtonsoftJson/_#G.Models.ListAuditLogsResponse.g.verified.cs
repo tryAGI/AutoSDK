@@ -24,12 +24,14 @@ namespace G
         /// <summary>
         /// Example: audit_log-defb456h8dks
         /// </summary>
+        /// <example>audit_log-defb456h8dks</example>
         [global::Newtonsoft.Json.JsonProperty("first_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string FirstId { get; set; } = default!;
 
         /// <summary>
         /// Example: audit_log-hnbkd8s93s
         /// </summary>
+        /// <example>audit_log-hnbkd8s93s</example>
         [global::Newtonsoft.Json.JsonProperty("last_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string LastId { get; set; } = default!;
 

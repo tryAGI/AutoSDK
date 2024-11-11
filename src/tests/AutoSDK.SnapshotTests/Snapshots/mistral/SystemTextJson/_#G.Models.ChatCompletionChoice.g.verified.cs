@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: stop
         /// </summary>
+        /// <example>stop</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionChoiceFinishReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -20,6 +21,7 @@ namespace G
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Index { get; set; }

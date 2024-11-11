@@ -13,6 +13,7 @@ namespace G
         /// The prompt to use to generate the image.<br/>
         /// Example: A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.
         /// </summary>
+        /// <example>A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there is an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.</example>
         [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
         public string Prompt { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// (Cannot be used in conjunction with resolution) The aspect ratio to use for image generation, which determines the image's resolution. Defaults to ASPECT_1_1.<br/>
         /// Example: ASPECT_10_16
         /// </summary>
+        /// <example>ASPECT_10_16</example>
         [global::Newtonsoft.Json.JsonProperty("aspect_ratio")]
         public global::G.AspectRatio? AspectRatio { get; set; }
 
@@ -28,6 +30,7 @@ namespace G
         /// Default Value: V_2<br/>
         /// Example: V_2_TURBO
         /// </summary>
+        /// <example>V_2_TURBO</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
         public global::G.ModelEnum? Model { get; set; }
 
@@ -36,12 +39,14 @@ namespace G
         /// Default Value: AUTO<br/>
         /// Example: ON
         /// </summary>
+        /// <example>ON</example>
         [global::Newtonsoft.Json.JsonProperty("magic_prompt_option")]
         public global::G.MagicPromptOption? MagicPromptOption { get; set; }
 
         /// <summary>
         /// Example: 12345
         /// </summary>
+        /// <example>12345</example>
         [global::Newtonsoft.Json.JsonProperty("seed")]
         public int? Seed { get; set; }
 
@@ -49,6 +54,7 @@ namespace G
         /// The style type to generate with; this is only applicable for models V_2 and above and should not be specified for model versions V_1.<br/>
         /// Example: REALISTIC
         /// </summary>
+        /// <example>REALISTIC</example>
         [global::Newtonsoft.Json.JsonProperty("style_type")]
         public global::G.StyleType? StyleType { get; set; }
 
@@ -56,6 +62,7 @@ namespace G
         /// Description of what to exclude from an image. Descriptions in the prompt take precedence to descriptions in the negative prompt.<br/>
         /// Example: brush strokes, painting
         /// </summary>
+        /// <example>brush strokes, painting</example>
         [global::Newtonsoft.Json.JsonProperty("negative_prompt")]
         public string? NegativePrompt { get; set; }
 
@@ -63,6 +70,7 @@ namespace G
         /// (For model_version for 2.0 only, cannot be used in conjunction with aspect_ratio) The resolution to use for image generation, represented in width x height. If not specified, defaults to using aspect_ratio.<br/>
         /// Example: RESOLUTION_1024_1024
         /// </summary>
+        /// <example>RESOLUTION_1024_1024</example>
         [global::Newtonsoft.Json.JsonProperty("resolution")]
         public global::G.Resolution? Resolution { get; set; }
 

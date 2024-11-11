@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the package.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The name of the package.<br/>
         /// Example: super-linter
         /// </summary>
+        /// <example>super-linter</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// <summary>
         /// Example: docker
         /// </summary>
+        /// <example>docker</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PackagePackageTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -36,6 +39,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/packages/container/super-linter
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/packages/container/super-linter</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -43,6 +47,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/orgs/github/packages/container/package/super-linter
         /// </summary>
+        /// <example>https://github.com/orgs/github/packages/container/package/super-linter</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -51,6 +56,7 @@ namespace G
         /// The number of versions of the package.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("version_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int VersionCount { get; set; }
@@ -58,6 +64,7 @@ namespace G
         /// <summary>
         /// Example: private
         /// </summary>
+        /// <example>private</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("visibility")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PackageVisibilityJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

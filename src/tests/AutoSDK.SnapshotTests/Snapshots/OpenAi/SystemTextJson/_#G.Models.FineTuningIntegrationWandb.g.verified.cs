@@ -15,6 +15,7 @@ namespace G
         /// The name of the project that the new run will be created under.<br/>
         /// Example: my-wandb-project
         /// </summary>
+        /// <example>my-wandb-project</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("project")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Project { get; set; }

@@ -13,6 +13,7 @@ namespace G
         /// The type of reviewer.<br/>
         /// Example: User
         /// </summary>
+        /// <example>User</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.DeploymentReviewerType? Type { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// The id of the user or team who can review the deployment<br/>
         /// Example: 4532992
         /// </summary>
+        /// <example>4532992</example>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public int? Id { get; set; }
 

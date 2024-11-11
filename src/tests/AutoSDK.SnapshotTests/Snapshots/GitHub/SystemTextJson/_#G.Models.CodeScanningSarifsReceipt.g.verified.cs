@@ -13,6 +13,7 @@ namespace G
         /// An identifier for the upload.<br/>
         /// Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
         /// </summary>
+        /// <example>6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 

@@ -18,12 +18,14 @@ namespace G
         /// <summary>
         /// Example: 135
         /// </summary>
+        /// <example>135</example>
         [global::Newtonsoft.Json.JsonProperty("total", Required = global::Newtonsoft.Json.Required.Always)]
         public int Total { get; set; } = default!;
 
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("weeks", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> Weeks { get; set; } = default!;
 

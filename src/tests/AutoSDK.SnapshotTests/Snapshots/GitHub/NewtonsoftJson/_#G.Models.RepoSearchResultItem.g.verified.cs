@@ -540,6 +540,7 @@ namespace G
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
         public bool? WebCommitSignoffRequired { get; set; }
 

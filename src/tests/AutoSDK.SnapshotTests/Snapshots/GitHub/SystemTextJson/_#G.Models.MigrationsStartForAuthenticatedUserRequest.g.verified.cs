@@ -13,6 +13,7 @@ namespace G
         /// Lock the repositories being migrated at the start of the migration<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("lock_repositories")]
         public bool? LockRepositories { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// Indicates whether metadata should be excluded and only git source should be included for the migration.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude_metadata")]
         public bool? ExcludeMetadata { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// Indicates whether the repository git data should be excluded from the migration.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude_git_data")]
         public bool? ExcludeGitData { get; set; }
 
@@ -34,6 +37,7 @@ namespace G
         /// Do not include attachments in the migration<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude_attachments")]
         public bool? ExcludeAttachments { get; set; }
 
@@ -41,6 +45,7 @@ namespace G
         /// Do not include releases in the migration<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude_releases")]
         public bool? ExcludeReleases { get; set; }
 
@@ -48,6 +53,7 @@ namespace G
         /// Indicates whether projects owned by the organization or users should be excluded.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude_owner_projects")]
         public bool? ExcludeOwnerProjects { get; set; }
 
@@ -56,6 +62,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("org_metadata_only")]
         public bool? OrgMetadataOnly { get; set; }
 
@@ -63,6 +70,7 @@ namespace G
         /// Exclude attributes from the API response to improve performance<br/>
         /// Example: [repositories]
         /// </summary>
+        /// <example>[repositories]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("exclude")]
         public global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>? Exclude { get; set; }
 

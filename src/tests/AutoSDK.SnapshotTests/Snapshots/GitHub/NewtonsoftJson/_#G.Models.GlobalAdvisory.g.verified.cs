@@ -13,6 +13,7 @@ namespace G
         /// The GitHub Security Advisory ID.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("ghsa_id")]
         public string GhsaId { get; set; } = default!;
 
@@ -27,6 +28,7 @@ namespace G
         /// The API URL for the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string Url { get; set; } = default!;
 
@@ -34,6 +36,7 @@ namespace G
         /// The URL for the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("html_url")]
         public string HtmlUrl { get; set; } = default!;
 
@@ -60,6 +63,7 @@ namespace G
         /// The type of advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.GlobalAdvisoryType Type { get; set; } = default!;
 
@@ -91,6 +95,7 @@ namespace G
         /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("published_at")]
         public global::System.DateTime PublishedAt { get; set; } = default!;
 
@@ -98,6 +103,7 @@ namespace G
         /// The date and time of when the advisory was last updated, in ISO 8601 format.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public global::System.DateTime UpdatedAt { get; set; } = default!;
 

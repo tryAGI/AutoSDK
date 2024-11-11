@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: [0, 3, 26, 20, 39, 1, 0]
         /// </summary>
+        /// <example>[0, 3, 26, 20, 39, 1, 0]</example>
         [global::Newtonsoft.Json.JsonProperty("days", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<int> Days { get; set; } = default!;
 
         /// <summary>
         /// Example: 89
         /// </summary>
+        /// <example>89</example>
         [global::Newtonsoft.Json.JsonProperty("total", Required = global::Newtonsoft.Json.Required.Always)]
         public int Total { get; set; } = default!;
 
         /// <summary>
         /// Example: 1336280400
         /// </summary>
+        /// <example>1336280400</example>
         [global::Newtonsoft.Json.JsonProperty("week", Required = global::Newtonsoft.Json.Required.Always)]
         public int Week { get; set; } = default!;
 

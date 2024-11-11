@@ -13,6 +13,7 @@ namespace G
         /// Determines if notifications should be received from this repository.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("subscribed", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Subscribed { get; set; } = default!;
 
@@ -37,12 +38,14 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/subscription
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/subscription</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example</example>
         [global::Newtonsoft.Json.JsonProperty("repository_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string RepositoryUrl { get; set; } = default!;
 

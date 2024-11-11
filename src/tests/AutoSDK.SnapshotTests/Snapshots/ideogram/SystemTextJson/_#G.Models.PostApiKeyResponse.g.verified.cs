@@ -13,6 +13,7 @@ namespace G
         /// The API key to use when making authenticated requests with the API. This key will only be shown once.<br/>
         /// Example: vkpDjaKdMNR8QJ83GjfNvFZJbnoi65XUp70MgZNtA2H9XE8yfDnmr_6BaRyQkF9hnJzu6mUPRLBmqlnZMwetJA
         /// </summary>
+        /// <example>vkpDjaKdMNR8QJ83GjfNvFZJbnoi65XUp70MgZNtA2H9XE8yfDnmr_6BaRyQkF9hnJzu6mUPRLBmqlnZMwetJA</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ApiKey { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The ID of the API key. A URL safe base64 encoded UUID<br/>
         /// Example: JRPVD7jWR1aTBYiJ0UFVOg==
         /// </summary>
+        /// <example>JRPVD7jWR1aTBYiJ0UFVOg==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ApiKeyId { get; set; }

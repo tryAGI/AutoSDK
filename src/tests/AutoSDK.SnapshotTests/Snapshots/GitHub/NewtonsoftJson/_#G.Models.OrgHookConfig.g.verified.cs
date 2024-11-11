@@ -12,24 +12,28 @@ namespace G
         /// <summary>
         /// Example: "http://example.com/2"
         /// </summary>
+        /// <example>"http://example.com/2"</example>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }
 
         /// <summary>
         /// Example: "0"
         /// </summary>
+        /// <example>"0"</example>
         [global::Newtonsoft.Json.JsonProperty("insecure_ssl")]
         public string? InsecureSsl { get; set; }
 
         /// <summary>
         /// Example: "form"
         /// </summary>
+        /// <example>"form"</example>
         [global::Newtonsoft.Json.JsonProperty("content_type")]
         public string? ContentType { get; set; }
 
         /// <summary>
         /// Example: "********"
         /// </summary>
+        /// <example>"********"</example>
         [global::Newtonsoft.Json.JsonProperty("secret")]
         public string? Secret { get; set; }
 

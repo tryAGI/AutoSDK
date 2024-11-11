@@ -13,6 +13,7 @@ namespace G
         /// The GitHub Security Advisory ID.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("ghsa_id")]
         public string GhsaId { get; set; } = default!;
 
@@ -27,6 +28,7 @@ namespace G
         /// The API URL for the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string Url { get; set; } = default!;
 
@@ -34,6 +36,7 @@ namespace G
         /// The URL for the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         public string HtmlUrl { get; set; } = default!;
 
@@ -76,6 +79,7 @@ namespace G
         /// <summary>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("identifiers")]
         public global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier> Identifiers { get; set; } = default!;
 

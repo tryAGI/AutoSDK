@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: &lt;session_id&gt;
         /// </summary>
+        /// <example>&lt;session_id&gt;</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         public string? SessionId { get; set; }
 
         /// <summary>
         /// Example: Hey, there!
         /// </summary>
+        /// <example>Hey, there!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         public string? Text { get; set; }
 

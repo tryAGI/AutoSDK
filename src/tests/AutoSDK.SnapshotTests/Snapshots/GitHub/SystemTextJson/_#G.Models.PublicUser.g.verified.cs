@@ -253,30 +253,35 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("private_gists")]
         public int? PrivateGists { get; set; }
 
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_private_repos")]
         public int? TotalPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("owned_private_repos")]
         public int? OwnedPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("disk_usage")]
         public int? DiskUsage { get; set; }
 
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborators")]
         public int? Collaborators { get; set; }
 

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -30,12 +31,14 @@ namespace G
         /// <summary>
         /// Example: Fix all the bugs
         /// </summary>
+        /// <example>Fix all the bugs</example>
         [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
         public string Message { get; set; } = default!;
 
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("comment_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int CommentCount { get; set; } = default!;
 

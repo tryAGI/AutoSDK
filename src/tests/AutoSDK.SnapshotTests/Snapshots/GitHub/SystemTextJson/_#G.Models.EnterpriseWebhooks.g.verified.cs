@@ -20,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/enterprises/octo-business
         /// </summary>
+        /// <example>https://github.com/enterprises/octo-business</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -34,6 +35,7 @@ namespace G
         /// Unique identifier of the enterprise<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -41,6 +43,7 @@ namespace G
         /// <summary>
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
         /// </summary>
+        /// <example>MDEwOlJlcG9zaXRvcnkxMjk2MjY5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -49,6 +52,7 @@ namespace G
         /// The name of the enterprise.<br/>
         /// Example: Octo Business
         /// </summary>
+        /// <example>Octo Business</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -57,6 +61,7 @@ namespace G
         /// The slug url identifier for the enterprise.<br/>
         /// Example: octo-business
         /// </summary>
+        /// <example>octo-business</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Slug { get; set; }

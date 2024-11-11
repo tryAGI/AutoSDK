@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: 173
         /// </summary>
+        /// <example>173</example>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
         public int Count { get; set; } = default!;
 
         /// <summary>
         /// Example: 128
         /// </summary>
+        /// <example>128</example>
         [global::Newtonsoft.Json.JsonProperty("uniques", Required = global::Newtonsoft.Json.Required.Always)]
         public int Uniques { get; set; } = default!;
 

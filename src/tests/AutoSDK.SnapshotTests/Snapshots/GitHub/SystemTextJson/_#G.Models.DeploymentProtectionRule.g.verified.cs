@@ -13,6 +13,7 @@ namespace G
         /// The unique identifier for the deployment protection rule.<br/>
         /// Example: 3515
         /// </summary>
+        /// <example>3515</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The node ID for the deployment protection rule.<br/>
         /// Example: MDQ6R2F0ZTM1MTU=
         /// </summary>
+        /// <example>MDQ6R2F0ZTM1MTU=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// Whether the deployment protection rule is enabled for the environment.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Enabled { get; set; }

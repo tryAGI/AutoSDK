@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDEwOkNoZWNrU3VpdGU1
         /// </summary>
+        /// <example>MDEwOkNoZWNrU3VpdGU1</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -25,6 +27,7 @@ namespace G
         /// The name of the artifact.<br/>
         /// Example: AdventureWorks.Framework
         /// </summary>
+        /// <example>AdventureWorks.Framework</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -32,18 +35,21 @@ namespace G
         /// The size in bytes of the artifact.<br/>
         /// Example: 12345
         /// </summary>
+        /// <example>12345</example>
         [global::Newtonsoft.Json.JsonProperty("size_in_bytes", Required = global::Newtonsoft.Json.Required.Always)]
         public int SizeInBytes { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/artifacts/5</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5/zip
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/artifacts/5/zip</example>
         [global::Newtonsoft.Json.JsonProperty("archive_download_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ArchiveDownloadUrl { get; set; } = default!;
 

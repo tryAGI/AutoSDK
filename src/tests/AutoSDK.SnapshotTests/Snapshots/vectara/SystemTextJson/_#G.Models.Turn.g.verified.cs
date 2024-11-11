@@ -25,6 +25,7 @@ namespace G
         /// The query made to produce this turn.<br/>
         /// Example: How do a turn this widget?
         /// </summary>
+        /// <example>How do a turn this widget?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         public string? Query { get; set; }
 
@@ -32,6 +33,7 @@ namespace G
         /// The response to the query.<br/>
         /// Example: The widget turns counter clockwise.
         /// </summary>
+        /// <example>The widget turns counter clockwise.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("answer")]
         public string? Answer { get; set; }
 
@@ -39,6 +41,7 @@ namespace G
         /// Indicates whether the turn is enabled and shown in futures turns of the chat.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         public bool? Enabled { get; set; }
 

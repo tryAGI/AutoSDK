@@ -12,24 +12,28 @@ namespace G
         /// <summary>
         /// Example: /github/hubot
         /// </summary>
+        /// <example>/github/hubot</example>
         [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
         public string Path { get; set; } = default!;
 
         /// <summary>
         /// Example: github/hubot: A customizable life embetterment robot.
         /// </summary>
+        /// <example>github/hubot: A customizable life embetterment robot.</example>
         [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
         public string Title { get; set; } = default!;
 
         /// <summary>
         /// Example: 3542
         /// </summary>
+        /// <example>3542</example>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
         public int Count { get; set; } = default!;
 
         /// <summary>
         /// Example: 2225
         /// </summary>
+        /// <example>2225</example>
         [global::Newtonsoft.Json.JsonProperty("uniques", Required = global::Newtonsoft.Json.Required.Always)]
         public int Uniques { get; set; } = default!;
 

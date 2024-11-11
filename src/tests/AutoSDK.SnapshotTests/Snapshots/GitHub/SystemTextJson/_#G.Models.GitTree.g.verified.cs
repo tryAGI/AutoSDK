@@ -34,6 +34,7 @@ namespace G
         /// Objects specifying a tree structure<br/>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("tree")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.GitTreeTreeItem> Tree { get; set; }

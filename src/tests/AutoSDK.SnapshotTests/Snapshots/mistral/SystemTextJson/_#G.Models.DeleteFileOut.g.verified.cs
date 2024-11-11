@@ -13,6 +13,7 @@ namespace G
         /// The deletion status.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Deleted { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The ID of the deleted file.<br/>
         /// Example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
         /// </summary>
+        /// <example>497f6eca-6276-4993-bfeb-53cbbbba6f09</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Guid Id { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// The object type that was deleted<br/>
         /// Example: file
         /// </summary>
+        /// <example>file</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Object { get; set; }

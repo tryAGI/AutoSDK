@@ -15,6 +15,7 @@ namespace G
         /// The ID of the installation.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -38,6 +39,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/app/installations/1/access_tokens
         /// </summary>
+        /// <example>https://api.github.com/app/installations/1/access_tokens</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("access_tokens_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AccessTokensUrl { get; set; }
@@ -45,6 +47,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/installation/repositories
         /// </summary>
+        /// <example>https://api.github.com/installation/repositories</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoriesUrl { get; set; }
@@ -52,6 +55,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/organizations/github/settings/installations/1
         /// </summary>
+        /// <example>https://github.com/organizations/github/settings/installations/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -59,6 +63,7 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int AppId { get; set; }
@@ -73,6 +78,7 @@ namespace G
         /// <summary>
         /// Example: Organization
         /// </summary>
+        /// <example>Organization</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TargetType { get; set; }
@@ -108,6 +114,7 @@ namespace G
         /// <summary>
         /// Example: config.yaml
         /// </summary>
+        /// <example>config.yaml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? SingleFileName { get; set; }
@@ -115,18 +122,21 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_multiple_single_files")]
         public bool? HasMultipleSingleFiles { get; set; }
 
         /// <summary>
         /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </summary>
+        /// <example>[config.yml, .github/issue_TEMPLATE.md]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_paths")]
         public global::System.Collections.Generic.IList<string>? SingleFilePaths { get; set; }
 
         /// <summary>
         /// Example: github-actions
         /// </summary>
+        /// <example>github-actions</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("app_slug")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AppSlug { get; set; }
@@ -148,6 +158,7 @@ namespace G
         /// <summary>
         /// Example: "test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"
         /// </summary>
+        /// <example>"test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("contact_email")]
         public string? ContactEmail { get; set; }
 

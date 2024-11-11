@@ -23,6 +23,7 @@ namespace G
         /// prompt.<br/>
         /// Example: vectara-summary-ext-v1.2.0
         /// </summary>
+        /// <example>vectara-summary-ext-v1.2.0</example>
         [global::Newtonsoft.Json.JsonProperty("generation_preset_name")]
         public string? GenerationPresetName { get; set; }
 
@@ -30,6 +31,7 @@ namespace G
         /// Use `generation_preset_name` instead of `prompt_name`.<br/>
         /// Example: vectara-summary-ext-v1.2.0
         /// </summary>
+        /// <example>vectara-summary-ext-v1.2.0</example>
         [global::Newtonsoft.Json.JsonProperty("prompt_name")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public string? PromptName { get; set; }
@@ -57,6 +59,16 @@ namespace G
         ///   {"role": "user", "content": "Generate a summary for the query '${vectaraQuery}' based on the above results."}<br/>
         /// ]
         /// </summary>
+        /// <example>
+        /// [<br/>
+        ///   {"role": "system", "content": "You are a helpful search assistant."},<br/>
+        ///   #foreach ($qResult in $vectaraQueryResults)<br/>
+        ///      {"role": "user", "content": "Given the $vectaraIdxWord[$foreach.index] search result."},<br/>
+        ///      {"role": "assistant", "content": "${qResult.getText()}" },<br/>
+        ///   #end<br/>
+        ///   {"role": "user", "content": "Generate a summary for the query '${vectaraQuery}' based on the above results."}<br/>
+        /// ]
+        /// </example>
         [global::Newtonsoft.Json.JsonProperty("prompt_template")]
         public string? PromptTemplate { get; set; }
 
@@ -72,6 +84,16 @@ namespace G
         ///   {"role": "user", "content": "Generate a summary for the query '${vectaraQuery}' based on the above results."}<br/>
         /// ]
         /// </summary>
+        /// <example>
+        /// [<br/>
+        ///   {"role": "system", "content": "You are a helpful search assistant."},<br/>
+        ///   #foreach ($qResult in $vectaraQueryResults)<br/>
+        ///      {"role": "user", "content": "Given the $vectaraIdxWord[$foreach.index] search result."},<br/>
+        ///      {"role": "assistant", "content": "${qResult.getText()}" },<br/>
+        ///   #end<br/>
+        ///   {"role": "user", "content": "Generate a summary for the query '${vectaraQuery}' based on the above results."}<br/>
+        /// ]
+        /// </example>
         [global::Newtonsoft.Json.JsonProperty("prompt_text")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public string? PromptText { get; set; }
@@ -86,6 +108,7 @@ namespace G
         /// See [pricing](https://vectara.com/pricing/) for more details on becoming a Scale customer.<br/>
         /// Example: 300
         /// </summary>
+        /// <example>300</example>
         [global::Newtonsoft.Json.JsonProperty("max_response_characters")]
         public int? MaxResponseCharacters { get; set; }
 

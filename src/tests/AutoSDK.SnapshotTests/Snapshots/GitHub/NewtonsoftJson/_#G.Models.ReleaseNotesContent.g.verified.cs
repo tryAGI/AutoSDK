@@ -13,6 +13,7 @@ namespace G
         /// The generated name of the release<br/>
         /// Example: Release v1.0.0 is now available!
         /// </summary>
+        /// <example>Release v1.0.0 is now available!</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 

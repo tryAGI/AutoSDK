@@ -13,6 +13,7 @@ namespace G
         /// The name of the machine.<br/>
         /// Example: standardLinux
         /// </summary>
+        /// <example>standardLinux</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The display name of the machine includes cores, memory, and storage.<br/>
         /// Example: 4 cores, 16 GB RAM, 64 GB storage
         /// </summary>
+        /// <example>4 cores, 16 GB RAM, 64 GB storage</example>
         [global::Newtonsoft.Json.JsonProperty("display_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string DisplayName { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// The operating system of the machine.<br/>
         /// Example: linux
         /// </summary>
+        /// <example>linux</example>
         [global::Newtonsoft.Json.JsonProperty("operating_system", Required = global::Newtonsoft.Json.Required.Always)]
         public string OperatingSystem { get; set; } = default!;
 
@@ -34,6 +37,7 @@ namespace G
         /// How much storage is available to the codespace.<br/>
         /// Example: 68719476736
         /// </summary>
+        /// <example>68719476736</example>
         [global::Newtonsoft.Json.JsonProperty("storage_in_bytes", Required = global::Newtonsoft.Json.Required.Always)]
         public int StorageInBytes { get; set; } = default!;
 
@@ -41,6 +45,7 @@ namespace G
         /// How much memory is available to the codespace.<br/>
         /// Example: 17179869184
         /// </summary>
+        /// <example>17179869184</example>
         [global::Newtonsoft.Json.JsonProperty("memory_in_bytes", Required = global::Newtonsoft.Json.Required.Always)]
         public int MemoryInBytes { get; set; } = default!;
 
@@ -48,6 +53,7 @@ namespace G
         /// How many cores are available to the codespace.<br/>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::Newtonsoft.Json.JsonProperty("cpus", Required = global::Newtonsoft.Json.Required.Always)]
         public int Cpus { get; set; } = default!;
 
@@ -55,6 +61,7 @@ namespace G
         /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.<br/>
         /// Example: ready
         /// </summary>
+        /// <example>ready</example>
         [global::Newtonsoft.Json.JsonProperty("prebuild_availability", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.NullableCodespaceMachinePrebuildAvailability? PrebuildAvailability { get; set; } = default!;
 

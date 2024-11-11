@@ -12,192 +12,224 @@ namespace G
         /// <summary>
         /// Example: github
         /// </summary>
+        /// <example>github</example>
         [global::Newtonsoft.Json.JsonProperty("login", Required = global::Newtonsoft.Json.Required.Always)]
         public string Login { get; set; } = default!;
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDEyOk9yZ2FuaXphdGlvbjE=
         /// </summary>
+        /// <example>MDEyOk9yZ2FuaXphdGlvbjE=</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/github
         /// </summary>
+        /// <example>https://api.github.com/orgs/github</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/github/repos
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/repos</example>
         [global::Newtonsoft.Json.JsonProperty("repos_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ReposUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/github/events
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/events</example>
         [global::Newtonsoft.Json.JsonProperty("events_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string EventsUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/github/hooks
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/hooks</example>
         [global::Newtonsoft.Json.JsonProperty("hooks_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HooksUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/github/issues
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/issues</example>
         [global::Newtonsoft.Json.JsonProperty("issues_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string IssuesUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/github/members{/member}
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/members{/member}</example>
         [global::Newtonsoft.Json.JsonProperty("members_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string MembersUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/github/public_members{/member}
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/public_members{/member}</example>
         [global::Newtonsoft.Json.JsonProperty("public_members_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PublicMembersUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/images/error/octocat_happy.gif
         /// </summary>
+        /// <example>https://github.com/images/error/octocat_happy.gif</example>
         [global::Newtonsoft.Json.JsonProperty("avatar_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AvatarUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: A great organization
         /// </summary>
+        /// <example>A great organization</example>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Description { get; set; } = default!;
 
         /// <summary>
         /// Example: github
         /// </summary>
+        /// <example>github</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
         /// Example: GitHub
         /// </summary>
+        /// <example>GitHub</example>
         [global::Newtonsoft.Json.JsonProperty("company")]
         public string? Company { get; set; }
 
         /// <summary>
         /// Example: https://github.com/blog
         /// </summary>
+        /// <example>https://github.com/blog</example>
         [global::Newtonsoft.Json.JsonProperty("blog")]
         public string? Blog { get; set; }
 
         /// <summary>
         /// Example: San Francisco
         /// </summary>
+        /// <example>San Francisco</example>
         [global::Newtonsoft.Json.JsonProperty("location")]
         public string? Location { get; set; }
 
         /// <summary>
         /// Example: octocat@github.com
         /// </summary>
+        /// <example>octocat@github.com</example>
         [global::Newtonsoft.Json.JsonProperty("email")]
         public string? Email { get; set; }
 
         /// <summary>
         /// Example: github
         /// </summary>
+        /// <example>github</example>
         [global::Newtonsoft.Json.JsonProperty("twitter_username")]
         public string? TwitterUsername { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("is_verified")]
         public bool? IsVerified { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_organization_projects", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasOrganizationProjects { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_repository_projects", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasRepositoryProjects { get; set; } = default!;
 
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("public_repos", Required = global::Newtonsoft.Json.Required.Always)]
         public int PublicRepos { get; set; } = default!;
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("public_gists", Required = global::Newtonsoft.Json.Required.Always)]
         public int PublicGists { get; set; } = default!;
 
         /// <summary>
         /// Example: 20
         /// </summary>
+        /// <example>20</example>
         [global::Newtonsoft.Json.JsonProperty("followers", Required = global::Newtonsoft.Json.Required.Always)]
         public int Followers { get; set; } = default!;
 
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("following", Required = global::Newtonsoft.Json.Required.Always)]
         public int Following { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat
         /// </summary>
+        /// <example>https://github.com/octocat</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: Organization
         /// </summary>
+        /// <example>Organization</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 
         /// <summary>
         /// Example: 100
         /// </summary>
+        /// <example>100</example>
         [global::Newtonsoft.Json.JsonProperty("total_private_repos")]
         public int? TotalPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 100
         /// </summary>
+        /// <example>100</example>
         [global::Newtonsoft.Json.JsonProperty("owned_private_repos")]
         public int? OwnedPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 81
         /// </summary>
+        /// <example>81</example>
         [global::Newtonsoft.Json.JsonProperty("private_gists")]
         public int? PrivateGists { get; set; }
 
         /// <summary>
         /// Example: 10000
         /// </summary>
+        /// <example>10000</example>
         [global::Newtonsoft.Json.JsonProperty("disk_usage")]
         public int? DiskUsage { get; set; }
 
         /// <summary>
         /// Example: org@example.com
         /// </summary>
+        /// <example>org@example.com</example>
         [global::Newtonsoft.Json.JsonProperty("billing_email")]
         public string? BillingEmail { get; set; }
 
@@ -216,66 +248,77 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_repositories")]
         public bool? MembersCanCreateRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("two_factor_requirement_enabled")]
         public bool? TwoFactorRequirementEnabled { get; set; }
 
         /// <summary>
         /// Example: all
         /// </summary>
+        /// <example>all</example>
         [global::Newtonsoft.Json.JsonProperty("members_allowed_repository_creation_type")]
         public string? MembersAllowedRepositoryCreationType { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_public_repositories")]
         public bool? MembersCanCreatePublicRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_private_repositories")]
         public bool? MembersCanCreatePrivateRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_internal_repositories")]
         public bool? MembersCanCreateInternalRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_pages")]
         public bool? MembersCanCreatePages { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_public_pages")]
         public bool? MembersCanCreatePublicPages { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("members_can_create_private_pages")]
         public bool? MembersCanCreatePrivatePages { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("members_can_fork_private_repositories")]
         public bool? MembersCanForkPrivateRepositories { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("web_commit_signoff_required")]
         public bool? WebCommitSignoffRequired { get; set; }
 
@@ -285,6 +328,7 @@ namespace G
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("advanced_security_enabled_for_new_repositories")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public bool? AdvancedSecurityEnabledForNewRepositories { get; set; }
@@ -295,6 +339,7 @@ namespace G
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("dependabot_alerts_enabled_for_new_repositories")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DependabotAlertsEnabledForNewRepositories { get; set; }
@@ -305,6 +350,7 @@ namespace G
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("dependabot_security_updates_enabled_for_new_repositories")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DependabotSecurityUpdatesEnabledForNewRepositories { get; set; }
@@ -315,6 +361,7 @@ namespace G
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("dependency_graph_enabled_for_new_repositories")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public bool? DependencyGraphEnabledForNewRepositories { get; set; }
@@ -325,6 +372,7 @@ namespace G
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_enabled_for_new_repositories")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public bool? SecretScanningEnabledForNewRepositories { get; set; }
@@ -335,6 +383,7 @@ namespace G
         /// This field is only visible to organization owners or members of a team with the security manager role.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection_enabled_for_new_repositories")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public bool? SecretScanningPushProtectionEnabledForNewRepositories { get; set; }
@@ -343,6 +392,7 @@ namespace G
         /// Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection_custom_link_enabled")]
         public bool? SecretScanningPushProtectionCustomLinkEnabled { get; set; }
 
@@ -350,6 +400,7 @@ namespace G
         /// An optional URL string to display to contributors who are blocked from pushing a secret.<br/>
         /// Example: https://github.com/test-org/test-repo/blob/main/README.md
         /// </summary>
+        /// <example>https://github.com/test-org/test-repo/blob/main/README.md</example>
         [global::Newtonsoft.Json.JsonProperty("secret_scanning_push_protection_custom_link")]
         public string? SecretScanningPushProtectionCustomLink { get; set; }
 

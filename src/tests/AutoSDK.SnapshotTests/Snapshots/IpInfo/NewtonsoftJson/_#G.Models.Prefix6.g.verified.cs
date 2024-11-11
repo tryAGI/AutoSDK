@@ -12,42 +12,49 @@ namespace G
         /// <summary>
         /// Example: 2601::/20
         /// </summary>
+        /// <example>2601::/20</example>
         [global::Newtonsoft.Json.JsonProperty("netblock", Required = global::Newtonsoft.Json.Required.Always)]
         public string Netblock { get; set; } = default!;
 
         /// <summary>
         /// Example: COMCAST6NET
         /// </summary>
+        /// <example>COMCAST6NET</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
         /// <summary>
         /// Example: Comcast Cable Communications, LLC
         /// </summary>
+        /// <example>Comcast Cable Communications, LLC</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: US
         /// </summary>
+        /// <example>US</example>
         [global::Newtonsoft.Json.JsonProperty("country", Required = global::Newtonsoft.Json.Required.Always)]
         public string Country { get; set; } = default!;
 
         /// <summary>
         /// Example: 20282409603651670423947251286016
         /// </summary>
+        /// <example>20282409603651670423947251286016</example>
         [global::Newtonsoft.Json.JsonProperty("size")]
         public string? Size { get; set; }
 
         /// <summary>
         /// Example: ASSIGNMENT
         /// </summary>
+        /// <example>ASSIGNMENT</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
         public string? Status { get; set; }
 
         /// <summary>
         /// Example: comcast.com
         /// </summary>
+        /// <example>comcast.com</example>
         [global::Newtonsoft.Json.JsonProperty("domain")]
         public string? Domain { get; set; }
 

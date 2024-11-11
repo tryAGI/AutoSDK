@@ -78,12 +78,14 @@ namespace G
         /// <summary>
         /// Example: "branch/with/protection"
         /// </summary>
+        /// <example>"branch/with/protection"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/repos/owner-79e94e2d36b3fd06a32bb213/AAA_Public_Repo/branches/branch/with/protection/protection"
         /// </summary>
+        /// <example>"https://api.github.com/repos/owner-79e94e2d36b3fd06a32bb213/AAA_Public_Repo/branches/branch/with/protection/protection"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("protection_url")]
         public string? ProtectionUrl { get; set; }
 

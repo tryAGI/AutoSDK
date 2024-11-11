@@ -12,66 +12,77 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/comments/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: 42L
         /// </summary>
+        /// <example>42L</example>
         [global::Newtonsoft.Json.JsonProperty("pull_request_review_id", Required = global::Newtonsoft.Json.Required.Always)]
         public long? PullRequestReviewId { get; set; } = default!;
 
         /// <summary>
         /// Example: 10L
         /// </summary>
+        /// <example>10L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEw
         /// </summary>
+        /// <example>MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEw</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
         /// Example: @@ -16,33 +16,40 @@ public class Connection : IConnection...
         /// </summary>
+        /// <example>@@ -16,33 +16,40 @@ public class Connection : IConnection...</example>
         [global::Newtonsoft.Json.JsonProperty("diff_hunk", Required = global::Newtonsoft.Json.Required.Always)]
         public string DiffHunk { get; set; } = default!;
 
         /// <summary>
         /// Example: file1.txt
         /// </summary>
+        /// <example>file1.txt</example>
         [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
         public string Path { get; set; } = default!;
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("position", Required = global::Newtonsoft.Json.Required.Always)]
         public int? Position { get; set; } = default!;
 
         /// <summary>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::Newtonsoft.Json.JsonProperty("original_position", Required = global::Newtonsoft.Json.Required.Always)]
         public int OriginalPosition { get; set; } = default!;
 
         /// <summary>
         /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
+        /// <example>6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
         [global::Newtonsoft.Json.JsonProperty("commit_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string CommitId { get; set; } = default!;
 
         /// <summary>
         /// Example: 9c48853fa3dc5c1c3d6f1f1cd1f2743e72652840
         /// </summary>
+        /// <example>9c48853fa3dc5c1c3d6f1f1cd1f2743e72652840</example>
         [global::Newtonsoft.Json.JsonProperty("original_commit_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string OriginalCommitId { get; set; } = default!;
 
         /// <summary>
         /// Example: 8
         /// </summary>
+        /// <example>8</example>
         [global::Newtonsoft.Json.JsonProperty("in_reply_to_id")]
         public int? InReplyToId { get; set; }
 
@@ -84,6 +95,7 @@ namespace G
         /// <summary>
         /// Example: Great stuff
         /// </summary>
+        /// <example>Great stuff</example>
         [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
         public string Body { get; set; } = default!;
 
@@ -102,12 +114,14 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/1#discussion-diff-1</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/1</example>
         [global::Newtonsoft.Json.JsonProperty("pull_request_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PullRequestUrl { get; set; } = default!;
 
@@ -115,6 +129,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 
@@ -160,6 +175,7 @@ namespace G
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("line")]
         public int? Line { get; set; }
 
@@ -167,6 +183,7 @@ namespace G
         /// The original line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("original_line")]
         public int? OriginalLine { get; set; }
 
@@ -174,6 +191,7 @@ namespace G
         /// The first line of the range for a multi-line comment.<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("start_line")]
         public int? StartLine { get; set; }
 
@@ -181,6 +199,7 @@ namespace G
         /// The original first line of the range for a multi-line comment.<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("original_start_line")]
         public int? OriginalStartLine { get; set; }
 

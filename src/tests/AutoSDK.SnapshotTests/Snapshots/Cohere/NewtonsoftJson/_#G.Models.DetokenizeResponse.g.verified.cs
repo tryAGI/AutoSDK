@@ -13,6 +13,7 @@ namespace G
         /// A string representing the list of tokens.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("text")]
         public string Text { get; set; } = default!;
 

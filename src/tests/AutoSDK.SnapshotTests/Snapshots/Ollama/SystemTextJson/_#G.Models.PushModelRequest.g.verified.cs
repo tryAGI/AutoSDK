@@ -13,6 +13,7 @@ namespace G
         /// The name of the model to push in the form of &lt;namespace&gt;/&lt;model&gt;:&lt;tag&gt;.<br/>
         /// Example: mattw/pygmalion:latest
         /// </summary>
+        /// <example>mattw/pygmalion:latest</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Model { get; set; }

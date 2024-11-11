@@ -13,6 +13,7 @@ namespace G
         /// The document ID.<br/>
         /// Example: my-doc-id
         /// </summary>
+        /// <example>my-doc-id</example>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public string? Id { get; set; }
 

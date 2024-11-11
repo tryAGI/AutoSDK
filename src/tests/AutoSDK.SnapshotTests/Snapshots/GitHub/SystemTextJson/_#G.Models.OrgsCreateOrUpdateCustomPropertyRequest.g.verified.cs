@@ -15,6 +15,7 @@ namespace G
         /// The type of the value for the property<br/>
         /// Example: single_select
         /// </summary>
+        /// <example>single_select</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("value_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OrgsCreateOrUpdateCustomPropertyRequestValueTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

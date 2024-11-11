@@ -15,6 +15,7 @@ namespace G
         /// The ID of the installation.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -33,24 +34,28 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/app/installations/1/access_tokens
         /// </summary>
+        /// <example>https://api.github.com/app/installations/1/access_tokens</example>
         [global::Newtonsoft.Json.JsonProperty("access_tokens_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AccessTokensUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/installation/repositories
         /// </summary>
+        /// <example>https://api.github.com/installation/repositories</example>
         [global::Newtonsoft.Json.JsonProperty("repositories_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string RepositoriesUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/organizations/github/settings/installations/1
         /// </summary>
+        /// <example>https://github.com/organizations/github/settings/installations/1</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("app_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int AppId { get; set; } = default!;
 
@@ -63,6 +68,7 @@ namespace G
         /// <summary>
         /// Example: Organization
         /// </summary>
+        /// <example>Organization</example>
         [global::Newtonsoft.Json.JsonProperty("target_type", Required = global::Newtonsoft.Json.Required.Always)]
         public string TargetType { get; set; } = default!;
 
@@ -93,24 +99,28 @@ namespace G
         /// <summary>
         /// Example: config.yaml
         /// </summary>
+        /// <example>config.yaml</example>
         [global::Newtonsoft.Json.JsonProperty("single_file_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string? SingleFileName { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_multiple_single_files")]
         public bool? HasMultipleSingleFiles { get; set; }
 
         /// <summary>
         /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </summary>
+        /// <example>[config.yml, .github/issue_TEMPLATE.md]</example>
         [global::Newtonsoft.Json.JsonProperty("single_file_paths")]
         public global::System.Collections.Generic.IList<string>? SingleFilePaths { get; set; }
 
         /// <summary>
         /// Example: github-actions
         /// </summary>
+        /// <example>github-actions</example>
         [global::Newtonsoft.Json.JsonProperty("app_slug", Required = global::Newtonsoft.Json.Required.Always)]
         public string AppSlug { get; set; } = default!;
 
@@ -129,6 +139,7 @@ namespace G
         /// <summary>
         /// Example: "test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"
         /// </summary>
+        /// <example>"test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"</example>
         [global::Newtonsoft.Json.JsonProperty("contact_email")]
         public string? ContactEmail { get; set; }
 

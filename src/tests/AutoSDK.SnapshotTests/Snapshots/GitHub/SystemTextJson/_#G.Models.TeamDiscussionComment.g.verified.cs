@@ -20,6 +20,7 @@ namespace G
         /// The main text of the comment.<br/>
         /// Example: I agree with this suggestion.
         /// </summary>
+        /// <example>I agree with this suggestion.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Body { get; set; }
@@ -27,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: &lt;p&gt;Do you like apples?&lt;/p&gt;
         /// </summary>
+        /// <example>&lt;p&gt;Do you like apples?&lt;/p&gt;</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body_html")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BodyHtml { get; set; }
@@ -35,6 +37,7 @@ namespace G
         /// The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.<br/>
         /// Example: 0307116bbf7ced493b8d8a346c650b71
         /// </summary>
+        /// <example>0307116bbf7ced493b8d8a346c650b71</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BodyVersion { get; set; }
@@ -56,6 +59,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/2403582/discussions/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("discussion_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DiscussionUrl { get; set; }
@@ -63,6 +67,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/orgs/github/teams/justice-league/discussions/1/comments/1
         /// </summary>
+        /// <example>https://github.com/orgs/github/teams/justice-league/discussions/1/comments/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -70,6 +75,7 @@ namespace G
         /// <summary>
         /// Example: MDIxOlRlYW1EaXNjdXNzaW9uQ29tbWVudDE=
         /// </summary>
+        /// <example>MDIxOlRlYW1EaXNjdXNzaW9uQ29tbWVudDE=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -78,6 +84,7 @@ namespace G
         /// The unique sequence number of a team discussion comment.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Number { get; set; }
@@ -92,6 +99,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1/comments/1
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/2403582/discussions/1/comments/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }

@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: linkedin
         /// </summary>
+        /// <example>linkedin</example>
         [global::Newtonsoft.Json.JsonProperty("provider", Required = global::Newtonsoft.Json.Required.Always)]
         public string Provider { get; set; } = default!;
 
         /// <summary>
         /// Example: https://www.linkedin.com/company/github/
         /// </summary>
+        /// <example>https://www.linkedin.com/company/github/</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 

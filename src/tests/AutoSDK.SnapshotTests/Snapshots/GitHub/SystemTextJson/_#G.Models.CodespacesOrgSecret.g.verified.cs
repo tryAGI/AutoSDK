@@ -13,6 +13,7 @@ namespace G
         /// The name of the secret<br/>
         /// Example: SECRET_NAME
         /// </summary>
+        /// <example>SECRET_NAME</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -43,6 +44,7 @@ namespace G
         /// The API URL at which the list of repositories this secret is visible to can be retrieved<br/>
         /// Example: https://api.github.com/orgs/ORGANIZATION/codespaces/secrets/SECRET_NAME/repositories
         /// </summary>
+        /// <example>https://api.github.com/orgs/ORGANIZATION/codespaces/secrets/SECRET_NAME/repositories</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("selected_repositories_url")]
         public string? SelectedRepositoriesUrl { get; set; }
 

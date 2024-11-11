@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: v0.1
         /// </summary>
+        /// <example>v0.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -26,6 +27,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/zipball/v0.1
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/zipball/v0.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("zipball_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ZipballUrl { get; set; }
@@ -33,6 +35,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/tarball/v0.1
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/tarball/v0.1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("tarball_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TarballUrl { get; set; }

@@ -13,6 +13,7 @@ namespace G
         /// The API URL to get the pull request where the secret was detected.<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pull/2846
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pull/2846</example>
         [global::Newtonsoft.Json.JsonProperty("pull_request_body_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PullRequestBodyUrl { get; set; } = default!;
 

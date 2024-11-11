@@ -13,6 +13,7 @@ namespace G
         /// A unique identifier of the repository.<br/>
         /// Example: 1296269
         /// </summary>
+        /// <example>1296269</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The full, globally unique name of the repository.<br/>
         /// Example: octocat/Hello-World
         /// </summary>
+        /// <example>octocat/Hello-World</example>
         [global::Newtonsoft.Json.JsonProperty("full_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string FullName { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// The URL to view the repository on GitHub.com.<br/>
         /// Example: https://github.com/octocat/Hello-World
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
@@ -34,6 +37,7 @@ namespace G
         /// The GraphQL identifier of the repository.<br/>
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
         /// </summary>
+        /// <example>MDEwOlJlcG9zaXRvcnkxMjk2MjY5</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -47,6 +51,7 @@ namespace G
         /// The default branch for the repository.<br/>
         /// Example: main
         /// </summary>
+        /// <example>main</example>
         [global::Newtonsoft.Json.JsonProperty("default_branch", Required = global::Newtonsoft.Json.Required.Always)]
         public string DefaultBranch { get; set; } = default!;
 

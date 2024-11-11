@@ -13,6 +13,7 @@ namespace G
         /// The SPDX identifier for the SPDX document.<br/>
         /// Example: SPDXRef-DOCUMENT
         /// </summary>
+        /// <example>SPDXRef-DOCUMENT</example>
         [global::Newtonsoft.Json.JsonProperty("SPDXID", Required = global::Newtonsoft.Json.Required.Always)]
         public string SPDXID { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The version of the SPDX specification that this document conforms to.<br/>
         /// Example: SPDX-2.3
         /// </summary>
+        /// <example>SPDX-2.3</example>
         [global::Newtonsoft.Json.JsonProperty("spdxVersion", Required = global::Newtonsoft.Json.Required.Always)]
         public string SpdxVersion { get; set; } = default!;
 
@@ -33,6 +35,7 @@ namespace G
         /// The name of the SPDX document.<br/>
         /// Example: github/github
         /// </summary>
+        /// <example>github/github</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -40,6 +43,7 @@ namespace G
         /// The license under which the SPDX document is licensed.<br/>
         /// Example: CC0-1.0
         /// </summary>
+        /// <example>CC0-1.0</example>
         [global::Newtonsoft.Json.JsonProperty("dataLicense", Required = global::Newtonsoft.Json.Required.Always)]
         public string DataLicense { get; set; } = default!;
 
@@ -53,6 +57,7 @@ namespace G
         /// The namespace for the SPDX document.<br/>
         /// Example: https://github.com/example/dependency_graph/sbom-123
         /// </summary>
+        /// <example>https://github.com/example/dependency_graph/sbom-123</example>
         [global::Newtonsoft.Json.JsonProperty("documentNamespace", Required = global::Newtonsoft.Json.Required.Always)]
         public string DocumentNamespace { get; set; } = default!;
 

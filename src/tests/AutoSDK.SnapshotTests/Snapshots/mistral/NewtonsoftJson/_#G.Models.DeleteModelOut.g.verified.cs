@@ -14,6 +14,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("deleted")]
         public bool? Deleted { get; set; }
 
@@ -21,6 +22,7 @@ namespace G
         /// The ID of the deleted model.<br/>
         /// Example: ft:open-mistral-7b:587a6b29:20240514:7e773925
         /// </summary>
+        /// <example>ft:open-mistral-7b:587a6b29:20240514:7e773925</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 

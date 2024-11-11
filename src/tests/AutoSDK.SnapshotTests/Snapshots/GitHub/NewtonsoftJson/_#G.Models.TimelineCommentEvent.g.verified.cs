@@ -25,6 +25,7 @@ namespace G
         /// Unique identifier of the issue comment<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -38,6 +39,7 @@ namespace G
         /// URL for the issue comment<br/>
         /// Example: https://api.github.com/repositories/42/issues/comments/1
         /// </summary>
+        /// <example>https://api.github.com/repositories/42/issues/comments/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -45,6 +47,7 @@ namespace G
         /// Contents of the issue comment<br/>
         /// Example: What version of Safari were you using when you observed this bug?
         /// </summary>
+        /// <example>What version of Safari were you using when you observed this bug?</example>
         [global::Newtonsoft.Json.JsonProperty("body")]
         public string? Body { get; set; }
 
@@ -94,6 +97,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 

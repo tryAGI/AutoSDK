@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 3755
         /// </summary>
+        /// <example>3755</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: MDQ6R2F0ZTM3NTU=
         /// </summary>
+        /// <example>MDQ6R2F0ZTM3NTU=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -27,12 +29,14 @@ namespace G
         /// Whether deployments to this environment can be approved by the user who created the deployment.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prevent_self_review")]
         public bool? PreventSelfReview { get; set; }
 
         /// <summary>
         /// Example: required_reviewers
         /// </summary>
+        /// <example>required_reviewers</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }

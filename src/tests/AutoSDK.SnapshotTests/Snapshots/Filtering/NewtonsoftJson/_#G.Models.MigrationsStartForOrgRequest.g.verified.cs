@@ -20,6 +20,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("lock_repositories")]
         public bool? LockRepositories { get; set; }
 
@@ -42,6 +43,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("exclude_attachments")]
         public bool? ExcludeAttachments { get; set; }
 
@@ -50,6 +52,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("exclude_releases")]
         public bool? ExcludeReleases { get; set; }
 
@@ -58,6 +61,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("exclude_owner_projects")]
         public bool? ExcludeOwnerProjects { get; set; }
 
@@ -66,6 +70,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("org_metadata_only")]
         public bool? OrgMetadataOnly { get; set; }
 

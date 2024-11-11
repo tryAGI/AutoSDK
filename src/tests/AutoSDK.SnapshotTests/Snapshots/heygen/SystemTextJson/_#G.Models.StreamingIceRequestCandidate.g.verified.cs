@@ -12,24 +12,28 @@ namespace G
         /// <summary>
         /// Example: &lt;CANDIDATE&gt;
         /// </summary>
+        /// <example>&lt;CANDIDATE&gt;</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("candidate")]
         public string? Candidate { get; set; }
 
         /// <summary>
         /// Example: &lt;SDP_MLINE_INDEX&gt;
         /// </summary>
+        /// <example>&lt;SDP_MLINE_INDEX&gt;</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("sdpMLineIndex")]
         public string? SdpMLineIndex { get; set; }
 
         /// <summary>
         /// Example: &lt;SDP_MID&gt;
         /// </summary>
+        /// <example>&lt;SDP_MID&gt;</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("sdpMid")]
         public string? SdpMid { get; set; }
 
         /// <summary>
         /// Example: &lt;USERNAME_FRAGMENT&gt;
         /// </summary>
+        /// <example>&lt;USERNAME_FRAGMENT&gt;</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("usernameFragment")]
         public string? UsernameFragment { get; set; }
 

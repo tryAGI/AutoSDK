@@ -13,6 +13,7 @@ namespace G
         /// The category of reference to an external resource this reference refers to.<br/>
         /// Example: PACKAGE-MANAGER
         /// </summary>
+        /// <example>PACKAGE-MANAGER</example>
         [global::Newtonsoft.Json.JsonProperty("referenceCategory", Required = global::Newtonsoft.Json.Required.Always)]
         public string ReferenceCategory { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// A locator for the particular external resource this reference refers to.<br/>
         /// Example: pkg:gem/rails@6.0.1
         /// </summary>
+        /// <example>pkg:gem/rails@6.0.1</example>
         [global::Newtonsoft.Json.JsonProperty("referenceLocator", Required = global::Newtonsoft.Json.Required.Always)]
         public string ReferenceLocator { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// The category of reference to an external resource this reference refers to.<br/>
         /// Example: purl
         /// </summary>
+        /// <example>purl</example>
         [global::Newtonsoft.Json.JsonProperty("referenceType", Required = global::Newtonsoft.Json.Required.Always)]
         public string ReferenceType { get; set; } = default!;
 

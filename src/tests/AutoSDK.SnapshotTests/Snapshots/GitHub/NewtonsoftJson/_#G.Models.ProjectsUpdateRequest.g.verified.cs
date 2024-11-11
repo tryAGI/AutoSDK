@@ -13,6 +13,7 @@ namespace G
         /// Name of the project<br/>
         /// Example: Week One Sprint
         /// </summary>
+        /// <example>Week One Sprint</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// Body of the project<br/>
         /// Example: This project represents the sprint of the first week in January
         /// </summary>
+        /// <example>This project represents the sprint of the first week in January</example>
         [global::Newtonsoft.Json.JsonProperty("body")]
         public string? Body { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// State of the project; either 'open' or 'closed'<br/>
         /// Example: open
         /// </summary>
+        /// <example>open</example>
         [global::Newtonsoft.Json.JsonProperty("state")]
         public string? State { get; set; }
 

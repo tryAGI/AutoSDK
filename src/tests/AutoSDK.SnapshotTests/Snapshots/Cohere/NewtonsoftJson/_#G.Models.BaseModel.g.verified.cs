@@ -31,6 +31,7 @@ namespace G
         ///  - BASE_TYPE_CHAT: Chat model.<br/>
         /// Default Value: BASE_TYPE_UNSPECIFIED
         /// </summary>
+        /// <default>global::G.BaseType.UNSPECIFIED</default>
         [global::Newtonsoft.Json.JsonProperty("base_type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.BaseType BaseType { get; set; } = default!;
 

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: README.md
         /// </summary>
+        /// <example>README.md</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StartLine { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_line")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int EndLine { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_column")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? StartColumn { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_column")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? EndColumn { get; set; }
@@ -47,6 +52,7 @@ namespace G
         /// <summary>
         /// Example: warning
         /// </summary>
+        /// <example>warning</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("annotation_level")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? AnnotationLevel { get; set; }
@@ -54,6 +60,7 @@ namespace G
         /// <summary>
         /// Example: Spell Checker
         /// </summary>
+        /// <example>Spell Checker</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Title { get; set; }
@@ -61,6 +68,7 @@ namespace G
         /// <summary>
         /// Example: Check your spelling for 'banaas'.
         /// </summary>
+        /// <example>Check your spelling for 'banaas'.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Message { get; set; }
@@ -68,6 +76,7 @@ namespace G
         /// <summary>
         /// Example: Do you mean 'bananas' or 'banana'?
         /// </summary>
+        /// <example>Do you mean 'bananas' or 'banana'?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("raw_details")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? RawDetails { get; set; }

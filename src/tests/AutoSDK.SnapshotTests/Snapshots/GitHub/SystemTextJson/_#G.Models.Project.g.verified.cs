@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/api-playground/projects-test
         /// </summary>
+        /// <example>https://api.github.com/repos/api-playground/projects-test</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("owner_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OwnerUrl { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/1002604
         /// </summary>
+        /// <example>https://api.github.com/projects/1002604</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/api-playground/projects-test/projects/12
         /// </summary>
+        /// <example>https://github.com/api-playground/projects-test/projects/12</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/1002604/columns
         /// </summary>
+        /// <example>https://api.github.com/projects/1002604/columns</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("columns_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ColumnsUrl { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: 1002604
         /// </summary>
+        /// <example>1002604</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -47,6 +52,7 @@ namespace G
         /// <summary>
         /// Example: MDc6UHJvamVjdDEwMDI2MDQ=
         /// </summary>
+        /// <example>MDc6UHJvamVjdDEwMDI2MDQ=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -55,6 +61,7 @@ namespace G
         /// Name of the project<br/>
         /// Example: Week One Sprint
         /// </summary>
+        /// <example>Week One Sprint</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -63,6 +70,7 @@ namespace G
         /// Body of the project<br/>
         /// Example: This project represents the sprint of the first week in January
         /// </summary>
+        /// <example>This project represents the sprint of the first week in January</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Body { get; set; }
@@ -70,6 +78,7 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Number { get; set; }
@@ -78,6 +87,7 @@ namespace G
         /// State of the project; either 'open' or 'closed'<br/>
         /// Example: open
         /// </summary>
+        /// <example>open</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string State { get; set; }

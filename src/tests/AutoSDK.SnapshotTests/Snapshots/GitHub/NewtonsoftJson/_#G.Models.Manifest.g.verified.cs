@@ -13,6 +13,7 @@ namespace G
         /// The name of the manifest.<br/>
         /// Example: package-lock.json
         /// </summary>
+        /// <example>package-lock.json</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 

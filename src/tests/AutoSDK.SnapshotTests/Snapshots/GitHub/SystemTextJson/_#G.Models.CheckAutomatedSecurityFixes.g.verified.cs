@@ -13,6 +13,7 @@ namespace G
         /// Whether automated security fixes are enabled for the repository.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Enabled { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// Whether automated security fixes are paused for the repository.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("paused")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Paused { get; set; }

@@ -13,12 +13,14 @@ namespace G
         /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.<br/>
         /// Example: collaborators_only
         /// </summary>
+        /// <example>collaborators_only</example>
         [global::Newtonsoft.Json.JsonProperty("limit", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.InteractionGroup Limit { get; set; } = default!;
 
         /// <summary>
         /// Example: repository
         /// </summary>
+        /// <example>repository</example>
         [global::Newtonsoft.Json.JsonProperty("origin", Required = global::Newtonsoft.Json.Required.Always)]
         public string Origin { get; set; } = default!;
 

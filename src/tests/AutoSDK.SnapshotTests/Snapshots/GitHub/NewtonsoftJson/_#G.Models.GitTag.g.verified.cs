@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: MDM6VGFnOTQwYmQzMzYyNDhlZmFlMGY5ZWU1YmM3YjJkNWM5ODU4ODdiMTZhYw==
         /// </summary>
+        /// <example>MDM6VGFnOTQwYmQzMzYyNDhlZmFlMGY5ZWU1YmM3YjJkNWM5ODU4ODdiMTZhYw==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -19,12 +20,14 @@ namespace G
         /// Name of the tag<br/>
         /// Example: v0.0.1
         /// </summary>
+        /// <example>v0.0.1</example>
         [global::Newtonsoft.Json.JsonProperty("tag", Required = global::Newtonsoft.Json.Required.Always)]
         public string Tag { get; set; } = default!;
 
         /// <summary>
         /// Example: 940bd336248efae0f9ee5bc7b2d5c985887b16ac
         /// </summary>
+        /// <example>940bd336248efae0f9ee5bc7b2d5c985887b16ac</example>
         [global::Newtonsoft.Json.JsonProperty("sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string Sha { get; set; } = default!;
 
@@ -32,6 +35,7 @@ namespace G
         /// URL for the tag<br/>
         /// Example: https://api.github.com/repositories/42/git/tags/940bd336248efae0f9ee5bc7b2d5c985887b16ac
         /// </summary>
+        /// <example>https://api.github.com/repositories/42/git/tags/940bd336248efae0f9ee5bc7b2d5c985887b16ac</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -39,6 +43,7 @@ namespace G
         /// Message describing the purpose of the tag<br/>
         /// Example: Initial public release
         /// </summary>
+        /// <example>Initial public release</example>
         [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
         public string Message { get; set; } = default!;
 

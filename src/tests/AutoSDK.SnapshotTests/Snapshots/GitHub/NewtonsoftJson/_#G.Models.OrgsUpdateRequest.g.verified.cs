@@ -140,6 +140,7 @@ namespace G
         /// <summary>
         /// Example: "http://github.blog"
         /// </summary>
+        /// <example>"http://github.blog"</example>
         [global::Newtonsoft.Json.JsonProperty("blog")]
         public string? Blog { get; set; }
 

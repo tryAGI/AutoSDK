@@ -13,6 +13,7 @@ namespace G
         /// An array of tokens, where each token is an integer.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("tokens")]
         public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
 

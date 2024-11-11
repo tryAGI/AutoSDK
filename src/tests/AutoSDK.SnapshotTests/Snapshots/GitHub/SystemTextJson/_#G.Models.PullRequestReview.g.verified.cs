@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the review<br/>
         /// Example: 42L
         /// </summary>
+        /// <example>42L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// <summary>
         /// Example: MDE3OlB1bGxSZXF1ZXN0UmV2aWV3ODA=
         /// </summary>
+        /// <example>MDE3OlB1bGxSZXF1ZXN0UmV2aWV3ODA=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -35,6 +37,7 @@ namespace G
         /// The text of the review.<br/>
         /// Example: This looks great.
         /// </summary>
+        /// <example>This looks great.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Body { get; set; }
@@ -42,6 +45,7 @@ namespace G
         /// <summary>
         /// Example: CHANGES_REQUESTED
         /// </summary>
+        /// <example>CHANGES_REQUESTED</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string State { get; set; }
@@ -49,6 +53,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/pull/12#pullrequestreview-80
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/12#pullrequestreview-80</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -56,6 +61,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/12
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/12</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PullRequestUrl { get; set; }
@@ -77,6 +83,7 @@ namespace G
         /// A commit SHA for the review. If the commit object was garbage collected or forcibly deleted, then it no longer exists in Git and this value will be `null`.<br/>
         /// Example: 54bb654c9e6025347f57900a4a5c2313a96b8035
         /// </summary>
+        /// <example>54bb654c9e6025347f57900a4a5c2313a96b8035</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? CommitId { get; set; }
@@ -97,6 +104,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

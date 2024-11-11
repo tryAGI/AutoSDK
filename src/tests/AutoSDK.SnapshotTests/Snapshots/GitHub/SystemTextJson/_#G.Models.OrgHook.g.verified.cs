@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/octocat/hooks/1
         /// </summary>
+        /// <example>https://api.github.com/orgs/octocat/hooks/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/octocat/hooks/1/pings
         /// </summary>
+        /// <example>https://api.github.com/orgs/octocat/hooks/1/pings</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ping_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PingUrl { get; set; }
@@ -33,12 +36,14 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/octocat/hooks/1/deliveries
         /// </summary>
+        /// <example>https://api.github.com/orgs/octocat/hooks/1/deliveries</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deliveries_url")]
         public string? DeliveriesUrl { get; set; }
 
         /// <summary>
         /// Example: web
         /// </summary>
+        /// <example>web</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -46,6 +51,7 @@ namespace G
         /// <summary>
         /// Example: [push, pull_request]
         /// </summary>
+        /// <example>[push, pull_request]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("events")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Events { get; set; }
@@ -53,6 +59,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("active")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Active { get; set; }

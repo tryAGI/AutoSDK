@@ -21,6 +21,7 @@ namespace G
         /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.MessagesItem2> Messages { get; set; }
@@ -35,6 +36,7 @@ namespace G
         /// ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.<br/>
         /// Example: mistral-small-latest
         /// </summary>
+        /// <example>mistral-small-latest</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Model { get; set; }

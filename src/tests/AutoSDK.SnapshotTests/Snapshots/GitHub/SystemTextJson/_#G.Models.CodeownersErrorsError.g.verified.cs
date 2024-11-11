@@ -13,6 +13,7 @@ namespace G
         /// The line number where this errors occurs.<br/>
         /// Example: 7
         /// </summary>
+        /// <example>7</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Line { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The column number where this errors occurs.<br/>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("column")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Column { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// The contents of the line where the error occurs.<br/>
         /// Example: * user
         /// </summary>
+        /// <example>* user</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
         public string? Source { get; set; }
 
@@ -36,6 +39,7 @@ namespace G
         /// The type of error.<br/>
         /// Example: Invalid owner
         /// </summary>
+        /// <example>Invalid owner</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("kind")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Kind { get; set; }
@@ -44,6 +48,7 @@ namespace G
         /// Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.<br/>
         /// Example: The pattern `/` will never match anything, did you mean `*` instead?
         /// </summary>
+        /// <example>The pattern `/` will never match anything, did you mean `*` instead?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("suggestion")]
         public string? Suggestion { get; set; }
 
@@ -53,6 +58,11 @@ namespace G
         ///   * user<br/>
         ///     ^
         /// </summary>
+        /// <example>
+        /// Invalid owner on line 7:<br/>
+        ///   * user<br/>
+        ///     ^
+        /// </example>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; }
@@ -61,6 +71,7 @@ namespace G
         /// The path of the file where the error occured.<br/>
         /// Example: .github/CODEOWNERS
         /// </summary>
+        /// <example>.github/CODEOWNERS</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }

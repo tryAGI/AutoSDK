@@ -18,6 +18,7 @@ namespace G
         /// <summary>
         /// Example: f8c1f5bd-edbd-11ee-ac61-06daf6be75b4
         /// </summary>
+        /// <example>f8c1f5bd-edbd-11ee-ac61-06daf6be75b4</example>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
         public string? SessionId { get; set; }
 

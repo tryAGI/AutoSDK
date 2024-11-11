@@ -21,6 +21,7 @@ namespace G
         /// ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
         /// Example: gpt-4o
         /// </summary>
+        /// <example>gpt-4o</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AnyOf<string, global::G.CreateChatCompletionRequestModel?> Model { get; set; } = default!;
 
@@ -64,6 +65,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("n")]
         public int? N { get; set; }
 
@@ -127,6 +129,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double? Temperature { get; set; }
 
@@ -136,6 +139,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
         public double? TopP { get; set; }
 
@@ -166,6 +170,7 @@ namespace G
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
+        /// <example>user-1234</example>
         [global::Newtonsoft.Json.JsonProperty("user")]
         public string? User { get; set; }
 

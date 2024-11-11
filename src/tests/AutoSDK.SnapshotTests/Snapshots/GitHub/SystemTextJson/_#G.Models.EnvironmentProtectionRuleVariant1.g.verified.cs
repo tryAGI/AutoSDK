@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 3515
         /// </summary>
+        /// <example>3515</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: MDQ6R2F0ZTM1MTU=
         /// </summary>
+        /// <example>MDQ6R2F0ZTM1MTU=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: wait_timer
         /// </summary>
+        /// <example>wait_timer</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
@@ -34,6 +37,7 @@ namespace G
         /// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).<br/>
         /// Example: 30
         /// </summary>
+        /// <example>30</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("wait_timer")]
         public int? WaitTimer { get; set; }
 

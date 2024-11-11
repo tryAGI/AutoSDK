@@ -48,12 +48,14 @@ namespace G
         /// <summary>
         /// Example: "mas*"
         /// </summary>
+        /// <example>"mas*"</example>
         [global::Newtonsoft.Json.JsonProperty("pattern")]
         public string? Pattern { get; set; }
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("required_approving_review_count")]
         public int? RequiredApprovingReviewCount { get; set; }
 

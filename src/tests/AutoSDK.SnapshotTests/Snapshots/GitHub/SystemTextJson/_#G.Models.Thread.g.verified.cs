@@ -68,6 +68,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/notifications/threads/2/subscription
         /// </summary>
+        /// <example>https://api.github.com/notifications/threads/2/subscription</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscription_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SubscriptionUrl { get; set; }

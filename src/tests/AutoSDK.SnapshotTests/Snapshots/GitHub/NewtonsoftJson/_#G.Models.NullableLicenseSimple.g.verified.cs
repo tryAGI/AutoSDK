@@ -12,30 +12,35 @@ namespace G
         /// <summary>
         /// Example: mit
         /// </summary>
+        /// <example>mit</example>
         [global::Newtonsoft.Json.JsonProperty("key", Required = global::Newtonsoft.Json.Required.Always)]
         public string Key { get; set; } = default!;
 
         /// <summary>
         /// Example: MIT License
         /// </summary>
+        /// <example>MIT License</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/licenses/mit
         /// </summary>
+        /// <example>https://api.github.com/licenses/mit</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Url { get; set; } = default!;
 
         /// <summary>
         /// Example: MIT
         /// </summary>
+        /// <example>MIT</example>
         [global::Newtonsoft.Json.JsonProperty("spdx_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string? SpdxId { get; set; } = default!;
 
         /// <summary>
         /// Example: MDc6TGljZW5zZW1pdA==
         /// </summary>
+        /// <example>MDc6TGljZW5zZW1pdA==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 

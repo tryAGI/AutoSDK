@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: github
         /// </summary>
+        /// <example>github</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Login { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: MDEyOk9yZ2FuaXphdGlvbjE=
         /// </summary>
+        /// <example>MDEyOk9yZ2FuaXphdGlvbjE=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/github
         /// </summary>
+        /// <example>https://github.com/github</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: Github - Code thigns happen here
         /// </summary>
+        /// <example>Github - Code thigns happen here</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Name { get; set; }
@@ -47,6 +52,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/images/error/octocat_happy.gif
         /// </summary>
+        /// <example>https://github.com/images/error/octocat_happy.gif</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AvatarUrl { get; set; }

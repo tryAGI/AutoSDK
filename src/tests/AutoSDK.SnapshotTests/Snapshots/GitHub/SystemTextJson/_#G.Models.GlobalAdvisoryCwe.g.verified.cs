@@ -20,6 +20,7 @@ namespace G
         /// The name of the CWE.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string Name { get; set; } = default!;
 

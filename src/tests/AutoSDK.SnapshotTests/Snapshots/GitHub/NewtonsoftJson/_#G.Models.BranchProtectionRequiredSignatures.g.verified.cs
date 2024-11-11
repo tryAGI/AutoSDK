@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_signatures
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_signatures</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("enabled", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Enabled { get; set; } = default!;
 

@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: Sprint Springfield POP
         /// </summary>
+        /// <example>Sprint Springfield POP</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: sprint.com
         /// </summary>
+        /// <example>sprint.com</example>
         [global::Newtonsoft.Json.JsonProperty("domain", Required = global::Newtonsoft.Json.Required.Always)]
         public string Domain { get; set; } = default!;
 
         /// <summary>
         /// Example: isp
         /// </summary>
+        /// <example>isp</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.CompanyType Type { get; set; } = default!;
 

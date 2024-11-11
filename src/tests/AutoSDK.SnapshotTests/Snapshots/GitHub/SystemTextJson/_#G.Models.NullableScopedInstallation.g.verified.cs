@@ -27,6 +27,7 @@ namespace G
         /// <summary>
         /// Example: config.yaml
         /// </summary>
+        /// <example>config.yaml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? SingleFileName { get; set; }
@@ -34,18 +35,21 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_multiple_single_files")]
         public bool? HasMultipleSingleFiles { get; set; }
 
         /// <summary>
         /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </summary>
+        /// <example>[config.yml, .github/issue_TEMPLATE.md]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("single_file_paths")]
         public global::System.Collections.Generic.IList<string>? SingleFilePaths { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/users/octocat/repos
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/repos</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoriesUrl { get; set; }

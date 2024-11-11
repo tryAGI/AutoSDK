@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("verifiable_password_authentication", Required = global::Newtonsoft.Json.Required.Always)]
         public bool VerifiablePasswordAuthentication { get; set; } = default!;
 
@@ -24,84 +25,98 @@ namespace G
         /// <summary>
         /// Example: [ssh-ed25519 ABCDEFGHIJKLMNOPQRSTUVWXYZ]
         /// </summary>
+        /// <example>[ssh-ed25519 ABCDEFGHIJKLMNOPQRSTUVWXYZ]</example>
         [global::Newtonsoft.Json.JsonProperty("ssh_keys")]
         public global::System.Collections.Generic.IList<string>? SshKeys { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("hooks")]
         public global::System.Collections.Generic.IList<string>? Hooks { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("github_enterprise_importer")]
         public global::System.Collections.Generic.IList<string>? GithubEnterpriseImporter { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("web")]
         public global::System.Collections.Generic.IList<string>? Web { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("api")]
         public global::System.Collections.Generic.IList<string>? Api { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("git")]
         public global::System.Collections.Generic.IList<string>? Git { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("packages")]
         public global::System.Collections.Generic.IList<string>? Packages { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("pages")]
         public global::System.Collections.Generic.IList<string>? Pages { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("importer")]
         public global::System.Collections.Generic.IList<string>? Importer { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("actions")]
         public global::System.Collections.Generic.IList<string>? Actions { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("actions_macos")]
         public global::System.Collections.Generic.IList<string>? ActionsMacos { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("codespaces")]
         public global::System.Collections.Generic.IList<string>? Codespaces { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("dependabot")]
         public global::System.Collections.Generic.IList<string>? Dependabot { get; set; }
 
         /// <summary>
         /// Example: [192.0.2.1]
         /// </summary>
+        /// <example>[192.0.2.1]</example>
         [global::Newtonsoft.Json.JsonProperty("copilot")]
         public global::System.Collections.Generic.IList<string>? Copilot { get; set; }
 

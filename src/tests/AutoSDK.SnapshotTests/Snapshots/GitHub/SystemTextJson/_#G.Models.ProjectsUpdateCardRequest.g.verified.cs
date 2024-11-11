@@ -13,6 +13,7 @@ namespace G
         /// The project card's note<br/>
         /// Example: Update all gems
         /// </summary>
+        /// <example>Update all gems</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("note")]
         public string? Note { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// Whether or not the card is archived<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         public bool? Archived { get; set; }
 

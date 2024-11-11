@@ -13,6 +13,7 @@ namespace G
         /// The document ID, must be unique within the corpus.<br/>
         /// Example: my-doc-id
         /// </summary>
+        /// <example>my-doc-id</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
@@ -23,6 +24,7 @@ namespace G
         /// to retrieval search results.<br/>
         /// Default Value: core
         /// </summary>
+        /// <default>"core"</default>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 

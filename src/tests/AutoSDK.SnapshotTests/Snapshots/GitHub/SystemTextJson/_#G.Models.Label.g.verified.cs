@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier for the label.<br/>
         /// Example: 208045946L
         /// </summary>
+        /// <example>208045946L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// <summary>
         /// Example: MDU6TGFiZWwyMDgwNDU5NDY=
         /// </summary>
+        /// <example>MDU6TGFiZWwyMDgwNDU5NDY=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// URL for the label<br/>
         /// Example: https://api.github.com/repositories/42/labels/bug
         /// </summary>
+        /// <example>https://api.github.com/repositories/42/labels/bug</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -36,6 +39,7 @@ namespace G
         /// The name of the label.<br/>
         /// Example: bug
         /// </summary>
+        /// <example>bug</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -44,6 +48,7 @@ namespace G
         /// Optional description of the label, such as its purpose.<br/>
         /// Example: Something isn't working
         /// </summary>
+        /// <example>Something isn't working</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Description { get; set; }
@@ -52,6 +57,7 @@ namespace G
         /// 6-character hex code, without the leading #, identifying the color<br/>
         /// Example: FFFFFF
         /// </summary>
+        /// <example>FFFFFF</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("color")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Color { get; set; }
@@ -60,6 +66,7 @@ namespace G
         /// Whether this label comes by default in a new repository.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("default")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Default { get; set; }

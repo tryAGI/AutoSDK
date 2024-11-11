@@ -13,6 +13,7 @@ namespace G
         /// Name of the project column<br/>
         /// Example: Remaining tasks
         /// </summary>
+        /// <example>Remaining tasks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }

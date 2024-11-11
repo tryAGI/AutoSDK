@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: continuous-integration/travis-ci
         /// </summary>
+        /// <example>continuous-integration/travis-ci</example>
         [global::Newtonsoft.Json.JsonProperty("context", Required = global::Newtonsoft.Json.Required.Always)]
         public string Context { get; set; } = default!;
 

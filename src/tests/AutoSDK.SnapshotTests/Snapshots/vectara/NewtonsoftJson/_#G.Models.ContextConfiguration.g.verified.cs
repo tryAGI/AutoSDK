@@ -18,6 +18,7 @@ namespace G
         /// Default Value: 0<br/>
         /// Example: 30
         /// </summary>
+        /// <example>30</example>
         [global::Newtonsoft.Json.JsonProperty("characters_before")]
         public int? CharactersBefore { get; set; }
 
@@ -30,6 +31,7 @@ namespace G
         /// Default Value: 0<br/>
         /// Example: 30
         /// </summary>
+        /// <example>30</example>
         [global::Newtonsoft.Json.JsonProperty("characters_after")]
         public int? CharactersAfter { get; set; }
 
@@ -39,6 +41,7 @@ namespace G
         /// Default Value: 0<br/>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::Newtonsoft.Json.JsonProperty("sentences_before")]
         public int? SentencesBefore { get; set; }
 
@@ -48,6 +51,7 @@ namespace G
         /// Default Value: 0<br/>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::Newtonsoft.Json.JsonProperty("sentences_after")]
         public int? SentencesAfter { get; set; }
 
@@ -58,6 +62,7 @@ namespace G
         /// understand where the context before ends and the document part begins.<br/>
         /// Example: &lt;em&gt;
         /// </summary>
+        /// <example>&lt;em&gt;</example>
         [global::Newtonsoft.Json.JsonProperty("start_tag")]
         public string? StartTag { get; set; }
 
@@ -68,6 +73,7 @@ namespace G
         /// understand where the context before ends and the document part begins.<br/>
         /// Example: &lt;/em&gt;
         /// </summary>
+        /// <example>&lt;/em&gt;</example>
         [global::Newtonsoft.Json.JsonProperty("end_tag")]
         public string? EndTag { get; set; }
 

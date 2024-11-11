@@ -24,6 +24,7 @@ namespace G
         /// <summary>
         /// Example: selected
         /// </summary>
+        /// <example>selected</example>
         [global::Newtonsoft.Json.JsonProperty("repository_selection")]
         public string? RepositorySelection { get; set; }
 

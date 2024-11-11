@@ -60,6 +60,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/notifications/threads/2/subscription
         /// </summary>
+        /// <example>https://api.github.com/notifications/threads/2/subscription</example>
         [global::Newtonsoft.Json.JsonProperty("subscription_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string SubscriptionUrl { get; set; } = default!;
 

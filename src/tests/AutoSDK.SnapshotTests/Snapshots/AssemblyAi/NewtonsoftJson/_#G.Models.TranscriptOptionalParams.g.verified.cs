@@ -146,6 +146,7 @@ namespace G
         /// Controls the filetype of the audio created by redact_pii_audio. Currently supports mp3 (default) and wav. See [PII redaction](https://www.assemblyai.com/docs/models/pii-redaction) for more details.<br/>
         /// Example: mp3
         /// </summary>
+        /// <example>mp3</example>
         [global::Newtonsoft.Json.JsonProperty("redact_pii_audio_quality")]
         public global::G.RedactPiiAudioQuality? RedactPiiAudioQuality { get; set; }
 

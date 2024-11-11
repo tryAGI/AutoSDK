@@ -13,6 +13,7 @@ namespace G
         /// The UNIX timestamp (in seconds) for when the checkpoint was created.<br/>
         /// Example: 1716963433
         /// </summary>
+        /// <example>1716963433</example>
         [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
 

@@ -26,6 +26,7 @@ namespace G
         /// <summary>
         /// Example: selected
         /// </summary>
+        /// <example>selected</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_selection")]
         public string? RepositorySelection { get; set; }
 

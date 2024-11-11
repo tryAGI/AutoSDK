@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: github
         /// </summary>
+        /// <example>github</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Login { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: MDEyOk9yZ2FuaXphdGlvbjE=
         /// </summary>
+        /// <example>MDEyOk9yZ2FuaXphdGlvbjE=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github
         /// </summary>
+        /// <example>https://api.github.com/orgs/github</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/repos
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/repos</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repos_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReposUrl { get; set; }
@@ -47,6 +52,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/events
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/events</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("events_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EventsUrl { get; set; }
@@ -54,6 +60,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/hooks
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/hooks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("hooks_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HooksUrl { get; set; }
@@ -61,6 +68,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/issues
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/issues</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("issues_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string IssuesUrl { get; set; }
@@ -68,6 +76,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/members{/member}
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/members{/member}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MembersUrl { get; set; }
@@ -75,6 +84,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/public_members{/member}
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/public_members{/member}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_members_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PublicMembersUrl { get; set; }
@@ -82,6 +92,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/images/error/octocat_happy.gif
         /// </summary>
+        /// <example>https://github.com/images/error/octocat_happy.gif</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AvatarUrl { get; set; }
@@ -89,6 +100,7 @@ namespace G
         /// <summary>
         /// Example: A great organization
         /// </summary>
+        /// <example>A great organization</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Description { get; set; }
@@ -96,48 +108,56 @@ namespace G
         /// <summary>
         /// Example: github
         /// </summary>
+        /// <example>github</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
         /// Example: GitHub
         /// </summary>
+        /// <example>GitHub</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("company")]
         public string? Company { get; set; }
 
         /// <summary>
         /// Example: https://github.com/blog
         /// </summary>
+        /// <example>https://github.com/blog</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("blog")]
         public string? Blog { get; set; }
 
         /// <summary>
         /// Example: San Francisco
         /// </summary>
+        /// <example>San Francisco</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("location")]
         public string? Location { get; set; }
 
         /// <summary>
         /// Example: octocat@github.com
         /// </summary>
+        /// <example>octocat@github.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
 
         /// <summary>
         /// Example: github
         /// </summary>
+        /// <example>github</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("twitter_username")]
         public string? TwitterUsername { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_verified")]
         public bool? IsVerified { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_organization_projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasOrganizationProjects { get; set; }
@@ -145,6 +165,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_repository_projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasRepositoryProjects { get; set; }
@@ -152,6 +173,7 @@ namespace G
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_repos")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PublicRepos { get; set; }
@@ -159,6 +181,7 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_gists")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PublicGists { get; set; }
@@ -166,6 +189,7 @@ namespace G
         /// <summary>
         /// Example: 20
         /// </summary>
+        /// <example>20</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("followers")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Followers { get; set; }
@@ -173,6 +197,7 @@ namespace G
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("following")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Following { get; set; }
@@ -180,6 +205,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat
         /// </summary>
+        /// <example>https://github.com/octocat</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -194,6 +220,7 @@ namespace G
         /// <summary>
         /// Example: Organization
         /// </summary>
+        /// <example>Organization</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
@@ -201,36 +228,42 @@ namespace G
         /// <summary>
         /// Example: 100
         /// </summary>
+        /// <example>100</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_private_repos")]
         public int? TotalPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 100
         /// </summary>
+        /// <example>100</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("owned_private_repos")]
         public int? OwnedPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 81
         /// </summary>
+        /// <example>81</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("private_gists")]
         public int? PrivateGists { get; set; }
 
         /// <summary>
         /// Example: 10000
         /// </summary>
+        /// <example>10000</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("disk_usage")]
         public int? DiskUsage { get; set; }
 
         /// <summary>
         /// Example: 8
         /// </summary>
+        /// <example>8</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborators")]
         public int? Collaborators { get; set; }
 
         /// <summary>
         /// Example: org@example.com
         /// </summary>
+        /// <example>org@example.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("billing_email")]
         public string? BillingEmail { get; set; }
 
@@ -249,66 +282,77 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_repositories")]
         public bool? MembersCanCreateRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("two_factor_requirement_enabled")]
         public bool? TwoFactorRequirementEnabled { get; set; }
 
         /// <summary>
         /// Example: all
         /// </summary>
+        /// <example>all</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_allowed_repository_creation_type")]
         public string? MembersAllowedRepositoryCreationType { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_public_repositories")]
         public bool? MembersCanCreatePublicRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_private_repositories")]
         public bool? MembersCanCreatePrivateRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_internal_repositories")]
         public bool? MembersCanCreateInternalRepositories { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_pages")]
         public bool? MembersCanCreatePages { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_public_pages")]
         public bool? MembersCanCreatePublicPages { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_create_private_pages")]
         public bool? MembersCanCreatePrivatePages { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_can_fork_private_repositories")]
         public bool? MembersCanForkPrivateRepositories { get; set; }
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("web_commit_signoff_required")]
         public bool? WebCommitSignoffRequired { get; set; }
 

@@ -14,6 +14,7 @@ namespace G
         /// The name of the custom dimension.<br/>
         /// Example: importance
         /// </summary>
+        /// <example>importance</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -22,6 +23,7 @@ namespace G
         /// Description of the custom dimension.<br/>
         /// Example: Product importance.
         /// </summary>
+        /// <example>Product importance.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 
@@ -32,6 +34,7 @@ namespace G
         /// Default Value: 0<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("indexing_default")]
         public double? IndexingDefault { get; set; }
 
@@ -42,6 +45,7 @@ namespace G
         /// Default Value: 0<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("querying_default")]
         public double? QueryingDefault { get; set; }
 

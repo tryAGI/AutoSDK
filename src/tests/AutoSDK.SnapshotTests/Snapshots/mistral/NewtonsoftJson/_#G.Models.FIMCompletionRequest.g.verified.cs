@@ -30,6 +30,7 @@ namespace G
         /// Default Value: codestral-2405<br/>
         /// Example: codestral-2405
         /// </summary>
+        /// <example>codestral-2405</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Model { get; set; } = default!;
 
@@ -37,6 +38,7 @@ namespace G
         /// The text/code to complete.<br/>
         /// Example: def
         /// </summary>
+        /// <example>def</example>
         [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
         public string Prompt { get; set; } = default!;
 
@@ -63,6 +65,7 @@ namespace G
         /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.<br/>
         /// Example: return a+b
         /// </summary>
+        /// <example>return a+b</example>
         [global::Newtonsoft.Json.JsonProperty("suffix")]
         public string? Suffix { get; set; }
 

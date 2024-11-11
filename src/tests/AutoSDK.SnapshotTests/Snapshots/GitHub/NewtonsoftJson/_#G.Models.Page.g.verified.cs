@@ -13,6 +13,7 @@ namespace G
         /// The API address for accessing this Page resource.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/pages
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/pages</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The status of the most recent build of the Page.<br/>
         /// Example: built
         /// </summary>
+        /// <example>built</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.PageStatus? Status { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// The Pages site's custom domain<br/>
         /// Example: example.com
         /// </summary>
+        /// <example>example.com</example>
         [global::Newtonsoft.Json.JsonProperty("cname", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Cname { get; set; } = default!;
 
@@ -34,6 +37,7 @@ namespace G
         /// The state if the domain is verified<br/>
         /// Example: pending
         /// </summary>
+        /// <example>pending</example>
         [global::Newtonsoft.Json.JsonProperty("protected_domain_state")]
         public global::G.PageProtectedDomainState? ProtectedDomainState { get; set; }
 
@@ -48,6 +52,8 @@ namespace G
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
+        /// <default>false</default>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("custom_404", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Custom404 { get; set; } = default!;
 
@@ -55,6 +61,7 @@ namespace G
         /// The web address the Page can be accessed from.<br/>
         /// Example: https://example.com
         /// </summary>
+        /// <example>https://example.com</example>
         [global::Newtonsoft.Json.JsonProperty("html_url")]
         public string? HtmlUrl { get; set; }
 
@@ -62,6 +69,7 @@ namespace G
         /// The process in which the Page will be built.<br/>
         /// Example: legacy
         /// </summary>
+        /// <example>legacy</example>
         [global::Newtonsoft.Json.JsonProperty("build_type")]
         public global::G.PageBuildType? BuildType { get; set; }
 
@@ -75,6 +83,7 @@ namespace G
         /// Whether the GitHub Pages site is publicly visible. If set to `true`, the site is accessible to anyone on the internet. If set to `false`, the site will only be accessible to users who have at least `read` access to the repository that published the site.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("public", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Public { get; set; } = default!;
 
@@ -88,6 +97,7 @@ namespace G
         /// Whether https is enabled on the domain<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("https_enforced")]
         public bool? HttpsEnforced { get; set; }
 

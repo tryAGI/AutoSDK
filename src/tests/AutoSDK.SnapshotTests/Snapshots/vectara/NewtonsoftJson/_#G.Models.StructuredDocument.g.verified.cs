@@ -22,6 +22,7 @@ namespace G
         /// create document parts using its internal algorithm.<br/>
         /// Default Value: structured
         /// </summary>
+        /// <default>"structured"</default>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 

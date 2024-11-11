@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: d6fde92930d4715a2b49857d24b940956b26d2d3
         /// </summary>
+        /// <example>d6fde92930d4715a2b49857d24b940956b26d2d3</example>
         [global::Newtonsoft.Json.JsonProperty("after")]
         public string? After { get; set; }
 
@@ -24,12 +25,14 @@ namespace G
         /// <summary>
         /// Example: 146e867f55c26428e5f9fade55a9bbf5e95a7912
         /// </summary>
+        /// <example>146e867f55c26428e5f9fade55a9bbf5e95a7912</example>
         [global::Newtonsoft.Json.JsonProperty("before")]
         public string? Before { get; set; }
 
         /// <summary>
         /// Example: neutral
         /// </summary>
+        /// <example>neutral</example>
         [global::Newtonsoft.Json.JsonProperty("conclusion")]
         public global::G.SimpleCheckSuiteConclusion? Conclusion { get; set; }
 
@@ -42,6 +45,7 @@ namespace G
         /// <summary>
         /// Example: master
         /// </summary>
+        /// <example>master</example>
         [global::Newtonsoft.Json.JsonProperty("head_branch")]
         public string? HeadBranch { get; set; }
 
@@ -49,18 +53,21 @@ namespace G
         /// The SHA of the head commit that is being checked.<br/>
         /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
         /// </summary>
+        /// <example>009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d</example>
         [global::Newtonsoft.Json.JsonProperty("head_sha")]
         public string? HeadSha { get; set; }
 
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public int? Id { get; set; }
 
         /// <summary>
         /// Example: MDEwOkNoZWNrU3VpdGU1
         /// </summary>
+        /// <example>MDEwOkNoZWNrU3VpdGU1</example>
         [global::Newtonsoft.Json.JsonProperty("node_id")]
         public string? NodeId { get; set; }
 
@@ -79,6 +86,7 @@ namespace G
         /// <summary>
         /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::Newtonsoft.Json.JsonProperty("status")]
         public global::G.SimpleCheckSuiteStatus? Status { get; set; }
 
@@ -91,6 +99,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/check-suites/5
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/check-suites/5</example>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }
 

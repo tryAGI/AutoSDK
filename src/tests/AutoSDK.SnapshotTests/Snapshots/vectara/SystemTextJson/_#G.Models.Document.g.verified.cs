@@ -13,6 +13,7 @@ namespace G
         /// The document ID.<br/>
         /// Example: my-doc-id
         /// </summary>
+        /// <example>my-doc-id</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 

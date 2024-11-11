@@ -15,6 +15,7 @@ namespace G
         /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.<br/>
         /// Example: gpt-4o
         /// </summary>
+        /// <example>gpt-4o</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AnyOf<string, global::G.CreateAssistantRequestModel?> Model { get; set; } = default!;
 
@@ -59,6 +60,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double? Temperature { get; set; }
 
@@ -67,6 +69,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
         public double? TopP { get; set; }
 

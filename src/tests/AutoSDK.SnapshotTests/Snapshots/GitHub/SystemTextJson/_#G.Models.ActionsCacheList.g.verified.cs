@@ -13,6 +13,7 @@ namespace G
         /// Total number of caches<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalCount { get; set; }

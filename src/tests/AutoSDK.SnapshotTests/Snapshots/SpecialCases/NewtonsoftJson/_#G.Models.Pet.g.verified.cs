@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: 1234
         /// </summary>
+        /// <example>1234</example>
         [global::Newtonsoft.Json.JsonProperty("4")]
         public string? x4 { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("1.5")]
         public bool? x15 { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("16:9")]
         public bool? x16_9 { get; set; }
 

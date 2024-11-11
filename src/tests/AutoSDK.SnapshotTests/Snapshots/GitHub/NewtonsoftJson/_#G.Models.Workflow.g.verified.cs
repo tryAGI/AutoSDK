@@ -12,30 +12,35 @@ namespace G
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDg6V29ya2Zsb3cxMg==
         /// </summary>
+        /// <example>MDg6V29ya2Zsb3cxMg==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
         /// Example: CI
         /// </summary>
+        /// <example>CI</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: ruby.yaml
         /// </summary>
+        /// <example>ruby.yaml</example>
         [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
         public string Path { get; set; } = default!;
 
         /// <summary>
         /// Example: active
         /// </summary>
+        /// <example>active</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.WorkflowState State { get; set; } = default!;
 
@@ -54,18 +59,21 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/actions/setup-ruby/workflows/5
         /// </summary>
+        /// <example>https://api.github.com/repos/actions/setup-ruby/workflows/5</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/actions/setup-ruby/blob/master/.github/workflows/ruby.yaml
         /// </summary>
+        /// <example>https://github.com/actions/setup-ruby/blob/master/.github/workflows/ruby.yaml</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/actions/setup-ruby/workflows/CI/badge.svg
         /// </summary>
+        /// <example>https://github.com/actions/setup-ruby/workflows/CI/badge.svg</example>
         [global::Newtonsoft.Json.JsonProperty("badge_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string BadgeUrl { get; set; } = default!;
 

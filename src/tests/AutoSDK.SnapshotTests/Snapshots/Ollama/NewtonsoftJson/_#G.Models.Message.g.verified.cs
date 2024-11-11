@@ -19,6 +19,7 @@ namespace G
         /// The content of the message<br/>
         /// Example: Why is the sky blue?
         /// </summary>
+        /// <example>Why is the sky blue?</example>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
         public string Content { get; set; } = default!;
 

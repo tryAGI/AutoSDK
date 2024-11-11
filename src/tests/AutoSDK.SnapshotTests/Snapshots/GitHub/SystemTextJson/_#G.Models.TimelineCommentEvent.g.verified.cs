@@ -27,6 +27,7 @@ namespace G
         /// Unique identifier of the issue comment<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -42,6 +43,7 @@ namespace G
         /// URL for the issue comment<br/>
         /// Example: https://api.github.com/repositories/42/issues/comments/1
         /// </summary>
+        /// <example>https://api.github.com/repositories/42/issues/comments/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -50,6 +52,7 @@ namespace G
         /// Contents of the issue comment<br/>
         /// Example: What version of Safari were you using when you observed this bug?
         /// </summary>
+        /// <example>What version of Safari were you using when you observed this bug?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         public string? Body { get; set; }
 
@@ -104,6 +107,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

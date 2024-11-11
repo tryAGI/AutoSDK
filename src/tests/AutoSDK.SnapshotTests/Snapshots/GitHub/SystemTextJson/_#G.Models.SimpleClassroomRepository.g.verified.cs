@@ -13,6 +13,7 @@ namespace G
         /// A unique identifier of the repository.<br/>
         /// Example: 1296269
         /// </summary>
+        /// <example>1296269</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The full, globally unique name of the repository.<br/>
         /// Example: octocat/Hello-World
         /// </summary>
+        /// <example>octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FullName { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// The URL to view the repository on GitHub.com.<br/>
         /// Example: https://github.com/octocat/Hello-World
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -37,6 +40,7 @@ namespace G
         /// The GraphQL identifier of the repository.<br/>
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
         /// </summary>
+        /// <example>MDEwOlJlcG9zaXRvcnkxMjk2MjY5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -52,6 +56,7 @@ namespace G
         /// The default branch for the repository.<br/>
         /// Example: main
         /// </summary>
+        /// <example>main</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_branch")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DefaultBranch { get; set; }

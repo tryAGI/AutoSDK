@@ -18,42 +18,49 @@ namespace G
         /// <summary>
         /// Example: path/to/package-lock.json
         /// </summary>
+        /// <example>path/to/package-lock.json</example>
         [global::Newtonsoft.Json.JsonProperty("manifest", Required = global::Newtonsoft.Json.Required.Always)]
         public string Manifest { get; set; } = default!;
 
         /// <summary>
         /// Example: npm
         /// </summary>
+        /// <example>npm</example>
         [global::Newtonsoft.Json.JsonProperty("ecosystem", Required = global::Newtonsoft.Json.Required.Always)]
         public string Ecosystem { get; set; } = default!;
 
         /// <summary>
         /// Example: @actions/core
         /// </summary>
+        /// <example>@actions/core</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: 1.0.0
         /// </summary>
+        /// <example>1.0.0</example>
         [global::Newtonsoft.Json.JsonProperty("version", Required = global::Newtonsoft.Json.Required.Always)]
         public string Version { get; set; } = default!;
 
         /// <summary>
         /// Example: pkg:/npm/%40actions/core@1.1.0
         /// </summary>
+        /// <example>pkg:/npm/%40actions/core@1.1.0</example>
         [global::Newtonsoft.Json.JsonProperty("package_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string? PackageUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: MIT
         /// </summary>
+        /// <example>MIT</example>
         [global::Newtonsoft.Json.JsonProperty("license", Required = global::Newtonsoft.Json.Required.Always)]
         public string? License { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/github/actions
         /// </summary>
+        /// <example>https://github.com/github/actions</example>
         [global::Newtonsoft.Json.JsonProperty("source_repository_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string? SourceRepositoryUrl { get; set; } = default!;
 

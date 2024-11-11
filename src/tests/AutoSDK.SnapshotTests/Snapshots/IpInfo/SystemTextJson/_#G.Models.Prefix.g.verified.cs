@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 104.69.216.0/22
         /// </summary>
+        /// <example>104.69.216.0/22</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("netblock")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Netblock { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: AKAMAI
         /// </summary>
+        /// <example>AKAMAI</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: Akamai Technologies, Inc.
         /// </summary>
+        /// <example>Akamai Technologies, Inc.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: US
         /// </summary>
+        /// <example>US</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("country")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Country { get; set; }
@@ -40,18 +44,21 @@ namespace G
         /// <summary>
         /// Example: 256
         /// </summary>
+        /// <example>256</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         public string? Size { get; set; }
 
         /// <summary>
         /// Example: ALLOCATION
         /// </summary>
+        /// <example>ALLOCATION</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         public string? Status { get; set; }
 
         /// <summary>
         /// Example: quadranet.com
         /// </summary>
+        /// <example>quadranet.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("domain")]
         public string? Domain { get; set; }
 

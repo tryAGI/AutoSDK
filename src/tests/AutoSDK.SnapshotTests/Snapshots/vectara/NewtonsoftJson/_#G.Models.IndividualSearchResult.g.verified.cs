@@ -46,6 +46,7 @@ namespace G
         /// If the query request is only over one corpus, this property is 0.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("request_corpora_index")]
         public int? RequestCorporaIndex { get; set; }
 

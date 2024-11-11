@@ -27,6 +27,7 @@ namespace G
         /// ID of the model to use. Only `whisper-1` (which is powered by our open source Whisper V2 model) is currently available.<br/>
         /// Example: whisper-1
         /// </summary>
+        /// <example>whisper-1</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AnyOf<string, global::G.CreateTranscriptionRequestModel?> Model { get; set; } = default!;
 

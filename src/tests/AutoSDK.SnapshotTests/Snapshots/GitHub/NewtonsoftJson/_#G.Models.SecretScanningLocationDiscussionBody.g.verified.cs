@@ -13,6 +13,7 @@ namespace G
         /// The URL to the discussion where the secret was detected.<br/>
         /// Example: https://github.com/community/community/discussions/39082#discussion-4566270
         /// </summary>
+        /// <example>https://github.com/community/community/discussions/39082#discussion-4566270</example>
         [global::Newtonsoft.Json.JsonProperty("discussion_body_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string DiscussionBodyUrl { get; set; } = default!;
 

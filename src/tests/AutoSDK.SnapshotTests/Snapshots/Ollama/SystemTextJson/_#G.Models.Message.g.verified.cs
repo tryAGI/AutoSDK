@@ -21,6 +21,7 @@ namespace G
         /// The content of the message<br/>
         /// Example: Why is the sky blue?
         /// </summary>
+        /// <example>Why is the sky blue?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Content { get; set; }

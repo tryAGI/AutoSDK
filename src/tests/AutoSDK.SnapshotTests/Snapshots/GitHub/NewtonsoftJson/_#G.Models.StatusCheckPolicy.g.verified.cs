@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("strict", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Strict { get; set; } = default!;
 
         /// <summary>
         /// Example: [continuous-integration/travis-ci]
         /// </summary>
+        /// <example>[continuous-integration/travis-ci]</example>
         [global::Newtonsoft.Json.JsonProperty("contexts", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> Contexts { get; set; } = default!;
 
@@ -36,6 +39,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts</example>
         [global::Newtonsoft.Json.JsonProperty("contexts_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ContextsUrl { get; set; } = default!;
 

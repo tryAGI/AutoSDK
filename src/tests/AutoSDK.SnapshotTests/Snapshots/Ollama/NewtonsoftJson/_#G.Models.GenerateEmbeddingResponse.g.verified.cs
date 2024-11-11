@@ -13,6 +13,7 @@ namespace G
         /// The embedding for the prompt.<br/>
         /// Example: [0.5670403838157654, 0.009260174818336964, ...]
         /// </summary>
+        /// <example>[0.5670403838157654, 0.009260174818336964, ...]</example>
         [global::Newtonsoft.Json.JsonProperty("embedding")]
         public global::System.Collections.Generic.IList<double>? Embedding { get; set; }
 

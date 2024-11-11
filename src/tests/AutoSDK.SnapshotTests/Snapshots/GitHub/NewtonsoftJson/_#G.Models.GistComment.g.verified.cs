@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDExOkdpc3RDb21tZW50MQ==
         /// </summary>
+        /// <example>MDExOkdpc3RDb21tZW50MQ==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/gists/a6db0bec360bb87e9418/comments/1
         /// </summary>
+        /// <example>https://api.github.com/gists/a6db0bec360bb87e9418/comments/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -31,6 +34,7 @@ namespace G
         /// The comment text.<br/>
         /// Example: Body of the attachment
         /// </summary>
+        /// <example>Body of the attachment</example>
         [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
         public string Body { get; set; } = default!;
 
@@ -56,6 +60,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 

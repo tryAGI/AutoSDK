@@ -24,6 +24,7 @@ namespace G
         /// <summary>
         /// Example: "uploaded"
         /// </summary>
+        /// <example>"uploaded"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         public string? State { get; set; }
 

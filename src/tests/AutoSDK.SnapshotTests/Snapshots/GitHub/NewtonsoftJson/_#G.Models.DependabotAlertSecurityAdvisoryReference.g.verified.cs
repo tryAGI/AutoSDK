@@ -14,6 +14,7 @@ namespace G
         /// The URL of the reference.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string Url { get; set; } = default!;
 

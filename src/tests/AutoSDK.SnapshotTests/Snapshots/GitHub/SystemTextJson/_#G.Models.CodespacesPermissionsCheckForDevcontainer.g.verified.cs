@@ -13,6 +13,7 @@ namespace G
         /// Whether the user has accepted the permissions defined by the devcontainer config<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("accepted")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Accepted { get; set; }

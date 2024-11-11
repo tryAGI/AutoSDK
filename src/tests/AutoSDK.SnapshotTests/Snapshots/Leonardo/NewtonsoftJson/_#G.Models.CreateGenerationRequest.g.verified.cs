@@ -156,6 +156,7 @@ namespace G
         /// The prompt used to generate images<br/>
         /// Default Value: A majestic cat in the snow
         /// </summary>
+        /// <default>"A majestic cat in the snow"</default>
         [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
         public string Prompt { get; set; } = default!;
 

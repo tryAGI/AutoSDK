@@ -12,24 +12,28 @@ namespace G
         /// <summary>
         /// Example: "http://example.com/2"
         /// </summary>
+        /// <example>"http://example.com/2"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
 
         /// <summary>
         /// Example: "0"
         /// </summary>
+        /// <example>"0"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("insecure_ssl")]
         public string? InsecureSsl { get; set; }
 
         /// <summary>
         /// Example: "form"
         /// </summary>
+        /// <example>"form"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
         public string? ContentType { get; set; }
 
         /// <summary>
         /// Example: "********"
         /// </summary>
+        /// <example>"********"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret")]
         public string? Secret { get; set; }
 

@@ -14,6 +14,7 @@ namespace G
         /// Default Value: write<br/>
         /// Example: write
         /// </summary>
+        /// <example>write</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ProjectsAddCollaboratorRequestPermissionJsonConverter))]
         public global::G.ProjectsAddCollaboratorRequestPermission? Permission { get; set; }

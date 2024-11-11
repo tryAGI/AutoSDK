@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// The prefix of a key that is linkified.<br/>
         /// Example: TICKET-
         /// </summary>
+        /// <example>TICKET-</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("key_prefix")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string KeyPrefix { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// A template for the target URL that is generated if a key was found.<br/>
         /// Example: https://example.com/TICKET?query=&lt;num&gt;
         /// </summary>
+        /// <example>https://example.com/TICKET?query=&lt;num&gt;</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url_template")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string UrlTemplate { get; set; }
@@ -36,6 +39,7 @@ namespace G
         /// Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_alphanumeric")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool IsAlphanumeric { get; set; }

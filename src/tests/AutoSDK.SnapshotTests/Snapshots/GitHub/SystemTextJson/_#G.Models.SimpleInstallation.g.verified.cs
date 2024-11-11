@@ -15,6 +15,7 @@ namespace G
         /// The ID of the installation.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -23,6 +24,7 @@ namespace G
         /// The global node ID of the installation.<br/>
         /// Example: MDQ6VXNlcjU4MzIzMQ==
         /// </summary>
+        /// <example>MDQ6VXNlcjU4MzIzMQ==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }

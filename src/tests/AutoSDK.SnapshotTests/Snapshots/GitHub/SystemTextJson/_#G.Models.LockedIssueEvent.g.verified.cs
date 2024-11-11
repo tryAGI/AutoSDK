@@ -75,6 +75,7 @@ namespace G
         /// <summary>
         /// Example: "off-topic"
         /// </summary>
+        /// <example>"off-topic"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("lock_reason")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? LockReason { get; set; }

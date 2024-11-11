@@ -13,6 +13,7 @@ namespace G
         /// The unique identifier of the content associated with the card<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("content_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int ContentId { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The piece of content associated with the card<br/>
         /// Example: PullRequest
         /// </summary>
+        /// <example>PullRequest</example>
         [global::Newtonsoft.Json.JsonProperty("content_type", Required = global::Newtonsoft.Json.Required.Always)]
         public string ContentType { get; set; } = default!;
 

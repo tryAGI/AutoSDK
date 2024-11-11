@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: [example]
         /// </summary>
+        /// <example>[example]</example>
         [global::Newtonsoft.Json.JsonProperty("trust_domain")]
         public string? TrustDomain { get; set; }
 

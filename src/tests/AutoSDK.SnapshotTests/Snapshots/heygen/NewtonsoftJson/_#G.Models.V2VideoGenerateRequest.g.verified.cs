@@ -30,18 +30,21 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("test")]
         public bool? Test { get; set; }
 
         /// <summary>
         /// Example: My Title
         /// </summary>
+        /// <example>My Title</example>
         [global::Newtonsoft.Json.JsonProperty("title")]
         public string? Title { get; set; }
 
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("video_inputs")]
         public global::System.Collections.Generic.IList<global::G.V2VideoGenerateRequestVideoInput>? VideoInputs { get; set; }
 

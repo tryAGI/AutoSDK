@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("fileUid")]
         public string FileUid { get; set; } = default!;
 

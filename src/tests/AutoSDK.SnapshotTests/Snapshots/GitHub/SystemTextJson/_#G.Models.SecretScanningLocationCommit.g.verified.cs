@@ -13,6 +13,7 @@ namespace G
         /// The file path in the repository<br/>
         /// Example: /example/secrets.txt
         /// </summary>
+        /// <example>/example/secrets.txt</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }
@@ -49,6 +50,7 @@ namespace G
         /// SHA-1 hash ID of the associated blob<br/>
         /// Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
         /// </summary>
+        /// <example>af5626b4a114abcb82d63db7c8082c3c4756e51b</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("blob_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BlobSha { get; set; }
@@ -64,6 +66,7 @@ namespace G
         /// SHA-1 hash ID of the associated commit<br/>
         /// Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
         /// </summary>
+        /// <example>af5626b4a114abcb82d63db7c8082c3c4756e51b</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommitSha { get; set; }

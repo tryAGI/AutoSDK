@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 100
         /// </summary>
+        /// <example>100</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("health_percentage")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int HealthPercentage { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: My first repository on GitHub!
         /// </summary>
+        /// <example>My first repository on GitHub!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Description { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: example.com
         /// </summary>
+        /// <example>example.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("documentation")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Documentation { get; set; }
@@ -47,6 +50,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_reports_enabled")]
         public bool? ContentReportsEnabled { get; set; }
 

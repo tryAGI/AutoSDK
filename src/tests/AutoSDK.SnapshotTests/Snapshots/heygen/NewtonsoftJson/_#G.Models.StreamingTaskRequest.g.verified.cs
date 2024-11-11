@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: &lt;session_id&gt;
         /// </summary>
+        /// <example>&lt;session_id&gt;</example>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
         public string? SessionId { get; set; }
 
         /// <summary>
         /// Example: Hey, there!
         /// </summary>
+        /// <example>Hey, there!</example>
         [global::Newtonsoft.Json.JsonProperty("text")]
         public string? Text { get; set; }
 

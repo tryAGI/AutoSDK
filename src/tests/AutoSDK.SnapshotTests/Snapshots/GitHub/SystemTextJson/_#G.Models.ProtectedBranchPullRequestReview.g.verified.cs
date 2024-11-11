@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
 
@@ -30,6 +31,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("dismiss_stale_reviews")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool DismissStaleReviews { get; set; }
@@ -37,6 +39,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_code_owner_reviews")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool RequireCodeOwnerReviews { get; set; }
@@ -44,6 +47,7 @@ namespace G
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_approving_review_count")]
         public int? RequiredApprovingReviewCount { get; set; }
 
@@ -52,6 +56,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("require_last_push_approval")]
         public bool? RequireLastPushApproval { get; set; }
 

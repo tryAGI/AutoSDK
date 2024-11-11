@@ -13,6 +13,7 @@ namespace G
         /// The type of reviewer.<br/>
         /// Example: User
         /// </summary>
+        /// <example>User</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeploymentReviewerTypeJsonConverter))]
         public global::G.DeploymentReviewerType? Type { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The id of the user or team who can review the deployment<br/>
         /// Example: 4532992
         /// </summary>
+        /// <example>4532992</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public int? Id { get; set; }
 

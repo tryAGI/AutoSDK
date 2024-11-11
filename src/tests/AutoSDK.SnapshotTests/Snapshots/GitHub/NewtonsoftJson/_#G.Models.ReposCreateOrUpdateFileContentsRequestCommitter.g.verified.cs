@@ -24,6 +24,7 @@ namespace G
         /// <summary>
         /// Example: "2013-01-05T13:13:22+05:00"
         /// </summary>
+        /// <example>"2013-01-05T13:13:22+05:00"</example>
         [global::Newtonsoft.Json.JsonProperty("date")]
         public string? Date { get; set; }
 

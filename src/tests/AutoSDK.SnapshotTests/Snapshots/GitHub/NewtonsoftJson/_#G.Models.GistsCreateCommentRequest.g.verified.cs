@@ -13,6 +13,7 @@ namespace G
         /// The comment text.<br/>
         /// Example: Body of the attachment
         /// </summary>
+        /// <example>Body of the attachment</example>
         [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
         public string Body { get; set; } = default!;
 

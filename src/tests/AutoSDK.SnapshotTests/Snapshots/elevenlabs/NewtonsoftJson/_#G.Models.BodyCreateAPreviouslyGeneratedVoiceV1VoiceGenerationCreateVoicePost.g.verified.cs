@@ -13,6 +13,7 @@ namespace G
         /// Name to use for the created voice.<br/>
         /// Example: Little squeaky mouse
         /// </summary>
+        /// <example>Little squeaky mouse</example>
         [global::Newtonsoft.Json.JsonProperty("voice_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string VoiceName { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// Description to use for the created voice.<br/>
         /// Example: A sassy little squeaky mouse
         /// </summary>
+        /// <example>A sassy little squeaky mouse</example>
         [global::Newtonsoft.Json.JsonProperty("voice_description", Required = global::Newtonsoft.Json.Required.Always)]
         public string VoiceDescription { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don't have one yet.<br/>
         /// Example: 37HceQefKmEi3bGovXjL
         /// </summary>
+        /// <example>37HceQefKmEi3bGovXjL</example>
         [global::Newtonsoft.Json.JsonProperty("generated_voice_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string GeneratedVoiceId { get; set; } = default!;
 

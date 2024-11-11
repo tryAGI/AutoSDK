@@ -13,6 +13,7 @@ namespace G
         /// The file path of the wiki page<br/>
         /// Example: /example/Home.md
         /// </summary>
+        /// <example>/example/Home.md</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }
@@ -49,6 +50,7 @@ namespace G
         /// SHA-1 hash ID of the associated blob<br/>
         /// Example: af5626b4a114abcb82d63db7c8082c3c4756e51b
         /// </summary>
+        /// <example>af5626b4a114abcb82d63db7c8082c3c4756e51b</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("blob_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BlobSha { get; set; }
@@ -57,6 +59,7 @@ namespace G
         /// The GitHub URL to get the associated wiki page<br/>
         /// Example: https://github.com/octocat/Hello-World/wiki/Home/302c0b7e200761c9dd9b57e57db540ee0b4293a5
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/wiki/Home/302c0b7e200761c9dd9b57e57db540ee0b4293a5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("page_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PageUrl { get; set; }
@@ -65,6 +68,7 @@ namespace G
         /// SHA-1 hash ID of the associated commit<br/>
         /// Example: 302c0b7e200761c9dd9b57e57db540ee0b4293a5
         /// </summary>
+        /// <example>302c0b7e200761c9dd9b57e57db540ee0b4293a5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommitSha { get; set; }
@@ -73,6 +77,7 @@ namespace G
         /// The GitHub URL to get the associated wiki commit<br/>
         /// Example: https://github.com/octocat/Hello-World/wiki/_compare/302c0b7e200761c9dd9b57e57db540ee0b4293a5
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/wiki/_compare/302c0b7e200761c9dd9b57e57db540ee0b4293a5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommitUrl { get; set; }

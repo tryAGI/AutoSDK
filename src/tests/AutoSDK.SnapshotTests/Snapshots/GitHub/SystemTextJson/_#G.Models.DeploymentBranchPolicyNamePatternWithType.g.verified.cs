@@ -15,6 +15,7 @@ namespace G
         /// For more information about pattern matching syntax, see the [Ruby File.fnmatch documentation](https://ruby-doc.org/core-2.5.1/File.html#method-c-fnmatch).<br/>
         /// Example: release/*
         /// </summary>
+        /// <example>release/*</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -23,6 +24,7 @@ namespace G
         /// Whether this rule targets a branch or tag<br/>
         /// Example: branch
         /// </summary>
+        /// <example>branch</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeploymentBranchPolicyNamePatternWithTypeTypeJsonConverter))]
         public global::G.DeploymentBranchPolicyNamePatternWithTypeType? Type { get; set; }

@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the team<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// <summary>
         /// Example: MDQ6VGVhbTE=
         /// </summary>
+        /// <example>MDQ6VGVhbTE=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// URL for the team<br/>
         /// Example: https://api.github.com/organizations/1/team/1
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -35,6 +38,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/orgs/rails/teams/core
         /// </summary>
+        /// <example>https://github.com/orgs/rails/teams/core</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -43,6 +47,7 @@ namespace G
         /// Name of the team<br/>
         /// Example: Developers
         /// </summary>
+        /// <example>Developers</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -50,6 +55,7 @@ namespace G
         /// <summary>
         /// Example: justice-league
         /// </summary>
+        /// <example>justice-league</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Slug { get; set; }
@@ -57,6 +63,7 @@ namespace G
         /// <summary>
         /// Example: A great team.
         /// </summary>
+        /// <example>A great team.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Description { get; set; }
@@ -65,6 +72,7 @@ namespace G
         /// The level of privacy this team should have<br/>
         /// Example: closed
         /// </summary>
+        /// <example>closed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("privacy")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamFullPrivacyJsonConverter))]
         public global::G.TeamFullPrivacy? Privacy { get; set; }
@@ -73,6 +81,7 @@ namespace G
         /// The notification setting the team has set<br/>
         /// Example: notifications_enabled
         /// </summary>
+        /// <example>notifications_enabled</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("notification_setting")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.TeamFullNotificationSettingJsonConverter))]
         public global::G.TeamFullNotificationSetting? NotificationSetting { get; set; }
@@ -81,6 +90,7 @@ namespace G
         /// Permission that the team will have for its repositories<br/>
         /// Example: push
         /// </summary>
+        /// <example>push</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("permission")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Permission { get; set; }
@@ -88,6 +98,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/1/members{/member}
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/1/members{/member}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MembersUrl { get; set; }
@@ -95,6 +106,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/1/repos
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/1/repos</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repositories_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoriesUrl { get; set; }
@@ -108,6 +120,7 @@ namespace G
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MembersCount { get; set; }
@@ -115,6 +128,7 @@ namespace G
         /// <summary>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repos_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ReposCount { get; set; }
@@ -144,6 +158,7 @@ namespace G
         /// Distinguished Name (DN) that team maps to within LDAP environment<br/>
         /// Example: uid=example,ou=users,dc=github,dc=com
         /// </summary>
+        /// <example>uid=example,ou=users,dc=github,dc=com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ldap_dn")]
         public string? LdapDn { get; set; }
 

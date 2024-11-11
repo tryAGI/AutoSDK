@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: 34
         /// </summary>
+        /// <example>34</example>
         [global::Newtonsoft.Json.JsonProperty("completion_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int CompletionTokens { get; set; } = default!;
 
         /// <summary>
         /// Example: 16
         /// </summary>
+        /// <example>16</example>
         [global::Newtonsoft.Json.JsonProperty("prompt_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int PromptTokens { get; set; } = default!;
 
         /// <summary>
         /// Example: 50
         /// </summary>
+        /// <example>50</example>
         [global::Newtonsoft.Json.JsonProperty("total_tokens", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalTokens { get; set; } = default!;
 

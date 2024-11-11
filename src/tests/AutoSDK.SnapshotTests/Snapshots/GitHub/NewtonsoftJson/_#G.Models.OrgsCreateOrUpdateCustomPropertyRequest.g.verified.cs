@@ -15,6 +15,7 @@ namespace G
         /// The type of the value for the property<br/>
         /// Example: single_select
         /// </summary>
+        /// <example>single_select</example>
         [global::Newtonsoft.Json.JsonProperty("value_type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.OrgsCreateOrUpdateCustomPropertyRequestValueType ValueType { get; set; } = default!;
 

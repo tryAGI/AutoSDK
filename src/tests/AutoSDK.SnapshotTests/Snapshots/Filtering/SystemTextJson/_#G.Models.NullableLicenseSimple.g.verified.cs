@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: mit
         /// </summary>
+        /// <example>mit</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Key { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: MIT License
         /// </summary>
+        /// <example>MIT License</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/licenses/mit
         /// </summary>
+        /// <example>https://api.github.com/licenses/mit</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Url { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: MIT
         /// </summary>
+        /// <example>MIT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("spdx_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? SpdxId { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: MDc6TGljZW5zZW1pdA==
         /// </summary>
+        /// <example>MDc6TGljZW5zZW1pdA==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }

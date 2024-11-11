@@ -13,6 +13,7 @@ namespace G
         /// The number of deployment branch policies for the environment.<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalCount { get; set; }

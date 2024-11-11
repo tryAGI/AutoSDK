@@ -13,6 +13,7 @@ namespace G
         /// Whether a private vulnerability report was accepted by the repository's administrators.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("accepted")]
         public bool Accepted { get; set; } = default!;
 

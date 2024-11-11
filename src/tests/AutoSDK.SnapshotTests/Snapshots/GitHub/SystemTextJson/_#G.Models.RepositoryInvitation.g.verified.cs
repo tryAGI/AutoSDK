@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the repository invitation.<br/>
         /// Example: 42L
         /// </summary>
+        /// <example>42L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -42,6 +43,7 @@ namespace G
         /// The permission associated with the invitation.<br/>
         /// Example: read
         /// </summary>
+        /// <example>read</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("permissions")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RepositoryInvitationPermissionsJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -64,6 +66,7 @@ namespace G
         /// URL for the repository invitation<br/>
         /// Example: https://api.github.com/user/repository-invitations/1
         /// </summary>
+        /// <example>https://api.github.com/user/repository-invitations/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -71,6 +74,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/invitations
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/invitations</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }

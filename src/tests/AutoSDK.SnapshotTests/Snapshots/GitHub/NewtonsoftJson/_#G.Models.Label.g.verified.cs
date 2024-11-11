@@ -13,12 +13,14 @@ namespace G
         /// Unique identifier for the label.<br/>
         /// Example: 208045946L
         /// </summary>
+        /// <example>208045946L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDU6TGFiZWwyMDgwNDU5NDY=
         /// </summary>
+        /// <example>MDU6TGFiZWwyMDgwNDU5NDY=</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -26,6 +28,7 @@ namespace G
         /// URL for the label<br/>
         /// Example: https://api.github.com/repositories/42/labels/bug
         /// </summary>
+        /// <example>https://api.github.com/repositories/42/labels/bug</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -33,6 +36,7 @@ namespace G
         /// The name of the label.<br/>
         /// Example: bug
         /// </summary>
+        /// <example>bug</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -40,6 +44,7 @@ namespace G
         /// Optional description of the label, such as its purpose.<br/>
         /// Example: Something isn't working
         /// </summary>
+        /// <example>Something isn't working</example>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Description { get; set; } = default!;
 
@@ -47,6 +52,7 @@ namespace G
         /// 6-character hex code, without the leading #, identifying the color<br/>
         /// Example: FFFFFF
         /// </summary>
+        /// <example>FFFFFF</example>
         [global::Newtonsoft.Json.JsonProperty("color", Required = global::Newtonsoft.Json.Required.Always)]
         public string Color { get; set; } = default!;
 
@@ -54,6 +60,7 @@ namespace G
         /// Whether this label comes by default in a new repository.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("default", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Default { get; set; } = default!;
 

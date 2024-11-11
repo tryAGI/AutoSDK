@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: medium
         /// </summary>
+        /// <example>medium</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("quality")]
         public string? Quality { get; set; }
 

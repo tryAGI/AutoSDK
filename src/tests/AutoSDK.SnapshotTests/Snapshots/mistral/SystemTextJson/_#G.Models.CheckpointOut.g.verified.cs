@@ -13,6 +13,7 @@ namespace G
         /// The UNIX timestamp (in seconds) for when the checkpoint was created.<br/>
         /// Example: 1716963433
         /// </summary>
+        /// <example>1716963433</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UnixTimestampJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

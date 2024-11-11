@@ -13,6 +13,7 @@ namespace G
         /// ID to uniquely identify this classification run<br/>
         /// Example: ee722219-b8ec-4db1-8f8d-5150bb1a9e0c
         /// </summary>
+        /// <example>ee722219-b8ec-4db1-8f8d-5150bb1a9e0c</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public global::System.Guid? Id { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// class (name) which is used in this classification<br/>
         /// Example: City
         /// </summary>
+        /// <example>City</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("class")]
         public string? Class { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// which ref-property to set as part of the classification<br/>
         /// Example: [inCountry]
         /// </summary>
+        /// <example>[inCountry]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("classifyProperties")]
         public global::System.Collections.Generic.IList<string>? ClassifyProperties { get; set; }
 
@@ -34,6 +37,7 @@ namespace G
         /// base the text-based classification on these fields (of type text)<br/>
         /// Example: [description]
         /// </summary>
+        /// <example>[description]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("basedOnProperties")]
         public global::System.Collections.Generic.IList<string>? BasedOnProperties { get; set; }
 
@@ -41,6 +45,7 @@ namespace G
         /// status of this classification<br/>
         /// Example: running
         /// </summary>
+        /// <example>running</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ClassificationStatusJsonConverter))]
         public global::G.ClassificationStatus? Status { get; set; }
@@ -67,6 +72,7 @@ namespace G
         /// error message if status == failed<br/>
         /// Example: classify xzy: something went wrong
         /// </summary>
+        /// <example>classify xzy: something went wrong</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         public string? Error { get; set; }
 

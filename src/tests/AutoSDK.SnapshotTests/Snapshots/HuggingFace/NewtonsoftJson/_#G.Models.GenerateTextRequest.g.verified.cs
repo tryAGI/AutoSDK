@@ -13,6 +13,7 @@ namespace G
         /// The prompt that you want to complete.<br/>
         /// Example: This is a test.
         /// </summary>
+        /// <example>This is a test.</example>
         [global::Newtonsoft.Json.JsonProperty("inputs", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Inputs { get; set; } = default!;
 

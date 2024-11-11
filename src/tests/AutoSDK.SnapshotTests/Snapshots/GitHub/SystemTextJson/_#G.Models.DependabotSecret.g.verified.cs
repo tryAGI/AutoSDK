@@ -13,6 +13,7 @@ namespace G
         /// The name of the secret.<br/>
         /// Example: MY_ARTIFACTORY_PASSWORD
         /// </summary>
+        /// <example>MY_ARTIFACTORY_PASSWORD</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }

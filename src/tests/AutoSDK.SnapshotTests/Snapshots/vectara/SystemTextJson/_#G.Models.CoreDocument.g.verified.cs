@@ -13,6 +13,7 @@ namespace G
         /// The document ID, must be unique within the corpus.<br/>
         /// Example: my-doc-id
         /// </summary>
+        /// <example>my-doc-id</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -24,6 +25,7 @@ namespace G
         /// to retrieval search results.<br/>
         /// Default Value: core
         /// </summary>
+        /// <default>"core"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; } = "core";

@@ -78,6 +78,7 @@ namespace G
         /// <summary>
         /// Example: [73..77, 77..78]
         /// </summary>
+        /// <example>[73..77, 77..78]</example>
         [global::Newtonsoft.Json.JsonProperty("line_numbers")]
         public global::System.Collections.Generic.IList<string>? LineNumbers { get; set; }
 

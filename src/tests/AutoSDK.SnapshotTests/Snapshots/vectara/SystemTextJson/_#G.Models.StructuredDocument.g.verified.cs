@@ -23,6 +23,7 @@ namespace G
         /// create document parts using its internal algorithm.<br/>
         /// Default Value: structured
         /// </summary>
+        /// <default>"structured"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; } = "structured";

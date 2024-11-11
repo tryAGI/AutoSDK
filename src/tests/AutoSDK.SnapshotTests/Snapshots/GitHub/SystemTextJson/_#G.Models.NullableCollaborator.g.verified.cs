@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: octocat
         /// </summary>
+        /// <example>octocat</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Login { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 1L
         /// </summary>
+        /// <example>1L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -38,6 +40,7 @@ namespace G
         /// <summary>
         /// Example: MDQ6VXNlcjE=
         /// </summary>
+        /// <example>MDQ6VXNlcjE=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -45,6 +48,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/images/error/octocat_happy.gif
         /// </summary>
+        /// <example>https://github.com/images/error/octocat_happy.gif</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AvatarUrl { get; set; }
@@ -52,6 +56,7 @@ namespace G
         /// <summary>
         /// Example: 41d064eb2195891e12d0413f63227ea7
         /// </summary>
+        /// <example>41d064eb2195891e12d0413f63227ea7</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("gravatar_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? GravatarId { get; set; }
@@ -59,6 +64,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat
         /// </summary>
+        /// <example>https://api.github.com/users/octocat</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -66,6 +72,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat
         /// </summary>
+        /// <example>https://github.com/octocat</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -73,6 +80,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat/followers
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/followers</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("followers_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FollowersUrl { get; set; }
@@ -80,6 +88,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat/following{/other_user}
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/following{/other_user}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("following_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FollowingUrl { get; set; }
@@ -87,6 +96,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat/gists{/gist_id}
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/gists{/gist_id}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("gists_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string GistsUrl { get; set; }
@@ -94,6 +104,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat/starred{/owner}{/repo}
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/starred{/owner}{/repo}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("starred_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StarredUrl { get; set; }
@@ -101,6 +112,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat/subscriptions
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/subscriptions</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscriptions_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SubscriptionsUrl { get; set; }
@@ -108,6 +120,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat/orgs
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/orgs</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("organizations_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OrganizationsUrl { get; set; }
@@ -115,6 +128,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat/repos
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/repos</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repos_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReposUrl { get; set; }
@@ -122,6 +136,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat/events{/privacy}
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/events{/privacy}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("events_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EventsUrl { get; set; }
@@ -129,6 +144,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/users/octocat/received_events
         /// </summary>
+        /// <example>https://api.github.com/users/octocat/received_events</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("received_events_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReceivedEventsUrl { get; set; }
@@ -136,6 +152,7 @@ namespace G
         /// <summary>
         /// Example: User
         /// </summary>
+        /// <example>User</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Type { get; set; }
@@ -156,6 +173,7 @@ namespace G
         /// <summary>
         /// Example: admin
         /// </summary>
+        /// <example>admin</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("role_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RoleName { get; set; }

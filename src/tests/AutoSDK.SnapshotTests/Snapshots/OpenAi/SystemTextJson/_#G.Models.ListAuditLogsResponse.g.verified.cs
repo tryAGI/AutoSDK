@@ -26,6 +26,7 @@ namespace G
         /// <summary>
         /// Example: audit_log-defb456h8dks
         /// </summary>
+        /// <example>audit_log-defb456h8dks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FirstId { get; set; }
@@ -33,6 +34,7 @@ namespace G
         /// <summary>
         /// Example: audit_log-hnbkd8s93s
         /// </summary>
+        /// <example>audit_log-hnbkd8s93s</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LastId { get; set; }

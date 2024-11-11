@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the repository<br/>
         /// Example: 42L
         /// </summary>
+        /// <example>42L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// <summary>
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
         /// </summary>
+        /// <example>MDEwOlJlcG9zaXRvcnkxMjk2MjY5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// The name of the repository.<br/>
         /// Example: Team Environment
         /// </summary>
+        /// <example>Team Environment</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -35,6 +38,7 @@ namespace G
         /// <summary>
         /// Example: octocat/Hello-World
         /// </summary>
+        /// <example>octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FullName { get; set; }
@@ -70,6 +74,7 @@ namespace G
         /// Whether the repository is private or public.<br/>
         /// Default Value: false
         /// </summary>
+        /// <default>false</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Private { get; set; } = false;
@@ -77,6 +82,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -84,6 +90,7 @@ namespace G
         /// <summary>
         /// Example: This your first repo!
         /// </summary>
+        /// <example>This your first repo!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Description { get; set; }
@@ -98,6 +105,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -105,6 +113,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("archive_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ArchiveUrl { get; set; }
@@ -112,6 +121,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/assignees{/user}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/assignees{/user}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("assignees_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AssigneesUrl { get; set; }
@@ -119,6 +129,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("blobs_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BlobsUrl { get; set; }
@@ -126,6 +137,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/branches{/branch}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/branches{/branch}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("branches_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BranchesUrl { get; set; }
@@ -133,6 +145,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("collaborators_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CollaboratorsUrl { get; set; }
@@ -140,6 +153,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/comments{/number}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/comments{/number}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommentsUrl { get; set; }
@@ -147,6 +161,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/commits{/sha}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/commits{/sha}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commits_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommitsUrl { get; set; }
@@ -154,6 +169,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("compare_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CompareUrl { get; set; }
@@ -161,6 +177,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/contents/{+path}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/contents/{+path}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("contents_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ContentsUrl { get; set; }
@@ -168,6 +185,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/contributors
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/contributors</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("contributors_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ContributorsUrl { get; set; }
@@ -175,6 +193,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/deployments
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/deployments</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deployments_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DeploymentsUrl { get; set; }
@@ -182,6 +201,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/downloads
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/downloads</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("downloads_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DownloadsUrl { get; set; }
@@ -189,6 +209,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/events
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/events</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("events_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EventsUrl { get; set; }
@@ -196,6 +217,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/forks
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/forks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("forks_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ForksUrl { get; set; }
@@ -203,6 +225,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("git_commits_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string GitCommitsUrl { get; set; }
@@ -210,6 +233,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("git_refs_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string GitRefsUrl { get; set; }
@@ -217,6 +241,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("git_tags_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string GitTagsUrl { get; set; }
@@ -224,6 +249,7 @@ namespace G
         /// <summary>
         /// Example: git:github.com/octocat/Hello-World.git
         /// </summary>
+        /// <example>git:github.com/octocat/Hello-World.git</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("git_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string GitUrl { get; set; }
@@ -231,6 +257,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue_comment_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string IssueCommentUrl { get; set; }
@@ -238,6 +265,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/issues/events{/number}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/issues/events{/number}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue_events_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string IssueEventsUrl { get; set; }
@@ -245,6 +273,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/issues{/number}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/issues{/number}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("issues_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string IssuesUrl { get; set; }
@@ -252,6 +281,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/keys{/key_id}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/keys{/key_id}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("keys_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string KeysUrl { get; set; }
@@ -259,6 +289,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/labels{/name}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/labels{/name}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LabelsUrl { get; set; }
@@ -266,6 +297,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/languages
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/languages</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("languages_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string LanguagesUrl { get; set; }
@@ -273,6 +305,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/merges
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/merges</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("merges_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MergesUrl { get; set; }
@@ -280,6 +313,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/milestones{/number}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/milestones{/number}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestones_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MilestonesUrl { get; set; }
@@ -287,6 +321,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("notifications_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NotificationsUrl { get; set; }
@@ -294,6 +329,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/pulls{/number}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/pulls{/number}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pulls_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PullsUrl { get; set; }
@@ -301,6 +337,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/releases{/id}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/releases{/id}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("releases_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReleasesUrl { get; set; }
@@ -308,6 +345,7 @@ namespace G
         /// <summary>
         /// Example: git@github.com:octocat/Hello-World.git
         /// </summary>
+        /// <example>git@github.com:octocat/Hello-World.git</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ssh_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SshUrl { get; set; }
@@ -315,6 +353,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/stargazers
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/stargazers</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("stargazers_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StargazersUrl { get; set; }
@@ -322,6 +361,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/statuses/{sha}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/statuses/{sha}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("statuses_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StatusesUrl { get; set; }
@@ -329,6 +369,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/subscribers
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/subscribers</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscribers_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SubscribersUrl { get; set; }
@@ -336,6 +377,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/subscription
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/subscription</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscription_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SubscriptionUrl { get; set; }
@@ -343,6 +385,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/tags
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/tags</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("tags_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TagsUrl { get; set; }
@@ -350,6 +393,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/teams
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/teams</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("teams_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TeamsUrl { get; set; }
@@ -357,6 +401,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("trees_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TreesUrl { get; set; }
@@ -364,6 +409,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World.git
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World.git</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("clone_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CloneUrl { get; set; }
@@ -371,6 +417,7 @@ namespace G
         /// <summary>
         /// Example: git:git.example.com/octocat/Hello-World
         /// </summary>
+        /// <example>git:git.example.com/octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("mirror_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? MirrorUrl { get; set; }
@@ -378,6 +425,7 @@ namespace G
         /// <summary>
         /// Example: http://api.github.com/repos/octocat/Hello-World/hooks
         /// </summary>
+        /// <example>http://api.github.com/repos/octocat/Hello-World/hooks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("hooks_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HooksUrl { get; set; }
@@ -385,6 +433,7 @@ namespace G
         /// <summary>
         /// Example: https://svn.github.com/octocat/Hello-World
         /// </summary>
+        /// <example>https://svn.github.com/octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("svn_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SvnUrl { get; set; }
@@ -392,6 +441,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com
         /// </summary>
+        /// <example>https://github.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("homepage")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Homepage { get; set; }
@@ -406,6 +456,7 @@ namespace G
         /// <summary>
         /// Example: 9
         /// </summary>
+        /// <example>9</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("forks_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ForksCount { get; set; }
@@ -413,6 +464,7 @@ namespace G
         /// <summary>
         /// Example: 80
         /// </summary>
+        /// <example>80</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("stargazers_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StargazersCount { get; set; }
@@ -420,6 +472,7 @@ namespace G
         /// <summary>
         /// Example: 80
         /// </summary>
+        /// <example>80</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("watchers_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int WatchersCount { get; set; }
@@ -428,6 +481,7 @@ namespace G
         /// The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.<br/>
         /// Example: 108
         /// </summary>
+        /// <example>108</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Size { get; set; }
@@ -436,6 +490,7 @@ namespace G
         /// The default branch of the repository.<br/>
         /// Example: master
         /// </summary>
+        /// <example>master</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_branch")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DefaultBranch { get; set; }
@@ -443,6 +498,7 @@ namespace G
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("open_issues_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int OpenIssuesCount { get; set; }
@@ -452,6 +508,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_template")]
         public bool? IsTemplate { get; set; }
 
@@ -466,6 +523,8 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <default>true</default>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_issues")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasIssues { get; set; } = true;
@@ -475,6 +534,8 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <default>true</default>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_projects")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasProjects { get; set; } = true;
@@ -484,6 +545,8 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <default>true</default>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_wiki")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasWiki { get; set; } = true;
@@ -500,6 +563,8 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <default>true</default>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_downloads")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasDownloads { get; set; } = true;
@@ -509,6 +574,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_discussions")]
         public bool? HasDiscussions { get; set; }
 
@@ -516,6 +582,7 @@ namespace G
         /// Whether the repository is archived.<br/>
         /// Default Value: false
         /// </summary>
+        /// <default>false</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Archived { get; set; } = false;
@@ -560,6 +627,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_rebase_merge")]
         public bool? AllowRebaseMerge { get; set; }
 
@@ -574,6 +642,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_squash_merge")]
         public bool? AllowSquashMerge { get; set; }
 
@@ -582,6 +651,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_auto_merge")]
         public bool? AllowAutoMerge { get; set; }
 
@@ -590,6 +660,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("delete_branch_on_merge")]
         public bool? DeleteBranchOnMerge { get; set; }
 
@@ -598,6 +669,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_update_branch")]
         public bool? AllowUpdateBranch { get; set; }
 
@@ -652,6 +724,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("allow_merge_commit")]
         public bool? AllowMergeCommit { get; set; }
 
@@ -691,6 +764,7 @@ namespace G
         /// <summary>
         /// Example: "2020-07-09T00:17:42Z"
         /// </summary>
+        /// <example>"2020-07-09T00:17:42Z"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("starred_at")]
         public string? StarredAt { get; set; }
 

@@ -21,6 +21,7 @@ namespace G
         /// Default Value: markdown<br/>
         /// Example: markdown
         /// </summary>
+        /// <example>markdown</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MarkdownRenderRequestModeJsonConverter))]
         public global::G.MarkdownRenderRequestMode? Mode { get; set; }

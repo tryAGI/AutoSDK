@@ -13,6 +13,7 @@ namespace G
         /// The ID of the workflow run.<br/>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,12 +21,14 @@ namespace G
         /// The name of the workflow run.<br/>
         /// Example: Build
         /// </summary>
+        /// <example>Build</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
         /// Example: MDEwOkNoZWNrU3VpdGU1
         /// </summary>
+        /// <example>MDEwOkNoZWNrU3VpdGU1</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -33,6 +36,7 @@ namespace G
         /// The ID of the associated check suite.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("check_suite_id")]
         public int? CheckSuiteId { get; set; }
 
@@ -40,12 +44,14 @@ namespace G
         /// The node ID of the associated check suite.<br/>
         /// Example: MDEwOkNoZWNrU3VpdGU0Mg==
         /// </summary>
+        /// <example>MDEwOkNoZWNrU3VpdGU0Mg==</example>
         [global::Newtonsoft.Json.JsonProperty("check_suite_node_id")]
         public string? CheckSuiteNodeId { get; set; }
 
         /// <summary>
         /// Example: master
         /// </summary>
+        /// <example>master</example>
         [global::Newtonsoft.Json.JsonProperty("head_branch", Required = global::Newtonsoft.Json.Required.Always)]
         public string? HeadBranch { get; set; } = default!;
 
@@ -53,6 +59,7 @@ namespace G
         /// The SHA of the head commit that points to the version of the workflow being run.<br/>
         /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
         /// </summary>
+        /// <example>009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d</example>
         [global::Newtonsoft.Json.JsonProperty("head_sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string HeadSha { get; set; } = default!;
 
@@ -60,6 +67,7 @@ namespace G
         /// The full path of the workflow<br/>
         /// Example: octocat/octo-repo/.github/workflows/ci.yml@main
         /// </summary>
+        /// <example>octocat/octo-repo/.github/workflows/ci.yml@main</example>
         [global::Newtonsoft.Json.JsonProperty("path", Required = global::Newtonsoft.Json.Required.Always)]
         public string Path { get; set; } = default!;
 
@@ -67,6 +75,7 @@ namespace G
         /// The auto incrementing run number for the workflow run.<br/>
         /// Example: 106
         /// </summary>
+        /// <example>106</example>
         [global::Newtonsoft.Json.JsonProperty("run_number", Required = global::Newtonsoft.Json.Required.Always)]
         public int RunNumber { get; set; } = default!;
 
@@ -74,6 +83,7 @@ namespace G
         /// Attempt number of the run, 1 for first attempt and higher if the workflow was re-run.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("run_attempt")]
         public int? RunAttempt { get; set; }
 
@@ -86,18 +96,21 @@ namespace G
         /// <summary>
         /// Example: push
         /// </summary>
+        /// <example>push</example>
         [global::Newtonsoft.Json.JsonProperty("event", Required = global::Newtonsoft.Json.Required.Always)]
         public string Event { get; set; } = default!;
 
         /// <summary>
         /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Status { get; set; } = default!;
 
         /// <summary>
         /// Example: neutral
         /// </summary>
+        /// <example>neutral</example>
         [global::Newtonsoft.Json.JsonProperty("conclusion", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Conclusion { get; set; } = default!;
 
@@ -105,6 +118,7 @@ namespace G
         /// The ID of the parent workflow.<br/>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("workflow_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int WorkflowId { get; set; } = default!;
 
@@ -112,12 +126,14 @@ namespace G
         /// The URL to the workflow run.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/runs/5</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/github/hello-world/suites/4
         /// </summary>
+        /// <example>https://github.com/github/hello-world/suites/4</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
@@ -161,6 +177,7 @@ namespace G
         /// The URL to the jobs for the workflow run.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5/jobs
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/runs/5/jobs</example>
         [global::Newtonsoft.Json.JsonProperty("jobs_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string JobsUrl { get; set; } = default!;
 
@@ -168,6 +185,7 @@ namespace G
         /// The URL to download the logs for the workflow run.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5/logs
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/runs/5/logs</example>
         [global::Newtonsoft.Json.JsonProperty("logs_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string LogsUrl { get; set; } = default!;
 
@@ -175,6 +193,7 @@ namespace G
         /// The URL to the associated check suite.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/check-suites/12
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/check-suites/12</example>
         [global::Newtonsoft.Json.JsonProperty("check_suite_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CheckSuiteUrl { get; set; } = default!;
 
@@ -182,6 +201,7 @@ namespace G
         /// The URL to the artifacts for the workflow run.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5/rerun/artifacts
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/runs/5/rerun/artifacts</example>
         [global::Newtonsoft.Json.JsonProperty("artifacts_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ArtifactsUrl { get; set; } = default!;
 
@@ -189,6 +209,7 @@ namespace G
         /// The URL to cancel the workflow run.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5/cancel
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/runs/5/cancel</example>
         [global::Newtonsoft.Json.JsonProperty("cancel_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CancelUrl { get; set; } = default!;
 
@@ -196,6 +217,7 @@ namespace G
         /// The URL to rerun the workflow run.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5/rerun
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/runs/5/rerun</example>
         [global::Newtonsoft.Json.JsonProperty("rerun_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string RerunUrl { get; set; } = default!;
 
@@ -203,6 +225,7 @@ namespace G
         /// The URL to the previous attempted run of this workflow, if one exists.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5/attempts/3
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/runs/5/attempts/3</example>
         [global::Newtonsoft.Json.JsonProperty("previous_attempt_url")]
         public string? PreviousAttemptUrl { get; set; }
 
@@ -210,6 +233,7 @@ namespace G
         /// The URL to the workflow.<br/>
         /// Example: https://api.github.com/repos/github/hello-world/actions/workflows/main.yaml
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/workflows/main.yaml</example>
         [global::Newtonsoft.Json.JsonProperty("workflow_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string WorkflowUrl { get; set; } = default!;
 
@@ -234,6 +258,7 @@ namespace G
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("head_repository_id")]
         public int? HeadRepositoryId { get; set; }
 
@@ -241,6 +266,7 @@ namespace G
         /// The event-specific title associated with the run or the run-name if set, or the value of `run-name` if it is set in the workflow.<br/>
         /// Example: Simple Workflow
         /// </summary>
+        /// <example>Simple Workflow</example>
         [global::Newtonsoft.Json.JsonProperty("display_title", Required = global::Newtonsoft.Json.Required.Always)]
         public string DisplayTitle { get; set; } = default!;
 

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("subscribed")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Subscribed { get; set; }
@@ -40,6 +41,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/notifications/threads/1/subscription
         /// </summary>
+        /// <example>https://api.github.com/notifications/threads/1/subscription</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -47,12 +49,14 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/notifications/threads/1
         /// </summary>
+        /// <example>https://api.github.com/notifications/threads/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("thread_url")]
         public string? ThreadUrl { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/1
         /// </summary>
+        /// <example>https://api.github.com/repos/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_url")]
         public string? RepositoryUrl { get; set; }
 

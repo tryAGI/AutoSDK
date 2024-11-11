@@ -32,6 +32,7 @@ namespace G
         /// A unique string that represents the version of the build for this deployment.<br/>
         /// Default Value: GITHUB_SHA
         /// </summary>
+        /// <default>"GITHUB_SHA"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("pages_build_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PagesBuildVersion { get; set; } = "GITHUB_SHA";

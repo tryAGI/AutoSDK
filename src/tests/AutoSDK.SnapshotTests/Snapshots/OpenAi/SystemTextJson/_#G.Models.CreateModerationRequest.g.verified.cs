@@ -25,6 +25,7 @@ namespace G
         /// Default Value: text-moderation-latest<br/>
         /// Example: text-moderation-stable
         /// </summary>
+        /// <example>text-moderation-stable</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? Model { get; set; }

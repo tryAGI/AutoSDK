@@ -28,6 +28,7 @@ namespace G
         /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.MessagesItem> Messages { get; set; }

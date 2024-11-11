@@ -20,6 +20,8 @@ namespace G
         /// Default Value: member<br/>
         /// Example: member
         /// </summary>
+        /// <default>global::G.TeamMembershipRole.Member</default>
+        /// <example>member</example>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.TeamMembershipRole Role { get; set; } = default!;
 

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/1347</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 1L
         /// </summary>
+        /// <example>1L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: MDExOlB1bGxSZXF1ZXN0MQ==
         /// </summary>
+        /// <example>MDExOlB1bGxSZXF1ZXN0MQ==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/pull/1347
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/1347</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/pull/1347.diff
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/1347.diff</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("diff_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DiffUrl { get; set; }
@@ -47,6 +52,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/pull/1347.patch
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/1347.patch</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("patch_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PatchUrl { get; set; }
@@ -54,6 +60,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/issues/1347
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/issues/1347</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string IssueUrl { get; set; }
@@ -61,6 +68,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347/commits
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/1347/commits</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commits_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommitsUrl { get; set; }
@@ -68,6 +76,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347/comments
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/1347/comments</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_comments_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReviewCommentsUrl { get; set; }
@@ -75,6 +84,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments{/number}
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/comments{/number}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_comment_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReviewCommentUrl { get; set; }
@@ -82,6 +92,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/issues/1347/comments
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/issues/1347/comments</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommentsUrl { get; set; }
@@ -89,6 +100,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/statuses/6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/statuses/6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("statuses_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string StatusesUrl { get; set; }
@@ -97,6 +109,7 @@ namespace G
         /// Number uniquely identifying the pull request within its repository.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Number { get; set; }
@@ -105,6 +118,7 @@ namespace G
         /// State of this Pull Request. Either `open` or `closed`.<br/>
         /// Example: open
         /// </summary>
+        /// <example>open</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.PullRequestStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -113,6 +127,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("locked")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Locked { get; set; }
@@ -121,6 +136,7 @@ namespace G
         /// The title of the pull request.<br/>
         /// Example: Amazing new feature
         /// </summary>
+        /// <example>Amazing new feature</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
@@ -135,6 +151,7 @@ namespace G
         /// <summary>
         /// Example: Please pull these awesome changes
         /// </summary>
+        /// <example>Please pull these awesome changes</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Body { get; set; }
@@ -156,6 +173,7 @@ namespace G
         /// <summary>
         /// Example: too heated
         /// </summary>
+        /// <example>too heated</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("active_lock_reason")]
         public string? ActiveLockReason { get; set; }
 
@@ -190,6 +208,7 @@ namespace G
         /// <summary>
         /// Example: e5bd3914e2e596debea16f433f57875b5b90bcd6
         /// </summary>
+        /// <example>e5bd3914e2e596debea16f433f57875b5b90bcd6</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("merge_commit_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? MergeCommitSha { get; set; }
@@ -244,6 +263,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -260,6 +280,7 @@ namespace G
         /// Indicates whether or not the pull request is a draft.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("draft")]
         public bool? Draft { get; set; }
 
@@ -273,6 +294,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("mergeable")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool? Mergeable { get; set; }
@@ -280,12 +302,14 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("rebaseable")]
         public bool? Rebaseable { get; set; }
 
         /// <summary>
         /// Example: clean
         /// </summary>
+        /// <example>clean</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("mergeable_state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MergeableState { get; set; }
@@ -300,6 +324,7 @@ namespace G
         /// <summary>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Comments { get; set; }
@@ -307,6 +332,7 @@ namespace G
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("review_comments")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ReviewComments { get; set; }
@@ -315,6 +341,7 @@ namespace G
         /// Indicates whether maintainers can modify the pull request.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("maintainer_can_modify")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool MaintainerCanModify { get; set; }
@@ -322,6 +349,7 @@ namespace G
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commits")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Commits { get; set; }
@@ -329,6 +357,7 @@ namespace G
         /// <summary>
         /// Example: 100
         /// </summary>
+        /// <example>100</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("additions")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Additions { get; set; }
@@ -336,6 +365,7 @@ namespace G
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deletions")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Deletions { get; set; }
@@ -343,6 +373,7 @@ namespace G
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("changed_files")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int ChangedFiles { get; set; }

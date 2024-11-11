@@ -13,6 +13,7 @@ namespace G
         /// The new concept you want to extend. Must be an all-lowercase single word, or a space delimited compound word. Examples: 'foobarium', 'my custom concept'<br/>
         /// Example: foobarium
         /// </summary>
+        /// <example>foobarium</example>
         [global::Newtonsoft.Json.JsonProperty("concept")]
         public string? Concept { get; set; }
 

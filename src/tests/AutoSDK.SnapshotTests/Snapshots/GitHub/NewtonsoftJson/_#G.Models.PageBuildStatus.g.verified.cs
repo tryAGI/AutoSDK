@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/pages/builds/latest
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/pages/builds/latest</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: queued
         /// </summary>
+        /// <example>queued</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public string Status { get; set; } = default!;
 

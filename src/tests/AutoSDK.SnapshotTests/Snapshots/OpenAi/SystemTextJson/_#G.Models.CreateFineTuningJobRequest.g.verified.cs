@@ -16,6 +16,7 @@ namespace G
         /// [supported models](/docs/guides/fine-tuning/which-models-can-be-fine-tuned).<br/>
         /// Example: gpt-4o-mini
         /// </summary>
+        /// <example>gpt-4o-mini</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -29,6 +30,7 @@ namespace G
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
         /// </summary>
+        /// <example>file-abc123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("training_file")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TrainingFile { get; set; }
@@ -56,6 +58,7 @@ namespace G
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
         /// </summary>
+        /// <example>file-abc123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("validation_file")]
         public string? ValidationFile { get; set; }
 
@@ -70,6 +73,7 @@ namespace G
         /// If a seed is not specified, one will be generated for you.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
         public int? Seed { get; set; }
 

@@ -13,6 +13,7 @@ namespace G
         /// The URL to which the payloads will be delivered.<br/>
         /// Example: https://example.com/webhook
         /// </summary>
+        /// <example>https://example.com/webhook</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.<br/>
         /// Example: "json"
         /// </summary>
+        /// <example>"json"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_type")]
         public string? ContentType { get; set; }
 
@@ -28,6 +30,7 @@ namespace G
         /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).<br/>
         /// Example: "********"
         /// </summary>
+        /// <example>"********"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("secret")]
         public string? Secret { get; set; }
 
@@ -41,12 +44,14 @@ namespace G
         /// <summary>
         /// Example: "kdaigle"
         /// </summary>
+        /// <example>"kdaigle"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("username")]
         public string? Username { get; set; }
 
         /// <summary>
         /// Example: "password"
         /// </summary>
+        /// <example>"password"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("password")]
         public string? Password { get; set; }
 

@@ -16,6 +16,7 @@ namespace G
         /// [supported models](/docs/guides/fine-tuning/which-models-can-be-fine-tuned).<br/>
         /// Example: gpt-4o-mini
         /// </summary>
+        /// <example>gpt-4o-mini</example>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AnyOf<string, global::G.CreateFineTuningJobRequestModel?> Model { get; set; } = default!;
 
@@ -27,6 +28,7 @@ namespace G
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
         /// </summary>
+        /// <example>file-abc123</example>
         [global::Newtonsoft.Json.JsonProperty("training_file", Required = global::Newtonsoft.Json.Required.Always)]
         public string TrainingFile { get; set; } = default!;
 
@@ -53,6 +55,7 @@ namespace G
         /// See the [fine-tuning guide](/docs/guides/fine-tuning) for more details.<br/>
         /// Example: file-abc123
         /// </summary>
+        /// <example>file-abc123</example>
         [global::Newtonsoft.Json.JsonProperty("validation_file")]
         public string? ValidationFile { get; set; }
 
@@ -67,6 +70,7 @@ namespace G
         /// If a seed is not specified, one will be generated for you.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("seed")]
         public int? Seed { get; set; }
 

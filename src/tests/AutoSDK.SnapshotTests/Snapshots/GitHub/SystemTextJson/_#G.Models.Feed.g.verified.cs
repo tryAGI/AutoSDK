@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/timeline
         /// </summary>
+        /// <example>https://github.com/timeline</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeline_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TimelineUrl { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/{user}
         /// </summary>
+        /// <example>https://github.com/{user}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("user_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string UserUrl { get; set; }
@@ -26,36 +28,42 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat
         /// </summary>
+        /// <example>https://github.com/octocat</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_user_public_url")]
         public string? CurrentUserPublicUrl { get; set; }
 
         /// <summary>
         /// Example: https://github.com/octocat.private?token=abc123
         /// </summary>
+        /// <example>https://github.com/octocat.private?token=abc123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_user_url")]
         public string? CurrentUserUrl { get; set; }
 
         /// <summary>
         /// Example: https://github.com/octocat.private.actor?token=abc123
         /// </summary>
+        /// <example>https://github.com/octocat.private.actor?token=abc123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_user_actor_url")]
         public string? CurrentUserActorUrl { get; set; }
 
         /// <summary>
         /// Example: https://github.com/octocat-org
         /// </summary>
+        /// <example>https://github.com/octocat-org</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_user_organization_url")]
         public string? CurrentUserOrganizationUrl { get; set; }
 
         /// <summary>
         /// Example: [https://github.com/organizations/github/octocat.private.atom?token=abc123]
         /// </summary>
+        /// <example>[https://github.com/organizations/github/octocat.private.atom?token=abc123]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_user_organization_urls")]
         public global::System.Collections.Generic.IList<string>? CurrentUserOrganizationUrls { get; set; }
 
         /// <summary>
         /// Example: https://github.com/security-advisories
         /// </summary>
+        /// <example>https://github.com/security-advisories</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("security_advisories_url")]
         public string? SecurityAdvisoriesUrl { get; set; }
 
@@ -63,6 +71,7 @@ namespace G
         /// A feed of discussions for a given repository.<br/>
         /// Example: https://github.com/{user}/{repo}/discussions
         /// </summary>
+        /// <example>https://github.com/{user}/{repo}/discussions</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_discussions_url")]
         public string? RepositoryDiscussionsUrl { get; set; }
 
@@ -70,6 +79,7 @@ namespace G
         /// A feed of discussions for a given repository and category.<br/>
         /// Example: https://github.com/{user}/{repo}/discussions/categories/{category}
         /// </summary>
+        /// <example>https://github.com/{user}/{repo}/discussions/categories/{category}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_discussions_category_url")]
         public string? RepositoryDiscussionsCategoryUrl { get; set; }
 

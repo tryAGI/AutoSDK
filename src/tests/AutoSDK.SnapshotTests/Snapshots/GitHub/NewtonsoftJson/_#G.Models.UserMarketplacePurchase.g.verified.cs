@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: monthly
         /// </summary>
+        /// <example>monthly</example>
         [global::Newtonsoft.Json.JsonProperty("billing_cycle", Required = global::Newtonsoft.Json.Required.Always)]
         public string BillingCycle { get; set; } = default!;
 
@@ -30,6 +31,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("on_free_trial", Required = global::Newtonsoft.Json.Required.Always)]
         public bool OnFreeTrial { get; set; } = default!;
 

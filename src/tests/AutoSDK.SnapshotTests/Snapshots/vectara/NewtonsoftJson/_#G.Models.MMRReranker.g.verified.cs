@@ -21,6 +21,7 @@ namespace G
         /// The diversity bias. Higher values indicate more diversity.<br/>
         /// Example: 0.3F
         /// </summary>
+        /// <example>0.3F</example>
         [global::Newtonsoft.Json.JsonProperty("diversity_bias")]
         public float? DiversityBias { get; set; }
 

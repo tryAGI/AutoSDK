@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: critical
         /// </summary>
+        /// <example>critical</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("severity")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Severity { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: GHSA-rf4j-j272-fj86
         /// </summary>
+        /// <example>GHSA-rf4j-j272-fj86</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("advisory_ghsa_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AdvisoryGhsaId { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: A summary of the advisory.
         /// </summary>
+        /// <example>A summary of the advisory.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("advisory_summary")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AdvisorySummary { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/advisories/GHSA-rf4j-j272-fj86
         /// </summary>
+        /// <example>https://github.com/advisories/GHSA-rf4j-j272-fj86</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("advisory_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AdvisoryUrl { get; set; }

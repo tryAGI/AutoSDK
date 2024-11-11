@@ -68,6 +68,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_downloads")]
         public bool? HasDownloads { get; set; }
 

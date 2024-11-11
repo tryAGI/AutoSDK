@@ -20,6 +20,7 @@ namespace G
         /// Whether deployment to the environment(s) was approved or rejected or pending (with comments)<br/>
         /// Example: approved
         /// </summary>
+        /// <example>approved</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.EnvironmentApprovalsStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -36,6 +37,7 @@ namespace G
         /// The comment submitted with the deployment review<br/>
         /// Example: Ship it!
         /// </summary>
+        /// <example>Ship it!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("comment")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Comment { get; set; }

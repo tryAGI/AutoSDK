@@ -13,6 +13,7 @@ namespace G
         /// The project card's note<br/>
         /// Example: Update all gems
         /// </summary>
+        /// <example>Update all gems</example>
         [global::Newtonsoft.Json.JsonProperty("note", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Note { get; set; } = default!;
 

@@ -13,6 +13,7 @@ namespace G
         /// The name of the secret.<br/>
         /// Example: SECRET_TOKEN
         /// </summary>
+        /// <example>SECRET_TOKEN</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -42,6 +43,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/org/dependabot/secrets/my_secret/repositories
         /// </summary>
+        /// <example>https://api.github.com/organizations/org/dependabot/secrets/my_secret/repositories</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("selected_repositories_url")]
         public string? SelectedRepositoriesUrl { get; set; }
 

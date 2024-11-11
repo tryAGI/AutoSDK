@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the package version.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The name of the package version.<br/>
         /// Example: latest
         /// </summary>
+        /// <example>latest</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/packages/container/super-linter/versions/786068
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/packages/container/super-linter/versions/786068</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -35,6 +38,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/orgs/github/packages/container/package/super-linter
         /// </summary>
+        /// <example>https://github.com/orgs/github/packages/container/package/super-linter</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PackageHtmlUrl { get; set; }
@@ -42,12 +46,14 @@ namespace G
         /// <summary>
         /// Example: https://github.com/orgs/github/packages/container/super-linter/786068
         /// </summary>
+        /// <example>https://github.com/orgs/github/packages/container/super-linter/786068</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         public string? HtmlUrl { get; set; }
 
         /// <summary>
         /// Example: MIT
         /// </summary>
+        /// <example>MIT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
         public string? License { get; set; }
 

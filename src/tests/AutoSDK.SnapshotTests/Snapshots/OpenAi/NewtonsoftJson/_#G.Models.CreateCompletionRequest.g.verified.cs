@@ -70,6 +70,7 @@ namespace G
         /// Default Value: 16<br/>
         /// Example: 16
         /// </summary>
+        /// <example>16</example>
         [global::Newtonsoft.Json.JsonProperty("max_tokens")]
         public int? MaxTokens { get; set; }
 
@@ -79,6 +80,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("n")]
         public int? N { get; set; }
 
@@ -121,6 +123,7 @@ namespace G
         /// This parameter is only supported for `gpt-3.5-turbo-instruct`.<br/>
         /// Example: test.
         /// </summary>
+        /// <example>test.</example>
         [global::Newtonsoft.Json.JsonProperty("suffix")]
         public string? Suffix { get; set; }
 
@@ -130,6 +133,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double? Temperature { get; set; }
 
@@ -139,6 +143,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
         public double? TopP { get; set; }
 
@@ -146,6 +151,7 @@ namespace G
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
+        /// <example>user-1234</example>
         [global::Newtonsoft.Json.JsonProperty("user")]
         public string? User { get; set; }
 

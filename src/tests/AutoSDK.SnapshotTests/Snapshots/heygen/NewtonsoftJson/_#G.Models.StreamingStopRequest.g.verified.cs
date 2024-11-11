@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: &lt;session_id&gt;
         /// </summary>
+        /// <example>&lt;session_id&gt;</example>
         [global::Newtonsoft.Json.JsonProperty("session_id")]
         public string? SessionId { get; set; }
 

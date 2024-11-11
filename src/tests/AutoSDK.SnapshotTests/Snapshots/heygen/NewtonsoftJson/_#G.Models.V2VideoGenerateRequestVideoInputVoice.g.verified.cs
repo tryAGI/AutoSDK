@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: Welcome to the new era of video creation with HeyGen! Simply type your script to get started!
         /// </summary>
+        /// <example>Welcome to the new era of video creation with HeyGen! Simply type your script to get started!</example>
         [global::Newtonsoft.Json.JsonProperty("input_text")]
         public string? InputText { get; set; }
 
         /// <summary>
         /// Example: text
         /// </summary>
+        /// <example>text</example>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public string? Type { get; set; }
 
         /// <summary>
         /// Example: 2f72ee82b83d4b00af16c4771d611752
         /// </summary>
+        /// <example>2f72ee82b83d4b00af16c4771d611752</example>
         [global::Newtonsoft.Json.JsonProperty("voice_id")]
         public string? VoiceId { get; set; }
 

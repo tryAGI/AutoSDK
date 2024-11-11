@@ -27,6 +27,7 @@ namespace G
         /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
         /// Example: A cute baby sea otter wearing a beret
         /// </summary>
+        /// <example>A cute baby sea otter wearing a beret</example>
         [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
         public string Prompt { get; set; } = default!;
 
@@ -47,6 +48,7 @@ namespace G
         /// Default Value: dall-e-2<br/>
         /// Example: dall-e-2
         /// </summary>
+        /// <example>dall-e-2</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
         public global::G.AnyOf<string, global::G.CreateImageEditRequestModel?>? Model { get; set; }
 
@@ -55,6 +57,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("n")]
         public int? N { get; set; }
 
@@ -63,6 +66,7 @@ namespace G
         /// Default Value: 1024x1024<br/>
         /// Example: 1024x1024
         /// </summary>
+        /// <example>1024x1024</example>
         [global::Newtonsoft.Json.JsonProperty("size")]
         public global::G.CreateImageEditRequestSize? Size { get; set; }
 
@@ -71,6 +75,7 @@ namespace G
         /// Default Value: url<br/>
         /// Example: url
         /// </summary>
+        /// <example>url</example>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
         public global::G.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; }
 
@@ -78,6 +83,7 @@ namespace G
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
+        /// <example>user-1234</example>
         [global::Newtonsoft.Json.JsonProperty("user")]
         public string? User { get; set; }
 

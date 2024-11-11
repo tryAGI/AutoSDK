@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: Kristin_public_3_20240108
         /// </summary>
+        /// <example>Kristin_public_3_20240108</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_id")]
         public string? AvatarId { get; set; }
 
         /// <summary>
         /// Example: normal
         /// </summary>
+        /// <example>normal</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_style")]
         public string? AvatarStyle { get; set; }
 
         /// <summary>
         /// Example: avatar
         /// </summary>
+        /// <example>avatar</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; }
 

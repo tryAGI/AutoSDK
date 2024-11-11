@@ -32,6 +32,7 @@ namespace G
         /// <summary>
         /// Example: "web"
         /// </summary>
+        /// <example>"web"</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 

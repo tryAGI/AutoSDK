@@ -13,6 +13,7 @@ namespace G
         /// The total number of repositories that were skipped for this reason.<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("repository_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int RepositoryCount { get; set; } = default!;
 

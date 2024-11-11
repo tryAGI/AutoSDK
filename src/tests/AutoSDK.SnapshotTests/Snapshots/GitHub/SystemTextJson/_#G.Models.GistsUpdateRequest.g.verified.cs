@@ -13,6 +13,7 @@ namespace G
         /// The description of the gist.<br/>
         /// Example: Example Ruby script
         /// </summary>
+        /// <example>Example Ruby script</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? Description { get; set; }
 

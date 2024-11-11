@@ -13,6 +13,7 @@ namespace G
         /// The name of the manifest.<br/>
         /// Example: package-lock.json
         /// </summary>
+        /// <example>package-lock.json</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }

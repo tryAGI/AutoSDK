@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/octocat/memberships/defunkt
         /// </summary>
+        /// <example>https://api.github.com/orgs/octocat/memberships/defunkt</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -19,6 +20,7 @@ namespace G
         /// The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.<br/>
         /// Example: active
         /// </summary>
+        /// <example>active</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.OrgMembershipState State { get; set; } = default!;
 
@@ -26,12 +28,14 @@ namespace G
         /// The user's membership type in the organization.<br/>
         /// Example: admin
         /// </summary>
+        /// <example>admin</example>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.OrgMembershipRole Role { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/octocat
         /// </summary>
+        /// <example>https://api.github.com/orgs/octocat</example>
         [global::Newtonsoft.Json.JsonProperty("organization_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string OrganizationUrl { get; set; } = default!;
 

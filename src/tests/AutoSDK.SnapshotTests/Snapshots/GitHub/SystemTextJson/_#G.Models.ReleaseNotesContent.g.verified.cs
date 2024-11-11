@@ -13,6 +13,7 @@ namespace G
         /// The generated name of the release<br/>
         /// Example: Release v1.0.0 is now available!
         /// </summary>
+        /// <example>Release v1.0.0 is now available!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }

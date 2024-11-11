@@ -12,72 +12,84 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/1347</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: 1L
         /// </summary>
+        /// <example>1L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDExOlB1bGxSZXF1ZXN0MQ==
         /// </summary>
+        /// <example>MDExOlB1bGxSZXF1ZXN0MQ==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/pull/1347
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/1347</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/pull/1347.diff
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/1347.diff</example>
         [global::Newtonsoft.Json.JsonProperty("diff_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string DiffUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/pull/1347.patch
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/1347.patch</example>
         [global::Newtonsoft.Json.JsonProperty("patch_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PatchUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/issues/1347
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/issues/1347</example>
         [global::Newtonsoft.Json.JsonProperty("issue_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string IssueUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347/commits
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/1347/commits</example>
         [global::Newtonsoft.Json.JsonProperty("commits_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CommitsUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347/comments
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/1347/comments</example>
         [global::Newtonsoft.Json.JsonProperty("review_comments_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ReviewCommentsUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments{/number}
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/comments{/number}</example>
         [global::Newtonsoft.Json.JsonProperty("review_comment_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ReviewCommentUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/issues/1347/comments
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/issues/1347/comments</example>
         [global::Newtonsoft.Json.JsonProperty("comments_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string CommentsUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/statuses/6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/statuses/6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
         [global::Newtonsoft.Json.JsonProperty("statuses_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string StatusesUrl { get; set; } = default!;
 
@@ -85,6 +97,7 @@ namespace G
         /// Number uniquely identifying the pull request within its repository.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("number", Required = global::Newtonsoft.Json.Required.Always)]
         public int Number { get; set; } = default!;
 
@@ -92,12 +105,14 @@ namespace G
         /// State of this Pull Request. Either `open` or `closed`.<br/>
         /// Example: open
         /// </summary>
+        /// <example>open</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.PullRequestState State { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("locked", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Locked { get; set; } = default!;
 
@@ -105,6 +120,7 @@ namespace G
         /// The title of the pull request.<br/>
         /// Example: Amazing new feature
         /// </summary>
+        /// <example>Amazing new feature</example>
         [global::Newtonsoft.Json.JsonProperty("title", Required = global::Newtonsoft.Json.Required.Always)]
         public string Title { get; set; } = default!;
 
@@ -117,6 +133,7 @@ namespace G
         /// <summary>
         /// Example: Please pull these awesome changes
         /// </summary>
+        /// <example>Please pull these awesome changes</example>
         [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Body { get; set; } = default!;
 
@@ -135,6 +152,7 @@ namespace G
         /// <summary>
         /// Example: too heated
         /// </summary>
+        /// <example>too heated</example>
         [global::Newtonsoft.Json.JsonProperty("active_lock_reason")]
         public string? ActiveLockReason { get; set; }
 
@@ -165,6 +183,7 @@ namespace G
         /// <summary>
         /// Example: e5bd3914e2e596debea16f433f57875b5b90bcd6
         /// </summary>
+        /// <example>e5bd3914e2e596debea16f433f57875b5b90bcd6</example>
         [global::Newtonsoft.Json.JsonProperty("merge_commit_sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string? MergeCommitSha { get; set; } = default!;
 
@@ -214,6 +233,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::Newtonsoft.Json.JsonProperty("author_association", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AuthorAssociation AuthorAssociation { get; set; } = default!;
 
@@ -227,6 +247,7 @@ namespace G
         /// Indicates whether or not the pull request is a draft.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("draft")]
         public bool? Draft { get; set; }
 
@@ -239,18 +260,21 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("mergeable", Required = global::Newtonsoft.Json.Required.Always)]
         public bool? Mergeable { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("rebaseable")]
         public bool? Rebaseable { get; set; }
 
         /// <summary>
         /// Example: clean
         /// </summary>
+        /// <example>clean</example>
         [global::Newtonsoft.Json.JsonProperty("mergeable_state", Required = global::Newtonsoft.Json.Required.Always)]
         public string MergeableState { get; set; } = default!;
 
@@ -263,12 +287,14 @@ namespace G
         /// <summary>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::Newtonsoft.Json.JsonProperty("comments", Required = global::Newtonsoft.Json.Required.Always)]
         public int Comments { get; set; } = default!;
 
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("review_comments", Required = global::Newtonsoft.Json.Required.Always)]
         public int ReviewComments { get; set; } = default!;
 
@@ -276,30 +302,35 @@ namespace G
         /// Indicates whether maintainers can modify the pull request.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("maintainer_can_modify", Required = global::Newtonsoft.Json.Required.Always)]
         public bool MaintainerCanModify { get; set; } = default!;
 
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::Newtonsoft.Json.JsonProperty("commits", Required = global::Newtonsoft.Json.Required.Always)]
         public int Commits { get; set; } = default!;
 
         /// <summary>
         /// Example: 100
         /// </summary>
+        /// <example>100</example>
         [global::Newtonsoft.Json.JsonProperty("additions", Required = global::Newtonsoft.Json.Required.Always)]
         public int Additions { get; set; } = default!;
 
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::Newtonsoft.Json.JsonProperty("deletions", Required = global::Newtonsoft.Json.Required.Always)]
         public int Deletions { get; set; } = default!;
 
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("changed_files", Required = global::Newtonsoft.Json.Required.Always)]
         public int ChangedFiles { get; set; } = default!;
 

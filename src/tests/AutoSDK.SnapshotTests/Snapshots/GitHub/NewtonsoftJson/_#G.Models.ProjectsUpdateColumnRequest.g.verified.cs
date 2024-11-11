@@ -13,6 +13,7 @@ namespace G
         /// Name of the project column<br/>
         /// Example: Remaining tasks
         /// </summary>
+        /// <example>Remaining tasks</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 

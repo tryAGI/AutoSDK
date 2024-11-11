@@ -20,6 +20,7 @@ namespace G
         /// Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.<br/>
         /// Default Value: true
         /// </summary>
+        /// <default>true</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("setting")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Setting { get; set; } = true;

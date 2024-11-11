@@ -13,6 +13,7 @@ namespace G
         /// The search query string, which is the question the user is asking.<br/>
         /// Example: Am I allowed to bring pets to work?
         /// </summary>
+        /// <example>Am I allowed to bring pets to work?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Query { get; set; }

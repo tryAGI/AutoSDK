@@ -13,6 +13,7 @@ namespace G
         /// Class (name) which objects will be deleted.<br/>
         /// Example: City
         /// </summary>
+        /// <example>City</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("class")]
         public string? Class { get; set; }
 

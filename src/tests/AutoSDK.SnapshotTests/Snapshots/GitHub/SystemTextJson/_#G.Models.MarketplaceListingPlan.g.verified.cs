@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/marketplace_listing/plans/1313
         /// </summary>
+        /// <example>https://api.github.com/marketplace_listing/plans/1313</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/marketplace_listing/plans/1313/accounts
         /// </summary>
+        /// <example>https://api.github.com/marketplace_listing/plans/1313/accounts</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("accounts_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AccountsUrl { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: 1313
         /// </summary>
+        /// <example>1313</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Number { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: Pro
         /// </summary>
+        /// <example>Pro</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -47,6 +52,7 @@ namespace G
         /// <summary>
         /// Example: A professional-grade CI solution
         /// </summary>
+        /// <example>A professional-grade CI solution</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Description { get; set; }
@@ -54,6 +60,7 @@ namespace G
         /// <summary>
         /// Example: 1099
         /// </summary>
+        /// <example>1099</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("monthly_price_in_cents")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int MonthlyPriceInCents { get; set; }
@@ -61,6 +68,7 @@ namespace G
         /// <summary>
         /// Example: 11870
         /// </summary>
+        /// <example>11870</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("yearly_price_in_cents")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int YearlyPriceInCents { get; set; }
@@ -68,6 +76,7 @@ namespace G
         /// <summary>
         /// Example: FLAT_RATE
         /// </summary>
+        /// <example>FLAT_RATE</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("price_model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MarketplaceListingPlanPriceModelJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -76,6 +85,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("has_free_trial")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool HasFreeTrial { get; set; }
@@ -90,6 +100,7 @@ namespace G
         /// <summary>
         /// Example: published
         /// </summary>
+        /// <example>published</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string State { get; set; }
@@ -97,6 +108,7 @@ namespace G
         /// <summary>
         /// Example: [Up to 25 private repositories, 11 concurrent builds]
         /// </summary>
+        /// <example>[Up to 25 private repositories, 11 concurrent builds]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("bullets")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Bullets { get; set; }

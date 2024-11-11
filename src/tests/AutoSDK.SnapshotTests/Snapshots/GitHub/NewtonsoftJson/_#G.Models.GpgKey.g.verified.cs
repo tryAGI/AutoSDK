@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: 3L
         /// </summary>
+        /// <example>3L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: Octocat's GPG Key
         /// </summary>
+        /// <example>Octocat's GPG Key</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -30,30 +32,35 @@ namespace G
         /// <summary>
         /// Example: 3262EFF25BA0D270
         /// </summary>
+        /// <example>3262EFF25BA0D270</example>
         [global::Newtonsoft.Json.JsonProperty("key_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string KeyId { get; set; } = default!;
 
         /// <summary>
         /// Example: xsBNBFayYZ...
         /// </summary>
+        /// <example>xsBNBFayYZ...</example>
         [global::Newtonsoft.Json.JsonProperty("public_key", Required = global::Newtonsoft.Json.Required.Always)]
         public string PublicKey { get; set; } = default!;
 
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("emails", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.GpgKeyEmail> Emails { get; set; } = default!;
 
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("subkeys", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.GpgKeySubkey> Subkeys { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("can_sign", Required = global::Newtonsoft.Json.Required.Always)]
         public bool CanSign { get; set; } = default!;
 
@@ -72,6 +79,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("can_certify", Required = global::Newtonsoft.Json.Required.Always)]
         public bool CanCertify { get; set; } = default!;
 
@@ -90,6 +98,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("revoked", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Revoked { get; set; } = default!;
 

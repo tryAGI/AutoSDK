@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("fileUid")]
         public string FileUid { get; set; } = default!;
 

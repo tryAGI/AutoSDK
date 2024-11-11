@@ -13,6 +13,7 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </summary>
+        /// <example>my-corpus</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("corpus_key")]
         public string? CorpusKey { get; set; }
 

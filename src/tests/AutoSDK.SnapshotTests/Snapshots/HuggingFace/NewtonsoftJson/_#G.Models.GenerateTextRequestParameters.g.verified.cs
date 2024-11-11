@@ -13,6 +13,7 @@ namespace G
         /// Integer to define the top tokens considered within the sample operation to create new text.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("top_k")]
         public int? TopK { get; set; }
 
@@ -21,6 +22,7 @@ namespace G
         /// Add tokens in the sample for more probable to least probable until the sum of the probabilities is greater than top_p.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("top_p")]
         public double? TopP { get; set; }
 
@@ -32,6 +34,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("temperature")]
         public double? Temperature { get; set; }
 
@@ -39,6 +42,7 @@ namespace G
         /// The more a token is used within generation the more it is penalized to not be picked in successive generation passes.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("repetition_penalty")]
         public double? RepetitionPenalty { get; set; }
 
@@ -47,6 +51,7 @@ namespace G
         /// Each new tokens slows down the request, so look for balance between response times and length of text generated.<br/>
         /// Example: 250
         /// </summary>
+        /// <example>250</example>
         [global::Newtonsoft.Json.JsonProperty("max_new_tokens")]
         public int? MaxNewTokens { get; set; }
 
@@ -54,6 +59,7 @@ namespace G
         /// The amount of time in seconds that the query should take maximum. Network can cause some overhead so it will be a soft limit. Use that in combination with max_new_tokens for best results.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("max_time")]
         public double? MaxTime { get; set; }
 
@@ -69,6 +75,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("num_return_sequences")]
         public int? NumReturnSequences { get; set; }
 

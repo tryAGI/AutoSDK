@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 1296269
         /// </summary>
+        /// <example>1296269</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
         /// </summary>
+        /// <example>MDEwOlJlcG9zaXRvcnkxMjk2MjY5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -27,6 +29,7 @@ namespace G
         /// The SHA of the commit before the activity.<br/>
         /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
+        /// <example>6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("before")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Before { get; set; }
@@ -35,6 +38,7 @@ namespace G
         /// The SHA of the commit after the activity.<br/>
         /// Example: 827efc6d56897b048c772eb4087f854f46256132
         /// </summary>
+        /// <example>827efc6d56897b048c772eb4087f854f46256132</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("after")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string After { get; set; }
@@ -43,6 +47,7 @@ namespace G
         /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`.<br/>
         /// Example: refs/heads/main
         /// </summary>
+        /// <example>refs/heads/main</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Ref { get; set; }
@@ -58,6 +63,7 @@ namespace G
         /// The type of the activity that was performed.<br/>
         /// Example: force_push
         /// </summary>
+        /// <example>force_push</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("activity_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ActivityActivityTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -12,60 +12,70 @@ namespace G
         /// <summary>
         /// Example: 66.87.125.72
         /// </summary>
+        /// <example>66.87.125.72</example>
         [global::Newtonsoft.Json.JsonProperty("ip", Required = global::Newtonsoft.Json.Required.Always)]
         public string Ip { get; set; } = default!;
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("bogon")]
         public bool? Bogon { get; set; }
 
         /// <summary>
         /// Example: ip-66-87-125-72.spfdma.spcsdns.net
         /// </summary>
+        /// <example>ip-66-87-125-72.spfdma.spcsdns.net</example>
         [global::Newtonsoft.Json.JsonProperty("hostname")]
         public string? Hostname { get; set; }
 
         /// <summary>
         /// Example: Springfield
         /// </summary>
+        /// <example>Springfield</example>
         [global::Newtonsoft.Json.JsonProperty("city")]
         public string? City { get; set; }
 
         /// <summary>
         /// Example: Massachusetts
         /// </summary>
+        /// <example>Massachusetts</example>
         [global::Newtonsoft.Json.JsonProperty("region")]
         public string? Region { get; set; }
 
         /// <summary>
         /// Example: US
         /// </summary>
+        /// <example>US</example>
         [global::Newtonsoft.Json.JsonProperty("country")]
         public string? Country { get; set; }
 
         /// <summary>
         /// Example: 42.0999,-72.5783
         /// </summary>
+        /// <example>42.0999,-72.5783</example>
         [global::Newtonsoft.Json.JsonProperty("loc")]
         public string? Loc { get; set; }
 
         /// <summary>
         /// Example: 01105
         /// </summary>
+        /// <example>01105</example>
         [global::Newtonsoft.Json.JsonProperty("postal")]
         public string? Postal { get; set; }
 
         /// <summary>
         /// Example: America/New_York
         /// </summary>
+        /// <example>America/New_York</example>
         [global::Newtonsoft.Json.JsonProperty("timezone")]
         public string? Timezone { get; set; }
 
         /// <summary>
         /// Example: AS51501 Khabarovsk home networks Ltd
         /// </summary>
+        /// <example>AS51501 Khabarovsk home networks Ltd</example>
         [global::Newtonsoft.Json.JsonProperty("org")]
         public string? Org { get; set; }
 

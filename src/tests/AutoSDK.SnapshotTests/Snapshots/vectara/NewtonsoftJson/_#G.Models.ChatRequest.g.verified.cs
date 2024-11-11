@@ -13,6 +13,7 @@ namespace G
         /// The chat message or question.<br/>
         /// Example: How can I use the Vectara platform?
         /// </summary>
+        /// <example>How can I use the Vectara platform?</example>
         [global::Newtonsoft.Json.JsonProperty("query", Required = global::Newtonsoft.Json.Required.Always)]
         public string Query { get; set; } = default!;
 

@@ -27,6 +27,7 @@ namespace G
         /// The commit SHA associated with this dependency snapshot. Maximum length: 40 characters.<br/>
         /// Example: ddc951f4b1293222421f2c8df679786153acf689
         /// </summary>
+        /// <example>ddc951f4b1293222421f2c8df679786153acf689</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Sha { get; set; }
@@ -35,6 +36,7 @@ namespace G
         /// The repository branch that triggered this snapshot.<br/>
         /// Example: refs/heads/main
         /// </summary>
+        /// <example>refs/heads/main</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ref")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Ref { get; set; }

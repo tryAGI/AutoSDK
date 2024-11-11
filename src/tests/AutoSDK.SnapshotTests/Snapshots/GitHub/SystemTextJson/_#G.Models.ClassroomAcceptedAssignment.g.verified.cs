@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the repository.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// Whether an accepted assignment has been submitted.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("submitted")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Submitted { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// Whether a submission passed.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("passing")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Passing { get; set; }
@@ -37,6 +40,7 @@ namespace G
         /// Count of student commits.<br/>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CommitCount { get; set; }
@@ -45,6 +49,7 @@ namespace G
         /// Most recent grade.<br/>
         /// Example: 10/10
         /// </summary>
+        /// <example>10/10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("grade")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Grade { get; set; }

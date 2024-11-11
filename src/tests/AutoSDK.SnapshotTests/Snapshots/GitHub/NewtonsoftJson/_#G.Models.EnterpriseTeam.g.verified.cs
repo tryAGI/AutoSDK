@@ -36,18 +36,21 @@ namespace G
         /// <summary>
         /// Example: disabled | all
         /// </summary>
+        /// <example>disabled | all</example>
         [global::Newtonsoft.Json.JsonProperty("sync_to_organizations", Required = global::Newtonsoft.Json.Required.Always)]
         public string SyncToOrganizations { get; set; } = default!;
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("group_id")]
         public int? GroupId { get; set; }
 
         /// <summary>
         /// Example: https://github.com/enterprises/dc/teams/justice-league
         /// </summary>
+        /// <example>https://github.com/enterprises/dc/teams/justice-league</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 

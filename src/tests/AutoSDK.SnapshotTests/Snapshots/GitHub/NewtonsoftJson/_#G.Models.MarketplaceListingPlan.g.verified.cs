@@ -12,60 +12,70 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/marketplace_listing/plans/1313
         /// </summary>
+        /// <example>https://api.github.com/marketplace_listing/plans/1313</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/marketplace_listing/plans/1313/accounts
         /// </summary>
+        /// <example>https://api.github.com/marketplace_listing/plans/1313/accounts</example>
         [global::Newtonsoft.Json.JsonProperty("accounts_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AccountsUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: 1313
         /// </summary>
+        /// <example>1313</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::Newtonsoft.Json.JsonProperty("number", Required = global::Newtonsoft.Json.Required.Always)]
         public int Number { get; set; } = default!;
 
         /// <summary>
         /// Example: Pro
         /// </summary>
+        /// <example>Pro</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: A professional-grade CI solution
         /// </summary>
+        /// <example>A professional-grade CI solution</example>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string Description { get; set; } = default!;
 
         /// <summary>
         /// Example: 1099
         /// </summary>
+        /// <example>1099</example>
         [global::Newtonsoft.Json.JsonProperty("monthly_price_in_cents", Required = global::Newtonsoft.Json.Required.Always)]
         public int MonthlyPriceInCents { get; set; } = default!;
 
         /// <summary>
         /// Example: 11870
         /// </summary>
+        /// <example>11870</example>
         [global::Newtonsoft.Json.JsonProperty("yearly_price_in_cents", Required = global::Newtonsoft.Json.Required.Always)]
         public int YearlyPriceInCents { get; set; } = default!;
 
         /// <summary>
         /// Example: FLAT_RATE
         /// </summary>
+        /// <example>FLAT_RATE</example>
         [global::Newtonsoft.Json.JsonProperty("price_model", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.MarketplaceListingPlanPriceModel PriceModel { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_free_trial", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasFreeTrial { get; set; } = default!;
 
@@ -78,12 +88,14 @@ namespace G
         /// <summary>
         /// Example: published
         /// </summary>
+        /// <example>published</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public string State { get; set; } = default!;
 
         /// <summary>
         /// Example: [Up to 25 private repositories, 11 concurrent builds]
         /// </summary>
+        /// <example>[Up to 25 private repositories, 11 concurrent builds]</example>
         [global::Newtonsoft.Json.JsonProperty("bullets", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<string> Bullets { get; set; } = default!;
 

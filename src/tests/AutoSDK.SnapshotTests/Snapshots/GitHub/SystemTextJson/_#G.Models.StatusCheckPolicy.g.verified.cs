@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("strict")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Strict { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: [continuous-integration/travis-ci]
         /// </summary>
+        /// <example>[continuous-integration/travis-ci]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("contexts")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Contexts { get; set; }
@@ -40,6 +43,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("contexts_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ContextsUrl { get; set; }

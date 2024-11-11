@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/columns/cards/1478
         /// </summary>
+        /// <example>https://api.github.com/projects/columns/cards/1478</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -20,6 +21,7 @@ namespace G
         /// The project card's ID<br/>
         /// Example: 42L
         /// </summary>
+        /// <example>42L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -27,6 +29,7 @@ namespace G
         /// <summary>
         /// Example: MDExOlByb2plY3RDYXJkMTQ3OA==
         /// </summary>
+        /// <example>MDExOlByb2plY3RDYXJkMTQ3OA==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -34,6 +37,7 @@ namespace G
         /// <summary>
         /// Example: Add payload for delete Project column
         /// </summary>
+        /// <example>Add payload for delete Project column</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("note")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Note { get; set; }
@@ -63,6 +67,7 @@ namespace G
         /// Whether or not the card is archived<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("archived")]
         public bool? Archived { get; set; }
 
@@ -81,6 +86,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/columns/367
         /// </summary>
+        /// <example>https://api.github.com/projects/columns/367</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("column_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ColumnUrl { get; set; }
@@ -88,12 +94,14 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/api-playground/projects-test/issues/3
         /// </summary>
+        /// <example>https://api.github.com/repos/api-playground/projects-test/issues/3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("content_url")]
         public string? ContentUrl { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/projects/120
         /// </summary>
+        /// <example>https://api.github.com/projects/120</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ProjectUrl { get; set; }

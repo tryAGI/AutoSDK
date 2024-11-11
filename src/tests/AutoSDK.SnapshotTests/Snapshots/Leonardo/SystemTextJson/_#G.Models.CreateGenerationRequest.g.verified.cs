@@ -157,6 +157,7 @@ namespace G
         /// The prompt used to generate images<br/>
         /// Default Value: A majestic cat in the snow
         /// </summary>
+        /// <default>"A majestic cat in the snow"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; } = "A majestic cat in the snow";

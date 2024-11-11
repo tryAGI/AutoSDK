@@ -14,6 +14,7 @@ namespace G
         /// The package's language or package management ecosystem.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("ecosystem")]
         public string Ecosystem { get; set; } = default!;
 
@@ -21,6 +22,7 @@ namespace G
         /// The unique package name within its ecosystem.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string Name { get; set; } = default!;
 

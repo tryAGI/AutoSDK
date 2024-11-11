@@ -19,6 +19,7 @@ namespace G
         /// <summary>
         /// Example: 135
         /// </summary>
+        /// <example>135</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Total { get; set; }
@@ -26,6 +27,7 @@ namespace G
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("weeks")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> Weeks { get; set; }

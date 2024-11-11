@@ -13,6 +13,7 @@ namespace G
         /// SHA for the commit<br/>
         /// Example: 7638417db6d59f3c431d3e1f261cc637155684cd
         /// </summary>
+        /// <example>7638417db6d59f3c431d3e1f261cc637155684cd</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
@@ -26,6 +27,7 @@ namespace G
         /// Message describing the purpose of the commit<br/>
         /// Example: Fix #42
         /// </summary>
+        /// <example>Fix #42</example>
         [global::Newtonsoft.Json.JsonProperty("message", Required = global::Newtonsoft.Json.Required.Always)]
         public string Message { get; set; } = default!;
 

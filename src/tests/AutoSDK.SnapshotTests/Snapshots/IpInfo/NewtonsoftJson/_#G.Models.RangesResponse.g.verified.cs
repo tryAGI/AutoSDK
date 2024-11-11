@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: comcast.net
         /// </summary>
+        /// <example>comcast.net</example>
         [global::Newtonsoft.Json.JsonProperty("domain", Required = global::Newtonsoft.Json.Required.Always)]
         public string Domain { get; set; } = default!;
 
         /// <summary>
         /// Example: 37330
         /// </summary>
+        /// <example>37330</example>
         [global::Newtonsoft.Json.JsonProperty("num_ranges", Required = global::Newtonsoft.Json.Required.Always)]
         public string NumRanges { get; set; } = default!;
 

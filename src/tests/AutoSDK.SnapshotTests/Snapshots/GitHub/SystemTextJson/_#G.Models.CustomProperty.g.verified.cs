@@ -28,6 +28,7 @@ namespace G
         /// The type of the value for the property<br/>
         /// Example: single_select
         /// </summary>
+        /// <example>single_select</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("value_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CustomPropertyValueTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -63,6 +64,7 @@ namespace G
         /// Who can edit the values of the property<br/>
         /// Example: org_actors
         /// </summary>
+        /// <example>org_actors</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("values_editable_by")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CustomPropertyValuesEditableByJsonConverter))]
         public global::G.CustomPropertyValuesEditableBy? ValuesEditableBy { get; set; }

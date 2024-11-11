@@ -13,6 +13,7 @@ namespace G
         /// The hexadecimal representation of the color with an optional chosen weight<br/>
         /// Example: #FFFFFF
         /// </summary>
+        /// <example>#FFFFFF</example>
         [global::Newtonsoft.Json.JsonProperty("color_hex", Required = global::Newtonsoft.Json.Required.Always)]
         public string ColorHex { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The weight of the color in the color palette.<br/>
         /// Example: 0.25
         /// </summary>
+        /// <example>0.25</example>
         [global::Newtonsoft.Json.JsonProperty("color_weight", Required = global::Newtonsoft.Json.Required.Always)]
         public double ColorWeight { get; set; } = default!;
 

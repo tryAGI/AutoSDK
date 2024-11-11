@@ -20,6 +20,7 @@ namespace G
         /// The set duration of the wait timer<br/>
         /// Example: 30
         /// </summary>
+        /// <example>30</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("wait_timer")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int WaitTimer { get; set; }
@@ -35,6 +36,7 @@ namespace G
         /// Whether the currently authenticated user can approve the deployment<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("current_user_can_approve")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool CurrentUserCanApprove { get; set; }

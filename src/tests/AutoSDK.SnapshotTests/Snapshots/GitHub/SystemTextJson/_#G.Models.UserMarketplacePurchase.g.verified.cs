@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: monthly
         /// </summary>
+        /// <example>monthly</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("billing_cycle")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BillingCycle { get; set; }
@@ -33,6 +34,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("on_free_trial")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool OnFreeTrial { get; set; }

@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: cmpl-e5cc70bb28c444948073e77776eb30ef
         /// </summary>
+        /// <example>cmpl-e5cc70bb28c444948073e77776eb30ef</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string? Id { get; set; }
 
         /// <summary>
         /// Example: mistral-small-latest
         /// </summary>
+        /// <example>mistral-small-latest</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         public string? Model { get; set; }
 
         /// <summary>
         /// Example: chat.completion
         /// </summary>
+        /// <example>chat.completion</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         public string? Object { get; set; }
 

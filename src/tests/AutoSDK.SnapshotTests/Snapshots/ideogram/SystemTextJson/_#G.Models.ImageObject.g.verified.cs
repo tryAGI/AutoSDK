@@ -13,6 +13,7 @@ namespace G
         /// The direct link to the image generated.<br/>
         /// Example: https://ideogram.ai/api/images/direct/8YEpFzHuS-S6xXEGmCsf7g
         /// </summary>
+        /// <example>https://ideogram.ai/api/images/direct/8YEpFzHuS-S6xXEGmCsf7g</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? Url { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// The prompt used for the generation. This may be different from the original prompt.<br/>
         /// Example: A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there's an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.
         /// </summary>
+        /// <example>A serene tropical beach scene. Dominating the foreground are tall palm trees with lush green leaves, standing tall against a backdrop of a sandy beach. The beach leads to the azure waters of the sea, which gently kisses the shoreline. In the distance, there's an island or landmass with a silhouette of what appears to be a lighthouse or tower. The sky above is painted with fluffy white clouds, some of which are tinged with hues of pink and orange, suggesting either a sunrise or sunset.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// The resolution of the final image.<br/>
         /// Example: 1024x1024
         /// </summary>
+        /// <example>1024x1024</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("resolution")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Resolution { get; set; }
@@ -42,6 +45,7 @@ namespace G
         /// <summary>
         /// Example: 12345
         /// </summary>
+        /// <example>12345</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Seed { get; set; }

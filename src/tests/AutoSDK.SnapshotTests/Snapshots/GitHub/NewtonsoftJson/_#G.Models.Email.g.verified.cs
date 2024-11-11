@@ -12,24 +12,28 @@ namespace G
         /// <summary>
         /// Example: octocat@github.com
         /// </summary>
+        /// <example>octocat@github.com</example>
         [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
         public string Email1 { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("primary", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Primary { get; set; } = default!;
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("verified", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Verified { get; set; } = default!;
 
         /// <summary>
         /// Example: public
         /// </summary>
+        /// <example>public</example>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Visibility { get; set; } = default!;
 

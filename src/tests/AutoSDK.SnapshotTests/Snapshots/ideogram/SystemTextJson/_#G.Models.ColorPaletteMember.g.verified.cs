@@ -13,6 +13,7 @@ namespace G
         /// The hexadecimal representation of the color with an optional chosen weight<br/>
         /// Example: #FFFFFF
         /// </summary>
+        /// <example>#FFFFFF</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("color_hex")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ColorHex { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The weight of the color in the color palette.<br/>
         /// Example: 0.25
         /// </summary>
+        /// <example>0.25</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("color_weight")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double ColorWeight { get; set; }

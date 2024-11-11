@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 1296269
         /// </summary>
+        /// <example>1296269</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int RepositoryId { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: Hello-World
         /// </summary>
+        /// <example>Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoryName { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: octocat/Hello-World
         /// </summary>
+        /// <example>octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_full_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoryFullName { get; set; }

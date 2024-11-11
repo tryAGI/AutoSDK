@@ -31,6 +31,7 @@ namespace G
         /// Objects specifying a tree structure<br/>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("tree", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.GitTreeTreeItem> Tree { get; set; } = default!;
 

@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the package.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,24 +21,28 @@ namespace G
         /// The name of the package.<br/>
         /// Example: super-linter
         /// </summary>
+        /// <example>super-linter</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: docker
         /// </summary>
+        /// <example>docker</example>
         [global::Newtonsoft.Json.JsonProperty("package_type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.PackagePackageType PackageType { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/orgs/github/packages/container/super-linter
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/packages/container/super-linter</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/orgs/github/packages/container/package/super-linter
         /// </summary>
+        /// <example>https://github.com/orgs/github/packages/container/package/super-linter</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
@@ -45,12 +50,14 @@ namespace G
         /// The number of versions of the package.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("version_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int VersionCount { get; set; } = default!;
 
         /// <summary>
         /// Example: private
         /// </summary>
+        /// <example>private</example>
         [global::Newtonsoft.Json.JsonProperty("visibility", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.PackageVisibility Visibility { get; set; } = default!;
 

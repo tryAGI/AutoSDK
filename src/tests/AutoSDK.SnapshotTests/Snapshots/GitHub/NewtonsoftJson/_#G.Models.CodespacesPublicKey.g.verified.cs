@@ -13,6 +13,7 @@ namespace G
         /// The identifier for the key.<br/>
         /// Example: 1234567
         /// </summary>
+        /// <example>1234567</example>
         [global::Newtonsoft.Json.JsonProperty("key_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string KeyId { get; set; } = default!;
 
@@ -20,30 +21,35 @@ namespace G
         /// The Base64 encoded public key.<br/>
         /// Example: hBT5WZEj8ZoOv6TYJsfWq7MxTEQopZO5/IT3ZCVQPzs=
         /// </summary>
+        /// <example>hBT5WZEj8ZoOv6TYJsfWq7MxTEQopZO5/IT3ZCVQPzs=</example>
         [global::Newtonsoft.Json.JsonProperty("key", Required = global::Newtonsoft.Json.Required.Always)]
         public string Key { get; set; } = default!;
 
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public int? Id { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/user/keys/2
         /// </summary>
+        /// <example>https://api.github.com/user/keys/2</example>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }
 
         /// <summary>
         /// Example: ssh-rsa AAAAB3NzaC1yc2EAAA
         /// </summary>
+        /// <example>ssh-rsa AAAAB3NzaC1yc2EAAA</example>
         [global::Newtonsoft.Json.JsonProperty("title")]
         public string? Title { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 

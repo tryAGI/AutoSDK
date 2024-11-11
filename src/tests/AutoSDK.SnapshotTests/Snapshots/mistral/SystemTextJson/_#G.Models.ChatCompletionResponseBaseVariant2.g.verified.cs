@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 1702256327
         /// </summary>
+        /// <example>1702256327</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created")]
         public int? Created { get; set; }
 

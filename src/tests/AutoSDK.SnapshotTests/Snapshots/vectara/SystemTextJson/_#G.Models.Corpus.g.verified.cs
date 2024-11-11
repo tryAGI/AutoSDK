@@ -19,6 +19,7 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </summary>
+        /// <example>my-corpus</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         public string? Key { get; set; }
 
@@ -74,6 +75,7 @@ namespace G
         /// The encoder used by the corpus.<br/>
         /// Example: boomerang
         /// </summary>
+        /// <example>boomerang</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("encoder_name")]
         public string? EncoderName { get; set; }
 

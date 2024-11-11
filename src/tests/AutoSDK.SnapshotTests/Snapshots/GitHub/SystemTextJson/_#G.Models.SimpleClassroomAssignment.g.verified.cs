@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the repository.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// Whether an accepted assignment creates a public repository.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_repo")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool PublicRepo { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// Assignment title.<br/>
         /// Example: Intro to Binaries
         /// </summary>
+        /// <example>Intro to Binaries</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
@@ -37,6 +40,7 @@ namespace G
         /// Whether it's a Group Assignment or Individual Assignment.<br/>
         /// Example: individual
         /// </summary>
+        /// <example>individual</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SimpleClassroomAssignmentTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -46,6 +50,7 @@ namespace G
         /// The link that a student can use to accept the assignment.<br/>
         /// Example: https://classroom.github.com/a/Lx7jiUgx
         /// </summary>
+        /// <example>https://classroom.github.com/a/Lx7jiUgx</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("invite_link")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string InviteLink { get; set; }
@@ -54,6 +59,7 @@ namespace G
         /// Whether the invitation link is enabled. Visiting an enabled invitation link will accept the assignment.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("invitations_enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool InvitationsEnabled { get; set; }
@@ -62,6 +68,7 @@ namespace G
         /// Sluggified name of the assignment.<br/>
         /// Example: intro-to-binaries
         /// </summary>
+        /// <example>intro-to-binaries</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("slug")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Slug { get; set; }
@@ -70,6 +77,7 @@ namespace G
         /// Whether students are admins on created repository on accepted assignment.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("students_are_repo_admins")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool StudentsAreRepoAdmins { get; set; }
@@ -78,6 +86,7 @@ namespace G
         /// Whether feedback pull request will be created on assignment acceptance.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("feedback_pull_requests_enabled")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool FeedbackPullRequestsEnabled { get; set; }
@@ -86,6 +95,7 @@ namespace G
         /// The maximum allowable teams for the assignment.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_teams")]
         public int? MaxTeams { get; set; }
 
@@ -93,6 +103,7 @@ namespace G
         /// The maximum allowable members per team.<br/>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_members")]
         public int? MaxMembers { get; set; }
 
@@ -100,6 +111,7 @@ namespace G
         /// The selected editor for the assignment.<br/>
         /// Example: codespaces
         /// </summary>
+        /// <example>codespaces</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("editor")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Editor { get; set; }
@@ -108,6 +120,7 @@ namespace G
         /// The number of students that have accepted the assignment.<br/>
         /// Example: 25
         /// </summary>
+        /// <example>25</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("accepted")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Accepted { get; set; }
@@ -116,6 +129,7 @@ namespace G
         /// The number of students that have submitted the assignment.<br/>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("submitted")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Submitted { get; set; }
@@ -124,6 +138,7 @@ namespace G
         /// The number of students that have passed the assignment.<br/>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("passing")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Passing { get; set; }
@@ -132,6 +147,7 @@ namespace G
         /// The programming language used in the assignment.<br/>
         /// Example: elixir
         /// </summary>
+        /// <example>elixir</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("language")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Language { get; set; }

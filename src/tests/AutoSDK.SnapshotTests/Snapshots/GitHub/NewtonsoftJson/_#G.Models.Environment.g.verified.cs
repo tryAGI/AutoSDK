@@ -15,12 +15,14 @@ namespace G
         /// The id of the environment.<br/>
         /// Example: 56780428L
         /// </summary>
+        /// <example>56780428L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=
         /// </summary>
+        /// <example>MDExOkVudmlyb25tZW50NTY3ODA0Mjg=</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -28,18 +30,21 @@ namespace G
         /// The name of the environment.<br/>
         /// Example: staging
         /// </summary>
+        /// <example>staging</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/environments/staging
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/environments/staging</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging
         /// </summary>
+        /// <example>https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 

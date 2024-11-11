@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: [example]
         /// </summary>
+        /// <example>[example]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("trust_domain")]
         public string? TrustDomain { get; set; }
 

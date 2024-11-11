@@ -41,6 +41,7 @@ namespace G
         /// The reason for the state change. Ignored unless `state` is changed.<br/>
         /// Example: not_planned
         /// </summary>
+        /// <example>not_planned</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.IssuesUpdateRequestStateReasonJsonConverter))]
         public global::G.IssuesUpdateRequestStateReason? StateReason { get; set; }

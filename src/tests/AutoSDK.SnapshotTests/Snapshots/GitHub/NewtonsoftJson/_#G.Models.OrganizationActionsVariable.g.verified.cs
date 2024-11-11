@@ -13,6 +13,7 @@ namespace G
         /// The name of the variable.<br/>
         /// Example: USERNAME
         /// </summary>
+        /// <example>USERNAME</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The value of the variable.<br/>
         /// Example: octocat
         /// </summary>
+        /// <example>octocat</example>
         [global::Newtonsoft.Json.JsonProperty("value", Required = global::Newtonsoft.Json.Required.Always)]
         public string Value { get; set; } = default!;
 
@@ -44,6 +46,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/org/variables/USERNAME/repositories
         /// </summary>
+        /// <example>https://api.github.com/organizations/org/variables/USERNAME/repositories</example>
         [global::Newtonsoft.Json.JsonProperty("selected_repositories_url")]
         public string? SelectedRepositoriesUrl { get; set; }
 

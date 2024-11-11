@@ -27,6 +27,7 @@ namespace G
         /// The type of the value for the property<br/>
         /// Example: single_select
         /// </summary>
+        /// <example>single_select</example>
         [global::Newtonsoft.Json.JsonProperty("value_type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.CustomPropertyValueType ValueType { get; set; } = default!;
 
@@ -59,6 +60,7 @@ namespace G
         /// Who can edit the values of the property<br/>
         /// Example: org_actors
         /// </summary>
+        /// <example>org_actors</example>
         [global::Newtonsoft.Json.JsonProperty("values_editable_by")]
         public global::G.CustomPropertyValuesEditableBy? ValuesEditableBy { get; set; }
 

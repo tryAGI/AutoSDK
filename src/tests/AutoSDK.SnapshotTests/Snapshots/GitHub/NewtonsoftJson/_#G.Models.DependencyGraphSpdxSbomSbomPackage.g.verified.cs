@@ -13,6 +13,7 @@ namespace G
         /// A unique SPDX identifier for the package.<br/>
         /// Example: SPDXRef-Package
         /// </summary>
+        /// <example>SPDXRef-Package</example>
         [global::Newtonsoft.Json.JsonProperty("SPDXID")]
         public string? SPDXID { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// The name of the package.<br/>
         /// Example: rubygems:github/github
         /// </summary>
+        /// <example>rubygems:github/github</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -28,6 +30,7 @@ namespace G
         /// a version range is given.<br/>
         /// Example: 1.0.0
         /// </summary>
+        /// <example>1.0.0</example>
         [global::Newtonsoft.Json.JsonProperty("versionInfo")]
         public string? VersionInfo { get; set; }
 
@@ -36,6 +39,7 @@ namespace G
         /// or NOASSERTION if this has not been determined.<br/>
         /// Example: NOASSERTION
         /// </summary>
+        /// <example>NOASSERTION</example>
         [global::Newtonsoft.Json.JsonProperty("downloadLocation")]
         public string? DownloadLocation { get; set; }
 
@@ -44,6 +48,7 @@ namespace G
         /// analysis during the creation of the SPDX document.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("filesAnalyzed")]
         public bool? FilesAnalyzed { get; set; }
 
@@ -51,6 +56,7 @@ namespace G
         /// The license of the package as determined while creating the SPDX document.<br/>
         /// Example: MIT
         /// </summary>
+        /// <example>MIT</example>
         [global::Newtonsoft.Json.JsonProperty("licenseConcluded")]
         public string? LicenseConcluded { get; set; }
 
@@ -59,6 +65,7 @@ namespace G
         /// was not available when the SPDX document was created.<br/>
         /// Example: NOASSERTION
         /// </summary>
+        /// <example>NOASSERTION</example>
         [global::Newtonsoft.Json.JsonProperty("licenseDeclared")]
         public string? LicenseDeclared { get; set; }
 
@@ -66,6 +73,7 @@ namespace G
         /// The distribution source of this package, or NOASSERTION if this was not determined.<br/>
         /// Example: NOASSERTION
         /// </summary>
+        /// <example>NOASSERTION</example>
         [global::Newtonsoft.Json.JsonProperty("supplier")]
         public string? Supplier { get; set; }
 
@@ -73,6 +81,7 @@ namespace G
         /// The copyright holders of the package, and any dates present with those notices, if available.<br/>
         /// Example: Copyright (c) 1985 GitHub.com
         /// </summary>
+        /// <example>Copyright (c) 1985 GitHub.com</example>
         [global::Newtonsoft.Json.JsonProperty("copyrightText")]
         public string? CopyrightText { get; set; }
 

@@ -13,6 +13,7 @@ namespace G
         /// The text of the document part.<br/>
         /// Example: I'm a nice document part.
         /// </summary>
+        /// <example>I'm a nice document part.</example>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
 

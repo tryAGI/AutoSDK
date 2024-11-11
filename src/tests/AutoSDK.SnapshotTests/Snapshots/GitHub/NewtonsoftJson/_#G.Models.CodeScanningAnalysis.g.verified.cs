@@ -43,6 +43,7 @@ namespace G
         /// <summary>
         /// Example: error reading field xyz
         /// </summary>
+        /// <example>error reading field xyz</example>
         [global::Newtonsoft.Json.JsonProperty("error", Required = global::Newtonsoft.Json.Required.Always)]
         public string Error { get; set; } = default!;
 
@@ -50,6 +51,7 @@ namespace G
         /// The time that the analysis was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
@@ -75,6 +77,7 @@ namespace G
         /// The REST API URL of the analysis resource.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string Url { get; set; } = default!;
 
@@ -82,6 +85,7 @@ namespace G
         /// An identifier for the upload.<br/>
         /// Example: 6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53
         /// </summary>
+        /// <example>6c81cd8e-b078-4ac3-a3be-1dad7dbd0b53</example>
         [global::Newtonsoft.Json.JsonProperty("sarif_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string SarifId { get; set; } = default!;
 
@@ -101,6 +105,7 @@ namespace G
         /// Warning generated when processing the analysis<br/>
         /// Example: 123 results were ignored
         /// </summary>
+        /// <example>123 results were ignored</example>
         [global::Newtonsoft.Json.JsonProperty("warning", Required = global::Newtonsoft.Json.Required.Always)]
         public string Warning { get; set; } = default!;
 

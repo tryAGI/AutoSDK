@@ -12,30 +12,35 @@ namespace G
         /// <summary>
         /// Example: 10
         /// </summary>
+        /// <example>10</example>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public int? Id { get; set; }
 
         /// <summary>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("repository_id")]
         public int? RepositoryId { get; set; }
 
         /// <summary>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("head_repository_id")]
         public int? HeadRepositoryId { get; set; }
 
         /// <summary>
         /// Example: main
         /// </summary>
+        /// <example>main</example>
         [global::Newtonsoft.Json.JsonProperty("head_branch")]
         public string? HeadBranch { get; set; }
 
         /// <summary>
         /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
         /// </summary>
+        /// <example>009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d</example>
         [global::Newtonsoft.Json.JsonProperty("head_sha")]
         public string? HeadSha { get; set; }
 

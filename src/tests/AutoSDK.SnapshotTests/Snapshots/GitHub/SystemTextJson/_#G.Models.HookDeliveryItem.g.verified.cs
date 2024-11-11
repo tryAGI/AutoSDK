@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the webhook delivery.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// Unique identifier for the event (shared with all deliveries for all webhooks that subscribe to this event).<br/>
         /// Example: 58474f00-b361-11eb-836d-0e4f3503ccbe
         /// </summary>
+        /// <example>58474f00-b361-11eb-836d-0e4f3503ccbe</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("guid")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Guid { get; set; }
@@ -36,6 +38,7 @@ namespace G
         /// Whether the webhook delivery is a redelivery.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("redelivery")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Redelivery { get; set; }
@@ -44,6 +47,7 @@ namespace G
         /// Time spent delivering.<br/>
         /// Example: 0.03
         /// </summary>
+        /// <example>0.03</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("duration")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Duration { get; set; }
@@ -52,6 +56,7 @@ namespace G
         /// Describes the response returned after attempting the delivery.<br/>
         /// Example: failed to connect
         /// </summary>
+        /// <example>failed to connect</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Status { get; set; }
@@ -60,6 +65,7 @@ namespace G
         /// Status code received when delivery was made.<br/>
         /// Example: 502
         /// </summary>
+        /// <example>502</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status_code")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StatusCode { get; set; }
@@ -68,6 +74,7 @@ namespace G
         /// The event that triggered the delivery.<br/>
         /// Example: issues
         /// </summary>
+        /// <example>issues</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Event { get; set; }
@@ -76,6 +83,7 @@ namespace G
         /// The type of activity for the event that triggered the delivery.<br/>
         /// Example: opened
         /// </summary>
+        /// <example>opened</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("action")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Action { get; set; }
@@ -84,6 +92,7 @@ namespace G
         /// The id of the GitHub App installation associated with this event.<br/>
         /// Example: 123
         /// </summary>
+        /// <example>123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("installation_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? InstallationId { get; set; }
@@ -92,6 +101,7 @@ namespace G
         /// The id of the repository associated with this event.<br/>
         /// Example: 123
         /// </summary>
+        /// <example>123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? RepositoryId { get; set; }

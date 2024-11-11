@@ -13,6 +13,7 @@ namespace G
         /// A color palette preset value<br/>
         /// Example: PASTEL
         /// </summary>
+        /// <example>PASTEL</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ColorPalettePresetNameJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: Image provided failed safety check due to the inclusion of prohibited content.
         /// </summary>
+        /// <example>Image provided failed safety check due to the inclusion of prohibited content.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("error")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Error { get; set; }

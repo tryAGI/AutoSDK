@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 79L
         /// </summary>
+        /// <example>79L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -26,6 +27,7 @@ namespace G
         /// <summary>
         /// Example: 0b989ba4-242f-11e5-81e1-c7b6966d2516
         /// </summary>
+        /// <example>0b989ba4-242f-11e5-81e1-c7b6966d2516</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("guid")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Guid { get; set; }
@@ -33,6 +35,7 @@ namespace G
         /// <summary>
         /// Example: pending
         /// </summary>
+        /// <example>pending</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string State { get; set; }
@@ -40,6 +43,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("lock_repositories")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool LockRepositories { get; set; }
@@ -96,6 +100,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/octo-org/migrations/79
         /// </summary>
+        /// <example>https://api.github.com/orgs/octo-org/migrations/79</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }

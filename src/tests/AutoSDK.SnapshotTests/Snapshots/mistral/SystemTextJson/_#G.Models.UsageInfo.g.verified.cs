@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 34
         /// </summary>
+        /// <example>34</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CompletionTokens { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 16
         /// </summary>
+        /// <example>16</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PromptTokens { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: 50
         /// </summary>
+        /// <example>50</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total_tokens")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int TotalTokens { get; set; }

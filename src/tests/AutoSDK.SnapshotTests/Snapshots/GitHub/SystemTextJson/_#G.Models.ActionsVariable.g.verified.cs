@@ -13,6 +13,7 @@ namespace G
         /// The name of the variable.<br/>
         /// Example: USERNAME
         /// </summary>
+        /// <example>USERNAME</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The value of the variable.<br/>
         /// Example: octocat
         /// </summary>
+        /// <example>octocat</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Value { get; set; }

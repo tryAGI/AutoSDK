@@ -13,6 +13,7 @@ namespace G
         /// The number of deployment branch policies for the environment.<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("total_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalCount { get; set; } = default!;
 

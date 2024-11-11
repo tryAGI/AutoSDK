@@ -15,6 +15,7 @@ namespace G
         /// The type of reviewer.<br/>
         /// Example: User
         /// </summary>
+        /// <example>User</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeploymentReviewerTypeJsonConverter))]
         public global::G.DeploymentReviewerType? Type { get; set; }

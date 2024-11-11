@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: stop
         /// </summary>
+        /// <example>stop</example>
         [global::Newtonsoft.Json.JsonProperty("finish_reason", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ChatCompletionChoiceFinishReason FinishReason { get; set; } = default!;
 
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
         public int Index { get; set; } = default!;
 

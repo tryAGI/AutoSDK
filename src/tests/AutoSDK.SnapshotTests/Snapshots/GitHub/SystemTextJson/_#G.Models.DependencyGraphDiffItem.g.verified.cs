@@ -20,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: path/to/package-lock.json
         /// </summary>
+        /// <example>path/to/package-lock.json</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("manifest")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Manifest { get; set; }
@@ -27,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: npm
         /// </summary>
+        /// <example>npm</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("ecosystem")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Ecosystem { get; set; }
@@ -34,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: @actions/core
         /// </summary>
+        /// <example>@actions/core</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -41,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: 1.0.0
         /// </summary>
+        /// <example>1.0.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Version { get; set; }
@@ -48,6 +52,7 @@ namespace G
         /// <summary>
         /// Example: pkg:/npm/%40actions/core@1.1.0
         /// </summary>
+        /// <example>pkg:/npm/%40actions/core@1.1.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("package_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? PackageUrl { get; set; }
@@ -55,6 +60,7 @@ namespace G
         /// <summary>
         /// Example: MIT
         /// </summary>
+        /// <example>MIT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("license")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? License { get; set; }
@@ -62,6 +68,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/github/actions
         /// </summary>
+        /// <example>https://github.com/github/actions</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("source_repository_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? SourceRepositoryUrl { get; set; }

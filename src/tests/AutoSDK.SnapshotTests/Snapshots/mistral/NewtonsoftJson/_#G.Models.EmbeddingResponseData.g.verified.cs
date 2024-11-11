@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: [0.1, 0.2, 0.3]
         /// </summary>
+        /// <example>[0.1, 0.2, 0.3]</example>
         [global::Newtonsoft.Json.JsonProperty("embedding")]
         public global::System.Collections.Generic.IList<double>? Embedding { get; set; }
 
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::Newtonsoft.Json.JsonProperty("index")]
         public int? Index { get; set; }
 
         /// <summary>
         /// Example: embedding
         /// </summary>
+        /// <example>embedding</example>
         [global::Newtonsoft.Json.JsonProperty("object")]
         public string? Object { get; set; }
 

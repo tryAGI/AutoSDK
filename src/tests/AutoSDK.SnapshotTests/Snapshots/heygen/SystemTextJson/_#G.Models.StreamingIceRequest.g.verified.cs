@@ -18,6 +18,7 @@ namespace G
         /// <summary>
         /// Example: &lt;SESSION_ID&gt;
         /// </summary>
+        /// <example>&lt;SESSION_ID&gt;</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         public string? SessionId { get; set; }
 

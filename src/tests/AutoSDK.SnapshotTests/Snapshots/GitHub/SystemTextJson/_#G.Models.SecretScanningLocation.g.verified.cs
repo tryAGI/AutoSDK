@@ -15,6 +15,7 @@ namespace G
         /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.<br/>
         /// Example: commit
         /// </summary>
+        /// <example>commit</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.SecretScanningLocationTypeJsonConverter))]
         public global::G.SecretScanningLocationType? Type { get; set; }

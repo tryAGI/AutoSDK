@@ -13,6 +13,7 @@ namespace G
         /// The token_type specifies the way the token is passed in the Authorization header. Valid values are "bearer", "basic", and "noscheme".<br/>
         /// Default Value: noscheme
         /// </summary>
+        /// <default>global::G.AuthTokenType.Noscheme</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthTokenTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/deployments/42/statuses/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/deployments/42/statuses/1</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: 1L
         /// </summary>
+        /// <example>1L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDE2OkRlcGxveW1lbnRTdGF0dXMx
         /// </summary>
+        /// <example>MDE2OkRlcGxveW1lbnRTdGF0dXMx</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -31,6 +34,7 @@ namespace G
         /// The state of the status.<br/>
         /// Example: success
         /// </summary>
+        /// <example>success</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.DeploymentStatusState State { get; set; } = default!;
 
@@ -44,6 +48,7 @@ namespace G
         /// A short description of the status.<br/>
         /// Example: Deployment finished successfully.
         /// </summary>
+        /// <example>Deployment finished successfully.</example>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string Description { get; set; } = default!;
 
@@ -51,6 +56,7 @@ namespace G
         /// The environment of the deployment that the status is for.<br/>
         /// Example: production
         /// </summary>
+        /// <example>production</example>
         [global::Newtonsoft.Json.JsonProperty("environment")]
         public string? Environment { get; set; }
 
@@ -58,6 +64,7 @@ namespace G
         /// Deprecated: the URL to associate with this status.<br/>
         /// Example: https://example.com/deployment/42/output
         /// </summary>
+        /// <example>https://example.com/deployment/42/output</example>
         [global::Newtonsoft.Json.JsonProperty("target_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string TargetUrl { get; set; } = default!;
 
@@ -76,12 +83,14 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/deployments/42
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/deployments/42</example>
         [global::Newtonsoft.Json.JsonProperty("deployment_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string DeploymentUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example</example>
         [global::Newtonsoft.Json.JsonProperty("repository_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string RepositoryUrl { get; set; } = default!;
 
@@ -89,6 +98,7 @@ namespace G
         /// The URL for accessing your environment.<br/>
         /// Example: https://staging.example.com/
         /// </summary>
+        /// <example>https://staging.example.com/</example>
         [global::Newtonsoft.Json.JsonProperty("environment_url")]
         public string? EnvironmentUrl { get; set; }
 
@@ -96,6 +106,7 @@ namespace G
         /// The URL to associate with this status.<br/>
         /// Example: https://example.com/deployment/42/output
         /// </summary>
+        /// <example>https://example.com/deployment/42/output</example>
         [global::Newtonsoft.Json.JsonProperty("log_url")]
         public string? LogUrl { get; set; }
 

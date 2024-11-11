@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: Wrong ip
         /// </summary>
+        /// <example>Wrong ip</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: Please provide a valid IP address
         /// </summary>
+        /// <example>Please provide a valid IP address</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Message { get; set; }

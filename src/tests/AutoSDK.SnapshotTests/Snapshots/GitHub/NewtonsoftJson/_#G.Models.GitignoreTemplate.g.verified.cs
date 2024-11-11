@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: C
         /// </summary>
+        /// <example>C</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -31,6 +32,22 @@ namespace G
         /// *.out<br/>
         /// *.app
         /// </summary>
+        /// <example>
+        /// # Object files<br/>
+        /// *.o<br/>
+        /// # Libraries<br/>
+        /// *.lib<br/>
+        /// *.a<br/>
+        /// # Shared objects (inc. Windows DLLs)<br/>
+        /// *.dll<br/>
+        /// *.so<br/>
+        /// *.so.*<br/>
+        /// *.dylib<br/>
+        /// # Executables<br/>
+        /// *.exe<br/>
+        /// *.out<br/>
+        /// *.app
+        /// </example>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
         public string Source { get; set; } = default!;
 

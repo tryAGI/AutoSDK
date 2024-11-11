@@ -23,6 +23,7 @@ namespace G
         /// **Deprecated**: Use `reranker_name` instead.<br/>
         /// Example: rnk_272725719
         /// </summary>
+        /// <example>rnk_272725719</example>
         [global::Newtonsoft.Json.JsonProperty("reranker_id")]
         [global::System.Obsolete("This property marked as deprecated.")]
         public string? RerankerId { get; set; }
@@ -31,6 +32,7 @@ namespace G
         /// The name of the reranker. Do not specify the MMR reranker name here. Instead, use the MMR reranker object type.<br/>
         /// Example: Rerank_Multilingual_v1
         /// </summary>
+        /// <example>Rerank_Multilingual_v1</example>
         [global::Newtonsoft.Json.JsonProperty("reranker_name")]
         public string? RerankerName { get; set; }
 

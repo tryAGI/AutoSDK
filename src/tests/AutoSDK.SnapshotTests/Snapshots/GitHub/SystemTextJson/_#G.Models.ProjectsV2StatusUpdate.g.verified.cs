@@ -72,6 +72,7 @@ namespace G
         /// Body of the status update<br/>
         /// Example: The project is off to a great start!
         /// </summary>
+        /// <example>The project is off to a great start!</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         public string? Body { get; set; }
 

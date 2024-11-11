@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: john@mail.com
         /// </summary>
+        /// <example>john@mail.com</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
 
         /// <summary>
         /// Example: John
         /// </summary>
+        /// <example>John</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_name")]
         public string? FirstName { get; set; }
 

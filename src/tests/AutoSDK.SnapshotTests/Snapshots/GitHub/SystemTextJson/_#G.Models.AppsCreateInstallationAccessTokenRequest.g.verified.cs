@@ -19,6 +19,7 @@ namespace G
         /// List of repository IDs that the token should have access to<br/>
         /// Example: [1]
         /// </summary>
+        /// <example>[1]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_ids")]
         public global::System.Collections.Generic.IList<int>? RepositoryIds { get; set; }
 

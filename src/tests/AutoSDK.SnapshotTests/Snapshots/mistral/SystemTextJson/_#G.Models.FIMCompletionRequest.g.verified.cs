@@ -30,6 +30,7 @@ namespace G
         /// Default Value: codestral-2405<br/>
         /// Example: codestral-2405
         /// </summary>
+        /// <example>codestral-2405</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Model { get; set; }
@@ -38,6 +39,7 @@ namespace G
         /// The text/code to complete.<br/>
         /// Example: def
         /// </summary>
+        /// <example>def</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; }
@@ -66,6 +68,7 @@ namespace G
         /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.<br/>
         /// Example: return a+b
         /// </summary>
+        /// <example>return a+b</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
         public string? Suffix { get; set; }
 

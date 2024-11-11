@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the repository.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// Whether an accepted assignment has been submitted.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("submitted", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Submitted { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// Whether a submission passed.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("passing", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Passing { get; set; } = default!;
 
@@ -34,6 +37,7 @@ namespace G
         /// Count of student commits.<br/>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("commit_count", Required = global::Newtonsoft.Json.Required.Always)]
         public int CommitCount { get; set; } = default!;
 
@@ -41,6 +45,7 @@ namespace G
         /// Most recent grade.<br/>
         /// Example: 10/10
         /// </summary>
+        /// <example>10/10</example>
         [global::Newtonsoft.Json.JsonProperty("grade", Required = global::Newtonsoft.Json.Required.Always)]
         public string Grade { get; set; } = default!;
 

@@ -15,6 +15,7 @@ namespace G
         /// The name of the project that the new run will be created under.<br/>
         /// Example: my-wandb-project
         /// </summary>
+        /// <example>my-wandb-project</example>
         [global::Newtonsoft.Json.JsonProperty("project", Required = global::Newtonsoft.Json.Required.Always)]
         public string Project { get; set; } = default!;
 

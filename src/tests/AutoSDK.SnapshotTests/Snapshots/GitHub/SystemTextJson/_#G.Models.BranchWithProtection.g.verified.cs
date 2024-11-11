@@ -54,12 +54,14 @@ namespace G
         /// <summary>
         /// Example: "mas*"
         /// </summary>
+        /// <example>"mas*"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pattern")]
         public string? Pattern { get; set; }
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("required_approving_review_count")]
         public int? RequiredApprovingReviewCount { get; set; }
 

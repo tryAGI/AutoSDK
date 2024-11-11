@@ -137,7 +137,8 @@ public static class StringExtensions
     
     public static string ToXmlDocumentation(
         this string text,
-        int level = 4)
+        int level = 4,
+        bool returnIfSingleLine = false)
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
         
@@ -145,6 +146,11 @@ public static class StringExtensions
         if (lines.Length == 0)
         {
             lines = [string.Empty];
+        }
+        
+        if (returnIfSingleLine && lines.Length == 1)
+        {
+            return $"{lines[0]}";
         }
         
         var spaces = new string(' ', level);
@@ -174,7 +180,12 @@ public static class StringExtensions
     {
         text = text ?? throw new ArgumentNullException(nameof(text));
         
-        var value = ToXmlDocumentation(text, level);
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return string.Empty;
+        }
+        
+        var value = ToXmlDocumentation(text, level, returnIfSingleLine: true);
         if (!value.Contains("\n"))
         {
             return $"/// <example>{value}</example>";
@@ -185,6 +196,30 @@ public static class StringExtensions
         return $@"/// <example>
 {value}
 {spaces}/// </example>";
+    }
+    
+    public static string ToXmlDocumentationDefault(
+        this string text,
+        int level = 4)
+    {
+        text = text ?? throw new ArgumentNullException(nameof(text));
+
+        if (string.IsNullOrWhiteSpace(text))
+        {
+            return string.Empty;
+        }
+        
+        var value = ToXmlDocumentation(text, level, returnIfSingleLine: true);
+        if (!value.Contains("\n"))
+        {
+            return $"/// <default>{value}</default>";
+        }
+        
+        var spaces = new string(' ', level);
+        
+        return $@"/// <default>
+{value}
+{spaces}/// </default>";
     }
     
     public static string ToXmlDocumentationForParam(

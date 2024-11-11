@@ -15,6 +15,7 @@ namespace G
         /// The ID of the installation.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -22,6 +23,7 @@ namespace G
         /// The global node ID of the installation.<br/>
         /// Example: MDQ6VXNlcjU4MzIzMQ==
         /// </summary>
+        /// <example>MDQ6VXNlcjU4MzIzMQ==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 

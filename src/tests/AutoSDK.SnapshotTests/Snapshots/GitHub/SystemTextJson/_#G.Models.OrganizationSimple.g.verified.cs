@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: github
         /// </summary>
+        /// <example>github</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("login")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Login { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: MDEyOk9yZ2FuaXphdGlvbjE=
         /// </summary>
+        /// <example>MDEyOk9yZ2FuaXphdGlvbjE=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github
         /// </summary>
+        /// <example>https://api.github.com/orgs/github</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/repos
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/repos</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repos_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ReposUrl { get; set; }
@@ -47,6 +52,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/events
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/events</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("events_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string EventsUrl { get; set; }
@@ -54,6 +60,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/hooks
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/hooks</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("hooks_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HooksUrl { get; set; }
@@ -61,6 +68,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/issues
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/issues</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("issues_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string IssuesUrl { get; set; }
@@ -68,6 +76,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/members{/member}
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/members{/member}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("members_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string MembersUrl { get; set; }
@@ -75,6 +84,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/orgs/github/public_members{/member}
         /// </summary>
+        /// <example>https://api.github.com/orgs/github/public_members{/member}</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("public_members_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PublicMembersUrl { get; set; }
@@ -82,6 +92,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/images/error/octocat_happy.gif
         /// </summary>
+        /// <example>https://github.com/images/error/octocat_happy.gif</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("avatar_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string AvatarUrl { get; set; }
@@ -89,6 +100,7 @@ namespace G
         /// <summary>
         /// Example: A great organization
         /// </summary>
+        /// <example>A great organization</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Description { get; set; }

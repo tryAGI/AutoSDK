@@ -13,6 +13,7 @@ namespace G
         /// The comment text.<br/>
         /// Example: Body of the attachment
         /// </summary>
+        /// <example>Body of the attachment</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Body { get; set; }

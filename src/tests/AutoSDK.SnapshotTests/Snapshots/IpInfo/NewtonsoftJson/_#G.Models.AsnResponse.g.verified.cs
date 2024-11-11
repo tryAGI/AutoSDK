@@ -12,54 +12,63 @@ namespace G
         /// <summary>
         /// Example: AS10507
         /// </summary>
+        /// <example>AS10507</example>
         [global::Newtonsoft.Json.JsonProperty("asn", Required = global::Newtonsoft.Json.Required.Always)]
         public string Asn { get; set; } = default!;
 
         /// <summary>
         /// Example: Sprint Personal Communications Systems
         /// </summary>
+        /// <example>Sprint Personal Communications Systems</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
         /// <summary>
         /// Example: US
         /// </summary>
+        /// <example>US</example>
         [global::Newtonsoft.Json.JsonProperty("country")]
         public string? Country { get; set; }
 
         /// <summary>
         /// Example: 1997-02-14
         /// </summary>
+        /// <example>1997-02-14</example>
         [global::Newtonsoft.Json.JsonProperty("allocated")]
         public string? Allocated { get; set; }
 
         /// <summary>
         /// Example: arin
         /// </summary>
+        /// <example>arin</example>
         [global::Newtonsoft.Json.JsonProperty("registry")]
         public string? Registry { get; set; }
 
         /// <summary>
         /// Example: sprint.net
         /// </summary>
+        /// <example>sprint.net</example>
         [global::Newtonsoft.Json.JsonProperty("domain", Required = global::Newtonsoft.Json.Required.Always)]
         public string Domain { get; set; } = default!;
 
         /// <summary>
         /// Example: 71224576
         /// </summary>
+        /// <example>71224576</example>
         [global::Newtonsoft.Json.JsonProperty("num_ips")]
         public int? NumIps { get; set; }
 
         /// <summary>
         /// Example: 66.87.125.0/24
         /// </summary>
+        /// <example>66.87.125.0/24</example>
         [global::Newtonsoft.Json.JsonProperty("route")]
         public string? Route { get; set; }
 
         /// <summary>
         /// Example: isp
         /// </summary>
+        /// <example>isp</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.AsnResponseType Type { get; set; } = default!;
 

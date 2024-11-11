@@ -90,6 +90,8 @@ public sealed partial class {modelData.Parents[level].ClassName}
     {{
 {modelData.Properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
+        {property.DefaultValue?.ToXmlDocumentationDefault(level: 8)}
+        {property.Example?.ToXmlDocumentationExample(level: 8)}
         {jsonSerializer.GeneratePropertyAttribute(property.Id, property.IsRequired)}
         {jsonSerializer.GenerateConverterAttribute(property.ConverterType)}
         {(property.IsRequired ? jsonSerializer.GenerateRequiredAttribute() : string.Empty)}

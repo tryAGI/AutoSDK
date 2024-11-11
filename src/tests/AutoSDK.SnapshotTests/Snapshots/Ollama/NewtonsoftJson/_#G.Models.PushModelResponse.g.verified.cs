@@ -21,6 +21,7 @@ namespace G
         /// the model's digest<br/>
         /// Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a
         /// </summary>
+        /// <example>sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a</example>
         [global::Newtonsoft.Json.JsonProperty("digest")]
         public string? Digest { get; set; }
 
@@ -28,6 +29,7 @@ namespace G
         /// total size of the model<br/>
         /// Example: 2142590208L
         /// </summary>
+        /// <example>2142590208L</example>
         [global::Newtonsoft.Json.JsonProperty("total")]
         public long? Total { get; set; }
 
@@ -35,6 +37,7 @@ namespace G
         /// Total bytes transferred.<br/>
         /// Example: 2142590208L
         /// </summary>
+        /// <example>2142590208L</example>
         [global::Newtonsoft.Json.JsonProperty("completed")]
         public long? Completed { get; set; }
 

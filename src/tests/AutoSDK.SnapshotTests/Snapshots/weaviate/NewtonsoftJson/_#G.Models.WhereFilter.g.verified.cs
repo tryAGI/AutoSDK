@@ -19,6 +19,7 @@ namespace G
         /// operator to use<br/>
         /// Example: GreaterThanEqual
         /// </summary>
+        /// <example>GreaterThanEqual</example>
         [global::Newtonsoft.Json.JsonProperty("operator")]
         public global::G.WhereFilterOperator? Operator { get; set; }
 
@@ -26,6 +27,7 @@ namespace G
         /// path to the property currently being filtered<br/>
         /// Example: [inCity, City, name]
         /// </summary>
+        /// <example>[inCity, City, name]</example>
         [global::Newtonsoft.Json.JsonProperty("path")]
         public global::System.Collections.Generic.IList<string>? Path { get; set; }
 
@@ -33,6 +35,7 @@ namespace G
         /// value as integer<br/>
         /// Example: 2000L
         /// </summary>
+        /// <example>2000L</example>
         [global::Newtonsoft.Json.JsonProperty("valueInt")]
         public long? ValueInt { get; set; }
 
@@ -40,6 +43,7 @@ namespace G
         /// value as number/float<br/>
         /// Example: 3.14
         /// </summary>
+        /// <example>3.14</example>
         [global::Newtonsoft.Json.JsonProperty("valueNumber")]
         public double? ValueNumber { get; set; }
 
@@ -47,6 +51,7 @@ namespace G
         /// value as boolean<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("valueBoolean")]
         public bool? ValueBoolean { get; set; }
 
@@ -54,6 +59,7 @@ namespace G
         /// value as text (deprecated as of v1.19; alias for valueText)<br/>
         /// Example: my search term
         /// </summary>
+        /// <example>my search term</example>
         [global::Newtonsoft.Json.JsonProperty("valueString")]
         public string? ValueString { get; set; }
 
@@ -61,6 +67,7 @@ namespace G
         /// value as text<br/>
         /// Example: my search term
         /// </summary>
+        /// <example>my search term</example>
         [global::Newtonsoft.Json.JsonProperty("valueText")]
         public string? ValueText { get; set; }
 
@@ -68,6 +75,7 @@ namespace G
         /// value as date (as string)<br/>
         /// Example: TODO
         /// </summary>
+        /// <example>TODO</example>
         [global::Newtonsoft.Json.JsonProperty("valueDate")]
         public string? ValueDate { get; set; }
 
@@ -75,6 +83,7 @@ namespace G
         /// value as integer<br/>
         /// Example: [100, 200]
         /// </summary>
+        /// <example>[100, 200]</example>
         [global::Newtonsoft.Json.JsonProperty("valueIntArray")]
         public global::System.Collections.Generic.IList<long>? ValueIntArray { get; set; }
 
@@ -82,6 +91,7 @@ namespace G
         /// value as number/float<br/>
         /// Example: [3.14]
         /// </summary>
+        /// <example>[3.14]</example>
         [global::Newtonsoft.Json.JsonProperty("valueNumberArray")]
         public global::System.Collections.Generic.IList<double>? ValueNumberArray { get; set; }
 
@@ -89,6 +99,7 @@ namespace G
         /// value as boolean<br/>
         /// Example: [true, false]
         /// </summary>
+        /// <example>[true, false]</example>
         [global::Newtonsoft.Json.JsonProperty("valueBooleanArray")]
         public global::System.Collections.Generic.IList<bool>? ValueBooleanArray { get; set; }
 
@@ -96,6 +107,7 @@ namespace G
         /// value as text (deprecated as of v1.19; alias for valueText)<br/>
         /// Example: [my search term]
         /// </summary>
+        /// <example>[my search term]</example>
         [global::Newtonsoft.Json.JsonProperty("valueStringArray")]
         public global::System.Collections.Generic.IList<string>? ValueStringArray { get; set; }
 
@@ -103,6 +115,7 @@ namespace G
         /// value as text<br/>
         /// Example: [my search term]
         /// </summary>
+        /// <example>[my search term]</example>
         [global::Newtonsoft.Json.JsonProperty("valueTextArray")]
         public global::System.Collections.Generic.IList<string>? ValueTextArray { get; set; }
 
@@ -110,6 +123,7 @@ namespace G
         /// value as date (as string)<br/>
         /// Example: TODO
         /// </summary>
+        /// <example>TODO</example>
         [global::Newtonsoft.Json.JsonProperty("valueDateArray")]
         public global::System.Collections.Generic.IList<string>? ValueDateArray { get; set; }
 

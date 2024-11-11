@@ -24,6 +24,7 @@ namespace G
         /// <summary>
         /// Example: "uploaded"
         /// </summary>
+        /// <example>"uploaded"</example>
         [global::Newtonsoft.Json.JsonProperty("state")]
         public string? State { get; set; }
 

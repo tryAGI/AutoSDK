@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: continuous-integration/travis-ci
         /// </summary>
+        /// <example>continuous-integration/travis-ci</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Context { get; set; }

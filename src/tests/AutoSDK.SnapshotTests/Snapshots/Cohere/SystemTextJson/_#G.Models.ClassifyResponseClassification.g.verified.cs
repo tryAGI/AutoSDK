@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         public string Id { get; set; } = default!;
 
@@ -34,6 +35,7 @@ namespace G
         /// An array containing the predicted labels for the associated query (only filled for single-label classification)<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("predictions")]
         public global::System.Collections.Generic.IList<string> Predictions { get; set; } = default!;
 
@@ -49,6 +51,7 @@ namespace G
         /// An array containing the confidence scores of all the predictions in the same order<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidences")]
         public global::System.Collections.Generic.IList<float> Confidences { get; set; } = default!;
 
@@ -56,6 +59,7 @@ namespace G
         /// A map containing each label and its confidence score according to the classifier. All the confidence scores add up to 1 for single-label classification. For multi-label classification the label confidences are independent of each other, so they don't have to sum up to 1.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         public global::System.Collections.Generic.Dictionary<string, global::G.ClassifyResponseClassificationLabels2> Labels { get; set; } = default!;
 
@@ -63,6 +67,7 @@ namespace G
         /// The type of classification performed<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("classification_type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ClassifyResponseClassificationClassificationTypeJsonConverter))]
         public global::G.ClassifyResponseClassificationClassificationType ClassificationType { get; set; } = default!;

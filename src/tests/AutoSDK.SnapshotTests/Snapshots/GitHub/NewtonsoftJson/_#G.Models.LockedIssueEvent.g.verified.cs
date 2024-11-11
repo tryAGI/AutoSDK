@@ -66,6 +66,7 @@ namespace G
         /// <summary>
         /// Example: "off-topic"
         /// </summary>
+        /// <example>"off-topic"</example>
         [global::Newtonsoft.Json.JsonProperty("lock_reason", Required = global::Newtonsoft.Json.Required.Always)]
         public string? LockReason { get; set; } = default!;
 

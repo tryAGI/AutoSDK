@@ -13,6 +13,7 @@ namespace G
         /// Name of the model to copy.<br/>
         /// Example: llama3.2
         /// </summary>
+        /// <example>llama3.2</example>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
         public string Source { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// Name of the new model.<br/>
         /// Example: llama3-backup
         /// </summary>
+        /// <example>llama3-backup</example>
         [global::Newtonsoft.Json.JsonProperty("destination", Required = global::Newtonsoft.Json.Required.Always)]
         public string Destination { get; set; } = default!;
 

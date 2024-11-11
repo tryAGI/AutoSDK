@@ -13,6 +13,7 @@ namespace G
         /// The ID of the terms which are being accepted.<br/>
         /// Example: TOS_2024_04_20
         /// </summary>
+        /// <example>TOS_2024_04_20</example>
         [global::Newtonsoft.Json.JsonProperty("terms_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string TermsId { get; set; } = default!;
 

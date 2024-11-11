@@ -222,30 +222,35 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("private_gists")]
         public int? PrivateGists { get; set; }
 
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("total_private_repos")]
         public int? TotalPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("owned_private_repos")]
         public int? OwnedPrivateRepos { get; set; }
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("disk_usage")]
         public int? DiskUsage { get; set; }
 
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::Newtonsoft.Json.JsonProperty("collaborators")]
         public int? Collaborators { get; set; }
 

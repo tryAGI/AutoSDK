@@ -25,6 +25,7 @@ namespace G
         /// number of objects which were taken into consideration for classification<br/>
         /// Example: 147
         /// </summary>
+        /// <example>147</example>
         [global::Newtonsoft.Json.JsonProperty("count")]
         public int? Count { get; set; }
 
@@ -32,6 +33,7 @@ namespace G
         /// number of objects successfully classified<br/>
         /// Example: 140
         /// </summary>
+        /// <example>140</example>
         [global::Newtonsoft.Json.JsonProperty("countSucceeded")]
         public int? CountSucceeded { get; set; }
 
@@ -39,6 +41,7 @@ namespace G
         /// number of objects which could not be classified - see error message for details<br/>
         /// Example: 7
         /// </summary>
+        /// <example>7</example>
         [global::Newtonsoft.Json.JsonProperty("countFailed")]
         public int? CountFailed { get; set; }
 

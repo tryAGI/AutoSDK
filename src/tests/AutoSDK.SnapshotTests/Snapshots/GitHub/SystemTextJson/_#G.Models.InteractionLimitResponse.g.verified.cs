@@ -13,6 +13,7 @@ namespace G
         /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.<br/>
         /// Example: collaborators_only
         /// </summary>
+        /// <example>collaborators_only</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InteractionGroupJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -21,6 +22,7 @@ namespace G
         /// <summary>
         /// Example: repository
         /// </summary>
+        /// <example>repository</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("origin")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Origin { get; set; }

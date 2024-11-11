@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: [0, 3, 26, 20, 39, 1, 0]
         /// </summary>
+        /// <example>[0, 3, 26, 20, 39, 1, 0]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("days")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<int> Days { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 89
         /// </summary>
+        /// <example>89</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("total")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Total { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: 1336280400
         /// </summary>
+        /// <example>1336280400</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("week")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Week { get; set; }

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("subscribed", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Subscribed { get; set; } = default!;
 
@@ -36,18 +37,21 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/notifications/threads/1/subscription
         /// </summary>
+        /// <example>https://api.github.com/notifications/threads/1/subscription</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/notifications/threads/1
         /// </summary>
+        /// <example>https://api.github.com/notifications/threads/1</example>
         [global::Newtonsoft.Json.JsonProperty("thread_url")]
         public string? ThreadUrl { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/repos/1
         /// </summary>
+        /// <example>https://api.github.com/repos/1</example>
         [global::Newtonsoft.Json.JsonProperty("repository_url")]
         public string? RepositoryUrl { get; set; }
 

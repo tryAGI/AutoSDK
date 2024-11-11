@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("href")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Href { get; set; }

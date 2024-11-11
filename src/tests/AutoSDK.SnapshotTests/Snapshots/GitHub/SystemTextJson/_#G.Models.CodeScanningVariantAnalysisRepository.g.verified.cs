@@ -13,6 +13,7 @@ namespace G
         /// A unique identifier of the repository.<br/>
         /// Example: 1296269
         /// </summary>
+        /// <example>1296269</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The name of the repository.<br/>
         /// Example: Hello-World
         /// </summary>
+        /// <example>Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// The full, globally unique, name of the repository.<br/>
         /// Example: octocat/Hello-World
         /// </summary>
+        /// <example>octocat/Hello-World</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("full_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string FullName { get; set; }
@@ -43,6 +46,7 @@ namespace G
         /// <summary>
         /// Example: 80
         /// </summary>
+        /// <example>80</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("stargazers_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int StargazersCount { get; set; }

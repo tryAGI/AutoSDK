@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: 720
         /// </summary>
+        /// <example>720</example>
         [global::Newtonsoft.Json.JsonProperty("height")]
         public double? Height { get; set; }
 
         /// <summary>
         /// Example: 1280
         /// </summary>
+        /// <example>1280</example>
         [global::Newtonsoft.Json.JsonProperty("width")]
         public double? Width { get; set; }
 

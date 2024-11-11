@@ -73,6 +73,7 @@ namespace G
         /// <summary>
         /// Example: "MDIyOk9yZ2FuaXphdGlvbkludml0YXRpb24x"
         /// </summary>
+        /// <example>"MDIyOk9yZ2FuaXphdGlvbkludml0YXRpb24x"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -80,6 +81,7 @@ namespace G
         /// <summary>
         /// Example: "https://api.github.com/organizations/16/invitations/1/teams"
         /// </summary>
+        /// <example>"https://api.github.com/organizations/16/invitations/1/teams"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("invitation_teams_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string InvitationTeamsUrl { get; set; }
@@ -87,6 +89,7 @@ namespace G
         /// <summary>
         /// Example: "member"
         /// </summary>
+        /// <example>"member"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("invitation_source")]
         public string? InvitationSource { get; set; }
 

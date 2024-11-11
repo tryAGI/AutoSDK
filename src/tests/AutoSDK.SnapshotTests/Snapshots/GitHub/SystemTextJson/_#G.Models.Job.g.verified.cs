@@ -13,6 +13,7 @@ namespace G
         /// The id of the job.<br/>
         /// Example: 21
         /// </summary>
+        /// <example>21</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The id of the associated workflow run.<br/>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int RunId { get; set; }
@@ -28,6 +30,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/actions/runs/5
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/runs/5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RunUrl { get; set; }
@@ -36,12 +39,14 @@ namespace G
         /// Attempt number of the associated workflow run, 1 for first attempt and higher if the workflow was re-run.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("run_attempt")]
         public int? RunAttempt { get; set; }
 
         /// <summary>
         /// Example: MDg6Q2hlY2tSdW40
         /// </summary>
+        /// <example>MDg6Q2hlY2tSdW40</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -50,6 +55,7 @@ namespace G
         /// The SHA of the commit that is being run.<br/>
         /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
         /// </summary>
+        /// <example>009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HeadSha { get; set; }
@@ -57,6 +63,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/actions/jobs/21
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/actions/jobs/21</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -64,6 +71,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/github/hello-world/runs/4
         /// </summary>
+        /// <example>https://github.com/github/hello-world/runs/4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? HtmlUrl { get; set; }
@@ -72,6 +80,7 @@ namespace G
         /// The phase of the lifecycle that the job is currently in.<br/>
         /// Example: queued
         /// </summary>
+        /// <example>queued</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JobStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -81,6 +90,7 @@ namespace G
         /// The outcome of the job.<br/>
         /// Example: success
         /// </summary>
+        /// <example>success</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.JobConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -111,6 +121,7 @@ namespace G
         /// The name of the job.<br/>
         /// Example: test-coverage
         /// </summary>
+        /// <example>test-coverage</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -124,6 +135,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/check-runs/4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("check_run_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CheckRunUrl { get; set; }
@@ -132,6 +144,7 @@ namespace G
         /// Labels for the workflow job. Specified by the "runs_on" attribute in the action's workflow file.<br/>
         /// Example: [self-hosted, foo, bar]
         /// </summary>
+        /// <example>[self-hosted, foo, bar]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("labels")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> Labels { get; set; }
@@ -140,6 +153,7 @@ namespace G
         /// The ID of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? RunnerId { get; set; }
@@ -148,6 +162,7 @@ namespace G
         /// The name of the runner to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: my runner
         /// </summary>
+        /// <example>my runner</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? RunnerName { get; set; }
@@ -156,6 +171,7 @@ namespace G
         /// The ID of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_group_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int? RunnerGroupId { get; set; }
@@ -164,6 +180,7 @@ namespace G
         /// The name of the runner group to which this job has been assigned. (If a runner hasn't yet been assigned, this will be null.)<br/>
         /// Example: my runner group
         /// </summary>
+        /// <example>my runner group</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("runner_group_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? RunnerGroupName { get; set; }
@@ -172,6 +189,7 @@ namespace G
         /// The name of the workflow.<br/>
         /// Example: Build
         /// </summary>
+        /// <example>Build</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? WorkflowName { get; set; }
@@ -180,6 +198,7 @@ namespace G
         /// The name of the current branch.<br/>
         /// Example: main
         /// </summary>
+        /// <example>main</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_branch")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? HeadBranch { get; set; }

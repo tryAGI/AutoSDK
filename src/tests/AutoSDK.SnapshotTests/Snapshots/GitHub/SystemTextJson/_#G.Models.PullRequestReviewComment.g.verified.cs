@@ -13,6 +13,7 @@ namespace G
         /// URL for the pull request review comment<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/comments/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The ID of the pull request review to which the comment belongs.<br/>
         /// Example: 42L
         /// </summary>
+        /// <example>42L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_review_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long? PullRequestReviewId { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// The ID of the pull request review comment.<br/>
         /// Example: 1L
         /// </summary>
+        /// <example>1L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -37,6 +40,7 @@ namespace G
         /// The node ID of the pull request review comment.<br/>
         /// Example: MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEw
         /// </summary>
+        /// <example>MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEw</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -45,6 +49,7 @@ namespace G
         /// The diff of the line that the comment refers to.<br/>
         /// Example: @@ -16,33 +16,40 @@ public class Connection : IConnection...
         /// </summary>
+        /// <example>@@ -16,33 +16,40 @@ public class Connection : IConnection...</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("diff_hunk")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DiffHunk { get; set; }
@@ -53,6 +58,7 @@ namespace G
         /// The relative path of the file to which the comment applies.<br/>
         /// Example: config/database.yaml
         /// </summary>
+        /// <example>config/database.yaml</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }
@@ -61,6 +67,7 @@ namespace G
         /// The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("position")]
         public int? Position { get; set; }
 
@@ -68,6 +75,7 @@ namespace G
         /// The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.<br/>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_position")]
         public int? OriginalPosition { get; set; }
 
@@ -75,6 +83,7 @@ namespace G
         /// The SHA of the commit to which the comment applies.<br/>
         /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
         /// </summary>
+        /// <example>6dcb09b5b57875f334f61aebed695e2e4193db5e</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommitId { get; set; }
@@ -83,6 +92,7 @@ namespace G
         /// The SHA of the original commit to which the comment applies.<br/>
         /// Example: 9c48853fa3dc5c1c3d6f1f1cd1f2743e72652840
         /// </summary>
+        /// <example>9c48853fa3dc5c1c3d6f1f1cd1f2743e72652840</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_commit_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string OriginalCommitId { get; set; }
@@ -91,6 +101,7 @@ namespace G
         /// The comment ID to reply to.<br/>
         /// Example: 8
         /// </summary>
+        /// <example>8</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("in_reply_to_id")]
         public int? InReplyToId { get; set; }
 
@@ -105,6 +116,7 @@ namespace G
         /// The text of the comment.<br/>
         /// Example: We should probably include a check for null values here.
         /// </summary>
+        /// <example>We should probably include a check for null values here.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Body { get; set; }
@@ -127,6 +139,7 @@ namespace G
         /// HTML URL for the pull request review comment.<br/>
         /// Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/pull/1#discussion-diff-1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -135,6 +148,7 @@ namespace G
         /// URL for the pull request that the review comment belongs to.<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/pulls/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pull_request_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string PullRequestUrl { get; set; }
@@ -143,6 +157,7 @@ namespace G
         /// How the author is associated with the repository.<br/>
         /// Example: OWNER
         /// </summary>
+        /// <example>OWNER</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("author_association")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuthorAssociationJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -159,6 +174,7 @@ namespace G
         /// The first line of the range for a multi-line comment.<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("start_line")]
         public int? StartLine { get; set; }
 
@@ -166,6 +182,7 @@ namespace G
         /// The first line of the range for a multi-line comment.<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_start_line")]
         public int? OriginalStartLine { get; set; }
 
@@ -181,6 +198,7 @@ namespace G
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("line")]
         public int? Line { get; set; }
 
@@ -188,6 +206,7 @@ namespace G
         /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("original_line")]
         public int? OriginalLine { get; set; }
 
@@ -215,12 +234,14 @@ namespace G
         /// <summary>
         /// Example: "&lt;p&gt;comment body&lt;/p&gt;"
         /// </summary>
+        /// <example>"&lt;p&gt;comment body&lt;/p&gt;"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body_html")]
         public string? BodyHtml { get; set; }
 
         /// <summary>
         /// Example: "comment body"
         /// </summary>
+        /// <example>"comment body"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body_text")]
         public string? BodyText { get; set; }
 

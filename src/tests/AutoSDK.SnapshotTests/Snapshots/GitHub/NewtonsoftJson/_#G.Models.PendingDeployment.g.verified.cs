@@ -19,6 +19,7 @@ namespace G
         /// The set duration of the wait timer<br/>
         /// Example: 30
         /// </summary>
+        /// <example>30</example>
         [global::Newtonsoft.Json.JsonProperty("wait_timer", Required = global::Newtonsoft.Json.Required.Always)]
         public int WaitTimer { get; set; } = default!;
 
@@ -32,6 +33,7 @@ namespace G
         /// Whether the currently authenticated user can approve the deployment<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("current_user_can_approve", Required = global::Newtonsoft.Json.Required.Always)]
         public bool CurrentUserCanApprove { get; set; } = default!;
 

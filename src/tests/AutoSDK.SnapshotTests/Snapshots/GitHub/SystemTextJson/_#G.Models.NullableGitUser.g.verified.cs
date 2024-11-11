@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: "Chris Wanstrath"
         /// </summary>
+        /// <example>"Chris Wanstrath"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         public string? Name { get; set; }
 
         /// <summary>
         /// Example: "chris@ozmm.org"
         /// </summary>
+        /// <example>"chris@ozmm.org"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
 
         /// <summary>
         /// Example: "2007-10-29T02:42:39.000-07:00"
         /// </summary>
+        /// <example>"2007-10-29T02:42:39.000-07:00"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("date")]
         public string? Date { get; set; }
 

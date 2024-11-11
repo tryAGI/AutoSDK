@@ -135,6 +135,7 @@ namespace G
         /// The reason for the current state<br/>
         /// Example: resolved
         /// </summary>
+        /// <example>resolved</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state_reason")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DiscussionStateReasonJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: 3755
         /// </summary>
+        /// <example>3755</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDQ6R2F0ZTM3NTU=
         /// </summary>
+        /// <example>MDQ6R2F0ZTM3NTU=</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -25,12 +27,14 @@ namespace G
         /// Whether deployments to this environment can be approved by the user who created the deployment.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("prevent_self_review")]
         public bool? PreventSelfReview { get; set; }
 
         /// <summary>
         /// Example: required_reviewers
         /// </summary>
+        /// <example>required_reviewers</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 

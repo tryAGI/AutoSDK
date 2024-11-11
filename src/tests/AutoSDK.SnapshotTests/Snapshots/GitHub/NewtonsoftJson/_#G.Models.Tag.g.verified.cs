@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: v0.1
         /// </summary>
+        /// <example>v0.1</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -24,12 +25,14 @@ namespace G
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/zipball/v0.1
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/zipball/v0.1</example>
         [global::Newtonsoft.Json.JsonProperty("zipball_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ZipballUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/tarball/v0.1
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/tarball/v0.1</example>
         [global::Newtonsoft.Json.JsonProperty("tarball_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string TarballUrl { get; set; } = default!;
 

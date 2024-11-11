@@ -13,6 +13,7 @@ namespace G
         /// A redacted text snippet of the API key. Contains the first 4 characters of the API key<br/>
         /// Example: vkpDja
         /// </summary>
+        /// <example>vkpDja</example>
         [global::Newtonsoft.Json.JsonProperty("redacted_api_key", Required = global::Newtonsoft.Json.Required.Always)]
         public string RedactedApiKey1 { get; set; } = default!;
 
@@ -26,6 +27,7 @@ namespace G
         /// A URL safe base64 encoded UUID<br/>
         /// Example: JRPVD7jWR1aTBYiJ0UFVOg==
         /// </summary>
+        /// <example>JRPVD7jWR1aTBYiJ0UFVOg==</example>
         [global::Newtonsoft.Json.JsonProperty("api_key_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string ApiKeyId { get; set; } = default!;
 

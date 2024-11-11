@@ -13,6 +13,7 @@ namespace G
         /// The security alert number.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("number")]
         public int Number { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
         public global::System.DateTime CreatedAt { get; set; } = default!;
 
@@ -34,6 +36,7 @@ namespace G
         /// The REST API URL of the alert resource.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string Url { get; set; } = default!;
 
@@ -41,6 +44,7 @@ namespace G
         /// The GitHub URL of the alert resource.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("html_url")]
         public string HtmlUrl { get; set; } = default!;
 
@@ -48,6 +52,7 @@ namespace G
         /// The REST API URL for fetching the list of instances for an alert.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::Newtonsoft.Json.JsonProperty("instances_url")]
         public string InstancesUrl { get; set; } = default!;
 

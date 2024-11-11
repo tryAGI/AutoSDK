@@ -13,6 +13,7 @@ namespace G
         /// Name to use for the created voice.<br/>
         /// Example: Little squeaky mouse
         /// </summary>
+        /// <example>Little squeaky mouse</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string VoiceName { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// Description to use for the created voice.<br/>
         /// Example: A sassy little squeaky mouse
         /// </summary>
+        /// <example>A sassy little squeaky mouse</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("voice_description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string VoiceDescription { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don't have one yet.<br/>
         /// Example: 37HceQefKmEi3bGovXjL
         /// </summary>
+        /// <example>37HceQefKmEi3bGovXjL</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("generated_voice_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string GeneratedVoiceId { get; set; }

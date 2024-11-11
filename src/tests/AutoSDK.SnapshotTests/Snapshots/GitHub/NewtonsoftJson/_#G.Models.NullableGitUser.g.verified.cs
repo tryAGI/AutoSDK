@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: "Chris Wanstrath"
         /// </summary>
+        /// <example>"Chris Wanstrath"</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
         /// <summary>
         /// Example: "chris@ozmm.org"
         /// </summary>
+        /// <example>"chris@ozmm.org"</example>
         [global::Newtonsoft.Json.JsonProperty("email")]
         public string? Email { get; set; }
 
         /// <summary>
         /// Example: "2007-10-29T02:42:39.000-07:00"
         /// </summary>
+        /// <example>"2007-10-29T02:42:39.000-07:00"</example>
         [global::Newtonsoft.Json.JsonProperty("date")]
         public string? Date { get; set; }
 

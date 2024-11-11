@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: 100
         /// </summary>
+        /// <example>100</example>
         [global::Newtonsoft.Json.JsonProperty("health_percentage", Required = global::Newtonsoft.Json.Required.Always)]
         public int HealthPercentage { get; set; } = default!;
 
         /// <summary>
         /// Example: My first repository on GitHub!
         /// </summary>
+        /// <example>My first repository on GitHub!</example>
         [global::Newtonsoft.Json.JsonProperty("description", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Description { get; set; } = default!;
 
         /// <summary>
         /// Example: example.com
         /// </summary>
+        /// <example>example.com</example>
         [global::Newtonsoft.Json.JsonProperty("documentation", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Documentation { get; set; } = default!;
 
@@ -42,6 +45,7 @@ namespace G
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("content_reports_enabled")]
         public bool? ContentReportsEnabled { get; set; }
 

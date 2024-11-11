@@ -13,6 +13,7 @@ namespace G
         /// The name of the detector used.<br/>
         /// Example: docker buildtime detector
         /// </summary>
+        /// <example>docker buildtime detector</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The version of the detector used.<br/>
         /// Example: 1.0.0
         /// </summary>
+        /// <example>1.0.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Version { get; set; }
@@ -29,6 +31,7 @@ namespace G
         /// The url of the detector used.<br/>
         /// Example: http://example.com/docker-buildtimer-detector
         /// </summary>
+        /// <example>http://example.com/docker-buildtimer-detector</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }

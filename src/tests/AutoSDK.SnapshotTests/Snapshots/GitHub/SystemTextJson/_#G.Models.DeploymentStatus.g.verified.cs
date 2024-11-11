@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/deployments/42/statuses/1
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/deployments/42/statuses/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 1L
         /// </summary>
+        /// <example>1L</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required long Id { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: MDE2OkRlcGxveW1lbnRTdGF0dXMx
         /// </summary>
+        /// <example>MDE2OkRlcGxveW1lbnRTdGF0dXMx</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -34,6 +37,7 @@ namespace G
         /// The state of the status.<br/>
         /// Example: success
         /// </summary>
+        /// <example>success</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("state")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.DeploymentStatusStateJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -50,6 +54,7 @@ namespace G
         /// A short description of the status.<br/>
         /// Example: Deployment finished successfully.
         /// </summary>
+        /// <example>Deployment finished successfully.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Description { get; set; }
@@ -58,6 +63,7 @@ namespace G
         /// The environment of the deployment that the status is for.<br/>
         /// Example: production
         /// </summary>
+        /// <example>production</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment")]
         public string? Environment { get; set; }
 
@@ -65,6 +71,7 @@ namespace G
         /// Deprecated: the URL to associate with this status.<br/>
         /// Example: https://example.com/deployment/42/output
         /// </summary>
+        /// <example>https://example.com/deployment/42/output</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("target_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TargetUrl { get; set; }
@@ -86,6 +93,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example/deployments/42
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example/deployments/42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("deployment_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DeploymentUrl { get; set; }
@@ -93,6 +101,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/example
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/example</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string RepositoryUrl { get; set; }
@@ -101,6 +110,7 @@ namespace G
         /// The URL for accessing your environment.<br/>
         /// Example: https://staging.example.com/
         /// </summary>
+        /// <example>https://staging.example.com/</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("environment_url")]
         public string? EnvironmentUrl { get; set; }
 
@@ -108,6 +118,7 @@ namespace G
         /// The URL to associate with this status.<br/>
         /// Example: https://example.com/deployment/42/output
         /// </summary>
+        /// <example>https://example.com/deployment/42/output</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("log_url")]
         public string? LogUrl { get; set; }
 

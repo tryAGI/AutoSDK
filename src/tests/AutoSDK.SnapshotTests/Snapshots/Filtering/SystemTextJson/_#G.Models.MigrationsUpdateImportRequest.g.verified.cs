@@ -25,6 +25,7 @@ namespace G
         /// The type of version control system you are migrating from.<br/>
         /// Example: "git"
         /// </summary>
+        /// <example>"git"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("vcs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MigrationsUpdateImportRequestVcsJsonConverter))]
         public global::G.MigrationsUpdateImportRequestVcs? Vcs { get; set; }
@@ -33,6 +34,7 @@ namespace G
         /// For a tfvc import, the name of the project that is being imported.<br/>
         /// Example: "project1"
         /// </summary>
+        /// <example>"project1"</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("tfvc_project")]
         public string? TfvcProject { get; set; }
 

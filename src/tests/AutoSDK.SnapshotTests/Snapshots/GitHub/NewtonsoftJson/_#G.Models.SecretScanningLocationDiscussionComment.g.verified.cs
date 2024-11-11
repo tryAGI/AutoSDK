@@ -13,6 +13,7 @@ namespace G
         /// The API URL to get the discussion comment where the secret was detected.<br/>
         /// Example: https://github.com/community/community/discussions/39082#discussioncomment-4158232
         /// </summary>
+        /// <example>https://github.com/community/community/discussions/39082#discussioncomment-4158232</example>
         [global::Newtonsoft.Json.JsonProperty("discussion_comment_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string DiscussionCommentUrl { get; set; } = default!;
 

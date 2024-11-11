@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: john@mail.com
         /// </summary>
+        /// <example>john@mail.com</example>
         [global::Newtonsoft.Json.JsonProperty("email")]
         public string? Email { get; set; }
 
         /// <summary>
         /// Example: John
         /// </summary>
+        /// <example>John</example>
         [global::Newtonsoft.Json.JsonProperty("first_name")]
         public string? FirstName { get; set; }
 

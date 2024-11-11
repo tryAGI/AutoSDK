@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: list
         /// </summary>
+        /// <example>list</example>
         [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
         public string Object { get; set; } = default!;
 
@@ -24,18 +25,21 @@ namespace G
         /// <summary>
         /// Example: step_abc123
         /// </summary>
+        /// <example>step_abc123</example>
         [global::Newtonsoft.Json.JsonProperty("first_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string FirstId { get; set; } = default!;
 
         /// <summary>
         /// Example: step_abc456
         /// </summary>
+        /// <example>step_abc456</example>
         [global::Newtonsoft.Json.JsonProperty("last_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string LastId { get; set; } = default!;
 
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
         public bool HasMore { get; set; } = default!;
 

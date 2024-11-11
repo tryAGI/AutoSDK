@@ -20,6 +20,7 @@ namespace G
         /// The main text of the discussion.<br/>
         /// Example: Please suggest improvements to our workflow in comments.
         /// </summary>
+        /// <example>Please suggest improvements to our workflow in comments.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Body { get; set; }
@@ -27,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: &lt;p&gt;Hi! This is an area for us to collaborate as a team&lt;/p&gt;
         /// </summary>
+        /// <example>&lt;p&gt;Hi! This is an area for us to collaborate as a team&lt;/p&gt;</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body_html")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BodyHtml { get; set; }
@@ -35,6 +37,7 @@ namespace G
         /// The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.<br/>
         /// Example: 0307116bbf7ced493b8d8a346c650b71
         /// </summary>
+        /// <example>0307116bbf7ced493b8d8a346c650b71</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("body_version")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string BodyVersion { get; set; }
@@ -42,6 +45,7 @@ namespace G
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CommentsCount { get; set; }
@@ -49,6 +53,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1/comments
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/2343027/discussions/1/comments</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("comments_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string CommentsUrl { get; set; }
@@ -70,6 +75,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/orgs/github/teams/justice-league/discussions/1
         /// </summary>
+        /// <example>https://github.com/orgs/github/teams/justice-league/discussions/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }
@@ -77,6 +83,7 @@ namespace G
         /// <summary>
         /// Example: MDE0OlRlYW1EaXNjdXNzaW9uMQ==
         /// </summary>
+        /// <example>MDE0OlRlYW1EaXNjdXNzaW9uMQ==</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -85,6 +92,7 @@ namespace G
         /// The unique sequence number of a team discussion.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("number")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Number { get; set; }
@@ -93,6 +101,7 @@ namespace G
         /// Whether or not this discussion should be pinned for easy retrieval.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("pinned")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Pinned { get; set; }
@@ -101,6 +110,7 @@ namespace G
         /// Whether or not this discussion should be restricted to team members and organization owners.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("private")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required bool Private { get; set; }
@@ -108,6 +118,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/2343027
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/2343027</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("team_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TeamUrl { get; set; }
@@ -116,6 +127,7 @@ namespace G
         /// The title of the discussion.<br/>
         /// Example: How can we improve our workflow?
         /// </summary>
+        /// <example>How can we improve our workflow?</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
@@ -130,6 +142,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1
         /// </summary>
+        /// <example>https://api.github.com/organizations/1/team/2343027/discussions/1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Url { get; set; }

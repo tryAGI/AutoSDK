@@ -38,6 +38,7 @@ namespace G
         /// Included only in requests<br/>
         /// Example: my-preset-a58sbd
         /// </summary>
+        /// <example>my-preset-a58sbd</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("preset")]
         public string? Preset { get; set; }
 

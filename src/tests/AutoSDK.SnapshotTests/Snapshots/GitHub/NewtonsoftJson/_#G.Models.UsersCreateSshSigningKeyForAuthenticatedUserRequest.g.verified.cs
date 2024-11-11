@@ -13,6 +13,7 @@ namespace G
         /// A descriptive name for the new key.<br/>
         /// Example: Personal MacBook Air
         /// </summary>
+        /// <example>Personal MacBook Air</example>
         [global::Newtonsoft.Json.JsonProperty("title")]
         public string? Title { get; set; }
 

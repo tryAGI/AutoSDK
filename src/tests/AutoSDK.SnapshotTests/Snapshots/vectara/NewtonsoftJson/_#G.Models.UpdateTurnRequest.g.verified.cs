@@ -14,6 +14,7 @@ namespace G
         /// Enabling a turn is not implemented.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("enabled")]
         public bool? Enabled { get; set; }
 

@@ -13,6 +13,7 @@ namespace G
         /// The unique identifier for the deployment protection rule.<br/>
         /// Example: 3515
         /// </summary>
+        /// <example>3515</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// The node ID for the deployment protection rule.<br/>
         /// Example: MDQ6R2F0ZTM1MTU=
         /// </summary>
+        /// <example>MDQ6R2F0ZTM1MTU=</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -27,6 +29,7 @@ namespace G
         /// Whether the deployment protection rule is enabled for the environment.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("enabled", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Enabled { get; set; } = default!;
 

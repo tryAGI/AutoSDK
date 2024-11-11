@@ -40,6 +40,7 @@ namespace G
         /// <summary>
         /// Example: disabled | all
         /// </summary>
+        /// <example>disabled | all</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("sync_to_organizations")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SyncToOrganizations { get; set; }
@@ -47,12 +48,14 @@ namespace G
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("group_id")]
         public int? GroupId { get; set; }
 
         /// <summary>
         /// Example: https://github.com/enterprises/dc/teams/justice-league
         /// </summary>
+        /// <example>https://github.com/enterprises/dc/teams/justice-league</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("html_url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HtmlUrl { get; set; }

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 173
         /// </summary>
+        /// <example>173</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Count { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 128
         /// </summary>
+        /// <example>128</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("uniques")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Uniques { get; set; }

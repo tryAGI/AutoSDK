@@ -13,6 +13,7 @@ namespace G
         /// Full URLs for the social media profiles to add.<br/>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("account_urls")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<string> AccountUrls { get; set; }

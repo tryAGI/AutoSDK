@@ -13,6 +13,7 @@ namespace G
         /// The name of the repository.<br/>
         /// Example: Team Environment
         /// </summary>
+        /// <example>Team Environment</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -40,6 +41,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_issues")]
         public bool? HasIssues { get; set; }
 
@@ -48,6 +50,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_projects")]
         public bool? HasProjects { get; set; }
 
@@ -56,6 +59,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_wiki")]
         public bool? HasWiki { get; set; }
 
@@ -64,6 +68,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_discussions")]
         public bool? HasDiscussions { get; set; }
 
@@ -84,6 +89,7 @@ namespace G
         /// The desired language or platform to apply to the .gitignore.<br/>
         /// Example: Haskell
         /// </summary>
+        /// <example>Haskell</example>
         [global::Newtonsoft.Json.JsonProperty("gitignore_template")]
         public string? GitignoreTemplate { get; set; }
 
@@ -91,6 +97,7 @@ namespace G
         /// The license keyword of the open source license for this repository.<br/>
         /// Example: mit
         /// </summary>
+        /// <example>mit</example>
         [global::Newtonsoft.Json.JsonProperty("license_template")]
         public string? LicenseTemplate { get; set; }
 
@@ -99,6 +106,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("allow_squash_merge")]
         public bool? AllowSquashMerge { get; set; }
 
@@ -107,6 +115,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("allow_merge_commit")]
         public bool? AllowMergeCommit { get; set; }
 
@@ -115,6 +124,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("allow_rebase_merge")]
         public bool? AllowRebaseMerge { get; set; }
 
@@ -123,6 +133,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("allow_auto_merge")]
         public bool? AllowAutoMerge { get; set; }
 
@@ -131,6 +142,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("delete_branch_on_merge")]
         public bool? DeleteBranchOnMerge { get; set; }
 
@@ -175,6 +187,7 @@ namespace G
         /// Default Value: true<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("has_downloads")]
         public bool? HasDownloads { get; set; }
 
@@ -183,6 +196,7 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("is_template")]
         public bool? IsTemplate { get; set; }
 

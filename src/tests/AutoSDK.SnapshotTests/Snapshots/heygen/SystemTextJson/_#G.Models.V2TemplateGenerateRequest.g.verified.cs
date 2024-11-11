@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("caption")]
         public bool? Caption { get; set; }
 
@@ -24,12 +25,14 @@ namespace G
         /// <summary>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("test")]
         public bool? Test { get; set; }
 
         /// <summary>
         /// Example: New Video
         /// </summary>
+        /// <example>New Video</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? Title { get; set; }
 

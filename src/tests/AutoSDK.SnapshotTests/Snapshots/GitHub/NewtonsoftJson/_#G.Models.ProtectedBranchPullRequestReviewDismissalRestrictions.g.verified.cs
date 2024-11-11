@@ -30,18 +30,21 @@ namespace G
         /// <summary>
         /// Example: "https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions"
         /// </summary>
+        /// <example>"https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions"</example>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions/users"
         /// </summary>
+        /// <example>"https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions/users"</example>
         [global::Newtonsoft.Json.JsonProperty("users_url")]
         public string? UsersUrl { get; set; }
 
         /// <summary>
         /// Example: "https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions/teams"
         /// </summary>
+        /// <example>"https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions/teams"</example>
         [global::Newtonsoft.Json.JsonProperty("teams_url")]
         public string? TeamsUrl { get; set; }
 

@@ -14,6 +14,7 @@ namespace G
         /// This will be used to match up the tool results later.<br/>
         /// Example: toolu_01A09q90qw90lq917835lq9
         /// </summary>
+        /// <example>toolu_01A09q90qw90lq917835lq9</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
@@ -22,6 +23,7 @@ namespace G
         /// The name of the tool being used.<br/>
         /// Example: get_weather
         /// </summary>
+        /// <example>get_weather</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }

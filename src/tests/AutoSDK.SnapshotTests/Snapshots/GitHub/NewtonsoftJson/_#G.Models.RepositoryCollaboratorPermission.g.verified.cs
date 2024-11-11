@@ -18,6 +18,7 @@ namespace G
         /// <summary>
         /// Example: admin
         /// </summary>
+        /// <example>admin</example>
         [global::Newtonsoft.Json.JsonProperty("role_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string RoleName { get; set; } = default!;
 

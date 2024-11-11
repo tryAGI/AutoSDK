@@ -19,6 +19,7 @@ namespace G
         /// SHA for the reference<br/>
         /// Example: 7638417db6d59f3c431d3e1f261cc637155684cd
         /// </summary>
+        /// <example>7638417db6d59f3c431d3e1f261cc637155684cd</example>
         [global::Newtonsoft.Json.JsonProperty("sha", Required = global::Newtonsoft.Json.Required.Always)]
         public string Sha { get; set; } = default!;
 

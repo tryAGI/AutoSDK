@@ -12,36 +12,42 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/api-playground/projects-test
         /// </summary>
+        /// <example>https://api.github.com/repos/api-playground/projects-test</example>
         [global::Newtonsoft.Json.JsonProperty("owner_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string OwnerUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/projects/1002604
         /// </summary>
+        /// <example>https://api.github.com/projects/1002604</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/api-playground/projects-test/projects/12
         /// </summary>
+        /// <example>https://github.com/api-playground/projects-test/projects/12</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/projects/1002604/columns
         /// </summary>
+        /// <example>https://api.github.com/projects/1002604/columns</example>
         [global::Newtonsoft.Json.JsonProperty("columns_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ColumnsUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: 1002604
         /// </summary>
+        /// <example>1002604</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDc6UHJvamVjdDEwMDI2MDQ=
         /// </summary>
+        /// <example>MDc6UHJvamVjdDEwMDI2MDQ=</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -49,6 +55,7 @@ namespace G
         /// Name of the project<br/>
         /// Example: Week One Sprint
         /// </summary>
+        /// <example>Week One Sprint</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -56,12 +63,14 @@ namespace G
         /// Body of the project<br/>
         /// Example: This project represents the sprint of the first week in January
         /// </summary>
+        /// <example>This project represents the sprint of the first week in January</example>
         [global::Newtonsoft.Json.JsonProperty("body", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Body { get; set; } = default!;
 
         /// <summary>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("number", Required = global::Newtonsoft.Json.Required.Always)]
         public int Number { get; set; } = default!;
 
@@ -69,6 +78,7 @@ namespace G
         /// State of the project; either 'open' or 'closed'<br/>
         /// Example: open
         /// </summary>
+        /// <example>open</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public string State { get; set; } = default!;
 

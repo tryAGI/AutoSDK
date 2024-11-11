@@ -12,30 +12,35 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/octocat/Hello-World/compare/master...topic
         /// </summary>
+        /// <example>https://api.github.com/repos/octocat/Hello-World/compare/master...topic</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/compare/master...topic
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/compare/master...topic</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/compare/octocat:bbcd538c8e72b8c175046e27cc8f907076331401...octocat:0328041d1152db8ae77652d1618a02e57f745f17
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/compare/octocat:bbcd538c8e72b8c175046e27cc8f907076331401...octocat:0328041d1152db8ae77652d1618a02e57f745f17</example>
         [global::Newtonsoft.Json.JsonProperty("permalink_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PermalinkUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/compare/master...topic.diff
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/compare/master...topic.diff</example>
         [global::Newtonsoft.Json.JsonProperty("diff_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string DiffUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/octocat/Hello-World/compare/master...topic.patch
         /// </summary>
+        /// <example>https://github.com/octocat/Hello-World/compare/master...topic.patch</example>
         [global::Newtonsoft.Json.JsonProperty("patch_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string PatchUrl { get; set; } = default!;
 
@@ -54,24 +59,28 @@ namespace G
         /// <summary>
         /// Example: ahead
         /// </summary>
+        /// <example>ahead</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.CommitComparisonStatus Status { get; set; } = default!;
 
         /// <summary>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::Newtonsoft.Json.JsonProperty("ahead_by", Required = global::Newtonsoft.Json.Required.Always)]
         public int AheadBy { get; set; } = default!;
 
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::Newtonsoft.Json.JsonProperty("behind_by", Required = global::Newtonsoft.Json.Required.Always)]
         public int BehindBy { get; set; } = default!;
 
         /// <summary>
         /// Example: 6
         /// </summary>
+        /// <example>6</example>
         [global::Newtonsoft.Json.JsonProperty("total_commits", Required = global::Newtonsoft.Json.Required.Always)]
         public int TotalCommits { get; set; } = default!;
 

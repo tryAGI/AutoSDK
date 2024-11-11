@@ -14,6 +14,7 @@ namespace G
         /// Default Value: write<br/>
         /// Example: write
         /// </summary>
+        /// <example>write</example>
         [global::Newtonsoft.Json.JsonProperty("permission")]
         public global::G.ProjectsAddCollaboratorRequestPermission? Permission { get; set; }
 

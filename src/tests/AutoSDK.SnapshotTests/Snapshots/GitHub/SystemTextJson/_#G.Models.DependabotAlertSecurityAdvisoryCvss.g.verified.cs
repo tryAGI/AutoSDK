@@ -14,6 +14,7 @@ namespace G
         /// The overall CVSS score of the advisory.<br/>
         /// Included only in responses
         /// </summary>
+        /// <default>default!</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("score")]
         public double Score { get; set; } = default!;
 

@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 1L
         /// </summary>
+        /// <example>1L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
@@ -19,6 +20,7 @@ namespace G
         /// Automatically generated name of this codespace.<br/>
         /// Example: monalisa-octocat-hello-world-g4wpq6h95q
         /// </summary>
+        /// <example>monalisa-octocat-hello-world-g4wpq6h95q</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -26,6 +28,7 @@ namespace G
         /// Display name for this codespace.<br/>
         /// Example: bookish space pancake
         /// </summary>
+        /// <example>bookish space pancake</example>
         [global::Newtonsoft.Json.JsonProperty("display_name")]
         public string? DisplayName { get; set; }
 
@@ -33,6 +36,7 @@ namespace G
         /// UUID identifying this codespace's environment.<br/>
         /// Example: 26a7c758-7299-4a73-b978-5a92a7ae98a0
         /// </summary>
+        /// <example>26a7c758-7299-4a73-b978-5a92a7ae98a0</example>
         [global::Newtonsoft.Json.JsonProperty("environment_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string? EnvironmentId { get; set; } = default!;
 
@@ -64,6 +68,7 @@ namespace G
         /// Path to devcontainer.json from repo root used to create Codespace.<br/>
         /// Example: .devcontainer/example/devcontainer.json
         /// </summary>
+        /// <example>.devcontainer/example/devcontainer.json</example>
         [global::Newtonsoft.Json.JsonProperty("devcontainer_path")]
         public string? DevcontainerPath { get; set; }
 
@@ -71,6 +76,7 @@ namespace G
         /// Whether the codespace was created from a prebuild.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("prebuild", Required = global::Newtonsoft.Json.Required.Always)]
         public bool? Prebuild { get; set; } = default!;
 
@@ -96,6 +102,7 @@ namespace G
         /// State of this codespace.<br/>
         /// Example: Available
         /// </summary>
+        /// <example>Available</example>
         [global::Newtonsoft.Json.JsonProperty("state", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.CodespaceWithFullRepositoryState State { get; set; } = default!;
 
@@ -115,6 +122,7 @@ namespace G
         /// The initally assigned location of a new codespace.<br/>
         /// Example: WestUs2
         /// </summary>
+        /// <example>WestUs2</example>
         [global::Newtonsoft.Json.JsonProperty("location", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.CodespaceWithFullRepositoryLocation Location { get; set; } = default!;
 
@@ -122,6 +130,7 @@ namespace G
         /// The number of minutes of inactivity after which this codespace will be automatically stopped.<br/>
         /// Example: 60
         /// </summary>
+        /// <example>60</example>
         [global::Newtonsoft.Json.JsonProperty("idle_timeout_minutes", Required = global::Newtonsoft.Json.Required.Always)]
         public int? IdleTimeoutMinutes { get; set; } = default!;
 
@@ -195,6 +204,7 @@ namespace G
         /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).<br/>
         /// Example: 60
         /// </summary>
+        /// <example>60</example>
         [global::Newtonsoft.Json.JsonProperty("retention_period_minutes")]
         public int? RetentionPeriodMinutes { get; set; }
 

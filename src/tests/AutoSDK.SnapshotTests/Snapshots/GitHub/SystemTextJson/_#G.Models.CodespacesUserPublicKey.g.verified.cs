@@ -13,6 +13,7 @@ namespace G
         /// The identifier for the key.<br/>
         /// Example: 1234567
         /// </summary>
+        /// <example>1234567</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("key_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string KeyId { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The Base64 encoded public key.<br/>
         /// Example: hBT5WZEj8ZoOv6TYJsfWq7MxTEQopZO5/IT3ZCVQPzs=
         /// </summary>
+        /// <example>hBT5WZEj8ZoOv6TYJsfWq7MxTEQopZO5/IT3ZCVQPzs=</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("key")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Key { get; set; }

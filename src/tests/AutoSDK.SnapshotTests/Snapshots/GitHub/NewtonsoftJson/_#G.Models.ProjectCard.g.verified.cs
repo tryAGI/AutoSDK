@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/columns/cards/1478
         /// </summary>
+        /// <example>https://api.github.com/projects/columns/cards/1478</example>
         [global::Newtonsoft.Json.JsonProperty("url", Required = global::Newtonsoft.Json.Required.Always)]
         public string Url { get; set; } = default!;
 
@@ -19,18 +20,21 @@ namespace G
         /// The project card's ID<br/>
         /// Example: 42L
         /// </summary>
+        /// <example>42L</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public long Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDExOlByb2plY3RDYXJkMTQ3OA==
         /// </summary>
+        /// <example>MDExOlByb2plY3RDYXJkMTQ3OA==</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
         /// Example: Add payload for delete Project column
         /// </summary>
+        /// <example>Add payload for delete Project column</example>
         [global::Newtonsoft.Json.JsonProperty("note", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Note { get; set; } = default!;
 
@@ -56,6 +60,7 @@ namespace G
         /// Whether or not the card is archived<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("archived")]
         public bool? Archived { get; set; }
 
@@ -74,18 +79,21 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/projects/columns/367
         /// </summary>
+        /// <example>https://api.github.com/projects/columns/367</example>
         [global::Newtonsoft.Json.JsonProperty("column_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ColumnUrl { get; set; } = default!;
 
         /// <summary>
         /// Example: https://api.github.com/repos/api-playground/projects-test/issues/3
         /// </summary>
+        /// <example>https://api.github.com/repos/api-playground/projects-test/issues/3</example>
         [global::Newtonsoft.Json.JsonProperty("content_url")]
         public string? ContentUrl { get; set; }
 
         /// <summary>
         /// Example: https://api.github.com/projects/120
         /// </summary>
+        /// <example>https://api.github.com/projects/120</example>
         [global::Newtonsoft.Json.JsonProperty("project_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string ProjectUrl { get; set; } = default!;
 

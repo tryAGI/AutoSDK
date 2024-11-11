@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: /github/hubot
         /// </summary>
+        /// <example>/github/hubot</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("path")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Path { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: github/hubot: A customizable life embetterment robot.
         /// </summary>
+        /// <example>github/hubot: A customizable life embetterment robot.</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Title { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: 3542
         /// </summary>
+        /// <example>3542</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Count { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: 2225
         /// </summary>
+        /// <example>2225</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("uniques")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Uniques { get; set; }

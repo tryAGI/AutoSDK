@@ -13,6 +13,7 @@ namespace G
         /// The new name of the user.<br/>
         /// Example: Omar Jahandar
         /// </summary>
+        /// <example>Omar Jahandar</example>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
 
@@ -20,6 +21,7 @@ namespace G
         /// The publicly visible email address of the user.<br/>
         /// Example: omar@example.com
         /// </summary>
+        /// <example>omar@example.com</example>
         [global::Newtonsoft.Json.JsonProperty("email")]
         public string? Email { get; set; }
 
@@ -27,6 +29,7 @@ namespace G
         /// The new blog URL of the user.<br/>
         /// Example: blog.example.com
         /// </summary>
+        /// <example>blog.example.com</example>
         [global::Newtonsoft.Json.JsonProperty("blog")]
         public string? Blog { get; set; }
 
@@ -34,6 +37,7 @@ namespace G
         /// The new Twitter username of the user.<br/>
         /// Example: therealomarj
         /// </summary>
+        /// <example>therealomarj</example>
         [global::Newtonsoft.Json.JsonProperty("twitter_username")]
         public string? TwitterUsername { get; set; }
 
@@ -41,6 +45,7 @@ namespace G
         /// The new company of the user.<br/>
         /// Example: Acme corporation
         /// </summary>
+        /// <example>Acme corporation</example>
         [global::Newtonsoft.Json.JsonProperty("company")]
         public string? Company { get; set; }
 
@@ -48,6 +53,7 @@ namespace G
         /// The new location of the user.<br/>
         /// Example: Berlin, Germany
         /// </summary>
+        /// <example>Berlin, Germany</example>
         [global::Newtonsoft.Json.JsonProperty("location")]
         public string? Location { get; set; }
 

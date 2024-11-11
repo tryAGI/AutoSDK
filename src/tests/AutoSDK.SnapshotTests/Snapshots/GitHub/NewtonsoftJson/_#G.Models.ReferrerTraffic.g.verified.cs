@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: Google
         /// </summary>
+        /// <example>Google</example>
         [global::Newtonsoft.Json.JsonProperty("referrer", Required = global::Newtonsoft.Json.Required.Always)]
         public string Referrer { get; set; } = default!;
 
         /// <summary>
         /// Example: 4
         /// </summary>
+        /// <example>4</example>
         [global::Newtonsoft.Json.JsonProperty("count", Required = global::Newtonsoft.Json.Required.Always)]
         public int Count { get; set; } = default!;
 
         /// <summary>
         /// Example: 3
         /// </summary>
+        /// <example>3</example>
         [global::Newtonsoft.Json.JsonProperty("uniques", Required = global::Newtonsoft.Json.Required.Always)]
         public int Uniques { get; set; } = default!;
 

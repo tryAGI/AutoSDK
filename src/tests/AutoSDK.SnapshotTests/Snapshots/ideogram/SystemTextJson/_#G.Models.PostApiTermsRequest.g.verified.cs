@@ -13,6 +13,7 @@ namespace G
         /// The ID of the terms which are being accepted.<br/>
         /// Example: TOS_2024_04_20
         /// </summary>
+        /// <example>TOS_2024_04_20</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("terms_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string TermsId { get; set; }

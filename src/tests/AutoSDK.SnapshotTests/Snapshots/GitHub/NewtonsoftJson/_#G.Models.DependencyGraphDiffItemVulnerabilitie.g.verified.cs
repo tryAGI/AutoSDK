@@ -12,24 +12,28 @@ namespace G
         /// <summary>
         /// Example: critical
         /// </summary>
+        /// <example>critical</example>
         [global::Newtonsoft.Json.JsonProperty("severity", Required = global::Newtonsoft.Json.Required.Always)]
         public string Severity { get; set; } = default!;
 
         /// <summary>
         /// Example: GHSA-rf4j-j272-fj86
         /// </summary>
+        /// <example>GHSA-rf4j-j272-fj86</example>
         [global::Newtonsoft.Json.JsonProperty("advisory_ghsa_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string AdvisoryGhsaId { get; set; } = default!;
 
         /// <summary>
         /// Example: A summary of the advisory.
         /// </summary>
+        /// <example>A summary of the advisory.</example>
         [global::Newtonsoft.Json.JsonProperty("advisory_summary", Required = global::Newtonsoft.Json.Required.Always)]
         public string AdvisorySummary { get; set; } = default!;
 
         /// <summary>
         /// Example: https://github.com/advisories/GHSA-rf4j-j272-fj86
         /// </summary>
+        /// <example>https://github.com/advisories/GHSA-rf4j-j272-fj86</example>
         [global::Newtonsoft.Json.JsonProperty("advisory_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string AdvisoryUrl { get; set; } = default!;
 

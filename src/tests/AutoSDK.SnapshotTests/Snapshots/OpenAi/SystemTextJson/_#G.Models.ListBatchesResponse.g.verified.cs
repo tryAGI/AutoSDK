@@ -19,12 +19,14 @@ namespace G
         /// <summary>
         /// Example: batch_abc123
         /// </summary>
+        /// <example>batch_abc123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("first_id")]
         public string? FirstId { get; set; }
 
         /// <summary>
         /// Example: batch_abc456
         /// </summary>
+        /// <example>batch_abc456</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         public string? LastId { get; set; }
 

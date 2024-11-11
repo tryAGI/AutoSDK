@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: 1296269
         /// </summary>
+        /// <example>1296269</example>
         [global::Newtonsoft.Json.JsonProperty("repository_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int RepositoryId { get; set; } = default!;
 
         /// <summary>
         /// Example: Hello-World
         /// </summary>
+        /// <example>Hello-World</example>
         [global::Newtonsoft.Json.JsonProperty("repository_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string RepositoryName { get; set; } = default!;
 
         /// <summary>
         /// Example: octocat/Hello-World
         /// </summary>
+        /// <example>octocat/Hello-World</example>
         [global::Newtonsoft.Json.JsonProperty("repository_full_name", Required = global::Newtonsoft.Json.Required.Always)]
         public string RepositoryFullName { get; set; } = default!;
 

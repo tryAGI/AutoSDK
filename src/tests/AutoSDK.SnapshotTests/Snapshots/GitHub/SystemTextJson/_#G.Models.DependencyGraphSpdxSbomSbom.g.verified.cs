@@ -13,6 +13,7 @@ namespace G
         /// The SPDX identifier for the SPDX document.<br/>
         /// Example: SPDXRef-DOCUMENT
         /// </summary>
+        /// <example>SPDXRef-DOCUMENT</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("SPDXID")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SPDXID { get; set; }
@@ -21,6 +22,7 @@ namespace G
         /// The version of the SPDX specification that this document conforms to.<br/>
         /// Example: SPDX-2.3
         /// </summary>
+        /// <example>SPDX-2.3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("spdxVersion")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string SpdxVersion { get; set; }
@@ -36,6 +38,7 @@ namespace G
         /// The name of the SPDX document.<br/>
         /// Example: github/github
         /// </summary>
+        /// <example>github/github</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -44,6 +47,7 @@ namespace G
         /// The license under which the SPDX document is licensed.<br/>
         /// Example: CC0-1.0
         /// </summary>
+        /// <example>CC0-1.0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("dataLicense")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DataLicense { get; set; }
@@ -59,6 +63,7 @@ namespace G
         /// The namespace for the SPDX document.<br/>
         /// Example: https://github.com/example/dependency_graph/sbom-123
         /// </summary>
+        /// <example>https://github.com/example/dependency_graph/sbom-123</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("documentNamespace")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DocumentNamespace { get; set; }

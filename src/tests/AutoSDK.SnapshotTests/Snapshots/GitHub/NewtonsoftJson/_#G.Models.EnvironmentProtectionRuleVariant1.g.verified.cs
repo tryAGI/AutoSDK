@@ -12,18 +12,21 @@ namespace G
         /// <summary>
         /// Example: 3515
         /// </summary>
+        /// <example>3515</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDQ6R2F0ZTM1MTU=
         /// </summary>
+        /// <example>MDQ6R2F0ZTM1MTU=</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
         /// <summary>
         /// Example: wait_timer
         /// </summary>
+        /// <example>wait_timer</example>
         [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
         public string Type { get; set; } = default!;
 
@@ -31,6 +34,7 @@ namespace G
         /// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).<br/>
         /// Example: 30
         /// </summary>
+        /// <example>30</example>
         [global::Newtonsoft.Json.JsonProperty("wait_timer")]
         public int? WaitTimer { get; set; }
 

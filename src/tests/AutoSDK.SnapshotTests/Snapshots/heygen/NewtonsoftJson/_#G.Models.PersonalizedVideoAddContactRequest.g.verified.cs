@@ -12,12 +12,14 @@ namespace G
         /// <summary>
         /// Example: &lt;project_id&gt;
         /// </summary>
+        /// <example>&lt;project_id&gt;</example>
         [global::Newtonsoft.Json.JsonProperty("project_id")]
         public string? ProjectId { get; set; }
 
         /// <summary>
         /// Example: []
         /// </summary>
+        /// <example>[]</example>
         [global::Newtonsoft.Json.JsonProperty("variables_list")]
         public global::System.Collections.Generic.IList<global::G.PersonalizedVideoAddContactRequestVariablesListItem>? VariablesList { get; set; }
 

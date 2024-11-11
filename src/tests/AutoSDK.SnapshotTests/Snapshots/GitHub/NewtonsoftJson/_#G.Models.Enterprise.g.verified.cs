@@ -18,6 +18,7 @@ namespace G
         /// <summary>
         /// Example: https://github.com/enterprises/octo-business
         /// </summary>
+        /// <example>https://github.com/enterprises/octo-business</example>
         [global::Newtonsoft.Json.JsonProperty("html_url", Required = global::Newtonsoft.Json.Required.Always)]
         public string HtmlUrl { get; set; } = default!;
 
@@ -31,12 +32,14 @@ namespace G
         /// Unique identifier of the enterprise<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
         /// <summary>
         /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
         /// </summary>
+        /// <example>MDEwOlJlcG9zaXRvcnkxMjk2MjY5</example>
         [global::Newtonsoft.Json.JsonProperty("node_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string NodeId { get; set; } = default!;
 
@@ -44,6 +47,7 @@ namespace G
         /// The name of the enterprise.<br/>
         /// Example: Octo Business
         /// </summary>
+        /// <example>Octo Business</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -51,6 +55,7 @@ namespace G
         /// The slug url identifier for the enterprise.<br/>
         /// Example: octo-business
         /// </summary>
+        /// <example>octo-business</example>
         [global::Newtonsoft.Json.JsonProperty("slug", Required = global::Newtonsoft.Json.Required.Always)]
         public string Slug { get; set; } = default!;
 

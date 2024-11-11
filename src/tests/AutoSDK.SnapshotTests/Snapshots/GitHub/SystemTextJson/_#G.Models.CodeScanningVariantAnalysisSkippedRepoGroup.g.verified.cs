@@ -13,6 +13,7 @@ namespace G
         /// The total number of repositories that were skipped for this reason.<br/>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("repository_count")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int RepositoryCount { get; set; }

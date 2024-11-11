@@ -12,30 +12,35 @@ namespace G
         /// <summary>
         /// Example: 2
         /// </summary>
+        /// <example>2</example>
         [global::Newtonsoft.Json.JsonProperty("id")]
         public int? Id { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("created_at")]
         public string? CreatedAt { get; set; }
 
         /// <summary>
         /// Example: 2011-01-26T19:01:12Z
         /// </summary>
+        /// <example>2011-01-26T19:01:12Z</example>
         [global::Newtonsoft.Json.JsonProperty("updated_at")]
         public string? UpdatedAt { get; set; }
 
         /// <summary>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("enabled")]
         public bool? Enabled { get; set; }
 
         /// <summary>
         /// Example: v1.*
         /// </summary>
+        /// <example>v1.*</example>
         [global::Newtonsoft.Json.JsonProperty("pattern", Required = global::Newtonsoft.Json.Required.Always)]
         public string Pattern { get; set; } = default!;
 

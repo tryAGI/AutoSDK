@@ -13,6 +13,7 @@ namespace G
         /// Unique identifier of the delivery.<br/>
         /// Example: 42
         /// </summary>
+        /// <example>42</example>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
 
@@ -20,6 +21,7 @@ namespace G
         /// Unique identifier for the event (shared with all deliveries for all webhooks that subscribe to this event).<br/>
         /// Example: 58474f00-b361-11eb-836d-0e4f3503ccbe
         /// </summary>
+        /// <example>58474f00-b361-11eb-836d-0e4f3503ccbe</example>
         [global::Newtonsoft.Json.JsonProperty("guid", Required = global::Newtonsoft.Json.Required.Always)]
         public string Guid { get; set; } = default!;
 
@@ -33,6 +35,7 @@ namespace G
         /// Whether the delivery is a redelivery.<br/>
         /// Example: false
         /// </summary>
+        /// <example>false</example>
         [global::Newtonsoft.Json.JsonProperty("redelivery", Required = global::Newtonsoft.Json.Required.Always)]
         public bool Redelivery { get; set; } = default!;
 
@@ -40,6 +43,7 @@ namespace G
         /// Time spent delivering.<br/>
         /// Example: 0.03
         /// </summary>
+        /// <example>0.03</example>
         [global::Newtonsoft.Json.JsonProperty("duration", Required = global::Newtonsoft.Json.Required.Always)]
         public double Duration { get; set; } = default!;
 
@@ -47,6 +51,7 @@ namespace G
         /// Description of the status of the attempted delivery<br/>
         /// Example: failed to connect
         /// </summary>
+        /// <example>failed to connect</example>
         [global::Newtonsoft.Json.JsonProperty("status", Required = global::Newtonsoft.Json.Required.Always)]
         public string Status { get; set; } = default!;
 
@@ -54,6 +59,7 @@ namespace G
         /// Status code received when delivery was made.<br/>
         /// Example: 502
         /// </summary>
+        /// <example>502</example>
         [global::Newtonsoft.Json.JsonProperty("status_code", Required = global::Newtonsoft.Json.Required.Always)]
         public int StatusCode { get; set; } = default!;
 
@@ -61,6 +67,7 @@ namespace G
         /// The event that triggered the delivery.<br/>
         /// Example: issues
         /// </summary>
+        /// <example>issues</example>
         [global::Newtonsoft.Json.JsonProperty("event", Required = global::Newtonsoft.Json.Required.Always)]
         public string Event { get; set; } = default!;
 
@@ -68,6 +75,7 @@ namespace G
         /// The type of activity for the event that triggered the delivery.<br/>
         /// Example: opened
         /// </summary>
+        /// <example>opened</example>
         [global::Newtonsoft.Json.JsonProperty("action", Required = global::Newtonsoft.Json.Required.Always)]
         public string? Action { get; set; } = default!;
 
@@ -75,6 +83,7 @@ namespace G
         /// The id of the GitHub App installation associated with this event.<br/>
         /// Example: 123
         /// </summary>
+        /// <example>123</example>
         [global::Newtonsoft.Json.JsonProperty("installation_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int? InstallationId { get; set; } = default!;
 
@@ -82,6 +91,7 @@ namespace G
         /// The id of the repository associated with this event.<br/>
         /// Example: 123
         /// </summary>
+        /// <example>123</example>
         [global::Newtonsoft.Json.JsonProperty("repository_id", Required = global::Newtonsoft.Json.Required.Always)]
         public int? RepositoryId { get; set; } = default!;
 
@@ -95,6 +105,7 @@ namespace G
         /// The URL target of the delivery.<br/>
         /// Example: https://www.example.com
         /// </summary>
+        /// <example>https://www.example.com</example>
         [global::Newtonsoft.Json.JsonProperty("url")]
         public string? Url { get; set; }
 

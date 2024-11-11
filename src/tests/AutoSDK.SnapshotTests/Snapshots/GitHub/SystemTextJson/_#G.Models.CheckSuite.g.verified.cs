@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 5
         /// </summary>
+        /// <example>5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Id { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: MDEwOkNoZWNrU3VpdGU1
         /// </summary>
+        /// <example>MDEwOkNoZWNrU3VpdGU1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("node_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string NodeId { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: master
         /// </summary>
+        /// <example>master</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_branch")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? HeadBranch { get; set; }
@@ -34,6 +37,7 @@ namespace G
         /// The SHA of the head commit that is being checked.<br/>
         /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
         /// </summary>
+        /// <example>009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("head_sha")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string HeadSha { get; set; }
@@ -42,6 +46,7 @@ namespace G
         /// The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.<br/>
         /// Example: completed
         /// </summary>
+        /// <example>completed</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckSuiteStatusJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -50,6 +55,7 @@ namespace G
         /// <summary>
         /// Example: neutral
         /// </summary>
+        /// <example>neutral</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("conclusion")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CheckSuiteConclusionJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -58,6 +64,7 @@ namespace G
         /// <summary>
         /// Example: https://api.github.com/repos/github/hello-world/check-suites/5
         /// </summary>
+        /// <example>https://api.github.com/repos/github/hello-world/check-suites/5</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("url")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Url { get; set; }
@@ -65,6 +72,7 @@ namespace G
         /// <summary>
         /// Example: 146e867f55c26428e5f9fade55a9bbf5e95a7912
         /// </summary>
+        /// <example>146e867f55c26428e5f9fade55a9bbf5e95a7912</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("before")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? Before { get; set; }
@@ -72,6 +80,7 @@ namespace G
         /// <summary>
         /// Example: d6fde92930d4715a2b49857d24b940956b26d2d3
         /// </summary>
+        /// <example>d6fde92930d4715a2b49857d24b940956b26d2d3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("after")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string? After { get; set; }

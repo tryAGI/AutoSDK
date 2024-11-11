@@ -31,6 +31,7 @@ namespace G
         /// Indicates whether this chat is enabled and can have further turns.<br/>
         /// Example: true
         /// </summary>
+        /// <example>true</example>
         [global::Newtonsoft.Json.JsonProperty("enabled")]
         public bool? Enabled { get; set; }
 

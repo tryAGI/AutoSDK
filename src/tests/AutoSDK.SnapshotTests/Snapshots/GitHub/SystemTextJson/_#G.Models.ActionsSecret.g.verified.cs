@@ -13,6 +13,7 @@ namespace G
         /// The name of the secret.<br/>
         /// Example: SECRET_TOKEN
         /// </summary>
+        /// <example>SECRET_TOKEN</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }

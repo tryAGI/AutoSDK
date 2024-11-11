@@ -29,6 +29,7 @@ namespace G
         /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
         /// Example: A cute baby sea otter wearing a beret
         /// </summary>
+        /// <example>A cute baby sea otter wearing a beret</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Prompt { get; set; }
@@ -50,6 +51,7 @@ namespace G
         /// Default Value: dall-e-2<br/>
         /// Example: dall-e-2
         /// </summary>
+        /// <example>dall-e-2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
         public global::G.AnyOf<string, global::G.CreateImageEditRequestModel?>? Model { get; set; }
@@ -59,6 +61,7 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </summary>
+        /// <example>1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("n")]
         public int? N { get; set; }
 
@@ -67,6 +70,7 @@ namespace G
         /// Default Value: 1024x1024<br/>
         /// Example: 1024x1024
         /// </summary>
+        /// <example>1024x1024</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateImageEditRequestSizeJsonConverter))]
         public global::G.CreateImageEditRequestSize? Size { get; set; }
@@ -76,6 +80,7 @@ namespace G
         /// Default Value: url<br/>
         /// Example: url
         /// </summary>
+        /// <example>url</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateImageEditRequestResponseFormatJsonConverter))]
         public global::G.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; }
@@ -84,6 +89,7 @@ namespace G
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
+        /// <example>user-1234</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("user")]
         public string? User { get; set; }
 
