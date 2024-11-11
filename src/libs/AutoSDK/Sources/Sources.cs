@@ -24,6 +24,20 @@ public static partial class Sources
             Text: GenerateClassFromToJsonMethods(modelData, cancellationToken: cancellationToken));
     }
     
+    public static FileWithName ClassValidation(
+        ModelData modelData,
+        CancellationToken cancellationToken = default)
+    {
+        if (!modelData.Settings.GenerateModelValidationMethods)
+        {
+            return FileWithName.Empty;
+        }
+        
+        return new FileWithName(
+            Name: $"{modelData.FileNameWithoutExtension}.IValidatableObject.g.cs",
+            Text: GenerateClassValidationMethods(modelData, cancellationToken: cancellationToken));
+    }
+    
     public static FileWithName Enum(
         ModelData modelData,
         CancellationToken cancellationToken = default)
@@ -57,6 +71,24 @@ public static partial class Sources
         return new FileWithName(
             Name: $"{name}.Json.g.cs",
             Text: GenerateAnyOfFromToJsonMethods(data, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName AnyOfValidation(
+        AnyOfData data,
+        CancellationToken cancellationToken = default)
+    {
+        if (!data.Settings.GenerateModelValidationMethods)
+        {
+            return FileWithName.Empty;
+        }
+
+        var name = string.IsNullOrWhiteSpace(data.Name)
+            ? $"{data.SubType}.{data.Count}"
+            : $"{data.Namespace}.Models.{data.Name}";
+        
+        return new FileWithName(
+            Name: $"{name}.IValidatableObject.g.cs",
+            Text: GenerateAnyOfValidationMethods(data, cancellationToken: cancellationToken));
     }
     
     public static FileWithName AnyOfJsonConverter(

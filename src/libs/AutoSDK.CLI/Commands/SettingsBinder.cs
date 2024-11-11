@@ -13,7 +13,8 @@ public class SettingsBinder(
     Option<bool> excludeDeprecatedOperations,
     Option<string> clsCompliantEnumPrefix,
     Option<bool> ignoreOpenApiErrors,
-    Option<bool> ignoreOpenApiWarnings
+    Option<bool> ignoreOpenApiWarnings,
+    Option<bool> validation
     )
     : BinderBase<Settings>
 {
@@ -47,6 +48,7 @@ public class SettingsBinder(
             JsonSerializerContext: $"{namespaceValue}.SourceGenerationContext",
             GenerateJsonSerializerContextTypes: true,
             GenerateModels: false,
+            GenerateModelValidationMethods: bindingContext.ParseResult.GetValueForOption(validation),
             ValidateAnyOfs: false,
             ModelStyle: default,
             IncludeModels: [],

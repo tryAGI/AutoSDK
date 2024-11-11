@@ -54,6 +54,10 @@ public class GenerateCommand : Command
             aliases: ["--ignore-openapi-warnings"],
             getDefaultValue: () => Settings.Default.IgnoreOpenApiWarnings,
             description: "Ignore OpenAPI warnings");
+        var validationOption = new Option<bool>(
+            aliases: ["--validation"],
+            getDefaultValue: () => Settings.Default.GenerateModelValidationMethods,
+            description: "Generate validation methods for models");
         AddArgument(inputOption);
         AddOption(outputOption);
         AddOption(targetFrameworkOption);
@@ -65,6 +69,7 @@ public class GenerateCommand : Command
         AddOption(clsCompliantEnumPrefixOption);
         AddOption(ignoreOpenApiErrorsOption);
         AddOption(ignoreOpenApiWarningsOption);
+        AddOption(validationOption);
 
         this.SetHandler(
             HandleAsync,
@@ -79,7 +84,8 @@ public class GenerateCommand : Command
                 excludeDeprecatedOption,
                 clsCompliantEnumPrefixOption,
                 ignoreOpenApiErrorsOption,
-                ignoreOpenApiWarningsOption));
+                ignoreOpenApiWarningsOption,
+                validationOption));
     }
 
     private static async Task HandleAsync(
@@ -129,6 +135,7 @@ public class GenerateCommand : Command
                 {
                     Sources.Class(x),
                     Sources.ClassJsonExtensions(x),
+                    Sources.ClassValidation(x),
                 }))
             .Concat(data.Methods
                 .SelectMany(x => new []
@@ -152,6 +159,7 @@ public class GenerateCommand : Command
                     Sources.AnyOfJsonExtensions(x),
                     Sources.AnyOfJsonConverter(x),
                     Sources.AnyOfJsonConverterFactory(x),
+                    Sources.AnyOfValidation(x),
                 }))
             .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
             .Concat([Sources.JsonSerializerContextTypes(data.Types)])
