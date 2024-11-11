@@ -118,22 +118,41 @@ public class GenerateCommand : Command
 
         var data = Generation.Data.Prepare((yaml, settings));
         var files = data.Enums
-            .SelectMany(x => new [] { Sources.Enum(x), Sources.EnumJsonConverter(x), Sources.EnumNullableJsonConverter(x) })
+            .SelectMany(x => new []
+            {
+                Sources.Enum(x),
+                Sources.EnumJsonConverter(x),
+                Sources.EnumNullableJsonConverter(x),
+            })
             .Concat(data.Classes
-                .Select(x => Sources.Class(x)))
+                .SelectMany(x => new []
+                {
+                    Sources.Class(x),
+                    Sources.ClassJsonExtensions(x),
+                }))
             .Concat(data.Methods
-                .Select(x => Sources.Method(x)))
-            .Concat(data.Methods
-                .Select(x => Sources.MethodInterface(x)))
+                .SelectMany(x => new []
+                {
+                    Sources.Method(x),
+                    Sources.MethodInterface(x),
+                }))
             .Concat(data.Clients
-                .Select(x => Sources.Client(x)))
-            .Concat(data.Clients
-                .Select(x => Sources.ClientInterface(x)))
+                .SelectMany(x => new []
+                {
+                    Sources.Client(x),
+                    Sources.ClientInterface(x),
+                }))
             .Concat(data.Authorizations
                 .Select(x => Sources.Authorization(x)))
             .Concat([Sources.MainAuthorizationConstructor(data.Authorizations)])
             .Concat(data.AnyOfs
-                .SelectMany(x => new [] { Sources.AnyOf(x), Sources.AnyOfJsonConverter(x), Sources.AnyOfJsonConverterFactory(x) }))
+                .SelectMany(x => new []
+                {
+                    Sources.AnyOf(x),
+                    Sources.AnyOfJsonExtensions(x),
+                    Sources.AnyOfJsonConverter(x),
+                    Sources.AnyOfJsonConverterFactory(x),
+                }))
             .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])
             .Concat([Sources.JsonSerializerContextTypes(data.Types)])
             .Concat([Sources.Polyfills(settings)])

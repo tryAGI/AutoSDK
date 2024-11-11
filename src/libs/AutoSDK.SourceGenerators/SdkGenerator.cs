@@ -75,6 +75,12 @@ public class SdkGenerator : IIncrementalGenerator
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         data
+            .SelectMany(static (x, _) => x.Classes)
+            .SelectAndReportExceptions((x, c) => Sources.ClassJsonExtensions(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        
+        data
             .SelectMany(static (x, _) => x.Enums)
             .SelectAndReportExceptions((x, c) => Sources.Enum(x, c)
                 .AsFileWithName(), context, Id)
@@ -99,6 +105,11 @@ public class SdkGenerator : IIncrementalGenerator
         data
             .SelectMany(static (x, _) => x.AnyOfs)
             .SelectAndReportExceptions((x, c) => Sources.AnyOf(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        data
+            .SelectMany(static (x, _) => x.AnyOfs)
+            .SelectAndReportExceptions((x, c) => Sources.AnyOfJsonExtensions(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         data

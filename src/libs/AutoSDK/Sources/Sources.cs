@@ -15,6 +15,15 @@ public static partial class Sources
             Text: GenerateModel(modelData, cancellationToken: cancellationToken));
     }
     
+    public static FileWithName ClassJsonExtensions(
+        ModelData modelData,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{modelData.FileNameWithoutExtension}.Json.g.cs",
+            Text: GenerateClassFromToJsonMethods(modelData, cancellationToken: cancellationToken));
+    }
+    
     public static FileWithName Enum(
         ModelData modelData,
         CancellationToken cancellationToken = default)
@@ -35,6 +44,19 @@ public static partial class Sources
         return new FileWithName(
             Name: $"{name}.g.cs",
             Text: GenerateAnyOf(data, cancellationToken: cancellationToken));
+    }
+    
+    public static FileWithName AnyOfJsonExtensions(
+        AnyOfData data,
+        CancellationToken cancellationToken = default)
+    {
+        var name = string.IsNullOrWhiteSpace(data.Name)
+            ? $"{data.SubType}.{data.Count}"
+            : $"{data.Namespace}.Models.{data.Name}";
+        
+        return new FileWithName(
+            Name: $"{name}.Json.g.cs",
+            Text: GenerateAnyOfFromToJsonMethods(data, cancellationToken: cancellationToken));
     }
     
     public static FileWithName AnyOfJsonConverter(
