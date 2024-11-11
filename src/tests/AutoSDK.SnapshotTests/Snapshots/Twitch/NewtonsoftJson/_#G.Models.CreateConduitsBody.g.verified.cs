@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConduitsBody" /> class.
+        /// </summary>
+        /// <param name="shardCount">
+        /// The number of shards to create for this conduit.
+        /// </param>
+        public CreateConduitsBody(
+            int shardCount)
+        {
+            this.ShardCount = shardCount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConduitsBody" /> class.
+        /// </summary>
+        public CreateConduitsBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

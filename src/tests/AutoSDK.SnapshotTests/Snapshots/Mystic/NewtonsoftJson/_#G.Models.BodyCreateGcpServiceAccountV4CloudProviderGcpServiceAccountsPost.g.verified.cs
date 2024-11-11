@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyCreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPost" /> class.
+        /// </summary>
+        /// <param name="credentialId"></param>
+        /// <param name="serviceAccountFile"></param>
+        /// <param name="serviceAccountFilename"></param>
+        public BodyCreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPost(
+            byte[] serviceAccountFile,
+            string serviceAccountFilename,
+            string? credentialId)
+        {
+            this.ServiceAccountFile = serviceAccountFile ?? throw new global::System.ArgumentNullException(nameof(serviceAccountFile));
+            this.ServiceAccountFilename = serviceAccountFilename ?? throw new global::System.ArgumentNullException(nameof(serviceAccountFilename));
+            this.CredentialId = credentialId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyCreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPost" /> class.
+        /// </summary>
+        public BodyCreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

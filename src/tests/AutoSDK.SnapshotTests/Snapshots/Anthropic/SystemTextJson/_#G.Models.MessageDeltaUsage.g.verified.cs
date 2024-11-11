@@ -30,6 +30,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaUsage" /> class.
+        /// </summary>
+        /// <param name="outputTokens">
+        /// The cumulative number of output tokens which were used.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageDeltaUsage(
+            int outputTokens)
+        {
+            this.OutputTokens = outputTokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaUsage" /> class.
+        /// </summary>
+        public MessageDeltaUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

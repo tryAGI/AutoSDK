@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CountTokensResponse" /> class.
+        /// </summary>
+        /// <param name="totalTokens">
+        /// The number of tokens that the `model` tokenizes the `prompt` into. Always non-negative.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CountTokensResponse(
+            int? totalTokens)
+        {
+            this.TotalTokens = totalTokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CountTokensResponse" /> class.
+        /// </summary>
+        public CountTokensResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

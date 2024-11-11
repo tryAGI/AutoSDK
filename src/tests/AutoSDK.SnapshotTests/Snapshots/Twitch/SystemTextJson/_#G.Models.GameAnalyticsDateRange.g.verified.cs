@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameAnalyticsDateRange" /> class.
+        /// </summary>
+        /// <param name="startedAt">
+        /// The reporting window’s start date.
+        /// </param>
+        /// <param name="endedAt">
+        /// The reporting window’s end date.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GameAnalyticsDateRange(
+            global::System.DateTime startedAt,
+            global::System.DateTime endedAt)
+        {
+            this.StartedAt = startedAt;
+            this.EndedAt = endedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameAnalyticsDateRange" /> class.
+        /// </summary>
+        public GameAnalyticsDateRange()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

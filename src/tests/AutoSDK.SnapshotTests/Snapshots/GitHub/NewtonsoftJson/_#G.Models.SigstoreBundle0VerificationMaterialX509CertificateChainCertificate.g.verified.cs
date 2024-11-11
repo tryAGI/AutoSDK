@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0VerificationMaterialX509CertificateChainCertificate" /> class.
+        /// </summary>
+        /// <param name="rawBytes"></param>
+        public SigstoreBundle0VerificationMaterialX509CertificateChainCertificate(
+            string? rawBytes)
+        {
+            this.RawBytes = rawBytes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0VerificationMaterialX509CertificateChainCertificate" /> class.
+        /// </summary>
+        public SigstoreBundle0VerificationMaterialX509CertificateChainCertificate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

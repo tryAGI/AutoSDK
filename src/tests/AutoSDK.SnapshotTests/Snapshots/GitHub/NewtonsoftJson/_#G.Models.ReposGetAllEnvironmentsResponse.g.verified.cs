@@ -28,6 +28,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposGetAllEnvironmentsResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount">
+        /// The number of environments in this repository<br/>
+        /// Example: 5
+        /// </param>
+        /// <param name="environments"></param>
+        public ReposGetAllEnvironmentsResponse(
+            int? totalCount,
+            global::System.Collections.Generic.IList<global::G.Environment>? environments)
+        {
+            this.TotalCount = totalCount;
+            this.Environments = environments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposGetAllEnvironmentsResponse" /> class.
+        /// </summary>
+        public ReposGetAllEnvironmentsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

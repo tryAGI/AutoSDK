@@ -32,6 +32,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnvironmentProtectionRuleVariant2Reviewer" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of reviewer.<br/>
+        /// Example: User
+        /// </param>
+        /// <param name="reviewer"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EnvironmentProtectionRuleVariant2Reviewer(
+            global::G.DeploymentReviewerType? type,
+            global::G.AnyOf<global::G.SimpleUser, global::G.Team>? reviewer)
+        {
+            this.Type = type;
+            this.Reviewer = reviewer;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnvironmentProtectionRuleVariant2Reviewer" /> class.
+        /// </summary>
+        public EnvironmentProtectionRuleVariant2Reviewer()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

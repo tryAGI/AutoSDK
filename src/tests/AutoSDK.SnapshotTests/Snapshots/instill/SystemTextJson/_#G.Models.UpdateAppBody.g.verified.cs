@@ -50,6 +50,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAppBody" /> class.
+        /// </summary>
+        /// <param name="newAppId">
+        /// The app id needs to follow the kebab case format.<br/>
+        /// if the new app id is not provided, the app id will not be updated.
+        /// </param>
+        /// <param name="newDescription">
+        /// The app description.<br/>
+        /// If the new description is empty, the description will be set to empty.
+        /// </param>
+        /// <param name="newTags">
+        /// The app tags.<br/>
+        /// If the new tags is empty, the tags will be set to empty.
+        /// </param>
+        /// <param name="lastAiAssistantAppCatalogUid">
+        /// last AI assistant app catalog uid<br/>
+        /// If the last AI assistant app catalog uid is empty, the last AI assistant app catalog uid will be set to empty.
+        /// </param>
+        /// <param name="lastAiAssistantAppTopK">
+        /// last AI assistant app top k<br/>
+        /// If the last AI assistant app top k is empty, the last AI assistant app top k will be set to empty.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateAppBody(
+            string? newAppId,
+            string? newDescription,
+            global::System.Collections.Generic.IList<string>? newTags,
+            string? lastAiAssistantAppCatalogUid,
+            int? lastAiAssistantAppTopK)
+        {
+            this.NewAppId = newAppId;
+            this.NewDescription = newDescription;
+            this.NewTags = newTags;
+            this.LastAiAssistantAppCatalogUid = lastAiAssistantAppCatalogUid;
+            this.LastAiAssistantAppTopK = lastAiAssistantAppTopK;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAppBody" /> class.
+        /// </summary>
+        public UpdateAppBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

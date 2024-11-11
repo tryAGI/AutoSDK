@@ -93,6 +93,63 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksReleaseAsset" /> class.
+        /// </summary>
+        /// <param name="browserDownloadUrl"></param>
+        /// <param name="contentType"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="downloadCount"></param>
+        /// <param name="id"></param>
+        /// <param name="label"></param>
+        /// <param name="name">
+        /// The file name of the asset.
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="size"></param>
+        /// <param name="state">
+        /// State of the release asset.
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="uploader"></param>
+        /// <param name="url"></param>
+        public WebhooksReleaseAsset(
+            string browserDownloadUrl,
+            string contentType,
+            global::System.DateTime createdAt,
+            int downloadCount,
+            int id,
+            string? label,
+            string name,
+            string nodeId,
+            int size,
+            global::System.DateTime updatedAt,
+            string url,
+            global::G.WebhooksReleaseAssetState state,
+            global::G.WebhooksReleaseAssetUploader? uploader)
+        {
+            this.BrowserDownloadUrl = browserDownloadUrl ?? throw new global::System.ArgumentNullException(nameof(browserDownloadUrl));
+            this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
+            this.CreatedAt = createdAt;
+            this.DownloadCount = downloadCount;
+            this.Id = id;
+            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Size = size;
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.State = state;
+            this.Uploader = uploader;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksReleaseAsset" /> class.
+        /// </summary>
+        public WebhooksReleaseAsset()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

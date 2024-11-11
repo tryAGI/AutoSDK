@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoGenerateRequestVideoInputVoice" /> class.
+        /// </summary>
+        /// <param name="inputText">
+        /// Example: Welcome to the new era of video creation with HeyGen! Simply type your script to get started!
+        /// </param>
+        /// <param name="type">
+        /// Example: text
+        /// </param>
+        /// <param name="voiceId">
+        /// Example: 2f72ee82b83d4b00af16c4771d611752
+        /// </param>
+        public V2VideoGenerateRequestVideoInputVoice(
+            string? inputText,
+            string? type,
+            string? voiceId)
+        {
+            this.InputText = inputText;
+            this.Type = type;
+            this.VoiceId = voiceId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoGenerateRequestVideoInputVoice" /> class.
+        /// </summary>
+        public V2VideoGenerateRequestVideoInputVoice()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

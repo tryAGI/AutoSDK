@@ -41,6 +41,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParaphraseBody" /> class.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="style">
+        /// Default Value: general
+        /// </param>
+        /// <param name="startIndex">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="endIndex"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ParaphraseBody(
+            string text,
+            global::G.StyleType? style,
+            int? startIndex,
+            int? endIndex)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Style = style;
+            this.StartIndex = startIndex;
+            this.EndIndex = endIndex;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParaphraseBody" /> class.
+        /// </summary>
+        public ParaphraseBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

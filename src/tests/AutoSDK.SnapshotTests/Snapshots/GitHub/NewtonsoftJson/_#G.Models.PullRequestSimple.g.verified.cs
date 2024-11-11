@@ -233,6 +233,180 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestSimple" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347
+        /// </param>
+        /// <param name="id">
+        /// Example: 1L
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDExOlB1bGxSZXF1ZXN0MQ==
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat/Hello-World/pull/1347
+        /// </param>
+        /// <param name="diffUrl">
+        /// Example: https://github.com/octocat/Hello-World/pull/1347.diff
+        /// </param>
+        /// <param name="patchUrl">
+        /// Example: https://github.com/octocat/Hello-World/pull/1347.patch
+        /// </param>
+        /// <param name="issueUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/issues/1347
+        /// </param>
+        /// <param name="commitsUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347/commits
+        /// </param>
+        /// <param name="reviewCommentsUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1347/comments
+        /// </param>
+        /// <param name="reviewCommentUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments{/number}
+        /// </param>
+        /// <param name="commentsUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/issues/1347/comments
+        /// </param>
+        /// <param name="statusesUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/statuses/6dcb09b5b57875f334f61aebed695e2e4193db5e
+        /// </param>
+        /// <param name="number">
+        /// Example: 1347
+        /// </param>
+        /// <param name="state">
+        /// Example: open
+        /// </param>
+        /// <param name="locked">
+        /// Example: true
+        /// </param>
+        /// <param name="title">
+        /// Example: new-feature
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="body">
+        /// Example: Please pull these awesome changes
+        /// </param>
+        /// <param name="labels"></param>
+        /// <param name="milestone">
+        /// A collection of related issues and pull requests.
+        /// </param>
+        /// <param name="activeLockReason">
+        /// Example: too heated
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="closedAt"></param>
+        /// <param name="mergedAt"></param>
+        /// <param name="mergeCommitSha">
+        /// Example: e5bd3914e2e596debea16f433f57875b5b90bcd6
+        /// </param>
+        /// <param name="assignee">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="assignees"></param>
+        /// <param name="requestedReviewers"></param>
+        /// <param name="requestedTeams"></param>
+        /// <param name="head"></param>
+        /// <param name="base"></param>
+        /// <param name="links"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        /// <param name="autoMerge">
+        /// The status of auto merging a pull request.
+        /// </param>
+        /// <param name="draft">
+        /// Indicates whether or not the pull request is a draft.<br/>
+        /// Example: false
+        /// </param>
+        public PullRequestSimple(
+            string url,
+            long id,
+            string nodeId,
+            string htmlUrl,
+            string diffUrl,
+            string patchUrl,
+            string issueUrl,
+            string commitsUrl,
+            string reviewCommentsUrl,
+            string reviewCommentUrl,
+            string commentsUrl,
+            string statusesUrl,
+            int number,
+            string state,
+            bool locked,
+            string title,
+            global::G.NullableSimpleUser? user,
+            string? body,
+            global::System.Collections.Generic.IList<global::G.PullRequestSimpleLabel> labels,
+            global::G.NullableMilestone? milestone,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::System.DateTime? closedAt,
+            global::System.DateTime? mergedAt,
+            string? mergeCommitSha,
+            global::G.NullableSimpleUser? assignee,
+            global::G.PullRequestSimpleHead head,
+            global::G.PullRequestSimpleBase @base,
+            global::G.PullRequestSimpleLinks links,
+            global::G.AuthorAssociation authorAssociation,
+            global::G.AutoMerge? autoMerge,
+            string? activeLockReason,
+            global::System.Collections.Generic.IList<global::G.SimpleUser>? assignees,
+            global::System.Collections.Generic.IList<global::G.SimpleUser>? requestedReviewers,
+            global::System.Collections.Generic.IList<global::G.Team>? requestedTeams,
+            bool? draft)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.DiffUrl = diffUrl ?? throw new global::System.ArgumentNullException(nameof(diffUrl));
+            this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
+            this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
+            this.CommitsUrl = commitsUrl ?? throw new global::System.ArgumentNullException(nameof(commitsUrl));
+            this.ReviewCommentsUrl = reviewCommentsUrl ?? throw new global::System.ArgumentNullException(nameof(reviewCommentsUrl));
+            this.ReviewCommentUrl = reviewCommentUrl ?? throw new global::System.ArgumentNullException(nameof(reviewCommentUrl));
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
+            this.Number = number;
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Locked = locked;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.ClosedAt = closedAt;
+            this.MergedAt = mergedAt;
+            this.MergeCommitSha = mergeCommitSha ?? throw new global::System.ArgumentNullException(nameof(mergeCommitSha));
+            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
+            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
+            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.AuthorAssociation = authorAssociation;
+            this.AutoMerge = autoMerge ?? throw new global::System.ArgumentNullException(nameof(autoMerge));
+            this.ActiveLockReason = activeLockReason;
+            this.Assignees = assignees;
+            this.RequestedReviewers = requestedReviewers;
+            this.RequestedTeams = requestedTeams;
+            this.Draft = draft;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestSimple" /> class.
+        /// </summary>
+        public PullRequestSimple()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -54,6 +54,51 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsCreateWebhookRequestConfig" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// The URL to which the payloads will be delivered.<br/>
+        /// Example: https://example.com/webhook
+        /// </param>
+        /// <param name="contentType">
+        /// The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.<br/>
+        /// Example: "json"
+        /// </param>
+        /// <param name="secret">
+        /// If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https://docs.github.com/webhooks/event-payloads/#delivery-headers).<br/>
+        /// Example: "********"
+        /// </param>
+        /// <param name="insecureSsl"></param>
+        /// <param name="username">
+        /// Example: "kdaigle"
+        /// </param>
+        /// <param name="password">
+        /// Example: "password"
+        /// </param>
+        public OrgsCreateWebhookRequestConfig(
+            string url,
+            string? contentType,
+            string? secret,
+            global::G.WebhookConfigInsecureSsl? insecureSsl,
+            string? username,
+            string? password)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ContentType = contentType;
+            this.Secret = secret;
+            this.InsecureSsl = insecureSsl;
+            this.Username = username;
+            this.Password = password;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsCreateWebhookRequestConfig" /> class.
+        /// </summary>
+        public OrgsCreateWebhookRequestConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

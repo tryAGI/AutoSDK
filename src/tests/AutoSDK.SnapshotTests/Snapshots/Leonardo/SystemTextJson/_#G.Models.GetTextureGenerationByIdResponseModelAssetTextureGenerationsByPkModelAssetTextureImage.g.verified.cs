@@ -35,6 +35,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="type">
+        /// When training model assets these are the texture types available to use.<br/>
+        /// Default Value: NORMAL
+        /// </param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage(
+            string? id,
+            global::G.MODELASSETTEXTURETYPES? type,
+            string? url)
+        {
+            this.Id = id;
+            this.Type = type;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage" /> class.
+        /// </summary>
+        public GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

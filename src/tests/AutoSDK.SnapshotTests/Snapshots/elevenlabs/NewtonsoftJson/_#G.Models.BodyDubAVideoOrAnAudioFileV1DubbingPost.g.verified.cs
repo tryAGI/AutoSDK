@@ -98,6 +98,90 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyDubAVideoOrAnAudioFileV1DubbingPost" /> class.
+        /// </summary>
+        /// <param name="file">
+        /// A list of file paths to audio recordings intended for voice cloning
+        /// </param>
+        /// <param name="filename">
+        /// A list of file paths to audio recordings intended for voice cloning
+        /// </param>
+        /// <param name="name">
+        /// Name of the dubbing project.
+        /// </param>
+        /// <param name="sourceUrl">
+        /// URL of the source video/audio file.
+        /// </param>
+        /// <param name="sourceLang">
+        /// Source language.<br/>
+        /// Default Value: auto
+        /// </param>
+        /// <param name="targetLang">
+        /// The Target language to dub the content into.
+        /// </param>
+        /// <param name="numSpeakers">
+        /// Number of speakers to use for the dubbing. Set to 0 to automatically detect the number of speakers<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="watermark">
+        /// Whether to apply watermark to the output video.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="startTime">
+        /// Start time of the source video/audio file.
+        /// </param>
+        /// <param name="endTime">
+        /// End time of the source video/audio file.
+        /// </param>
+        /// <param name="highestResolution">
+        /// Whether to use the highest resolution available.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="dropBackgroundAudio">
+        /// An advanced setting. Whether to drop background audio from the final dub. This can improve dub quality where it's known that audio shouldn't have a background track such as for speeches or monologues.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="useProfanityFilter">
+        /// [BETA] Whether transcripts should have profanities censored with the words '[censored]'
+        /// </param>
+        public BodyDubAVideoOrAnAudioFileV1DubbingPost(
+            byte[]? file,
+            string? filename,
+            string? name,
+            string? sourceUrl,
+            string? sourceLang,
+            string? targetLang,
+            int? numSpeakers,
+            bool? watermark,
+            int? startTime,
+            int? endTime,
+            bool? highestResolution,
+            bool? dropBackgroundAudio,
+            bool? useProfanityFilter)
+        {
+            this.File = file;
+            this.Filename = filename;
+            this.Name = name;
+            this.SourceUrl = sourceUrl;
+            this.SourceLang = sourceLang;
+            this.TargetLang = targetLang;
+            this.NumSpeakers = numSpeakers;
+            this.Watermark = watermark;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.HighestResolution = highestResolution;
+            this.DropBackgroundAudio = dropBackgroundAudio;
+            this.UseProfanityFilter = useProfanityFilter;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyDubAVideoOrAnAudioFileV1DubbingPost" /> class.
+        /// </summary>
+        public BodyDubAVideoOrAnAudioFileV1DubbingPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

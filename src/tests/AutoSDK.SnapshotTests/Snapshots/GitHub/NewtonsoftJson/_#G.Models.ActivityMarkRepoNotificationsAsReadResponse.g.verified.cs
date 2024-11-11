@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActivityMarkRepoNotificationsAsReadResponse" /> class.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="url"></param>
+        public ActivityMarkRepoNotificationsAsReadResponse(
+            string? message,
+            string? url)
+        {
+            this.Message = message;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActivityMarkRepoNotificationsAsReadResponse" /> class.
+        /// </summary>
+        public ActivityMarkRepoNotificationsAsReadResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

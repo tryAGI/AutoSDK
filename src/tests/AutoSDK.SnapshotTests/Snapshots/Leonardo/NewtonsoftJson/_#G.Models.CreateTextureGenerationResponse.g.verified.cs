@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTextureGenerationResponse" /> class.
+        /// </summary>
+        /// <param name="textureGenerationJob"></param>
+        public CreateTextureGenerationResponse(
+            global::G.CreateTextureGenerationResponseTextureGenerationJob? textureGenerationJob)
+        {
+            this.TextureGenerationJob = textureGenerationJob;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTextureGenerationResponse" /> class.
+        /// </summary>
+        public CreateTextureGenerationResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

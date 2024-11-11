@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepObjectLastError" /> class.
+        /// </summary>
+        /// <param name="code">
+        /// One of `server_error` or `rate_limit_exceeded`.
+        /// </param>
+        /// <param name="message">
+        /// A human-readable description of the error.
+        /// </param>
+        public RunStepObjectLastError(
+            global::G.RunStepObjectLastErrorCode code,
+            string message)
+        {
+            this.Code = code;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepObjectLastError" /> class.
+        /// </summary>
+        public RunStepObjectLastError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

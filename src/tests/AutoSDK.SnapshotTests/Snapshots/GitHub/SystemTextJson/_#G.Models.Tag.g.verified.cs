@@ -50,6 +50,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Tag" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Example: v0.1
+        /// </param>
+        /// <param name="commit"></param>
+        /// <param name="zipballUrl">
+        /// Example: https://github.com/octocat/Hello-World/zipball/v0.1
+        /// </param>
+        /// <param name="tarballUrl">
+        /// Example: https://github.com/octocat/Hello-World/tarball/v0.1
+        /// </param>
+        /// <param name="nodeId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Tag(
+            string name,
+            global::G.TagCommit commit,
+            string zipballUrl,
+            string tarballUrl,
+            string nodeId)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.ZipballUrl = zipballUrl ?? throw new global::System.ArgumentNullException(nameof(zipballUrl));
+            this.TarballUrl = tarballUrl ?? throw new global::System.ArgumentNullException(nameof(tarballUrl));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Tag" /> class.
+        /// </summary>
+        public Tag()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

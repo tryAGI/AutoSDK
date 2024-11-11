@@ -29,6 +29,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResponseFormatJsonSchema" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of response format being defined: `json_schema`
+        /// </param>
+        /// <param name="jsonSchema"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ResponseFormatJsonSchema(
+            global::G.ResponseFormatJsonSchemaJsonSchema jsonSchema,
+            global::G.ResponseFormatJsonSchemaType type)
+        {
+            this.JsonSchema = jsonSchema ?? throw new global::System.ArgumentNullException(nameof(jsonSchema));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResponseFormatJsonSchema" /> class.
+        /// </summary>
+        public ResponseFormatJsonSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

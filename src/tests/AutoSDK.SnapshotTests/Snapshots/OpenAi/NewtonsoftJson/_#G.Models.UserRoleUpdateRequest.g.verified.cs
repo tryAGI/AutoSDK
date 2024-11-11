@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserRoleUpdateRequest" /> class.
+        /// </summary>
+        /// <param name="role">
+        /// `owner` or `reader`
+        /// </param>
+        public UserRoleUpdateRequest(
+            global::G.UserRoleUpdateRequestRole role)
+        {
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserRoleUpdateRequest" /> class.
+        /// </summary>
+        public UserRoleUpdateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

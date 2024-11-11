@@ -51,6 +51,48 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PrivacyResponse" /> class.
+        /// </summary>
+        /// <param name="vpn">
+        /// Example: true
+        /// </param>
+        /// <param name="proxy">
+        /// Example: false
+        /// </param>
+        /// <param name="tor">
+        /// Example: false
+        /// </param>
+        /// <param name="hosting">
+        /// Example: false
+        /// </param>
+        /// <param name="relay">
+        /// Example: false
+        /// </param>
+        /// <param name="service"></param>
+        public PrivacyResponse(
+            bool vpn,
+            bool proxy,
+            bool tor,
+            bool hosting,
+            bool relay,
+            string service)
+        {
+            this.Vpn = vpn;
+            this.Proxy = proxy;
+            this.Tor = tor;
+            this.Hosting = hosting;
+            this.Relay = relay;
+            this.Service = service ?? throw new global::System.ArgumentNullException(nameof(service));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PrivacyResponse" /> class.
+        /// </summary>
+        public PrivacyResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

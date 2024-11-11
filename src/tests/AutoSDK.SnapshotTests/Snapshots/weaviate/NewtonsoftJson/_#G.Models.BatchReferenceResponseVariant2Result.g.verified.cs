@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchReferenceResponseVariant2Result" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// Default Value: SUCCESS
+        /// </param>
+        /// <param name="errors">
+        /// An error response given by Weaviate end-points.
+        /// </param>
+        public BatchReferenceResponseVariant2Result(
+            global::G.BatchReferenceResponseVariant2ResultStatus? status,
+            global::G.ErrorResponse? errors)
+        {
+            this.Status = status;
+            this.Errors = errors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchReferenceResponseVariant2Result" /> class.
+        /// </summary>
+        public BatchReferenceResponseVariant2Result()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

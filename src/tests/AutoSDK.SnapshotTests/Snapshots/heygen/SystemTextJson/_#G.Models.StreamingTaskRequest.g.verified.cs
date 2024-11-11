@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamingTaskRequest" /> class.
+        /// </summary>
+        /// <param name="sessionId">
+        /// Example: &lt;session_id&gt;
+        /// </param>
+        /// <param name="text">
+        /// Example: Hey, there!
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StreamingTaskRequest(
+            string? sessionId,
+            string? text)
+        {
+            this.SessionId = sessionId;
+            this.Text = text;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamingTaskRequest" /> class.
+        /// </summary>
+        public StreamingTaskRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

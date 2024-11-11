@@ -291,6 +291,158 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewApprovedWorkflowRunHeadRepository" /> class.
+        /// </summary>
+        /// <param name="archiveUrl"></param>
+        /// <param name="assigneesUrl"></param>
+        /// <param name="blobsUrl"></param>
+        /// <param name="branchesUrl"></param>
+        /// <param name="collaboratorsUrl"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="commitsUrl"></param>
+        /// <param name="compareUrl"></param>
+        /// <param name="contentsUrl"></param>
+        /// <param name="contributorsUrl"></param>
+        /// <param name="deploymentsUrl"></param>
+        /// <param name="description"></param>
+        /// <param name="downloadsUrl"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="fork"></param>
+        /// <param name="forksUrl"></param>
+        /// <param name="fullName"></param>
+        /// <param name="gitCommitsUrl"></param>
+        /// <param name="gitRefsUrl"></param>
+        /// <param name="gitTagsUrl"></param>
+        /// <param name="hooksUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="issueCommentUrl"></param>
+        /// <param name="issueEventsUrl"></param>
+        /// <param name="issuesUrl"></param>
+        /// <param name="keysUrl"></param>
+        /// <param name="labelsUrl"></param>
+        /// <param name="languagesUrl"></param>
+        /// <param name="mergesUrl"></param>
+        /// <param name="milestonesUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="notificationsUrl"></param>
+        /// <param name="owner"></param>
+        /// <param name="private"></param>
+        /// <param name="pullsUrl"></param>
+        /// <param name="releasesUrl"></param>
+        /// <param name="stargazersUrl"></param>
+        /// <param name="statusesUrl"></param>
+        /// <param name="subscribersUrl"></param>
+        /// <param name="subscriptionUrl"></param>
+        /// <param name="tagsUrl"></param>
+        /// <param name="teamsUrl"></param>
+        /// <param name="treesUrl"></param>
+        /// <param name="url"></param>
+        public WebhookDeploymentReviewApprovedWorkflowRunHeadRepository(
+            string? archiveUrl,
+            string? assigneesUrl,
+            string? blobsUrl,
+            string? branchesUrl,
+            string? collaboratorsUrl,
+            string? commentsUrl,
+            string? commitsUrl,
+            string? compareUrl,
+            string? contentsUrl,
+            string? contributorsUrl,
+            string? deploymentsUrl,
+            string? description,
+            string? downloadsUrl,
+            string? eventsUrl,
+            bool? fork,
+            string? forksUrl,
+            string? fullName,
+            string? gitCommitsUrl,
+            string? gitRefsUrl,
+            string? gitTagsUrl,
+            string? hooksUrl,
+            string? htmlUrl,
+            int? id,
+            string? issueCommentUrl,
+            string? issueEventsUrl,
+            string? issuesUrl,
+            string? keysUrl,
+            string? labelsUrl,
+            string? languagesUrl,
+            string? mergesUrl,
+            string? milestonesUrl,
+            string? name,
+            string? nodeId,
+            string? notificationsUrl,
+            global::G.WebhookDeploymentReviewApprovedWorkflowRunHeadRepositoryOwner? owner,
+            bool? @private,
+            string? pullsUrl,
+            string? releasesUrl,
+            string? stargazersUrl,
+            string? statusesUrl,
+            string? subscribersUrl,
+            string? subscriptionUrl,
+            string? tagsUrl,
+            string? teamsUrl,
+            string? treesUrl,
+            string? url)
+        {
+            this.ArchiveUrl = archiveUrl;
+            this.AssigneesUrl = assigneesUrl;
+            this.BlobsUrl = blobsUrl;
+            this.BranchesUrl = branchesUrl;
+            this.CollaboratorsUrl = collaboratorsUrl;
+            this.CommentsUrl = commentsUrl;
+            this.CommitsUrl = commitsUrl;
+            this.CompareUrl = compareUrl;
+            this.ContentsUrl = contentsUrl;
+            this.ContributorsUrl = contributorsUrl;
+            this.DeploymentsUrl = deploymentsUrl;
+            this.Description = description;
+            this.DownloadsUrl = downloadsUrl;
+            this.EventsUrl = eventsUrl;
+            this.Fork = fork;
+            this.ForksUrl = forksUrl;
+            this.FullName = fullName;
+            this.GitCommitsUrl = gitCommitsUrl;
+            this.GitRefsUrl = gitRefsUrl;
+            this.GitTagsUrl = gitTagsUrl;
+            this.HooksUrl = hooksUrl;
+            this.HtmlUrl = htmlUrl;
+            this.Id = id;
+            this.IssueCommentUrl = issueCommentUrl;
+            this.IssueEventsUrl = issueEventsUrl;
+            this.IssuesUrl = issuesUrl;
+            this.KeysUrl = keysUrl;
+            this.LabelsUrl = labelsUrl;
+            this.LanguagesUrl = languagesUrl;
+            this.MergesUrl = mergesUrl;
+            this.MilestonesUrl = milestonesUrl;
+            this.Name = name;
+            this.NodeId = nodeId;
+            this.NotificationsUrl = notificationsUrl;
+            this.Owner = owner;
+            this.Private = @private;
+            this.PullsUrl = pullsUrl;
+            this.ReleasesUrl = releasesUrl;
+            this.StargazersUrl = stargazersUrl;
+            this.StatusesUrl = statusesUrl;
+            this.SubscribersUrl = subscribersUrl;
+            this.SubscriptionUrl = subscriptionUrl;
+            this.TagsUrl = tagsUrl;
+            this.TeamsUrl = teamsUrl;
+            this.TreesUrl = treesUrl;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewApprovedWorkflowRunHeadRepository" /> class.
+        /// </summary>
+        public WebhookDeploymentReviewApprovedWorkflowRunHeadRepository()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

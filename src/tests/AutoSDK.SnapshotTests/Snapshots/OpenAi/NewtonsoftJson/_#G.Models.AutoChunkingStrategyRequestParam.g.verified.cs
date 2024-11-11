@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoChunkingStrategyRequestParam" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Always `auto`.
+        /// </param>
+        public AutoChunkingStrategyRequestParam(
+            global::G.AutoChunkingStrategyRequestParamType type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoChunkingStrategyRequestParam" /> class.
+        /// </summary>
+        public AutoChunkingStrategyRequestParam()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

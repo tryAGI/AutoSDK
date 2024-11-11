@@ -45,6 +45,37 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineCrossReferencedEvent" /> class.
+        /// </summary>
+        /// <param name="event"></param>
+        /// <param name="actor">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="source"></param>
+        public TimelineCrossReferencedEvent(
+            string @event,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::G.TimelineCrossReferencedEventSource source,
+            global::G.SimpleUser? actor)
+        {
+            this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.Actor = actor;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineCrossReferencedEvent" /> class.
+        /// </summary>
+        public TimelineCrossReferencedEvent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

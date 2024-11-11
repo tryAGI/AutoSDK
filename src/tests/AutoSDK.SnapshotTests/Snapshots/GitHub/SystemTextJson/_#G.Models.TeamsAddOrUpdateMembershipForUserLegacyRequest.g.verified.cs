@@ -23,6 +23,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamsAddOrUpdateMembershipForUserLegacyRequest" /> class.
+        /// </summary>
+        /// <param name="role">
+        /// The role that this user should have in the team.<br/>
+        /// Default Value: member
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TeamsAddOrUpdateMembershipForUserLegacyRequest(
+            global::G.TeamsAddOrUpdateMembershipForUserLegacyRequestRole? role)
+        {
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamsAddOrUpdateMembershipForUserLegacyRequest" /> class.
+        /// </summary>
+        public TeamsAddOrUpdateMembershipForUserLegacyRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

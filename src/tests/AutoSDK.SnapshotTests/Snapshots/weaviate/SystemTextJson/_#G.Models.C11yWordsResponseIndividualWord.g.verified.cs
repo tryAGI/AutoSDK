@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yWordsResponseIndividualWord" /> class.
+        /// </summary>
+        /// <param name="word"></param>
+        /// <param name="present"></param>
+        /// <param name="info"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public C11yWordsResponseIndividualWord(
+            string? word,
+            bool? present,
+            global::G.C11yWordsResponseIndividualWordInfo? info)
+        {
+            this.Word = word;
+            this.Present = present;
+            this.Info = info;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yWordsResponseIndividualWord" /> class.
+        /// </summary>
+        public C11yWordsResponseIndividualWord()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

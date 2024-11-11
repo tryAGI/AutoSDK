@@ -68,6 +68,45 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OverallUsageSummary" /> class.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="runCount"></param>
+        /// <param name="failedRunCount"></param>
+        /// <param name="totalComputeTimeMs"></param>
+        /// <param name="successfulRunCountChange"></param>
+        /// <param name="failedRunCountChange"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OverallUsageSummary(
+            double start,
+            double end,
+            int runCount,
+            int failedRunCount,
+            int totalComputeTimeMs,
+            string? pipelineId,
+            double? successfulRunCountChange,
+            double? failedRunCountChange)
+        {
+            this.Start = start;
+            this.End = end;
+            this.RunCount = runCount;
+            this.FailedRunCount = failedRunCount;
+            this.TotalComputeTimeMs = totalComputeTimeMs;
+            this.PipelineId = pipelineId;
+            this.SuccessfulRunCountChange = successfulRunCountChange;
+            this.FailedRunCountChange = failedRunCountChange;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OverallUsageSummary" /> class.
+        /// </summary>
+        public OverallUsageSummary()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

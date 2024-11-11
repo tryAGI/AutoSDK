@@ -109,6 +109,82 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Hook" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="id">
+        /// Unique identifier of the webhook.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="name">
+        /// The name of a valid service, use 'web' for a webhook.<br/>
+        /// Example: web
+        /// </param>
+        /// <param name="active">
+        /// Determines whether the hook is actually triggered on pushes.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="events">
+        /// Determines what events the hook is triggered for. Default: ['push'].<br/>
+        /// Example: [push, pull_request]
+        /// </param>
+        /// <param name="config">
+        /// Configuration object of the webhook
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1
+        /// </param>
+        /// <param name="testUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/test
+        /// </param>
+        /// <param name="pingUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/pings
+        /// </param>
+        /// <param name="deliveriesUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/deliveries
+        /// </param>
+        /// <param name="lastResponse"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Hook(
+            string type,
+            int id,
+            string name,
+            bool active,
+            global::System.Collections.Generic.IList<string> events,
+            global::G.WebhookConfig config,
+            global::System.DateTime updatedAt,
+            global::System.DateTime createdAt,
+            string url,
+            string testUrl,
+            string pingUrl,
+            global::G.HookResponse lastResponse,
+            string? deliveriesUrl)
+        {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Active = active;
+            this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.UpdatedAt = updatedAt;
+            this.CreatedAt = createdAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.TestUrl = testUrl ?? throw new global::System.ArgumentNullException(nameof(testUrl));
+            this.PingUrl = pingUrl ?? throw new global::System.ArgumentNullException(nameof(pingUrl));
+            this.LastResponse = lastResponse ?? throw new global::System.ArgumentNullException(nameof(lastResponse));
+            this.DeliveriesUrl = deliveriesUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Hook" /> class.
+        /// </summary>
+        public Hook()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

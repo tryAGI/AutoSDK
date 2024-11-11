@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsCodeObjectCodeInterpreter" /> class.
+        /// </summary>
+        /// <param name="input">
+        /// The input to the Code Interpreter tool call.
+        /// </param>
+        /// <param name="outputs">
+        /// The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items, including text (`logs`) or images (`image`). Each of these are represented by a different object type.
+        /// </param>
+        public RunStepDetailsToolCallsCodeObjectCodeInterpreter(
+            string input,
+            global::System.Collections.Generic.IList<global::G.RunStepDetailsToolCallsCodeObjectCodeInterpreterOutput> outputs)
+        {
+            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.Outputs = outputs ?? throw new global::System.ArgumentNullException(nameof(outputs));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsCodeObjectCodeInterpreter" /> class.
+        /// </summary>
+        public RunStepDetailsToolCallsCodeObjectCodeInterpreter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

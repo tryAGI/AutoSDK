@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCreateOrgVariableRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the variable.
+        /// </param>
+        /// <param name="value">
+        /// The value of the variable.
+        /// </param>
+        /// <param name="visibility">
+        /// The type of repositories in the organization that can access the variable. `selected` means only the repositories specified by `selected_repository_ids` can access the variable.
+        /// </param>
+        /// <param name="selectedRepositoryIds">
+        /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
+        /// </param>
+        public ActionsCreateOrgVariableRequest(
+            string name,
+            string value,
+            global::G.ActionsCreateOrgVariableRequestVisibility visibility,
+            global::System.Collections.Generic.IList<int>? selectedRepositoryIds)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Visibility = visibility;
+            this.SelectedRepositoryIds = selectedRepositoryIds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCreateOrgVariableRequest" /> class.
+        /// </summary>
+        public ActionsCreateOrgVariableRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

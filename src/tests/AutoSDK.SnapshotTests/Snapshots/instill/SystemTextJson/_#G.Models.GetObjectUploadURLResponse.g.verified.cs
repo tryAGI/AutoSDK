@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetObjectUploadURLResponse" /> class.
+        /// </summary>
+        /// <param name="uploadUrl"></param>
+        /// <param name="urlExpireAt"></param>
+        /// <param name="object"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetObjectUploadURLResponse(
+            string? uploadUrl,
+            global::System.DateTime? urlExpireAt,
+            global::G.AIObject? @object)
+        {
+            this.UploadUrl = uploadUrl;
+            this.UrlExpireAt = urlExpireAt;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetObjectUploadURLResponse" /> class.
+        /// </summary>
+        public GetObjectUploadURLResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -50,6 +50,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageBatchRequestCounts" /> class.
+        /// </summary>
+        /// <param name="processing">
+        /// Number of requests in the Message Batch that are processing.
+        /// </param>
+        /// <param name="succeeded">
+        /// Number of requests in the Message Batch that have completed successfully.
+        /// </param>
+        /// <param name="errored">
+        /// Number of requests in the Message Batch that encountered an error.
+        /// </param>
+        /// <param name="canceled">
+        /// Number of requests in the Message Batch that have been canceled.
+        /// </param>
+        /// <param name="expired">
+        /// Number of requests in the Message Batch that have expired.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageBatchRequestCounts(
+            int processing,
+            int succeeded,
+            int errored,
+            int canceled,
+            int expired)
+        {
+            this.Processing = processing;
+            this.Succeeded = succeeded;
+            this.Errored = errored;
+            this.Canceled = canceled;
+            this.Expired = expired;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageBatchRequestCounts" /> class.
+        /// </summary>
+        public MessageBatchRequestCounts()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

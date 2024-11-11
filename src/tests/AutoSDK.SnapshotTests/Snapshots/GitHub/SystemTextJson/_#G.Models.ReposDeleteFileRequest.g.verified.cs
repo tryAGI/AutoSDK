@@ -47,6 +47,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposDeleteFileRequest" /> class.
+        /// </summary>
+        /// <param name="message">
+        /// The commit message.
+        /// </param>
+        /// <param name="sha">
+        /// The blob SHA of the file being deleted.
+        /// </param>
+        /// <param name="branch">
+        /// The branch name. Default: the repository’s default branch
+        /// </param>
+        /// <param name="committer">
+        /// object containing information about the committer.
+        /// </param>
+        /// <param name="author">
+        /// object containing information about the author.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposDeleteFileRequest(
+            string message,
+            string sha,
+            string? branch,
+            global::G.ReposDeleteFileRequestCommitter? committer,
+            global::G.ReposDeleteFileRequestAuthor? author)
+        {
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Branch = branch;
+            this.Committer = committer;
+            this.Author = author;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposDeleteFileRequest" /> class.
+        /// </summary>
+        public ReposDeleteFileRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

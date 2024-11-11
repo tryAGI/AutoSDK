@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EvaluatorTopLevel" /> class.
+        /// </summary>
+        /// <param name="structured">
+        /// Evaluator structured output schema.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EvaluatorTopLevel(
+            global::G.EvaluatorStructuredOutput structured)
+        {
+            this.Structured = structured ?? throw new global::System.ArgumentNullException(nameof(structured));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EvaluatorTopLevel" /> class.
+        /// </summary>
+        public EvaluatorTopLevel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

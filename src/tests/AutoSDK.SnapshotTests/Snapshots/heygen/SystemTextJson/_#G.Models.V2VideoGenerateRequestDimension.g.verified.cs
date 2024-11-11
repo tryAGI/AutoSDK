@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoGenerateRequestDimension" /> class.
+        /// </summary>
+        /// <param name="height">
+        /// Example: 720
+        /// </param>
+        /// <param name="width">
+        /// Example: 1280
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public V2VideoGenerateRequestDimension(
+            double? height,
+            double? width)
+        {
+            this.Height = height;
+            this.Width = width;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoGenerateRequestDimension" /> class.
+        /// </summary>
+        public V2VideoGenerateRequestDimension()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

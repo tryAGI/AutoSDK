@@ -39,6 +39,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SourceFile" /> class.
+        /// </summary>
+        /// <param name="originalFileUid"></param>
+        /// <param name="content"></param>
+        /// <param name="createTime"></param>
+        /// <param name="updateTime"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SourceFile(
+            string? originalFileUid,
+            string? content,
+            global::System.DateTime? createTime,
+            global::System.DateTime? updateTime)
+        {
+            this.OriginalFileUid = originalFileUid;
+            this.Content = content;
+            this.CreateTime = createTime;
+            this.UpdateTime = updateTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SourceFile" /> class.
+        /// </summary>
+        public SourceFile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

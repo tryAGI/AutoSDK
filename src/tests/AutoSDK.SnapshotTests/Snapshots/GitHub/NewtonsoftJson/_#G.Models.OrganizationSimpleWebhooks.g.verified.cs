@@ -88,6 +88,80 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationSimpleWebhooks" /> class.
+        /// </summary>
+        /// <param name="login">
+        /// Example: github
+        /// </param>
+        /// <param name="id">
+        /// Example: 1
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDEyOk9yZ2FuaXphdGlvbjE=
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/orgs/github
+        /// </param>
+        /// <param name="reposUrl">
+        /// Example: https://api.github.com/orgs/github/repos
+        /// </param>
+        /// <param name="eventsUrl">
+        /// Example: https://api.github.com/orgs/github/events
+        /// </param>
+        /// <param name="hooksUrl">
+        /// Example: https://api.github.com/orgs/github/hooks
+        /// </param>
+        /// <param name="issuesUrl">
+        /// Example: https://api.github.com/orgs/github/issues
+        /// </param>
+        /// <param name="membersUrl">
+        /// Example: https://api.github.com/orgs/github/members{/member}
+        /// </param>
+        /// <param name="publicMembersUrl">
+        /// Example: https://api.github.com/orgs/github/public_members{/member}
+        /// </param>
+        /// <param name="avatarUrl">
+        /// Example: https://github.com/images/error/octocat_happy.gif
+        /// </param>
+        /// <param name="description">
+        /// Example: A great organization
+        /// </param>
+        public OrganizationSimpleWebhooks(
+            string login,
+            int id,
+            string nodeId,
+            string url,
+            string reposUrl,
+            string eventsUrl,
+            string hooksUrl,
+            string issuesUrl,
+            string membersUrl,
+            string publicMembersUrl,
+            string avatarUrl,
+            string? description)
+        {
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ReposUrl = reposUrl ?? throw new global::System.ArgumentNullException(nameof(reposUrl));
+            this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
+            this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
+            this.IssuesUrl = issuesUrl ?? throw new global::System.ArgumentNullException(nameof(issuesUrl));
+            this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
+            this.PublicMembersUrl = publicMembersUrl ?? throw new global::System.ArgumentNullException(nameof(publicMembersUrl));
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationSimpleWebhooks" /> class.
+        /// </summary>
+        public OrganizationSimpleWebhooks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

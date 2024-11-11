@@ -54,6 +54,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateExtensionBitsProductBody" /> class.
+        /// </summary>
+        /// <param name="sku">
+        /// The product's SKU. The SKU must be unique within an extension. The product's SKU cannot be changed. The SKU may contain only alphanumeric characters, dashes (-), underscores (\_), and periods (.) and is limited to a maximum of 255 characters. No spaces.
+        /// </param>
+        /// <param name="cost">
+        /// An object that contains the product's cost information.
+        /// </param>
+        /// <param name="displayName">
+        /// The product's name as displayed in the extension. The maximum length is 255 characters.
+        /// </param>
+        /// <param name="inDevelopment">
+        /// A Boolean value that indicates whether the product is in development. Set to **true** if the product is in development and not available for public use. The default is **false**.
+        /// </param>
+        /// <param name="expiration">
+        /// The date and time, in RFC3339 format, when the product expires. If not set, the product does not expire. To disable the product, set the expiration date to a date in the past.
+        /// </param>
+        /// <param name="isBroadcast">
+        /// A Boolean value that determines whether Bits product purchase events are broadcast to all instances of the extension on a channel. The events are broadcast via the `onTransactionComplete` helper callback. The default is **false**.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateExtensionBitsProductBody(
+            string sku,
+            global::G.UpdateExtensionBitsProductBodyCost cost,
+            string displayName,
+            bool? inDevelopment,
+            global::System.DateTime? expiration,
+            bool? isBroadcast)
+        {
+            this.Sku = sku ?? throw new global::System.ArgumentNullException(nameof(sku));
+            this.Cost = cost ?? throw new global::System.ArgumentNullException(nameof(cost));
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.InDevelopment = inDevelopment;
+            this.Expiration = expiration;
+            this.IsBroadcast = isBroadcast;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateExtensionBitsProductBody" /> class.
+        /// </summary>
+        public UpdateExtensionBitsProductBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

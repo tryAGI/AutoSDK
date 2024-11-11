@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantMembers" /> class.
+        /// </summary>
+        /// <param name="tenantId"></param>
+        /// <param name="members"></param>
+        /// <param name="pending"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TenantMembers(
+            global::System.Guid tenantId,
+            global::System.Collections.Generic.IList<global::G.MemberIdentity> members,
+            global::System.Collections.Generic.IList<global::G.PendingIdentity> pending)
+        {
+            this.TenantId = tenantId;
+            this.Members = members ?? throw new global::System.ArgumentNullException(nameof(members));
+            this.Pending = pending ?? throw new global::System.ArgumentNullException(nameof(pending));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantMembers" /> class.
+        /// </summary>
+        public TenantMembers()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

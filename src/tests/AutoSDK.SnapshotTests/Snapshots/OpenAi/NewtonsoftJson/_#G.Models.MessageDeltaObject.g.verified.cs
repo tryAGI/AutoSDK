@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaObject" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The identifier of the message, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `thread.message.delta`.
+        /// </param>
+        /// <param name="delta">
+        /// The delta containing the fields that have changed on the Message.
+        /// </param>
+        public MessageDeltaObject(
+            string id,
+            global::G.MessageDeltaObjectDelta delta,
+            global::G.MessageDeltaObjectObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaObject" /> class.
+        /// </summary>
+        public MessageDeltaObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

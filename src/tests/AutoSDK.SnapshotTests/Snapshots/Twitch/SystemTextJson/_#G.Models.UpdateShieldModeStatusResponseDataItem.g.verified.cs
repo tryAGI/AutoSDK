@@ -50,6 +50,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateShieldModeStatusResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="isActive">
+        /// A Boolean value that determines whether Shield Mode is active. Is **true** if Shield Mode is active; otherwise, **false**.
+        /// </param>
+        /// <param name="moderatorId">
+        /// An ID that identifies the moderator that last activated Shield Mode.
+        /// </param>
+        /// <param name="moderatorLogin">
+        /// The moderator’s login name.
+        /// </param>
+        /// <param name="moderatorName">
+        /// The moderator’s display name.
+        /// </param>
+        /// <param name="lastActivatedAt">
+        /// The UTC timestamp (in RFC3339 format) of when Shield Mode was last activated.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateShieldModeStatusResponseDataItem(
+            bool isActive,
+            string moderatorId,
+            string moderatorLogin,
+            string moderatorName,
+            global::System.DateTime lastActivatedAt)
+        {
+            this.IsActive = isActive;
+            this.ModeratorId = moderatorId ?? throw new global::System.ArgumentNullException(nameof(moderatorId));
+            this.ModeratorLogin = moderatorLogin ?? throw new global::System.ArgumentNullException(nameof(moderatorLogin));
+            this.ModeratorName = moderatorName ?? throw new global::System.ArgumentNullException(nameof(moderatorName));
+            this.LastActivatedAt = lastActivatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateShieldModeStatusResponseDataItem" /> class.
+        /// </summary>
+        public UpdateShieldModeStatusResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

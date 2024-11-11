@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposRenameBranchRequest" /> class.
+        /// </summary>
+        /// <param name="newName">
+        /// The new name of the branch.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposRenameBranchRequest(
+            string newName)
+        {
+            this.NewName = newName ?? throw new global::System.ArgumentNullException(nameof(newName));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposRenameBranchRequest" /> class.
+        /// </summary>
+        public ReposRenameBranchRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

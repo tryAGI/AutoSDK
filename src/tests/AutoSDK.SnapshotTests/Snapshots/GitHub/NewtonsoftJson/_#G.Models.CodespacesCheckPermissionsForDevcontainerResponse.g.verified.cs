@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesCheckPermissionsForDevcontainerResponse" /> class.
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="message"></param>
+        /// <param name="documentationUrl"></param>
+        public CodespacesCheckPermissionsForDevcontainerResponse(
+            string? code,
+            string? message,
+            string? documentationUrl)
+        {
+            this.Code = code;
+            this.Message = message;
+            this.DocumentationUrl = documentationUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesCheckPermissionsForDevcontainerResponse" /> class.
+        /// </summary>
+        public CodespacesCheckPermissionsForDevcontainerResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

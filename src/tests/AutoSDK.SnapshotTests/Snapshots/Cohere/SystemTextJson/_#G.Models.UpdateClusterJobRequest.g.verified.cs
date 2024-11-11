@@ -58,6 +58,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateClusterJobRequest" /> class.
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="clusters"></param>
+        /// <param name="outputClustersGsPath"></param>
+        /// <param name="outputOutliersGsPath"></param>
+        /// <param name="error"></param>
+        /// <param name="inputTrackingMetrics"></param>
+        /// <param name="outputTrackingMetrics"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateClusterJobRequest(
+            global::G.UpdateClusterJobRequestStatus? status,
+            global::System.Collections.Generic.IList<global::G.Cluster>? clusters,
+            string? outputClustersGsPath,
+            string? outputOutliersGsPath,
+            string? error,
+            object? inputTrackingMetrics,
+            object? outputTrackingMetrics)
+        {
+            this.Status = status;
+            this.Clusters = clusters;
+            this.OutputClustersGsPath = outputClustersGsPath;
+            this.OutputOutliersGsPath = outputOutliersGsPath;
+            this.Error = error;
+            this.InputTrackingMetrics = inputTrackingMetrics;
+            this.OutputTrackingMetrics = outputTrackingMetrics;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateClusterJobRequest" /> class.
+        /// </summary>
+        public UpdateClusterJobRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

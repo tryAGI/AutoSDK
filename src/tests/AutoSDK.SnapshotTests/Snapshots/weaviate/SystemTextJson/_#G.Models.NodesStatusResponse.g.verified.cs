@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodesStatusResponse" /> class.
+        /// </summary>
+        /// <param name="nodes"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public NodesStatusResponse(
+            global::System.Collections.Generic.IList<global::G.NodeStatus>? nodes)
+        {
+            this.Nodes = nodes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodesStatusResponse" /> class.
+        /// </summary>
+        public NodesStatusResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

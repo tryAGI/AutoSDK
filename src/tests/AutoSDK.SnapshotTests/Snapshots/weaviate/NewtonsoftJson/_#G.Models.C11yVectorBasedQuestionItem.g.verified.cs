@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yVectorBasedQuestionItem" /> class.
+        /// </summary>
+        /// <param name="classVectors">
+        /// Vectorized classname.
+        /// </param>
+        /// <param name="classProps">
+        /// Vectorized properties.
+        /// </param>
+        public C11yVectorBasedQuestionItem(
+            global::System.Collections.Generic.IList<float>? classVectors,
+            global::System.Collections.Generic.IList<global::G.C11yVectorBasedQuestionItemClassProp>? classProps)
+        {
+            this.ClassVectors = classVectors;
+            this.ClassProps = classProps;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yVectorBasedQuestionItem" /> class.
+        /// </summary>
+        public C11yVectorBasedQuestionItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

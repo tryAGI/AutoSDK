@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiOverviewSshKeyFingerprints" /> class.
+        /// </summary>
+        /// <param name="sHA256RSA"></param>
+        /// <param name="sHA256DSA"></param>
+        /// <param name="sHA256ECDSA"></param>
+        /// <param name="sHA256ED25519"></param>
+        public ApiOverviewSshKeyFingerprints(
+            string? sHA256RSA,
+            string? sHA256DSA,
+            string? sHA256ECDSA,
+            string? sHA256ED25519)
+        {
+            this.SHA256RSA = sHA256RSA;
+            this.SHA256DSA = sHA256DSA;
+            this.SHA256ECDSA = sHA256ECDSA;
+            this.SHA256ED25519 = sHA256ED25519;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiOverviewSshKeyFingerprints" /> class.
+        /// </summary>
+        public ApiOverviewSshKeyFingerprints()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

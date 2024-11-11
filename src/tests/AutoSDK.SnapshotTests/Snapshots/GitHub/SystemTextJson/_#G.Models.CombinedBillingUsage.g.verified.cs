@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CombinedBillingUsage" /> class.
+        /// </summary>
+        /// <param name="daysLeftInBillingCycle">
+        /// Numbers of days left in billing cycle.
+        /// </param>
+        /// <param name="estimatedPaidStorageForMonth">
+        /// Estimated storage space (GB) used in billing cycle.
+        /// </param>
+        /// <param name="estimatedStorageForMonth">
+        /// Estimated sum of free and paid storage space (GB) used in billing cycle.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CombinedBillingUsage(
+            int daysLeftInBillingCycle,
+            int estimatedPaidStorageForMonth,
+            int estimatedStorageForMonth)
+        {
+            this.DaysLeftInBillingCycle = daysLeftInBillingCycle;
+            this.EstimatedPaidStorageForMonth = estimatedPaidStorageForMonth;
+            this.EstimatedStorageForMonth = estimatedStorageForMonth;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CombinedBillingUsage" /> class.
+        /// </summary>
+        public CombinedBillingUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

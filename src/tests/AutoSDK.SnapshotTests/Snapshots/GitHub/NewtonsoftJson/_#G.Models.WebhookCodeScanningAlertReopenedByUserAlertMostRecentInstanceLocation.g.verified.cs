@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceLocation" /> class.
+        /// </summary>
+        /// <param name="endColumn"></param>
+        /// <param name="endLine"></param>
+        /// <param name="path"></param>
+        /// <param name="startColumn"></param>
+        /// <param name="startLine"></param>
+        public WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceLocation(
+            int? endColumn,
+            int? endLine,
+            string? path,
+            int? startColumn,
+            int? startLine)
+        {
+            this.EndColumn = endColumn;
+            this.EndLine = endLine;
+            this.Path = path;
+            this.StartColumn = startColumn;
+            this.StartLine = startLine;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceLocation" /> class.
+        /// </summary>
+        public WebhookCodeScanningAlertReopenedByUserAlertMostRecentInstanceLocation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

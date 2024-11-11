@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunObjectIncompleteDetails" /> class.
+        /// </summary>
+        /// <param name="reason">
+        /// The reason why the run is incomplete. This will point to which specific token limit was reached over the course of the run.
+        /// </param>
+        public RunObjectIncompleteDetails(
+            global::G.RunObjectIncompleteDetailsReason? reason)
+        {
+            this.Reason = reason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunObjectIncompleteDetails" /> class.
+        /// </summary>
+        public RunObjectIncompleteDetails()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

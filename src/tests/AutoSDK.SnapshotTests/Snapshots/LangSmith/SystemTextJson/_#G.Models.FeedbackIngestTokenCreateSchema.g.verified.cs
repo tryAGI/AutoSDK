@@ -47,6 +47,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackIngestTokenCreateSchema" /> class.
+        /// </summary>
+        /// <param name="expiresIn">
+        /// Timedelta input.
+        /// </param>
+        /// <param name="expiresAt"></param>
+        /// <param name="runId"></param>
+        /// <param name="feedbackKey"></param>
+        /// <param name="feedbackConfig"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FeedbackIngestTokenCreateSchema(
+            global::System.Guid runId,
+            string feedbackKey,
+            global::G.TimedeltaInput? expiresIn,
+            global::System.DateTime? expiresAt,
+            global::G.FeedbackConfig? feedbackConfig)
+        {
+            this.RunId = runId;
+            this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
+            this.ExpiresIn = expiresIn;
+            this.ExpiresAt = expiresAt;
+            this.FeedbackConfig = feedbackConfig;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackIngestTokenCreateSchema" /> class.
+        /// </summary>
+        public FeedbackIngestTokenCreateSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

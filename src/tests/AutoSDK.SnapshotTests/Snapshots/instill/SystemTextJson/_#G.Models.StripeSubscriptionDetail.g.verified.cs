@@ -72,6 +72,69 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripeSubscriptionDetail" /> class.
+        /// </summary>
+        /// <param name="productName">
+        /// Product name associated with the subscription in Stripe.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="id">
+        /// Unique identifier for the subscription.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="itemId">
+        /// Identifier for the specific item within the subscription.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="price">
+        /// Price of the subscription.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="canceledAt">
+        /// Optional timestamp indicating when the subscription was canceled, if applicable.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="trialEnd">
+        /// Optional timestamp indicating when the trial ended, if applicable.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="status">
+        /// Status of the subscription.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="description">
+        /// Description of the subscription.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StripeSubscriptionDetail(
+            string? productName,
+            string? id,
+            string? itemId,
+            float? price,
+            int? canceledAt,
+            int? trialEnd,
+            global::G.StripeSubscriptionDetailStatus? status,
+            string? description)
+        {
+            this.ProductName = productName;
+            this.Id = id;
+            this.ItemId = itemId;
+            this.Price = price;
+            this.CanceledAt = canceledAt;
+            this.TrialEnd = trialEnd;
+            this.Status = status;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripeSubscriptionDetail" /> class.
+        /// </summary>
+        public StripeSubscriptionDetail()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

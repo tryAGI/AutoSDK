@@ -63,6 +63,45 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagAppDTO" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="projectId"></param>
+        /// <param name="tagId"></param>
+        /// <param name="resourceId"></param>
+        /// <param name="excerptId"></param>
+        /// <param name="weight"></param>
+        /// <param name="userId"></param>
+        /// <param name="createStamp"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TagAppDTO(
+            global::System.Guid? id,
+            global::System.Guid? projectId,
+            global::System.Guid? tagId,
+            global::System.Guid? resourceId,
+            global::System.Guid? excerptId,
+            double? weight,
+            global::System.Guid? userId,
+            global::System.DateTime? createStamp)
+        {
+            this.Id = id;
+            this.ProjectId = projectId;
+            this.TagId = tagId;
+            this.ResourceId = resourceId;
+            this.ExcerptId = excerptId;
+            this.Weight = weight;
+            this.UserId = userId;
+            this.CreateStamp = createStamp;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagAppDTO" /> class.
+        /// </summary>
+        public TagAppDTO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

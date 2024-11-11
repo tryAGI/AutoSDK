@@ -81,6 +81,59 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LibrarySearchRequest" /> class.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="maxSegments"></param>
+        /// <param name="path"></param>
+        /// <param name="labels"></param>
+        /// <param name="labelsFilter"></param>
+        /// <param name="labelsFilterMode">
+        /// Default Value: AND
+        /// </param>
+        /// <param name="fileIds"></param>
+        /// <param name="retrievalStrategy">
+        /// Default Value: default
+        /// </param>
+        /// <param name="maxNeighbors">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="retrievalSimilarityThreshold"></param>
+        /// <param name="hybridSearchAlpha"></param>
+        public LibrarySearchRequest(
+            string query,
+            int? maxSegments,
+            string? path,
+            global::System.Collections.Generic.IList<string>? labels,
+            global::G.QueryFilter? labelsFilter,
+            global::G.LibrarySearchRequestLabelsFilterMode? labelsFilterMode,
+            global::System.Collections.Generic.IList<global::System.Guid>? fileIds,
+            global::G.RetrievalStrategy? retrievalStrategy,
+            int? maxNeighbors,
+            double? retrievalSimilarityThreshold,
+            double? hybridSearchAlpha)
+        {
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
+            this.MaxSegments = maxSegments;
+            this.Path = path;
+            this.Labels = labels;
+            this.LabelsFilter = labelsFilter;
+            this.LabelsFilterMode = labelsFilterMode;
+            this.FileIds = fileIds;
+            this.RetrievalStrategy = retrievalStrategy;
+            this.MaxNeighbors = maxNeighbors;
+            this.RetrievalSimilarityThreshold = retrievalSimilarityThreshold;
+            this.HybridSearchAlpha = hybridSearchAlpha;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LibrarySearchRequest" /> class.
+        /// </summary>
+        public LibrarySearchRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

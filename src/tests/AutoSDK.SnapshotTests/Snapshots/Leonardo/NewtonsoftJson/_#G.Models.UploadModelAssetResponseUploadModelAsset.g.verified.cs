@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadModelAssetResponseUploadModelAsset" /> class.
+        /// </summary>
+        /// <param name="modelFields"></param>
+        /// <param name="modelId"></param>
+        /// <param name="modelKey"></param>
+        /// <param name="modelUrl"></param>
+        public UploadModelAssetResponseUploadModelAsset(
+            string? modelFields,
+            string? modelId,
+            string? modelKey,
+            string? modelUrl)
+        {
+            this.ModelFields = modelFields;
+            this.ModelId = modelId;
+            this.ModelKey = modelKey;
+            this.ModelUrl = modelUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadModelAssetResponseUploadModelAsset" /> class.
+        /// </summary>
+        public UploadModelAssetResponseUploadModelAsset()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

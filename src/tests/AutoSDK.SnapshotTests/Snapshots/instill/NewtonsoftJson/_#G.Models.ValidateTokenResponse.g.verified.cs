@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidateTokenResponse" /> class.
+        /// </summary>
+        /// <param name="userUid">
+        /// If token is valid, UUID of the user that owns it.<br/>
+        /// Included only in responses
+        /// </param>
+        public ValidateTokenResponse(
+            string? userUid)
+        {
+            this.UserUid = userUid;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidateTokenResponse" /> class.
+        /// </summary>
+        public ValidateTokenResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

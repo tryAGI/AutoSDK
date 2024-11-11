@@ -28,6 +28,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CvssSeveritiesCvssV3" /> class.
+        /// </summary>
+        /// <param name="vectorString">
+        /// The CVSS 3 vector string.
+        /// </param>
+        /// <param name="score">
+        /// The CVSS 3 score.<br/>
+        /// Included only in responses
+        /// </param>
+        public CvssSeveritiesCvssV3(
+            string? vectorString,
+            double? score)
+        {
+            this.VectorString = vectorString ?? throw new global::System.ArgumentNullException(nameof(vectorString));
+            this.Score = score;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CvssSeveritiesCvssV3" /> class.
+        /// </summary>
+        public CvssSeveritiesCvssV3()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

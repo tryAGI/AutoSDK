@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessageV2Discriminator" /> class.
+        /// </summary>
+        /// <param name="role"></param>
+        public ChatMessageV2Discriminator(
+            global::G.ChatMessageV2DiscriminatorRole? role)
+        {
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessageV2Discriminator" /> class.
+        /// </summary>
+        public ChatMessageV2Discriminator()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -36,6 +36,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsReviewPendingDeploymentsForRunRequest" /> class.
+        /// </summary>
+        /// <param name="environmentIds">
+        /// The list of environment ids to approve or reject<br/>
+        /// Example: [161171787, 161171795]
+        /// </param>
+        /// <param name="state">
+        /// Whether to approve or reject deployment to the specified environments.<br/>
+        /// Example: approved
+        /// </param>
+        /// <param name="comment">
+        /// A comment to accompany the deployment review<br/>
+        /// Example: Ship it!
+        /// </param>
+        public ActionsReviewPendingDeploymentsForRunRequest(
+            global::System.Collections.Generic.IList<int> environmentIds,
+            global::G.ActionsReviewPendingDeploymentsForRunRequestState state,
+            string comment)
+        {
+            this.EnvironmentIds = environmentIds ?? throw new global::System.ArgumentNullException(nameof(environmentIds));
+            this.State = state;
+            this.Comment = comment ?? throw new global::System.ArgumentNullException(nameof(comment));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsReviewPendingDeploymentsForRunRequest" /> class.
+        /// </summary>
+        public ActionsReviewPendingDeploymentsForRunRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -51,6 +51,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Tagging" /> class.
+        /// </summary>
+        /// <param name="tagValueId"></param>
+        /// <param name="resourceType"></param>
+        /// <param name="resourceId"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Tagging(
+            global::System.Guid tagValueId,
+            global::G.ResourceType resourceType,
+            global::System.Guid resourceId,
+            global::System.Guid id,
+            global::System.DateTime createdAt)
+        {
+            this.TagValueId = tagValueId;
+            this.ResourceType = resourceType;
+            this.ResourceId = resourceId;
+            this.Id = id;
+            this.CreatedAt = createdAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Tagging" /> class.
+        /// </summary>
+        public Tagging()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

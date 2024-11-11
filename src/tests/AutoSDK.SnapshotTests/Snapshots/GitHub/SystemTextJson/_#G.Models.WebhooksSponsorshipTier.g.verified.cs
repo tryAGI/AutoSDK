@@ -76,6 +76,48 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSponsorshipTier" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="description"></param>
+        /// <param name="isCustomAmmount"></param>
+        /// <param name="isCustomAmount"></param>
+        /// <param name="isOneTime"></param>
+        /// <param name="monthlyPriceInCents"></param>
+        /// <param name="monthlyPriceInDollars"></param>
+        /// <param name="name"></param>
+        /// <param name="nodeId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhooksSponsorshipTier(
+            string createdAt,
+            string description,
+            bool isOneTime,
+            int monthlyPriceInCents,
+            int monthlyPriceInDollars,
+            string name,
+            string nodeId,
+            bool? isCustomAmmount,
+            bool? isCustomAmount)
+        {
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.IsOneTime = isOneTime;
+            this.MonthlyPriceInCents = monthlyPriceInCents;
+            this.MonthlyPriceInDollars = monthlyPriceInDollars;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.IsCustomAmmount = isCustomAmmount;
+            this.IsCustomAmount = isCustomAmount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSponsorshipTier" /> class.
+        /// </summary>
+        public WebhooksSponsorshipTier()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

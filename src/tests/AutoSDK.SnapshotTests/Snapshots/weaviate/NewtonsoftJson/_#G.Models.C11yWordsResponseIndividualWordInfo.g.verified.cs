@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yWordsResponseIndividualWordInfo" /> class.
+        /// </summary>
+        /// <param name="vector">
+        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// </param>
+        /// <param name="nearestNeighbors">
+        /// C11y function to show the nearest neighbors to a word.
+        /// </param>
+        public C11yWordsResponseIndividualWordInfo(
+            global::System.Collections.Generic.IList<float>? vector,
+            global::System.Collections.Generic.IList<global::G.C11yNearestNeighbor>? nearestNeighbors)
+        {
+            this.Vector = vector;
+            this.NearestNeighbors = nearestNeighbors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yWordsResponseIndividualWordInfo" /> class.
+        /// </summary>
+        public C11yWordsResponseIndividualWordInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

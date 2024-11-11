@@ -55,6 +55,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagKeyWithValues" /> class.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="description"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="values"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TagKeyWithValues(
+            string key,
+            global::System.Guid id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string? description,
+            global::System.Collections.Generic.IList<global::G.TagValue>? values)
+        {
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Description = description;
+            this.Values = values;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagKeyWithValues" /> class.
+        /// </summary>
+        public TagKeyWithValues()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantStreamEventVariant22" /> class.
+        /// </summary>
+        /// <param name="event"></param>
+        /// <param name="data">
+        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// </param>
+        public AssistantStreamEventVariant22(
+            global::G.MessageObject data,
+            global::G.AssistantStreamEventVariant22Event @event)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Event = @event;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantStreamEventVariant22" /> class.
+        /// </summary>
+        public AssistantStreamEventVariant22()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

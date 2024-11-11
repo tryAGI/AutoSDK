@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Error" /> class.
+        /// </summary>
+        /// <param name="messages">
+        /// The messages describing why the error occurred.
+        /// </param>
+        /// <param name="requestId">
+        /// The ID of the request that can be used to help Vectara support debug what went wrong.
+        /// </param>
+        public Error(
+            global::System.Collections.Generic.IList<string>? messages,
+            string? requestId)
+        {
+            this.Messages = messages;
+            this.RequestId = requestId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Error" /> class.
+        /// </summary>
+        public Error()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

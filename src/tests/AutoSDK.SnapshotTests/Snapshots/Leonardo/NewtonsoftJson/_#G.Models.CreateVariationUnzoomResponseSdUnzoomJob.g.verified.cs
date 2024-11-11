@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVariationUnzoomResponseSdUnzoomJob" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="apiCreditCost">
+        /// API Credits Cost for Unzoom Variation. Available for Production API Users.
+        /// </param>
+        public CreateVariationUnzoomResponseSdUnzoomJob(
+            string? id,
+            int? apiCreditCost)
+        {
+            this.Id = id;
+            this.ApiCreditCost = apiCreditCost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVariationUnzoomResponseSdUnzoomJob" /> class.
+        /// </summary>
+        public CreateVariationUnzoomResponseSdUnzoomJob()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -57,6 +57,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestRemovedVariant1PullRequestLabel" /> class.
+        /// </summary>
+        /// <param name="color">
+        /// 6-character hex code, without the leading #, identifying the color
+        /// </param>
+        /// <param name="default"></param>
+        /// <param name="description"></param>
+        /// <param name="id"></param>
+        /// <param name="name">
+        /// The name of the label.
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="url">
+        /// URL for the label
+        /// </param>
+        public WebhookPullRequestReviewRequestRemovedVariant1PullRequestLabel(
+            string color,
+            bool @default,
+            string? description,
+            int id,
+            string name,
+            string nodeId,
+            string url)
+        {
+            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
+            this.Default = @default;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestRemovedVariant1PullRequestLabel" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewRequestRemovedVariant1PullRequestLabel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

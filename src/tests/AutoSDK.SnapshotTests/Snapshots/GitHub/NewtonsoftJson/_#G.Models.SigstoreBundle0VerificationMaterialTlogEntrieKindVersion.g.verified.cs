@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0VerificationMaterialTlogEntrieKindVersion" /> class.
+        /// </summary>
+        /// <param name="kind"></param>
+        /// <param name="version"></param>
+        public SigstoreBundle0VerificationMaterialTlogEntrieKindVersion(
+            string? kind,
+            string? version)
+        {
+            this.Kind = kind;
+            this.Version = version;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0VerificationMaterialTlogEntrieKindVersion" /> class.
+        /// </summary>
+        public SigstoreBundle0VerificationMaterialTlogEntrieKindVersion()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -42,6 +42,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueEventDismissedReview" /> class.
+        /// </summary>
+        /// <param name="state"></param>
+        /// <param name="reviewId"></param>
+        /// <param name="dismissalMessage"></param>
+        /// <param name="dismissalCommitId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public IssueEventDismissedReview(
+            string state,
+            int reviewId,
+            string? dismissalMessage,
+            string? dismissalCommitId)
+        {
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.ReviewId = reviewId;
+            this.DismissalMessage = dismissalMessage ?? throw new global::System.ArgumentNullException(nameof(dismissalMessage));
+            this.DismissalCommitId = dismissalCommitId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueEventDismissedReview" /> class.
+        /// </summary>
+        public IssueEventDismissedReview()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

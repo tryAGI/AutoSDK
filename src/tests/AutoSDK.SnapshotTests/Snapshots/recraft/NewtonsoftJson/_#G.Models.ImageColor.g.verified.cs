@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageColor" /> class.
+        /// </summary>
+        /// <param name="rgb"></param>
+        /// <param name="std"></param>
+        /// <param name="weight"></param>
+        public ImageColor(
+            global::System.Collections.Generic.IList<int>? rgb,
+            global::System.Collections.Generic.IList<double>? std,
+            double? weight)
+        {
+            this.Rgb = rgb;
+            this.Std = std;
+            this.Weight = weight;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageColor" /> class.
+        /// </summary>
+        public ImageColor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

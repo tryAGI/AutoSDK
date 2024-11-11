@@ -36,6 +36,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CloneTraffic" /> class.
+        /// </summary>
+        /// <param name="count">
+        /// Example: 173
+        /// </param>
+        /// <param name="uniques">
+        /// Example: 128
+        /// </param>
+        /// <param name="clones"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CloneTraffic(
+            int count,
+            int uniques,
+            global::System.Collections.Generic.IList<global::G.Traffic> clones)
+        {
+            this.Count = count;
+            this.Uniques = uniques;
+            this.Clones = clones ?? throw new global::System.ArgumentNullException(nameof(clones));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CloneTraffic" /> class.
+        /// </summary>
+        public CloneTraffic()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

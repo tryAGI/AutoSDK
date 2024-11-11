@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitTagObject" /> class.
+        /// </summary>
+        /// <param name="sha"></param>
+        /// <param name="type"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GitTagObject(
+            string sha,
+            string type,
+            string url)
+        {
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitTagObject" /> class.
+        /// </summary>
+        public GitTagObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

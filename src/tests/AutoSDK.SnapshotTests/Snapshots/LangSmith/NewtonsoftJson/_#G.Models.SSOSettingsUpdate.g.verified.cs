@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SSOSettingsUpdate" /> class.
+        /// </summary>
+        /// <param name="defaultWorkspaceRoleId"></param>
+        /// <param name="defaultWorkspaceIds"></param>
+        /// <param name="metadataUrl"></param>
+        /// <param name="metadataXml"></param>
+        public SSOSettingsUpdate(
+            global::System.Guid? defaultWorkspaceRoleId,
+            global::System.Collections.Generic.IList<global::System.Guid>? defaultWorkspaceIds,
+            string? metadataUrl,
+            string? metadataXml)
+        {
+            this.DefaultWorkspaceRoleId = defaultWorkspaceRoleId;
+            this.DefaultWorkspaceIds = defaultWorkspaceIds;
+            this.MetadataUrl = metadataUrl;
+            this.MetadataXml = metadataXml;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SSOSettingsUpdate" /> class.
+        /// </summary>
+        public SSOSettingsUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

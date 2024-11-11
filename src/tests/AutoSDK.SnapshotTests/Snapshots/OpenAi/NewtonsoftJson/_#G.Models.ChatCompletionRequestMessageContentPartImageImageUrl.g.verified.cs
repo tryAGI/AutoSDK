@@ -28,6 +28,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartImageImageUrl" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Either a URL of the image or the base64 encoded image data.
+        /// </param>
+        /// <param name="detail">
+        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).<br/>
+        /// Default Value: auto
+        /// </param>
+        public ChatCompletionRequestMessageContentPartImageImageUrl(
+            string url,
+            global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail? detail)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Detail = detail;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartImageImageUrl" /> class.
+        /// </summary>
+        public ChatCompletionRequestMessageContentPartImageImageUrl()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

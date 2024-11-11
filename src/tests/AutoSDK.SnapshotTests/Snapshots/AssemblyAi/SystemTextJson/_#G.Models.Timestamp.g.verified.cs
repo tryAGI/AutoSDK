@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Timestamp" /> class.
+        /// </summary>
+        /// <param name="start">
+        /// The start time in milliseconds
+        /// </param>
+        /// <param name="end">
+        /// The end time in milliseconds
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Timestamp(
+            int start,
+            int end)
+        {
+            this.Start = start;
+            this.End = end;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Timestamp" /> class.
+        /// </summary>
+        public Timestamp()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

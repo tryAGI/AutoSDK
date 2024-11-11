@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgIdentityPatch" /> class.
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="fullName"></param>
+        /// <param name="roleId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrgIdentityPatch(
+            string? password,
+            string? fullName,
+            global::System.Guid? roleId)
+        {
+            this.Password = password;
+            this.FullName = fullName;
+            this.RoleId = roleId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgIdentityPatch" /> class.
+        /// </summary>
+        public OrgIdentityPatch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetPollsResponsePagination" /> class.
+        /// </summary>
+        /// <param name="cursor">
+        /// The cursor used to get the next page of results. Use the cursor to set the request's _after_ query parameter.
+        /// </param>
+        public GetPollsResponsePagination(
+            string? cursor)
+        {
+            this.Cursor = cursor;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetPollsResponsePagination" /> class.
+        /// </summary>
+        public GetPollsResponsePagination()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

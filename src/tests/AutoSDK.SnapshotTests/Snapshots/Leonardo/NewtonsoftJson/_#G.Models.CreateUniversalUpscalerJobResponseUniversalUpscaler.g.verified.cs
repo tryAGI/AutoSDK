@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateUniversalUpscalerJobResponseUniversalUpscaler" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="apiCreditCost">
+        /// API Credits Cost for Universal Upscaler Variation. Available for Production API Users.
+        /// </param>
+        public CreateUniversalUpscalerJobResponseUniversalUpscaler(
+            string? id,
+            int? apiCreditCost)
+        {
+            this.Id = id;
+            this.ApiCreditCost = apiCreditCost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateUniversalUpscalerJobResponseUniversalUpscaler" /> class.
+        /// </summary>
+        public CreateUniversalUpscalerJobResponseUniversalUpscaler()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

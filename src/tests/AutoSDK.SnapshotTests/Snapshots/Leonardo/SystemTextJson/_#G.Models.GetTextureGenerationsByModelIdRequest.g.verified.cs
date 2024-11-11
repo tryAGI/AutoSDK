@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTextureGenerationsByModelIdRequest" /> class.
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="modelId"></param>
+        /// <param name="offset"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetTextureGenerationsByModelIdRequest(
+            int? limit,
+            string? modelId,
+            int? offset)
+        {
+            this.Limit = limit;
+            this.ModelId = modelId;
+            this.Offset = offset;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTextureGenerationsByModelIdRequest" /> class.
+        /// </summary>
+        public GetTextureGenerationsByModelIdRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

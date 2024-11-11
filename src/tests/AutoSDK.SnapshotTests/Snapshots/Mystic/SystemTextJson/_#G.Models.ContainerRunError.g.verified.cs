@@ -36,6 +36,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContainerRunError" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// An enumeration.
+        /// </param>
+        /// <param name="message"></param>
+        /// <param name="traceback"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ContainerRunError(
+            global::G.ContainerRunErrorType type,
+            string message,
+            string? traceback)
+        {
+            this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Traceback = traceback;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContainerRunError" /> class.
+        /// </summary>
+        public ContainerRunError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

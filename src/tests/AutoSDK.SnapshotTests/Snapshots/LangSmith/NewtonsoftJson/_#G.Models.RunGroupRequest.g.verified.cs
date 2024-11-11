@@ -57,6 +57,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunGroupRequest" /> class.
+        /// </summary>
+        /// <param name="sessionId"></param>
+        /// <param name="groupBy"></param>
+        /// <param name="filter"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 10
+        /// </param>
+        public RunGroupRequest(
+            global::System.Guid sessionId,
+            global::G.RunGroupBy groupBy,
+            string? filter,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            int? offset,
+            int? limit)
+        {
+            this.SessionId = sessionId;
+            this.GroupBy = groupBy;
+            this.Filter = filter;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Offset = offset;
+            this.Limit = limit;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunGroupRequest" /> class.
+        /// </summary>
+        public RunGroupRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

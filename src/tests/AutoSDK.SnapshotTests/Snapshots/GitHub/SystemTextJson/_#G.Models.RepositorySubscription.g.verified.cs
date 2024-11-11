@@ -58,6 +58,48 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositorySubscription" /> class.
+        /// </summary>
+        /// <param name="subscribed">
+        /// Determines if notifications should be received from this repository.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="ignored">
+        /// Determines if all notifications should be blocked from this repository.
+        /// </param>
+        /// <param name="reason"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/example/subscription
+        /// </param>
+        /// <param name="repositoryUrl">
+        /// Example: https://api.github.com/repos/octocat/example
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositorySubscription(
+            bool subscribed,
+            bool ignored,
+            string? reason,
+            global::System.DateTime createdAt,
+            string url,
+            string repositoryUrl)
+        {
+            this.Subscribed = subscribed;
+            this.Ignored = ignored;
+            this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
+            this.CreatedAt = createdAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositorySubscription" /> class.
+        /// </summary>
+        public RepositorySubscription()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

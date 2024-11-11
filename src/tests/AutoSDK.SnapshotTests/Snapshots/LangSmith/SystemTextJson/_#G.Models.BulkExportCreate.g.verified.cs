@@ -57,6 +57,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportCreate" /> class.
+        /// </summary>
+        /// <param name="bulkExportDestinationId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="format"></param>
+        /// <param name="compression"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BulkExportCreate(
+            global::System.Guid bulkExportDestinationId,
+            global::System.Guid sessionId,
+            global::System.DateTime startTime,
+            global::System.DateTime endTime,
+            global::G.BulkExportFormat? format,
+            global::G.BulkExportCompression? compression)
+        {
+            this.BulkExportDestinationId = bulkExportDestinationId;
+            this.SessionId = sessionId;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Format = format;
+            this.Compression = compression;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportCreate" /> class.
+        /// </summary>
+        public BulkExportCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

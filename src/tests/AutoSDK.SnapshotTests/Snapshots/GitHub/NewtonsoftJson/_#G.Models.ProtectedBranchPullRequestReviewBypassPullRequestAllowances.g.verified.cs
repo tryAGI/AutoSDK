@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchPullRequestReviewBypassPullRequestAllowances" /> class.
+        /// </summary>
+        /// <param name="users">
+        /// The list of users allowed to bypass pull request requirements.
+        /// </param>
+        /// <param name="teams">
+        /// The list of teams allowed to bypass pull request requirements.
+        /// </param>
+        /// <param name="apps">
+        /// The list of apps allowed to bypass pull request requirements.
+        /// </param>
+        public ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
+            global::System.Collections.Generic.IList<global::G.SimpleUser>? users,
+            global::System.Collections.Generic.IList<global::G.Team>? teams,
+            global::System.Collections.Generic.IList<global::G.Integration>? apps)
+        {
+            this.Users = users;
+            this.Teams = teams;
+            this.Apps = apps;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchPullRequestReviewBypassPullRequestAllowances" /> class.
+        /// </summary>
+        public ProtectedBranchPullRequestReviewBypassPullRequestAllowances()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

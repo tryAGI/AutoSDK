@@ -39,6 +39,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsLCMGENERATION" /> class.
+        /// </summary>
+        /// <param name="height">
+        /// The output height of the image. Must be 512, 640 or 1024.
+        /// </param>
+        /// <param name="width">
+        /// The output width of the image. Must be 512, 640 or 1024.
+        /// </param>
+        /// <param name="instantRefine">
+        /// Enable for instant upscale
+        /// </param>
+        /// <param name="refine">
+        /// Enable for normal alchemy upscale
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PricingCalculatorRequestServiceParamsLCMGENERATION(
+            int? height,
+            int? width,
+            bool? instantRefine,
+            bool? refine)
+        {
+            this.Height = height;
+            this.Width = width;
+            this.InstantRefine = instantRefine;
+            this.Refine = refine;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsLCMGENERATION" /> class.
+        /// </summary>
+        public PricingCalculatorRequestServiceParamsLCMGENERATION()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

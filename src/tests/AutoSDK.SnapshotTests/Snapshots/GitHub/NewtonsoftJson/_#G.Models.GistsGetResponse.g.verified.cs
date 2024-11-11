@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistsGetResponse" /> class.
+        /// </summary>
+        /// <param name="block"></param>
+        /// <param name="message"></param>
+        /// <param name="documentationUrl"></param>
+        public GistsGetResponse(
+            global::G.GistsGetResponseBlock? block,
+            string? message,
+            string? documentationUrl)
+        {
+            this.Block = block;
+            this.Message = message;
+            this.DocumentationUrl = documentationUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistsGetResponse" /> class.
+        /// </summary>
+        public GistsGetResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

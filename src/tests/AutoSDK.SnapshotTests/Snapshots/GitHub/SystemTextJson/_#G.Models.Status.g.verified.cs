@@ -92,6 +92,56 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Status" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="avatarUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="state"></param>
+        /// <param name="description"></param>
+        /// <param name="targetUrl"></param>
+        /// <param name="context"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="creator">
+        /// A GitHub user.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Status(
+            string url,
+            string? avatarUrl,
+            int id,
+            string nodeId,
+            string state,
+            string? description,
+            string? targetUrl,
+            string context,
+            string createdAt,
+            string updatedAt,
+            global::G.NullableSimpleUser? creator)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
+            this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Status" /> class.
+        /// </summary>
+        public Status()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

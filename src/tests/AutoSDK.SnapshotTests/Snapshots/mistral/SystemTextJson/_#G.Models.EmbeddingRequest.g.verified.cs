@@ -39,6 +39,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingRequest" /> class.
+        /// </summary>
+        /// <param name="encodingFormat">
+        /// The format to return the embeddings in.<br/>
+        /// Default Value: float
+        /// </param>
+        /// <param name="input">
+        /// Text to embed.
+        /// </param>
+        /// <param name="model">
+        /// ID of the model to use.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EmbeddingRequest(
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>> input,
+            string model,
+            string? encodingFormat)
+        {
+            this.Input = input;
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.EncodingFormat = encodingFormat;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingRequest" /> class.
+        /// </summary>
+        public EmbeddingRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReplaceFilterAttributesResponse" /> class.
+        /// </summary>
+        /// <param name="jobId">
+        /// Job that was created in order to replace filter attributes.
+        /// </param>
+        public ReplaceFilterAttributesResponse(
+            string jobId)
+        {
+            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReplaceFilterAttributesResponse" /> class.
+        /// </summary>
+        public ReplaceFilterAttributesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

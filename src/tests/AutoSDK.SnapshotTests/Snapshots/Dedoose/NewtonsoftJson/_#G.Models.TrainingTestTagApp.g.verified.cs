@@ -75,6 +75,52 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingTestTagApp" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="trainingTestIDL"></param>
+        /// <param name="createdOn"></param>
+        /// <param name="trainingTagIDL"></param>
+        /// <param name="weight"></param>
+        /// <param name="trainingTestExcerptId"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="trainingTestResultIDL"></param>
+        public TrainingTestTagApp(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? trainingTestIDL,
+            global::System.DateTime? createdOn,
+            global::System.Guid? trainingTagIDL,
+            double? weight,
+            global::System.Guid? trainingTestExcerptId,
+            global::System.Guid? projectIDL,
+            global::System.Guid? trainingTestResultIDL)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.TrainingTestIDL = trainingTestIDL;
+            this.CreatedOn = createdOn;
+            this.TrainingTagIDL = trainingTagIDL;
+            this.Weight = weight;
+            this.TrainingTestExcerptId = trainingTestExcerptId;
+            this.ProjectIDL = projectIDL;
+            this.TrainingTestResultIDL = trainingTestResultIDL;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingTestTagApp" /> class.
+        /// </summary>
+        public TrainingTestTagApp()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

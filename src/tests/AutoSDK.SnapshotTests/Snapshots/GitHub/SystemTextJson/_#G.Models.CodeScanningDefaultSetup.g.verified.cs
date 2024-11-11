@@ -48,6 +48,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningDefaultSetup" /> class.
+        /// </summary>
+        /// <param name="state">
+        /// Code scanning default setup has been configured or not.
+        /// </param>
+        /// <param name="languages">
+        /// Languages to be analyzed.
+        /// </param>
+        /// <param name="querySuite">
+        /// CodeQL query suite to be used.
+        /// </param>
+        /// <param name="updatedAt">
+        /// Timestamp of latest configuration update.
+        /// </param>
+        /// <param name="schedule">
+        /// The frequency of the periodic analysis.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeScanningDefaultSetup(
+            global::G.CodeScanningDefaultSetupState? state,
+            global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupLanguage>? languages,
+            global::G.CodeScanningDefaultSetupQuerySuite? querySuite,
+            global::System.DateTime? updatedAt,
+            global::G.CodeScanningDefaultSetupSchedule? schedule)
+        {
+            this.State = state;
+            this.Languages = languages;
+            this.QuerySuite = querySuite;
+            this.UpdatedAt = updatedAt;
+            this.Schedule = schedule;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningDefaultSetup" /> class.
+        /// </summary>
+        public CodeScanningDefaultSetup()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

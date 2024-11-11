@@ -65,6 +65,58 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistComment" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 1
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDExOkdpc3RDb21tZW50MQ==
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/gists/a6db0bec360bb87e9418/comments/1
+        /// </param>
+        /// <param name="body">
+        /// The comment text.<br/>
+        /// Example: Body of the attachment
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        public GistComment(
+            int id,
+            string nodeId,
+            string url,
+            string body,
+            global::G.NullableSimpleUser? user,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::G.AuthorAssociation authorAssociation)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.AuthorAssociation = authorAssociation;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistComment" /> class.
+        /// </summary>
+        public GistComment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

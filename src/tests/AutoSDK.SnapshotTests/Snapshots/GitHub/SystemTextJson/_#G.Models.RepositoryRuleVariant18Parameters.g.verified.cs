@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleVariant18Parameters" /> class.
+        /// </summary>
+        /// <param name="restrictedFileExtensions">
+        /// The file extensions that are restricted from being pushed to the commit graph.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryRuleVariant18Parameters(
+            global::System.Collections.Generic.IList<string> restrictedFileExtensions)
+        {
+            this.RestrictedFileExtensions = restrictedFileExtensions ?? throw new global::System.ArgumentNullException(nameof(restrictedFileExtensions));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleVariant18Parameters" /> class.
+        /// </summary>
+        public RepositoryRuleVariant18Parameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

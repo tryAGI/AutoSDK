@@ -69,6 +69,57 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConversationalRagConfig" /> class.
+        /// </summary>
+        /// <param name="messages">
+        /// messages
+        /// </param>
+        /// <param name="path"></param>
+        /// <param name="labels"></param>
+        /// <param name="fileIds"></param>
+        /// <param name="maxSegments">
+        /// Default Value: 15
+        /// </param>
+        /// <param name="retrievalStrategy">
+        /// Default Value: default
+        /// </param>
+        /// <param name="retrievalSimilarityThreshold">
+        /// Default Value: 0.8
+        /// </param>
+        /// <param name="maxNeighbors"></param>
+        /// <param name="hybridSearchAlpha">
+        /// Default Value: 0.98
+        /// </param>
+        public ConversationalRagConfig(
+            global::System.Collections.Generic.IList<global::G.Message> messages,
+            string? path,
+            global::System.Collections.Generic.IList<string>? labels,
+            global::System.Collections.Generic.IList<string>? fileIds,
+            int? maxSegments,
+            global::G.ConversationalRagConfigRetrievalStrategy? retrievalStrategy,
+            double? retrievalSimilarityThreshold,
+            int? maxNeighbors,
+            double? hybridSearchAlpha)
+        {
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
+            this.Path = path;
+            this.Labels = labels;
+            this.FileIds = fileIds;
+            this.MaxSegments = maxSegments;
+            this.RetrievalStrategy = retrievalStrategy;
+            this.RetrievalSimilarityThreshold = retrievalSimilarityThreshold;
+            this.MaxNeighbors = maxNeighbors;
+            this.HybridSearchAlpha = hybridSearchAlpha;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConversationalRagConfig" /> class.
+        /// </summary>
+        public ConversationalRagConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

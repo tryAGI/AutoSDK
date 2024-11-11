@@ -44,6 +44,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreditConsumptionChartRecord" /> class.
+        /// </summary>
+        /// <param name="namespaceId">
+        /// The ID of the namespace that owns the credit.
+        /// </param>
+        /// <param name="timeBuckets">
+        /// Time buckets.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="amount">
+        /// Total credit consumed in each time bucket.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="source">
+        /// Credit consumption source (e.g. "pipeline", "model").<br/>
+        /// Included only in responses
+        /// </param>
+        public CreditConsumptionChartRecord(
+            string namespaceId,
+            global::System.Collections.Generic.IList<global::System.DateTime>? timeBuckets,
+            global::System.Collections.Generic.IList<float>? amount,
+            string? source)
+        {
+            this.NamespaceId = namespaceId ?? throw new global::System.ArgumentNullException(nameof(namespaceId));
+            this.TimeBuckets = timeBuckets;
+            this.Amount = amount;
+            this.Source = source;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreditConsumptionChartRecord" /> class.
+        /// </summary>
+        public CreditConsumptionChartRecord()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

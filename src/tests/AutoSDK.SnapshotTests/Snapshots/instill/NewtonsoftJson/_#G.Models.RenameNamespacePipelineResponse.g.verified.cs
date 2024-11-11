@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RenameNamespacePipelineResponse" /> class.
+        /// </summary>
+        /// <param name="pipeline">
+        /// The renamed pipeline resource.<br/>
+        /// Included only in responses
+        /// </param>
+        public RenameNamespacePipelineResponse(
+            global::G.Pipeline? pipeline)
+        {
+            this.Pipeline = pipeline;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RenameNamespacePipelineResponse" /> class.
+        /// </summary>
+        public RenameNamespacePipelineResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

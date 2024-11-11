@@ -64,6 +64,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VoiceGenerationParameterResponseModel" /> class.
+        /// </summary>
+        /// <param name="genders"></param>
+        /// <param name="accents"></param>
+        /// <param name="ages"></param>
+        /// <param name="minimumCharacters"></param>
+        /// <param name="maximumCharacters"></param>
+        /// <param name="minimumAccentStrength"></param>
+        /// <param name="maximumAccentStrength"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public VoiceGenerationParameterResponseModel(
+            global::System.Collections.Generic.IList<global::G.VoiceGenerationParameterOptionResponseModel> genders,
+            global::System.Collections.Generic.IList<global::G.VoiceGenerationParameterOptionResponseModel> accents,
+            global::System.Collections.Generic.IList<global::G.VoiceGenerationParameterOptionResponseModel> ages,
+            int minimumCharacters,
+            int maximumCharacters,
+            double minimumAccentStrength,
+            double maximumAccentStrength)
+        {
+            this.Genders = genders ?? throw new global::System.ArgumentNullException(nameof(genders));
+            this.Accents = accents ?? throw new global::System.ArgumentNullException(nameof(accents));
+            this.Ages = ages ?? throw new global::System.ArgumentNullException(nameof(ages));
+            this.MinimumCharacters = minimumCharacters;
+            this.MaximumCharacters = maximumCharacters;
+            this.MinimumAccentStrength = minimumAccentStrength;
+            this.MaximumAccentStrength = maximumAccentStrength;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VoiceGenerationParameterResponseModel" /> class.
+        /// </summary>
+        public VoiceGenerationParameterResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

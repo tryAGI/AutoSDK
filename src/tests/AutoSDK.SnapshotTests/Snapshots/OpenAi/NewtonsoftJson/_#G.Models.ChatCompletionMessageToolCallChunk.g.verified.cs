@@ -39,6 +39,36 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionMessageToolCallChunk" /> class.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="id">
+        /// The ID of the tool call.
+        /// </param>
+        /// <param name="type">
+        /// The type of the tool. Currently, only `function` is supported.
+        /// </param>
+        /// <param name="function"></param>
+        public ChatCompletionMessageToolCallChunk(
+            int index,
+            string? id,
+            global::G.ChatCompletionMessageToolCallChunkType? type,
+            global::G.ChatCompletionMessageToolCallChunkFunction? function)
+        {
+            this.Index = index;
+            this.Id = id;
+            this.Type = type;
+            this.Function = function;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionMessageToolCallChunk" /> class.
+        /// </summary>
+        public ChatCompletionMessageToolCallChunk()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

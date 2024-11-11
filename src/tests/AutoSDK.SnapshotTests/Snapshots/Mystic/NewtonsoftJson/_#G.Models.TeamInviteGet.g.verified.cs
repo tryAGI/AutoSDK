@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamInviteGet" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="email"></param>
+        /// <param name="teamId"></param>
+        /// <param name="teamName"></param>
+        public TeamInviteGet(
+            string id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string email,
+            string teamId,
+            string teamName)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.TeamId = teamId ?? throw new global::System.ArgumentNullException(nameof(teamId));
+            this.TeamName = teamName ?? throw new global::System.ArgumentNullException(nameof(teamName));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamInviteGet" /> class.
+        /// </summary>
+        public TeamInviteGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

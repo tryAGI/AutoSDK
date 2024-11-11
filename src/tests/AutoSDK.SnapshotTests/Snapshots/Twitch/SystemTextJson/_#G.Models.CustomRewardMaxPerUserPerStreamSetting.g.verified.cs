@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomRewardMaxPerUserPerStreamSetting" /> class.
+        /// </summary>
+        /// <param name="isEnabled">
+        /// A Boolean value that determines whether the reward applies a limit on the number of redemptions allowed per user per live stream. Is **true** if the reward applies a limit.
+        /// </param>
+        /// <param name="maxPerUserPerStream">
+        /// The maximum number of redemptions allowed per user per live stream.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomRewardMaxPerUserPerStreamSetting(
+            bool isEnabled,
+            long maxPerUserPerStream)
+        {
+            this.IsEnabled = isEnabled;
+            this.MaxPerUserPerStream = maxPerUserPerStream;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomRewardMaxPerUserPerStreamSetting" /> class.
+        /// </summary>
+        public CustomRewardMaxPerUserPerStreamSetting()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

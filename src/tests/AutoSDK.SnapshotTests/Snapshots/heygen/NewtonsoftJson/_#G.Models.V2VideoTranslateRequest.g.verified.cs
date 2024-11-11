@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoTranslateRequest" /> class.
+        /// </summary>
+        /// <param name="outputLanguage">
+        /// Example: English - American Accent
+        /// </param>
+        /// <param name="speakerNum">
+        /// Example: 1
+        /// </param>
+        /// <param name="title">
+        /// Example: My Title
+        /// </param>
+        /// <param name="translateAudioOnly">
+        /// Example: false
+        /// </param>
+        /// <param name="videoUrl">
+        /// Example: https://static.heygen.ai/heygen/asset/originalnew.mp4
+        /// </param>
+        public V2VideoTranslateRequest(
+            string? outputLanguage,
+            double? speakerNum,
+            string? title,
+            bool? translateAudioOnly,
+            string? videoUrl)
+        {
+            this.OutputLanguage = outputLanguage;
+            this.SpeakerNum = speakerNum;
+            this.Title = title;
+            this.TranslateAudioOnly = translateAudioOnly;
+            this.VideoUrl = videoUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoTranslateRequest" /> class.
+        /// </summary>
+        public V2VideoTranslateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

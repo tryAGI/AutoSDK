@@ -81,6 +81,75 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryUpdate" /> class.
+        /// </summary>
+        /// <param name="summary">
+        /// A short summary of the advisory.
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of what the advisory impacts.
+        /// </param>
+        /// <param name="cveId">
+        /// The Common Vulnerabilities and Exposures (CVE) ID.
+        /// </param>
+        /// <param name="vulnerabilities">
+        /// A product affected by the vulnerability detailed in a repository security advisory.
+        /// </param>
+        /// <param name="cweIds">
+        /// A list of Common Weakness Enumeration (CWE) IDs.
+        /// </param>
+        /// <param name="credits">
+        /// A list of users receiving credit for their participation in the security advisory.
+        /// </param>
+        /// <param name="severity">
+        /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
+        /// </param>
+        /// <param name="cvssVectorString">
+        /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
+        /// </param>
+        /// <param name="state">
+        /// The state of the advisory.
+        /// </param>
+        /// <param name="collaboratingUsers">
+        /// A list of usernames who have been granted write access to the advisory.
+        /// </param>
+        /// <param name="collaboratingTeams">
+        /// A list of team slugs which have been granted write access to the advisory.
+        /// </param>
+        public RepositoryAdvisoryUpdate(
+            string? summary,
+            string? description,
+            string? cveId,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateVulnerabilitie>? vulnerabilities,
+            global::System.Collections.Generic.IList<string>? cweIds,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryUpdateCredit>? credits,
+            global::G.RepositoryAdvisoryUpdateSeverity? severity,
+            string? cvssVectorString,
+            global::G.RepositoryAdvisoryUpdateState? state,
+            global::System.Collections.Generic.IList<string>? collaboratingUsers,
+            global::System.Collections.Generic.IList<string>? collaboratingTeams)
+        {
+            this.Summary = summary;
+            this.Description = description;
+            this.CveId = cveId;
+            this.Vulnerabilities = vulnerabilities;
+            this.CweIds = cweIds;
+            this.Credits = credits;
+            this.Severity = severity;
+            this.CvssVectorString = cvssVectorString;
+            this.State = state;
+            this.CollaboratingUsers = collaboratingUsers;
+            this.CollaboratingTeams = collaboratingTeams;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryUpdate" /> class.
+        /// </summary>
+        public RepositoryAdvisoryUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -47,6 +47,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackUpdateSchema" /> class.
+        /// </summary>
+        /// <param name="score"></param>
+        /// <param name="value"></param>
+        /// <param name="comment"></param>
+        /// <param name="correction"></param>
+        /// <param name="feedbackConfig"></param>
+        public FeedbackUpdateSchema(
+            global::G.AnyOf<double?, int?, bool?>? score,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value,
+            string? comment,
+            global::G.AnyOf<object, string>? correction,
+            global::G.FeedbackConfig? feedbackConfig)
+        {
+            this.Score = score;
+            this.Value = value;
+            this.Comment = comment;
+            this.Correction = correction;
+            this.FeedbackConfig = feedbackConfig;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackUpdateSchema" /> class.
+        /// </summary>
+        public FeedbackUpdateSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

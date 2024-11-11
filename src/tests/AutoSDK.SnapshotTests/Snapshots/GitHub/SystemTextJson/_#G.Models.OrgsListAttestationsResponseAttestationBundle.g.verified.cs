@@ -34,6 +34,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsListAttestationsResponseAttestationBundle" /> class.
+        /// </summary>
+        /// <param name="mediaType"></param>
+        /// <param name="verificationMaterial"></param>
+        /// <param name="dsseEnvelope"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrgsListAttestationsResponseAttestationBundle(
+            string? mediaType,
+            object? verificationMaterial,
+            object? dsseEnvelope)
+        {
+            this.MediaType = mediaType;
+            this.VerificationMaterial = verificationMaterial;
+            this.DsseEnvelope = dsseEnvelope;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsListAttestationsResponseAttestationBundle" /> class.
+        /// </summary>
+        public OrgsListAttestationsResponseAttestationBundle()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

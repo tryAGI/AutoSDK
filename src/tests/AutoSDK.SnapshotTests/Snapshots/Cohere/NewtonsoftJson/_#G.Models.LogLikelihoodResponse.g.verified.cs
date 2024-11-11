@@ -45,6 +45,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogLikelihoodResponse" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="promptTokens">
+        /// Probabilities for tokens in the request prompt
+        /// </param>
+        /// <param name="completionTokens">
+        /// Probabilities for tokens in the request completion
+        /// </param>
+        /// <param name="rawPromptTokens">
+        /// Probabilities for tokens in the request raw_prompt
+        /// </param>
+        /// <param name="meta"></param>
+        public LogLikelihoodResponse(
+            string id,
+            global::System.Collections.Generic.IList<global::G.TokenLikelihood> promptTokens,
+            global::System.Collections.Generic.IList<global::G.TokenLikelihood> completionTokens,
+            global::System.Collections.Generic.IList<global::G.TokenLikelihood> rawPromptTokens,
+            global::G.ApiMeta? meta)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.PromptTokens = promptTokens ?? throw new global::System.ArgumentNullException(nameof(promptTokens));
+            this.CompletionTokens = completionTokens ?? throw new global::System.ArgumentNullException(nameof(completionTokens));
+            this.RawPromptTokens = rawPromptTokens ?? throw new global::System.ArgumentNullException(nameof(rawPromptTokens));
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogLikelihoodResponse" /> class.
+        /// </summary>
+        public LogLikelihoodResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

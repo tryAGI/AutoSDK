@@ -125,6 +125,114 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhereFilter" /> class.
+        /// </summary>
+        /// <param name="operands">
+        /// combine multiple where filters, requires 'And' or 'Or' operator
+        /// </param>
+        /// <param name="operator">
+        /// operator to use<br/>
+        /// Example: GreaterThanEqual
+        /// </param>
+        /// <param name="path">
+        /// path to the property currently being filtered<br/>
+        /// Example: [inCity, City, name]
+        /// </param>
+        /// <param name="valueInt">
+        /// value as integer<br/>
+        /// Example: 2000L
+        /// </param>
+        /// <param name="valueNumber">
+        /// value as number/float<br/>
+        /// Example: 3.14
+        /// </param>
+        /// <param name="valueBoolean">
+        /// value as boolean<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="valueString">
+        /// value as text (deprecated as of v1.19; alias for valueText)<br/>
+        /// Example: my search term
+        /// </param>
+        /// <param name="valueText">
+        /// value as text<br/>
+        /// Example: my search term
+        /// </param>
+        /// <param name="valueDate">
+        /// value as date (as string)<br/>
+        /// Example: TODO
+        /// </param>
+        /// <param name="valueIntArray">
+        /// value as integer<br/>
+        /// Example: [100, 200]
+        /// </param>
+        /// <param name="valueNumberArray">
+        /// value as number/float<br/>
+        /// Example: [3.14]
+        /// </param>
+        /// <param name="valueBooleanArray">
+        /// value as boolean<br/>
+        /// Example: [true, false]
+        /// </param>
+        /// <param name="valueStringArray">
+        /// value as text (deprecated as of v1.19; alias for valueText)<br/>
+        /// Example: [my search term]
+        /// </param>
+        /// <param name="valueTextArray">
+        /// value as text<br/>
+        /// Example: [my search term]
+        /// </param>
+        /// <param name="valueDateArray">
+        /// value as date (as string)<br/>
+        /// Example: TODO
+        /// </param>
+        /// <param name="valueGeoRange">
+        /// filter within a distance of a georange
+        /// </param>
+        public WhereFilter(
+            global::System.Collections.Generic.IList<global::G.WhereFilter>? operands,
+            global::G.WhereFilterOperator? @operator,
+            global::System.Collections.Generic.IList<string>? path,
+            long? valueInt,
+            double? valueNumber,
+            bool? valueBoolean,
+            string? valueString,
+            string? valueText,
+            string? valueDate,
+            global::System.Collections.Generic.IList<long>? valueIntArray,
+            global::System.Collections.Generic.IList<double>? valueNumberArray,
+            global::System.Collections.Generic.IList<bool>? valueBooleanArray,
+            global::System.Collections.Generic.IList<string>? valueStringArray,
+            global::System.Collections.Generic.IList<string>? valueTextArray,
+            global::System.Collections.Generic.IList<string>? valueDateArray,
+            global::G.WhereFilterGeoRange? valueGeoRange)
+        {
+            this.Operands = operands;
+            this.Operator = @operator;
+            this.Path = path;
+            this.ValueInt = valueInt;
+            this.ValueNumber = valueNumber;
+            this.ValueBoolean = valueBoolean;
+            this.ValueString = valueString;
+            this.ValueText = valueText;
+            this.ValueDate = valueDate;
+            this.ValueIntArray = valueIntArray;
+            this.ValueNumberArray = valueNumberArray;
+            this.ValueBooleanArray = valueBooleanArray;
+            this.ValueStringArray = valueStringArray;
+            this.ValueTextArray = valueTextArray;
+            this.ValueDateArray = valueDateArray;
+            this.ValueGeoRange = valueGeoRange;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhereFilter" /> class.
+        /// </summary>
+        public WhereFilter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

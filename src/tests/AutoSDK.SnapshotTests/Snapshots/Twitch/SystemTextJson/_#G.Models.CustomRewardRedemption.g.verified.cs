@@ -97,6 +97,80 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomRewardRedemption" /> class.
+        /// </summary>
+        /// <param name="broadcasterId">
+        /// The ID that uniquely identifies the broadcaster.
+        /// </param>
+        /// <param name="broadcasterLogin">
+        /// The broadcaster’s login name.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The broadcaster’s display name.
+        /// </param>
+        /// <param name="id">
+        /// The ID that uniquely identifies this redemption..
+        /// </param>
+        /// <param name="userId">
+        /// The ID of the user that redeemed the reward.
+        /// </param>
+        /// <param name="userName">
+        /// The user’s display name.
+        /// </param>
+        /// <param name="userLogin">
+        /// The user’s login name.
+        /// </param>
+        /// <param name="reward">
+        /// An object that describes the reward that the user redeemed.
+        /// </param>
+        /// <param name="userInput">
+        /// The text that the user entered at the prompt when they redeemed the reward; otherwise, an empty string if user input was not required.
+        /// </param>
+        /// <param name="status">
+        /// The state of the redemption. Possible values are:  <br/>
+        ///   <br/>
+        /// * CANCELED<br/>
+        /// * FULFILLED<br/>
+        /// * UNFULFILLED
+        /// </param>
+        /// <param name="redeemedAt">
+        /// The date and time of when the reward was redeemed, in RFC3339 format.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomRewardRedemption(
+            string broadcasterId,
+            string broadcasterLogin,
+            string broadcasterName,
+            string id,
+            string userId,
+            string userName,
+            string userLogin,
+            global::G.CustomRewardRedemptionReward reward,
+            string userInput,
+            global::G.CustomRewardRedemptionStatus status,
+            global::System.DateTime redeemedAt)
+        {
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+            this.Reward = reward ?? throw new global::System.ArgumentNullException(nameof(reward));
+            this.UserInput = userInput ?? throw new global::System.ArgumentNullException(nameof(userInput));
+            this.Status = status;
+            this.RedeemedAt = redeemedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomRewardRedemption" /> class.
+        /// </summary>
+        public CustomRewardRedemption()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

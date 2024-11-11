@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheUsageOrgEnterprise" /> class.
+        /// </summary>
+        /// <param name="totalActiveCachesCount">
+        /// The count of active caches across all repositories of an enterprise or an organization.
+        /// </param>
+        /// <param name="totalActiveCachesSizeInBytes">
+        /// The total size in bytes of all active cache items across all repositories of an enterprise or an organization.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsCacheUsageOrgEnterprise(
+            int totalActiveCachesCount,
+            int totalActiveCachesSizeInBytes)
+        {
+            this.TotalActiveCachesCount = totalActiveCachesCount;
+            this.TotalActiveCachesSizeInBytes = totalActiveCachesSizeInBytes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheUsageOrgEnterprise" /> class.
+        /// </summary>
+        public ActionsCacheUsageOrgEnterprise()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

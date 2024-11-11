@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetVersion" /> class.
+        /// </summary>
+        /// <param name="tags"></param>
+        /// <param name="asOf"></param>
+        public DatasetVersion(
+            global::System.DateTime asOf,
+            global::System.Collections.Generic.IList<string>? tags)
+        {
+            this.AsOf = asOf;
+            this.Tags = tags;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetVersion" /> class.
+        /// </summary>
+        public DatasetVersion()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesPreFlightWithRepoForAuthenticatedUserResponse" /> class.
+        /// </summary>
+        /// <param name="billableOwner">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="defaults"></param>
+        public CodespacesPreFlightWithRepoForAuthenticatedUserResponse(
+            global::G.SimpleUser? billableOwner,
+            global::G.CodespacesPreFlightWithRepoForAuthenticatedUserResponseDefaults? defaults)
+        {
+            this.BillableOwner = billableOwner;
+            this.Defaults = defaults;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesPreFlightWithRepoForAuthenticatedUserResponse" /> class.
+        /// </summary>
+        public CodespacesPreFlightWithRepoForAuthenticatedUserResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

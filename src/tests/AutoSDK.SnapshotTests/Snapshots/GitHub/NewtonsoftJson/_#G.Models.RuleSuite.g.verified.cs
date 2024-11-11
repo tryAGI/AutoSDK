@@ -81,6 +81,73 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RuleSuite" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The unique identifier of the rule insight.
+        /// </param>
+        /// <param name="actorId">
+        /// The number that identifies the user.
+        /// </param>
+        /// <param name="actorName">
+        /// The handle for the GitHub user account.
+        /// </param>
+        /// <param name="beforeSha">
+        /// The first commit sha before the push evaluation.
+        /// </param>
+        /// <param name="afterSha">
+        /// The last commit sha in the push evaluation.
+        /// </param>
+        /// <param name="ref">
+        /// The ref name that the evaluation ran on.
+        /// </param>
+        /// <param name="repositoryId">
+        /// The ID of the repository associated with the rule evaluation.
+        /// </param>
+        /// <param name="repositoryName">
+        /// The name of the repository without the `.git` extension.
+        /// </param>
+        /// <param name="pushedAt"></param>
+        /// <param name="result">
+        /// The result of the rule evaluations for rules with the `active` enforcement status.
+        /// </param>
+        /// <param name="evaluationResult">
+        /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+        /// </param>
+        public RuleSuite(
+            int? id,
+            int? actorId,
+            string? actorName,
+            string? beforeSha,
+            string? afterSha,
+            string? @ref,
+            int? repositoryId,
+            string? repositoryName,
+            global::System.DateTime? pushedAt,
+            global::G.RuleSuiteResult? result,
+            global::G.RuleSuiteEvaluationResult? evaluationResult)
+        {
+            this.Id = id;
+            this.ActorId = actorId;
+            this.ActorName = actorName;
+            this.BeforeSha = beforeSha;
+            this.AfterSha = afterSha;
+            this.Ref = @ref;
+            this.RepositoryId = repositoryId;
+            this.RepositoryName = repositoryName;
+            this.PushedAt = pushedAt;
+            this.Result = result;
+            this.EvaluationResult = evaluationResult;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RuleSuite" /> class.
+        /// </summary>
+        public RuleSuite()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

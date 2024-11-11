@@ -46,6 +46,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterViewCreate" /> class.
+        /// </summary>
+        /// <param name="filterString"></param>
+        /// <param name="traceFilterString"></param>
+        /// <param name="treeFilterString"></param>
+        /// <param name="displayName"></param>
+        /// <param name="description"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FilterViewCreate(
+            string displayName,
+            string? filterString,
+            string? traceFilterString,
+            string? treeFilterString,
+            string? description)
+        {
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.FilterString = filterString;
+            this.TraceFilterString = traceFilterString;
+            this.TreeFilterString = treeFilterString;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterViewCreate" /> class.
+        /// </summary>
+        public FilterViewCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

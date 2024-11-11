@@ -47,6 +47,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingDeployment" /> class.
+        /// </summary>
+        /// <param name="environment"></param>
+        /// <param name="waitTimer">
+        /// The set duration of the wait timer<br/>
+        /// Example: 30
+        /// </param>
+        /// <param name="waitTimerStartedAt">
+        /// The time that the wait timer began.
+        /// </param>
+        /// <param name="currentUserCanApprove">
+        /// Whether the currently authenticated user can approve the deployment<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="reviewers">
+        /// The people or teams that may approve jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
+        /// </param>
+        public PendingDeployment(
+            global::G.PendingDeploymentEnvironment environment,
+            int waitTimer,
+            global::System.DateTime? waitTimerStartedAt,
+            bool currentUserCanApprove,
+            global::System.Collections.Generic.IList<global::G.PendingDeploymentReviewer> reviewers)
+        {
+            this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
+            this.WaitTimer = waitTimer;
+            this.WaitTimerStartedAt = waitTimerStartedAt;
+            this.CurrentUserCanApprove = currentUserCanApprove;
+            this.Reviewers = reviewers ?? throw new global::System.ArgumentNullException(nameof(reviewers));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingDeployment" /> class.
+        /// </summary>
+        public PendingDeployment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

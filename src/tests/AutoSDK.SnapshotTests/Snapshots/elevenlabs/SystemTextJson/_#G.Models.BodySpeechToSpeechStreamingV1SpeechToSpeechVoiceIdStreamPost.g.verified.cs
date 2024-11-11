@@ -48,6 +48,47 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost" /> class.
+        /// </summary>
+        /// <param name="audio">
+        /// The audio file which holds the content and emotion that will control the generated speech.
+        /// </param>
+        /// <param name="audioname">
+        /// The audio file which holds the content and emotion that will control the generated speech.
+        /// </param>
+        /// <param name="modelId">
+        /// Identifier of the model that will be used, you can query them using GET /v1/models. The model needs to have support for speech to speech, you can check this using the can_do_voice_conversion property.<br/>
+        /// Default Value: eleven_english_sts_v2
+        /// </param>
+        /// <param name="voiceSettings">
+        /// Voice settings overriding stored setttings for the given voice. They are applied only on the given request. Needs to be send as a JSON encoded string.
+        /// </param>
+        /// <param name="seed">
+        /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost(
+            byte[] audio,
+            string audioname,
+            string? modelId,
+            string? voiceSettings,
+            int? seed)
+        {
+            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
+            this.Audioname = audioname ?? throw new global::System.ArgumentNullException(nameof(audioname));
+            this.ModelId = modelId;
+            this.VoiceSettings = voiceSettings;
+            this.Seed = seed;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost" /> class.
+        /// </summary>
+        public BodySpeechToSpeechStreamingV1SpeechToSpeechVoiceIdStreamPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistsUpdateRequestFiles2" /> class.
+        /// </summary>
+        /// <param name="content">
+        /// The new content of the file.
+        /// </param>
+        /// <param name="filename">
+        /// The new filename for the file.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GistsUpdateRequestFiles2(
+            string? content,
+            string? filename)
+        {
+            this.Content = content;
+            this.Filename = filename;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistsUpdateRequestFiles2" /> class.
+        /// </summary>
+        public GistsUpdateRequestFiles2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

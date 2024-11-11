@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadUnresolvedThread" /> class.
+        /// </summary>
+        /// <param name="comments"></param>
+        /// <param name="nodeId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookPullRequestReviewThreadUnresolvedThread(
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedThreadComment> comments,
+            string nodeId)
+        {
+            this.Comments = comments ?? throw new global::System.ArgumentNullException(nameof(comments));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadUnresolvedThread" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewThreadUnresolvedThread()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

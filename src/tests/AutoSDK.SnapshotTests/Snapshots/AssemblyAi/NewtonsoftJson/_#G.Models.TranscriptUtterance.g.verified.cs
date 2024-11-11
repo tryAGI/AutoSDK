@@ -51,6 +51,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TranscriptUtterance" /> class.
+        /// </summary>
+        /// <param name="confidence">
+        /// The confidence score for the transcript of this utterance
+        /// </param>
+        /// <param name="start">
+        /// The starting time, in milliseconds, of the utterance in the audio file
+        /// </param>
+        /// <param name="end">
+        /// The ending time, in milliseconds, of the utterance in the audio file
+        /// </param>
+        /// <param name="text">
+        /// The text for this utterance
+        /// </param>
+        /// <param name="words">
+        /// The words in the utterance.
+        /// </param>
+        /// <param name="speaker">
+        /// The speaker of this utterance, where each speaker is assigned a sequential capital letter - e.g. "A" for Speaker A, "B" for Speaker B, etc.
+        /// </param>
+        public TranscriptUtterance(
+            double confidence,
+            int start,
+            int end,
+            string text,
+            global::System.Collections.Generic.IList<global::G.TranscriptWord> words,
+            string speaker)
+        {
+            this.Confidence = confidence;
+            this.Start = start;
+            this.End = end;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Words = words ?? throw new global::System.ArgumentNullException(nameof(words));
+            this.Speaker = speaker ?? throw new global::System.ArgumentNullException(nameof(speaker));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TranscriptUtterance" /> class.
+        /// </summary>
+        public TranscriptUtterance()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

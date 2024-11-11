@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidateUserResult" /> class.
+        /// </summary>
+        /// <param name="userData"></param>
+        /// <param name="isFederated"></param>
+        /// <param name="accountIdleTimeout"></param>
+        /// <param name="accountRequire2Factor"></param>
+        /// <param name="accountRequire2FactorOnRelog"></param>
+        /// <param name="isValidated"></param>
+        public ValidateUserResult(
+            global::G.User? userData,
+            bool? isFederated,
+            int? accountIdleTimeout,
+            bool? accountRequire2Factor,
+            bool? accountRequire2FactorOnRelog,
+            bool? isValidated)
+        {
+            this.UserData = userData;
+            this.IsFederated = isFederated;
+            this.AccountIdleTimeout = accountIdleTimeout;
+            this.AccountRequire2Factor = accountRequire2Factor;
+            this.AccountRequire2FactorOnRelog = accountRequire2FactorOnRelog;
+            this.IsValidated = isValidated;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidateUserResult" /> class.
+        /// </summary>
+        public ValidateUserResult()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

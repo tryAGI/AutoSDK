@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsFunctionObject" /> class.
+        /// </summary>
+        /// <param name="index">
+        /// The index of the tool call in the tool calls array.
+        /// </param>
+        /// <param name="id">
+        /// The ID of the tool call object.
+        /// </param>
+        /// <param name="type">
+        /// The type of tool call. This is always going to be `function` for this type of tool call.
+        /// </param>
+        /// <param name="function">
+        /// The definition of the function that was called.
+        /// </param>
+        public RunStepDeltaStepDetailsToolCallsFunctionObject(
+            int index,
+            string? id,
+            global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectType type,
+            global::G.RunStepDeltaStepDetailsToolCallsFunctionObjectFunction? function)
+        {
+            this.Index = index;
+            this.Id = id;
+            this.Type = type;
+            this.Function = function;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsFunctionObject" /> class.
+        /// </summary>
+        public RunStepDeltaStepDetailsToolCallsFunctionObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Delete3DModelByIdResponse" /> class.
+        /// </summary>
+        /// <param name="deleteModelAssetsByPk">
+        /// columns and relationships of "model_assets"
+        /// </param>
+        public Delete3DModelByIdResponse(
+            global::G.Delete3DModelByIdResponseDeleteModelAssetsByPk? deleteModelAssetsByPk)
+        {
+            this.DeleteModelAssetsByPk = deleteModelAssetsByPk;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Delete3DModelByIdResponse" /> class.
+        /// </summary>
+        public Delete3DModelByIdResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

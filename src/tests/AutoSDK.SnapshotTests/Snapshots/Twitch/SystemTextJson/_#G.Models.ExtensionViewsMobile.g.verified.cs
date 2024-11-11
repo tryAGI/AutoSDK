@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionViewsMobile" /> class.
+        /// </summary>
+        /// <param name="viewerUrl">
+        /// The HTML file that is shown to viewers on mobile devices. This page is presented to viewers as a panel behind the chat area of the mobile app.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ExtensionViewsMobile(
+            string viewerUrl)
+        {
+            this.ViewerUrl = viewerUrl ?? throw new global::System.ArgumentNullException(nameof(viewerUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionViewsMobile" /> class.
+        /// </summary>
+        public ExtensionViewsMobile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

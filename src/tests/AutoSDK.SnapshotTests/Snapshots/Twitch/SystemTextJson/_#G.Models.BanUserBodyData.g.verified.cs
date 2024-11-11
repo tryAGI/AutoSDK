@@ -38,6 +38,40 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BanUserBodyData" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// The ID of the user to ban or put in a timeout.
+        /// </param>
+        /// <param name="duration">
+        /// To ban a user indefinitely, don’t include this field.  <br/>
+        ///   <br/>
+        /// To put a user in a timeout, include this field and specify the timeout period, in seconds. The minimum timeout is 1 second and the maximum is 1,209,600 seconds (2 weeks).  <br/>
+        ///   <br/>
+        /// To end a user’s timeout early, set this field to 1, or use the [Unban user](https://dev.twitch.tv/docs/api/reference#unban-user) endpoint.
+        /// </param>
+        /// <param name="reason">
+        /// The reason the you’re banning the user or putting them in a timeout. The text is user defined and is limited to a maximum of 500 characters.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BanUserBodyData(
+            string userId,
+            int? duration,
+            string? reason)
+        {
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.Duration = duration;
+            this.Reason = reason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BanUserBodyData" /> class.
+        /// </summary>
+        public BanUserBodyData()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

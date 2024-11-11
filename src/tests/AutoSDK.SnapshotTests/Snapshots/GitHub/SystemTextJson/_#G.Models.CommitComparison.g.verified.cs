@@ -106,6 +106,82 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitComparison" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/compare/master...topic
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat/Hello-World/compare/master...topic
+        /// </param>
+        /// <param name="permalinkUrl">
+        /// Example: https://github.com/octocat/Hello-World/compare/octocat:bbcd538c8e72b8c175046e27cc8f907076331401...octocat:0328041d1152db8ae77652d1618a02e57f745f17
+        /// </param>
+        /// <param name="diffUrl">
+        /// Example: https://github.com/octocat/Hello-World/compare/master...topic.diff
+        /// </param>
+        /// <param name="patchUrl">
+        /// Example: https://github.com/octocat/Hello-World/compare/master...topic.patch
+        /// </param>
+        /// <param name="baseCommit">
+        /// Commit
+        /// </param>
+        /// <param name="mergeBaseCommit">
+        /// Commit
+        /// </param>
+        /// <param name="status">
+        /// Example: ahead
+        /// </param>
+        /// <param name="aheadBy">
+        /// Example: 4
+        /// </param>
+        /// <param name="behindBy">
+        /// Example: 5
+        /// </param>
+        /// <param name="totalCommits">
+        /// Example: 6
+        /// </param>
+        /// <param name="commits"></param>
+        /// <param name="files"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CommitComparison(
+            string url,
+            string htmlUrl,
+            string permalinkUrl,
+            string diffUrl,
+            string patchUrl,
+            global::G.Commit baseCommit,
+            global::G.Commit mergeBaseCommit,
+            global::G.CommitComparisonStatus status,
+            int aheadBy,
+            int behindBy,
+            int totalCommits,
+            global::System.Collections.Generic.IList<global::G.Commit> commits,
+            global::System.Collections.Generic.IList<global::G.DiffEntry>? files)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.PermalinkUrl = permalinkUrl ?? throw new global::System.ArgumentNullException(nameof(permalinkUrl));
+            this.DiffUrl = diffUrl ?? throw new global::System.ArgumentNullException(nameof(diffUrl));
+            this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
+            this.BaseCommit = baseCommit ?? throw new global::System.ArgumentNullException(nameof(baseCommit));
+            this.MergeBaseCommit = mergeBaseCommit ?? throw new global::System.ArgumentNullException(nameof(mergeBaseCommit));
+            this.Status = status;
+            this.AheadBy = aheadBy;
+            this.BehindBy = behindBy;
+            this.TotalCommits = totalCommits;
+            this.Commits = commits ?? throw new global::System.ArgumentNullException(nameof(commits));
+            this.Files = files;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitComparison" /> class.
+        /// </summary>
+        public CommitComparison()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

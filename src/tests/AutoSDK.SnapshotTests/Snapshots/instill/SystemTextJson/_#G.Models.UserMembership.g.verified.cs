@@ -54,6 +54,52 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserMembership" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The resource name of the membership, which allows its access by user and<br/>
+        /// organization ID.<br/>
+        /// - Format: `users/{user.id}/memberships/{organization.id}`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="role">
+        /// Role of the user in the organization.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="state">
+        /// State of the membership.
+        /// </param>
+        /// <param name="user">
+        /// User information.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="organization">
+        /// Organization information.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UserMembership(
+            global::G.MembershipState state,
+            string? name,
+            string? role,
+            global::G.User? user,
+            global::G.Organization? organization)
+        {
+            this.State = state;
+            this.Name = name;
+            this.Role = role;
+            this.User = user;
+            this.Organization = organization;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserMembership" /> class.
+        /// </summary>
+        public UserMembership()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

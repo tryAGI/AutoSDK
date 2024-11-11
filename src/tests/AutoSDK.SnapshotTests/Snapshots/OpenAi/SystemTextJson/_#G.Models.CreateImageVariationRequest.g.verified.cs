@@ -73,6 +73,65 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateImageVariationRequest" /> class.
+        /// </summary>
+        /// <param name="image">
+        /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
+        /// </param>
+        /// <param name="imagename">
+        /// The image to use as the basis for the variation(s). Must be a valid PNG file, less than 4MB, and square.
+        /// </param>
+        /// <param name="model">
+        /// The model to use for image generation. Only `dall-e-2` is supported at this time.<br/>
+        /// Default Value: dall-e-2<br/>
+        /// Example: dall-e-2
+        /// </param>
+        /// <param name="n">
+        /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
+        /// Default Value: 1<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="responseFormat">
+        /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
+        /// Default Value: url<br/>
+        /// Example: url
+        /// </param>
+        /// <param name="size">
+        /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
+        /// Default Value: 1024x1024<br/>
+        /// Example: 1024x1024
+        /// </param>
+        /// <param name="user">
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
+        /// Example: user-1234
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateImageVariationRequest(
+            byte[] image,
+            string imagename,
+            global::G.AnyOf<string, global::G.CreateImageVariationRequestModel?>? model,
+            int? n,
+            global::G.CreateImageVariationRequestResponseFormat? responseFormat,
+            global::G.CreateImageVariationRequestSize? size,
+            string? user)
+        {
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
+            this.Model = model;
+            this.N = n;
+            this.ResponseFormat = responseFormat;
+            this.Size = size;
+            this.User = user;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateImageVariationRequest" /> class.
+        /// </summary>
+        public CreateImageVariationRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

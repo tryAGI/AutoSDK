@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HistoryAlignmentsResponseModel" /> class.
+        /// </summary>
+        /// <param name="alignment"></param>
+        /// <param name="normalizedAlignment"></param>
+        public HistoryAlignmentsResponseModel(
+            global::G.HistoryAlignmentResponseModel alignment,
+            global::G.HistoryAlignmentResponseModel normalizedAlignment)
+        {
+            this.Alignment = alignment ?? throw new global::System.ArgumentNullException(nameof(alignment));
+            this.NormalizedAlignment = normalizedAlignment ?? throw new global::System.ArgumentNullException(nameof(normalizedAlignment));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HistoryAlignmentsResponseModel" /> class.
+        /// </summary>
+        public HistoryAlignmentsResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

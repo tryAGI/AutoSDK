@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatSearchResultConnector" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The identifier of the connector.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatSearchResultConnector(
+            string id)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatSearchResultConnector" /> class.
+        /// </summary>
+        public ChatSearchResultConnector()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

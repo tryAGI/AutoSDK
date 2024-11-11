@@ -71,6 +71,65 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeownersErrorsError" /> class.
+        /// </summary>
+        /// <param name="line">
+        /// The line number where this errors occurs.<br/>
+        /// Example: 7
+        /// </param>
+        /// <param name="column">
+        /// The column number where this errors occurs.<br/>
+        /// Example: 3
+        /// </param>
+        /// <param name="source">
+        /// The contents of the line where the error occurs.<br/>
+        /// Example: * user
+        /// </param>
+        /// <param name="kind">
+        /// The type of error.<br/>
+        /// Example: Invalid owner
+        /// </param>
+        /// <param name="suggestion">
+        /// Suggested action to fix the error. This will usually be `null`, but is provided for some common errors.<br/>
+        /// Example: The pattern `/` will never match anything, did you mean `*` instead?
+        /// </param>
+        /// <param name="message">
+        /// A human-readable description of the error, combining information from multiple fields, laid out for display in a monospaced typeface (for example, a command-line setting).<br/>
+        /// Example: Invalid owner on line 7:<br/>
+        ///   * user<br/>
+        ///     ^
+        /// </param>
+        /// <param name="path">
+        /// The path of the file where the error occured.<br/>
+        /// Example: .github/CODEOWNERS
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeownersErrorsError(
+            int line,
+            int column,
+            string kind,
+            string message,
+            string path,
+            string? source,
+            string? suggestion)
+        {
+            this.Line = line;
+            this.Column = column;
+            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Source = source;
+            this.Suggestion = suggestion;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeownersErrorsError" /> class.
+        /// </summary>
+        public CodeownersErrorsError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

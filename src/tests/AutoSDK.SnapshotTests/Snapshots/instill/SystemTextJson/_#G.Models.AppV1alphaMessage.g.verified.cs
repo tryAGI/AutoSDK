@@ -72,6 +72,60 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppV1alphaMessage" /> class.
+        /// </summary>
+        /// <param name="uid">
+        /// Included only in responses
+        /// </param>
+        /// <param name="appUid">
+        /// Included only in responses
+        /// </param>
+        /// <param name="conversationUid">
+        /// Included only in responses
+        /// </param>
+        /// <param name="content"></param>
+        /// <param name="role"></param>
+        /// <param name="type"></param>
+        /// <param name="createTime">
+        /// Included only in responses
+        /// </param>
+        /// <param name="updateTime">
+        /// Included only in responses
+        /// </param>
+        /// <param name="msgSenderUid">
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AppV1alphaMessage(
+            string content,
+            string role,
+            string? uid,
+            string? appUid,
+            string? conversationUid,
+            global::G.MessageType type,
+            global::System.DateTime? createTime,
+            global::System.DateTime? updateTime,
+            string? msgSenderUid)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
+            this.Uid = uid;
+            this.AppUid = appUid;
+            this.ConversationUid = conversationUid;
+            this.Type = type;
+            this.CreateTime = createTime;
+            this.UpdateTime = updateTime;
+            this.MsgSenderUid = msgSenderUid;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppV1alphaMessage" /> class.
+        /// </summary>
+        public AppV1alphaMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

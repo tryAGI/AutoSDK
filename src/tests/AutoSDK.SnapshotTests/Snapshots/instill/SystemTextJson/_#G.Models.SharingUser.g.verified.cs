@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharingUser" /> class.
+        /// </summary>
+        /// <param name="enabled">
+        /// Defines whether the sharing option with this user is enabled.
+        /// </param>
+        /// <param name="role">
+        /// Defines the role the user will have over the resource.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SharingUser(
+            bool? enabled,
+            global::G.Role? role)
+        {
+            this.Enabled = enabled;
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SharingUser" /> class.
+        /// </summary>
+        public SharingUser()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

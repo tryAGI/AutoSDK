@@ -45,6 +45,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelCapabilities" /> class.
+        /// </summary>
+        /// <param name="completionChat">
+        /// Default Value: true
+        /// </param>
+        /// <param name="completionFim">
+        /// Default Value: false
+        /// </param>
+        /// <param name="fineTuning">
+        /// Default Value: false
+        /// </param>
+        /// <param name="functionCalling">
+        /// Default Value: true
+        /// </param>
+        /// <param name="vision">
+        /// Default Value: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ModelCapabilities(
+            bool? completionChat,
+            bool? completionFim,
+            bool? fineTuning,
+            bool? functionCalling,
+            bool? vision)
+        {
+            this.CompletionChat = completionChat;
+            this.CompletionFim = completionFim;
+            this.FineTuning = fineTuning;
+            this.FunctionCalling = functionCalling;
+            this.Vision = vision;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelCapabilities" /> class.
+        /// </summary>
+        public ModelCapabilities()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

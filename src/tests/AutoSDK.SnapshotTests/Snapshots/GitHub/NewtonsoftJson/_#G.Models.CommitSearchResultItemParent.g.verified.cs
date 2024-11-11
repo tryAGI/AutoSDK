@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitSearchResultItemParent" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="sha"></param>
+        public CommitSearchResultItemParent(
+            string? url,
+            string? htmlUrl,
+            string? sha)
+        {
+            this.Url = url;
+            this.HtmlUrl = htmlUrl;
+            this.Sha = sha;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitSearchResultItemParent" /> class.
+        /// </summary>
+        public CommitSearchResultItemParent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

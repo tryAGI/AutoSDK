@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableGitUser" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Example: "Chris Wanstrath"
+        /// </param>
+        /// <param name="email">
+        /// Example: "chris@ozmm.org"
+        /// </param>
+        /// <param name="date">
+        /// Example: "2007-10-29T02:42:39.000-07:00"
+        /// </param>
+        public NullableGitUser(
+            string? name,
+            string? email,
+            string? date)
+        {
+            this.Name = name;
+            this.Email = email;
+            this.Date = date;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableGitUser" /> class.
+        /// </summary>
+        public NullableGitUser()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -50,6 +50,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PredictionOutcomeTopPredictor" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// An ID that identifies the viewer.
+        /// </param>
+        /// <param name="userName">
+        /// The viewer’s display name.
+        /// </param>
+        /// <param name="userLogin">
+        /// The viewer’s login name.
+        /// </param>
+        /// <param name="channelPointsUsed">
+        /// The number of Channel Points the viewer spent.
+        /// </param>
+        /// <param name="channelPointsWon">
+        /// The number of Channel Points distributed to the viewer.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PredictionOutcomeTopPredictor(
+            string userId,
+            string userName,
+            string userLogin,
+            int channelPointsUsed,
+            int channelPointsWon)
+        {
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+            this.ChannelPointsUsed = channelPointsUsed;
+            this.ChannelPointsWon = channelPointsWon;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PredictionOutcomeTopPredictor" /> class.
+        /// </summary>
+        public PredictionOutcomeTopPredictor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

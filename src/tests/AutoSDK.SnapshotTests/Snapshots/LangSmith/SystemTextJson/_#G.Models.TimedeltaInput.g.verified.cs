@@ -33,6 +33,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimedeltaInput" /> class.
+        /// </summary>
+        /// <param name="days">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="minutes">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="hours">
+        /// Default Value: 0
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TimedeltaInput(
+            int? days,
+            int? minutes,
+            int? hours)
+        {
+            this.Days = days;
+            this.Minutes = minutes;
+            this.Hours = hours;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimedeltaInput" /> class.
+        /// </summary>
+        public TimedeltaInput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

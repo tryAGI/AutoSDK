@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookReleaseEditedChangesMakeLatest" /> class.
+        /// </summary>
+        /// <param name="to">
+        /// Whether this release was explicitly `edited` to be the latest.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookReleaseEditedChangesMakeLatest(
+            bool to)
+        {
+            this.To = to;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookReleaseEditedChangesMakeLatest" /> class.
+        /// </summary>
+        public WebhookReleaseEditedChangesMakeLatest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

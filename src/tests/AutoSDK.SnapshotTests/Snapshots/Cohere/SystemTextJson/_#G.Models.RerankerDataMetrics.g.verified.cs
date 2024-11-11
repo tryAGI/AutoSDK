@@ -51,6 +51,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RerankerDataMetrics" /> class.
+        /// </summary>
+        /// <param name="numTrainQueries">
+        /// The number of training queries.
+        /// </param>
+        /// <param name="numTrainRelevantPassages">
+        /// The sum of all relevant passages of valid training examples.
+        /// </param>
+        /// <param name="numTrainHardNegatives">
+        /// The sum of all hard negatives of valid training examples.
+        /// </param>
+        /// <param name="numEvalQueries">
+        /// The number of evaluation queries.
+        /// </param>
+        /// <param name="numEvalRelevantPassages">
+        /// The sum of all relevant passages of valid eval examples.
+        /// </param>
+        /// <param name="numEvalHardNegatives">
+        /// The sum of all hard negatives of valid eval examples.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RerankerDataMetrics(
+            double? numTrainQueries,
+            double? numTrainRelevantPassages,
+            double? numTrainHardNegatives,
+            double? numEvalQueries,
+            double? numEvalRelevantPassages,
+            double? numEvalHardNegatives)
+        {
+            this.NumTrainQueries = numTrainQueries;
+            this.NumTrainRelevantPassages = numTrainRelevantPassages;
+            this.NumTrainHardNegatives = numTrainHardNegatives;
+            this.NumEvalQueries = numEvalQueries;
+            this.NumEvalRelevantPassages = numEvalRelevantPassages;
+            this.NumEvalHardNegatives = numEvalHardNegatives;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RerankerDataMetrics" /> class.
+        /// </summary>
+        public RerankerDataMetrics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

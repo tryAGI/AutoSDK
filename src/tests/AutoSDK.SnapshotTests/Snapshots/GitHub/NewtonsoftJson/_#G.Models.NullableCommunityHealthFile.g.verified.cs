@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableCommunityHealthFile" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="htmlUrl"></param>
+        public NullableCommunityHealthFile(
+            string url,
+            string htmlUrl)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableCommunityHealthFile" /> class.
+        /// </summary>
+        public NullableCommunityHealthFile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

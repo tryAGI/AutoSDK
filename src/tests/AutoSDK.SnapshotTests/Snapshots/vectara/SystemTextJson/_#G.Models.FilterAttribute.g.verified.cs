@@ -55,6 +55,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterAttribute" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The JSON path of the filter attribute in a document or document part metadata.<br/>
+        /// Example: Title
+        /// </param>
+        /// <param name="level">
+        /// Indicates whether this is a document or document part metadata filter.<br/>
+        /// Example: document
+        /// </param>
+        /// <param name="description">
+        /// Description of the filter. May be omitted.<br/>
+        /// Example: The title of the document.
+        /// </param>
+        /// <param name="indexed">
+        /// Indicates whether an index should be created for the filter. Creating an index will improve query latency when using the filter.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="type">
+        /// The value type of the filter.<br/>
+        /// Example: text
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FilterAttribute(
+            string name,
+            global::G.FilterAttributeLevel level,
+            global::G.FilterAttributeType type,
+            string? description,
+            bool? indexed)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Level = level;
+            this.Type = type;
+            this.Description = description;
+            this.Indexed = indexed;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterAttribute" /> class.
+        /// </summary>
+        public FilterAttribute()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsDeleteCardResponse" /> class.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="documentationUrl"></param>
+        /// <param name="errors"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectsDeleteCardResponse(
+            string? message,
+            string? documentationUrl,
+            global::System.Collections.Generic.IList<string>? errors)
+        {
+            this.Message = message;
+            this.DocumentationUrl = documentationUrl;
+            this.Errors = errors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsDeleteCardResponse" /> class.
+        /// </summary>
+        public ProjectsDeleteCardResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

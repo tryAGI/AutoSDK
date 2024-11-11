@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OptimizePromptResponse" /> class.
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <param name="error"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OptimizePromptResponse(
+            string prompt,
+            string? error)
+        {
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OptimizePromptResponse" /> class.
+        /// </summary>
+        public OptimizePromptResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

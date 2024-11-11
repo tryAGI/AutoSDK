@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckRunOutput" /> class.
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="summary"></param>
+        /// <param name="text"></param>
+        /// <param name="annotationsCount"></param>
+        /// <param name="annotationsUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CheckRunOutput(
+            string? title,
+            string? summary,
+            string? text,
+            int annotationsCount,
+            string annotationsUrl)
+        {
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.AnnotationsCount = annotationsCount;
+            this.AnnotationsUrl = annotationsUrl ?? throw new global::System.ArgumentNullException(nameof(annotationsUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckRunOutput" /> class.
+        /// </summary>
+        public CheckRunOutput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

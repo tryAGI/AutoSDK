@@ -46,6 +46,42 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationDependabotSecret" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the secret.<br/>
+        /// Example: SECRET_TOKEN
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="visibility">
+        /// Visibility of a secret
+        /// </param>
+        /// <param name="selectedRepositoriesUrl">
+        /// Example: https://api.github.com/organizations/org/dependabot/secrets/my_secret/repositories
+        /// </param>
+        public OrganizationDependabotSecret(
+            string name,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::G.OrganizationDependabotSecretVisibility visibility,
+            string? selectedRepositoriesUrl)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Visibility = visibility;
+            this.SelectedRepositoriesUrl = selectedRepositoriesUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationDependabotSecret" /> class.
+        /// </summary>
+        public OrganizationDependabotSecret()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

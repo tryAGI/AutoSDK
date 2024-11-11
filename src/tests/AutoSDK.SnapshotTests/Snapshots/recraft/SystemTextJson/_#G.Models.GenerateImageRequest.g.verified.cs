@@ -81,6 +81,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateImageRequest" /> class.
+        /// </summary>
+        /// <param name="controls"></param>
+        /// <param name="model"></param>
+        /// <param name="n"></param>
+        /// <param name="prompt"></param>
+        /// <param name="randomSeed"></param>
+        /// <param name="responseFormat"></param>
+        /// <param name="size"></param>
+        /// <param name="style"></param>
+        /// <param name="styleId"></param>
+        /// <param name="substyle"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GenerateImageRequest(
+            string prompt,
+            global::G.UserControls? controls,
+            global::G.TransformModel? model,
+            int? n,
+            int? randomSeed,
+            global::G.ResponseFormat? responseFormat,
+            global::G.ImageSize? size,
+            global::G.ImageStyle? style,
+            global::System.Guid? styleId,
+            global::G.ImageSubStyle? substyle)
+        {
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Controls = controls;
+            this.Model = model;
+            this.N = n;
+            this.RandomSeed = randomSeed;
+            this.ResponseFormat = responseFormat;
+            this.Size = size;
+            this.Style = style;
+            this.StyleId = styleId;
+            this.Substyle = substyle;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateImageRequest" /> class.
+        /// </summary>
+        public GenerateImageRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

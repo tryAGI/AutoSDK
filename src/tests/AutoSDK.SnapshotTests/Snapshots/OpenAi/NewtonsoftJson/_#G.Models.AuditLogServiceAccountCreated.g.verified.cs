@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogServiceAccountCreated" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The service account ID.
+        /// </param>
+        /// <param name="data">
+        /// The payload used to create the service account.
+        /// </param>
+        public AuditLogServiceAccountCreated(
+            string? id,
+            global::G.AuditLogServiceAccountCreatedData? data)
+        {
+            this.Id = id;
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogServiceAccountCreated" /> class.
+        /// </summary>
+        public AuditLogServiceAccountCreated()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

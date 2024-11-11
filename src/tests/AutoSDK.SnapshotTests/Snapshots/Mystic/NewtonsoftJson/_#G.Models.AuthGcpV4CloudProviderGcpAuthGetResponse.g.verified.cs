@@ -16,6 +16,14 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthGcpV4CloudProviderGcpAuthGetResponse" /> class.
+        /// </summary>
+        public AuthGcpV4CloudProviderGcpAuthGetResponse(
+ )
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

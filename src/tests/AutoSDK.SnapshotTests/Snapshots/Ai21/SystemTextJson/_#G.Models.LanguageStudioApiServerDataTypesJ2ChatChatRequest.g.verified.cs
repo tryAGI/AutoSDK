@@ -89,6 +89,73 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LanguageStudioApiServerDataTypesJ2ChatChatRequest" /> class.
+        /// </summary>
+        /// <param name="messages">
+        /// messages
+        /// </param>
+        /// <param name="system"></param>
+        /// <param name="frequencyPenalty"></param>
+        /// <param name="presencePenalty"></param>
+        /// <param name="countPenalty"></param>
+        /// <param name="numResults">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="temperature">
+        /// Default Value: 0.7
+        /// </param>
+        /// <param name="maxTokens">
+        /// Default Value: 300
+        /// </param>
+        /// <param name="minTokens">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="topP">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="topKReturn">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="stopSequences">
+        /// Default Value: []
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public LanguageStudioApiServerDataTypesJ2ChatChatRequest(
+            global::System.Collections.Generic.IList<global::G.ChatMessage> messages,
+            string system,
+            global::G.Penalty? frequencyPenalty,
+            global::G.Penalty? presencePenalty,
+            global::G.Penalty? countPenalty,
+            int? numResults,
+            double? temperature,
+            int? maxTokens,
+            int? minTokens,
+            double? topP,
+            int? topKReturn,
+            global::System.Collections.Generic.IList<string>? stopSequences)
+        {
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
+            this.System = system ?? throw new global::System.ArgumentNullException(nameof(system));
+            this.FrequencyPenalty = frequencyPenalty;
+            this.PresencePenalty = presencePenalty;
+            this.CountPenalty = countPenalty;
+            this.NumResults = numResults;
+            this.Temperature = temperature;
+            this.MaxTokens = maxTokens;
+            this.MinTokens = minTokens;
+            this.TopP = topP;
+            this.TopKReturn = topKReturn;
+            this.StopSequences = stopSequences;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LanguageStudioApiServerDataTypesJ2ChatChatRequest" /> class.
+        /// </summary>
+        public LanguageStudioApiServerDataTypesJ2ChatChatRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

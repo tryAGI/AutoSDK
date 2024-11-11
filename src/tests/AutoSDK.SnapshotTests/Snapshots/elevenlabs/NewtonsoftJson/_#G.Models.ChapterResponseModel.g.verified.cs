@@ -63,6 +63,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChapterResponseModel" /> class.
+        /// </summary>
+        /// <param name="chapterId"></param>
+        /// <param name="name"></param>
+        /// <param name="lastConversionDateUnix"></param>
+        /// <param name="lastBlockConversionUnixMs"></param>
+        /// <param name="conversionProgress"></param>
+        /// <param name="canBeDownloaded"></param>
+        /// <param name="state"></param>
+        /// <param name="statistics"></param>
+        public ChapterResponseModel(
+            string chapterId,
+            string name,
+            int lastConversionDateUnix,
+            int lastBlockConversionUnixMs,
+            double conversionProgress,
+            bool canBeDownloaded,
+            global::G.ChapterResponseModelState state,
+            global::G.ChapterStatisticsResponseModel statistics)
+        {
+            this.ChapterId = chapterId ?? throw new global::System.ArgumentNullException(nameof(chapterId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.LastConversionDateUnix = lastConversionDateUnix;
+            this.LastBlockConversionUnixMs = lastBlockConversionUnixMs;
+            this.ConversionProgress = conversionProgress;
+            this.CanBeDownloaded = canBeDownloaded;
+            this.State = state;
+            this.Statistics = statistics ?? throw new global::System.ArgumentNullException(nameof(statistics));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChapterResponseModel" /> class.
+        /// </summary>
+        public ChapterResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

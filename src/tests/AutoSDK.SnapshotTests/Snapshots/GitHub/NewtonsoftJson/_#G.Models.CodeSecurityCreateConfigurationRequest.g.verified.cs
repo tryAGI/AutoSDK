@@ -117,6 +117,107 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityCreateConfigurationRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the code security configuration. Must be unique within the organization.
+        /// </param>
+        /// <param name="description">
+        /// A description of the code security configuration
+        /// </param>
+        /// <param name="advancedSecurity">
+        /// The enablement status of GitHub Advanced Security<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="dependencyGraph">
+        /// The enablement status of Dependency Graph<br/>
+        /// Default Value: enabled
+        /// </param>
+        /// <param name="dependencyGraphAutosubmitAction">
+        /// The enablement status of Automatic dependency submission<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="dependencyGraphAutosubmitActionOptions">
+        /// Feature options for Automatic dependency submission
+        /// </param>
+        /// <param name="dependabotAlerts">
+        /// The enablement status of Dependabot alerts<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="dependabotSecurityUpdates">
+        /// The enablement status of Dependabot security updates<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="codeScanningDefaultSetup">
+        /// The enablement status of code scanning default setup<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="secretScanning">
+        /// The enablement status of secret scanning<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="secretScanningPushProtection">
+        /// The enablement status of secret scanning push protection<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="secretScanningValidityChecks">
+        /// The enablement status of secret scanning validity checks<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="secretScanningNonProviderPatterns">
+        /// The enablement status of secret scanning non provider patterns<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="privateVulnerabilityReporting">
+        /// The enablement status of private vulnerability reporting<br/>
+        /// Default Value: disabled
+        /// </param>
+        /// <param name="enforcement">
+        /// The enforcement status for a security configuration<br/>
+        /// Default Value: enforced
+        /// </param>
+        public CodeSecurityCreateConfigurationRequest(
+            string name,
+            string description,
+            global::G.CodeSecurityCreateConfigurationRequestAdvancedSecurity? advancedSecurity,
+            global::G.CodeSecurityCreateConfigurationRequestDependencyGraph? dependencyGraph,
+            global::G.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitAction? dependencyGraphAutosubmitAction,
+            global::G.CodeSecurityCreateConfigurationRequestDependencyGraphAutosubmitActionOptions? dependencyGraphAutosubmitActionOptions,
+            global::G.CodeSecurityCreateConfigurationRequestDependabotAlerts? dependabotAlerts,
+            global::G.CodeSecurityCreateConfigurationRequestDependabotSecurityUpdates? dependabotSecurityUpdates,
+            global::G.CodeSecurityCreateConfigurationRequestCodeScanningDefaultSetup? codeScanningDefaultSetup,
+            global::G.CodeSecurityCreateConfigurationRequestSecretScanning? secretScanning,
+            global::G.CodeSecurityCreateConfigurationRequestSecretScanningPushProtection? secretScanningPushProtection,
+            global::G.CodeSecurityCreateConfigurationRequestSecretScanningValidityChecks? secretScanningValidityChecks,
+            global::G.CodeSecurityCreateConfigurationRequestSecretScanningNonProviderPatterns? secretScanningNonProviderPatterns,
+            global::G.CodeSecurityCreateConfigurationRequestPrivateVulnerabilityReporting? privateVulnerabilityReporting,
+            global::G.CodeSecurityCreateConfigurationRequestEnforcement? enforcement)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.AdvancedSecurity = advancedSecurity;
+            this.DependencyGraph = dependencyGraph;
+            this.DependencyGraphAutosubmitAction = dependencyGraphAutosubmitAction;
+            this.DependencyGraphAutosubmitActionOptions = dependencyGraphAutosubmitActionOptions;
+            this.DependabotAlerts = dependabotAlerts;
+            this.DependabotSecurityUpdates = dependabotSecurityUpdates;
+            this.CodeScanningDefaultSetup = codeScanningDefaultSetup;
+            this.SecretScanning = secretScanning;
+            this.SecretScanningPushProtection = secretScanningPushProtection;
+            this.SecretScanningValidityChecks = secretScanningValidityChecks;
+            this.SecretScanningNonProviderPatterns = secretScanningNonProviderPatterns;
+            this.PrivateVulnerabilityReporting = privateVulnerabilityReporting;
+            this.Enforcement = enforcement;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityCreateConfigurationRequest" /> class.
+        /// </summary>
+        public CodeSecurityCreateConfigurationRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

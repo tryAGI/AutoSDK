@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsCreateResponse" /> class.
+        /// </summary>
+        /// <param name="currentRelease"></param>
+        /// <param name="name">
+        /// The name of the deployment.
+        /// </param>
+        /// <param name="owner">
+        /// The owner of the deployment.
+        /// </param>
+        public DeploymentsCreateResponse(
+            global::G.DeploymentsCreateResponseCurrentRelease? currentRelease,
+            string? name,
+            string? owner)
+        {
+            this.CurrentRelease = currentRelease;
+            this.Name = name;
+            this.Owner = owner;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsCreateResponse" /> class.
+        /// </summary>
+        public DeploymentsCreateResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

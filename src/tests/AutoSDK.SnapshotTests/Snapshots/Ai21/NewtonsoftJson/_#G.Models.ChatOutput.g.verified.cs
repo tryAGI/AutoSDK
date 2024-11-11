@@ -33,6 +33,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatOutput" /> class.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="role">
+        /// An enumeration.
+        /// </param>
+        /// <param name="finishReason"></param>
+        public ChatOutput(
+            string text,
+            global::G.RoleType role,
+            global::G.FinishReason finishReason)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Role = role;
+            this.FinishReason = finishReason ?? throw new global::System.ArgumentNullException(nameof(finishReason));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatOutput" /> class.
+        /// </summary>
+        public ChatOutput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

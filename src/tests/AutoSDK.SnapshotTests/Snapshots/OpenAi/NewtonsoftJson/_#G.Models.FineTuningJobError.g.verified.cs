@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJobError" /> class.
+        /// </summary>
+        /// <param name="code">
+        /// A machine-readable error code.
+        /// </param>
+        /// <param name="message">
+        /// A human-readable error message.
+        /// </param>
+        /// <param name="param">
+        /// The parameter that was invalid, usually `training_file` or `validation_file`. This field will be null if the failure was not parameter-specific.
+        /// </param>
+        public FineTuningJobError(
+            string code,
+            string message,
+            string? param)
+        {
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Param = param ?? throw new global::System.ArgumentNullException(nameof(param));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJobError" /> class.
+        /// </summary>
+        public FineTuningJobError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

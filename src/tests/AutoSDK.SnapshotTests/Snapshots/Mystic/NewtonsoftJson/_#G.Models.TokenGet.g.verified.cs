@@ -75,6 +75,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TokenGet" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="value"></param>
+        /// <param name="name"></param>
+        /// <param name="expiresAt"></param>
+        /// <param name="lastUsed"></param>
+        /// <param name="isActive"></param>
+        /// <param name="isEnabled"></param>
+        /// <param name="teamId"></param>
+        public TokenGet(
+            string id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string value,
+            string name,
+            bool isActive,
+            bool isEnabled,
+            global::System.DateTime? expiresAt,
+            global::System.DateTime? lastUsed,
+            string? teamId)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.IsActive = isActive;
+            this.IsEnabled = isEnabled;
+            this.ExpiresAt = expiresAt;
+            this.LastUsed = lastUsed;
+            this.TeamId = teamId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TokenGet" /> class.
+        /// </summary>
+        public TokenGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

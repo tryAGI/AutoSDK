@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileDeleteResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// A unique ID for the request (not the message). Repeated identical requests<br/>
+        /// get different IDs. However, for a streaming response, the ID will be the same<br/>
+        /// for all responses in the stream.
+        /// </param>
+        /// <param name="fileId">
+        /// The RAG library ID of the deleted file.
+        /// </param>
+        public FileDeleteResponse(
+            string id,
+            string fileId)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileDeleteResponse" /> class.
+        /// </summary>
+        public FileDeleteResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

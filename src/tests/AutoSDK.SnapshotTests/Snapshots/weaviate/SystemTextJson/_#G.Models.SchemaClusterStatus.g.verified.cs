@@ -45,6 +45,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SchemaClusterStatus" /> class.
+        /// </summary>
+        /// <param name="healthy">
+        /// True if the cluster is in sync, false if there is an issue (see error).
+        /// </param>
+        /// <param name="error">
+        /// Contains the sync check error if one occurred
+        /// </param>
+        /// <param name="hostname">
+        /// Hostname of the coordinating node, i.e. the one that received the cluster. This can be useful information if the error message contains phrases such as 'other nodes agree, but local does not', etc.
+        /// </param>
+        /// <param name="nodeCount">
+        /// Number of nodes that participated in the sync check
+        /// </param>
+        /// <param name="ignoreSchemaSync">
+        /// The cluster check at startup can be ignored (to recover from an out-of-sync situation).
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SchemaClusterStatus(
+            bool? healthy,
+            string? error,
+            string? hostname,
+            double? nodeCount,
+            bool? ignoreSchemaSync)
+        {
+            this.Healthy = healthy;
+            this.Error = error;
+            this.Hostname = hostname;
+            this.NodeCount = nodeCount;
+            this.IgnoreSchemaSync = ignoreSchemaSync;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SchemaClusterStatus" /> class.
+        /// </summary>
+        public SchemaClusterStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

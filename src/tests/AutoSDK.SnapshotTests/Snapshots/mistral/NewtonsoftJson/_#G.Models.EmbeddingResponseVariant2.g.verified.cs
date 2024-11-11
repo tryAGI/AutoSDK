@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingResponseVariant2" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        public EmbeddingResponseVariant2(
+            global::System.Collections.Generic.IList<global::G.EmbeddingResponseData>? data)
+        {
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingResponseVariant2" /> class.
+        /// </summary>
+        public EmbeddingResponseVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

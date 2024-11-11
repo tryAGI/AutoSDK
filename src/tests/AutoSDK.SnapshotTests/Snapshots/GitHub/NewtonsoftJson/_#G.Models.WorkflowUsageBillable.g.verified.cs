@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowUsageBillable" /> class.
+        /// </summary>
+        /// <param name="uBUNTU"></param>
+        /// <param name="mACOS"></param>
+        /// <param name="wINDOWS"></param>
+        public WorkflowUsageBillable(
+            global::G.WorkflowUsageBillableUBUNTU? uBUNTU,
+            global::G.WorkflowUsageBillableMACOS? mACOS,
+            global::G.WorkflowUsageBillableWINDOWS? wINDOWS)
+        {
+            this.UBUNTU = uBUNTU;
+            this.MACOS = mACOS;
+            this.WINDOWS = wINDOWS;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowUsageBillable" /> class.
+        /// </summary>
+        public WorkflowUsageBillable()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

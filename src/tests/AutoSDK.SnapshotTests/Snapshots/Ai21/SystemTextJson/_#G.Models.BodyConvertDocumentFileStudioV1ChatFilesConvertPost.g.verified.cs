@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyConvertDocumentFileStudioV1ChatFilesConvertPost" /> class.
+        /// </summary>
+        /// <param name="files"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyConvertDocumentFileStudioV1ChatFilesConvertPost(
+            global::System.Collections.Generic.IList<byte[]> files)
+        {
+            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyConvertDocumentFileStudioV1ChatFilesConvertPost" /> class.
+        /// </summary>
+        public BodyConvertDocumentFileStudioV1ChatFilesConvertPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

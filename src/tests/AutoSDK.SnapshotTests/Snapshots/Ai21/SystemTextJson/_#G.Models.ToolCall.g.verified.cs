@@ -38,6 +38,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolCall" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// A unique ID for the request (not the message). Repeated identical requests<br/>
+        /// get different IDs. However, for a streaming response, the ID will be the same<br/>
+        /// for all responses in the stream.
+        /// </param>
+        /// <param name="type">
+        /// Default Value: function
+        /// </param>
+        /// <param name="function"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ToolCall(
+            string id,
+            global::G.ToolFunction function,
+            global::G.ToolCallType? type)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Function = function ?? throw new global::System.ArgumentNullException(nameof(function));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolCall" /> class.
+        /// </summary>
+        public ToolCall()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -54,6 +54,54 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelVersion" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The parent resource, i.e., the user that created the models.<br/>
+        /// - Format: `users/{user.id}`.<br/>
+        /// The resource name of the model, which allows its access by parent user<br/>
+        /// and ID.<br/>
+        /// - Format: `users/{user.id}/models/{model.id}`.<br/>
+        /// The name of the Version.<br/>
+        /// - Format: `users/{user.id}/models/{model.id}/versions/{version.id}`.
+        /// </param>
+        /// <param name="version">
+        /// The model version identifier, which is equal to image tag.
+        /// </param>
+        /// <param name="digest">
+        /// Unique identifier, computed from the manifest the Version refers to.
+        /// </param>
+        /// <param name="state">
+        /// Current state of this model version.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="updateTime">
+        /// Version update time, i.e. timestamp of the last push.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ModelVersion(
+            string? name,
+            string? version,
+            string? digest,
+            global::G.State? state,
+            global::System.DateTime? updateTime)
+        {
+            this.Name = name;
+            this.Version = version;
+            this.Digest = digest;
+            this.State = state;
+            this.UpdateTime = updateTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelVersion" /> class.
+        /// </summary>
+        public ModelVersion()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -81,6 +81,53 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleCommitStatus" /> class.
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="state"></param>
+        /// <param name="context"></param>
+        /// <param name="targetUrl"></param>
+        /// <param name="required"></param>
+        /// <param name="avatarUrl"></param>
+        /// <param name="url"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        public SimpleCommitStatus(
+            string? description,
+            int id,
+            string nodeId,
+            string state,
+            string context,
+            string? targetUrl,
+            string? avatarUrl,
+            string url,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            bool? required)
+        {
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
+            this.TargetUrl = targetUrl ?? throw new global::System.ArgumentNullException(nameof(targetUrl));
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Required = required;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleCommitStatus" /> class.
+        /// </summary>
+        public SimpleCommitStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

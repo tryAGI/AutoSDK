@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest" /> class.
+        /// </summary>
+        /// <param name="pullRequestNumber">
+        /// Pull request number
+        /// </param>
+        /// <param name="repositoryId">
+        /// Repository id for this codespace
+        /// </param>
+        public CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest(
+            int pullRequestNumber,
+            int repositoryId)
+        {
+            this.PullRequestNumber = pullRequestNumber;
+            this.RepositoryId = repositoryId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest" /> class.
+        /// </summary>
+        public CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

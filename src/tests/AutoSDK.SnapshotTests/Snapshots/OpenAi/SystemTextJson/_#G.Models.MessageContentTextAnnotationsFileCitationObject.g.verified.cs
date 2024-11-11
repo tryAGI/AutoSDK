@@ -50,6 +50,40 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageContentTextAnnotationsFileCitationObject" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Always `file_citation`.
+        /// </param>
+        /// <param name="text">
+        /// The text in the message content that needs to be replaced.
+        /// </param>
+        /// <param name="fileCitation"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageContentTextAnnotationsFileCitationObject(
+            string text,
+            global::G.MessageContentTextAnnotationsFileCitationObjectFileCitation fileCitation,
+            int startIndex,
+            int endIndex,
+            global::G.MessageContentTextAnnotationsFileCitationObjectType type)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.FileCitation = fileCitation ?? throw new global::System.ArgumentNullException(nameof(fileCitation));
+            this.StartIndex = startIndex;
+            this.EndIndex = endIndex;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageContentTextAnnotationsFileCitationObject" /> class.
+        /// </summary>
+        public MessageContentTextAnnotationsFileCitationObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

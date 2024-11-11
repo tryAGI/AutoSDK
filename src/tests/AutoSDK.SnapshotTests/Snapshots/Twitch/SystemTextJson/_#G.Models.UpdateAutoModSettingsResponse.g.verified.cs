@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAutoModSettingsResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The list of AutoMod settings. The list contains a single object that contains all the AutoMod settings.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateAutoModSettingsResponse(
+            global::System.Collections.Generic.IList<global::G.AutoModSettings> data)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAutoModSettingsResponse" /> class.
+        /// </summary>
+        public UpdateAutoModSettingsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

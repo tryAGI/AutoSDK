@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueSizeSchema" /> class.
+        /// </summary>
+        /// <param name="size"></param>
+        public AnnotationQueueSizeSchema(
+            int size)
+        {
+            this.Size = size;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueSizeSchema" /> class.
+        /// </summary>
+        public AnnotationQueueSizeSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

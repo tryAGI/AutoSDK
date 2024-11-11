@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthorizationApp" /> class.
+        /// </summary>
+        /// <param name="clientId"></param>
+        /// <param name="name"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AuthorizationApp(
+            string clientId,
+            string name,
+            string url)
+        {
+            this.ClientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthorizationApp" /> class.
+        /// </summary>
+        public AuthorizationApp()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

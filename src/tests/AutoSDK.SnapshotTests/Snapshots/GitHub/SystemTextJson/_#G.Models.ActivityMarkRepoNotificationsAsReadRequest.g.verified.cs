@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActivityMarkRepoNotificationsAsReadRequest" /> class.
+        /// </summary>
+        /// <param name="lastReadAt">
+        /// Describes the last point that notifications were checked. Anything updated since this time will not be marked as read. If you omit this parameter, all notifications are marked as read. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. Default: The current timestamp.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActivityMarkRepoNotificationsAsReadRequest(
+            global::System.DateTime? lastReadAt)
+        {
+            this.LastReadAt = lastReadAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActivityMarkRepoNotificationsAsReadRequest" /> class.
+        /// </summary>
+        public ActivityMarkRepoNotificationsAsReadRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

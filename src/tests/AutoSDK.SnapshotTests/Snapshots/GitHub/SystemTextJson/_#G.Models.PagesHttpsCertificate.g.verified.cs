@@ -44,6 +44,40 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PagesHttpsCertificate" /> class.
+        /// </summary>
+        /// <param name="state">
+        /// Example: approved
+        /// </param>
+        /// <param name="description">
+        /// Example: Certificate is approved
+        /// </param>
+        /// <param name="domains">
+        /// Array of the domain set and its alternate name (if it is configured)<br/>
+        /// Example: [example.com, www.example.com]
+        /// </param>
+        /// <param name="expiresAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PagesHttpsCertificate(
+            global::G.PagesHttpsCertificateState state,
+            string description,
+            global::System.Collections.Generic.IList<string> domains,
+            global::System.DateTime? expiresAt)
+        {
+            this.State = state;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Domains = domains ?? throw new global::System.ArgumentNullException(nameof(domains));
+            this.ExpiresAt = expiresAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PagesHttpsCertificate" /> class.
+        /// </summary>
+        public PagesHttpsCertificate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

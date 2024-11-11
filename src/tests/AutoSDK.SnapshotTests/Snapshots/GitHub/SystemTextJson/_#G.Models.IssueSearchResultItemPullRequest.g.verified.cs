@@ -49,6 +49,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueSearchResultItemPullRequest" /> class.
+        /// </summary>
+        /// <param name="mergedAt"></param>
+        /// <param name="diffUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="patchUrl"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public IssueSearchResultItemPullRequest(
+            string? diffUrl,
+            string? htmlUrl,
+            string? patchUrl,
+            string? url,
+            global::System.DateTime? mergedAt)
+        {
+            this.DiffUrl = diffUrl ?? throw new global::System.ArgumentNullException(nameof(diffUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.MergedAt = mergedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueSearchResultItemPullRequest" /> class.
+        /// </summary>
+        public IssueSearchResultItemPullRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

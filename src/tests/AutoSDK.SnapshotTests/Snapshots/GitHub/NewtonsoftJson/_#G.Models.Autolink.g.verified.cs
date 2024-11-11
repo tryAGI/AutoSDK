@@ -42,6 +42,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Autolink" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 3
+        /// </param>
+        /// <param name="keyPrefix">
+        /// The prefix of a key that is linkified.<br/>
+        /// Example: TICKET-
+        /// </param>
+        /// <param name="urlTemplate">
+        /// A template for the target URL that is generated if a key was found.<br/>
+        /// Example: https://example.com/TICKET?query=&lt;num&gt;
+        /// </param>
+        /// <param name="isAlphanumeric">
+        /// Whether this autolink reference matches alphanumeric characters. If false, this autolink reference only matches numeric characters.<br/>
+        /// Example: true
+        /// </param>
+        public Autolink(
+            int id,
+            string keyPrefix,
+            string urlTemplate,
+            bool isAlphanumeric)
+        {
+            this.Id = id;
+            this.KeyPrefix = keyPrefix ?? throw new global::System.ArgumentNullException(nameof(keyPrefix));
+            this.UrlTemplate = urlTemplate ?? throw new global::System.ArgumentNullException(nameof(urlTemplate));
+            this.IsAlphanumeric = isAlphanumeric;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Autolink" /> class.
+        /// </summary>
+        public Autolink()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

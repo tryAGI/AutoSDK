@@ -205,6 +205,11 @@ public readonly record struct TypeData(
             ("string", "password") => true,
             ("string", "uuid") => true,
             
+            // AssemblyAI format
+            (null, "float") => true,
+            (null, "double") => true,
+            (null, "boolean") => true,
+            
             _ => false,
         };
     }

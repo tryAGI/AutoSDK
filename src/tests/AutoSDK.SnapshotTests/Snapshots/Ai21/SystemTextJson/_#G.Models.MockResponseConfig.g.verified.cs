@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MockResponseConfig" /> class.
+        /// </summary>
+        /// <param name="responseDelaySeconds">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="streamResponseDelayBetweenDeltasSeconds">
+        /// Default Value: 0.1
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MockResponseConfig(
+            double? responseDelaySeconds,
+            double? streamResponseDelayBetweenDeltasSeconds)
+        {
+            this.ResponseDelaySeconds = responseDelaySeconds;
+            this.StreamResponseDelayBetweenDeltasSeconds = streamResponseDelayBetweenDeltasSeconds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MockResponseConfig" /> class.
+        /// </summary>
+        public MockResponseConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

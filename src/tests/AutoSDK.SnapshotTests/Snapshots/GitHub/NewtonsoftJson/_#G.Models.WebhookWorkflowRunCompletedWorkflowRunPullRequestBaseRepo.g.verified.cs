@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowRunCompletedWorkflowRunPullRequestBaseRepo" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="url"></param>
+        public WebhookWorkflowRunCompletedWorkflowRunPullRequestBaseRepo(
+            int id,
+            string name,
+            string url)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowRunCompletedWorkflowRunPullRequestBaseRepo" /> class.
+        /// </summary>
+        public WebhookWorkflowRunCompletedWorkflowRunPullRequestBaseRepo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

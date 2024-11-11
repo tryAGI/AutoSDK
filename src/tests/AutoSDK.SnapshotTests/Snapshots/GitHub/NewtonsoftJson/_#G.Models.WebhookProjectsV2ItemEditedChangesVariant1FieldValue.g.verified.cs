@@ -53,6 +53,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectsV2ItemEditedChangesVariant1FieldValue" /> class.
+        /// </summary>
+        /// <param name="fieldNodeId"></param>
+        /// <param name="fieldType"></param>
+        /// <param name="fieldName"></param>
+        /// <param name="projectNumber"></param>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        public WebhookProjectsV2ItemEditedChangesVariant1FieldValue(
+            string? fieldNodeId,
+            string? fieldType,
+            string? fieldName,
+            int? projectNumber,
+            global::G.OneOf<string, int?, global::G.ProjectsV2SingleSelectOption, global::G.ProjectsV2IterationSetting>? from,
+            global::G.OneOf<string, int?, global::G.ProjectsV2SingleSelectOption, global::G.ProjectsV2IterationSetting>? to)
+        {
+            this.FieldNodeId = fieldNodeId;
+            this.FieldType = fieldType;
+            this.FieldName = fieldName;
+            this.ProjectNumber = projectNumber;
+            this.From = from;
+            this.To = to;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectsV2ItemEditedChangesVariant1FieldValue" /> class.
+        /// </summary>
+        public WebhookProjectsV2ItemEditedChangesVariant1FieldValue()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

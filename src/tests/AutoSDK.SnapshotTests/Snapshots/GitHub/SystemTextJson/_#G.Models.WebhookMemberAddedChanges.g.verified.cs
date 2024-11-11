@@ -30,6 +30,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMemberAddedChanges" /> class.
+        /// </summary>
+        /// <param name="permission">
+        /// This field is included for legacy purposes; use the `role_name` field instead. The `maintain`<br/>
+        /// role is mapped to `write` and the `triage` role is mapped to `read`. To determine the role<br/>
+        /// assigned to the collaborator, use the `role_name` field instead, which will provide the full<br/>
+        /// role name, including custom roles.
+        /// </param>
+        /// <param name="roleName">
+        /// The role assigned to the collaborator.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookMemberAddedChanges(
+            global::G.WebhookMemberAddedChangesPermission? permission,
+            global::G.WebhookMemberAddedChangesRoleName? roleName)
+        {
+            this.Permission = permission;
+            this.RoleName = roleName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMemberAddedChanges" /> class.
+        /// </summary>
+        public WebhookMemberAddedChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

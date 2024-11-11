@@ -83,6 +83,75 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Feed" /> class.
+        /// </summary>
+        /// <param name="timelineUrl">
+        /// Example: https://github.com/timeline
+        /// </param>
+        /// <param name="userUrl">
+        /// Example: https://github.com/{user}
+        /// </param>
+        /// <param name="currentUserPublicUrl">
+        /// Example: https://github.com/octocat
+        /// </param>
+        /// <param name="currentUserUrl">
+        /// Example: https://github.com/octocat.private?token=abc123
+        /// </param>
+        /// <param name="currentUserActorUrl">
+        /// Example: https://github.com/octocat.private.actor?token=abc123
+        /// </param>
+        /// <param name="currentUserOrganizationUrl">
+        /// Example: https://github.com/octocat-org
+        /// </param>
+        /// <param name="currentUserOrganizationUrls">
+        /// Example: [https://github.com/organizations/github/octocat.private.atom?token=abc123]
+        /// </param>
+        /// <param name="securityAdvisoriesUrl">
+        /// Example: https://github.com/security-advisories
+        /// </param>
+        /// <param name="repositoryDiscussionsUrl">
+        /// A feed of discussions for a given repository.<br/>
+        /// Example: https://github.com/{user}/{repo}/discussions
+        /// </param>
+        /// <param name="repositoryDiscussionsCategoryUrl">
+        /// A feed of discussions for a given repository and category.<br/>
+        /// Example: https://github.com/{user}/{repo}/discussions/categories/{category}
+        /// </param>
+        /// <param name="links"></param>
+        public Feed(
+            string timelineUrl,
+            string userUrl,
+            global::G.FeedLinks links,
+            string? currentUserPublicUrl,
+            string? currentUserUrl,
+            string? currentUserActorUrl,
+            string? currentUserOrganizationUrl,
+            global::System.Collections.Generic.IList<string>? currentUserOrganizationUrls,
+            string? securityAdvisoriesUrl,
+            string? repositoryDiscussionsUrl,
+            string? repositoryDiscussionsCategoryUrl)
+        {
+            this.TimelineUrl = timelineUrl ?? throw new global::System.ArgumentNullException(nameof(timelineUrl));
+            this.UserUrl = userUrl ?? throw new global::System.ArgumentNullException(nameof(userUrl));
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.CurrentUserPublicUrl = currentUserPublicUrl;
+            this.CurrentUserUrl = currentUserUrl;
+            this.CurrentUserActorUrl = currentUserActorUrl;
+            this.CurrentUserOrganizationUrl = currentUserOrganizationUrl;
+            this.CurrentUserOrganizationUrls = currentUserOrganizationUrls;
+            this.SecurityAdvisoriesUrl = securityAdvisoriesUrl;
+            this.RepositoryDiscussionsUrl = repositoryDiscussionsUrl;
+            this.RepositoryDiscussionsCategoryUrl = repositoryDiscussionsCategoryUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Feed" /> class.
+        /// </summary>
+        public Feed()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -59,6 +59,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelPriceMapCreateSchema" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="startTime"></param>
+        /// <param name="matchPath">
+        /// Default Value: [model, model_name, model_id, model_path, endpoint_name]
+        /// </param>
+        /// <param name="matchPattern"></param>
+        /// <param name="promptCost"></param>
+        /// <param name="completionCost"></param>
+        /// <param name="provider"></param>
+        public ModelPriceMapCreateSchema(
+            string name,
+            string matchPattern,
+            global::G.AnyOf<double?, string> promptCost,
+            global::G.AnyOf<double?, string> completionCost,
+            global::System.DateTime? startTime,
+            global::System.Collections.Generic.IList<string>? matchPath,
+            string? provider)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.MatchPattern = matchPattern ?? throw new global::System.ArgumentNullException(nameof(matchPattern));
+            this.PromptCost = promptCost;
+            this.CompletionCost = completionCost;
+            this.StartTime = startTime;
+            this.MatchPath = matchPath;
+            this.Provider = provider;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelPriceMapCreateSchema" /> class.
+        /// </summary>
+        public ModelPriceMapCreateSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

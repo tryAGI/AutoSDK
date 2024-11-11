@@ -94,6 +94,68 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranch" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="requiredStatusChecks">
+        /// Status Check Policy
+        /// </param>
+        /// <param name="requiredPullRequestReviews"></param>
+        /// <param name="requiredSignatures"></param>
+        /// <param name="enforceAdmins"></param>
+        /// <param name="requiredLinearHistory"></param>
+        /// <param name="allowForcePushes"></param>
+        /// <param name="allowDeletions"></param>
+        /// <param name="restrictions">
+        /// Branch Restriction Policy
+        /// </param>
+        /// <param name="requiredConversationResolution"></param>
+        /// <param name="blockCreations"></param>
+        /// <param name="lockBranch">
+        /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+        /// </param>
+        /// <param name="allowForkSyncing">
+        /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProtectedBranch(
+            string url,
+            global::G.StatusCheckPolicy? requiredStatusChecks,
+            global::G.ProtectedBranchRequiredPullRequestReviews? requiredPullRequestReviews,
+            global::G.ProtectedBranchRequiredSignatures? requiredSignatures,
+            global::G.ProtectedBranchEnforceAdmins? enforceAdmins,
+            global::G.ProtectedBranchRequiredLinearHistory? requiredLinearHistory,
+            global::G.ProtectedBranchAllowForcePushes? allowForcePushes,
+            global::G.ProtectedBranchAllowDeletions? allowDeletions,
+            global::G.BranchRestrictionPolicy? restrictions,
+            global::G.ProtectedBranchRequiredConversationResolution? requiredConversationResolution,
+            global::G.ProtectedBranchBlockCreations? blockCreations,
+            global::G.ProtectedBranchLockBranch? lockBranch,
+            global::G.ProtectedBranchAllowForkSyncing? allowForkSyncing)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.RequiredStatusChecks = requiredStatusChecks;
+            this.RequiredPullRequestReviews = requiredPullRequestReviews;
+            this.RequiredSignatures = requiredSignatures;
+            this.EnforceAdmins = enforceAdmins;
+            this.RequiredLinearHistory = requiredLinearHistory;
+            this.AllowForcePushes = allowForcePushes;
+            this.AllowDeletions = allowDeletions;
+            this.Restrictions = restrictions;
+            this.RequiredConversationResolution = requiredConversationResolution;
+            this.BlockCreations = blockCreations;
+            this.LockBranch = lockBranch;
+            this.AllowForkSyncing = allowForkSyncing;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranch" /> class.
+        /// </summary>
+        public ProtectedBranch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RuleLogActionResponse" /> class.
+        /// </summary>
+        /// <param name="outcome"></param>
+        /// <param name="payload"></param>
+        public RuleLogActionResponse(
+            global::G.RuleLogActionOutcome outcome,
+            object? payload)
+        {
+            this.Outcome = outcome;
+            this.Payload = payload;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RuleLogActionResponse" /> class.
+        /// </summary>
+        public RuleLogActionResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelEditor" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// An ID that uniquely identifies a user with editor permissions.
+        /// </param>
+        /// <param name="userName">
+        /// The user’s display name.
+        /// </param>
+        /// <param name="createdAt">
+        /// The date and time, in RFC3339 format, when the user became one of the broadcaster’s editors.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChannelEditor(
+            string userId,
+            string userName,
+            global::System.DateTime createdAt)
+        {
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+            this.CreatedAt = createdAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelEditor" /> class.
+        /// </summary>
+        public ChannelEditor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

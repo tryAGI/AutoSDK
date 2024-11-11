@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PronunciationDictionaryAliasRuleRequestModel" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="stringToReplace"></param>
+        /// <param name="alias"></param>
+        public PronunciationDictionaryAliasRuleRequestModel(
+            string stringToReplace,
+            string alias,
+            global::G.PronunciationDictionaryAliasRuleRequestModelType type)
+        {
+            this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
+            this.Alias = alias ?? throw new global::System.ArgumentNullException(nameof(alias));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PronunciationDictionaryAliasRuleRequestModel" /> class.
+        /// </summary>
+        public PronunciationDictionaryAliasRuleRequestModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

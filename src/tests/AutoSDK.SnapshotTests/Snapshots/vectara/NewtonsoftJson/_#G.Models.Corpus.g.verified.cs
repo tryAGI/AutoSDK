@@ -107,6 +107,89 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Corpus" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Vectara ID of the corpus.
+        /// </param>
+        /// <param name="key">
+        /// A user-provided key for a corpus.<br/>
+        /// Example: my-corpus
+        /// </param>
+        /// <param name="name">
+        /// Name for the corpus. This value defaults to the key.
+        /// </param>
+        /// <param name="description">
+        /// Corpus description.
+        /// </param>
+        /// <param name="enabled">
+        /// Specifies whether the corpus is enabled or not.
+        /// </param>
+        /// <param name="chatHistoryCorpus">
+        /// Indicates that this corpus does not store documents and stores chats instead.
+        /// </param>
+        /// <param name="queriesAreAnswers">
+        /// Queries made to this corpus are considered answers, and not questions.<br/>
+        /// This swaps the semantics of the encoder used at query time.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="documentsAreQuestions">
+        /// Documents inside this corpus are considered questions, and not answers.<br/>
+        /// This swaps the semantics of the encoder used at indexing.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="encoderName">
+        /// The encoder used by the corpus.<br/>
+        /// Example: boomerang
+        /// </param>
+        /// <param name="filterAttributes">
+        /// The new filter attributes of the corpus.
+        /// </param>
+        /// <param name="customDimensions">
+        /// The custom dimensions of all document parts inside the corpus.
+        /// </param>
+        /// <param name="limits"></param>
+        /// <param name="createdAt">
+        /// Indicates when the corpus was created.
+        /// </param>
+        public Corpus(
+            string? id,
+            string? key,
+            string? name,
+            string? description,
+            bool? enabled,
+            bool? chatHistoryCorpus,
+            bool? queriesAreAnswers,
+            bool? documentsAreQuestions,
+            string? encoderName,
+            global::System.Collections.Generic.IList<global::G.FilterAttribute>? filterAttributes,
+            global::System.Collections.Generic.IList<global::G.CorpusCustomDimension>? customDimensions,
+            global::G.CorpusLimits? limits,
+            global::System.DateTime? createdAt)
+        {
+            this.Id = id;
+            this.Key = key;
+            this.Name = name;
+            this.Description = description;
+            this.Enabled = enabled;
+            this.ChatHistoryCorpus = chatHistoryCorpus;
+            this.QueriesAreAnswers = queriesAreAnswers;
+            this.DocumentsAreQuestions = documentsAreQuestions;
+            this.EncoderName = encoderName;
+            this.FilterAttributes = filterAttributes;
+            this.CustomDimensions = customDimensions;
+            this.Limits = limits;
+            this.CreatedAt = createdAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Corpus" /> class.
+        /// </summary>
+        public Corpus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

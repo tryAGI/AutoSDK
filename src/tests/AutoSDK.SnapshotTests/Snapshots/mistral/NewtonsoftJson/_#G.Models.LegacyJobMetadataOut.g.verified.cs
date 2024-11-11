@@ -95,6 +95,84 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LegacyJobMetadataOut" /> class.
+        /// </summary>
+        /// <param name="cost">
+        /// The cost of the fine-tuning job.<br/>
+        /// Example: 10
+        /// </param>
+        /// <param name="costCurrency">
+        /// The currency used for the fine-tuning job cost.<br/>
+        /// Example: EUR
+        /// </param>
+        /// <param name="dataTokens">
+        /// The total number of tokens in the training dataset.<br/>
+        /// Example: 305375
+        /// </param>
+        /// <param name="deprecated">
+        /// Default Value: true
+        /// </param>
+        /// <param name="details"></param>
+        /// <param name="epochs">
+        /// The number of complete passes through the entire training dataset.<br/>
+        /// Example: 4.2922
+        /// </param>
+        /// <param name="estimatedStartTime"></param>
+        /// <param name="expectedDurationSeconds">
+        /// The approximated time (in seconds) for the fine-tuning process to complete.<br/>
+        /// Example: 220
+        /// </param>
+        /// <param name="object">
+        /// Default Value: job.metadata
+        /// </param>
+        /// <param name="trainTokens">
+        /// The total number of tokens used during the fine-tuning process.<br/>
+        /// Example: 1310720
+        /// </param>
+        /// <param name="trainTokensPerStep">
+        /// The number of tokens consumed by one training step.<br/>
+        /// Example: 131072
+        /// </param>
+        /// <param name="trainingSteps">
+        /// The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.<br/>
+        /// Example: 10
+        /// </param>
+        public LegacyJobMetadataOut(
+            string details,
+            double? cost,
+            string? costCurrency,
+            int? dataTokens,
+            bool? deprecated,
+            double? epochs,
+            int? estimatedStartTime,
+            int? expectedDurationSeconds,
+            global::G.LegacyJobMetadataOutObject? @object,
+            int? trainTokens,
+            int? trainTokensPerStep,
+            int? trainingSteps)
+        {
+            this.Details = details ?? throw new global::System.ArgumentNullException(nameof(details));
+            this.Cost = cost;
+            this.CostCurrency = costCurrency;
+            this.DataTokens = dataTokens;
+            this.Deprecated = deprecated;
+            this.Epochs = epochs;
+            this.EstimatedStartTime = estimatedStartTime;
+            this.ExpectedDurationSeconds = expectedDurationSeconds;
+            this.Object = @object;
+            this.TrainTokens = trainTokens;
+            this.TrainTokensPerStep = trainTokensPerStep;
+            this.TrainingSteps = trainingSteps;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LegacyJobMetadataOut" /> class.
+        /// </summary>
+        public LegacyJobMetadataOut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -81,6 +81,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Identity" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="userId"></param>
+        /// <param name="lsUserId"></param>
+        /// <param name="readOnly"></param>
+        /// <param name="roleId"></param>
+        /// <param name="roleName"></param>
+        /// <param name="accessScope"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Identity(
+            global::System.Guid id,
+            global::System.Guid organizationId,
+            global::System.DateTime createdAt,
+            global::System.Guid userId,
+            bool readOnly,
+            global::System.Guid? tenantId,
+            global::System.Guid? lsUserId,
+            global::System.Guid? roleId,
+            string? roleName,
+            global::G.AccessScope? accessScope)
+        {
+            this.Id = id;
+            this.OrganizationId = organizationId;
+            this.CreatedAt = createdAt;
+            this.UserId = userId;
+            this.ReadOnly = readOnly;
+            this.TenantId = tenantId;
+            this.LsUserId = lsUserId;
+            this.RoleId = roleId;
+            this.RoleName = roleName;
+            this.AccessScope = accessScope;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Identity" /> class.
+        /// </summary>
+        public Identity()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

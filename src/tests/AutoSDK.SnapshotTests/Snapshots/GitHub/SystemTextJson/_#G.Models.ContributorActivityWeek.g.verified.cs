@@ -39,6 +39,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContributorActivityWeek" /> class.
+        /// </summary>
+        /// <param name="w"></param>
+        /// <param name="a"></param>
+        /// <param name="d"></param>
+        /// <param name="c"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ContributorActivityWeek(
+            int? w,
+            int? a,
+            int? d,
+            int? c)
+        {
+            this.W = w;
+            this.A = a;
+            this.D = d;
+            this.C = c;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContributorActivityWeek" /> class.
+        /// </summary>
+        public ContributorActivityWeek()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

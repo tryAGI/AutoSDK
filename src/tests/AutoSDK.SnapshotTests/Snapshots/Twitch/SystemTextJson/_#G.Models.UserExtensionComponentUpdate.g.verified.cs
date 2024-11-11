@@ -46,6 +46,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserExtensionComponentUpdate" /> class.
+        /// </summary>
+        /// <param name="active">
+        /// A Boolean value that determines the extension’s activation state. If **false**, the user has not configured a component extension.
+        /// </param>
+        /// <param name="id">
+        /// An ID that identifies the extension.
+        /// </param>
+        /// <param name="version">
+        /// The extension’s version.
+        /// </param>
+        /// <param name="x">
+        /// The x-coordinate where the extension is placed.
+        /// </param>
+        /// <param name="y">
+        /// The y-coordinate where the extension is placed.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UserExtensionComponentUpdate(
+            bool active,
+            string? id,
+            string? version,
+            int? x,
+            int? y)
+        {
+            this.Active = active;
+            this.Id = id;
+            this.Version = version;
+            this.X = x;
+            this.Y = y;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserExtensionComponentUpdate" /> class.
+        /// </summary>
+        public UserExtensionComponentUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

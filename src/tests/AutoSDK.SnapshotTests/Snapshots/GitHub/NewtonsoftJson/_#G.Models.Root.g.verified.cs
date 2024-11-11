@@ -214,6 +214,116 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Root" /> class.
+        /// </summary>
+        /// <param name="currentUserUrl"></param>
+        /// <param name="currentUserAuthorizationsHtmlUrl"></param>
+        /// <param name="authorizationsUrl"></param>
+        /// <param name="codeSearchUrl"></param>
+        /// <param name="commitSearchUrl"></param>
+        /// <param name="emailsUrl"></param>
+        /// <param name="emojisUrl"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="feedsUrl"></param>
+        /// <param name="followersUrl"></param>
+        /// <param name="followingUrl"></param>
+        /// <param name="gistsUrl"></param>
+        /// <param name="issueSearchUrl"></param>
+        /// <param name="issuesUrl"></param>
+        /// <param name="keysUrl"></param>
+        /// <param name="labelSearchUrl"></param>
+        /// <param name="notificationsUrl"></param>
+        /// <param name="organizationUrl"></param>
+        /// <param name="organizationRepositoriesUrl"></param>
+        /// <param name="organizationTeamsUrl"></param>
+        /// <param name="publicGistsUrl"></param>
+        /// <param name="rateLimitUrl"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="repositorySearchUrl"></param>
+        /// <param name="currentUserRepositoriesUrl"></param>
+        /// <param name="starredUrl"></param>
+        /// <param name="starredGistsUrl"></param>
+        /// <param name="topicSearchUrl"></param>
+        /// <param name="userUrl"></param>
+        /// <param name="userOrganizationsUrl"></param>
+        /// <param name="userRepositoriesUrl"></param>
+        /// <param name="userSearchUrl"></param>
+        public Root(
+            string currentUserUrl,
+            string currentUserAuthorizationsHtmlUrl,
+            string authorizationsUrl,
+            string codeSearchUrl,
+            string commitSearchUrl,
+            string emailsUrl,
+            string emojisUrl,
+            string eventsUrl,
+            string feedsUrl,
+            string followersUrl,
+            string followingUrl,
+            string gistsUrl,
+            string issueSearchUrl,
+            string issuesUrl,
+            string keysUrl,
+            string labelSearchUrl,
+            string notificationsUrl,
+            string organizationUrl,
+            string organizationRepositoriesUrl,
+            string organizationTeamsUrl,
+            string publicGistsUrl,
+            string rateLimitUrl,
+            string repositoryUrl,
+            string repositorySearchUrl,
+            string currentUserRepositoriesUrl,
+            string starredUrl,
+            string starredGistsUrl,
+            string userUrl,
+            string userOrganizationsUrl,
+            string userRepositoriesUrl,
+            string userSearchUrl,
+            string? topicSearchUrl)
+        {
+            this.CurrentUserUrl = currentUserUrl ?? throw new global::System.ArgumentNullException(nameof(currentUserUrl));
+            this.CurrentUserAuthorizationsHtmlUrl = currentUserAuthorizationsHtmlUrl ?? throw new global::System.ArgumentNullException(nameof(currentUserAuthorizationsHtmlUrl));
+            this.AuthorizationsUrl = authorizationsUrl ?? throw new global::System.ArgumentNullException(nameof(authorizationsUrl));
+            this.CodeSearchUrl = codeSearchUrl ?? throw new global::System.ArgumentNullException(nameof(codeSearchUrl));
+            this.CommitSearchUrl = commitSearchUrl ?? throw new global::System.ArgumentNullException(nameof(commitSearchUrl));
+            this.EmailsUrl = emailsUrl ?? throw new global::System.ArgumentNullException(nameof(emailsUrl));
+            this.EmojisUrl = emojisUrl ?? throw new global::System.ArgumentNullException(nameof(emojisUrl));
+            this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
+            this.FeedsUrl = feedsUrl ?? throw new global::System.ArgumentNullException(nameof(feedsUrl));
+            this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
+            this.FollowingUrl = followingUrl ?? throw new global::System.ArgumentNullException(nameof(followingUrl));
+            this.GistsUrl = gistsUrl ?? throw new global::System.ArgumentNullException(nameof(gistsUrl));
+            this.IssueSearchUrl = issueSearchUrl ?? throw new global::System.ArgumentNullException(nameof(issueSearchUrl));
+            this.IssuesUrl = issuesUrl ?? throw new global::System.ArgumentNullException(nameof(issuesUrl));
+            this.KeysUrl = keysUrl ?? throw new global::System.ArgumentNullException(nameof(keysUrl));
+            this.LabelSearchUrl = labelSearchUrl ?? throw new global::System.ArgumentNullException(nameof(labelSearchUrl));
+            this.NotificationsUrl = notificationsUrl ?? throw new global::System.ArgumentNullException(nameof(notificationsUrl));
+            this.OrganizationUrl = organizationUrl ?? throw new global::System.ArgumentNullException(nameof(organizationUrl));
+            this.OrganizationRepositoriesUrl = organizationRepositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(organizationRepositoriesUrl));
+            this.OrganizationTeamsUrl = organizationTeamsUrl ?? throw new global::System.ArgumentNullException(nameof(organizationTeamsUrl));
+            this.PublicGistsUrl = publicGistsUrl ?? throw new global::System.ArgumentNullException(nameof(publicGistsUrl));
+            this.RateLimitUrl = rateLimitUrl ?? throw new global::System.ArgumentNullException(nameof(rateLimitUrl));
+            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+            this.RepositorySearchUrl = repositorySearchUrl ?? throw new global::System.ArgumentNullException(nameof(repositorySearchUrl));
+            this.CurrentUserRepositoriesUrl = currentUserRepositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(currentUserRepositoriesUrl));
+            this.StarredUrl = starredUrl ?? throw new global::System.ArgumentNullException(nameof(starredUrl));
+            this.StarredGistsUrl = starredGistsUrl ?? throw new global::System.ArgumentNullException(nameof(starredGistsUrl));
+            this.UserUrl = userUrl ?? throw new global::System.ArgumentNullException(nameof(userUrl));
+            this.UserOrganizationsUrl = userOrganizationsUrl ?? throw new global::System.ArgumentNullException(nameof(userOrganizationsUrl));
+            this.UserRepositoriesUrl = userRepositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(userRepositoriesUrl));
+            this.UserSearchUrl = userSearchUrl ?? throw new global::System.ArgumentNullException(nameof(userSearchUrl));
+            this.TopicSearchUrl = topicSearchUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Root" /> class.
+        /// </summary>
+        public Root()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

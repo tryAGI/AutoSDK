@@ -37,6 +37,40 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerationInfo" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// When the streaming event contains the generation information<br/>
+        /// type will be `generation_info`.<br/>
+        /// Default Value: generation_info
+        /// </param>
+        /// <param name="renderedPrompt">
+        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available<br/>
+        /// to Scale customers.
+        /// </param>
+        /// <param name="rephrasedQuery">
+        /// If you are on the Scale plan, you can view the actual query made to backend that was rephrased <br/>
+        /// by the LLM from the input query.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GenerationInfo(
+            string? type,
+            string? renderedPrompt,
+            string? rephrasedQuery)
+        {
+            this.Type = type;
+            this.RenderedPrompt = renderedPrompt;
+            this.RephrasedQuery = rephrasedQuery;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerationInfo" /> class.
+        /// </summary>
+        public GenerationInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

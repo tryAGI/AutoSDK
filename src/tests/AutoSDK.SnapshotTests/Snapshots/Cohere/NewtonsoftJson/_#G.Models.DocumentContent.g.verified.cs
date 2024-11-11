@@ -29,6 +29,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentContent" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="document">
+        /// Relevant information that could be used by the model to generate a more accurate reply.<br/>
+        /// The content of each document are generally short (should be under 300 words). Metadata should be used to provide additional information, both the key name and the value will be<br/>
+        /// passed to the model.
+        /// </param>
+        public DocumentContent(
+            global::G.Document document,
+            global::G.DocumentContentType type)
+        {
+            this.Document = document ?? throw new global::System.ArgumentNullException(nameof(document));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentContent" /> class.
+        /// </summary>
+        public DocumentContent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -93,6 +93,69 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2" /> class.
+        /// </summary>
+        /// <param name="deleted"></param>
+        /// <param name="description">
+        /// Description of the team
+        /// </param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id">
+        /// Unique identifier of the team
+        /// </param>
+        /// <param name="membersUrl"></param>
+        /// <param name="name">
+        /// Name of the team
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="parent"></param>
+        /// <param name="permission">
+        /// Permission that the team will have for its repositories
+        /// </param>
+        /// <param name="privacy"></param>
+        /// <param name="repositoriesUrl"></param>
+        /// <param name="slug"></param>
+        /// <param name="url">
+        /// URL for the team
+        /// </param>
+        public WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2(
+            string? description,
+            string htmlUrl,
+            int id,
+            string membersUrl,
+            string name,
+            string nodeId,
+            string permission,
+            global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2Privacy privacy,
+            string repositoriesUrl,
+            string slug,
+            string url,
+            bool? deleted,
+            global::G.WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2Parent? parent)
+        {
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
+            this.Privacy = privacy;
+            this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
+            this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Deleted = deleted;
+            this.Parent = parent;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2" /> class.
+        /// </summary>
+        public WebhookPullRequestLabeledPullRequestRequestedReviewerVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

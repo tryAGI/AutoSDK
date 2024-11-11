@@ -48,6 +48,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FullRepositoryPermissions" /> class.
+        /// </summary>
+        /// <param name="admin"></param>
+        /// <param name="maintain"></param>
+        /// <param name="push"></param>
+        /// <param name="triage"></param>
+        /// <param name="pull"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FullRepositoryPermissions(
+            bool admin,
+            bool push,
+            bool pull,
+            bool? maintain,
+            bool? triage)
+        {
+            this.Admin = admin;
+            this.Push = push;
+            this.Pull = pull;
+            this.Maintain = maintain;
+            this.Triage = triage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FullRepositoryPermissions" /> class.
+        /// </summary>
+        public FullRepositoryPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

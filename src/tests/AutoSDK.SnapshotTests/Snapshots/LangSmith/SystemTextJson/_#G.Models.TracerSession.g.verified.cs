@@ -192,6 +192,108 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TracerSession" /> class.
+        /// </summary>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="extra"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="defaultDatasetId"></param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="traceTier"></param>
+        /// <param name="id"></param>
+        /// <param name="runCount"></param>
+        /// <param name="latencyP50"></param>
+        /// <param name="latencyP99"></param>
+        /// <param name="firstTokenP50"></param>
+        /// <param name="firstTokenP99"></param>
+        /// <param name="totalTokens"></param>
+        /// <param name="promptTokens"></param>
+        /// <param name="completionTokens"></param>
+        /// <param name="totalCost"></param>
+        /// <param name="promptCost"></param>
+        /// <param name="completionCost"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="lastRunStartTime"></param>
+        /// <param name="lastRunStartTimeLive"></param>
+        /// <param name="feedbackStats"></param>
+        /// <param name="sessionFeedbackStats"></param>
+        /// <param name="runFacets"></param>
+        /// <param name="errorRate"></param>
+        /// <param name="streamingRate"></param>
+        /// <param name="testRunNumber"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TracerSession(
+            global::System.Guid id,
+            global::System.Guid tenantId,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            object? extra,
+            string? name,
+            string? description,
+            global::System.Guid? defaultDatasetId,
+            global::System.Guid? referenceDatasetId,
+            global::G.TraceTier? traceTier,
+            int? runCount,
+            double? latencyP50,
+            double? latencyP99,
+            double? firstTokenP50,
+            double? firstTokenP99,
+            int? totalTokens,
+            int? promptTokens,
+            int? completionTokens,
+            string? totalCost,
+            string? promptCost,
+            string? completionCost,
+            global::System.DateTime? lastRunStartTime,
+            global::System.DateTime? lastRunStartTimeLive,
+            object? feedbackStats,
+            object? sessionFeedbackStats,
+            global::System.Collections.Generic.IList<object>? runFacets,
+            double? errorRate,
+            double? streamingRate,
+            int? testRunNumber)
+        {
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Extra = extra;
+            this.Name = name;
+            this.Description = description;
+            this.DefaultDatasetId = defaultDatasetId;
+            this.ReferenceDatasetId = referenceDatasetId;
+            this.TraceTier = traceTier;
+            this.RunCount = runCount;
+            this.LatencyP50 = latencyP50;
+            this.LatencyP99 = latencyP99;
+            this.FirstTokenP50 = firstTokenP50;
+            this.FirstTokenP99 = firstTokenP99;
+            this.TotalTokens = totalTokens;
+            this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
+            this.TotalCost = totalCost;
+            this.PromptCost = promptCost;
+            this.CompletionCost = completionCost;
+            this.LastRunStartTime = lastRunStartTime;
+            this.LastRunStartTimeLive = lastRunStartTimeLive;
+            this.FeedbackStats = feedbackStats;
+            this.SessionFeedbackStats = sessionFeedbackStats;
+            this.RunFacets = runFacets;
+            this.ErrorRate = errorRate;
+            this.StreamingRate = streamingRate;
+            this.TestRunNumber = testRunNumber;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TracerSession" /> class.
+        /// </summary>
+        public TracerSession()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

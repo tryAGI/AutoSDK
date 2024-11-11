@@ -47,6 +47,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the pronunciation dictionary, used for identification only.
+        /// </param>
+        /// <param name="file">
+        /// A lexicon .pls file which we will use to initialize the project with.
+        /// </param>
+        /// <param name="filename">
+        /// A lexicon .pls file which we will use to initialize the project with.
+        /// </param>
+        /// <param name="description">
+        /// A description of the pronunciation dictionary, used for identification only.
+        /// </param>
+        /// <param name="workspaceAccess">
+        /// Should be one of 'editor' or 'viewer'. If not provided, defaults to no access.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost(
+            string name,
+            byte[]? file,
+            string? filename,
+            string? description,
+            global::G.BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePostWorkspaceAccess? workspaceAccess)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.File = file;
+            this.Filename = filename;
+            this.Description = description;
+            this.WorkspaceAccess = workspaceAccess;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost" /> class.
+        /// </summary>
+        public BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

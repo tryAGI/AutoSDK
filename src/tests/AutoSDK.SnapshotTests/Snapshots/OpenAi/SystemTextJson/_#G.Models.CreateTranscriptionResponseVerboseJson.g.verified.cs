@@ -48,6 +48,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTranscriptionResponseVerboseJson" /> class.
+        /// </summary>
+        /// <param name="language">
+        /// The language of the input audio.
+        /// </param>
+        /// <param name="duration">
+        /// The duration of the input audio.
+        /// </param>
+        /// <param name="text">
+        /// The transcribed text.
+        /// </param>
+        /// <param name="words">
+        /// Extracted words and their corresponding timestamps.
+        /// </param>
+        /// <param name="segments">
+        /// Segments of the transcribed text and their corresponding details.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateTranscriptionResponseVerboseJson(
+            string language,
+            string duration,
+            string text,
+            global::System.Collections.Generic.IList<global::G.TranscriptionWord>? words,
+            global::System.Collections.Generic.IList<global::G.TranscriptionSegment>? segments)
+        {
+            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.Duration = duration ?? throw new global::System.ArgumentNullException(nameof(duration));
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Words = words;
+            this.Segments = segments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTranscriptionResponseVerboseJson" /> class.
+        /// </summary>
+        public CreateTranscriptionResponseVerboseJson()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

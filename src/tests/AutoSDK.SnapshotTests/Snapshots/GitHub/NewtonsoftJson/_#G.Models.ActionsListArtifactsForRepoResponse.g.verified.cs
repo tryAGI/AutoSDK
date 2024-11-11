@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListArtifactsForRepoResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="artifacts"></param>
+        public ActionsListArtifactsForRepoResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.Artifact> artifacts)
+        {
+            this.TotalCount = totalCount;
+            this.Artifacts = artifacts ?? throw new global::System.ArgumentNullException(nameof(artifacts));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListArtifactsForRepoResponse" /> class.
+        /// </summary>
+        public ActionsListArtifactsForRepoResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

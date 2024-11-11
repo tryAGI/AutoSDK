@@ -50,6 +50,48 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatRequest" /> class.
+        /// </summary>
+        /// <param name="query">
+        /// The chat message or question.<br/>
+        /// Example: How can I use the Vectara platform?
+        /// </param>
+        /// <param name="search">
+        /// The parameters to search one or more corpora.
+        /// </param>
+        /// <param name="generation">
+        /// The parameters to control generation.
+        /// </param>
+        /// <param name="chat">
+        /// Parameters to control chat behavior.
+        /// </param>
+        /// <param name="streamResponse">
+        /// Indicates whether the response should be streamed or not.<br/>
+        /// Default Value: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatRequest(
+            string query,
+            global::G.SearchCorporaParameters search,
+            global::G.GenerationParameters? generation,
+            global::G.ChatParameters? chat,
+            bool? streamResponse)
+        {
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
+            this.Search = search;
+            this.Generation = generation;
+            this.Chat = chat;
+            this.StreamResponse = streamResponse;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatRequest" /> class.
+        /// </summary>
+        public ChatRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

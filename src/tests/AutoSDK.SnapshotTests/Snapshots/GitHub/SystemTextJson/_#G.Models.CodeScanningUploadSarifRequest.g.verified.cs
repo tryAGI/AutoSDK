@@ -65,6 +65,61 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningUploadSarifRequest" /> class.
+        /// </summary>
+        /// <param name="commitSha">
+        /// The SHA of the commit to which the analysis you are uploading relates.
+        /// </param>
+        /// <param name="ref">
+        /// The full Git reference, formatted as `refs/heads/&lt;branch name&gt;`,<br/>
+        /// `refs/tags/&lt;tag&gt;`, `refs/pull/&lt;number&gt;/merge`, or `refs/pull/&lt;number&gt;/head`.<br/>
+        /// Example: refs/heads/main
+        /// </param>
+        /// <param name="sarif">
+        /// A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)."
+        /// </param>
+        /// <param name="checkoutUri">
+        /// The base directory used in the analysis, as it appears in the SARIF file.<br/>
+        /// This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.<br/>
+        /// Example: file:///github/workspace/
+        /// </param>
+        /// <param name="startedAt">
+        /// The time that the analysis run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// </param>
+        /// <param name="toolName">
+        /// The name of the tool used to generate the code scanning analysis. If this parameter is not used, the tool name defaults to "API". If the uploaded SARIF contains a tool GUID, this will be available for filtering using the `tool_guid` parameter of operations such as `GET /repos/{owner}/{repo}/code-scanning/alerts`.
+        /// </param>
+        /// <param name="validate">
+        /// Whether the SARIF file will be validated according to the code scanning specifications.<br/>
+        /// This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeScanningUploadSarifRequest(
+            string commitSha,
+            string @ref,
+            string sarif,
+            string? checkoutUri,
+            global::System.DateTime? startedAt,
+            string? toolName,
+            bool? validate)
+        {
+            this.CommitSha = commitSha ?? throw new global::System.ArgumentNullException(nameof(commitSha));
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.Sarif = sarif ?? throw new global::System.ArgumentNullException(nameof(sarif));
+            this.CheckoutUri = checkoutUri;
+            this.StartedAt = startedAt;
+            this.ToolName = toolName;
+            this.Validate = validate;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningUploadSarifRequest" /> class.
+        /// </summary>
+        public CodeScanningUploadSarifRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

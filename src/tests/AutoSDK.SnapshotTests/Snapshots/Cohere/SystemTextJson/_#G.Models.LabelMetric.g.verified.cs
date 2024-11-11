@@ -33,6 +33,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LabelMetric" /> class.
+        /// </summary>
+        /// <param name="totalExamples">
+        /// Total number of examples for this label
+        /// </param>
+        /// <param name="label">
+        /// value of the label
+        /// </param>
+        /// <param name="samples">
+        /// samples for this label
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public LabelMetric(
+            double? totalExamples,
+            string? label,
+            global::System.Collections.Generic.IList<string>? samples)
+        {
+            this.TotalExamples = totalExamples;
+            this.Label = label;
+            this.Samples = samples;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LabelMetric" /> class.
+        /// </summary>
+        public LabelMetric()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -46,6 +46,46 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationProfile" /> class.
+        /// </summary>
+        /// <param name="displayName">
+        /// Display name.
+        /// </param>
+        /// <param name="bio">
+        /// Biography.
+        /// </param>
+        /// <param name="avatar">
+        /// Avatar in base64 format.
+        /// </param>
+        /// <param name="publicEmail">
+        /// Public email.
+        /// </param>
+        /// <param name="socialProfileLinks">
+        /// Social profile links list the links to the organization's social profiles.<br/>
+        /// The key represents the provider, and the value is the corresponding URL.
+        /// </param>
+        public OrganizationProfile(
+            string? displayName,
+            string? bio,
+            string? avatar,
+            string? publicEmail,
+            global::System.Collections.Generic.Dictionary<string, string>? socialProfileLinks)
+        {
+            this.DisplayName = displayName;
+            this.Bio = bio;
+            this.Avatar = avatar;
+            this.PublicEmail = publicEmail;
+            this.SocialProfileLinks = socialProfileLinks;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationProfile" /> class.
+        /// </summary>
+        public OrganizationProfile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

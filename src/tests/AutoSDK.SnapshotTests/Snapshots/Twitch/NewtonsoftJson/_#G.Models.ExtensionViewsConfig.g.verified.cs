@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionViewsConfig" /> class.
+        /// </summary>
+        /// <param name="viewerUrl">
+        /// The HTML file shown to broadcasters while they are configuring your extension within the Extension Manager.
+        /// </param>
+        /// <param name="canLinkExternalContent">
+        /// A Boolean value that determines whether the extension can link to non-Twitch domains.
+        /// </param>
+        public ExtensionViewsConfig(
+            string viewerUrl,
+            bool canLinkExternalContent)
+        {
+            this.ViewerUrl = viewerUrl ?? throw new global::System.ArgumentNullException(nameof(viewerUrl));
+            this.CanLinkExternalContent = canLinkExternalContent;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionViewsConfig" /> class.
+        /// </summary>
+        public ExtensionViewsConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

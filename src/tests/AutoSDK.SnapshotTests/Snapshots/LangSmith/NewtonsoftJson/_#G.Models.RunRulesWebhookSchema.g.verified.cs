@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunRulesWebhookSchema" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="headers"></param>
+        public RunRulesWebhookSchema(
+            string url,
+            global::System.Collections.Generic.Dictionary<string, string>? headers)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Headers = headers;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunRulesWebhookSchema" /> class.
+        /// </summary>
+        public RunRulesWebhookSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

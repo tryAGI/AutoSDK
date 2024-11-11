@@ -50,6 +50,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PollChoice" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// An ID that identifies this choice.
+        /// </param>
+        /// <param name="title">
+        /// The choice’s title. The title may contain a maximum of 25 characters.
+        /// </param>
+        /// <param name="votes">
+        /// The total number of votes cast for this choice.
+        /// </param>
+        /// <param name="channelPointsVotes">
+        /// The number of votes cast using Channel Points.
+        /// </param>
+        /// <param name="bitsVotes">
+        /// Not used; will be set to 0.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PollChoice(
+            string id,
+            string title,
+            int votes,
+            int channelPointsVotes,
+            int bitsVotes)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Votes = votes;
+            this.ChannelPointsVotes = channelPointsVotes;
+            this.BitsVotes = bitsVotes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PollChoice" /> class.
+        /// </summary>
+        public PollChoice()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

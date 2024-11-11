@@ -87,6 +87,62 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FTModelOut" /> class.
+        /// </summary>
+        /// <param name="aliases">
+        /// Default Value: []
+        /// </param>
+        /// <param name="archived"></param>
+        /// <param name="capabilities"></param>
+        /// <param name="created"></param>
+        /// <param name="description"></param>
+        /// <param name="id"></param>
+        /// <param name="job"></param>
+        /// <param name="maxContextLength">
+        /// Default Value: 32768
+        /// </param>
+        /// <param name="name"></param>
+        /// <param name="object">
+        /// Default Value: model
+        /// </param>
+        /// <param name="ownedBy"></param>
+        /// <param name="root"></param>
+        public FTModelOut(
+            bool archived,
+            global::G.FTModelCapabilitiesOut capabilities,
+            int created,
+            string id,
+            global::System.Guid job,
+            string ownedBy,
+            string root,
+            global::System.Collections.Generic.IList<string>? aliases,
+            string? description,
+            int? maxContextLength,
+            string? name,
+            global::G.FTModelOutObject? @object)
+        {
+            this.Archived = archived;
+            this.Capabilities = capabilities ?? throw new global::System.ArgumentNullException(nameof(capabilities));
+            this.Created = created;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Job = job;
+            this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
+            this.Root = root ?? throw new global::System.ArgumentNullException(nameof(root));
+            this.Aliases = aliases;
+            this.Description = description;
+            this.MaxContextLength = maxContextLength;
+            this.Name = name;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FTModelOut" /> class.
+        /// </summary>
+        public FTModelOut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -225,6 +225,125 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowRunRequestedWorkflowRun" /> class.
+        /// </summary>
+        /// <param name="actor"></param>
+        /// <param name="artifactsUrl"></param>
+        /// <param name="cancelUrl"></param>
+        /// <param name="checkSuiteId"></param>
+        /// <param name="checkSuiteNodeId"></param>
+        /// <param name="checkSuiteUrl"></param>
+        /// <param name="conclusion"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="event"></param>
+        /// <param name="headBranch"></param>
+        /// <param name="headCommit"></param>
+        /// <param name="headRepository"></param>
+        /// <param name="headSha"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="jobsUrl"></param>
+        /// <param name="logsUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="path"></param>
+        /// <param name="previousAttemptUrl"></param>
+        /// <param name="pullRequests"></param>
+        /// <param name="referencedWorkflows"></param>
+        /// <param name="repository"></param>
+        /// <param name="rerunUrl"></param>
+        /// <param name="runAttempt"></param>
+        /// <param name="runNumber"></param>
+        /// <param name="runStartedAt"></param>
+        /// <param name="status"></param>
+        /// <param name="triggeringActor"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="workflowId"></param>
+        /// <param name="workflowUrl"></param>
+        /// <param name="displayTitle"></param>
+        public WebhookWorkflowRunRequestedWorkflowRun(
+            global::G.WebhookWorkflowRunRequestedWorkflowRunActor? actor,
+            string artifactsUrl,
+            string cancelUrl,
+            int checkSuiteId,
+            string checkSuiteNodeId,
+            string checkSuiteUrl,
+            global::G.WebhookWorkflowRunRequestedWorkflowRunConclusion? conclusion,
+            global::System.DateTime createdAt,
+            string @event,
+            string? headBranch,
+            global::G.WebhookWorkflowRunRequestedWorkflowRunHeadCommit headCommit,
+            global::G.WebhookWorkflowRunRequestedWorkflowRunHeadRepository headRepository,
+            string headSha,
+            string htmlUrl,
+            int id,
+            string jobsUrl,
+            string logsUrl,
+            string? name,
+            string nodeId,
+            string path,
+            string? previousAttemptUrl,
+            global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunRequestedWorkflowRunPullRequest> pullRequests,
+            global::G.WebhookWorkflowRunRequestedWorkflowRunRepository repository,
+            string rerunUrl,
+            int runAttempt,
+            int runNumber,
+            global::System.DateTime runStartedAt,
+            global::G.WebhookWorkflowRunRequestedWorkflowRunStatus status,
+            global::G.WebhookWorkflowRunRequestedWorkflowRunTriggeringActor? triggeringActor,
+            global::System.DateTime updatedAt,
+            string url,
+            int workflowId,
+            string workflowUrl,
+            string displayTitle,
+            global::System.Collections.Generic.IList<global::G.WebhookWorkflowRunRequestedWorkflowRunReferencedWorkflow>? referencedWorkflows)
+        {
+            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.ArtifactsUrl = artifactsUrl ?? throw new global::System.ArgumentNullException(nameof(artifactsUrl));
+            this.CancelUrl = cancelUrl ?? throw new global::System.ArgumentNullException(nameof(cancelUrl));
+            this.CheckSuiteId = checkSuiteId;
+            this.CheckSuiteNodeId = checkSuiteNodeId ?? throw new global::System.ArgumentNullException(nameof(checkSuiteNodeId));
+            this.CheckSuiteUrl = checkSuiteUrl ?? throw new global::System.ArgumentNullException(nameof(checkSuiteUrl));
+            this.Conclusion = conclusion;
+            this.CreatedAt = createdAt;
+            this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
+            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
+            this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
+            this.HeadRepository = headRepository ?? throw new global::System.ArgumentNullException(nameof(headRepository));
+            this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.JobsUrl = jobsUrl ?? throw new global::System.ArgumentNullException(nameof(jobsUrl));
+            this.LogsUrl = logsUrl ?? throw new global::System.ArgumentNullException(nameof(logsUrl));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.PreviousAttemptUrl = previousAttemptUrl ?? throw new global::System.ArgumentNullException(nameof(previousAttemptUrl));
+            this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.RerunUrl = rerunUrl ?? throw new global::System.ArgumentNullException(nameof(rerunUrl));
+            this.RunAttempt = runAttempt;
+            this.RunNumber = runNumber;
+            this.RunStartedAt = runStartedAt;
+            this.Status = status;
+            this.TriggeringActor = triggeringActor ?? throw new global::System.ArgumentNullException(nameof(triggeringActor));
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.WorkflowId = workflowId;
+            this.WorkflowUrl = workflowUrl ?? throw new global::System.ArgumentNullException(nameof(workflowUrl));
+            this.DisplayTitle = displayTitle ?? throw new global::System.ArgumentNullException(nameof(displayTitle));
+            this.ReferencedWorkflows = referencedWorkflows;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowRunRequestedWorkflowRun" /> class.
+        /// </summary>
+        public WebhookWorkflowRunRequestedWorkflowRun()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

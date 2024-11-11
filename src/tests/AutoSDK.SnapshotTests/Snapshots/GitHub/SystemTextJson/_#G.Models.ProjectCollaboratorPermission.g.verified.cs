@@ -29,6 +29,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectCollaboratorPermission" /> class.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectCollaboratorPermission(
+            string permission,
+            global::G.NullableSimpleUser? user)
+        {
+            this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectCollaboratorPermission" /> class.
+        /// </summary>
+        public ProjectCollaboratorPermission()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

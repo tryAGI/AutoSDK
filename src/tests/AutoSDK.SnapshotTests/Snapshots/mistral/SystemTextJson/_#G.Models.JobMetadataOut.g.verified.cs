@@ -57,6 +57,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobMetadataOut" /> class.
+        /// </summary>
+        /// <param name="cost"></param>
+        /// <param name="costCurrency"></param>
+        /// <param name="dataTokens"></param>
+        /// <param name="estimatedStartTime"></param>
+        /// <param name="expectedDurationSeconds"></param>
+        /// <param name="trainTokens"></param>
+        /// <param name="trainTokensPerStep"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public JobMetadataOut(
+            double? cost,
+            string? costCurrency,
+            int? dataTokens,
+            int? estimatedStartTime,
+            int? expectedDurationSeconds,
+            int? trainTokens,
+            int? trainTokensPerStep)
+        {
+            this.Cost = cost;
+            this.CostCurrency = costCurrency;
+            this.DataTokens = dataTokens;
+            this.EstimatedStartTime = estimatedStartTime;
+            this.ExpectedDurationSeconds = expectedDurationSeconds;
+            this.TrainTokens = trainTokens;
+            this.TrainTokensPerStep = trainTokensPerStep;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobMetadataOut" /> class.
+        /// </summary>
+        public JobMetadataOut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

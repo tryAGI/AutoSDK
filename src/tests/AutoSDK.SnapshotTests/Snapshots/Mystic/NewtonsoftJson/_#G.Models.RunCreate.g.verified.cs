@@ -45,6 +45,37 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunCreate" /> class.
+        /// </summary>
+        /// <param name="pipeline"></param>
+        /// <param name="inputs"></param>
+        /// <param name="asyncRun">
+        /// Default Value: false
+        /// </param>
+        /// <param name="waitForResources"></param>
+        /// <param name="runId"></param>
+        public RunCreate(
+            string pipeline,
+            global::System.Collections.Generic.IList<global::G.RunInput> inputs,
+            bool? asyncRun,
+            bool? waitForResources,
+            string? runId)
+        {
+            this.Pipeline = pipeline ?? throw new global::System.ArgumentNullException(nameof(pipeline));
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
+            this.AsyncRun = asyncRun;
+            this.WaitForResources = waitForResources;
+            this.RunId = runId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunCreate" /> class.
+        /// </summary>
+        public RunCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

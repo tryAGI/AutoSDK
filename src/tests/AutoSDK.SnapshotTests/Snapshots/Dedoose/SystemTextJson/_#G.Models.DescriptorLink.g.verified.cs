@@ -51,6 +51,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorLink" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="descriptorIDL"></param>
+        /// <param name="resourceIDL"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DescriptorLink(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            global::System.Guid? descriptorIDL,
+            global::System.Guid? resourceIDL)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.ProjectIDL = projectIDL;
+            this.DescriptorIDL = descriptorIDL;
+            this.ResourceIDL = resourceIDL;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorLink" /> class.
+        /// </summary>
+        public DescriptorLink()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -75,6 +75,70 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Lora" /> class.
+        /// </summary>
+        /// <param name="akUUID">
+        /// Unique identifier for the element. Elements can be found from the List Elements endpoint.
+        /// </param>
+        /// <param name="creatorName">
+        /// Name of the creator of the element
+        /// </param>
+        /// <param name="name">
+        /// Name of the element
+        /// </param>
+        /// <param name="description">
+        /// Description for the element
+        /// </param>
+        /// <param name="urlImage">
+        /// URL of the element image
+        /// </param>
+        /// <param name="baseModel">
+        /// Base model version for the element
+        /// </param>
+        /// <param name="weightDefault">
+        /// Default weight for the element
+        /// </param>
+        /// <param name="weightMin">
+        /// Minimum weight for the element
+        /// </param>
+        /// <param name="weightMax">
+        /// Maximum weight for the element
+        /// </param>
+        /// <param name="typename">
+        /// Type name for introspection purposes
+        /// </param>
+        public Lora(
+            string? akUUID,
+            string? creatorName,
+            string? name,
+            string? description,
+            string? urlImage,
+            string? baseModel,
+            int? weightDefault,
+            int? weightMin,
+            int? weightMax,
+            string? typename)
+        {
+            this.AkUUID = akUUID;
+            this.CreatorName = creatorName;
+            this.Name = name;
+            this.Description = description;
+            this.UrlImage = urlImage;
+            this.BaseModel = baseModel;
+            this.WeightDefault = weightDefault;
+            this.WeightMin = weightMin;
+            this.WeightMax = weightMax;
+            this.Typename = typename;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Lora" /> class.
+        /// </summary>
+        public Lora()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

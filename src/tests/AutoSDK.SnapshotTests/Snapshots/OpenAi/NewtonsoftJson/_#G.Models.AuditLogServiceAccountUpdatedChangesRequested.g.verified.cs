@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogServiceAccountUpdatedChangesRequested" /> class.
+        /// </summary>
+        /// <param name="role">
+        /// The role of the service account. Is either `owner` or `member`.
+        /// </param>
+        public AuditLogServiceAccountUpdatedChangesRequested(
+            string? role)
+        {
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogServiceAccountUpdatedChangesRequested" /> class.
+        /// </summary>
+        public AuditLogServiceAccountUpdatedChangesRequested()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

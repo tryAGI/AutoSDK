@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RegionGet" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="kind"></param>
+        /// <param name="name"></param>
+        /// <param name="selfLink"></param>
+        /// <param name="status"></param>
+        /// <param name="zones"></param>
+        public RegionGet(
+            int id,
+            string kind,
+            string name,
+            string selfLink,
+            string status,
+            global::System.Collections.Generic.IList<string> zones)
+        {
+            this.Id = id;
+            this.Kind = kind ?? throw new global::System.ArgumentNullException(nameof(kind));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.SelfLink = selfLink ?? throw new global::System.ArgumentNullException(nameof(selfLink));
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.Zones = zones ?? throw new global::System.ArgumentNullException(nameof(zones));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RegionGet" /> class.
+        /// </summary>
+        public RegionGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

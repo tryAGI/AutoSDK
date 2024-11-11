@@ -26,6 +26,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateRedemptionStatusBody" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// The status to set the redemption to. Possible values are:  <br/>
+        ///   <br/>
+        /// * CANCELED<br/>
+        /// * FULFILLED<br/>
+        ///   <br/>
+        /// Setting the status to CANCELED refunds the user’s channel points.
+        /// </param>
+        public UpdateRedemptionStatusBody(
+            global::G.UpdateRedemptionStatusBodyStatus status)
+        {
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateRedemptionStatusBody" /> class.
+        /// </summary>
+        public UpdateRedemptionStatusBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

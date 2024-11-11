@@ -75,6 +75,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReactionRollup" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="totalCount"></param>
+        /// <param name="plus1"></param>
+        /// <param name="minus1"></param>
+        /// <param name="laugh"></param>
+        /// <param name="confused"></param>
+        /// <param name="heart"></param>
+        /// <param name="hooray"></param>
+        /// <param name="eyes"></param>
+        /// <param name="rocket"></param>
+        public ReactionRollup(
+            string url,
+            int totalCount,
+            int plus1,
+            int minus1,
+            int laugh,
+            int confused,
+            int heart,
+            int hooray,
+            int eyes,
+            int rocket)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.TotalCount = totalCount;
+            this.Plus1 = plus1;
+            this.Minus1 = minus1;
+            this.Laugh = laugh;
+            this.Confused = confused;
+            this.Heart = heart;
+            this.Hooray = hooray;
+            this.Eyes = eyes;
+            this.Rocket = rocket;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReactionRollup" /> class.
+        /// </summary>
+        public ReactionRollup()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

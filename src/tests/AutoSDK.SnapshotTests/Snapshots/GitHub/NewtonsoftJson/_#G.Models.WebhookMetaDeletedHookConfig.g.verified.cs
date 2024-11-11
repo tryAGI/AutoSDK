@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMetaDeletedHookConfig" /> class.
+        /// </summary>
+        /// <param name="contentType"></param>
+        /// <param name="insecureSsl"></param>
+        /// <param name="secret"></param>
+        /// <param name="url"></param>
+        public WebhookMetaDeletedHookConfig(
+            global::G.WebhookMetaDeletedHookConfigContentType contentType,
+            string insecureSsl,
+            string url,
+            string? secret)
+        {
+            this.ContentType = contentType;
+            this.InsecureSsl = insecureSsl ?? throw new global::System.ArgumentNullException(nameof(insecureSsl));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Secret = secret;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMetaDeletedHookConfig" /> class.
+        /// </summary>
+        public WebhookMetaDeletedHookConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

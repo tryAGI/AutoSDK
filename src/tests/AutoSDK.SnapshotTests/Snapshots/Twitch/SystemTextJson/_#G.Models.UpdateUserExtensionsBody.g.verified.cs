@@ -26,6 +26,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateUserExtensionsBody" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The extensions to update. The `data` field is a dictionary of extension types. The dictionary’s possible keys are: panel, overlay, or component. The key’s value is a dictionary of extensions.  <br/>
+        ///   <br/>
+        /// For the extension’s dictionary, the key is a sequential number beginning with 1\. For panel and overlay extensions, the key’s value is an object that contains the following fields: `active` (true/false), `id` (the extension’s ID), and `version` (the extension’s version).  <br/>
+        ///   <br/>
+        /// For component extensions, the key’s value includes the above fields plus the `x` and `y` fields, which identify the coordinate where the extension is placed.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateUserExtensionsBody(
+            global::G.UpdateUserExtensionsBodyData data)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateUserExtensionsBody" /> class.
+        /// </summary>
+        public UpdateUserExtensionsBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

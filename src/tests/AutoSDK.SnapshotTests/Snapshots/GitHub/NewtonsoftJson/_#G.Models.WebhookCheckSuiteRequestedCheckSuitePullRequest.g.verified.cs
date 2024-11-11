@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCheckSuiteRequestedCheckSuitePullRequest" /> class.
+        /// </summary>
+        /// <param name="base"></param>
+        /// <param name="head"></param>
+        /// <param name="id"></param>
+        /// <param name="number"></param>
+        /// <param name="url"></param>
+        public WebhookCheckSuiteRequestedCheckSuitePullRequest(
+            global::G.WebhookCheckSuiteRequestedCheckSuitePullRequestBase @base,
+            global::G.WebhookCheckSuiteRequestedCheckSuitePullRequestHead head,
+            int id,
+            int number,
+            string url)
+        {
+            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
+            this.Id = id;
+            this.Number = number;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCheckSuiteRequestedCheckSuitePullRequest" /> class.
+        /// </summary>
+        public WebhookCheckSuiteRequestedCheckSuitePullRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

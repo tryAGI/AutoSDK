@@ -40,6 +40,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatBody" /> class.
+        /// </summary>
+        /// <param name="catalogId"></param>
+        /// <param name="conversationUid"></param>
+        /// <param name="message"></param>
+        /// <param name="topK"></param>
+        public ChatBody(
+            string catalogId,
+            string conversationUid,
+            string message,
+            long? topK)
+        {
+            this.CatalogId = catalogId ?? throw new global::System.ArgumentNullException(nameof(catalogId));
+            this.ConversationUid = conversationUid ?? throw new global::System.ArgumentNullException(nameof(conversationUid));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.TopK = topK;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatBody" /> class.
+        /// </summary>
+        public ChatBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

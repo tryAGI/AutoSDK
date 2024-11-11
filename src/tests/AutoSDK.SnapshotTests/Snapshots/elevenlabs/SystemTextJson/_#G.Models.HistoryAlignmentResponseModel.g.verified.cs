@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HistoryAlignmentResponseModel" /> class.
+        /// </summary>
+        /// <param name="characters"></param>
+        /// <param name="characterStartTimesSeconds"></param>
+        /// <param name="characterEndTimesSeconds"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public HistoryAlignmentResponseModel(
+            global::System.Collections.Generic.IList<string> characters,
+            global::System.Collections.Generic.IList<double> characterStartTimesSeconds,
+            global::System.Collections.Generic.IList<double> characterEndTimesSeconds)
+        {
+            this.Characters = characters ?? throw new global::System.ArgumentNullException(nameof(characters));
+            this.CharacterStartTimesSeconds = characterStartTimesSeconds ?? throw new global::System.ArgumentNullException(nameof(characterStartTimesSeconds));
+            this.CharacterEndTimesSeconds = characterEndTimesSeconds ?? throw new global::System.ArgumentNullException(nameof(characterEndTimesSeconds));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HistoryAlignmentResponseModel" /> class.
+        /// </summary>
+        public HistoryAlignmentResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

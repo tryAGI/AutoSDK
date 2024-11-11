@@ -45,6 +45,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertCreatedAlertMostRecentInstanceLocation" /> class.
+        /// </summary>
+        /// <param name="endColumn"></param>
+        /// <param name="endLine"></param>
+        /// <param name="path"></param>
+        /// <param name="startColumn"></param>
+        /// <param name="startLine"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookCodeScanningAlertCreatedAlertMostRecentInstanceLocation(
+            int? endColumn,
+            int? endLine,
+            string? path,
+            int? startColumn,
+            int? startLine)
+        {
+            this.EndColumn = endColumn;
+            this.EndLine = endLine;
+            this.Path = path;
+            this.StartColumn = startColumn;
+            this.StartLine = startLine;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertCreatedAlertMostRecentInstanceLocation" /> class.
+        /// </summary>
+        public WebhookCodeScanningAlertCreatedAlertMostRecentInstanceLocation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

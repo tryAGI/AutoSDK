@@ -22,6 +22,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckNamespaceRequest" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The namespace ID to be checked.
+        /// </param>
+        public CheckNamespaceRequest(
+            string id)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckNamespaceRequest" /> class.
+        /// </summary>
+        public CheckNamespaceRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

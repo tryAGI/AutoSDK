@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestOutputError" /> class.
+        /// </summary>
+        /// <param name="code">
+        /// A machine-readable error code.
+        /// </param>
+        /// <param name="message">
+        /// A human-readable error message.
+        /// </param>
+        public BatchRequestOutputError(
+            string? code,
+            string? message)
+        {
+            this.Code = code;
+            this.Message = message;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestOutputError" /> class.
+        /// </summary>
+        public BatchRequestOutputError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldValueDTO" /> class.
+        /// </summary>
+        /// <param name="descriptorId"></param>
+        /// <param name="fieldId"></param>
+        /// <param name="value"></param>
+        /// <param name="optionId"></param>
+        public FieldValueDTO(
+            global::System.Guid? descriptorId,
+            global::System.Guid? fieldId,
+            string? value,
+            global::System.Guid? optionId)
+        {
+            this.DescriptorId = descriptorId;
+            this.FieldId = fieldId;
+            this.Value = value;
+            this.OptionId = optionId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldValueDTO" /> class.
+        /// </summary>
+        public FieldValueDTO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

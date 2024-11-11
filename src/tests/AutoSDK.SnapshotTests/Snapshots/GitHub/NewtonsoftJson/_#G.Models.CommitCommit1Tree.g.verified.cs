@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitCommit1Tree" /> class.
+        /// </summary>
+        /// <param name="sha">
+        /// Example: 827efc6d56897b048c772eb4087f854f46256132
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/tree/827efc6d56897b048c772eb4087f854f46256132
+        /// </param>
+        public CommitCommit1Tree(
+            string sha,
+            string url)
+        {
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitCommit1Tree" /> class.
+        /// </summary>
+        public CommitCommit1Tree()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

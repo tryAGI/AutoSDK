@@ -75,6 +75,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserAccountVO" /> class.
+        /// </summary>
+        /// <param name="isPastDue"></param>
+        /// <param name="isDisabled"></param>
+        /// <param name="accountId"></param>
+        /// <param name="accountUserCount"></param>
+        /// <param name="accountCPUPM"></param>
+        /// <param name="currentBalance"></param>
+        /// <param name="lastPaymentDate"></param>
+        /// <param name="lastPastDueNoticeDate"></param>
+        /// <param name="lastPaymentAmmount"></param>
+        /// <param name="isPastLateGracePeriod"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UserAccountVO(
+            bool? isPastDue,
+            bool? isDisabled,
+            global::System.Guid? accountId,
+            int? accountUserCount,
+            double? accountCPUPM,
+            double? currentBalance,
+            global::System.DateTime? lastPaymentDate,
+            global::System.DateTime? lastPastDueNoticeDate,
+            double? lastPaymentAmmount,
+            bool? isPastLateGracePeriod)
+        {
+            this.IsPastDue = isPastDue;
+            this.IsDisabled = isDisabled;
+            this.AccountId = accountId;
+            this.AccountUserCount = accountUserCount;
+            this.AccountCPUPM = accountCPUPM;
+            this.CurrentBalance = currentBalance;
+            this.LastPaymentDate = lastPaymentDate;
+            this.LastPastDueNoticeDate = lastPastDueNoticeDate;
+            this.LastPaymentAmmount = lastPaymentAmmount;
+            this.IsPastLateGracePeriod = isPastLateGracePeriod;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserAccountVO" /> class.
+        /// </summary>
+        public UserAccountVO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Schema" /> class.
+        /// </summary>
+        /// <param name="classes">
+        /// Semantic classes that are available.
+        /// </param>
+        /// <param name="maintainer">
+        /// Email of the maintainer.
+        /// </param>
+        /// <param name="name">
+        /// Name of the schema.
+        /// </param>
+        public Schema(
+            global::System.Collections.Generic.IList<global::G.Class>? classes,
+            string? maintainer,
+            string? name)
+        {
+            this.Classes = classes;
+            this.Maintainer = maintainer;
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Schema" /> class.
+        /// </summary>
+        public Schema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

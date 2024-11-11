@@ -76,6 +76,48 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeployKey" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="key"></param>
+        /// <param name="url"></param>
+        /// <param name="title"></param>
+        /// <param name="verified"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="readOnly"></param>
+        /// <param name="addedBy"></param>
+        /// <param name="lastUsed"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DeployKey(
+            int id,
+            string key,
+            string url,
+            string title,
+            bool verified,
+            string createdAt,
+            bool readOnly,
+            string? addedBy,
+            string? lastUsed)
+        {
+            this.Id = id;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Verified = verified;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.ReadOnly = readOnly;
+            this.AddedBy = addedBy;
+            this.LastUsed = lastUsed;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeployKey" /> class.
+        /// </summary>
+        public DeployKey()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

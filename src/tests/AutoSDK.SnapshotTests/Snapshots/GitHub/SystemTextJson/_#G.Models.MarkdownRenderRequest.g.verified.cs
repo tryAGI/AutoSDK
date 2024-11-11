@@ -37,6 +37,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarkdownRenderRequest" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// The Markdown text to render in HTML.
+        /// </param>
+        /// <param name="mode">
+        /// The rendering mode.<br/>
+        /// Default Value: markdown<br/>
+        /// Example: markdown
+        /// </param>
+        /// <param name="context">
+        /// The repository context to use when creating references in `gfm` mode.  For example, setting `context` to `octo-org/octo-repo` will change the text `#42` into an HTML link to issue 42 in the `octo-org/octo-repo` repository.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MarkdownRenderRequest(
+            string text,
+            global::G.MarkdownRenderRequestMode? mode,
+            string? context)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Mode = mode;
+            this.Context = context;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarkdownRenderRequest" /> class.
+        /// </summary>
+        public MarkdownRenderRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -65,6 +65,45 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComparativeExperimentCreate" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="experimentIds"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="modifiedAt"></param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="extra"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ComparativeExperimentCreate(
+            global::System.Collections.Generic.IList<global::System.Guid> experimentIds,
+            global::System.Guid referenceDatasetId,
+            global::System.Guid? id,
+            string? name,
+            string? description,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? modifiedAt,
+            object? extra)
+        {
+            this.ExperimentIds = experimentIds ?? throw new global::System.ArgumentNullException(nameof(experimentIds));
+            this.ReferenceDatasetId = referenceDatasetId;
+            this.Id = id;
+            this.Name = name;
+            this.Description = description;
+            this.CreatedAt = createdAt;
+            this.ModifiedAt = modifiedAt;
+            this.Extra = extra;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComparativeExperimentCreate" /> class.
+        /// </summary>
+        public ComparativeExperimentCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

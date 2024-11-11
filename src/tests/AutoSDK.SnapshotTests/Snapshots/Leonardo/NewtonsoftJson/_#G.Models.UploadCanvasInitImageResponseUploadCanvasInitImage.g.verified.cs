@@ -63,6 +63,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadCanvasInitImageResponseUploadCanvasInitImage" /> class.
+        /// </summary>
+        /// <param name="initImageId"></param>
+        /// <param name="initFields"></param>
+        /// <param name="initKey"></param>
+        /// <param name="initUrl"></param>
+        /// <param name="maskImageId"></param>
+        /// <param name="maskFields"></param>
+        /// <param name="maskKey"></param>
+        /// <param name="maskUrl"></param>
+        public UploadCanvasInitImageResponseUploadCanvasInitImage(
+            string? initImageId,
+            string? initFields,
+            string? initKey,
+            string? initUrl,
+            string? maskImageId,
+            string? maskFields,
+            string? maskKey,
+            string? maskUrl)
+        {
+            this.InitImageId = initImageId;
+            this.InitFields = initFields;
+            this.InitKey = initKey;
+            this.InitUrl = initUrl;
+            this.MaskImageId = maskImageId;
+            this.MaskFields = maskFields;
+            this.MaskKey = maskKey;
+            this.MaskUrl = maskUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadCanvasInitImageResponseUploadCanvasInitImage" /> class.
+        /// </summary>
+        public UploadCanvasInitImageResponseUploadCanvasInitImage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetStreamMarkersResponsePagination" /> class.
+        /// </summary>
+        /// <param name="cursor">
+        /// The cursor used to get the next page of results. Set the request’s _after_ or _before_ query parameter to this value depending on whether you’re paging forwards or backwards.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetStreamMarkersResponsePagination(
+            string? cursor)
+        {
+            this.Cursor = cursor;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetStreamMarkersResponsePagination" /> class.
+        /// </summary>
+        public GetStreamMarkersResponsePagination()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

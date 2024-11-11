@@ -49,6 +49,49 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Classroom" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the classroom.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="name">
+        /// The name of the classroom.<br/>
+        /// Example: Programming Elixir
+        /// </param>
+        /// <param name="archived">
+        /// Whether classroom is archived.<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="organization">
+        /// A GitHub organization.
+        /// </param>
+        /// <param name="url">
+        /// The URL of the classroom on GitHub Classroom.<br/>
+        /// Example: https://classroom.github.com/classrooms/1-programming-elixir
+        /// </param>
+        public Classroom(
+            int id,
+            string name,
+            bool archived,
+            global::G.SimpleClassroomOrganization organization,
+            string url)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Archived = archived;
+            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Classroom" /> class.
+        /// </summary>
+        public Classroom()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

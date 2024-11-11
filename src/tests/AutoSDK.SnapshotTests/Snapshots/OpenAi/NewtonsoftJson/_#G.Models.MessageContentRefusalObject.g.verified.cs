@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageContentRefusalObject" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Always `refusal`.
+        /// </param>
+        /// <param name="refusal"></param>
+        public MessageContentRefusalObject(
+            string refusal,
+            global::G.MessageContentRefusalObjectType type)
+        {
+            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageContentRefusalObject" /> class.
+        /// </summary>
+        public MessageContentRefusalObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

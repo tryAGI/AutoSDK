@@ -36,6 +36,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModifyChannelInformationBodyContentClassificationLabel" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// ID of the [Content Classification Labels](https://blog.twitch.tv/en/2023/06/20/introducing-content-classification-labels/) that must be added/removed from the channel. Can be one of the following values:  <br/>
+        ///   <br/>
+        /// * DrugsIntoxication<br/>
+        /// * SexualThemes<br/>
+        /// * ViolentGraphic<br/>
+        /// * Gambling<br/>
+        /// * ProfanityVulgarity
+        /// </param>
+        /// <param name="isEnabled">
+        /// Boolean flag indicating whether the label should be enabled (true) or disabled for the channel.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ModifyChannelInformationBodyContentClassificationLabel(
+            global::G.ModifyChannelInformationBodyContentClassificationLabelId id,
+            bool isEnabled)
+        {
+            this.Id = id;
+            this.IsEnabled = isEnabled;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModifyChannelInformationBodyContentClassificationLabel" /> class.
+        /// </summary>
+        public ModifyChannelInformationBodyContentClassificationLabel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

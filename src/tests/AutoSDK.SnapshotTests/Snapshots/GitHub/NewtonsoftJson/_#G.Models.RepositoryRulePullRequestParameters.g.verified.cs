@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulePullRequestParameters" /> class.
+        /// </summary>
+        /// <param name="dismissStaleReviewsOnPush">
+        /// New, reviewable commits pushed will dismiss previous pull request review approvals.
+        /// </param>
+        /// <param name="requireCodeOwnerReview">
+        /// Require an approving review in pull requests that modify files that have a designated code owner.
+        /// </param>
+        /// <param name="requireLastPushApproval">
+        /// Whether the most recent reviewable push must be approved by someone other than the person who pushed it.
+        /// </param>
+        /// <param name="requiredApprovingReviewCount">
+        /// The number of approving reviews that are required before a pull request can be merged.
+        /// </param>
+        /// <param name="requiredReviewThreadResolution">
+        /// All conversations on code must be resolved before a pull request can be merged.
+        /// </param>
+        public RepositoryRulePullRequestParameters(
+            bool dismissStaleReviewsOnPush,
+            bool requireCodeOwnerReview,
+            bool requireLastPushApproval,
+            int requiredApprovingReviewCount,
+            bool requiredReviewThreadResolution)
+        {
+            this.DismissStaleReviewsOnPush = dismissStaleReviewsOnPush;
+            this.RequireCodeOwnerReview = requireCodeOwnerReview;
+            this.RequireLastPushApproval = requireLastPushApproval;
+            this.RequiredApprovingReviewCount = requiredApprovingReviewCount;
+            this.RequiredReviewThreadResolution = requiredReviewThreadResolution;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulePullRequestParameters" /> class.
+        /// </summary>
+        public RepositoryRulePullRequestParameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

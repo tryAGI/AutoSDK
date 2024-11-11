@@ -260,6 +260,126 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissions" /> class.
+        /// </summary>
+        /// <param name="actions"></param>
+        /// <param name="administration"></param>
+        /// <param name="checks"></param>
+        /// <param name="contentReferences"></param>
+        /// <param name="contents"></param>
+        /// <param name="deployments"></param>
+        /// <param name="discussions"></param>
+        /// <param name="emails"></param>
+        /// <param name="environments"></param>
+        /// <param name="issues"></param>
+        /// <param name="keys"></param>
+        /// <param name="members"></param>
+        /// <param name="metadata"></param>
+        /// <param name="organizationAdministration"></param>
+        /// <param name="organizationHooks"></param>
+        /// <param name="organizationPackages"></param>
+        /// <param name="organizationPlan"></param>
+        /// <param name="organizationProjects"></param>
+        /// <param name="organizationSecrets"></param>
+        /// <param name="organizationSelfHostedRunners"></param>
+        /// <param name="organizationUserBlocking"></param>
+        /// <param name="packages"></param>
+        /// <param name="pages"></param>
+        /// <param name="pullRequests"></param>
+        /// <param name="repositoryHooks"></param>
+        /// <param name="repositoryProjects"></param>
+        /// <param name="secretScanningAlerts"></param>
+        /// <param name="secrets"></param>
+        /// <param name="securityEvents"></param>
+        /// <param name="securityScanningAlert"></param>
+        /// <param name="singleFile"></param>
+        /// <param name="statuses"></param>
+        /// <param name="teamDiscussions"></param>
+        /// <param name="vulnerabilityAlerts"></param>
+        /// <param name="workflows"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissions(
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsActions? actions,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsAdministration? administration,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsChecks? checks,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsContentReferences? contentReferences,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsContents? contents,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsDeployments? deployments,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsDiscussions? discussions,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsEmails? emails,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsEnvironments? environments,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsIssues? issues,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsKeys? keys,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsMembers? members,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsMetadata? metadata,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationAdministration? organizationAdministration,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationHooks? organizationHooks,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPackages? organizationPackages,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationPlan? organizationPlan,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationProjects? organizationProjects,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSecrets? organizationSecrets,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? organizationSelfHostedRunners,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsOrganizationUserBlocking? organizationUserBlocking,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsPackages? packages,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsPages? pages,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsPullRequests? pullRequests,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsRepositoryHooks? repositoryHooks,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsRepositoryProjects? repositoryProjects,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSecretScanningAlerts? secretScanningAlerts,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSecrets? secrets,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSecurityEvents? securityEvents,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSecurityScanningAlert? securityScanningAlert,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsSingleFile? singleFile,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsStatuses? statuses,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsTeamDiscussions? teamDiscussions,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsVulnerabilityAlerts? vulnerabilityAlerts,
+            global::G.WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissionsWorkflows? workflows)
+        {
+            this.Actions = actions;
+            this.Administration = administration;
+            this.Checks = checks;
+            this.ContentReferences = contentReferences;
+            this.Contents = contents;
+            this.Deployments = deployments;
+            this.Discussions = discussions;
+            this.Emails = emails;
+            this.Environments = environments;
+            this.Issues = issues;
+            this.Keys = keys;
+            this.Members = members;
+            this.Metadata = metadata;
+            this.OrganizationAdministration = organizationAdministration;
+            this.OrganizationHooks = organizationHooks;
+            this.OrganizationPackages = organizationPackages;
+            this.OrganizationPlan = organizationPlan;
+            this.OrganizationProjects = organizationProjects;
+            this.OrganizationSecrets = organizationSecrets;
+            this.OrganizationSelfHostedRunners = organizationSelfHostedRunners;
+            this.OrganizationUserBlocking = organizationUserBlocking;
+            this.Packages = packages;
+            this.Pages = pages;
+            this.PullRequests = pullRequests;
+            this.RepositoryHooks = repositoryHooks;
+            this.RepositoryProjects = repositoryProjects;
+            this.SecretScanningAlerts = secretScanningAlerts;
+            this.Secrets = secrets;
+            this.SecurityEvents = securityEvents;
+            this.SecurityScanningAlert = securityScanningAlert;
+            this.SingleFile = singleFile;
+            this.Statuses = statuses;
+            this.TeamDiscussions = teamDiscussions;
+            this.VulnerabilityAlerts = vulnerabilityAlerts;
+            this.Workflows = workflows;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissions" /> class.
+        /// </summary>
+        public WebhookIssueCommentEditedIssueVariant1PerformedViaGithubAppPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

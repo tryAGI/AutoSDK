@@ -29,6 +29,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckSuitePreference" /> class.
+        /// </summary>
+        /// <param name="preferences"></param>
+        /// <param name="repository">
+        /// Minimal Repository
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CheckSuitePreference(
+            global::G.CheckSuitePreferencePreferences preferences,
+            global::G.MinimalRepository repository)
+        {
+            this.Preferences = preferences ?? throw new global::System.ArgumentNullException(nameof(preferences));
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckSuitePreference" /> class.
+        /// </summary>
+        public CheckSuitePreference()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

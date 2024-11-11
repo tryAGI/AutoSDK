@@ -45,6 +45,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScalingConfigCreate" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="minimumNodes">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="maximumNodes">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="type">
+        /// An enumeration.
+        /// </param>
+        /// <param name="args"></param>
+        public ScalingConfigCreate(
+            string name,
+            object args,
+            int? minimumNodes,
+            int? maximumNodes,
+            global::G.ScalingConfigType type)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
+            this.MinimumNodes = minimumNodes;
+            this.MaximumNodes = maximumNodes;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScalingConfigCreate" /> class.
+        /// </summary>
+        public ScalingConfigCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

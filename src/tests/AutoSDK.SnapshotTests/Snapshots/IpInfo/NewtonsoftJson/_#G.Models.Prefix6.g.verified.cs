@@ -57,6 +57,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Prefix6" /> class.
+        /// </summary>
+        /// <param name="netblock">
+        /// Example: 2601::/20
+        /// </param>
+        /// <param name="id">
+        /// Example: COMCAST6NET
+        /// </param>
+        /// <param name="name">
+        /// Example: Comcast Cable Communications, LLC
+        /// </param>
+        /// <param name="country">
+        /// Example: US
+        /// </param>
+        /// <param name="size">
+        /// Example: 20282409603651670423947251286016
+        /// </param>
+        /// <param name="status">
+        /// Example: ASSIGNMENT
+        /// </param>
+        /// <param name="domain">
+        /// Example: comcast.com
+        /// </param>
+        public Prefix6(
+            string netblock,
+            string id,
+            string name,
+            string country,
+            string? size,
+            string? status,
+            string? domain)
+        {
+            this.Netblock = netblock ?? throw new global::System.ArgumentNullException(nameof(netblock));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Country = country ?? throw new global::System.ArgumentNullException(nameof(country));
+            this.Size = size;
+            this.Status = status;
+            this.Domain = domain;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Prefix6" /> class.
+        /// </summary>
+        public Prefix6()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

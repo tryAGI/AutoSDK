@@ -108,6 +108,81 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamDiscussionComment" /> class.
+        /// </summary>
+        /// <param name="author">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="body">
+        /// The main text of the comment.<br/>
+        /// Example: I agree with this suggestion.
+        /// </param>
+        /// <param name="bodyHtml">
+        /// Example: &lt;p&gt;Do you like apples?&lt;/p&gt;
+        /// </param>
+        /// <param name="bodyVersion">
+        /// The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.<br/>
+        /// Example: 0307116bbf7ced493b8d8a346c650b71
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="lastEditedAt"></param>
+        /// <param name="discussionUrl">
+        /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/orgs/github/teams/justice-league/discussions/1/comments/1
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDIxOlRlYW1EaXNjdXNzaW9uQ29tbWVudDE=
+        /// </param>
+        /// <param name="number">
+        /// The unique sequence number of a team discussion comment.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url">
+        /// Example: https://api.github.com/organizations/1/team/2403582/discussions/1/comments/1
+        /// </param>
+        /// <param name="reactions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TeamDiscussionComment(
+            global::G.NullableSimpleUser? author,
+            string body,
+            string bodyHtml,
+            string bodyVersion,
+            global::System.DateTime createdAt,
+            global::System.DateTime? lastEditedAt,
+            string discussionUrl,
+            string htmlUrl,
+            string nodeId,
+            int number,
+            global::System.DateTime updatedAt,
+            string url,
+            global::G.ReactionRollup? reactions)
+        {
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.BodyHtml = bodyHtml ?? throw new global::System.ArgumentNullException(nameof(bodyHtml));
+            this.BodyVersion = bodyVersion ?? throw new global::System.ArgumentNullException(nameof(bodyVersion));
+            this.CreatedAt = createdAt;
+            this.LastEditedAt = lastEditedAt;
+            this.DiscussionUrl = discussionUrl ?? throw new global::System.ArgumentNullException(nameof(discussionUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Number = number;
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Reactions = reactions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamDiscussionComment" /> class.
+        /// </summary>
+        public TeamDiscussionComment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

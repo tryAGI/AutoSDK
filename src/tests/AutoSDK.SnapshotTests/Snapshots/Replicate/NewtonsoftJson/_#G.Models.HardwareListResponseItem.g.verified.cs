@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HardwareListResponseItem" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the hardware.
+        /// </param>
+        /// <param name="sku">
+        /// The SKU of the hardware.
+        /// </param>
+        public HardwareListResponseItem(
+            string? name,
+            string? sku)
+        {
+            this.Name = name;
+            this.Sku = sku;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HardwareListResponseItem" /> class.
+        /// </summary>
+        public HardwareListResponseItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

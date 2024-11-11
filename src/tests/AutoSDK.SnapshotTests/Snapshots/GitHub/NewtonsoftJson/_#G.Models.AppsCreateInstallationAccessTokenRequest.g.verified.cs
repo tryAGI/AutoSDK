@@ -34,6 +34,36 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsCreateInstallationAccessTokenRequest" /> class.
+        /// </summary>
+        /// <param name="repositories">
+        /// List of repository names that the token should have access to
+        /// </param>
+        /// <param name="repositoryIds">
+        /// List of repository IDs that the token should have access to<br/>
+        /// Example: [1]
+        /// </param>
+        /// <param name="permissions">
+        /// The permissions granted to the user access token.
+        /// </param>
+        public AppsCreateInstallationAccessTokenRequest(
+            global::System.Collections.Generic.IList<string>? repositories,
+            global::System.Collections.Generic.IList<int>? repositoryIds,
+            global::G.AppPermissions? permissions)
+        {
+            this.Repositories = repositories;
+            this.RepositoryIds = repositoryIds;
+            this.Permissions = permissions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsCreateInstallationAccessTokenRequest" /> class.
+        /// </summary>
+        public AppsCreateInstallationAccessTokenRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

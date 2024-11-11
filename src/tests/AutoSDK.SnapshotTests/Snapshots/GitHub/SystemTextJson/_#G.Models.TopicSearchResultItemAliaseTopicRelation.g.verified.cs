@@ -39,6 +39,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicSearchResultItemAliaseTopicRelation" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="topicId"></param>
+        /// <param name="relationType"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TopicSearchResultItemAliaseTopicRelation(
+            int? id,
+            string? name,
+            int? topicId,
+            string? relationType)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.TopicId = topicId;
+            this.RelationType = relationType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicSearchResultItemAliaseTopicRelation" /> class.
+        /// </summary>
+        public TopicSearchResultItemAliaseTopicRelation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

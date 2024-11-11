@@ -92,6 +92,54 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFile" /> class.
+        /// </summary>
+        /// <param name="contentType"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="downloadUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="md5"></param>
+        /// <param name="name"></param>
+        /// <param name="sha1"></param>
+        /// <param name="sha256"></param>
+        /// <param name="size"></param>
+        /// <param name="state"></param>
+        /// <param name="updatedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFile(
+            string contentType,
+            string createdAt,
+            string downloadUrl,
+            int id,
+            string? md5,
+            string name,
+            string? sha1,
+            string? sha256,
+            int size,
+            string? state,
+            string updatedAt)
+        {
+            this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
+            this.Id = id;
+            this.Md5 = md5 ?? throw new global::System.ArgumentNullException(nameof(md5));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Sha1 = sha1 ?? throw new global::System.ArgumentNullException(nameof(sha1));
+            this.Sha256 = sha256 ?? throw new global::System.ArgumentNullException(nameof(sha256));
+            this.Size = size;
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFile" /> class.
+        /// </summary>
+        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionPackageFile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

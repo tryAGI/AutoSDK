@@ -85,6 +85,78 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerationPreset" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the generation preset to be used with configuring generation.
+        /// </param>
+        /// <param name="description">
+        /// Description of the generation preset.
+        /// </param>
+        /// <param name="llmName">
+        /// Name of the model that these presets are used with.
+        /// </param>
+        /// <param name="promptTemplate">
+        /// Preset template used to render the prompt sent to generation.
+        /// </param>
+        /// <param name="maxUsedSearchResults">
+        /// Preset maximum number of search results that will be available to the prompt.
+        /// </param>
+        /// <param name="maxTokens">
+        /// Preset maximum number of tokens to be returned by the generation.
+        /// </param>
+        /// <param name="temperature">
+        /// The sampling temperature to use. Higher values make the output more random, while lower<br/>
+        /// values make it more focused and deterministic.
+        /// </param>
+        /// <param name="frequencyPenalty">
+        /// Higher values penalize new tokens based on their existing frequency in the generation so far,<br/>
+        /// decreasing the model's likelihood to repeat the same line verbatim.
+        /// </param>
+        /// <param name="presencePenalty">
+        /// Higher values penalize new tokens based on whether they appear in the generation so far,<br/>
+        /// increasing the model's likelihood to talk about new topics.
+        /// </param>
+        /// <param name="enabled">
+        /// Indicates whether the prompt is enabled.
+        /// </param>
+        /// <param name="default">
+        /// Indicates if this prompt is the default prompt used with the LLM.
+        /// </param>
+        public GenerationPreset(
+            string? name,
+            string? description,
+            string? llmName,
+            string? promptTemplate,
+            int? maxUsedSearchResults,
+            int? maxTokens,
+            float? temperature,
+            float? frequencyPenalty,
+            float? presencePenalty,
+            bool? enabled,
+            bool? @default)
+        {
+            this.Name = name;
+            this.Description = description;
+            this.LlmName = llmName;
+            this.PromptTemplate = promptTemplate;
+            this.MaxUsedSearchResults = maxUsedSearchResults;
+            this.MaxTokens = maxTokens;
+            this.Temperature = temperature;
+            this.FrequencyPenalty = frequencyPenalty;
+            this.PresencePenalty = presencePenalty;
+            this.Enabled = enabled;
+            this.Default = @default;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerationPreset" /> class.
+        /// </summary>
+        public GenerationPreset()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

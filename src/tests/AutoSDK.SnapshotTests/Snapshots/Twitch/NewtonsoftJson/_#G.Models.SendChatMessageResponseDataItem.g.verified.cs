@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendChatMessageResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="messageId">
+        /// The message id for the message that was sent.
+        /// </param>
+        /// <param name="isSent">
+        /// If the message passed all checks and was sent.
+        /// </param>
+        /// <param name="dropReason">
+        /// The reason the message was dropped, if any.
+        /// </param>
+        public SendChatMessageResponseDataItem(
+            string messageId,
+            bool isSent,
+            global::System.Collections.Generic.IList<global::G.SendChatMessageResponseDataItemDropReasonItem>? dropReason)
+        {
+            this.MessageId = messageId ?? throw new global::System.ArgumentNullException(nameof(messageId));
+            this.IsSent = isSent;
+            this.DropReason = dropReason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendChatMessageResponseDataItem" /> class.
+        /// </summary>
+        public SendChatMessageResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsObject" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Always `tool_calls`.
+        /// </param>
+        /// <param name="toolCalls">
+        /// An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunStepDeltaStepDetailsToolCallsObject(
+            global::G.RunStepDeltaStepDetailsToolCallsObjectType type,
+            global::System.Collections.Generic.IList<global::G.ToolCallsItem2>? toolCalls)
+        {
+            this.Type = type;
+            this.ToolCalls = toolCalls;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsObject" /> class.
+        /// </summary>
+        public RunStepDeltaStepDetailsToolCallsObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

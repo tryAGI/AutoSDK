@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaObject" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The identifier of the run step, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `thread.run.step.delta`.
+        /// </param>
+        /// <param name="delta">
+        /// The delta containing the fields that have changed on the run step.
+        /// </param>
+        public RunStepDeltaObject(
+            string id,
+            global::G.RunStepDeltaObjectDelta delta,
+            global::G.RunStepDeltaObjectObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaObject" /> class.
+        /// </summary>
+        public RunStepDeltaObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

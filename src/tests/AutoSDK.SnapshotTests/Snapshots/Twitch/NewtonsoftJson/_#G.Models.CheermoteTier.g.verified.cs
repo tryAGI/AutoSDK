@@ -59,6 +59,56 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheermoteTier" /> class.
+        /// </summary>
+        /// <param name="minBits">
+        /// The minimum number of Bits that you must cheer at this tier level. The maximum number of Bits that you can cheer at this level is determined by the required minimum Bits of the next tier level minus 1\. For example, if `min_bits` is 1 and `min_bits` for the next tier is 100, the Bits range for this tier level is 1 through 99\. The minimum Bits value of the last tier is the maximum number of Bits you can cheer using this Cheermote. For example, 10000.
+        /// </param>
+        /// <param name="id">
+        /// The tier level. Possible tiers are:  <br/>
+        ///   <br/>
+        /// * 1<br/>
+        /// * 100<br/>
+        /// * 500<br/>
+        /// * 1000<br/>
+        /// * 5000<br/>
+        /// * 10000<br/>
+        /// * 100000
+        /// </param>
+        /// <param name="color">
+        /// The hex code of the color associated with this tier level (for example, #979797).
+        /// </param>
+        /// <param name="images"></param>
+        /// <param name="canCheer">
+        /// A Boolean value that determines whether users can cheer at this tier level.
+        /// </param>
+        /// <param name="showInBitsCard">
+        /// A Boolean value that determines whether this tier level is shown in the Bits card. Is **true** if this tier level is shown in the Bits card.
+        /// </param>
+        public CheermoteTier(
+            int minBits,
+            global::G.CheermoteTierId id,
+            string color,
+            global::G.CheermoteImages images,
+            bool canCheer,
+            bool showInBitsCard)
+        {
+            this.MinBits = minBits;
+            this.Id = id;
+            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
+            this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
+            this.CanCheer = canCheer;
+            this.ShowInBitsCard = showInBitsCard;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheermoteTier" /> class.
+        /// </summary>
+        public CheermoteTier()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -41,6 +41,42 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShareCode" /> class.
+        /// </summary>
+        /// <param name="user">
+        /// Defines which users will be able to access the resource through the<br/>
+        /// code. This is a pattern that will be checked against user names.<br/>
+        /// For now, the only accepted value is `*/*`.
+        /// </param>
+        /// <param name="code">
+        /// The public URL that allows users to access the resource.
+        /// </param>
+        /// <param name="enabled">
+        /// Defines whether the sharing option via link is enabled.
+        /// </param>
+        /// <param name="role">
+        /// Defines the role users will have over the resource.
+        /// </param>
+        public ShareCode(
+            string? user,
+            string? code,
+            bool? enabled,
+            global::G.Role? role)
+        {
+            this.User = user;
+            this.Code = code;
+            this.Enabled = enabled;
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShareCode" /> class.
+        /// </summary>
+        public ShareCode()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamsAddOrUpdateProjectPermissionsLegacyRequest" /> class.
+        /// </summary>
+        /// <param name="permission">
+        /// The permission to grant to the team for this project. Default: the team's `permission` attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set `Content-Length` to zero when calling this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TeamsAddOrUpdateProjectPermissionsLegacyRequest(
+            global::G.TeamsAddOrUpdateProjectPermissionsLegacyRequestPermission? permission)
+        {
+            this.Permission = permission;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamsAddOrUpdateProjectPermissionsLegacyRequest" /> class.
+        /// </summary>
+        public TeamsAddOrUpdateProjectPermissionsLegacyRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogActorUser" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The user id.
+        /// </param>
+        /// <param name="email">
+        /// The user email.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AuditLogActorUser(
+            string? id,
+            string? email)
+        {
+            this.Id = id;
+            this.Email = email;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogActorUser" /> class.
+        /// </summary>
+        public AuditLogActorUser()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

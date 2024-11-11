@@ -54,6 +54,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APIKeyGetResponse" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="id"></param>
+        /// <param name="shortKey"></param>
+        /// <param name="description"></param>
+        /// <param name="readOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="lastUsedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public APIKeyGetResponse(
+            global::System.Guid id,
+            string shortKey,
+            string description,
+            global::System.DateTime? createdAt,
+            bool? readOnly,
+            global::System.DateTime? lastUsedAt)
+        {
+            this.Id = id;
+            this.ShortKey = shortKey ?? throw new global::System.ArgumentNullException(nameof(shortKey));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.CreatedAt = createdAt;
+            this.ReadOnly = readOnly;
+            this.LastUsedAt = lastUsedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APIKeyGetResponse" /> class.
+        /// </summary>
+        public APIKeyGetResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

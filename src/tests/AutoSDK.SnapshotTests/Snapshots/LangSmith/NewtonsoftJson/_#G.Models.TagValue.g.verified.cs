@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagValue" /> class.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="description"></param>
+        /// <param name="id"></param>
+        /// <param name="tagKeyId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        public TagValue(
+            string value,
+            global::System.Guid id,
+            global::System.Guid tagKeyId,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string? description)
+        {
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Id = id;
+            this.TagKeyId = tagKeyId;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagValue" /> class.
+        /// </summary>
+        public TagValue()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

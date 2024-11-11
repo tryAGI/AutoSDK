@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetDropsEntitlementsResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The list of entitlements.
+        /// </param>
+        /// <param name="pagination">
+        /// The information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
+        /// </param>
+        public GetDropsEntitlementsResponse(
+            global::System.Collections.Generic.IList<global::G.DropsEntitlement> data,
+            global::G.GetDropsEntitlementsResponsePagination? pagination)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Pagination = pagination;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetDropsEntitlementsResponse" /> class.
+        /// </summary>
+        public GetDropsEntitlementsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

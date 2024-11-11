@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectServiceAccount" /> class.
+        /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.service_account`
+        /// </param>
+        /// <param name="id">
+        /// The identifier, which can be referenced in API endpoints
+        /// </param>
+        /// <param name="name">
+        /// The name of the service account
+        /// </param>
+        /// <param name="role">
+        /// `owner` or `member`
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) of when the service account was created
+        /// </param>
+        public ProjectServiceAccount(
+            string id,
+            string name,
+            global::G.ProjectServiceAccountRole role,
+            global::System.DateTimeOffset createdAt,
+            global::G.ProjectServiceAccountObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Role = role;
+            this.CreatedAt = createdAt;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectServiceAccount" /> class.
+        /// </summary>
+        public ProjectServiceAccount()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

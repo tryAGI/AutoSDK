@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitCommitCommitter" /> class.
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="name"></param>
+        /// <param name="email"></param>
+        public FileCommitCommitCommitter(
+            string? date,
+            string? name,
+            string? email)
+        {
+            this.Date = date;
+            this.Name = name;
+            this.Email = email;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitCommitCommitter" /> class.
+        /// </summary>
+        public FileCommitCommitCommitter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

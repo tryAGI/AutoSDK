@@ -52,6 +52,50 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePost" /> class.
+        /// </summary>
+        /// <param name="voiceName">
+        /// Name to use for the created voice.<br/>
+        /// Example: Little squeaky mouse
+        /// </param>
+        /// <param name="voiceDescription">
+        /// Description to use for the created voice.<br/>
+        /// Example: A sassy little squeaky mouse
+        /// </param>
+        /// <param name="generatedVoiceId">
+        /// The generated_voice_id to create, call POST /v1/voice-generation/generate-voice and fetch the generated_voice_id from the response header if don't have one yet.<br/>
+        /// Example: 37HceQefKmEi3bGovXjL
+        /// </param>
+        /// <param name="playedNotSelectedVoiceIds">
+        /// List of voice ids that the user has played but not selected. Used for RLHF.<br/>
+        /// Default Value: []
+        /// </param>
+        /// <param name="labels">
+        /// Optional, metadata to add to the created voice. Defaults to None.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePost(
+            string voiceName,
+            string voiceDescription,
+            string generatedVoiceId,
+            global::System.Collections.Generic.IList<string>? playedNotSelectedVoiceIds,
+            global::System.Collections.Generic.Dictionary<string, string>? labels)
+        {
+            this.VoiceName = voiceName ?? throw new global::System.ArgumentNullException(nameof(voiceName));
+            this.VoiceDescription = voiceDescription ?? throw new global::System.ArgumentNullException(nameof(voiceDescription));
+            this.GeneratedVoiceId = generatedVoiceId ?? throw new global::System.ArgumentNullException(nameof(generatedVoiceId));
+            this.PlayedNotSelectedVoiceIds = playedNotSelectedVoiceIds;
+            this.Labels = labels;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePost" /> class.
+        /// </summary>
+        public BodyCreateAPreviouslyGeneratedVoiceV1VoiceGenerationCreateVoicePost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

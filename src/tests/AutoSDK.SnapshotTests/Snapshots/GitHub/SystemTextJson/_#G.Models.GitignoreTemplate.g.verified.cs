@@ -42,6 +42,44 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitignoreTemplate" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Example: C
+        /// </param>
+        /// <param name="source">
+        /// Example: # Object files<br/>
+        /// *.o<br/>
+        /// # Libraries<br/>
+        /// *.lib<br/>
+        /// *.a<br/>
+        /// # Shared objects (inc. Windows DLLs)<br/>
+        /// *.dll<br/>
+        /// *.so<br/>
+        /// *.so.*<br/>
+        /// *.dylib<br/>
+        /// # Executables<br/>
+        /// *.exe<br/>
+        /// *.out<br/>
+        /// *.app
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GitignoreTemplate(
+            string name,
+            string source)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitignoreTemplate" /> class.
+        /// </summary>
+        public GitignoreTemplate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

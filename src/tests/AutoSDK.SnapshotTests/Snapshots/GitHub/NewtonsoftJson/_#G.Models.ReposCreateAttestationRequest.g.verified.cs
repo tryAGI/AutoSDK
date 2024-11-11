@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateAttestationRequest" /> class.
+        /// </summary>
+        /// <param name="bundle">
+        /// The attestation's Sigstore Bundle.<br/>
+        /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+        /// </param>
+        public ReposCreateAttestationRequest(
+            global::G.ReposCreateAttestationRequestBundle bundle)
+        {
+            this.Bundle = bundle ?? throw new global::System.ArgumentNullException(nameof(bundle));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateAttestationRequest" /> class.
+        /// </summary>
+        public ReposCreateAttestationRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

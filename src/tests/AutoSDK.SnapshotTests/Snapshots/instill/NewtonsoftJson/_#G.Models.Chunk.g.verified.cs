@@ -57,6 +57,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Chunk" /> class.
+        /// </summary>
+        /// <param name="chunkUid"></param>
+        /// <param name="retrievable"></param>
+        /// <param name="startPos"></param>
+        /// <param name="endPos"></param>
+        /// <param name="tokens"></param>
+        /// <param name="createTime"></param>
+        /// <param name="originalFileUid"></param>
+        public Chunk(
+            string? chunkUid,
+            bool? retrievable,
+            long? startPos,
+            long? endPos,
+            long? tokens,
+            global::System.DateTime? createTime,
+            string? originalFileUid)
+        {
+            this.ChunkUid = chunkUid;
+            this.Retrievable = retrievable;
+            this.StartPos = startPos;
+            this.EndPos = endPos;
+            this.Tokens = tokens;
+            this.CreateTime = createTime;
+            this.OriginalFileUid = originalFileUid;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Chunk" /> class.
+        /// </summary>
+        public Chunk()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

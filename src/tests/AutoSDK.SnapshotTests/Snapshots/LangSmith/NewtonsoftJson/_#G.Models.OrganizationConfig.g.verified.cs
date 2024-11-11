@@ -99,6 +99,82 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationConfig" /> class.
+        /// </summary>
+        /// <param name="maxIdentities">
+        /// Default Value: 5
+        /// </param>
+        /// <param name="maxWorkspaces">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="canUseRbac">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canAddSeats">
+        /// Default Value: true
+        /// </param>
+        /// <param name="startupPlanApprovalDate"></param>
+        /// <param name="partnerPlanApprovalDate"></param>
+        /// <param name="premierPlanApprovalDate"></param>
+        /// <param name="canServeDatasets">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canUseLanggraphCloud">
+        /// Default Value: false
+        /// </param>
+        /// <param name="maxLanggraphCloudDeployments">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="canUseSamlSso">
+        /// Default Value: false
+        /// </param>
+        /// <param name="canUseBulkExport">
+        /// Default Value: false
+        /// </param>
+        /// <param name="usePythonPlaygroundService">
+        /// Default Value: false
+        /// </param>
+        /// <param name="flags"></param>
+        public OrganizationConfig(
+            int? maxIdentities,
+            int? maxWorkspaces,
+            bool? canUseRbac,
+            bool? canAddSeats,
+            string? startupPlanApprovalDate,
+            string? partnerPlanApprovalDate,
+            string? premierPlanApprovalDate,
+            bool? canServeDatasets,
+            bool? canUseLanggraphCloud,
+            int? maxLanggraphCloudDeployments,
+            bool? canUseSamlSso,
+            bool? canUseBulkExport,
+            bool? usePythonPlaygroundService,
+            global::System.Collections.Generic.Dictionary<string, bool>? flags)
+        {
+            this.MaxIdentities = maxIdentities;
+            this.MaxWorkspaces = maxWorkspaces;
+            this.CanUseRbac = canUseRbac;
+            this.CanAddSeats = canAddSeats;
+            this.StartupPlanApprovalDate = startupPlanApprovalDate;
+            this.PartnerPlanApprovalDate = partnerPlanApprovalDate;
+            this.PremierPlanApprovalDate = premierPlanApprovalDate;
+            this.CanServeDatasets = canServeDatasets;
+            this.CanUseLanggraphCloud = canUseLanggraphCloud;
+            this.MaxLanggraphCloudDeployments = maxLanggraphCloudDeployments;
+            this.CanUseSamlSso = canUseSamlSso;
+            this.CanUseBulkExport = canUseBulkExport;
+            this.UsePythonPlaygroundService = usePythonPlaygroundService;
+            this.Flags = flags;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationConfig" /> class.
+        /// </summary>
+        public OrganizationConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

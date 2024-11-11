@@ -22,6 +22,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Endpoints" /> class.
+        /// </summary>
+        /// <param name="webhooks">
+        /// Webhook endpoints.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Endpoints(
+            global::System.Collections.Generic.Dictionary<string, global::G.WebhookEndpoint>? webhooks)
+        {
+            this.Webhooks = webhooks;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Endpoints" /> class.
+        /// </summary>
+        public Endpoints()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckAutoModStatusBodyDataItem" /> class.
+        /// </summary>
+        /// <param name="msgId">
+        /// A caller-defined ID used to correlate this message with the same message in the response.
+        /// </param>
+        /// <param name="msgText">
+        /// The message to check.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CheckAutoModStatusBodyDataItem(
+            string msgId,
+            string msgText)
+        {
+            this.MsgId = msgId ?? throw new global::System.ArgumentNullException(nameof(msgId));
+            this.MsgText = msgText ?? throw new global::System.ArgumentNullException(nameof(msgText));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckAutoModStatusBodyDataItem" /> class.
+        /// </summary>
+        public CheckAutoModStatusBodyDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

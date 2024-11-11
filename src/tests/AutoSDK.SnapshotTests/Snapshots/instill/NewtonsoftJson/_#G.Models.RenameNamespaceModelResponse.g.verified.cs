@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RenameNamespaceModelResponse" /> class.
+        /// </summary>
+        /// <param name="model">
+        /// The renamed model resource.<br/>
+        /// Included only in responses
+        /// </param>
+        public RenameNamespaceModelResponse(
+            global::G.Model? model)
+        {
+            this.Model = model;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RenameNamespaceModelResponse" /> class.
+        /// </summary>
+        public RenameNamespaceModelResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

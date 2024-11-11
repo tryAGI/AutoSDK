@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryTransferredChangesOwnerFrom" /> class.
+        /// </summary>
+        /// <param name="organization"></param>
+        /// <param name="user"></param>
+        public WebhookRepositoryTransferredChangesOwnerFrom(
+            global::G.WebhookRepositoryTransferredChangesOwnerFromOrganization? organization,
+            global::G.WebhookRepositoryTransferredChangesOwnerFromUser? user)
+        {
+            this.Organization = organization;
+            this.User = user;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryTransferredChangesOwnerFrom" /> class.
+        /// </summary>
+        public WebhookRepositoryTransferredChangesOwnerFrom()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

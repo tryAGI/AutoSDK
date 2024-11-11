@@ -72,6 +72,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifyResponseClassification" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Included only in responses
+        /// </param>
+        /// <param name="input">
+        /// The input text that was classified<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="predictions">
+        /// An array containing the predicted labels for the associated query (only filled for single-label classification)<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="confidences">
+        /// An array containing the confidence scores of all the predictions in the same order<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="labels">
+        /// A map containing each label and its confidence score according to the classifier. All the confidence scores add up to 1 for single-label classification. For multi-label classification the label confidences are independent of each other, so they don't have to sum up to 1.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="classificationType">
+        /// The type of classification performed<br/>
+        /// Included only in responses
+        /// </param>
+        public ClassifyResponseClassification(
+            string? input,
+            string id = default!,
+            global::System.Collections.Generic.IList<string> predictions = default!,
+            global::System.Collections.Generic.IList<float> confidences = default!,
+            global::System.Collections.Generic.Dictionary<string, global::G.ClassifyResponseClassificationLabels2> labels = default!,
+            global::G.ClassifyResponseClassificationClassificationType classificationType = default!)
+        {
+            this.Id = id;
+            this.Input = input;
+            this.Predictions = predictions;
+            this.Confidences = confidences;
+            this.Labels = labels;
+            this.ClassificationType = classificationType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifyResponseClassification" /> class.
+        /// </summary>
+        public ClassifyResponseClassification()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

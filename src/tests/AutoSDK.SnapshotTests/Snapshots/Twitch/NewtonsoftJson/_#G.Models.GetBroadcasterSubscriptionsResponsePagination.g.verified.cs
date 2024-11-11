@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetBroadcasterSubscriptionsResponsePagination" /> class.
+        /// </summary>
+        /// <param name="cursor">
+        /// The cursor used to get the next or previous page of results. Use the cursor to set the request’s _after_ or _before_ query parameter depending on whether you’re paging forwards or backwards.
+        /// </param>
+        public GetBroadcasterSubscriptionsResponsePagination(
+            string? cursor)
+        {
+            this.Cursor = cursor;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetBroadcasterSubscriptionsResponsePagination" /> class.
+        /// </summary>
+        public GetBroadcasterSubscriptionsResponsePagination()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleCodeScanning" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="parameters"></param>
+        public RepositoryRuleCodeScanning(
+            global::G.RepositoryRuleCodeScanningType type,
+            global::G.RepositoryRuleCodeScanningParameters? parameters)
+        {
+            this.Type = type;
+            this.Parameters = parameters;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleCodeScanning" /> class.
+        /// </summary>
+        public RepositoryRuleCodeScanning()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateRequestSecurityAndAnalysisSecretScanning" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// Can be `enabled` or `disabled`.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposUpdateRequestSecurityAndAnalysisSecretScanning(
+            string? status)
+        {
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateRequestSecurityAndAnalysisSecretScanning" /> class.
+        /// </summary>
+        public ReposUpdateRequestSecurityAndAnalysisSecretScanning()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

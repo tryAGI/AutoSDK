@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsUpdatePatAccessRequest" /> class.
+        /// </summary>
+        /// <param name="action">
+        /// Action to apply to the fine-grained personal access token.
+        /// </param>
+        public OrgsUpdatePatAccessRequest(
+            global::G.OrgsUpdatePatAccessRequestAction action)
+        {
+            this.Action = action;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsUpdatePatAccessRequest" /> class.
+        /// </summary>
+        public OrgsUpdatePatAccessRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

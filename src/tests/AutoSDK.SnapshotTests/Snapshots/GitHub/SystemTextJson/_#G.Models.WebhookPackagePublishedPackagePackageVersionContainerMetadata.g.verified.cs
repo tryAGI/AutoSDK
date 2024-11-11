@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPackagePublishedPackagePackageVersionContainerMetadata" /> class.
+        /// </summary>
+        /// <param name="labels"></param>
+        /// <param name="manifest"></param>
+        /// <param name="tag"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookPackagePublishedPackagePackageVersionContainerMetadata(
+            object? labels,
+            object? manifest,
+            global::G.WebhookPackagePublishedPackagePackageVersionContainerMetadataTag? tag)
+        {
+            this.Labels = labels;
+            this.Manifest = manifest;
+            this.Tag = tag;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPackagePublishedPackagePackageVersionContainerMetadata" /> class.
+        /// </summary>
+        public WebhookPackagePublishedPackagePackageVersionContainerMetadata()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CitationStartEventVariant2DeltaMessage" /> class.
+        /// </summary>
+        /// <param name="citations">
+        /// Citation information containing sources and the text cited.
+        /// </param>
+        public CitationStartEventVariant2DeltaMessage(
+            global::G.Citation? citations)
+        {
+            this.Citations = citations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CitationStartEventVariant2DeltaMessage" /> class.
+        /// </summary>
+        public CitationStartEventVariant2DeltaMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

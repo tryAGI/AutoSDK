@@ -99,6 +99,80 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AsnResponse" /> class.
+        /// </summary>
+        /// <param name="asn">
+        /// Example: AS10507
+        /// </param>
+        /// <param name="name">
+        /// Example: Sprint Personal Communications Systems
+        /// </param>
+        /// <param name="country">
+        /// Example: US
+        /// </param>
+        /// <param name="allocated">
+        /// Example: 1997-02-14
+        /// </param>
+        /// <param name="registry">
+        /// Example: arin
+        /// </param>
+        /// <param name="domain">
+        /// Example: sprint.net
+        /// </param>
+        /// <param name="numIps">
+        /// Example: 71224576
+        /// </param>
+        /// <param name="route">
+        /// Example: 66.87.125.0/24
+        /// </param>
+        /// <param name="type">
+        /// Example: isp
+        /// </param>
+        /// <param name="prefixes"></param>
+        /// <param name="prefixes6"></param>
+        /// <param name="peers"></param>
+        /// <param name="upstreams"></param>
+        /// <param name="downstreams"></param>
+        public AsnResponse(
+            string asn,
+            string name,
+            string domain,
+            global::G.AsnResponseType type,
+            string? country,
+            string? allocated,
+            string? registry,
+            int? numIps,
+            string? route,
+            global::System.Collections.Generic.IList<global::G.Prefix>? prefixes,
+            global::System.Collections.Generic.IList<global::G.Prefix6>? prefixes6,
+            global::System.Collections.Generic.IList<string>? peers,
+            global::System.Collections.Generic.IList<string>? upstreams,
+            global::System.Collections.Generic.IList<string>? downstreams)
+        {
+            this.Asn = asn ?? throw new global::System.ArgumentNullException(nameof(asn));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Domain = domain ?? throw new global::System.ArgumentNullException(nameof(domain));
+            this.Type = type;
+            this.Country = country;
+            this.Allocated = allocated;
+            this.Registry = registry;
+            this.NumIps = numIps;
+            this.Route = route;
+            this.Prefixes = prefixes;
+            this.Prefixes6 = prefixes6;
+            this.Peers = peers;
+            this.Upstreams = upstreams;
+            this.Downstreams = downstreams;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AsnResponse" /> class.
+        /// </summary>
+        public AsnResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -45,6 +45,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PatchDocumentAction" /> class.
+        /// </summary>
+        /// <param name="from">
+        /// A string containing a JSON Pointer value.
+        /// </param>
+        /// <param name="op">
+        /// The operation to be performed.
+        /// </param>
+        /// <param name="path">
+        /// A JSON-Pointer.
+        /// </param>
+        /// <param name="value">
+        /// The value to be used within the operations.
+        /// </param>
+        /// <param name="merge"></param>
+        public PatchDocumentAction(
+            global::G.PatchDocumentActionOp op,
+            string path,
+            string? from,
+            object? value,
+            global::G.Object? merge)
+        {
+            this.Op = op;
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.From = from;
+            this.Value = value;
+            this.Merge = merge;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PatchDocumentAction" /> class.
+        /// </summary>
+        public PatchDocumentAction()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

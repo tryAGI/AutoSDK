@@ -28,6 +28,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShardingConfig" /> class.
+        /// </summary>
+        /// <param name="desiredCount">
+        /// (Defaults to the number of nodes in the cluster.) Controls how many shards should be created for this collection index. The typical setting is that a collection should be distributed across all the nodes in the cluster, but you can explicitly set this value to a lower value. If the `desiredCount` is larger than the amount of physical nodes in the cluster, then some nodes will contain multiple shards.
+        /// </param>
+        /// <param name="virtualPerPhysical">
+        /// Weaviate uses virtual shards. This helps in reducing the amount of data moved when resharding<br/>
+        /// Default Value: 128
+        /// </param>
+        public ShardingConfig(
+            int? desiredCount,
+            int? virtualPerPhysical)
+        {
+            this.DesiredCount = desiredCount;
+            this.VirtualPerPhysical = virtualPerPhysical;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShardingConfig" /> class.
+        /// </summary>
+        public ShardingConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

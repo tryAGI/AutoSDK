@@ -43,6 +43,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListComponentRunsResponse" /> class.
+        /// </summary>
+        /// <param name="componentRuns">
+        /// The list of component runs.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="totalSize">
+        /// The total number of component runs matching the request.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="page">
+        /// The current page number.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="pageSize">
+        /// The number of items per page.<br/>
+        /// Included only in responses
+        /// </param>
+        public ListComponentRunsResponse(
+            global::System.Collections.Generic.IList<global::G.ComponentRun>? componentRuns,
+            int? totalSize,
+            int? page,
+            int? pageSize)
+        {
+            this.ComponentRuns = componentRuns;
+            this.TotalSize = totalSize;
+            this.Page = page;
+            this.PageSize = pageSize;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListComponentRunsResponse" /> class.
+        /// </summary>
+        public ListComponentRunsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

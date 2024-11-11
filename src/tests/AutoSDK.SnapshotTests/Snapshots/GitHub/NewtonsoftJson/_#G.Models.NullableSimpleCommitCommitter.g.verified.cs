@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableSimpleCommitCommitter" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the commit's committer<br/>
+        /// Example: Monalisa Octocat
+        /// </param>
+        /// <param name="email">
+        /// Git email address of the commit's committer<br/>
+        /// Example: monalisa.octocat@example.com
+        /// </param>
+        public NullableSimpleCommitCommitter(
+            string name,
+            string email)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableSimpleCommitCommitter" /> class.
+        /// </summary>
+        public NullableSimpleCommitCommitter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

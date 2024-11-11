@@ -30,6 +30,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Spec" /> class.
+        /// </summary>
+        /// <param name="componentSpecification">
+        /// Component specification.
+        /// </param>
+        /// <param name="dataSpecifications">
+        /// Data specifications.<br/>
+        /// The key represents the task, and the value is the corresponding data_specification.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Spec(
+            object componentSpecification,
+            global::System.Collections.Generic.Dictionary<string, global::G.DataSpecification> dataSpecifications)
+        {
+            this.ComponentSpecification = componentSpecification ?? throw new global::System.ArgumentNullException(nameof(componentSpecification));
+            this.DataSpecifications = dataSpecifications ?? throw new global::System.ArgumentNullException(nameof(dataSpecifications));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Spec" /> class.
+        /// </summary>
+        public Spec()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

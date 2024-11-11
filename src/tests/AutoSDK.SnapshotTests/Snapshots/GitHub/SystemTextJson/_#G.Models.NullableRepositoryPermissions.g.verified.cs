@@ -48,6 +48,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableRepositoryPermissions" /> class.
+        /// </summary>
+        /// <param name="admin"></param>
+        /// <param name="pull"></param>
+        /// <param name="triage"></param>
+        /// <param name="push"></param>
+        /// <param name="maintain"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public NullableRepositoryPermissions(
+            bool admin,
+            bool pull,
+            bool push,
+            bool? triage,
+            bool? maintain)
+        {
+            this.Admin = admin;
+            this.Pull = pull;
+            this.Push = push;
+            this.Triage = triage;
+            this.Maintain = maintain;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableRepositoryPermissions" /> class.
+        /// </summary>
+        public NullableRepositoryPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

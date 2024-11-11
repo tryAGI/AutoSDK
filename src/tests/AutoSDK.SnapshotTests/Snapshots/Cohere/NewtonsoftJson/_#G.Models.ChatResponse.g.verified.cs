@@ -39,6 +39,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier for the generated reply. Useful for submitting feedback.
+        /// </param>
+        /// <param name="finishReason">
+        /// The reason a chat request has finished.
+        /// </param>
+        /// <param name="message">
+        /// A message from the assistant role can contain text and tool call information.
+        /// </param>
+        /// <param name="usage"></param>
+        public ChatResponse(
+            string id,
+            global::G.ChatFinishReason finishReason,
+            global::G.AssistantMessageResponse? message,
+            global::G.Usage? usage)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.FinishReason = finishReason;
+            this.Message = message;
+            this.Usage = usage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatResponse" /> class.
+        /// </summary>
+        public ChatResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

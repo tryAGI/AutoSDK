@@ -40,6 +40,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsGenerateRunnerJitconfigForRepoRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the new runner.
+        /// </param>
+        /// <param name="runnerGroupId">
+        /// The ID of the runner group to register the runner to.
+        /// </param>
+        /// <param name="labels">
+        /// The names of the custom labels to add to the runner. **Minimum items**: 1. **Maximum items**: 100.
+        /// </param>
+        /// <param name="workFolder">
+        /// The working directory to be used for job execution, relative to the runner install directory.<br/>
+        /// Default Value: _work
+        /// </param>
+        public ActionsGenerateRunnerJitconfigForRepoRequest(
+            string name,
+            int runnerGroupId,
+            global::System.Collections.Generic.IList<string> labels,
+            string? workFolder)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.RunnerGroupId = runnerGroupId;
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.WorkFolder = workFolder;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsGenerateRunnerJitconfigForRepoRequest" /> class.
+        /// </summary>
+        public ActionsGenerateRunnerJitconfigForRepoRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

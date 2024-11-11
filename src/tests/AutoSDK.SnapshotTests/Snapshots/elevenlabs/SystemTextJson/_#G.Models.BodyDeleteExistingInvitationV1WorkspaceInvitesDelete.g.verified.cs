@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyDeleteExistingInvitationV1WorkspaceInvitesDelete" /> class.
+        /// </summary>
+        /// <param name="email">
+        /// Email of the target user.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyDeleteExistingInvitationV1WorkspaceInvitesDelete(
+            string email)
+        {
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyDeleteExistingInvitationV1WorkspaceInvitesDelete" /> class.
+        /// </summary>
+        public BodyDeleteExistingInvitationV1WorkspaceInvitesDelete()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

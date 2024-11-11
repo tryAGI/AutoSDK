@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotAddCopilotSeatsForUsersResponse" /> class.
+        /// </summary>
+        /// <param name="seatsCreated"></param>
+        public CopilotAddCopilotSeatsForUsersResponse(
+            int seatsCreated)
+        {
+            this.SeatsCreated = seatsCreated;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotAddCopilotSeatsForUsersResponse" /> class.
+        /// </summary>
+        public CopilotAddCopilotSeatsForUsersResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

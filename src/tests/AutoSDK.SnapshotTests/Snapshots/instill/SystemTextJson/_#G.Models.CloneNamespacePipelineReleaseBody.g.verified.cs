@@ -42,6 +42,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CloneNamespacePipelineReleaseBody" /> class.
+        /// </summary>
+        /// <param name="description">
+        /// Pipeline description.
+        /// </param>
+        /// <param name="sharing">
+        /// Pipeline sharing information.
+        /// </param>
+        /// <param name="targetNamespaceId">
+        /// Target Namespace ID.
+        /// </param>
+        /// <param name="targetPipelineId">
+        /// Target Pipeline ID.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CloneNamespacePipelineReleaseBody(
+            string targetNamespaceId,
+            string targetPipelineId,
+            string? description,
+            global::G.Sharing? sharing)
+        {
+            this.TargetNamespaceId = targetNamespaceId ?? throw new global::System.ArgumentNullException(nameof(targetNamespaceId));
+            this.TargetPipelineId = targetPipelineId ?? throw new global::System.ArgumentNullException(nameof(targetPipelineId));
+            this.Description = description;
+            this.Sharing = sharing;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CloneNamespacePipelineReleaseBody" /> class.
+        /// </summary>
+        public CloneNamespacePipelineReleaseBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueRunUpdateSchema" /> class.
+        /// </summary>
+        /// <param name="lastReviewedTime"></param>
+        /// <param name="addedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AnnotationQueueRunUpdateSchema(
+            global::System.DateTime? lastReviewedTime,
+            global::System.DateTime? addedAt)
+        {
+            this.LastReviewedTime = lastReviewedTime;
+            this.AddedAt = addedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueRunUpdateSchema" /> class.
+        /// </summary>
+        public AnnotationQueueRunUpdateSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

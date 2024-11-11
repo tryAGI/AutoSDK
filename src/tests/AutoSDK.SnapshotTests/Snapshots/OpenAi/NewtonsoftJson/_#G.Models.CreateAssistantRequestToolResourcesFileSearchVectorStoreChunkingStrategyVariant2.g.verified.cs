@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Always `static`.
+        /// </param>
+        /// <param name="static"></param>
+        public CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2(
+            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static @static,
+            global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type type)
+        {
+            this.Static = @static ?? throw new global::System.ArgumentNullException(nameof(@static));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2" /> class.
+        /// </summary>
+        public CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

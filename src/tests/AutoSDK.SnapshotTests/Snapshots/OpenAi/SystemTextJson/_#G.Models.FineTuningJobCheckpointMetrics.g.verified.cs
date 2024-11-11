@@ -57,6 +57,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJobCheckpointMetrics" /> class.
+        /// </summary>
+        /// <param name="step"></param>
+        /// <param name="trainLoss"></param>
+        /// <param name="trainMeanTokenAccuracy"></param>
+        /// <param name="validLoss"></param>
+        /// <param name="validMeanTokenAccuracy"></param>
+        /// <param name="fullValidLoss"></param>
+        /// <param name="fullValidMeanTokenAccuracy"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FineTuningJobCheckpointMetrics(
+            double? step,
+            double? trainLoss,
+            double? trainMeanTokenAccuracy,
+            double? validLoss,
+            double? validMeanTokenAccuracy,
+            double? fullValidLoss,
+            double? fullValidMeanTokenAccuracy)
+        {
+            this.Step = step;
+            this.TrainLoss = trainLoss;
+            this.TrainMeanTokenAccuracy = trainMeanTokenAccuracy;
+            this.ValidLoss = validLoss;
+            this.ValidMeanTokenAccuracy = validMeanTokenAccuracy;
+            this.FullValidLoss = fullValidLoss;
+            this.FullValidMeanTokenAccuracy = fullValidMeanTokenAccuracy;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJobCheckpointMetrics" /> class.
+        /// </summary>
+        public FineTuningJobCheckpointMetrics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

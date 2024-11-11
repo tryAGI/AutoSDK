@@ -75,6 +75,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineCreate" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="image"></param>
+        /// <param name="inputVariables"></param>
+        /// <param name="outputVariables"></param>
+        /// <param name="accelerators"></param>
+        /// <param name="cluster"></param>
+        /// <param name="scalingConfig"></param>
+        /// <param name="description"></param>
+        /// <param name="readme"></param>
+        /// <param name="extras"></param>
+        public PipelineCreate(
+            string name,
+            string image,
+            global::System.Collections.Generic.IList<global::G.IOVariable> inputVariables,
+            global::System.Collections.Generic.IList<global::G.IOVariable> outputVariables,
+            global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators,
+            global::G.PipelineClusterConfig? cluster,
+            string? scalingConfig,
+            string? description,
+            string? readme,
+            object? extras)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.InputVariables = inputVariables ?? throw new global::System.ArgumentNullException(nameof(inputVariables));
+            this.OutputVariables = outputVariables ?? throw new global::System.ArgumentNullException(nameof(outputVariables));
+            this.Accelerators = accelerators;
+            this.Cluster = cluster;
+            this.ScalingConfig = scalingConfig;
+            this.Description = description;
+            this.Readme = readme;
+            this.Extras = extras;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineCreate" /> class.
+        /// </summary>
+        public PipelineCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

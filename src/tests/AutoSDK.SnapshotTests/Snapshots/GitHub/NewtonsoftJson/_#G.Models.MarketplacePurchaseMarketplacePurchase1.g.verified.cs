@@ -63,6 +63,46 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketplacePurchaseMarketplacePurchase1" /> class.
+        /// </summary>
+        /// <param name="billingCycle"></param>
+        /// <param name="nextBillingDate"></param>
+        /// <param name="isInstalled"></param>
+        /// <param name="unitCount"></param>
+        /// <param name="onFreeTrial"></param>
+        /// <param name="freeTrialEndsOn"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="plan">
+        /// Marketplace Listing Plan
+        /// </param>
+        public MarketplacePurchaseMarketplacePurchase1(
+            string? billingCycle,
+            string? nextBillingDate,
+            bool? isInstalled,
+            int? unitCount,
+            bool? onFreeTrial,
+            string? freeTrialEndsOn,
+            string? updatedAt,
+            global::G.MarketplaceListingPlan? plan)
+        {
+            this.BillingCycle = billingCycle;
+            this.NextBillingDate = nextBillingDate;
+            this.IsInstalled = isInstalled;
+            this.UnitCount = unitCount;
+            this.OnFreeTrial = onFreeTrial;
+            this.FreeTrialEndsOn = freeTrialEndsOn;
+            this.UpdatedAt = updatedAt;
+            this.Plan = plan;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketplacePurchaseMarketplacePurchase1" /> class.
+        /// </summary>
+        public MarketplacePurchaseMarketplacePurchase1()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -35,6 +35,37 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CharityCampaignTargetAmount" /> class.
+        /// </summary>
+        /// <param name="value">
+        /// The monetary amount. The amount is specified in the currency’s minor unit. For example, the minor units for USD is cents, so if the amount is $5.50 USD, `value` is set to 550.
+        /// </param>
+        /// <param name="decimalPlaces">
+        /// The number of decimal places used by the currency. For example, USD uses two decimal places. Use this number to translate `value` from minor units to major units by using the formula:  <br/>
+        ///   <br/>
+        /// `value / 10^decimal_places`
+        /// </param>
+        /// <param name="currency">
+        /// The ISO-4217 three-letter currency code that identifies the type of currency in `value`.
+        /// </param>
+        public CharityCampaignTargetAmount(
+            int value,
+            int decimalPlaces,
+            string currency)
+        {
+            this.Value = value;
+            this.DecimalPlaces = decimalPlaces;
+            this.Currency = currency ?? throw new global::System.ArgumentNullException(nameof(currency));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CharityCampaignTargetAmount" /> class.
+        /// </summary>
+        public CharityCampaignTargetAmount()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

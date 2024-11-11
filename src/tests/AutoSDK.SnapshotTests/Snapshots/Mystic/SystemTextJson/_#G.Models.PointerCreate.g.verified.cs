@@ -35,6 +35,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PointerCreate" /> class.
+        /// </summary>
+        /// <param name="pointerOrPipelineId"></param>
+        /// <param name="pointer"></param>
+        /// <param name="locked"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PointerCreate(
+            string pointerOrPipelineId,
+            string pointer,
+            bool? locked)
+        {
+            this.PointerOrPipelineId = pointerOrPipelineId ?? throw new global::System.ArgumentNullException(nameof(pointerOrPipelineId));
+            this.Pointer = pointer ?? throw new global::System.ArgumentNullException(nameof(pointer));
+            this.Locked = locked;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PointerCreate" /> class.
+        /// </summary>
+        public PointerCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

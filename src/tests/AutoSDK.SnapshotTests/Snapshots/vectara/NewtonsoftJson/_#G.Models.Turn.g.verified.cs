@@ -54,6 +54,53 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Turn" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the turn.
+        /// </param>
+        /// <param name="chatId">
+        /// The ID of the chat the turn resides in.
+        /// </param>
+        /// <param name="query">
+        /// The query made to produce this turn.<br/>
+        /// Example: How do a turn this widget?
+        /// </param>
+        /// <param name="answer">
+        /// The response to the query.<br/>
+        /// Example: The widget turns counter clockwise.
+        /// </param>
+        /// <param name="enabled">
+        /// Indicates whether the turn is enabled and shown in futures turns of the chat.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="createdAt">
+        /// Specifies when the turn was created.
+        /// </param>
+        public Turn(
+            string? id,
+            string? chatId,
+            string? query,
+            string? answer,
+            bool? enabled,
+            global::System.DateTime? createdAt)
+        {
+            this.Id = id;
+            this.ChatId = chatId;
+            this.Query = query;
+            this.Answer = answer;
+            this.Enabled = enabled;
+            this.CreatedAt = createdAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Turn" /> class.
+        /// </summary>
+        public Turn()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

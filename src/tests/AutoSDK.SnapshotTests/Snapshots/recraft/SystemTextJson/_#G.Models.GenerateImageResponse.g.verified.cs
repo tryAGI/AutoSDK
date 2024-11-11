@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateImageResponse" /> class.
+        /// </summary>
+        /// <param name="created"></param>
+        /// <param name="data"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GenerateImageResponse(
+            int created,
+            global::System.Collections.Generic.IList<global::G.Image> data)
+        {
+            this.Created = created;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateImageResponse" /> class.
+        /// </summary>
+        public GenerateImageResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogInviteSent" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the invite.
+        /// </param>
+        /// <param name="data">
+        /// The payload used to create the invite.
+        /// </param>
+        public AuditLogInviteSent(
+            string? id,
+            global::G.AuditLogInviteSentData? data)
+        {
+            this.Id = id;
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogInviteSent" /> class.
+        /// </summary>
+        public AuditLogInviteSent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

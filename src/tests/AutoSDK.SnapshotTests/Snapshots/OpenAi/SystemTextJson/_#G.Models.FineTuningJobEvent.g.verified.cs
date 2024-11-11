@@ -51,6 +51,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJobEvent" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="level"></param>
+        /// <param name="message"></param>
+        /// <param name="object"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FineTuningJobEvent(
+            string id,
+            int createdAt,
+            global::G.FineTuningJobEventLevel level,
+            string message,
+            global::G.FineTuningJobEventObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.Level = level;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJobEvent" /> class.
+        /// </summary>
+        public FineTuningJobEvent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

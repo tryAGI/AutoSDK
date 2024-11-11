@@ -23,6 +23,27 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsAddCollaboratorRequest" /> class.
+        /// </summary>
+        /// <param name="permission">
+        /// The permission to grant the collaborator.<br/>
+        /// Default Value: write<br/>
+        /// Example: write
+        /// </param>
+        public ProjectsAddCollaboratorRequest(
+            global::G.ProjectsAddCollaboratorRequestPermission? permission)
+        {
+            this.Permission = permission;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsAddCollaboratorRequest" /> class.
+        /// </summary>
+        public ProjectsAddCollaboratorRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

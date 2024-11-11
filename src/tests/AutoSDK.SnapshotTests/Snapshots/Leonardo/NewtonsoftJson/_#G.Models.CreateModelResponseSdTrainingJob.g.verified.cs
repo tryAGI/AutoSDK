@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateModelResponseSdTrainingJob" /> class.
+        /// </summary>
+        /// <param name="customModelId"></param>
+        /// <param name="apiCreditCost">
+        /// API Credits Cost for Model Training. Available for Production API Users.
+        /// </param>
+        public CreateModelResponseSdTrainingJob(
+            string? customModelId,
+            int? apiCreditCost)
+        {
+            this.CustomModelId = customModelId;
+            this.ApiCreditCost = apiCreditCost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateModelResponseSdTrainingJob" /> class.
+        /// </summary>
+        public CreateModelResponseSdTrainingJob()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

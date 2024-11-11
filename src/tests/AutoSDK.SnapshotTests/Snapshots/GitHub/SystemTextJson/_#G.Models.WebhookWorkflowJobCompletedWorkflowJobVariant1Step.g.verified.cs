@@ -59,6 +59,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowJobCompletedWorkflowJobVariant1Step" /> class.
+        /// </summary>
+        /// <param name="completedAt"></param>
+        /// <param name="conclusion"></param>
+        /// <param name="name"></param>
+        /// <param name="number"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="status"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookWorkflowJobCompletedWorkflowJobVariant1Step(
+            string? completedAt,
+            global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1StepConclusion? conclusion,
+            string name,
+            int number,
+            string? startedAt,
+            global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1StepStatus status)
+        {
+            this.CompletedAt = completedAt ?? throw new global::System.ArgumentNullException(nameof(completedAt));
+            this.Conclusion = conclusion;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Number = number;
+            this.StartedAt = startedAt ?? throw new global::System.ArgumentNullException(nameof(startedAt));
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowJobCompletedWorkflowJobVariant1Step" /> class.
+        /// </summary>
+        public WebhookWorkflowJobCompletedWorkflowJobVariant1Step()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

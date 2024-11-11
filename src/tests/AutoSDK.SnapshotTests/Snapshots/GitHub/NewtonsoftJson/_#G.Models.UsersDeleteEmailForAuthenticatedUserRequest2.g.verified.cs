@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersDeleteEmailForAuthenticatedUserRequest2" /> class.
+        /// </summary>
+        /// <param name="emails">
+        /// Email addresses associated with the GitHub user account.
+        /// </param>
+        public UsersDeleteEmailForAuthenticatedUserRequest2(
+            global::System.Collections.Generic.IList<string> emails)
+        {
+            this.Emails = emails ?? throw new global::System.ArgumentNullException(nameof(emails));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersDeleteEmailForAuthenticatedUserRequest2" /> class.
+        /// </summary>
+        public UsersDeleteEmailForAuthenticatedUserRequest2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

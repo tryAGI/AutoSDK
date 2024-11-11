@@ -69,6 +69,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookStatusCommit" /> class.
+        /// </summary>
+        /// <param name="author"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="commit"></param>
+        /// <param name="committer"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="parents"></param>
+        /// <param name="sha"></param>
+        /// <param name="url"></param>
+        public WebhookStatusCommit(
+            global::G.WebhookStatusCommitAuthor? author,
+            string commentsUrl,
+            global::G.WebhookStatusCommitCommit commit,
+            global::G.WebhookStatusCommitCommitter? committer,
+            string htmlUrl,
+            string nodeId,
+            global::System.Collections.Generic.IList<global::G.WebhookStatusCommitParent> parents,
+            string sha,
+            string url)
+        {
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookStatusCommit" /> class.
+        /// </summary>
+        public WebhookStatusCommit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

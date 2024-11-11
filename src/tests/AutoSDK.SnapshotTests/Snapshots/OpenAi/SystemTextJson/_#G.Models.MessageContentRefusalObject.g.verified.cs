@@ -29,6 +29,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageContentRefusalObject" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Always `refusal`.
+        /// </param>
+        /// <param name="refusal"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageContentRefusalObject(
+            string refusal,
+            global::G.MessageContentRefusalObjectType type)
+        {
+            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageContentRefusalObject" /> class.
+        /// </summary>
+        public MessageContentRefusalObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

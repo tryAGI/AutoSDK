@@ -118,6 +118,72 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStats" /> class.
+        /// </summary>
+        /// <param name="runCount"></param>
+        /// <param name="latencyP50"></param>
+        /// <param name="latencyP99"></param>
+        /// <param name="firstTokenP50"></param>
+        /// <param name="firstTokenP99"></param>
+        /// <param name="totalTokens"></param>
+        /// <param name="promptTokens"></param>
+        /// <param name="completionTokens"></param>
+        /// <param name="medianTokens"></param>
+        /// <param name="lastRunStartTime"></param>
+        /// <param name="feedbackStats"></param>
+        /// <param name="runFacets"></param>
+        /// <param name="errorRate"></param>
+        /// <param name="streamingRate"></param>
+        /// <param name="totalCost"></param>
+        /// <param name="promptCost"></param>
+        /// <param name="completionCost"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunStats(
+            int runCount,
+            double? latencyP50,
+            double? latencyP99,
+            double? firstTokenP50,
+            double? firstTokenP99,
+            int? totalTokens,
+            int? promptTokens,
+            int? completionTokens,
+            int? medianTokens,
+            global::System.DateTime? lastRunStartTime,
+            object? feedbackStats,
+            global::System.Collections.Generic.IList<object>? runFacets,
+            double? errorRate,
+            double? streamingRate,
+            string? totalCost,
+            string? promptCost,
+            string? completionCost)
+        {
+            this.RunCount = runCount;
+            this.LatencyP50 = latencyP50;
+            this.LatencyP99 = latencyP99;
+            this.FirstTokenP50 = firstTokenP50;
+            this.FirstTokenP99 = firstTokenP99;
+            this.TotalTokens = totalTokens;
+            this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
+            this.MedianTokens = medianTokens;
+            this.LastRunStartTime = lastRunStartTime;
+            this.FeedbackStats = feedbackStats;
+            this.RunFacets = runFacets;
+            this.ErrorRate = errorRate;
+            this.StreamingRate = streamingRate;
+            this.TotalCost = totalCost;
+            this.PromptCost = promptCost;
+            this.CompletionCost = completionCost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStats" /> class.
+        /// </summary>
+        public RunStats()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

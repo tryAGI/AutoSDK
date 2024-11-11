@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Permission" /> class.
+        /// </summary>
+        /// <param name="canEdit">
+        /// Defines whether the pipeline can be modified.
+        /// </param>
+        /// <param name="canTrigger">
+        /// Defines whether the pipeline can be executed.
+        /// </param>
+        public Permission(
+            bool? canEdit,
+            bool? canTrigger)
+        {
+            this.CanEdit = canEdit;
+            this.CanTrigger = canTrigger;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Permission" /> class.
+        /// </summary>
+        public Permission()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

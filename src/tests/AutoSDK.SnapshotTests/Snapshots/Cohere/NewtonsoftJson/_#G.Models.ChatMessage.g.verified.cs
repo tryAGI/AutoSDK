@@ -34,6 +34,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessage" /> class.
+        /// </summary>
+        /// <param name="role">
+        /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
+        /// </param>
+        /// <param name="message">
+        /// Contents of the chat message.
+        /// </param>
+        /// <param name="toolCalls"></param>
+        public ChatMessage(
+            global::G.ChatRole role,
+            string message,
+            global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls)
+        {
+            this.Role = role;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.ToolCalls = toolCalls;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessage" /> class.
+        /// </summary>
+        public ChatMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

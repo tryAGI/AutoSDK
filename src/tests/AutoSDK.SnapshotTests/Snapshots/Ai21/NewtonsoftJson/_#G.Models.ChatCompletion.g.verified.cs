@@ -41,6 +41,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletion" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// A unique ID for the request (not the message). Repeated identical requests<br/>
+        /// get different IDs. However, for a streaming response, the ID will be the same<br/>
+        /// for all responses in the stream.
+        /// </param>
+        /// <param name="choices">
+        /// One or more responses, depending on the `n` parameter from the request.
+        /// </param>
+        /// <param name="usage"></param>
+        /// <param name="meta"></param>
+        public ChatCompletion(
+            string id,
+            global::System.Collections.Generic.IList<global::G.ChatCompletionResponseChoice> choices,
+            global::G.UsageInfo usage,
+            object? meta)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletion" /> class.
+        /// </summary>
+        public ChatCompletion()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

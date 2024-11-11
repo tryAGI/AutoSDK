@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryIdTargetRepositoryId" /> class.
+        /// </summary>
+        /// <param name="repositoryIds">
+        /// The repository IDs that the ruleset applies to. One of these IDs must match for the condition to pass.
+        /// </param>
+        public RepositoryRulesetConditionsRepositoryIdTargetRepositoryId(
+            global::System.Collections.Generic.IList<int>? repositoryIds)
+        {
+            this.RepositoryIds = repositoryIds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryIdTargetRepositoryId" /> class.
+        /// </summary>
+        public RepositoryRulesetConditionsRepositoryIdTargetRepositoryId()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

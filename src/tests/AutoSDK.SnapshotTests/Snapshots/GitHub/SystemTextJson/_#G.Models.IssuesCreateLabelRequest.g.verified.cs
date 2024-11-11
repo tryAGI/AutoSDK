@@ -34,6 +34,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssuesCreateLabelRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing `:strawberry:` will render the emoji ![:strawberry:](https://github.githubassets.com/images/icons/emoji/unicode/1f353.png ":strawberry:"). For a full list of available emoji and codes, see "[Emoji cheat sheet](https://github.com/ikatyang/emoji-cheat-sheet)."
+        /// </param>
+        /// <param name="color">
+        /// The [hexadecimal color code](http://www.color-hex.com/) for the label, without the leading `#`.
+        /// </param>
+        /// <param name="description">
+        /// A short description of the label. Must be 100 characters or fewer.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public IssuesCreateLabelRequest(
+            string name,
+            string? color,
+            string? description)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Color = color;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssuesCreateLabelRequest" /> class.
+        /// </summary>
+        public IssuesCreateLabelRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

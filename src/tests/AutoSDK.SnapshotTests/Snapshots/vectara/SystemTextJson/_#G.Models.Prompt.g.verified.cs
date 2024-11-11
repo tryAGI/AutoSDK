@@ -47,6 +47,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Prompt" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the prompt.
+        /// </param>
+        /// <param name="name">
+        /// Name of the prompt. This is used as the `prompt_name` in a query.
+        /// </param>
+        /// <param name="description">
+        /// The description of the prompt.
+        /// </param>
+        /// <param name="enabled">
+        /// Indicates whether the prompt is enabled.
+        /// </param>
+        /// <param name="default">
+        /// Indicates if this prompt is the default prompt used with the LLM.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Prompt(
+            string? id,
+            string? name,
+            string? description,
+            bool? enabled,
+            bool? @default)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Description = description;
+            this.Enabled = enabled;
+            this.Default = @default;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Prompt" /> class.
+        /// </summary>
+        public Prompt()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatContentDeltaEventVariant2DeltaMessageContent" /> class.
+        /// </summary>
+        /// <param name="text"></param>
+        public ChatContentDeltaEventVariant2DeltaMessageContent(
+            string? text)
+        {
+            this.Text = text;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatContentDeltaEventVariant2DeltaMessageContent" /> class.
+        /// </summary>
+        public ChatContentDeltaEventVariant2DeltaMessageContent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

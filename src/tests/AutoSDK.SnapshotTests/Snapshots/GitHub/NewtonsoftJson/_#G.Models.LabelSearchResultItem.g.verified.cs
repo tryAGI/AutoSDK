@@ -69,6 +69,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LabelSearchResultItem" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="name"></param>
+        /// <param name="color"></param>
+        /// <param name="default"></param>
+        /// <param name="description"></param>
+        /// <param name="score"></param>
+        /// <param name="textMatches"></param>
+        public LabelSearchResultItem(
+            int id,
+            string nodeId,
+            string url,
+            string name,
+            string color,
+            bool @default,
+            string? description,
+            double score,
+            global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? textMatches)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
+            this.Default = @default;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Score = score;
+            this.TextMatches = textMatches;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LabelSearchResultItem" /> class.
+        /// </summary>
+        public LabelSearchResultItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

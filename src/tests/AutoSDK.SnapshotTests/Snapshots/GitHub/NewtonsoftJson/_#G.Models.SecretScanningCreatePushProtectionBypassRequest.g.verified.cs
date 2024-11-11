@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningCreatePushProtectionBypassRequest" /> class.
+        /// </summary>
+        /// <param name="reason">
+        /// The reason for bypassing push protection.
+        /// </param>
+        /// <param name="placeholderId">
+        /// The ID of the push protection bypass placeholder. This value is returned on any push protected routes.
+        /// </param>
+        public SecretScanningCreatePushProtectionBypassRequest(
+            global::G.SecretScanningPushProtectionBypassReason reason,
+            string placeholderId)
+        {
+            this.Reason = reason;
+            this.PlaceholderId = placeholderId ?? throw new global::System.ArgumentNullException(nameof(placeholderId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningCreatePushProtectionBypassRequest" /> class.
+        /// </summary>
+        public SecretScanningCreatePushProtectionBypassRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

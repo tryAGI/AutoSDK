@@ -35,6 +35,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateFeedbackConfigSchema" /> class.
+        /// </summary>
+        /// <param name="feedbackKey"></param>
+        /// <param name="feedbackConfig"></param>
+        /// <param name="isLowerScoreBetter">
+        /// Default Value: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateFeedbackConfigSchema(
+            string feedbackKey,
+            global::G.FeedbackConfig feedbackConfig,
+            bool? isLowerScoreBetter)
+        {
+            this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
+            this.FeedbackConfig = feedbackConfig ?? throw new global::System.ArgumentNullException(nameof(feedbackConfig));
+            this.IsLowerScoreBetter = isLowerScoreBetter;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateFeedbackConfigSchema" /> class.
+        /// </summary>
+        public CreateFeedbackConfigSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

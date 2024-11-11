@@ -31,6 +31,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Price" /> class.
+        /// </summary>
+        /// <param name="currencyCode">
+        /// The ISO 4217 currency code for the price object.<br/>
+        /// Example: USD
+        /// </param>
+        /// <param name="amount">
+        /// The amount of the currency in the common denomination. For example, in USD this is cents.<br/>
+        /// Example: 1050
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Price(
+            string currencyCode,
+            double amount)
+        {
+            this.CurrencyCode = currencyCode ?? throw new global::System.ArgumentNullException(nameof(currencyCode));
+            this.Amount = amount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Price" /> class.
+        /// </summary>
+        public Price()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

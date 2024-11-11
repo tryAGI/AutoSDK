@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatSearchQuery" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// The text of the search query.
+        /// </param>
+        /// <param name="generationId">
+        /// Unique identifier for the generated search query. Useful for submitting feedback.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatSearchQuery(
+            string text,
+            global::System.Guid generationId)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.GenerationId = generationId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatSearchQuery" /> class.
+        /// </summary>
+        public ChatSearchQuery()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

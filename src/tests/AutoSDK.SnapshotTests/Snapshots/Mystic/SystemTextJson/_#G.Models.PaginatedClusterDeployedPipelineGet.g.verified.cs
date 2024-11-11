@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaginatedClusterDeployedPipelineGet" /> class.
+        /// </summary>
+        /// <param name="skip"></param>
+        /// <param name="limit"></param>
+        /// <param name="total"></param>
+        /// <param name="data"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PaginatedClusterDeployedPipelineGet(
+            int skip,
+            int limit,
+            int total,
+            global::System.Collections.Generic.IList<global::G.ClusterDeployedPipelineGet> data)
+        {
+            this.Skip = skip;
+            this.Limit = limit;
+            this.Total = total;
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaginatedClusterDeployedPipelineGet" /> class.
+        /// </summary>
+        public PaginatedClusterDeployedPipelineGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

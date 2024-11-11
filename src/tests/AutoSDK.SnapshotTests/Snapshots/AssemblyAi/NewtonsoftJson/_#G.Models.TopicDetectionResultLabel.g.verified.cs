@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicDetectionResultLabel" /> class.
+        /// </summary>
+        /// <param name="relevance">
+        /// How relevant the detected topic is of a detected topic
+        /// </param>
+        /// <param name="label">
+        /// The IAB taxonomical label for the label of the detected topic, where &gt; denotes supertopic/subtopic relationship
+        /// </param>
+        public TopicDetectionResultLabel(
+            double relevance,
+            string label)
+        {
+            this.Relevance = relevance;
+            this.Label = label ?? throw new global::System.ArgumentNullException(nameof(label));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicDetectionResultLabel" /> class.
+        /// </summary>
+        public TopicDetectionResultLabel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

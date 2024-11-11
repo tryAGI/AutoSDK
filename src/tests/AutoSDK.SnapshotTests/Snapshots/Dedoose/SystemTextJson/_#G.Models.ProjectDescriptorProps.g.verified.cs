@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectDescriptorProps" /> class.
+        /// </summary>
+        /// <param name="projectDescriptorSets"></param>
+        /// <param name="projectDescriptorFields"></param>
+        /// <param name="projectDescriptorFieldOptions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectDescriptorProps(
+            global::System.Collections.Generic.IList<global::G.DescriptorSet>? projectDescriptorSets,
+            global::System.Collections.Generic.IList<global::G.DescriptorField>? projectDescriptorFields,
+            global::System.Collections.Generic.IList<global::G.DescriptorFieldOption>? projectDescriptorFieldOptions)
+        {
+            this.ProjectDescriptorSets = projectDescriptorSets;
+            this.ProjectDescriptorFields = projectDescriptorFields;
+            this.ProjectDescriptorFieldOptions = projectDescriptorFieldOptions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectDescriptorProps" /> class.
+        /// </summary>
+        public ProjectDescriptorProps()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

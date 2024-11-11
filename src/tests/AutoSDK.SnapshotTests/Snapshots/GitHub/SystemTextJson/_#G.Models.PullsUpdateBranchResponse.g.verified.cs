@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsUpdateBranchResponse" /> class.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PullsUpdateBranchResponse(
+            string? message,
+            string? url)
+        {
+            this.Message = message;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsUpdateBranchResponse" /> class.
+        /// </summary>
+        public PullsUpdateBranchResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

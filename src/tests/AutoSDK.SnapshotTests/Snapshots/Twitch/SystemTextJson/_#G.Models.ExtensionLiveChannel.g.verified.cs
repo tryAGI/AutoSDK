@@ -50,6 +50,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionLiveChannel" /> class.
+        /// </summary>
+        /// <param name="broadcasterId">
+        /// The ID of the broadcaster that is streaming live and has installed or activated the extension.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The broadcaster’s display name.
+        /// </param>
+        /// <param name="gameName">
+        /// The name of the category or game being streamed.
+        /// </param>
+        /// <param name="gameId">
+        /// The ID of the category or game being streamed.
+        /// </param>
+        /// <param name="title">
+        /// The title of the broadcaster’s stream. May be an empty string if not specified.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ExtensionLiveChannel(
+            string broadcasterId,
+            string broadcasterName,
+            string gameName,
+            string gameId,
+            string title)
+        {
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+            this.GameName = gameName ?? throw new global::System.ArgumentNullException(nameof(gameName));
+            this.GameId = gameId ?? throw new global::System.ArgumentNullException(nameof(gameId));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionLiveChannel" /> class.
+        /// </summary>
+        public ExtensionLiveChannel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

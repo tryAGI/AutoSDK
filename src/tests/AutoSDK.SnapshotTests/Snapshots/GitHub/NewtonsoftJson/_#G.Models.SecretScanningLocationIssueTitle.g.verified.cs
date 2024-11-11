@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationIssueTitle" /> class.
+        /// </summary>
+        /// <param name="issueTitleUrl">
+        /// The API URL to get the issue where the secret was detected.<br/>
+        /// Example: https://api.github.com/repos/octocat/Hello-World/issues/1347
+        /// </param>
+        public SecretScanningLocationIssueTitle(
+            string issueTitleUrl)
+        {
+            this.IssueTitleUrl = issueTitleUrl ?? throw new global::System.ArgumentNullException(nameof(issueTitleUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationIssueTitle" /> class.
+        /// </summary>
+        public SecretScanningLocationIssueTitle()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

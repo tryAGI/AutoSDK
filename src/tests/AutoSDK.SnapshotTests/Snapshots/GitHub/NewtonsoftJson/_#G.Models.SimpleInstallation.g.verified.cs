@@ -31,6 +31,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleInstallation" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the installation.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="nodeId">
+        /// The global node ID of the installation.<br/>
+        /// Example: MDQ6VXNlcjU4MzIzMQ==
+        /// </param>
+        public SimpleInstallation(
+            int id,
+            string nodeId)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleInstallation" /> class.
+        /// </summary>
+        public SimpleInstallation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

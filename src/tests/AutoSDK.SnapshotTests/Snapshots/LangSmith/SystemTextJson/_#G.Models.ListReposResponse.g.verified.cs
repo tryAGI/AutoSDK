@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListReposResponse" /> class.
+        /// </summary>
+        /// <param name="repos"></param>
+        /// <param name="total"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListReposResponse(
+            global::System.Collections.Generic.IList<global::G.RepoWithLookups> repos,
+            int total)
+        {
+            this.Repos = repos ?? throw new global::System.ArgumentNullException(nameof(repos));
+            this.Total = total;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListReposResponse" /> class.
+        /// </summary>
+        public ListReposResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

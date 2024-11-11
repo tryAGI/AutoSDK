@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitRef" /> class.
+        /// </summary>
+        /// <param name="ref"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="object"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GitRef(
+            string @ref,
+            string nodeId,
+            string url,
+            global::G.GitRefObject @object)
+        {
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitRef" /> class.
+        /// </summary>
+        public GitRef()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

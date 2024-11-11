@@ -75,6 +75,52 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Memo" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="projectId"></param>
+        /// <param name="title"></param>
+        /// <param name="createdUserId"></param>
+        /// <param name="lastEditUserId"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="lastEditStamp"></param>
+        /// <param name="folderId"></param>
+        /// <param name="dataURI"></param>
+        public Memo(
+            string? projectIdKey,
+            global::System.Guid? id,
+            global::System.Guid? projectId,
+            string? title,
+            global::System.Guid? createdUserId,
+            global::System.Guid? lastEditUserId,
+            global::System.DateTime? createStamp,
+            global::System.DateTime? lastEditStamp,
+            global::System.Guid? folderId,
+            string? dataURI)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.Id = id;
+            this.ProjectId = projectId;
+            this.Title = title;
+            this.CreatedUserId = createdUserId;
+            this.LastEditUserId = lastEditUserId;
+            this.CreateStamp = createStamp;
+            this.LastEditStamp = lastEditStamp;
+            this.FolderId = folderId;
+            this.DataURI = dataURI;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Memo" /> class.
+        /// </summary>
+        public Memo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

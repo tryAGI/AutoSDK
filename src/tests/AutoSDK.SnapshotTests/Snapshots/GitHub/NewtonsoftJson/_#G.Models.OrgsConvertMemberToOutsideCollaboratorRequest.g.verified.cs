@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsConvertMemberToOutsideCollaboratorRequest" /> class.
+        /// </summary>
+        /// <param name="async">
+        /// When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.<br/>
+        /// Default Value: false
+        /// </param>
+        public OrgsConvertMemberToOutsideCollaboratorRequest(
+            bool? async)
+        {
+            this.Async = async;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsConvertMemberToOutsideCollaboratorRequest" /> class.
+        /// </summary>
+        public OrgsConvertMemberToOutsideCollaboratorRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

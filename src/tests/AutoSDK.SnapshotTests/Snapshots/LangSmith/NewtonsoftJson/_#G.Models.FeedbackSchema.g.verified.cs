@@ -95,6 +95,61 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackSchema" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="modifiedAt"></param>
+        /// <param name="key"></param>
+        /// <param name="score"></param>
+        /// <param name="value"></param>
+        /// <param name="comment"></param>
+        /// <param name="correction"></param>
+        /// <param name="feedbackGroupId"></param>
+        /// <param name="comparativeExperimentId"></param>
+        /// <param name="runId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="id"></param>
+        /// <param name="feedbackSource">
+        /// The feedback source loaded from the database.
+        /// </param>
+        public FeedbackSchema(
+            string key,
+            global::System.Guid id,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? modifiedAt,
+            global::G.AnyOf<double?, int?, bool?>? score,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value,
+            string? comment,
+            global::G.AnyOf<object, string>? correction,
+            global::System.Guid? feedbackGroupId,
+            global::System.Guid? comparativeExperimentId,
+            global::System.Guid? runId,
+            global::System.Guid? sessionId,
+            global::G.FeedbackSource3? feedbackSource)
+        {
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Id = id;
+            this.CreatedAt = createdAt;
+            this.ModifiedAt = modifiedAt;
+            this.Score = score;
+            this.Value = value;
+            this.Comment = comment;
+            this.Correction = correction;
+            this.FeedbackGroupId = feedbackGroupId;
+            this.ComparativeExperimentId = comparativeExperimentId;
+            this.RunId = runId;
+            this.SessionId = sessionId;
+            this.FeedbackSource = feedbackSource;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackSchema" /> class.
+        /// </summary>
+        public FeedbackSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

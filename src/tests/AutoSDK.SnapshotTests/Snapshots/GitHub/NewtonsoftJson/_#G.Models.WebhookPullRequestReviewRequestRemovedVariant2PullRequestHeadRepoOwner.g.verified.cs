@@ -141,6 +141,83 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoOwner" /> class.
+        /// </summary>
+        /// <param name="avatarUrl"></param>
+        /// <param name="deleted"></param>
+        /// <param name="email"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="followersUrl"></param>
+        /// <param name="followingUrl"></param>
+        /// <param name="gistsUrl"></param>
+        /// <param name="gravatarId"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="login"></param>
+        /// <param name="name"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="organizationsUrl"></param>
+        /// <param name="receivedEventsUrl"></param>
+        /// <param name="reposUrl"></param>
+        /// <param name="siteAdmin"></param>
+        /// <param name="starredUrl"></param>
+        /// <param name="subscriptionsUrl"></param>
+        /// <param name="type"></param>
+        /// <param name="url"></param>
+        public WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoOwner(
+            int id,
+            string login,
+            string? avatarUrl,
+            bool? deleted,
+            string? email,
+            string? eventsUrl,
+            string? followersUrl,
+            string? followingUrl,
+            string? gistsUrl,
+            string? gravatarId,
+            string? htmlUrl,
+            string? name,
+            string? nodeId,
+            string? organizationsUrl,
+            string? receivedEventsUrl,
+            string? reposUrl,
+            bool? siteAdmin,
+            string? starredUrl,
+            string? subscriptionsUrl,
+            global::G.WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoOwnerType? type,
+            string? url)
+        {
+            this.Id = id;
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.AvatarUrl = avatarUrl;
+            this.Deleted = deleted;
+            this.Email = email;
+            this.EventsUrl = eventsUrl;
+            this.FollowersUrl = followersUrl;
+            this.FollowingUrl = followingUrl;
+            this.GistsUrl = gistsUrl;
+            this.GravatarId = gravatarId;
+            this.HtmlUrl = htmlUrl;
+            this.Name = name;
+            this.NodeId = nodeId;
+            this.OrganizationsUrl = organizationsUrl;
+            this.ReceivedEventsUrl = receivedEventsUrl;
+            this.ReposUrl = reposUrl;
+            this.SiteAdmin = siteAdmin;
+            this.StarredUrl = starredUrl;
+            this.SubscriptionsUrl = subscriptionsUrl;
+            this.Type = type;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoOwner" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewRequestRemovedVariant2PullRequestHeadRepoOwner()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVectorStoreRequest" /> class.
+        /// </summary>
+        /// <param name="fileIds">
+        /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// </param>
+        /// <param name="name">
+        /// The name of the vector store.
+        /// </param>
+        /// <param name="expiresAfter">
+        /// The expiration policy for a vector store.
+        /// </param>
+        /// <param name="chunkingStrategy">
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy. Only applicable if `file_ids` is non-empty.
+        /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+        /// </param>
+        public CreateVectorStoreRequest(
+            global::System.Collections.Generic.IList<string>? fileIds,
+            string? name,
+            global::G.VectorStoreExpirationAfter? expiresAfter,
+            global::G.CreateVectorStoreRequestChunkingStrategy? chunkingStrategy,
+            object? metadata)
+        {
+            this.FileIds = fileIds;
+            this.Name = name;
+            this.ExpiresAfter = expiresAfter;
+            this.ChunkingStrategy = chunkingStrategy;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVectorStoreRequest" /> class.
+        /// </summary>
+        public CreateVectorStoreRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

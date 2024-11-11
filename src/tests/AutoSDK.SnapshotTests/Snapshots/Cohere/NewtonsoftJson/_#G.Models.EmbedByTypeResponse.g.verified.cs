@@ -46,6 +46,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbedByTypeResponse" /> class.
+        /// </summary>
+        /// <param name="responseType"></param>
+        /// <param name="id"></param>
+        /// <param name="embeddings">
+        /// An object with different embedding types. The length of each embedding type array will be the same as the length of the original `texts` array.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="texts">
+        /// The text entries for which embeddings were returned.
+        /// </param>
+        /// <param name="meta"></param>
+        public EmbedByTypeResponse(
+            string id,
+            global::System.Collections.Generic.IList<string> texts,
+            global::G.EmbedByTypeResponseResponseType? responseType,
+            global::G.ApiMeta? meta,
+            global::G.EmbedByTypeResponseEmbeddings embeddings = default!)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Texts = texts ?? throw new global::System.ArgumentNullException(nameof(texts));
+            this.ResponseType = responseType;
+            this.Embeddings = embeddings;
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbedByTypeResponse" /> class.
+        /// </summary>
+        public EmbedByTypeResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

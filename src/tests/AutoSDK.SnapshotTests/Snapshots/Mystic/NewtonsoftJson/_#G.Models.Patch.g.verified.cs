@@ -93,6 +93,59 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Patch" /> class.
+        /// </summary>
+        /// <param name="public"></param>
+        /// <param name="description"></param>
+        /// <param name="websiteUrl"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="paperUrl"></param>
+        /// <param name="licenseUrl"></param>
+        /// <param name="imageUrl"></param>
+        /// <param name="readme"></param>
+        /// <param name="inputVariables"></param>
+        /// <param name="outputVariables"></param>
+        /// <param name="accelerators"></param>
+        /// <param name="extras"></param>
+        /// <param name="scalingConfig"></param>
+        public Patch(
+            bool? @public,
+            string? description,
+            string? websiteUrl,
+            string? repositoryUrl,
+            string? paperUrl,
+            string? licenseUrl,
+            string? imageUrl,
+            string? readme,
+            global::System.Collections.Generic.IList<global::G.IOVariable>? inputVariables,
+            global::System.Collections.Generic.IList<global::G.IOVariable>? outputVariables,
+            global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators,
+            object? extras,
+            string? scalingConfig)
+        {
+            this.Public = @public;
+            this.Description = description;
+            this.WebsiteUrl = websiteUrl;
+            this.RepositoryUrl = repositoryUrl;
+            this.PaperUrl = paperUrl;
+            this.LicenseUrl = licenseUrl;
+            this.ImageUrl = imageUrl;
+            this.Readme = readme;
+            this.InputVariables = inputVariables;
+            this.OutputVariables = outputVariables;
+            this.Accelerators = accelerators;
+            this.Extras = extras;
+            this.ScalingConfig = scalingConfig;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Patch" /> class.
+        /// </summary>
+        public Patch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

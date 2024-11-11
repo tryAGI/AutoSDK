@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateExtensionBitsProductBodyCost" /> class.
+        /// </summary>
+        /// <param name="amount">
+        /// The product's price.
+        /// </param>
+        /// <param name="type">
+        /// The type of currency. Possible values are:  <br/>
+        ///   <br/>
+        /// * bits — The minimum price is 1 and the maximum is 10000.
+        /// </param>
+        public UpdateExtensionBitsProductBodyCost(
+            int amount,
+            global::G.UpdateExtensionBitsProductBodyCostType type)
+        {
+            this.Amount = amount;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateExtensionBitsProductBodyCost" /> class.
+        /// </summary>
+        public UpdateExtensionBitsProductBodyCost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

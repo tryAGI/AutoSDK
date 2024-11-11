@@ -177,6 +177,101 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesClosedIssueVariant2" /> class.
+        /// </summary>
+        /// <param name="activeLockReason"></param>
+        /// <param name="assignee"></param>
+        /// <param name="assignees"></param>
+        /// <param name="authorAssociation"></param>
+        /// <param name="body"></param>
+        /// <param name="closedAt"></param>
+        /// <param name="comments"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="labels"></param>
+        /// <param name="labelsUrl"></param>
+        /// <param name="locked"></param>
+        /// <param name="milestone"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="number"></param>
+        /// <param name="performedViaGithubApp"></param>
+        /// <param name="reactions"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="state"></param>
+        /// <param name="timelineUrl"></param>
+        /// <param name="title"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="user"></param>
+        public WebhookIssuesClosedIssueVariant2(
+            string? closedAt,
+            global::G.WebhookIssuesClosedIssueVariant2State state,
+            string? activeLockReason,
+            object? assignee,
+            global::System.Collections.Generic.IList<object>? assignees,
+            string? authorAssociation,
+            string? body,
+            int? comments,
+            string? commentsUrl,
+            string? createdAt,
+            string? eventsUrl,
+            string? htmlUrl,
+            int? id,
+            global::System.Collections.Generic.IList<object>? labels,
+            string? labelsUrl,
+            bool? locked,
+            object? milestone,
+            string? nodeId,
+            int? number,
+            object? performedViaGithubApp,
+            global::G.WebhookIssuesClosedIssueVariant2Reactions? reactions,
+            string? repositoryUrl,
+            string? timelineUrl,
+            string? title,
+            string? updatedAt,
+            string? url,
+            global::G.WebhookIssuesClosedIssueVariant2User? user)
+        {
+            this.ClosedAt = closedAt ?? throw new global::System.ArgumentNullException(nameof(closedAt));
+            this.State = state;
+            this.ActiveLockReason = activeLockReason;
+            this.Assignee = assignee;
+            this.Assignees = assignees;
+            this.AuthorAssociation = authorAssociation;
+            this.Body = body;
+            this.Comments = comments;
+            this.CommentsUrl = commentsUrl;
+            this.CreatedAt = createdAt;
+            this.EventsUrl = eventsUrl;
+            this.HtmlUrl = htmlUrl;
+            this.Id = id;
+            this.Labels = labels;
+            this.LabelsUrl = labelsUrl;
+            this.Locked = locked;
+            this.Milestone = milestone;
+            this.NodeId = nodeId;
+            this.Number = number;
+            this.PerformedViaGithubApp = performedViaGithubApp;
+            this.Reactions = reactions;
+            this.RepositoryUrl = repositoryUrl;
+            this.TimelineUrl = timelineUrl;
+            this.Title = title;
+            this.UpdatedAt = updatedAt;
+            this.Url = url;
+            this.User = user;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesClosedIssueVariant2" /> class.
+        /// </summary>
+        public WebhookIssuesClosedIssueVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

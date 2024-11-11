@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRequestedReviewer" /> class.
+        /// </summary>
+        /// <param name="reviewer"></param>
+        /// <param name="type"></param>
+        public WebhookDeploymentReviewRequestedReviewer(
+            global::G.WebhookDeploymentReviewRequestedReviewerReviewer? reviewer,
+            global::G.WebhookDeploymentReviewRequestedReviewerType? type)
+        {
+            this.Reviewer = reviewer;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRequestedReviewer" /> class.
+        /// </summary>
+        public WebhookDeploymentReviewRequestedReviewer()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LanguageResponseModel" /> class.
+        /// </summary>
+        /// <param name="languageId"></param>
+        /// <param name="name"></param>
+        public LanguageResponseModel(
+            string languageId,
+            string name)
+        {
+            this.LanguageId = languageId ?? throw new global::System.ArgumentNullException(nameof(languageId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LanguageResponseModel" /> class.
+        /// </summary>
+        public LanguageResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonalizedVideoAddContactRequestVariablesListItem" /> class.
+        /// </summary>
+        /// <param name="email">
+        /// Example: john@mail.com
+        /// </param>
+        /// <param name="firstName">
+        /// Example: John
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PersonalizedVideoAddContactRequestVariablesListItem(
+            string? email,
+            string? firstName)
+        {
+            this.Email = email;
+            this.FirstName = firstName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonalizedVideoAddContactRequestVariablesListItem" /> class.
+        /// </summary>
+        public PersonalizedVideoAddContactRequestVariablesListItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

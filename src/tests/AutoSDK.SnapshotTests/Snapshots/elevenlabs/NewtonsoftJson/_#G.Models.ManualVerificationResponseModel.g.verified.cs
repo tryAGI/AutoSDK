@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManualVerificationResponseModel" /> class.
+        /// </summary>
+        /// <param name="extraText"></param>
+        /// <param name="requestTimeUnix"></param>
+        /// <param name="files"></param>
+        public ManualVerificationResponseModel(
+            string extraText,
+            int requestTimeUnix,
+            global::System.Collections.Generic.IList<global::G.ManualVerificationFileResponseModel> files)
+        {
+            this.ExtraText = extraText ?? throw new global::System.ArgumentNullException(nameof(extraText));
+            this.RequestTimeUnix = requestTimeUnix;
+            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManualVerificationResponseModel" /> class.
+        /// </summary>
+        public ManualVerificationResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

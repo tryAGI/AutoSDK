@@ -34,6 +34,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotSecret" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the secret.<br/>
+        /// Example: MY_ARTIFACTORY_PASSWORD
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        public DependabotSecret(
+            string name,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotSecret" /> class.
+        /// </summary>
+        public DependabotSecret()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

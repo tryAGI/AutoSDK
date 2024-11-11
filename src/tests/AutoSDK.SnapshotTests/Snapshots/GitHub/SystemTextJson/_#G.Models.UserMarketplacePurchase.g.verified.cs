@@ -71,6 +71,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserMarketplacePurchase" /> class.
+        /// </summary>
+        /// <param name="billingCycle">
+        /// Example: monthly
+        /// </param>
+        /// <param name="nextBillingDate"></param>
+        /// <param name="unitCount"></param>
+        /// <param name="onFreeTrial">
+        /// Example: true
+        /// </param>
+        /// <param name="freeTrialEndsOn"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="account"></param>
+        /// <param name="plan">
+        /// Marketplace Listing Plan
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UserMarketplacePurchase(
+            string billingCycle,
+            global::System.DateTime? nextBillingDate,
+            int? unitCount,
+            bool onFreeTrial,
+            global::System.DateTime? freeTrialEndsOn,
+            global::System.DateTime? updatedAt,
+            global::G.MarketplaceAccount account,
+            global::G.MarketplaceListingPlan plan)
+        {
+            this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
+            this.NextBillingDate = nextBillingDate;
+            this.UnitCount = unitCount;
+            this.OnFreeTrial = onFreeTrial;
+            this.FreeTrialEndsOn = freeTrialEndsOn;
+            this.UpdatedAt = updatedAt;
+            this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
+            this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserMarketplacePurchase" /> class.
+        /// </summary>
+        public UserMarketplacePurchase()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

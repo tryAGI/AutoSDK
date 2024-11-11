@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListComponentDefinitionsResponse" /> class.
+        /// </summary>
+        /// <param name="componentDefinitions">
+        /// A list of component definition resources.
+        /// </param>
+        /// <param name="totalSize">
+        /// Total number of component definitions.
+        /// </param>
+        /// <param name="pageSize">
+        /// The requested page size.
+        /// </param>
+        /// <param name="page">
+        /// The requested page offset.
+        /// </param>
+        public ListComponentDefinitionsResponse(
+            global::System.Collections.Generic.IList<global::G.ComponentDefinition>? componentDefinitions,
+            int? totalSize,
+            int? pageSize,
+            int? page)
+        {
+            this.ComponentDefinitions = componentDefinitions;
+            this.TotalSize = totalSize;
+            this.PageSize = pageSize;
+            this.Page = page;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListComponentDefinitionsResponse" /> class.
+        /// </summary>
+        public ListComponentDefinitionsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistCommitChangeStatus" /> class.
+        /// </summary>
+        /// <param name="total"></param>
+        /// <param name="additions"></param>
+        /// <param name="deletions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GistCommitChangeStatus(
+            int? total,
+            int? additions,
+            int? deletions)
+        {
+            this.Total = total;
+            this.Additions = additions;
+            this.Deletions = deletions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistCommitChangeStatus" /> class.
+        /// </summary>
+        public GistCommitChangeStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

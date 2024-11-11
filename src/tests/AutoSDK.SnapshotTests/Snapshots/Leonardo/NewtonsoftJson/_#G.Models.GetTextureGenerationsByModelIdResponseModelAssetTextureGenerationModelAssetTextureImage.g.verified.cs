@@ -34,6 +34,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTextureGenerationsByModelIdResponseModelAssetTextureGenerationModelAssetTextureImage" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="type">
+        /// When training model assets these are the texture types available to use.<br/>
+        /// Default Value: NORMAL
+        /// </param>
+        /// <param name="url"></param>
+        public GetTextureGenerationsByModelIdResponseModelAssetTextureGenerationModelAssetTextureImage(
+            string? id,
+            global::G.MODELASSETTEXTURETYPES? type,
+            string? url)
+        {
+            this.Id = id;
+            this.Type = type;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTextureGenerationsByModelIdResponseModelAssetTextureGenerationModelAssetTextureImage" /> class.
+        /// </summary>
+        public GetTextureGenerationsByModelIdResponseModelAssetTextureGenerationModelAssetTextureImage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

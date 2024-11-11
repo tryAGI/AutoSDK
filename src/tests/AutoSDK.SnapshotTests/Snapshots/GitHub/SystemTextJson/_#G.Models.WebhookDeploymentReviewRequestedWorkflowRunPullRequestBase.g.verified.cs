@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRequestedWorkflowRunPullRequestBase" /> class.
+        /// </summary>
+        /// <param name="ref"></param>
+        /// <param name="repo"></param>
+        /// <param name="sha"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookDeploymentReviewRequestedWorkflowRunPullRequestBase(
+            string @ref,
+            global::G.WebhookDeploymentReviewRequestedWorkflowRunPullRequestBaseRepo repo,
+            string sha)
+        {
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRequestedWorkflowRunPullRequestBase" /> class.
+        /// </summary>
+        public WebhookDeploymentReviewRequestedWorkflowRunPullRequestBase()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

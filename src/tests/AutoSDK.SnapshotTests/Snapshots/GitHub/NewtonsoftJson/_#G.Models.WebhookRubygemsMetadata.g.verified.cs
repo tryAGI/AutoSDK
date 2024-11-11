@@ -75,6 +75,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRubygemsMetadata" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="readme"></param>
+        /// <param name="homepage"></param>
+        /// <param name="versionInfo"></param>
+        /// <param name="platform"></param>
+        /// <param name="metadata"></param>
+        /// <param name="repo"></param>
+        /// <param name="dependencies"></param>
+        /// <param name="commitOid"></param>
+        public WebhookRubygemsMetadata(
+            string? name,
+            string? description,
+            string? readme,
+            string? homepage,
+            global::G.WebhookRubygemsMetadataVersionInfo? versionInfo,
+            string? platform,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
+            string? repo,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, string>>? dependencies,
+            string? commitOid)
+        {
+            this.Name = name;
+            this.Description = description;
+            this.Readme = readme;
+            this.Homepage = homepage;
+            this.VersionInfo = versionInfo;
+            this.Platform = platform;
+            this.Metadata = metadata;
+            this.Repo = repo;
+            this.Dependencies = dependencies;
+            this.CommitOid = commitOid;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRubygemsMetadata" /> class.
+        /// </summary>
+        public WebhookRubygemsMetadata()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

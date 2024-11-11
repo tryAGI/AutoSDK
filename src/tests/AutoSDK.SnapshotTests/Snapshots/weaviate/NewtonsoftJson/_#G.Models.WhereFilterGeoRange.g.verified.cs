@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhereFilterGeoRange" /> class.
+        /// </summary>
+        /// <param name="geoCoordinates"></param>
+        /// <param name="distance"></param>
+        public WhereFilterGeoRange(
+            global::G.GeoCoordinates? geoCoordinates,
+            global::G.WhereFilterGeoRangeDistance? distance)
+        {
+            this.GeoCoordinates = geoCoordinates;
+            this.Distance = distance;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WhereFilterGeoRange" /> class.
+        /// </summary>
+        public WhereFilterGeoRange()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

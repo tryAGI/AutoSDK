@@ -37,6 +37,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationSubscription" /> class.
+        /// </summary>
+        /// <param name="plan">
+        /// Plan identifier.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="detail">
+        /// Details of the associated Stripe subscription.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="usedSeats">
+        /// Number of used seats within the organization subscription.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrganizationSubscription(
+            global::G.OrganizationSubscriptionPlan? plan,
+            global::G.StripeSubscriptionDetail? detail,
+            int? usedSeats)
+        {
+            this.Plan = plan;
+            this.Detail = detail;
+            this.UsedSeats = usedSeats;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationSubscription" /> class.
+        /// </summary>
+        public OrganizationSubscription()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

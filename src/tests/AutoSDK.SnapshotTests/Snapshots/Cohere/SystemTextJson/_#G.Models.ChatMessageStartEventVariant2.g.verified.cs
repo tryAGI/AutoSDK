@@ -27,6 +27,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessageStartEventVariant2" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier for the generated reply.
+        /// </param>
+        /// <param name="delta"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatMessageStartEventVariant2(
+            string? id,
+            global::G.ChatMessageStartEventVariant2Delta? delta)
+        {
+            this.Id = id;
+            this.Delta = delta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessageStartEventVariant2" /> class.
+        /// </summary>
+        public ChatMessageStartEventVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

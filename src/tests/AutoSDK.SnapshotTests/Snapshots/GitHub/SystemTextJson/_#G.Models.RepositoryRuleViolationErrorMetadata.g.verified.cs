@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleViolationErrorMetadata" /> class.
+        /// </summary>
+        /// <param name="secretScanning"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryRuleViolationErrorMetadata(
+            global::G.RepositoryRuleViolationErrorMetadataSecretScanning? secretScanning)
+        {
+            this.SecretScanning = secretScanning;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleViolationErrorMetadata" /> class.
+        /// </summary>
+        public RepositoryRuleViolationErrorMetadata()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

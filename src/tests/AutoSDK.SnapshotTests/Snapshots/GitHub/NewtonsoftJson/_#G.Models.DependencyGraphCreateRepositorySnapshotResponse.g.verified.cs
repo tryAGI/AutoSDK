@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependencyGraphCreateRepositorySnapshotResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// ID of the created snapshot.
+        /// </param>
+        /// <param name="createdAt">
+        /// The time at which the snapshot was created.
+        /// </param>
+        /// <param name="result">
+        /// Either "SUCCESS", "ACCEPTED", or "INVALID". "SUCCESS" indicates that the snapshot was successfully created and the repository's dependencies were updated. "ACCEPTED" indicates that the snapshot was successfully created, but the repository's dependencies were not updated. "INVALID" indicates that the snapshot was malformed.
+        /// </param>
+        /// <param name="message">
+        /// A message providing further details about the result, such as why the dependencies were not updated.
+        /// </param>
+        public DependencyGraphCreateRepositorySnapshotResponse(
+            int id,
+            string createdAt,
+            string result,
+            string message)
+        {
+            this.Id = id;
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependencyGraphCreateRepositorySnapshotResponse" /> class.
+        /// </summary>
+        public DependencyGraphCreateRepositorySnapshotResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

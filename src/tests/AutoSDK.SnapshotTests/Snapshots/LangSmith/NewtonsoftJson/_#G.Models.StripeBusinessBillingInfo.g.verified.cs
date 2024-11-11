@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripeBusinessBillingInfo" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="address">
+        /// Stripe customer address.
+        /// </param>
+        public StripeBusinessBillingInfo(
+            string name,
+            global::G.StripeCustomerAddress? address)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Address = address;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripeBusinessBillingInfo" /> class.
+        /// </summary>
+        public StripeBusinessBillingInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

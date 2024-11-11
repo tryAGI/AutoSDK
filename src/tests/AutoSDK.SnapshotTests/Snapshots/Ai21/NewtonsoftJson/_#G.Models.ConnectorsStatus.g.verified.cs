@@ -39,6 +39,34 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectorsStatus" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="workflowStatus">
+        /// An enumeration.
+        /// </param>
+        /// <param name="filesSuccessfullyUploaded"></param>
+        /// <param name="failedUploadedFiles"></param>
+        public ConnectorsStatus(
+            string createdAt,
+            global::G.ConnectorsWorkflowStatus workflowStatus,
+            int filesSuccessfullyUploaded,
+            int failedUploadedFiles)
+        {
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.WorkflowStatus = workflowStatus;
+            this.FilesSuccessfullyUploaded = filesSuccessfullyUploaded;
+            this.FailedUploadedFiles = failedUploadedFiles;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectorsStatus" /> class.
+        /// </summary>
+        public ConnectorsStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

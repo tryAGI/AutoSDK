@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasicAuthResponse" /> class.
+        /// </summary>
+        /// <param name="accessToken"></param>
+        public BasicAuthResponse(
+            string accessToken)
+        {
+            this.AccessToken = accessToken ?? throw new global::System.ArgumentNullException(nameof(accessToken));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BasicAuthResponse" /> class.
+        /// </summary>
+        public BasicAuthResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

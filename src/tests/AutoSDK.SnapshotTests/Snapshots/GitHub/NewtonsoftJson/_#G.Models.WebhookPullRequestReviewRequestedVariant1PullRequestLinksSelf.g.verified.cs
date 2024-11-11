@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf" /> class.
+        /// </summary>
+        /// <param name="href"></param>
+        public WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf(
+            string href)
+        {
+            this.Href = href ?? throw new global::System.ArgumentNullException(nameof(href));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewRequestedVariant1PullRequestLinksSelf()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

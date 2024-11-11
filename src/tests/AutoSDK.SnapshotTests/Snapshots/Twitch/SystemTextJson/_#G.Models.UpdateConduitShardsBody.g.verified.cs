@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConduitShardsBody" /> class.
+        /// </summary>
+        /// <param name="conduitId">
+        /// Conduit ID.
+        /// </param>
+        /// <param name="shards">
+        /// List of shards to update.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateConduitShardsBody(
+            string conduitId,
+            global::System.Collections.Generic.IList<global::G.UpdateConduitShardsBodyShard> shards)
+        {
+            this.ConduitId = conduitId ?? throw new global::System.ArgumentNullException(nameof(conduitId));
+            this.Shards = shards ?? throw new global::System.ArgumentNullException(nameof(shards));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConduitShardsBody" /> class.
+        /// </summary>
+        public UpdateConduitShardsBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

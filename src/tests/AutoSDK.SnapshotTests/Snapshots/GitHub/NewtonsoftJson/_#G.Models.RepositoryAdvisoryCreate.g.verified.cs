@@ -70,6 +70,66 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCreate" /> class.
+        /// </summary>
+        /// <param name="summary">
+        /// A short summary of the advisory.
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of what the advisory impacts.
+        /// </param>
+        /// <param name="cveId">
+        /// The Common Vulnerabilities and Exposures (CVE) ID.
+        /// </param>
+        /// <param name="vulnerabilities">
+        /// A product affected by the vulnerability detailed in a repository security advisory.
+        /// </param>
+        /// <param name="cweIds">
+        /// A list of Common Weakness Enumeration (CWE) IDs.
+        /// </param>
+        /// <param name="credits">
+        /// A list of users receiving credit for their participation in the security advisory.
+        /// </param>
+        /// <param name="severity">
+        /// The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
+        /// </param>
+        /// <param name="cvssVectorString">
+        /// The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
+        /// </param>
+        /// <param name="startPrivateFork">
+        /// Whether to create a temporary private fork of the repository to collaborate on a fix.<br/>
+        /// Default Value: false
+        /// </param>
+        public RepositoryAdvisoryCreate(
+            string summary,
+            string description,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateVulnerabilitie> vulnerabilities,
+            string? cveId,
+            global::System.Collections.Generic.IList<string>? cweIds,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCreateCredit>? credits,
+            global::G.RepositoryAdvisoryCreateSeverity? severity,
+            string? cvssVectorString,
+            bool? startPrivateFork)
+        {
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
+            this.CveId = cveId;
+            this.CweIds = cweIds;
+            this.Credits = credits;
+            this.Severity = severity;
+            this.CvssVectorString = cvssVectorString;
+            this.StartPrivateFork = startPrivateFork;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCreate" /> class.
+        /// </summary>
+        public RepositoryAdvisoryCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

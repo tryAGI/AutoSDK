@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsSectionCreate" /> class.
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="index"></param>
+        public CustomChartsSectionCreate(
+            string title,
+            string? description,
+            int? index)
+        {
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Description = description;
+            this.Index = index;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsSectionCreate" /> class.
+        /// </summary>
+        public CustomChartsSectionCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

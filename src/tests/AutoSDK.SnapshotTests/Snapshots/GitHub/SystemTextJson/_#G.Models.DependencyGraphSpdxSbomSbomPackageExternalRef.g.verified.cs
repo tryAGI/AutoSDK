@@ -39,6 +39,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependencyGraphSpdxSbomSbomPackageExternalRef" /> class.
+        /// </summary>
+        /// <param name="referenceCategory">
+        /// The category of reference to an external resource this reference refers to.<br/>
+        /// Example: PACKAGE-MANAGER
+        /// </param>
+        /// <param name="referenceLocator">
+        /// A locator for the particular external resource this reference refers to.<br/>
+        /// Example: pkg:gem/rails@6.0.1
+        /// </param>
+        /// <param name="referenceType">
+        /// The category of reference to an external resource this reference refers to.<br/>
+        /// Example: purl
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DependencyGraphSpdxSbomSbomPackageExternalRef(
+            string referenceCategory,
+            string referenceLocator,
+            string referenceType)
+        {
+            this.ReferenceCategory = referenceCategory ?? throw new global::System.ArgumentNullException(nameof(referenceCategory));
+            this.ReferenceLocator = referenceLocator ?? throw new global::System.ArgumentNullException(nameof(referenceLocator));
+            this.ReferenceType = referenceType ?? throw new global::System.ArgumentNullException(nameof(referenceType));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependencyGraphSpdxSbomSbomPackageExternalRef" /> class.
+        /// </summary>
+        public DependencyGraphSpdxSbomSbomPackageExternalRef()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

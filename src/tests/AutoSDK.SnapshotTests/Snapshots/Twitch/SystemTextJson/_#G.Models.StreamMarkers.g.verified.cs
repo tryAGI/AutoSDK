@@ -57,6 +57,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamMarkers" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// The ID of the user that created the marker.
+        /// </param>
+        /// <param name="userName">
+        /// The user’s display name.
+        /// </param>
+        /// <param name="userLogin">
+        /// The user’s login name.
+        /// </param>
+        /// <param name="videos">
+        /// A list of videos that contain markers. The list contains a single video.
+        /// </param>
+        /// <param name="videoId">
+        /// An ID that identifies this video.
+        /// </param>
+        /// <param name="markers">
+        /// The list of markers in this video. The list in ascending order by when the marker was created.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StreamMarkers(
+            string userId,
+            string userName,
+            string userLogin,
+            global::System.Collections.Generic.IList<object> videos,
+            string videoId,
+            global::System.Collections.Generic.IList<global::G.StreamMarkersMarker> markers)
+        {
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+            this.Videos = videos ?? throw new global::System.ArgumentNullException(nameof(videos));
+            this.VideoId = videoId ?? throw new global::System.ArgumentNullException(nameof(videoId));
+            this.Markers = markers ?? throw new global::System.ArgumentNullException(nameof(markers));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamMarkers" /> class.
+        /// </summary>
+        public StreamMarkers()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

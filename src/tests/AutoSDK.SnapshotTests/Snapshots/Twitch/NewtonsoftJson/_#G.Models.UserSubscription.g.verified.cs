@@ -67,6 +67,64 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserSubscription" /> class.
+        /// </summary>
+        /// <param name="broadcasterId">
+        /// An ID that identifies the broadcaster.
+        /// </param>
+        /// <param name="broadcasterLogin">
+        /// The broadcaster’s login name.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The broadcaster’s display name.
+        /// </param>
+        /// <param name="gifterId">
+        /// The ID of the user that gifted the subscription. The object includes this field only if `is_gift` is **true**.
+        /// </param>
+        /// <param name="gifterLogin">
+        /// The gifter’s login name. The object includes this field only if `is_gift` is **true**.
+        /// </param>
+        /// <param name="gifterName">
+        /// The gifter’s display name. The object includes this field only if `is_gift` is **true**.
+        /// </param>
+        /// <param name="isGift">
+        /// A Boolean value that determines whether the subscription is a gift subscription. Is **true** if the subscription was gifted.
+        /// </param>
+        /// <param name="tier">
+        /// The type of subscription. Possible values are:  <br/>
+        ///   <br/>
+        /// * 1000 — Tier 1<br/>
+        /// * 2000 — Tier 2<br/>
+        /// * 3000 — Tier 3
+        /// </param>
+        public UserSubscription(
+            string broadcasterId,
+            string broadcasterLogin,
+            string broadcasterName,
+            bool isGift,
+            global::G.UserSubscriptionTier tier,
+            string? gifterId,
+            string? gifterLogin,
+            string? gifterName)
+        {
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+            this.IsGift = isGift;
+            this.Tier = tier;
+            this.GifterId = gifterId;
+            this.GifterLogin = gifterLogin;
+            this.GifterName = gifterName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserSubscription" /> class.
+        /// </summary>
+        public UserSubscription()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

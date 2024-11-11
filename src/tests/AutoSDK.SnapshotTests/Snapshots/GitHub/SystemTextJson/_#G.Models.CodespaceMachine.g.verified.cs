@@ -72,6 +72,63 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespaceMachine" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the machine.<br/>
+        /// Example: standardLinux
+        /// </param>
+        /// <param name="displayName">
+        /// The display name of the machine includes cores, memory, and storage.<br/>
+        /// Example: 4 cores, 16 GB RAM, 64 GB storage
+        /// </param>
+        /// <param name="operatingSystem">
+        /// The operating system of the machine.<br/>
+        /// Example: linux
+        /// </param>
+        /// <param name="storageInBytes">
+        /// How much storage is available to the codespace.<br/>
+        /// Example: 68719476736
+        /// </param>
+        /// <param name="memoryInBytes">
+        /// How much memory is available to the codespace.<br/>
+        /// Example: 17179869184
+        /// </param>
+        /// <param name="cpus">
+        /// How many cores are available to the codespace.<br/>
+        /// Example: 4
+        /// </param>
+        /// <param name="prebuildAvailability">
+        /// Whether a prebuild is currently available when creating a codespace for this machine and repository. If a branch was not specified as a ref, the default branch will be assumed. Value will be "null" if prebuilds are not supported or prebuild availability could not be determined. Value will be "none" if no prebuild is available. Latest values "ready" and "in_progress" indicate the prebuild availability status.<br/>
+        /// Example: ready
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodespaceMachine(
+            string name,
+            string displayName,
+            string operatingSystem,
+            int storageInBytes,
+            int memoryInBytes,
+            int cpus,
+            global::G.CodespaceMachinePrebuildAvailability? prebuildAvailability)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.OperatingSystem = operatingSystem ?? throw new global::System.ArgumentNullException(nameof(operatingSystem));
+            this.StorageInBytes = storageInBytes;
+            this.MemoryInBytes = memoryInBytes;
+            this.Cpus = cpus;
+            this.PrebuildAvailability = prebuildAvailability;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespaceMachine" /> class.
+        /// </summary>
+        public CodespaceMachine()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

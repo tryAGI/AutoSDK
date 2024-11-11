@@ -24,6 +24,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatDocument" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier for this document.
+        /// </param>
+        public ChatDocument(
+            string? id)
+        {
+            this.Id = id;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatDocument" /> class.
+        /// </summary>
+        public ChatDocument()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

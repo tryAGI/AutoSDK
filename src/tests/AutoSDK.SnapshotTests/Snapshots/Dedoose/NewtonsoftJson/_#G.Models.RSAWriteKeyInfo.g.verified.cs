@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RSAWriteKeyInfo" /> class.
+        /// </summary>
+        /// <param name="modulus"></param>
+        /// <param name="exponent"></param>
+        public RSAWriteKeyInfo(
+            string? modulus,
+            string? exponent)
+        {
+            this.Modulus = modulus;
+            this.Exponent = exponent;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RSAWriteKeyInfo" /> class.
+        /// </summary>
+        public RSAWriteKeyInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -69,6 +69,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagImportVO" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="parentId"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="isWeighted"></param>
+        /// <param name="weightMin"></param>
+        /// <param name="weightMax"></param>
+        /// <param name="weightDefault"></param>
+        /// <param name="rowIndex"></param>
+        public TagImportVO(
+            int? id,
+            int? parentId,
+            string? title,
+            string? description,
+            bool? isWeighted,
+            int? weightMin,
+            int? weightMax,
+            int? weightDefault,
+            int? rowIndex)
+        {
+            this.Id = id;
+            this.ParentId = parentId;
+            this.Title = title;
+            this.Description = description;
+            this.IsWeighted = isWeighted;
+            this.WeightMin = weightMin;
+            this.WeightMax = weightMax;
+            this.WeightDefault = weightDefault;
+            this.RowIndex = rowIndex;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagImportVO" /> class.
+        /// </summary>
+        public TagImportVO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

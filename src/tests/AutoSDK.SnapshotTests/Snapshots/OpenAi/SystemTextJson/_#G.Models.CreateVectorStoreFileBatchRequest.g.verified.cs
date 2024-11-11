@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVectorStoreFileBatchRequest" /> class.
+        /// </summary>
+        /// <param name="fileIds">
+        /// A list of [File](/docs/api-reference/files) IDs that the vector store should use. Useful for tools like `file_search` that can access files.
+        /// </param>
+        /// <param name="chunkingStrategy">
+        /// The chunking strategy used to chunk the file(s). If not set, will use the `auto` strategy.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateVectorStoreFileBatchRequest(
+            global::System.Collections.Generic.IList<string> fileIds,
+            global::G.ChunkingStrategyRequestParam? chunkingStrategy)
+        {
+            this.FileIds = fileIds ?? throw new global::System.ArgumentNullException(nameof(fileIds));
+            this.ChunkingStrategy = chunkingStrategy;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVectorStoreFileBatchRequest" /> class.
+        /// </summary>
+        public CreateVectorStoreFileBatchRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

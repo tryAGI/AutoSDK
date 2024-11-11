@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsUpdateRequest" /> class.
+        /// </summary>
+        /// <param name="hardware">
+        /// The SKU for the hardware used to run the model. Possible values can be retrieved from the `hardware.list` endpoint.
+        /// </param>
+        /// <param name="maxInstances">
+        /// The maximum number of instances for scaling.
+        /// </param>
+        /// <param name="minInstances">
+        /// The minimum number of instances for scaling.
+        /// </param>
+        /// <param name="version">
+        /// The ID of the model version that you want to deploy
+        /// </param>
+        public DeploymentsUpdateRequest(
+            string? hardware,
+            int? maxInstances,
+            int? minInstances,
+            string? version)
+        {
+            this.Hardware = hardware;
+            this.MaxInstances = maxInstances;
+            this.MinInstances = minInstances;
+            this.Version = version;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsUpdateRequest" /> class.
+        /// </summary>
+        public DeploymentsUpdateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -39,6 +39,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SnapshotDetector" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the detector used.<br/>
+        /// Example: docker buildtime detector
+        /// </param>
+        /// <param name="version">
+        /// The version of the detector used.<br/>
+        /// Example: 1.0.0
+        /// </param>
+        /// <param name="url">
+        /// The url of the detector used.<br/>
+        /// Example: http://example.com/docker-buildtimer-detector
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SnapshotDetector(
+            string name,
+            string version,
+            string url)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SnapshotDetector" /> class.
+        /// </summary>
+        public SnapshotDetector()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

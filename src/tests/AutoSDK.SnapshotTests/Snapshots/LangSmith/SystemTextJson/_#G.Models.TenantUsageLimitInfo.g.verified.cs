@@ -35,6 +35,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantUsageLimitInfo" /> class.
+        /// </summary>
+        /// <param name="inRejectSet"></param>
+        /// <param name="usageLimitType"></param>
+        /// <param name="tenantLimit"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TenantUsageLimitInfo(
+            bool inRejectSet,
+            global::G.TenantUsageLimitType? usageLimitType,
+            int? tenantLimit)
+        {
+            this.InRejectSet = inRejectSet;
+            this.UsageLimitType = usageLimitType;
+            this.TenantLimit = tenantLimit;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantUsageLimitInfo" /> class.
+        /// </summary>
+        public TenantUsageLimitInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

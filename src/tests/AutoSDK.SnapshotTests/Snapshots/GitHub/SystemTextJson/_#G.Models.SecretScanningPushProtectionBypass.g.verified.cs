@@ -34,6 +34,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningPushProtectionBypass" /> class.
+        /// </summary>
+        /// <param name="reason">
+        /// The reason for bypassing push protection.
+        /// </param>
+        /// <param name="expireAt">
+        /// The time that the bypass will expire in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// </param>
+        /// <param name="tokenType">
+        /// The token type this bypass is for.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SecretScanningPushProtectionBypass(
+            global::G.SecretScanningPushProtectionBypassReason? reason,
+            global::System.DateTime? expireAt,
+            string? tokenType)
+        {
+            this.Reason = reason;
+            this.ExpireAt = expireAt;
+            this.TokenType = tokenType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningPushProtectionBypass" /> class.
+        /// </summary>
+        public SecretScanningPushProtectionBypass()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

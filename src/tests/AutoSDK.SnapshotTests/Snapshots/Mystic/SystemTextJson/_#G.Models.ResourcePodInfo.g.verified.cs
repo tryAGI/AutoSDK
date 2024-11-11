@@ -50,6 +50,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResourcePodInfo" /> class.
+        /// </summary>
+        /// <param name="podName"></param>
+        /// <param name="podIp"></param>
+        /// <param name="nodeName"></param>
+        /// <param name="state">
+        /// An enumeration.
+        /// </param>
+        /// <param name="currentRun"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ResourcePodInfo(
+            string podName,
+            string podIp,
+            string nodeName,
+            global::G.PipelineState state,
+            string? currentRun)
+        {
+            this.PodName = podName ?? throw new global::System.ArgumentNullException(nameof(podName));
+            this.PodIp = podIp ?? throw new global::System.ArgumentNullException(nameof(podIp));
+            this.NodeName = nodeName ?? throw new global::System.ArgumentNullException(nameof(nodeName));
+            this.State = state;
+            this.CurrentRun = currentRun;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResourcePodInfo" /> class.
+        /// </summary>
+        public ResourcePodInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

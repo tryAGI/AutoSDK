@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PurgeLemurRequestDataResponse" /> class.
+        /// </summary>
+        /// <param name="requestId">
+        /// The ID of the deletion request of the LeMUR request
+        /// </param>
+        /// <param name="requestIdToPurge">
+        /// The ID of the LeMUR request to purge the data for
+        /// </param>
+        /// <param name="deleted">
+        /// Whether the request data was deleted
+        /// </param>
+        public PurgeLemurRequestDataResponse(
+            global::System.Guid requestId,
+            global::System.Guid requestIdToPurge,
+            bool deleted)
+        {
+            this.RequestId = requestId;
+            this.RequestIdToPurge = requestIdToPurge;
+            this.Deleted = deleted;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PurgeLemurRequestDataResponse" /> class.
+        /// </summary>
+        public PurgeLemurRequestDataResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -122,6 +122,95 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Project" /> class.
+        /// </summary>
+        /// <param name="ownerUrl">
+        /// Example: https://api.github.com/repos/api-playground/projects-test
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/projects/1002604
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/api-playground/projects-test/projects/12
+        /// </param>
+        /// <param name="columnsUrl">
+        /// Example: https://api.github.com/projects/1002604/columns
+        /// </param>
+        /// <param name="id">
+        /// Example: 1002604
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDc6UHJvamVjdDEwMDI2MDQ=
+        /// </param>
+        /// <param name="name">
+        /// Name of the project<br/>
+        /// Example: Week One Sprint
+        /// </param>
+        /// <param name="body">
+        /// Body of the project<br/>
+        /// Example: This project represents the sprint of the first week in January
+        /// </param>
+        /// <param name="number">
+        /// Example: 1
+        /// </param>
+        /// <param name="state">
+        /// State of the project; either 'open' or 'closed'<br/>
+        /// Example: open
+        /// </param>
+        /// <param name="creator">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="organizationPermission">
+        /// The baseline permission that all organization members have on this project. Only present if owner is an organization.
+        /// </param>
+        /// <param name="private">
+        /// Whether or not this project can be seen by everyone. Only present if owner is an organization.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Project(
+            string ownerUrl,
+            string url,
+            string htmlUrl,
+            string columnsUrl,
+            int id,
+            string nodeId,
+            string name,
+            string? body,
+            int number,
+            string state,
+            global::G.NullableSimpleUser? creator,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::G.ProjectOrganizationPermission? organizationPermission,
+            bool? @private)
+        {
+            this.OwnerUrl = ownerUrl ?? throw new global::System.ArgumentNullException(nameof(ownerUrl));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.ColumnsUrl = columnsUrl ?? throw new global::System.ArgumentNullException(nameof(columnsUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.Number = number;
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.OrganizationPermission = organizationPermission;
+            this.Private = @private;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Project" /> class.
+        /// </summary>
+        public Project()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

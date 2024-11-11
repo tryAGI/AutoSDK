@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyCreateV4FilesPost" /> class.
+        /// </summary>
+        /// <param name="pfile"></param>
+        /// <param name="pfilename"></param>
+        public BodyCreateV4FilesPost(
+            byte[] pfile,
+            string pfilename)
+        {
+            this.Pfile = pfile ?? throw new global::System.ArgumentNullException(nameof(pfile));
+            this.Pfilename = pfilename ?? throw new global::System.ArgumentNullException(nameof(pfilename));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyCreateV4FilesPost" /> class.
+        /// </summary>
+        public BodyCreateV4FilesPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

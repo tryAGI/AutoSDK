@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RateLimit" /> class.
+        /// </summary>
+        /// <param name="limit"></param>
+        /// <param name="remaining"></param>
+        /// <param name="reset"></param>
+        /// <param name="used"></param>
+        public RateLimit(
+            int limit,
+            int remaining,
+            int reset,
+            int used)
+        {
+            this.Limit = limit;
+            this.Remaining = remaining;
+            this.Reset = reset;
+            this.Used = used;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RateLimit" /> class.
+        /// </summary>
+        public RateLimit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

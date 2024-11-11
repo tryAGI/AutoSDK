@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchCodeResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="incompleteResults"></param>
+        /// <param name="items"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SearchCodeResponse(
+            int totalCount,
+            bool incompleteResults,
+            global::System.Collections.Generic.IList<global::G.CodeSearchResultItem> items)
+        {
+            this.TotalCount = totalCount;
+            this.IncompleteResults = incompleteResults;
+            this.Items = items ?? throw new global::System.ArgumentNullException(nameof(items));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchCodeResponse" /> class.
+        /// </summary>
+        public SearchCodeResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

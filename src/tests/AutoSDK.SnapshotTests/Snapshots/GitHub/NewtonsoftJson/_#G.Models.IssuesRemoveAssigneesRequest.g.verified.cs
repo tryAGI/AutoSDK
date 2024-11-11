@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssuesRemoveAssigneesRequest" /> class.
+        /// </summary>
+        /// <param name="assignees">
+        /// Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
+        /// </param>
+        public IssuesRemoveAssigneesRequest(
+            global::System.Collections.Generic.IList<string>? assignees)
+        {
+            this.Assignees = assignees;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssuesRemoveAssigneesRequest" /> class.
+        /// </summary>
+        public IssuesRemoveAssigneesRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -45,6 +45,37 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartSeriesUpdate" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="filters"></param>
+        /// <param name="metric">
+        /// Metrics you can chart.
+        /// </param>
+        /// <param name="feedbackKey"></param>
+        /// <param name="id"></param>
+        public CustomChartSeriesUpdate(
+            string name,
+            global::G.CustomChartMetric metric,
+            global::G.CustomChartSeriesFilters? filters,
+            string? feedbackKey,
+            global::System.Guid? id)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Metric = metric;
+            this.Filters = filters;
+            this.FeedbackKey = feedbackKey;
+            this.Id = id;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartSeriesUpdate" /> class.
+        /// </summary>
+        public CustomChartSeriesUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

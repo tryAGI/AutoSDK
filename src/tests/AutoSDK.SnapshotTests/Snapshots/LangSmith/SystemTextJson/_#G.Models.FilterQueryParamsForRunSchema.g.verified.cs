@@ -113,6 +113,73 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterQueryParamsForRunSchema" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="trace"></param>
+        /// <param name="parentRun"></param>
+        /// <param name="runType">
+        /// Enum for run types.
+        /// </param>
+        /// <param name="session"></param>
+        /// <param name="referenceExample"></param>
+        /// <param name="executionOrder"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="error"></param>
+        /// <param name="query"></param>
+        /// <param name="filter"></param>
+        /// <param name="traceFilter"></param>
+        /// <param name="treeFilter"></param>
+        /// <param name="isRoot"></param>
+        /// <param name="dataSourceType">
+        /// Enum for run data source types.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FilterQueryParamsForRunSchema(
+            global::System.Collections.Generic.IList<global::System.Guid>? id,
+            global::System.Guid? trace,
+            global::System.Guid? parentRun,
+            global::G.RunTypeEnum? runType,
+            global::System.Collections.Generic.IList<global::System.Guid>? session,
+            global::System.Collections.Generic.IList<global::System.Guid>? referenceExample,
+            int? executionOrder,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            bool? error,
+            string? query,
+            string? filter,
+            string? traceFilter,
+            string? treeFilter,
+            bool? isRoot,
+            global::G.RunsFilterDataSourceTypeEnum? dataSourceType)
+        {
+            this.Id = id;
+            this.Trace = trace;
+            this.ParentRun = parentRun;
+            this.RunType = runType;
+            this.Session = session;
+            this.ReferenceExample = referenceExample;
+            this.ExecutionOrder = executionOrder;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Error = error;
+            this.Query = query;
+            this.Filter = filter;
+            this.TraceFilter = traceFilter;
+            this.TreeFilter = treeFilter;
+            this.IsRoot = isRoot;
+            this.DataSourceType = dataSourceType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterQueryParamsForRunSchema" /> class.
+        /// </summary>
+        public FilterQueryParamsForRunSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

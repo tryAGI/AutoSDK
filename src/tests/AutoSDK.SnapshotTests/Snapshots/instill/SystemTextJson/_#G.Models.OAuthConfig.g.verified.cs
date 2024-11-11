@@ -40,6 +40,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OAuthConfig" /> class.
+        /// </summary>
+        /// <param name="authUrl">
+        /// The URL of the OAuth server to initiate the authentication and<br/>
+        /// authorization process.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="accessUrl">
+        /// The URL of the OAuth server to exchange the authorization code for an<br/>
+        /// access token.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="scopes">
+        /// A list of scopes that identify the resources that the connection will be<br/>
+        /// able to access on the user's behalf.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OAuthConfig(
+            string? authUrl,
+            string? accessUrl,
+            global::System.Collections.Generic.IList<string>? scopes)
+        {
+            this.AuthUrl = authUrl;
+            this.AccessUrl = accessUrl;
+            this.Scopes = scopes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OAuthConfig" /> class.
+        /// </summary>
+        public OAuthConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

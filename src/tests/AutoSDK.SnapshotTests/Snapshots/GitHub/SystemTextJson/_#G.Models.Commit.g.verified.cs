@@ -94,6 +94,64 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Commit" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e
+        /// </param>
+        /// <param name="sha">
+        /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDY6Q29tbWl0NmRjYjA5YjViNTc4NzVmMzM0ZjYxYWViZWQ2OTVlMmU0MTkzZGI1ZQ==
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat/Hello-World/commit/6dcb09b5b57875f334f61aebed695e2e4193db5e
+        /// </param>
+        /// <param name="commentsUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e/comments
+        /// </param>
+        /// <param name="commit1"></param>
+        /// <param name="author"></param>
+        /// <param name="committer"></param>
+        /// <param name="parents"></param>
+        /// <param name="stats"></param>
+        /// <param name="files"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Commit(
+            string url,
+            string sha,
+            string nodeId,
+            string htmlUrl,
+            string commentsUrl,
+            global::G.CommitCommit1 commit1,
+            global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? author,
+            global::G.OneOf<global::G.SimpleUser, global::G.EmptyObject>? committer,
+            global::System.Collections.Generic.IList<global::G.CommitParent> parents,
+            global::G.CommitStats? stats,
+            global::System.Collections.Generic.IList<global::G.DiffEntry>? files)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.Commit1 = commit1 ?? throw new global::System.ArgumentNullException(nameof(commit1));
+            this.Author = author;
+            this.Committer = committer;
+            this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
+            this.Stats = stats;
+            this.Files = files;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Commit" /> class.
+        /// </summary>
+        public Commit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

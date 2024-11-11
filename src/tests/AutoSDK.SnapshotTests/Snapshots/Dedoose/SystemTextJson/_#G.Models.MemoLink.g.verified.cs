@@ -81,6 +81,56 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemoLink" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="projectId"></param>
+        /// <param name="memoId"></param>
+        /// <param name="resourceId"></param>
+        /// <param name="excerptId"></param>
+        /// <param name="descriptorId"></param>
+        /// <param name="tagId"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="createUserId"></param>
+        /// <param name="position"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MemoLink(
+            string? projectIdKey,
+            global::System.Guid? id,
+            global::System.Guid? projectId,
+            global::System.Guid? memoId,
+            global::System.Guid? resourceId,
+            global::System.Guid? excerptId,
+            global::System.Guid? descriptorId,
+            global::System.Guid? tagId,
+            global::System.DateTime? createStamp,
+            global::System.Guid? createUserId,
+            int? position)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.Id = id;
+            this.ProjectId = projectId;
+            this.MemoId = memoId;
+            this.ResourceId = resourceId;
+            this.ExcerptId = excerptId;
+            this.DescriptorId = descriptorId;
+            this.TagId = tagId;
+            this.CreateStamp = createStamp;
+            this.CreateUserId = createUserId;
+            this.Position = position;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemoLink" /> class.
+        /// </summary>
+        public MemoLink()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

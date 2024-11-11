@@ -291,6 +291,170 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunSchema" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="inputs"></param>
+        /// <param name="inputsPreview"></param>
+        /// <param name="runType">
+        /// Enum for run types.
+        /// </param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="extra"></param>
+        /// <param name="error"></param>
+        /// <param name="executionOrder">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="serialized"></param>
+        /// <param name="outputs"></param>
+        /// <param name="outputsPreview"></param>
+        /// <param name="parentRunId"></param>
+        /// <param name="manifestId"></param>
+        /// <param name="manifestS3Id"></param>
+        /// <param name="events"></param>
+        /// <param name="tags"></param>
+        /// <param name="inputsS3Urls"></param>
+        /// <param name="outputsS3Urls"></param>
+        /// <param name="s3Urls"></param>
+        /// <param name="traceId"></param>
+        /// <param name="dottedOrder"></param>
+        /// <param name="id"></param>
+        /// <param name="status"></param>
+        /// <param name="childRunIds"></param>
+        /// <param name="directChildRunIds"></param>
+        /// <param name="parentRunIds"></param>
+        /// <param name="feedbackStats"></param>
+        /// <param name="referenceExampleId"></param>
+        /// <param name="totalTokens">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="promptTokens">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="completionTokens">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="totalCost"></param>
+        /// <param name="promptCost"></param>
+        /// <param name="completionCost"></param>
+        /// <param name="priceModelId"></param>
+        /// <param name="firstTokenTime"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="appPath"></param>
+        /// <param name="lastQueuedAt"></param>
+        /// <param name="inDataset"></param>
+        /// <param name="shareToken"></param>
+        /// <param name="traceTier"></param>
+        /// <param name="traceFirstReceivedAt"></param>
+        /// <param name="ttlSeconds"></param>
+        /// <param name="traceUpgrade">
+        /// Default Value: false
+        /// </param>
+        public RunSchema(
+            string name,
+            global::G.RunTypeEnum runType,
+            global::System.Guid traceId,
+            string dottedOrder,
+            global::System.Guid id,
+            string status,
+            global::System.Guid sessionId,
+            string appPath,
+            object? inputs,
+            string? inputsPreview,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            object? extra,
+            string? error,
+            int? executionOrder,
+            object? serialized,
+            object? outputs,
+            string? outputsPreview,
+            global::System.Guid? parentRunId,
+            global::System.Guid? manifestId,
+            global::System.Guid? manifestS3Id,
+            global::System.Collections.Generic.IList<object>? events,
+            global::System.Collections.Generic.IList<string>? tags,
+            object? inputsS3Urls,
+            object? outputsS3Urls,
+            object? s3Urls,
+            global::System.Collections.Generic.IList<global::System.Guid>? childRunIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? directChildRunIds,
+            global::System.Collections.Generic.IList<global::System.Guid>? parentRunIds,
+            global::System.Collections.Generic.Dictionary<string, object>? feedbackStats,
+            global::System.Guid? referenceExampleId,
+            int? totalTokens,
+            int? promptTokens,
+            int? completionTokens,
+            string? totalCost,
+            string? promptCost,
+            string? completionCost,
+            global::System.Guid? priceModelId,
+            global::System.DateTime? firstTokenTime,
+            global::System.DateTime? lastQueuedAt,
+            bool? inDataset,
+            global::System.Guid? shareToken,
+            global::G.TraceTier? traceTier,
+            global::System.DateTime? traceFirstReceivedAt,
+            int? ttlSeconds,
+            bool? traceUpgrade)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.RunType = runType;
+            this.TraceId = traceId;
+            this.DottedOrder = dottedOrder ?? throw new global::System.ArgumentNullException(nameof(dottedOrder));
+            this.Id = id;
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.SessionId = sessionId;
+            this.AppPath = appPath ?? throw new global::System.ArgumentNullException(nameof(appPath));
+            this.Inputs = inputs;
+            this.InputsPreview = inputsPreview;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Extra = extra;
+            this.Error = error;
+            this.ExecutionOrder = executionOrder;
+            this.Serialized = serialized;
+            this.Outputs = outputs;
+            this.OutputsPreview = outputsPreview;
+            this.ParentRunId = parentRunId;
+            this.ManifestId = manifestId;
+            this.ManifestS3Id = manifestS3Id;
+            this.Events = events;
+            this.Tags = tags;
+            this.InputsS3Urls = inputsS3Urls;
+            this.OutputsS3Urls = outputsS3Urls;
+            this.S3Urls = s3Urls;
+            this.ChildRunIds = childRunIds;
+            this.DirectChildRunIds = directChildRunIds;
+            this.ParentRunIds = parentRunIds;
+            this.FeedbackStats = feedbackStats;
+            this.ReferenceExampleId = referenceExampleId;
+            this.TotalTokens = totalTokens;
+            this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
+            this.TotalCost = totalCost;
+            this.PromptCost = promptCost;
+            this.CompletionCost = completionCost;
+            this.PriceModelId = priceModelId;
+            this.FirstTokenTime = firstTokenTime;
+            this.LastQueuedAt = lastQueuedAt;
+            this.InDataset = inDataset;
+            this.ShareToken = shareToken;
+            this.TraceTier = traceTier;
+            this.TraceFirstReceivedAt = traceFirstReceivedAt;
+            this.TtlSeconds = ttlSeconds;
+            this.TraceUpgrade = traceUpgrade;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunSchema" /> class.
+        /// </summary>
+        public RunSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

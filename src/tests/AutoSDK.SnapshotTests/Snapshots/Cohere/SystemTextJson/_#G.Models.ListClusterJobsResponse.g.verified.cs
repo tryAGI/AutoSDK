@@ -34,6 +34,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListClusterJobsResponse" /> class.
+        /// </summary>
+        /// <param name="jobs"></param>
+        /// <param name="totalCount"></param>
+        /// <param name="meta"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListClusterJobsResponse(
+            global::System.Collections.Generic.IList<global::G.GetClusterJobResponse> jobs,
+            int? totalCount,
+            global::G.ApiMeta? meta)
+        {
+            this.Jobs = jobs ?? throw new global::System.ArgumentNullException(nameof(jobs));
+            this.TotalCount = totalCount;
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListClusterJobsResponse" /> class.
+        /// </summary>
+        public ListClusterJobsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

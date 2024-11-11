@@ -39,6 +39,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextExampleDoc" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the BaseDoc. This is useful for indexing in vector stores. If not set by user, it will automatically be assigned a random value<br/>
+        /// Example: e10b550cf99e2e072e22420af5c6eb47
+        /// </param>
+        /// <param name="text">
+        /// The example text
+        /// </param>
+        /// <param name="label">
+        /// The label of the text
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TextExampleDoc(
+            string text,
+            global::G.AnyOf<bool?, string> label,
+            string? id)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Label = label;
+            this.Id = id;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextExampleDoc" /> class.
+        /// </summary>
+        public TextExampleDoc()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest" /> class.
+        /// </summary>
+        /// <param name="labels">
+        /// The names of the custom labels to add to the runner.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest(
+            global::System.Collections.Generic.IList<string> labels)
+        {
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest" /> class.
+        /// </summary>
+        public ActionsAddCustomLabelsToSelfHostedRunnerForRepoRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

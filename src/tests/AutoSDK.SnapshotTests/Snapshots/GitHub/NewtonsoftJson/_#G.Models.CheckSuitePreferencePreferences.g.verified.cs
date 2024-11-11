@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckSuitePreferencePreferences" /> class.
+        /// </summary>
+        /// <param name="autoTriggerChecks"></param>
+        public CheckSuitePreferencePreferences(
+            global::System.Collections.Generic.IList<global::G.CheckSuitePreferencePreferencesAutoTriggerCheck>? autoTriggerChecks)
+        {
+            this.AutoTriggerChecks = autoTriggerChecks;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckSuitePreferencePreferences" /> class.
+        /// </summary>
+        public CheckSuitePreferencePreferences()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

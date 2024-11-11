@@ -47,6 +47,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionResponseDeltaChoice" /> class.
+        /// </summary>
+        /// <param name="index">
+        /// Always zero in streamed responses.
+        /// </param>
+        /// <param name="delta">
+        /// - **The first message** in the stream will be an object set to `{"role":"assistant"}`.<br/>
+        /// - **Subsequent messages** will have an object `{"content": __token__}` with the generated token.
+        /// </param>
+        /// <param name="logprobs"></param>
+        /// <param name="finishReason">
+        /// One of the following string values:<br/>
+        ///   - `null`: All messages but the last will return null for `finish_reason`.<br/>
+        ///   - `stop`: The response ended naturally as a complete answer (due to<br/>
+        ///     [end-of-sequence token](https://huggingface.co/docs/transformers/v4.32.1/en/llm_tutorial#generate-text))<br/>
+        ///      or because the model generated a stop sequence provided in the request.<br/>
+        ///   - `length`:  The response ended by reaching `max_tokens`.
+        /// </param>
+        public ChatCompletionResponseDeltaChoice(
+            int index,
+            global::G.AnyOf<global::G.ChatStreamingFirstDelta, global::G.ChatStreamingContentDelta> delta,
+            global::G.Logprobs? logprobs,
+            string? finishReason)
+        {
+            this.Index = index;
+            this.Delta = delta;
+            this.Logprobs = logprobs;
+            this.FinishReason = finishReason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionResponseDeltaChoice" /> class.
+        /// </summary>
+        public ChatCompletionResponseDeltaChoice()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

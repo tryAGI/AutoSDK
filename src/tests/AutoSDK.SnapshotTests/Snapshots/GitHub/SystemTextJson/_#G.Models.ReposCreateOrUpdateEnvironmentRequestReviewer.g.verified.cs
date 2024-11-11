@@ -30,6 +30,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateOrUpdateEnvironmentRequestReviewer" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of reviewer.<br/>
+        /// Example: User
+        /// </param>
+        /// <param name="id">
+        /// The id of the user or team who can review the deployment<br/>
+        /// Example: 4532992
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposCreateOrUpdateEnvironmentRequestReviewer(
+            global::G.DeploymentReviewerType? type,
+            int? id)
+        {
+            this.Type = type;
+            this.Id = id;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateOrUpdateEnvironmentRequestReviewer" /> class.
+        /// </summary>
+        public ReposCreateOrUpdateEnvironmentRequestReviewer()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

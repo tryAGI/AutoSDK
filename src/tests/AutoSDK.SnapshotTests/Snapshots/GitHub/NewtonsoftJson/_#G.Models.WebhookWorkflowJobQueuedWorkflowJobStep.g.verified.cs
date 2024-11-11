@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowJobQueuedWorkflowJobStep" /> class.
+        /// </summary>
+        /// <param name="completedAt"></param>
+        /// <param name="conclusion"></param>
+        /// <param name="name"></param>
+        /// <param name="number"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="status"></param>
+        public WebhookWorkflowJobQueuedWorkflowJobStep(
+            string? completedAt,
+            global::G.WebhookWorkflowJobQueuedWorkflowJobStepConclusion? conclusion,
+            string name,
+            int number,
+            string? startedAt,
+            global::G.WebhookWorkflowJobQueuedWorkflowJobStepStatus status)
+        {
+            this.CompletedAt = completedAt ?? throw new global::System.ArgumentNullException(nameof(completedAt));
+            this.Conclusion = conclusion;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Number = number;
+            this.StartedAt = startedAt ?? throw new global::System.ArgumentNullException(nameof(startedAt));
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowJobQueuedWorkflowJobStep" /> class.
+        /// </summary>
+        public WebhookWorkflowJobQueuedWorkflowJobStep()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCreateVulnerabilitiePackage" /> class.
+        /// </summary>
+        /// <param name="ecosystem">
+        /// The package's language or package management ecosystem.
+        /// </param>
+        /// <param name="name">
+        /// The unique package name within its ecosystem.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryAdvisoryCreateVulnerabilitiePackage(
+            global::G.SecurityAdvisoryEcosystems ecosystem,
+            string? name)
+        {
+            this.Ecosystem = ecosystem;
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCreateVulnerabilitiePackage" /> class.
+        /// </summary>
+        public RepositoryAdvisoryCreateVulnerabilitiePackage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

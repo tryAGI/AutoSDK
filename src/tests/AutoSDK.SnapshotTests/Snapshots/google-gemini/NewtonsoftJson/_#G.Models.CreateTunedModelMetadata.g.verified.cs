@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTunedModelMetadata" /> class.
+        /// </summary>
+        /// <param name="totalSteps">
+        /// The total number of tuning steps.
+        /// </param>
+        /// <param name="tunedModel">
+        /// Name of the tuned model associated with the tuning operation.
+        /// </param>
+        /// <param name="completedSteps">
+        /// The number of steps completed.
+        /// </param>
+        /// <param name="snapshots">
+        /// Metrics collected during tuning.
+        /// </param>
+        /// <param name="completedPercent">
+        /// The completed percentage for the tuning operation.
+        /// </param>
+        public CreateTunedModelMetadata(
+            int? totalSteps,
+            string? tunedModel,
+            int? completedSteps,
+            global::System.Collections.Generic.IList<global::G.TuningSnapshot>? snapshots,
+            float? completedPercent)
+        {
+            this.TotalSteps = totalSteps;
+            this.TunedModel = tunedModel;
+            this.CompletedSteps = completedSteps;
+            this.Snapshots = snapshots;
+            this.CompletedPercent = completedPercent;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateTunedModelMetadata" /> class.
+        /// </summary>
+        public CreateTunedModelMetadata()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

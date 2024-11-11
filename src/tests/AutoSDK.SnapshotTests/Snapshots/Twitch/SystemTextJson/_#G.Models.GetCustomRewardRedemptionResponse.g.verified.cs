@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetCustomRewardRedemptionResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The list of redemptions for the specified reward. The list is empty if there are no redemptions that match the redemption criteria.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetCustomRewardRedemptionResponse(
+            global::System.Collections.Generic.IList<global::G.CustomRewardRedemption> data)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetCustomRewardRedemptionResponse" /> class.
+        /// </summary>
+        public GetCustomRewardRedemptionResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

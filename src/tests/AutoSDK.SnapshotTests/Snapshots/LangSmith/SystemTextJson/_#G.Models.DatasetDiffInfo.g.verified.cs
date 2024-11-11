@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetDiffInfo" /> class.
+        /// </summary>
+        /// <param name="examplesModified"></param>
+        /// <param name="examplesAdded"></param>
+        /// <param name="examplesRemoved"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DatasetDiffInfo(
+            global::System.Collections.Generic.IList<global::System.Guid> examplesModified,
+            global::System.Collections.Generic.IList<global::System.Guid> examplesAdded,
+            global::System.Collections.Generic.IList<global::System.Guid> examplesRemoved)
+        {
+            this.ExamplesModified = examplesModified ?? throw new global::System.ArgumentNullException(nameof(examplesModified));
+            this.ExamplesAdded = examplesAdded ?? throw new global::System.ArgumentNullException(nameof(examplesAdded));
+            this.ExamplesRemoved = examplesRemoved ?? throw new global::System.ArgumentNullException(nameof(examplesRemoved));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetDiffInfo" /> class.
+        /// </summary>
+        public DatasetDiffInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

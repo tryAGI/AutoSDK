@@ -66,6 +66,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Conversation" /> class.
+        /// </summary>
+        /// <param name="uid">
+        /// Included only in responses
+        /// </param>
+        /// <param name="namespaceId"></param>
+        /// <param name="appId"></param>
+        /// <param name="id"></param>
+        /// <param name="lastUsedCatalogUid"></param>
+        /// <param name="lastUsedTopK"></param>
+        /// <param name="createTime">
+        /// Included only in responses
+        /// </param>
+        /// <param name="updateTime">
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Conversation(
+            string namespaceId,
+            string appId,
+            string id,
+            string? uid,
+            string? lastUsedCatalogUid,
+            long? lastUsedTopK,
+            global::System.DateTime? createTime,
+            global::System.DateTime? updateTime)
+        {
+            this.NamespaceId = namespaceId ?? throw new global::System.ArgumentNullException(nameof(namespaceId));
+            this.AppId = appId ?? throw new global::System.ArgumentNullException(nameof(appId));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Uid = uid;
+            this.LastUsedCatalogUid = lastUsedCatalogUid;
+            this.LastUsedTopK = lastUsedTopK;
+            this.CreateTime = createTime;
+            this.UpdateTime = updateTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Conversation" /> class.
+        /// </summary>
+        public Conversation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

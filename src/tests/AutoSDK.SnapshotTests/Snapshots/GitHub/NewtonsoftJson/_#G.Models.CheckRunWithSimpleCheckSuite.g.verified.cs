@@ -121,6 +121,101 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckRunWithSimpleCheckSuite" /> class.
+        /// </summary>
+        /// <param name="app">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="checkSuite">
+        /// A suite of checks performed on the code of a given code change
+        /// </param>
+        /// <param name="completedAt"></param>
+        /// <param name="conclusion">
+        /// Example: neutral
+        /// </param>
+        /// <param name="deployment">
+        /// A deployment created as the result of an Actions check run from a workflow that references an environment
+        /// </param>
+        /// <param name="detailsUrl">
+        /// Example: https://example.com
+        /// </param>
+        /// <param name="externalId">
+        /// Example: 42
+        /// </param>
+        /// <param name="headSha">
+        /// The SHA of the commit that is being checked.<br/>
+        /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/github/hello-world/runs/4
+        /// </param>
+        /// <param name="id">
+        /// The id of the check.<br/>
+        /// Example: 21
+        /// </param>
+        /// <param name="name">
+        /// The name of the check.<br/>
+        /// Example: test-coverage
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDg6Q2hlY2tSdW40
+        /// </param>
+        /// <param name="output"></param>
+        /// <param name="pullRequests"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="status">
+        /// The phase of the lifecycle that the check is currently in.<br/>
+        /// Example: queued
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
+        /// </param>
+        public CheckRunWithSimpleCheckSuite(
+            global::G.NullableIntegration? app,
+            global::G.SimpleCheckSuite checkSuite,
+            global::System.DateTime? completedAt,
+            global::G.CheckRunWithSimpleCheckSuiteConclusion? conclusion,
+            string detailsUrl,
+            string externalId,
+            string headSha,
+            string htmlUrl,
+            int id,
+            string name,
+            string nodeId,
+            global::G.CheckRunWithSimpleCheckSuiteOutput output,
+            global::System.Collections.Generic.IList<global::G.PullRequestMinimal> pullRequests,
+            global::System.DateTime startedAt,
+            global::G.CheckRunWithSimpleCheckSuiteStatus status,
+            string url,
+            global::G.DeploymentSimple? deployment)
+        {
+            this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
+            this.CheckSuite = checkSuite ?? throw new global::System.ArgumentNullException(nameof(checkSuite));
+            this.CompletedAt = completedAt;
+            this.Conclusion = conclusion;
+            this.DetailsUrl = detailsUrl ?? throw new global::System.ArgumentNullException(nameof(detailsUrl));
+            this.ExternalId = externalId ?? throw new global::System.ArgumentNullException(nameof(externalId));
+            this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
+            this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
+            this.StartedAt = startedAt;
+            this.Status = status;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Deployment = deployment;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckRunWithSimpleCheckSuite" /> class.
+        /// </summary>
+        public CheckRunWithSimpleCheckSuite()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

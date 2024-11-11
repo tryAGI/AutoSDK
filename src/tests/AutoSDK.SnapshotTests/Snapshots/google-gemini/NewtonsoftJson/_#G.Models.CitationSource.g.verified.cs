@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CitationSource" /> class.
+        /// </summary>
+        /// <param name="license">
+        /// Optional. License for the GitHub project that is attributed as a source for segment. License info is required for code citations.
+        /// </param>
+        /// <param name="uri">
+        /// Optional. URI that is attributed as a source for a portion of the text.
+        /// </param>
+        /// <param name="endIndex">
+        /// Optional. End of the attributed segment, exclusive.
+        /// </param>
+        /// <param name="startIndex">
+        /// Optional. Start of segment of the response that is attributed to this source. Index indicates the start of the segment, measured in bytes.
+        /// </param>
+        public CitationSource(
+            string? license,
+            string? uri,
+            int? endIndex,
+            int? startIndex)
+        {
+            this.License = license;
+            this.Uri = uri;
+            this.EndIndex = endIndex;
+            this.StartIndex = startIndex;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CitationSource" /> class.
+        /// </summary>
+        public CitationSource()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

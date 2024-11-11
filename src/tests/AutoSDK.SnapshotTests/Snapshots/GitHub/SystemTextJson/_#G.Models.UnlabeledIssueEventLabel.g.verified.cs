@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnlabeledIssueEventLabel" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="color"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UnlabeledIssueEventLabel(
+            string name,
+            string color)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnlabeledIssueEventLabel" /> class.
+        /// </summary>
+        public UnlabeledIssueEventLabel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

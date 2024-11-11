@@ -51,6 +51,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchPullRequestReviewDismissalRestrictions" /> class.
+        /// </summary>
+        /// <param name="users">
+        /// The list of users with review dismissal access.
+        /// </param>
+        /// <param name="teams">
+        /// The list of teams with review dismissal access.
+        /// </param>
+        /// <param name="apps">
+        /// The list of apps with review dismissal access.
+        /// </param>
+        /// <param name="url">
+        /// Example: "https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions"
+        /// </param>
+        /// <param name="usersUrl">
+        /// Example: "https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions/users"
+        /// </param>
+        /// <param name="teamsUrl">
+        /// Example: "https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions/teams"
+        /// </param>
+        public ProtectedBranchPullRequestReviewDismissalRestrictions(
+            global::System.Collections.Generic.IList<global::G.SimpleUser>? users,
+            global::System.Collections.Generic.IList<global::G.Team>? teams,
+            global::System.Collections.Generic.IList<global::G.Integration>? apps,
+            string? url,
+            string? usersUrl,
+            string? teamsUrl)
+        {
+            this.Users = users;
+            this.Teams = teams;
+            this.Apps = apps;
+            this.Url = url;
+            this.UsersUrl = usersUrl;
+            this.TeamsUrl = teamsUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchPullRequestReviewDismissalRestrictions" /> class.
+        /// </summary>
+        public ProtectedBranchPullRequestReviewDismissalRestrictions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

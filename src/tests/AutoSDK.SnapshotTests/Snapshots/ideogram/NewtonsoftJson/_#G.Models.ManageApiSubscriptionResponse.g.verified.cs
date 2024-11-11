@@ -59,6 +59,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManageApiSubscriptionResponse" /> class.
+        /// </summary>
+        /// <param name="hasAcceptedTerms">
+        /// Whether or not the latest required terms have been accepted.
+        /// </param>
+        /// <param name="hasStripeSetup">
+        /// Whether or not Stripe is setup for API usage.
+        /// </param>
+        /// <param name="metronomeLinks"></param>
+        /// <param name="rechargeSettings"></param>
+        /// <param name="stripeBillingUrl">
+        /// The URL for the user to manage the existing Stripe subscription plan.
+        /// </param>
+        public ManageApiSubscriptionResponse(
+            bool hasAcceptedTerms,
+            bool hasStripeSetup,
+            global::G.MetronomeLinks? metronomeLinks,
+            global::G.RechargeSettingsResponse? rechargeSettings,
+            string? stripeBillingUrl)
+        {
+            this.HasAcceptedTerms = hasAcceptedTerms;
+            this.HasStripeSetup = hasStripeSetup;
+            this.MetronomeLinks = metronomeLinks;
+            this.RechargeSettings = rechargeSettings;
+            this.StripeBillingUrl = stripeBillingUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManageApiSubscriptionResponse" /> class.
+        /// </summary>
+        public ManageApiSubscriptionResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

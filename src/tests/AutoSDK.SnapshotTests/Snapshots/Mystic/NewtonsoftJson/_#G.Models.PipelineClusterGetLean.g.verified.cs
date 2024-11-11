@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineClusterGetLean" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodePool"></param>
+        /// <param name="name"></param>
+        /// <param name="provider"></param>
+        public PipelineClusterGetLean(
+            string id,
+            string nodePool,
+            string? name,
+            string? provider)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.NodePool = nodePool ?? throw new global::System.ArgumentNullException(nameof(nodePool));
+            this.Name = name;
+            this.Provider = provider;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineClusterGetLean" /> class.
+        /// </summary>
+        public PipelineClusterGetLean()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

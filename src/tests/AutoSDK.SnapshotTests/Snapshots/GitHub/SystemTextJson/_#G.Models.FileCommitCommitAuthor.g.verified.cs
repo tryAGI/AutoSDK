@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitCommitAuthor" /> class.
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="name"></param>
+        /// <param name="email"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FileCommitCommitAuthor(
+            string? date,
+            string? name,
+            string? email)
+        {
+            this.Date = date;
+            this.Name = name;
+            this.Email = email;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitCommitAuthor" /> class.
+        /// </summary>
+        public FileCommitCommitAuthor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

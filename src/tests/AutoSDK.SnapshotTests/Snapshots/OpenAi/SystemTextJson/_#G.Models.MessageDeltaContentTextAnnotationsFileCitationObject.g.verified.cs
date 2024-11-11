@@ -53,6 +53,45 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentTextAnnotationsFileCitationObject" /> class.
+        /// </summary>
+        /// <param name="index">
+        /// The index of the annotation in the text content part.
+        /// </param>
+        /// <param name="type">
+        /// Always `file_citation`.
+        /// </param>
+        /// <param name="text">
+        /// The text in the message content that needs to be replaced.
+        /// </param>
+        /// <param name="fileCitation"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageDeltaContentTextAnnotationsFileCitationObject(
+            int index,
+            global::G.MessageDeltaContentTextAnnotationsFileCitationObjectType type,
+            string? text,
+            global::G.MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation? fileCitation,
+            int? startIndex,
+            int? endIndex)
+        {
+            this.Index = index;
+            this.Type = type;
+            this.Text = text;
+            this.FileCitation = fileCitation;
+            this.StartIndex = startIndex;
+            this.EndIndex = endIndex;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentTextAnnotationsFileCitationObject" /> class.
+        /// </summary>
+        public MessageDeltaContentTextAnnotationsFileCitationObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

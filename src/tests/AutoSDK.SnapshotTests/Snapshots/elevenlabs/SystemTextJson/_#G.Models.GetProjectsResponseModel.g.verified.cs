@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetProjectsResponseModel" /> class.
+        /// </summary>
+        /// <param name="projects"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetProjectsResponseModel(
+            global::System.Collections.Generic.IList<global::G.ProjectResponseModel> projects)
+        {
+            this.Projects = projects ?? throw new global::System.ArgumentNullException(nameof(projects));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetProjectsResponseModel" /> class.
+        /// </summary>
+        public GetProjectsResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetOrganizationSubscriptionAdminResponse" /> class.
+        /// </summary>
+        /// <param name="subscription"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetOrganizationSubscriptionAdminResponse(
+            global::G.OrganizationSubscription? subscription)
+        {
+            this.Subscription = subscription;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetOrganizationSubscriptionAdminResponse" /> class.
+        /// </summary>
+        public GetOrganizationSubscriptionAdminResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

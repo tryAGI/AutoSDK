@@ -28,6 +28,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidateNamespacePipelineResponse" /> class.
+        /// </summary>
+        /// <param name="success">
+        /// Included only in responses
+        /// </param>
+        /// <param name="errors">
+        /// The validated pipeline resource.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ValidateNamespacePipelineResponse(
+            bool? success,
+            global::System.Collections.Generic.IList<global::G.ErrPipelineValidation>? errors)
+        {
+            this.Success = success;
+            this.Errors = errors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidateNamespacePipelineResponse" /> class.
+        /// </summary>
+        public ValidateNamespacePipelineResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

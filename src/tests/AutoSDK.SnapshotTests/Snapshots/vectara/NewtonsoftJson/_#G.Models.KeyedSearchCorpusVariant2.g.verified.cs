@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="KeyedSearchCorpusVariant2" /> class.
+        /// </summary>
+        /// <param name="corpusKey">
+        /// A user-provided key for a corpus.<br/>
+        /// Example: my-corpus
+        /// </param>
+        public KeyedSearchCorpusVariant2(
+            string? corpusKey)
+        {
+            this.CorpusKey = corpusKey;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="KeyedSearchCorpusVariant2" /> class.
+        /// </summary>
+        public KeyedSearchCorpusVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

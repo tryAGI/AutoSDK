@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListDocumentsResponse" /> class.
+        /// </summary>
+        /// <param name="documents">
+        /// List of documents.
+        /// </param>
+        /// <param name="metadata">
+        /// The standard metadata in the response of a list operation.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListDocumentsResponse(
+            global::System.Collections.Generic.IList<global::G.Document>? documents,
+            global::G.ListMetadata? metadata)
+        {
+            this.Documents = documents;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListDocumentsResponse" /> class.
+        /// </summary>
+        public ListDocumentsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

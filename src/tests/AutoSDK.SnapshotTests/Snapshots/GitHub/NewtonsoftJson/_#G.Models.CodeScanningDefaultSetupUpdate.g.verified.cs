@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningDefaultSetupUpdate" /> class.
+        /// </summary>
+        /// <param name="state">
+        /// The desired state of code scanning default setup.
+        /// </param>
+        /// <param name="querySuite">
+        /// CodeQL query suite to be used.
+        /// </param>
+        /// <param name="languages">
+        /// CodeQL languages to be analyzed.
+        /// </param>
+        public CodeScanningDefaultSetupUpdate(
+            global::G.CodeScanningDefaultSetupUpdateState? state,
+            global::G.CodeScanningDefaultSetupUpdateQuerySuite? querySuite,
+            global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupUpdateLanguage>? languages)
+        {
+            this.State = state;
+            this.QuerySuite = querySuite;
+            this.Languages = languages;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningDefaultSetupUpdate" /> class.
+        /// </summary>
+        public CodeScanningDefaultSetupUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

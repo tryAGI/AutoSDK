@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColorPaletteWithPresetName" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// A color palette preset value<br/>
+        /// Example: PASTEL
+        /// </param>
+        public ColorPaletteWithPresetName(
+            global::G.ColorPalettePresetName name)
+        {
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColorPaletteWithPresetName" /> class.
+        /// </summary>
+        public ColorPaletteWithPresetName()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

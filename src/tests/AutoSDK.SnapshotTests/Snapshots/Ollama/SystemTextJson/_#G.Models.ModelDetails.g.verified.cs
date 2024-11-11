@@ -51,6 +51,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelDetails" /> class.
+        /// </summary>
+        /// <param name="parentModel">
+        /// The parent model of the model.
+        /// </param>
+        /// <param name="format">
+        /// The format of the model.
+        /// </param>
+        /// <param name="family">
+        /// The family of the model.
+        /// </param>
+        /// <param name="families">
+        /// The families of the model.
+        /// </param>
+        /// <param name="parameterSize">
+        /// The size of the model's parameters.
+        /// </param>
+        /// <param name="quantizationLevel">
+        /// The quantization level of the model.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ModelDetails(
+            string? parentModel,
+            string? format,
+            string? family,
+            global::System.Collections.Generic.IList<string>? families,
+            string? parameterSize,
+            string? quantizationLevel)
+        {
+            this.ParentModel = parentModel;
+            this.Format = format;
+            this.Family = family;
+            this.Families = families;
+            this.ParameterSize = parameterSize;
+            this.QuantizationLevel = quantizationLevel;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelDetails" /> class.
+        /// </summary>
+        public ModelDetails()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

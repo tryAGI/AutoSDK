@@ -69,6 +69,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScalingConfigGet" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="minimumNodes">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="maximumNodes">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="type">
+        /// An enumeration.
+        /// </param>
+        /// <param name="args"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ScalingConfigGet(
+            string name,
+            object args,
+            string id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            int? minimumNodes,
+            int? maximumNodes,
+            global::G.ScalingConfigType type)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.MinimumNodes = minimumNodes;
+            this.MaximumNodes = maximumNodes;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ScalingConfigGet" /> class.
+        /// </summary>
+        public ScalingConfigGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -49,6 +49,49 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SetExtensionConfigurationSegmentBody" /> class.
+        /// </summary>
+        /// <param name="extensionId">
+        /// The ID of the extension to update.
+        /// </param>
+        /// <param name="segment">
+        /// The configuration segment to update. Possible case-sensitive values are:  <br/>
+        ///   <br/>
+        /// * broadcaster<br/>
+        /// * developer<br/>
+        /// * global
+        /// </param>
+        /// <param name="broadcasterId">
+        /// The ID of the broadcaster that installed the extension. Include this field only if the `segment` is set to developer or broadcaster.
+        /// </param>
+        /// <param name="content">
+        /// The contents of the segment. This string may be a plain-text string or a string-encoded JSON object.
+        /// </param>
+        /// <param name="version">
+        /// The version number that identifies this definition of the segment’s data. If not specified, the latest definition is updated.
+        /// </param>
+        public SetExtensionConfigurationSegmentBody(
+            string extensionId,
+            global::G.SetExtensionConfigurationSegmentBodySegment segment,
+            string? broadcasterId,
+            string? content,
+            string? version)
+        {
+            this.ExtensionId = extensionId ?? throw new global::System.ArgumentNullException(nameof(extensionId));
+            this.Segment = segment;
+            this.BroadcasterId = broadcasterId;
+            this.Content = content;
+            this.Version = version;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SetExtensionConfigurationSegmentBody" /> class.
+        /// </summary>
+        public SetExtensionConfigurationSegmentBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

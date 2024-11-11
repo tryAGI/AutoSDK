@@ -77,6 +77,52 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksProjectColumn" /> class.
+        /// </summary>
+        /// <param name="afterId"></param>
+        /// <param name="cardsUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="id">
+        /// The unique identifier of the project column
+        /// </param>
+        /// <param name="name">
+        /// Name of the project column
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="projectUrl"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhooksProjectColumn(
+            string cardsUrl,
+            global::System.DateTime createdAt,
+            int id,
+            string name,
+            string nodeId,
+            string projectUrl,
+            global::System.DateTime updatedAt,
+            string url,
+            int? afterId)
+        {
+            this.CardsUrl = cardsUrl ?? throw new global::System.ArgumentNullException(nameof(cardsUrl));
+            this.CreatedAt = createdAt;
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.AfterId = afterId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksProjectColumn" /> class.
+        /// </summary>
+        public WebhooksProjectColumn()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -29,6 +29,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantStreamEventVariant14" /> class.
+        /// </summary>
+        /// <param name="event"></param>
+        /// <param name="data">
+        /// Represents a step in execution of a run.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AssistantStreamEventVariant14(
+            global::G.RunStepObject data,
+            global::G.AssistantStreamEventVariant14Event @event)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Event = @event;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantStreamEventVariant14" /> class.
+        /// </summary>
+        public AssistantStreamEventVariant14()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

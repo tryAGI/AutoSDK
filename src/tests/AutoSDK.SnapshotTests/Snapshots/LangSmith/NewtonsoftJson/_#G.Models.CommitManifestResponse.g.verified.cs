@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitManifestResponse" /> class.
+        /// </summary>
+        /// <param name="commitHash"></param>
+        /// <param name="manifest"></param>
+        /// <param name="examples"></param>
+        public CommitManifestResponse(
+            string commitHash,
+            object manifest,
+            global::System.Collections.Generic.IList<global::G.RepoExampleResponse>? examples)
+        {
+            this.CommitHash = commitHash ?? throw new global::System.ArgumentNullException(nameof(commitHash));
+            this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
+            this.Examples = examples;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitManifestResponse" /> class.
+        /// </summary>
+        public CommitManifestResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

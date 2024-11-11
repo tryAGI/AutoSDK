@@ -35,6 +35,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUBUNTU" /> class.
+        /// </summary>
+        /// <param name="totalMs"></param>
+        /// <param name="jobs"></param>
+        /// <param name="jobRuns"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WorkflowRunUsageBillableUBUNTU(
+            int totalMs,
+            int jobs,
+            global::System.Collections.Generic.IList<global::G.WorkflowRunUsageBillableUBUNTUJobRun>? jobRuns)
+        {
+            this.TotalMs = totalMs;
+            this.Jobs = jobs;
+            this.JobRuns = jobRuns;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillableUBUNTU" /> class.
+        /// </summary>
+        public WorkflowRunUsageBillableUBUNTU()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

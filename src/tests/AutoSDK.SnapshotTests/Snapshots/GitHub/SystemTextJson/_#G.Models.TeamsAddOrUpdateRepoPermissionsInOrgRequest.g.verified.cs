@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamsAddOrUpdateRepoPermissionsInOrgRequest" /> class.
+        /// </summary>
+        /// <param name="permission">
+        /// The permission to grant the team on this repository. We accept the following permissions to be set: `pull`, `triage`, `push`, `maintain`, `admin` and you can also specify a custom repository role name, if the owning organization has defined any. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TeamsAddOrUpdateRepoPermissionsInOrgRequest(
+            string? permission)
+        {
+            this.Permission = permission;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamsAddOrUpdateRepoPermissionsInOrgRequest" /> class.
+        /// </summary>
+        public TeamsAddOrUpdateRepoPermissionsInOrgRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

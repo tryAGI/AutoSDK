@@ -35,6 +35,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogprobsData" /> class.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="logprob"></param>
+        /// <param name="topLogprobs"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public LogprobsData(
+            string token,
+            double logprob,
+            global::System.Collections.Generic.IList<global::G.TopLogprobsData>? topLogprobs)
+        {
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.Logprob = logprob;
+            this.TopLogprobs = topLogprobs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogprobsData" /> class.
+        /// </summary>
+        public LogprobsData()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

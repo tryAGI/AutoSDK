@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerData" /> class.
+        /// </summary>
+        /// <param name="variable"></param>
+        /// <param name="secret"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TriggerData(
+            object? variable,
+            global::System.Collections.Generic.Dictionary<string, string>? secret)
+        {
+            this.Variable = variable;
+            this.Secret = secret;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerData" /> class.
+        /// </summary>
+        public TriggerData()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

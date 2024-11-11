@@ -41,6 +41,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VoiceSettingsResponseModel" /> class.
+        /// </summary>
+        /// <param name="stability"></param>
+        /// <param name="similarityBoost"></param>
+        /// <param name="style">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="useSpeakerBoost">
+        /// Default Value: true
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public VoiceSettingsResponseModel(
+            double stability,
+            double similarityBoost,
+            double? style,
+            bool? useSpeakerBoost)
+        {
+            this.Stability = stability;
+            this.SimilarityBoost = similarityBoost;
+            this.Style = style;
+            this.UseSpeakerBoost = useSpeakerBoost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VoiceSettingsResponseModel" /> class.
+        /// </summary>
+        public VoiceSettingsResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -53,6 +53,49 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolResultBlock" /> class.
+        /// </summary>
+        /// <param name="toolUseId">
+        /// The `id` of the tool use request this is a result for.
+        /// </param>
+        /// <param name="content">
+        /// The result of the tool, as a string (e.g. `"content": "15 degrees"`) <br/>
+        /// or list of nested content blocks (e.g. `"content": [{"type": "text", "text": "15 degrees"}]`). <br/>
+        /// These content blocks can use the text or image types.
+        /// </param>
+        /// <param name="isError">
+        /// Set to `true` if the tool execution resulted in an error.
+        /// </param>
+        /// <param name="type">
+        /// The type of content block.<br/>
+        /// Default Value: tool_result
+        /// </param>
+        /// <param name="cacheControl">
+        /// The cache control settings.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ToolResultBlock(
+            string toolUseId,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>> content,
+            bool? isError,
+            string? type,
+            global::G.CacheControlEphemeral? cacheControl)
+        {
+            this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.Content = content;
+            this.IsError = isError;
+            this.Type = type;
+            this.CacheControl = cacheControl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolResultBlock" /> class.
+        /// </summary>
+        public ToolResultBlock()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

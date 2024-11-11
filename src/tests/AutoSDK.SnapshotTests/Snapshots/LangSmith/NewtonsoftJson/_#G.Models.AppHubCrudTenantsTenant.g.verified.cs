@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppHubCrudTenantsTenant" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="displayName"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="tenantHandle"></param>
+        public AppHubCrudTenantsTenant(
+            global::System.Guid id,
+            string displayName,
+            global::System.DateTime createdAt,
+            string? tenantHandle)
+        {
+            this.Id = id;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.CreatedAt = createdAt;
+            this.TenantHandle = tenantHandle;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppHubCrudTenantsTenant" /> class.
+        /// </summary>
+        public AppHubCrudTenantsTenant()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

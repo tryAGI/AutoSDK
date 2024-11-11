@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetDatasetByIdResponse" /> class.
+        /// </summary>
+        /// <param name="datasetsByPk">
+        /// columns and relationships of "datasets"
+        /// </param>
+        public GetDatasetByIdResponse(
+            global::G.GetDatasetByIdResponseDatasetsByPk? datasetsByPk)
+        {
+            this.DatasetsByPk = datasetsByPk;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetDatasetByIdResponse" /> class.
+        /// </summary>
+        public GetDatasetByIdResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

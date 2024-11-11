@@ -99,6 +99,78 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCommitCommentCreatedComment" /> class.
+        /// </summary>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.
+        /// </param>
+        /// <param name="body">
+        /// The text of the comment.
+        /// </param>
+        /// <param name="commitId">
+        /// The SHA of the commit to which the comment applies.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id">
+        /// The ID of the commit comment.
+        /// </param>
+        /// <param name="line">
+        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+        /// </param>
+        /// <param name="nodeId">
+        /// The node ID of the commit comment.
+        /// </param>
+        /// <param name="path">
+        /// The relative path of the file to which the comment applies.
+        /// </param>
+        /// <param name="position">
+        /// The line index in the diff to which the comment applies.
+        /// </param>
+        /// <param name="reactions"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="user"></param>
+        public WebhookCommitCommentCreatedComment(
+            global::G.WebhookCommitCommentCreatedCommentAuthorAssociation authorAssociation,
+            string body,
+            string commitId,
+            string createdAt,
+            string htmlUrl,
+            int id,
+            int? line,
+            string nodeId,
+            string? path,
+            int? position,
+            string updatedAt,
+            string url,
+            global::G.WebhookCommitCommentCreatedCommentUser? user,
+            global::G.WebhookCommitCommentCreatedCommentReactions? reactions)
+        {
+            this.AuthorAssociation = authorAssociation;
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.Line = line;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Position = position;
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Reactions = reactions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCommitCommentCreatedComment" /> class.
+        /// </summary>
+        public WebhookCommitCommentCreatedComment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

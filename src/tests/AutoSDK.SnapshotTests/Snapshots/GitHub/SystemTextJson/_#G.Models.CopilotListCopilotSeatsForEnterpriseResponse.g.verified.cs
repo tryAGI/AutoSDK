@@ -27,6 +27,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotListCopilotSeatsForEnterpriseResponse" /> class.
+        /// </summary>
+        /// <param name="totalSeats">
+        /// The total number of Copilot seats the enterprise is being billed for. Users with access through multiple organizations or enterprise teams are only counted once.
+        /// </param>
+        /// <param name="seats"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CopilotListCopilotSeatsForEnterpriseResponse(
+            int? totalSeats,
+            global::System.Collections.Generic.IList<global::G.CopilotSeatDetails>? seats)
+        {
+            this.TotalSeats = totalSeats;
+            this.Seats = seats;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotListCopilotSeatsForEnterpriseResponse" /> class.
+        /// </summary>
+        public CopilotListCopilotSeatsForEnterpriseResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

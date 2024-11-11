@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagKeyUpdate" /> class.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="description"></param>
+        public TagKeyUpdate(
+            string? key,
+            string? description)
+        {
+            this.Key = key;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagKeyUpdate" /> class.
+        /// </summary>
+        public TagKeyUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -34,6 +34,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateAttestationRequestBundle" /> class.
+        /// </summary>
+        /// <param name="mediaType"></param>
+        /// <param name="verificationMaterial"></param>
+        /// <param name="dsseEnvelope"></param>
+        public ReposCreateAttestationRequestBundle(
+            string? mediaType,
+            object? verificationMaterial,
+            object? dsseEnvelope)
+        {
+            this.MediaType = mediaType;
+            this.VerificationMaterial = verificationMaterial;
+            this.DsseEnvelope = dsseEnvelope;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateAttestationRequestBundle" /> class.
+        /// </summary>
+        public ReposCreateAttestationRequestBundle()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

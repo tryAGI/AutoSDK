@@ -30,6 +30,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependencyGraphSpdxSbomSbomCreationInfo" /> class.
+        /// </summary>
+        /// <param name="created">
+        /// The date and time the SPDX document was created.<br/>
+        /// Example: 2021-11-03T00:00:00Z
+        /// </param>
+        /// <param name="creators">
+        /// The tools that were used to generate the SPDX document.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DependencyGraphSpdxSbomSbomCreationInfo(
+            string created,
+            global::System.Collections.Generic.IList<string> creators)
+        {
+            this.Created = created ?? throw new global::System.ArgumentNullException(nameof(created));
+            this.Creators = creators ?? throw new global::System.ArgumentNullException(nameof(creators));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependencyGraphSpdxSbomSbomCreationInfo" /> class.
+        /// </summary>
+        public DependencyGraphSpdxSbomSbomCreationInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

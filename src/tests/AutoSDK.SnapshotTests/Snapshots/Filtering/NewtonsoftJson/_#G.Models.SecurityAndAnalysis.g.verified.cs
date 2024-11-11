@@ -51,6 +51,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurityAndAnalysis" /> class.
+        /// </summary>
+        /// <param name="advancedSecurity"></param>
+        /// <param name="dependabotSecurityUpdates">
+        /// Enable or disable Dependabot security updates for the repository.
+        /// </param>
+        /// <param name="secretScanning"></param>
+        /// <param name="secretScanningPushProtection"></param>
+        /// <param name="secretScanningNonProviderPatterns"></param>
+        /// <param name="secretScanningAiDetection"></param>
+        public SecurityAndAnalysis(
+            global::G.SecurityAndAnalysisAdvancedSecurity? advancedSecurity,
+            global::G.SecurityAndAnalysisDependabotSecurityUpdates? dependabotSecurityUpdates,
+            global::G.SecurityAndAnalysisSecretScanning? secretScanning,
+            global::G.SecurityAndAnalysisSecretScanningPushProtection? secretScanningPushProtection,
+            global::G.SecurityAndAnalysisSecretScanningNonProviderPatterns? secretScanningNonProviderPatterns,
+            global::G.SecurityAndAnalysisSecretScanningAiDetection? secretScanningAiDetection)
+        {
+            this.AdvancedSecurity = advancedSecurity;
+            this.DependabotSecurityUpdates = dependabotSecurityUpdates;
+            this.SecretScanning = secretScanning;
+            this.SecretScanningPushProtection = secretScanningPushProtection;
+            this.SecretScanningNonProviderPatterns = secretScanningNonProviderPatterns;
+            this.SecretScanningAiDetection = secretScanningAiDetection;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurityAndAnalysis" /> class.
+        /// </summary>
+        public SecurityAndAnalysis()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

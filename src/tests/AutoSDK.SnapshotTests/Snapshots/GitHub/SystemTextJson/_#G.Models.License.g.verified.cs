@@ -123,6 +123,103 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="License" /> class.
+        /// </summary>
+        /// <param name="key">
+        /// Example: mit
+        /// </param>
+        /// <param name="name">
+        /// Example: MIT License
+        /// </param>
+        /// <param name="spdxId">
+        /// Example: MIT
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/licenses/mit
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDc6TGljZW5zZW1pdA==
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: http://choosealicense.com/licenses/mit/
+        /// </param>
+        /// <param name="description">
+        /// Example: A permissive license that is short and to the point. It lets people do anything with your code with proper attribution and without warranty.
+        /// </param>
+        /// <param name="implementation">
+        /// Example: Create a text file (typically named LICENSE or LICENSE.txt) in the root of your source code and copy the text of the license into the file. Replace [year] with the current year and [fullname] with the name (or names) of the copyright holders.
+        /// </param>
+        /// <param name="permissions">
+        /// Example: [commercial-use, modifications, distribution, sublicense, private-use]
+        /// </param>
+        /// <param name="conditions">
+        /// Example: [include-copyright]
+        /// </param>
+        /// <param name="limitations">
+        /// Example: [no-liability]
+        /// </param>
+        /// <param name="body">
+        /// Example: <br/>
+        /// The MIT License (MIT)<br/>
+        /// Copyright (c) [year] [fullname]<br/>
+        /// Permission is hereby granted, free of charge, to any person obtaining a copy<br/>
+        /// of this software and associated documentation files (the "Software"), to deal<br/>
+        /// in the Software without restriction, including without limitation the rights<br/>
+        /// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell<br/>
+        /// copies of the Software, and to permit persons to whom the Software is<br/>
+        /// furnished to do so, subject to the following conditions:<br/>
+        /// The above copyright notice and this permission notice shall be included in all<br/>
+        /// copies or substantial portions of the Software.<br/>
+        /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR<br/>
+        /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,<br/>
+        /// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE<br/>
+        /// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER<br/>
+        /// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,<br/>
+        /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE<br/>
+        /// SOFTWARE.
+        /// </param>
+        /// <param name="featured">
+        /// Example: true
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public License(
+            string key,
+            string name,
+            string? spdxId,
+            string? url,
+            string nodeId,
+            string htmlUrl,
+            string description,
+            string implementation,
+            global::System.Collections.Generic.IList<string> permissions,
+            global::System.Collections.Generic.IList<string> conditions,
+            global::System.Collections.Generic.IList<string> limitations,
+            string body,
+            bool featured)
+        {
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.SpdxId = spdxId ?? throw new global::System.ArgumentNullException(nameof(spdxId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Implementation = implementation ?? throw new global::System.ArgumentNullException(nameof(implementation));
+            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
+            this.Conditions = conditions ?? throw new global::System.ArgumentNullException(nameof(conditions));
+            this.Limitations = limitations ?? throw new global::System.ArgumentNullException(nameof(limitations));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.Featured = featured;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="License" /> class.
+        /// </summary>
+        public License()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

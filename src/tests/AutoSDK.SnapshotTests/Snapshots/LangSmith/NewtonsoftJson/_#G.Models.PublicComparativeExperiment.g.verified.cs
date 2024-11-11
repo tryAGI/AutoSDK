@@ -63,6 +63,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicComparativeExperiment" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="modifiedAt"></param>
+        /// <param name="extra"></param>
+        /// <param name="experimentsInfo"></param>
+        /// <param name="feedbackStats"></param>
+        public PublicComparativeExperiment(
+            global::System.Guid id,
+            global::System.DateTime createdAt,
+            global::System.DateTime modifiedAt,
+            global::System.Collections.Generic.IList<global::G.SimpleExperimentInfo> experimentsInfo,
+            string? name,
+            string? description,
+            object? extra,
+            object? feedbackStats)
+        {
+            this.Id = id;
+            this.CreatedAt = createdAt;
+            this.ModifiedAt = modifiedAt;
+            this.ExperimentsInfo = experimentsInfo ?? throw new global::System.ArgumentNullException(nameof(experimentsInfo));
+            this.Name = name;
+            this.Description = description;
+            this.Extra = extra;
+            this.FeedbackStats = feedbackStats;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicComparativeExperiment" /> class.
+        /// </summary>
+        public PublicComparativeExperiment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

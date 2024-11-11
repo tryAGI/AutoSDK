@@ -22,6 +22,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerAsyncNamespaceModelBody" /> class.
+        /// </summary>
+        /// <param name="taskInputs">
+        /// Model inference inputs.
+        /// </param>
+        public TriggerAsyncNamespaceModelBody(
+            global::System.Collections.Generic.IList<object> taskInputs)
+        {
+            this.TaskInputs = taskInputs ?? throw new global::System.ArgumentNullException(nameof(taskInputs));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerAsyncNamespaceModelBody" /> class.
+        /// </summary>
+        public TriggerAsyncNamespaceModelBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

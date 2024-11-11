@@ -33,6 +33,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGenerationsByUserIdResponseGenerationGenerationElement" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="lora">
+        /// Element used for the generation.
+        /// </param>
+        /// <param name="weightApplied"></param>
+        public GetGenerationsByUserIdResponseGenerationGenerationElement(
+            int? id,
+            global::G.GetGenerationsByUserIdResponseGenerationGenerationElementLora? lora,
+            double? weightApplied)
+        {
+            this.Id = id;
+            this.Lora = lora;
+            this.WeightApplied = weightApplied;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGenerationsByUserIdResponseGenerationGenerationElement" /> class.
+        /// </summary>
+        public GetGenerationsByUserIdResponseGenerationGenerationElement()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

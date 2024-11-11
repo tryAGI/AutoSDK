@@ -183,6 +183,104 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PagesHealthCheckDomain" /> class.
+        /// </summary>
+        /// <param name="host"></param>
+        /// <param name="uri"></param>
+        /// <param name="nameservers"></param>
+        /// <param name="dnsResolves"></param>
+        /// <param name="isProxied"></param>
+        /// <param name="isCloudflareIp"></param>
+        /// <param name="isFastlyIp"></param>
+        /// <param name="isOldIpAddress"></param>
+        /// <param name="isARecord"></param>
+        /// <param name="hasCnameRecord"></param>
+        /// <param name="hasMxRecordsPresent"></param>
+        /// <param name="isValidDomain"></param>
+        /// <param name="isApexDomain"></param>
+        /// <param name="shouldBeARecord"></param>
+        /// <param name="isCnameToGithubUserDomain"></param>
+        /// <param name="isCnameToPagesDotGithubDotCom"></param>
+        /// <param name="isCnameToFastly"></param>
+        /// <param name="isPointedToGithubPagesIp"></param>
+        /// <param name="isNonGithubPagesIpPresent"></param>
+        /// <param name="isPagesDomain"></param>
+        /// <param name="isServedByPages"></param>
+        /// <param name="isValid"></param>
+        /// <param name="reason"></param>
+        /// <param name="respondsToHttps"></param>
+        /// <param name="enforcesHttps"></param>
+        /// <param name="httpsError"></param>
+        /// <param name="isHttpsEligible"></param>
+        /// <param name="caaError"></param>
+        public PagesHealthCheckDomain(
+            string? host,
+            string? uri,
+            string? nameservers,
+            bool? dnsResolves,
+            bool? isProxied,
+            bool? isCloudflareIp,
+            bool? isFastlyIp,
+            bool? isOldIpAddress,
+            bool? isARecord,
+            bool? hasCnameRecord,
+            bool? hasMxRecordsPresent,
+            bool? isValidDomain,
+            bool? isApexDomain,
+            bool? shouldBeARecord,
+            bool? isCnameToGithubUserDomain,
+            bool? isCnameToPagesDotGithubDotCom,
+            bool? isCnameToFastly,
+            bool? isPointedToGithubPagesIp,
+            bool? isNonGithubPagesIpPresent,
+            bool? isPagesDomain,
+            bool? isServedByPages,
+            bool? isValid,
+            string? reason,
+            bool? respondsToHttps,
+            bool? enforcesHttps,
+            string? httpsError,
+            bool? isHttpsEligible,
+            string? caaError)
+        {
+            this.Host = host;
+            this.Uri = uri;
+            this.Nameservers = nameservers;
+            this.DnsResolves = dnsResolves;
+            this.IsProxied = isProxied;
+            this.IsCloudflareIp = isCloudflareIp;
+            this.IsFastlyIp = isFastlyIp;
+            this.IsOldIpAddress = isOldIpAddress;
+            this.IsARecord = isARecord;
+            this.HasCnameRecord = hasCnameRecord;
+            this.HasMxRecordsPresent = hasMxRecordsPresent;
+            this.IsValidDomain = isValidDomain;
+            this.IsApexDomain = isApexDomain;
+            this.ShouldBeARecord = shouldBeARecord;
+            this.IsCnameToGithubUserDomain = isCnameToGithubUserDomain;
+            this.IsCnameToPagesDotGithubDotCom = isCnameToPagesDotGithubDotCom;
+            this.IsCnameToFastly = isCnameToFastly;
+            this.IsPointedToGithubPagesIp = isPointedToGithubPagesIp;
+            this.IsNonGithubPagesIpPresent = isNonGithubPagesIpPresent;
+            this.IsPagesDomain = isPagesDomain;
+            this.IsServedByPages = isServedByPages;
+            this.IsValid = isValid;
+            this.Reason = reason;
+            this.RespondsToHttps = respondsToHttps;
+            this.EnforcesHttps = enforcesHttps;
+            this.HttpsError = httpsError;
+            this.IsHttpsEligible = isHttpsEligible;
+            this.CaaError = caaError;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PagesHealthCheckDomain" /> class.
+        /// </summary>
+        public PagesHealthCheckDomain()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

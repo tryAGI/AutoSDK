@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantStreamEventVariant16" /> class.
+        /// </summary>
+        /// <param name="event"></param>
+        /// <param name="data">
+        /// Represents a run step delta i.e. any changed fields on a run step during streaming.
+        /// </param>
+        public AssistantStreamEventVariant16(
+            global::G.RunStepDeltaObject data,
+            global::G.AssistantStreamEventVariant16Event @event)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Event = @event;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantStreamEventVariant16" /> class.
+        /// </summary>
+        public AssistantStreamEventVariant16()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

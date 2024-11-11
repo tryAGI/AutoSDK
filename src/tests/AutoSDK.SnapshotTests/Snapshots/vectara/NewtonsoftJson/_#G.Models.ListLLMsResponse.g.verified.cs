@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListLLMsResponse" /> class.
+        /// </summary>
+        /// <param name="llms">
+        /// List of LLMs.
+        /// </param>
+        /// <param name="metadata">
+        /// The standard metadata in the response of a list operation.
+        /// </param>
+        public ListLLMsResponse(
+            global::System.Collections.Generic.IList<global::G.LLM>? llms,
+            global::G.ListMetadata? metadata)
+        {
+            this.Llms = llms;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListLLMsResponse" /> class.
+        /// </summary>
+        public ListLLMsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

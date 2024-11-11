@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposMergeUpstreamRequest" /> class.
+        /// </summary>
+        /// <param name="branch">
+        /// The name of the branch which should be updated to match upstream.
+        /// </param>
+        public ReposMergeUpstreamRequest(
+            string branch)
+        {
+            this.Branch = branch ?? throw new global::System.ArgumentNullException(nameof(branch));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposMergeUpstreamRequest" /> class.
+        /// </summary>
+        public ReposMergeUpstreamRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

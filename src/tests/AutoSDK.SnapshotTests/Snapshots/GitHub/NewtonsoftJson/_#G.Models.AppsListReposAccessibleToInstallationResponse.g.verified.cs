@@ -33,6 +33,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsListReposAccessibleToInstallationResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="repositories"></param>
+        /// <param name="repositorySelection">
+        /// Example: selected
+        /// </param>
+        public AppsListReposAccessibleToInstallationResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.Repository> repositories,
+            string? repositorySelection)
+        {
+            this.TotalCount = totalCount;
+            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
+            this.RepositorySelection = repositorySelection;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsListReposAccessibleToInstallationResponse" /> class.
+        /// </summary>
+        public AppsListReposAccessibleToInstallationResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

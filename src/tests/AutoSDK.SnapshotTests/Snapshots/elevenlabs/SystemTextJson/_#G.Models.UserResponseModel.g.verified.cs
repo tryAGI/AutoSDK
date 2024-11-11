@@ -75,6 +75,50 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserResponseModel" /> class.
+        /// </summary>
+        /// <param name="subscription"></param>
+        /// <param name="isNewUser"></param>
+        /// <param name="xiApiKey"></param>
+        /// <param name="canUseDelayedPaymentMethods"></param>
+        /// <param name="isOnboardingCompleted"></param>
+        /// <param name="isOnboardingChecklistCompleted"></param>
+        /// <param name="firstName"></param>
+        /// <param name="isApiKeyHashed">
+        /// Default Value: false
+        /// </param>
+        /// <param name="xiApiKeyPreview"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UserResponseModel(
+            global::G.SubscriptionResponseModel subscription,
+            bool isNewUser,
+            string xiApiKey,
+            bool canUseDelayedPaymentMethods,
+            bool isOnboardingCompleted,
+            bool isOnboardingChecklistCompleted,
+            string? firstName,
+            bool? isApiKeyHashed,
+            string? xiApiKeyPreview)
+        {
+            this.Subscription = subscription ?? throw new global::System.ArgumentNullException(nameof(subscription));
+            this.IsNewUser = isNewUser;
+            this.XiApiKey = xiApiKey ?? throw new global::System.ArgumentNullException(nameof(xiApiKey));
+            this.CanUseDelayedPaymentMethods = canUseDelayedPaymentMethods;
+            this.IsOnboardingCompleted = isOnboardingCompleted;
+            this.IsOnboardingChecklistCompleted = isOnboardingChecklistCompleted;
+            this.FirstName = firstName;
+            this.IsApiKeyHashed = isApiKeyHashed;
+            this.XiApiKeyPreview = xiApiKeyPreview;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserResponseModel" /> class.
+        /// </summary>
+        public UserResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

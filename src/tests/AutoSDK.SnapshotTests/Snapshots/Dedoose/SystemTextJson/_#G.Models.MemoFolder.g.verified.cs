@@ -39,6 +39,35 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemoFolder" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="projectId"></param>
+        /// <param name="title"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MemoFolder(
+            string? projectIdKey,
+            global::System.Guid? id,
+            global::System.Guid? projectId,
+            string? title)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.Id = id;
+            this.ProjectId = projectId;
+            this.Title = title;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemoFolder" /> class.
+        /// </summary>
+        public MemoFolder()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

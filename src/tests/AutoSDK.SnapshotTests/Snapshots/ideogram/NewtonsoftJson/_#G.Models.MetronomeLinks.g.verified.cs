@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MetronomeLinks" /> class.
+        /// </summary>
+        /// <param name="invoicesIframeUrl">
+        /// The URL to display the customer invoice and API usage.
+        /// </param>
+        /// <param name="invoicesIframeDarkModeUrl">
+        /// The URL to display the customer invoice and API usage.
+        /// </param>
+        /// <param name="creditsIframeUrl">
+        /// The URL to display the customer invoice and API usage.
+        /// </param>
+        /// <param name="creditsIframeDarkModeUrl">
+        /// The URL to display the customer invoice and API usage.
+        /// </param>
+        public MetronomeLinks(
+            string? invoicesIframeUrl,
+            string? invoicesIframeDarkModeUrl,
+            string? creditsIframeUrl,
+            string? creditsIframeDarkModeUrl)
+        {
+            this.InvoicesIframeUrl = invoicesIframeUrl;
+            this.InvoicesIframeDarkModeUrl = invoicesIframeDarkModeUrl;
+            this.CreditsIframeUrl = creditsIframeUrl;
+            this.CreditsIframeDarkModeUrl = creditsIframeDarkModeUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MetronomeLinks" /> class.
+        /// </summary>
+        public MetronomeLinks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

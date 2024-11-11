@@ -28,6 +28,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolV2" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="function">
+        /// The function to be executed.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ToolV2(
+            global::G.ToolV2Type? type,
+            global::G.ToolV2Function? function)
+        {
+            this.Type = type;
+            this.Function = function;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolV2" /> class.
+        /// </summary>
+        public ToolV2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

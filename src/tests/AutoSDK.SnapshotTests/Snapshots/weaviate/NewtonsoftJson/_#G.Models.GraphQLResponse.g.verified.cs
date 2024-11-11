@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GraphQLResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// GraphQL data object.
+        /// </param>
+        /// <param name="errors">
+        /// Array with errors.
+        /// </param>
+        public GraphQLResponse(
+            global::System.Collections.Generic.Dictionary<string, object>? data,
+            global::System.Collections.Generic.IList<global::G.GraphQLError>? errors)
+        {
+            this.Data = data;
+            this.Errors = errors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GraphQLResponse" /> class.
+        /// </summary>
+        public GraphQLResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

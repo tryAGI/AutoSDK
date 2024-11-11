@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiPolicy" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the API role.
+        /// </param>
+        /// <param name="allowedOperations">
+        /// Operations that are allowed by the API role. Each operation may only allow<br/>
+        /// certain resources that are described by a resource path to resource value<br/>
+        /// map. If the value is null, then the operation is allowed on any resource.
+        /// </param>
+        public ApiPolicy(
+            string name,
+            global::System.Collections.Generic.Dictionary<string, global::G.ApiOperationPolicy> allowedOperations)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.AllowedOperations = allowedOperations ?? throw new global::System.ArgumentNullException(nameof(allowedOperations));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiPolicy" /> class.
+        /// </summary>
+        public ApiPolicy()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImportProjectChoice" /> class.
+        /// </summary>
+        /// <param name="vcs"></param>
+        /// <param name="tfvcProject"></param>
+        /// <param name="humanName"></param>
+        public ImportProjectChoice(
+            string? vcs,
+            string? tfvcProject,
+            string? humanName)
+        {
+            this.Vcs = vcs;
+            this.TfvcProject = tfvcProject;
+            this.HumanName = humanName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImportProjectChoice" /> class.
+        /// </summary>
+        public ImportProjectChoice()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

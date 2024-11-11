@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="repositories"></param>
+        public ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
+            double totalCount,
+            global::System.Collections.Generic.IList<global::G.Repository> repositories)
+        {
+            this.TotalCount = totalCount;
+            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse" /> class.
+        /// </summary>
+        public ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

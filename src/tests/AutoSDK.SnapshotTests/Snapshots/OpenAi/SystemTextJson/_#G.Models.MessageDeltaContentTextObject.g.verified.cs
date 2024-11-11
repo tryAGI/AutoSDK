@@ -35,6 +35,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentTextObject" /> class.
+        /// </summary>
+        /// <param name="index">
+        /// The index of the content part in the message.
+        /// </param>
+        /// <param name="type">
+        /// Always `text`.
+        /// </param>
+        /// <param name="text"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageDeltaContentTextObject(
+            int index,
+            global::G.MessageDeltaContentTextObjectType type,
+            global::G.MessageDeltaContentTextObjectText? text)
+        {
+            this.Index = index;
+            this.Type = type;
+            this.Text = text;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentTextObject" /> class.
+        /// </summary>
+        public MessageDeltaContentTextObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -52,6 +52,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EvaluatorStructuredOutput" /> class.
+        /// </summary>
+        /// <param name="hubRef"></param>
+        /// <param name="prompt"></param>
+        /// <param name="templateFormat"></param>
+        /// <param name="schema"></param>
+        /// <param name="variableMapping"></param>
+        /// <param name="model"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EvaluatorStructuredOutput(
+            object model,
+            string? hubRef,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>? prompt,
+            string? templateFormat,
+            object? schema,
+            global::System.Collections.Generic.Dictionary<string, string>? variableMapping)
+        {
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.HubRef = hubRef;
+            this.Prompt = prompt;
+            this.TemplateFormat = templateFormat;
+            this.Schema = schema;
+            this.VariableMapping = variableMapping;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EvaluatorStructuredOutput" /> class.
+        /// </summary>
+        public EvaluatorStructuredOutput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

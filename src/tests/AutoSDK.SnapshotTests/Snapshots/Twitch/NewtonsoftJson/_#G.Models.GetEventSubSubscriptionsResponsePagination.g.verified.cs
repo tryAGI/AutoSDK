@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetEventSubSubscriptionsResponsePagination" /> class.
+        /// </summary>
+        /// <param name="cursor">
+        /// The cursor value that you set the _after_ query parameter to.
+        /// </param>
+        public GetEventSubSubscriptionsResponsePagination(
+            string? cursor)
+        {
+            this.Cursor = cursor;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetEventSubSubscriptionsResponsePagination" /> class.
+        /// </summary>
+        public GetEventSubSubscriptionsResponsePagination()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

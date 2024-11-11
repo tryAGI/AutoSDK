@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Carrier" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Example: Sprint Corporation
+        /// </param>
+        /// <param name="mcc">
+        /// Example: 310
+        /// </param>
+        /// <param name="mnc">
+        /// Example: 120
+        /// </param>
+        public Carrier(
+            string name,
+            string mcc,
+            string mnc)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Mcc = mcc ?? throw new global::System.ArgumentNullException(nameof(mcc));
+            this.Mnc = mnc ?? throw new global::System.ArgumentNullException(nameof(mnc));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Carrier" /> class.
+        /// </summary>
+        public Carrier()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

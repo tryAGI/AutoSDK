@@ -45,6 +45,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MinimalRepositoryLicense" /> class.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="name"></param>
+        /// <param name="spdxId"></param>
+        /// <param name="url"></param>
+        /// <param name="nodeId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MinimalRepositoryLicense(
+            string? key,
+            string? name,
+            string? spdxId,
+            string? url,
+            string? nodeId)
+        {
+            this.Key = key;
+            this.Name = name;
+            this.SpdxId = spdxId;
+            this.Url = url;
+            this.NodeId = nodeId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MinimalRepositoryLicense" /> class.
+        /// </summary>
+        public MinimalRepositoryLicense()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

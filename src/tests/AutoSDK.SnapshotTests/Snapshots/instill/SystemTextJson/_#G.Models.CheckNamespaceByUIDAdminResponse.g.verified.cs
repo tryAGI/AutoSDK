@@ -41,6 +41,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckNamespaceByUIDAdminResponse" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Namespace type.
+        /// </param>
+        /// <param name="id">
+        /// Namespace ID.
+        /// </param>
+        /// <param name="user">
+        /// User.
+        /// </param>
+        /// <param name="organization">
+        /// Organization.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CheckNamespaceByUIDAdminResponse(
+            global::G.CheckNamespaceByUIDAdminResponseNamespace? type,
+            string? id,
+            global::G.User? user,
+            global::G.Organization? organization)
+        {
+            this.Type = type;
+            this.Id = id;
+            this.User = user;
+            this.Organization = organization;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckNamespaceByUIDAdminResponse" /> class.
+        /// </summary>
+        public CheckNamespaceByUIDAdminResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

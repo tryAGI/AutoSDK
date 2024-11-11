@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectAccessDetails" /> class.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="projectTitle"></param>
+        /// <param name="groupId"></param>
+        /// <param name="groupTitle"></param>
+        /// <param name="accessGroupId"></param>
+        public ProjectAccessDetails(
+            global::System.Guid? projectId,
+            string? projectTitle,
+            global::System.Guid? groupId,
+            string? groupTitle,
+            global::System.Guid? accessGroupId)
+        {
+            this.ProjectId = projectId;
+            this.ProjectTitle = projectTitle;
+            this.GroupId = groupId;
+            this.GroupTitle = groupTitle;
+            this.AccessGroupId = accessGroupId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectAccessDetails" /> class.
+        /// </summary>
+        public ProjectAccessDetails()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

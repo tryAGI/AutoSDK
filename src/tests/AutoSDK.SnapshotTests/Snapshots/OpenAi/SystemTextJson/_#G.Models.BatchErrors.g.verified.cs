@@ -27,6 +27,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchErrors" /> class.
+        /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `list`.
+        /// </param>
+        /// <param name="data"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BatchErrors(
+            string? @object,
+            global::System.Collections.Generic.IList<global::G.BatchErrorsDataItem>? data)
+        {
+            this.Object = @object;
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchErrors" /> class.
+        /// </summary>
+        public BatchErrors()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

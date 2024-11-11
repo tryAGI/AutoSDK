@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SeverityScoreSummary" /> class.
+        /// </summary>
+        /// <param name="low"></param>
+        /// <param name="medium"></param>
+        /// <param name="high"></param>
+        public SeverityScoreSummary(
+            double low,
+            double medium,
+            double high)
+        {
+            this.Low = low;
+            this.Medium = medium;
+            this.High = high;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SeverityScoreSummary" /> class.
+        /// </summary>
+        public SeverityScoreSummary()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

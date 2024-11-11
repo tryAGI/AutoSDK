@@ -90,6 +90,84 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateChatCompletionResponse" /> class.
+        /// </summary>
+        /// <param name="message">
+        /// A message in the chat endpoint
+        /// </param>
+        /// <param name="model">
+        /// The model name. <br/>
+        /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
+        /// Example: llama3.2
+        /// </param>
+        /// <param name="createdAt">
+        /// Date on which a model was created.
+        /// </param>
+        /// <param name="done">
+        /// Whether the response has completed.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="doneReason">
+        /// Reason why the model is done generating a response.
+        /// </param>
+        /// <param name="totalDuration">
+        /// Time spent generating the response.<br/>
+        /// Example: 5589157167L
+        /// </param>
+        /// <param name="loadDuration">
+        /// Time spent in nanoseconds loading the model.<br/>
+        /// Example: 3013701500L
+        /// </param>
+        /// <param name="promptEvalCount">
+        /// Number of tokens in the prompt.<br/>
+        /// Example: 46
+        /// </param>
+        /// <param name="promptEvalDuration">
+        /// Time spent in nanoseconds evaluating the prompt.<br/>
+        /// Example: 1160282000L
+        /// </param>
+        /// <param name="evalCount">
+        /// Number of tokens the response.<br/>
+        /// Example: 113
+        /// </param>
+        /// <param name="evalDuration">
+        /// Time in nanoseconds spent generating the response.<br/>
+        /// Example: 1325948000L
+        /// </param>
+        public GenerateChatCompletionResponse(
+            global::G.Message message,
+            string model,
+            global::System.DateTime createdAt,
+            bool done,
+            global::G.DoneReason? doneReason,
+            long? totalDuration,
+            long? loadDuration,
+            int? promptEvalCount,
+            long? promptEvalDuration,
+            int? evalCount,
+            long? evalDuration)
+        {
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.CreatedAt = createdAt;
+            this.Done = done;
+            this.DoneReason = doneReason;
+            this.TotalDuration = totalDuration;
+            this.LoadDuration = loadDuration;
+            this.PromptEvalCount = promptEvalCount;
+            this.PromptEvalDuration = promptEvalDuration;
+            this.EvalCount = evalCount;
+            this.EvalDuration = evalDuration;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateChatCompletionResponse" /> class.
+        /// </summary>
+        public GenerateChatCompletionResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

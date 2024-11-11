@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecordingResponseModel" /> class.
+        /// </summary>
+        /// <param name="recordingId"></param>
+        /// <param name="mimeType"></param>
+        /// <param name="sizeBytes"></param>
+        /// <param name="uploadDateUnix"></param>
+        /// <param name="transcription"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RecordingResponseModel(
+            string recordingId,
+            string mimeType,
+            int sizeBytes,
+            int uploadDateUnix,
+            string transcription)
+        {
+            this.RecordingId = recordingId ?? throw new global::System.ArgumentNullException(nameof(recordingId));
+            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
+            this.SizeBytes = sizeBytes;
+            this.UploadDateUnix = uploadDateUnix;
+            this.Transcription = transcription ?? throw new global::System.ArgumentNullException(nameof(transcription));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RecordingResponseModel" /> class.
+        /// </summary>
+        public RecordingResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

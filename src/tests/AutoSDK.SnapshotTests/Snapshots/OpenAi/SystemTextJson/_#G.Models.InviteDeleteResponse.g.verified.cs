@@ -36,6 +36,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InviteDeleteResponse" /> class.
+        /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `organization.invite.deleted`
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="deleted"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public InviteDeleteResponse(
+            string id,
+            bool deleted,
+            global::G.InviteDeleteResponseObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Deleted = deleted;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InviteDeleteResponse" /> class.
+        /// </summary>
+        public InviteDeleteResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

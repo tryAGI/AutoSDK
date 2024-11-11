@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Embedding" /> class.
+        /// </summary>
+        /// <param name="index">
+        /// The index of the embedding in the list of embeddings.
+        /// </param>
+        /// <param name="embedding1">
+        /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "embedding".
+        /// </param>
+        public Embedding(
+            int index,
+            global::System.Collections.Generic.IList<double> embedding1,
+            global::G.EmbeddingObject @object)
+        {
+            this.Index = index;
+            this.Embedding1 = embedding1 ?? throw new global::System.ArgumentNullException(nameof(embedding1));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Embedding" /> class.
+        /// </summary>
+        public Embedding()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

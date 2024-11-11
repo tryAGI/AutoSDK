@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageInfo" /> class.
+        /// </summary>
+        /// <param name="completionTokens">
+        /// Example: 34
+        /// </param>
+        /// <param name="promptTokens">
+        /// Example: 16
+        /// </param>
+        /// <param name="totalTokens">
+        /// Example: 50
+        /// </param>
+        public UsageInfo(
+            int completionTokens,
+            int promptTokens,
+            int totalTokens)
+        {
+            this.CompletionTokens = completionTokens;
+            this.PromptTokens = promptTokens;
+            this.TotalTokens = totalTokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageInfo" /> class.
+        /// </summary>
+        public UsageInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

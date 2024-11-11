@@ -47,6 +47,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateUsingTemplateRequest" /> class.
+        /// </summary>
+        /// <param name="owner">
+        /// The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization.
+        /// </param>
+        /// <param name="name">
+        /// The name of the new repository.
+        /// </param>
+        /// <param name="description">
+        /// A short description of the new repository.
+        /// </param>
+        /// <param name="includeAllBranches">
+        /// Set to `true` to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: `false`.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="private">
+        /// Either `true` to create a new private repository or `false` to create a new public one.<br/>
+        /// Default Value: false
+        /// </param>
+        public ReposCreateUsingTemplateRequest(
+            string name,
+            string? owner,
+            string? description,
+            bool? includeAllBranches,
+            bool? @private)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Owner = owner;
+            this.Description = description;
+            this.IncludeAllBranches = includeAllBranches;
+            this.Private = @private;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateUsingTemplateRequest" /> class.
+        /// </summary>
+        public ReposCreateUsingTemplateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

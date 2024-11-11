@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksProjectChanges" /> class.
+        /// </summary>
+        /// <param name="archivedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhooksProjectChanges(
+            global::G.WebhooksProjectChangesArchivedAt? archivedAt)
+        {
+            this.ArchivedAt = archivedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksProjectChanges" /> class.
+        /// </summary>
+        public WebhooksProjectChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

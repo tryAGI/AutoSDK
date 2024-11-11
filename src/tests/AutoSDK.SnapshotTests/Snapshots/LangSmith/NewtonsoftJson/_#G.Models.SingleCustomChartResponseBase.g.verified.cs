@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SingleCustomChartResponseBase" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        public SingleCustomChartResponseBase(
+            global::System.Collections.Generic.IList<global::G.CustomChartsDataPoint> data)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SingleCustomChartResponseBase" /> class.
+        /// </summary>
+        public SingleCustomChartResponseBase()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

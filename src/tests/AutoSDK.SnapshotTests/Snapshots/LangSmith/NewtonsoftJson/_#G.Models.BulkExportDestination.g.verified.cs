@@ -63,6 +63,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportDestination" /> class.
+        /// </summary>
+        /// <param name="destinationType"></param>
+        /// <param name="displayName"></param>
+        /// <param name="config"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="credentialsKeys"></param>
+        public BulkExportDestination(
+            string displayName,
+            global::G.BulkExportDestinationS3Config config,
+            global::System.Guid id,
+            global::System.Guid tenantId,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::System.Collections.Generic.IList<string> credentialsKeys,
+            global::G.BulkExportDestinationType? destinationType)
+        {
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.CredentialsKeys = credentialsKeys ?? throw new global::System.ArgumentNullException(nameof(credentialsKeys));
+            this.DestinationType = destinationType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportDestination" /> class.
+        /// </summary>
+        public BulkExportDestination()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

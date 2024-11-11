@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingStepMetrics" /> class.
+        /// </summary>
+        /// <param name="createdAt">
+        /// Creation timestamp.
+        /// </param>
+        /// <param name="stepNumber">
+        /// Step number.
+        /// </param>
+        /// <param name="metrics">
+        /// Map of names and values for each evaluation metrics.
+        /// </param>
+        public TrainingStepMetrics(
+            global::System.DateTime? createdAt,
+            int? stepNumber,
+            global::System.Collections.Generic.Dictionary<string, double>? metrics)
+        {
+            this.CreatedAt = createdAt;
+            this.StepNumber = stepNumber;
+            this.Metrics = metrics;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingStepMetrics" /> class.
+        /// </summary>
+        public TrainingStepMetrics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectCardConvertedChanges" /> class.
+        /// </summary>
+        /// <param name="note"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookProjectCardConvertedChanges(
+            global::G.WebhookProjectCardConvertedChangesNote note)
+        {
+            this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectCardConvertedChanges" /> class.
+        /// </summary>
+        public WebhookProjectCardConvertedChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

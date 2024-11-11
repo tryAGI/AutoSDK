@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Company" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Example: Sprint Springfield POP
+        /// </param>
+        /// <param name="domain">
+        /// Example: sprint.com
+        /// </param>
+        /// <param name="type">
+        /// Example: isp
+        /// </param>
+        public Company(
+            string name,
+            string domain,
+            global::G.CompanyType type)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Domain = domain ?? throw new global::System.ArgumentNullException(nameof(domain));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Company" /> class.
+        /// </summary>
+        public Company()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

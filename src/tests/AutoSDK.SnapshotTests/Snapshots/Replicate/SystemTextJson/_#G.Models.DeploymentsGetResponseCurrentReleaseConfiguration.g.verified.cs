@@ -33,6 +33,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsGetResponseCurrentReleaseConfiguration" /> class.
+        /// </summary>
+        /// <param name="hardware">
+        /// The SKU for the hardware used to run the model.
+        /// </param>
+        /// <param name="maxInstances">
+        /// The maximum number of instances for scaling.
+        /// </param>
+        /// <param name="minInstances">
+        /// The minimum number of instances for scaling.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DeploymentsGetResponseCurrentReleaseConfiguration(
+            string? hardware,
+            int? maxInstances,
+            int? minInstances)
+        {
+            this.Hardware = hardware;
+            this.MaxInstances = maxInstances;
+            this.MinInstances = minInstances;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsGetResponseCurrentReleaseConfiguration" /> class.
+        /// </summary>
+        public DeploymentsGetResponseCurrentReleaseConfiguration()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

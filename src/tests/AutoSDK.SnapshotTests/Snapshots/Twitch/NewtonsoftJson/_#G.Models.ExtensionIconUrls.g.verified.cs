@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionIconUrls" /> class.
+        /// </summary>
+        /// <param name="x100x100"></param>
+        /// <param name="x24x24"></param>
+        /// <param name="x300x200"></param>
+        public ExtensionIconUrls(
+            string? x100x100,
+            string? x24x24,
+            string? x300x200)
+        {
+            this.x100x100 = x100x100;
+            this.x24x24 = x24x24;
+            this.x300x200 = x300x200;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionIconUrls" /> class.
+        /// </summary>
+        public ExtensionIconUrls()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

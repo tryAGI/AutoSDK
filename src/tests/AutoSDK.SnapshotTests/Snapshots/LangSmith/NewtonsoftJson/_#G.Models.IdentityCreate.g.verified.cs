@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IdentityCreate" /> class.
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="readOnly"></param>
+        /// <param name="roleId"></param>
+        public IdentityCreate(
+            global::System.Guid userId,
+            bool? readOnly,
+            global::System.Guid? roleId)
+        {
+            this.UserId = userId;
+            this.ReadOnly = readOnly;
+            this.RoleId = roleId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IdentityCreate" /> class.
+        /// </summary>
+        public IdentityCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

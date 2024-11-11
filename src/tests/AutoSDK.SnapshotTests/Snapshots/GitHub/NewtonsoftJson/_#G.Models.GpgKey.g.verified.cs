@@ -105,6 +105,83 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpgKey" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 3L
+        /// </param>
+        /// <param name="name">
+        /// Example: Octocat's GPG Key
+        /// </param>
+        /// <param name="primaryKeyId"></param>
+        /// <param name="keyId">
+        /// Example: 3262EFF25BA0D270
+        /// </param>
+        /// <param name="publicKey">
+        /// Example: xsBNBFayYZ...
+        /// </param>
+        /// <param name="emails">
+        /// Example: []
+        /// </param>
+        /// <param name="subkeys">
+        /// Example: []
+        /// </param>
+        /// <param name="canSign">
+        /// Example: true
+        /// </param>
+        /// <param name="canEncryptComms"></param>
+        /// <param name="canEncryptStorage"></param>
+        /// <param name="canCertify">
+        /// Example: true
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="expiresAt"></param>
+        /// <param name="revoked">
+        /// Example: true
+        /// </param>
+        /// <param name="rawKey"></param>
+        public GpgKey(
+            long id,
+            int? primaryKeyId,
+            string keyId,
+            string publicKey,
+            global::System.Collections.Generic.IList<global::G.GpgKeyEmail> emails,
+            global::System.Collections.Generic.IList<global::G.GpgKeySubkey> subkeys,
+            bool canSign,
+            bool canEncryptComms,
+            bool canEncryptStorage,
+            bool canCertify,
+            global::System.DateTime createdAt,
+            global::System.DateTime? expiresAt,
+            bool revoked,
+            string? rawKey,
+            string? name)
+        {
+            this.Id = id;
+            this.PrimaryKeyId = primaryKeyId;
+            this.KeyId = keyId ?? throw new global::System.ArgumentNullException(nameof(keyId));
+            this.PublicKey = publicKey ?? throw new global::System.ArgumentNullException(nameof(publicKey));
+            this.Emails = emails ?? throw new global::System.ArgumentNullException(nameof(emails));
+            this.Subkeys = subkeys ?? throw new global::System.ArgumentNullException(nameof(subkeys));
+            this.CanSign = canSign;
+            this.CanEncryptComms = canEncryptComms;
+            this.CanEncryptStorage = canEncryptStorage;
+            this.CanCertify = canCertify;
+            this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
+            this.Revoked = revoked;
+            this.RawKey = rawKey ?? throw new global::System.ArgumentNullException(nameof(rawKey));
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpgKey" /> class.
+        /// </summary>
+        public GpgKey()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

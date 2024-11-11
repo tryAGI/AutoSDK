@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsTEXTUREGENERATION" /> class.
+        /// </summary>
+        /// <param name="preview"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PricingCalculatorRequestServiceParamsTEXTUREGENERATION(
+            bool? preview)
+        {
+            this.Preview = preview;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsTEXTUREGENERATION" /> class.
+        /// </summary>
+        public PricingCalculatorRequestServiceParamsTEXTUREGENERATION()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

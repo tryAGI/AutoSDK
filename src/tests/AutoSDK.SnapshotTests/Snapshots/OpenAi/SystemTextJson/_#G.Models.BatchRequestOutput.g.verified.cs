@@ -39,6 +39,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestOutput" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="customId">
+        /// A developer-provided per-request id that will be used to match outputs to inputs.
+        /// </param>
+        /// <param name="response"></param>
+        /// <param name="error">
+        /// For requests that failed with a non-HTTP error, this will contain more information on the cause of the failure.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BatchRequestOutput(
+            string? id,
+            string? customId,
+            global::G.BatchRequestOutputResponse? response,
+            global::G.BatchRequestOutputError? error)
+        {
+            this.Id = id;
+            this.CustomId = customId;
+            this.Response = response;
+            this.Error = error;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestOutput" /> class.
+        /// </summary>
+        public BatchRequestOutput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

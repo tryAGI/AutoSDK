@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TruncationObject" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The truncation strategy to use for the thread. The default is `auto`. If set to `last_messages`, the thread will be truncated to the n most recent messages in the thread. When set to `auto`, messages in the middle of the thread will be dropped to fit the context length of the model, `max_prompt_tokens`.
+        /// </param>
+        /// <param name="lastMessages">
+        /// The number of most recent messages from the thread when constructing the context for the run.
+        /// </param>
+        public TruncationObject(
+            global::G.TruncationObjectType type,
+            int? lastMessages)
+        {
+            this.Type = type;
+            this.LastMessages = lastMessages;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TruncationObject" /> class.
+        /// </summary>
+        public TruncationObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

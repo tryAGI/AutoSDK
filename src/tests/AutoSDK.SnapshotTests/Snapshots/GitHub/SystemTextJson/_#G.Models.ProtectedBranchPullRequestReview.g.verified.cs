@@ -61,6 +61,56 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchPullRequestReview" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/dismissal_restrictions
+        /// </param>
+        /// <param name="dismissalRestrictions"></param>
+        /// <param name="bypassPullRequestAllowances">
+        /// Allow specific users, teams, or apps to bypass pull request requirements.
+        /// </param>
+        /// <param name="dismissStaleReviews">
+        /// Example: true
+        /// </param>
+        /// <param name="requireCodeOwnerReviews">
+        /// Example: true
+        /// </param>
+        /// <param name="requiredApprovingReviewCount">
+        /// Example: 2
+        /// </param>
+        /// <param name="requireLastPushApproval">
+        /// Whether the most recent push must be approved by someone other than the person who pushed it.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProtectedBranchPullRequestReview(
+            bool dismissStaleReviews,
+            bool requireCodeOwnerReviews,
+            string? url,
+            global::G.ProtectedBranchPullRequestReviewDismissalRestrictions? dismissalRestrictions,
+            global::G.ProtectedBranchPullRequestReviewBypassPullRequestAllowances? bypassPullRequestAllowances,
+            int? requiredApprovingReviewCount,
+            bool? requireLastPushApproval)
+        {
+            this.DismissStaleReviews = dismissStaleReviews;
+            this.RequireCodeOwnerReviews = requireCodeOwnerReviews;
+            this.Url = url;
+            this.DismissalRestrictions = dismissalRestrictions;
+            this.BypassPullRequestAllowances = bypassPullRequestAllowances;
+            this.RequiredApprovingReviewCount = requiredApprovingReviewCount;
+            this.RequireLastPushApproval = requireLastPushApproval;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchPullRequestReview" /> class.
+        /// </summary>
+        public ProtectedBranchPullRequestReview()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

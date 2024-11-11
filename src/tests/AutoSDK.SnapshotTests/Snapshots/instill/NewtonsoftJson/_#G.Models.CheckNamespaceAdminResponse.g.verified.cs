@@ -40,6 +40,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckNamespaceAdminResponse" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Namespace type.
+        /// </param>
+        /// <param name="uid">
+        /// Namespace UID.
+        /// </param>
+        /// <param name="user">
+        /// User.
+        /// </param>
+        /// <param name="organization">
+        /// Organization.
+        /// </param>
+        public CheckNamespaceAdminResponse(
+            global::G.CheckNamespaceAdminResponseNamespace? type,
+            string? uid,
+            global::G.User? user,
+            global::G.Organization? organization)
+        {
+            this.Type = type;
+            this.Uid = uid;
+            this.User = user;
+            this.Organization = organization;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckNamespaceAdminResponse" /> class.
+        /// </summary>
+        public CheckNamespaceAdminResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

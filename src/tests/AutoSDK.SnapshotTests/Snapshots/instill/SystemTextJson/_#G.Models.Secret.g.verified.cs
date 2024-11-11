@@ -65,6 +65,62 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Secret" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the secret, define by its ID.<br/>
+        /// - Format: `secrets/{secret.id}`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="uid">
+        /// Secret UUID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="id">
+        /// Secret resource ID (used in `name` as the last segment). This conforms<br/>
+        /// to RFC-1034, which restricts to letters, numbers, and hyphen, with the<br/>
+        /// first character a letter, the last a letter or a number, and a 63<br/>
+        /// character maximum.
+        /// </param>
+        /// <param name="createTime">
+        /// Creation time.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="updateTime">
+        /// Update time.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="value">
+        /// The value of the secret, which is input-only and will never be returned in API responses.
+        /// </param>
+        /// <param name="description"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Secret(
+            string? name,
+            string? uid,
+            string? id,
+            global::System.DateTime? createTime,
+            global::System.DateTime? updateTime,
+            string? value,
+            string? description)
+        {
+            this.Name = name;
+            this.Uid = uid;
+            this.Id = id;
+            this.CreateTime = createTime;
+            this.UpdateTime = updateTime;
+            this.Value = value;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Secret" /> class.
+        /// </summary>
+        public Secret()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

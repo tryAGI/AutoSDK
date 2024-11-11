@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposAddAppAccessRestrictionsRequest" /> class.
+        /// </summary>
+        /// <param name="apps">
+        /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
+        /// </param>
+        public ReposAddAppAccessRestrictionsRequest(
+            global::System.Collections.Generic.IList<string> apps)
+        {
+            this.Apps = apps ?? throw new global::System.ArgumentNullException(nameof(apps));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposAddAppAccessRestrictionsRequest" /> class.
+        /// </summary>
+        public ReposAddAppAccessRestrictionsRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

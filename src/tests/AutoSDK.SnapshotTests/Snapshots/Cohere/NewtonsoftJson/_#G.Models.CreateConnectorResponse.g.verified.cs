@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConnectorResponse" /> class.
+        /// </summary>
+        /// <param name="connector">
+        /// A connector allows you to integrate data sources with the '/chat' endpoint to create grounded generations with citations to the data source.<br/>
+        /// documents to help answer users.
+        /// </param>
+        public CreateConnectorResponse(
+            global::G.Connector connector)
+        {
+            this.Connector = connector ?? throw new global::System.ArgumentNullException(nameof(connector));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConnectorResponse" /> class.
+        /// </summary>
+        public CreateConnectorResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

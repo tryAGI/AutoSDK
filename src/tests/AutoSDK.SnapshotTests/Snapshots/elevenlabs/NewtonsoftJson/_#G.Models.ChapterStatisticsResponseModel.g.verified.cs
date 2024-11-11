@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChapterStatisticsResponseModel" /> class.
+        /// </summary>
+        /// <param name="charactersUnconverted"></param>
+        /// <param name="charactersConverted"></param>
+        /// <param name="paragraphsConverted"></param>
+        /// <param name="paragraphsUnconverted"></param>
+        public ChapterStatisticsResponseModel(
+            int charactersUnconverted,
+            int charactersConverted,
+            int paragraphsConverted,
+            int paragraphsUnconverted)
+        {
+            this.CharactersUnconverted = charactersUnconverted;
+            this.CharactersConverted = charactersConverted;
+            this.ParagraphsConverted = paragraphsConverted;
+            this.ParagraphsUnconverted = paragraphsUnconverted;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChapterStatisticsResponseModel" /> class.
+        /// </summary>
+        public ChapterStatisticsResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

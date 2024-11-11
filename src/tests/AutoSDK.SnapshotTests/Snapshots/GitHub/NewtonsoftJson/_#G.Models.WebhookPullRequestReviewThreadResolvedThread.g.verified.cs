@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadResolvedThread" /> class.
+        /// </summary>
+        /// <param name="comments"></param>
+        /// <param name="nodeId"></param>
+        public WebhookPullRequestReviewThreadResolvedThread(
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadResolvedThreadComment> comments,
+            string nodeId)
+        {
+            this.Comments = comments ?? throw new global::System.ArgumentNullException(nameof(comments));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadResolvedThread" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewThreadResolvedThread()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

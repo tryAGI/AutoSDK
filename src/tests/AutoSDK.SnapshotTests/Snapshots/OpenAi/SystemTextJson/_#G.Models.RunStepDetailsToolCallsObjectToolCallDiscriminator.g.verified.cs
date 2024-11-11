@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsObjectToolCallDiscriminator" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunStepDetailsToolCallsObjectToolCallDiscriminator(
+            global::G.RunStepDetailsToolCallsObjectToolCallDiscriminatorType? type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsObjectToolCallDiscriminator" /> class.
+        /// </summary>
+        public RunStepDetailsToolCallsObjectToolCallDiscriminator()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

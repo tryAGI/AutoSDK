@@ -51,6 +51,42 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GithubRepositoryIn" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="owner"></param>
+        /// <param name="ref"></param>
+        /// <param name="token"></param>
+        /// <param name="type">
+        /// Default Value: github
+        /// </param>
+        /// <param name="weight">
+        /// Default Value: 1
+        /// </param>
+        public GithubRepositoryIn(
+            string name,
+            string owner,
+            string token,
+            string? @ref,
+            global::G.GithubRepositoryInType? type,
+            double? weight)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.Ref = @ref;
+            this.Type = type;
+            this.Weight = weight;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GithubRepositoryIn" /> class.
+        /// </summary>
+        public GithubRepositoryIn()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

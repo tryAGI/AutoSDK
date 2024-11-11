@@ -69,6 +69,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksPreviousMarketplacePurchasePlan" /> class.
+        /// </summary>
+        /// <param name="bullets"></param>
+        /// <param name="description"></param>
+        /// <param name="hasFreeTrial"></param>
+        /// <param name="id"></param>
+        /// <param name="monthlyPriceInCents"></param>
+        /// <param name="name"></param>
+        /// <param name="priceModel"></param>
+        /// <param name="unitName"></param>
+        /// <param name="yearlyPriceInCents"></param>
+        public WebhooksPreviousMarketplacePurchasePlan(
+            global::System.Collections.Generic.IList<string> bullets,
+            string description,
+            bool hasFreeTrial,
+            int id,
+            int monthlyPriceInCents,
+            string name,
+            global::G.WebhooksPreviousMarketplacePurchasePlanPriceModel priceModel,
+            string? unitName,
+            int yearlyPriceInCents)
+        {
+            this.Bullets = bullets ?? throw new global::System.ArgumentNullException(nameof(bullets));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.HasFreeTrial = hasFreeTrial;
+            this.Id = id;
+            this.MonthlyPriceInCents = monthlyPriceInCents;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.PriceModel = priceModel;
+            this.UnitName = unitName ?? throw new global::System.ArgumentNullException(nameof(unitName));
+            this.YearlyPriceInCents = yearlyPriceInCents;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksPreviousMarketplacePurchasePlan" /> class.
+        /// </summary>
+        public WebhooksPreviousMarketplacePurchasePlan()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

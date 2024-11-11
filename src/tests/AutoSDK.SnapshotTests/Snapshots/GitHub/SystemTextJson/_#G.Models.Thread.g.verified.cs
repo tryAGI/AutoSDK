@@ -78,6 +78,52 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Thread" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="repository">
+        /// Minimal Repository
+        /// </param>
+        /// <param name="subject"></param>
+        /// <param name="reason"></param>
+        /// <param name="unread"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="lastReadAt"></param>
+        /// <param name="url"></param>
+        /// <param name="subscriptionUrl">
+        /// Example: https://api.github.com/notifications/threads/2/subscription
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Thread(
+            string id,
+            global::G.MinimalRepository repository,
+            global::G.ThreadSubject subject,
+            string reason,
+            bool unread,
+            string updatedAt,
+            string? lastReadAt,
+            string url,
+            string subscriptionUrl)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Subject = subject ?? throw new global::System.ArgumentNullException(nameof(subject));
+            this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
+            this.Unread = unread;
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.LastReadAt = lastReadAt ?? throw new global::System.ArgumentNullException(nameof(lastReadAt));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.SubscriptionUrl = subscriptionUrl ?? throw new global::System.ArgumentNullException(nameof(subscriptionUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Thread" /> class.
+        /// </summary>
+        public Thread()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

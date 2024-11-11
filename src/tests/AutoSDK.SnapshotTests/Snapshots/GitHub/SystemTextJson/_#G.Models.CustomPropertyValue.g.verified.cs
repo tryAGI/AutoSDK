@@ -32,6 +32,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomPropertyValue" /> class.
+        /// </summary>
+        /// <param name="propertyName">
+        /// The name of the property
+        /// </param>
+        /// <param name="value">
+        /// The value assigned to the property
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomPropertyValue(
+            string propertyName,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? value)
+        {
+            this.PropertyName = propertyName ?? throw new global::System.ArgumentNullException(nameof(propertyName));
+            this.Value = value;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomPropertyValue" /> class.
+        /// </summary>
+        public CustomPropertyValue()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

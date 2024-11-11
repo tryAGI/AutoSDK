@@ -30,6 +30,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerNamespaceModelBinaryFileUploadResponse" /> class.
+        /// </summary>
+        /// <param name="task">
+        /// Task type.
+        /// </param>
+        /// <param name="taskOutputs">
+        /// Model inference outputs.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TriggerNamespaceModelBinaryFileUploadResponse(
+            global::G.AITask task,
+            global::System.Collections.Generic.IList<object>? taskOutputs)
+        {
+            this.Task = task;
+            this.TaskOutputs = taskOutputs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerNamespaceModelBinaryFileUploadResponse" /> class.
+        /// </summary>
+        public TriggerNamespaceModelBinaryFileUploadResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

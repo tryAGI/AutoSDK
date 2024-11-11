@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingFile" /> class.
+        /// </summary>
+        /// <param name="fileId"></param>
+        /// <param name="weight">
+        /// Default Value: 1
+        /// </param>
+        public TrainingFile(
+            global::System.Guid fileId,
+            double? weight)
+        {
+            this.FileId = fileId;
+            this.Weight = weight;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingFile" /> class.
+        /// </summary>
+        public TrainingFile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

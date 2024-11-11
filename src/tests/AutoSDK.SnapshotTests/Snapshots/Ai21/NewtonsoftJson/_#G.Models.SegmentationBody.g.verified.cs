@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SegmentationBody" /> class.
+        /// </summary>
+        /// <param name="sourceType">
+        /// An enumeration.
+        /// </param>
+        /// <param name="source"></param>
+        public SegmentationBody(
+            global::G.DocumentType sourceType,
+            string source)
+        {
+            this.SourceType = sourceType;
+            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SegmentationBody" /> class.
+        /// </summary>
+        public SegmentationBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

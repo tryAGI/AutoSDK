@@ -134,6 +134,122 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineRun" /> class.
+        /// </summary>
+        /// <param name="pipelineUid">
+        /// Unique identifier for the pipeline.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="pipelineRunUid">
+        /// Unique identifier for each run.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="pipelineVersion">
+        /// Pipeline version used in the run.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="status">
+        /// Current status of the run.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="source">
+        /// Origin of the run.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="totalDuration">
+        /// Time taken to complete the run in milliseconds.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="runnerId">
+        /// Runner ID. If current viewing requester does not have enough permission, it will return null.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="inputs">
+        /// Pipeline input parameters.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="outputs">
+        /// Pipeline inference outputs.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="recipeSnapshot">
+        /// Snapshot of the pipeline recipe used for this run.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="startTime">
+        /// Time when the run started execution.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="completeTime">
+        /// Time when the run completed.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="error">
+        /// Error message if the run failed.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="creditAmount">
+        /// Credits used of internal accounting metric.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="dataSpecification">
+        /// Data specifications.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="pipelineId">
+        /// Included only in responses
+        /// </param>
+        /// <param name="requesterId">
+        /// Requester ID. This field might be empty if the pipeline run belongs to a<br/>
+        /// deleted namespace.<br/>
+        /// Included only in responses
+        /// </param>
+        public PipelineRun(
+            string? pipelineUid,
+            string? pipelineRunUid,
+            string? pipelineVersion,
+            global::G.RunStatus? status,
+            global::G.RunSource? source,
+            int? totalDuration,
+            string? runnerId,
+            global::System.Collections.Generic.IList<object>? inputs,
+            global::System.Collections.Generic.IList<object>? outputs,
+            object? recipeSnapshot,
+            global::System.DateTime? startTime,
+            global::System.DateTime? completeTime,
+            string? error,
+            float? creditAmount,
+            global::G.DataSpecification? dataSpecification,
+            string? pipelineId,
+            string? requesterId)
+        {
+            this.PipelineUid = pipelineUid;
+            this.PipelineRunUid = pipelineRunUid;
+            this.PipelineVersion = pipelineVersion;
+            this.Status = status;
+            this.Source = source;
+            this.TotalDuration = totalDuration;
+            this.RunnerId = runnerId;
+            this.Inputs = inputs;
+            this.Outputs = outputs;
+            this.RecipeSnapshot = recipeSnapshot;
+            this.StartTime = startTime;
+            this.CompleteTime = completeTime;
+            this.Error = error;
+            this.CreditAmount = creditAmount;
+            this.DataSpecification = dataSpecification;
+            this.PipelineId = pipelineId;
+            this.RequesterId = requesterId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineRun" /> class.
+        /// </summary>
+        public PipelineRun()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -106,6 +106,89 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="User" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// An ID that identifies the user.
+        /// </param>
+        /// <param name="login">
+        /// The user's login name.
+        /// </param>
+        /// <param name="displayName">
+        /// The user's display name.
+        /// </param>
+        /// <param name="type">
+        /// The type of user. Possible values are:  <br/>
+        ///   <br/>
+        /// * admin — Twitch administrator<br/>
+        /// * global\_mod<br/>
+        /// * staff — Twitch staff<br/>
+        /// * "" — Normal user
+        /// </param>
+        /// <param name="broadcasterType">
+        /// The type of broadcaster. Possible values are:  <br/>
+        ///   <br/>
+        /// * affiliate — An [affiliate broadcaster](https://help.twitch.tv/s/article/joining-the-affiliate-program)<br/>
+        /// * partner — A [partner broadcaster](https://help.twitch.tv/s/article/partner-program-overview)<br/>
+        /// * "" — A normal broadcaster
+        /// </param>
+        /// <param name="description">
+        /// The user's description of their channel.
+        /// </param>
+        /// <param name="profileImageUrl">
+        /// A URL to the user's profile image.
+        /// </param>
+        /// <param name="offlineImageUrl">
+        /// A URL to the user's offline image.
+        /// </param>
+        /// <param name="viewCount">
+        /// The number of times the user's channel has been viewed.  <br/>
+        ///   <br/>
+        /// **NOTE**: This field has been deprecated (see [Get Users API endpoint – "view\_count" deprecation](https://discuss.dev.twitch.tv/t/get-users-api-endpoint-view-count-deprecation/37777)). Any data in this field is not valid and should not be used.
+        /// </param>
+        /// <param name="email">
+        /// The user's verified email address. The object includes this field only if the user access token includes the **user:read:email** scope.  <br/>
+        ///   <br/>
+        /// If the request contains more than one user, only the user associated with the access token that provided consent will include an email address — the email address for all other users will be empty.
+        /// </param>
+        /// <param name="createdAt">
+        /// The UTC date and time that the user's account was created. The timestamp is in RFC3339 format.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public User(
+            string id,
+            string login,
+            string displayName,
+            global::G.UserType type,
+            global::G.UserBroadcasterType broadcasterType,
+            string description,
+            string profileImageUrl,
+            string offlineImageUrl,
+            int viewCount,
+            global::System.DateTime createdAt,
+            string? email)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.Type = type;
+            this.BroadcasterType = broadcasterType;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.ProfileImageUrl = profileImageUrl ?? throw new global::System.ArgumentNullException(nameof(profileImageUrl));
+            this.OfflineImageUrl = offlineImageUrl ?? throw new global::System.ArgumentNullException(nameof(offlineImageUrl));
+            this.ViewCount = viewCount;
+            this.CreatedAt = createdAt;
+            this.Email = email;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="User" /> class.
+        /// </summary>
+        public User()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

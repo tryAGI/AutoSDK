@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateTextResponseValue" /> class.
+        /// </summary>
+        /// <param name="generatedText">
+        /// The resulting completion up to and excluding the stop sequences.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GenerateTextResponseValue(
+            string generatedText)
+        {
+            this.GeneratedText = generatedText ?? throw new global::System.ArgumentNullException(nameof(generatedText));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateTextResponseValue" /> class.
+        /// </summary>
+        public GenerateTextResponseValue()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -82,6 +82,71 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCorpusRequest" /> class.
+        /// </summary>
+        /// <param name="key">
+        /// A user-provided key for a corpus.<br/>
+        /// Example: my-corpus
+        /// </param>
+        /// <param name="name">
+        /// The name for the corpus. This value defaults to the key.<br/>
+        /// Example: My corpus
+        /// </param>
+        /// <param name="description">
+        /// Description of the corpus.<br/>
+        /// Example: Documents with important information for my prompt.
+        /// </param>
+        /// <param name="queriesAreAnswers">
+        /// Queries made to this corpus are considered answers, and not questions.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="documentsAreQuestions">
+        /// Documents inside this corpus are considered questions, and not answers.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="encoderName">
+        /// The encoder used by the corpus.<br/>
+        /// Example: boomerang
+        /// </param>
+        /// <param name="filterAttributes">
+        /// The new filter attributes of the corpus. <br/>
+        /// If unset then the corpus will not have filter attributes.
+        /// </param>
+        /// <param name="customDimensions">
+        /// A custom dimension is an additional numerical field attached to a document part. You<br/>
+        /// can then multiply this numerical field with a query time custom dimension of the same<br/>
+        /// name. This allows boosting (or burying) document parts for arbitrary reasons.<br/>
+        /// This feature is only enabled for Scale customers.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateCorpusRequest(
+            string key,
+            string? name,
+            string? description,
+            bool? queriesAreAnswers,
+            bool? documentsAreQuestions,
+            string? encoderName,
+            global::System.Collections.Generic.IList<global::G.FilterAttribute>? filterAttributes,
+            global::System.Collections.Generic.IList<global::G.CorpusCustomDimension>? customDimensions)
+        {
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Name = name;
+            this.Description = description;
+            this.QueriesAreAnswers = queriesAreAnswers;
+            this.DocumentsAreQuestions = documentsAreQuestions;
+            this.EncoderName = encoderName;
+            this.FilterAttributes = filterAttributes;
+            this.CustomDimensions = customDimensions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCorpusRequest" /> class.
+        /// </summary>
+        public CreateCorpusRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

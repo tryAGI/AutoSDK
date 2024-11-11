@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionViews" /> class.
+        /// </summary>
+        /// <param name="mobile">
+        /// Describes how the extension is displayed on mobile devices.
+        /// </param>
+        /// <param name="panel">
+        /// Describes how the extension is rendered if the extension may be activated as a panel extension.
+        /// </param>
+        /// <param name="videoOverlay">
+        /// Describes how the extension is rendered if the extension may be activated as a video-overlay extension.
+        /// </param>
+        /// <param name="component">
+        /// Describes how the extension is rendered if the extension may be activated as a video-component extension.
+        /// </param>
+        /// <param name="config">
+        /// Describes the view that is shown to broadcasters while they are configuring your extension within the Extension Manager.
+        /// </param>
+        public ExtensionViews(
+            global::G.ExtensionViewsMobile mobile,
+            global::G.ExtensionViewsPanel panel,
+            global::G.ExtensionViewsVideoOverlay videoOverlay,
+            global::G.ExtensionViewsComponent component,
+            global::G.ExtensionViewsConfig config)
+        {
+            this.Mobile = mobile ?? throw new global::System.ArgumentNullException(nameof(mobile));
+            this.Panel = panel ?? throw new global::System.ArgumentNullException(nameof(panel));
+            this.VideoOverlay = videoOverlay ?? throw new global::System.ArgumentNullException(nameof(videoOverlay));
+            this.Component = component ?? throw new global::System.ArgumentNullException(nameof(component));
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionViews" /> class.
+        /// </summary>
+        public ExtensionViews()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

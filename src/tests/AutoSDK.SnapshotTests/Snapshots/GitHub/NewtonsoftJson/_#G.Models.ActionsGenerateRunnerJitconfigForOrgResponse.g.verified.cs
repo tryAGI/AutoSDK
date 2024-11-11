@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsGenerateRunnerJitconfigForOrgResponse" /> class.
+        /// </summary>
+        /// <param name="runner">
+        /// A self hosted runner
+        /// </param>
+        /// <param name="encodedJitConfig">
+        /// The base64 encoded runner configuration.
+        /// </param>
+        public ActionsGenerateRunnerJitconfigForOrgResponse(
+            global::G.Runner runner,
+            string encodedJitConfig)
+        {
+            this.Runner = runner ?? throw new global::System.ArgumentNullException(nameof(runner));
+            this.EncodedJitConfig = encodedJitConfig ?? throw new global::System.ArgumentNullException(nameof(encodedJitConfig));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsGenerateRunnerJitconfigForOrgResponse" /> class.
+        /// </summary>
+        public ActionsGenerateRunnerJitconfigForOrgResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

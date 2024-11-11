@@ -48,6 +48,44 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PatchDocumentObject" /> class.
+        /// </summary>
+        /// <param name="from">
+        /// A string containing a JSON Pointer value.
+        /// </param>
+        /// <param name="op">
+        /// The operation to be performed.
+        /// </param>
+        /// <param name="path">
+        /// A JSON-Pointer.
+        /// </param>
+        /// <param name="value">
+        /// The value to be used within the operations.
+        /// </param>
+        /// <param name="merge"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PatchDocumentObject(
+            global::G.PatchDocumentObjectOp op,
+            string path,
+            string? from,
+            object? value,
+            global::G.Object? merge)
+        {
+            this.Op = op;
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.From = from;
+            this.Value = value;
+            this.Merge = merge;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PatchDocumentObject" /> class.
+        /// </summary>
+        public PatchDocumentObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

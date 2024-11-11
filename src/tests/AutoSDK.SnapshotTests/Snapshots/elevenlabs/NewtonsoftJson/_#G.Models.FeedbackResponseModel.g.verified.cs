@@ -63,6 +63,46 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackResponseModel" /> class.
+        /// </summary>
+        /// <param name="thumbsUp"></param>
+        /// <param name="feedback"></param>
+        /// <param name="emotions"></param>
+        /// <param name="inaccurateClone"></param>
+        /// <param name="glitches"></param>
+        /// <param name="audioQuality"></param>
+        /// <param name="other"></param>
+        /// <param name="reviewStatus">
+        /// Default Value: not_reviewed
+        /// </param>
+        public FeedbackResponseModel(
+            bool thumbsUp,
+            string feedback,
+            bool emotions,
+            bool inaccurateClone,
+            bool glitches,
+            bool audioQuality,
+            bool other,
+            string? reviewStatus)
+        {
+            this.ThumbsUp = thumbsUp;
+            this.Feedback = feedback ?? throw new global::System.ArgumentNullException(nameof(feedback));
+            this.Emotions = emotions;
+            this.InaccurateClone = inaccurateClone;
+            this.Glitches = glitches;
+            this.AudioQuality = audioQuality;
+            this.Other = other;
+            this.ReviewStatus = reviewStatus;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackResponseModel" /> class.
+        /// </summary>
+        public FeedbackResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListRepositoryTagsResponse" /> class.
+        /// </summary>
+        /// <param name="tags">
+        /// A list of repository tags.
+        /// </param>
+        /// <param name="totalSize">
+        /// Total number of tags.
+        /// </param>
+        /// <param name="pageSize">
+        /// The requested page size.
+        /// </param>
+        /// <param name="page">
+        /// The requested page offset.
+        /// </param>
+        public ListRepositoryTagsResponse(
+            global::System.Collections.Generic.IList<global::G.RepositoryTag>? tags,
+            int? totalSize,
+            int? pageSize,
+            int? page)
+        {
+            this.Tags = tags;
+            this.TotalSize = totalSize;
+            this.PageSize = pageSize;
+            this.Page = page;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListRepositoryTagsResponse" /> class.
+        /// </summary>
+        public ListRepositoryTagsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

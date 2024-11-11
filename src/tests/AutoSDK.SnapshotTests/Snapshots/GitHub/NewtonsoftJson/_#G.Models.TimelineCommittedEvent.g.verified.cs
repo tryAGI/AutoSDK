@@ -83,6 +83,63 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineCommittedEvent" /> class.
+        /// </summary>
+        /// <param name="event"></param>
+        /// <param name="sha">
+        /// SHA for the commit<br/>
+        /// Example: 7638417db6d59f3c431d3e1f261cc637155684cd
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="author">
+        /// Identifying information for the git-user
+        /// </param>
+        /// <param name="committer">
+        /// Identifying information for the git-user
+        /// </param>
+        /// <param name="message">
+        /// Message describing the purpose of the commit<br/>
+        /// Example: Fix #42
+        /// </param>
+        /// <param name="tree"></param>
+        /// <param name="parents"></param>
+        /// <param name="verification"></param>
+        /// <param name="htmlUrl"></param>
+        public TimelineCommittedEvent(
+            string sha,
+            string nodeId,
+            string url,
+            global::G.TimelineCommittedEventAuthor author,
+            global::G.TimelineCommittedEventCommitter committer,
+            string message,
+            global::G.TimelineCommittedEventTree tree,
+            global::System.Collections.Generic.IList<global::G.TimelineCommittedEventParent> parents,
+            global::G.TimelineCommittedEventVerification verification,
+            string htmlUrl,
+            string? @event)
+        {
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Tree = tree ?? throw new global::System.ArgumentNullException(nameof(tree));
+            this.Parents = parents ?? throw new global::System.ArgumentNullException(nameof(parents));
+            this.Verification = verification ?? throw new global::System.ArgumentNullException(nameof(verification));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Event = @event;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineCommittedEvent" /> class.
+        /// </summary>
+        public TimelineCommittedEvent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -82,6 +82,78 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MigrationsStartForOrgRequest" /> class.
+        /// </summary>
+        /// <param name="repositories">
+        /// A list of arrays indicating which repositories should be migrated.
+        /// </param>
+        /// <param name="lockRepositories">
+        /// Indicates whether repositories should be locked (to prevent manipulation) while migrating data.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="excludeMetadata">
+        /// Indicates whether metadata should be excluded and only git source should be included for the migration.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="excludeGitData">
+        /// Indicates whether the repository git data should be excluded from the migration.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="excludeAttachments">
+        /// Indicates whether attachments should be excluded from the migration (to reduce migration archive file size).<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="excludeReleases">
+        /// Indicates whether releases should be excluded from the migration (to reduce migration archive file size).<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="excludeOwnerProjects">
+        /// Indicates whether projects owned by the organization or users should be excluded. from the migration.<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="orgMetadataOnly">
+        /// Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="exclude">
+        /// Exclude related items from being returned in the response in order to improve performance of the request.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MigrationsStartForOrgRequest(
+            global::System.Collections.Generic.IList<string> repositories,
+            bool? lockRepositories,
+            bool? excludeMetadata,
+            bool? excludeGitData,
+            bool? excludeAttachments,
+            bool? excludeReleases,
+            bool? excludeOwnerProjects,
+            bool? orgMetadataOnly,
+            global::System.Collections.Generic.IList<global::G.MigrationsStartForOrgRequestExcludeItem>? exclude)
+        {
+            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
+            this.LockRepositories = lockRepositories;
+            this.ExcludeMetadata = excludeMetadata;
+            this.ExcludeGitData = excludeGitData;
+            this.ExcludeAttachments = excludeAttachments;
+            this.ExcludeReleases = excludeReleases;
+            this.ExcludeOwnerProjects = excludeOwnerProjects;
+            this.OrgMetadataOnly = orgMetadataOnly;
+            this.Exclude = exclude;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MigrationsStartForOrgRequest" /> class.
+        /// </summary>
+        public MigrationsStartForOrgRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

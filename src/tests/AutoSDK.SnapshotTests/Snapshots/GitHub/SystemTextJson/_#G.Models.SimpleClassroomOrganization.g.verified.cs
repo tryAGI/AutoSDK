@@ -57,6 +57,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleClassroomOrganization" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 1
+        /// </param>
+        /// <param name="login">
+        /// Example: github
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDEyOk9yZ2FuaXphdGlvbjE=
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/github
+        /// </param>
+        /// <param name="name">
+        /// Example: Github - Code thigns happen here
+        /// </param>
+        /// <param name="avatarUrl">
+        /// Example: https://github.com/images/error/octocat_happy.gif
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SimpleClassroomOrganization(
+            int id,
+            string login,
+            string nodeId,
+            string htmlUrl,
+            string? name,
+            string avatarUrl)
+        {
+            this.Id = id;
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleClassroomOrganization" /> class.
+        /// </summary>
+        public SimpleClassroomOrganization()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

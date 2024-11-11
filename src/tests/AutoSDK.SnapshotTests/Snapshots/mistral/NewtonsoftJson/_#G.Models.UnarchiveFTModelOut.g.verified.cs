@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnarchiveFTModelOut" /> class.
+        /// </summary>
+        /// <param name="archived">
+        /// Default Value: false
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="object">
+        /// Default Value: model
+        /// </param>
+        public UnarchiveFTModelOut(
+            string id,
+            bool? archived,
+            global::G.UnarchiveFTModelOutObject? @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Archived = archived;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnarchiveFTModelOut" /> class.
+        /// </summary>
+        public UnarchiveFTModelOut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

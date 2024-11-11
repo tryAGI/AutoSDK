@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookStatusBranche" /> class.
+        /// </summary>
+        /// <param name="commit"></param>
+        /// <param name="name"></param>
+        /// <param name="protected"></param>
+        public WebhookStatusBranche(
+            global::G.WebhookStatusBrancheCommit commit,
+            string name,
+            bool @protected)
+        {
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Protected = @protected;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookStatusBranche" /> class.
+        /// </summary>
+        public WebhookStatusBranche()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

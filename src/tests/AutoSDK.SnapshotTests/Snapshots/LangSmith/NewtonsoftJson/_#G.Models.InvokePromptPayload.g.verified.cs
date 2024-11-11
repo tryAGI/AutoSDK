@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvokePromptPayload" /> class.
+        /// </summary>
+        /// <param name="messages"></param>
+        /// <param name="templateFormat"></param>
+        /// <param name="inputs"></param>
+        public InvokePromptPayload(
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>> messages,
+            string templateFormat,
+            object inputs)
+        {
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
+            this.TemplateFormat = templateFormat ?? throw new global::System.ArgumentNullException(nameof(templateFormat));
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvokePromptPayload" /> class.
+        /// </summary>
+        public InvokePromptPayload()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

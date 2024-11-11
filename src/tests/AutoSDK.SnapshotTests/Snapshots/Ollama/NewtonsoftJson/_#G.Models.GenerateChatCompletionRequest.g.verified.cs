@@ -66,6 +66,64 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateChatCompletionRequest" /> class.
+        /// </summary>
+        /// <param name="model">
+        /// The model name. <br/>
+        /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
+        /// Example: llama3.2
+        /// </param>
+        /// <param name="messages">
+        /// The messages of the chat, this can be used to keep a chat memory
+        /// </param>
+        /// <param name="format">
+        /// The format to return a response in. Currently the only accepted value is json.<br/>
+        /// Enable JSON mode by setting the format parameter to json. This will structure the response as valid JSON.<br/>
+        /// Note: it's important to instruct the model to use JSON in the prompt. Otherwise, the model may generate large amounts whitespace.
+        /// </param>
+        /// <param name="options">
+        /// Additional model parameters listed in the documentation for the Modelfile such as `temperature`.
+        /// </param>
+        /// <param name="stream">
+        /// If `false` the response will be returned as a single response object, otherwise the response will be streamed as a series of objects.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="keepAlive">
+        /// How long (in minutes) to keep the model loaded in memory.<br/>
+        /// - If set to a positive duration (e.g. 20), the model will stay loaded for the provided duration.<br/>
+        /// - If set to a negative duration (e.g. -1), the model will stay loaded indefinitely.<br/>
+        /// - If set to 0, the model will be unloaded immediately once finished.<br/>
+        /// - If not set, the model will stay loaded for 5 minutes by default
+        /// </param>
+        /// <param name="tools">
+        /// A list of tools the model may call.
+        /// </param>
+        public GenerateChatCompletionRequest(
+            string model,
+            global::System.Collections.Generic.IList<global::G.Message> messages,
+            global::G.ResponseFormat? format,
+            global::G.RequestOptions? options,
+            bool? stream,
+            int? keepAlive,
+            global::System.Collections.Generic.IList<global::G.Tool>? tools)
+        {
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
+            this.Format = format;
+            this.Options = options;
+            this.Stream = stream;
+            this.KeepAlive = keepAlive;
+            this.Tools = tools;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateChatCompletionRequest" /> class.
+        /// </summary>
+        public GenerateChatCompletionRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

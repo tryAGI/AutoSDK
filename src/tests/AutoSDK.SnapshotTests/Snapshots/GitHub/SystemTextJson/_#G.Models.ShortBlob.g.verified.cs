@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShortBlob" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="sha"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ShortBlob(
+            string url,
+            string sha)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ShortBlob" /> class.
+        /// </summary>
+        public ShortBlob()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

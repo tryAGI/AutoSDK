@@ -75,6 +75,61 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Invite" /> class.
+        /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `organization.invite`
+        /// </param>
+        /// <param name="id">
+        /// The identifier, which can be referenced in API endpoints
+        /// </param>
+        /// <param name="email">
+        /// The email address of the individual to whom the invite was sent
+        /// </param>
+        /// <param name="role">
+        /// `owner` or `reader`
+        /// </param>
+        /// <param name="status">
+        /// `accepted`,`expired`, or `pending`
+        /// </param>
+        /// <param name="invitedAt">
+        /// The Unix timestamp (in seconds) of when the invite was sent.
+        /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) of when the invite expires.
+        /// </param>
+        /// <param name="acceptedAt">
+        /// The Unix timestamp (in seconds) of when the invite was accepted.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Invite(
+            string id,
+            string email,
+            global::G.InviteRole role,
+            global::G.InviteStatus status,
+            global::System.DateTimeOffset invitedAt,
+            global::System.DateTimeOffset expiresAt,
+            global::G.InviteObject @object,
+            global::System.DateTimeOffset? acceptedAt)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Role = role;
+            this.Status = status;
+            this.InvitedAt = invitedAt;
+            this.ExpiresAt = expiresAt;
+            this.Object = @object;
+            this.AcceptedAt = acceptedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Invite" /> class.
+        /// </summary>
+        public Invite()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

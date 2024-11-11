@@ -123,6 +123,77 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RaftStatistics" /> class.
+        /// </summary>
+        /// <param name="appliedIndex"></param>
+        /// <param name="commitIndex"></param>
+        /// <param name="fsmPending"></param>
+        /// <param name="lastContact"></param>
+        /// <param name="lastLogIndex"></param>
+        /// <param name="lastLogTerm"></param>
+        /// <param name="lastSnapshotIndex"></param>
+        /// <param name="lastSnapshotTerm"></param>
+        /// <param name="latestConfiguration">
+        /// Weaviate Raft nodes.
+        /// </param>
+        /// <param name="latestConfigurationIndex"></param>
+        /// <param name="numPeers"></param>
+        /// <param name="protocolVersion"></param>
+        /// <param name="protocolVersionMax"></param>
+        /// <param name="protocolVersionMin"></param>
+        /// <param name="snapshotVersionMax"></param>
+        /// <param name="snapshotVersionMin"></param>
+        /// <param name="state"></param>
+        /// <param name="term"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RaftStatistics(
+            string? appliedIndex,
+            string? commitIndex,
+            string? fsmPending,
+            string? lastContact,
+            string? lastLogIndex,
+            string? lastLogTerm,
+            string? lastSnapshotIndex,
+            string? lastSnapshotTerm,
+            object? latestConfiguration,
+            string? latestConfigurationIndex,
+            string? numPeers,
+            string? protocolVersion,
+            string? protocolVersionMax,
+            string? protocolVersionMin,
+            string? snapshotVersionMax,
+            string? snapshotVersionMin,
+            string? state,
+            string? term)
+        {
+            this.AppliedIndex = appliedIndex;
+            this.CommitIndex = commitIndex;
+            this.FsmPending = fsmPending;
+            this.LastContact = lastContact;
+            this.LastLogIndex = lastLogIndex;
+            this.LastLogTerm = lastLogTerm;
+            this.LastSnapshotIndex = lastSnapshotIndex;
+            this.LastSnapshotTerm = lastSnapshotTerm;
+            this.LatestConfiguration = latestConfiguration;
+            this.LatestConfigurationIndex = latestConfigurationIndex;
+            this.NumPeers = numPeers;
+            this.ProtocolVersion = protocolVersion;
+            this.ProtocolVersionMax = protocolVersionMax;
+            this.ProtocolVersionMin = protocolVersionMin;
+            this.SnapshotVersionMax = snapshotVersionMax;
+            this.SnapshotVersionMin = snapshotVersionMin;
+            this.State = state;
+            this.Term = term;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RaftStatistics" /> class.
+        /// </summary>
+        public RaftStatistics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

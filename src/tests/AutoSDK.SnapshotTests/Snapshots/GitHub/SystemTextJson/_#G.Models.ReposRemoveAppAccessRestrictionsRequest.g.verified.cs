@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposRemoveAppAccessRestrictionsRequest" /> class.
+        /// </summary>
+        /// <param name="apps">
+        /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposRemoveAppAccessRestrictionsRequest(
+            global::System.Collections.Generic.IList<string> apps)
+        {
+            this.Apps = apps ?? throw new global::System.ArgumentNullException(nameof(apps));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposRemoveAppAccessRestrictionsRequest" /> class.
+        /// </summary>
+        public ReposRemoveAppAccessRestrictionsRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

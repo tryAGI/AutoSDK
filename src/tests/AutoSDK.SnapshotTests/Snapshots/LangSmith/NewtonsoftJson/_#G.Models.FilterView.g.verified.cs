@@ -69,6 +69,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterView" /> class.
+        /// </summary>
+        /// <param name="filterString"></param>
+        /// <param name="traceFilterString"></param>
+        /// <param name="treeFilterString"></param>
+        /// <param name="displayName"></param>
+        /// <param name="description"></param>
+        /// <param name="id"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        public FilterView(
+            string displayName,
+            global::System.Guid id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string? filterString,
+            string? traceFilterString,
+            string? treeFilterString,
+            string? description,
+            global::System.Guid? sessionId)
+        {
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.FilterString = filterString;
+            this.TraceFilterString = traceFilterString;
+            this.TreeFilterString = treeFilterString;
+            this.Description = description;
+            this.SessionId = sessionId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilterView" /> class.
+        /// </summary>
+        public FilterView()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

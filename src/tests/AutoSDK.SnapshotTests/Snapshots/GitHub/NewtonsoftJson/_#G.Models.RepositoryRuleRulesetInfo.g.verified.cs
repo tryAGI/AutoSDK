@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleRulesetInfo" /> class.
+        /// </summary>
+        /// <param name="rulesetSourceType">
+        /// The type of source for the ruleset that includes this rule.
+        /// </param>
+        /// <param name="rulesetSource">
+        /// The name of the source of the ruleset that includes this rule.
+        /// </param>
+        /// <param name="rulesetId">
+        /// The ID of the ruleset that includes this rule.
+        /// </param>
+        public RepositoryRuleRulesetInfo(
+            global::G.RepositoryRuleRulesetInfoRulesetSourceType? rulesetSourceType,
+            string? rulesetSource,
+            int? rulesetId)
+        {
+            this.RulesetSourceType = rulesetSourceType;
+            this.RulesetSource = rulesetSource;
+            this.RulesetId = rulesetId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleRulesetInfo" /> class.
+        /// </summary>
+        public RepositoryRuleRulesetInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

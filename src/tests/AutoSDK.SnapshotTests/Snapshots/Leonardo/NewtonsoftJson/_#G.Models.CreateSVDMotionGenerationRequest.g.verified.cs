@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationRequest" /> class.
+        /// </summary>
+        /// <param name="imageId">
+        /// The ID of the image, supports generated images, variation images, and init images.
+        /// </param>
+        /// <param name="isPublic">
+        /// Whether the generation is public or not
+        /// </param>
+        /// <param name="isInitImage">
+        /// If it is an init image uploaded by the user. This image is uploaded from endpoint: Upload init image.
+        /// </param>
+        /// <param name="isVariation">
+        /// If it is a variation image.
+        /// </param>
+        /// <param name="motionStrength">
+        /// The motion strength.
+        /// </param>
+        public CreateSVDMotionGenerationRequest(
+            string imageId,
+            bool? isPublic,
+            bool? isInitImage,
+            bool? isVariation,
+            int? motionStrength)
+        {
+            this.ImageId = imageId ?? throw new global::System.ArgumentNullException(nameof(imageId));
+            this.IsPublic = isPublic;
+            this.IsInitImage = isInitImage;
+            this.IsVariation = isVariation;
+            this.MotionStrength = motionStrength;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationRequest" /> class.
+        /// </summary>
+        public CreateSVDMotionGenerationRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

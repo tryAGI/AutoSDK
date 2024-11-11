@@ -244,6 +244,132 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="version"></param>
+        /// <param name="npmUser"></param>
+        /// <param name="author"></param>
+        /// <param name="bugs"></param>
+        /// <param name="dependencies"></param>
+        /// <param name="devDependencies"></param>
+        /// <param name="peerDependencies"></param>
+        /// <param name="optionalDependencies"></param>
+        /// <param name="description"></param>
+        /// <param name="dist"></param>
+        /// <param name="gitHead"></param>
+        /// <param name="homepage"></param>
+        /// <param name="license"></param>
+        /// <param name="main"></param>
+        /// <param name="repository"></param>
+        /// <param name="scripts"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeVersion"></param>
+        /// <param name="npmVersion"></param>
+        /// <param name="hasShrinkwrap"></param>
+        /// <param name="maintainers"></param>
+        /// <param name="contributors"></param>
+        /// <param name="engines"></param>
+        /// <param name="keywords"></param>
+        /// <param name="files"></param>
+        /// <param name="bin"></param>
+        /// <param name="man"></param>
+        /// <param name="directories"></param>
+        /// <param name="os"></param>
+        /// <param name="cpu"></param>
+        /// <param name="readme"></param>
+        /// <param name="installationCommand"></param>
+        /// <param name="releaseId"></param>
+        /// <param name="commitOid"></param>
+        /// <param name="publishedViaActions"></param>
+        /// <param name="deletedById"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata(
+            string? name,
+            string? version,
+            string? npmUser,
+            global::G.OneOf<string, object>? author,
+            global::G.OneOf<string, object>? bugs,
+            object? dependencies,
+            object? devDependencies,
+            object? peerDependencies,
+            object? optionalDependencies,
+            string? description,
+            global::G.OneOf<string, object>? dist,
+            string? gitHead,
+            string? homepage,
+            string? license,
+            string? main,
+            global::G.OneOf<string, object>? repository,
+            object? scripts,
+            string? id,
+            string? nodeVersion,
+            string? npmVersion,
+            bool? hasShrinkwrap,
+            global::System.Collections.Generic.IList<string>? maintainers,
+            global::System.Collections.Generic.IList<string>? contributors,
+            object? engines,
+            global::System.Collections.Generic.IList<string>? keywords,
+            global::System.Collections.Generic.IList<string>? files,
+            object? bin,
+            object? man,
+            global::G.OneOf<string, object>? directories,
+            global::System.Collections.Generic.IList<string>? os,
+            global::System.Collections.Generic.IList<string>? cpu,
+            string? readme,
+            string? installationCommand,
+            int? releaseId,
+            string? commitOid,
+            bool? publishedViaActions,
+            int? deletedById)
+        {
+            this.Name = name;
+            this.Version = version;
+            this.NpmUser = npmUser;
+            this.Author = author;
+            this.Bugs = bugs;
+            this.Dependencies = dependencies;
+            this.DevDependencies = devDependencies;
+            this.PeerDependencies = peerDependencies;
+            this.OptionalDependencies = optionalDependencies;
+            this.Description = description;
+            this.Dist = dist;
+            this.GitHead = gitHead;
+            this.Homepage = homepage;
+            this.License = license;
+            this.Main = main;
+            this.Repository = repository;
+            this.Scripts = scripts;
+            this.Id = id;
+            this.NodeVersion = nodeVersion;
+            this.NpmVersion = npmVersion;
+            this.HasShrinkwrap = hasShrinkwrap;
+            this.Maintainers = maintainers;
+            this.Contributors = contributors;
+            this.Engines = engines;
+            this.Keywords = keywords;
+            this.Files = files;
+            this.Bin = bin;
+            this.Man = man;
+            this.Directories = directories;
+            this.Os = os;
+            this.Cpu = cpu;
+            this.Readme = readme;
+            this.InstallationCommand = installationCommand;
+            this.ReleaseId = releaseId;
+            this.CommitOid = commitOid;
+            this.PublishedViaActions = publishedViaActions;
+            this.DeletedById = deletedById;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata" /> class.
+        /// </summary>
+        public WebhookRegistryPackagePublishedRegistryPackagePackageVersionNpmMetadata()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

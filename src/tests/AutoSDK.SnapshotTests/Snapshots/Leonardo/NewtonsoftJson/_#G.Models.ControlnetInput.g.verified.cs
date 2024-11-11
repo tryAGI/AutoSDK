@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ControlnetInput" /> class.
+        /// </summary>
+        /// <param name="initImageId">
+        /// The ID of the init image
+        /// </param>
+        /// <param name="initImageType">
+        /// Type indicating whether the init image is uploaded or generated.
+        /// </param>
+        /// <param name="preprocessorId">
+        /// ID of the controlnet. A list of compatible IDs can be found in our guides.
+        /// </param>
+        /// <param name="weight">
+        /// Weight for the controlnet
+        /// </param>
+        /// <param name="strengthType">
+        /// Strength type for the controlnet. Can only be used for Style, Character and Content Reference controlnets.
+        /// </param>
+        public ControlnetInput(
+            string? initImageId,
+            global::G.ControlnetInputInitImageType? initImageType,
+            double? preprocessorId,
+            double? weight,
+            global::G.ControlnetInputStrengthType? strengthType)
+        {
+            this.InitImageId = initImageId;
+            this.InitImageType = initImageType;
+            this.PreprocessorId = preprocessorId;
+            this.Weight = weight;
+            this.StrengthType = strengthType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ControlnetInput" /> class.
+        /// </summary>
+        public ControlnetInput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -84,6 +84,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiscussionCategory" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="description"></param>
+        /// <param name="emoji"></param>
+        /// <param name="id"></param>
+        /// <param name="isAnswerable"></param>
+        /// <param name="name"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="repositoryId"></param>
+        /// <param name="slug"></param>
+        /// <param name="updatedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DiscussionCategory(
+            global::System.DateTime createdAt,
+            string description,
+            string emoji,
+            int id,
+            bool isAnswerable,
+            string name,
+            int repositoryId,
+            string slug,
+            string updatedAt,
+            string? nodeId)
+        {
+            this.CreatedAt = createdAt;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Emoji = emoji ?? throw new global::System.ArgumentNullException(nameof(emoji));
+            this.Id = id;
+            this.IsAnswerable = isAnswerable;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.RepositoryId = repositoryId;
+            this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.NodeId = nodeId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiscussionCategory" /> class.
+        /// </summary>
+        public DiscussionCategory()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

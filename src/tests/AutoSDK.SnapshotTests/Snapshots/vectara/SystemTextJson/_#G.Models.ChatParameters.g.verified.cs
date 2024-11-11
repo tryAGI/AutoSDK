@@ -22,6 +22,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatParameters" /> class.
+        /// </summary>
+        /// <param name="store">
+        /// Indicates whether to store chat message and response message.<br/>
+        /// Default Value: true
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatParameters(
+            bool? store)
+        {
+            this.Store = store;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatParameters" /> class.
+        /// </summary>
+        public ChatParameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

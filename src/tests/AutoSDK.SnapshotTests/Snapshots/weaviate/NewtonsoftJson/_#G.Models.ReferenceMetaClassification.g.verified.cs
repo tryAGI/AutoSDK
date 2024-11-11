@@ -75,6 +75,70 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferenceMetaClassification" /> class.
+        /// </summary>
+        /// <param name="overallCount">
+        /// overall neighbors checked as part of the classification. In most cases this will equal k, but could be lower than k - for example if not enough data was present
+        /// </param>
+        /// <param name="winningCount">
+        /// size of the winning group, a number between 1..k
+        /// </param>
+        /// <param name="losingCount">
+        /// size of the losing group, can be 0 if the winning group size equals k
+        /// </param>
+        /// <param name="closestOverallDistance">
+        /// The lowest distance of any neighbor, regardless of whether they were in the winning or losing group
+        /// </param>
+        /// <param name="winningDistance">
+        /// deprecated - do not use, to be removed in 0.23.0
+        /// </param>
+        /// <param name="meanWinningDistance">
+        /// Mean distance of all neighbors from the winning group
+        /// </param>
+        /// <param name="closestWinningDistance">
+        /// Closest distance of a neighbor from the winning group
+        /// </param>
+        /// <param name="closestLosingDistance">
+        /// The lowest distance of a neighbor in the losing group. Optional. If k equals the size of the winning group, there is no losing group
+        /// </param>
+        /// <param name="losingDistance">
+        /// deprecated - do not use, to be removed in 0.23.0
+        /// </param>
+        /// <param name="meanLosingDistance">
+        /// Mean distance of all neighbors from the losing group. Optional. If k equals the size of the winning group, there is no losing group.
+        /// </param>
+        public ReferenceMetaClassification(
+            double? overallCount,
+            double? winningCount,
+            double? losingCount,
+            double? closestOverallDistance,
+            double? winningDistance,
+            double? meanWinningDistance,
+            double? closestWinningDistance,
+            double? closestLosingDistance,
+            double? losingDistance,
+            double? meanLosingDistance)
+        {
+            this.OverallCount = overallCount;
+            this.WinningCount = winningCount;
+            this.LosingCount = losingCount;
+            this.ClosestOverallDistance = closestOverallDistance;
+            this.WinningDistance = winningDistance;
+            this.MeanWinningDistance = meanWinningDistance;
+            this.ClosestWinningDistance = closestWinningDistance;
+            this.ClosestLosingDistance = closestLosingDistance;
+            this.LosingDistance = losingDistance;
+            this.MeanLosingDistance = meanLosingDistance;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferenceMetaClassification" /> class.
+        /// </summary>
+        public ReferenceMetaClassification()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

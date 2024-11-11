@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentEmbedding" /> class.
+        /// </summary>
+        /// <param name="values">
+        /// The embedding values.
+        /// </param>
+        public ContentEmbedding(
+            global::System.Collections.Generic.IList<float>? values)
+        {
+            this.Values = values;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentEmbedding" /> class.
+        /// </summary>
+        public ContentEmbedding()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

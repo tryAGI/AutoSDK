@@ -64,6 +64,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantStats" /> class.
+        /// </summary>
+        /// <param name="tenantId"></param>
+        /// <param name="datasetCount"></param>
+        /// <param name="tracerSessionCount"></param>
+        /// <param name="repoCount"></param>
+        /// <param name="annotationQueueCount"></param>
+        /// <param name="deploymentCount"></param>
+        /// <param name="dashboardsCount"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TenantStats(
+            global::System.Guid tenantId,
+            int datasetCount,
+            int tracerSessionCount,
+            int repoCount,
+            int annotationQueueCount,
+            int deploymentCount,
+            int dashboardsCount)
+        {
+            this.TenantId = tenantId;
+            this.DatasetCount = datasetCount;
+            this.TracerSessionCount = tracerSessionCount;
+            this.RepoCount = repoCount;
+            this.AnnotationQueueCount = annotationQueueCount;
+            this.DeploymentCount = deploymentCount;
+            this.DashboardsCount = dashboardsCount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantStats" /> class.
+        /// </summary>
+        public TenantStats()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

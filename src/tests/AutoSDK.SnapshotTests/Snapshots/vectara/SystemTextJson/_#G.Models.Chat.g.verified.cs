@@ -46,6 +46,47 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Chat" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// ID of the chat.
+        /// </param>
+        /// <param name="firstQuery">
+        /// The first query of the chat.
+        /// </param>
+        /// <param name="firstAnswer">
+        /// The first answer of the chat.
+        /// </param>
+        /// <param name="enabled">
+        /// Indicates whether this chat is enabled and can have further turns.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="createdAt">
+        /// Specifies when this chat was created.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Chat(
+            string? id,
+            string? firstQuery,
+            string? firstAnswer,
+            bool? enabled,
+            global::System.DateTime? createdAt)
+        {
+            this.Id = id;
+            this.FirstQuery = firstQuery;
+            this.FirstAnswer = firstAnswer;
+            this.Enabled = enabled;
+            this.CreatedAt = createdAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Chat" /> class.
+        /// </summary>
+        public Chat()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

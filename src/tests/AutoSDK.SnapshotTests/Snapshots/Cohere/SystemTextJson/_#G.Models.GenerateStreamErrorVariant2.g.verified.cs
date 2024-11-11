@@ -43,6 +43,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateStreamErrorVariant2" /> class.
+        /// </summary>
+        /// <param name="index">
+        /// Refers to the nth generation. Only present when `num_generations` is greater than zero.
+        /// </param>
+        /// <param name="isFinished"></param>
+        /// <param name="finishReason"></param>
+        /// <param name="err">
+        /// Error message
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GenerateStreamErrorVariant2(
+            bool isFinished,
+            global::G.FinishReason finishReason,
+            string err,
+            int? index)
+        {
+            this.IsFinished = isFinished;
+            this.FinishReason = finishReason;
+            this.Err = err ?? throw new global::System.ArgumentNullException(nameof(err));
+            this.Index = index;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateStreamErrorVariant2" /> class.
+        /// </summary>
+        public GenerateStreamErrorVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

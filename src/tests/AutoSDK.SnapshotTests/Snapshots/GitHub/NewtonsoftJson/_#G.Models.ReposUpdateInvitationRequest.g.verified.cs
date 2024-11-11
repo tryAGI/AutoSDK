@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateInvitationRequest" /> class.
+        /// </summary>
+        /// <param name="permissions">
+        /// The permissions that the associated user will have on the repository. Valid values are `read`, `write`, `maintain`, `triage`, and `admin`.
+        /// </param>
+        public ReposUpdateInvitationRequest(
+            global::G.ReposUpdateInvitationRequestPermissions? permissions)
+        {
+            this.Permissions = permissions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateInvitationRequest" /> class.
+        /// </summary>
+        public ReposUpdateInvitationRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

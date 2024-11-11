@@ -37,6 +37,39 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageInfo" /> class.
+        /// </summary>
+        /// <param name="promptTokens">
+        /// Number of tokens in the prompt for this request. Note that the prompt token<br/>
+        /// includes the entire message history, plus extra tokens needed by the system<br/>
+        /// when combining the list of prompt messages into a single message, as<br/>
+        /// required by the model. The number of extra tokens is typically proportional<br/>
+        /// to the number of messages in the thread, and should be relatively small.
+        /// </param>
+        /// <param name="completionTokens">
+        /// Number of tokens in the response message.
+        /// </param>
+        /// <param name="totalTokens">
+        /// `prompt_tokens` + `completion_tokens`.
+        /// </param>
+        public UsageInfo(
+            int promptTokens,
+            int completionTokens,
+            int totalTokens)
+        {
+            this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
+            this.TotalTokens = totalTokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageInfo" /> class.
+        /// </summary>
+        public UsageInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

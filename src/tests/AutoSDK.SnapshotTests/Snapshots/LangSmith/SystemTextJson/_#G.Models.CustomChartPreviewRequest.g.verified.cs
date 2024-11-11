@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartPreviewRequest" /> class.
+        /// </summary>
+        /// <param name="bucketInfo"></param>
+        /// <param name="chart"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomChartPreviewRequest(
+            global::G.CustomChartsRequestBase bucketInfo,
+            global::G.CustomChartCreatePreview chart)
+        {
+            this.BucketInfo = bucketInfo ?? throw new global::System.ArgumentNullException(nameof(bucketInfo));
+            this.Chart = chart ?? throw new global::System.ArgumentNullException(nameof(chart));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartPreviewRequest" /> class.
+        /// </summary>
+        public CustomChartPreviewRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

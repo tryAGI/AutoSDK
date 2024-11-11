@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserModerator" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// The ID of the user that has permission to moderate the broadcaster’s channel.
+        /// </param>
+        /// <param name="userLogin">
+        /// The user’s login name.
+        /// </param>
+        /// <param name="userName">
+        /// The user’s display name.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UserModerator(
+            string userId,
+            string userLogin,
+            string userName)
+        {
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserModerator" /> class.
+        /// </summary>
+        public UserModerator()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

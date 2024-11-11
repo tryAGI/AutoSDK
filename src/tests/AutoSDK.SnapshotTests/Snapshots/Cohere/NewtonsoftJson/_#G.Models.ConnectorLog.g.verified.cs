@@ -69,6 +69,65 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectorLog" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier for the connector log
+        /// </param>
+        /// <param name="connectorId">
+        /// Unique identifier for the connector
+        /// </param>
+        /// <param name="requestId">
+        /// Unique identifier for the request
+        /// </param>
+        /// <param name="userId">
+        /// Unique identifier for the user
+        /// </param>
+        /// <param name="organizationId">
+        /// Unique identifier for the organization
+        /// </param>
+        /// <param name="createdAt">
+        /// Time of connector log creation in RFC3339 format
+        /// </param>
+        /// <param name="statusCode">
+        /// HTTP status code of the request
+        /// </param>
+        /// <param name="durationMillis">
+        /// Duration of the request in milliseconds
+        /// </param>
+        /// <param name="errorMessage">
+        /// Error message of the request
+        /// </param>
+        public ConnectorLog(
+            string id,
+            string connectorId,
+            string requestId,
+            string userId,
+            string organizationId,
+            global::System.DateTime createdAt,
+            int statusCode,
+            int durationMillis,
+            string? errorMessage)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.ConnectorId = connectorId ?? throw new global::System.ArgumentNullException(nameof(connectorId));
+            this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.OrganizationId = organizationId ?? throw new global::System.ArgumentNullException(nameof(organizationId));
+            this.CreatedAt = createdAt;
+            this.StatusCode = statusCode;
+            this.DurationMillis = durationMillis;
+            this.ErrorMessage = errorMessage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectorLog" /> class.
+        /// </summary>
+        public ConnectorLog()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

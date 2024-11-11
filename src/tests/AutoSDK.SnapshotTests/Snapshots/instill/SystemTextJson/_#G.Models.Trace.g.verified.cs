@@ -50,6 +50,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Trace" /> class.
+        /// </summary>
+        /// <param name="statuses">
+        /// Statuses contains an execution status per input.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="inputs">
+        /// Component inputs.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="outputs">
+        /// Component outputs.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="error">
+        /// Error details.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="computeTimeInSeconds">
+        /// Computation time in seconds.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Trace(
+            global::System.Collections.Generic.IList<global::G.TraceStatus>? statuses,
+            global::System.Collections.Generic.IList<object>? inputs,
+            global::System.Collections.Generic.IList<object>? outputs,
+            object? error,
+            float? computeTimeInSeconds)
+        {
+            this.Statuses = statuses;
+            this.Inputs = inputs;
+            this.Outputs = outputs;
+            this.Error = error;
+            this.ComputeTimeInSeconds = computeTimeInSeconds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Trace" /> class.
+        /// </summary>
+        public Trace()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

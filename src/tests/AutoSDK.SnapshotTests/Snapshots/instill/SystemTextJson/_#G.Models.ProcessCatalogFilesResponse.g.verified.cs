@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcessCatalogFilesResponse" /> class.
+        /// </summary>
+        /// <param name="files">
+        /// The file uid.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProcessCatalogFilesResponse(
+            global::System.Collections.Generic.IList<global::G.File> files)
+        {
+            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcessCatalogFilesResponse" /> class.
+        /// </summary>
+        public ProcessCatalogFilesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

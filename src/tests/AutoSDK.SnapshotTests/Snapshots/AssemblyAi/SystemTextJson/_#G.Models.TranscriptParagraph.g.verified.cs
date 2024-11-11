@@ -56,6 +56,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TranscriptParagraph" /> class.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="confidence"></param>
+        /// <param name="words"></param>
+        /// <param name="speaker">
+        /// The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TranscriptParagraph(
+            string text,
+            int start,
+            int end,
+            double confidence,
+            global::System.Collections.Generic.IList<global::G.TranscriptWord> words,
+            object? speaker)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Start = start;
+            this.End = end;
+            this.Confidence = confidence;
+            this.Words = words ?? throw new global::System.ArgumentNullException(nameof(words));
+            this.Speaker = speaker;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TranscriptParagraph" /> class.
+        /// </summary>
+        public TranscriptParagraph()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

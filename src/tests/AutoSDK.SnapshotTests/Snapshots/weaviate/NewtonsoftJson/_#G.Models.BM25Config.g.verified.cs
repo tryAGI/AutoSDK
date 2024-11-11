@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BM25Config" /> class.
+        /// </summary>
+        /// <param name="k1">
+        /// Calibrates term-weight scaling based on the term frequency within a document<br/>
+        /// Default Value: 1.2F
+        /// </param>
+        /// <param name="b">
+        /// Calibrates term-weight scaling based on the document length<br/>
+        /// Default Value: 0.75F
+        /// </param>
+        public BM25Config(
+            float? k1,
+            float? b)
+        {
+            this.K1 = k1;
+            this.B = b;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BM25Config" /> class.
+        /// </summary>
+        public BM25Config()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

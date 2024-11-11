@@ -79,6 +79,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExperimentResultsUpload" /> class.
+        /// </summary>
+        /// <param name="experimentName"></param>
+        /// <param name="experimentDescription"></param>
+        /// <param name="datasetId"></param>
+        /// <param name="datasetName"></param>
+        /// <param name="datasetDescription"></param>
+        /// <param name="summaryExperimentScores"></param>
+        /// <param name="results"></param>
+        /// <param name="experimentStartTime"></param>
+        /// <param name="experimentEndTime"></param>
+        /// <param name="experimentMetadata"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ExperimentResultsUpload(
+            string experimentName,
+            global::System.Collections.Generic.IList<global::G.ExperimentResultRow> results,
+            global::System.DateTime experimentStartTime,
+            global::System.DateTime experimentEndTime,
+            string? experimentDescription,
+            global::System.Guid? datasetId,
+            string? datasetName,
+            string? datasetDescription,
+            global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>? summaryExperimentScores,
+            object? experimentMetadata)
+        {
+            this.ExperimentName = experimentName ?? throw new global::System.ArgumentNullException(nameof(experimentName));
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
+            this.ExperimentStartTime = experimentStartTime;
+            this.ExperimentEndTime = experimentEndTime;
+            this.ExperimentDescription = experimentDescription;
+            this.DatasetId = datasetId;
+            this.DatasetName = datasetName;
+            this.DatasetDescription = datasetDescription;
+            this.SummaryExperimentScores = summaryExperimentScores;
+            this.ExperimentMetadata = experimentMetadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExperimentResultsUpload" /> class.
+        /// </summary>
+        public ExperimentResultsUpload()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

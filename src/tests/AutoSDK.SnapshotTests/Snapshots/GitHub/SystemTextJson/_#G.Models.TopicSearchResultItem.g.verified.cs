@@ -122,6 +122,69 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicSearchResultItem" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="displayName"></param>
+        /// <param name="shortDescription"></param>
+        /// <param name="description"></param>
+        /// <param name="createdBy"></param>
+        /// <param name="released"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="featured"></param>
+        /// <param name="curated"></param>
+        /// <param name="score"></param>
+        /// <param name="repositoryCount"></param>
+        /// <param name="logoUrl"></param>
+        /// <param name="textMatches"></param>
+        /// <param name="related"></param>
+        /// <param name="aliases"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TopicSearchResultItem(
+            string name,
+            string? displayName,
+            string? shortDescription,
+            string? description,
+            string? createdBy,
+            string? released,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            bool featured,
+            bool curated,
+            double score,
+            int? repositoryCount,
+            string? logoUrl,
+            global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? textMatches,
+            global::System.Collections.Generic.IList<global::G.TopicSearchResultItemRelatedItem>? related,
+            global::System.Collections.Generic.IList<global::G.TopicSearchResultItemAliase>? aliases)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.ShortDescription = shortDescription ?? throw new global::System.ArgumentNullException(nameof(shortDescription));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
+            this.Released = released ?? throw new global::System.ArgumentNullException(nameof(released));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Featured = featured;
+            this.Curated = curated;
+            this.Score = score;
+            this.RepositoryCount = repositoryCount;
+            this.LogoUrl = logoUrl;
+            this.TextMatches = textMatches;
+            this.Related = related;
+            this.Aliases = aliases;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicSearchResultItem" /> class.
+        /// </summary>
+        public TopicSearchResultItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -35,6 +35,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReplicationConfig" /> class.
+        /// </summary>
+        /// <param name="factor">
+        /// Number of times a class is replicated<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="asyncEnabled">
+        /// Enable asynchronous replication
+        /// </param>
+        /// <param name="objectDeletionConflictResolution">
+        /// Conflict resolution strategy for deleted objects
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReplicationConfig(
+            int? factor,
+            bool? asyncEnabled,
+            global::G.ReplicationConfigObjectDeletionConflictResolution? objectDeletionConflictResolution)
+        {
+            this.Factor = factor;
+            this.AsyncEnabled = asyncEnabled;
+            this.ObjectDeletionConflictResolution = objectDeletionConflictResolution;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReplicationConfig" /> class.
+        /// </summary>
+        public ReplicationConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

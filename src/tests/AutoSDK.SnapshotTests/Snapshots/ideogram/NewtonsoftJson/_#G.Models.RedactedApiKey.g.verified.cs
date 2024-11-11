@@ -35,6 +35,37 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RedactedApiKey" /> class.
+        /// </summary>
+        /// <param name="redactedApiKey1">
+        /// A redacted text snippet of the API key. Contains the first 4 characters of the API key<br/>
+        /// Example: vkpDja
+        /// </param>
+        /// <param name="creationTime">
+        /// The time at which the key was created
+        /// </param>
+        /// <param name="apiKeyId">
+        /// A URL safe base64 encoded UUID<br/>
+        /// Example: JRPVD7jWR1aTBYiJ0UFVOg==
+        /// </param>
+        public RedactedApiKey(
+            string redactedApiKey1,
+            global::System.DateTime creationTime,
+            string apiKeyId)
+        {
+            this.RedactedApiKey1 = redactedApiKey1 ?? throw new global::System.ArgumentNullException(nameof(redactedApiKey1));
+            this.CreationTime = creationTime;
+            this.ApiKeyId = apiKeyId ?? throw new global::System.ArgumentNullException(nameof(apiKeyId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RedactedApiKey" /> class.
+        /// </summary>
+        public RedactedApiKey()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

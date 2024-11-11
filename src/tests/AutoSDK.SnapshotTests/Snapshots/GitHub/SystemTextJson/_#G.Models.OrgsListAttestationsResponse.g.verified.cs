@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsListAttestationsResponse" /> class.
+        /// </summary>
+        /// <param name="attestations"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrgsListAttestationsResponse(
+            global::System.Collections.Generic.IList<global::G.OrgsListAttestationsResponseAttestation>? attestations)
+        {
+            this.Attestations = attestations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsListAttestationsResponse" /> class.
+        /// </summary>
+        public OrgsListAttestationsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

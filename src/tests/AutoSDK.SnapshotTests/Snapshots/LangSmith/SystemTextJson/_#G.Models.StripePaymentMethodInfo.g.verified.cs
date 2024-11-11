@@ -45,6 +45,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripePaymentMethodInfo" /> class.
+        /// </summary>
+        /// <param name="brand"></param>
+        /// <param name="last4"></param>
+        /// <param name="expMonth"></param>
+        /// <param name="expYear"></param>
+        /// <param name="email"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StripePaymentMethodInfo(
+            string? brand,
+            string? last4,
+            int? expMonth,
+            int? expYear,
+            string? email)
+        {
+            this.Brand = brand;
+            this.Last4 = last4;
+            this.ExpMonth = expMonth;
+            this.ExpYear = expYear;
+            this.Email = email;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripePaymentMethodInfo" /> class.
+        /// </summary>
+        public StripePaymentMethodInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -143,6 +143,81 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistSimple" /> class.
+        /// </summary>
+        /// <param name="forkOf">
+        /// Gist
+        /// </param>
+        /// <param name="url"></param>
+        /// <param name="forksUrl"></param>
+        /// <param name="commitsUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="gitPullUrl"></param>
+        /// <param name="gitPushUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="files"></param>
+        /// <param name="public"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="description"></param>
+        /// <param name="comments"></param>
+        /// <param name="user"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="owner">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="truncated"></param>
+        public GistSimple(
+            global::G.GistSimpleForkOf? forkOf,
+            string? url,
+            string? forksUrl,
+            string? commitsUrl,
+            string? id,
+            string? nodeId,
+            string? gitPullUrl,
+            string? gitPushUrl,
+            string? htmlUrl,
+            global::System.Collections.Generic.Dictionary<string, global::G.GistSimpleFiles2?>? files,
+            bool? @public,
+            string? createdAt,
+            string? updatedAt,
+            string? description,
+            int? comments,
+            string? user,
+            string? commentsUrl,
+            global::G.SimpleUser? owner,
+            bool? truncated)
+        {
+            this.ForkOf = forkOf;
+            this.Url = url;
+            this.ForksUrl = forksUrl;
+            this.CommitsUrl = commitsUrl;
+            this.Id = id;
+            this.NodeId = nodeId;
+            this.GitPullUrl = gitPullUrl;
+            this.GitPushUrl = gitPushUrl;
+            this.HtmlUrl = htmlUrl;
+            this.Files = files;
+            this.Public = @public;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Description = description;
+            this.Comments = comments;
+            this.User = user;
+            this.CommentsUrl = commentsUrl;
+            this.Owner = owner;
+            this.Truncated = truncated;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistSimple" /> class.
+        /// </summary>
+        public GistSimple()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

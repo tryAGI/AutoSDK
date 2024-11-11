@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetPronunciationDictionariesMetadataResponseModel" /> class.
+        /// </summary>
+        /// <param name="pronunciationDictionaries"></param>
+        /// <param name="nextCursor"></param>
+        /// <param name="hasMore"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetPronunciationDictionariesMetadataResponseModel(
+            global::System.Collections.Generic.IList<global::G.GetPronunciationDictionaryMetadataResponseModel> pronunciationDictionaries,
+            string nextCursor,
+            bool hasMore)
+        {
+            this.PronunciationDictionaries = pronunciationDictionaries ?? throw new global::System.ArgumentNullException(nameof(pronunciationDictionaries));
+            this.NextCursor = nextCursor ?? throw new global::System.ArgumentNullException(nameof(nextCursor));
+            this.HasMore = hasMore;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetPronunciationDictionariesMetadataResponseModel" /> class.
+        /// </summary>
+        public GetPronunciationDictionariesMetadataResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

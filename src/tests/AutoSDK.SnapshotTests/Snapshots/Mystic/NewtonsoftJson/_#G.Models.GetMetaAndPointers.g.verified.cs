@@ -87,6 +87,58 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetMetaAndPointers" /> class.
+        /// </summary>
+        /// <param name="public"></param>
+        /// <param name="description"></param>
+        /// <param name="websiteUrl"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="paperUrl"></param>
+        /// <param name="licenseUrl"></param>
+        /// <param name="imageUrl"></param>
+        /// <param name="pointers"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="cluster">
+        /// A lean representation of a cluster when returned from an API call
+        /// </param>
+        /// <param name="accelerators"></param>
+        public GetMetaAndPointers(
+            bool @public,
+            global::System.Collections.Generic.IList<string> pointers,
+            string id,
+            global::System.DateTime createdAt,
+            string? description,
+            string? websiteUrl,
+            string? repositoryUrl,
+            string? paperUrl,
+            string? licenseUrl,
+            string? imageUrl,
+            global::G.PipelineClusterGetLean? cluster,
+            global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators)
+        {
+            this.Public = @public;
+            this.Pointers = pointers ?? throw new global::System.ArgumentNullException(nameof(pointers));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.Description = description;
+            this.WebsiteUrl = websiteUrl;
+            this.RepositoryUrl = repositoryUrl;
+            this.PaperUrl = paperUrl;
+            this.LicenseUrl = licenseUrl;
+            this.ImageUrl = imageUrl;
+            this.Cluster = cluster;
+            this.Accelerators = accelerators;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetMetaAndPointers" /> class.
+        /// </summary>
+        public GetMetaAndPointers()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

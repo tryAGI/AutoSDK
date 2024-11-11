@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageCharactersResponseModel" /> class.
+        /// </summary>
+        /// <param name="time"></param>
+        /// <param name="usage"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UsageCharactersResponseModel(
+            global::System.Collections.Generic.IList<int> time,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<int>> usage)
+        {
+            this.Time = time ?? throw new global::System.ArgumentNullException(nameof(time));
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsageCharactersResponseModel" /> class.
+        /// </summary>
+        public UsageCharactersResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

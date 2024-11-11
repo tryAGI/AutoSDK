@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEventRequest" /> class.
+        /// </summary>
+        /// <param name="eventType"></param>
+        /// <param name="owner"></param>
+        /// <param name="repo"></param>
+        /// <param name="commit"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateEventRequest(
+            global::G.CreateEventRequestEventType eventType,
+            string owner,
+            string repo,
+            string? commit)
+        {
+            this.EventType = eventType;
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+            this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
+            this.Commit = commit;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEventRequest" /> class.
+        /// </summary>
+        public CreateEventRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

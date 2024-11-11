@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SingleGenerationTokenLikelihood" /> class.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="likelihood"></param>
+        public SingleGenerationTokenLikelihood(
+            string token,
+            double likelihood)
+        {
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.Likelihood = likelihood;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SingleGenerationTokenLikelihood" /> class.
+        /// </summary>
+        public SingleGenerationTokenLikelihood()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

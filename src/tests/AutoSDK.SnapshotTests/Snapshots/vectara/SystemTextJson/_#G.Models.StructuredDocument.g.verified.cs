@@ -65,6 +65,61 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StructuredDocument" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The document ID, must be unique within the corpus.
+        /// </param>
+        /// <param name="type">
+        /// When the type of the indexed document is `structured` the rest of<br/>
+        /// the object is expected to follow this schema. It allows you to create a document<br/>
+        /// that follows normal document conventions. The Vectara platform will then<br/>
+        /// create document parts using its internal algorithm.<br/>
+        /// Default Value: structured
+        /// </param>
+        /// <param name="title">
+        /// The title of the document.
+        /// </param>
+        /// <param name="description">
+        /// The description of the document.
+        /// </param>
+        /// <param name="metadata">
+        /// The metadata for a document as an arbitrary JSON object. Properties of this object<br/>
+        /// can be used by document level filter attributes.
+        /// </param>
+        /// <param name="customDimensions">
+        /// The custom dimensions as additional weights.
+        /// </param>
+        /// <param name="sections">
+        /// The subsection of the document.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StructuredDocument(
+            string id,
+            string type,
+            global::System.Collections.Generic.IList<global::G.StructuredDocumentSection> sections,
+            string? title,
+            string? description,
+            object? metadata,
+            global::System.Collections.Generic.Dictionary<string, double>? customDimensions)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Sections = sections ?? throw new global::System.ArgumentNullException(nameof(sections));
+            this.Title = title;
+            this.Description = description;
+            this.Metadata = metadata;
+            this.CustomDimensions = customDimensions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StructuredDocument" /> class.
+        /// </summary>
+        public StructuredDocument()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

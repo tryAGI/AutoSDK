@@ -47,6 +47,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepoExampleResponse" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="startTime"></param>
+        /// <param name="inputs"></param>
+        /// <param name="outputs"></param>
+        /// <param name="sessionId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepoExampleResponse(
+            global::System.Guid id,
+            global::System.Guid sessionId,
+            global::System.DateTime? startTime,
+            object? inputs,
+            object? outputs)
+        {
+            this.Id = id;
+            this.SessionId = sessionId;
+            this.StartTime = startTime;
+            this.Inputs = inputs;
+            this.Outputs = outputs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepoExampleResponse" /> class.
+        /// </summary>
+        public RepoExampleResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

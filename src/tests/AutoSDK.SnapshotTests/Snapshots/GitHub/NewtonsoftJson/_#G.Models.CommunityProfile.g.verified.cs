@@ -51,6 +51,46 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommunityProfile" /> class.
+        /// </summary>
+        /// <param name="healthPercentage">
+        /// Example: 100
+        /// </param>
+        /// <param name="description">
+        /// Example: My first repository on GitHub!
+        /// </param>
+        /// <param name="documentation">
+        /// Example: example.com
+        /// </param>
+        /// <param name="files"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="contentReportsEnabled">
+        /// Example: true
+        /// </param>
+        public CommunityProfile(
+            int healthPercentage,
+            string? description,
+            string? documentation,
+            global::G.CommunityProfileFiles files,
+            global::System.DateTime? updatedAt,
+            bool? contentReportsEnabled)
+        {
+            this.HealthPercentage = healthPercentage;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Documentation = documentation ?? throw new global::System.ArgumentNullException(nameof(documentation));
+            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
+            this.UpdatedAt = updatedAt;
+            this.ContentReportsEnabled = contentReportsEnabled;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommunityProfile" /> class.
+        /// </summary>
+        public CommunityProfile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

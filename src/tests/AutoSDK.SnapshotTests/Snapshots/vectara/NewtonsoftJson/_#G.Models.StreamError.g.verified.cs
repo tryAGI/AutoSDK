@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamError" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// If the stream errors, an event with type `error` will<br/>
+        /// be sent.<br/>
+        /// Default Value: error
+        /// </param>
+        /// <param name="messages">
+        /// The error messages.
+        /// </param>
+        public StreamError(
+            string? type,
+            global::System.Collections.Generic.IList<string>? messages)
+        {
+            this.Type = type;
+            this.Messages = messages;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamError" /> class.
+        /// </summary>
+        public StreamError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -39,6 +39,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiMeta" /> class.
+        /// </summary>
+        /// <param name="apiVersion"></param>
+        /// <param name="billedUnits"></param>
+        /// <param name="tokens"></param>
+        /// <param name="warnings"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ApiMeta(
+            global::G.ApiMetaApiVersion? apiVersion,
+            global::G.ApiMetaBilledUnits? billedUnits,
+            global::G.ApiMetaTokens? tokens,
+            global::System.Collections.Generic.IList<string>? warnings)
+        {
+            this.ApiVersion = apiVersion;
+            this.BilledUnits = billedUnits;
+            this.Tokens = tokens;
+            this.Warnings = warnings;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiMeta" /> class.
+        /// </summary>
+        public ApiMeta()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

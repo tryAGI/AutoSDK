@@ -58,6 +58,56 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyEditBasicProjectInfoV1ProjectsProjectIdPost" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the project, used for identification only.
+        /// </param>
+        /// <param name="defaultTitleVoiceId">
+        /// The voice_id that corresponds to the default voice used for new titles.
+        /// </param>
+        /// <param name="defaultParagraphVoiceId">
+        /// The voice_id that corresponds to the default voice used for new paragraphs.
+        /// </param>
+        /// <param name="title">
+        /// An optional name of the author of the project, this will be added as metadata to the mp3 file on project / chapter download.
+        /// </param>
+        /// <param name="author">
+        /// An optional name of the author of the project, this will be added as metadata to the mp3 file on project / chapter download.
+        /// </param>
+        /// <param name="isbnNumber">
+        /// An optional ISBN number of the project you want to create, this will be added as metadata to the mp3 file on project / chapter download.
+        /// </param>
+        /// <param name="volumeNormalization">
+        /// When the project is downloaded, should the returned audio have postprocessing in order to make it compliant with audiobook normalized volume requirements<br/>
+        /// Default Value: false
+        /// </param>
+        public BodyEditBasicProjectInfoV1ProjectsProjectIdPost(
+            string name,
+            string defaultTitleVoiceId,
+            string defaultParagraphVoiceId,
+            string? title,
+            string? author,
+            string? isbnNumber,
+            bool? volumeNormalization)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.DefaultTitleVoiceId = defaultTitleVoiceId ?? throw new global::System.ArgumentNullException(nameof(defaultTitleVoiceId));
+            this.DefaultParagraphVoiceId = defaultParagraphVoiceId ?? throw new global::System.ArgumentNullException(nameof(defaultParagraphVoiceId));
+            this.Title = title;
+            this.Author = author;
+            this.IsbnNumber = isbnNumber;
+            this.VolumeNormalization = volumeNormalization;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyEditBasicProjectInfoV1ProjectsProjectIdPost" /> class.
+        /// </summary>
+        public BodyEditBasicProjectInfoV1ProjectsProjectIdPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

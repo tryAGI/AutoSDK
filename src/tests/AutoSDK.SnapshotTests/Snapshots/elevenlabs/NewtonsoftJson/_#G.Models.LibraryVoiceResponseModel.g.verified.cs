@@ -177,6 +177,101 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LibraryVoiceResponseModel" /> class.
+        /// </summary>
+        /// <param name="publicOwnerId"></param>
+        /// <param name="voiceId"></param>
+        /// <param name="dateUnix"></param>
+        /// <param name="name"></param>
+        /// <param name="accent"></param>
+        /// <param name="gender"></param>
+        /// <param name="age"></param>
+        /// <param name="descriptive"></param>
+        /// <param name="useCase"></param>
+        /// <param name="category"></param>
+        /// <param name="language"></param>
+        /// <param name="description"></param>
+        /// <param name="previewUrl"></param>
+        /// <param name="usageCharacterCount1y"></param>
+        /// <param name="usageCharacterCount7d"></param>
+        /// <param name="playApiUsageCharacterCount1y"></param>
+        /// <param name="clonedByCount"></param>
+        /// <param name="rate"></param>
+        /// <param name="freeUsersAllowed"></param>
+        /// <param name="liveModerationEnabled"></param>
+        /// <param name="featured"></param>
+        /// <param name="noticePeriod"></param>
+        /// <param name="instagramUsername"></param>
+        /// <param name="twitterUsername"></param>
+        /// <param name="youtubeUsername"></param>
+        /// <param name="tiktokUsername"></param>
+        /// <param name="imageUrl"></param>
+        public LibraryVoiceResponseModel(
+            string publicOwnerId,
+            string voiceId,
+            int dateUnix,
+            string name,
+            string accent,
+            string gender,
+            string age,
+            string descriptive,
+            string useCase,
+            global::G.LibraryVoiceResponseModelCategory category,
+            string language,
+            string description,
+            string previewUrl,
+            int usageCharacterCount1y,
+            int usageCharacterCount7d,
+            int playApiUsageCharacterCount1y,
+            int clonedByCount,
+            double rate,
+            bool freeUsersAllowed,
+            bool liveModerationEnabled,
+            bool featured,
+            int? noticePeriod,
+            string? instagramUsername,
+            string? twitterUsername,
+            string? youtubeUsername,
+            string? tiktokUsername,
+            string? imageUrl)
+        {
+            this.PublicOwnerId = publicOwnerId ?? throw new global::System.ArgumentNullException(nameof(publicOwnerId));
+            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
+            this.DateUnix = dateUnix;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Accent = accent ?? throw new global::System.ArgumentNullException(nameof(accent));
+            this.Gender = gender ?? throw new global::System.ArgumentNullException(nameof(gender));
+            this.Age = age ?? throw new global::System.ArgumentNullException(nameof(age));
+            this.Descriptive = descriptive ?? throw new global::System.ArgumentNullException(nameof(descriptive));
+            this.UseCase = useCase ?? throw new global::System.ArgumentNullException(nameof(useCase));
+            this.Category = category;
+            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.PreviewUrl = previewUrl ?? throw new global::System.ArgumentNullException(nameof(previewUrl));
+            this.UsageCharacterCount1y = usageCharacterCount1y;
+            this.UsageCharacterCount7d = usageCharacterCount7d;
+            this.PlayApiUsageCharacterCount1y = playApiUsageCharacterCount1y;
+            this.ClonedByCount = clonedByCount;
+            this.Rate = rate;
+            this.FreeUsersAllowed = freeUsersAllowed;
+            this.LiveModerationEnabled = liveModerationEnabled;
+            this.Featured = featured;
+            this.NoticePeriod = noticePeriod;
+            this.InstagramUsername = instagramUsername;
+            this.TwitterUsername = twitterUsername;
+            this.YoutubeUsername = youtubeUsername;
+            this.TiktokUsername = tiktokUsername;
+            this.ImageUrl = imageUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LibraryVoiceResponseModel" /> class.
+        /// </summary>
+        public LibraryVoiceResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

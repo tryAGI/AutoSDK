@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SshSigningKey" /> class.
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="createdAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SshSigningKey(
+            string key,
+            int id,
+            string title,
+            global::System.DateTime createdAt)
+        {
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Id = id;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.CreatedAt = createdAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SshSigningKey" /> class.
+        /// </summary>
+        public SshSigningKey()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

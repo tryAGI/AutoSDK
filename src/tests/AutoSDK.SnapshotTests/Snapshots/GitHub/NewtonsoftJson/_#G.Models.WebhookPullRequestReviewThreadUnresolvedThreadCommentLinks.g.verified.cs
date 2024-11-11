@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadUnresolvedThreadCommentLinks" /> class.
+        /// </summary>
+        /// <param name="html"></param>
+        /// <param name="pullRequest"></param>
+        /// <param name="self"></param>
+        public WebhookPullRequestReviewThreadUnresolvedThreadCommentLinks(
+            global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentLinksHtml html,
+            global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentLinksPullRequest pullRequest,
+            global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentLinksSelf self)
+        {
+            this.Html = html ?? throw new global::System.ArgumentNullException(nameof(html));
+            this.PullRequest = pullRequest ?? throw new global::System.ArgumentNullException(nameof(pullRequest));
+            this.Self = self ?? throw new global::System.ArgumentNullException(nameof(self));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadUnresolvedThreadCommentLinks" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewThreadUnresolvedThreadCommentLinks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

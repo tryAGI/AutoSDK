@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsReRunWorkflowRequest" /> class.
+        /// </summary>
+        /// <param name="enableDebugLogging">
+        /// Whether to enable debug logging for the re-run.<br/>
+        /// Default Value: false
+        /// </param>
+        public ActionsReRunWorkflowRequest(
+            bool? enableDebugLogging)
+        {
+            this.EnableDebugLogging = enableDebugLogging;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsReRunWorkflowRequest" /> class.
+        /// </summary>
+        public ActionsReRunWorkflowRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

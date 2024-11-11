@@ -92,6 +92,57 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningResponseModel" /> class.
+        /// </summary>
+        /// <param name="isAllowedToFineTune"></param>
+        /// <param name="state"></param>
+        /// <param name="verificationFailures"></param>
+        /// <param name="verificationAttemptsCount"></param>
+        /// <param name="manualVerificationRequested"></param>
+        /// <param name="language"></param>
+        /// <param name="progress"></param>
+        /// <param name="message"></param>
+        /// <param name="datasetDurationSeconds"></param>
+        /// <param name="verificationAttempts"></param>
+        /// <param name="sliceIds"></param>
+        /// <param name="manualVerification"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FineTuningResponseModel(
+            bool isAllowedToFineTune,
+            global::System.Collections.Generic.Dictionary<string, global::G.FineTuningResponseModelState2> state,
+            global::System.Collections.Generic.IList<string> verificationFailures,
+            int verificationAttemptsCount,
+            bool manualVerificationRequested,
+            string? language,
+            global::System.Collections.Generic.Dictionary<string, double>? progress,
+            global::System.Collections.Generic.Dictionary<string, string>? message,
+            double? datasetDurationSeconds,
+            global::System.Collections.Generic.IList<global::G.VerificationAttemptResponseModel>? verificationAttempts,
+            global::System.Collections.Generic.IList<string>? sliceIds,
+            global::G.ManualVerificationResponseModel? manualVerification)
+        {
+            this.IsAllowedToFineTune = isAllowedToFineTune;
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.VerificationFailures = verificationFailures ?? throw new global::System.ArgumentNullException(nameof(verificationFailures));
+            this.VerificationAttemptsCount = verificationAttemptsCount;
+            this.ManualVerificationRequested = manualVerificationRequested;
+            this.Language = language;
+            this.Progress = progress;
+            this.Message = message;
+            this.DatasetDurationSeconds = datasetDurationSeconds;
+            this.VerificationAttempts = verificationAttempts;
+            this.SliceIds = sliceIds;
+            this.ManualVerification = manualVerification;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningResponseModel" /> class.
+        /// </summary>
+        public FineTuningResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MergedUpstream" /> class.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="mergeType"></param>
+        /// <param name="baseBranch"></param>
+        public MergedUpstream(
+            string? message,
+            global::G.MergedUpstreamMergeType? mergeType,
+            string? baseBranch)
+        {
+            this.Message = message;
+            this.MergeType = mergeType;
+            this.BaseBranch = baseBranch;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MergedUpstream" /> class.
+        /// </summary>
+        public MergedUpstream()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

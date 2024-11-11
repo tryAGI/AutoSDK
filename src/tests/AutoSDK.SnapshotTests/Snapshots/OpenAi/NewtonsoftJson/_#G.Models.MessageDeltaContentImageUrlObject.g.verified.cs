@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentImageUrlObject" /> class.
+        /// </summary>
+        /// <param name="index">
+        /// The index of the content part in the message.
+        /// </param>
+        /// <param name="type">
+        /// Always `image_url`.
+        /// </param>
+        /// <param name="imageUrl"></param>
+        public MessageDeltaContentImageUrlObject(
+            int index,
+            global::G.MessageDeltaContentImageUrlObjectType type,
+            global::G.MessageDeltaContentImageUrlObjectImageUrl? imageUrl)
+        {
+            this.Index = index;
+            this.Type = type;
+            this.ImageUrl = imageUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentImageUrlObject" /> class.
+        /// </summary>
+        public MessageDeltaContentImageUrlObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

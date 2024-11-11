@@ -63,6 +63,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectImportStatus" /> class.
+        /// </summary>
+        /// <param name="resourcesToProcess"></param>
+        /// <param name="resourcesProcessed"></param>
+        /// <param name="resourcesErrored"></param>
+        /// <param name="excerptsToProcess"></param>
+        /// <param name="excerptsProcessed"></param>
+        /// <param name="excerptsErrored"></param>
+        /// <param name="errors"></param>
+        /// <param name="finished"></param>
+        public ProjectImportStatus(
+            int? resourcesToProcess,
+            int? resourcesProcessed,
+            int? resourcesErrored,
+            int? excerptsToProcess,
+            int? excerptsProcessed,
+            int? excerptsErrored,
+            global::System.Collections.Generic.IList<string>? errors,
+            bool? finished)
+        {
+            this.ResourcesToProcess = resourcesToProcess;
+            this.ResourcesProcessed = resourcesProcessed;
+            this.ResourcesErrored = resourcesErrored;
+            this.ExcerptsToProcess = excerptsToProcess;
+            this.ExcerptsProcessed = excerptsProcessed;
+            this.ExcerptsErrored = excerptsErrored;
+            this.Errors = errors;
+            this.Finished = finished;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectImportStatus" /> class.
+        /// </summary>
+        public ProjectImportStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

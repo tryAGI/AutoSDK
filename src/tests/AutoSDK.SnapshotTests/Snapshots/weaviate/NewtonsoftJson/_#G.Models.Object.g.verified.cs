@@ -75,6 +75,70 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Object" /> class.
+        /// </summary>
+        /// <param name="class">
+        /// The object collection name.
+        /// </param>
+        /// <param name="vectorWeights">
+        /// Allow custom overrides of vector weights as math expressions in word-based vectorization models. E.g. "pancake": "7" will set the weight for the word pancake to 7 in the vectorization, whereas "w * 3" would triple the originally calculated word.
+        /// </param>
+        /// <param name="properties">
+        /// Names and values of an individual property. A returned response may also contain additional metadata, such as from classification or feature projection.
+        /// </param>
+        /// <param name="id">
+        /// ID of the object.
+        /// </param>
+        /// <param name="creationTimeUnix">
+        /// (Response only) Timestamp of creation of this object in milliseconds since epoch UTC.
+        /// </param>
+        /// <param name="lastUpdateTimeUnix">
+        /// (Response only) Timestamp of the last object update in milliseconds since epoch UTC.
+        /// </param>
+        /// <param name="vector">
+        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// </param>
+        /// <param name="vectors">
+        /// A map of named vectors for multi-vector representations.
+        /// </param>
+        /// <param name="tenant">
+        /// Name of the tenant.
+        /// </param>
+        /// <param name="additional">
+        /// (Response only) Additional meta information about a single object.
+        /// </param>
+        public Object(
+            string? @class,
+            object? vectorWeights,
+            object? properties,
+            global::System.Guid? id,
+            long? creationTimeUnix,
+            long? lastUpdateTimeUnix,
+            global::System.Collections.Generic.IList<float>? vector,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<float>>? vectors,
+            string? tenant,
+            global::System.Collections.Generic.Dictionary<string, object>? additional)
+        {
+            this.Class = @class;
+            this.VectorWeights = vectorWeights;
+            this.Properties = properties;
+            this.Id = id;
+            this.CreationTimeUnix = creationTimeUnix;
+            this.LastUpdateTimeUnix = lastUpdateTimeUnix;
+            this.Vector = vector;
+            this.Vectors = vectors;
+            this.Tenant = tenant;
+            this.Additional = additional;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Object" /> class.
+        /// </summary>
+        public Object()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

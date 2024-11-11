@@ -88,6 +88,68 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnterpriseWebhooks" /> class.
+        /// </summary>
+        /// <param name="description">
+        /// A short description of the enterprise.
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/enterprises/octo-business
+        /// </param>
+        /// <param name="websiteUrl">
+        /// The enterprise's website URL.
+        /// </param>
+        /// <param name="id">
+        /// Unique identifier of the enterprise<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
+        /// </param>
+        /// <param name="name">
+        /// The name of the enterprise.<br/>
+        /// Example: Octo Business
+        /// </param>
+        /// <param name="slug">
+        /// The slug url identifier for the enterprise.<br/>
+        /// Example: octo-business
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="avatarUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EnterpriseWebhooks(
+            string htmlUrl,
+            int id,
+            string nodeId,
+            string name,
+            string slug,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
+            string avatarUrl,
+            string? description,
+            string? websiteUrl)
+        {
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.Description = description;
+            this.WebsiteUrl = websiteUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnterpriseWebhooks" /> class.
+        /// </summary>
+        public EnterpriseWebhooks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

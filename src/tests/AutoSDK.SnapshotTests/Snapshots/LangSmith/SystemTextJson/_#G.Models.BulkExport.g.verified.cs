@@ -100,6 +100,57 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExport" /> class.
+        /// </summary>
+        /// <param name="bulkExportDestinationId"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="format"></param>
+        /// <param name="compression"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="status"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="finishedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BulkExport(
+            global::System.Guid bulkExportDestinationId,
+            global::System.Guid sessionId,
+            global::System.DateTime startTime,
+            global::System.DateTime endTime,
+            global::System.Guid id,
+            global::System.Guid tenantId,
+            global::G.BulkExportStatus status,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::System.DateTime? finishedAt,
+            global::G.BulkExportFormat? format,
+            global::G.BulkExportCompression? compression)
+        {
+            this.BulkExportDestinationId = bulkExportDestinationId;
+            this.SessionId = sessionId;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.Status = status;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.FinishedAt = finishedAt;
+            this.Format = format;
+            this.Compression = compression;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExport" /> class.
+        /// </summary>
+        public BulkExport()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

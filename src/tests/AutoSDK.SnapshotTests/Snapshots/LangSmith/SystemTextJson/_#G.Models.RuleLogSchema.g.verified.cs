@@ -91,6 +91,57 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RuleLogSchema" /> class.
+        /// </summary>
+        /// <param name="ruleId"></param>
+        /// <param name="runId"></param>
+        /// <param name="runName"></param>
+        /// <param name="runType"></param>
+        /// <param name="runSessionId"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="addToAnnotationQueue"></param>
+        /// <param name="addToDataset"></param>
+        /// <param name="evaluators"></param>
+        /// <param name="alerts"></param>
+        /// <param name="webhooks"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RuleLogSchema(
+            global::System.Guid ruleId,
+            global::System.Guid runId,
+            global::System.DateTime startTime,
+            global::System.DateTime endTime,
+            string? runName,
+            string? runType,
+            global::System.Guid? runSessionId,
+            global::G.RuleLogActionResponse? addToAnnotationQueue,
+            global::G.RuleLogActionResponse? addToDataset,
+            global::G.RuleLogActionResponse? evaluators,
+            global::G.RuleLogActionResponse? alerts,
+            global::G.RuleLogActionResponse? webhooks)
+        {
+            this.RuleId = ruleId;
+            this.RunId = runId;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.RunName = runName;
+            this.RunType = runType;
+            this.RunSessionId = runSessionId;
+            this.AddToAnnotationQueue = addToAnnotationQueue;
+            this.AddToDataset = addToDataset;
+            this.Evaluators = evaluators;
+            this.Alerts = alerts;
+            this.Webhooks = webhooks;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RuleLogSchema" /> class.
+        /// </summary>
+        public RuleLogSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

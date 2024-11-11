@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListCorporaResponse" /> class.
+        /// </summary>
+        /// <param name="corpora"></param>
+        /// <param name="metadata">
+        /// The standard metadata in the response of a list operation.
+        /// </param>
+        public ListCorporaResponse(
+            global::System.Collections.Generic.IList<global::G.Corpus>? corpora,
+            global::G.ListMetadata? metadata)
+        {
+            this.Corpora = corpora;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListCorporaResponse" /> class.
+        /// </summary>
+        public ListCorporaResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

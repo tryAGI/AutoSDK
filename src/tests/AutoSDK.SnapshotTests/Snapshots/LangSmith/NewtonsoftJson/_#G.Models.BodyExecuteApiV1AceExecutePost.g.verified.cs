@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyExecuteApiV1AceExecutePost" /> class.
+        /// </summary>
+        /// <param name="args"></param>
+        /// <param name="code"></param>
+        public BodyExecuteApiV1AceExecutePost(
+            global::System.Collections.Generic.IList<object> args,
+            string code)
+        {
+            this.Args = args ?? throw new global::System.ArgumentNullException(nameof(args));
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyExecuteApiV1AceExecutePost" /> class.
+        /// </summary>
+        public BodyExecuteApiV1AceExecutePost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

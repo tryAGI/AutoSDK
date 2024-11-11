@@ -43,6 +43,44 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentBranchPolicy" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The unique identifier of the branch or tag policy.<br/>
+        /// Example: 361471
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDE2OkdhdGVCcmFuY2hQb2xpY3kzNjE0NzE=
+        /// </param>
+        /// <param name="name">
+        /// The name pattern that branches or tags must match in order to deploy to the environment.<br/>
+        /// Example: release/*
+        /// </param>
+        /// <param name="type">
+        /// Whether this rule targets a branch or tag.<br/>
+        /// Example: branch
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DeploymentBranchPolicy(
+            int? id,
+            string? nodeId,
+            string? name,
+            global::G.DeploymentBranchPolicyType? type)
+        {
+            this.Id = id;
+            this.NodeId = nodeId;
+            this.Name = name;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentBranchPolicy" /> class.
+        /// </summary>
+        public DeploymentBranchPolicy()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

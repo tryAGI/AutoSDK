@@ -64,6 +64,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PorterAuthor" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="remoteId"></param>
+        /// <param name="remoteName"></param>
+        /// <param name="email"></param>
+        /// <param name="name"></param>
+        /// <param name="url"></param>
+        /// <param name="importUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PorterAuthor(
+            int id,
+            string remoteId,
+            string remoteName,
+            string email,
+            string name,
+            string url,
+            string importUrl)
+        {
+            this.Id = id;
+            this.RemoteId = remoteId ?? throw new global::System.ArgumentNullException(nameof(remoteId));
+            this.RemoteName = remoteName ?? throw new global::System.ArgumentNullException(nameof(remoteName));
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ImportUrl = importUrl ?? throw new global::System.ArgumentNullException(nameof(importUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PorterAuthor" /> class.
+        /// </summary>
+        public PorterAuthor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

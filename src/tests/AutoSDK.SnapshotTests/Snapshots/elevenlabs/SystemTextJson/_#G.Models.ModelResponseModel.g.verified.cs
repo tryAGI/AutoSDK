@@ -135,6 +135,72 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelResponseModel" /> class.
+        /// </summary>
+        /// <param name="modelId"></param>
+        /// <param name="name"></param>
+        /// <param name="canBeFinetuned"></param>
+        /// <param name="canDoTextToSpeech"></param>
+        /// <param name="canDoVoiceConversion"></param>
+        /// <param name="canUseStyle"></param>
+        /// <param name="canUseSpeakerBoost"></param>
+        /// <param name="servesProVoices"></param>
+        /// <param name="tokenCostFactor"></param>
+        /// <param name="description"></param>
+        /// <param name="requiresAlphaAccess"></param>
+        /// <param name="maxCharactersRequestFreeUser"></param>
+        /// <param name="maxCharactersRequestSubscribedUser"></param>
+        /// <param name="maximumTextLengthPerRequest"></param>
+        /// <param name="languages"></param>
+        /// <param name="modelRates"></param>
+        /// <param name="concurrencyGroup"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ModelResponseModel(
+            string modelId,
+            string name,
+            bool canBeFinetuned,
+            bool canDoTextToSpeech,
+            bool canDoVoiceConversion,
+            bool canUseStyle,
+            bool canUseSpeakerBoost,
+            bool servesProVoices,
+            double tokenCostFactor,
+            string description,
+            bool requiresAlphaAccess,
+            int maxCharactersRequestFreeUser,
+            int maxCharactersRequestSubscribedUser,
+            int maximumTextLengthPerRequest,
+            global::System.Collections.Generic.IList<global::G.LanguageResponseModel> languages,
+            global::G.ModelRatesResponseModel modelRates,
+            global::G.ModelResponseModelConcurrencyGroup concurrencyGroup)
+        {
+            this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CanBeFinetuned = canBeFinetuned;
+            this.CanDoTextToSpeech = canDoTextToSpeech;
+            this.CanDoVoiceConversion = canDoVoiceConversion;
+            this.CanUseStyle = canUseStyle;
+            this.CanUseSpeakerBoost = canUseSpeakerBoost;
+            this.ServesProVoices = servesProVoices;
+            this.TokenCostFactor = tokenCostFactor;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.RequiresAlphaAccess = requiresAlphaAccess;
+            this.MaxCharactersRequestFreeUser = maxCharactersRequestFreeUser;
+            this.MaxCharactersRequestSubscribedUser = maxCharactersRequestSubscribedUser;
+            this.MaximumTextLengthPerRequest = maximumTextLengthPerRequest;
+            this.Languages = languages ?? throw new global::System.ArgumentNullException(nameof(languages));
+            this.ModelRates = modelRates ?? throw new global::System.ArgumentNullException(nameof(modelRates));
+            this.ConcurrencyGroup = concurrencyGroup;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelResponseModel" /> class.
+        /// </summary>
+        public ModelResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

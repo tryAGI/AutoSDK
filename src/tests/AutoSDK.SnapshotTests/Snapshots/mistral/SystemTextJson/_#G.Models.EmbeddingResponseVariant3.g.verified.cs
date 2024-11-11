@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingResponseVariant3" /> class.
+        /// </summary>
+        /// <param name="choices"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EmbeddingResponseVariant3(
+            global::System.Collections.Generic.IList<global::G.ChatCompletionChoice>? choices)
+        {
+            this.Choices = choices;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingResponseVariant3" /> class.
+        /// </summary>
+        public EmbeddingResponseVariant3()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

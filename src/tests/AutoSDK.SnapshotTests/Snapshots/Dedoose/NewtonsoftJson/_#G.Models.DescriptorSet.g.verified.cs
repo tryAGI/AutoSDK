@@ -63,6 +63,46 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorSet" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="createdByUserId"></param>
+        public DescriptorSet(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            string? title,
+            string? description,
+            global::System.DateTime? createStamp,
+            global::System.Guid? createdByUserId)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.ProjectIDL = projectIDL;
+            this.Title = title;
+            this.Description = description;
+            this.CreateStamp = createStamp;
+            this.CreatedByUserId = createdByUserId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorSet" /> class.
+        /// </summary>
+        public DescriptorSet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerNamespaceLatestModelResponse" /> class.
+        /// </summary>
+        /// <param name="task">
+        /// Task type.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="taskOutputs">
+        /// Model inference outputs.<br/>
+        /// Included only in responses
+        /// </param>
+        public TriggerNamespaceLatestModelResponse(
+            global::G.AITask? task,
+            global::System.Collections.Generic.IList<object>? taskOutputs)
+        {
+            this.Task = task;
+            this.TaskOutputs = taskOutputs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerNamespaceLatestModelResponse" /> class.
+        /// </summary>
+        public TriggerNamespaceLatestModelResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

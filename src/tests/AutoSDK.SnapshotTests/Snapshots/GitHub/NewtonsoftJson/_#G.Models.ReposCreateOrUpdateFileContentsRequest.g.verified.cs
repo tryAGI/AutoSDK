@@ -51,6 +51,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateOrUpdateFileContentsRequest" /> class.
+        /// </summary>
+        /// <param name="message">
+        /// The commit message.
+        /// </param>
+        /// <param name="content">
+        /// The new file content, using Base64 encoding.
+        /// </param>
+        /// <param name="sha">
+        /// **Required if you are updating a file**. The blob SHA of the file being replaced.
+        /// </param>
+        /// <param name="branch">
+        /// The branch name. Default: the repository’s default branch.
+        /// </param>
+        /// <param name="committer">
+        /// The person that committed the file. Default: the authenticated user.
+        /// </param>
+        /// <param name="author">
+        /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
+        /// </param>
+        public ReposCreateOrUpdateFileContentsRequest(
+            string message,
+            string content,
+            string? sha,
+            string? branch,
+            global::G.ReposCreateOrUpdateFileContentsRequestCommitter? committer,
+            global::G.ReposCreateOrUpdateFileContentsRequestAuthor? author)
+        {
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Sha = sha;
+            this.Branch = branch;
+            this.Committer = committer;
+            this.Author = author;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateOrUpdateFileContentsRequest" /> class.
+        /// </summary>
+        public ReposCreateOrUpdateFileContentsRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

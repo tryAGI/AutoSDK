@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowRunUsage" /> class.
+        /// </summary>
+        /// <param name="billable"></param>
+        /// <param name="runDurationMs"></param>
+        public WorkflowRunUsage(
+            global::G.WorkflowRunUsageBillable billable,
+            int? runDurationMs)
+        {
+            this.Billable = billable ?? throw new global::System.ArgumentNullException(nameof(billable));
+            this.RunDurationMs = runDurationMs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowRunUsage" /> class.
+        /// </summary>
+        public WorkflowRunUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

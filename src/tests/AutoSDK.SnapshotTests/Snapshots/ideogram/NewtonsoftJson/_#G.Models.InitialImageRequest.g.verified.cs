@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InitialImageRequest" /> class.
+        /// </summary>
+        /// <param name="imageWeight">
+        /// Default Value: 50<br/>
+        /// Example: 50
+        /// </param>
+        public InitialImageRequest(
+            int? imageWeight)
+        {
+            this.ImageWeight = imageWeight;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InitialImageRequest" /> class.
+        /// </summary>
+        public InitialImageRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -101,6 +101,62 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateRunRequest" /> class.
+        /// </summary>
+        /// <param name="traceId"></param>
+        /// <param name="dottedOrder"></param>
+        /// <param name="parentRunId"></param>
+        /// <param name="endTime"></param>
+        /// <param name="error"></param>
+        /// <param name="inputs"></param>
+        /// <param name="outputs"></param>
+        /// <param name="events"></param>
+        /// <param name="tags"></param>
+        /// <param name="extra"></param>
+        /// <param name="inputAttachments"></param>
+        /// <param name="outputAttachments"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
+        public UpdateRunRequest(
+            global::System.Guid? traceId,
+            string? dottedOrder,
+            global::System.Guid? parentRunId,
+            global::G.OneOf<string, double?>? endTime,
+            string? error,
+            object? inputs,
+            object? outputs,
+            global::System.Collections.Generic.IList<object>? events,
+            global::System.Collections.Generic.IList<string>? tags,
+            object? extra,
+            object? inputAttachments,
+            object? outputAttachments,
+            global::System.Guid? sessionId,
+            string? sessionName)
+        {
+            this.TraceId = traceId;
+            this.DottedOrder = dottedOrder;
+            this.ParentRunId = parentRunId;
+            this.EndTime = endTime;
+            this.Error = error;
+            this.Inputs = inputs;
+            this.Outputs = outputs;
+            this.Events = events;
+            this.Tags = tags;
+            this.Extra = extra;
+            this.InputAttachments = inputAttachments;
+            this.OutputAttachments = outputAttachments;
+            this.SessionId = sessionId;
+            this.SessionName = sessionName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateRunRequest" /> class.
+        /// </summary>
+        public UpdateRunRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningAnalysisDeletion" /> class.
+        /// </summary>
+        /// <param name="nextAnalysisUrl">
+        /// Next deletable analysis in chain, without last analysis deletion confirmation<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="confirmDeleteUrl">
+        /// Next deletable analysis in chain, with last analysis deletion confirmation<br/>
+        /// Included only in responses
+        /// </param>
+        public CodeScanningAnalysisDeletion(
+            string? nextAnalysisUrl,
+            string? confirmDeleteUrl)
+        {
+            this.NextAnalysisUrl = nextAnalysisUrl;
+            this.ConfirmDeleteUrl = confirmDeleteUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningAnalysisDeletion" /> class.
+        /// </summary>
+        public CodeScanningAnalysisDeletion()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

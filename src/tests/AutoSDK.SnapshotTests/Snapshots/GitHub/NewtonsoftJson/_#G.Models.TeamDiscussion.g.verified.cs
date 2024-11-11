@@ -129,6 +129,108 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamDiscussion" /> class.
+        /// </summary>
+        /// <param name="author">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="body">
+        /// The main text of the discussion.<br/>
+        /// Example: Please suggest improvements to our workflow in comments.
+        /// </param>
+        /// <param name="bodyHtml">
+        /// Example: &lt;p&gt;Hi! This is an area for us to collaborate as a team&lt;/p&gt;
+        /// </param>
+        /// <param name="bodyVersion">
+        /// The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.<br/>
+        /// Example: 0307116bbf7ced493b8d8a346c650b71
+        /// </param>
+        /// <param name="commentsCount">
+        /// Example: 0
+        /// </param>
+        /// <param name="commentsUrl">
+        /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1/comments
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="lastEditedAt"></param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/orgs/github/teams/justice-league/discussions/1
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDE0OlRlYW1EaXNjdXNzaW9uMQ==
+        /// </param>
+        /// <param name="number">
+        /// The unique sequence number of a team discussion.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="pinned">
+        /// Whether or not this discussion should be pinned for easy retrieval.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="private">
+        /// Whether or not this discussion should be restricted to team members and organization owners.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="teamUrl">
+        /// Example: https://api.github.com/organizations/1/team/2343027
+        /// </param>
+        /// <param name="title">
+        /// The title of the discussion.<br/>
+        /// Example: How can we improve our workflow?
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url">
+        /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1
+        /// </param>
+        /// <param name="reactions"></param>
+        public TeamDiscussion(
+            global::G.NullableSimpleUser? author,
+            string body,
+            string bodyHtml,
+            string bodyVersion,
+            int commentsCount,
+            string commentsUrl,
+            global::System.DateTime createdAt,
+            global::System.DateTime? lastEditedAt,
+            string htmlUrl,
+            string nodeId,
+            int number,
+            bool pinned,
+            bool @private,
+            string teamUrl,
+            string title,
+            global::System.DateTime updatedAt,
+            string url,
+            global::G.ReactionRollup? reactions)
+        {
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.BodyHtml = bodyHtml ?? throw new global::System.ArgumentNullException(nameof(bodyHtml));
+            this.BodyVersion = bodyVersion ?? throw new global::System.ArgumentNullException(nameof(bodyVersion));
+            this.CommentsCount = commentsCount;
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.CreatedAt = createdAt;
+            this.LastEditedAt = lastEditedAt;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Number = number;
+            this.Pinned = pinned;
+            this.Private = @private;
+            this.TeamUrl = teamUrl ?? throw new global::System.ArgumentNullException(nameof(teamUrl));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Reactions = reactions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamDiscussion" /> class.
+        /// </summary>
+        public TeamDiscussion()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

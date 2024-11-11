@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateModerationResponseResult" /> class.
+        /// </summary>
+        /// <param name="flagged">
+        /// Whether any of the below categories are flagged.
+        /// </param>
+        /// <param name="categories">
+        /// A list of the categories, and whether they are flagged or not.
+        /// </param>
+        /// <param name="categoryScores">
+        /// A list of the categories along with their scores as predicted by model.
+        /// </param>
+        public CreateModerationResponseResult(
+            bool flagged,
+            global::G.CreateModerationResponseResultCategories categories,
+            global::G.CreateModerationResponseResultCategoryScores categoryScores)
+        {
+            this.Flagged = flagged;
+            this.Categories = categories ?? throw new global::System.ArgumentNullException(nameof(categories));
+            this.CategoryScores = categoryScores ?? throw new global::System.ArgumentNullException(nameof(categoryScores));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateModerationResponseResult" /> class.
+        /// </summary>
+        public CreateModerationResponseResult()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

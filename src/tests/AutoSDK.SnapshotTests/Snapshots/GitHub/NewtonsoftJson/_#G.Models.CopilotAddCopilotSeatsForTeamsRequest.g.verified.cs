@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotAddCopilotSeatsForTeamsRequest" /> class.
+        /// </summary>
+        /// <param name="selectedTeams">
+        /// List of team names within the organization to which to grant access to GitHub Copilot.
+        /// </param>
+        public CopilotAddCopilotSeatsForTeamsRequest(
+            global::System.Collections.Generic.IList<string> selectedTeams)
+        {
+            this.SelectedTeams = selectedTeams ?? throw new global::System.ArgumentNullException(nameof(selectedTeams));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotAddCopilotSeatsForTeamsRequest" /> class.
+        /// </summary>
+        public CopilotAddCopilotSeatsForTeamsRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

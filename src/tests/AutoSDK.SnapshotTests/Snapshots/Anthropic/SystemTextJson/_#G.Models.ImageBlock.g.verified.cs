@@ -35,6 +35,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageBlock" /> class.
+        /// </summary>
+        /// <param name="source">
+        /// The source of an image block.
+        /// </param>
+        /// <param name="type">
+        /// The type of content block.<br/>
+        /// Default Value: image
+        /// </param>
+        /// <param name="cacheControl">
+        /// The cache control settings.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ImageBlock(
+            global::G.ImageBlockSource source,
+            string? type,
+            global::G.CacheControlEphemeral? cacheControl)
+        {
+            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.Type = type;
+            this.CacheControl = cacheControl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageBlock" /> class.
+        /// </summary>
+        public ImageBlock()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

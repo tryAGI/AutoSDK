@@ -46,6 +46,40 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryExampleSchemaWithRuns" /> class.
+        /// </summary>
+        /// <param name="sessionIds"></param>
+        /// <param name="comparativeExperimentId"></param>
+        /// <param name="filters"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 20
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public QueryExampleSchemaWithRuns(
+            global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
+            global::System.Guid? comparativeExperimentId,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
+            int? offset,
+            int? limit)
+        {
+            this.SessionIds = sessionIds ?? throw new global::System.ArgumentNullException(nameof(sessionIds));
+            this.ComparativeExperimentId = comparativeExperimentId;
+            this.Filters = filters;
+            this.Offset = offset;
+            this.Limit = limit;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryExampleSchemaWithRuns" /> class.
+        /// </summary>
+        public QueryExampleSchemaWithRuns()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

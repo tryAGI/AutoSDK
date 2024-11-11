@@ -28,6 +28,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatResponse" /> class.
+        /// </summary>
+        /// <param name="outputs">
+        /// Conversation responses.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="chunks">
+        /// Included only in responses
+        /// </param>
+        public ChatResponse(
+            global::System.Collections.Generic.IList<object>? outputs,
+            global::System.Collections.Generic.IList<global::G.SimilarityChunk>? chunks)
+        {
+            this.Outputs = outputs;
+            this.Chunks = chunks;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatResponse" /> class.
+        /// </summary>
+        public ChatResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

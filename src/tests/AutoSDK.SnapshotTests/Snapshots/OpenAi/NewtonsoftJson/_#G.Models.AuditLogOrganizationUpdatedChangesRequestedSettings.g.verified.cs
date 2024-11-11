@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogOrganizationUpdatedChangesRequestedSettings" /> class.
+        /// </summary>
+        /// <param name="threadsUiVisibility">
+        /// Visibility of the threads page which shows messages created with the Assistants API and Playground. One of `ANY_ROLE`, `OWNERS`, or `NONE`.
+        /// </param>
+        /// <param name="usageDashboardVisibility">
+        /// Visibility of the usage dashboard which shows activity and costs for your organization. One of `ANY_ROLE` or `OWNERS`.
+        /// </param>
+        public AuditLogOrganizationUpdatedChangesRequestedSettings(
+            string? threadsUiVisibility,
+            string? usageDashboardVisibility)
+        {
+            this.ThreadsUiVisibility = threadsUiVisibility;
+            this.UsageDashboardVisibility = usageDashboardVisibility;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogOrganizationUpdatedChangesRequestedSettings" /> class.
+        /// </summary>
+        public AuditLogOrganizationUpdatedChangesRequestedSettings()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

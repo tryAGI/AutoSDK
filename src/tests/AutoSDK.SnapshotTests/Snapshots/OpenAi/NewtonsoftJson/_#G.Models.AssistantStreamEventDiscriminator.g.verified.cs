@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantStreamEventDiscriminator" /> class.
+        /// </summary>
+        /// <param name="event"></param>
+        public AssistantStreamEventDiscriminator(
+            global::G.AssistantStreamEventDiscriminatorEvent? @event)
+        {
+            this.Event = @event;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantStreamEventDiscriminator" /> class.
+        /// </summary>
+        public AssistantStreamEventDiscriminator()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

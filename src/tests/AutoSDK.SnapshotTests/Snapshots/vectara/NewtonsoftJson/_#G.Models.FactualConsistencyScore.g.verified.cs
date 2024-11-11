@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FactualConsistencyScore" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// When the streaming event contains the factual consistency score, the<br/>
+        /// type will be `factual_consistency_score`.<br/>
+        /// Default Value: factual_consistency_score
+        /// </param>
+        /// <param name="factualConsistencyScore1">
+        /// The probability that the summary is factually consistent with the results.
+        /// </param>
+        public FactualConsistencyScore(
+            string? type,
+            float? factualConsistencyScore1)
+        {
+            this.Type = type;
+            this.FactualConsistencyScore1 = factualConsistencyScore1;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FactualConsistencyScore" /> class.
+        /// </summary>
+        public FactualConsistencyScore()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

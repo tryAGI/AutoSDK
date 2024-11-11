@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchDeleteResponseResults" /> class.
+        /// </summary>
+        /// <param name="matches">
+        /// How many objects were matched by the filter.
+        /// </param>
+        /// <param name="limit">
+        /// The most amount of objects that can be deleted in a single query, equals QUERY_MAXIMUM_RESULTS.
+        /// </param>
+        /// <param name="successful">
+        /// How many objects were successfully deleted in this round.
+        /// </param>
+        /// <param name="failed">
+        /// How many objects should have been deleted but could not be deleted.
+        /// </param>
+        /// <param name="objects">
+        /// With output set to "minimal" only objects with error occurred will the be described. Successfully deleted objects would be omitted. Output set to "verbose" will list all of the objets with their respective statuses.
+        /// </param>
+        public BatchDeleteResponseResults(
+            double? matches,
+            double? limit,
+            double? successful,
+            double? failed,
+            global::System.Collections.Generic.IList<global::G.BatchDeleteResponseResultsObject>? objects)
+        {
+            this.Matches = matches;
+            this.Limit = limit;
+            this.Successful = successful;
+            this.Failed = failed;
+            this.Objects = objects;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchDeleteResponseResults" /> class.
+        /// </summary>
+        public BatchDeleteResponseResults()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

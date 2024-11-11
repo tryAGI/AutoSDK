@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewDismissedIssueEventDismissedReview" /> class.
+        /// </summary>
+        /// <param name="state"></param>
+        /// <param name="reviewId"></param>
+        /// <param name="dismissalMessage"></param>
+        /// <param name="dismissalCommitId"></param>
+        public ReviewDismissedIssueEventDismissedReview(
+            string state,
+            int reviewId,
+            string? dismissalMessage,
+            string? dismissalCommitId)
+        {
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.ReviewId = reviewId;
+            this.DismissalMessage = dismissalMessage ?? throw new global::System.ArgumentNullException(nameof(dismissalMessage));
+            this.DismissalCommitId = dismissalCommitId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewDismissedIssueEventDismissedReview" /> class.
+        /// </summary>
+        public ReviewDismissedIssueEventDismissedReview()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

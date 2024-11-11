@@ -45,6 +45,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookInstallationRepositoriesAddedRepositoriesRemovedItem" /> class.
+        /// </summary>
+        /// <param name="fullName"></param>
+        /// <param name="id">
+        /// Unique identifier of the repository
+        /// </param>
+        /// <param name="name">
+        /// The name of the repository.
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="private">
+        /// Whether the repository is private or public.
+        /// </param>
+        public WebhookInstallationRepositoriesAddedRepositoriesRemovedItem(
+            string? fullName,
+            int? id,
+            string? name,
+            string? nodeId,
+            bool? @private)
+        {
+            this.FullName = fullName;
+            this.Id = id;
+            this.Name = name;
+            this.NodeId = nodeId;
+            this.Private = @private;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookInstallationRepositoriesAddedRepositoriesRemovedItem" /> class.
+        /// </summary>
+        public WebhookInstallationRepositoriesAddedRepositoriesRemovedItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

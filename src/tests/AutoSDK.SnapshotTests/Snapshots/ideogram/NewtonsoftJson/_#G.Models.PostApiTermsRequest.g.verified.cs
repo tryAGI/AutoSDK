@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostApiTermsRequest" /> class.
+        /// </summary>
+        /// <param name="termsId">
+        /// The ID of the terms which are being accepted.<br/>
+        /// Example: TOS_2024_04_20
+        /// </param>
+        public PostApiTermsRequest(
+            string termsId)
+        {
+            this.TermsId = termsId ?? throw new global::System.ArgumentNullException(nameof(termsId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostApiTermsRequest" /> class.
+        /// </summary>
+        public PostApiTermsRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

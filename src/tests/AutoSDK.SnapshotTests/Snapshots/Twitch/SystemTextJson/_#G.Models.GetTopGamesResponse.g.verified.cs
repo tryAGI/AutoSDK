@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTopGamesResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The list of broadcasts. The broadcasts are sorted by the number of viewers, with the most popular first.
+        /// </param>
+        /// <param name="pagination">
+        /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetTopGamesResponse(
+            global::System.Collections.Generic.IList<global::G.Game> data,
+            global::G.GetTopGamesResponsePagination? pagination)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Pagination = pagination;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTopGamesResponse" /> class.
+        /// </summary>
+        public GetTopGamesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

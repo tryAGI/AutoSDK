@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamUser" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// An ID that identifies the team member.
+        /// </param>
+        /// <param name="userLogin">
+        /// The team member’s login name.
+        /// </param>
+        /// <param name="userName">
+        /// The team member’s display name.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TeamUser(
+            string userId,
+            string userLogin,
+            string userName)
+        {
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamUser" /> class.
+        /// </summary>
+        public TeamUser()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

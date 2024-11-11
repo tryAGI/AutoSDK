@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleBranchNamePattern" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="parameters"></param>
+        public RepositoryRuleBranchNamePattern(
+            global::G.RepositoryRuleBranchNamePatternType type,
+            global::G.RepositoryRuleBranchNamePatternParameters? parameters)
+        {
+            this.Type = type;
+            this.Parameters = parameters;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleBranchNamePattern" /> class.
+        /// </summary>
+        public RepositoryRuleBranchNamePattern()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

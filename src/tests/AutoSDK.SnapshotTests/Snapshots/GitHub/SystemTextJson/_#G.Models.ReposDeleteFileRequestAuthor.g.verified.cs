@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposDeleteFileRequestAuthor" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the author (or committer) of the commit
+        /// </param>
+        /// <param name="email">
+        /// The email of the author (or committer) of the commit
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposDeleteFileRequestAuthor(
+            string? name,
+            string? email)
+        {
+            this.Name = name;
+            this.Email = email;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposDeleteFileRequestAuthor" /> class.
+        /// </summary>
+        public ReposDeleteFileRequestAuthor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

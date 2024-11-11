@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HovercardContext" /> class.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="octicon"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public HovercardContext(
+            string message,
+            string octicon)
+        {
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Octicon = octicon ?? throw new global::System.ArgumentNullException(nameof(octicon));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HovercardContext" /> class.
+        /// </summary>
+        public HovercardContext()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

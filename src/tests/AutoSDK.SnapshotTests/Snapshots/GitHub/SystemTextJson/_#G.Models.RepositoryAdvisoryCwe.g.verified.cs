@@ -29,6 +29,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCwe" /> class.
+        /// </summary>
+        /// <param name="cweId">
+        /// The Common Weakness Enumeration (CWE) identifier.
+        /// </param>
+        /// <param name="name">
+        /// The name of the CWE.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryAdvisoryCwe(
+            string cweId,
+            string name = default!)
+        {
+            this.CweId = cweId ?? throw new global::System.ArgumentNullException(nameof(cweId));
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCwe" /> class.
+        /// </summary>
+        public RepositoryAdvisoryCwe()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

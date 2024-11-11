@@ -87,6 +87,64 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationInvitation" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="login"></param>
+        /// <param name="email"></param>
+        /// <param name="role"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="failedAt"></param>
+        /// <param name="failedReason"></param>
+        /// <param name="inviter">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="teamCount"></param>
+        /// <param name="nodeId">
+        /// Example: "MDIyOk9yZ2FuaXphdGlvbkludml0YXRpb24x"
+        /// </param>
+        /// <param name="invitationTeamsUrl">
+        /// Example: "https://api.github.com/organizations/16/invitations/1/teams"
+        /// </param>
+        /// <param name="invitationSource">
+        /// Example: "member"
+        /// </param>
+        public OrganizationInvitation(
+            long id,
+            string? login,
+            string? email,
+            string role,
+            string createdAt,
+            global::G.SimpleUser inviter,
+            int teamCount,
+            string nodeId,
+            string invitationTeamsUrl,
+            string? failedAt,
+            string? failedReason,
+            string? invitationSource)
+        {
+            this.Id = id;
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Inviter = inviter ?? throw new global::System.ArgumentNullException(nameof(inviter));
+            this.TeamCount = teamCount;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.InvitationTeamsUrl = invitationTeamsUrl ?? throw new global::System.ArgumentNullException(nameof(invitationTeamsUrl));
+            this.FailedAt = failedAt;
+            this.FailedReason = failedReason;
+            this.InvitationSource = invitationSource;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationInvitation" /> class.
+        /// </summary>
+        public OrganizationInvitation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

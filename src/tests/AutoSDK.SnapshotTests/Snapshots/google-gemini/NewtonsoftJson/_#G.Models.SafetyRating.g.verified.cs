@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SafetyRating" /> class.
+        /// </summary>
+        /// <param name="category">
+        /// Required. The category for this rating.
+        /// </param>
+        /// <param name="probability">
+        /// Required. The probability of harm for this content.
+        /// </param>
+        /// <param name="blocked">
+        /// Was this content blocked because of this rating?
+        /// </param>
+        public SafetyRating(
+            global::G.SafetyRatingCategory? category,
+            global::G.SafetyRatingProbability? probability,
+            bool? blocked)
+        {
+            this.Category = category;
+            this.Probability = probability;
+            this.Blocked = blocked;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SafetyRating" /> class.
+        /// </summary>
+        public SafetyRating()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

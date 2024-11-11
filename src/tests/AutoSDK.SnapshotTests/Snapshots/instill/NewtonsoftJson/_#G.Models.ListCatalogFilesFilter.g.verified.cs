@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListCatalogFilesFilter" /> class.
+        /// </summary>
+        /// <param name="fileUids">
+        /// The file uids.
+        /// </param>
+        public ListCatalogFilesFilter(
+            global::System.Collections.Generic.IList<string>? fileUids)
+        {
+            this.FileUids = fileUids;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListCatalogFilesFilter" /> class.
+        /// </summary>
+        public ListCatalogFilesFilter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

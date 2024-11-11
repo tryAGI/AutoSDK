@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitie" /> class.
+        /// </summary>
+        /// <param name="firstPatchedVersion"></param>
+        /// <param name="package"></param>
+        /// <param name="severity"></param>
+        /// <param name="vulnerableVersionRange"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitie(
+            global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitieFirstPatchedVersion? firstPatchedVersion,
+            global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitiePackage package,
+            string severity,
+            string vulnerableVersionRange)
+        {
+            this.FirstPatchedVersion = firstPatchedVersion ?? throw new global::System.ArgumentNullException(nameof(firstPatchedVersion));
+            this.Package = package ?? throw new global::System.ArgumentNullException(nameof(package));
+            this.Severity = severity ?? throw new global::System.ArgumentNullException(nameof(severity));
+            this.VulnerableVersionRange = vulnerableVersionRange ?? throw new global::System.ArgumentNullException(nameof(vulnerableVersionRange));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitie" /> class.
+        /// </summary>
+        public WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryVulnerabilitie()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

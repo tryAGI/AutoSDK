@@ -29,6 +29,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentImageUrlObjectImageUrl" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// The URL of the image, must be a supported image types: jpeg, jpg, png, gif, webp.
+        /// </param>
+        /// <param name="detail">
+        /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`.<br/>
+        /// Default Value: auto
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageDeltaContentImageUrlObjectImageUrl(
+            string? url,
+            global::G.MessageDeltaContentImageUrlObjectImageUrlDetail? detail)
+        {
+            this.Url = url;
+            this.Detail = detail;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentImageUrlObjectImageUrl" /> class.
+        /// </summary>
+        public MessageDeltaContentImageUrlObjectImageUrl()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitActivity" /> class.
+        /// </summary>
+        /// <param name="days">
+        /// Example: [0, 3, 26, 20, 39, 1, 0]
+        /// </param>
+        /// <param name="total">
+        /// Example: 89
+        /// </param>
+        /// <param name="week">
+        /// Example: 1336280400
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CommitActivity(
+            global::System.Collections.Generic.IList<int> days,
+            int total,
+            int week)
+        {
+            this.Days = days ?? throw new global::System.ArgumentNullException(nameof(days));
+            this.Total = total;
+            this.Week = week;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitActivity" /> class.
+        /// </summary>
+        public CommitActivity()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

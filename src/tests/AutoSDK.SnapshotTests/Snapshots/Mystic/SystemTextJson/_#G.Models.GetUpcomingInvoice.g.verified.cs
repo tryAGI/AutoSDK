@@ -44,6 +44,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUpcomingInvoice" /> class.
+        /// </summary>
+        /// <param name="creditsUsed"></param>
+        /// <param name="creditsTotal"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetUpcomingInvoice(
+            int creditsUsed,
+            int creditsTotal,
+            global::System.DateTime startDate,
+            global::System.DateTime endDate)
+        {
+            this.CreditsUsed = creditsUsed;
+            this.CreditsTotal = creditsTotal;
+            this.StartDate = startDate;
+            this.EndDate = endDate;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUpcomingInvoice" /> class.
+        /// </summary>
+        public GetUpcomingInvoice()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

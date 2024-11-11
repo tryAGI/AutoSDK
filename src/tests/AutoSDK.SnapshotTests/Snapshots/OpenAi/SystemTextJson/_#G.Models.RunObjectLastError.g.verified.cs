@@ -30,6 +30,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunObjectLastError" /> class.
+        /// </summary>
+        /// <param name="code">
+        /// One of `server_error`, `rate_limit_exceeded`, or `invalid_prompt`.
+        /// </param>
+        /// <param name="message">
+        /// A human-readable description of the error.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunObjectLastError(
+            global::G.RunObjectLastErrorCode code,
+            string message)
+        {
+            this.Code = code;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunObjectLastError" /> class.
+        /// </summary>
+        public RunObjectLastError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

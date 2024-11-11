@@ -28,6 +28,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksSetSuitesPreferencesRequestAutoTriggerCheck" /> class.
+        /// </summary>
+        /// <param name="appId">
+        /// The `id` of the GitHub App.
+        /// </param>
+        /// <param name="setting">
+        /// Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.<br/>
+        /// Default Value: true
+        /// </param>
+        public ChecksSetSuitesPreferencesRequestAutoTriggerCheck(
+            int appId,
+            bool setting)
+        {
+            this.AppId = appId;
+            this.Setting = setting;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksSetSuitesPreferencesRequestAutoTriggerCheck" /> class.
+        /// </summary>
+        public ChecksSetSuitesPreferencesRequestAutoTriggerCheck()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

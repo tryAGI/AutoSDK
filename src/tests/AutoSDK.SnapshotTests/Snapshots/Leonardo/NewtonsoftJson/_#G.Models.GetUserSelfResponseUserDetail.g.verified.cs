@@ -75,6 +75,70 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUserSelfResponseUserDetail" /> class.
+        /// </summary>
+        /// <param name="user">
+        /// columns and relationships of "users"
+        /// </param>
+        /// <param name="tokenRenewalDate">
+        /// User Plan Token Renewal Date.
+        /// </param>
+        /// <param name="paidTokens">
+        /// Current balance of paid tokens the user has.
+        /// </param>
+        /// <param name="subscriptionTokens">
+        /// Current balance of user plan subscription tokens the user has.
+        /// </param>
+        /// <param name="subscriptionGptTokens">
+        /// Current balance of user plan GPT tokens the user has.
+        /// </param>
+        /// <param name="subscriptionModelTokens">
+        /// Current balance of model training tokens the user has.
+        /// </param>
+        /// <param name="apiConcurrencySlots">
+        /// API Concurrency Slots.
+        /// </param>
+        /// <param name="apiPaidTokens">
+        /// Current balance of API paid tokens the user has.
+        /// </param>
+        /// <param name="apiSubscriptionTokens">
+        /// Current balance of Enterprise API subscriptions tokens the user has.
+        /// </param>
+        /// <param name="apiPlanTokenRenewalDate">
+        /// API Plan Token Renewal Date.
+        /// </param>
+        public GetUserSelfResponseUserDetail(
+            global::G.GetUserSelfResponseUserDetailUser? user,
+            string? tokenRenewalDate,
+            int? paidTokens,
+            int? subscriptionTokens,
+            int? subscriptionGptTokens,
+            int? subscriptionModelTokens,
+            int? apiConcurrencySlots,
+            int? apiPaidTokens,
+            int? apiSubscriptionTokens,
+            string? apiPlanTokenRenewalDate)
+        {
+            this.User = user;
+            this.TokenRenewalDate = tokenRenewalDate;
+            this.PaidTokens = paidTokens;
+            this.SubscriptionTokens = subscriptionTokens;
+            this.SubscriptionGptTokens = subscriptionGptTokens;
+            this.SubscriptionModelTokens = subscriptionModelTokens;
+            this.ApiConcurrencySlots = apiConcurrencySlots;
+            this.ApiPaidTokens = apiPaidTokens;
+            this.ApiSubscriptionTokens = apiSubscriptionTokens;
+            this.ApiPlanTokenRenewalDate = apiPlanTokenRenewalDate;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUserSelfResponseUserDetail" /> class.
+        /// </summary>
+        public GetUserSelfResponseUserDetail()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

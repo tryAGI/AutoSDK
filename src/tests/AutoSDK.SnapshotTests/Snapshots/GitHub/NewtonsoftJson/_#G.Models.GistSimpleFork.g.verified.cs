@@ -45,6 +45,37 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistSimpleFork" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="url"></param>
+        /// <param name="user">
+        /// Public User
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        public GistSimpleFork(
+            string? id,
+            string? url,
+            global::G.PublicUser? user,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt)
+        {
+            this.Id = id;
+            this.Url = url;
+            this.User = user;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistSimpleFork" /> class.
+        /// </summary>
+        public GistSimpleFork()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

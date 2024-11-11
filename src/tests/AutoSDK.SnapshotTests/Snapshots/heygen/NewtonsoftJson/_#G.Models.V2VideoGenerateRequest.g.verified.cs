@@ -51,6 +51,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoGenerateRequest" /> class.
+        /// </summary>
+        /// <param name="aspectRatio"></param>
+        /// <param name="callbackId"></param>
+        /// <param name="dimension"></param>
+        /// <param name="test">
+        /// Example: true
+        /// </param>
+        /// <param name="title">
+        /// Example: My Title
+        /// </param>
+        /// <param name="videoInputs">
+        /// Example: []
+        /// </param>
+        public V2VideoGenerateRequest(
+            object? aspectRatio,
+            object? callbackId,
+            global::G.V2VideoGenerateRequestDimension? dimension,
+            bool? test,
+            string? title,
+            global::System.Collections.Generic.IList<global::G.V2VideoGenerateRequestVideoInput>? videoInputs)
+        {
+            this.AspectRatio = aspectRatio;
+            this.CallbackId = callbackId;
+            this.Dimension = dimension;
+            this.Test = test;
+            this.Title = title;
+            this.VideoInputs = videoInputs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoGenerateRequest" /> class.
+        /// </summary>
+        public V2VideoGenerateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HookDeliveryResponse" /> class.
+        /// </summary>
+        /// <param name="headers">
+        /// The response headers received when the delivery was made.
+        /// </param>
+        /// <param name="payload">
+        /// The response payload received.
+        /// </param>
+        public HookDeliveryResponse(
+            object? headers,
+            string? payload)
+        {
+            this.Headers = headers ?? throw new global::System.ArgumentNullException(nameof(headers));
+            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HookDeliveryResponse" /> class.
+        /// </summary>
+        public HookDeliveryResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

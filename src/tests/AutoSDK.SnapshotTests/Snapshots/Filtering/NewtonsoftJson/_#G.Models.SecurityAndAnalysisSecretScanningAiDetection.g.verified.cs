@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurityAndAnalysisSecretScanningAiDetection" /> class.
+        /// </summary>
+        /// <param name="status"></param>
+        public SecurityAndAnalysisSecretScanningAiDetection(
+            global::G.SecurityAndAnalysisSecretScanningAiDetectionStatus? status)
+        {
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurityAndAnalysisSecretScanningAiDetection" /> class.
+        /// </summary>
+        public SecurityAndAnalysisSecretScanningAiDetection()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

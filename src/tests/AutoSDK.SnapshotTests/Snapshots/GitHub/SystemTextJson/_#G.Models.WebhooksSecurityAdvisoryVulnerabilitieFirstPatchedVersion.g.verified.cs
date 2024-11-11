@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisoryVulnerabilitieFirstPatchedVersion" /> class.
+        /// </summary>
+        /// <param name="identifier"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhooksSecurityAdvisoryVulnerabilitieFirstPatchedVersion(
+            string identifier)
+        {
+            this.Identifier = identifier ?? throw new global::System.ArgumentNullException(nameof(identifier));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisoryVulnerabilitieFirstPatchedVersion" /> class.
+        /// </summary>
+        public WebhooksSecurityAdvisoryVulnerabilitieFirstPatchedVersion()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

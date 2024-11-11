@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StarredRepository" /> class.
+        /// </summary>
+        /// <param name="starredAt"></param>
+        /// <param name="repo">
+        /// A repository on GitHub.
+        /// </param>
+        public StarredRepository(
+            global::System.DateTime starredAt,
+            global::G.Repository repo)
+        {
+            this.StarredAt = starredAt;
+            this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StarredRepository" /> class.
+        /// </summary>
+        public StarredRepository()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

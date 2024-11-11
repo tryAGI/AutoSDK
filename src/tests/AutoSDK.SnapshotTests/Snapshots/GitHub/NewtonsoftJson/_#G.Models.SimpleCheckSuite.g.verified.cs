@@ -100,6 +100,85 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleCheckSuite" /> class.
+        /// </summary>
+        /// <param name="after">
+        /// Example: d6fde92930d4715a2b49857d24b940956b26d2d3
+        /// </param>
+        /// <param name="app">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="before">
+        /// Example: 146e867f55c26428e5f9fade55a9bbf5e95a7912
+        /// </param>
+        /// <param name="conclusion">
+        /// Example: neutral
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="headBranch">
+        /// Example: master
+        /// </param>
+        /// <param name="headSha">
+        /// The SHA of the head commit that is being checked.<br/>
+        /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
+        /// </param>
+        /// <param name="id">
+        /// Example: 5
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDEwOkNoZWNrU3VpdGU1
+        /// </param>
+        /// <param name="pullRequests"></param>
+        /// <param name="repository">
+        /// Minimal Repository
+        /// </param>
+        /// <param name="status">
+        /// Example: completed
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/github/hello-world/check-suites/5
+        /// </param>
+        public SimpleCheckSuite(
+            string? after,
+            global::G.Integration? app,
+            string? before,
+            global::G.SimpleCheckSuiteConclusion? conclusion,
+            global::System.DateTime? createdAt,
+            string? headBranch,
+            string? headSha,
+            int? id,
+            string? nodeId,
+            global::System.Collections.Generic.IList<global::G.PullRequestMinimal>? pullRequests,
+            global::G.MinimalRepository? repository,
+            global::G.SimpleCheckSuiteStatus? status,
+            global::System.DateTime? updatedAt,
+            string? url)
+        {
+            this.After = after;
+            this.App = app;
+            this.Before = before;
+            this.Conclusion = conclusion;
+            this.CreatedAt = createdAt;
+            this.HeadBranch = headBranch;
+            this.HeadSha = headSha;
+            this.Id = id;
+            this.NodeId = nodeId;
+            this.PullRequests = pullRequests;
+            this.Repository = repository;
+            this.Status = status;
+            this.UpdatedAt = updatedAt;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleCheckSuite" /> class.
+        /// </summary>
+        public SimpleCheckSuite()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -41,6 +41,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateFineTuningJobRequestHyperparameters" /> class.
+        /// </summary>
+        /// <param name="batchSize">
+        /// Number of examples in each batch. A larger batch size means that model parameters<br/>
+        /// are updated less frequently, but with lower variance.<br/>
+        /// Default Value: auto
+        /// </param>
+        /// <param name="learningRateMultiplier">
+        /// Scaling factor for the learning rate. A smaller learning rate may be useful to avoid<br/>
+        /// overfitting.<br/>
+        /// Default Value: auto
+        /// </param>
+        /// <param name="nEpochs">
+        /// The number of epochs to train the model for. An epoch refers to one full cycle<br/>
+        /// through the training dataset.<br/>
+        /// Default Value: auto
+        /// </param>
+        public CreateFineTuningJobRequestHyperparameters(
+            global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? batchSize,
+            global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? learningRateMultiplier,
+            global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? nEpochs)
+        {
+            this.BatchSize = batchSize;
+            this.LearningRateMultiplier = learningRateMultiplier;
+            this.NEpochs = nEpochs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateFineTuningJobRequestHyperparameters" /> class.
+        /// </summary>
+        public CreateFineTuningJobRequestHyperparameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

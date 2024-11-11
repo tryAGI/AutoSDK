@@ -190,6 +190,113 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunRulesSchema" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="isEnabled">
+        /// Default Value: true
+        /// </param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
+        /// <param name="datasetId"></param>
+        /// <param name="datasetName"></param>
+        /// <param name="displayName"></param>
+        /// <param name="samplingRate"></param>
+        /// <param name="filter"></param>
+        /// <param name="traceFilter"></param>
+        /// <param name="treeFilter"></param>
+        /// <param name="addToAnnotationQueueId"></param>
+        /// <param name="addToAnnotationQueueName"></param>
+        /// <param name="addToDatasetId"></param>
+        /// <param name="addToDatasetName"></param>
+        /// <param name="addToDatasetPreferCorrection">
+        /// Default Value: false
+        /// </param>
+        /// <param name="correctionsDatasetId"></param>
+        /// <param name="useCorrectionsDataset">
+        /// Default Value: false
+        /// </param>
+        /// <param name="numFewShotExamples"></param>
+        /// <param name="evaluators"></param>
+        /// <param name="codeEvaluators"></param>
+        /// <param name="alerts"></param>
+        /// <param name="webhooks"></param>
+        /// <param name="extendOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="backfillFrom"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunRulesSchema(
+            global::System.Guid id,
+            global::System.Guid tenantId,
+            string displayName,
+            double samplingRate,
+            global::System.Collections.Generic.IList<global::G.RunRulesWebhookSchema>? webhooks,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            bool? isEnabled,
+            global::System.Guid? sessionId,
+            string? sessionName,
+            global::System.Guid? datasetId,
+            string? datasetName,
+            string? filter,
+            string? traceFilter,
+            string? treeFilter,
+            global::System.Guid? addToAnnotationQueueId,
+            string? addToAnnotationQueueName,
+            global::System.Guid? addToDatasetId,
+            string? addToDatasetName,
+            bool? addToDatasetPreferCorrection,
+            global::System.Guid? correctionsDatasetId,
+            bool? useCorrectionsDataset,
+            int? numFewShotExamples,
+            global::System.Collections.Generic.IList<global::G.EvaluatorTopLevel>? evaluators,
+            global::System.Collections.Generic.IList<global::G.CodeEvaluatorTopLevel>? codeEvaluators,
+            global::System.Collections.Generic.IList<global::G.RunRulesPagerdutyAlertSchema>? alerts,
+            bool? extendOnly,
+            global::System.DateTime? backfillFrom)
+        {
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.SamplingRate = samplingRate;
+            this.Webhooks = webhooks ?? throw new global::System.ArgumentNullException(nameof(webhooks));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.IsEnabled = isEnabled;
+            this.SessionId = sessionId;
+            this.SessionName = sessionName;
+            this.DatasetId = datasetId;
+            this.DatasetName = datasetName;
+            this.Filter = filter;
+            this.TraceFilter = traceFilter;
+            this.TreeFilter = treeFilter;
+            this.AddToAnnotationQueueId = addToAnnotationQueueId;
+            this.AddToAnnotationQueueName = addToAnnotationQueueName;
+            this.AddToDatasetId = addToDatasetId;
+            this.AddToDatasetName = addToDatasetName;
+            this.AddToDatasetPreferCorrection = addToDatasetPreferCorrection;
+            this.CorrectionsDatasetId = correctionsDatasetId;
+            this.UseCorrectionsDataset = useCorrectionsDataset;
+            this.NumFewShotExamples = numFewShotExamples;
+            this.Evaluators = evaluators;
+            this.CodeEvaluators = codeEvaluators;
+            this.Alerts = alerts;
+            this.ExtendOnly = extendOnly;
+            this.BackfillFrom = backfillFrom;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunRulesSchema" /> class.
+        /// </summary>
+        public RunRulesSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

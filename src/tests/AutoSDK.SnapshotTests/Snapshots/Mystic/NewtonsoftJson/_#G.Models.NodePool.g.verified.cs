@@ -57,6 +57,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodePool" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="accelerators"></param>
+        /// <param name="status"></param>
+        /// <param name="autoscaling">
+        /// Base model for schemas.
+        /// </param>
+        /// <param name="consoleLink"></param>
+        /// <param name="useSpotInstances">
+        /// Default Value: false
+        /// </param>
+        /// <param name="numPipelines">
+        /// Default Value: 0
+        /// </param>
+        public NodePool(
+            string name,
+            global::System.Collections.Generic.IList<global::G.Accelerator> accelerators,
+            string status,
+            string consoleLink,
+            global::G.NodePoolAutoscaling? autoscaling,
+            bool? useSpotInstances,
+            int? numPipelines)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Accelerators = accelerators ?? throw new global::System.ArgumentNullException(nameof(accelerators));
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.ConsoleLink = consoleLink ?? throw new global::System.ArgumentNullException(nameof(consoleLink));
+            this.Autoscaling = autoscaling;
+            this.UseSpotInstances = useSpotInstances;
+            this.NumPipelines = numPipelines;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodePool" /> class.
+        /// </summary>
+        public NodePool()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

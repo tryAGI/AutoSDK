@@ -35,6 +35,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentRefusalObject" /> class.
+        /// </summary>
+        /// <param name="index">
+        /// The index of the refusal part in the message.
+        /// </param>
+        /// <param name="type">
+        /// Always `refusal`.
+        /// </param>
+        /// <param name="refusal"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageDeltaContentRefusalObject(
+            int index,
+            global::G.MessageDeltaContentRefusalObjectType type,
+            string? refusal)
+        {
+            this.Index = index;
+            this.Type = type;
+            this.Refusal = refusal;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentRefusalObject" /> class.
+        /// </summary>
+        public MessageDeltaContentRefusalObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

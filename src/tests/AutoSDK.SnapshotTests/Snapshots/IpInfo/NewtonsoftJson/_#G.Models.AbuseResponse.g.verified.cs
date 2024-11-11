@@ -51,6 +51,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AbuseResponse" /> class.
+        /// </summary>
+        /// <param name="address">
+        /// Example: US, CA, Mountain View, 1600 Amphitheatre Parkway, 94043
+        /// </param>
+        /// <param name="country">
+        /// Example: US
+        /// </param>
+        /// <param name="email">
+        /// Example: network-abuse@google.com
+        /// </param>
+        /// <param name="name">
+        /// Example: Abuse
+        /// </param>
+        /// <param name="network">
+        /// Example: 8.8.8.0/24
+        /// </param>
+        /// <param name="phone">
+        /// Example: +1-650-253-0000
+        /// </param>
+        public AbuseResponse(
+            string? address,
+            string? country,
+            string? email,
+            string? name,
+            string? network,
+            string? phone)
+        {
+            this.Address = address;
+            this.Country = country;
+            this.Email = email;
+            this.Name = name;
+            this.Network = network;
+            this.Phone = phone;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AbuseResponse" /> class.
+        /// </summary>
+        public AbuseResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

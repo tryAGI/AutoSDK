@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentTextObjectText" /> class.
+        /// </summary>
+        /// <param name="value">
+        /// The data that makes up the text.
+        /// </param>
+        /// <param name="annotations"></param>
+        public MessageDeltaContentTextObjectText(
+            string? value,
+            global::System.Collections.Generic.IList<global::G.AnnotationsItem2>? annotations)
+        {
+            this.Value = value;
+            this.Annotations = annotations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageDeltaContentTextObjectText" /> class.
+        /// </summary>
+        public MessageDeltaContentTextObjectText()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

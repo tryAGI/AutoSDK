@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchRestrictionPolicyAppPermissions" /> class.
+        /// </summary>
+        /// <param name="metadata"></param>
+        /// <param name="contents"></param>
+        /// <param name="issues"></param>
+        /// <param name="singleFile"></param>
+        public BranchRestrictionPolicyAppPermissions(
+            string? metadata,
+            string? contents,
+            string? issues,
+            string? singleFile)
+        {
+            this.Metadata = metadata;
+            this.Contents = contents;
+            this.Issues = issues;
+            this.SingleFile = singleFile;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchRestrictionPolicyAppPermissions" /> class.
+        /// </summary>
+        public BranchRestrictionPolicyAppPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

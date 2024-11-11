@@ -45,6 +45,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Text" /> class.
+        /// </summary>
+        /// <param name="pipelineIds"></param>
+        /// <param name="transformedContent"></param>
+        /// <param name="transformedContentChunkNum"></param>
+        /// <param name="transformedContentTokenNum"></param>
+        /// <param name="transformedContentUpdateTime"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Text(
+            global::System.Collections.Generic.IList<string>? pipelineIds,
+            string? transformedContent,
+            int? transformedContentChunkNum,
+            int? transformedContentTokenNum,
+            global::System.DateTime? transformedContentUpdateTime)
+        {
+            this.PipelineIds = pipelineIds;
+            this.TransformedContent = transformedContent;
+            this.TransformedContentChunkNum = transformedContentChunkNum;
+            this.TransformedContentTokenNum = transformedContentTokenNum;
+            this.TransformedContentUpdateTime = transformedContentUpdateTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Text" /> class.
+        /// </summary>
+        public Text()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

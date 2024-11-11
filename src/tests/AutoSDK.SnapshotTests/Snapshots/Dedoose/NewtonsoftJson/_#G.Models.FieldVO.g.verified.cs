@@ -57,6 +57,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldVO" /> class.
+        /// </summary>
+        /// <param name="fieldId"></param>
+        /// <param name="title"></param>
+        /// <param name="typeLabel"></param>
+        /// <param name="isDynamicLabel"></param>
+        /// <param name="description"></param>
+        /// <param name="sortOrder"></param>
+        /// <param name="isActive"></param>
+        public FieldVO(
+            global::System.Guid? fieldId,
+            string? title,
+            string? typeLabel,
+            string? isDynamicLabel,
+            string? description,
+            int? sortOrder,
+            bool? isActive)
+        {
+            this.FieldId = fieldId;
+            this.Title = title;
+            this.TypeLabel = typeLabel;
+            this.IsDynamicLabel = isDynamicLabel;
+            this.Description = description;
+            this.SortOrder = sortOrder;
+            this.IsActive = isActive;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldVO" /> class.
+        /// </summary>
+        public FieldVO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InviteRequest" /> class.
+        /// </summary>
+        /// <param name="email">
+        /// Send an email to this address
+        /// </param>
+        /// <param name="role">
+        /// `owner` or `reader`
+        /// </param>
+        public InviteRequest(
+            string email,
+            global::G.InviteRequestRole role)
+        {
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InviteRequest" /> class.
+        /// </summary>
+        public InviteRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

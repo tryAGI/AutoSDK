@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillable" /> class.
+        /// </summary>
+        /// <param name="uBUNTU"></param>
+        /// <param name="mACOS"></param>
+        /// <param name="wINDOWS"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WorkflowRunUsageBillable(
+            global::G.WorkflowRunUsageBillableUBUNTU? uBUNTU,
+            global::G.WorkflowRunUsageBillableMACOS? mACOS,
+            global::G.WorkflowRunUsageBillableWINDOWS? wINDOWS)
+        {
+            this.UBUNTU = uBUNTU;
+            this.MACOS = mACOS;
+            this.WINDOWS = wINDOWS;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowRunUsageBillable" /> class.
+        /// </summary>
+        public WorkflowRunUsageBillable()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

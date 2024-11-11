@@ -30,6 +30,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAllStreamTagsResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The list of stream tags that the broadcaster can apply to their channel.
+        /// </param>
+        /// <param name="pagination">
+        /// The information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
+        /// </param>
+        public GetAllStreamTagsResponse(
+            global::System.Collections.Generic.IList<global::G.StreamTag> data,
+            global::G.GetAllStreamTagsResponsePagination? pagination)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Pagination = pagination;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAllStreamTagsResponse" /> class.
+        /// </summary>
+        public GetAllStreamTagsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

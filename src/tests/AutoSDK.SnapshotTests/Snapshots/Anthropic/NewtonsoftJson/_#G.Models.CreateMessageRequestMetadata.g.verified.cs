@@ -24,6 +24,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateMessageRequestMetadata" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// An external identifier for the user who is associated with the request.<br/>
+        /// This should be a uuid, hash value, or other opaque identifier. Anthropic may use<br/>
+        /// this id to help detect abuse. Do not include any identifying information such as<br/>
+        /// name, email address, or phone number.
+        /// </param>
+        public CreateMessageRequestMetadata(
+            string? userId)
+        {
+            this.UserId = userId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateMessageRequestMetadata" /> class.
+        /// </summary>
+        public CreateMessageRequestMetadata()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

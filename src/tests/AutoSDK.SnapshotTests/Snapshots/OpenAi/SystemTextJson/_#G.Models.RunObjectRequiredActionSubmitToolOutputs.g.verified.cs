@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunObjectRequiredActionSubmitToolOutputs" /> class.
+        /// </summary>
+        /// <param name="toolCalls">
+        /// A list of the relevant tool calls.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunObjectRequiredActionSubmitToolOutputs(
+            global::System.Collections.Generic.IList<global::G.RunToolCallObject> toolCalls)
+        {
+            this.ToolCalls = toolCalls ?? throw new global::System.ArgumentNullException(nameof(toolCalls));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunObjectRequiredActionSubmitToolOutputs" /> class.
+        /// </summary>
+        public RunObjectRequiredActionSubmitToolOutputs()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestInput" /> class.
+        /// </summary>
+        /// <param name="customId">
+        /// A developer-provided per-request id that will be used to match outputs to inputs. Must be unique for each request in a batch.
+        /// </param>
+        /// <param name="method">
+        /// The HTTP method to be used for the request. Currently only `POST` is supported.
+        /// </param>
+        /// <param name="url">
+        /// The OpenAI API relative URL to be used for the request. Currently `/v1/chat/completions`, `/v1/embeddings`, and `/v1/completions` are supported.
+        /// </param>
+        public BatchRequestInput(
+            string? customId,
+            global::G.BatchRequestInputMethod? method,
+            string? url)
+        {
+            this.CustomId = customId;
+            this.Method = method;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestInput" /> class.
+        /// </summary>
+        public BatchRequestInput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

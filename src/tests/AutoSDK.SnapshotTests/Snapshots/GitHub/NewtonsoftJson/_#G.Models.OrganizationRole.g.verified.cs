@@ -57,6 +57,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationRole" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The unique identifier of the role.
+        /// </param>
+        /// <param name="name">
+        /// The name of the role.
+        /// </param>
+        /// <param name="description">
+        /// A short description about who this role is for or what permissions it grants.
+        /// </param>
+        /// <param name="permissions">
+        /// A list of permissions included in this role.
+        /// </param>
+        /// <param name="organization">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="createdAt">
+        /// The date and time the role was created.
+        /// </param>
+        /// <param name="updatedAt">
+        /// The date and time the role was last updated.
+        /// </param>
+        public OrganizationRole(
+            long id,
+            string name,
+            global::System.Collections.Generic.IList<string> permissions,
+            global::G.NullableSimpleUser? organization,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string? description)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
+            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationRole" /> class.
+        /// </summary>
+        public OrganizationRole()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

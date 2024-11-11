@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptFeedback" /> class.
+        /// </summary>
+        /// <param name="safetyRatings">
+        /// Ratings for safety of the prompt. There is at most one rating per category.
+        /// </param>
+        /// <param name="blockReason">
+        /// Optional. If set, the prompt was blocked and no candidates are returned. Rephrase your prompt.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PromptFeedback(
+            global::System.Collections.Generic.IList<global::G.SafetyRating>? safetyRatings,
+            global::G.PromptFeedbackBlockReason? blockReason)
+        {
+            this.SafetyRatings = safetyRatings;
+            this.BlockReason = blockReason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptFeedback" /> class.
+        /// </summary>
+        public PromptFeedback()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

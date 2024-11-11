@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectsV2StatusUpdateEditedChanges" /> class.
+        /// </summary>
+        /// <param name="body"></param>
+        /// <param name="status"></param>
+        /// <param name="startDate"></param>
+        /// <param name="targetDate"></param>
+        public WebhookProjectsV2StatusUpdateEditedChanges(
+            global::G.WebhookProjectsV2StatusUpdateEditedChangesBody? body,
+            global::G.WebhookProjectsV2StatusUpdateEditedChangesStatus? status,
+            global::G.WebhookProjectsV2StatusUpdateEditedChangesStartDate? startDate,
+            global::G.WebhookProjectsV2StatusUpdateEditedChangesTargetDate? targetDate)
+        {
+            this.Body = body;
+            this.Status = status;
+            this.StartDate = startDate;
+            this.TargetDate = targetDate;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectsV2StatusUpdateEditedChanges" /> class.
+        /// </summary>
+        public WebhookProjectsV2StatusUpdateEditedChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

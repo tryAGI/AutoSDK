@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckAutomatedSecurityFixes" /> class.
+        /// </summary>
+        /// <param name="enabled">
+        /// Whether automated security fixes are enabled for the repository.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="paused">
+        /// Whether automated security fixes are paused for the repository.<br/>
+        /// Example: false
+        /// </param>
+        public CheckAutomatedSecurityFixes(
+            bool enabled,
+            bool paused)
+        {
+            this.Enabled = enabled;
+            this.Paused = paused;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckAutomatedSecurityFixes" /> class.
+        /// </summary>
+        public CheckAutomatedSecurityFixes()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

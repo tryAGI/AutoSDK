@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MonitorGroupSpec" /> class.
+        /// </summary>
+        /// <param name="session"></param>
+        /// <param name="tag"></param>
+        /// <param name="metadata"></param>
+        public MonitorGroupSpec(
+            global::System.Guid session,
+            string? tag,
+            global::G.MetadataKeyValue? metadata)
+        {
+            this.Session = session;
+            this.Tag = tag;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MonitorGroupSpec" /> class.
+        /// </summary>
+        public MonitorGroupSpec()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

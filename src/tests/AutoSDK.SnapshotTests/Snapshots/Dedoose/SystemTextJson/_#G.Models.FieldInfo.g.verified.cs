@@ -45,6 +45,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldInfo" /> class.
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="typeInt"></param>
+        /// <param name="listOptions"></param>
+        /// <param name="isDynamic"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FieldInfo(
+            string? title,
+            string? description,
+            int? typeInt,
+            global::System.Collections.Generic.IList<string>? listOptions,
+            bool? isDynamic)
+        {
+            this.Title = title;
+            this.Description = description;
+            this.TypeInt = typeInt;
+            this.ListOptions = listOptions;
+            this.IsDynamic = isDynamic;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldInfo" /> class.
+        /// </summary>
+        public FieldInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

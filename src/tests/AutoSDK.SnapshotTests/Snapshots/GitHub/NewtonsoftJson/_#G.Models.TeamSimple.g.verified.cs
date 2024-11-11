@@ -101,6 +101,93 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamSimple" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the team<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDQ6VGVhbTE=
+        /// </param>
+        /// <param name="url">
+        /// URL for the team<br/>
+        /// Example: https://api.github.com/organizations/1/team/1
+        /// </param>
+        /// <param name="membersUrl">
+        /// Example: https://api.github.com/organizations/1/team/1/members{/member}
+        /// </param>
+        /// <param name="name">
+        /// Name of the team<br/>
+        /// Example: Justice League
+        /// </param>
+        /// <param name="description">
+        /// Description of the team<br/>
+        /// Example: A great team.
+        /// </param>
+        /// <param name="permission">
+        /// Permission that the team will have for its repositories<br/>
+        /// Example: admin
+        /// </param>
+        /// <param name="privacy">
+        /// The level of privacy this team should have<br/>
+        /// Example: closed
+        /// </param>
+        /// <param name="notificationSetting">
+        /// The notification setting the team has set<br/>
+        /// Example: notifications_enabled
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/orgs/rails/teams/core
+        /// </param>
+        /// <param name="repositoriesUrl">
+        /// Example: https://api.github.com/organizations/1/team/1/repos
+        /// </param>
+        /// <param name="slug">
+        /// Example: justice-league
+        /// </param>
+        /// <param name="ldapDn">
+        /// Distinguished Name (DN) that team maps to within LDAP environment<br/>
+        /// Example: uid=example,ou=users,dc=github,dc=com
+        /// </param>
+        public TeamSimple(
+            int id,
+            string nodeId,
+            string url,
+            string membersUrl,
+            string name,
+            string? description,
+            string permission,
+            string htmlUrl,
+            string repositoriesUrl,
+            string slug,
+            string? privacy,
+            string? notificationSetting,
+            string? ldapDn)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
+            this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.Privacy = privacy;
+            this.NotificationSetting = notificationSetting;
+            this.LdapDn = ldapDn;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamSimple" /> class.
+        /// </summary>
+        public TeamSimple()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

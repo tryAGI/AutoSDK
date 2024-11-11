@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsCreateCardResponse2" /> class.
+        /// </summary>
+        /// <param name="code"></param>
+        /// <param name="message"></param>
+        /// <param name="documentationUrl"></param>
+        /// <param name="errors"></param>
+        public ProjectsCreateCardResponse2(
+            string? code,
+            string? message,
+            string? documentationUrl,
+            global::System.Collections.Generic.IList<global::G.ProjectsCreateCardResponseError>? errors)
+        {
+            this.Code = code;
+            this.Message = message;
+            this.DocumentationUrl = documentationUrl;
+            this.Errors = errors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsCreateCardResponse2" /> class.
+        /// </summary>
+        public ProjectsCreateCardResponse2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

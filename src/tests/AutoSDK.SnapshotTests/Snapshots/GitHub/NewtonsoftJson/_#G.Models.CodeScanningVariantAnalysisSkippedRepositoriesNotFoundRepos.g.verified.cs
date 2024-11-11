@@ -28,6 +28,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos" /> class.
+        /// </summary>
+        /// <param name="repositoryCount">
+        /// The total number of repositories that were skipped for this reason.<br/>
+        /// Example: 2
+        /// </param>
+        /// <param name="repositoryFullNames">
+        /// A list of full repository names that were skipped. This list may not include all repositories that were skipped.
+        /// </param>
+        public CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos(
+            int repositoryCount,
+            global::System.Collections.Generic.IList<string> repositoryFullNames)
+        {
+            this.RepositoryCount = repositoryCount;
+            this.RepositoryFullNames = repositoryFullNames ?? throw new global::System.ArgumentNullException(nameof(repositoryFullNames));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos" /> class.
+        /// </summary>
+        public CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

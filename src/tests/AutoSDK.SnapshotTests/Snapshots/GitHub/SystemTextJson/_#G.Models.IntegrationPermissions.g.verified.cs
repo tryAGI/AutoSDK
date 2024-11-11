@@ -45,6 +45,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IntegrationPermissions" /> class.
+        /// </summary>
+        /// <param name="issues"></param>
+        /// <param name="checks"></param>
+        /// <param name="metadata"></param>
+        /// <param name="contents"></param>
+        /// <param name="deployments"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public IntegrationPermissions(
+            string? issues,
+            string? checks,
+            string? metadata,
+            string? contents,
+            string? deployments)
+        {
+            this.Issues = issues;
+            this.Checks = checks;
+            this.Metadata = metadata;
+            this.Contents = contents;
+            this.Deployments = deployments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IntegrationPermissions" /> class.
+        /// </summary>
+        public IntegrationPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

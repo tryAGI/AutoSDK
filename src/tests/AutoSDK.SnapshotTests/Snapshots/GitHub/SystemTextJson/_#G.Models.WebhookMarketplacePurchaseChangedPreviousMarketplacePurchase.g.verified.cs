@@ -63,6 +63,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase" /> class.
+        /// </summary>
+        /// <param name="account"></param>
+        /// <param name="billingCycle"></param>
+        /// <param name="freeTrialEndsOn"></param>
+        /// <param name="nextBillingDate"></param>
+        /// <param name="onFreeTrial"></param>
+        /// <param name="plan"></param>
+        /// <param name="unitCount"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase(
+            global::G.WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount account,
+            string billingCycle,
+            string? freeTrialEndsOn,
+            bool? onFreeTrial,
+            global::G.WebhookMarketplacePurchaseChangedPreviousMarketplacePurchasePlan plan,
+            int unitCount,
+            string? nextBillingDate)
+        {
+            this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
+            this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
+            this.FreeTrialEndsOn = freeTrialEndsOn ?? throw new global::System.ArgumentNullException(nameof(freeTrialEndsOn));
+            this.OnFreeTrial = onFreeTrial;
+            this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
+            this.UnitCount = unitCount;
+            this.NextBillingDate = nextBillingDate;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase" /> class.
+        /// </summary>
+        public WebhookMarketplacePurchaseChangedPreviousMarketplacePurchase()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

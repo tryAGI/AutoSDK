@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopLogprobsData" /> class.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="logprob"></param>
+        public TopLogprobsData(
+            string token,
+            double logprob)
+        {
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.Logprob = logprob;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopLogprobsData" /> class.
+        /// </summary>
+        public TopLogprobsData()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

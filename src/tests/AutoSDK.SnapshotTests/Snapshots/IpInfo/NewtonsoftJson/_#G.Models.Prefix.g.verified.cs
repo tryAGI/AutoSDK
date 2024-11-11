@@ -57,6 +57,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Prefix" /> class.
+        /// </summary>
+        /// <param name="netblock">
+        /// Example: 104.69.216.0/22
+        /// </param>
+        /// <param name="id">
+        /// Example: AKAMAI
+        /// </param>
+        /// <param name="name">
+        /// Example: Akamai Technologies, Inc.
+        /// </param>
+        /// <param name="country">
+        /// Example: US
+        /// </param>
+        /// <param name="size">
+        /// Example: 256
+        /// </param>
+        /// <param name="status">
+        /// Example: ALLOCATION
+        /// </param>
+        /// <param name="domain">
+        /// Example: quadranet.com
+        /// </param>
+        public Prefix(
+            string netblock,
+            string id,
+            string name,
+            string country,
+            string? size,
+            string? status,
+            string? domain)
+        {
+            this.Netblock = netblock ?? throw new global::System.ArgumentNullException(nameof(netblock));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Country = country ?? throw new global::System.ArgumentNullException(nameof(country));
+            this.Size = size;
+            this.Status = status;
+            this.Domain = domain;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Prefix" /> class.
+        /// </summary>
+        public Prefix()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

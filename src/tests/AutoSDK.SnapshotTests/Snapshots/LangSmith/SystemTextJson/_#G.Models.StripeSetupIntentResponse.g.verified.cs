@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripeSetupIntentResponse" /> class.
+        /// </summary>
+        /// <param name="clientSecret"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StripeSetupIntentResponse(
+            string clientSecret)
+        {
+            this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripeSetupIntentResponse" /> class.
+        /// </summary>
+        public StripeSetupIntentResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

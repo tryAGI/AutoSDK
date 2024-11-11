@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryUpdateCredit" /> class.
+        /// </summary>
+        /// <param name="login">
+        /// The username of the user credited.
+        /// </param>
+        /// <param name="type">
+        /// The type of credit the user is receiving.
+        /// </param>
+        public RepositoryAdvisoryUpdateCredit(
+            string login,
+            global::G.SecurityAdvisoryCreditTypes type)
+        {
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryUpdateCredit" /> class.
+        /// </summary>
+        public RepositoryAdvisoryUpdateCredit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

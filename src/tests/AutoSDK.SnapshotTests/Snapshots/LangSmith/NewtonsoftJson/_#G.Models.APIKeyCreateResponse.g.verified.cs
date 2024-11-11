@@ -57,6 +57,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APIKeyCreateResponse" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="id"></param>
+        /// <param name="shortKey"></param>
+        /// <param name="description"></param>
+        /// <param name="readOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="lastUsedAt"></param>
+        /// <param name="key"></param>
+        public APIKeyCreateResponse(
+            global::System.Guid id,
+            string shortKey,
+            string description,
+            string key,
+            global::System.DateTime? createdAt,
+            bool? readOnly,
+            global::System.DateTime? lastUsedAt)
+        {
+            this.Id = id;
+            this.ShortKey = shortKey ?? throw new global::System.ArgumentNullException(nameof(shortKey));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.CreatedAt = createdAt;
+            this.ReadOnly = readOnly;
+            this.LastUsedAt = lastUsedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APIKeyCreateResponse" /> class.
+        /// </summary>
+        public APIKeyCreateResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

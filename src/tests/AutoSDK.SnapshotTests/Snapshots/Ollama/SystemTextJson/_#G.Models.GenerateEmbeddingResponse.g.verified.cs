@@ -22,6 +22,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateEmbeddingResponse" /> class.
+        /// </summary>
+        /// <param name="embedding">
+        /// The embedding for the prompt.<br/>
+        /// Example: [0.5670403838157654, 0.009260174818336964, ...]
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GenerateEmbeddingResponse(
+            global::System.Collections.Generic.IList<double>? embedding)
+        {
+            this.Embedding = embedding;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateEmbeddingResponse" /> class.
+        /// </summary>
+        public GenerateEmbeddingResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GuestStarSession" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// ID uniquely representing the Guest Star session.
+        /// </param>
+        /// <param name="guests">
+        /// List of guests currently interacting with the Guest Star session.
+        /// </param>
+        public GuestStarSession(
+            string id,
+            global::System.Collections.Generic.IList<global::G.Guest> guests)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Guests = guests ?? throw new global::System.ArgumentNullException(nameof(guests));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GuestStarSession" /> class.
+        /// </summary>
+        public GuestStarSession()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

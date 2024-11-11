@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksCreateSuiteRequest" /> class.
+        /// </summary>
+        /// <param name="headSha">
+        /// The sha of the head commit.
+        /// </param>
+        public ChecksCreateSuiteRequest(
+            string headSha)
+        {
+            this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksCreateSuiteRequest" /> class.
+        /// </summary>
+        public ChecksCreateSuiteRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

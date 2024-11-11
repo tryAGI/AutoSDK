@@ -57,6 +57,44 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorValueDTO" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="projectId"></param>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="descriptorId"></param>
+        /// <param name="fieldId"></param>
+        /// <param name="data"></param>
+        /// <param name="optionId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DescriptorValueDTO(
+            global::System.Guid? id,
+            global::System.Guid? projectId,
+            string? projectIdKey,
+            global::System.Guid? descriptorId,
+            global::System.Guid? fieldId,
+            string? data,
+            global::System.Guid? optionId)
+        {
+            this.Id = id;
+            this.ProjectId = projectId;
+            this.ProjectIdKey = projectIdKey;
+            this.DescriptorId = descriptorId;
+            this.FieldId = fieldId;
+            this.Data = data;
+            this.OptionId = optionId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorValueDTO" /> class.
+        /// </summary>
+        public DescriptorValueDTO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

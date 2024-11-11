@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BackupListResponseItem" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
+        /// </param>
+        /// <param name="path">
+        /// destination path of backup files proper to selected backend
+        /// </param>
+        /// <param name="classes">
+        /// The list of classes for which the existed backup process
+        /// </param>
+        /// <param name="status">
+        /// status of backup process
+        /// </param>
+        public BackupListResponseItem(
+            string? id,
+            string? path,
+            global::System.Collections.Generic.IList<string>? classes,
+            global::G.BackupListResponseItemStatus? status)
+        {
+            this.Id = id;
+            this.Path = path;
+            this.Classes = classes;
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BackupListResponseItem" /> class.
+        /// </summary>
+        public BackupListResponseItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

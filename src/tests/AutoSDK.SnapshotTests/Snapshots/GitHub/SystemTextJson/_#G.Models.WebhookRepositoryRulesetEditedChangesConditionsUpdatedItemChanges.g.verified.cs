@@ -39,6 +39,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges" /> class.
+        /// </summary>
+        /// <param name="conditionType"></param>
+        /// <param name="target"></param>
+        /// <param name="include"></param>
+        /// <param name="exclude"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges(
+            global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesConditionType? conditionType,
+            global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesTarget? target,
+            global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesInclude? include,
+            global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesExclude? exclude)
+        {
+            this.ConditionType = conditionType;
+            this.Target = target;
+            this.Include = include;
+            this.Exclude = exclude;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges" /> class.
+        /// </summary>
+        public WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

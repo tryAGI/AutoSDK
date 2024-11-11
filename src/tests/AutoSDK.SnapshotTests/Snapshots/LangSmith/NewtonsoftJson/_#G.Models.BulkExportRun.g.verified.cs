@@ -69,6 +69,49 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportRun" /> class.
+        /// </summary>
+        /// <param name="bulkExportId"></param>
+        /// <param name="metadata"></param>
+        /// <param name="id"></param>
+        /// <param name="status"></param>
+        /// <param name="retryNumber">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="errors"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="finishedAt"></param>
+        public BulkExportRun(
+            global::System.Guid bulkExportId,
+            global::G.BulkExportRunS3Metadata metadata,
+            global::System.Guid id,
+            global::G.BulkExportRunStatus status,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::System.DateTime? finishedAt,
+            int? retryNumber,
+            object? errors)
+        {
+            this.BulkExportId = bulkExportId;
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Id = id;
+            this.Status = status;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.FinishedAt = finishedAt;
+            this.RetryNumber = retryNumber;
+            this.Errors = errors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportRun" /> class.
+        /// </summary>
+        public BulkExportRun()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

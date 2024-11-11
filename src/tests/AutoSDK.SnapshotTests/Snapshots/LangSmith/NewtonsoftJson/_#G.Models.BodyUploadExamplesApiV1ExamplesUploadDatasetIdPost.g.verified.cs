@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost" /> class.
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="filename"></param>
+        /// <param name="inputKeys"></param>
+        /// <param name="outputKeys"></param>
+        public BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost(
+            byte[] file,
+            string filename,
+            global::System.Collections.Generic.IList<string> inputKeys,
+            global::System.Collections.Generic.IList<string>? outputKeys)
+        {
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.InputKeys = inputKeys ?? throw new global::System.ArgumentNullException(nameof(inputKeys));
+            this.OutputKeys = outputKeys;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost" /> class.
+        /// </summary>
+        public BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -64,6 +64,44 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CombinedCommitStatus" /> class.
+        /// </summary>
+        /// <param name="state"></param>
+        /// <param name="statuses"></param>
+        /// <param name="sha"></param>
+        /// <param name="totalCount"></param>
+        /// <param name="repository">
+        /// Minimal Repository
+        /// </param>
+        /// <param name="commitUrl"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CombinedCommitStatus(
+            string state,
+            global::System.Collections.Generic.IList<global::G.SimpleCommitStatus> statuses,
+            string sha,
+            int totalCount,
+            global::G.MinimalRepository repository,
+            string commitUrl,
+            string url)
+        {
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Statuses = statuses ?? throw new global::System.ArgumentNullException(nameof(statuses));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.TotalCount = totalCount;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.CommitUrl = commitUrl ?? throw new global::System.ArgumentNullException(nameof(commitUrl));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CombinedCommitStatus" /> class.
+        /// </summary>
+        public CombinedCommitStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

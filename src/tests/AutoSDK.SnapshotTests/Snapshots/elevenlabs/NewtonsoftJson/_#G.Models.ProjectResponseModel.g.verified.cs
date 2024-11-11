@@ -141,6 +141,83 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectResponseModel" /> class.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="name"></param>
+        /// <param name="createDateUnix"></param>
+        /// <param name="defaultTitleVoiceId"></param>
+        /// <param name="defaultParagraphVoiceId"></param>
+        /// <param name="defaultModelId"></param>
+        /// <param name="lastConversionDateUnix"></param>
+        /// <param name="canBeDownloaded"></param>
+        /// <param name="title"></param>
+        /// <param name="author"></param>
+        /// <param name="description"></param>
+        /// <param name="genres"></param>
+        /// <param name="coverImageUrl"></param>
+        /// <param name="targetAudience"></param>
+        /// <param name="language"></param>
+        /// <param name="contentType"></param>
+        /// <param name="originalPublicationDate"></param>
+        /// <param name="matureContent"></param>
+        /// <param name="isbnNumber"></param>
+        /// <param name="volumeNormalization"></param>
+        /// <param name="state"></param>
+        public ProjectResponseModel(
+            string projectId,
+            string name,
+            int createDateUnix,
+            string defaultTitleVoiceId,
+            string defaultParagraphVoiceId,
+            string defaultModelId,
+            int lastConversionDateUnix,
+            bool canBeDownloaded,
+            string title,
+            string author,
+            string description,
+            global::System.Collections.Generic.IList<string> genres,
+            string coverImageUrl,
+            global::G.ProjectResponseModelTargetAudience targetAudience,
+            string language,
+            string contentType,
+            string originalPublicationDate,
+            bool matureContent,
+            string isbnNumber,
+            bool volumeNormalization,
+            global::G.ProjectResponseModelState state)
+        {
+            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreateDateUnix = createDateUnix;
+            this.DefaultTitleVoiceId = defaultTitleVoiceId ?? throw new global::System.ArgumentNullException(nameof(defaultTitleVoiceId));
+            this.DefaultParagraphVoiceId = defaultParagraphVoiceId ?? throw new global::System.ArgumentNullException(nameof(defaultParagraphVoiceId));
+            this.DefaultModelId = defaultModelId ?? throw new global::System.ArgumentNullException(nameof(defaultModelId));
+            this.LastConversionDateUnix = lastConversionDateUnix;
+            this.CanBeDownloaded = canBeDownloaded;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Genres = genres ?? throw new global::System.ArgumentNullException(nameof(genres));
+            this.CoverImageUrl = coverImageUrl ?? throw new global::System.ArgumentNullException(nameof(coverImageUrl));
+            this.TargetAudience = targetAudience;
+            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
+            this.OriginalPublicationDate = originalPublicationDate ?? throw new global::System.ArgumentNullException(nameof(originalPublicationDate));
+            this.MatureContent = matureContent;
+            this.IsbnNumber = isbnNumber ?? throw new global::System.ArgumentNullException(nameof(isbnNumber));
+            this.VolumeNormalization = volumeNormalization;
+            this.State = state;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectResponseModel" /> class.
+        /// </summary>
+        public ProjectResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

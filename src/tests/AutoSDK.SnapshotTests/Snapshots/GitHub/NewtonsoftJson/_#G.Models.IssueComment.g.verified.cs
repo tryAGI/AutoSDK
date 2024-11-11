@@ -103,6 +103,78 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueComment" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the issue comment<br/>
+        /// Example: 42L
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="url">
+        /// URL for the issue comment<br/>
+        /// Example: https://api.github.com/repositories/42/issues/comments/1
+        /// </param>
+        /// <param name="body">
+        /// Contents of the issue comment<br/>
+        /// Example: What version of Safari were you using when you observed this bug?
+        /// </param>
+        /// <param name="bodyText"></param>
+        /// <param name="bodyHtml"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="issueUrl"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="reactions"></param>
+        public IssueComment(
+            long id,
+            string nodeId,
+            string url,
+            string htmlUrl,
+            global::G.NullableSimpleUser? user,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string issueUrl,
+            global::G.AuthorAssociation authorAssociation,
+            string? body,
+            string? bodyText,
+            string? bodyHtml,
+            global::G.NullableIntegration? performedViaGithubApp,
+            global::G.ReactionRollup? reactions)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
+            this.AuthorAssociation = authorAssociation;
+            this.Body = body;
+            this.BodyText = bodyText;
+            this.BodyHtml = bodyHtml;
+            this.PerformedViaGithubApp = performedViaGithubApp;
+            this.Reactions = reactions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueComment" /> class.
+        /// </summary>
+        public IssueComment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

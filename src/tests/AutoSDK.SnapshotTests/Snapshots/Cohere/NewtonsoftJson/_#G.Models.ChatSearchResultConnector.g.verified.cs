@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatSearchResultConnector" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The identifier of the connector.
+        /// </param>
+        public ChatSearchResultConnector(
+            string id)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatSearchResultConnector" /> class.
+        /// </summary>
+        public ChatSearchResultConnector()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

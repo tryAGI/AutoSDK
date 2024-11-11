@@ -46,6 +46,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantMessageResponse" /> class.
+        /// </summary>
+        /// <param name="role"></param>
+        /// <param name="toolCalls"></param>
+        /// <param name="toolPlan"></param>
+        /// <param name="content"></param>
+        /// <param name="citations"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AssistantMessageResponse(
+            global::G.AssistantMessageResponseRole role,
+            global::System.Collections.Generic.IList<global::G.ToolCallV2>? toolCalls,
+            string? toolPlan,
+            global::System.Collections.Generic.IList<global::G.ContentItem>? content,
+            global::System.Collections.Generic.IList<global::G.Citation>? citations)
+        {
+            this.Role = role;
+            this.ToolCalls = toolCalls;
+            this.ToolPlan = toolPlan;
+            this.Content = content;
+            this.Citations = citations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantMessageResponse" /> class.
+        /// </summary>
+        public AssistantMessageResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

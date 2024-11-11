@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAllStreamTagsResponsePagination" /> class.
+        /// </summary>
+        /// <param name="cursor">
+        /// The cursor used to get the next page of results. Set the request’s _after_ query parameter to this value to page forwards through the results.
+        /// </param>
+        public GetAllStreamTagsResponsePagination(
+            string? cursor)
+        {
+            this.Cursor = cursor;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAllStreamTagsResponsePagination" /> class.
+        /// </summary>
+        public GetAllStreamTagsResponsePagination()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

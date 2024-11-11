@@ -221,6 +221,143 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsUpdateRequest" /> class.
+        /// </summary>
+        /// <param name="billingEmail">
+        /// Billing email address. This address is not publicized.
+        /// </param>
+        /// <param name="company">
+        /// The company name.
+        /// </param>
+        /// <param name="email">
+        /// The publicly visible email address.
+        /// </param>
+        /// <param name="twitterUsername">
+        /// The Twitter username of the company.
+        /// </param>
+        /// <param name="location">
+        /// The location.
+        /// </param>
+        /// <param name="name">
+        /// The shorthand name of the company.
+        /// </param>
+        /// <param name="description">
+        /// The description of the company. The maximum size is 160 characters.
+        /// </param>
+        /// <param name="hasOrganizationProjects">
+        /// Whether an organization can use organization projects.
+        /// </param>
+        /// <param name="hasRepositoryProjects">
+        /// Whether repositories that belong to the organization can use repository projects.
+        /// </param>
+        /// <param name="defaultRepositoryPermission">
+        /// Default permission level members have for organization repositories.<br/>
+        /// Default Value: read
+        /// </param>
+        /// <param name="membersCanCreateRepositories">
+        /// Whether of non-admin organization members can create repositories. **Note:** A parameter can override this parameter. See `members_allowed_repository_creation_type` in this table for details.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="membersCanCreateInternalRepositories">
+        /// Whether organization members can create internal repositories, which are visible to all enterprise members. You can only allow members to create internal repositories if your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
+        /// </param>
+        /// <param name="membersCanCreatePrivateRepositories">
+        /// Whether organization members can create private repositories, which are visible to organization members with permission. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
+        /// </param>
+        /// <param name="membersCanCreatePublicRepositories">
+        /// Whether organization members can create public repositories, which are visible to anyone. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
+        /// </param>
+        /// <param name="membersAllowedRepositoryCreationType">
+        /// Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. <br/>
+        /// **Note:** This parameter is deprecated and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
+        /// </param>
+        /// <param name="membersCanCreatePages">
+        /// Whether organization members can create GitHub Pages sites. Existing published sites will not be impacted.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="membersCanCreatePublicPages">
+        /// Whether organization members can create public GitHub Pages sites. Existing published sites will not be impacted.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="membersCanCreatePrivatePages">
+        /// Whether organization members can create private GitHub Pages sites. Existing published sites will not be impacted.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="membersCanForkPrivateRepositories">
+        /// Whether organization members can fork private organization repositories.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="webCommitSignoffRequired">
+        /// Whether contributors to organization repositories are required to sign off on commits they make through GitHub's web interface.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="blog">
+        /// Example: "http://github.blog"
+        /// </param>
+        /// <param name="secretScanningPushProtectionCustomLinkEnabled">
+        /// Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
+        /// </param>
+        /// <param name="secretScanningPushProtectionCustomLink">
+        /// If `secret_scanning_push_protection_custom_link_enabled` is true, the URL that will be displayed to contributors who are blocked from pushing a secret.
+        /// </param>
+        public OrgsUpdateRequest(
+            string? billingEmail,
+            string? company,
+            string? email,
+            string? twitterUsername,
+            string? location,
+            string? name,
+            string? description,
+            bool? hasOrganizationProjects,
+            bool? hasRepositoryProjects,
+            global::G.OrgsUpdateRequestDefaultRepositoryPermission? defaultRepositoryPermission,
+            bool? membersCanCreateRepositories,
+            bool? membersCanCreateInternalRepositories,
+            bool? membersCanCreatePrivateRepositories,
+            bool? membersCanCreatePublicRepositories,
+            global::G.OrgsUpdateRequestMembersAllowedRepositoryCreationType? membersAllowedRepositoryCreationType,
+            bool? membersCanCreatePages,
+            bool? membersCanCreatePublicPages,
+            bool? membersCanCreatePrivatePages,
+            bool? membersCanForkPrivateRepositories,
+            bool? webCommitSignoffRequired,
+            string? blog,
+            bool? secretScanningPushProtectionCustomLinkEnabled,
+            string? secretScanningPushProtectionCustomLink)
+        {
+            this.BillingEmail = billingEmail;
+            this.Company = company;
+            this.Email = email;
+            this.TwitterUsername = twitterUsername;
+            this.Location = location;
+            this.Name = name;
+            this.Description = description;
+            this.HasOrganizationProjects = hasOrganizationProjects;
+            this.HasRepositoryProjects = hasRepositoryProjects;
+            this.DefaultRepositoryPermission = defaultRepositoryPermission;
+            this.MembersCanCreateRepositories = membersCanCreateRepositories;
+            this.MembersCanCreateInternalRepositories = membersCanCreateInternalRepositories;
+            this.MembersCanCreatePrivateRepositories = membersCanCreatePrivateRepositories;
+            this.MembersCanCreatePublicRepositories = membersCanCreatePublicRepositories;
+            this.MembersAllowedRepositoryCreationType = membersAllowedRepositoryCreationType;
+            this.MembersCanCreatePages = membersCanCreatePages;
+            this.MembersCanCreatePublicPages = membersCanCreatePublicPages;
+            this.MembersCanCreatePrivatePages = membersCanCreatePrivatePages;
+            this.MembersCanForkPrivateRepositories = membersCanForkPrivateRepositories;
+            this.WebCommitSignoffRequired = webCommitSignoffRequired;
+            this.Blog = blog;
+            this.SecretScanningPushProtectionCustomLinkEnabled = secretScanningPushProtectionCustomLinkEnabled;
+            this.SecretScanningPushProtectionCustomLink = secretScanningPushProtectionCustomLink;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsUpdateRequest" /> class.
+        /// </summary>
+        public OrgsUpdateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

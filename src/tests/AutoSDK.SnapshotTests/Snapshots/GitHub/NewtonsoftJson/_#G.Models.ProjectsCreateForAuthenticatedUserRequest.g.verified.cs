@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsCreateForAuthenticatedUserRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the project<br/>
+        /// Example: Week One Sprint
+        /// </param>
+        /// <param name="body">
+        /// Body of the project<br/>
+        /// Example: This project represents the sprint of the first week in January
+        /// </param>
+        public ProjectsCreateForAuthenticatedUserRequest(
+            string name,
+            string? body)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Body = body;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsCreateForAuthenticatedUserRequest" /> class.
+        /// </summary>
+        public ProjectsCreateForAuthenticatedUserRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

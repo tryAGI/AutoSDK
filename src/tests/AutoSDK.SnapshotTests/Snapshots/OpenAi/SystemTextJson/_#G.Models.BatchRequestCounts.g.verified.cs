@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestCounts" /> class.
+        /// </summary>
+        /// <param name="total">
+        /// Total number of requests in the batch.
+        /// </param>
+        /// <param name="completed">
+        /// Number of requests that have been completed successfully.
+        /// </param>
+        /// <param name="failed">
+        /// Number of requests that have failed.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BatchRequestCounts(
+            int total,
+            int completed,
+            int failed)
+        {
+            this.Total = total;
+            this.Completed = completed;
+            this.Failed = failed;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestCounts" /> class.
+        /// </summary>
+        public BatchRequestCounts()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

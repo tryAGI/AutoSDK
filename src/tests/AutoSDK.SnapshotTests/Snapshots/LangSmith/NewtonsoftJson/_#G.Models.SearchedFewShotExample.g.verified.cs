@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchedFewShotExample" /> class.
+        /// </summary>
+        /// <param name="inputs"></param>
+        /// <param name="outputs"></param>
+        /// <param name="id"></param>
+        /// <param name="debugInfo"></param>
+        public SearchedFewShotExample(
+            object inputs,
+            object outputs,
+            global::System.Guid id,
+            object? debugInfo)
+        {
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
+            this.Outputs = outputs ?? throw new global::System.ArgumentNullException(nameof(outputs));
+            this.Id = id;
+            this.DebugInfo = debugInfo;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchedFewShotExample" /> class.
+        /// </summary>
+        public SearchedFewShotExample()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

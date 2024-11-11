@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OptimizePromptRequest" /> class.
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <param name="metaprompt"></param>
+        /// <param name="examples"></param>
+        /// <param name="overallFeedback"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OptimizePromptRequest(
+            string prompt,
+            object metaprompt,
+            global::System.Collections.Generic.IList<global::G.ExampleRunWithFeedback> examples,
+            string? overallFeedback)
+        {
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Metaprompt = metaprompt ?? throw new global::System.ArgumentNullException(nameof(metaprompt));
+            this.Examples = examples ?? throw new global::System.ArgumentNullException(nameof(examples));
+            this.OverallFeedback = overallFeedback ?? throw new global::System.ArgumentNullException(nameof(overallFeedback));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OptimizePromptRequest" /> class.
+        /// </summary>
+        public OptimizePromptRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

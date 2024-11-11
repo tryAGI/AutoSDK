@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvoiceResponseModel" /> class.
+        /// </summary>
+        /// <param name="amountDueCents"></param>
+        /// <param name="nextPaymentAttemptUnix"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public InvoiceResponseModel(
+            int amountDueCents,
+            int nextPaymentAttemptUnix)
+        {
+            this.AmountDueCents = amountDueCents;
+            this.NextPaymentAttemptUnix = nextPaymentAttemptUnix;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvoiceResponseModel" /> class.
+        /// </summary>
+        public InvoiceResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

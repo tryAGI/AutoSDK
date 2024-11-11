@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SampleResponseModel" /> class.
+        /// </summary>
+        /// <param name="sampleId"></param>
+        /// <param name="fileName"></param>
+        /// <param name="mimeType"></param>
+        /// <param name="sizeBytes"></param>
+        /// <param name="hash"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SampleResponseModel(
+            string sampleId,
+            string fileName,
+            string mimeType,
+            int sizeBytes,
+            string hash)
+        {
+            this.SampleId = sampleId ?? throw new global::System.ArgumentNullException(nameof(sampleId));
+            this.FileName = fileName ?? throw new global::System.ArgumentNullException(nameof(fileName));
+            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
+            this.SizeBytes = sizeBytes;
+            this.Hash = hash ?? throw new global::System.ArgumentNullException(nameof(hash));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SampleResponseModel" /> class.
+        /// </summary>
+        public SampleResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

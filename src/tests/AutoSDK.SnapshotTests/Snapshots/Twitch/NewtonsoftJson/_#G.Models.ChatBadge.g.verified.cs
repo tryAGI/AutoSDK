@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatBadge" /> class.
+        /// </summary>
+        /// <param name="setId">
+        /// An ID that identifies this set of chat badges. For example, Bits or Subscriber.
+        /// </param>
+        /// <param name="versions">
+        /// The list of chat badges in this set.
+        /// </param>
+        public ChatBadge(
+            string setId,
+            global::System.Collections.Generic.IList<global::G.ChatBadgeVersion> versions)
+        {
+            this.SetId = setId ?? throw new global::System.ArgumentNullException(nameof(setId));
+            this.Versions = versions ?? throw new global::System.ArgumentNullException(nameof(versions));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatBadge" /> class.
+        /// </summary>
+        public ChatBadge()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

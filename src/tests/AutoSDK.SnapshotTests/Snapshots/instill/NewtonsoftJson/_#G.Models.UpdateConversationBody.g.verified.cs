@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConversationBody" /> class.
+        /// </summary>
+        /// <param name="newConversationId"></param>
+        /// <param name="lastUsedCatalogUid"></param>
+        /// <param name="lastUsedTopK"></param>
+        public UpdateConversationBody(
+            string? newConversationId,
+            string? lastUsedCatalogUid,
+            long? lastUsedTopK)
+        {
+            this.NewConversationId = newConversationId;
+            this.LastUsedCatalogUid = lastUsedCatalogUid;
+            this.LastUsedTopK = lastUsedTopK;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConversationBody" /> class.
+        /// </summary>
+        public UpdateConversationBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

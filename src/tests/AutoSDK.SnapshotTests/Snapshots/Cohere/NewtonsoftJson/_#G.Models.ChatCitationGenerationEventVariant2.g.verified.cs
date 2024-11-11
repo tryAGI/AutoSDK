@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCitationGenerationEventVariant2" /> class.
+        /// </summary>
+        /// <param name="citations">
+        /// Citations for the generated reply.
+        /// </param>
+        public ChatCitationGenerationEventVariant2(
+            global::System.Collections.Generic.IList<global::G.ChatCitation> citations)
+        {
+            this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCitationGenerationEventVariant2" /> class.
+        /// </summary>
+        public ChatCitationGenerationEventVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

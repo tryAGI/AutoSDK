@@ -39,6 +39,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamingIceRequestCandidate" /> class.
+        /// </summary>
+        /// <param name="candidate">
+        /// Example: &lt;CANDIDATE&gt;
+        /// </param>
+        /// <param name="sdpMLineIndex">
+        /// Example: &lt;SDP_MLINE_INDEX&gt;
+        /// </param>
+        /// <param name="sdpMid">
+        /// Example: &lt;SDP_MID&gt;
+        /// </param>
+        /// <param name="usernameFragment">
+        /// Example: &lt;USERNAME_FRAGMENT&gt;
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StreamingIceRequestCandidate(
+            string? candidate,
+            string? sdpMLineIndex,
+            string? sdpMid,
+            string? usernameFragment)
+        {
+            this.Candidate = candidate;
+            this.SdpMLineIndex = sdpMLineIndex;
+            this.SdpMid = sdpMid;
+            this.UsernameFragment = usernameFragment;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamingIceRequestCandidate" /> class.
+        /// </summary>
+        public StreamingIceRequestCandidate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolCallV2" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="type"></param>
+        /// <param name="function"></param>
+        public ToolCallV2(
+            string? id,
+            global::G.ToolCallV2Type? type,
+            global::G.ToolCallV2Function? function)
+        {
+            this.Id = id;
+            this.Type = type;
+            this.Function = function;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolCallV2" /> class.
+        /// </summary>
+        public ToolCallV2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

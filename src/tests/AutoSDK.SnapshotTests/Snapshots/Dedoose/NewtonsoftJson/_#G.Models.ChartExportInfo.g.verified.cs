@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChartExportInfo" /> class.
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="seriesData"></param>
+        public ChartExportInfo(
+            string? title,
+            global::System.Collections.Generic.IList<global::G.ChartSeriesInfo>? seriesData)
+        {
+            this.Title = title;
+            this.SeriesData = seriesData;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChartExportInfo" /> class.
+        /// </summary>
+        public ChartExportInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

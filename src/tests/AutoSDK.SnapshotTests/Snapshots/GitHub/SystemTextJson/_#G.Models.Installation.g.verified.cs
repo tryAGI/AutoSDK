@@ -157,6 +157,112 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Installation" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the installation.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="account"></param>
+        /// <param name="repositorySelection">
+        /// Describe whether all repositories have been selected or there's a selection involved
+        /// </param>
+        /// <param name="accessTokensUrl">
+        /// Example: https://api.github.com/app/installations/1/access_tokens
+        /// </param>
+        /// <param name="repositoriesUrl">
+        /// Example: https://api.github.com/installation/repositories
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/organizations/github/settings/installations/1
+        /// </param>
+        /// <param name="appId">
+        /// Example: 1
+        /// </param>
+        /// <param name="targetId">
+        /// The ID of the user or organization this token is being scoped to.
+        /// </param>
+        /// <param name="targetType">
+        /// Example: Organization
+        /// </param>
+        /// <param name="permissions">
+        /// The permissions granted to the user access token.
+        /// </param>
+        /// <param name="events"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="singleFileName">
+        /// Example: config.yaml
+        /// </param>
+        /// <param name="hasMultipleSingleFiles">
+        /// Example: true
+        /// </param>
+        /// <param name="singleFilePaths">
+        /// Example: [config.yml, .github/issue_TEMPLATE.md]
+        /// </param>
+        /// <param name="appSlug">
+        /// Example: github-actions
+        /// </param>
+        /// <param name="suspendedBy">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="suspendedAt"></param>
+        /// <param name="contactEmail">
+        /// Example: "test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com"
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Installation(
+            int id,
+            global::G.AnyOf<global::G.SimpleUser, global::G.Enterprise>? account,
+            global::G.InstallationRepositorySelection repositorySelection,
+            string accessTokensUrl,
+            string repositoriesUrl,
+            string htmlUrl,
+            int appId,
+            int targetId,
+            string targetType,
+            global::G.AppPermissions permissions,
+            global::System.Collections.Generic.IList<string> events,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string? singleFileName,
+            string appSlug,
+            global::G.NullableSimpleUser? suspendedBy,
+            global::System.DateTime? suspendedAt,
+            bool? hasMultipleSingleFiles,
+            global::System.Collections.Generic.IList<string>? singleFilePaths,
+            string? contactEmail)
+        {
+            this.Id = id;
+            this.Account = account;
+            this.RepositorySelection = repositorySelection;
+            this.AccessTokensUrl = accessTokensUrl ?? throw new global::System.ArgumentNullException(nameof(accessTokensUrl));
+            this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.AppId = appId;
+            this.TargetId = targetId;
+            this.TargetType = targetType ?? throw new global::System.ArgumentNullException(nameof(targetType));
+            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
+            this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.SingleFileName = singleFileName ?? throw new global::System.ArgumentNullException(nameof(singleFileName));
+            this.AppSlug = appSlug ?? throw new global::System.ArgumentNullException(nameof(appSlug));
+            this.SuspendedBy = suspendedBy ?? throw new global::System.ArgumentNullException(nameof(suspendedBy));
+            this.SuspendedAt = suspendedAt;
+            this.HasMultipleSingleFiles = hasMultipleSingleFiles;
+            this.SingleFilePaths = singleFilePaths;
+            this.ContactEmail = contactEmail;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Installation" /> class.
+        /// </summary>
+        public Installation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

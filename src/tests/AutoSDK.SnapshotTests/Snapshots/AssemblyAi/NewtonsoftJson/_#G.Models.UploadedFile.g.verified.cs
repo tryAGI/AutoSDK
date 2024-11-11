@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadedFile" /> class.
+        /// </summary>
+        /// <param name="uploadUrl">
+        /// A URL that points to your audio file, accessible only by AssemblyAI's servers
+        /// </param>
+        public UploadedFile(
+            string uploadUrl)
+        {
+            this.UploadUrl = uploadUrl ?? throw new global::System.ArgumentNullException(nameof(uploadUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadedFile" /> class.
+        /// </summary>
+        public UploadedFile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -81,6 +81,75 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassroomAssignmentGrade" /> class.
+        /// </summary>
+        /// <param name="assignmentName">
+        /// Name of the assignment
+        /// </param>
+        /// <param name="assignmentUrl">
+        /// URL of the assignment
+        /// </param>
+        /// <param name="starterCodeUrl">
+        /// URL of the starter code for the assignment
+        /// </param>
+        /// <param name="githubUsername">
+        /// GitHub username of the student
+        /// </param>
+        /// <param name="rosterIdentifier">
+        /// Roster identifier of the student
+        /// </param>
+        /// <param name="studentRepositoryName">
+        /// Name of the student's assignment repository
+        /// </param>
+        /// <param name="studentRepositoryUrl">
+        /// URL of the student's assignment repository
+        /// </param>
+        /// <param name="submissionTimestamp">
+        /// Timestamp of the student's assignment submission
+        /// </param>
+        /// <param name="pointsAwarded">
+        /// Number of points awarded to the student
+        /// </param>
+        /// <param name="pointsAvailable">
+        /// Number of points available for the assignment
+        /// </param>
+        /// <param name="groupName">
+        /// If a group assignment, name of the group the student is in
+        /// </param>
+        public ClassroomAssignmentGrade(
+            string assignmentName,
+            string assignmentUrl,
+            string starterCodeUrl,
+            string githubUsername,
+            string rosterIdentifier,
+            string studentRepositoryName,
+            string studentRepositoryUrl,
+            string submissionTimestamp,
+            int pointsAwarded,
+            int pointsAvailable,
+            string? groupName)
+        {
+            this.AssignmentName = assignmentName ?? throw new global::System.ArgumentNullException(nameof(assignmentName));
+            this.AssignmentUrl = assignmentUrl ?? throw new global::System.ArgumentNullException(nameof(assignmentUrl));
+            this.StarterCodeUrl = starterCodeUrl ?? throw new global::System.ArgumentNullException(nameof(starterCodeUrl));
+            this.GithubUsername = githubUsername ?? throw new global::System.ArgumentNullException(nameof(githubUsername));
+            this.RosterIdentifier = rosterIdentifier ?? throw new global::System.ArgumentNullException(nameof(rosterIdentifier));
+            this.StudentRepositoryName = studentRepositoryName ?? throw new global::System.ArgumentNullException(nameof(studentRepositoryName));
+            this.StudentRepositoryUrl = studentRepositoryUrl ?? throw new global::System.ArgumentNullException(nameof(studentRepositoryUrl));
+            this.SubmissionTimestamp = submissionTimestamp ?? throw new global::System.ArgumentNullException(nameof(submissionTimestamp));
+            this.PointsAwarded = pointsAwarded;
+            this.PointsAvailable = pointsAvailable;
+            this.GroupName = groupName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassroomAssignmentGrade" /> class.
+        /// </summary>
+        public ClassroomAssignmentGrade()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

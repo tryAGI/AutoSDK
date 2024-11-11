@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExampleRunWithFeedback" /> class.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="referenceOutput"></param>
+        /// <param name="output"></param>
+        /// <param name="feedback"></param>
+        /// <param name="runId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ExampleRunWithFeedback(
+            string input,
+            string referenceOutput,
+            string output,
+            string feedback,
+            string runId)
+        {
+            this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.ReferenceOutput = referenceOutput ?? throw new global::System.ArgumentNullException(nameof(referenceOutput));
+            this.Output = output ?? throw new global::System.ArgumentNullException(nameof(output));
+            this.Feedback = feedback ?? throw new global::System.ArgumentNullException(nameof(feedback));
+            this.RunId = runId ?? throw new global::System.ArgumentNullException(nameof(runId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExampleRunWithFeedback" /> class.
+        /// </summary>
+        public ExampleRunWithFeedback()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

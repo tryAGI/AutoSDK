@@ -45,6 +45,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RuleSuiteRuleEvaluation" /> class.
+        /// </summary>
+        /// <param name="ruleSource"></param>
+        /// <param name="enforcement">
+        /// The enforcement level of this rule source.
+        /// </param>
+        /// <param name="result">
+        /// The result of the evaluation of the individual rule.
+        /// </param>
+        /// <param name="ruleType">
+        /// The type of rule.
+        /// </param>
+        /// <param name="details">
+        /// The detailed failure message for the rule. Null if the rule passed.
+        /// </param>
+        public RuleSuiteRuleEvaluation(
+            global::G.RuleSuiteRuleEvaluationRuleSource? ruleSource,
+            global::G.RuleSuiteRuleEvaluationEnforcement? enforcement,
+            global::G.RuleSuiteRuleEvaluationResult? result,
+            string? ruleType,
+            string? details)
+        {
+            this.RuleSource = ruleSource;
+            this.Enforcement = enforcement;
+            this.Result = result;
+            this.RuleType = ruleType;
+            this.Details = details;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RuleSuiteRuleEvaluation" /> class.
+        /// </summary>
+        public RuleSuiteRuleEvaluation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

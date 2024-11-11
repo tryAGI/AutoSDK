@@ -96,6 +96,67 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentCreatedDeploymentPerformedViaGithubApp" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="description"></param>
+        /// <param name="events">
+        /// The list of events for the GitHub app
+        /// </param>
+        /// <param name="externalUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id">
+        /// Unique identifier of the GitHub app
+        /// </param>
+        /// <param name="name">
+        /// The name of the GitHub app
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="owner"></param>
+        /// <param name="permissions">
+        /// The set of permissions for the GitHub app
+        /// </param>
+        /// <param name="slug">
+        /// The slug name of the GitHub app
+        /// </param>
+        /// <param name="updatedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookDeploymentCreatedDeploymentPerformedViaGithubApp(
+            global::System.DateTime? createdAt,
+            string? description,
+            string? externalUrl,
+            string htmlUrl,
+            int? id,
+            string name,
+            string nodeId,
+            global::G.WebhookDeploymentCreatedDeploymentPerformedViaGithubAppOwner? owner,
+            global::System.DateTime? updatedAt,
+            global::System.Collections.Generic.IList<global::G.WebhookDeploymentCreatedDeploymentPerformedViaGithubAppEvent>? events,
+            global::G.WebhookDeploymentCreatedDeploymentPerformedViaGithubAppPermissions? permissions,
+            string? slug)
+        {
+            this.CreatedAt = createdAt;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.ExternalUrl = externalUrl ?? throw new global::System.ArgumentNullException(nameof(externalUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+            this.UpdatedAt = updatedAt;
+            this.Events = events;
+            this.Permissions = permissions;
+            this.Slug = slug;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentCreatedDeploymentPerformedViaGithubApp" /> class.
+        /// </summary>
+        public WebhookDeploymentCreatedDeploymentPerformedViaGithubApp()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

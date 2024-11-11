@@ -28,6 +28,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposListAttestationsResponseAttestation" /> class.
+        /// </summary>
+        /// <param name="bundle">
+        /// The attestation's Sigstore Bundle.<br/>
+        /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
+        /// </param>
+        /// <param name="repositoryId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposListAttestationsResponseAttestation(
+            global::G.ReposListAttestationsResponseAttestationBundle? bundle,
+            int? repositoryId)
+        {
+            this.Bundle = bundle;
+            this.RepositoryId = repositoryId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposListAttestationsResponseAttestation" /> class.
+        /// </summary>
+        public ReposListAttestationsResponseAttestation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

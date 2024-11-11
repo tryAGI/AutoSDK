@@ -75,6 +75,53 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingTest" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="testType"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="createdOn"></param>
+        /// <param name="projectId"></param>
+        /// <param name="excerptCount"></param>
+        /// <param name="tagCount"></param>
+        /// <param name="creator"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TrainingTest(
+            string? projectIdKey,
+            global::System.Guid? id,
+            int? testType,
+            string? title,
+            string? description,
+            global::System.DateTime? createdOn,
+            global::System.Guid? projectId,
+            int? excerptCount,
+            int? tagCount,
+            global::System.Guid? creator)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.Id = id;
+            this.TestType = testType;
+            this.Title = title;
+            this.Description = description;
+            this.CreatedOn = createdOn;
+            this.ProjectId = projectId;
+            this.ExcerptCount = excerptCount;
+            this.TagCount = tagCount;
+            this.Creator = creator;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingTest" /> class.
+        /// </summary>
+        public TrainingTest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -40,6 +40,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamMembership" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="role">
+        /// The role of the user in the team.<br/>
+        /// Default Value: member<br/>
+        /// Example: member
+        /// </param>
+        /// <param name="state">
+        /// The state of the user's membership in the team.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TeamMembership(
+            string url,
+            global::G.TeamMembershipRole role,
+            global::G.TeamMembershipState state)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Role = role;
+            this.State = state;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamMembership" /> class.
+        /// </summary>
+        public TeamMembership()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

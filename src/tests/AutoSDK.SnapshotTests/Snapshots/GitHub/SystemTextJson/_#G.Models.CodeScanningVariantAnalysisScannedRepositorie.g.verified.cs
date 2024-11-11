@@ -48,6 +48,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisScannedRepositorie" /> class.
+        /// </summary>
+        /// <param name="repository">
+        /// Repository Identifier
+        /// </param>
+        /// <param name="analysisStatus">
+        /// The new status of the CodeQL variant analysis repository task.
+        /// </param>
+        /// <param name="resultCount">
+        /// The number of results in the case of a successful analysis. This is only available for successful analyses.
+        /// </param>
+        /// <param name="artifactSizeInBytes">
+        /// The size of the artifact. This is only available for successful analyses.
+        /// </param>
+        /// <param name="failureMessage">
+        /// The reason of the failure of this repo task. This is only available if the repository task has failed.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeScanningVariantAnalysisScannedRepositorie(
+            global::G.CodeScanningVariantAnalysisRepository repository,
+            global::G.CodeScanningVariantAnalysisStatus analysisStatus,
+            int? resultCount,
+            int? artifactSizeInBytes,
+            string? failureMessage)
+        {
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.AnalysisStatus = analysisStatus;
+            this.ResultCount = resultCount;
+            this.ArtifactSizeInBytes = artifactSizeInBytes;
+            this.FailureMessage = failureMessage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisScannedRepositorie" /> class.
+        /// </summary>
+        public CodeScanningVariantAnalysisScannedRepositorie()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

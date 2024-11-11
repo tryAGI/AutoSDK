@@ -28,6 +28,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManageApiStripeSubscriptionResponse" /> class.
+        /// </summary>
+        /// <param name="stripeSubscriptionUrl">
+        /// The URL for the user to checkout the Stripe subscription plan.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ManageApiStripeSubscriptionResponse(
+            string? stripeSubscriptionUrl)
+        {
+            this.StripeSubscriptionUrl = stripeSubscriptionUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManageApiStripeSubscriptionResponse" /> class.
+        /// </summary>
+        public ManageApiStripeSubscriptionResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

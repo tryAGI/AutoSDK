@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetVariationByIdResponse" /> class.
+        /// </summary>
+        /// <param name="generatedImageVariationGeneric"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetVariationByIdResponse(
+            global::System.Collections.Generic.IList<global::G.GetVariationByIdResponseGeneratedImageVariationGenericItem>? generatedImageVariationGeneric)
+        {
+            this.GeneratedImageVariationGeneric = generatedImageVariationGeneric;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetVariationByIdResponse" /> class.
+        /// </summary>
+        public GetVariationByIdResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -51,6 +51,42 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowRunInProgressWorkflowRunHeadCommit" /> class.
+        /// </summary>
+        /// <param name="author">
+        /// Metaproperties for Git author/committer information.
+        /// </param>
+        /// <param name="committer">
+        /// Metaproperties for Git author/committer information.
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="message"></param>
+        /// <param name="timestamp"></param>
+        /// <param name="treeId"></param>
+        public WebhookWorkflowRunInProgressWorkflowRunHeadCommit(
+            global::G.WebhookWorkflowRunInProgressWorkflowRunHeadCommitAuthor author,
+            global::G.WebhookWorkflowRunInProgressWorkflowRunHeadCommitCommitter committer,
+            string id,
+            string message,
+            string timestamp,
+            string treeId)
+        {
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Timestamp = timestamp ?? throw new global::System.ArgumentNullException(nameof(timestamp));
+            this.TreeId = treeId ?? throw new global::System.ArgumentNullException(nameof(treeId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowRunInProgressWorkflowRunHeadCommit" /> class.
+        /// </summary>
+        public WebhookWorkflowRunInProgressWorkflowRunHeadCommit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

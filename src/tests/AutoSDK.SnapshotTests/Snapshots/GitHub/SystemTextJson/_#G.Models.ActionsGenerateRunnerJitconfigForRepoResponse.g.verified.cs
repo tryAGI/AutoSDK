@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsGenerateRunnerJitconfigForRepoResponse" /> class.
+        /// </summary>
+        /// <param name="runner">
+        /// A self hosted runner
+        /// </param>
+        /// <param name="encodedJitConfig">
+        /// The base64 encoded runner configuration.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsGenerateRunnerJitconfigForRepoResponse(
+            global::G.Runner runner,
+            string encodedJitConfig)
+        {
+            this.Runner = runner ?? throw new global::System.ArgumentNullException(nameof(runner));
+            this.EncodedJitConfig = encodedJitConfig ?? throw new global::System.ArgumentNullException(nameof(encodedJitConfig));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsGenerateRunnerJitconfigForRepoResponse" /> class.
+        /// </summary>
+        public ActionsGenerateRunnerJitconfigForRepoResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

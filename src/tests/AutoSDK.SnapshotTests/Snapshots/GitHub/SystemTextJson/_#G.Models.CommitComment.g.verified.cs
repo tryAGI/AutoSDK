@@ -114,6 +114,68 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitComment" /> class.
+        /// </summary>
+        /// <param name="htmlUrl"></param>
+        /// <param name="url"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="body"></param>
+        /// <param name="path"></param>
+        /// <param name="position"></param>
+        /// <param name="line"></param>
+        /// <param name="commitId"></param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        /// <param name="reactions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CommitComment(
+            string htmlUrl,
+            string url,
+            int id,
+            string nodeId,
+            string body,
+            string? path,
+            int? position,
+            int? line,
+            string commitId,
+            global::G.NullableSimpleUser? user,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::G.AuthorAssociation authorAssociation,
+            global::G.ReactionRollup? reactions)
+        {
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Position = position;
+            this.Line = line;
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.AuthorAssociation = authorAssociation;
+            this.Reactions = reactions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitComment" /> class.
+        /// </summary>
+        public CommitComment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

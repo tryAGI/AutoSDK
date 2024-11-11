@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsMergeRequest" /> class.
+        /// </summary>
+        /// <param name="commitTitle">
+        /// Title for the automatic commit message.
+        /// </param>
+        /// <param name="commitMessage">
+        /// Extra detail to append to automatic commit message.
+        /// </param>
+        /// <param name="sha">
+        /// SHA that pull request head must match to allow merge.
+        /// </param>
+        /// <param name="mergeMethod">
+        /// The merge method to use.
+        /// </param>
+        public PullsMergeRequest(
+            string? commitTitle,
+            string? commitMessage,
+            string? sha,
+            global::G.PullsMergeRequestMergeMethod? mergeMethod)
+        {
+            this.CommitTitle = commitTitle;
+            this.CommitMessage = commitMessage;
+            this.Sha = sha;
+            this.MergeMethod = mergeMethod;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsMergeRequest" /> class.
+        /// </summary>
+        public PullsMergeRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -47,6 +47,48 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingDeploymentEnvironment" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The id of the environment.<br/>
+        /// Example: 56780428L
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=
+        /// </param>
+        /// <param name="name">
+        /// The name of the environment.<br/>
+        /// Example: staging
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/github/hello-world/environments/staging
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PendingDeploymentEnvironment(
+            long? id,
+            string? nodeId,
+            string? name,
+            string? url,
+            string? htmlUrl)
+        {
+            this.Id = id;
+            this.NodeId = nodeId;
+            this.Name = name;
+            this.Url = url;
+            this.HtmlUrl = htmlUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingDeploymentEnvironment" /> class.
+        /// </summary>
+        public PendingDeploymentEnvironment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

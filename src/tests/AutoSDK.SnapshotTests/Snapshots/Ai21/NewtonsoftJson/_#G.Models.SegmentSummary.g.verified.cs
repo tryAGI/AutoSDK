@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SegmentSummary" /> class.
+        /// </summary>
+        /// <param name="summary"></param>
+        /// <param name="segmentText"></param>
+        /// <param name="segmentHtml"></param>
+        /// <param name="segmentType"></param>
+        /// <param name="hasSummary"></param>
+        /// <param name="highlights"></param>
+        public SegmentSummary(
+            string segmentText,
+            string segmentType,
+            bool hasSummary,
+            global::System.Collections.Generic.IList<global::G.Highlight> highlights,
+            string? summary,
+            string? segmentHtml)
+        {
+            this.SegmentText = segmentText ?? throw new global::System.ArgumentNullException(nameof(segmentText));
+            this.SegmentType = segmentType ?? throw new global::System.ArgumentNullException(nameof(segmentType));
+            this.HasSummary = hasSummary;
+            this.Highlights = highlights ?? throw new global::System.ArgumentNullException(nameof(highlights));
+            this.Summary = summary;
+            this.SegmentHtml = segmentHtml;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SegmentSummary" /> class.
+        /// </summary>
+        public SegmentSummary()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningDefaultSetupUpdateResponse" /> class.
+        /// </summary>
+        /// <param name="runId">
+        /// ID of the corresponding run.
+        /// </param>
+        /// <param name="runUrl">
+        /// URL of the corresponding run.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeScanningDefaultSetupUpdateResponse(
+            int? runId,
+            string? runUrl)
+        {
+            this.RunId = runId;
+            this.RunUrl = runUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningDefaultSetupUpdateResponse" /> class.
+        /// </summary>
+        public CodeScanningDefaultSetupUpdateResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

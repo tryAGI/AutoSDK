@@ -53,6 +53,52 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BackupCreateResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
+        /// </param>
+        /// <param name="classes">
+        /// The list of classes for which the backup creation process was started
+        /// </param>
+        /// <param name="backend">
+        /// Backup backend name e.g. filesystem, gcs, s3.
+        /// </param>
+        /// <param name="path">
+        /// destination path of backup files proper to selected backend
+        /// </param>
+        /// <param name="error">
+        /// error message if creation failed
+        /// </param>
+        /// <param name="status">
+        /// phase of backup creation process<br/>
+        /// Default Value: STARTED
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BackupCreateResponse(
+            string? id,
+            global::System.Collections.Generic.IList<string>? classes,
+            string? backend,
+            string? path,
+            string? error,
+            global::G.BackupCreateResponseStatus? status)
+        {
+            this.Id = id;
+            this.Classes = classes;
+            this.Backend = backend;
+            this.Path = path;
+            this.Error = error;
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BackupCreateResponse" /> class.
+        /// </summary>
+        public BackupCreateResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

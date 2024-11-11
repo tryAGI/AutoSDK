@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantToolsCode" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of tool being defined: `code_interpreter`
+        /// </param>
+        public AssistantToolsCode(
+            global::G.AssistantToolsCodeType type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantToolsCode" /> class.
+        /// </summary>
+        public AssistantToolsCode()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

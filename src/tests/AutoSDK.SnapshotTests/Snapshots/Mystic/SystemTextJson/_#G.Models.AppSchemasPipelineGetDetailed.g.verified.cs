@@ -143,6 +143,85 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppSchemasPipelineGetDetailed" /> class.
+        /// </summary>
+        /// <param name="public"></param>
+        /// <param name="description"></param>
+        /// <param name="websiteUrl"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="paperUrl"></param>
+        /// <param name="licenseUrl"></param>
+        /// <param name="imageUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="image"></param>
+        /// <param name="inputVariables"></param>
+        /// <param name="outputVariables"></param>
+        /// <param name="extras"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="accelerators"></param>
+        /// <param name="cluster">
+        /// A lean representation of a cluster when returned from an API call
+        /// </param>
+        /// <param name="scalingConfig"></param>
+        /// <param name="failedStateInfo">
+        /// Base model for schemas.
+        /// </param>
+        /// <param name="pointers"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AppSchemasPipelineGetDetailed(
+            bool @public,
+            string name,
+            string image,
+            global::System.Collections.Generic.IList<global::G.IOVariable> inputVariables,
+            global::System.Collections.Generic.IList<global::G.IOVariable> outputVariables,
+            string id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string? description,
+            string? websiteUrl,
+            string? repositoryUrl,
+            string? paperUrl,
+            string? licenseUrl,
+            string? imageUrl,
+            object? extras,
+            global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators,
+            global::G.PipelineClusterGetLean? cluster,
+            string? scalingConfig,
+            global::G.PipelineContainerState? failedStateInfo,
+            global::System.Collections.Generic.IList<string>? pointers)
+        {
+            this.Public = @public;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.InputVariables = inputVariables ?? throw new global::System.ArgumentNullException(nameof(inputVariables));
+            this.OutputVariables = outputVariables ?? throw new global::System.ArgumentNullException(nameof(outputVariables));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Description = description;
+            this.WebsiteUrl = websiteUrl;
+            this.RepositoryUrl = repositoryUrl;
+            this.PaperUrl = paperUrl;
+            this.LicenseUrl = licenseUrl;
+            this.ImageUrl = imageUrl;
+            this.Extras = extras;
+            this.Accelerators = accelerators;
+            this.Cluster = cluster;
+            this.ScalingConfig = scalingConfig;
+            this.FailedStateInfo = failedStateInfo;
+            this.Pointers = pointers;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppSchemasPipelineGetDetailed" /> class.
+        /// </summary>
+        public AppSchemasPipelineGetDetailed()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -75,6 +75,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitContent" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="path"></param>
+        /// <param name="sha"></param>
+        /// <param name="size"></param>
+        /// <param name="url"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="gitUrl"></param>
+        /// <param name="downloadUrl"></param>
+        /// <param name="type"></param>
+        /// <param name="links"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FileCommitContent(
+            string? name,
+            string? path,
+            string? sha,
+            int? size,
+            string? url,
+            string? htmlUrl,
+            string? gitUrl,
+            string? downloadUrl,
+            string? type,
+            global::G.FileCommitContentLinks? links)
+        {
+            this.Name = name;
+            this.Path = path;
+            this.Sha = sha;
+            this.Size = size;
+            this.Url = url;
+            this.HtmlUrl = htmlUrl;
+            this.GitUrl = gitUrl;
+            this.DownloadUrl = downloadUrl;
+            this.Type = type;
+            this.Links = links;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitContent" /> class.
+        /// </summary>
+        public FileCommitContent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageStartEvent" /> class.
+        /// </summary>
+        /// <param name="message">
+        /// A message in a chat conversation.
+        /// </param>
+        /// <param name="type">
+        /// The type of a streaming event.
+        /// </param>
+        public MessageStartEvent(
+            global::G.Message message,
+            global::G.MessageStreamEventType type)
+        {
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageStartEvent" /> class.
+        /// </summary>
+        public MessageStartEvent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

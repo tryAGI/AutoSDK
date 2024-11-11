@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsCreateCardRequestVariant1" /> class.
+        /// </summary>
+        /// <param name="note">
+        /// The project card's note<br/>
+        /// Example: Update all gems
+        /// </param>
+        public ProjectsCreateCardRequestVariant1(
+            string? note)
+        {
+            this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsCreateCardRequestVariant1" /> class.
+        /// </summary>
+        public ProjectsCreateCardRequestVariant1()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportDestinationCreate" /> class.
+        /// </summary>
+        /// <param name="destinationType"></param>
+        /// <param name="displayName"></param>
+        /// <param name="config"></param>
+        /// <param name="credentials"></param>
+        public BulkExportDestinationCreate(
+            string displayName,
+            global::G.BulkExportDestinationS3Config config,
+            global::G.BulkExportDestinationS3Credentials credentials,
+            global::G.BulkExportDestinationType? destinationType)
+        {
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.Credentials = credentials ?? throw new global::System.ArgumentNullException(nameof(credentials));
+            this.DestinationType = destinationType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportDestinationCreate" /> class.
+        /// </summary>
+        public BulkExportDestinationCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

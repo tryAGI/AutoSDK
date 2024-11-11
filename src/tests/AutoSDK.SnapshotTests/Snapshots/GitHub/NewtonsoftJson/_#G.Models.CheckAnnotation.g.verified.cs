@@ -75,6 +75,68 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckAnnotation" /> class.
+        /// </summary>
+        /// <param name="path">
+        /// Example: README.md
+        /// </param>
+        /// <param name="startLine">
+        /// Example: 2
+        /// </param>
+        /// <param name="endLine">
+        /// Example: 2
+        /// </param>
+        /// <param name="startColumn">
+        /// Example: 5
+        /// </param>
+        /// <param name="endColumn">
+        /// Example: 10
+        /// </param>
+        /// <param name="annotationLevel">
+        /// Example: warning
+        /// </param>
+        /// <param name="title">
+        /// Example: Spell Checker
+        /// </param>
+        /// <param name="message">
+        /// Example: Check your spelling for 'banaas'.
+        /// </param>
+        /// <param name="rawDetails">
+        /// Example: Do you mean 'bananas' or 'banana'?
+        /// </param>
+        /// <param name="blobHref"></param>
+        public CheckAnnotation(
+            string path,
+            int startLine,
+            int endLine,
+            int? startColumn,
+            int? endColumn,
+            string? annotationLevel,
+            string? title,
+            string? message,
+            string? rawDetails,
+            string blobHref)
+        {
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.StartLine = startLine;
+            this.EndLine = endLine;
+            this.StartColumn = startColumn;
+            this.EndColumn = endColumn;
+            this.AnnotationLevel = annotationLevel ?? throw new global::System.ArgumentNullException(nameof(annotationLevel));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.RawDetails = rawDetails ?? throw new global::System.ArgumentNullException(nameof(rawDetails));
+            this.BlobHref = blobHref ?? throw new global::System.ArgumentNullException(nameof(blobHref));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckAnnotation" /> class.
+        /// </summary>
+        public CheckAnnotation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

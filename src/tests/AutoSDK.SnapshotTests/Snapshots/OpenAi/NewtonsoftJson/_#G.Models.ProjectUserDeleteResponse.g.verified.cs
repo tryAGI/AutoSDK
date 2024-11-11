@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectUserDeleteResponse" /> class.
+        /// </summary>
+        /// <param name="object"></param>
+        /// <param name="id"></param>
+        /// <param name="deleted"></param>
+        public ProjectUserDeleteResponse(
+            string id,
+            bool deleted,
+            global::G.ProjectUserDeleteResponseObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Deleted = deleted;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectUserDeleteResponse" /> class.
+        /// </summary>
+        public ProjectUserDeleteResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

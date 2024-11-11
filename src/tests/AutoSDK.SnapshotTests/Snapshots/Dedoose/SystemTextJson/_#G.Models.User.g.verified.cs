@@ -141,6 +141,84 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="User" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="username"></param>
+        /// <param name="passSalt"></param>
+        /// <param name="firstName"></param>
+        /// <param name="lastName"></param>
+        /// <param name="email"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="phone"></param>
+        /// <param name="eulaStamp"></param>
+        /// <param name="isActive"></param>
+        /// <param name="adminDisable"></param>
+        /// <param name="accountId"></param>
+        /// <param name="address"></param>
+        /// <param name="city"></param>
+        /// <param name="state"></param>
+        /// <param name="country"></param>
+        /// <param name="zip"></param>
+        /// <param name="lastLogin"></param>
+        /// <param name="changePass"></param>
+        /// <param name="chagePassDate"></param>
+        /// <param name="isVerified"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public User(
+            global::System.Guid? id,
+            string? username,
+            string? passSalt,
+            string? firstName,
+            string? lastName,
+            string? email,
+            global::System.DateTime? createStamp,
+            string? phone,
+            global::System.DateTime? eulaStamp,
+            bool? isActive,
+            bool? adminDisable,
+            global::System.Guid? accountId,
+            string? address,
+            string? city,
+            string? state,
+            string? country,
+            string? zip,
+            global::System.DateTime? lastLogin,
+            bool? changePass,
+            global::System.DateTime? chagePassDate,
+            bool? isVerified)
+        {
+            this.Id = id;
+            this.Username = username;
+            this.PassSalt = passSalt;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+            this.CreateStamp = createStamp;
+            this.Phone = phone;
+            this.EulaStamp = eulaStamp;
+            this.IsActive = isActive;
+            this.AdminDisable = adminDisable;
+            this.AccountId = accountId;
+            this.Address = address;
+            this.City = city;
+            this.State = state;
+            this.Country = country;
+            this.Zip = zip;
+            this.LastLogin = lastLogin;
+            this.ChangePass = changePass;
+            this.ChagePassDate = chagePassDate;
+            this.IsVerified = isVerified;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="User" /> class.
+        /// </summary>
+        public User()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

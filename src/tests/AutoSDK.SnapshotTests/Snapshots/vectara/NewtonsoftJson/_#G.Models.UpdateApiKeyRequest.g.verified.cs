@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateApiKeyRequest" /> class.
+        /// </summary>
+        /// <param name="enabled">
+        /// Indicates whether to disable or enable an API key.
+        /// </param>
+        public UpdateApiKeyRequest(
+            bool? enabled)
+        {
+            this.Enabled = enabled;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateApiKeyRequest" /> class.
+        /// </summary>
+        public UpdateApiKeyRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

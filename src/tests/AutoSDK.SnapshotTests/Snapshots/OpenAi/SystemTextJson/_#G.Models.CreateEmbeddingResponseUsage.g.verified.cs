@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEmbeddingResponseUsage" /> class.
+        /// </summary>
+        /// <param name="promptTokens">
+        /// The number of tokens used by the prompt.
+        /// </param>
+        /// <param name="totalTokens">
+        /// The total number of tokens used by the request.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateEmbeddingResponseUsage(
+            int promptTokens,
+            int totalTokens)
+        {
+            this.PromptTokens = promptTokens;
+            this.TotalTokens = totalTokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEmbeddingResponseUsage" /> class.
+        /// </summary>
+        public CreateEmbeddingResponseUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

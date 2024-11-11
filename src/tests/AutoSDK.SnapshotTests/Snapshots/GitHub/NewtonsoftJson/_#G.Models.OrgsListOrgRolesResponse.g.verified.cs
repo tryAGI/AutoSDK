@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsListOrgRolesResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount">
+        /// The total number of organization roles available to the organization.
+        /// </param>
+        /// <param name="roles">
+        /// The list of organization roles available to the organization.
+        /// </param>
+        public OrgsListOrgRolesResponse(
+            int? totalCount,
+            global::System.Collections.Generic.IList<global::G.OrganizationRole>? roles)
+        {
+            this.TotalCount = totalCount;
+            this.Roles = roles;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsListOrgRolesResponse" /> class.
+        /// </summary>
+        public OrgsListOrgRolesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

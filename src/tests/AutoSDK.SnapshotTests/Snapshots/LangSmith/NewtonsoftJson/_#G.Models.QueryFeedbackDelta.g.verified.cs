@@ -57,6 +57,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryFeedbackDelta" /> class.
+        /// </summary>
+        /// <param name="baselineSessionId"></param>
+        /// <param name="comparisonSessionIds"></param>
+        /// <param name="feedbackKey"></param>
+        /// <param name="filters"></param>
+        /// <param name="offset">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="limit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="comparativeExperimentId"></param>
+        public QueryFeedbackDelta(
+            global::System.Guid baselineSessionId,
+            global::System.Collections.Generic.IList<global::System.Guid> comparisonSessionIds,
+            string feedbackKey,
+            global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? filters,
+            int? offset,
+            int? limit,
+            global::System.Guid? comparativeExperimentId)
+        {
+            this.BaselineSessionId = baselineSessionId;
+            this.ComparisonSessionIds = comparisonSessionIds ?? throw new global::System.ArgumentNullException(nameof(comparisonSessionIds));
+            this.FeedbackKey = feedbackKey ?? throw new global::System.ArgumentNullException(nameof(feedbackKey));
+            this.Filters = filters;
+            this.Offset = offset;
+            this.Limit = limit;
+            this.ComparativeExperimentId = comparativeExperimentId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryFeedbackDelta" /> class.
+        /// </summary>
+        public QueryFeedbackDelta()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -44,6 +44,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageDeployment" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the GitHub Pages deployment. This is the Git SHA of the deployed commit.
+        /// </param>
+        /// <param name="statusUrl">
+        /// The URI to monitor GitHub Pages deployment status.<br/>
+        /// Example: https://api.github.com/repos/github/hello-world/pages/deployments/4fd754f7e594640989b406850d0bc8f06a121251
+        /// </param>
+        /// <param name="pageUrl">
+        /// The URI to the deployed GitHub Pages.<br/>
+        /// Example: hello-world.github.io
+        /// </param>
+        /// <param name="previewUrl">
+        /// The URI to the deployed GitHub Pages preview.<br/>
+        /// Example: monalisa-1231a2312sa32-23sda74.drafts.github.io
+        /// </param>
+        public PageDeployment(
+            global::G.OneOf<int?, string> id,
+            string statusUrl,
+            string pageUrl,
+            string? previewUrl)
+        {
+            this.Id = id;
+            this.StatusUrl = statusUrl ?? throw new global::System.ArgumentNullException(nameof(statusUrl));
+            this.PageUrl = pageUrl ?? throw new global::System.ArgumentNullException(nameof(pageUrl));
+            this.PreviewUrl = previewUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageDeployment" /> class.
+        /// </summary>
+        public PageDeployment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

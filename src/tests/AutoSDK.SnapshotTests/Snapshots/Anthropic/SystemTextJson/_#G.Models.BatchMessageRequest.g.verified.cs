@@ -31,6 +31,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchMessageRequest" /> class.
+        /// </summary>
+        /// <param name="customId">
+        /// Developer-provided ID created for each request in a Message Batch. Useful for<br/>
+        /// matching results to requests, as results may be given out of request order.<br/>
+        /// Must be unique for each request within the Message Batch.
+        /// </param>
+        /// <param name="params">
+        /// The request parameters for creating a message.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BatchMessageRequest(
+            string customId,
+            global::G.CreateMessageRequest @params)
+        {
+            this.CustomId = customId ?? throw new global::System.ArgumentNullException(nameof(customId));
+            this.Params = @params ?? throw new global::System.ArgumentNullException(nameof(@params));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchMessageRequest" /> class.
+        /// </summary>
+        public BatchMessageRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

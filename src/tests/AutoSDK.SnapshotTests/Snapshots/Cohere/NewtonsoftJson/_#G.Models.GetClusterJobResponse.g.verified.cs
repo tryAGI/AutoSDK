@@ -109,6 +109,92 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetClusterJobResponse" /> class.
+        /// </summary>
+        /// <param name="jobId"></param>
+        /// <param name="createdAt">
+        /// Time of job creation in RFC3339 format<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="embeddingsUrl">
+        /// The input file URL used for the job<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="inputDatasetId">
+        /// The input dataset ID used for the job<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="minClusterSize">
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="nNeighbors">
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="isDeterministic">
+        /// The parameter used in the job creation. Please refer to the job creation endpoint for more details<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="status"></param>
+        /// <param name="isFinalState">
+        /// A boolean indicating whether the job is in a final state, whether completed or failed<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="outputClustersUrl">
+        /// The output file URL for the clusters (signed url that expires)<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="outputOutliersUrl">
+        /// The output file URL for the outliers (signed url that expires)<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="clusters">
+        /// The list of cluster summaries for the job<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="error"></param>
+        /// <param name="meta"></param>
+        public GetClusterJobResponse(
+            string jobId,
+            global::System.DateTime? createdAt,
+            string? embeddingsUrl,
+            string? inputDatasetId,
+            int? minClusterSize,
+            int? nNeighbors,
+            bool? isDeterministic,
+            global::G.GetClusterJobResponseStatus? status,
+            bool? isFinalState,
+            string? outputClustersUrl,
+            string? outputOutliersUrl,
+            global::System.Collections.Generic.IList<global::G.Cluster>? clusters,
+            string? error,
+            global::G.ApiMeta? meta)
+        {
+            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
+            this.CreatedAt = createdAt;
+            this.EmbeddingsUrl = embeddingsUrl;
+            this.InputDatasetId = inputDatasetId;
+            this.MinClusterSize = minClusterSize;
+            this.NNeighbors = nNeighbors;
+            this.IsDeterministic = isDeterministic;
+            this.Status = status;
+            this.IsFinalState = isFinalState;
+            this.OutputClustersUrl = outputClustersUrl;
+            this.OutputOutliersUrl = outputOutliersUrl;
+            this.Clusters = clusters;
+            this.Error = error;
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetClusterJobResponse" /> class.
+        /// </summary>
+        public GetClusterJobResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

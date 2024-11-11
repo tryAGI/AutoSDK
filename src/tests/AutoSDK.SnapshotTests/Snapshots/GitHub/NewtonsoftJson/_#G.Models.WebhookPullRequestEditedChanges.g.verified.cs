@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestEditedChanges" /> class.
+        /// </summary>
+        /// <param name="base"></param>
+        /// <param name="body"></param>
+        /// <param name="title"></param>
+        public WebhookPullRequestEditedChanges(
+            global::G.WebhookPullRequestEditedChangesBase? @base,
+            global::G.WebhookPullRequestEditedChangesBody? body,
+            global::G.WebhookPullRequestEditedChangesTitle? title)
+        {
+            this.Base = @base;
+            this.Body = body;
+            this.Title = title;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestEditedChanges" /> class.
+        /// </summary>
+        public WebhookPullRequestEditedChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

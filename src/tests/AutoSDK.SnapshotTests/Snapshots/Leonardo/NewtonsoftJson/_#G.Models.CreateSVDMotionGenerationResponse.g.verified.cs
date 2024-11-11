@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponse" /> class.
+        /// </summary>
+        /// <param name="sdGenerationJob"></param>
+        public CreateSVDMotionGenerationResponse(
+            global::G.CreateSVDMotionGenerationResponseSdGenerationJob? sdGenerationJob)
+        {
+            this.SdGenerationJob = sdGenerationJob;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponse" /> class.
+        /// </summary>
+        public CreateSVDMotionGenerationResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

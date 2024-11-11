@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVectorStoreRequestChunkingStrategyDiscriminator" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateVectorStoreRequestChunkingStrategyDiscriminator(
+            global::G.CreateVectorStoreRequestChunkingStrategyDiscriminatorType? type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVectorStoreRequestChunkingStrategyDiscriminator" /> class.
+        /// </summary>
+        public CreateVectorStoreRequestChunkingStrategyDiscriminator()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

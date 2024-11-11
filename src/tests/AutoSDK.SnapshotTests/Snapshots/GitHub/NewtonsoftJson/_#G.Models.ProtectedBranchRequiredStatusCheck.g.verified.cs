@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchRequiredStatusCheck" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="enforcementLevel"></param>
+        /// <param name="contexts"></param>
+        /// <param name="checks"></param>
+        /// <param name="contextsUrl"></param>
+        /// <param name="strict"></param>
+        public ProtectedBranchRequiredStatusCheck(
+            global::System.Collections.Generic.IList<string> contexts,
+            global::System.Collections.Generic.IList<global::G.ProtectedBranchRequiredStatusCheckCheck> checks,
+            string? url,
+            string? enforcementLevel,
+            string? contextsUrl,
+            bool? strict)
+        {
+            this.Contexts = contexts ?? throw new global::System.ArgumentNullException(nameof(contexts));
+            this.Checks = checks ?? throw new global::System.ArgumentNullException(nameof(checks));
+            this.Url = url;
+            this.EnforcementLevel = enforcementLevel;
+            this.ContextsUrl = contextsUrl;
+            this.Strict = strict;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchRequiredStatusCheck" /> class.
+        /// </summary>
+        public ProtectedBranchRequiredStatusCheck()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

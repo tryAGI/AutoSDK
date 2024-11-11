@@ -226,6 +226,127 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunSchemaComparisonView" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="inputs"></param>
+        /// <param name="inputsPreview"></param>
+        /// <param name="runType">
+        /// Enum for run types.
+        /// </param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="extra"></param>
+        /// <param name="error"></param>
+        /// <param name="executionOrder">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="serialized"></param>
+        /// <param name="outputs"></param>
+        /// <param name="outputsPreview"></param>
+        /// <param name="parentRunId"></param>
+        /// <param name="manifestId"></param>
+        /// <param name="manifestS3Id"></param>
+        /// <param name="events"></param>
+        /// <param name="tags"></param>
+        /// <param name="inputsS3Urls"></param>
+        /// <param name="outputsS3Urls"></param>
+        /// <param name="s3Urls"></param>
+        /// <param name="traceId"></param>
+        /// <param name="dottedOrder"></param>
+        /// <param name="id"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="referenceExampleId"></param>
+        /// <param name="totalTokens"></param>
+        /// <param name="promptTokens"></param>
+        /// <param name="completionTokens"></param>
+        /// <param name="totalCost"></param>
+        /// <param name="promptCost"></param>
+        /// <param name="completionCost"></param>
+        /// <param name="status"></param>
+        /// <param name="feedbackStats"></param>
+        /// <param name="appPath"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunSchemaComparisonView(
+            string name,
+            global::G.RunTypeEnum runType,
+            global::System.Guid traceId,
+            global::System.Guid id,
+            global::System.Guid sessionId,
+            string status,
+            object? inputs,
+            string? inputsPreview,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            object? extra,
+            string? error,
+            int? executionOrder,
+            object? serialized,
+            object? outputs,
+            string? outputsPreview,
+            global::System.Guid? parentRunId,
+            global::System.Guid? manifestId,
+            global::System.Guid? manifestS3Id,
+            global::System.Collections.Generic.IList<object>? events,
+            global::System.Collections.Generic.IList<string>? tags,
+            object? inputsS3Urls,
+            object? outputsS3Urls,
+            object? s3Urls,
+            string? dottedOrder,
+            global::System.Guid? referenceExampleId,
+            int? totalTokens,
+            int? promptTokens,
+            int? completionTokens,
+            string? totalCost,
+            string? promptCost,
+            string? completionCost,
+            global::System.Collections.Generic.Dictionary<string, object>? feedbackStats,
+            string? appPath)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.RunType = runType;
+            this.TraceId = traceId;
+            this.Id = id;
+            this.SessionId = sessionId;
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.Inputs = inputs;
+            this.InputsPreview = inputsPreview;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Extra = extra;
+            this.Error = error;
+            this.ExecutionOrder = executionOrder;
+            this.Serialized = serialized;
+            this.Outputs = outputs;
+            this.OutputsPreview = outputsPreview;
+            this.ParentRunId = parentRunId;
+            this.ManifestId = manifestId;
+            this.ManifestS3Id = manifestS3Id;
+            this.Events = events;
+            this.Tags = tags;
+            this.InputsS3Urls = inputsS3Urls;
+            this.OutputsS3Urls = outputsS3Urls;
+            this.S3Urls = s3Urls;
+            this.DottedOrder = dottedOrder;
+            this.ReferenceExampleId = referenceExampleId;
+            this.TotalTokens = totalTokens;
+            this.PromptTokens = promptTokens;
+            this.CompletionTokens = completionTokens;
+            this.TotalCost = totalCost;
+            this.PromptCost = promptCost;
+            this.CompletionCost = completionCost;
+            this.FeedbackStats = feedbackStats;
+            this.AppPath = appPath;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunSchemaComparisonView" /> class.
+        /// </summary>
+        public RunSchemaComparisonView()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTokenResponse" /> class.
+        /// </summary>
+        /// <param name="token">
+        /// The API token resource.<br/>
+        /// Included only in responses
+        /// </param>
+        public GetTokenResponse(
+            global::G.ApiToken? token)
+        {
+            this.Token = token;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTokenResponse" /> class.
+        /// </summary>
+        public GetTokenResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

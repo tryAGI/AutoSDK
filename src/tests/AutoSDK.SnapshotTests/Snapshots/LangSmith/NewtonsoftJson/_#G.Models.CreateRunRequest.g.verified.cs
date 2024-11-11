@@ -137,6 +137,80 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateRunRequest" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="inputs"></param>
+        /// <param name="runType"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="extra"></param>
+        /// <param name="error"></param>
+        /// <param name="serialized"></param>
+        /// <param name="outputs"></param>
+        /// <param name="parentRunId"></param>
+        /// <param name="events"></param>
+        /// <param name="tags"></param>
+        /// <param name="traceId"></param>
+        /// <param name="dottedOrder"></param>
+        /// <param name="id"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
+        /// <param name="referenceExampleId"></param>
+        /// <param name="inputAttachments"></param>
+        /// <param name="outputAttachments"></param>
+        public CreateRunRequest(
+            string name,
+            global::G.CreateRunRequestRunType runType,
+            object? inputs,
+            global::G.OneOf<string, double?>? startTime,
+            global::G.OneOf<string, double?>? endTime,
+            object? extra,
+            string? error,
+            object? serialized,
+            object? outputs,
+            global::System.Guid? parentRunId,
+            global::System.Collections.Generic.IList<object>? events,
+            global::System.Collections.Generic.IList<string>? tags,
+            global::System.Guid? traceId,
+            string? dottedOrder,
+            global::System.Guid? id,
+            global::System.Guid? sessionId,
+            string? sessionName,
+            global::System.Guid? referenceExampleId,
+            object? inputAttachments,
+            object? outputAttachments)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.RunType = runType;
+            this.Inputs = inputs;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Extra = extra;
+            this.Error = error;
+            this.Serialized = serialized;
+            this.Outputs = outputs;
+            this.ParentRunId = parentRunId;
+            this.Events = events;
+            this.Tags = tags;
+            this.TraceId = traceId;
+            this.DottedOrder = dottedOrder;
+            this.Id = id;
+            this.SessionId = sessionId;
+            this.SessionName = sessionName;
+            this.ReferenceExampleId = referenceExampleId;
+            this.InputAttachments = inputAttachments;
+            this.OutputAttachments = outputAttachments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateRunRequest" /> class.
+        /// </summary>
+        public CreateRunRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

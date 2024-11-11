@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerNamespaceLatestModelBinaryFileUploadResponse" /> class.
+        /// </summary>
+        /// <param name="task">
+        /// Task type.
+        /// </param>
+        /// <param name="taskOutputs">
+        /// Deleteted field.<br/>
+        /// Model inference outputs.<br/>
+        /// Included only in responses
+        /// </param>
+        public TriggerNamespaceLatestModelBinaryFileUploadResponse(
+            global::G.AITask task,
+            global::System.Collections.Generic.IList<object>? taskOutputs)
+        {
+            this.Task = task;
+            this.TaskOutputs = taskOutputs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerNamespaceLatestModelBinaryFileUploadResponse" /> class.
+        /// </summary>
+        public TriggerNamespaceLatestModelBinaryFileUploadResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

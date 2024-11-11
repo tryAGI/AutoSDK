@@ -57,6 +57,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceAccount" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="name"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="defaultWorkspaceId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ServiceAccount(
+            global::System.Guid id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string name,
+            global::System.Guid organizationId,
+            global::System.Guid? defaultWorkspaceId)
+        {
+            this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.OrganizationId = organizationId;
+            this.DefaultWorkspaceId = defaultWorkspaceId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ServiceAccount" /> class.
+        /// </summary>
+        public ServiceAccount()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -22,6 +22,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManifestFile" /> class.
+        /// </summary>
+        /// <param name="sourceLocation">
+        /// The path of the manifest file relative to the root of the Git repository.<br/>
+        /// Example: /src/build/package-lock.json
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ManifestFile(
+            string? sourceLocation)
+        {
+            this.SourceLocation = sourceLocation;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManifestFile" /> class.
+        /// </summary>
+        public ManifestFile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

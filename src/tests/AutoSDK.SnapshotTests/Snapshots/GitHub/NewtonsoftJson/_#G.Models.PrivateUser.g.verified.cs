@@ -273,6 +273,219 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PrivateUser" /> class.
+        /// </summary>
+        /// <param name="login">
+        /// Example: octocat
+        /// </param>
+        /// <param name="id">
+        /// Example: 1L
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDQ6VXNlcjE=
+        /// </param>
+        /// <param name="avatarUrl">
+        /// Example: https://github.com/images/error/octocat_happy.gif
+        /// </param>
+        /// <param name="gravatarId">
+        /// Example: 41d064eb2195891e12d0413f63227ea7
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/users/octocat
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat
+        /// </param>
+        /// <param name="followersUrl">
+        /// Example: https://api.github.com/users/octocat/followers
+        /// </param>
+        /// <param name="followingUrl">
+        /// Example: https://api.github.com/users/octocat/following{/other_user}
+        /// </param>
+        /// <param name="gistsUrl">
+        /// Example: https://api.github.com/users/octocat/gists{/gist_id}
+        /// </param>
+        /// <param name="starredUrl">
+        /// Example: https://api.github.com/users/octocat/starred{/owner}{/repo}
+        /// </param>
+        /// <param name="subscriptionsUrl">
+        /// Example: https://api.github.com/users/octocat/subscriptions
+        /// </param>
+        /// <param name="organizationsUrl">
+        /// Example: https://api.github.com/users/octocat/orgs
+        /// </param>
+        /// <param name="reposUrl">
+        /// Example: https://api.github.com/users/octocat/repos
+        /// </param>
+        /// <param name="eventsUrl">
+        /// Example: https://api.github.com/users/octocat/events{/privacy}
+        /// </param>
+        /// <param name="receivedEventsUrl">
+        /// Example: https://api.github.com/users/octocat/received_events
+        /// </param>
+        /// <param name="type">
+        /// Example: User
+        /// </param>
+        /// <param name="siteAdmin"></param>
+        /// <param name="name">
+        /// Example: monalisa octocat
+        /// </param>
+        /// <param name="company">
+        /// Example: GitHub
+        /// </param>
+        /// <param name="blog">
+        /// Example: https://github.com/blog
+        /// </param>
+        /// <param name="location">
+        /// Example: San Francisco
+        /// </param>
+        /// <param name="email">
+        /// Example: octocat@github.com
+        /// </param>
+        /// <param name="notificationEmail">
+        /// Example: octocat@github.com
+        /// </param>
+        /// <param name="hireable"></param>
+        /// <param name="bio">
+        /// Example: There once was...
+        /// </param>
+        /// <param name="twitterUsername">
+        /// Example: monalisa
+        /// </param>
+        /// <param name="publicRepos">
+        /// Example: 2
+        /// </param>
+        /// <param name="publicGists">
+        /// Example: 1
+        /// </param>
+        /// <param name="followers">
+        /// Example: 20
+        /// </param>
+        /// <param name="following">
+        /// Example: 0
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="privateGists">
+        /// Example: 81
+        /// </param>
+        /// <param name="totalPrivateRepos">
+        /// Example: 100
+        /// </param>
+        /// <param name="ownedPrivateRepos">
+        /// Example: 100
+        /// </param>
+        /// <param name="diskUsage">
+        /// Example: 10000
+        /// </param>
+        /// <param name="collaborators">
+        /// Example: 8
+        /// </param>
+        /// <param name="twoFactorAuthentication">
+        /// Example: true
+        /// </param>
+        /// <param name="plan"></param>
+        /// <param name="suspendedAt"></param>
+        /// <param name="businessPlus"></param>
+        /// <param name="ldapDn"></param>
+        public PrivateUser(
+            string login,
+            long id,
+            string nodeId,
+            string avatarUrl,
+            string? gravatarId,
+            string url,
+            string htmlUrl,
+            string followersUrl,
+            string followingUrl,
+            string gistsUrl,
+            string starredUrl,
+            string subscriptionsUrl,
+            string organizationsUrl,
+            string reposUrl,
+            string eventsUrl,
+            string receivedEventsUrl,
+            string type,
+            bool siteAdmin,
+            string? name,
+            string? company,
+            string? blog,
+            string? location,
+            string? email,
+            bool? hireable,
+            string? bio,
+            int publicRepos,
+            int publicGists,
+            int followers,
+            int following,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            int privateGists,
+            int totalPrivateRepos,
+            int ownedPrivateRepos,
+            int diskUsage,
+            int collaborators,
+            bool twoFactorAuthentication,
+            string? notificationEmail,
+            string? twitterUsername,
+            global::G.PrivateUserPlan? plan,
+            global::System.DateTime? suspendedAt,
+            bool? businessPlus,
+            string? ldapDn)
+        {
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.GravatarId = gravatarId ?? throw new global::System.ArgumentNullException(nameof(gravatarId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.FollowersUrl = followersUrl ?? throw new global::System.ArgumentNullException(nameof(followersUrl));
+            this.FollowingUrl = followingUrl ?? throw new global::System.ArgumentNullException(nameof(followingUrl));
+            this.GistsUrl = gistsUrl ?? throw new global::System.ArgumentNullException(nameof(gistsUrl));
+            this.StarredUrl = starredUrl ?? throw new global::System.ArgumentNullException(nameof(starredUrl));
+            this.SubscriptionsUrl = subscriptionsUrl ?? throw new global::System.ArgumentNullException(nameof(subscriptionsUrl));
+            this.OrganizationsUrl = organizationsUrl ?? throw new global::System.ArgumentNullException(nameof(organizationsUrl));
+            this.ReposUrl = reposUrl ?? throw new global::System.ArgumentNullException(nameof(reposUrl));
+            this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
+            this.ReceivedEventsUrl = receivedEventsUrl ?? throw new global::System.ArgumentNullException(nameof(receivedEventsUrl));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.SiteAdmin = siteAdmin;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Company = company ?? throw new global::System.ArgumentNullException(nameof(company));
+            this.Blog = blog ?? throw new global::System.ArgumentNullException(nameof(blog));
+            this.Location = location ?? throw new global::System.ArgumentNullException(nameof(location));
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Hireable = hireable;
+            this.Bio = bio ?? throw new global::System.ArgumentNullException(nameof(bio));
+            this.PublicRepos = publicRepos;
+            this.PublicGists = publicGists;
+            this.Followers = followers;
+            this.Following = following;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.PrivateGists = privateGists;
+            this.TotalPrivateRepos = totalPrivateRepos;
+            this.OwnedPrivateRepos = ownedPrivateRepos;
+            this.DiskUsage = diskUsage;
+            this.Collaborators = collaborators;
+            this.TwoFactorAuthentication = twoFactorAuthentication;
+            this.NotificationEmail = notificationEmail;
+            this.TwitterUsername = twitterUsername;
+            this.Plan = plan;
+            this.SuspendedAt = suspendedAt;
+            this.BusinessPlus = businessPlus;
+            this.LdapDn = ldapDn;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PrivateUser" /> class.
+        /// </summary>
+        public PrivateUser()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

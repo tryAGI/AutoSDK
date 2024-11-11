@@ -119,6 +119,101 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobOut" /> class.
+        /// </summary>
+        /// <param name="autoStart"></param>
+        /// <param name="createdAt">
+        /// The UNIX timestamp (in seconds) for when the fine-tuning job was created.
+        /// </param>
+        /// <param name="fineTunedModel">
+        /// The name of the fine-tuned model that is being created. The value will be `null` if the fine-tuning job is still running.
+        /// </param>
+        /// <param name="hyperparameters"></param>
+        /// <param name="id">
+        /// The ID of the job.
+        /// </param>
+        /// <param name="integrations">
+        /// A list of integrations enabled for your fine-tuning job.
+        /// </param>
+        /// <param name="jobType">
+        /// The type of job (`FT` for fine-tuning).
+        /// </param>
+        /// <param name="metadata"></param>
+        /// <param name="model">
+        /// The name of the model to fine-tune.
+        /// </param>
+        /// <param name="modifiedAt">
+        /// The UNIX timestamp (in seconds) for when the fine-tuning job was last modified.
+        /// </param>
+        /// <param name="object">
+        /// The object type of the fine-tuning job.<br/>
+        /// Default Value: job
+        /// </param>
+        /// <param name="repositories">
+        /// Default Value: []
+        /// </param>
+        /// <param name="status">
+        /// The current status of the fine-tuning job.
+        /// </param>
+        /// <param name="suffix">
+        /// Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.
+        /// </param>
+        /// <param name="trainedTokens">
+        /// Total number of tokens trained.
+        /// </param>
+        /// <param name="trainingFiles">
+        /// A list containing the IDs of uploaded files that contain training data.
+        /// </param>
+        /// <param name="validationFiles">
+        /// A list containing the IDs of uploaded files that contain validation data.<br/>
+        /// Default Value: []
+        /// </param>
+        public JobOut(
+            bool autoStart,
+            global::System.DateTimeOffset createdAt,
+            global::G.TrainingParameters hyperparameters,
+            global::System.Guid id,
+            string jobType,
+            global::G.FineTuneableModel model,
+            global::System.DateTimeOffset modifiedAt,
+            global::G.JobOutStatus status,
+            global::System.Collections.Generic.IList<global::System.Guid> trainingFiles,
+            string? fineTunedModel,
+            global::System.Collections.Generic.IList<global::G.IntegrationsItem3>? integrations,
+            object? metadata,
+            global::G.JobOutObject? @object,
+            global::System.Collections.Generic.IList<global::G.RepositoriesItem3>? repositories,
+            string? suffix,
+            int? trainedTokens,
+            global::System.Collections.Generic.IList<global::System.Guid>? validationFiles)
+        {
+            this.AutoStart = autoStart;
+            this.CreatedAt = createdAt;
+            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
+            this.Id = id;
+            this.JobType = jobType ?? throw new global::System.ArgumentNullException(nameof(jobType));
+            this.Model = model;
+            this.ModifiedAt = modifiedAt;
+            this.Status = status;
+            this.TrainingFiles = trainingFiles ?? throw new global::System.ArgumentNullException(nameof(trainingFiles));
+            this.FineTunedModel = fineTunedModel;
+            this.Integrations = integrations;
+            this.Metadata = metadata;
+            this.Object = @object;
+            this.Repositories = repositories;
+            this.Suffix = suffix;
+            this.TrainedTokens = trainedTokens;
+            this.ValidationFiles = validationFiles;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobOut" /> class.
+        /// </summary>
+        public JobOut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

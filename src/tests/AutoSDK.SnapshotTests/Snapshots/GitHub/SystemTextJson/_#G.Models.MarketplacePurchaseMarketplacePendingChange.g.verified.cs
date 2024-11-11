@@ -45,6 +45,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketplacePurchaseMarketplacePendingChange" /> class.
+        /// </summary>
+        /// <param name="isInstalled"></param>
+        /// <param name="effectiveDate"></param>
+        /// <param name="unitCount"></param>
+        /// <param name="id"></param>
+        /// <param name="plan">
+        /// Marketplace Listing Plan
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MarketplacePurchaseMarketplacePendingChange(
+            bool? isInstalled,
+            string? effectiveDate,
+            int? unitCount,
+            int? id,
+            global::G.MarketplaceListingPlan? plan)
+        {
+            this.IsInstalled = isInstalled;
+            this.EffectiveDate = effectiveDate;
+            this.UnitCount = unitCount;
+            this.Id = id;
+            this.Plan = plan;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketplacePurchaseMarketplacePendingChange" /> class.
+        /// </summary>
+        public MarketplacePurchaseMarketplacePendingChange()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

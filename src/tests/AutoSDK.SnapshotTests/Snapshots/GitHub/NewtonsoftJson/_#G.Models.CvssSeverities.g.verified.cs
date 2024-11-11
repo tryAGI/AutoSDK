@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CvssSeverities" /> class.
+        /// </summary>
+        /// <param name="cvssV3"></param>
+        /// <param name="cvssV4"></param>
+        public CvssSeverities(
+            global::G.CvssSeveritiesCvssV3? cvssV3,
+            global::G.CvssSeveritiesCvssV4? cvssV4)
+        {
+            this.CvssV3 = cvssV3;
+            this.CvssV4 = cvssV4;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CvssSeverities" /> class.
+        /// </summary>
+        public CvssSeverities()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

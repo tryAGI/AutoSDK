@@ -73,6 +73,52 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetSchemaForUpdate" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="inputsSchemaDefinition"></param>
+        /// <param name="outputsSchemaDefinition"></param>
+        /// <param name="externallyManaged">
+        /// Default Value: false
+        /// </param>
+        /// <param name="dataType">
+        /// Enum for dataset data types.
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DatasetSchemaForUpdate(
+            string name,
+            global::System.Guid id,
+            global::System.Guid tenantId,
+            string? description,
+            global::System.DateTime? createdAt,
+            object? inputsSchemaDefinition,
+            object? outputsSchemaDefinition,
+            bool? externallyManaged,
+            global::G.DataType? dataType)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.Description = description;
+            this.CreatedAt = createdAt;
+            this.InputsSchemaDefinition = inputsSchemaDefinition;
+            this.OutputsSchemaDefinition = outputsSchemaDefinition;
+            this.ExternallyManaged = externallyManaged;
+            this.DataType = dataType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetSchemaForUpdate" /> class.
+        /// </summary>
+        public DatasetSchemaForUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

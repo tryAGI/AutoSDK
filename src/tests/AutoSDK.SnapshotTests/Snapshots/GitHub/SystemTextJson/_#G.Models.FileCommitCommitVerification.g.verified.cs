@@ -39,6 +39,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitCommitVerification" /> class.
+        /// </summary>
+        /// <param name="verified"></param>
+        /// <param name="reason"></param>
+        /// <param name="signature"></param>
+        /// <param name="payload"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FileCommitCommitVerification(
+            bool? verified,
+            string? reason,
+            string? signature,
+            string? payload)
+        {
+            this.Verified = verified;
+            this.Reason = reason;
+            this.Signature = signature;
+            this.Payload = payload;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitCommitVerification" /> class.
+        /// </summary>
+        public FileCommitCommitVerification()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

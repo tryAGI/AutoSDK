@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConduitsResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Conduit ID.
+        /// </param>
+        /// <param name="shardCount">
+        /// Number of shards created for this conduit.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateConduitsResponseDataItem(
+            string id,
+            int shardCount)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.ShardCount = shardCount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConduitsResponseDataItem" /> class.
+        /// </summary>
+        public CreateConduitsResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

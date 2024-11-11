@@ -50,6 +50,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CorpusCustomDimension" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the custom dimension.<br/>
+        /// Example: importance
+        /// </param>
+        /// <param name="description">
+        /// Description of the custom dimension.<br/>
+        /// Example: Product importance.
+        /// </param>
+        /// <param name="indexingDefault">
+        /// Default value of a custom dimension on a document part if the custom<br/>
+        /// dimension value is not specified when the document part is indexed.<br/>
+        /// A value of 0 means that custom dimension is not considered.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="queryingDefault">
+        /// Default value of a custom dimension for a query if the value<br/>
+        /// of the custom dimension is not specified when querying the corpus.<br/>
+        /// A value of 0 means that custom dimension is not considered.<br/>
+        /// Default Value: 0<br/>
+        /// Example: 0
+        /// </param>
+        public CorpusCustomDimension(
+            string name,
+            string? description,
+            double? indexingDefault,
+            double? queryingDefault)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
+            this.IndexingDefault = indexingDefault;
+            this.QueryingDefault = queryingDefault;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CorpusCustomDimension" /> class.
+        /// </summary>
+        public CorpusCustomDimension()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

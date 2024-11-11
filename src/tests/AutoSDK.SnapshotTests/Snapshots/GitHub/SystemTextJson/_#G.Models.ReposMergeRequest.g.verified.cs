@@ -35,6 +35,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposMergeRequest" /> class.
+        /// </summary>
+        /// <param name="base">
+        /// The name of the base branch that the head will be merged into.
+        /// </param>
+        /// <param name="head">
+        /// The head to merge. This can be a branch name or a commit SHA1.
+        /// </param>
+        /// <param name="commitMessage">
+        /// Commit message to use for the merge commit. If omitted, a default message will be used.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposMergeRequest(
+            string @base,
+            string head,
+            string? commitMessage)
+        {
+            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
+            this.CommitMessage = commitMessage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposMergeRequest" /> class.
+        /// </summary>
+        public ReposMergeRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

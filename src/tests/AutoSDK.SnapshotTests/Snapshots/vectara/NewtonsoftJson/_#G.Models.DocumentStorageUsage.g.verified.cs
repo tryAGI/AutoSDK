@@ -29,6 +29,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentStorageUsage" /> class.
+        /// </summary>
+        /// <param name="bytesUsed">
+        /// Number of bytes used by document counting towards maximum corpus size, and<br/>
+        /// towards any billing plans.
+        /// </param>
+        /// <param name="metadataBytesUsed">
+        /// Number of metadata bytes used by a document.
+        /// </param>
+        public DocumentStorageUsage(
+            long? bytesUsed,
+            long? metadataBytesUsed)
+        {
+            this.BytesUsed = bytesUsed;
+            this.MetadataBytesUsed = metadataBytesUsed;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentStorageUsage" /> class.
+        /// </summary>
+        public DocumentStorageUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

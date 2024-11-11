@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAuditLogsEffectiveAt" /> class.
+        /// </summary>
+        /// <param name="gt">
+        /// Return only events whose `effective_at` (Unix seconds) is greater than this value.
+        /// </param>
+        /// <param name="gte">
+        /// Return only events whose `effective_at` (Unix seconds) is greater than or equal to this value.
+        /// </param>
+        /// <param name="lt">
+        /// Return only events whose `effective_at` (Unix seconds) is less than this value.
+        /// </param>
+        /// <param name="lte">
+        /// Return only events whose `effective_at` (Unix seconds) is less than or equal to this value.
+        /// </param>
+        public ListAuditLogsEffectiveAt(
+            int? gt,
+            int? gte,
+            int? lt,
+            int? lte)
+        {
+            this.Gt = gt;
+            this.Gte = gte;
+            this.Lt = lt;
+            this.Lte = lte;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAuditLogsEffectiveAt" /> class.
+        /// </summary>
+        public ListAuditLogsEffectiveAt()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

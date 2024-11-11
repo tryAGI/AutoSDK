@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunObjectRequiredAction" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// For now, this is always `submit_tool_outputs`.
+        /// </param>
+        /// <param name="submitToolOutputs">
+        /// Details on the tool outputs needed for this run to continue.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunObjectRequiredAction(
+            global::G.RunObjectRequiredActionSubmitToolOutputs submitToolOutputs,
+            global::G.RunObjectRequiredActionType type)
+        {
+            this.SubmitToolOutputs = submitToolOutputs ?? throw new global::System.ArgumentNullException(nameof(submitToolOutputs));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunObjectRequiredAction" /> class.
+        /// </summary>
+        public RunObjectRequiredAction()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -81,6 +81,75 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiffEntry" /> class.
+        /// </summary>
+        /// <param name="sha">
+        /// Example: bbcd538c8e72b8c175046e27cc8f907076331401
+        /// </param>
+        /// <param name="filename">
+        /// Example: file1.txt
+        /// </param>
+        /// <param name="status">
+        /// Example: added
+        /// </param>
+        /// <param name="additions">
+        /// Example: 103
+        /// </param>
+        /// <param name="deletions">
+        /// Example: 21
+        /// </param>
+        /// <param name="changes">
+        /// Example: 124
+        /// </param>
+        /// <param name="blobUrl">
+        /// Example: https://github.com/octocat/Hello-World/blob/6dcb09b5b57875f334f61aebed695e2e4193db5e/file1.txt
+        /// </param>
+        /// <param name="rawUrl">
+        /// Example: https://github.com/octocat/Hello-World/raw/6dcb09b5b57875f334f61aebed695e2e4193db5e/file1.txt
+        /// </param>
+        /// <param name="contentsUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/contents/file1.txt?ref=6dcb09b5b57875f334f61aebed695e2e4193db5e
+        /// </param>
+        /// <param name="patch">
+        /// Example: @@ -132,7 +132,7 @@ module Test @@ -1000,7 +1000,7 @@ module Test
+        /// </param>
+        /// <param name="previousFilename">
+        /// Example: file.txt
+        /// </param>
+        public DiffEntry(
+            string sha,
+            string filename,
+            global::G.DiffEntryStatus status,
+            int additions,
+            int deletions,
+            int changes,
+            string blobUrl,
+            string rawUrl,
+            string contentsUrl,
+            string? patch,
+            string? previousFilename)
+        {
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.Status = status;
+            this.Additions = additions;
+            this.Deletions = deletions;
+            this.Changes = changes;
+            this.BlobUrl = blobUrl ?? throw new global::System.ArgumentNullException(nameof(blobUrl));
+            this.RawUrl = rawUrl ?? throw new global::System.ArgumentNullException(nameof(rawUrl));
+            this.ContentsUrl = contentsUrl ?? throw new global::System.ArgumentNullException(nameof(contentsUrl));
+            this.Patch = patch;
+            this.PreviousFilename = previousFilename;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DiffEntry" /> class.
+        /// </summary>
+        public DiffEntry()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

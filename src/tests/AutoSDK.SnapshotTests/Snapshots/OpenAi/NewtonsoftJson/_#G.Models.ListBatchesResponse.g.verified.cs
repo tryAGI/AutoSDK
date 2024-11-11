@@ -45,6 +45,39 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListBatchesResponse" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="firstId">
+        /// Example: batch_abc123
+        /// </param>
+        /// <param name="lastId">
+        /// Example: batch_abc456
+        /// </param>
+        /// <param name="hasMore"></param>
+        /// <param name="object"></param>
+        public ListBatchesResponse(
+            global::System.Collections.Generic.IList<global::G.Batch> data,
+            bool hasMore,
+            string? firstId,
+            string? lastId,
+            global::G.ListBatchesResponseObject @object)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.HasMore = hasMore;
+            this.FirstId = firstId;
+            this.LastId = lastId;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListBatchesResponse" /> class.
+        /// </summary>
+        public ListBatchesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

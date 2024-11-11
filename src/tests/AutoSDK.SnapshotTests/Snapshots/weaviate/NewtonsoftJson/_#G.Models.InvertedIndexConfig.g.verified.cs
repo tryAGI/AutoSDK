@@ -55,6 +55,54 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvertedIndexConfig" /> class.
+        /// </summary>
+        /// <param name="cleanupIntervalSeconds">
+        /// Asynchronous index clean up happens every n seconds<br/>
+        /// Default Value: 60
+        /// </param>
+        /// <param name="bm25">
+        /// tuning parameters for the BM25 algorithm
+        /// </param>
+        /// <param name="stopwords">
+        /// fine-grained control over stopword list usage
+        /// </param>
+        /// <param name="indexTimestamps">
+        /// Index each object by its internal timestamps<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="indexNullState">
+        /// Index each object with the null state<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="indexPropertyLength">
+        /// Index length of properties<br/>
+        /// Default Value: false
+        /// </param>
+        public InvertedIndexConfig(
+            double? cleanupIntervalSeconds,
+            global::G.BM25Config? bm25,
+            global::G.StopwordConfig? stopwords,
+            bool? indexTimestamps,
+            bool? indexNullState,
+            bool? indexPropertyLength)
+        {
+            this.CleanupIntervalSeconds = cleanupIntervalSeconds;
+            this.Bm25 = bm25;
+            this.Stopwords = stopwords;
+            this.IndexTimestamps = indexTimestamps;
+            this.IndexNullState = indexNullState;
+            this.IndexPropertyLength = indexPropertyLength;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InvertedIndexConfig" /> class.
+        /// </summary>
+        public InvertedIndexConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

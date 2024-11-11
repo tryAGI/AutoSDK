@@ -50,6 +50,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BitsLeaderboard" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// An ID that identifies a user on the leaderboard.
+        /// </param>
+        /// <param name="userLogin">
+        /// The user’s login name.
+        /// </param>
+        /// <param name="userName">
+        /// The user’s display name.
+        /// </param>
+        /// <param name="rank">
+        /// The user’s position on the leaderboard.
+        /// </param>
+        /// <param name="score">
+        /// The number of Bits the user has cheered.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BitsLeaderboard(
+            string userId,
+            string userLogin,
+            string userName,
+            int rank,
+            int score)
+        {
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+            this.Rank = rank;
+            this.Score = score;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BitsLeaderboard" /> class.
+        /// </summary>
+        public BitsLeaderboard()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

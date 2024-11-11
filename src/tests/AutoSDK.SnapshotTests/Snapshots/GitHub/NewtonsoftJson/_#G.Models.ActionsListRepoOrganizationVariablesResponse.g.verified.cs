@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListRepoOrganizationVariablesResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="variables"></param>
+        public ActionsListRepoOrganizationVariablesResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.ActionsVariable> variables)
+        {
+            this.TotalCount = totalCount;
+            this.Variables = variables ?? throw new global::System.ArgumentNullException(nameof(variables));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListRepoOrganizationVariablesResponse" /> class.
+        /// </summary>
+        public ActionsListRepoOrganizationVariablesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

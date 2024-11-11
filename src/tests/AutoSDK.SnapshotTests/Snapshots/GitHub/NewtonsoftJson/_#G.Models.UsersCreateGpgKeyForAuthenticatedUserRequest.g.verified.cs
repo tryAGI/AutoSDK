@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersCreateGpgKeyForAuthenticatedUserRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// A descriptive name for the new key.
+        /// </param>
+        /// <param name="armoredPublicKey">
+        /// A GPG key in ASCII-armored format.
+        /// </param>
+        public UsersCreateGpgKeyForAuthenticatedUserRequest(
+            string armoredPublicKey,
+            string? name)
+        {
+            this.ArmoredPublicKey = armoredPublicKey ?? throw new global::System.ArgumentNullException(nameof(armoredPublicKey));
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersCreateGpgKeyForAuthenticatedUserRequest" /> class.
+        /// </summary>
+        public UsersCreateGpgKeyForAuthenticatedUserRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

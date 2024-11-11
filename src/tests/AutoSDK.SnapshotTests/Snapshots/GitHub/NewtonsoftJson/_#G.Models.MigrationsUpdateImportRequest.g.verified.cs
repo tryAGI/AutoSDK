@@ -41,6 +41,42 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MigrationsUpdateImportRequest" /> class.
+        /// </summary>
+        /// <param name="vcsUsername">
+        /// The username to provide to the originating repository.
+        /// </param>
+        /// <param name="vcsPassword">
+        /// The password to provide to the originating repository.
+        /// </param>
+        /// <param name="vcs">
+        /// The type of version control system you are migrating from.<br/>
+        /// Example: "git"
+        /// </param>
+        /// <param name="tfvcProject">
+        /// For a tfvc import, the name of the project that is being imported.<br/>
+        /// Example: "project1"
+        /// </param>
+        public MigrationsUpdateImportRequest(
+            string? vcsUsername,
+            string? vcsPassword,
+            global::G.MigrationsUpdateImportRequestVcs? vcs,
+            string? tfvcProject)
+        {
+            this.VcsUsername = vcsUsername;
+            this.VcsPassword = vcsPassword;
+            this.Vcs = vcs;
+            this.TfvcProject = tfvcProject;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MigrationsUpdateImportRequest" /> class.
+        /// </summary>
+        public MigrationsUpdateImportRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -77,6 +77,70 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextEmbeddingInput" /> class.
+        /// </summary>
+        /// <param name="model">
+        /// The identifier of the model.<br/>
+        /// Available models and corresponding param size and dimension:<br/>
+        /// - `jina-clip-v1`,	223M,	768<br/>
+        /// - `jina-embeddings-v2-base-en`,	137M,	768<br/>
+        /// - `jina-embeddings-v2-base-es`,	161M,	768<br/>
+        /// - `jina-embeddings-v2-base-de`,	161M,	768<br/>
+        /// - `jina-embeddings-v2-base-zh`,	161M,	768<br/>
+        /// - `jina-embeddings-v2-base-code`,	137M,	768<br/>
+        /// - `jina-embeddings-v3`,	570M,	1024<br/>
+        /// For more information, please checkout our [technical blog](https://arxiv.org/abs/2307.11224).
+        /// </param>
+        /// <param name="input">
+        /// List of texts to embed
+        /// </param>
+        /// <param name="embeddingType">
+        /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`
+        /// </param>
+        /// <param name="task">
+        /// Used to convey intended downstream application to help the model produce better embeddings. Must be one of the following values:<br/>
+        /// - "retrieval.query": Specifies the given text is a query in a search or retrieval setting.<br/>
+        /// - "retrieval.passage": Specifies the given text is a document in a search or retrieval setting.<br/>
+        /// - "text-matching": Specifies the given text is used for Semantic Textual Similarity.<br/>
+        /// - "classification": Specifies that the embedding is used for classification.<br/>
+        /// - "separation": Specifies that the embedding is used for clustering.
+        /// </param>
+        /// <param name="dimensions">
+        /// Used to specify output embedding size. If set, output embeddings will be truncated to the size specified.
+        /// </param>
+        /// <param name="normalized">
+        /// Flag to determine if the embeddings should be normalized to have a unit L2 norm
+        /// </param>
+        /// <param name="lateChunking">
+        /// Flag to determine if late chunking is applied. If True, all the sentences in inputs will be concatenated and used as input for late chunking.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TextEmbeddingInput(
+            string model,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, global::System.Collections.Generic.IList<global::G.ApiSchemasEmbeddingTextDoc>, global::G.ApiSchemasEmbeddingTextDoc>? input,
+            global::G.AnyOf<global::G.TextEmbeddingInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.TextEmbeddingInputEmbeddingTypeItem>>? embeddingType,
+            global::G.TextEmbeddingInputTask? task,
+            int? dimensions,
+            bool? normalized,
+            bool? lateChunking)
+        {
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Input = input;
+            this.EmbeddingType = embeddingType;
+            this.Task = task;
+            this.Dimensions = dimensions;
+            this.Normalized = normalized;
+            this.LateChunking = lateChunking;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextEmbeddingInput" /> class.
+        /// </summary>
+        public TextEmbeddingInput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

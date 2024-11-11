@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchShort" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="commit"></param>
+        /// <param name="protected"></param>
+        public BranchShort(
+            string name,
+            global::G.BranchShortCommit commit,
+            bool @protected)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.Protected = @protected;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchShort" /> class.
+        /// </summary>
+        public BranchShort()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

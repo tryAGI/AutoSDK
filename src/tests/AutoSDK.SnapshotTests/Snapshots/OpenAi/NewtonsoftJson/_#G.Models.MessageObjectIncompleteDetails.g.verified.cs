@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageObjectIncompleteDetails" /> class.
+        /// </summary>
+        /// <param name="reason">
+        /// The reason the message is incomplete.
+        /// </param>
+        public MessageObjectIncompleteDetails(
+            global::G.MessageObjectIncompleteDetailsReason reason)
+        {
+            this.Reason = reason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageObjectIncompleteDetails" /> class.
+        /// </summary>
+        public MessageObjectIncompleteDetails()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

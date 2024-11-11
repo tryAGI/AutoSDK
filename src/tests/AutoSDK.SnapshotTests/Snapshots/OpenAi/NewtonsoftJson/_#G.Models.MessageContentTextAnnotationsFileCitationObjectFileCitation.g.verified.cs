@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageContentTextAnnotationsFileCitationObjectFileCitation" /> class.
+        /// </summary>
+        /// <param name="fileId">
+        /// The ID of the specific File the citation is from.
+        /// </param>
+        public MessageContentTextAnnotationsFileCitationObjectFileCitation(
+            string fileId)
+        {
+            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageContentTextAnnotationsFileCitationObjectFileCitation" /> class.
+        /// </summary>
+        public MessageContentTextAnnotationsFileCitationObjectFileCitation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

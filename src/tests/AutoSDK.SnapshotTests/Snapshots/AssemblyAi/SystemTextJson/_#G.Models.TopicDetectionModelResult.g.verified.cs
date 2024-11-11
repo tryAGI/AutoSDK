@@ -38,6 +38,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicDetectionModelResult" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// Either success, or unavailable in the rare case that the model failed
+        /// </param>
+        /// <param name="results">
+        /// An array of results for the Topic Detection model
+        /// </param>
+        /// <param name="summary">
+        /// The overall relevance of topic to the entire audio file
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TopicDetectionModelResult(
+            global::G.AudioIntelligenceModelStatus status,
+            global::System.Collections.Generic.IList<global::G.TopicDetectionResult> results,
+            global::System.Collections.Generic.Dictionary<string, double> summary)
+        {
+            this.Status = status;
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicDetectionModelResult" /> class.
+        /// </summary>
+        public TopicDetectionModelResult()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

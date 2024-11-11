@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateNamespaceSecretResponse" /> class.
+        /// </summary>
+        /// <param name="secret">
+        /// The created secret resource.<br/>
+        /// Included only in responses
+        /// </param>
+        public CreateNamespaceSecretResponse(
+            global::G.Secret? secret)
+        {
+            this.Secret = secret;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateNamespaceSecretResponse" /> class.
+        /// </summary>
+        public CreateNamespaceSecretResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

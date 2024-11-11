@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitCreateRefRequest" /> class.
+        /// </summary>
+        /// <param name="ref">
+        /// The name of the fully qualified reference (ie: `refs/heads/master`). If it doesn't start with 'refs' and have at least two slashes, it will be rejected.
+        /// </param>
+        /// <param name="sha">
+        /// The SHA1 value for this reference.
+        /// </param>
+        public GitCreateRefRequest(
+            string @ref,
+            string sha)
+        {
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitCreateRefRequest" /> class.
+        /// </summary>
+        public GitCreateRefRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

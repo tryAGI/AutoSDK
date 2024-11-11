@@ -39,6 +39,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartSeriesFilters" /> class.
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <param name="traceFilter"></param>
+        /// <param name="treeFilter"></param>
+        /// <param name="session"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomChartSeriesFilters(
+            string? filter,
+            string? traceFilter,
+            string? treeFilter,
+            global::System.Collections.Generic.IList<global::System.Guid>? session)
+        {
+            this.Filter = filter;
+            this.TraceFilter = traceFilter;
+            this.TreeFilter = treeFilter;
+            this.Session = session;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartSeriesFilters" /> class.
+        /// </summary>
+        public CustomChartSeriesFilters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

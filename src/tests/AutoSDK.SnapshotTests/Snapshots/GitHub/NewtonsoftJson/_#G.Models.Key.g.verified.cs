@@ -57,6 +57,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Key" /> class.
+        /// </summary>
+        /// <param name="key1"></param>
+        /// <param name="id"></param>
+        /// <param name="url"></param>
+        /// <param name="title"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="verified"></param>
+        /// <param name="readOnly"></param>
+        public Key(
+            string key1,
+            long id,
+            string url,
+            string title,
+            global::System.DateTime createdAt,
+            bool verified,
+            bool readOnly)
+        {
+            this.Key1 = key1 ?? throw new global::System.ArgumentNullException(nameof(key1));
+            this.Id = id;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.CreatedAt = createdAt;
+            this.Verified = verified;
+            this.ReadOnly = readOnly;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Key" /> class.
+        /// </summary>
+        public Key()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

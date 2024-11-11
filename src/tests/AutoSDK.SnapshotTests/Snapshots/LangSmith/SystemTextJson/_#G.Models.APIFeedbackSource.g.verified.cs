@@ -27,6 +27,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APIFeedbackSource" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Default Value: api
+        /// </param>
+        /// <param name="metadata"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public APIFeedbackSource(
+            string? type,
+            object? metadata)
+        {
+            this.Type = type;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APIFeedbackSource" /> class.
+        /// </summary>
+        public APIFeedbackSource()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

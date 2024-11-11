@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsGetResponseCurrentReleaseCreatedBy" /> class.
+        /// </summary>
+        /// <param name="githubUrl">
+        /// The GitHub URL of the account that created the release.
+        /// </param>
+        /// <param name="name">
+        /// The name of the account that created the release.
+        /// </param>
+        /// <param name="type">
+        /// The account type of the creator. Can be a user or an organization.
+        /// </param>
+        /// <param name="username">
+        /// The username of the account that created the release.
+        /// </param>
+        public DeploymentsGetResponseCurrentReleaseCreatedBy(
+            string? githubUrl,
+            string? name,
+            global::G.DeploymentsGetResponseCurrentReleaseCreatedByType? type,
+            string? username)
+        {
+            this.GithubUrl = githubUrl;
+            this.Name = name;
+            this.Type = type;
+            this.Username = username;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsGetResponseCurrentReleaseCreatedBy" /> class.
+        /// </summary>
+        public DeploymentsGetResponseCurrentReleaseCreatedBy()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

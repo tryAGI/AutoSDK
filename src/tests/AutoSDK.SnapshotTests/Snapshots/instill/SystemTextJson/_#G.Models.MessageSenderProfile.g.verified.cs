@@ -42,6 +42,43 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageSenderProfile" /> class.
+        /// </summary>
+        /// <param name="msgSenderUid">
+        /// Included only in responses
+        /// </param>
+        /// <param name="msgSenderId">
+        /// Included only in responses
+        /// </param>
+        /// <param name="displayName">
+        /// Display name.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="avatar">
+        /// Avatar url. this url might be expired or not exist.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageSenderProfile(
+            string? msgSenderUid,
+            string? msgSenderId,
+            string? displayName,
+            string? avatar)
+        {
+            this.MsgSenderUid = msgSenderUid;
+            this.MsgSenderId = msgSenderId;
+            this.DisplayName = displayName;
+            this.Avatar = avatar;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageSenderProfile" /> class.
+        /// </summary>
+        public MessageSenderProfile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

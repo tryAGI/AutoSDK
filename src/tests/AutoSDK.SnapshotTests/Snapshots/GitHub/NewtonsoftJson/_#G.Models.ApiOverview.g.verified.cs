@@ -117,6 +117,101 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiOverview" /> class.
+        /// </summary>
+        /// <param name="verifiablePasswordAuthentication">
+        /// Example: true
+        /// </param>
+        /// <param name="sshKeyFingerprints"></param>
+        /// <param name="sshKeys">
+        /// Example: [ssh-ed25519 ABCDEFGHIJKLMNOPQRSTUVWXYZ]
+        /// </param>
+        /// <param name="hooks">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="githubEnterpriseImporter">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="web">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="api">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="git">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="packages">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="pages">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="importer">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="actions">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="actionsMacos">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="codespaces">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="dependabot">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="copilot">
+        /// Example: [192.0.2.1]
+        /// </param>
+        /// <param name="domains"></param>
+        public ApiOverview(
+            bool verifiablePasswordAuthentication,
+            global::G.ApiOverviewSshKeyFingerprints? sshKeyFingerprints,
+            global::System.Collections.Generic.IList<string>? sshKeys,
+            global::System.Collections.Generic.IList<string>? hooks,
+            global::System.Collections.Generic.IList<string>? githubEnterpriseImporter,
+            global::System.Collections.Generic.IList<string>? web,
+            global::System.Collections.Generic.IList<string>? api,
+            global::System.Collections.Generic.IList<string>? git,
+            global::System.Collections.Generic.IList<string>? packages,
+            global::System.Collections.Generic.IList<string>? pages,
+            global::System.Collections.Generic.IList<string>? importer,
+            global::System.Collections.Generic.IList<string>? actions,
+            global::System.Collections.Generic.IList<string>? actionsMacos,
+            global::System.Collections.Generic.IList<string>? codespaces,
+            global::System.Collections.Generic.IList<string>? dependabot,
+            global::System.Collections.Generic.IList<string>? copilot,
+            global::G.ApiOverviewDomains? domains)
+        {
+            this.VerifiablePasswordAuthentication = verifiablePasswordAuthentication;
+            this.SshKeyFingerprints = sshKeyFingerprints;
+            this.SshKeys = sshKeys;
+            this.Hooks = hooks;
+            this.GithubEnterpriseImporter = githubEnterpriseImporter;
+            this.Web = web;
+            this.Api = api;
+            this.Git = git;
+            this.Packages = packages;
+            this.Pages = pages;
+            this.Importer = importer;
+            this.Actions = actions;
+            this.ActionsMacos = actionsMacos;
+            this.Codespaces = codespaces;
+            this.Dependabot = dependabot;
+            this.Copilot = copilot;
+            this.Domains = domains;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiOverview" /> class.
+        /// </summary>
+        public ApiOverview()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

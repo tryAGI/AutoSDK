@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateModerationResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The unique identifier for the moderation request.
+        /// </param>
+        /// <param name="model">
+        /// The model used to generate the moderation results.
+        /// </param>
+        /// <param name="results">
+        /// A list of moderation objects.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateModerationResponse(
+            string id,
+            string model,
+            global::System.Collections.Generic.IList<global::G.CreateModerationResponseResult> results)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateModerationResponse" /> class.
+        /// </summary>
+        public CreateModerationResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

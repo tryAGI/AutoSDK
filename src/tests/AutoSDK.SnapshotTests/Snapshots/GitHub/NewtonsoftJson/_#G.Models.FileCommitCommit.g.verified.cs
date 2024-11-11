@@ -75,6 +75,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitCommit" /> class.
+        /// </summary>
+        /// <param name="sha"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="author"></param>
+        /// <param name="committer"></param>
+        /// <param name="message"></param>
+        /// <param name="tree"></param>
+        /// <param name="parents"></param>
+        /// <param name="verification"></param>
+        public FileCommitCommit(
+            string? sha,
+            string? nodeId,
+            string? url,
+            string? htmlUrl,
+            global::G.FileCommitCommitAuthor? author,
+            global::G.FileCommitCommitCommitter? committer,
+            string? message,
+            global::G.FileCommitCommitTree? tree,
+            global::System.Collections.Generic.IList<global::G.FileCommitCommitParent>? parents,
+            global::G.FileCommitCommitVerification? verification)
+        {
+            this.Sha = sha;
+            this.NodeId = nodeId;
+            this.Url = url;
+            this.HtmlUrl = htmlUrl;
+            this.Author = author;
+            this.Committer = committer;
+            this.Message = message;
+            this.Tree = tree;
+            this.Parents = parents;
+            this.Verification = verification;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommitCommit" /> class.
+        /// </summary>
+        public FileCommitCommit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

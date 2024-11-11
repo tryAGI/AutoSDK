@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookGithubAppAuthorizationRevoked" /> class.
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        public WebhookGithubAppAuthorizationRevoked(
+            global::G.SimpleUser sender,
+            global::G.WebhookGithubAppAuthorizationRevokedAction action)
+        {
+            this.Sender = sender ?? throw new global::System.ArgumentNullException(nameof(sender));
+            this.Action = action;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookGithubAppAuthorizationRevoked" /> class.
+        /// </summary>
+        public WebhookGithubAppAuthorizationRevoked()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

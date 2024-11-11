@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION" /> class.
+        /// </summary>
+        /// <param name="imageHeight">
+        /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features
+        /// </param>
+        /// <param name="imageWidth">
+        /// The input height of the images. Must be between 32 and 1024 and be a multiple of 8. Note: Input resolution is not always the same as output resolution due to upscaling from other features
+        /// </param>
+        /// <param name="numImages">
+        /// The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4.
+        /// </param>
+        public PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION(
+            int? imageHeight,
+            int? imageWidth,
+            int? numImages)
+        {
+            this.ImageHeight = imageHeight;
+            this.ImageWidth = imageWidth;
+            this.NumImages = numImages;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION" /> class.
+        /// </summary>
+        public PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -123,6 +123,88 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCheckSuiteRerequestedCheckSuite" /> class.
+        /// </summary>
+        /// <param name="after"></param>
+        /// <param name="app">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="before"></param>
+        /// <param name="checkRunsUrl"></param>
+        /// <param name="conclusion">
+        /// The summary conclusion for all check runs that are part of the check suite. This value will be `null` until the check run has completed.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="headBranch">
+        /// The head branch name the changes are on.
+        /// </param>
+        /// <param name="headCommit"></param>
+        /// <param name="headSha">
+        /// The SHA of the head commit that is being checked.
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="latestCheckRunsCount"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="pullRequests">
+        /// An array of pull requests that match this check suite. A pull request matches a check suite if they have the same `head_sha` and `head_branch`. When the check suite's `head_branch` is in a forked repository it will be `null` and the `pull_requests` array will be empty.
+        /// </param>
+        /// <param name="rerequestable"></param>
+        /// <param name="runsRerequestable"></param>
+        /// <param name="status">
+        /// The summary status for all check runs that are part of the check suite. Can be `requested`, `in_progress`, or `completed`.
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url">
+        /// URL that points to the check suite API resource.
+        /// </param>
+        public WebhookCheckSuiteRerequestedCheckSuite(
+            string? after,
+            global::G.WebhookCheckSuiteRerequestedCheckSuiteApp app,
+            string? before,
+            string checkRunsUrl,
+            global::G.WebhookCheckSuiteRerequestedCheckSuiteConclusion? conclusion,
+            global::System.DateTime createdAt,
+            string? headBranch,
+            global::G.WebhookCheckSuiteRerequestedCheckSuiteHeadCommit headCommit,
+            string headSha,
+            int id,
+            int latestCheckRunsCount,
+            string nodeId,
+            global::System.Collections.Generic.IList<global::G.WebhookCheckSuiteRerequestedCheckSuitePullRequest> pullRequests,
+            global::G.WebhookCheckSuiteRerequestedCheckSuiteStatus? status,
+            global::System.DateTime updatedAt,
+            string url,
+            bool? rerequestable,
+            bool? runsRerequestable)
+        {
+            this.After = after ?? throw new global::System.ArgumentNullException(nameof(after));
+            this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
+            this.Before = before ?? throw new global::System.ArgumentNullException(nameof(before));
+            this.CheckRunsUrl = checkRunsUrl ?? throw new global::System.ArgumentNullException(nameof(checkRunsUrl));
+            this.Conclusion = conclusion;
+            this.CreatedAt = createdAt;
+            this.HeadBranch = headBranch ?? throw new global::System.ArgumentNullException(nameof(headBranch));
+            this.HeadCommit = headCommit ?? throw new global::System.ArgumentNullException(nameof(headCommit));
+            this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
+            this.Id = id;
+            this.LatestCheckRunsCount = latestCheckRunsCount;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.PullRequests = pullRequests ?? throw new global::System.ArgumentNullException(nameof(pullRequests));
+            this.Status = status;
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Rerequestable = rerequestable;
+            this.RunsRerequestable = runsRerequestable;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCheckSuiteRerequestedCheckSuite" /> class.
+        /// </summary>
+        public WebhookCheckSuiteRerequestedCheckSuite()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

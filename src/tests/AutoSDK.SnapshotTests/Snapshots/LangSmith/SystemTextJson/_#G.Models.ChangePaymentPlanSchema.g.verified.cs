@@ -23,6 +23,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChangePaymentPlanSchema" /> class.
+        /// </summary>
+        /// <param name="tier">
+        /// Enum for payment plans that the user can change to. Developer plans are permanent and enterprise plans will be changed manually.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChangePaymentPlanSchema(
+            global::G.ChangePaymentPlanReq tier)
+        {
+            this.Tier = tier;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChangePaymentPlanSchema" /> class.
+        /// </summary>
+        public ChangePaymentPlanSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

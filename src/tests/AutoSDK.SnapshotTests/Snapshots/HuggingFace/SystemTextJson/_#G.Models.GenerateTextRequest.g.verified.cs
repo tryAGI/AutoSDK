@@ -35,6 +35,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateTextRequest" /> class.
+        /// </summary>
+        /// <param name="inputs">
+        /// The prompt that you want to complete.<br/>
+        /// Example: This is a test.
+        /// </param>
+        /// <param name="parameters"></param>
+        /// <param name="options"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GenerateTextRequest(
+            string? inputs,
+            global::G.GenerateTextRequestParameters? parameters,
+            global::G.GenerateTextRequestOptions? options)
+        {
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
+            this.Parameters = parameters;
+            this.Options = options;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateTextRequest" /> class.
+        /// </summary>
+        public GenerateTextRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

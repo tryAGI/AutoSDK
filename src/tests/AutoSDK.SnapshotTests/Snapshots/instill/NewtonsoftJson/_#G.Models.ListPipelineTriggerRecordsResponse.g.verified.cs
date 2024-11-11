@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListPipelineTriggerRecordsResponse" /> class.
+        /// </summary>
+        /// <param name="pipelineTriggerRecords">
+        /// A list of pipeline triggers.
+        /// </param>
+        /// <param name="nextPageToken">
+        /// Next page token.
+        /// </param>
+        /// <param name="totalSize">
+        /// Total number of pipeline triggers.
+        /// </param>
+        public ListPipelineTriggerRecordsResponse(
+            global::System.Collections.Generic.IList<global::G.PipelineTriggerRecord>? pipelineTriggerRecords,
+            string? nextPageToken,
+            int? totalSize)
+        {
+            this.PipelineTriggerRecords = pipelineTriggerRecords;
+            this.NextPageToken = nextPageToken;
+            this.TotalSize = totalSize;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListPipelineTriggerRecordsResponse" /> class.
+        /// </summary>
+        public ListPipelineTriggerRecordsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

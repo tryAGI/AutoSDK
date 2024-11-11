@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchReferenceResponseVariant2" /> class.
+        /// </summary>
+        /// <param name="result">
+        /// Results for this specific reference.
+        /// </param>
+        public BatchReferenceResponseVariant2(
+            global::G.BatchReferenceResponseVariant2Result? result)
+        {
+            this.Result = result;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchReferenceResponseVariant2" /> class.
+        /// </summary>
+        public BatchReferenceResponseVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

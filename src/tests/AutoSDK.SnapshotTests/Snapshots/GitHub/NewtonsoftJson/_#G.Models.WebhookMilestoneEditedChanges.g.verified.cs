@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMilestoneEditedChanges" /> class.
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="dueOn"></param>
+        /// <param name="title"></param>
+        public WebhookMilestoneEditedChanges(
+            global::G.WebhookMilestoneEditedChangesDescription? description,
+            global::G.WebhookMilestoneEditedChangesDueOn? dueOn,
+            global::G.WebhookMilestoneEditedChangesTitle? title)
+        {
+            this.Description = description;
+            this.DueOn = dueOn;
+            this.Title = title;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMilestoneEditedChanges" /> class.
+        /// </summary>
+        public WebhookMilestoneEditedChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

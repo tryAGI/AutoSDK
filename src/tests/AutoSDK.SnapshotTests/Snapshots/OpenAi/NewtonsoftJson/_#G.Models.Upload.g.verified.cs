@@ -69,6 +69,65 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Upload" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The Upload unique identifier, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the Upload was created.
+        /// </param>
+        /// <param name="filename">
+        /// The name of the file to be uploaded.
+        /// </param>
+        /// <param name="bytes">
+        /// The intended number of bytes to be uploaded.
+        /// </param>
+        /// <param name="purpose">
+        /// The intended purpose of the file. [Please refer here](/docs/api-reference/files/object#files/object-purpose) for acceptable values.
+        /// </param>
+        /// <param name="status">
+        /// The status of the Upload.
+        /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) for when the Upload was created.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "upload".
+        /// </param>
+        /// <param name="file">
+        /// The `File` object represents a document that has been uploaded to OpenAI.
+        /// </param>
+        public Upload(
+            string id,
+            global::System.DateTimeOffset createdAt,
+            string filename,
+            int bytes,
+            string purpose,
+            global::G.UploadStatus status,
+            global::System.DateTimeOffset expiresAt,
+            global::G.UploadObject? @object,
+            global::G.OpenAIFile? file)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.Bytes = bytes;
+            this.Purpose = purpose ?? throw new global::System.ArgumentNullException(nameof(purpose));
+            this.Status = status;
+            this.ExpiresAt = expiresAt;
+            this.Object = @object;
+            this.File = file;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Upload" /> class.
+        /// </summary>
+        public Upload()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

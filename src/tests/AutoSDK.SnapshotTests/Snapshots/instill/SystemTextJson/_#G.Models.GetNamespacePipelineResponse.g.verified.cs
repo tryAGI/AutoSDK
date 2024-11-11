@@ -22,6 +22,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetNamespacePipelineResponse" /> class.
+        /// </summary>
+        /// <param name="pipeline">
+        /// The pipeline resource.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetNamespacePipelineResponse(
+            global::G.Pipeline? pipeline)
+        {
+            this.Pipeline = pipeline;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetNamespacePipelineResponse" /> class.
+        /// </summary>
+        public GetNamespacePipelineResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

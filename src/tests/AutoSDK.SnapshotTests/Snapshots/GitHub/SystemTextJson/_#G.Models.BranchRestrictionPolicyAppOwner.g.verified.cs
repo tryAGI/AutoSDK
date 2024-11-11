@@ -153,6 +153,112 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchRestrictionPolicyAppOwner" /> class.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="reposUrl"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="hooksUrl"></param>
+        /// <param name="issuesUrl"></param>
+        /// <param name="membersUrl"></param>
+        /// <param name="publicMembersUrl"></param>
+        /// <param name="avatarUrl"></param>
+        /// <param name="description"></param>
+        /// <param name="gravatarId">
+        /// Example: ""
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: "https://github.com/testorg-ea8ec76d71c3af4b"
+        /// </param>
+        /// <param name="followersUrl">
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/followers"
+        /// </param>
+        /// <param name="followingUrl">
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/following{/other_user}"
+        /// </param>
+        /// <param name="gistsUrl">
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/gists{/gist_id}"
+        /// </param>
+        /// <param name="starredUrl">
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/starred{/owner}{/repo}"
+        /// </param>
+        /// <param name="subscriptionsUrl">
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/subscriptions"
+        /// </param>
+        /// <param name="organizationsUrl">
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/orgs"
+        /// </param>
+        /// <param name="receivedEventsUrl">
+        /// Example: "https://api.github.com/users/testorg-ea8ec76d71c3af4b/received_events"
+        /// </param>
+        /// <param name="type">
+        /// Example: "Organization"
+        /// </param>
+        /// <param name="siteAdmin">
+        /// Example: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BranchRestrictionPolicyAppOwner(
+            string? login,
+            int? id,
+            string? nodeId,
+            string? url,
+            string? reposUrl,
+            string? eventsUrl,
+            string? hooksUrl,
+            string? issuesUrl,
+            string? membersUrl,
+            string? publicMembersUrl,
+            string? avatarUrl,
+            string? description,
+            string? gravatarId,
+            string? htmlUrl,
+            string? followersUrl,
+            string? followingUrl,
+            string? gistsUrl,
+            string? starredUrl,
+            string? subscriptionsUrl,
+            string? organizationsUrl,
+            string? receivedEventsUrl,
+            string? type,
+            bool? siteAdmin)
+        {
+            this.Login = login;
+            this.Id = id;
+            this.NodeId = nodeId;
+            this.Url = url;
+            this.ReposUrl = reposUrl;
+            this.EventsUrl = eventsUrl;
+            this.HooksUrl = hooksUrl;
+            this.IssuesUrl = issuesUrl;
+            this.MembersUrl = membersUrl;
+            this.PublicMembersUrl = publicMembersUrl;
+            this.AvatarUrl = avatarUrl;
+            this.Description = description;
+            this.GravatarId = gravatarId;
+            this.HtmlUrl = htmlUrl;
+            this.FollowersUrl = followersUrl;
+            this.FollowingUrl = followingUrl;
+            this.GistsUrl = gistsUrl;
+            this.StarredUrl = starredUrl;
+            this.SubscriptionsUrl = subscriptionsUrl;
+            this.OrganizationsUrl = organizationsUrl;
+            this.ReceivedEventsUrl = receivedEventsUrl;
+            this.Type = type;
+            this.SiteAdmin = siteAdmin;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchRestrictionPolicyAppOwner" /> class.
+        /// </summary>
+        public BranchRestrictionPolicyAppOwner()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

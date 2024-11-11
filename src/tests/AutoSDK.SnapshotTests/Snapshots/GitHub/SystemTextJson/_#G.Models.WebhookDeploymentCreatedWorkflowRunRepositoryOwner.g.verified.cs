@@ -123,6 +123,75 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentCreatedWorkflowRunRepositoryOwner" /> class.
+        /// </summary>
+        /// <param name="avatarUrl"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="followersUrl"></param>
+        /// <param name="followingUrl"></param>
+        /// <param name="gistsUrl"></param>
+        /// <param name="gravatarId"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="login"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="organizationsUrl"></param>
+        /// <param name="receivedEventsUrl"></param>
+        /// <param name="reposUrl"></param>
+        /// <param name="siteAdmin"></param>
+        /// <param name="starredUrl"></param>
+        /// <param name="subscriptionsUrl"></param>
+        /// <param name="type"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookDeploymentCreatedWorkflowRunRepositoryOwner(
+            string? avatarUrl,
+            string? eventsUrl,
+            string? followersUrl,
+            string? followingUrl,
+            string? gistsUrl,
+            string? gravatarId,
+            string? htmlUrl,
+            int? id,
+            string? login,
+            string? nodeId,
+            string? organizationsUrl,
+            string? receivedEventsUrl,
+            string? reposUrl,
+            bool? siteAdmin,
+            string? starredUrl,
+            string? subscriptionsUrl,
+            string? type,
+            string? url)
+        {
+            this.AvatarUrl = avatarUrl;
+            this.EventsUrl = eventsUrl;
+            this.FollowersUrl = followersUrl;
+            this.FollowingUrl = followingUrl;
+            this.GistsUrl = gistsUrl;
+            this.GravatarId = gravatarId;
+            this.HtmlUrl = htmlUrl;
+            this.Id = id;
+            this.Login = login;
+            this.NodeId = nodeId;
+            this.OrganizationsUrl = organizationsUrl;
+            this.ReceivedEventsUrl = receivedEventsUrl;
+            this.ReposUrl = reposUrl;
+            this.SiteAdmin = siteAdmin;
+            this.StarredUrl = starredUrl;
+            this.SubscriptionsUrl = subscriptionsUrl;
+            this.Type = type;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentCreatedWorkflowRunRepositoryOwner" /> class.
+        /// </summary>
+        public WebhookDeploymentCreatedWorkflowRunRepositoryOwner()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

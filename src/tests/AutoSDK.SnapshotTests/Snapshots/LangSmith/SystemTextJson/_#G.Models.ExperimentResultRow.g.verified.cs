@@ -78,6 +78,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExperimentResultRow" /> class.
+        /// </summary>
+        /// <param name="rowId"></param>
+        /// <param name="inputs"></param>
+        /// <param name="expectedOutputs"></param>
+        /// <param name="actualOutputs"></param>
+        /// <param name="evaluationScores"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="runName"></param>
+        /// <param name="error"></param>
+        /// <param name="runMetadata"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ExperimentResultRow(
+            object inputs,
+            global::System.DateTime startTime,
+            global::System.DateTime endTime,
+            global::System.Guid? rowId,
+            object? expectedOutputs,
+            object? actualOutputs,
+            global::System.Collections.Generic.IList<global::G.FeedbackCreateCoreSchema>? evaluationScores,
+            string? runName,
+            string? error,
+            object? runMetadata)
+        {
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.RowId = rowId;
+            this.ExpectedOutputs = expectedOutputs;
+            this.ActualOutputs = actualOutputs;
+            this.EvaluationScores = evaluationScores;
+            this.RunName = runName;
+            this.Error = error;
+            this.RunMetadata = runMetadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExperimentResultRow" /> class.
+        /// </summary>
+        public ExperimentResultRow()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

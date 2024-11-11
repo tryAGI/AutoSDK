@@ -33,6 +33,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Image" /> class.
+        /// </summary>
+        /// <param name="b64Json">
+        /// The base64-encoded JSON of the generated image, if `response_format` is `b64_json`.
+        /// </param>
+        /// <param name="url">
+        /// The URL of the generated image, if `response_format` is `url` (default).
+        /// </param>
+        /// <param name="revisedPrompt">
+        /// The prompt that was used to generate the image, if there was any revision to the prompt.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Image(
+            string? b64Json,
+            string? url,
+            string? revisedPrompt)
+        {
+            this.B64Json = b64Json;
+            this.Url = url;
+            this.RevisedPrompt = revisedPrompt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Image" /> class.
+        /// </summary>
+        public Image()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

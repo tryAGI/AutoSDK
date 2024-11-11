@@ -42,6 +42,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleCommitMessagePatternParameters" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// How this rule will appear to users.
+        /// </param>
+        /// <param name="negate">
+        /// If true, the rule will fail if the pattern matches.
+        /// </param>
+        /// <param name="operator">
+        /// The operator to use for matching.
+        /// </param>
+        /// <param name="pattern">
+        /// The pattern to match with.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryRuleCommitMessagePatternParameters(
+            global::G.RepositoryRuleCommitMessagePatternParametersOperator @operator,
+            string pattern,
+            string? name,
+            bool? negate)
+        {
+            this.Operator = @operator;
+            this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
+            this.Name = name;
+            this.Negate = negate;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleCommitMessagePatternParameters" /> class.
+        /// </summary>
+        public RepositoryRuleCommitMessagePatternParameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

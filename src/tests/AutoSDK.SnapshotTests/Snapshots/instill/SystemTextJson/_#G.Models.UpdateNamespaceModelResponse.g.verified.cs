@@ -22,6 +22,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateNamespaceModelResponse" /> class.
+        /// </summary>
+        /// <param name="model">
+        /// The updated model resource.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateNamespaceModelResponse(
+            global::G.Model? model)
+        {
+            this.Model = model;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateNamespaceModelResponse" /> class.
+        /// </summary>
+        public UpdateNamespaceModelResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

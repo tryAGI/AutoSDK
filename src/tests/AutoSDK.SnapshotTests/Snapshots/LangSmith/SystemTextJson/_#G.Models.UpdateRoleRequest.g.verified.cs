@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateRoleRequest" /> class.
+        /// </summary>
+        /// <param name="displayName"></param>
+        /// <param name="description"></param>
+        /// <param name="permissions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateRoleRequest(
+            string displayName,
+            string description,
+            global::System.Collections.Generic.IList<string> permissions)
+        {
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateRoleRequest" /> class.
+        /// </summary>
+        public UpdateRoleRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

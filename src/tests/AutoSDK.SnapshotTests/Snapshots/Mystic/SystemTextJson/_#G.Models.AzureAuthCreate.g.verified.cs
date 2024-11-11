@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AzureAuthCreate" /> class.
+        /// </summary>
+        /// <param name="clientId"></param>
+        /// <param name="clientSecret"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="subscriptionId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AzureAuthCreate(
+            string clientId,
+            string clientSecret,
+            string tenantId,
+            string subscriptionId)
+        {
+            this.ClientId = clientId ?? throw new global::System.ArgumentNullException(nameof(clientId));
+            this.ClientSecret = clientSecret ?? throw new global::System.ArgumentNullException(nameof(clientSecret));
+            this.TenantId = tenantId ?? throw new global::System.ArgumentNullException(nameof(tenantId));
+            this.SubscriptionId = subscriptionId ?? throw new global::System.ArgumentNullException(nameof(subscriptionId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AzureAuthCreate" /> class.
+        /// </summary>
+        public AzureAuthCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

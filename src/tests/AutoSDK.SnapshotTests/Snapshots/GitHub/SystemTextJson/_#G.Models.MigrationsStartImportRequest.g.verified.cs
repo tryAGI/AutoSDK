@@ -47,6 +47,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MigrationsStartImportRequest" /> class.
+        /// </summary>
+        /// <param name="vcsUrl">
+        /// The URL of the originating repository.
+        /// </param>
+        /// <param name="vcs">
+        /// The originating VCS type. Without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response.
+        /// </param>
+        /// <param name="vcsUsername">
+        /// If authentication is required, the username to provide to `vcs_url`.
+        /// </param>
+        /// <param name="vcsPassword">
+        /// If authentication is required, the password to provide to `vcs_url`.
+        /// </param>
+        /// <param name="tfvcProject">
+        /// For a tfvc import, the name of the project that is being imported.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MigrationsStartImportRequest(
+            string vcsUrl,
+            global::G.MigrationsStartImportRequestVcs? vcs,
+            string? vcsUsername,
+            string? vcsPassword,
+            string? tfvcProject)
+        {
+            this.VcsUrl = vcsUrl ?? throw new global::System.ArgumentNullException(nameof(vcsUrl));
+            this.Vcs = vcs;
+            this.VcsUsername = vcsUsername;
+            this.VcsPassword = vcsPassword;
+            this.TfvcProject = tfvcProject;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MigrationsStartImportRequest" /> class.
+        /// </summary>
+        public MigrationsStartImportRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -43,6 +43,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Message" /> class.
+        /// </summary>
+        /// <param name="role">
+        /// The role of the message
+        /// </param>
+        /// <param name="content">
+        /// The content of the message<br/>
+        /// Example: Why is the sky blue?
+        /// </param>
+        /// <param name="images">
+        /// (optional) a list of Base64-encoded images to include in the message (for multimodal models such as llava)
+        /// </param>
+        /// <param name="toolCalls">
+        /// A list of tools the model wants to call.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Message(
+            global::G.MessageRole role,
+            string content,
+            global::System.Collections.Generic.IList<string>? images,
+            global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls)
+        {
+            this.Role = role;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Images = images;
+            this.ToolCalls = toolCalls;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Message" /> class.
+        /// </summary>
+        public Message()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

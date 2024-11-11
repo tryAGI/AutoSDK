@@ -252,6 +252,159 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Issue" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url">
+        /// URL for the issue<br/>
+        /// Example: https://api.github.com/repositories/42/issues/1
+        /// </param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="labelsUrl"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="number">
+        /// Number uniquely identifying the issue within its repository<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="state">
+        /// State of the issue; either 'open' or 'closed'<br/>
+        /// Example: open
+        /// </param>
+        /// <param name="stateReason">
+        /// The reason for the current state<br/>
+        /// Example: not_planned
+        /// </param>
+        /// <param name="title">
+        /// Title of the issue<br/>
+        /// Example: Widget creation fails in Safari on OS X 10.8
+        /// </param>
+        /// <param name="body">
+        /// Contents of the issue<br/>
+        /// Example: It looks like the new widget form is broken on Safari. When I try and create the widget, Safari crashes. This is reproducible on 10.8, but not 10.9. Maybe a browser bug?
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="labels">
+        /// Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository<br/>
+        /// Example: [bug, registration]
+        /// </param>
+        /// <param name="assignee">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="assignees"></param>
+        /// <param name="milestone">
+        /// A collection of related issues and pull requests.
+        /// </param>
+        /// <param name="locked"></param>
+        /// <param name="activeLockReason"></param>
+        /// <param name="comments"></param>
+        /// <param name="pullRequest"></param>
+        /// <param name="closedAt"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="draft"></param>
+        /// <param name="closedBy">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="bodyHtml"></param>
+        /// <param name="bodyText"></param>
+        /// <param name="timelineUrl"></param>
+        /// <param name="repository">
+        /// A repository on GitHub.
+        /// </param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        /// <param name="reactions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Issue(
+            long id,
+            string nodeId,
+            string url,
+            string repositoryUrl,
+            string labelsUrl,
+            string commentsUrl,
+            string eventsUrl,
+            string htmlUrl,
+            int number,
+            string state,
+            string title,
+            global::G.NullableSimpleUser? user,
+            global::System.Collections.Generic.IList<global::G.OneOf<string, global::G.IssueLabel>> labels,
+            global::G.NullableSimpleUser? assignee,
+            global::G.NullableMilestone? milestone,
+            bool locked,
+            int comments,
+            global::System.DateTime? closedAt,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::G.AuthorAssociation authorAssociation,
+            global::G.IssueStateReason? stateReason,
+            string? body,
+            global::System.Collections.Generic.IList<global::G.SimpleUser>? assignees,
+            string? activeLockReason,
+            global::G.IssuePullRequest? pullRequest,
+            bool? draft,
+            global::G.NullableSimpleUser? closedBy,
+            string? bodyHtml,
+            string? bodyText,
+            string? timelineUrl,
+            global::G.Repository? repository,
+            global::G.NullableIntegration? performedViaGithubApp,
+            global::G.ReactionRollup? reactions)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+            this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Number = number;
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
+            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
+            this.Locked = locked;
+            this.Comments = comments;
+            this.ClosedAt = closedAt;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.AuthorAssociation = authorAssociation;
+            this.StateReason = stateReason;
+            this.Body = body;
+            this.Assignees = assignees;
+            this.ActiveLockReason = activeLockReason;
+            this.PullRequest = pullRequest;
+            this.Draft = draft;
+            this.ClosedBy = closedBy;
+            this.BodyHtml = bodyHtml;
+            this.BodyText = bodyText;
+            this.TimelineUrl = timelineUrl;
+            this.Repository = repository;
+            this.PerformedViaGithubApp = performedViaGithubApp;
+            this.Reactions = reactions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Issue" /> class.
+        /// </summary>
+        public Issue()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

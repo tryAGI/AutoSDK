@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Status" /> class.
+        /// </summary>
+        /// <param name="code">
+        /// The status code, which should be an enum value of google.rpc.Code.
+        /// </param>
+        /// <param name="message">
+        /// A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client.
+        /// </param>
+        /// <param name="details">
+        /// A list of messages that carry the error details. There is a common set of message types for APIs to use.
+        /// </param>
+        public Status(
+            int? code,
+            string? message,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, object>>? details)
+        {
+            this.Code = code;
+            this.Message = message;
+            this.Details = details;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Status" /> class.
+        /// </summary>
+        public Status()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

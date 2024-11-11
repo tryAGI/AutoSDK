@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemoAndLinks" /> class.
+        /// </summary>
+        /// <param name="memoData"></param>
+        /// <param name="links"></param>
+        /// <param name="folderLinks"></param>
+        public MemoAndLinks(
+            global::G.Memo? memoData,
+            global::System.Collections.Generic.IList<global::G.MemoLink>? links,
+            global::System.Collections.Generic.IList<global::G.MemoFolderLink>? folderLinks)
+        {
+            this.MemoData = memoData;
+            this.Links = links;
+            this.FolderLinks = folderLinks;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemoAndLinks" /> class.
+        /// </summary>
+        public MemoAndLinks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -90,6 +90,78 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EventSubSubscription" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// An ID that identifies the subscription.
+        /// </param>
+        /// <param name="status">
+        /// The subscription's status. The subscriber receives events only for **enabled** subscriptions. Possible values are:  <br/>
+        ///   <br/>
+        /// * enabled — The subscription is enabled.<br/>
+        /// * webhook\_callback\_verification\_pending — The subscription is pending verification of the specified callback URL.<br/>
+        /// * webhook\_callback\_verification\_failed — The specified callback URL failed verification.<br/>
+        /// * notification\_failures\_exceeded — The notification delivery failure rate was too high.<br/>
+        /// * authorization\_revoked — The authorization was revoked for one or more users specified in the **Condition** object.<br/>
+        /// * moderator\_removed — The moderator that authorized the subscription is no longer one of the broadcaster's moderators.<br/>
+        /// * user\_removed — One of the users specified in the **Condition** object was removed.<br/>
+        /// * version\_removed — The subscription to subscription type and version is no longer supported.<br/>
+        /// * beta\_maintenance — The subscription to the beta subscription type was removed due to maintenance.<br/>
+        /// * websocket\_disconnected — The client closed the connection.<br/>
+        /// * websocket\_failed\_ping\_pong — The client failed to respond to a ping message.<br/>
+        /// * websocket\_received\_inbound\_traffic — The client sent a non-pong message. Clients may only send pong messages (and only in response to a ping message).<br/>
+        /// * websocket\_connection\_unused — The client failed to subscribe to events within the required time.<br/>
+        /// * websocket\_internal\_error — The Twitch WebSocket server experienced an unexpected error.<br/>
+        /// * websocket\_network\_timeout — The Twitch WebSocket server timed out writing the message to the client.<br/>
+        /// * websocket\_network\_error — The Twitch WebSocket server experienced a network error writing the message to the client.
+        /// </param>
+        /// <param name="type">
+        /// The subscription's type. See [Subscription Types](https://dev.twitch.tv/docs/eventsub/eventsub-subscription-types#subscription-types).
+        /// </param>
+        /// <param name="version">
+        /// The version number that identifies this definition of the subscription's data.
+        /// </param>
+        /// <param name="condition">
+        /// The subscription's parameter values. This is a string-encoded JSON object whose contents are determined by the subscription type.
+        /// </param>
+        /// <param name="createdAt">
+        /// The date and time (in RFC3339 format) of when the subscription was created.
+        /// </param>
+        /// <param name="transport">
+        /// The transport details used to send the notifications.
+        /// </param>
+        /// <param name="cost">
+        /// The amount that the subscription counts against your limit. [Learn More](https://dev.twitch.tv/docs/eventsub/manage-subscriptions/#subscription-limits)
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EventSubSubscription(
+            string id,
+            global::G.EventSubSubscriptionStatus status,
+            global::G.EventSubSubscriptionType type,
+            string version,
+            object condition,
+            global::System.DateTime createdAt,
+            global::G.EventSubSubscriptionTransport transport,
+            int cost)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Status = status;
+            this.Type = type;
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.Condition = condition ?? throw new global::System.ArgumentNullException(nameof(condition));
+            this.CreatedAt = createdAt;
+            this.Transport = transport ?? throw new global::System.ArgumentNullException(nameof(transport));
+            this.Cost = cost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EventSubSubscription" /> class.
+        /// </summary>
+        public EventSubSubscription()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

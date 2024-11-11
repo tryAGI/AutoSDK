@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0VerificationMaterial" /> class.
+        /// </summary>
+        /// <param name="x509CertificateChain"></param>
+        /// <param name="tlogEntries"></param>
+        /// <param name="timestampVerificationData"></param>
+        public SigstoreBundle0VerificationMaterial(
+            global::G.SigstoreBundle0VerificationMaterialX509CertificateChain? x509CertificateChain,
+            global::System.Collections.Generic.IList<global::G.SigstoreBundle0VerificationMaterialTlogEntrie>? tlogEntries,
+            string? timestampVerificationData)
+        {
+            this.X509CertificateChain = x509CertificateChain;
+            this.TlogEntries = tlogEntries;
+            this.TimestampVerificationData = timestampVerificationData;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0VerificationMaterial" /> class.
+        /// </summary>
+        public SigstoreBundle0VerificationMaterial()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

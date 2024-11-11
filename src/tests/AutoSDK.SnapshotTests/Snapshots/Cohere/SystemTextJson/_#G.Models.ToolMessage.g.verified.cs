@@ -29,6 +29,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolMessage" /> class.
+        /// </summary>
+        /// <param name="role">
+        /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
+        /// </param>
+        /// <param name="toolResults"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ToolMessage(
+            global::G.ChatRole role,
+            global::System.Collections.Generic.IList<global::G.ToolResult>? toolResults)
+        {
+            this.Role = role;
+            this.ToolResults = toolResults;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolMessage" /> class.
+        /// </summary>
+        public ToolMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

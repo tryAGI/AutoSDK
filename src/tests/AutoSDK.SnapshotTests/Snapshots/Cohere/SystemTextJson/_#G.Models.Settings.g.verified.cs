@@ -48,6 +48,47 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Settings" /> class.
+        /// </summary>
+        /// <param name="baseModel">
+        /// The base model used for fine-tuning.
+        /// </param>
+        /// <param name="datasetId">
+        /// The data used for training and evaluating the fine-tuned model.
+        /// </param>
+        /// <param name="hyperparameters">
+        /// The fine-tuning hyperparameters.
+        /// </param>
+        /// <param name="multiLabel">
+        /// read-only. Whether the model is single-label or multi-label (only for classification).<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="wandb">
+        /// The Weights &amp; Biases configuration.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Settings(
+            global::G.BaseModel baseModel,
+            string datasetId,
+            global::G.Hyperparameters? hyperparameters,
+            bool? multiLabel,
+            global::G.WandbConfig? wandb)
+        {
+            this.BaseModel = baseModel ?? throw new global::System.ArgumentNullException(nameof(baseModel));
+            this.DatasetId = datasetId ?? throw new global::System.ArgumentNullException(nameof(datasetId));
+            this.Hyperparameters = hyperparameters;
+            this.MultiLabel = multiLabel;
+            this.Wandb = wandb;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Settings" /> class.
+        /// </summary>
+        public Settings()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespaceWithFullRepositoryRuntimeConstraints" /> class.
+        /// </summary>
+        /// <param name="allowedPortPrivacySettings">
+        /// The privacy settings a user can select from when forwarding a port.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodespaceWithFullRepositoryRuntimeConstraints(
+            global::System.Collections.Generic.IList<string>? allowedPortPrivacySettings)
+        {
+            this.AllowedPortPrivacySettings = allowedPortPrivacySettings;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespaceWithFullRepositoryRuntimeConstraints" /> class.
+        /// </summary>
+        public CodespaceWithFullRepositoryRuntimeConstraints()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

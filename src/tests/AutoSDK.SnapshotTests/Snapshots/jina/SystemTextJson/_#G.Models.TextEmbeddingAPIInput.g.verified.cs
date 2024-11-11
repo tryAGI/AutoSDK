@@ -55,6 +55,49 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextEmbeddingAPIInput" /> class.
+        /// </summary>
+        /// <param name="model">
+        /// The identifier of the model.<br/>
+        /// Available models and corresponding param size and dimension:<br/>
+        /// - `jina-colbert-v1-en`,	137
+        /// </param>
+        /// <param name="input">
+        /// List of texts to embed
+        /// </param>
+        /// <param name="inputType">
+        /// Type of the embedding to compute, query or document<br/>
+        /// Default Value: document
+        /// </param>
+        /// <param name="embeddingType">
+        /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`
+        /// </param>
+        /// <param name="dimensions">
+        /// Dimensions of the vectors to be returned. Only valid for v2 colbert models. Defaults to 128
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TextEmbeddingAPIInput(
+            string model,
+            global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, global::System.Collections.Generic.IList<global::G.ApiSchemasEmbeddingTextDoc>, global::G.ApiSchemasEmbeddingTextDoc> input,
+            global::G.TextEmbeddingAPIInputInputType? inputType,
+            global::G.AnyOf<global::G.TextEmbeddingAPIInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.TextEmbeddingAPIInputEmbeddingTypeItem>>? embeddingType,
+            int? dimensions)
+        {
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Input = input;
+            this.InputType = inputType;
+            this.EmbeddingType = embeddingType;
+            this.Dimensions = dimensions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TextEmbeddingAPIInput" /> class.
+        /// </summary>
+        public TextEmbeddingAPIInput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

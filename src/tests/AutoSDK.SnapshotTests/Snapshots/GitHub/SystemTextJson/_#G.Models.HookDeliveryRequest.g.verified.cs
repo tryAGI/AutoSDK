@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HookDeliveryRequest" /> class.
+        /// </summary>
+        /// <param name="headers">
+        /// The request headers sent with the webhook delivery.
+        /// </param>
+        /// <param name="payload">
+        /// The webhook payload.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public HookDeliveryRequest(
+            object? headers,
+            object? payload)
+        {
+            this.Headers = headers ?? throw new global::System.ArgumentNullException(nameof(headers));
+            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HookDeliveryRequest" /> class.
+        /// </summary>
+        public HookDeliveryRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

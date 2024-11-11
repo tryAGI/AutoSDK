@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateRealtimeTemporaryTokenParams" /> class.
+        /// </summary>
+        /// <param name="expiresIn">
+        /// The amount of time until the token expires in seconds
+        /// </param>
+        public CreateRealtimeTemporaryTokenParams(
+            int expiresIn)
+        {
+            this.ExpiresIn = expiresIn;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateRealtimeTemporaryTokenParams" /> class.
+        /// </summary>
+        public CreateRealtimeTemporaryTokenParams()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

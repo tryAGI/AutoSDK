@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchRequiredStatusCheckCheck" /> class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="appId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProtectedBranchRequiredStatusCheckCheck(
+            string context,
+            int? appId)
+        {
+            this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
+            this.AppId = appId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchRequiredStatusCheckCheck" /> class.
+        /// </summary>
+        public ProtectedBranchRequiredStatusCheckCheck()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

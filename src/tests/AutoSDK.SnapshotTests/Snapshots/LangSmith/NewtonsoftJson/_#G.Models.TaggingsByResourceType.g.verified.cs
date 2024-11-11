@@ -57,6 +57,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaggingsByResourceType" /> class.
+        /// </summary>
+        /// <param name="prompts">
+        /// Default Value: []
+        /// </param>
+        /// <param name="projects">
+        /// Default Value: []
+        /// </param>
+        /// <param name="queues">
+        /// Default Value: []
+        /// </param>
+        /// <param name="deployments">
+        /// Default Value: []
+        /// </param>
+        /// <param name="experiments">
+        /// Default Value: []
+        /// </param>
+        /// <param name="datasets">
+        /// Default Value: []
+        /// </param>
+        /// <param name="dashboards">
+        /// Default Value: []
+        /// </param>
+        public TaggingsByResourceType(
+            global::System.Collections.Generic.IList<global::G.Resource>? prompts,
+            global::System.Collections.Generic.IList<global::G.Resource>? projects,
+            global::System.Collections.Generic.IList<global::G.Resource>? queues,
+            global::System.Collections.Generic.IList<global::G.Resource>? deployments,
+            global::System.Collections.Generic.IList<global::G.Resource>? experiments,
+            global::System.Collections.Generic.IList<global::G.Resource>? datasets,
+            global::System.Collections.Generic.IList<global::G.Resource>? dashboards)
+        {
+            this.Prompts = prompts;
+            this.Projects = projects;
+            this.Queues = queues;
+            this.Deployments = deployments;
+            this.Experiments = experiments;
+            this.Datasets = datasets;
+            this.Dashboards = dashboards;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaggingsByResourceType" /> class.
+        /// </summary>
+        public TaggingsByResourceType()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

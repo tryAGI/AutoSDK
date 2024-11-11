@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunnerLabel" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the label.
+        /// </param>
+        /// <param name="name">
+        /// Name of the label.
+        /// </param>
+        /// <param name="type">
+        /// The type of label. Read-only labels are applied automatically when the runner is configured.
+        /// </param>
+        public RunnerLabel(
+            string name,
+            int? id,
+            global::G.RunnerLabelType? type)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Id = id;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunnerLabel" /> class.
+        /// </summary>
+        public RunnerLabel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

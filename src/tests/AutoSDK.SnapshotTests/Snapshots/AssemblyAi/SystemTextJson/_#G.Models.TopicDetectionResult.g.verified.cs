@@ -34,6 +34,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicDetectionResult" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// The text in the transcript in which a detected topic occurs
+        /// </param>
+        /// <param name="labels"></param>
+        /// <param name="timestamp">
+        /// Timestamp containing a start and end property in milliseconds
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TopicDetectionResult(
+            string text,
+            global::System.Collections.Generic.IList<global::G.TopicDetectionResultLabel>? labels,
+            global::G.Timestamp? timestamp)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Labels = labels;
+            this.Timestamp = timestamp;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicDetectionResult" /> class.
+        /// </summary>
+        public TopicDetectionResult()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

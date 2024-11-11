@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleBranchNamePatternParameters" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// How this rule will appear to users.
+        /// </param>
+        /// <param name="negate">
+        /// If true, the rule will fail if the pattern matches.
+        /// </param>
+        /// <param name="operator">
+        /// The operator to use for matching.
+        /// </param>
+        /// <param name="pattern">
+        /// The pattern to match with.
+        /// </param>
+        public RepositoryRuleBranchNamePatternParameters(
+            global::G.RepositoryRuleBranchNamePatternParametersOperator @operator,
+            string pattern,
+            string? name,
+            bool? negate)
+        {
+            this.Operator = @operator;
+            this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
+            this.Name = name;
+            this.Negate = negate;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleBranchNamePatternParameters" /> class.
+        /// </summary>
+        public RepositoryRuleBranchNamePatternParameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

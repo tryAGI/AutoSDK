@@ -30,6 +30,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectUserCreateRequest" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// The ID of the user.
+        /// </param>
+        /// <param name="role">
+        /// `owner` or `member`
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectUserCreateRequest(
+            string userId,
+            global::G.ProjectUserCreateRequestRole role)
+        {
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectUserCreateRequest" /> class.
+        /// </summary>
+        public ProjectUserCreateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

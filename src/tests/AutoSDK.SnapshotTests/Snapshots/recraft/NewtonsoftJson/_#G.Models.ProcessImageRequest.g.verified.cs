@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcessImageRequest" /> class.
+        /// </summary>
+        /// <param name="image"></param>
+        /// <param name="imagename"></param>
+        /// <param name="responseFormat"></param>
+        public ProcessImageRequest(
+            byte[] image,
+            string imagename,
+            global::G.ResponseFormat? responseFormat)
+        {
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));
+            this.ResponseFormat = responseFormat;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProcessImageRequest" /> class.
+        /// </summary>
+        public ProcessImageRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

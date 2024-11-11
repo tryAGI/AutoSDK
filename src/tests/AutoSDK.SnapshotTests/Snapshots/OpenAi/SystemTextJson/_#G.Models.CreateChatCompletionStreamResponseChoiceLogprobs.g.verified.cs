@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateChatCompletionStreamResponseChoiceLogprobs" /> class.
+        /// </summary>
+        /// <param name="content">
+        /// A list of message content tokens with log probability information.
+        /// </param>
+        /// <param name="refusal">
+        /// A list of message refusal tokens with log probability information.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateChatCompletionStreamResponseChoiceLogprobs(
+            global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? content,
+            global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? refusal)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateChatCompletionStreamResponseChoiceLogprobs" /> class.
+        /// </summary>
+        public CreateChatCompletionStreamResponseChoiceLogprobs()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -105,6 +105,93 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Catalog" /> class.
+        /// </summary>
+        /// <param name="catalogUid">
+        /// The catalog uid.
+        /// </param>
+        /// <param name="catalogId">
+        /// The catalog id.
+        /// </param>
+        /// <param name="name">
+        /// The catalog name.
+        /// </param>
+        /// <param name="description">
+        /// The catalog description.
+        /// </param>
+        /// <param name="createTime">
+        /// The creation time of the catalog.
+        /// </param>
+        /// <param name="updateTime">
+        /// The last update time of the catalog.
+        /// </param>
+        /// <param name="ownerName">
+        /// The owner/namespace of the catalog.
+        /// </param>
+        /// <param name="tags">
+        /// The catalog tags.
+        /// </param>
+        /// <param name="convertingPipelines">
+        /// The catalog converting pipelines.
+        /// </param>
+        /// <param name="splittingPipelines">
+        /// The catalog splitting pipelines.
+        /// </param>
+        /// <param name="embeddingPipelines">
+        /// The catalog embedding pipelines.
+        /// </param>
+        /// <param name="downstreamApps"></param>
+        /// <param name="totalFiles">
+        /// The total files in catalog.
+        /// </param>
+        /// <param name="totalTokens">
+        /// The total tokens in catalog.
+        /// </param>
+        /// <param name="usedStorage">
+        /// The current used storage in catalog.
+        /// </param>
+        public Catalog(
+            string catalogId,
+            string? catalogUid,
+            string? name,
+            string? description,
+            string? createTime,
+            string? updateTime,
+            string? ownerName,
+            global::System.Collections.Generic.IList<string>? tags,
+            global::System.Collections.Generic.IList<string>? convertingPipelines,
+            global::System.Collections.Generic.IList<string>? splittingPipelines,
+            global::System.Collections.Generic.IList<string>? embeddingPipelines,
+            global::System.Collections.Generic.IList<string>? downstreamApps,
+            long? totalFiles,
+            long? totalTokens,
+            string? usedStorage)
+        {
+            this.CatalogId = catalogId ?? throw new global::System.ArgumentNullException(nameof(catalogId));
+            this.CatalogUid = catalogUid;
+            this.Name = name;
+            this.Description = description;
+            this.CreateTime = createTime;
+            this.UpdateTime = updateTime;
+            this.OwnerName = ownerName;
+            this.Tags = tags;
+            this.ConvertingPipelines = convertingPipelines;
+            this.SplittingPipelines = splittingPipelines;
+            this.EmbeddingPipelines = embeddingPipelines;
+            this.DownstreamApps = downstreamApps;
+            this.TotalFiles = totalFiles;
+            this.TotalTokens = totalTokens;
+            this.UsedStorage = usedStorage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Catalog" /> class.
+        /// </summary>
+        public Catalog()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DownloadResultResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the job
+        /// </param>
+        /// <param name="downloadUrl">
+        /// The URL to download the result file
+        /// </param>
+        public DownloadResultResponse(
+            string id,
+            string downloadUrl)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DownloadResultResponse" /> class.
+        /// </summary>
+        public DownloadResultResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

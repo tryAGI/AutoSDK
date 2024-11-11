@@ -69,6 +69,51 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsV2Item" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="projectNodeId"></param>
+        /// <param name="contentNodeId"></param>
+        /// <param name="contentType">
+        /// The type of content tracked in a project item
+        /// </param>
+        /// <param name="creator">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="archivedAt"></param>
+        public ProjectsV2Item(
+            double id,
+            string contentNodeId,
+            global::G.ProjectsV2ItemContentType contentType,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::System.DateTime? archivedAt,
+            string? nodeId,
+            string? projectNodeId,
+            global::G.SimpleUser? creator)
+        {
+            this.Id = id;
+            this.ContentNodeId = contentNodeId ?? throw new global::System.ArgumentNullException(nameof(contentNodeId));
+            this.ContentType = contentType;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.ArchivedAt = archivedAt;
+            this.NodeId = nodeId;
+            this.ProjectNodeId = projectNodeId;
+            this.Creator = creator;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsV2Item" /> class.
+        /// </summary>
+        public ProjectsV2Item()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

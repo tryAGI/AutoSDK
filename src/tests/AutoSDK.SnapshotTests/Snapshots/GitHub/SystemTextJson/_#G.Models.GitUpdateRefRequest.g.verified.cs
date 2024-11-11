@@ -29,6 +29,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitUpdateRefRequest" /> class.
+        /// </summary>
+        /// <param name="sha">
+        /// The SHA1 value to set this reference to
+        /// </param>
+        /// <param name="force">
+        /// Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to `false` will make sure you're not overwriting work.<br/>
+        /// Default Value: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GitUpdateRefRequest(
+            string sha,
+            bool? force)
+        {
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Force = force;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitUpdateRefRequest" /> class.
+        /// </summary>
+        public GitUpdateRefRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

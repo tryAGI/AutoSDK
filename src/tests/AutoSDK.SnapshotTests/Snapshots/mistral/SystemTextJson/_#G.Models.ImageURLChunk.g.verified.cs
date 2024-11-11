@@ -32,6 +32,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageURLChunk" /> class.
+        /// </summary>
+        /// <param name="imageUrl"></param>
+        /// <param name="type">
+        /// Default Value: image_url
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ImageURLChunk(
+            global::G.AnyOf<global::G.ImageURL, string> imageUrl,
+            global::G.ImageURLChunkType? type)
+        {
+            this.ImageUrl = imageUrl;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageURLChunk" /> class.
+        /// </summary>
+        public ImageURLChunk()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

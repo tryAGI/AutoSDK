@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestMinimal" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="number"></param>
+        /// <param name="url"></param>
+        /// <param name="head"></param>
+        /// <param name="base"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PullRequestMinimal(
+            long id,
+            int number,
+            string url,
+            global::G.PullRequestMinimalHead head,
+            global::G.PullRequestMinimalBase @base)
+        {
+            this.Id = id;
+            this.Number = number;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
+            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestMinimal" /> class.
+        /// </summary>
+        public PullRequestMinimal()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

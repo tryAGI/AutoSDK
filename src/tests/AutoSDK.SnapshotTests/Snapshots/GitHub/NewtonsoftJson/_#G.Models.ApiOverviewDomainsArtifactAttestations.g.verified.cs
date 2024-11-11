@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiOverviewDomainsArtifactAttestations" /> class.
+        /// </summary>
+        /// <param name="trustDomain">
+        /// Example: [example]
+        /// </param>
+        /// <param name="services"></param>
+        public ApiOverviewDomainsArtifactAttestations(
+            string? trustDomain,
+            global::System.Collections.Generic.IList<string>? services)
+        {
+            this.TrustDomain = trustDomain;
+            this.Services = services;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiOverviewDomainsArtifactAttestations" /> class.
+        /// </summary>
+        public ApiOverviewDomainsArtifactAttestations()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

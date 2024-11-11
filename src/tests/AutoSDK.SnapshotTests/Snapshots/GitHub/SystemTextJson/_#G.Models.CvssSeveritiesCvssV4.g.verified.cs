@@ -29,6 +29,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CvssSeveritiesCvssV4" /> class.
+        /// </summary>
+        /// <param name="vectorString">
+        /// The CVSS 4 vector string.
+        /// </param>
+        /// <param name="score">
+        /// The CVSS 4 score.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CvssSeveritiesCvssV4(
+            string? vectorString,
+            double? score)
+        {
+            this.VectorString = vectorString ?? throw new global::System.ArgumentNullException(nameof(vectorString));
+            this.Score = score;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CvssSeveritiesCvssV4" /> class.
+        /// </summary>
+        public CvssSeveritiesCvssV4()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

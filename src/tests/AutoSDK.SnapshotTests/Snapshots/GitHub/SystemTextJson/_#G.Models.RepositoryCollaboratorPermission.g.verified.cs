@@ -36,6 +36,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryCollaboratorPermission" /> class.
+        /// </summary>
+        /// <param name="permission"></param>
+        /// <param name="roleName">
+        /// Example: admin
+        /// </param>
+        /// <param name="user">
+        /// Collaborator
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryCollaboratorPermission(
+            string permission,
+            string roleName,
+            global::G.NullableCollaborator? user)
+        {
+            this.Permission = permission ?? throw new global::System.ArgumentNullException(nameof(permission));
+            this.RoleName = roleName ?? throw new global::System.ArgumentNullException(nameof(roleName));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryCollaboratorPermission" /> class.
+        /// </summary>
+        public RepositoryCollaboratorPermission()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

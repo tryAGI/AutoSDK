@@ -45,6 +45,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2TemplateGenerateRequest" /> class.
+        /// </summary>
+        /// <param name="caption">
+        /// Example: false
+        /// </param>
+        /// <param name="dimension"></param>
+        /// <param name="test">
+        /// Example: false
+        /// </param>
+        /// <param name="title">
+        /// Example: New Video
+        /// </param>
+        /// <param name="variables"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public V2TemplateGenerateRequest(
+            bool? caption,
+            global::G.V2TemplateGenerateRequestDimension? dimension,
+            bool? test,
+            string? title,
+            global::G.V2TemplateGenerateRequestVariables? variables)
+        {
+            this.Caption = caption;
+            this.Dimension = dimension;
+            this.Test = test;
+            this.Title = title;
+            this.Variables = variables;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2TemplateGenerateRequest" /> class.
+        /// </summary>
+        public V2TemplateGenerateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

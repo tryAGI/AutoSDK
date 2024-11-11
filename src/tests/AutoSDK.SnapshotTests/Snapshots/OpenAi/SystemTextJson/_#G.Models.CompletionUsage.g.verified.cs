@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionUsage" /> class.
+        /// </summary>
+        /// <param name="completionTokens">
+        /// Number of tokens in the generated completion.
+        /// </param>
+        /// <param name="promptTokens">
+        /// Number of tokens in the prompt.
+        /// </param>
+        /// <param name="totalTokens">
+        /// Total number of tokens used in the request (prompt + completion).
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CompletionUsage(
+            int completionTokens,
+            int promptTokens,
+            int totalTokens)
+        {
+            this.CompletionTokens = completionTokens;
+            this.PromptTokens = promptTokens;
+            this.TotalTokens = totalTokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionUsage" /> class.
+        /// </summary>
+        public CompletionUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -106,6 +106,86 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FullResponse" /> class.
+        /// </summary>
+        /// <param name="ip">
+        /// Example: 66.87.125.72
+        /// </param>
+        /// <param name="bogon">
+        /// Example: false
+        /// </param>
+        /// <param name="hostname">
+        /// Example: ip-66-87-125-72.spfdma.spcsdns.net
+        /// </param>
+        /// <param name="city">
+        /// Example: Springfield
+        /// </param>
+        /// <param name="region">
+        /// Example: Massachusetts
+        /// </param>
+        /// <param name="country">
+        /// Example: US
+        /// </param>
+        /// <param name="loc">
+        /// Example: 42.0999,-72.5783
+        /// </param>
+        /// <param name="postal">
+        /// Example: 01105
+        /// </param>
+        /// <param name="timezone">
+        /// Example: America/New_York
+        /// </param>
+        /// <param name="org">
+        /// Example: AS51501 Khabarovsk home networks Ltd
+        /// </param>
+        /// <param name="asn"></param>
+        /// <param name="company"></param>
+        /// <param name="carrier"></param>
+        /// <param name="privacy"></param>
+        /// <param name="domains"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FullResponse(
+            string ip,
+            bool? bogon,
+            string? hostname,
+            string? city,
+            string? region,
+            string? country,
+            string? loc,
+            string? postal,
+            string? timezone,
+            string? org,
+            global::G.AsnResponse? asn,
+            global::G.Company? company,
+            global::G.Carrier? carrier,
+            global::G.PrivacyResponse? privacy,
+            global::G.DomainsResponse? domains)
+        {
+            this.Ip = ip ?? throw new global::System.ArgumentNullException(nameof(ip));
+            this.Bogon = bogon;
+            this.Hostname = hostname;
+            this.City = city;
+            this.Region = region;
+            this.Country = country;
+            this.Loc = loc;
+            this.Postal = postal;
+            this.Timezone = timezone;
+            this.Org = org;
+            this.Asn = asn;
+            this.Company = company;
+            this.Carrier = carrier;
+            this.Privacy = privacy;
+            this.Domains = domains;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FullResponse" /> class.
+        /// </summary>
+        public FullResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

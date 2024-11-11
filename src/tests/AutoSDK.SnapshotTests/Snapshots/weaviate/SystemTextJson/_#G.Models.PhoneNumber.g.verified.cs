@@ -57,6 +57,56 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PhoneNumber" /> class.
+        /// </summary>
+        /// <param name="input">
+        /// The raw input as the phone number is present in your raw data set. It will be parsed into the standardized formats if valid.
+        /// </param>
+        /// <param name="internationalFormatted">
+        /// Read-only. Parsed result in the international format (e.g. +49 123 ...)
+        /// </param>
+        /// <param name="defaultCountry">
+        /// Optional. The ISO 3166-1 alpha-2 country code. This is used to figure out the correct countryCode and international format if only a national number (e.g. 0123 4567) is provided
+        /// </param>
+        /// <param name="countryCode">
+        /// Read-only. The numerical country code (e.g. 49)
+        /// </param>
+        /// <param name="national">
+        /// Read-only. The numerical representation of the national part
+        /// </param>
+        /// <param name="nationalFormatted">
+        /// Read-only. Parsed result in the national format (e.g. 0123 456789)
+        /// </param>
+        /// <param name="valid">
+        /// Read-only. Indicates whether the parsed number is a valid phone number
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PhoneNumber(
+            string? input,
+            string? internationalFormatted,
+            string? defaultCountry,
+            double? countryCode,
+            double? national,
+            string? nationalFormatted,
+            bool? valid)
+        {
+            this.Input = input;
+            this.InternationalFormatted = internationalFormatted;
+            this.DefaultCountry = defaultCountry;
+            this.CountryCode = countryCode;
+            this.National = national;
+            this.NationalFormatted = nationalFormatted;
+            this.Valid = valid;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PhoneNumber" /> class.
+        /// </summary>
+        public PhoneNumber()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

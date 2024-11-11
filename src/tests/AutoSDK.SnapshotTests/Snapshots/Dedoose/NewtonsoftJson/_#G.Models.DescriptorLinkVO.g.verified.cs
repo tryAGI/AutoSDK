@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorLinkVO" /> class.
+        /// </summary>
+        /// <param name="descriptorId"></param>
+        /// <param name="resourceId"></param>
+        public DescriptorLinkVO(
+            global::System.Guid? descriptorId,
+            global::System.Guid? resourceId)
+        {
+            this.DescriptorId = descriptorId;
+            this.ResourceId = resourceId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorLinkVO" /> class.
+        /// </summary>
+        public DescriptorLinkVO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

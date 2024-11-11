@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2TemplateGenerateRequestVariables" /> class.
+        /// </summary>
+        /// <param name="firstName"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public V2TemplateGenerateRequestVariables(
+            global::G.V2TemplateGenerateRequestVariablesFirstName? firstName)
+        {
+            this.FirstName = firstName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2TemplateGenerateRequestVariables" /> class.
+        /// </summary>
+        public V2TemplateGenerateRequestVariables()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

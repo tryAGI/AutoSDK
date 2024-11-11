@@ -39,6 +39,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsBillingUsage" /> class.
+        /// </summary>
+        /// <param name="totalMinutesUsed">
+        /// The sum of the free and paid GitHub Actions minutes used.
+        /// </param>
+        /// <param name="totalPaidMinutesUsed">
+        /// The total paid GitHub Actions minutes used.
+        /// </param>
+        /// <param name="includedMinutes">
+        /// The amount of free GitHub Actions minutes available.
+        /// </param>
+        /// <param name="minutesUsedBreakdown"></param>
+        public ActionsBillingUsage(
+            int totalMinutesUsed,
+            int totalPaidMinutesUsed,
+            int includedMinutes,
+            global::G.ActionsBillingUsageMinutesUsedBreakdown minutesUsedBreakdown)
+        {
+            this.TotalMinutesUsed = totalMinutesUsed;
+            this.TotalPaidMinutesUsed = totalPaidMinutesUsed;
+            this.IncludedMinutes = includedMinutes;
+            this.MinutesUsedBreakdown = minutesUsedBreakdown ?? throw new global::System.ArgumentNullException(nameof(minutesUsedBreakdown));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsBillingUsage" /> class.
+        /// </summary>
+        public ActionsBillingUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

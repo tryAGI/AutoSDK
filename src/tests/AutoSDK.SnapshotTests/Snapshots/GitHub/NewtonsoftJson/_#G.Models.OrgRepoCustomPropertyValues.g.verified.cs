@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgRepoCustomPropertyValues" /> class.
+        /// </summary>
+        /// <param name="repositoryId">
+        /// Example: 1296269
+        /// </param>
+        /// <param name="repositoryName">
+        /// Example: Hello-World
+        /// </param>
+        /// <param name="repositoryFullName">
+        /// Example: octocat/Hello-World
+        /// </param>
+        /// <param name="properties">
+        /// List of custom property names and associated values
+        /// </param>
+        public OrgRepoCustomPropertyValues(
+            int repositoryId,
+            string repositoryName,
+            string repositoryFullName,
+            global::System.Collections.Generic.IList<global::G.CustomPropertyValue> properties)
+        {
+            this.RepositoryId = repositoryId;
+            this.RepositoryName = repositoryName ?? throw new global::System.ArgumentNullException(nameof(repositoryName));
+            this.RepositoryFullName = repositoryFullName ?? throw new global::System.ArgumentNullException(nameof(repositoryFullName));
+            this.Properties = properties ?? throw new global::System.ArgumentNullException(nameof(properties));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgRepoCustomPropertyValues" /> class.
+        /// </summary>
+        public OrgRepoCustomPropertyValues()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

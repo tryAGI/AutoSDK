@@ -43,6 +43,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamMarkerCreated" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// An ID that identifies this marker.
+        /// </param>
+        /// <param name="createdAt">
+        /// The UTC date and time (in RFC3339 format) of when the user created the marker.
+        /// </param>
+        /// <param name="positionSeconds">
+        /// The relative offset (in seconds) of the marker from the beginning of the stream.
+        /// </param>
+        /// <param name="description">
+        /// A description that the user gave the marker to help them remember why they marked the location.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StreamMarkerCreated(
+            string id,
+            global::System.DateTime createdAt,
+            int positionSeconds,
+            string description)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.PositionSeconds = positionSeconds;
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamMarkerCreated" /> class.
+        /// </summary>
+        public StreamMarkerCreated()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

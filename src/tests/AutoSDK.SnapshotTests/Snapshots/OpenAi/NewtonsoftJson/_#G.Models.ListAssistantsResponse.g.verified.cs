@@ -45,6 +45,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAssistantsResponse" /> class.
+        /// </summary>
+        /// <param name="object">
+        /// Example: list
+        /// </param>
+        /// <param name="data"></param>
+        /// <param name="firstId">
+        /// Example: asst_abc123
+        /// </param>
+        /// <param name="lastId">
+        /// Example: asst_abc456
+        /// </param>
+        /// <param name="hasMore">
+        /// Example: false
+        /// </param>
+        public ListAssistantsResponse(
+            string @object,
+            global::System.Collections.Generic.IList<global::G.AssistantObject> data,
+            string firstId,
+            string lastId,
+            bool hasMore)
+        {
+            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.HasMore = hasMore;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAssistantsResponse" /> class.
+        /// </summary>
+        public ListAssistantsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

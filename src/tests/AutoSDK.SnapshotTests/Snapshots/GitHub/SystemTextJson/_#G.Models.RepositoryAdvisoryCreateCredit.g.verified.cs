@@ -30,6 +30,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCreateCredit" /> class.
+        /// </summary>
+        /// <param name="login">
+        /// The username of the user credited.
+        /// </param>
+        /// <param name="type">
+        /// The type of credit the user is receiving.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryAdvisoryCreateCredit(
+            string login,
+            global::G.SecurityAdvisoryCreditTypes type)
+        {
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCreateCredit" /> class.
+        /// </summary>
+        public RepositoryAdvisoryCreateCredit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

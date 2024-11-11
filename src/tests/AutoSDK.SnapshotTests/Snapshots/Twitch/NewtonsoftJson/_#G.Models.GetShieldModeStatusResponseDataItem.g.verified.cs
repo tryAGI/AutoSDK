@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetShieldModeStatusResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="isActive">
+        /// A Boolean value that determines whether Shield Mode is active. Is **true** if the broadcaster activated Shield Mode; otherwise, **false**.
+        /// </param>
+        /// <param name="moderatorId">
+        /// An ID that identifies the moderator that last activated Shield Mode. Is an empty string if Shield Mode hasn’t been previously activated.
+        /// </param>
+        /// <param name="moderatorLogin">
+        /// The moderator’s login name. Is an empty string if Shield Mode hasn’t been previously activated.
+        /// </param>
+        /// <param name="moderatorName">
+        /// The moderator’s display name. Is an empty string if Shield Mode hasn’t been previously activated.
+        /// </param>
+        /// <param name="lastActivatedAt">
+        /// The UTC timestamp (in RFC3339 format) of when Shield Mode was last activated. Is an empty string if Shield Mode hasn’t been previously activated.
+        /// </param>
+        public GetShieldModeStatusResponseDataItem(
+            bool isActive,
+            string moderatorId,
+            string moderatorLogin,
+            string moderatorName,
+            global::System.DateTime lastActivatedAt)
+        {
+            this.IsActive = isActive;
+            this.ModeratorId = moderatorId ?? throw new global::System.ArgumentNullException(nameof(moderatorId));
+            this.ModeratorLogin = moderatorLogin ?? throw new global::System.ArgumentNullException(nameof(moderatorLogin));
+            this.ModeratorName = moderatorName ?? throw new global::System.ArgumentNullException(nameof(moderatorName));
+            this.LastActivatedAt = lastActivatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetShieldModeStatusResponseDataItem" /> class.
+        /// </summary>
+        public GetShieldModeStatusResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

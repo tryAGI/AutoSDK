@@ -36,6 +36,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BackupConfig" /> class.
+        /// </summary>
+        /// <param name="cPUPercentage">
+        /// Desired CPU core utilization ranging from 1%-80%<br/>
+        /// Default Value: 50
+        /// </param>
+        /// <param name="chunkSize">
+        /// Aimed chunk size, with a minimum of 2MB, default of 128MB, and a maximum of 512MB. The actual chunk size may vary.<br/>
+        /// Default Value: 128
+        /// </param>
+        /// <param name="compressionLevel">
+        /// Compression level used by compression algorithm<br/>
+        /// Default Value: DefaultCompression
+        /// </param>
+        public BackupConfig(
+            int? cPUPercentage,
+            int? chunkSize,
+            global::G.BackupConfigCompressionLevel? compressionLevel)
+        {
+            this.CPUPercentage = cPUPercentage;
+            this.ChunkSize = chunkSize;
+            this.CompressionLevel = compressionLevel;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BackupConfig" /> class.
+        /// </summary>
+        public BackupConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

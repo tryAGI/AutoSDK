@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoModStatus" /> class.
+        /// </summary>
+        /// <param name="msgId">
+        /// The caller-defined ID passed in the request.
+        /// </param>
+        /// <param name="isPermitted">
+        /// A Boolean value that indicates whether Twitch would approve the message for chat or hold it for moderator review or block it from chat. Is **true** if Twitch would approve the message; otherwise, **false** if Twitch would hold the message for moderator review or block it from chat.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AutoModStatus(
+            string msgId,
+            bool isPermitted)
+        {
+            this.MsgId = msgId ?? throw new global::System.ArgumentNullException(nameof(msgId));
+            this.IsPermitted = isPermitted;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoModStatus" /> class.
+        /// </summary>
+        public AutoModStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertAppearedInBranchAlertRule" /> class.
+        /// </summary>
+        /// <param name="description">
+        /// A short description of the rule used to detect the alert.
+        /// </param>
+        /// <param name="id">
+        /// A unique identifier for the rule used to detect the alert.
+        /// </param>
+        /// <param name="severity">
+        /// The severity of the alert.
+        /// </param>
+        public WebhookCodeScanningAlertAppearedInBranchAlertRule(
+            string description,
+            string id,
+            global::G.WebhookCodeScanningAlertAppearedInBranchAlertRuleSeverity? severity)
+        {
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Severity = severity;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertAppearedInBranchAlertRule" /> class.
+        /// </summary>
+        public WebhookCodeScanningAlertAppearedInBranchAlertRule()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

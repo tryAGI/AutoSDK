@@ -43,6 +43,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RpcStatus" /> class.
+        /// </summary>
+        /// <param name="code">
+        /// The status code, which should be an enum value of<br/>
+        /// [google.rpc.Code][google.rpc.Code].
+        /// </param>
+        /// <param name="message">
+        /// A developer-facing error message, which should be in English. Any<br/>
+        /// user-facing error message should be localized and sent in the<br/>
+        /// [google.rpc.Status.details][google.rpc.Status.details] field, or localized<br/>
+        /// by the client.
+        /// </param>
+        /// <param name="details">
+        /// A list of messages that carry the error details.  There is a common set of<br/>
+        /// message types for APIs to use.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RpcStatus(
+            int? code,
+            string? message,
+            global::System.Collections.Generic.IList<global::G.Any>? details)
+        {
+            this.Code = code;
+            this.Message = message;
+            this.Details = details;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RpcStatus" /> class.
+        /// </summary>
+        public RpcStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

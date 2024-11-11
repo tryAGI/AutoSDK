@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SetExtensionRequiredConfigurationBody" /> class.
+        /// </summary>
+        /// <param name="extensionId">
+        /// The ID of the extension to update.
+        /// </param>
+        /// <param name="extensionVersion">
+        /// The version of the extension to update.
+        /// </param>
+        /// <param name="requiredConfiguration">
+        /// The required\_configuration string to use with the extension.
+        /// </param>
+        public SetExtensionRequiredConfigurationBody(
+            string extensionId,
+            string extensionVersion,
+            string requiredConfiguration)
+        {
+            this.ExtensionId = extensionId ?? throw new global::System.ArgumentNullException(nameof(extensionId));
+            this.ExtensionVersion = extensionVersion ?? throw new global::System.ArgumentNullException(nameof(extensionVersion));
+            this.RequiredConfiguration = requiredConfiguration ?? throw new global::System.ArgumentNullException(nameof(requiredConfiguration));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SetExtensionRequiredConfigurationBody" /> class.
+        /// </summary>
+        public SetExtensionRequiredConfigurationBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Chapter" /> class.
+        /// </summary>
+        /// <param name="gist">
+        /// An ultra-short summary (just a few words) of the content spoken in the chapter
+        /// </param>
+        /// <param name="headline">
+        /// A single sentence summary of the content spoken during the chapter
+        /// </param>
+        /// <param name="summary">
+        /// A one paragraph summary of the content spoken during the chapter
+        /// </param>
+        /// <param name="start">
+        /// The starting time, in milliseconds, for the chapter
+        /// </param>
+        /// <param name="end">
+        /// The starting time, in milliseconds, for the chapter
+        /// </param>
+        public Chapter(
+            string gist,
+            string headline,
+            string summary,
+            int start,
+            int end)
+        {
+            this.Gist = gist ?? throw new global::System.ArgumentNullException(nameof(gist));
+            this.Headline = headline ?? throw new global::System.ArgumentNullException(nameof(headline));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Start = start;
+            this.End = end;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Chapter" /> class.
+        /// </summary>
+        public Chapter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -35,6 +35,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpsertTTLSettingsRequest" /> class.
+        /// </summary>
+        /// <param name="tenantId"></param>
+        /// <param name="defaultTraceTier"></param>
+        /// <param name="applyToAllProjects">
+        /// Default Value: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpsertTTLSettingsRequest(
+            global::G.TraceTier defaultTraceTier,
+            global::System.Guid? tenantId,
+            bool? applyToAllProjects)
+        {
+            this.DefaultTraceTier = defaultTraceTier;
+            this.TenantId = tenantId;
+            this.ApplyToAllProjects = applyToAllProjects;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpsertTTLSettingsRequest" /> class.
+        /// </summary>
+        public UpsertTTLSettingsRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

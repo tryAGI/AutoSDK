@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsReviewPatGrantRequestRequest" /> class.
+        /// </summary>
+        /// <param name="action">
+        /// Action to apply to the request.
+        /// </param>
+        /// <param name="reason">
+        /// Reason for approving or denying the request. Max 1024 characters.
+        /// </param>
+        public OrgsReviewPatGrantRequestRequest(
+            global::G.OrgsReviewPatGrantRequestRequestAction action,
+            string? reason)
+        {
+            this.Action = action;
+            this.Reason = reason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsReviewPatGrantRequestRequest" /> class.
+        /// </summary>
+        public OrgsReviewPatGrantRequestRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

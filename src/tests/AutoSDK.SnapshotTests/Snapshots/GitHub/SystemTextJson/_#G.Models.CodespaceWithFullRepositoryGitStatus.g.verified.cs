@@ -48,6 +48,49 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespaceWithFullRepositoryGitStatus" /> class.
+        /// </summary>
+        /// <param name="ahead">
+        /// The number of commits the local repository is ahead of the remote.<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="behind">
+        /// The number of commits the local repository is behind the remote.<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="hasUnpushedChanges">
+        /// Whether the local repository has unpushed changes.
+        /// </param>
+        /// <param name="hasUncommittedChanges">
+        /// Whether the local repository has uncommitted changes.
+        /// </param>
+        /// <param name="ref">
+        /// The current branch (or SHA if in detached HEAD state) of the local repository.<br/>
+        /// Example: main
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodespaceWithFullRepositoryGitStatus(
+            int? ahead,
+            int? behind,
+            bool? hasUnpushedChanges,
+            bool? hasUncommittedChanges,
+            string? @ref)
+        {
+            this.Ahead = ahead;
+            this.Behind = behind;
+            this.HasUnpushedChanges = hasUnpushedChanges;
+            this.HasUncommittedChanges = hasUncommittedChanges;
+            this.Ref = @ref;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespaceWithFullRepositoryGitStatus" /> class.
+        /// </summary>
+        public CodespaceWithFullRepositoryGitStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

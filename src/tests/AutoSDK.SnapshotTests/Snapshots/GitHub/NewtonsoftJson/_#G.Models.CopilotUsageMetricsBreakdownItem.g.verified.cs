@@ -57,6 +57,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotUsageMetricsBreakdownItem" /> class.
+        /// </summary>
+        /// <param name="language">
+        /// The language in which Copilot suggestions were shown to users in the specified editor.
+        /// </param>
+        /// <param name="editor">
+        /// The editor in which Copilot suggestions were shown to users for the specified language.
+        /// </param>
+        /// <param name="suggestionsCount">
+        /// The number of Copilot suggestions shown to users in the editor specified during the day specified.
+        /// </param>
+        /// <param name="acceptancesCount">
+        /// The number of Copilot suggestions accepted by users in the editor specified during the day specified.
+        /// </param>
+        /// <param name="linesSuggested">
+        /// The number of lines of code suggested by Copilot in the editor specified during the day specified.
+        /// </param>
+        /// <param name="linesAccepted">
+        /// The number of lines of code accepted by users in the editor specified during the day specified.
+        /// </param>
+        /// <param name="activeUsers">
+        /// The number of users who were shown Copilot completion suggestions in the editor specified during the day specified.
+        /// </param>
+        public CopilotUsageMetricsBreakdownItem(
+            string? language,
+            string? editor,
+            int? suggestionsCount,
+            int? acceptancesCount,
+            int? linesSuggested,
+            int? linesAccepted,
+            int? activeUsers)
+        {
+            this.Language = language;
+            this.Editor = editor;
+            this.SuggestionsCount = suggestionsCount;
+            this.AcceptancesCount = acceptancesCount;
+            this.LinesSuggested = linesSuggested;
+            this.LinesAccepted = linesAccepted;
+            this.ActiveUsers = activeUsers;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotUsageMetricsBreakdownItem" /> class.
+        /// </summary>
+        public CopilotUsageMetricsBreakdownItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

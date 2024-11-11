@@ -55,6 +55,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationErrorError" /> class.
+        /// </summary>
+        /// <param name="resource"></param>
+        /// <param name="field"></param>
+        /// <param name="message"></param>
+        /// <param name="code"></param>
+        /// <param name="index"></param>
+        /// <param name="value"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ValidationErrorError(
+            string code,
+            string? resource,
+            string? field,
+            string? message,
+            int? index,
+            global::G.OneOf<string, int?, global::System.Collections.Generic.IList<string>>? value)
+        {
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Resource = resource;
+            this.Field = field;
+            this.Message = message;
+            this.Index = index;
+            this.Value = value;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationErrorError" /> class.
+        /// </summary>
+        public ValidationErrorError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

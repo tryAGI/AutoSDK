@@ -94,6 +94,62 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewDismissedReview" /> class.
+        /// </summary>
+        /// <param name="links"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.
+        /// </param>
+        /// <param name="body">
+        /// The text of the review.
+        /// </param>
+        /// <param name="commitId">
+        /// A commit SHA for the review.
+        /// </param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id">
+        /// Unique identifier of the review
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="pullRequestUrl"></param>
+        /// <param name="state"></param>
+        /// <param name="submittedAt"></param>
+        /// <param name="user"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookPullRequestReviewDismissedReview(
+            global::G.WebhookPullRequestReviewDismissedReviewLinks links,
+            global::G.WebhookPullRequestReviewDismissedReviewAuthorAssociation authorAssociation,
+            string? body,
+            string commitId,
+            string htmlUrl,
+            int id,
+            string nodeId,
+            string pullRequestUrl,
+            global::G.WebhookPullRequestReviewDismissedReviewState state,
+            global::System.DateTime submittedAt,
+            global::G.WebhookPullRequestReviewDismissedReviewUser? user)
+        {
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.AuthorAssociation = authorAssociation;
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
+            this.State = state;
+            this.SubmittedAt = submittedAt;
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewDismissedReview" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewDismissedReview()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

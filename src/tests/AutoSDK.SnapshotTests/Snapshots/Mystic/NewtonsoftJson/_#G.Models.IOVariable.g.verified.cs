@@ -123,6 +123,76 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IOVariable" /> class.
+        /// </summary>
+        /// <param name="runIoType">
+        /// An enumeration.
+        /// </param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="examples"></param>
+        /// <param name="gt"></param>
+        /// <param name="ge"></param>
+        /// <param name="lt"></param>
+        /// <param name="le"></param>
+        /// <param name="multipleOf"></param>
+        /// <param name="allowInfNan"></param>
+        /// <param name="maxDigits"></param>
+        /// <param name="decimalPlaces"></param>
+        /// <param name="minLength"></param>
+        /// <param name="maxLength"></param>
+        /// <param name="choices"></param>
+        /// <param name="dictSchema"></param>
+        /// <param name="default"></param>
+        /// <param name="optional"></param>
+        public IOVariable(
+            global::G.RunIOType runIoType,
+            string? title,
+            string? description,
+            global::System.Collections.Generic.IList<object>? examples,
+            int? gt,
+            int? ge,
+            int? lt,
+            int? le,
+            int? multipleOf,
+            bool? allowInfNan,
+            int? maxDigits,
+            int? decimalPlaces,
+            int? minLength,
+            int? maxLength,
+            global::System.Collections.Generic.IList<object>? choices,
+            global::System.Collections.Generic.IList<object>? dictSchema,
+            object? @default,
+            bool? optional)
+        {
+            this.RunIoType = runIoType;
+            this.Title = title;
+            this.Description = description;
+            this.Examples = examples;
+            this.Gt = gt;
+            this.Ge = ge;
+            this.Lt = lt;
+            this.Le = le;
+            this.MultipleOf = multipleOf;
+            this.AllowInfNan = allowInfNan;
+            this.MaxDigits = maxDigits;
+            this.DecimalPlaces = decimalPlaces;
+            this.MinLength = minLength;
+            this.MaxLength = maxLength;
+            this.Choices = choices;
+            this.DictSchema = dictSchema;
+            this.Default = @default;
+            this.Optional = optional;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IOVariable" /> class.
+        /// </summary>
+        public IOVariable()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

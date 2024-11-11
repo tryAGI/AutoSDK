@@ -36,6 +36,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningSarifsStatus" /> class.
+        /// </summary>
+        /// <param name="processingStatus">
+        /// `pending` files have not yet been processed, while `complete` means results from the SARIF have been stored. `failed` files have either not been processed at all, or could only be partially processed.
+        /// </param>
+        /// <param name="analysesUrl">
+        /// The REST API URL for getting the analyses associated with the upload.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="errors">
+        /// Any errors that ocurred during processing of the delivery.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeScanningSarifsStatus(
+            global::G.CodeScanningSarifsStatusProcessingStatus? processingStatus,
+            string? analysesUrl,
+            global::System.Collections.Generic.IList<string>? errors)
+        {
+            this.ProcessingStatus = processingStatus;
+            this.AnalysesUrl = analysesUrl;
+            this.Errors = errors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningSarifsStatus" /> class.
+        /// </summary>
+        public CodeScanningSarifsStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -40,6 +40,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateUserRequest" /> class.
+        /// </summary>
+        /// <param name="email">
+        /// The email address for the user.
+        /// </param>
+        /// <param name="username">
+        /// The username for the user. The value defaults to the email.
+        /// </param>
+        /// <param name="description">
+        /// The description of the user.
+        /// </param>
+        /// <param name="apiRoles">
+        /// The role names assigned to the user.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateUserRequest(
+            string email,
+            string? username,
+            string? description,
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles)
+        {
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Username = username;
+            this.Description = description;
+            this.ApiRoles = apiRoles;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateUserRequest" /> class.
+        /// </summary>
+        public CreateUserRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

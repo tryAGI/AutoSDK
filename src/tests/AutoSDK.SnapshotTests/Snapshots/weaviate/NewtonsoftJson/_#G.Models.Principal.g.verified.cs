@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Principal" /> class.
+        /// </summary>
+        /// <param name="username">
+        /// The username that was extracted either from the authentication information
+        /// </param>
+        /// <param name="groups"></param>
+        public Principal(
+            string? username,
+            global::System.Collections.Generic.IList<string>? groups)
+        {
+            this.Username = username;
+            this.Groups = groups;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Principal" /> class.
+        /// </summary>
+        public Principal()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

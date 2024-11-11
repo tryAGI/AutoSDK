@@ -40,6 +40,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountGetResponse" /> class.
+        /// </summary>
+        /// <param name="githubUrl">
+        /// The GitHub URL of the account.
+        /// </param>
+        /// <param name="name">
+        /// The name of the account.
+        /// </param>
+        /// <param name="type">
+        /// The account type. Can be a user or an organization.
+        /// </param>
+        /// <param name="username">
+        /// The username of the account.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AccountGetResponse(
+            string? githubUrl,
+            string? name,
+            global::G.AccountGetResponseType? type,
+            string? username)
+        {
+            this.GithubUrl = githubUrl;
+            this.Name = name;
+            this.Type = type;
+            this.Username = username;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountGetResponse" /> class.
+        /// </summary>
+        public AccountGetResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -99,6 +99,65 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Excerpt" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="resourceIDL"></param>
+        /// <param name="startIndex"></param>
+        /// <param name="endIndex"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="createUserIDL"></param>
+        /// <param name="dataFilePartialURL"></param>
+        /// <param name="metaData"></param>
+        /// <param name="codeAppData"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Excerpt(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            global::System.Guid? resourceIDL,
+            int? startIndex,
+            int? endIndex,
+            string? title,
+            string? description,
+            global::System.DateTime? createStamp,
+            global::System.Guid? createUserIDL,
+            string? dataFilePartialURL,
+            string? metaData,
+            byte[]? codeAppData)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.ProjectIDL = projectIDL;
+            this.ResourceIDL = resourceIDL;
+            this.StartIndex = startIndex;
+            this.EndIndex = endIndex;
+            this.Title = title;
+            this.Description = description;
+            this.CreateStamp = createStamp;
+            this.CreateUserIDL = createUserIDL;
+            this.DataFilePartialURL = dataFilePartialURL;
+            this.MetaData = metaData;
+            this.CodeAppData = codeAppData;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Excerpt" /> class.
+        /// </summary>
+        public Excerpt()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

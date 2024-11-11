@@ -88,6 +88,57 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectCardMovedProjectCardVariant2" /> class.
+        /// </summary>
+        /// <param name="afterId"></param>
+        /// <param name="archived"></param>
+        /// <param name="columnId"></param>
+        /// <param name="columnUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="creator"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="note"></param>
+        /// <param name="projectUrl"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookProjectCardMovedProjectCardVariant2(
+            double? afterId,
+            bool? archived,
+            int? columnId,
+            string? columnUrl,
+            string? createdAt,
+            global::G.WebhookProjectCardMovedProjectCardVariant2Creator? creator,
+            int? id,
+            string? nodeId,
+            string? note,
+            string? projectUrl,
+            string? updatedAt,
+            string? url)
+        {
+            this.AfterId = afterId;
+            this.Archived = archived;
+            this.ColumnId = columnId;
+            this.ColumnUrl = columnUrl;
+            this.CreatedAt = createdAt;
+            this.Creator = creator;
+            this.Id = id;
+            this.NodeId = nodeId;
+            this.Note = note;
+            this.ProjectUrl = projectUrl;
+            this.UpdatedAt = updatedAt;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectCardMovedProjectCardVariant2" /> class.
+        /// </summary>
+        public WebhookProjectCardMovedProjectCardVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

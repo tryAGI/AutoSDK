@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackCategory" /> class.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="label"></param>
+        public FeedbackCategory(
+            double value,
+            string? label)
+        {
+            this.Value = value;
+            this.Label = label;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackCategory" /> class.
+        /// </summary>
+        public FeedbackCategory()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

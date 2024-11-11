@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponseSdGenerationJob" /> class.
+        /// </summary>
+        /// <param name="generationId"></param>
+        /// <param name="apiCreditCost">
+        /// API credits cost, available for Production API users.
+        /// </param>
+        public CreateSVDMotionGenerationResponseSdGenerationJob(
+            string? generationId,
+            int? apiCreditCost)
+        {
+            this.GenerationId = generationId;
+            this.ApiCreditCost = apiCreditCost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateSVDMotionGenerationResponseSdGenerationJob" /> class.
+        /// </summary>
+        public CreateSVDMotionGenerationResponseSdGenerationJob()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

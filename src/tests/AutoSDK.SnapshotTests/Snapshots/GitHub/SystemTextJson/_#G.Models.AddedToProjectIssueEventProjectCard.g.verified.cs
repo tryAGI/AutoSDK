@@ -56,6 +56,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddedToProjectIssueEventProjectCard" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="url"></param>
+        /// <param name="projectId"></param>
+        /// <param name="projectUrl"></param>
+        /// <param name="columnName"></param>
+        /// <param name="previousColumnName"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AddedToProjectIssueEventProjectCard(
+            int id,
+            string url,
+            int projectId,
+            string projectUrl,
+            string columnName,
+            string? previousColumnName)
+        {
+            this.Id = id;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ProjectId = projectId;
+            this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
+            this.ColumnName = columnName ?? throw new global::System.ArgumentNullException(nameof(columnName));
+            this.PreviousColumnName = previousColumnName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddedToProjectIssueEventProjectCard" /> class.
+        /// </summary>
+        public AddedToProjectIssueEventProjectCard()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

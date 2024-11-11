@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateRepoCommitResponse" /> class.
+        /// </summary>
+        /// <param name="commit">
+        /// All database fields for commits, plus helpful computed fields.
+        /// </param>
+        public CreateRepoCommitResponse(
+            global::G.CommitWithLookups commit)
+        {
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateRepoCommitResponse" /> class.
+        /// </summary>
+        public CreateRepoCommitResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

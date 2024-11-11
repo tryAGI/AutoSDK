@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SetTenantHandleRequest" /> class.
+        /// </summary>
+        /// <param name="tenantHandle"></param>
+        public SetTenantHandleRequest(
+            string tenantHandle)
+        {
+            this.TenantHandle = tenantHandle ?? throw new global::System.ArgumentNullException(nameof(tenantHandle));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SetTenantHandleRequest" /> class.
+        /// </summary>
+        public SetTenantHandleRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

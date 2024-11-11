@@ -87,6 +87,60 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineGet" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="image"></param>
+        /// <param name="inputVariables"></param>
+        /// <param name="outputVariables"></param>
+        /// <param name="extras"></param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="accelerators"></param>
+        /// <param name="cluster">
+        /// A lean representation of a cluster when returned from an API call
+        /// </param>
+        /// <param name="scalingConfig"></param>
+        /// <param name="failedStateInfo">
+        /// Base model for schemas.
+        /// </param>
+        public PipelineGet(
+            string name,
+            string image,
+            global::System.Collections.Generic.IList<global::G.IOVariable> inputVariables,
+            global::System.Collections.Generic.IList<global::G.IOVariable> outputVariables,
+            string id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            object? extras,
+            global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators,
+            global::G.PipelineClusterGetLean? cluster,
+            string? scalingConfig,
+            global::G.PipelineContainerState? failedStateInfo)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.InputVariables = inputVariables ?? throw new global::System.ArgumentNullException(nameof(inputVariables));
+            this.OutputVariables = outputVariables ?? throw new global::System.ArgumentNullException(nameof(outputVariables));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Extras = extras;
+            this.Accelerators = accelerators;
+            this.Cluster = cluster;
+            this.ScalingConfig = scalingConfig;
+            this.FailedStateInfo = failedStateInfo;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineGet" /> class.
+        /// </summary>
+        public PipelineGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

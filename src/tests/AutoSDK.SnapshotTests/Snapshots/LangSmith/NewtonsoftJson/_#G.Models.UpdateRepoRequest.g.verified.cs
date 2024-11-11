@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateRepoRequest" /> class.
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="readme"></param>
+        /// <param name="tags"></param>
+        /// <param name="isPublic"></param>
+        /// <param name="isArchived"></param>
+        public UpdateRepoRequest(
+            string? description,
+            string? readme,
+            global::System.Collections.Generic.IList<string>? tags,
+            bool? isPublic,
+            bool? isArchived)
+        {
+            this.Description = description;
+            this.Readme = readme;
+            this.Tags = tags;
+            this.IsPublic = isPublic;
+            this.IsArchived = isArchived;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateRepoRequest" /> class.
+        /// </summary>
+        public UpdateRepoRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

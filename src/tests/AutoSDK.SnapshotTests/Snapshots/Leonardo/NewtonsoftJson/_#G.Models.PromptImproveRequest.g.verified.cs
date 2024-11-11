@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptImproveRequest" /> class.
+        /// </summary>
+        /// <param name="prompt">
+        /// The prompt to improve.
+        /// </param>
+        public PromptImproveRequest(
+            string prompt)
+        {
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptImproveRequest" /> class.
+        /// </summary>
+        public PromptImproveRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

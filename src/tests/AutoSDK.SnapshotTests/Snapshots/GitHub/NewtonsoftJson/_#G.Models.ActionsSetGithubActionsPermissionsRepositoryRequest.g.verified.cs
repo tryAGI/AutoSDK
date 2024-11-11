@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsSetGithubActionsPermissionsRepositoryRequest" /> class.
+        /// </summary>
+        /// <param name="enabled">
+        /// Whether GitHub Actions is enabled on the repository.
+        /// </param>
+        /// <param name="allowedActions">
+        /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
+        /// </param>
+        public ActionsSetGithubActionsPermissionsRepositoryRequest(
+            bool enabled,
+            global::G.AllowedActions? allowedActions)
+        {
+            this.Enabled = enabled;
+            this.AllowedActions = allowedActions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsSetGithubActionsPermissionsRepositoryRequest" /> class.
+        /// </summary>
+        public ActionsSetGithubActionsPermissionsRepositoryRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

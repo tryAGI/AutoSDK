@@ -47,6 +47,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunInput" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// An enumeration.
+        /// </param>
+        /// <param name="value"></param>
+        /// <param name="fileName"></param>
+        /// <param name="filePath"></param>
+        /// <param name="fileUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunInput(
+            global::G.RunIOType type,
+            object? value,
+            string? fileName,
+            string? filePath,
+            string? fileUrl)
+        {
+            this.Type = type;
+            this.Value = value;
+            this.FileName = fileName;
+            this.FilePath = filePath;
+            this.FileUrl = fileUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunInput" /> class.
+        /// </summary>
+        public RunInput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

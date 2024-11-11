@@ -57,6 +57,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueSearchResultItemLabel" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="name"></param>
+        /// <param name="color"></param>
+        /// <param name="default"></param>
+        /// <param name="description"></param>
+        public IssueSearchResultItemLabel(
+            long? id,
+            string? nodeId,
+            string? url,
+            string? name,
+            string? color,
+            bool? @default,
+            string? description)
+        {
+            this.Id = id;
+            this.NodeId = nodeId;
+            this.Url = url;
+            this.Name = name;
+            this.Color = color;
+            this.Default = @default;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueSearchResultItemLabel" /> class.
+        /// </summary>
+        public IssueSearchResultItemLabel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

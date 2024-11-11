@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListChatTurnsResponse" /> class.
+        /// </summary>
+        /// <param name="turns">
+        /// List of turns.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListChatTurnsResponse(
+            global::System.Collections.Generic.IList<global::G.Turn>? turns)
+        {
+            this.Turns = turns;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListChatTurnsResponse" /> class.
+        /// </summary>
+        public ListChatTurnsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

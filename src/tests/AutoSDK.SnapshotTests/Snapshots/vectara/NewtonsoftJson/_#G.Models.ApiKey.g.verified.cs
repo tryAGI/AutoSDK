@@ -54,6 +54,53 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiKey" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the API key.
+        /// </param>
+        /// <param name="name">
+        /// The human-readable name of the API key.
+        /// </param>
+        /// <param name="secretKey">
+        /// The key used in API requests. The key should be kept secure.
+        /// </param>
+        /// <param name="enabled">
+        /// If this API key is enabled.
+        /// </param>
+        /// <param name="apiKeyRole">
+        /// Role of the API key. <br/>
+        /// A serving API key can only perform query type requests on its corpora. A serving and<br/>
+        /// indexing key can perform both indexing and query type requests on its corpora.<br/>
+        /// A personal API key has all the same permissions as the creator of the API key.
+        /// </param>
+        /// <param name="apiPolicy">
+        /// What actions a principal can take on the Vectara platform.
+        /// </param>
+        public ApiKey(
+            string? id,
+            string? name,
+            string? secretKey,
+            bool? enabled,
+            global::G.ApiKeyRole? apiKeyRole,
+            global::G.ApiPolicy? apiPolicy)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.SecretKey = secretKey;
+            this.Enabled = enabled;
+            this.ApiKeyRole = apiKeyRole;
+            this.ApiPolicy = apiPolicy;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiKey" /> class.
+        /// </summary>
+        public ApiKey()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

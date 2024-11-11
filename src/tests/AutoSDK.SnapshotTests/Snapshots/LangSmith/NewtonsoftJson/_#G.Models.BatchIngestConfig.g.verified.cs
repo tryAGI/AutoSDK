@@ -51,6 +51,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchIngestConfig" /> class.
+        /// </summary>
+        /// <param name="useMultipartEndpoint">
+        /// Default Value: true
+        /// </param>
+        /// <param name="scaleUpQsizeTrigger">
+        /// Default Value: 1000
+        /// </param>
+        /// <param name="scaleUpNthreadsLimit">
+        /// Default Value: 16
+        /// </param>
+        /// <param name="scaleDownNemptyTrigger">
+        /// Default Value: 4
+        /// </param>
+        /// <param name="sizeLimit">
+        /// Default Value: 100
+        /// </param>
+        /// <param name="sizeLimitBytes">
+        /// Default Value: 20971520
+        /// </param>
+        public BatchIngestConfig(
+            bool? useMultipartEndpoint,
+            int? scaleUpQsizeTrigger,
+            int? scaleUpNthreadsLimit,
+            int? scaleDownNemptyTrigger,
+            int? sizeLimit,
+            int? sizeLimitBytes)
+        {
+            this.UseMultipartEndpoint = useMultipartEndpoint;
+            this.ScaleUpQsizeTrigger = scaleUpQsizeTrigger;
+            this.ScaleUpNthreadsLimit = scaleUpNthreadsLimit;
+            this.ScaleDownNemptyTrigger = scaleDownNemptyTrigger;
+            this.SizeLimit = sizeLimit;
+            this.SizeLimitBytes = sizeLimitBytes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchIngestConfig" /> class.
+        /// </summary>
+        public BatchIngestConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

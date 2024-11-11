@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EventOut" /> class.
+        /// </summary>
+        /// <param name="createdAt">
+        /// The UNIX timestamp (in seconds) of the event.
+        /// </param>
+        /// <param name="data"></param>
+        /// <param name="name">
+        /// The name of the event.
+        /// </param>
+        public EventOut(
+            global::System.DateTimeOffset createdAt,
+            string name,
+            object? data)
+        {
+            this.CreatedAt = createdAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EventOut" /> class.
+        /// </summary>
+        public EventOut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

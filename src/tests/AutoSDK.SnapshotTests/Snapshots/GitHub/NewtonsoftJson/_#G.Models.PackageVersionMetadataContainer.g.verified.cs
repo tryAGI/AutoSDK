@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PackageVersionMetadataContainer" /> class.
+        /// </summary>
+        /// <param name="tags"></param>
+        public PackageVersionMetadataContainer(
+            global::System.Collections.Generic.IList<string> tags)
+        {
+            this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PackageVersionMetadataContainer" /> class.
+        /// </summary>
+        public PackageVersionMetadataContainer()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

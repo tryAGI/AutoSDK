@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisoryIdentifier" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="value"></param>
+        public WebhooksSecurityAdvisoryIdentifier(
+            string type,
+            string value)
+        {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisoryIdentifier" /> class.
+        /// </summary>
+        public WebhooksSecurityAdvisoryIdentifier()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

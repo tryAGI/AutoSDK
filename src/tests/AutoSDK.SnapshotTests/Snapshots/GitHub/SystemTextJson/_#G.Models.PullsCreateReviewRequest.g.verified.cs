@@ -40,6 +40,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsCreateReviewRequest" /> class.
+        /// </summary>
+        /// <param name="commitId">
+        /// The SHA of the commit that needs a review. Not using the latest commit SHA may render your review comment outdated if a subsequent commit modifies the line you specify as the `position`. Defaults to the most recent commit in the pull request when you do not specify a value.
+        /// </param>
+        /// <param name="body">
+        /// **Required** when using `REQUEST_CHANGES` or `COMMENT` for the `event` parameter. The body text of the pull request review.
+        /// </param>
+        /// <param name="event">
+        /// The review action you want to perform. The review actions include: `APPROVE`, `REQUEST_CHANGES`, or `COMMENT`. By leaving this blank, you set the review action state to `PENDING`, which means you will need to [submit the pull request review](https://docs.github.com/rest/pulls/reviews#submit-a-review-for-a-pull-request) when you are ready.
+        /// </param>
+        /// <param name="comments">
+        /// Use the following table to specify the location, destination, and contents of the draft review comment.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PullsCreateReviewRequest(
+            string? commitId,
+            string? body,
+            global::G.PullsCreateReviewRequestEvent? @event,
+            global::System.Collections.Generic.IList<global::G.PullsCreateReviewRequestComment>? comments)
+        {
+            this.CommitId = commitId;
+            this.Body = body;
+            this.Event = @event;
+            this.Comments = comments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsCreateReviewRequest" /> class.
+        /// </summary>
+        public PullsCreateReviewRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

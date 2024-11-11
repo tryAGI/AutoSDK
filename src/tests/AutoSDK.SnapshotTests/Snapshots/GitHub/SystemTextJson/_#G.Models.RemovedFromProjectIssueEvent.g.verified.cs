@@ -84,6 +84,55 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemovedFromProjectIssueEvent" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="actor">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="event"></param>
+        /// <param name="commitId"></param>
+        /// <param name="commitUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="projectCard"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RemovedFromProjectIssueEvent(
+            int id,
+            string nodeId,
+            string url,
+            global::G.SimpleUser actor,
+            string @event,
+            string? commitId,
+            string? commitUrl,
+            string createdAt,
+            global::G.NullableIntegration? performedViaGithubApp,
+            global::G.RemovedFromProjectIssueEventProjectCard? projectCard)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
+            this.CommitUrl = commitUrl ?? throw new global::System.ArgumentNullException(nameof(commitUrl));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.PerformedViaGithubApp = performedViaGithubApp ?? throw new global::System.ArgumentNullException(nameof(performedViaGithubApp));
+            this.ProjectCard = projectCard;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemovedFromProjectIssueEvent" /> class.
+        /// </summary>
+        public RemovedFromProjectIssueEvent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

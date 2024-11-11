@@ -111,6 +111,102 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CatalogRun" /> class.
+        /// </summary>
+        /// <param name="uid">
+        /// Unique identifier for each run.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="catalogUid">
+        /// Included only in responses
+        /// </param>
+        /// <param name="fileUids">
+        /// The file uids.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="action">
+        /// Action of the catalog run.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="status">
+        /// Current status of the run.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="source">
+        /// Origin of the run.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="totalDuration">
+        /// Time taken to complete the run in milliseconds.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="runnerId">
+        /// Included only in responses
+        /// </param>
+        /// <param name="namespaceId">
+        /// Namespace ID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="payload">
+        /// Run request payload.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="startTime">
+        /// Time when the run started execution.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="completeTime">
+        /// Time when the run completed.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="error">
+        /// Error message if the run failed.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="creditAmount">
+        /// Credits used of internal accounting metric.<br/>
+        /// Included only in responses
+        /// </param>
+        public CatalogRun(
+            string? uid,
+            string? catalogUid,
+            global::System.Collections.Generic.IList<string>? fileUids,
+            global::G.CatalogRunAction? action,
+            global::G.RunStatus? status,
+            global::G.RunSource? source,
+            int? totalDuration,
+            string? runnerId,
+            string? namespaceId,
+            object? payload,
+            global::System.DateTime? startTime,
+            global::System.DateTime? completeTime,
+            string? error,
+            float? creditAmount)
+        {
+            this.Uid = uid;
+            this.CatalogUid = catalogUid;
+            this.FileUids = fileUids;
+            this.Action = action;
+            this.Status = status;
+            this.Source = source;
+            this.TotalDuration = totalDuration;
+            this.RunnerId = runnerId;
+            this.NamespaceId = namespaceId;
+            this.Payload = payload;
+            this.StartTime = startTime;
+            this.CompleteTime = completeTime;
+            this.Error = error;
+            this.CreditAmount = creditAmount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CatalogRun" /> class.
+        /// </summary>
+        public CatalogRun()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

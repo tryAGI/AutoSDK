@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesOpenedChanges" /> class.
+        /// </summary>
+        /// <param name="oldIssue">
+        /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) itself.
+        /// </param>
+        /// <param name="oldRepository">
+        /// A git repository
+        /// </param>
+        public WebhookIssuesOpenedChanges(
+            global::G.WebhookIssuesOpenedChangesOldIssue? oldIssue,
+            global::G.WebhookIssuesOpenedChangesOldRepository oldRepository)
+        {
+            this.OldIssue = oldIssue ?? throw new global::System.ArgumentNullException(nameof(oldIssue));
+            this.OldRepository = oldRepository ?? throw new global::System.ArgumentNullException(nameof(oldRepository));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesOpenedChanges" /> class.
+        /// </summary>
+        public WebhookIssuesOpenedChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

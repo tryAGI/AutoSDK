@@ -67,6 +67,53 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertClosedByUserAlertRule" /> class.
+        /// </summary>
+        /// <param name="description">
+        /// A short description of the rule used to detect the alert.
+        /// </param>
+        /// <param name="fullDescription"></param>
+        /// <param name="help"></param>
+        /// <param name="helpUri">
+        /// A link to the documentation for the rule used to detect the alert.
+        /// </param>
+        /// <param name="id">
+        /// A unique identifier for the rule used to detect the alert.
+        /// </param>
+        /// <param name="name"></param>
+        /// <param name="severity">
+        /// The severity of the alert.
+        /// </param>
+        /// <param name="tags"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookCodeScanningAlertClosedByUserAlertRule(
+            string description,
+            string id,
+            global::G.WebhookCodeScanningAlertClosedByUserAlertRuleSeverity? severity,
+            string? fullDescription,
+            string? help,
+            string? helpUri,
+            string? name,
+            global::System.Collections.Generic.IList<string>? tags)
+        {
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Severity = severity;
+            this.FullDescription = fullDescription;
+            this.Help = help;
+            this.HelpUri = helpUri;
+            this.Name = name;
+            this.Tags = tags;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertClosedByUserAlertRule" /> class.
+        /// </summary>
+        public WebhookCodeScanningAlertClosedByUserAlertRule()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

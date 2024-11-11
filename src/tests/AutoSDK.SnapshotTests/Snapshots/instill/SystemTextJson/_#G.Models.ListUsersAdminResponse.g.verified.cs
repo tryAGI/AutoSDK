@@ -33,6 +33,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListUsersAdminResponse" /> class.
+        /// </summary>
+        /// <param name="users"></param>
+        /// <param name="nextPageToken">
+        /// Next page token.
+        /// </param>
+        /// <param name="totalSize">
+        /// Total number of users.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListUsersAdminResponse(
+            global::System.Collections.Generic.IList<global::G.User>? users,
+            string? nextPageToken,
+            int? totalSize)
+        {
+            this.Users = users;
+            this.NextPageToken = nextPageToken;
+            this.TotalSize = totalSize;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListUsersAdminResponse" /> class.
+        /// </summary>
+        public ListUsersAdminResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

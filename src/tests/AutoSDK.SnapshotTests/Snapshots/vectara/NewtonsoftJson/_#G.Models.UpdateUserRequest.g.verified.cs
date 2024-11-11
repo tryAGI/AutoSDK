@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateUserRequest" /> class.
+        /// </summary>
+        /// <param name="enabled">
+        /// Indicates whether to enable or disable the user.
+        /// </param>
+        /// <param name="apiRoles">
+        /// The new role names of the user.
+        /// </param>
+        public UpdateUserRequest(
+            bool? enabled,
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles)
+        {
+            this.Enabled = enabled;
+            this.ApiRoles = apiRoles;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateUserRequest" /> class.
+        /// </summary>
+        public UpdateUserRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

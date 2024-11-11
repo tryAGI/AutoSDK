@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleViolationError" /> class.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="documentationUrl"></param>
+        /// <param name="status"></param>
+        /// <param name="metadata"></param>
+        public RepositoryRuleViolationError(
+            string? message,
+            string? documentationUrl,
+            string? status,
+            global::G.RepositoryRuleViolationErrorMetadata? metadata)
+        {
+            this.Message = message;
+            this.DocumentationUrl = documentationUrl;
+            this.Status = status;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleViolationError" /> class.
+        /// </summary>
+        public RepositoryRuleViolationError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

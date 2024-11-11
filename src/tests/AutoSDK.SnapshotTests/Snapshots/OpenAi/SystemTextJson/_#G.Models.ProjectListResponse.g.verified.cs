@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectListResponse" /> class.
+        /// </summary>
+        /// <param name="object"></param>
+        /// <param name="data"></param>
+        /// <param name="firstId"></param>
+        /// <param name="lastId"></param>
+        /// <param name="hasMore"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectListResponse(
+            global::System.Collections.Generic.IList<global::G.Project> data,
+            string firstId,
+            string lastId,
+            bool hasMore,
+            global::G.ProjectListResponseObject @object)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.HasMore = hasMore;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectListResponse" /> class.
+        /// </summary>
+        public ProjectListResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

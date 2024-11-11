@@ -48,6 +48,48 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsUpdateRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the project<br/>
+        /// Example: Week One Sprint
+        /// </param>
+        /// <param name="body">
+        /// Body of the project<br/>
+        /// Example: This project represents the sprint of the first week in January
+        /// </param>
+        /// <param name="state">
+        /// State of the project; either 'open' or 'closed'<br/>
+        /// Example: open
+        /// </param>
+        /// <param name="organizationPermission">
+        /// The baseline permission that all organization members have on this project
+        /// </param>
+        /// <param name="private">
+        /// Whether or not this project can be seen by everyone.
+        /// </param>
+        public ProjectsUpdateRequest(
+            string? name,
+            string? body,
+            string? state,
+            global::G.ProjectsUpdateRequestOrganizationPermission? organizationPermission,
+            bool? @private)
+        {
+            this.Name = name;
+            this.Body = body;
+            this.State = state;
+            this.OrganizationPermission = organizationPermission;
+            this.Private = @private;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsUpdateRequest" /> class.
+        /// </summary>
+        public ProjectsUpdateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

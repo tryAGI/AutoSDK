@@ -75,6 +75,66 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotSeatDetails" /> class.
+        /// </summary>
+        /// <param name="assignee">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="organization">
+        /// A GitHub organization.
+        /// </param>
+        /// <param name="assigningTeam">
+        /// The team through which the assignee is granted access to GitHub Copilot, if applicable.
+        /// </param>
+        /// <param name="pendingCancellationDate">
+        /// The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
+        /// </param>
+        /// <param name="lastActivityAt">
+        /// Timestamp of user's last GitHub Copilot activity, in ISO 8601 format.
+        /// </param>
+        /// <param name="lastActivityEditor">
+        /// Last editor that was used by the user for a GitHub Copilot completion.
+        /// </param>
+        /// <param name="createdAt">
+        /// Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
+        /// </param>
+        /// <param name="updatedAt">
+        /// Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
+        /// </param>
+        /// <param name="planType">
+        /// The Copilot plan of the organization, or the parent enterprise, when applicable.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CopilotSeatDetails(
+            global::G.SimpleUser assignee,
+            global::System.DateTime createdAt,
+            global::G.NullableOrganizationSimple? organization,
+            global::G.OneOf<global::G.Team, global::G.EnterpriseTeam>? assigningTeam,
+            global::System.DateTime? pendingCancellationDate,
+            global::System.DateTime? lastActivityAt,
+            string? lastActivityEditor,
+            global::System.DateTime? updatedAt,
+            global::G.CopilotSeatDetailsPlanType? planType)
+        {
+            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
+            this.CreatedAt = createdAt;
+            this.Organization = organization;
+            this.AssigningTeam = assigningTeam;
+            this.PendingCancellationDate = pendingCancellationDate;
+            this.LastActivityAt = lastActivityAt;
+            this.LastActivityEditor = lastActivityEditor;
+            this.UpdatedAt = updatedAt;
+            this.PlanType = planType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotSeatDetails" /> class.
+        /// </summary>
+        public CopilotSeatDetails()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

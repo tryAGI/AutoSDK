@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListFilesResponse" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="object"></param>
+        public ListFilesResponse(
+            global::System.Collections.Generic.IList<global::G.OpenAIFile> data,
+            global::G.ListFilesResponseObject @object)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListFilesResponse" /> class.
+        /// </summary>
+        public ListFilesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

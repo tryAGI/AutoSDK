@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotFoundError" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID cannot be found.
+        /// </param>
+        /// <param name="messages"></param>
+        /// <param name="requestId">
+        /// ID of the request that can be used to help Vectara support debug what went wrong.
+        /// </param>
+        public NotFoundError(
+            string? id,
+            global::System.Collections.Generic.IList<string>? messages,
+            string? requestId)
+        {
+            this.Id = id;
+            this.Messages = messages;
+            this.RequestId = requestId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NotFoundError" /> class.
+        /// </summary>
+        public NotFoundError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

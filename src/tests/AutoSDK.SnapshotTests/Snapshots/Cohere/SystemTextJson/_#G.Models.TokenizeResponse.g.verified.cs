@@ -35,6 +35,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TokenizeResponse" /> class.
+        /// </summary>
+        /// <param name="tokens">
+        /// An array of tokens, where each token is an integer.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="tokenStrings"></param>
+        /// <param name="meta"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TokenizeResponse(
+            global::System.Collections.Generic.IList<string> tokenStrings,
+            global::G.ApiMeta? meta,
+            global::System.Collections.Generic.IList<int> tokens = default!)
+        {
+            this.TokenStrings = tokenStrings ?? throw new global::System.ArgumentNullException(nameof(tokenStrings));
+            this.Tokens = tokens;
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TokenizeResponse" /> class.
+        /// </summary>
+        public TokenizeResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

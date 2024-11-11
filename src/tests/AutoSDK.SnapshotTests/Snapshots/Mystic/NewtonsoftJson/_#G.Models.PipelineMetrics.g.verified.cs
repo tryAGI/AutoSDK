@@ -69,6 +69,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineMetrics" /> class.
+        /// </summary>
+        /// <param name="pipelineId"></param>
+        /// <param name="pipelineName"></param>
+        /// <param name="pointers"></param>
+        /// <param name="runCount"></param>
+        /// <param name="failedRunCount"></param>
+        /// <param name="lastRunAt"></param>
+        /// <param name="lastFailedAt"></param>
+        /// <param name="avgComputeTimeMs"></param>
+        /// <param name="totalComputeTimeMs"></param>
+        public PipelineMetrics(
+            string pipelineId,
+            string pipelineName,
+            global::System.Collections.Generic.IList<string> pointers,
+            int runCount,
+            int failedRunCount,
+            int avgComputeTimeMs,
+            int totalComputeTimeMs,
+            global::System.DateTime? lastRunAt,
+            global::System.DateTime? lastFailedAt)
+        {
+            this.PipelineId = pipelineId ?? throw new global::System.ArgumentNullException(nameof(pipelineId));
+            this.PipelineName = pipelineName ?? throw new global::System.ArgumentNullException(nameof(pipelineName));
+            this.Pointers = pointers ?? throw new global::System.ArgumentNullException(nameof(pointers));
+            this.RunCount = runCount;
+            this.FailedRunCount = failedRunCount;
+            this.AvgComputeTimeMs = avgComputeTimeMs;
+            this.TotalComputeTimeMs = totalComputeTimeMs;
+            this.LastRunAt = lastRunAt;
+            this.LastFailedAt = lastFailedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineMetrics" /> class.
+        /// </summary>
+        public PipelineMetrics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

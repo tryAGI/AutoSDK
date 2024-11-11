@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Cluster" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="keywords"></param>
+        /// <param name="description"></param>
+        /// <param name="size"></param>
+        /// <param name="sampleElements"></param>
+        public Cluster(
+            string? id,
+            global::System.Collections.Generic.IList<string>? keywords,
+            string? description,
+            int? size,
+            global::System.Collections.Generic.IList<string>? sampleElements)
+        {
+            this.Id = id;
+            this.Keywords = keywords;
+            this.Description = description;
+            this.Size = size;
+            this.SampleElements = sampleElements;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Cluster" /> class.
+        /// </summary>
+        public Cluster()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

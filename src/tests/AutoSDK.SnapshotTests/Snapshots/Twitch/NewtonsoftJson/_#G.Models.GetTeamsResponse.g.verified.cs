@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTeamsResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// A list that contains the single team that you requested.
+        /// </param>
+        public GetTeamsResponse(
+            global::System.Collections.Generic.IList<global::G.Team> data)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTeamsResponse" /> class.
+        /// </summary>
+        public GetTeamsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

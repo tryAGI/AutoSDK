@@ -483,6 +483,255 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookForkForkeeVariant2" /> class.
+        /// </summary>
+        /// <param name="allowForking"></param>
+        /// <param name="archiveUrl"></param>
+        /// <param name="archived"></param>
+        /// <param name="assigneesUrl"></param>
+        /// <param name="blobsUrl"></param>
+        /// <param name="branchesUrl"></param>
+        /// <param name="cloneUrl"></param>
+        /// <param name="collaboratorsUrl"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="commitsUrl"></param>
+        /// <param name="compareUrl"></param>
+        /// <param name="contentsUrl"></param>
+        /// <param name="contributorsUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="defaultBranch"></param>
+        /// <param name="deploymentsUrl"></param>
+        /// <param name="description"></param>
+        /// <param name="disabled"></param>
+        /// <param name="downloadsUrl"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="fork"></param>
+        /// <param name="forks"></param>
+        /// <param name="forksCount"></param>
+        /// <param name="forksUrl"></param>
+        /// <param name="fullName"></param>
+        /// <param name="gitCommitsUrl"></param>
+        /// <param name="gitRefsUrl"></param>
+        /// <param name="gitTagsUrl"></param>
+        /// <param name="gitUrl"></param>
+        /// <param name="hasDownloads"></param>
+        /// <param name="hasIssues"></param>
+        /// <param name="hasPages"></param>
+        /// <param name="hasProjects"></param>
+        /// <param name="hasWiki"></param>
+        /// <param name="homepage"></param>
+        /// <param name="hooksUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="isTemplate"></param>
+        /// <param name="issueCommentUrl"></param>
+        /// <param name="issueEventsUrl"></param>
+        /// <param name="issuesUrl"></param>
+        /// <param name="keysUrl"></param>
+        /// <param name="labelsUrl"></param>
+        /// <param name="language"></param>
+        /// <param name="languagesUrl"></param>
+        /// <param name="license"></param>
+        /// <param name="mergesUrl"></param>
+        /// <param name="milestonesUrl"></param>
+        /// <param name="mirrorUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="notificationsUrl"></param>
+        /// <param name="openIssues"></param>
+        /// <param name="openIssuesCount"></param>
+        /// <param name="owner"></param>
+        /// <param name="private"></param>
+        /// <param name="public"></param>
+        /// <param name="pullsUrl"></param>
+        /// <param name="pushedAt"></param>
+        /// <param name="releasesUrl"></param>
+        /// <param name="size"></param>
+        /// <param name="sshUrl"></param>
+        /// <param name="stargazersCount"></param>
+        /// <param name="stargazersUrl"></param>
+        /// <param name="statusesUrl"></param>
+        /// <param name="subscribersUrl"></param>
+        /// <param name="subscriptionUrl"></param>
+        /// <param name="svnUrl"></param>
+        /// <param name="tagsUrl"></param>
+        /// <param name="teamsUrl"></param>
+        /// <param name="topics"></param>
+        /// <param name="treesUrl"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="visibility"></param>
+        /// <param name="watchers"></param>
+        /// <param name="watchersCount"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookForkForkeeVariant2(
+            bool? allowForking,
+            string? archiveUrl,
+            bool? archived,
+            string? assigneesUrl,
+            string? blobsUrl,
+            string? branchesUrl,
+            string? cloneUrl,
+            string? collaboratorsUrl,
+            string? commentsUrl,
+            string? commitsUrl,
+            string? compareUrl,
+            string? contentsUrl,
+            string? contributorsUrl,
+            string? createdAt,
+            string? defaultBranch,
+            string? deploymentsUrl,
+            string? description,
+            bool? disabled,
+            string? downloadsUrl,
+            string? eventsUrl,
+            bool? fork,
+            int? forks,
+            int? forksCount,
+            string? forksUrl,
+            string? fullName,
+            string? gitCommitsUrl,
+            string? gitRefsUrl,
+            string? gitTagsUrl,
+            string? gitUrl,
+            bool? hasDownloads,
+            bool? hasIssues,
+            bool? hasPages,
+            bool? hasProjects,
+            bool? hasWiki,
+            string? homepage,
+            string? hooksUrl,
+            string? htmlUrl,
+            int? id,
+            bool? isTemplate,
+            string? issueCommentUrl,
+            string? issueEventsUrl,
+            string? issuesUrl,
+            string? keysUrl,
+            string? labelsUrl,
+            object? language,
+            string? languagesUrl,
+            object? license,
+            string? mergesUrl,
+            string? milestonesUrl,
+            object? mirrorUrl,
+            string? name,
+            string? nodeId,
+            string? notificationsUrl,
+            int? openIssues,
+            int? openIssuesCount,
+            global::G.WebhookForkForkeeVariant2Owner? owner,
+            bool? @private,
+            bool? @public,
+            string? pullsUrl,
+            string? pushedAt,
+            string? releasesUrl,
+            int? size,
+            string? sshUrl,
+            int? stargazersCount,
+            string? stargazersUrl,
+            string? statusesUrl,
+            string? subscribersUrl,
+            string? subscriptionUrl,
+            string? svnUrl,
+            string? tagsUrl,
+            string? teamsUrl,
+            global::System.Collections.Generic.IList<object>? topics,
+            string? treesUrl,
+            string? updatedAt,
+            string? url,
+            string? visibility,
+            int? watchers,
+            int? watchersCount)
+        {
+            this.AllowForking = allowForking;
+            this.ArchiveUrl = archiveUrl;
+            this.Archived = archived;
+            this.AssigneesUrl = assigneesUrl;
+            this.BlobsUrl = blobsUrl;
+            this.BranchesUrl = branchesUrl;
+            this.CloneUrl = cloneUrl;
+            this.CollaboratorsUrl = collaboratorsUrl;
+            this.CommentsUrl = commentsUrl;
+            this.CommitsUrl = commitsUrl;
+            this.CompareUrl = compareUrl;
+            this.ContentsUrl = contentsUrl;
+            this.ContributorsUrl = contributorsUrl;
+            this.CreatedAt = createdAt;
+            this.DefaultBranch = defaultBranch;
+            this.DeploymentsUrl = deploymentsUrl;
+            this.Description = description;
+            this.Disabled = disabled;
+            this.DownloadsUrl = downloadsUrl;
+            this.EventsUrl = eventsUrl;
+            this.Fork = fork;
+            this.Forks = forks;
+            this.ForksCount = forksCount;
+            this.ForksUrl = forksUrl;
+            this.FullName = fullName;
+            this.GitCommitsUrl = gitCommitsUrl;
+            this.GitRefsUrl = gitRefsUrl;
+            this.GitTagsUrl = gitTagsUrl;
+            this.GitUrl = gitUrl;
+            this.HasDownloads = hasDownloads;
+            this.HasIssues = hasIssues;
+            this.HasPages = hasPages;
+            this.HasProjects = hasProjects;
+            this.HasWiki = hasWiki;
+            this.Homepage = homepage;
+            this.HooksUrl = hooksUrl;
+            this.HtmlUrl = htmlUrl;
+            this.Id = id;
+            this.IsTemplate = isTemplate;
+            this.IssueCommentUrl = issueCommentUrl;
+            this.IssueEventsUrl = issueEventsUrl;
+            this.IssuesUrl = issuesUrl;
+            this.KeysUrl = keysUrl;
+            this.LabelsUrl = labelsUrl;
+            this.Language = language;
+            this.LanguagesUrl = languagesUrl;
+            this.License = license;
+            this.MergesUrl = mergesUrl;
+            this.MilestonesUrl = milestonesUrl;
+            this.MirrorUrl = mirrorUrl;
+            this.Name = name;
+            this.NodeId = nodeId;
+            this.NotificationsUrl = notificationsUrl;
+            this.OpenIssues = openIssues;
+            this.OpenIssuesCount = openIssuesCount;
+            this.Owner = owner;
+            this.Private = @private;
+            this.Public = @public;
+            this.PullsUrl = pullsUrl;
+            this.PushedAt = pushedAt;
+            this.ReleasesUrl = releasesUrl;
+            this.Size = size;
+            this.SshUrl = sshUrl;
+            this.StargazersCount = stargazersCount;
+            this.StargazersUrl = stargazersUrl;
+            this.StatusesUrl = statusesUrl;
+            this.SubscribersUrl = subscribersUrl;
+            this.SubscriptionUrl = subscriptionUrl;
+            this.SvnUrl = svnUrl;
+            this.TagsUrl = tagsUrl;
+            this.TeamsUrl = teamsUrl;
+            this.Topics = topics;
+            this.TreesUrl = treesUrl;
+            this.UpdatedAt = updatedAt;
+            this.Url = url;
+            this.Visibility = visibility;
+            this.Watchers = watchers;
+            this.WatchersCount = watchersCount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookForkForkeeVariant2" /> class.
+        /// </summary>
+        public WebhookForkForkeeVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

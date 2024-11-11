@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGuestStarInvitesResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// A list of invite objects describing the invited user as well as their ready status.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetGuestStarInvitesResponse(
+            global::System.Collections.Generic.IList<global::G.GuestStarInvite> data)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGuestStarInvitesResponse" /> class.
+        /// </summary>
+        public GetGuestStarInvitesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

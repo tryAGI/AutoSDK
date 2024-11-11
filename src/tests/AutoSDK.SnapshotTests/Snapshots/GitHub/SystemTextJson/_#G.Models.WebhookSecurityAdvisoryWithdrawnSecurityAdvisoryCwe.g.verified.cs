@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwe" /> class.
+        /// </summary>
+        /// <param name="cweId"></param>
+        /// <param name="name"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwe(
+            string cweId,
+            string name)
+        {
+            this.CweId = cweId ?? throw new global::System.ArgumentNullException(nameof(cweId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwe" /> class.
+        /// </summary>
+        public WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwe()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

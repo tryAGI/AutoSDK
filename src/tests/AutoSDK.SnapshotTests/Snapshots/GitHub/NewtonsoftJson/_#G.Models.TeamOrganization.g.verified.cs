@@ -309,6 +309,255 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamOrganization" /> class.
+        /// </summary>
+        /// <param name="login">
+        /// Example: github
+        /// </param>
+        /// <param name="id">
+        /// Example: 1
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDEyOk9yZ2FuaXphdGlvbjE=
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/orgs/github
+        /// </param>
+        /// <param name="reposUrl">
+        /// Example: https://api.github.com/orgs/github/repos
+        /// </param>
+        /// <param name="eventsUrl">
+        /// Example: https://api.github.com/orgs/github/events
+        /// </param>
+        /// <param name="hooksUrl">
+        /// Example: https://api.github.com/orgs/github/hooks
+        /// </param>
+        /// <param name="issuesUrl">
+        /// Example: https://api.github.com/orgs/github/issues
+        /// </param>
+        /// <param name="membersUrl">
+        /// Example: https://api.github.com/orgs/github/members{/member}
+        /// </param>
+        /// <param name="publicMembersUrl">
+        /// Example: https://api.github.com/orgs/github/public_members{/member}
+        /// </param>
+        /// <param name="avatarUrl">
+        /// Example: https://github.com/images/error/octocat_happy.gif
+        /// </param>
+        /// <param name="description">
+        /// Example: A great organization
+        /// </param>
+        /// <param name="name">
+        /// Example: github
+        /// </param>
+        /// <param name="company">
+        /// Example: GitHub
+        /// </param>
+        /// <param name="blog">
+        /// Example: https://github.com/blog
+        /// </param>
+        /// <param name="location">
+        /// Example: San Francisco
+        /// </param>
+        /// <param name="email">
+        /// Example: octocat@github.com
+        /// </param>
+        /// <param name="twitterUsername">
+        /// Example: github
+        /// </param>
+        /// <param name="isVerified">
+        /// Example: true
+        /// </param>
+        /// <param name="hasOrganizationProjects">
+        /// Example: true
+        /// </param>
+        /// <param name="hasRepositoryProjects">
+        /// Example: true
+        /// </param>
+        /// <param name="publicRepos">
+        /// Example: 2
+        /// </param>
+        /// <param name="publicGists">
+        /// Example: 1
+        /// </param>
+        /// <param name="followers">
+        /// Example: 20
+        /// </param>
+        /// <param name="following">
+        /// Example: 0
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="type">
+        /// Example: Organization
+        /// </param>
+        /// <param name="totalPrivateRepos">
+        /// Example: 100
+        /// </param>
+        /// <param name="ownedPrivateRepos">
+        /// Example: 100
+        /// </param>
+        /// <param name="privateGists">
+        /// Example: 81
+        /// </param>
+        /// <param name="diskUsage">
+        /// Example: 10000
+        /// </param>
+        /// <param name="collaborators">
+        /// Example: 8
+        /// </param>
+        /// <param name="billingEmail">
+        /// Example: org@example.com
+        /// </param>
+        /// <param name="plan"></param>
+        /// <param name="defaultRepositoryPermission"></param>
+        /// <param name="membersCanCreateRepositories">
+        /// Example: true
+        /// </param>
+        /// <param name="twoFactorRequirementEnabled">
+        /// Example: true
+        /// </param>
+        /// <param name="membersAllowedRepositoryCreationType">
+        /// Example: all
+        /// </param>
+        /// <param name="membersCanCreatePublicRepositories">
+        /// Example: true
+        /// </param>
+        /// <param name="membersCanCreatePrivateRepositories">
+        /// Example: true
+        /// </param>
+        /// <param name="membersCanCreateInternalRepositories">
+        /// Example: true
+        /// </param>
+        /// <param name="membersCanCreatePages">
+        /// Example: true
+        /// </param>
+        /// <param name="membersCanCreatePublicPages">
+        /// Example: true
+        /// </param>
+        /// <param name="membersCanCreatePrivatePages">
+        /// Example: true
+        /// </param>
+        /// <param name="membersCanForkPrivateRepositories">
+        /// Example: false
+        /// </param>
+        /// <param name="webCommitSignoffRequired">
+        /// Example: false
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="archivedAt"></param>
+        public TeamOrganization(
+            string login,
+            int id,
+            string nodeId,
+            string url,
+            string reposUrl,
+            string eventsUrl,
+            string hooksUrl,
+            string issuesUrl,
+            string membersUrl,
+            string publicMembersUrl,
+            string avatarUrl,
+            string? description,
+            bool hasOrganizationProjects,
+            bool hasRepositoryProjects,
+            int publicRepos,
+            int publicGists,
+            int followers,
+            int following,
+            string htmlUrl,
+            global::System.DateTime createdAt,
+            string type,
+            global::System.DateTime updatedAt,
+            global::System.DateTime? archivedAt,
+            string? name,
+            string? company,
+            string? blog,
+            string? location,
+            string? email,
+            string? twitterUsername,
+            bool? isVerified,
+            int? totalPrivateRepos,
+            int? ownedPrivateRepos,
+            int? privateGists,
+            int? diskUsage,
+            int? collaborators,
+            string? billingEmail,
+            global::G.TeamOrganizationPlan? plan,
+            string? defaultRepositoryPermission,
+            bool? membersCanCreateRepositories,
+            bool? twoFactorRequirementEnabled,
+            string? membersAllowedRepositoryCreationType,
+            bool? membersCanCreatePublicRepositories,
+            bool? membersCanCreatePrivateRepositories,
+            bool? membersCanCreateInternalRepositories,
+            bool? membersCanCreatePages,
+            bool? membersCanCreatePublicPages,
+            bool? membersCanCreatePrivatePages,
+            bool? membersCanForkPrivateRepositories,
+            bool? webCommitSignoffRequired)
+        {
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ReposUrl = reposUrl ?? throw new global::System.ArgumentNullException(nameof(reposUrl));
+            this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
+            this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
+            this.IssuesUrl = issuesUrl ?? throw new global::System.ArgumentNullException(nameof(issuesUrl));
+            this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
+            this.PublicMembersUrl = publicMembersUrl ?? throw new global::System.ArgumentNullException(nameof(publicMembersUrl));
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.HasOrganizationProjects = hasOrganizationProjects;
+            this.HasRepositoryProjects = hasRepositoryProjects;
+            this.PublicRepos = publicRepos;
+            this.PublicGists = publicGists;
+            this.Followers = followers;
+            this.Following = following;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.CreatedAt = createdAt;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.UpdatedAt = updatedAt;
+            this.ArchivedAt = archivedAt;
+            this.Name = name;
+            this.Company = company;
+            this.Blog = blog;
+            this.Location = location;
+            this.Email = email;
+            this.TwitterUsername = twitterUsername;
+            this.IsVerified = isVerified;
+            this.TotalPrivateRepos = totalPrivateRepos;
+            this.OwnedPrivateRepos = ownedPrivateRepos;
+            this.PrivateGists = privateGists;
+            this.DiskUsage = diskUsage;
+            this.Collaborators = collaborators;
+            this.BillingEmail = billingEmail;
+            this.Plan = plan;
+            this.DefaultRepositoryPermission = defaultRepositoryPermission;
+            this.MembersCanCreateRepositories = membersCanCreateRepositories;
+            this.TwoFactorRequirementEnabled = twoFactorRequirementEnabled;
+            this.MembersAllowedRepositoryCreationType = membersAllowedRepositoryCreationType;
+            this.MembersCanCreatePublicRepositories = membersCanCreatePublicRepositories;
+            this.MembersCanCreatePrivateRepositories = membersCanCreatePrivateRepositories;
+            this.MembersCanCreateInternalRepositories = membersCanCreateInternalRepositories;
+            this.MembersCanCreatePages = membersCanCreatePages;
+            this.MembersCanCreatePublicPages = membersCanCreatePublicPages;
+            this.MembersCanCreatePrivatePages = membersCanCreatePrivatePages;
+            this.MembersCanForkPrivateRepositories = membersCanForkPrivateRepositories;
+            this.WebCommitSignoffRequired = webCommitSignoffRequired;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamOrganization" /> class.
+        /// </summary>
+        public TeamOrganization()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

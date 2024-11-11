@@ -104,6 +104,64 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksProjectCard" /> class.
+        /// </summary>
+        /// <param name="afterId"></param>
+        /// <param name="archived">
+        /// Whether or not the card is archived
+        /// </param>
+        /// <param name="columnId"></param>
+        /// <param name="columnUrl"></param>
+        /// <param name="contentUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="creator"></param>
+        /// <param name="id">
+        /// The project card's ID
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="note"></param>
+        /// <param name="projectUrl"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhooksProjectCard(
+            bool archived,
+            int columnId,
+            string columnUrl,
+            global::System.DateTime createdAt,
+            global::G.WebhooksProjectCardCreator? creator,
+            int id,
+            string nodeId,
+            string? note,
+            string projectUrl,
+            global::System.DateTime updatedAt,
+            string url,
+            int? afterId,
+            string? contentUrl)
+        {
+            this.Archived = archived;
+            this.ColumnId = columnId;
+            this.ColumnUrl = columnUrl ?? throw new global::System.ArgumentNullException(nameof(columnUrl));
+            this.CreatedAt = createdAt;
+            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Note = note ?? throw new global::System.ArgumentNullException(nameof(note));
+            this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.AfterId = afterId;
+            this.ContentUrl = contentUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksProjectCard" /> class.
+        /// </summary>
+        public WebhooksProjectCard()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

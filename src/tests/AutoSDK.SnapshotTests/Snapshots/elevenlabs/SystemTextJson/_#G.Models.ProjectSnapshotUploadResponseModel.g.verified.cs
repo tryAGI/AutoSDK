@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectSnapshotUploadResponseModel" /> class.
+        /// </summary>
+        /// <param name="status"></param>
+        /// <param name="acxVolumeNormalization"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectSnapshotUploadResponseModel(
+            global::G.ProjectSnapshotUploadResponseModelStatus status,
+            bool? acxVolumeNormalization)
+        {
+            this.Status = status;
+            this.AcxVolumeNormalization = acxVolumeNormalization;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectSnapshotUploadResponseModel" /> class.
+        /// </summary>
+        public ProjectSnapshotUploadResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

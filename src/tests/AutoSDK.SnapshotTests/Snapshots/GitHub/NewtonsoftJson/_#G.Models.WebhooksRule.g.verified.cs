@@ -183,6 +183,110 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksRule" /> class.
+        /// </summary>
+        /// <param name="adminEnforced"></param>
+        /// <param name="allowDeletionsEnforcementLevel"></param>
+        /// <param name="allowForcePushesEnforcementLevel"></param>
+        /// <param name="authorizedActorNames"></param>
+        /// <param name="authorizedActorsOnly"></param>
+        /// <param name="authorizedDismissalActorsOnly"></param>
+        /// <param name="createProtected"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="dismissStaleReviewsOnPush"></param>
+        /// <param name="id"></param>
+        /// <param name="ignoreApprovalsFromContributors"></param>
+        /// <param name="linearHistoryRequirementEnforcementLevel"></param>
+        /// <param name="lockBranchEnforcementLevel">
+        /// The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone.
+        /// </param>
+        /// <param name="lockAllowsForkSync">
+        /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow users to pull changes from upstream when the branch is locked. This setting is only applicable for forks.
+        /// </param>
+        /// <param name="mergeQueueEnforcementLevel"></param>
+        /// <param name="name"></param>
+        /// <param name="pullRequestReviewsEnforcementLevel"></param>
+        /// <param name="repositoryId"></param>
+        /// <param name="requireCodeOwnerReview"></param>
+        /// <param name="requireLastPushApproval">
+        /// Whether the most recent push must be approved by someone other than the person who pushed it
+        /// </param>
+        /// <param name="requiredApprovingReviewCount"></param>
+        /// <param name="requiredConversationResolutionLevel"></param>
+        /// <param name="requiredDeploymentsEnforcementLevel"></param>
+        /// <param name="requiredStatusChecks"></param>
+        /// <param name="requiredStatusChecksEnforcementLevel"></param>
+        /// <param name="signatureRequirementEnforcementLevel"></param>
+        /// <param name="strictRequiredStatusChecksPolicy"></param>
+        /// <param name="updatedAt"></param>
+        public WebhooksRule(
+            bool adminEnforced,
+            global::G.WebhooksRuleAllowDeletionsEnforcementLevel allowDeletionsEnforcementLevel,
+            global::G.WebhooksRuleAllowForcePushesEnforcementLevel allowForcePushesEnforcementLevel,
+            global::System.Collections.Generic.IList<string> authorizedActorNames,
+            bool authorizedActorsOnly,
+            bool authorizedDismissalActorsOnly,
+            global::System.DateTime createdAt,
+            bool dismissStaleReviewsOnPush,
+            int id,
+            bool ignoreApprovalsFromContributors,
+            global::G.WebhooksRuleLinearHistoryRequirementEnforcementLevel linearHistoryRequirementEnforcementLevel,
+            global::G.WebhooksRuleLockBranchEnforcementLevel lockBranchEnforcementLevel,
+            global::G.WebhooksRuleMergeQueueEnforcementLevel mergeQueueEnforcementLevel,
+            string name,
+            global::G.WebhooksRulePullRequestReviewsEnforcementLevel pullRequestReviewsEnforcementLevel,
+            int repositoryId,
+            bool requireCodeOwnerReview,
+            int requiredApprovingReviewCount,
+            global::G.WebhooksRuleRequiredConversationResolutionLevel requiredConversationResolutionLevel,
+            global::G.WebhooksRuleRequiredDeploymentsEnforcementLevel requiredDeploymentsEnforcementLevel,
+            global::System.Collections.Generic.IList<string> requiredStatusChecks,
+            global::G.WebhooksRuleRequiredStatusChecksEnforcementLevel requiredStatusChecksEnforcementLevel,
+            global::G.WebhooksRuleSignatureRequirementEnforcementLevel signatureRequirementEnforcementLevel,
+            bool strictRequiredStatusChecksPolicy,
+            global::System.DateTime updatedAt,
+            bool? createProtected,
+            bool? lockAllowsForkSync,
+            bool? requireLastPushApproval)
+        {
+            this.AdminEnforced = adminEnforced;
+            this.AllowDeletionsEnforcementLevel = allowDeletionsEnforcementLevel;
+            this.AllowForcePushesEnforcementLevel = allowForcePushesEnforcementLevel;
+            this.AuthorizedActorNames = authorizedActorNames ?? throw new global::System.ArgumentNullException(nameof(authorizedActorNames));
+            this.AuthorizedActorsOnly = authorizedActorsOnly;
+            this.AuthorizedDismissalActorsOnly = authorizedDismissalActorsOnly;
+            this.CreatedAt = createdAt;
+            this.DismissStaleReviewsOnPush = dismissStaleReviewsOnPush;
+            this.Id = id;
+            this.IgnoreApprovalsFromContributors = ignoreApprovalsFromContributors;
+            this.LinearHistoryRequirementEnforcementLevel = linearHistoryRequirementEnforcementLevel;
+            this.LockBranchEnforcementLevel = lockBranchEnforcementLevel;
+            this.MergeQueueEnforcementLevel = mergeQueueEnforcementLevel;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.PullRequestReviewsEnforcementLevel = pullRequestReviewsEnforcementLevel;
+            this.RepositoryId = repositoryId;
+            this.RequireCodeOwnerReview = requireCodeOwnerReview;
+            this.RequiredApprovingReviewCount = requiredApprovingReviewCount;
+            this.RequiredConversationResolutionLevel = requiredConversationResolutionLevel;
+            this.RequiredDeploymentsEnforcementLevel = requiredDeploymentsEnforcementLevel;
+            this.RequiredStatusChecks = requiredStatusChecks ?? throw new global::System.ArgumentNullException(nameof(requiredStatusChecks));
+            this.RequiredStatusChecksEnforcementLevel = requiredStatusChecksEnforcementLevel;
+            this.SignatureRequirementEnforcementLevel = signatureRequirementEnforcementLevel;
+            this.StrictRequiredStatusChecksPolicy = strictRequiredStatusChecksPolicy;
+            this.UpdatedAt = updatedAt;
+            this.CreateProtected = createProtected;
+            this.LockAllowsForkSync = lockAllowsForkSync;
+            this.RequireLastPushApproval = requireLastPushApproval;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksRule" /> class.
+        /// </summary>
+        public WebhooksRule()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

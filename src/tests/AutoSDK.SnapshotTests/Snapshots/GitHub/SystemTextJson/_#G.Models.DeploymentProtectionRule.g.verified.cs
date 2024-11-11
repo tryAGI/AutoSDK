@@ -46,6 +46,44 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentProtectionRule" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The unique identifier for the deployment protection rule.<br/>
+        /// Example: 3515
+        /// </param>
+        /// <param name="nodeId">
+        /// The node ID for the deployment protection rule.<br/>
+        /// Example: MDQ6R2F0ZTM1MTU=
+        /// </param>
+        /// <param name="enabled">
+        /// Whether the deployment protection rule is enabled for the environment.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="app">
+        /// A GitHub App that is providing a custom deployment protection rule.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DeploymentProtectionRule(
+            int id,
+            string nodeId,
+            bool enabled,
+            global::G.CustomDeploymentRuleApp app)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Enabled = enabled;
+            this.App = app ?? throw new global::System.ArgumentNullException(nameof(app));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentProtectionRule" /> class.
+        /// </summary>
+        public DeploymentProtectionRule()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

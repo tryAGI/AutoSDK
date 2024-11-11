@@ -99,6 +99,64 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppSchemasRunGetDetailed" /> class.
+        /// </summary>
+        /// <param name="inputs"></param>
+        /// <param name="outputs"></param>
+        /// <param name="error">
+        /// Base model for schemas.
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="pipelineId"></param>
+        /// <param name="state">
+        /// An enumeration.
+        /// </param>
+        /// <param name="queuePosition"></param>
+        /// <param name="computeTimeMs"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="endedAt"></param>
+        /// <param name="accelerators"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AppSchemasRunGetDetailed(
+            string id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string pipelineId,
+            global::G.RunState state,
+            global::System.Collections.Generic.IList<global::G.RunInput>? inputs,
+            global::System.Collections.Generic.IList<global::G.RunOutput>? outputs,
+            global::G.ContainerRunError? error,
+            int? queuePosition,
+            int? computeTimeMs,
+            global::System.DateTime? startedAt,
+            global::System.DateTime? endedAt,
+            global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.PipelineId = pipelineId ?? throw new global::System.ArgumentNullException(nameof(pipelineId));
+            this.State = state;
+            this.Inputs = inputs;
+            this.Outputs = outputs;
+            this.Error = error;
+            this.QueuePosition = queuePosition;
+            this.ComputeTimeMs = computeTimeMs;
+            this.StartedAt = startedAt;
+            this.EndedAt = endedAt;
+            this.Accelerators = accelerators;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppSchemasRunGetDetailed" /> class.
+        /// </summary>
+        public AppSchemasRunGetDetailed()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

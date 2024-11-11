@@ -40,6 +40,35 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InfoGetResponse" /> class.
+        /// </summary>
+        /// <param name="version"></param>
+        /// <param name="licenseExpirationTime"></param>
+        /// <param name="batchIngestConfig">
+        /// Batch ingest config.
+        /// </param>
+        /// <param name="instanceFlags"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public InfoGetResponse(
+            string version,
+            global::System.DateTime? licenseExpirationTime,
+            global::G.BatchIngestConfig? batchIngestConfig,
+            object? instanceFlags)
+        {
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.LicenseExpirationTime = licenseExpirationTime;
+            this.BatchIngestConfig = batchIngestConfig;
+            this.InstanceFlags = instanceFlags;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InfoGetResponse" /> class.
+        /// </summary>
+        public InfoGetResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

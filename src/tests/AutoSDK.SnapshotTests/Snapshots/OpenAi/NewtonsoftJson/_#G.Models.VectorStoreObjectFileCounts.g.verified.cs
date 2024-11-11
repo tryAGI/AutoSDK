@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorStoreObjectFileCounts" /> class.
+        /// </summary>
+        /// <param name="inProgress">
+        /// The number of files that are currently being processed.
+        /// </param>
+        /// <param name="completed">
+        /// The number of files that have been successfully processed.
+        /// </param>
+        /// <param name="failed">
+        /// The number of files that have failed to process.
+        /// </param>
+        /// <param name="cancelled">
+        /// The number of files that were cancelled.
+        /// </param>
+        /// <param name="total">
+        /// The total number of files.
+        /// </param>
+        public VectorStoreObjectFileCounts(
+            int inProgress,
+            int completed,
+            int failed,
+            int cancelled,
+            int total)
+        {
+            this.InProgress = inProgress;
+            this.Completed = completed;
+            this.Failed = failed;
+            this.Cancelled = cancelled;
+            this.Total = total;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorStoreObjectFileCounts" /> class.
+        /// </summary>
+        public VectorStoreObjectFileCounts()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

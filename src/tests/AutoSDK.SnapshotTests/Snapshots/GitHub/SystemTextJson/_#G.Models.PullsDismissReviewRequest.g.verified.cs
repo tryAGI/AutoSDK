@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsDismissReviewRequest" /> class.
+        /// </summary>
+        /// <param name="message">
+        /// The message for the pull request review dismissal
+        /// </param>
+        /// <param name="event">
+        /// Example: "DISMISS"
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PullsDismissReviewRequest(
+            string message,
+            global::G.PullsDismissReviewRequestEvent? @event)
+        {
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Event = @event;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsDismissReviewRequest" /> class.
+        /// </summary>
+        public PullsDismissReviewRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

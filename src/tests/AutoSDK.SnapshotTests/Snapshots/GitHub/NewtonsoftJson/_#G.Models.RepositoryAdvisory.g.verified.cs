@@ -188,6 +188,158 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisory" /> class.
+        /// </summary>
+        /// <param name="ghsaId">
+        /// The GitHub Security Advisory ID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="cveId">
+        /// The Common Vulnerabilities and Exposures (CVE) ID.
+        /// </param>
+        /// <param name="url">
+        /// The API URL for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="htmlUrl">
+        /// The URL for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="summary">
+        /// A short summary of the advisory.
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of what the advisory entails.
+        /// </param>
+        /// <param name="severity">
+        /// The severity of the advisory.
+        /// </param>
+        /// <param name="author">
+        /// The author of the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="publisher">
+        /// The publisher of the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="identifiers">
+        /// Included only in responses
+        /// </param>
+        /// <param name="state">
+        /// The state of the advisory.
+        /// </param>
+        /// <param name="createdAt">
+        /// The date and time of when the advisory was created, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="updatedAt">
+        /// The date and time of when the advisory was last updated, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="publishedAt">
+        /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="closedAt">
+        /// The date and time of when the advisory was closed, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="withdrawnAt">
+        /// The date and time of when the advisory was withdrawn, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="submission">
+        /// Included only in responses
+        /// </param>
+        /// <param name="vulnerabilities"></param>
+        /// <param name="cvss"></param>
+        /// <param name="cvssSeverities"></param>
+        /// <param name="cwes">
+        /// Included only in responses
+        /// </param>
+        /// <param name="cweIds">
+        /// A list of only the CWE IDs.
+        /// </param>
+        /// <param name="credits"></param>
+        /// <param name="creditsDetailed">
+        /// Included only in responses
+        /// </param>
+        /// <param name="collaboratingUsers">
+        /// A list of users that collaborate on the advisory.
+        /// </param>
+        /// <param name="collaboratingTeams">
+        /// A list of teams that collaborate on the advisory.
+        /// </param>
+        /// <param name="privateFork">
+        /// A temporary private fork of the advisory's repository for collaborating on a fix.<br/>
+        /// Included only in responses
+        /// </param>
+        public RepositoryAdvisory(
+            string? cveId,
+            string summary,
+            string? description,
+            global::G.RepositoryAdvisorySeverity? severity,
+            global::G.RepositoryAdvisoryState state,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryVulnerability>? vulnerabilities,
+            global::G.RepositoryAdvisoryCvss? cvss,
+            global::System.Collections.Generic.IList<string>? cweIds,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit2>? credits,
+            global::System.Collections.Generic.IList<global::G.SimpleUser>? collaboratingUsers,
+            global::System.Collections.Generic.IList<global::G.Team>? collaboratingTeams,
+            global::G.SimpleUser? author,
+            global::G.SimpleUser? publisher,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
+            global::System.DateTime? publishedAt,
+            global::System.DateTime? closedAt,
+            global::System.DateTime? withdrawnAt,
+            global::G.RepositoryAdvisorySubmission? submission,
+            global::G.CvssSeverities? cvssSeverities,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCwe>? cwes,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryCredit>? creditsDetailed,
+            global::G.SimpleRepository? privateFork,
+            string ghsaId = default!,
+            string url = default!,
+            string htmlUrl = default!,
+            global::System.Collections.Generic.IList<global::G.RepositoryAdvisoryIdentifier> identifiers = default!)
+        {
+            this.CveId = cveId ?? throw new global::System.ArgumentNullException(nameof(cveId));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Severity = severity;
+            this.State = state;
+            this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
+            this.Cvss = cvss ?? throw new global::System.ArgumentNullException(nameof(cvss));
+            this.CweIds = cweIds ?? throw new global::System.ArgumentNullException(nameof(cweIds));
+            this.Credits = credits ?? throw new global::System.ArgumentNullException(nameof(credits));
+            this.CollaboratingUsers = collaboratingUsers ?? throw new global::System.ArgumentNullException(nameof(collaboratingUsers));
+            this.CollaboratingTeams = collaboratingTeams ?? throw new global::System.ArgumentNullException(nameof(collaboratingTeams));
+            this.GhsaId = ghsaId;
+            this.Url = url;
+            this.HtmlUrl = htmlUrl;
+            this.Author = author;
+            this.Publisher = publisher;
+            this.Identifiers = identifiers;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.PublishedAt = publishedAt;
+            this.ClosedAt = closedAt;
+            this.WithdrawnAt = withdrawnAt;
+            this.Submission = submission;
+            this.CvssSeverities = cvssSeverities;
+            this.Cwes = cwes;
+            this.CreditsDetailed = creditsDetailed;
+            this.PrivateFork = privateFork;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisory" /> class.
+        /// </summary>
+        public RepositoryAdvisory()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

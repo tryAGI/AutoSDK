@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoMerge" /> class.
+        /// </summary>
+        /// <param name="enabledBy">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="mergeMethod">
+        /// The merge method to use.
+        /// </param>
+        /// <param name="commitTitle">
+        /// Title for the merge commit message.
+        /// </param>
+        /// <param name="commitMessage">
+        /// Commit message for the merge commit.
+        /// </param>
+        public AutoMerge(
+            global::G.SimpleUser enabledBy,
+            global::G.AutoMergeMergeMethod mergeMethod,
+            string commitTitle,
+            string commitMessage)
+        {
+            this.EnabledBy = enabledBy ?? throw new global::System.ArgumentNullException(nameof(enabledBy));
+            this.MergeMethod = mergeMethod;
+            this.CommitTitle = commitTitle ?? throw new global::System.ArgumentNullException(nameof(commitTitle));
+            this.CommitMessage = commitMessage ?? throw new global::System.ArgumentNullException(nameof(commitMessage));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AutoMerge" /> class.
+        /// </summary>
+        public AutoMerge()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

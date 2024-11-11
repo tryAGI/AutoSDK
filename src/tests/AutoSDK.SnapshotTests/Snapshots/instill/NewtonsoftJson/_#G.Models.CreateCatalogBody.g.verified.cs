@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCatalogBody" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The catalog name.
+        /// </param>
+        /// <param name="description">
+        /// The catalog description.
+        /// </param>
+        /// <param name="tags">
+        /// The catalog tags.
+        /// </param>
+        public CreateCatalogBody(
+            string? name,
+            string? description,
+            global::System.Collections.Generic.IList<string>? tags)
+        {
+            this.Name = name;
+            this.Description = description;
+            this.Tags = tags;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCatalogBody" /> class.
+        /// </summary>
+        public CreateCatalogBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

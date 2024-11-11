@@ -71,6 +71,47 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageBuild" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="status"></param>
+        /// <param name="error"></param>
+        /// <param name="pusher">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="commit"></param>
+        /// <param name="duration"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PageBuild(
+            string url,
+            string status,
+            global::G.PageBuildError error,
+            global::G.NullableSimpleUser? pusher,
+            string commit,
+            int duration,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Pusher = pusher ?? throw new global::System.ArgumentNullException(nameof(pusher));
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.Duration = duration;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageBuild" /> class.
+        /// </summary>
+        public PageBuild()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

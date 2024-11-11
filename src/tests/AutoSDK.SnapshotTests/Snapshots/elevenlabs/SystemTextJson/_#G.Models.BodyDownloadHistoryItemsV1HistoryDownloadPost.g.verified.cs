@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyDownloadHistoryItemsV1HistoryDownloadPost" /> class.
+        /// </summary>
+        /// <param name="historyItemIds">
+        /// A list of history items to download, you can get IDs of history items and other metadata using the GET https://api.elevenlabs.io/v1/history endpoint.
+        /// </param>
+        /// <param name="outputFormat">
+        /// Output format to transcode the audio file, can be wav or default.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyDownloadHistoryItemsV1HistoryDownloadPost(
+            global::System.Collections.Generic.IList<string> historyItemIds,
+            string? outputFormat)
+        {
+            this.HistoryItemIds = historyItemIds ?? throw new global::System.ArgumentNullException(nameof(historyItemIds));
+            this.OutputFormat = outputFormat;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyDownloadHistoryItemsV1HistoryDownloadPost" /> class.
+        /// </summary>
+        public BodyDownloadHistoryItemsV1HistoryDownloadPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

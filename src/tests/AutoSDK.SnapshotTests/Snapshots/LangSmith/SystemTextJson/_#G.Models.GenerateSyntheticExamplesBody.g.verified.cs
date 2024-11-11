@@ -28,6 +28,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateSyntheticExamplesBody" /> class.
+        /// </summary>
+        /// <param name="exampleIds"></param>
+        /// <param name="numExamples"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GenerateSyntheticExamplesBody(
+            int numExamples,
+            global::System.Collections.Generic.IList<global::System.Guid>? exampleIds)
+        {
+            this.NumExamples = numExamples;
+            this.ExampleIds = exampleIds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateSyntheticExamplesBody" /> class.
+        /// </summary>
+        public GenerateSyntheticExamplesBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

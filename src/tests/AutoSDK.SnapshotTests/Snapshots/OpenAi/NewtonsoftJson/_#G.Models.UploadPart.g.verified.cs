@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadPart" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The upload Part unique identifier, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the Part was created.
+        /// </param>
+        /// <param name="uploadId">
+        /// The ID of the Upload object that this Part was added to.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `upload.part`.
+        /// </param>
+        public UploadPart(
+            string id,
+            global::System.DateTimeOffset createdAt,
+            string uploadId,
+            global::G.UploadPartObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UploadId = uploadId ?? throw new global::System.ArgumentNullException(nameof(uploadId));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadPart" /> class.
+        /// </summary>
+        public UploadPart()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

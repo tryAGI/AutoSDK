@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsUpdatePatAccessesRequest" /> class.
+        /// </summary>
+        /// <param name="action">
+        /// Action to apply to the fine-grained personal access token.
+        /// </param>
+        /// <param name="patIds">
+        /// The IDs of the fine-grained personal access tokens.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrgsUpdatePatAccessesRequest(
+            global::System.Collections.Generic.IList<int> patIds,
+            global::G.OrgsUpdatePatAccessesRequestAction action)
+        {
+            this.PatIds = patIds ?? throw new global::System.ArgumentNullException(nameof(patIds));
+            this.Action = action;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsUpdatePatAccessesRequest" /> class.
+        /// </summary>
+        public OrgsUpdatePatAccessesRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -65,6 +65,62 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsCreateRequest" /> class.
+        /// </summary>
+        /// <param name="title">
+        /// The title of the new pull request. Required unless `issue` is specified.
+        /// </param>
+        /// <param name="head">
+        /// The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace `head` with a user like this: `username:branch`.
+        /// </param>
+        /// <param name="headRepo">
+        /// The name of the repository where the changes in the pull request were made. This field is required for cross-repository pull requests if both repositories are owned by the same organization.<br/>
+        /// Example: octo-org/octo-repo
+        /// </param>
+        /// <param name="base">
+        /// The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository.
+        /// </param>
+        /// <param name="body">
+        /// The contents of the pull request.
+        /// </param>
+        /// <param name="maintainerCanModify">
+        /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
+        /// </param>
+        /// <param name="draft">
+        /// Indicates whether the pull request is a draft. See "[Draft Pull Requests](https://docs.github.com/articles/about-pull-requests#draft-pull-requests)" in the GitHub Help documentation to learn more.
+        /// </param>
+        /// <param name="issue">
+        /// An issue in the repository to convert to a pull request. The issue title, body, and comments will become the title, body, and comments on the new pull request. Required unless `title` is specified.<br/>
+        /// Example: 1L
+        /// </param>
+        public PullsCreateRequest(
+            string head,
+            string @base,
+            string? title,
+            string? headRepo,
+            string? body,
+            bool? maintainerCanModify,
+            bool? draft,
+            long? issue)
+        {
+            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
+            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+            this.Title = title;
+            this.HeadRepo = headRepo;
+            this.Body = body;
+            this.MaintainerCanModify = maintainerCanModify;
+            this.Draft = draft;
+            this.Issue = issue;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsCreateRequest" /> class.
+        /// </summary>
+        public PullsCreateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

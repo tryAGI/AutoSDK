@@ -51,6 +51,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EventPayloadPage" /> class.
+        /// </summary>
+        /// <param name="pageName"></param>
+        /// <param name="title"></param>
+        /// <param name="summary"></param>
+        /// <param name="action"></param>
+        /// <param name="sha"></param>
+        /// <param name="htmlUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EventPayloadPage(
+            string? pageName,
+            string? title,
+            string? summary,
+            string? action,
+            string? sha,
+            string? htmlUrl)
+        {
+            this.PageName = pageName;
+            this.Title = title;
+            this.Summary = summary;
+            this.Action = action;
+            this.Sha = sha;
+            this.HtmlUrl = htmlUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EventPayloadPage" /> class.
+        /// </summary>
+        public EventPayloadPage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

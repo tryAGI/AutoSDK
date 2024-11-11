@@ -39,6 +39,36 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsRequestBase" /> class.
+        /// </summary>
+        /// <param name="timezone">
+        /// Default Value: UTC
+        /// </param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="stride">
+        /// Timedelta input.
+        /// </param>
+        public CustomChartsRequestBase(
+            global::System.DateTime startTime,
+            string? timezone,
+            global::System.DateTime? endTime,
+            global::G.TimedeltaInput? stride)
+        {
+            this.StartTime = startTime;
+            this.Timezone = timezone;
+            this.EndTime = endTime;
+            this.Stride = stride;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsRequestBase" /> class.
+        /// </summary>
+        public CustomChartsRequestBase()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

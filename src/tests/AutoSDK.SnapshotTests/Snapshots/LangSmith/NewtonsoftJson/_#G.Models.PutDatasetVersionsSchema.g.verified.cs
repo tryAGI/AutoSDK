@@ -29,6 +29,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PutDatasetVersionsSchema" /> class.
+        /// </summary>
+        /// <param name="asOf">
+        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
+        /// </param>
+        /// <param name="tag"></param>
+        public PutDatasetVersionsSchema(
+            global::G.AnyOf<global::System.DateTime?, string> asOf,
+            string tag)
+        {
+            this.AsOf = asOf;
+            this.Tag = tag ?? throw new global::System.ArgumentNullException(nameof(tag));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PutDatasetVersionsSchema" /> class.
+        /// </summary>
+        public PutDatasetVersionsSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

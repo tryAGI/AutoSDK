@@ -87,6 +87,66 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewRequestedIssueEvent" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="actor">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="event"></param>
+        /// <param name="commitId"></param>
+        /// <param name="commitUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="reviewRequester">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="requestedTeam">
+        /// Groups of organization members that gives permissions on specified repositories.
+        /// </param>
+        /// <param name="requestedReviewer">
+        /// A GitHub user.
+        /// </param>
+        public ReviewRequestedIssueEvent(
+            int id,
+            string nodeId,
+            string url,
+            global::G.SimpleUser actor,
+            string @event,
+            string? commitId,
+            string? commitUrl,
+            string createdAt,
+            global::G.NullableIntegration? performedViaGithubApp,
+            global::G.SimpleUser reviewRequester,
+            global::G.Team? requestedTeam,
+            global::G.SimpleUser? requestedReviewer)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
+            this.CommitUrl = commitUrl ?? throw new global::System.ArgumentNullException(nameof(commitUrl));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.PerformedViaGithubApp = performedViaGithubApp ?? throw new global::System.ArgumentNullException(nameof(performedViaGithubApp));
+            this.ReviewRequester = reviewRequester ?? throw new global::System.ArgumentNullException(nameof(reviewRequester));
+            this.RequestedTeam = requestedTeam;
+            this.RequestedReviewer = requestedReviewer;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewRequestedIssueEvent" /> class.
+        /// </summary>
+        public ReviewRequestedIssueEvent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

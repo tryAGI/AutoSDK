@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateInformationAboutPagesSiteRequestSourceEnum2" /> class.
+        /// </summary>
+        /// <param name="branch">
+        /// The repository branch used to publish your site's source files.
+        /// </param>
+        /// <param name="path">
+        /// The repository directory that includes the source files for the Pages site. Allowed paths are `/` or `/docs`.
+        /// </param>
+        public ReposUpdateInformationAboutPagesSiteRequestSourceEnum2(
+            string branch,
+            global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnumPath path)
+        {
+            this.Branch = branch ?? throw new global::System.ArgumentNullException(nameof(branch));
+            this.Path = path;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateInformationAboutPagesSiteRequestSourceEnum2" /> class.
+        /// </summary>
+        public ReposUpdateInformationAboutPagesSiteRequestSourceEnum2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

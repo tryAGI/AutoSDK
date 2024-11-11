@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectsGetResponseVariant2" /> class.
+        /// </summary>
+        /// <param name="deprecations"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ObjectsGetResponseVariant2(
+            global::System.Collections.Generic.IList<global::G.Deprecation>? deprecations)
+        {
+            this.Deprecations = deprecations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectsGetResponseVariant2" /> class.
+        /// </summary>
+        public ObjectsGetResponseVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

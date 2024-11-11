@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetChannelEmotesResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The list of emotes that the specified broadcaster created. If the broadcaster hasn't created custom emotes, the list is empty.
+        /// </param>
+        /// <param name="template">
+        /// A templated URL. Use the values from the `id`, `format`, `scale`, and `theme_mode` fields to replace the like-named placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote. For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL format](https://dev.twitch.tv/docs/irc/emotes#cdn-template). You should use this template instead of using the URLs in the `images` object.
+        /// </param>
+        public GetChannelEmotesResponse(
+            global::System.Collections.Generic.IList<global::G.ChannelEmote> data,
+            string template)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetChannelEmotesResponse" /> class.
+        /// </summary>
+        public GetChannelEmotesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

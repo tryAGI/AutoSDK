@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SentencesResponse" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="confidence"></param>
+        /// <param name="audioDuration"></param>
+        /// <param name="sentences"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SentencesResponse(
+            global::System.Guid id,
+            double confidence,
+            double audioDuration,
+            global::System.Collections.Generic.IList<global::G.TranscriptSentence> sentences)
+        {
+            this.Id = id;
+            this.Confidence = confidence;
+            this.AudioDuration = audioDuration;
+            this.Sentences = sentences ?? throw new global::System.ArgumentNullException(nameof(sentences));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SentencesResponse" /> class.
+        /// </summary>
+        public SentencesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

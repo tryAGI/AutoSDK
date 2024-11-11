@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistsGetResponseBlock" /> class.
+        /// </summary>
+        /// <param name="reason"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="htmlUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GistsGetResponseBlock(
+            string? reason,
+            string? createdAt,
+            string? htmlUrl)
+        {
+            this.Reason = reason;
+            this.CreatedAt = createdAt;
+            this.HtmlUrl = htmlUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistsGetResponseBlock" /> class.
+        /// </summary>
+        public GistsGetResponseBlock()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

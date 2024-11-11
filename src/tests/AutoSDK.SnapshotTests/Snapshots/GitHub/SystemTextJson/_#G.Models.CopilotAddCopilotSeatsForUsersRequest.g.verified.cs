@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotAddCopilotSeatsForUsersRequest" /> class.
+        /// </summary>
+        /// <param name="selectedUsernames">
+        /// The usernames of the organization members to be granted access to GitHub Copilot.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CopilotAddCopilotSeatsForUsersRequest(
+            global::System.Collections.Generic.IList<string> selectedUsernames)
+        {
+            this.SelectedUsernames = selectedUsernames ?? throw new global::System.ArgumentNullException(nameof(selectedUsernames));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotAddCopilotSeatsForUsersRequest" /> class.
+        /// </summary>
+        public CopilotAddCopilotSeatsForUsersRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListOperationsResponse" /> class.
+        /// </summary>
+        /// <param name="operations">
+        /// A list of operations that matches the specified filter in the request.
+        /// </param>
+        /// <param name="nextPageToken">
+        /// The standard List next-page token.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListOperationsResponse(
+            global::System.Collections.Generic.IList<global::G.Operation>? operations,
+            string? nextPageToken)
+        {
+            this.Operations = operations;
+            this.NextPageToken = nextPageToken;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListOperationsResponse" /> class.
+        /// </summary>
+        public ListOperationsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

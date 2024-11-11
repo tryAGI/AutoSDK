@@ -81,6 +81,76 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Deprecation" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The id that uniquely identifies this particular deprecations (mostly used internally)
+        /// </param>
+        /// <param name="status">
+        /// Whether the problematic API functionality is deprecated (planned to be removed) or already removed
+        /// </param>
+        /// <param name="apiType">
+        /// Describes which API is effected, usually one of: REST, GraphQL
+        /// </param>
+        /// <param name="msg">
+        /// What this deprecation is about
+        /// </param>
+        /// <param name="mitigation">
+        /// User-required object to not be affected by the (planned) removal
+        /// </param>
+        /// <param name="sinceVersion">
+        /// The deprecation was introduced in this version
+        /// </param>
+        /// <param name="plannedRemovalVersion">
+        /// A best-effort guess of which upcoming version will remove the feature entirely
+        /// </param>
+        /// <param name="removedIn">
+        /// If the feature has already been removed, it was removed in this version
+        /// </param>
+        /// <param name="removedTime">
+        /// If the feature has already been removed, it was removed at this timestamp
+        /// </param>
+        /// <param name="sinceTime">
+        /// The deprecation was introduced in this version
+        /// </param>
+        /// <param name="locations">
+        /// The locations within the specified API affected by this deprecation
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Deprecation(
+            string? id,
+            string? status,
+            string? apiType,
+            string? msg,
+            string? mitigation,
+            string? sinceVersion,
+            string? plannedRemovalVersion,
+            string? removedIn,
+            global::System.DateTime? removedTime,
+            global::System.DateTime? sinceTime,
+            global::System.Collections.Generic.IList<string>? locations)
+        {
+            this.Id = id;
+            this.Status = status;
+            this.ApiType = apiType;
+            this.Msg = msg;
+            this.Mitigation = mitigation;
+            this.SinceVersion = sinceVersion;
+            this.PlannedRemovalVersion = plannedRemovalVersion;
+            this.RemovedIn = removedIn;
+            this.RemovedTime = removedTime;
+            this.SinceTime = sinceTime;
+            this.Locations = locations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Deprecation" /> class.
+        /// </summary>
+        public Deprecation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

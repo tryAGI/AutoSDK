@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsRepositoryPermissions" /> class.
+        /// </summary>
+        /// <param name="enabled">
+        /// Whether GitHub Actions is enabled on the repository.
+        /// </param>
+        /// <param name="allowedActions">
+        /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
+        /// </param>
+        /// <param name="selectedActionsUrl">
+        /// The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
+        /// </param>
+        public ActionsRepositoryPermissions(
+            bool enabled,
+            global::G.AllowedActions? allowedActions,
+            string? selectedActionsUrl)
+        {
+            this.Enabled = enabled;
+            this.AllowedActions = allowedActions;
+            this.SelectedActionsUrl = selectedActionsUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsRepositoryPermissions" /> class.
+        /// </summary>
+        public ActionsRepositoryPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

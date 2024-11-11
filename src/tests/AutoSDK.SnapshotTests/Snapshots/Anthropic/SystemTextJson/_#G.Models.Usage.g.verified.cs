@@ -49,6 +49,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Usage" /> class.
+        /// </summary>
+        /// <param name="inputTokens">
+        /// The number of input tokens which were used.
+        /// </param>
+        /// <param name="outputTokens">
+        /// The number of output tokens which were used.
+        /// </param>
+        /// <param name="cacheCreationInputTokens">
+        /// The number of input tokens read from the cache.
+        /// </param>
+        /// <param name="cacheReadInputTokens">
+        /// The number of input tokens used to create the cache entry.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Usage(
+            int inputTokens,
+            int outputTokens,
+            int? cacheCreationInputTokens,
+            int? cacheReadInputTokens)
+        {
+            this.InputTokens = inputTokens;
+            this.OutputTokens = outputTokens;
+            this.CacheCreationInputTokens = cacheCreationInputTokens;
+            this.CacheReadInputTokens = cacheReadInputTokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Usage" /> class.
+        /// </summary>
+        public Usage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Actor" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="login"></param>
+        /// <param name="displayLogin"></param>
+        /// <param name="gravatarId"></param>
+        /// <param name="url"></param>
+        /// <param name="avatarUrl"></param>
+        public Actor(
+            int id,
+            string login,
+            string? gravatarId,
+            string url,
+            string avatarUrl,
+            string? displayLogin)
+        {
+            this.Id = id;
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.GravatarId = gravatarId ?? throw new global::System.ArgumentNullException(nameof(gravatarId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.DisplayLogin = displayLogin;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Actor" /> class.
+        /// </summary>
+        public Actor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

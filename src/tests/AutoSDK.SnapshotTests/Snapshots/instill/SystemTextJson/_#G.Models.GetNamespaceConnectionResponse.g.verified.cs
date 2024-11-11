@@ -22,6 +22,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetNamespaceConnectionResponse" /> class.
+        /// </summary>
+        /// <param name="connection">
+        /// The requested connection.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetNamespaceConnectionResponse(
+            global::G.Connection? connection)
+        {
+            this.Connection = connection;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetNamespaceConnectionResponse" /> class.
+        /// </summary>
+        public GetNamespaceConnectionResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

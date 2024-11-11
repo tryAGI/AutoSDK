@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodePoolCreate" /> class.
+        /// </summary>
+        /// <param name="accelerators"></param>
+        /// <param name="spot">
+        /// Default Value: true
+        /// </param>
+        public NodePoolCreate(
+            global::System.Collections.Generic.IList<global::G.Accelerator> accelerators,
+            bool? spot)
+        {
+            this.Accelerators = accelerators ?? throw new global::System.ArgumentNullException(nameof(accelerators));
+            this.Spot = spot;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodePoolCreate" /> class.
+        /// </summary>
+        public NodePoolCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -69,6 +69,60 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneDatasetMetrics" /> class.
+        /// </summary>
+        /// <param name="trainableTokenCount">
+        /// The number of tokens of valid examples that can be used for training.
+        /// </param>
+        /// <param name="totalExamples">
+        /// The overall number of examples.
+        /// </param>
+        /// <param name="trainExamples">
+        /// The number of training examples.
+        /// </param>
+        /// <param name="trainSizeBytes">
+        /// The size in bytes of all training examples.
+        /// </param>
+        /// <param name="evalExamples">
+        /// Number of evaluation examples.
+        /// </param>
+        /// <param name="evalSizeBytes">
+        /// The size in bytes of all eval examples.
+        /// </param>
+        /// <param name="rerankerDataMetrics"></param>
+        /// <param name="chatDataMetrics"></param>
+        /// <param name="classifyDataMetrics"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FinetuneDatasetMetrics(
+            double? trainableTokenCount,
+            double? totalExamples,
+            double? trainExamples,
+            double? trainSizeBytes,
+            double? evalExamples,
+            double? evalSizeBytes,
+            global::G.RerankerDataMetrics? rerankerDataMetrics,
+            global::G.ChatDataMetrics? chatDataMetrics,
+            global::G.ClassifyDataMetrics? classifyDataMetrics)
+        {
+            this.TrainableTokenCount = trainableTokenCount;
+            this.TotalExamples = totalExamples;
+            this.TrainExamples = trainExamples;
+            this.TrainSizeBytes = trainSizeBytes;
+            this.EvalExamples = evalExamples;
+            this.EvalSizeBytes = evalSizeBytes;
+            this.RerankerDataMetrics = rerankerDataMetrics;
+            this.ChatDataMetrics = chatDataMetrics;
+            this.ClassifyDataMetrics = classifyDataMetrics;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneDatasetMetrics" /> class.
+        /// </summary>
+        public FinetuneDatasetMetrics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

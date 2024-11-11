@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchLockBranch" /> class.
+        /// </summary>
+        /// <param name="enabled">
+        /// Default Value: false
+        /// </param>
+        public ProtectedBranchLockBranch(
+            bool? enabled)
+        {
+            this.Enabled = enabled;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchLockBranch" /> class.
+        /// </summary>
+        public ProtectedBranchLockBranch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

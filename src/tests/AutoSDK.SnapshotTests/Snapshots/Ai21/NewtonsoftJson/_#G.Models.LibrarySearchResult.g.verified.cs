@@ -57,6 +57,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LibrarySearchResult" /> class.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="fileId"></param>
+        /// <param name="fileName"></param>
+        /// <param name="score"></param>
+        /// <param name="order"></param>
+        /// <param name="publicUrl"></param>
+        /// <param name="labels"></param>
+        public LibrarySearchResult(
+            string text,
+            string fileId,
+            string fileName,
+            double score,
+            int? order,
+            string? publicUrl,
+            global::System.Collections.Generic.IList<string>? labels)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
+            this.FileName = fileName ?? throw new global::System.ArgumentNullException(nameof(fileName));
+            this.Score = score;
+            this.Order = order;
+            this.PublicUrl = publicUrl;
+            this.Labels = labels;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LibrarySearchResult" /> class.
+        /// </summary>
+        public LibrarySearchResult()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

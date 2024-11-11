@@ -41,6 +41,40 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Manifest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the manifest.<br/>
+        /// Example: package-lock.json
+        /// </param>
+        /// <param name="file"></param>
+        /// <param name="metadata">
+        /// User-defined metadata to store domain-specific information limited to 8 keys with scalar values.
+        /// </param>
+        /// <param name="resolved">
+        /// A collection of resolved package dependencies.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Manifest(
+            string name,
+            global::G.ManifestFile? file,
+            object? metadata,
+            global::System.Collections.Generic.Dictionary<string, global::G.Dependency>? resolved)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.File = file;
+            this.Metadata = metadata;
+            this.Resolved = resolved;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Manifest" /> class.
+        /// </summary>
+        public Manifest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

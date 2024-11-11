@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewCustomGatesCommentRequired" /> class.
+        /// </summary>
+        /// <param name="environmentName">
+        /// The name of the environment to approve or reject.
+        /// </param>
+        /// <param name="comment">
+        /// Comment associated with the pending deployment protection rule. **Required when state is not provided.**
+        /// </param>
+        public ReviewCustomGatesCommentRequired(
+            string environmentName,
+            string comment)
+        {
+            this.EnvironmentName = environmentName ?? throw new global::System.ArgumentNullException(nameof(environmentName));
+            this.Comment = comment ?? throw new global::System.ArgumentNullException(nameof(comment));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewCustomGatesCommentRequired" /> class.
+        /// </summary>
+        public ReviewCustomGatesCommentRequired()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

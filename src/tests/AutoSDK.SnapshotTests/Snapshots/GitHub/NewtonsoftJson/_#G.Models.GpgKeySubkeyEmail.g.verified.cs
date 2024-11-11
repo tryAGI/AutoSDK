@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpgKeySubkeyEmail" /> class.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="verified"></param>
+        public GpgKeySubkeyEmail(
+            string? email,
+            bool? verified)
+        {
+            this.Email = email;
+            this.Verified = verified;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpgKeySubkeyEmail" /> class.
+        /// </summary>
+        public GpgKeySubkeyEmail()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

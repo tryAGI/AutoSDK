@@ -28,6 +28,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetConnectorsLogsResponse" /> class.
+        /// </summary>
+        /// <param name="connectorLogs"></param>
+        /// <param name="total">
+        /// Total number of connector logs<br/>
+        /// Included only in responses
+        /// </param>
+        public GetConnectorsLogsResponse(
+            global::System.Collections.Generic.IList<global::G.ConnectorLog> connectorLogs,
+            double total = default!)
+        {
+            this.ConnectorLogs = connectorLogs ?? throw new global::System.ArgumentNullException(nameof(connectorLogs));
+            this.Total = total;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetConnectorsLogsResponse" /> class.
+        /// </summary>
+        public GetConnectorsLogsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

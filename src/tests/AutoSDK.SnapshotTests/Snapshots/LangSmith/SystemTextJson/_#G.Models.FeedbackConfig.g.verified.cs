@@ -41,6 +41,35 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackConfig" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Enum for feedback types.
+        /// </param>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <param name="categories"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FeedbackConfig(
+            global::G.FeedbackType type,
+            double? min,
+            double? max,
+            global::System.Collections.Generic.IList<global::G.FeedbackCategory>? categories)
+        {
+            this.Type = type;
+            this.Min = min;
+            this.Max = max;
+            this.Categories = categories;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackConfig" /> class.
+        /// </summary>
+        public FeedbackConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -51,6 +51,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemoFolderLink" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="memoId"></param>
+        /// <param name="memoFolderId"></param>
+        public MemoFolderLink(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            global::System.Guid? memoId,
+            global::System.Guid? memoFolderId)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.ProjectIDL = projectIDL;
+            this.MemoId = memoId;
+            this.MemoFolderId = memoFolderId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemoFolderLink" /> class.
+        /// </summary>
+        public MemoFolderLink()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

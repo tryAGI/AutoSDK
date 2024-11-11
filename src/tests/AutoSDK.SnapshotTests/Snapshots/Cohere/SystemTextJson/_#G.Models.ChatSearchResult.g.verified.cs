@@ -47,6 +47,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatSearchResult" /> class.
+        /// </summary>
+        /// <param name="searchQuery">
+        /// The generated search query. Contains the text of the query and a unique identifier for the query.
+        /// </param>
+        /// <param name="connector">
+        /// The connector used for fetching documents.
+        /// </param>
+        /// <param name="documentIds">
+        /// Identifiers of documents found by this search query.
+        /// </param>
+        /// <param name="errorMessage">
+        /// An error message if the search failed.
+        /// </param>
+        /// <param name="continueOnFailure">
+        /// Whether a chat request should continue or not if the request to this connector fails.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatSearchResult(
+            global::G.ChatSearchResultConnector connector,
+            global::System.Collections.Generic.IList<string> documentIds,
+            global::G.ChatSearchQuery? searchQuery,
+            string? errorMessage,
+            bool? continueOnFailure)
+        {
+            this.Connector = connector ?? throw new global::System.ArgumentNullException(nameof(connector));
+            this.DocumentIds = documentIds ?? throw new global::System.ArgumentNullException(nameof(documentIds));
+            this.SearchQuery = searchQuery;
+            this.ErrorMessage = errorMessage;
+            this.ContinueOnFailure = continueOnFailure;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatSearchResult" /> class.
+        /// </summary>
+        public ChatSearchResult()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -65,6 +65,58 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectColumn" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/projects/columns/367
+        /// </param>
+        /// <param name="projectUrl">
+        /// Example: https://api.github.com/projects/120
+        /// </param>
+        /// <param name="cardsUrl">
+        /// Example: https://api.github.com/projects/columns/367/cards
+        /// </param>
+        /// <param name="id">
+        /// The unique identifier of the project column<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDEzOlByb2plY3RDb2x1bW4zNjc=
+        /// </param>
+        /// <param name="name">
+        /// Name of the project column<br/>
+        /// Example: Remaining tasks
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        public ProjectColumn(
+            string url,
+            string projectUrl,
+            string cardsUrl,
+            int id,
+            string nodeId,
+            string name,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ProjectUrl = projectUrl ?? throw new global::System.ArgumentNullException(nameof(projectUrl));
+            this.CardsUrl = cardsUrl ?? throw new global::System.ArgumentNullException(nameof(cardsUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectColumn" /> class.
+        /// </summary>
+        public ProjectColumn()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

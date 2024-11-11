@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListPlatformModelsResponseCustomModelGeneratedImage" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListPlatformModelsResponseCustomModelGeneratedImage(
+            string? id,
+            string? url)
+        {
+            this.Id = id;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListPlatformModelsResponseCustomModelGeneratedImage" /> class.
+        /// </summary>
+        public ListPlatformModelsResponseCustomModelGeneratedImage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

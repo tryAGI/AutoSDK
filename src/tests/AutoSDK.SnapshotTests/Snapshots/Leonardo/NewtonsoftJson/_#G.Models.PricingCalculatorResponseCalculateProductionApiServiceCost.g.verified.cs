@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorResponseCalculateProductionApiServiceCost" /> class.
+        /// </summary>
+        /// <param name="cost">
+        /// API service cost to generate the image.
+        /// </param>
+        public PricingCalculatorResponseCalculateProductionApiServiceCost(
+            int? cost)
+        {
+            this.Cost = cost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorResponseCalculateProductionApiServiceCost" /> class.
+        /// </summary>
+        public PricingCalculatorResponseCalculateProductionApiServiceCost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

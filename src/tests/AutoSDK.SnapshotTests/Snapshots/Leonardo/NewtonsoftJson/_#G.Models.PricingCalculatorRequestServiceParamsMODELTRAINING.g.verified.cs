@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsMODELTRAINING" /> class.
+        /// </summary>
+        /// <param name="resolution">
+        /// The resolution for training. Must be 512 or 768.
+        /// </param>
+        public PricingCalculatorRequestServiceParamsMODELTRAINING(
+            int? resolution)
+        {
+            this.Resolution = resolution;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParamsMODELTRAINING" /> class.
+        /// </summary>
+        public PricingCalculatorRequestServiceParamsMODELTRAINING()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

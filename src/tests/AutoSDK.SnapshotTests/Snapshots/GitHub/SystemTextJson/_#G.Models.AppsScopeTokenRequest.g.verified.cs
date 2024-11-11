@@ -56,6 +56,55 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsScopeTokenRequest" /> class.
+        /// </summary>
+        /// <param name="accessToken">
+        /// The access token used to authenticate to the GitHub API.<br/>
+        /// Example: e72e16c7e42f292c6912e7710c838347ae178b4a
+        /// </param>
+        /// <param name="target">
+        /// The name of the user or organization to scope the user access token to. **Required** unless `target_id` is specified.<br/>
+        /// Example: octocat
+        /// </param>
+        /// <param name="targetId">
+        /// The ID of the user or organization to scope the user access token to. **Required** unless `target` is specified.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="repositories">
+        /// The list of repository names to scope the user access token to. `repositories` may not be specified if `repository_ids` is specified.
+        /// </param>
+        /// <param name="repositoryIds">
+        /// The list of repository IDs to scope the user access token to. `repository_ids` may not be specified if `repositories` is specified.<br/>
+        /// Example: [1]
+        /// </param>
+        /// <param name="permissions">
+        /// The permissions granted to the user access token.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AppsScopeTokenRequest(
+            string accessToken,
+            string? target,
+            int? targetId,
+            global::System.Collections.Generic.IList<string>? repositories,
+            global::System.Collections.Generic.IList<int>? repositoryIds,
+            global::G.AppPermissions? permissions)
+        {
+            this.AccessToken = accessToken ?? throw new global::System.ArgumentNullException(nameof(accessToken));
+            this.Target = target;
+            this.TargetId = targetId;
+            this.Repositories = repositories;
+            this.RepositoryIds = repositoryIds;
+            this.Permissions = permissions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsScopeTokenRequest" /> class.
+        /// </summary>
+        public AppsScopeTokenRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

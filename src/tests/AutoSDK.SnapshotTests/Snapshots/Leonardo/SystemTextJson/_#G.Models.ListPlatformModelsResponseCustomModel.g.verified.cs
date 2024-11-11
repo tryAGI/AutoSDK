@@ -51,6 +51,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListPlatformModelsResponseCustomModel" /> class.
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="featured"></param>
+        /// <param name="generatedImage">
+        /// columns and relationships of "generated_images"
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="nsfw"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListPlatformModelsResponseCustomModel(
+            string? description,
+            bool? featured,
+            global::G.ListPlatformModelsResponseCustomModelGeneratedImage? generatedImage,
+            string? id,
+            string? name,
+            bool? nsfw)
+        {
+            this.Description = description;
+            this.Featured = featured;
+            this.GeneratedImage = generatedImage;
+            this.Id = id;
+            this.Name = name;
+            this.Nsfw = nsfw;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListPlatformModelsResponseCustomModel" /> class.
+        /// </summary>
+        public ListPlatformModelsResponseCustomModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

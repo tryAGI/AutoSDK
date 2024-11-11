@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChapterSnapshotResponseModel" /> class.
+        /// </summary>
+        /// <param name="chapterSnapshotId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="chapterId"></param>
+        /// <param name="createdAtUnix"></param>
+        /// <param name="name"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChapterSnapshotResponseModel(
+            string chapterSnapshotId,
+            string projectId,
+            string chapterId,
+            int createdAtUnix,
+            string name)
+        {
+            this.ChapterSnapshotId = chapterSnapshotId ?? throw new global::System.ArgumentNullException(nameof(chapterSnapshotId));
+            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
+            this.ChapterId = chapterId ?? throw new global::System.ArgumentNullException(nameof(chapterId));
+            this.CreatedAtUnix = createdAtUnix;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChapterSnapshotResponseModel" /> class.
+        /// </summary>
+        public ChapterSnapshotResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

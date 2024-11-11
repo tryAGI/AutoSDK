@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomRewardDefaultImage" /> class.
+        /// </summary>
+        /// <param name="url1x">
+        /// The URL to a small version of the image.
+        /// </param>
+        /// <param name="url2x">
+        /// The URL to a medium version of the image.
+        /// </param>
+        /// <param name="url4x">
+        /// The URL to a large version of the image.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomRewardDefaultImage(
+            string url1x,
+            string url2x,
+            string url4x)
+        {
+            this.Url1x = url1x ?? throw new global::System.ArgumentNullException(nameof(url1x));
+            this.Url2x = url2x ?? throw new global::System.ArgumentNullException(nameof(url2x));
+            this.Url4x = url4x ?? throw new global::System.ArgumentNullException(nameof(url4x));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomRewardDefaultImage" /> class.
+        /// </summary>
+        public CustomRewardDefaultImage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

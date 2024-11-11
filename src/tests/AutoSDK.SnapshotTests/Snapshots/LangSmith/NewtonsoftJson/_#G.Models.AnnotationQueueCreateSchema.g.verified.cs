@@ -69,6 +69,53 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueCreateSchema" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="defaultDataset"></param>
+        /// <param name="numReviewersPerItem">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="enableReservations">
+        /// Default Value: true
+        /// </param>
+        /// <param name="reservationMinutes">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="id"></param>
+        public AnnotationQueueCreateSchema(
+            string name,
+            string? description,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
+            global::System.Guid? defaultDataset,
+            int? numReviewersPerItem,
+            bool? enableReservations,
+            int? reservationMinutes,
+            global::System.Guid? id)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.DefaultDataset = defaultDataset;
+            this.NumReviewersPerItem = numReviewersPerItem;
+            this.EnableReservations = enableReservations;
+            this.ReservationMinutes = reservationMinutes;
+            this.Id = id;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueCreateSchema" /> class.
+        /// </summary>
+        public AnnotationQueueCreateSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

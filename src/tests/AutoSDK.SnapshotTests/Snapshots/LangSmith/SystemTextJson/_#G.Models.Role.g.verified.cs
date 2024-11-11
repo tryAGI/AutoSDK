@@ -63,6 +63,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Role" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="displayName"></param>
+        /// <param name="description"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="permissions"></param>
+        /// <param name="accessScope"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Role(
+            global::System.Guid id,
+            string name,
+            string displayName,
+            string description,
+            global::System.Collections.Generic.IList<string> permissions,
+            global::System.Guid? organizationId,
+            global::G.AccessScope? accessScope)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
+            this.OrganizationId = organizationId;
+            this.AccessScope = accessScope;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Role" /> class.
+        /// </summary>
+        public Role()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

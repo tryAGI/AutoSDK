@@ -31,6 +31,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// A unique ID for the request (not the message). Repeated identical requests<br/>
+        /// get different IDs. However, for a streaming response, the ID will be the same<br/>
+        /// for all responses in the stream.
+        /// </param>
+        /// <param name="outputs"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatResponse(
+            string id,
+            global::System.Collections.Generic.IList<global::G.ChatOutput> outputs)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Outputs = outputs ?? throw new global::System.ArgumentNullException(nameof(outputs));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatResponse" /> class.
+        /// </summary>
+        public ChatResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

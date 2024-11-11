@@ -75,6 +75,52 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunGet" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="pipelineId"></param>
+        /// <param name="pointers"></param>
+        /// <param name="state">
+        /// An enumeration.
+        /// </param>
+        /// <param name="computeTimeMs"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="endedAt"></param>
+        /// <param name="accelerators"></param>
+        public RunGet(
+            string id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string pipelineId,
+            global::G.RunState state,
+            global::System.Collections.Generic.IList<string>? pointers,
+            int? computeTimeMs,
+            global::System.DateTime? startedAt,
+            global::System.DateTime? endedAt,
+            global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.PipelineId = pipelineId ?? throw new global::System.ArgumentNullException(nameof(pipelineId));
+            this.State = state;
+            this.Pointers = pointers;
+            this.ComputeTimeMs = computeTimeMs;
+            this.StartedAt = startedAt;
+            this.EndedAt = endedAt;
+            this.Accelerators = accelerators;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunGet" /> class.
+        /// </summary>
+        public RunGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

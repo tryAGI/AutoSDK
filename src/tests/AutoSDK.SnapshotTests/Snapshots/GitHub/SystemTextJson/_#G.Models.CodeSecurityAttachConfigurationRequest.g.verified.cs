@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityAttachConfigurationRequest" /> class.
+        /// </summary>
+        /// <param name="scope">
+        /// The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
+        /// </param>
+        /// <param name="selectedRepositoryIds">
+        /// An array of repository IDs to attach the configuration to. You can only provide a list of repository ids when the `scope` is set to `selected`.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeSecurityAttachConfigurationRequest(
+            global::G.CodeSecurityAttachConfigurationRequestScope scope,
+            global::System.Collections.Generic.IList<int>? selectedRepositoryIds)
+        {
+            this.Scope = scope;
+            this.SelectedRepositoryIds = selectedRepositoryIds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityAttachConfigurationRequest" /> class.
+        /// </summary>
+        public CodeSecurityAttachConfigurationRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

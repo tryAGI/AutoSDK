@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryPropertyTarget" /> class.
+        /// </summary>
+        /// <param name="repositoryProperty"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryRulesetConditionsRepositoryPropertyTarget(
+            global::G.RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty repositoryProperty)
+        {
+            this.RepositoryProperty = repositoryProperty ?? throw new global::System.ArgumentNullException(nameof(repositoryProperty));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryPropertyTarget" /> class.
+        /// </summary>
+        public RepositoryRulesetConditionsRepositoryPropertyTarget()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

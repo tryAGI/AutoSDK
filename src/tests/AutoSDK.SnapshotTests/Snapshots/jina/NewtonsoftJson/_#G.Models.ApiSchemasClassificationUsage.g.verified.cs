@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiSchemasClassificationUsage" /> class.
+        /// </summary>
+        /// <param name="totalTokens">
+        /// The number of tokens used by all the texts in the input
+        /// </param>
+        /// <param name="promptTokens">
+        /// Same as total_tokens
+        /// </param>
+        public ApiSchemasClassificationUsage(
+            int totalTokens,
+            int promptTokens)
+        {
+            this.TotalTokens = totalTokens;
+            this.PromptTokens = promptTokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiSchemasClassificationUsage" /> class.
+        /// </summary>
+        public ApiSchemasClassificationUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

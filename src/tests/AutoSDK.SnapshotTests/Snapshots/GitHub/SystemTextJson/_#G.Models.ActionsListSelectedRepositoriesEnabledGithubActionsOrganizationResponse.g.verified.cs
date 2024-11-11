@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="repositories"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse(
+            double totalCount,
+            global::System.Collections.Generic.IList<global::G.Repository> repositories)
+        {
+            this.TotalCount = totalCount;
+            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse" /> class.
+        /// </summary>
+        public ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

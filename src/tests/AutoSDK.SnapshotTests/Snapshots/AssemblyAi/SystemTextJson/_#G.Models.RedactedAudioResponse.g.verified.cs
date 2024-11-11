@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RedactedAudioResponse" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// The status of the redacted audio
+        /// </param>
+        /// <param name="redactedAudioUrl">
+        /// The URL of the redacted audio file
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RedactedAudioResponse(
+            string redactedAudioUrl,
+            global::G.RedactedAudioStatus status)
+        {
+            this.RedactedAudioUrl = redactedAudioUrl ?? throw new global::System.ArgumentNullException(nameof(redactedAudioUrl));
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RedactedAudioResponse" /> class.
+        /// </summary>
+        public RedactedAudioResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

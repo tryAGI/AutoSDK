@@ -152,6 +152,78 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedSubscriptionResponseModel" /> class.
+        /// </summary>
+        /// <param name="tier"></param>
+        /// <param name="characterCount"></param>
+        /// <param name="characterLimit"></param>
+        /// <param name="canExtendCharacterLimit"></param>
+        /// <param name="allowedToExtendCharacterLimit"></param>
+        /// <param name="nextCharacterCountResetUnix"></param>
+        /// <param name="voiceLimit"></param>
+        /// <param name="maxVoiceAddEdits"></param>
+        /// <param name="voiceAddEditCounter"></param>
+        /// <param name="professionalVoiceLimit"></param>
+        /// <param name="canExtendVoiceLimit"></param>
+        /// <param name="canUseInstantVoiceCloning"></param>
+        /// <param name="canUseProfessionalVoiceCloning"></param>
+        /// <param name="currency"></param>
+        /// <param name="status"></param>
+        /// <param name="billingPeriod"></param>
+        /// <param name="characterRefreshPeriod"></param>
+        /// <param name="nextInvoice"></param>
+        /// <param name="hasOpenInvoices"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ExtendedSubscriptionResponseModel(
+            string tier,
+            int characterCount,
+            int characterLimit,
+            bool canExtendCharacterLimit,
+            bool allowedToExtendCharacterLimit,
+            int nextCharacterCountResetUnix,
+            int voiceLimit,
+            int maxVoiceAddEdits,
+            int voiceAddEditCounter,
+            int professionalVoiceLimit,
+            bool canExtendVoiceLimit,
+            bool canUseInstantVoiceCloning,
+            bool canUseProfessionalVoiceCloning,
+            global::G.ExtendedSubscriptionResponseModelCurrency currency,
+            global::G.ExtendedSubscriptionResponseModelStatus status,
+            global::G.ExtendedSubscriptionResponseModelBillingPeriod billingPeriod,
+            global::G.ExtendedSubscriptionResponseModelCharacterRefreshPeriod characterRefreshPeriod,
+            global::G.InvoiceResponseModel nextInvoice,
+            bool hasOpenInvoices)
+        {
+            this.Tier = tier ?? throw new global::System.ArgumentNullException(nameof(tier));
+            this.CharacterCount = characterCount;
+            this.CharacterLimit = characterLimit;
+            this.CanExtendCharacterLimit = canExtendCharacterLimit;
+            this.AllowedToExtendCharacterLimit = allowedToExtendCharacterLimit;
+            this.NextCharacterCountResetUnix = nextCharacterCountResetUnix;
+            this.VoiceLimit = voiceLimit;
+            this.MaxVoiceAddEdits = maxVoiceAddEdits;
+            this.VoiceAddEditCounter = voiceAddEditCounter;
+            this.ProfessionalVoiceLimit = professionalVoiceLimit;
+            this.CanExtendVoiceLimit = canExtendVoiceLimit;
+            this.CanUseInstantVoiceCloning = canUseInstantVoiceCloning;
+            this.CanUseProfessionalVoiceCloning = canUseProfessionalVoiceCloning;
+            this.Currency = currency;
+            this.Status = status;
+            this.BillingPeriod = billingPeriod;
+            this.CharacterRefreshPeriod = characterRefreshPeriod;
+            this.NextInvoice = nextInvoice ?? throw new global::System.ArgumentNullException(nameof(nextInvoice));
+            this.HasOpenInvoices = hasOpenInvoices;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtendedSubscriptionResponseModel" /> class.
+        /// </summary>
+        public ExtendedSubscriptionResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -51,6 +51,48 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookGollumPage" /> class.
+        /// </summary>
+        /// <param name="action">
+        /// The action that was performed on the page. Can be `created` or `edited`.
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Points to the HTML wiki page.
+        /// </param>
+        /// <param name="pageName">
+        /// The name of the page.
+        /// </param>
+        /// <param name="sha">
+        /// The latest commit SHA of the page.
+        /// </param>
+        /// <param name="summary"></param>
+        /// <param name="title">
+        /// The current page title.
+        /// </param>
+        public WebhookGollumPage(
+            global::G.WebhookGollumPageAction action,
+            string htmlUrl,
+            string pageName,
+            string sha,
+            string? summary,
+            string title)
+        {
+            this.Action = action;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.PageName = pageName ?? throw new global::System.ArgumentNullException(nameof(pageName));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookGollumPage" /> class.
+        /// </summary>
+        public WebhookGollumPage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

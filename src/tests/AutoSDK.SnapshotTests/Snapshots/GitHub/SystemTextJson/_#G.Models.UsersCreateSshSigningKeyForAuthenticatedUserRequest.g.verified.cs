@@ -29,6 +29,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersCreateSshSigningKeyForAuthenticatedUserRequest" /> class.
+        /// </summary>
+        /// <param name="title">
+        /// A descriptive name for the new key.<br/>
+        /// Example: Personal MacBook Air
+        /// </param>
+        /// <param name="key">
+        /// The public SSH key to add to your GitHub account. For more information, see "[Checking for existing SSH keys](https://docs.github.com/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)."
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UsersCreateSshSigningKeyForAuthenticatedUserRequest(
+            string key,
+            string? title)
+        {
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Title = title;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersCreateSshSigningKeyForAuthenticatedUserRequest" /> class.
+        /// </summary>
+        public UsersCreateSshSigningKeyForAuthenticatedUserRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

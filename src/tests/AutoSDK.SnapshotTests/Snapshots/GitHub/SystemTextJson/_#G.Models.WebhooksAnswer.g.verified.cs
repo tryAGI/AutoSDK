@@ -106,6 +106,62 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksAnswer" /> class.
+        /// </summary>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.
+        /// </param>
+        /// <param name="body"></param>
+        /// <param name="childCommentCount"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="discussionId"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="parentId"></param>
+        /// <param name="reactions"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="user"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhooksAnswer(
+            global::G.WebhooksAnswerAuthorAssociation authorAssociation,
+            string body,
+            int childCommentCount,
+            global::System.DateTime createdAt,
+            int discussionId,
+            string htmlUrl,
+            int id,
+            string nodeId,
+            object? parentId,
+            string repositoryUrl,
+            global::System.DateTime updatedAt,
+            global::G.WebhooksAnswerUser? user,
+            global::G.WebhooksAnswerReactions? reactions)
+        {
+            this.AuthorAssociation = authorAssociation;
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.ChildCommentCount = childCommentCount;
+            this.CreatedAt = createdAt;
+            this.DiscussionId = discussionId;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.ParentId = parentId ?? throw new global::System.ArgumentNullException(nameof(parentId));
+            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+            this.UpdatedAt = updatedAt;
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Reactions = reactions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksAnswer" /> class.
+        /// </summary>
+        public WebhooksAnswer()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

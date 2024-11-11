@@ -57,6 +57,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchRestrictionPolicy" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="usersUrl"></param>
+        /// <param name="teamsUrl"></param>
+        /// <param name="appsUrl"></param>
+        /// <param name="users"></param>
+        /// <param name="teams"></param>
+        /// <param name="apps"></param>
+        public BranchRestrictionPolicy(
+            string url,
+            string usersUrl,
+            string teamsUrl,
+            string appsUrl,
+            global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyUser> users,
+            global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyTeam> teams,
+            global::System.Collections.Generic.IList<global::G.BranchRestrictionPolicyApp> apps)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.UsersUrl = usersUrl ?? throw new global::System.ArgumentNullException(nameof(usersUrl));
+            this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
+            this.AppsUrl = appsUrl ?? throw new global::System.ArgumentNullException(nameof(appsUrl));
+            this.Users = users ?? throw new global::System.ArgumentNullException(nameof(users));
+            this.Teams = teams ?? throw new global::System.ArgumentNullException(nameof(teams));
+            this.Apps = apps ?? throw new global::System.ArgumentNullException(nameof(apps));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchRestrictionPolicy" /> class.
+        /// </summary>
+        public BranchRestrictionPolicy()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

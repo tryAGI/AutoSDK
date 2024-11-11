@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentBlockStartEvent" /> class.
+        /// </summary>
+        /// <param name="contentBlock">
+        /// A block of content in a message.
+        /// </param>
+        /// <param name="index">
+        /// The index of the content block.
+        /// </param>
+        /// <param name="type">
+        /// The type of a streaming event.
+        /// </param>
+        public ContentBlockStartEvent(
+            global::G.Block contentBlock,
+            int index,
+            global::G.MessageStreamEventType type)
+        {
+            this.ContentBlock = contentBlock;
+            this.Index = index;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentBlockStartEvent" /> class.
+        /// </summary>
+        public ContentBlockStartEvent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

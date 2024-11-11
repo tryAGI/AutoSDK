@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryTransferredChangesOwner" /> class.
+        /// </summary>
+        /// <param name="from"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookRepositoryTransferredChangesOwner(
+            global::G.WebhookRepositoryTransferredChangesOwnerFrom from)
+        {
+            this.From = from ?? throw new global::System.ArgumentNullException(nameof(from));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryTransferredChangesOwner" /> class.
+        /// </summary>
+        public WebhookRepositoryTransferredChangesOwner()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

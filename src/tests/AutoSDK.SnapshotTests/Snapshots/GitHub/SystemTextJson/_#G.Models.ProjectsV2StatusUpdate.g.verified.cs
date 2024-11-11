@@ -81,6 +81,56 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsV2StatusUpdate" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="projectNodeId"></param>
+        /// <param name="creator">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="status"></param>
+        /// <param name="startDate"></param>
+        /// <param name="targetDate"></param>
+        /// <param name="body">
+        /// Body of the status update<br/>
+        /// Example: The project is off to a great start!
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectsV2StatusUpdate(
+            double id,
+            string nodeId,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string? projectNodeId,
+            global::G.SimpleUser? creator,
+            global::G.ProjectsV2StatusUpdateStatus? status,
+            global::System.DateTime? startDate,
+            global::System.DateTime? targetDate,
+            string? body)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.ProjectNodeId = projectNodeId;
+            this.Creator = creator;
+            this.Status = status;
+            this.StartDate = startDate;
+            this.TargetDate = targetDate;
+            this.Body = body;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsV2StatusUpdate" /> class.
+        /// </summary>
+        public ProjectsV2StatusUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

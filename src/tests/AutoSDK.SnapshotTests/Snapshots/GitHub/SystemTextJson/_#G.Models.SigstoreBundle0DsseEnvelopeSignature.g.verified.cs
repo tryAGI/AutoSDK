@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0DsseEnvelopeSignature" /> class.
+        /// </summary>
+        /// <param name="sig"></param>
+        /// <param name="keyid"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SigstoreBundle0DsseEnvelopeSignature(
+            string? sig,
+            string? keyid)
+        {
+            this.Sig = sig;
+            this.Keyid = keyid;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0DsseEnvelopeSignature" /> class.
+        /// </summary>
+        public SigstoreBundle0DsseEnvelopeSignature()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

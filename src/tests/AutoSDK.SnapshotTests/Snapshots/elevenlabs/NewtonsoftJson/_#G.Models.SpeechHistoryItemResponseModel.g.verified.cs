@@ -117,6 +117,71 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SpeechHistoryItemResponseModel" /> class.
+        /// </summary>
+        /// <param name="historyItemId"></param>
+        /// <param name="requestId"></param>
+        /// <param name="voiceId"></param>
+        /// <param name="modelId"></param>
+        /// <param name="voiceName"></param>
+        /// <param name="voiceCategory"></param>
+        /// <param name="text"></param>
+        /// <param name="dateUnix"></param>
+        /// <param name="characterCountChangeFrom"></param>
+        /// <param name="characterCountChangeTo"></param>
+        /// <param name="contentType"></param>
+        /// <param name="state"></param>
+        /// <param name="settings"></param>
+        /// <param name="feedback"></param>
+        /// <param name="shareLinkId"></param>
+        /// <param name="source"></param>
+        /// <param name="alignments"></param>
+        public SpeechHistoryItemResponseModel(
+            string historyItemId,
+            string requestId,
+            string voiceId,
+            string modelId,
+            string voiceName,
+            global::G.SpeechHistoryItemResponseModelVoiceCategory voiceCategory,
+            string text,
+            int dateUnix,
+            int characterCountChangeFrom,
+            int characterCountChangeTo,
+            string contentType,
+            global::G.SpeechHistoryItemResponseModelState state,
+            object settings,
+            global::G.FeedbackResponseModel feedback,
+            string shareLinkId,
+            global::G.SpeechHistoryItemResponseModelSource source,
+            global::G.HistoryAlignmentsResponseModel? alignments)
+        {
+            this.HistoryItemId = historyItemId ?? throw new global::System.ArgumentNullException(nameof(historyItemId));
+            this.RequestId = requestId ?? throw new global::System.ArgumentNullException(nameof(requestId));
+            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
+            this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
+            this.VoiceName = voiceName ?? throw new global::System.ArgumentNullException(nameof(voiceName));
+            this.VoiceCategory = voiceCategory;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.DateUnix = dateUnix;
+            this.CharacterCountChangeFrom = characterCountChangeFrom;
+            this.CharacterCountChangeTo = characterCountChangeTo;
+            this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
+            this.State = state;
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
+            this.Feedback = feedback ?? throw new global::System.ArgumentNullException(nameof(feedback));
+            this.ShareLinkId = shareLinkId ?? throw new global::System.ArgumentNullException(nameof(shareLinkId));
+            this.Source = source;
+            this.Alignments = alignments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SpeechHistoryItemResponseModel" /> class.
+        /// </summary>
+        public SpeechHistoryItemResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

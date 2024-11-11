@@ -44,6 +44,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookStatusCommitCommitVerification" /> class.
+        /// </summary>
+        /// <param name="payload"></param>
+        /// <param name="reason"></param>
+        /// <param name="signature"></param>
+        /// <param name="verified"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookStatusCommitCommitVerification(
+            string? payload,
+            global::G.WebhookStatusCommitCommitVerificationReason reason,
+            string? signature,
+            bool verified)
+        {
+            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+            this.Reason = reason;
+            this.Signature = signature ?? throw new global::System.ArgumentNullException(nameof(signature));
+            this.Verified = verified;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookStatusCommitCommitVerification" /> class.
+        /// </summary>
+        public WebhookStatusCommitCommitVerification()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

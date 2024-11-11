@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCreateWorkflowDispatchRequest" /> class.
+        /// </summary>
+        /// <param name="ref">
+        /// The git reference for the workflow. The reference can be a branch or tag name.
+        /// </param>
+        /// <param name="inputs">
+        /// Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsCreateWorkflowDispatchRequest(
+            string @ref,
+            object? inputs)
+        {
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.Inputs = inputs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCreateWorkflowDispatchRequest" /> class.
+        /// </summary>
+        public ActionsCreateWorkflowDispatchRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCreateEnvironmentVariableRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the variable.
+        /// </param>
+        /// <param name="value">
+        /// The value of the variable.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsCreateEnvironmentVariableRequest(
+            string name,
+            string value)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCreateEnvironmentVariableRequest" /> class.
+        /// </summary>
+        public ActionsCreateEnvironmentVariableRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

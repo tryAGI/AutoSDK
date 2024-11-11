@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestReviewCommentLinksHtml" /> class.
+        /// </summary>
+        /// <param name="href">
+        /// Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
+        /// </param>
+        public PullRequestReviewCommentLinksHtml(
+            string href)
+        {
+            this.Href = href ?? throw new global::System.ArgumentNullException(nameof(href));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestReviewCommentLinksHtml" /> class.
+        /// </summary>
+        public PullRequestReviewCommentLinksHtml()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

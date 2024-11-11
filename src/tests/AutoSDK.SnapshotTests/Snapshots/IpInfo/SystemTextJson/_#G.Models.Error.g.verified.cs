@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Error" /> class.
+        /// </summary>
+        /// <param name="error1"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Error(
+            global::G.ErrorError1 error1)
+        {
+            this.Error1 = error1 ?? throw new global::System.ArgumentNullException(nameof(error1));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Error" /> class.
+        /// </summary>
+        public Error()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

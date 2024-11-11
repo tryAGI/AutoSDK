@@ -235,6 +235,129 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookInstallationTargetRenamedAccount" /> class.
+        /// </summary>
+        /// <param name="archivedAt"></param>
+        /// <param name="avatarUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="description"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="followers"></param>
+        /// <param name="followersUrl"></param>
+        /// <param name="following"></param>
+        /// <param name="followingUrl"></param>
+        /// <param name="gistsUrl"></param>
+        /// <param name="gravatarId"></param>
+        /// <param name="hasOrganizationProjects"></param>
+        /// <param name="hasRepositoryProjects"></param>
+        /// <param name="hooksUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="isVerified"></param>
+        /// <param name="issuesUrl"></param>
+        /// <param name="login"></param>
+        /// <param name="membersUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="organizationsUrl"></param>
+        /// <param name="publicGists"></param>
+        /// <param name="publicMembersUrl"></param>
+        /// <param name="publicRepos"></param>
+        /// <param name="receivedEventsUrl"></param>
+        /// <param name="reposUrl"></param>
+        /// <param name="siteAdmin"></param>
+        /// <param name="slug"></param>
+        /// <param name="starredUrl"></param>
+        /// <param name="subscriptionsUrl"></param>
+        /// <param name="type"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="websiteUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookInstallationTargetRenamedAccount(
+            string avatarUrl,
+            string htmlUrl,
+            int id,
+            string nodeId,
+            string? archivedAt,
+            string? createdAt,
+            object? description,
+            string? eventsUrl,
+            int? followers,
+            string? followersUrl,
+            int? following,
+            string? followingUrl,
+            string? gistsUrl,
+            string? gravatarId,
+            bool? hasOrganizationProjects,
+            bool? hasRepositoryProjects,
+            string? hooksUrl,
+            bool? isVerified,
+            string? issuesUrl,
+            string? login,
+            string? membersUrl,
+            string? name,
+            string? organizationsUrl,
+            int? publicGists,
+            string? publicMembersUrl,
+            int? publicRepos,
+            string? receivedEventsUrl,
+            string? reposUrl,
+            bool? siteAdmin,
+            string? slug,
+            string? starredUrl,
+            string? subscriptionsUrl,
+            string? type,
+            string? updatedAt,
+            string? url,
+            object? websiteUrl)
+        {
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.ArchivedAt = archivedAt;
+            this.CreatedAt = createdAt;
+            this.Description = description;
+            this.EventsUrl = eventsUrl;
+            this.Followers = followers;
+            this.FollowersUrl = followersUrl;
+            this.Following = following;
+            this.FollowingUrl = followingUrl;
+            this.GistsUrl = gistsUrl;
+            this.GravatarId = gravatarId;
+            this.HasOrganizationProjects = hasOrganizationProjects;
+            this.HasRepositoryProjects = hasRepositoryProjects;
+            this.HooksUrl = hooksUrl;
+            this.IsVerified = isVerified;
+            this.IssuesUrl = issuesUrl;
+            this.Login = login;
+            this.MembersUrl = membersUrl;
+            this.Name = name;
+            this.OrganizationsUrl = organizationsUrl;
+            this.PublicGists = publicGists;
+            this.PublicMembersUrl = publicMembersUrl;
+            this.PublicRepos = publicRepos;
+            this.ReceivedEventsUrl = receivedEventsUrl;
+            this.ReposUrl = reposUrl;
+            this.SiteAdmin = siteAdmin;
+            this.Slug = slug;
+            this.StarredUrl = starredUrl;
+            this.SubscriptionsUrl = subscriptionsUrl;
+            this.Type = type;
+            this.UpdatedAt = updatedAt;
+            this.Url = url;
+            this.WebsiteUrl = websiteUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookInstallationTargetRenamedAccount" /> class.
+        /// </summary>
+        public WebhookInstallationTargetRenamedAccount()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

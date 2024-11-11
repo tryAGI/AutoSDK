@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchAdminEnforced" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/enforce_admins
+        /// </param>
+        /// <param name="enabled">
+        /// Example: true
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProtectedBranchAdminEnforced(
+            string url,
+            bool enabled)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Enabled = enabled;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchAdminEnforced" /> class.
+        /// </summary>
+        public ProtectedBranchAdminEnforced()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

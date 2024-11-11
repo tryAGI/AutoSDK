@@ -39,6 +39,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCompletionResponseChoiceLogprobs" /> class.
+        /// </summary>
+        /// <param name="textOffset"></param>
+        /// <param name="tokenLogprobs"></param>
+        /// <param name="tokens"></param>
+        /// <param name="topLogprobs"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateCompletionResponseChoiceLogprobs(
+            global::System.Collections.Generic.IList<int>? textOffset,
+            global::System.Collections.Generic.IList<double>? tokenLogprobs,
+            global::System.Collections.Generic.IList<string>? tokens,
+            global::System.Collections.Generic.IList<global::System.Collections.Generic.Dictionary<string, double>>? topLogprobs)
+        {
+            this.TextOffset = textOffset;
+            this.TokenLogprobs = tokenLogprobs;
+            this.Tokens = tokens;
+            this.TopLogprobs = topLogprobs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCompletionResponseChoiceLogprobs" /> class.
+        /// </summary>
+        public CreateCompletionResponseChoiceLogprobs()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

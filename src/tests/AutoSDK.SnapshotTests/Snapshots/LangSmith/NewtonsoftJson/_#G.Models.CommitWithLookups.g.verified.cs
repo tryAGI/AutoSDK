@@ -81,6 +81,53 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitWithLookups" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="manifest"></param>
+        /// <param name="repoId"></param>
+        /// <param name="parentId"></param>
+        /// <param name="commitHash"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="exampleRunIds"></param>
+        /// <param name="numDownloads"></param>
+        /// <param name="numViews"></param>
+        /// <param name="parentCommitHash"></param>
+        public CommitWithLookups(
+            global::System.Guid id,
+            object manifest,
+            global::System.Guid repoId,
+            string commitHash,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::System.Collections.Generic.IList<global::System.Guid> exampleRunIds,
+            int numDownloads,
+            int numViews,
+            global::System.Guid? parentId,
+            string? parentCommitHash)
+        {
+            this.Id = id;
+            this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
+            this.RepoId = repoId;
+            this.CommitHash = commitHash ?? throw new global::System.ArgumentNullException(nameof(commitHash));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.ExampleRunIds = exampleRunIds ?? throw new global::System.ArgumentNullException(nameof(exampleRunIds));
+            this.NumDownloads = numDownloads;
+            this.NumViews = numViews;
+            this.ParentId = parentId;
+            this.ParentCommitHash = parentCommitHash;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitWithLookups" /> class.
+        /// </summary>
+        public CommitWithLookups()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

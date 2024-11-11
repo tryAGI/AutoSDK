@@ -39,6 +39,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MonitorRequest" /> class.
+        /// </summary>
+        /// <param name="timezone">
+        /// Default Value: UTC
+        /// </param>
+        /// <param name="groups"></param>
+        /// <param name="interval">
+        /// Timedelta input.
+        /// </param>
+        /// <param name="stride">
+        /// Timedelta input.
+        /// </param>
+        public MonitorRequest(
+            global::System.Collections.Generic.IList<global::G.MonitorGroupSpec> groups,
+            string? timezone,
+            global::G.TimedeltaInput? interval,
+            global::G.TimedeltaInput? stride)
+        {
+            this.Groups = groups ?? throw new global::System.ArgumentNullException(nameof(groups));
+            this.Timezone = timezone;
+            this.Interval = interval;
+            this.Stride = stride;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MonitorRequest" /> class.
+        /// </summary>
+        public MonitorRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

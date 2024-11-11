@@ -69,6 +69,49 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SingleCustomChartResponse" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="metadata"></param>
+        /// <param name="index"></param>
+        /// <param name="chartType">
+        /// Enum for custom chart types.
+        /// </param>
+        /// <param name="series"></param>
+        /// <param name="commonFilters"></param>
+        public SingleCustomChartResponse(
+            global::System.Collections.Generic.IList<global::G.CustomChartsDataPoint> data,
+            global::System.Guid id,
+            string title,
+            int index,
+            global::G.CustomChartType chartType,
+            global::System.Collections.Generic.IList<global::G.CustomChartSeries> series,
+            string? description,
+            object? metadata,
+            global::G.CustomChartSeriesFilters? commonFilters)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Id = id;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Index = index;
+            this.ChartType = chartType;
+            this.Series = series ?? throw new global::System.ArgumentNullException(nameof(series));
+            this.Description = description;
+            this.Metadata = metadata;
+            this.CommonFilters = commonFilters;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SingleCustomChartResponse" /> class.
+        /// </summary>
+        public SingleCustomChartResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

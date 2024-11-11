@@ -27,6 +27,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVariationUpscaleResponseSdUpscaleJob" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="apiCreditCost">
+        /// API Credits Cost for Upscale Variation. Available for Production API Users.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateVariationUpscaleResponseSdUpscaleJob(
+            string? id,
+            int? apiCreditCost)
+        {
+            this.Id = id;
+            this.ApiCreditCost = apiCreditCost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVariationUpscaleResponseSdUpscaleJob" /> class.
+        /// </summary>
+        public CreateVariationUpscaleResponseSdUpscaleJob()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -66,6 +66,57 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitTag" /> class.
+        /// </summary>
+        /// <param name="nodeId">
+        /// Example: MDM6VGFnOTQwYmQzMzYyNDhlZmFlMGY5ZWU1YmM3YjJkNWM5ODU4ODdiMTZhYw==
+        /// </param>
+        /// <param name="tag">
+        /// Name of the tag<br/>
+        /// Example: v0.0.1
+        /// </param>
+        /// <param name="sha">
+        /// Example: 940bd336248efae0f9ee5bc7b2d5c985887b16ac
+        /// </param>
+        /// <param name="url">
+        /// URL for the tag<br/>
+        /// Example: https://api.github.com/repositories/42/git/tags/940bd336248efae0f9ee5bc7b2d5c985887b16ac
+        /// </param>
+        /// <param name="message">
+        /// Message describing the purpose of the tag<br/>
+        /// Example: Initial public release
+        /// </param>
+        /// <param name="tagger"></param>
+        /// <param name="object"></param>
+        /// <param name="verification"></param>
+        public GitTag(
+            string nodeId,
+            string tag,
+            string sha,
+            string url,
+            string message,
+            global::G.GitTagTagger tagger,
+            global::G.GitTagObject @object,
+            global::G.Verification? verification)
+        {
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Tag = tag ?? throw new global::System.ArgumentNullException(nameof(tag));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Tagger = tagger ?? throw new global::System.ArgumentNullException(nameof(tagger));
+            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+            this.Verification = verification;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitTag" /> class.
+        /// </summary>
+        public GitTag()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

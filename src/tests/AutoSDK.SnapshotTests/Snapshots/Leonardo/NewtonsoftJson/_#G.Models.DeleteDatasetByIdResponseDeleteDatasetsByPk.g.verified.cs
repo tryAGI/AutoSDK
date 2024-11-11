@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteDatasetByIdResponseDeleteDatasetsByPk" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        public DeleteDatasetByIdResponseDeleteDatasetsByPk(
+            string? id)
+        {
+            this.Id = id;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteDatasetByIdResponseDeleteDatasetsByPk" /> class.
+        /// </summary>
+        public DeleteDatasetByIdResponseDeleteDatasetsByPk()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

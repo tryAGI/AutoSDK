@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateRunRequestToolDiscriminator" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        public CreateRunRequestToolDiscriminator(
+            global::G.CreateRunRequestToolDiscriminatorType? type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateRunRequestToolDiscriminator" /> class.
+        /// </summary>
+        public CreateRunRequestToolDiscriminator()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

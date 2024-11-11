@@ -41,6 +41,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurQuestion" /> class.
+        /// </summary>
+        /// <param name="question">
+        /// The question you wish to ask. For more complex questions use default model.
+        /// </param>
+        /// <param name="context">
+        /// Any context about the transcripts you wish to provide. This can be a string or any object.
+        /// </param>
+        /// <param name="answerFormat">
+        /// How you want the answer to be returned. This can be any text. Can't be used with answer_options. Examples: "short sentence", "bullet points"
+        /// </param>
+        /// <param name="answerOptions">
+        /// What discrete options to return. Useful for precise responses. Can't be used with answer_format. Example: ["Yes", "No"]
+        /// </param>
+        public LemurQuestion(
+            string question,
+            global::G.OneOf<string, object>? context,
+            string? answerFormat,
+            global::System.Collections.Generic.IList<string>? answerOptions)
+        {
+            this.Question = question ?? throw new global::System.ArgumentNullException(nameof(question));
+            this.Context = context;
+            this.AnswerFormat = answerFormat;
+            this.AnswerOptions = answerOptions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurQuestion" /> class.
+        /// </summary>
+        public LemurQuestion()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

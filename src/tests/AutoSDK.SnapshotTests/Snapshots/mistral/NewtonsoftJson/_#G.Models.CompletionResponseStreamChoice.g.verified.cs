@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionResponseStreamChoice" /> class.
+        /// </summary>
+        /// <param name="delta"></param>
+        /// <param name="finishReason"></param>
+        /// <param name="index"></param>
+        public CompletionResponseStreamChoice(
+            global::G.DeltaMessage delta,
+            global::G.CompletionResponseStreamChoiceFinishReason? finishReason,
+            int index)
+        {
+            this.Delta = delta ?? throw new global::System.ArgumentNullException(nameof(delta));
+            this.FinishReason = finishReason;
+            this.Index = index;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionResponseStreamChoice" /> class.
+        /// </summary>
+        public CompletionResponseStreamChoice()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

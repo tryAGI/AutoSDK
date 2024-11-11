@@ -22,6 +22,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetRemainingCreditAdminResponse" /> class.
+        /// </summary>
+        /// <param name="amount">
+        /// The requested credit.
+        /// </param>
+        public GetRemainingCreditAdminResponse(
+            float? amount)
+        {
+            this.Amount = amount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetRemainingCreditAdminResponse" /> class.
+        /// </summary>
+        public GetRemainingCreditAdminResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

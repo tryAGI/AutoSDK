@@ -41,6 +41,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConduitShardsResponseError" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Shard ID.
+        /// </param>
+        /// <param name="message">
+        /// The error that occurred while updating the shard. Possible errors:  <br/>
+        ///   <br/>
+        /// * The length of the string in the secret field is not valid.<br/>
+        /// * The URL in the transport's callback field is not valid. The URL must use the HTTPS protocol and the 443 port number.<br/>
+        /// * The value specified in the method field is not valid.<br/>
+        /// * The callback field is required if you specify the webhook transport method.<br/>
+        /// * The session\_id field is required if you specify the WebSocket transport method.<br/>
+        /// * The websocket session is not connected.<br/>
+        /// * The shard id is outside of the conduit’s range.
+        /// </param>
+        /// <param name="code">
+        /// Error codes used to represent a specific error condition while attempting to update shards.
+        /// </param>
+        public UpdateConduitShardsResponseError(
+            string id,
+            string message,
+            string code)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConduitShardsResponseError" /> class.
+        /// </summary>
+        public UpdateConduitShardsResponseError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

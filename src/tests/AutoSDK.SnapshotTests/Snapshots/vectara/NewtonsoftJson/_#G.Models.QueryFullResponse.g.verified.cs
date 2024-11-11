@@ -47,6 +47,47 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryFullResponse" /> class.
+        /// </summary>
+        /// <param name="summary">
+        /// The summary of the search results.
+        /// </param>
+        /// <param name="responseLanguage">
+        /// Languages that the Vectara platform supports.<br/>
+        /// Default Value: auto
+        /// </param>
+        /// <param name="searchResults">
+        /// The ranked search results.
+        /// </param>
+        /// <param name="factualConsistencyScore">
+        /// The probability that the summary is factually consistent with the results.
+        /// </param>
+        /// <param name="renderedPrompt">
+        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available<br/>
+        /// to Scale customers.
+        /// </param>
+        public QueryFullResponse(
+            string? summary,
+            global::G.Language? responseLanguage,
+            global::System.Collections.Generic.IList<global::G.IndividualSearchResult>? searchResults,
+            float? factualConsistencyScore,
+            string? renderedPrompt)
+        {
+            this.Summary = summary;
+            this.ResponseLanguage = responseLanguage;
+            this.SearchResults = searchResults;
+            this.FactualConsistencyScore = factualConsistencyScore;
+            this.RenderedPrompt = renderedPrompt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryFullResponse" /> class.
+        /// </summary>
+        public QueryFullResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

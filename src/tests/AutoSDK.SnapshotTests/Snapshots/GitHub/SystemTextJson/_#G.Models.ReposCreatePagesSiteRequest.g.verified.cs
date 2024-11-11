@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreatePagesSiteRequest" /> class.
+        /// </summary>
+        /// <param name="buildType">
+        /// The process in which the Page will be built. Possible values are `"legacy"` and `"workflow"`.
+        /// </param>
+        /// <param name="source">
+        /// The source branch and directory used to publish your Pages site.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposCreatePagesSiteRequest(
+            global::G.ReposCreatePagesSiteRequestBuildType? buildType,
+            global::G.ReposCreatePagesSiteRequestSource? source)
+        {
+            this.BuildType = buildType;
+            this.Source = source;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreatePagesSiteRequest" /> class.
+        /// </summary>
+        public ReposCreatePagesSiteRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

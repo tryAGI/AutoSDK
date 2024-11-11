@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateChannelStreamScheduleSegmentResponseDataVacation" /> class.
+        /// </summary>
+        /// <param name="startTime">
+        /// The UTC date and time (in RFC3339 format) of when the broadcaster’s vacation starts.
+        /// </param>
+        /// <param name="endTime">
+        /// The UTC date and time (in RFC3339 format) of when the broadcaster’s vacation ends.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateChannelStreamScheduleSegmentResponseDataVacation(
+            global::System.DateTime startTime,
+            global::System.DateTime endTime)
+        {
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateChannelStreamScheduleSegmentResponseDataVacation" /> class.
+        /// </summary>
+        public CreateChannelStreamScheduleSegmentResponseDataVacation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

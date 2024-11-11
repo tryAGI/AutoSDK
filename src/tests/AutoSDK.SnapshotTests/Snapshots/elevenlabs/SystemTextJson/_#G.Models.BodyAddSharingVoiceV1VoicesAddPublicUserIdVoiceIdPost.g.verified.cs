@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyAddSharingVoiceV1VoicesAddPublicUserIdVoiceIdPost" /> class.
+        /// </summary>
+        /// <param name="newName">
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyAddSharingVoiceV1VoicesAddPublicUserIdVoiceIdPost(
+            string newName)
+        {
+            this.NewName = newName ?? throw new global::System.ArgumentNullException(nameof(newName));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyAddSharingVoiceV1VoicesAddPublicUserIdVoiceIdPost" /> class.
+        /// </summary>
+        public BodyAddSharingVoiceV1VoicesAddPublicUserIdVoiceIdPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

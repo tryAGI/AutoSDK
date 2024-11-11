@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogActorSession" /> class.
+        /// </summary>
+        /// <param name="user">
+        /// The user who performed the audit logged action.
+        /// </param>
+        /// <param name="ipAddress">
+        /// The IP address from which the action was performed.
+        /// </param>
+        public AuditLogActorSession(
+            global::G.AuditLogActorUser? user,
+            string? ipAddress)
+        {
+            this.User = user;
+            this.IpAddress = ipAddress;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogActorSession" /> class.
+        /// </summary>
+        public AuditLogActorSession()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

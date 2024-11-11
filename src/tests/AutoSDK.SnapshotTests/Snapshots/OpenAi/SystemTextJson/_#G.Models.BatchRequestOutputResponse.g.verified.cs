@@ -33,6 +33,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestOutputResponse" /> class.
+        /// </summary>
+        /// <param name="statusCode">
+        /// The HTTP status code of the response
+        /// </param>
+        /// <param name="requestId">
+        /// An unique identifier for the OpenAI API request. Please include this request ID when contacting support.
+        /// </param>
+        /// <param name="body">
+        /// The JSON body of the response
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BatchRequestOutputResponse(
+            int? statusCode,
+            string? requestId,
+            object? body)
+        {
+            this.StatusCode = statusCode;
+            this.RequestId = requestId;
+            this.Body = body;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchRequestOutputResponse" /> class.
+        /// </summary>
+        public BatchRequestOutputResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

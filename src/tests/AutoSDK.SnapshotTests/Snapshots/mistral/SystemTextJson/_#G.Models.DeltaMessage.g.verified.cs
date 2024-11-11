@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeltaMessage" /> class.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="role"></param>
+        /// <param name="toolCalls"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DeltaMessage(
+            string? content,
+            string? role,
+            global::System.Collections.Generic.IList<global::G.ToolCall>? toolCalls)
+        {
+            this.Content = content;
+            this.Role = role;
+            this.ToolCalls = toolCalls;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeltaMessage" /> class.
+        /// </summary>
+        public DeltaMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -81,6 +81,53 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFile" /> class.
+        /// </summary>
+        /// <param name="contentType"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="downloadUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="md5"></param>
+        /// <param name="name"></param>
+        /// <param name="sha1"></param>
+        /// <param name="sha256"></param>
+        /// <param name="size"></param>
+        /// <param name="state"></param>
+        /// <param name="updatedAt"></param>
+        public WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFile(
+            string? contentType,
+            string? createdAt,
+            string? downloadUrl,
+            int? id,
+            string? md5,
+            string? name,
+            string? sha1,
+            string? sha256,
+            int? size,
+            string? state,
+            string? updatedAt)
+        {
+            this.ContentType = contentType;
+            this.CreatedAt = createdAt;
+            this.DownloadUrl = downloadUrl;
+            this.Id = id;
+            this.Md5 = md5;
+            this.Name = name;
+            this.Sha1 = sha1;
+            this.Sha256 = sha256;
+            this.Size = size;
+            this.State = state;
+            this.UpdatedAt = updatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFile" /> class.
+        /// </summary>
+        public WebhookRegistryPackageUpdatedRegistryPackagePackageVersionPackageFile()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

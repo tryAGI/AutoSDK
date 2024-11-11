@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RenamedIssueEventRename" /> class.
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
+        public RenamedIssueEventRename(
+            string from,
+            string to)
+        {
+            this.From = from ?? throw new global::System.ArgumentNullException(nameof(from));
+            this.To = to ?? throw new global::System.ArgumentNullException(nameof(to));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RenamedIssueEventRename" /> class.
+        /// </summary>
+        public RenamedIssueEventRename()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

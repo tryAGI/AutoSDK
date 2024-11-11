@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectSnapshotsResponseModel" /> class.
+        /// </summary>
+        /// <param name="snapshots"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectSnapshotsResponseModel(
+            global::System.Collections.Generic.IList<global::G.ProjectSnapshotResponseModel> snapshots)
+        {
+            this.Snapshots = snapshots ?? throw new global::System.ArgumentNullException(nameof(snapshots));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectSnapshotsResponseModel" /> class.
+        /// </summary>
+        public ProjectSnapshotsResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

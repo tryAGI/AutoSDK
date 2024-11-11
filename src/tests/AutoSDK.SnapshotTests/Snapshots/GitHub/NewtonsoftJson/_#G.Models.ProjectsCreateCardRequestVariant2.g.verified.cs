@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsCreateCardRequestVariant2" /> class.
+        /// </summary>
+        /// <param name="contentId">
+        /// The unique identifier of the content associated with the card<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="contentType">
+        /// The piece of content associated with the card<br/>
+        /// Example: PullRequest
+        /// </param>
+        public ProjectsCreateCardRequestVariant2(
+            int contentId,
+            string contentType)
+        {
+            this.ContentId = contentId;
+            this.ContentType = contentType ?? throw new global::System.ArgumentNullException(nameof(contentType));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsCreateCardRequestVariant2" /> class.
+        /// </summary>
+        public ProjectsCreateCardRequestVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

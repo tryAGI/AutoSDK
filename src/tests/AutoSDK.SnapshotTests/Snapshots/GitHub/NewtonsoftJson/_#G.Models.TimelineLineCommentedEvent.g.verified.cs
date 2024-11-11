@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineLineCommentedEvent" /> class.
+        /// </summary>
+        /// <param name="event"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="comments"></param>
+        public TimelineLineCommentedEvent(
+            string? @event,
+            string? nodeId,
+            global::System.Collections.Generic.IList<global::G.PullRequestReviewComment>? comments)
+        {
+            this.Event = @event;
+            this.NodeId = nodeId;
+            this.Comments = comments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineLineCommentedEvent" /> class.
+        /// </summary>
+        public TimelineLineCommentedEvent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GeoCoordinates" /> class.
+        /// </summary>
+        /// <param name="latitude">
+        /// The latitude of the point on earth in decimal form
+        /// </param>
+        /// <param name="longitude">
+        /// The longitude of the point on earth in decimal form
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GeoCoordinates(
+            float? latitude,
+            float? longitude)
+        {
+            this.Latitude = latitude;
+            this.Longitude = longitude;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GeoCoordinates" /> class.
+        /// </summary>
+        public GeoCoordinates()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

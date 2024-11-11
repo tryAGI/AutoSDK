@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LookUpModelAdminResponse" /> class.
+        /// </summary>
+        /// <param name="model"></param>
+        public LookUpModelAdminResponse(
+            global::G.Model? model)
+        {
+            this.Model = model;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LookUpModelAdminResponse" /> class.
+        /// </summary>
+        public LookUpModelAdminResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

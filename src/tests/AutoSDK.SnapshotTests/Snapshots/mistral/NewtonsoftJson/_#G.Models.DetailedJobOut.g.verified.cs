@@ -130,6 +130,90 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DetailedJobOut" /> class.
+        /// </summary>
+        /// <param name="autoStart"></param>
+        /// <param name="checkpoints">
+        /// Default Value: []
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="events">
+        /// Event items are created every time the status of a fine-tuning job changes. The timestamped list of all events is accessible here.<br/>
+        /// Default Value: []
+        /// </param>
+        /// <param name="fineTunedModel"></param>
+        /// <param name="hyperparameters"></param>
+        /// <param name="id"></param>
+        /// <param name="integrations"></param>
+        /// <param name="jobType"></param>
+        /// <param name="metadata"></param>
+        /// <param name="model">
+        /// The name of the model to fine-tune.
+        /// </param>
+        /// <param name="modifiedAt"></param>
+        /// <param name="object">
+        /// Default Value: job
+        /// </param>
+        /// <param name="repositories">
+        /// Default Value: []
+        /// </param>
+        /// <param name="status"></param>
+        /// <param name="suffix"></param>
+        /// <param name="trainedTokens"></param>
+        /// <param name="trainingFiles"></param>
+        /// <param name="validationFiles">
+        /// Default Value: []
+        /// </param>
+        public DetailedJobOut(
+            bool autoStart,
+            int createdAt,
+            global::G.TrainingParameters hyperparameters,
+            global::System.Guid id,
+            string jobType,
+            global::G.FineTuneableModel model,
+            int modifiedAt,
+            global::G.DetailedJobOutStatus status,
+            global::System.Collections.Generic.IList<global::System.Guid> trainingFiles,
+            global::System.Collections.Generic.IList<global::G.CheckpointOut>? checkpoints,
+            global::System.Collections.Generic.IList<global::G.EventOut>? events,
+            string? fineTunedModel,
+            global::System.Collections.Generic.IList<global::G.IntegrationsItem>? integrations,
+            object? metadata,
+            global::G.DetailedJobOutObject? @object,
+            global::System.Collections.Generic.IList<global::G.RepositoriesItem>? repositories,
+            string? suffix,
+            int? trainedTokens,
+            global::System.Collections.Generic.IList<global::System.Guid>? validationFiles)
+        {
+            this.AutoStart = autoStart;
+            this.CreatedAt = createdAt;
+            this.Hyperparameters = hyperparameters ?? throw new global::System.ArgumentNullException(nameof(hyperparameters));
+            this.Id = id;
+            this.JobType = jobType ?? throw new global::System.ArgumentNullException(nameof(jobType));
+            this.Model = model;
+            this.ModifiedAt = modifiedAt;
+            this.Status = status;
+            this.TrainingFiles = trainingFiles ?? throw new global::System.ArgumentNullException(nameof(trainingFiles));
+            this.Checkpoints = checkpoints;
+            this.Events = events;
+            this.FineTunedModel = fineTunedModel;
+            this.Integrations = integrations;
+            this.Metadata = metadata;
+            this.Object = @object;
+            this.Repositories = repositories;
+            this.Suffix = suffix;
+            this.TrainedTokens = trainedTokens;
+            this.ValidationFiles = validationFiles;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DetailedJobOut" /> class.
+        /// </summary>
+        public DetailedJobOut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

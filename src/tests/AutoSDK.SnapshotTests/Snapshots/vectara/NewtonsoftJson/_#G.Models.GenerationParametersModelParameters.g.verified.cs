@@ -46,6 +46,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerationParametersModelParameters" /> class.
+        /// </summary>
+        /// <param name="maxTokens">
+        /// The maximum number of tokens to be returned by the model.
+        /// </param>
+        /// <param name="temperature">
+        /// The sampling temperature to use. Higher values make the output more random, while lower<br/>
+        /// values make it more focused and deterministic.
+        /// </param>
+        /// <param name="frequencyPenalty">
+        /// Higher values penalize new tokens based on their existing frequency in the text so far,<br/>
+        /// decreasing the model's likelihood to repeat the same line verbatim.
+        /// </param>
+        /// <param name="presencePenalty">
+        /// Higher values penalize new tokens based on whether they appear in the text so far,<br/>
+        /// increasing the model's likelihood to talk about new topics.
+        /// </param>
+        public GenerationParametersModelParameters(
+            int? maxTokens,
+            float? temperature,
+            float? frequencyPenalty,
+            float? presencePenalty)
+        {
+            this.MaxTokens = maxTokens;
+            this.Temperature = temperature;
+            this.FrequencyPenalty = frequencyPenalty;
+            this.PresencePenalty = presencePenalty;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerationParametersModelParameters" /> class.
+        /// </summary>
+        public GenerationParametersModelParameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

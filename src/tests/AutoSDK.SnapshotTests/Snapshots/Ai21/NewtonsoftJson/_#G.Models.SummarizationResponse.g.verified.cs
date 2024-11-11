@@ -29,6 +29,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SummarizationResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// A unique ID for the request (not the message). Repeated identical requests<br/>
+        /// get different IDs. However, for a streaming response, the ID will be the same<br/>
+        /// for all responses in the stream.
+        /// </param>
+        /// <param name="summary"></param>
+        public SummarizationResponse(
+            string id,
+            string summary)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SummarizationResponse" /> class.
+        /// </summary>
+        public SummarizationResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

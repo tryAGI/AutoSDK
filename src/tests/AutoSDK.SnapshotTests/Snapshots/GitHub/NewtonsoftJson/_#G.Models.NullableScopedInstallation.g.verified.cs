@@ -57,6 +57,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableScopedInstallation" /> class.
+        /// </summary>
+        /// <param name="permissions">
+        /// The permissions granted to the user access token.
+        /// </param>
+        /// <param name="repositorySelection">
+        /// Describe whether all repositories have been selected or there's a selection involved
+        /// </param>
+        /// <param name="singleFileName">
+        /// Example: config.yaml
+        /// </param>
+        /// <param name="hasMultipleSingleFiles">
+        /// Example: true
+        /// </param>
+        /// <param name="singleFilePaths">
+        /// Example: [config.yml, .github/issue_TEMPLATE.md]
+        /// </param>
+        /// <param name="repositoriesUrl">
+        /// Example: https://api.github.com/users/octocat/repos
+        /// </param>
+        /// <param name="account">
+        /// A GitHub user.
+        /// </param>
+        public NullableScopedInstallation(
+            global::G.AppPermissions permissions,
+            global::G.NullableScopedInstallationRepositorySelection repositorySelection,
+            string? singleFileName,
+            string repositoriesUrl,
+            global::G.SimpleUser account,
+            bool? hasMultipleSingleFiles,
+            global::System.Collections.Generic.IList<string>? singleFilePaths)
+        {
+            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
+            this.RepositorySelection = repositorySelection;
+            this.SingleFileName = singleFileName ?? throw new global::System.ArgumentNullException(nameof(singleFileName));
+            this.RepositoriesUrl = repositoriesUrl ?? throw new global::System.ArgumentNullException(nameof(repositoriesUrl));
+            this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
+            this.HasMultipleSingleFiles = hasMultipleSingleFiles;
+            this.SingleFilePaths = singleFilePaths;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableScopedInstallation" /> class.
+        /// </summary>
+        public NullableScopedInstallation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

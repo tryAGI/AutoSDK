@@ -68,6 +68,57 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Runner" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The id of the runner.<br/>
+        /// Example: 5
+        /// </param>
+        /// <param name="runnerGroupId">
+        /// The id of the runner group.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="name">
+        /// The name of the runner.<br/>
+        /// Example: iMac
+        /// </param>
+        /// <param name="os">
+        /// The Operating System of the runner.<br/>
+        /// Example: macos
+        /// </param>
+        /// <param name="status">
+        /// The status of the runner.<br/>
+        /// Example: online
+        /// </param>
+        /// <param name="busy"></param>
+        /// <param name="labels"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Runner(
+            int id,
+            string name,
+            string os,
+            string status,
+            bool busy,
+            global::System.Collections.Generic.IList<global::G.RunnerLabel> labels,
+            int? runnerGroupId)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Os = os ?? throw new global::System.ArgumentNullException(nameof(os));
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.Busy = busy;
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.RunnerGroupId = runnerGroupId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Runner" /> class.
+        /// </summary>
+        public Runner()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

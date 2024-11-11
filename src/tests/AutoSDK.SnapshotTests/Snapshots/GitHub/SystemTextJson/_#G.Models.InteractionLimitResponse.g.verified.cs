@@ -38,6 +38,35 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InteractionLimitResponse" /> class.
+        /// </summary>
+        /// <param name="limit">
+        /// The type of GitHub user that can comment, open issues, or create pull requests while the interaction limit is in effect.<br/>
+        /// Example: collaborators_only
+        /// </param>
+        /// <param name="origin">
+        /// Example: repository
+        /// </param>
+        /// <param name="expiresAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public InteractionLimitResponse(
+            global::G.InteractionGroup limit,
+            string origin,
+            global::System.DateTime expiresAt)
+        {
+            this.Limit = limit;
+            this.Origin = origin ?? throw new global::System.ArgumentNullException(nameof(origin));
+            this.ExpiresAt = expiresAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InteractionLimitResponse" /> class.
+        /// </summary>
+        public InteractionLimitResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -33,6 +33,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatDataMetrics" /> class.
+        /// </summary>
+        /// <param name="numTrainTurns">
+        /// The sum of all turns of valid train examples.
+        /// </param>
+        /// <param name="numEvalTurns">
+        /// The sum of all turns of valid eval examples.
+        /// </param>
+        /// <param name="preamble">
+        /// The preamble of this dataset.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatDataMetrics(
+            double? numTrainTurns,
+            double? numEvalTurns,
+            string? preamble)
+        {
+            this.NumTrainTurns = numTrainTurns;
+            this.NumEvalTurns = numEvalTurns;
+            this.Preamble = preamble;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatDataMetrics" /> class.
+        /// </summary>
+        public ChatDataMetrics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

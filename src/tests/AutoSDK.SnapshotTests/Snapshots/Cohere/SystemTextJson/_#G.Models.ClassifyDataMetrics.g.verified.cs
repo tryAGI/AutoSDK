@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifyDataMetrics" /> class.
+        /// </summary>
+        /// <param name="labelMetrics"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ClassifyDataMetrics(
+            global::System.Collections.Generic.IList<global::G.LabelMetric>? labelMetrics)
+        {
+            this.LabelMetrics = labelMetrics;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifyDataMetrics" /> class.
+        /// </summary>
+        public ClassifyDataMetrics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

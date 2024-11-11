@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemixImageRequest" /> class.
+        /// </summary>
+        /// <param name="imageRequest">
+        /// A request to generate a new image using a provided image and a prompt.
+        /// </param>
+        /// <param name="imageFile">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        /// <param name="imageFilename">
+        /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RemixImageRequest(
+            global::G.InitialImageRequest imageRequest,
+            byte[] imageFile,
+            string imageFilename)
+        {
+            this.ImageRequest = imageRequest ?? throw new global::System.ArgumentNullException(nameof(imageRequest));
+            this.ImageFile = imageFile ?? throw new global::System.ArgumentNullException(nameof(imageFile));
+            this.ImageFilename = imageFilename ?? throw new global::System.ArgumentNullException(nameof(imageFilename));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RemixImageRequest" /> class.
+        /// </summary>
+        public RemixImageRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

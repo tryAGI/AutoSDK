@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CollectionModuleConfig" /> class.
+        /// </summary>
+        /// <param name="vectorizeClassName">
+        /// Whether the name of the collection is used in determining the object vector.<br/>
+        /// Default Value: true
+        /// </param>
+        public CollectionModuleConfig(
+            bool? vectorizeClassName)
+        {
+            this.VectorizeClassName = vectorizeClassName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CollectionModuleConfig" /> class.
+        /// </summary>
+        public CollectionModuleConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

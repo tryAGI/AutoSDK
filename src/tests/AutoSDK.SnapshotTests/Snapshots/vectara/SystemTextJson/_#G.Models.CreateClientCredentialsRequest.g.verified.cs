@@ -42,6 +42,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateClientCredentialsRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the client credentials.
+        /// </param>
+        /// <param name="description">
+        /// Description of the client credentials.
+        /// </param>
+        /// <param name="type">
+        /// This will always be the value `client_credentials`.<br/>
+        /// Default Value: client_credentials
+        /// </param>
+        /// <param name="apiRoles">
+        /// API roles that the client credentials will have.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateClientCredentialsRequest(
+            string name,
+            string type,
+            string? description,
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Description = description;
+            this.ApiRoles = apiRoles;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateClientCredentialsRequest" /> class.
+        /// </summary>
+        public CreateClientCredentialsRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

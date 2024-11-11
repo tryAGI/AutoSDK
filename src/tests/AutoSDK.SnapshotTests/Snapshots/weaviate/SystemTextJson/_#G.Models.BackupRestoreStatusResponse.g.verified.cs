@@ -47,6 +47,47 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BackupRestoreStatusResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the backup. Must be URL-safe and work as a filesystem path, only lowercase, numbers, underscore, minus characters allowed.
+        /// </param>
+        /// <param name="backend">
+        /// Backup backend name e.g. filesystem, gcs, s3.
+        /// </param>
+        /// <param name="path">
+        /// destination path of backup files proper to selected backup backend
+        /// </param>
+        /// <param name="error">
+        /// error message if restoration failed
+        /// </param>
+        /// <param name="status">
+        /// phase of backup restoration process<br/>
+        /// Default Value: STARTED
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BackupRestoreStatusResponse(
+            string? id,
+            string? backend,
+            string? path,
+            string? error,
+            global::G.BackupRestoreStatusResponseStatus? status)
+        {
+            this.Id = id;
+            this.Backend = backend;
+            this.Path = path;
+            this.Error = error;
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BackupRestoreStatusResponse" /> class.
+        /// </summary>
+        public BackupRestoreStatusResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -211,6 +211,156 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewComment" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/1
+        /// </param>
+        /// <param name="pullRequestReviewId">
+        /// Example: 42L
+        /// </param>
+        /// <param name="id">
+        /// Example: 10L
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDI0OlB1bGxSZXF1ZXN0UmV2aWV3Q29tbWVudDEw
+        /// </param>
+        /// <param name="diffHunk">
+        /// Example: @@ -16,33 +16,40 @@ public class Connection : IConnection...
+        /// </param>
+        /// <param name="path">
+        /// Example: file1.txt
+        /// </param>
+        /// <param name="position">
+        /// Example: 1
+        /// </param>
+        /// <param name="originalPosition">
+        /// Example: 4
+        /// </param>
+        /// <param name="commitId">
+        /// Example: 6dcb09b5b57875f334f61aebed695e2e4193db5e
+        /// </param>
+        /// <param name="originalCommitId">
+        /// Example: 9c48853fa3dc5c1c3d6f1f1cd1f2743e72652840
+        /// </param>
+        /// <param name="inReplyToId">
+        /// Example: 8
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="body">
+        /// Example: Great stuff
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat/Hello-World/pull/1#discussion-diff-1
+        /// </param>
+        /// <param name="pullRequestUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1
+        /// </param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        /// <param name="links"></param>
+        /// <param name="bodyText"></param>
+        /// <param name="bodyHtml"></param>
+        /// <param name="reactions"></param>
+        /// <param name="side">
+        /// The side of the first line of the range for a multi-line comment.<br/>
+        /// Default Value: RIGHT
+        /// </param>
+        /// <param name="startSide">
+        /// The side of the first line of the range for a multi-line comment.<br/>
+        /// Default Value: RIGHT
+        /// </param>
+        /// <param name="line">
+        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
+        /// Example: 2
+        /// </param>
+        /// <param name="originalLine">
+        /// The original line of the blob to which the comment applies. The last line of the range for a multi-line comment<br/>
+        /// Example: 2
+        /// </param>
+        /// <param name="startLine">
+        /// The first line of the range for a multi-line comment.<br/>
+        /// Example: 2
+        /// </param>
+        /// <param name="originalStartLine">
+        /// The original first line of the range for a multi-line comment.<br/>
+        /// Example: 2
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReviewComment(
+            string url,
+            long? pullRequestReviewId,
+            long id,
+            string nodeId,
+            string diffHunk,
+            string path,
+            int? position,
+            int originalPosition,
+            string commitId,
+            string originalCommitId,
+            global::G.NullableSimpleUser? user,
+            string body,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string htmlUrl,
+            string pullRequestUrl,
+            global::G.AuthorAssociation authorAssociation,
+            global::G.ReviewCommentLinks links,
+            int? inReplyToId,
+            string? bodyText,
+            string? bodyHtml,
+            global::G.ReactionRollup? reactions,
+            global::G.ReviewCommentSide? side,
+            global::G.ReviewCommentStartSide? startSide,
+            int? line,
+            int? originalLine,
+            int? startLine,
+            int? originalStartLine)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.PullRequestReviewId = pullRequestReviewId;
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.DiffHunk = diffHunk ?? throw new global::System.ArgumentNullException(nameof(diffHunk));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Position = position;
+            this.OriginalPosition = originalPosition;
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
+            this.OriginalCommitId = originalCommitId ?? throw new global::System.ArgumentNullException(nameof(originalCommitId));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
+            this.AuthorAssociation = authorAssociation;
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.InReplyToId = inReplyToId;
+            this.BodyText = bodyText;
+            this.BodyHtml = bodyHtml;
+            this.Reactions = reactions;
+            this.Side = side;
+            this.StartSide = startSide;
+            this.Line = line;
+            this.OriginalLine = originalLine;
+            this.StartLine = startLine;
+            this.OriginalStartLine = originalStartLine;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewComment" /> class.
+        /// </summary>
+        public ReviewComment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendExtensionChatMessageBody" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// The message. The message may contain a maximum of 280 characters.
+        /// </param>
+        /// <param name="extensionId">
+        /// The ID of the extension that’s sending the chat message.
+        /// </param>
+        /// <param name="extensionVersion">
+        /// The extension’s version number.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SendExtensionChatMessageBody(
+            string text,
+            string extensionId,
+            string extensionVersion)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.ExtensionId = extensionId ?? throw new global::System.ArgumentNullException(nameof(extensionId));
+            this.ExtensionVersion = extensionVersion ?? throw new global::System.ArgumentNullException(nameof(extensionVersion));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendExtensionChatMessageBody" /> class.
+        /// </summary>
+        public SendExtensionChatMessageBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -34,6 +34,36 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StopwordConfig" /> class.
+        /// </summary>
+        /// <param name="preset">
+        /// pre-existing list of common words by language<br/>
+        /// Default Value: en
+        /// </param>
+        /// <param name="additions">
+        /// Stopwords to be considered additionally. Can be any array of custom strings.
+        /// </param>
+        /// <param name="removals">
+        /// stopwords to be removed from consideration. Can be any array of custom strings.
+        /// </param>
+        public StopwordConfig(
+            global::G.StopwordConfigPreset? preset,
+            global::System.Collections.Generic.IList<string>? additions,
+            global::System.Collections.Generic.IList<string>? removals)
+        {
+            this.Preset = preset;
+            this.Additions = additions;
+            this.Removals = removals;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StopwordConfig" /> class.
+        /// </summary>
+        public StopwordConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -79,6 +79,73 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MigrationsStartForAuthenticatedUserRequest" /> class.
+        /// </summary>
+        /// <param name="lockRepositories">
+        /// Lock the repositories being migrated at the start of the migration<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="excludeMetadata">
+        /// Indicates whether metadata should be excluded and only git source should be included for the migration.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="excludeGitData">
+        /// Indicates whether the repository git data should be excluded from the migration.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="excludeAttachments">
+        /// Do not include attachments in the migration<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="excludeReleases">
+        /// Do not include releases in the migration<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="excludeOwnerProjects">
+        /// Indicates whether projects owned by the organization or users should be excluded.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="orgMetadataOnly">
+        /// Indicates whether this should only include organization metadata (repositories array should be empty and will ignore other flags).<br/>
+        /// Default Value: false<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="exclude">
+        /// Exclude attributes from the API response to improve performance<br/>
+        /// Example: [repositories]
+        /// </param>
+        /// <param name="repositories"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MigrationsStartForAuthenticatedUserRequest(
+            global::System.Collections.Generic.IList<string> repositories,
+            bool? lockRepositories,
+            bool? excludeMetadata,
+            bool? excludeGitData,
+            bool? excludeAttachments,
+            bool? excludeReleases,
+            bool? excludeOwnerProjects,
+            bool? orgMetadataOnly,
+            global::System.Collections.Generic.IList<global::G.MigrationsStartForAuthenticatedUserRequestExcludeItem>? exclude)
+        {
+            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
+            this.LockRepositories = lockRepositories;
+            this.ExcludeMetadata = excludeMetadata;
+            this.ExcludeGitData = excludeGitData;
+            this.ExcludeAttachments = excludeAttachments;
+            this.ExcludeReleases = excludeReleases;
+            this.ExcludeOwnerProjects = excludeOwnerProjects;
+            this.OrgMetadataOnly = orgMetadataOnly;
+            this.Exclude = exclude;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MigrationsStartForAuthenticatedUserRequest" /> class.
+        /// </summary>
+        public MigrationsStartForAuthenticatedUserRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

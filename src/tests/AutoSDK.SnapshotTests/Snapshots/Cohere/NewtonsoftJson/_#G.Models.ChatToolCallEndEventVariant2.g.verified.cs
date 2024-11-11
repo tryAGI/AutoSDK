@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatToolCallEndEventVariant2" /> class.
+        /// </summary>
+        /// <param name="index"></param>
+        public ChatToolCallEndEventVariant2(
+            int? index)
+        {
+            this.Index = index;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatToolCallEndEventVariant2" /> class.
+        /// </summary>
+        public ChatToolCallEndEventVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

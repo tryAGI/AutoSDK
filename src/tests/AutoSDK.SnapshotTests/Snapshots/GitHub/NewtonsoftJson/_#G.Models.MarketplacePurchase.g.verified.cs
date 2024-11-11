@@ -63,6 +63,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketplacePurchase" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="type"></param>
+        /// <param name="id"></param>
+        /// <param name="login"></param>
+        /// <param name="organizationBillingEmail"></param>
+        /// <param name="email"></param>
+        /// <param name="marketplacePendingChange"></param>
+        /// <param name="marketplacePurchase1"></param>
+        public MarketplacePurchase(
+            string url,
+            string type,
+            int id,
+            string login,
+            global::G.MarketplacePurchaseMarketplacePurchase1 marketplacePurchase1,
+            string? organizationBillingEmail,
+            string? email,
+            global::G.MarketplacePurchaseMarketplacePendingChange? marketplacePendingChange)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Id = id;
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.MarketplacePurchase1 = marketplacePurchase1 ?? throw new global::System.ArgumentNullException(nameof(marketplacePurchase1));
+            this.OrganizationBillingEmail = organizationBillingEmail;
+            this.Email = email;
+            this.MarketplacePendingChange = marketplacePendingChange;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketplacePurchase" /> class.
+        /// </summary>
+        public MarketplacePurchase()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

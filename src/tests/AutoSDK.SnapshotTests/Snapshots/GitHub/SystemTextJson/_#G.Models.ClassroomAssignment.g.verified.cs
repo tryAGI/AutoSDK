@@ -165,6 +165,132 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassroomAssignment" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the repository.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="publicRepo">
+        /// Whether an accepted assignment creates a public repository.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="title">
+        /// Assignment title.<br/>
+        /// Example: Intro to Binaries
+        /// </param>
+        /// <param name="type">
+        /// Whether it's a group assignment or individual assignment.<br/>
+        /// Example: individual
+        /// </param>
+        /// <param name="inviteLink">
+        /// The link that a student can use to accept the assignment.<br/>
+        /// Example: https://classroom.github.com/a/Lx7jiUgx
+        /// </param>
+        /// <param name="invitationsEnabled">
+        /// Whether the invitation link is enabled. Visiting an enabled invitation link will accept the assignment.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="slug">
+        /// Sluggified name of the assignment.<br/>
+        /// Example: intro-to-binaries
+        /// </param>
+        /// <param name="studentsAreRepoAdmins">
+        /// Whether students are admins on created repository when a student accepts the assignment.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="feedbackPullRequestsEnabled">
+        /// Whether feedback pull request will be created when a student accepts the assignment.<br/>
+        /// Example: true
+        /// </param>
+        /// <param name="maxTeams">
+        /// The maximum allowable teams for the assignment.<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="maxMembers">
+        /// The maximum allowable members per team.<br/>
+        /// Example: 0
+        /// </param>
+        /// <param name="editor">
+        /// The selected editor for the assignment.<br/>
+        /// Example: codespaces
+        /// </param>
+        /// <param name="accepted">
+        /// The number of students that have accepted the assignment.<br/>
+        /// Example: 25
+        /// </param>
+        /// <param name="submitted">
+        /// The number of students that have submitted the assignment.<br/>
+        /// Example: 10
+        /// </param>
+        /// <param name="passing">
+        /// The number of students that have passed the assignment.<br/>
+        /// Example: 10
+        /// </param>
+        /// <param name="language">
+        /// The programming language used in the assignment.<br/>
+        /// Example: elixir
+        /// </param>
+        /// <param name="deadline">
+        /// The time at which the assignment is due.
+        /// </param>
+        /// <param name="starterCodeRepository">
+        /// A GitHub repository view for Classroom
+        /// </param>
+        /// <param name="classroom">
+        /// A GitHub Classroom classroom
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ClassroomAssignment(
+            int id,
+            bool publicRepo,
+            string title,
+            global::G.ClassroomAssignmentType type,
+            string inviteLink,
+            bool invitationsEnabled,
+            string slug,
+            bool studentsAreRepoAdmins,
+            bool feedbackPullRequestsEnabled,
+            int? maxTeams,
+            int? maxMembers,
+            string editor,
+            int accepted,
+            int submitted,
+            int passing,
+            string language,
+            global::System.DateTime? deadline,
+            global::G.SimpleClassroomRepository starterCodeRepository,
+            global::G.Classroom classroom)
+        {
+            this.Id = id;
+            this.PublicRepo = publicRepo;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Type = type;
+            this.InviteLink = inviteLink ?? throw new global::System.ArgumentNullException(nameof(inviteLink));
+            this.InvitationsEnabled = invitationsEnabled;
+            this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.StudentsAreRepoAdmins = studentsAreRepoAdmins;
+            this.FeedbackPullRequestsEnabled = feedbackPullRequestsEnabled;
+            this.MaxTeams = maxTeams;
+            this.MaxMembers = maxMembers;
+            this.Editor = editor ?? throw new global::System.ArgumentNullException(nameof(editor));
+            this.Accepted = accepted;
+            this.Submitted = submitted;
+            this.Passing = passing;
+            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.Deadline = deadline;
+            this.StarterCodeRepository = starterCodeRepository ?? throw new global::System.ArgumentNullException(nameof(starterCodeRepository));
+            this.Classroom = classroom ?? throw new global::System.ArgumentNullException(nameof(classroom));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassroomAssignment" /> class.
+        /// </summary>
+        public ClassroomAssignment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

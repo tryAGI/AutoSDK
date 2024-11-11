@@ -69,6 +69,66 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersUpdateAuthenticatedRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The new name of the user.<br/>
+        /// Example: Omar Jahandar
+        /// </param>
+        /// <param name="email">
+        /// The publicly visible email address of the user.<br/>
+        /// Example: omar@example.com
+        /// </param>
+        /// <param name="blog">
+        /// The new blog URL of the user.<br/>
+        /// Example: blog.example.com
+        /// </param>
+        /// <param name="twitterUsername">
+        /// The new Twitter username of the user.<br/>
+        /// Example: therealomarj
+        /// </param>
+        /// <param name="company">
+        /// The new company of the user.<br/>
+        /// Example: Acme corporation
+        /// </param>
+        /// <param name="location">
+        /// The new location of the user.<br/>
+        /// Example: Berlin, Germany
+        /// </param>
+        /// <param name="hireable">
+        /// The new hiring availability of the user.
+        /// </param>
+        /// <param name="bio">
+        /// The new short biography of the user.
+        /// </param>
+        public UsersUpdateAuthenticatedRequest(
+            string? name,
+            string? email,
+            string? blog,
+            string? twitterUsername,
+            string? company,
+            string? location,
+            bool? hireable,
+            string? bio)
+        {
+            this.Name = name;
+            this.Email = email;
+            this.Blog = blog;
+            this.TwitterUsername = twitterUsername;
+            this.Company = company;
+            this.Location = location;
+            this.Hireable = hireable;
+            this.Bio = bio;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersUpdateAuthenticatedRequest" /> class.
+        /// </summary>
+        public UsersUpdateAuthenticatedRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PerformAlchemyUpscaleLCMResponse" /> class.
+        /// </summary>
+        /// <param name="lcmGenerationJob"></param>
+        public PerformAlchemyUpscaleLCMResponse(
+            global::G.PerformAlchemyUpscaleLCMResponseLcmGenerationJob? lcmGenerationJob)
+        {
+            this.LcmGenerationJob = lcmGenerationJob;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PerformAlchemyUpscaleLCMResponse" /> class.
+        /// </summary>
+        public PerformAlchemyUpscaleLCMResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

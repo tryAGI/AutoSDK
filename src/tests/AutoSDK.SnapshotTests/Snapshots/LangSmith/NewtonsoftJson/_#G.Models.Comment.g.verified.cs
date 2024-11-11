@@ -81,6 +81,53 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Comment" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="commentBy"></param>
+        /// <param name="commentOn"></param>
+        /// <param name="parentId"></param>
+        /// <param name="content"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="commentByName"></param>
+        /// <param name="numSubComments"></param>
+        /// <param name="numLikes"></param>
+        /// <param name="likedByAuthUser"></param>
+        public Comment(
+            global::System.Guid id,
+            global::System.Guid commentOn,
+            string content,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            int numSubComments,
+            int numLikes,
+            global::System.Guid? commentBy,
+            global::System.Guid? parentId,
+            string? commentByName,
+            bool? likedByAuthUser)
+        {
+            this.Id = id;
+            this.CommentOn = commentOn;
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.NumSubComments = numSubComments;
+            this.NumLikes = numLikes;
+            this.CommentBy = commentBy;
+            this.ParentId = parentId;
+            this.CommentByName = commentByName;
+            this.LikedByAuthUser = likedByAuthUser;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Comment" /> class.
+        /// </summary>
+        public Comment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

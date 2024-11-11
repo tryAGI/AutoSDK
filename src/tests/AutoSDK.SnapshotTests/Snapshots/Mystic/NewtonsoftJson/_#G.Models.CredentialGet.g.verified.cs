@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CredentialGet" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="provider"></param>
+        /// <param name="authError"></param>
+        public CredentialGet(
+            string id,
+            string provider,
+            bool authError)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
+            this.AuthError = authError;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CredentialGet" /> class.
+        /// </summary>
+        public CredentialGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -52,6 +52,43 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsRequest" /> class.
+        /// </summary>
+        /// <param name="timezone">
+        /// Default Value: UTC
+        /// </param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="stride">
+        /// Timedelta input.
+        /// </param>
+        /// <param name="afterIndex"></param>
+        /// <param name="tagValueId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomChartsRequest(
+            global::System.DateTime startTime,
+            string? timezone,
+            global::System.DateTime? endTime,
+            global::G.TimedeltaInput? stride,
+            int? afterIndex,
+            global::System.Collections.Generic.IList<global::System.Guid>? tagValueId)
+        {
+            this.StartTime = startTime;
+            this.Timezone = timezone;
+            this.EndTime = endTime;
+            this.Stride = stride;
+            this.AfterIndex = afterIndex;
+            this.TagValueId = tagValueId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsRequest" /> class.
+        /// </summary>
+        public CustomChartsRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

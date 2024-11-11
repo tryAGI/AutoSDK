@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetApiKeysResponse" /> class.
+        /// </summary>
+        /// <param name="currentApiKeys">
+        /// The current API keys that are active. Only returns redacted keys.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetApiKeysResponse(
+            global::System.Collections.Generic.IList<global::G.RedactedApiKey>? currentApiKeys)
+        {
+            this.CurrentApiKeys = currentApiKeys;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetApiKeysResponse" /> class.
+        /// </summary>
+        public GetApiKeysResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

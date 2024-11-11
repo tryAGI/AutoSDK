@@ -57,6 +57,51 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheListActionsCache" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 2
+        /// </param>
+        /// <param name="ref">
+        /// Example: refs/heads/main
+        /// </param>
+        /// <param name="key">
+        /// Example: Linux-node-958aff96db2d75d67787d1e634ae70b659de937b
+        /// </param>
+        /// <param name="version">
+        /// Example: 73885106f58cc52a7df9ec4d4a5622a5614813162cb516c759a30af6bf56e6f0
+        /// </param>
+        /// <param name="lastAccessedAt"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="sizeInBytes">
+        /// Example: 1024
+        /// </param>
+        public ActionsCacheListActionsCache(
+            int? id,
+            string? @ref,
+            string? key,
+            string? version,
+            global::System.DateTime? lastAccessedAt,
+            global::System.DateTime? createdAt,
+            int? sizeInBytes)
+        {
+            this.Id = id;
+            this.Ref = @ref;
+            this.Key = key;
+            this.Version = version;
+            this.LastAccessedAt = lastAccessedAt;
+            this.CreatedAt = createdAt;
+            this.SizeInBytes = sizeInBytes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheListActionsCache" /> class.
+        /// </summary>
+        public ActionsCacheListActionsCache()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

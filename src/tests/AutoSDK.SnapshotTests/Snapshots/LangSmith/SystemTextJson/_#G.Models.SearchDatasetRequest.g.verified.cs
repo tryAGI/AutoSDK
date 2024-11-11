@@ -40,6 +40,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchDatasetRequest" /> class.
+        /// </summary>
+        /// <param name="inputs"></param>
+        /// <param name="limit">
+        /// Default Value: 5
+        /// </param>
+        /// <param name="debug">
+        /// Default Value: false
+        /// </param>
+        /// <param name="filter"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SearchDatasetRequest(
+            object inputs,
+            int? limit,
+            bool? debug,
+            string? filter)
+        {
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
+            this.Limit = limit;
+            this.Debug = debug;
+            this.Filter = filter;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchDatasetRequest" /> class.
+        /// </summary>
+        public SearchDatasetRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

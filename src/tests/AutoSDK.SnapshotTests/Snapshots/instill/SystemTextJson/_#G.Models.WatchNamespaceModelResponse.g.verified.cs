@@ -29,6 +29,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WatchNamespaceModelResponse" /> class.
+        /// </summary>
+        /// <param name="state">
+        /// State.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="message">
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WatchNamespaceModelResponse(
+            global::G.State? state,
+            string? message)
+        {
+            this.State = state;
+            this.Message = message;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WatchNamespaceModelResponse" /> class.
+        /// </summary>
+        public WatchNamespaceModelResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

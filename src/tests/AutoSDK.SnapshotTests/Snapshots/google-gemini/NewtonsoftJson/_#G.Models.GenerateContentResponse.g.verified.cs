@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateContentResponse" /> class.
+        /// </summary>
+        /// <param name="promptFeedback">
+        /// A set of the feedback metadata the prompt specified in `GenerateContentRequest.content`.
+        /// </param>
+        /// <param name="candidates">
+        /// Candidate responses from the model.
+        /// </param>
+        public GenerateContentResponse(
+            global::G.PromptFeedback? promptFeedback,
+            global::System.Collections.Generic.IList<global::G.Candidate>? candidates)
+        {
+            this.PromptFeedback = promptFeedback;
+            this.Candidates = candidates;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateContentResponse" /> class.
+        /// </summary>
+        public GenerateContentResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

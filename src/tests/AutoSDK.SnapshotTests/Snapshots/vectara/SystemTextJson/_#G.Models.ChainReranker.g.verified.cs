@@ -29,6 +29,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChainReranker" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// When the type is `chain`, you can then chain re-rankers together.<br/>
+        /// Default Value: chain
+        /// </param>
+        /// <param name="rerankers">
+        /// Specify an array of rerankers to apply to search results consecutively.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChainReranker(
+            global::System.Collections.Generic.IList<global::G.SearchReranker> rerankers,
+            string? type)
+        {
+            this.Rerankers = rerankers ?? throw new global::System.ArgumentNullException(nameof(rerankers));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChainReranker" /> class.
+        /// </summary>
+        public ChainReranker()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

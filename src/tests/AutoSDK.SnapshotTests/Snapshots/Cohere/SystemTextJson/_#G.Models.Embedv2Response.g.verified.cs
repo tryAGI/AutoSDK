@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Embedv2Response" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Embedv2Response(
+            string? data)
+        {
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Embedv2Response" /> class.
+        /// </summary>
+        public Embedv2Response()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

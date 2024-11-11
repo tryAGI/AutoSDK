@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionViewsVideoOverlay" /> class.
+        /// </summary>
+        /// <param name="viewerUrl">
+        /// The HTML file that is shown to viewers on the channel page when the extension is activated on the Video - Overlay slot.
+        /// </param>
+        /// <param name="canLinkExternalContent">
+        /// A Boolean value that determines whether the extension can link to non-Twitch domains.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ExtensionViewsVideoOverlay(
+            string viewerUrl,
+            bool canLinkExternalContent)
+        {
+            this.ViewerUrl = viewerUrl ?? throw new global::System.ArgumentNullException(nameof(viewerUrl));
+            this.CanLinkExternalContent = canLinkExternalContent;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExtensionViewsVideoOverlay" /> class.
+        /// </summary>
+        public ExtensionViewsVideoOverlay()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

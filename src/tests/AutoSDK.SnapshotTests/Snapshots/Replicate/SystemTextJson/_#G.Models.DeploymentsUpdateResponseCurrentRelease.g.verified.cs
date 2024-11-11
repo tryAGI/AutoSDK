@@ -51,6 +51,47 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsUpdateResponseCurrentRelease" /> class.
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="createdAt">
+        /// The time the release was created.
+        /// </param>
+        /// <param name="createdBy"></param>
+        /// <param name="model">
+        /// The model identifier string in the format of `{model_owner}/{model_name}`.
+        /// </param>
+        /// <param name="number">
+        /// The release number.
+        /// </param>
+        /// <param name="version">
+        /// The ID of the model version used in the release.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DeploymentsUpdateResponseCurrentRelease(
+            global::G.DeploymentsUpdateResponseCurrentReleaseConfiguration? configuration,
+            global::System.DateTime? createdAt,
+            global::G.DeploymentsUpdateResponseCurrentReleaseCreatedBy? createdBy,
+            string? model,
+            int? number,
+            string? version)
+        {
+            this.Configuration = configuration;
+            this.CreatedAt = createdAt;
+            this.CreatedBy = createdBy;
+            this.Model = model;
+            this.Number = number;
+            this.Version = version;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsUpdateResponseCurrentRelease" /> class.
+        /// </summary>
+        public DeploymentsUpdateResponseCurrentRelease()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

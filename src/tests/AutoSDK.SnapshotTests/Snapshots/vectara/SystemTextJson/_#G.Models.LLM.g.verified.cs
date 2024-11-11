@@ -54,6 +54,47 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LLM" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the LLM.
+        /// </param>
+        /// <param name="name">
+        /// Name of the LLM.
+        /// </param>
+        /// <param name="description">
+        /// The description of the LLM.
+        /// </param>
+        /// <param name="enabled">
+        /// Indicates whether the LLM is enabled.
+        /// </param>
+        /// <param name="default">
+        /// If this is the default LLM, it is used in queries when the generator<br/>
+        /// is not specified.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public LLM(
+            string? id,
+            string? name,
+            string? description,
+            bool? enabled,
+            bool? @default)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Description = description;
+            this.Enabled = enabled;
+            this.Default = @default;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LLM" /> class.
+        /// </summary>
+        public LLM()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

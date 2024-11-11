@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksChanges8Tier" /> class.
+        /// </summary>
+        /// <param name="from">
+        /// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
+        /// </param>
+        public WebhooksChanges8Tier(
+            global::G.WebhooksChanges8TierFrom from)
+        {
+            this.From = from ?? throw new global::System.ArgumentNullException(nameof(from));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksChanges8Tier" /> class.
+        /// </summary>
+        public WebhooksChanges8Tier()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

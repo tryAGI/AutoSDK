@@ -81,6 +81,65 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertAppearedInBranchAlert" /> class.
+        /// </summary>
+        /// <param name="createdAt">
+        /// The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
+        /// </param>
+        /// <param name="dismissedAt">
+        /// The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// </param>
+        /// <param name="dismissedBy"></param>
+        /// <param name="dismissedReason">
+        /// The reason for dismissing or closing the alert.
+        /// </param>
+        /// <param name="htmlUrl">
+        /// The GitHub URL of the alert resource.
+        /// </param>
+        /// <param name="mostRecentInstance"></param>
+        /// <param name="number">
+        /// The code scanning alert number.
+        /// </param>
+        /// <param name="rule"></param>
+        /// <param name="state">
+        /// State of a code scanning alert.
+        /// </param>
+        /// <param name="tool"></param>
+        /// <param name="url"></param>
+        public WebhookCodeScanningAlertAppearedInBranchAlert(
+            global::System.DateTime createdAt,
+            global::System.DateTime? dismissedAt,
+            global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedBy? dismissedBy,
+            global::G.WebhookCodeScanningAlertAppearedInBranchAlertDismissedReason? dismissedReason,
+            string htmlUrl,
+            int number,
+            global::G.WebhookCodeScanningAlertAppearedInBranchAlertRule rule,
+            global::G.WebhookCodeScanningAlertAppearedInBranchAlertState state,
+            global::G.WebhookCodeScanningAlertAppearedInBranchAlertTool tool,
+            string url,
+            global::G.WebhookCodeScanningAlertAppearedInBranchAlertMostRecentInstance? mostRecentInstance)
+        {
+            this.CreatedAt = createdAt;
+            this.DismissedAt = dismissedAt;
+            this.DismissedBy = dismissedBy ?? throw new global::System.ArgumentNullException(nameof(dismissedBy));
+            this.DismissedReason = dismissedReason;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Number = number;
+            this.Rule = rule ?? throw new global::System.ArgumentNullException(nameof(rule));
+            this.State = state;
+            this.Tool = tool ?? throw new global::System.ArgumentNullException(nameof(tool));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.MostRecentInstance = mostRecentInstance;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertAppearedInBranchAlert" /> class.
+        /// </summary>
+        public WebhookCodeScanningAlertAppearedInBranchAlert()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

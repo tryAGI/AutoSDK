@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateMessageBatchRequest" /> class.
+        /// </summary>
+        /// <param name="requests">
+        /// List of requests for prompt completion. Each is an individual request to create a Message.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateMessageBatchRequest(
+            global::System.Collections.Generic.IList<global::G.BatchMessageRequest> requests)
+        {
+            this.Requests = requests ?? throw new global::System.ArgumentNullException(nameof(requests));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateMessageBatchRequest" /> class.
+        /// </summary>
+        public CreateMessageBatchRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

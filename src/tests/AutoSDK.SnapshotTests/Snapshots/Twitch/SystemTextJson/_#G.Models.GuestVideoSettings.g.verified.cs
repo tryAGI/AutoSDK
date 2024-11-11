@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GuestVideoSettings" /> class.
+        /// </summary>
+        /// <param name="isHostEnabled">
+        /// Flag determining whether the host is allowing the guest’s video to be seen or heard within the session.
+        /// </param>
+        /// <param name="isGuestEnabled">
+        /// Flag determining whether the guest is allowing their video to be transmitted to the session.
+        /// </param>
+        /// <param name="isAvailable">
+        /// Flag determining whether the guest has an appropriate video device available to be transmitted to the session.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GuestVideoSettings(
+            bool isHostEnabled,
+            bool isGuestEnabled,
+            bool isAvailable)
+        {
+            this.IsHostEnabled = isHostEnabled;
+            this.IsGuestEnabled = isGuestEnabled;
+            this.IsAvailable = isAvailable;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GuestVideoSettings" /> class.
+        /// </summary>
+        public GuestVideoSettings()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

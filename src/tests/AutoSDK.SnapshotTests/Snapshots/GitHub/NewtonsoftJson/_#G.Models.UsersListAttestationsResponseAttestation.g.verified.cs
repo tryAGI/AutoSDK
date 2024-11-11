@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersListAttestationsResponseAttestation" /> class.
+        /// </summary>
+        /// <param name="bundle">
+        /// Sigstore Bundle v0.1
+        /// </param>
+        /// <param name="repositoryId"></param>
+        public UsersListAttestationsResponseAttestation(
+            global::G.SigstoreBundle0? bundle,
+            int? repositoryId)
+        {
+            this.Bundle = bundle;
+            this.RepositoryId = repositoryId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersListAttestationsResponseAttestation" /> class.
+        /// </summary>
+        public UsersListAttestationsResponseAttestation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContributorActivity" /> class.
+        /// </summary>
+        /// <param name="author">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="total">
+        /// Example: 135
+        /// </param>
+        /// <param name="weeks">
+        /// Example: []
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ContributorActivity(
+            global::G.NullableSimpleUser? author,
+            int total,
+            global::System.Collections.Generic.IList<global::G.ContributorActivityWeek> weeks)
+        {
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Total = total;
+            this.Weeks = weeks ?? throw new global::System.ArgumentNullException(nameof(weeks));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContributorActivity" /> class.
+        /// </summary>
+        public ContributorActivity()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

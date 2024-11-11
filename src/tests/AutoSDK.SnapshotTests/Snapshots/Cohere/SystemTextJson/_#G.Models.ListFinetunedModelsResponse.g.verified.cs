@@ -34,6 +34,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListFinetunedModelsResponse" /> class.
+        /// </summary>
+        /// <param name="finetunedModels">
+        /// List of fine-tuned models matching the request.
+        /// </param>
+        /// <param name="nextPageToken">
+        /// Pagination token to retrieve the next page of results. If the value is "",<br/>
+        /// it means no further results for the request.
+        /// </param>
+        /// <param name="totalSize">
+        /// Total count of results.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListFinetunedModelsResponse(
+            global::System.Collections.Generic.IList<global::G.FinetunedModel>? finetunedModels,
+            string? nextPageToken,
+            int? totalSize)
+        {
+            this.FinetunedModels = finetunedModels;
+            this.NextPageToken = nextPageToken;
+            this.TotalSize = totalSize;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListFinetunedModelsResponse" /> class.
+        /// </summary>
+        public ListFinetunedModelsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

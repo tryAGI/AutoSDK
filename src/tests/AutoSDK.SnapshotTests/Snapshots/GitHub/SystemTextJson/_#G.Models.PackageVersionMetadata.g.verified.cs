@@ -35,6 +35,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PackageVersionMetadata" /> class.
+        /// </summary>
+        /// <param name="packageType">
+        /// Example: docker
+        /// </param>
+        /// <param name="container"></param>
+        /// <param name="docker"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PackageVersionMetadata(
+            global::G.PackageVersionMetadataPackageType packageType,
+            global::G.PackageVersionMetadataContainer? container,
+            global::G.PackageVersionMetadataDocker? docker)
+        {
+            this.PackageType = packageType;
+            this.Container = container;
+            this.Docker = docker;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PackageVersionMetadata" /> class.
+        /// </summary>
+        public PackageVersionMetadata()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

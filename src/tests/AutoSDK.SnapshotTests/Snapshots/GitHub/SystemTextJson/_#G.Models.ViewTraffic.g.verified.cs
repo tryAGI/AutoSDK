@@ -36,6 +36,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewTraffic" /> class.
+        /// </summary>
+        /// <param name="count">
+        /// Example: 14850
+        /// </param>
+        /// <param name="uniques">
+        /// Example: 3782
+        /// </param>
+        /// <param name="views"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ViewTraffic(
+            int count,
+            int uniques,
+            global::System.Collections.Generic.IList<global::G.Traffic> views)
+        {
+            this.Count = count;
+            this.Uniques = uniques;
+            this.Views = views ?? throw new global::System.ArgumentNullException(nameof(views));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ViewTraffic" /> class.
+        /// </summary>
+        public ViewTraffic()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

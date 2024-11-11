@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateBranchProtectionRequestRequiredStatusChecksCheck" /> class.
+        /// </summary>
+        /// <param name="context">
+        /// The name of the required check
+        /// </param>
+        /// <param name="appId">
+        /// The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposUpdateBranchProtectionRequestRequiredStatusChecksCheck(
+            string context,
+            int? appId)
+        {
+            this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
+            this.AppId = appId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateBranchProtectionRequestRequiredStatusChecksCheck" /> class.
+        /// </summary>
+        public ReposUpdateBranchProtectionRequestRequiredStatusChecksCheck()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

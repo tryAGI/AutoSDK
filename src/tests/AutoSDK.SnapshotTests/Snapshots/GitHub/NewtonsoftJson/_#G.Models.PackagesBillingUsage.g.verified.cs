@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PackagesBillingUsage" /> class.
+        /// </summary>
+        /// <param name="totalGigabytesBandwidthUsed">
+        /// Sum of the free and paid storage space (GB) for GitHuub Packages.
+        /// </param>
+        /// <param name="totalPaidGigabytesBandwidthUsed">
+        /// Total paid storage space (GB) for GitHuub Packages.
+        /// </param>
+        /// <param name="includedGigabytesBandwidth">
+        /// Free storage space (GB) for GitHub Packages.
+        /// </param>
+        public PackagesBillingUsage(
+            int totalGigabytesBandwidthUsed,
+            int totalPaidGigabytesBandwidthUsed,
+            int includedGigabytesBandwidth)
+        {
+            this.TotalGigabytesBandwidthUsed = totalGigabytesBandwidthUsed;
+            this.TotalPaidGigabytesBandwidthUsed = totalPaidGigabytesBandwidthUsed;
+            this.IncludedGigabytesBandwidth = includedGigabytesBandwidth;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PackagesBillingUsage" /> class.
+        /// </summary>
+        public PackagesBillingUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

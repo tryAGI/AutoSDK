@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChanges" /> class.
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="ruleType"></param>
+        /// <param name="pattern"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChanges(
+            global::G.WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChangesConfiguration? configuration,
+            global::G.WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChangesRuleType? ruleType,
+            global::G.WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChangesPattern? pattern)
+        {
+            this.Configuration = configuration;
+            this.RuleType = ruleType;
+            this.Pattern = pattern;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChanges" /> class.
+        /// </summary>
+        public WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

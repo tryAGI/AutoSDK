@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Traffic" /> class.
+        /// </summary>
+        /// <param name="timestamp"></param>
+        /// <param name="uniques"></param>
+        /// <param name="count"></param>
+        public Traffic(
+            global::System.DateTime timestamp,
+            int uniques,
+            int count)
+        {
+            this.Timestamp = timestamp;
+            this.Uniques = uniques;
+            this.Count = count;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Traffic" /> class.
+        /// </summary>
+        public Traffic()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

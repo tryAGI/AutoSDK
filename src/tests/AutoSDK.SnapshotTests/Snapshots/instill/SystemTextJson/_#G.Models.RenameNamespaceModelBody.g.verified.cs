@@ -23,6 +23,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RenameNamespaceModelBody" /> class.
+        /// </summary>
+        /// <param name="newModelId">
+        /// The new resource ID. This will transform the resource name into<br/>
+        /// `namespaces/{namespace.id}/models/{new_model_id}`.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RenameNamespaceModelBody(
+            string newModelId)
+        {
+            this.NewModelId = newModelId ?? throw new global::System.ArgumentNullException(nameof(newModelId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RenameNamespaceModelBody" /> class.
+        /// </summary>
+        public RenameNamespaceModelBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

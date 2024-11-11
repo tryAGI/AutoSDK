@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendChatMessageResponseDataItemDropReasonItem" /> class.
+        /// </summary>
+        /// <param name="code">
+        /// Code for why the message was dropped.
+        /// </param>
+        /// <param name="message">
+        /// Message for why the message was dropped.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SendChatMessageResponseDataItemDropReasonItem(
+            string code,
+            string message)
+        {
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SendChatMessageResponseDataItemDropReasonItem" /> class.
+        /// </summary>
+        public SendChatMessageResponseDataItemDropReasonItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

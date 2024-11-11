@@ -36,6 +36,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RangesResponse" /> class.
+        /// </summary>
+        /// <param name="domain">
+        /// Example: comcast.net
+        /// </param>
+        /// <param name="numRanges">
+        /// Example: 37330
+        /// </param>
+        /// <param name="ranges"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RangesResponse(
+            string domain,
+            string numRanges,
+            global::System.Collections.Generic.IList<string> ranges)
+        {
+            this.Domain = domain ?? throw new global::System.ArgumentNullException(nameof(domain));
+            this.NumRanges = numRanges ?? throw new global::System.ArgumentNullException(nameof(numRanges));
+            this.Ranges = ranges ?? throw new global::System.ArgumentNullException(nameof(ranges));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RangesResponse" /> class.
+        /// </summary>
+        public RangesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -28,6 +28,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InputJsonBlockDelta" /> class.
+        /// </summary>
+        /// <param name="partialJson">
+        /// The partial JSON delta.
+        /// </param>
+        /// <param name="type">
+        /// The type of content block.<br/>
+        /// Default Value: input_json_delta
+        /// </param>
+        public InputJsonBlockDelta(
+            string type,
+            string? partialJson)
+        {
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.PartialJson = partialJson;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InputJsonBlockDelta" /> class.
+        /// </summary>
+        public InputJsonBlockDelta()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCustomRewardsResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// A list that contains the single custom reward you created.
+        /// </param>
+        public CreateCustomRewardsResponse(
+            global::System.Collections.Generic.IList<global::G.CustomReward> data)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateCustomRewardsResponse" /> class.
+        /// </summary>
+        public CreateCustomRewardsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

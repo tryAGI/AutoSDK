@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposRemoveTeamAccessRestrictionsRequest2" /> class.
+        /// </summary>
+        /// <param name="teams">
+        /// The slug values for teams
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposRemoveTeamAccessRestrictionsRequest2(
+            global::System.Collections.Generic.IList<string> teams)
+        {
+            this.Teams = teams ?? throw new global::System.ArgumentNullException(nameof(teams));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposRemoveTeamAccessRestrictionsRequest2" /> class.
+        /// </summary>
+        public ReposRemoveTeamAccessRestrictionsRequest2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

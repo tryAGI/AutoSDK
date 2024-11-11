@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocialAccount" /> class.
+        /// </summary>
+        /// <param name="provider">
+        /// Example: linkedin
+        /// </param>
+        /// <param name="url">
+        /// Example: https://www.linkedin.com/company/github/
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SocialAccount(
+            string provider,
+            string url)
+        {
+            this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SocialAccount" /> class.
+        /// </summary>
+        public SocialAccount()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

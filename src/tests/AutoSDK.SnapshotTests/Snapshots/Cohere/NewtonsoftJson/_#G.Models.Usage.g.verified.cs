@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Usage" /> class.
+        /// </summary>
+        /// <param name="billedUnits"></param>
+        /// <param name="tokens"></param>
+        public Usage(
+            global::G.UsageBilledUnits? billedUnits,
+            global::G.UsageTokens? tokens)
+        {
+            this.BilledUnits = billedUnits;
+            this.Tokens = tokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Usage" /> class.
+        /// </summary>
+        public Usage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

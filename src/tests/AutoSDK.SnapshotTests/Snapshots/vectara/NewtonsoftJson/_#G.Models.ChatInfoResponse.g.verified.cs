@@ -35,6 +35,37 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatInfoResponse" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// This will be `chat_info` when the stream event contains information<br/>
+        /// about how the chat is stored.<br/>
+        /// Default Value: chat_info
+        /// </param>
+        /// <param name="chatId">
+        /// ID of the chat.
+        /// </param>
+        /// <param name="turnId">
+        /// ID of the turn.
+        /// </param>
+        public ChatInfoResponse(
+            string? type,
+            string? chatId,
+            string? turnId)
+        {
+            this.Type = type;
+            this.ChatId = chatId;
+            this.TurnId = turnId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatInfoResponse" /> class.
+        /// </summary>
+        public ChatInfoResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

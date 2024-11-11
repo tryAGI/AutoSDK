@@ -77,6 +77,64 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbedJob" /> class.
+        /// </summary>
+        /// <param name="jobId">
+        /// ID of the embed job
+        /// </param>
+        /// <param name="name">
+        /// The name of the embed job
+        /// </param>
+        /// <param name="status">
+        /// The status of the embed job
+        /// </param>
+        /// <param name="createdAt">
+        /// The creation date of the embed job
+        /// </param>
+        /// <param name="inputDatasetId">
+        /// ID of the input dataset
+        /// </param>
+        /// <param name="outputDatasetId">
+        /// ID of the resulting output dataset
+        /// </param>
+        /// <param name="model">
+        /// ID of the model used to embed
+        /// </param>
+        /// <param name="truncate">
+        /// The truncation option used
+        /// </param>
+        /// <param name="meta"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EmbedJob(
+            string jobId,
+            global::G.EmbedJobStatus status,
+            global::System.DateTime createdAt,
+            string inputDatasetId,
+            string model,
+            global::G.EmbedJobTruncate truncate,
+            string? name,
+            string? outputDatasetId,
+            global::G.ApiMeta? meta)
+        {
+            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
+            this.Status = status;
+            this.CreatedAt = createdAt;
+            this.InputDatasetId = inputDatasetId ?? throw new global::System.ArgumentNullException(nameof(inputDatasetId));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Truncate = truncate;
+            this.Name = name;
+            this.OutputDatasetId = outputDatasetId;
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbedJob" /> class.
+        /// </summary>
+        public EmbedJob()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

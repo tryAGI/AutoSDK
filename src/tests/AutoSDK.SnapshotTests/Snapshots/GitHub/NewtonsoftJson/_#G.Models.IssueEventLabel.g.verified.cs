@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueEventLabel" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="color"></param>
+        public IssueEventLabel(
+            string? name,
+            string? color)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IssueEventLabel" /> class.
+        /// </summary>
+        public IssueEventLabel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

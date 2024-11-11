@@ -30,6 +30,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotAlertSecurityAdvisoryCwe" /> class.
+        /// </summary>
+        /// <param name="cweId">
+        /// The unique CWE ID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="name">
+        /// The short, plain text name of the CWE.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DependabotAlertSecurityAdvisoryCwe(
+            string cweId = default!,
+            string name = default!)
+        {
+            this.CweId = cweId;
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotAlertSecurityAdvisoryCwe" /> class.
+        /// </summary>
+        public DependabotAlertSecurityAdvisoryCwe()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

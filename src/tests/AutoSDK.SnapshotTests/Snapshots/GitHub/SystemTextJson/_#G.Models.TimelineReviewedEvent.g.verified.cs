@@ -115,6 +115,85 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineReviewedEvent" /> class.
+        /// </summary>
+        /// <param name="event"></param>
+        /// <param name="id">
+        /// Unique identifier of the review<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDE3OlB1bGxSZXF1ZXN0UmV2aWV3ODA=
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="body">
+        /// The text of the review.<br/>
+        /// Example: This looks great.
+        /// </param>
+        /// <param name="state">
+        /// Example: CHANGES_REQUESTED
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat/Hello-World/pull/12#pullrequestreview-80
+        /// </param>
+        /// <param name="pullRequestUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/12
+        /// </param>
+        /// <param name="links"></param>
+        /// <param name="submittedAt"></param>
+        /// <param name="commitId">
+        /// A commit SHA for the review.<br/>
+        /// Example: 54bb654c9e6025347f57900a4a5c2313a96b8035
+        /// </param>
+        /// <param name="bodyHtml"></param>
+        /// <param name="bodyText"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.<br/>
+        /// Example: OWNER
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TimelineReviewedEvent(
+            string @event,
+            int id,
+            string nodeId,
+            global::G.SimpleUser user,
+            string? body,
+            string state,
+            string htmlUrl,
+            string pullRequestUrl,
+            global::G.TimelineReviewedEventLinks links,
+            string commitId,
+            global::G.AuthorAssociation authorAssociation,
+            global::System.DateTime? submittedAt,
+            string? bodyHtml,
+            string? bodyText)
+        {
+            this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
+            this.AuthorAssociation = authorAssociation;
+            this.SubmittedAt = submittedAt;
+            this.BodyHtml = bodyHtml;
+            this.BodyText = bodyText;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineReviewedEvent" /> class.
+        /// </summary>
+        public TimelineReviewedEvent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

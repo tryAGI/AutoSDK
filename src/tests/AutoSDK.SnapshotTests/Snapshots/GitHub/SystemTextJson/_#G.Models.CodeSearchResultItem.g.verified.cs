@@ -101,6 +101,64 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSearchResultItem" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="path"></param>
+        /// <param name="sha"></param>
+        /// <param name="url"></param>
+        /// <param name="gitUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="repository">
+        /// Minimal Repository
+        /// </param>
+        /// <param name="score"></param>
+        /// <param name="fileSize"></param>
+        /// <param name="language"></param>
+        /// <param name="lastModifiedAt"></param>
+        /// <param name="lineNumbers">
+        /// Example: [73..77, 77..78]
+        /// </param>
+        /// <param name="textMatches"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeSearchResultItem(
+            string name,
+            string path,
+            string sha,
+            string url,
+            string gitUrl,
+            string htmlUrl,
+            global::G.MinimalRepository repository,
+            double score,
+            int? fileSize,
+            string? language,
+            global::System.DateTime? lastModifiedAt,
+            global::System.Collections.Generic.IList<string>? lineNumbers,
+            global::System.Collections.Generic.IList<global::G.SearchResultTextMatche>? textMatches)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.GitUrl = gitUrl ?? throw new global::System.ArgumentNullException(nameof(gitUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Score = score;
+            this.FileSize = fileSize;
+            this.Language = language;
+            this.LastModifiedAt = lastModifiedAt;
+            this.LineNumbers = lineNumbers;
+            this.TextMatches = textMatches;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSearchResultItem" /> class.
+        /// </summary>
+        public CodeSearchResultItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

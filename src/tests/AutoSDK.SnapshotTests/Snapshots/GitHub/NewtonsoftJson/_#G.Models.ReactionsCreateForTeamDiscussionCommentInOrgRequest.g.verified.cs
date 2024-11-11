@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReactionsCreateForTeamDiscussionCommentInOrgRequest" /> class.
+        /// </summary>
+        /// <param name="content">
+        /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the team discussion comment.
+        /// </param>
+        public ReactionsCreateForTeamDiscussionCommentInOrgRequest(
+            global::G.ReactionsCreateForTeamDiscussionCommentInOrgRequestContent content)
+        {
+            this.Content = content;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReactionsCreateForTeamDiscussionCommentInOrgRequest" /> class.
+        /// </summary>
+        public ReactionsCreateForTeamDiscussionCommentInOrgRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryUpdateVulnerabilitiePackage" /> class.
+        /// </summary>
+        /// <param name="ecosystem">
+        /// The package's language or package management ecosystem.
+        /// </param>
+        /// <param name="name">
+        /// The unique package name within its ecosystem.
+        /// </param>
+        public RepositoryAdvisoryUpdateVulnerabilitiePackage(
+            global::G.SecurityAdvisoryEcosystems ecosystem,
+            string? name)
+        {
+            this.Ecosystem = ecosystem;
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryUpdateVulnerabilitiePackage" /> class.
+        /// </summary>
+        public RepositoryAdvisoryUpdateVulnerabilitiePackage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

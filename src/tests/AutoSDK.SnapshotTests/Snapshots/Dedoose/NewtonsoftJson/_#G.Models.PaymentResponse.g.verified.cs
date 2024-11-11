@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentResponse" /> class.
+        /// </summary>
+        /// <param name="isSuccessfull"></param>
+        /// <param name="transactionId"></param>
+        /// <param name="errors"></param>
+        /// <param name="creditTransactionLog"></param>
+        /// <param name="billingTransactionLog"></param>
+        public PaymentResponse(
+            bool? isSuccessfull,
+            string? transactionId,
+            global::System.Collections.Generic.IList<string>? errors,
+            global::G.CreditTransaction? creditTransactionLog,
+            global::G.BillingTransaction? billingTransactionLog)
+        {
+            this.IsSuccessfull = isSuccessfull;
+            this.TransactionId = transactionId;
+            this.Errors = errors;
+            this.CreditTransactionLog = creditTransactionLog;
+            this.BillingTransactionLog = billingTransactionLog;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PaymentResponse" /> class.
+        /// </summary>
+        public PaymentResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

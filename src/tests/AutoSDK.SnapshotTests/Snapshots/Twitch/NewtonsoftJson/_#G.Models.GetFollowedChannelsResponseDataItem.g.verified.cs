@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetFollowedChannelsResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="broadcasterId">
+        /// An ID that uniquely identifies the broadcaster that this user is following.
+        /// </param>
+        /// <param name="broadcasterLogin">
+        /// The broadcaster’s login name.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The broadcaster’s display name.
+        /// </param>
+        /// <param name="followedAt">
+        /// The UTC timestamp when the user started following the broadcaster.
+        /// </param>
+        public GetFollowedChannelsResponseDataItem(
+            string broadcasterId,
+            string broadcasterLogin,
+            string broadcasterName,
+            global::System.DateTime followedAt)
+        {
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+            this.FollowedAt = followedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetFollowedChannelsResponseDataItem" /> class.
+        /// </summary>
+        public GetFollowedChannelsResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

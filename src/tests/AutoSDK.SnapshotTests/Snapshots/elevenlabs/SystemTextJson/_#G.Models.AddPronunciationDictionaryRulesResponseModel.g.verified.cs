@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddPronunciationDictionaryRulesResponseModel" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="versionId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AddPronunciationDictionaryRulesResponseModel(
+            string id,
+            string versionId)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddPronunciationDictionaryRulesResponseModel" /> class.
+        /// </summary>
+        public AddPronunciationDictionaryRulesResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

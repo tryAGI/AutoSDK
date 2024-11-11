@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewCommentLinks" /> class.
+        /// </summary>
+        /// <param name="self">
+        /// Hypermedia Link
+        /// </param>
+        /// <param name="html">
+        /// Hypermedia Link
+        /// </param>
+        /// <param name="pullRequest">
+        /// Hypermedia Link
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReviewCommentLinks(
+            global::G.Link self,
+            global::G.Link html,
+            global::G.Link pullRequest)
+        {
+            this.Self = self ?? throw new global::System.ArgumentNullException(nameof(self));
+            this.Html = html ?? throw new global::System.ArgumentNullException(nameof(html));
+            this.PullRequest = pullRequest ?? throw new global::System.ArgumentNullException(nameof(pullRequest));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReviewCommentLinks" /> class.
+        /// </summary>
+        public ReviewCommentLinks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -158,6 +158,109 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGenerationByIdResponseGenerationsByPk" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="generatedImages"></param>
+        /// <param name="generationElements"></param>
+        /// <param name="guidanceScale"></param>
+        /// <param name="id"></param>
+        /// <param name="imageHeight"></param>
+        /// <param name="imageWidth"></param>
+        /// <param name="inferenceSteps"></param>
+        /// <param name="initStrength"></param>
+        /// <param name="modelId"></param>
+        /// <param name="negativePrompt"></param>
+        /// <param name="photoReal">
+        /// If photoReal feature was used.
+        /// </param>
+        /// <param name="photoRealStrength">
+        /// Depth of field of photoReal used. 0.55 is low, 0.5 is medium, and 0.45 is high. Default is 0.55.
+        /// </param>
+        /// <param name="presetStyle">
+        /// The style to generate images with. When photoReal is enabled, refer to the Guide section for a full list. When alchemy is disabled, use LEONARDO or NONE. When alchemy is enabled, use ANIME, CREATIVE, DYNAMIC, ENVIRONMENT, GENERAL, ILLUSTRATION, PHOTOGRAPHY, RAYTRACED, RENDER_3D, SKETCH_BW, SKETCH_COLOR, or NONE.<br/>
+        /// Default Value: DYNAMIC
+        /// </param>
+        /// <param name="prompt"></param>
+        /// <param name="promptMagic">
+        /// If prompt magic was used.
+        /// </param>
+        /// <param name="promptMagicStrength">
+        /// Strength of prompt magic used.
+        /// </param>
+        /// <param name="promptMagicVersion">
+        /// Version of prompt magic used.
+        /// </param>
+        /// <param name="public"></param>
+        /// <param name="scheduler">
+        /// The scheduler to generate images with. Defaults to EULER_DISCRETE if not specified.
+        /// </param>
+        /// <param name="sdVersion">
+        /// The base version of stable diffusion to use if not using a custom model. v1_5 is 1.5, v2 is 2.1, if not specified it will default to v1_5. Also includes SDXL and SDXL Lightning models
+        /// </param>
+        /// <param name="seed"></param>
+        /// <param name="status">
+        /// The status of the current task.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetGenerationByIdResponseGenerationsByPk(
+            string? createdAt,
+            global::System.Collections.Generic.IList<global::G.GetGenerationByIdResponseGenerationsByPkGeneratedImage>? generatedImages,
+            global::System.Collections.Generic.IList<global::G.GetGenerationByIdResponseGenerationsByPkGenerationElement>? generationElements,
+            double? guidanceScale,
+            string? id,
+            int? imageHeight,
+            int? imageWidth,
+            int? inferenceSteps,
+            double? initStrength,
+            string? modelId,
+            string? negativePrompt,
+            bool? photoReal,
+            double? photoRealStrength,
+            global::G.SdGenerationStyle? presetStyle,
+            string? prompt,
+            bool? promptMagic,
+            double? promptMagicStrength,
+            string? promptMagicVersion,
+            bool? @public,
+            global::G.SdGenerationSchedulers? scheduler,
+            global::G.SdVersions? sdVersion,
+            int? seed,
+            global::G.JobStatus? status)
+        {
+            this.CreatedAt = createdAt;
+            this.GeneratedImages = generatedImages;
+            this.GenerationElements = generationElements;
+            this.GuidanceScale = guidanceScale;
+            this.Id = id;
+            this.ImageHeight = imageHeight;
+            this.ImageWidth = imageWidth;
+            this.InferenceSteps = inferenceSteps;
+            this.InitStrength = initStrength;
+            this.ModelId = modelId;
+            this.NegativePrompt = negativePrompt;
+            this.PhotoReal = photoReal;
+            this.PhotoRealStrength = photoRealStrength;
+            this.PresetStyle = presetStyle;
+            this.Prompt = prompt;
+            this.PromptMagic = promptMagic;
+            this.PromptMagicStrength = promptMagicStrength;
+            this.PromptMagicVersion = promptMagicVersion;
+            this.Public = @public;
+            this.Scheduler = scheduler;
+            this.SdVersion = sdVersion;
+            this.Seed = seed;
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGenerationByIdResponseGenerationsByPk" /> class.
+        /// </summary>
+        public GetGenerationByIdResponseGenerationsByPk()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

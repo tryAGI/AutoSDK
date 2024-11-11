@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SnoozeNextAdResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="snoozeCount">
+        /// The number of snoozes available for the broadcaster.
+        /// </param>
+        /// <param name="snoozeRefreshAt">
+        /// The UTC timestamp when the broadcaster will gain an additional snooze, in RFC3339 format.
+        /// </param>
+        /// <param name="nextAdAt">
+        /// The UTC timestamp of the broadcaster’s next scheduled ad, in RFC3339 format.
+        /// </param>
+        public SnoozeNextAdResponseDataItem(
+            int snoozeCount,
+            global::System.DateTime snoozeRefreshAt,
+            global::System.DateTime nextAdAt)
+        {
+            this.SnoozeCount = snoozeCount;
+            this.SnoozeRefreshAt = snoozeRefreshAt;
+            this.NextAdAt = nextAdAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SnoozeNextAdResponseDataItem" /> class.
+        /// </summary>
+        public SnoozeNextAdResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

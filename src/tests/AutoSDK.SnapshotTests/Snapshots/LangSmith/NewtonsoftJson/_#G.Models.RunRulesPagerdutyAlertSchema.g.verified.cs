@@ -39,6 +39,36 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunRulesPagerdutyAlertSchema" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Enum for alert types.
+        /// </param>
+        /// <param name="routingKey"></param>
+        /// <param name="summary"></param>
+        /// <param name="severity">
+        /// Enum for severity.
+        /// </param>
+        public RunRulesPagerdutyAlertSchema(
+            string routingKey,
+            global::G.RunRulesAlertType? type,
+            string? summary,
+            global::G.PagerdutySeverity? severity)
+        {
+            this.RoutingKey = routingKey ?? throw new global::System.ArgumentNullException(nameof(routingKey));
+            this.Type = type;
+            this.Summary = summary;
+            this.Severity = severity;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunRulesPagerdutyAlertSchema" /> class.
+        /// </summary>
+        public RunRulesPagerdutyAlertSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

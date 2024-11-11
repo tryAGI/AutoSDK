@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchObjectsCreateRequest" /> class.
+        /// </summary>
+        /// <param name="fields">
+        /// Define which fields need to be returned. Default value is ALL
+        /// </param>
+        /// <param name="objects"></param>
+        public BatchObjectsCreateRequest(
+            global::System.Collections.Generic.IList<global::G.BatchObjectsCreateRequestField>? fields,
+            global::System.Collections.Generic.IList<global::G.Object>? objects)
+        {
+            this.Fields = fields;
+            this.Objects = objects;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchObjectsCreateRequest" /> class.
+        /// </summary>
+        public BatchObjectsCreateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

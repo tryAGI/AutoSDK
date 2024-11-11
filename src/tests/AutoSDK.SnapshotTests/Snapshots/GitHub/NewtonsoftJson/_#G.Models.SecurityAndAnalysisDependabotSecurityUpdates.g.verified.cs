@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurityAndAnalysisDependabotSecurityUpdates" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// The enablement status of Dependabot security updates for the repository.
+        /// </param>
+        public SecurityAndAnalysisDependabotSecurityUpdates(
+            global::G.SecurityAndAnalysisDependabotSecurityUpdatesStatus? status)
+        {
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecurityAndAnalysisDependabotSecurityUpdates" /> class.
+        /// </summary>
+        public SecurityAndAnalysisDependabotSecurityUpdates()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

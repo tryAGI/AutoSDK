@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityConfigurationForRepository" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// The attachment status of the code security configuration on the repository.
+        /// </param>
+        /// <param name="configuration">
+        /// A code security configuration
+        /// </param>
+        public CodeSecurityConfigurationForRepository(
+            global::G.CodeSecurityConfigurationForRepositoryStatus? status,
+            global::G.CodeSecurityConfiguration? configuration)
+        {
+            this.Status = status;
+            this.Configuration = configuration;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityConfigurationForRepository" /> class.
+        /// </summary>
+        public CodeSecurityConfigurationForRepository()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

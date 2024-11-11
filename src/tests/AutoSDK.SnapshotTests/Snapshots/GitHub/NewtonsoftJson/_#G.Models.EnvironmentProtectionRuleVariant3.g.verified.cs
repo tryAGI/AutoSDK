@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnvironmentProtectionRuleVariant3" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 3515
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDQ6R2F0ZTM1MTU=
+        /// </param>
+        /// <param name="type">
+        /// Example: branch_policy
+        /// </param>
+        public EnvironmentProtectionRuleVariant3(
+            int id,
+            string nodeId,
+            string type)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnvironmentProtectionRuleVariant3" /> class.
+        /// </summary>
+        public EnvironmentProtectionRuleVariant3()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

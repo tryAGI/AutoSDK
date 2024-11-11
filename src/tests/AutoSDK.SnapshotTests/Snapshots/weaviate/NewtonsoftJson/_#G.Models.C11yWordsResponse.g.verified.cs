@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yWordsResponse" /> class.
+        /// </summary>
+        /// <param name="concatenatedWord">
+        /// Weighted results for all words
+        /// </param>
+        /// <param name="individualWords">
+        /// Weighted results for per individual word
+        /// </param>
+        public C11yWordsResponse(
+            global::G.C11yWordsResponseConcatenatedWord? concatenatedWord,
+            global::System.Collections.Generic.IList<global::G.C11yWordsResponseIndividualWord>? individualWords)
+        {
+            this.ConcatenatedWord = concatenatedWord;
+            this.IndividualWords = individualWords;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yWordsResponse" /> class.
+        /// </summary>
+        public C11yWordsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

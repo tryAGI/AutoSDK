@@ -43,6 +43,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListModelRunsByRequesterResponse" /> class.
+        /// </summary>
+        /// <param name="runs">
+        /// A list of runs resources.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="totalSize">
+        /// Total number of runs.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="pageSize">
+        /// The requested page size.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="page">
+        /// The requested page offset.<br/>
+        /// Included only in responses
+        /// </param>
+        public ListModelRunsByRequesterResponse(
+            global::System.Collections.Generic.IList<global::G.ModelRun>? runs,
+            int? totalSize,
+            int? pageSize,
+            int? page)
+        {
+            this.Runs = runs;
+            this.TotalSize = totalSize;
+            this.PageSize = pageSize;
+            this.Page = page;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListModelRunsByRequesterResponse" /> class.
+        /// </summary>
+        public ListModelRunsByRequesterResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

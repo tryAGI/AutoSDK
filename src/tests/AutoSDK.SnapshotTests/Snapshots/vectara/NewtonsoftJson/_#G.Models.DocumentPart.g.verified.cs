@@ -40,6 +40,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentPart" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// The text of the document part.<br/>
+        /// Example: I'm a nice document part.
+        /// </param>
+        /// <param name="metadata">
+        /// The metadata for a document part. These may be used in metadata filters at query time if filter attributes are configured on the corpus.
+        /// </param>
+        /// <param name="context">
+        /// The context text for the document part.
+        /// </param>
+        /// <param name="customDimensions">
+        /// The custom dimensions as additional weights.
+        /// </param>
+        public DocumentPart(
+            string text,
+            object? metadata,
+            string? context,
+            global::System.Collections.Generic.Dictionary<string, double>? customDimensions)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Metadata = metadata;
+            this.Context = context;
+            this.CustomDimensions = customDimensions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DocumentPart" /> class.
+        /// </summary>
+        public DocumentPart()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

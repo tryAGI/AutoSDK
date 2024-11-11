@@ -75,6 +75,56 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnterpriseTeam" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="slug"></param>
+        /// <param name="url"></param>
+        /// <param name="syncToOrganizations">
+        /// Example: disabled | all
+        /// </param>
+        /// <param name="groupId">
+        /// Example: 1
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/enterprises/dc/teams/justice-league
+        /// </param>
+        /// <param name="membersUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        public EnterpriseTeam(
+            long id,
+            string name,
+            string slug,
+            string url,
+            string syncToOrganizations,
+            string htmlUrl,
+            string membersUrl,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            int? groupId)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Slug = slug ?? throw new global::System.ArgumentNullException(nameof(slug));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.SyncToOrganizations = syncToOrganizations ?? throw new global::System.ArgumentNullException(nameof(syncToOrganizations));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.MembersUrl = membersUrl ?? throw new global::System.ArgumentNullException(nameof(membersUrl));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.GroupId = groupId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnterpriseTeam" /> class.
+        /// </summary>
+        public EnterpriseTeam()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

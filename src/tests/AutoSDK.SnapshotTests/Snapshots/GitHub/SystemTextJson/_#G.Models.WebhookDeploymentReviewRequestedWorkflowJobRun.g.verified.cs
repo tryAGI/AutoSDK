@@ -71,6 +71,45 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRequestedWorkflowJobRun" /> class.
+        /// </summary>
+        /// <param name="conclusion"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="environment"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="status"></param>
+        /// <param name="updatedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookDeploymentReviewRequestedWorkflowJobRun(
+            object? conclusion,
+            string createdAt,
+            string environment,
+            string htmlUrl,
+            int id,
+            string? name,
+            string status,
+            string updatedAt)
+        {
+            this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRequestedWorkflowJobRun" /> class.
+        /// </summary>
+        public WebhookDeploymentReviewRequestedWorkflowJobRun()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

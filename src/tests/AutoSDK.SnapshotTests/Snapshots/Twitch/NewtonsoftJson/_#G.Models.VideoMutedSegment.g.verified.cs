@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VideoMutedSegment" /> class.
+        /// </summary>
+        /// <param name="duration">
+        /// The duration of the muted segment, in seconds.
+        /// </param>
+        /// <param name="offset">
+        /// The offset, in seconds, from the beginning of the video to where the muted segment begins.
+        /// </param>
+        public VideoMutedSegment(
+            int duration,
+            int offset)
+        {
+            this.Duration = duration;
+            this.Offset = offset;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VideoMutedSegment" /> class.
+        /// </summary>
+        public VideoMutedSegment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

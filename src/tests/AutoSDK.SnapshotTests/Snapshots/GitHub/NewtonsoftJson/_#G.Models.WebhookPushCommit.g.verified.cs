@@ -81,6 +81,71 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPushCommit" /> class.
+        /// </summary>
+        /// <param name="added">
+        /// An array of files added in the commit. A maximum of 3000 changed files will be reported per commit.
+        /// </param>
+        /// <param name="author">
+        /// Metaproperties for Git author/committer information.
+        /// </param>
+        /// <param name="committer">
+        /// Metaproperties for Git author/committer information.
+        /// </param>
+        /// <param name="distinct">
+        /// Whether this commit is distinct from any that have been pushed before.
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="message">
+        /// The commit message.
+        /// </param>
+        /// <param name="modified">
+        /// An array of files modified by the commit. A maximum of 3000 changed files will be reported per commit.
+        /// </param>
+        /// <param name="removed">
+        /// An array of files removed in the commit. A maximum of 3000 changed files will be reported per commit.
+        /// </param>
+        /// <param name="timestamp">
+        /// The ISO 8601 timestamp of the commit.
+        /// </param>
+        /// <param name="treeId"></param>
+        /// <param name="url">
+        /// URL that points to the commit API resource.
+        /// </param>
+        public WebhookPushCommit(
+            global::G.WebhookPushCommitAuthor author,
+            global::G.WebhookPushCommitCommitter committer,
+            bool distinct,
+            string id,
+            string message,
+            global::System.DateTime timestamp,
+            string treeId,
+            string url,
+            global::System.Collections.Generic.IList<string>? added,
+            global::System.Collections.Generic.IList<string>? modified,
+            global::System.Collections.Generic.IList<string>? removed)
+        {
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
+            this.Distinct = distinct;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Timestamp = timestamp;
+            this.TreeId = treeId ?? throw new global::System.ArgumentNullException(nameof(treeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Added = added;
+            this.Modified = modified;
+            this.Removed = removed;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPushCommit" /> class.
+        /// </summary>
+        public WebhookPushCommit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

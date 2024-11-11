@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsOrganizationPermissions" /> class.
+        /// </summary>
+        /// <param name="enabledRepositories">
+        /// The policy that controls the repositories in the organization that are allowed to run GitHub Actions.
+        /// </param>
+        /// <param name="selectedRepositoriesUrl">
+        /// The API URL to use to get or set the selected repositories that are allowed to run GitHub Actions, when `enabled_repositories` is set to `selected`.
+        /// </param>
+        /// <param name="allowedActions">
+        /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
+        /// </param>
+        /// <param name="selectedActionsUrl">
+        /// The API URL to use to get or set the actions and reusable workflows that are allowed to run, when `allowed_actions` is set to `selected`.
+        /// </param>
+        public ActionsOrganizationPermissions(
+            global::G.EnabledRepositories enabledRepositories,
+            string? selectedRepositoriesUrl,
+            global::G.AllowedActions? allowedActions,
+            string? selectedActionsUrl)
+        {
+            this.EnabledRepositories = enabledRepositories;
+            this.SelectedRepositoriesUrl = selectedRepositoriesUrl;
+            this.AllowedActions = allowedActions;
+            this.SelectedActionsUrl = selectedActionsUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsOrganizationPermissions" /> class.
+        /// </summary>
+        public ActionsOrganizationPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

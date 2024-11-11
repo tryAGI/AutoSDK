@@ -45,6 +45,39 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetVariationByIdResponseGeneratedImageVariationGenericItem" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="id"></param>
+        /// <param name="status">
+        /// The status of the current task.
+        /// </param>
+        /// <param name="transformType">
+        /// The type of variation.
+        /// </param>
+        /// <param name="url"></param>
+        public GetVariationByIdResponseGeneratedImageVariationGenericItem(
+            string? createdAt,
+            string? id,
+            global::G.JobStatus? status,
+            global::G.VARIATIONTYPE? transformType,
+            string? url)
+        {
+            this.CreatedAt = createdAt;
+            this.Id = id;
+            this.Status = status;
+            this.TransformType = transformType;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetVariationByIdResponseGeneratedImageVariationGenericItem" /> class.
+        /// </summary>
+        public GetVariationByIdResponseGeneratedImageVariationGenericItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

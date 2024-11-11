@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListSelfHostedRunnersForRepoResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="runners"></param>
+        public ActionsListSelfHostedRunnersForRepoResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.Runner> runners)
+        {
+            this.TotalCount = totalCount;
+            this.Runners = runners ?? throw new global::System.ArgumentNullException(nameof(runners));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListSelfHostedRunnersForRepoResponse" /> class.
+        /// </summary>
+        public ActionsListSelfHostedRunnersForRepoResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

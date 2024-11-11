@@ -23,6 +23,27 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurActionItemsParamsVariant2" /> class.
+        /// </summary>
+        /// <param name="answerFormat">
+        /// How you want the action items to be returned. This can be any text.<br/>
+        /// Defaults to "Bullet Points".<br/>
+        /// Default Value: Bullet Points
+        /// </param>
+        public LemurActionItemsParamsVariant2(
+            string? answerFormat)
+        {
+            this.AnswerFormat = answerFormat;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurActionItemsParamsVariant2" /> class.
+        /// </summary>
+        public LemurActionItemsParamsVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -37,6 +37,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComponentTask" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The task name, e.g. `TASK_TEXT_GENERATION`.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="title">
+        /// Title is the task name in a human-friendly format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="description">
+        /// Description contains information about the task.<br/>
+        /// Included only in responses
+        /// </param>
+        public ComponentTask(
+            string? name,
+            string? title,
+            string? description)
+        {
+            this.Name = name;
+            this.Title = title;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComponentTask" /> class.
+        /// </summary>
+        public ComponentTask()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

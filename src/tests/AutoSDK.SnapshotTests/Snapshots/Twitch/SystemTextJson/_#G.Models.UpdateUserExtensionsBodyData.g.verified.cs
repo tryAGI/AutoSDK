@@ -37,6 +37,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateUserExtensionsBodyData" /> class.
+        /// </summary>
+        /// <param name="panel"></param>
+        /// <param name="overlay"></param>
+        /// <param name="component"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateUserExtensionsBodyData(
+            global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionPanelUpdate>? panel,
+            global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionOverlayUpdate>? overlay,
+            global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionComponentUpdate>? component)
+        {
+            this.Panel = panel;
+            this.Overlay = overlay;
+            this.Component = component;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateUserExtensionsBodyData" /> class.
+        /// </summary>
+        public UpdateUserExtensionsBodyData()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -87,6 +87,56 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPackageUpdatedPackage" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="description"></param>
+        /// <param name="ecosystem"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="namespace"></param>
+        /// <param name="owner"></param>
+        /// <param name="packageType"></param>
+        /// <param name="packageVersion"></param>
+        /// <param name="registry"></param>
+        /// <param name="updatedAt"></param>
+        public WebhookPackageUpdatedPackage(
+            string createdAt,
+            string? description,
+            string ecosystem,
+            string htmlUrl,
+            int id,
+            string name,
+            string @namespace,
+            global::G.WebhookPackageUpdatedPackageOwner? owner,
+            string packageType,
+            global::G.WebhookPackageUpdatedPackagePackageVersion packageVersion,
+            global::G.WebhookPackageUpdatedPackageRegistry? registry,
+            string updatedAt)
+        {
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Ecosystem = ecosystem ?? throw new global::System.ArgumentNullException(nameof(ecosystem));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Namespace = @namespace ?? throw new global::System.ArgumentNullException(nameof(@namespace));
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+            this.PackageType = packageType ?? throw new global::System.ArgumentNullException(nameof(packageType));
+            this.PackageVersion = packageVersion ?? throw new global::System.ArgumentNullException(nameof(packageVersion));
+            this.Registry = registry ?? throw new global::System.ArgumentNullException(nameof(registry));
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPackageUpdatedPackage" /> class.
+        /// </summary>
+        public WebhookPackageUpdatedPackage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

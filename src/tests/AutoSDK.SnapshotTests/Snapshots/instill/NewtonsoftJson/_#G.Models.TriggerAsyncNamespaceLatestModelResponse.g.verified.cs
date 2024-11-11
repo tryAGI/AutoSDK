@@ -23,6 +23,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerAsyncNamespaceLatestModelResponse" /> class.
+        /// </summary>
+        /// <param name="operation">
+        /// Long-running operation information.<br/>
+        /// Included only in responses
+        /// </param>
+        public TriggerAsyncNamespaceLatestModelResponse(
+            global::G.LongrunningOperation? operation)
+        {
+            this.Operation = operation;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerAsyncNamespaceLatestModelResponse" /> class.
+        /// </summary>
+        public TriggerAsyncNamespaceLatestModelResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

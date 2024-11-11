@@ -43,6 +43,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableCodeOfConductSimple" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/github/docs/community/code_of_conduct
+        /// </param>
+        /// <param name="key">
+        /// Example: citizen_code_of_conduct
+        /// </param>
+        /// <param name="name">
+        /// Example: Citizen Code of Conduct
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public NullableCodeOfConductSimple(
+            string url,
+            string key,
+            string name,
+            string? htmlUrl)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableCodeOfConductSimple" /> class.
+        /// </summary>
+        public NullableCodeOfConductSimple()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

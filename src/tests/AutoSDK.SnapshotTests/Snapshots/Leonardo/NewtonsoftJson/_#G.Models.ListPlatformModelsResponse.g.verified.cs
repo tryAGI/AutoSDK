@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListPlatformModelsResponse" /> class.
+        /// </summary>
+        /// <param name="customModels"></param>
+        public ListPlatformModelsResponse(
+            global::System.Collections.Generic.IList<global::G.ListPlatformModelsResponseCustomModel>? customModels)
+        {
+            this.CustomModels = customModels;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListPlatformModelsResponse" /> class.
+        /// </summary>
+        public ListPlatformModelsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

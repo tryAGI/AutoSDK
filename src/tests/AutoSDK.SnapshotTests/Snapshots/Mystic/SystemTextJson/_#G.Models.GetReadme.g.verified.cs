@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetReadme" /> class.
+        /// </summary>
+        /// <param name="readme"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetReadme(
+            string? readme)
+        {
+            this.Readme = readme;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetReadme" /> class.
+        /// </summary>
+        public GetReadme()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

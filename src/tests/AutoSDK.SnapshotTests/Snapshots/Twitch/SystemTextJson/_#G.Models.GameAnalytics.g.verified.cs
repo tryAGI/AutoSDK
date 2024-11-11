@@ -43,6 +43,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameAnalytics" /> class.
+        /// </summary>
+        /// <param name="gameId">
+        /// An ID that identifies the game that the report was generated for.
+        /// </param>
+        /// <param name="uRL">
+        /// The URL that you use to download the report. The URL is valid for 5 minutes.
+        /// </param>
+        /// <param name="type">
+        /// The type of report.
+        /// </param>
+        /// <param name="dateRange">
+        /// The reporting window’s start and end dates, in RFC3339 format.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GameAnalytics(
+            string gameId,
+            string uRL,
+            string type,
+            global::G.GameAnalyticsDateRange dateRange)
+        {
+            this.GameId = gameId ?? throw new global::System.ArgumentNullException(nameof(gameId));
+            this.URL = uRL ?? throw new global::System.ArgumentNullException(nameof(uRL));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.DateRange = dateRange ?? throw new global::System.ArgumentNullException(nameof(dateRange));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameAnalytics" /> class.
+        /// </summary>
+        public GameAnalytics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

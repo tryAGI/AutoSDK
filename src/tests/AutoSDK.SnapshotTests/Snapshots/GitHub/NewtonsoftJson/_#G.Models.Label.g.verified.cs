@@ -63,6 +63,61 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Label" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier for the label.<br/>
+        /// Example: 208045946L
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDU6TGFiZWwyMDgwNDU5NDY=
+        /// </param>
+        /// <param name="url">
+        /// URL for the label<br/>
+        /// Example: https://api.github.com/repositories/42/labels/bug
+        /// </param>
+        /// <param name="name">
+        /// The name of the label.<br/>
+        /// Example: bug
+        /// </param>
+        /// <param name="description">
+        /// Optional description of the label, such as its purpose.<br/>
+        /// Example: Something isn't working
+        /// </param>
+        /// <param name="color">
+        /// 6-character hex code, without the leading #, identifying the color<br/>
+        /// Example: FFFFFF
+        /// </param>
+        /// <param name="default">
+        /// Whether this label comes by default in a new repository.<br/>
+        /// Example: true
+        /// </param>
+        public Label(
+            long id,
+            string nodeId,
+            string url,
+            string name,
+            string? description,
+            string color,
+            bool @default)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
+            this.Default = @default;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Label" /> class.
+        /// </summary>
+        public Label()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

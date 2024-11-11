@@ -51,6 +51,48 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Penalty" /> class.
+        /// </summary>
+        /// <param name="scale"></param>
+        /// <param name="applyToWhitespaces">
+        /// Default Value: true
+        /// </param>
+        /// <param name="applyToPunctuations">
+        /// Default Value: true
+        /// </param>
+        /// <param name="applyToNumbers">
+        /// Default Value: true
+        /// </param>
+        /// <param name="applyToStopwords">
+        /// Default Value: true
+        /// </param>
+        /// <param name="applyToEmojis">
+        /// Default Value: true
+        /// </param>
+        public Penalty(
+            double scale,
+            bool? applyToWhitespaces,
+            bool? applyToPunctuations,
+            bool? applyToNumbers,
+            bool? applyToStopwords,
+            bool? applyToEmojis)
+        {
+            this.Scale = scale;
+            this.ApplyToWhitespaces = applyToWhitespaces;
+            this.ApplyToPunctuations = applyToPunctuations;
+            this.ApplyToNumbers = applyToNumbers;
+            this.ApplyToStopwords = applyToStopwords;
+            this.ApplyToEmojis = applyToEmojis;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Penalty" /> class.
+        /// </summary>
+        public Penalty()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

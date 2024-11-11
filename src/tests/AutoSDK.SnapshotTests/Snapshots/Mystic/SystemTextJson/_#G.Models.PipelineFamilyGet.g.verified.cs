@@ -55,6 +55,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineFamilyGet" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="runCount"></param>
+        /// <param name="description"></param>
+        /// <param name="latestAt"></param>
+        /// <param name="pipelineId"></param>
+        /// <param name="imageUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PipelineFamilyGet(
+            string name,
+            int runCount,
+            global::System.DateTime latestAt,
+            string pipelineId,
+            string? description,
+            string? imageUrl)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.RunCount = runCount;
+            this.LatestAt = latestAt;
+            this.PipelineId = pipelineId ?? throw new global::System.ArgumentNullException(nameof(pipelineId));
+            this.Description = description;
+            this.ImageUrl = imageUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineFamilyGet" /> class.
+        /// </summary>
+        public PipelineFamilyGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

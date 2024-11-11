@@ -113,6 +113,49 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Any" /> class.
+        /// </summary>
+        /// <param name="x_type">
+        /// A URL/resource name that uniquely identifies the type of the serialized<br/>
+        /// protocol buffer message. This string must contain at least<br/>
+        /// one "/" character. The last segment of the URL's path must represent<br/>
+        /// the fully qualified name of the type (as in<br/>
+        /// `path/google.protobuf.Duration`). The name should be in a canonical form<br/>
+        /// (e.g., leading "." is not accepted).<br/>
+        /// In practice, teams usually precompile into the binary all types that they<br/>
+        /// expect it to use in the context of Any. However, for URLs which use the<br/>
+        /// scheme `http`, `https`, or no scheme, one can optionally set up a type<br/>
+        /// server that maps type URLs to message definitions as follows:<br/>
+        /// * If no scheme is provided, `https` is assumed.<br/>
+        /// * An HTTP GET on the URL must yield a [google.protobuf.Type][]<br/>
+        ///   value in binary format, or produce an error.<br/>
+        /// * Applications are allowed to cache lookup results based on the<br/>
+        ///   URL, or have them precompiled into a binary to avoid any<br/>
+        ///   lookup. Therefore, binary compatibility needs to be preserved<br/>
+        ///   on changes to types. (Use versioned type names to manage<br/>
+        ///   breaking changes.)<br/>
+        /// Note: this functionality is not currently available in the official<br/>
+        /// protobuf release, and it is not used for type URLs beginning with<br/>
+        /// type.googleapis.com. As of May 2023, there are no widely used type server<br/>
+        /// implementations and no plans to implement one.<br/>
+        /// Schemes other than `http`, `https` (or the empty scheme) might be<br/>
+        /// used with implementation specific semantics.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Any(
+            string? x_type)
+        {
+            this.x_type = x_type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Any" /> class.
+        /// </summary>
+        public Any()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

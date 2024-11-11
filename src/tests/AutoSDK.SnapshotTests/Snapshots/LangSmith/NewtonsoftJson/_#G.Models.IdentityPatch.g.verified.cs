@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IdentityPatch" /> class.
+        /// </summary>
+        /// <param name="readOnly"></param>
+        /// <param name="roleId"></param>
+        public IdentityPatch(
+            global::System.Guid roleId,
+            bool? readOnly)
+        {
+            this.RoleId = roleId;
+            this.ReadOnly = readOnly;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="IdentityPatch" /> class.
+        /// </summary>
+        public IdentityPatch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

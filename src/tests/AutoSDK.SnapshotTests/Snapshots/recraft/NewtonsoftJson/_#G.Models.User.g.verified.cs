@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="User" /> class.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="registrationTime"></param>
+        public User(
+            global::System.Guid id,
+            string? email,
+            string? name,
+            global::System.DateTime? registrationTime)
+        {
+            this.Id = id;
+            this.Email = email;
+            this.Name = name;
+            this.RegistrationTime = registrationTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="User" /> class.
+        /// </summary>
+        public User()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

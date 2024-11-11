@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Rerankv2ResponseResultDocument" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// The text of the document to rerank
+        /// </param>
+        public Rerankv2ResponseResultDocument(
+            string text)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Rerankv2ResponseResultDocument" /> class.
+        /// </summary>
+        public Rerankv2ResponseResultDocument()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

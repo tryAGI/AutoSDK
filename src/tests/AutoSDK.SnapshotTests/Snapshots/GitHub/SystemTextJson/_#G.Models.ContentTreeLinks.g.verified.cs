@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentTreeLinks" /> class.
+        /// </summary>
+        /// <param name="git"></param>
+        /// <param name="html"></param>
+        /// <param name="self"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ContentTreeLinks(
+            string? git,
+            string? html,
+            string self)
+        {
+            this.Git = git ?? throw new global::System.ArgumentNullException(nameof(git));
+            this.Html = html ?? throw new global::System.ArgumentNullException(nameof(html));
+            this.Self = self ?? throw new global::System.ArgumentNullException(nameof(self));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentTreeLinks" /> class.
+        /// </summary>
+        public ContentTreeLinks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -39,6 +39,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUserEmotesResponse" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="template">
+        /// A templated URL. Uses the values from the _id_, _format_, _scale_, and _theme\_mode_ fields to replace the like-named placeholder strings in the templated URL to create a CDN (content delivery network) URL that you use to fetch the emote.   <br/>
+        ///   <br/>
+        ///  For information about what the template looks like and how to use it to fetch emotes, see [Emote CDN URL](https://dev.twitch.tv/docs/irc/emotes#cdn-template) format.
+        /// </param>
+        /// <param name="pagination">
+        /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through.   <br/>
+        ///   <br/>
+        ///  For more information about pagination support, see [Twitch API Guide - Pagination](https://dev.twitch.tv/docs/api/guide#pagination).
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetUserEmotesResponse(
+            global::System.Collections.Generic.IList<global::G.GetUserEmotesResponseDataItem> data,
+            string template,
+            global::G.GetUserEmotesResponsePagination? pagination)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Template = template ?? throw new global::System.ArgumentNullException(nameof(template));
+            this.Pagination = pagination;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUserEmotesResponse" /> class.
+        /// </summary>
+        public GetUserEmotesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

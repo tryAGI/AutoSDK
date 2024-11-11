@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageObjectAttachment" /> class.
+        /// </summary>
+        /// <param name="fileId">
+        /// The ID of the file to attach to the message.
+        /// </param>
+        /// <param name="tools">
+        /// The tools to add this file to.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MessageObjectAttachment(
+            string? fileId,
+            global::System.Collections.Generic.IList<global::G.ToolsItem7>? tools)
+        {
+            this.FileId = fileId;
+            this.Tools = tools;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageObjectAttachment" /> class.
+        /// </summary>
+        public MessageObjectAttachment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

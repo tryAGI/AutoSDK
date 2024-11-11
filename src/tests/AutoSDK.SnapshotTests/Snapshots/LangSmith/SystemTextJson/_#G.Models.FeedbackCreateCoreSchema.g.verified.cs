@@ -94,6 +94,57 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackCreateCoreSchema" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="modifiedAt"></param>
+        /// <param name="key"></param>
+        /// <param name="score"></param>
+        /// <param name="value"></param>
+        /// <param name="comment"></param>
+        /// <param name="correction"></param>
+        /// <param name="feedbackGroupId"></param>
+        /// <param name="comparativeExperimentId"></param>
+        /// <param name="id"></param>
+        /// <param name="feedbackSource"></param>
+        /// <param name="feedbackConfig"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FeedbackCreateCoreSchema(
+            string key,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? modifiedAt,
+            global::G.AnyOf<double?, int?, bool?>? score,
+            global::G.AnyOf<double?, int?, bool?, string, object>? value,
+            string? comment,
+            global::G.AnyOf<object, string>? correction,
+            global::System.Guid? feedbackGroupId,
+            global::System.Guid? comparativeExperimentId,
+            global::System.Guid? id,
+            global::G.AnyOf<global::G.AppFeedbackSource, global::G.APIFeedbackSource, global::G.ModelFeedbackSource, global::G.AutoEvalFeedbackSource>? feedbackSource,
+            global::G.FeedbackConfig? feedbackConfig)
+        {
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.CreatedAt = createdAt;
+            this.ModifiedAt = modifiedAt;
+            this.Score = score;
+            this.Value = value;
+            this.Comment = comment;
+            this.Correction = correction;
+            this.FeedbackGroupId = feedbackGroupId;
+            this.ComparativeExperimentId = comparativeExperimentId;
+            this.Id = id;
+            this.FeedbackSource = feedbackSource;
+            this.FeedbackConfig = feedbackConfig;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackCreateCoreSchema" /> class.
+        /// </summary>
+        public FeedbackCreateCoreSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

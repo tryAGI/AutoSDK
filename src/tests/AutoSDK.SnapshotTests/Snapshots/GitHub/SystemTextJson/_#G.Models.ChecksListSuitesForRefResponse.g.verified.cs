@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksListSuitesForRefResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="checkSuites"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChecksListSuitesForRefResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.CheckSuite> checkSuites)
+        {
+            this.TotalCount = totalCount;
+            this.CheckSuites = checkSuites ?? throw new global::System.ArgumentNullException(nameof(checkSuites));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksListSuitesForRefResponse" /> class.
+        /// </summary>
+        public ChecksListSuitesForRefResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

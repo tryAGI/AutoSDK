@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurBaseResponse" /> class.
+        /// </summary>
+        /// <param name="requestId">
+        /// The ID of the LeMUR request
+        /// </param>
+        /// <param name="usage">
+        /// The usage numbers for the LeMUR request
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public LemurBaseResponse(
+            global::System.Guid requestId,
+            global::G.LemurUsage usage)
+        {
+            this.RequestId = requestId;
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurBaseResponse" /> class.
+        /// </summary>
+        public LemurBaseResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -58,6 +58,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchRequiredPullRequestReviews" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="dismissStaleReviews"></param>
+        /// <param name="requireCodeOwnerReviews"></param>
+        /// <param name="requiredApprovingReviewCount"></param>
+        /// <param name="requireLastPushApproval">
+        /// Whether the most recent push must be approved by someone other than the person who pushed it.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="dismissalRestrictions"></param>
+        /// <param name="bypassPullRequestAllowances"></param>
+        public ProtectedBranchRequiredPullRequestReviews(
+            string url,
+            bool? dismissStaleReviews,
+            bool? requireCodeOwnerReviews,
+            int? requiredApprovingReviewCount,
+            bool? requireLastPushApproval,
+            global::G.ProtectedBranchRequiredPullRequestReviewsDismissalRestrictions? dismissalRestrictions,
+            global::G.ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances? bypassPullRequestAllowances)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.DismissStaleReviews = dismissStaleReviews;
+            this.RequireCodeOwnerReviews = requireCodeOwnerReviews;
+            this.RequiredApprovingReviewCount = requiredApprovingReviewCount;
+            this.RequireLastPushApproval = requireLastPushApproval;
+            this.DismissalRestrictions = dismissalRestrictions;
+            this.BypassPullRequestAllowances = bypassPullRequestAllowances;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchRequiredPullRequestReviews" /> class.
+        /// </summary>
+        public ProtectedBranchRequiredPullRequestReviews()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

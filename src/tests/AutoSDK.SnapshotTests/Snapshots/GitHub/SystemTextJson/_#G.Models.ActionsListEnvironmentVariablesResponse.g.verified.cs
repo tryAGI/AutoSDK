@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListEnvironmentVariablesResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="variables"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsListEnvironmentVariablesResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.ActionsVariable> variables)
+        {
+            this.TotalCount = totalCount;
+            this.Variables = variables ?? throw new global::System.ArgumentNullException(nameof(variables));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListEnvironmentVariablesResponse" /> class.
+        /// </summary>
+        public ActionsListEnvironmentVariablesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

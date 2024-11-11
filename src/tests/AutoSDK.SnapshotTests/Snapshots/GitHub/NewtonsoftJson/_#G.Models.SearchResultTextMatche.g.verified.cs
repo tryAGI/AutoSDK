@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchResultTextMatche" /> class.
+        /// </summary>
+        /// <param name="objectUrl"></param>
+        /// <param name="objectType"></param>
+        /// <param name="property"></param>
+        /// <param name="fragment"></param>
+        /// <param name="matches"></param>
+        public SearchResultTextMatche(
+            string? objectUrl,
+            string? objectType,
+            string? property,
+            string? fragment,
+            global::System.Collections.Generic.IList<global::G.SearchResultTextMatcheMatche>? matches)
+        {
+            this.ObjectUrl = objectUrl;
+            this.ObjectType = objectType;
+            this.Property = property;
+            this.Fragment = fragment;
+            this.Matches = matches;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchResultTextMatche" /> class.
+        /// </summary>
+        public SearchResultTextMatche()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

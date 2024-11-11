@@ -51,6 +51,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetModelResponse" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Specify this name in the `model` parameter of API requests to use your chosen model.
+        /// </param>
+        /// <param name="endpoints">
+        /// The API endpoints that the model is compatible with.
+        /// </param>
+        /// <param name="finetuned">
+        /// Whether the model has been fine-tuned or not.
+        /// </param>
+        /// <param name="contextLength">
+        /// The maximum number of tokens that the model can process in a single request. Note that not all of these tokens are always available due to special tokens and preambles that Cohere has added by default.
+        /// </param>
+        /// <param name="tokenizerUrl">
+        /// Public URL to the tokenizer's configuration file.
+        /// </param>
+        /// <param name="defaultEndpoints">
+        /// The API endpoints that the model is default to.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetModelResponse(
+            string? name,
+            global::System.Collections.Generic.IList<global::G.CompatibleEndpoint>? endpoints,
+            bool? finetuned,
+            double? contextLength,
+            string? tokenizerUrl,
+            global::System.Collections.Generic.IList<global::G.CompatibleEndpoint>? defaultEndpoints)
+        {
+            this.Name = name;
+            this.Endpoints = endpoints;
+            this.Finetuned = finetuned;
+            this.ContextLength = contextLength;
+            this.TokenizerUrl = tokenizerUrl;
+            this.DefaultEndpoints = defaultEndpoints;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetModelResponse" /> class.
+        /// </summary>
+        public GetModelResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

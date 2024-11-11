@@ -84,6 +84,54 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TracerSessionWithoutVirtualFields" /> class.
+        /// </summary>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        /// <param name="extra"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="defaultDatasetId"></param>
+        /// <param name="referenceDatasetId"></param>
+        /// <param name="traceTier"></param>
+        /// <param name="id"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="lastRunStartTimeLive"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TracerSessionWithoutVirtualFields(
+            global::System.Guid id,
+            global::System.Guid tenantId,
+            global::System.DateTime? startTime,
+            global::System.DateTime? endTime,
+            object? extra,
+            string? name,
+            string? description,
+            global::System.Guid? defaultDatasetId,
+            global::System.Guid? referenceDatasetId,
+            global::G.TraceTier? traceTier,
+            global::System.DateTime? lastRunStartTimeLive)
+        {
+            this.Id = id;
+            this.TenantId = tenantId;
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+            this.Extra = extra;
+            this.Name = name;
+            this.Description = description;
+            this.DefaultDatasetId = defaultDatasetId;
+            this.ReferenceDatasetId = referenceDatasetId;
+            this.TraceTier = traceTier;
+            this.LastRunStartTimeLive = lastRunStartTimeLive;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TracerSessionWithoutVirtualFields" /> class.
+        /// </summary>
+        public TracerSessionWithoutVirtualFields()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

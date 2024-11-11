@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateFinetunedModelResponse" /> class.
+        /// </summary>
+        /// <param name="finetunedModel">
+        /// This resource represents a fine-tuned model.
+        /// </param>
+        public UpdateFinetunedModelResponse(
+            global::G.FinetunedModel? finetunedModel)
+        {
+            this.FinetunedModel = finetunedModel;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateFinetunedModelResponse" /> class.
+        /// </summary>
+        public UpdateFinetunedModelResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

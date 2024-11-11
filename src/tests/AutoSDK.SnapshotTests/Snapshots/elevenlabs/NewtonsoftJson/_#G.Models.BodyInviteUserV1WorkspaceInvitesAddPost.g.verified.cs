@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyInviteUserV1WorkspaceInvitesAddPost" /> class.
+        /// </summary>
+        /// <param name="email">
+        /// Email of the target user.
+        /// </param>
+        public BodyInviteUserV1WorkspaceInvitesAddPost(
+            string email)
+        {
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyInviteUserV1WorkspaceInvitesAddPost" /> class.
+        /// </summary>
+        public BodyInviteUserV1WorkspaceInvitesAddPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

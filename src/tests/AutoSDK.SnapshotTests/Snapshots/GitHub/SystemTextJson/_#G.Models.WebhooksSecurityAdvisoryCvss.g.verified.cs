@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisoryCvss" /> class.
+        /// </summary>
+        /// <param name="score"></param>
+        /// <param name="vectorString"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhooksSecurityAdvisoryCvss(
+            double score,
+            string? vectorString)
+        {
+            this.Score = score;
+            this.VectorString = vectorString ?? throw new global::System.ArgumentNullException(nameof(vectorString));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisoryCvss" /> class.
+        /// </summary>
+        public WebhooksSecurityAdvisoryCvss()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

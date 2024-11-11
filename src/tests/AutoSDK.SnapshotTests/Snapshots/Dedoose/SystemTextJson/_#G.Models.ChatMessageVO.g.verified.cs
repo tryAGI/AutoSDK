@@ -51,6 +51,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessageVO" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="projectId"></param>
+        /// <param name="userId"></param>
+        /// <param name="username"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="message"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatMessageVO(
+            global::System.Guid? id,
+            global::System.Guid? projectId,
+            global::System.Guid? userId,
+            string? username,
+            global::System.DateTime? createStamp,
+            string? message)
+        {
+            this.Id = id;
+            this.ProjectId = projectId;
+            this.UserId = userId;
+            this.Username = username;
+            this.CreateStamp = createStamp;
+            this.Message = message;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatMessageVO" /> class.
+        /// </summary>
+        public ChatMessageVO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

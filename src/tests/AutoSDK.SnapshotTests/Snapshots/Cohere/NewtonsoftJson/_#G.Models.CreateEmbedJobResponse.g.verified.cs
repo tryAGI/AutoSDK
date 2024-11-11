@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEmbedJobResponse" /> class.
+        /// </summary>
+        /// <param name="jobId"></param>
+        /// <param name="meta"></param>
+        public CreateEmbedJobResponse(
+            string jobId,
+            global::G.ApiMeta? meta)
+        {
+            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateEmbedJobResponse" /> class.
+        /// </summary>
+        public CreateEmbedJobResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

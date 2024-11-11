@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModifyThreadRequestToolResourcesFileSearch" /> class.
+        /// </summary>
+        /// <param name="vectorStoreIds">
+        /// The [vector store](/docs/api-reference/vector-stores/object) attached to this thread. There can be a maximum of 1 vector store attached to the thread.
+        /// </param>
+        public ModifyThreadRequestToolResourcesFileSearch(
+            global::System.Collections.Generic.IList<string>? vectorStoreIds)
+        {
+            this.VectorStoreIds = vectorStoreIds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModifyThreadRequestToolResourcesFileSearch" /> class.
+        /// </summary>
+        public ModifyThreadRequestToolResourcesFileSearch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

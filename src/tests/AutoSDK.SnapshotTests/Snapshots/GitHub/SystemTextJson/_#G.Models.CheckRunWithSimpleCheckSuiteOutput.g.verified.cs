@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckRunWithSimpleCheckSuiteOutput" /> class.
+        /// </summary>
+        /// <param name="annotationsCount"></param>
+        /// <param name="annotationsUrl"></param>
+        /// <param name="summary"></param>
+        /// <param name="text"></param>
+        /// <param name="title"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CheckRunWithSimpleCheckSuiteOutput(
+            int annotationsCount,
+            string annotationsUrl,
+            string? summary,
+            string? text,
+            string? title)
+        {
+            this.AnnotationsCount = annotationsCount;
+            this.AnnotationsUrl = annotationsUrl ?? throw new global::System.ArgumentNullException(nameof(annotationsUrl));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckRunWithSimpleCheckSuiteOutput" /> class.
+        /// </summary>
+        public CheckRunWithSimpleCheckSuiteOutput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

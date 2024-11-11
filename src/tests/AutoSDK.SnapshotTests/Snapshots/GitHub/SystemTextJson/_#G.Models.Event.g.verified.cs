@@ -70,6 +70,49 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Event" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="type"></param>
+        /// <param name="actor">
+        /// Actor
+        /// </param>
+        /// <param name="repo"></param>
+        /// <param name="org">
+        /// Actor
+        /// </param>
+        /// <param name="payload"></param>
+        /// <param name="public"></param>
+        /// <param name="createdAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Event(
+            string id,
+            string? type,
+            global::G.Actor actor,
+            global::G.EventRepo repo,
+            global::G.EventPayload payload,
+            bool @public,
+            global::System.DateTime? createdAt,
+            global::G.Actor? org)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Repo = repo ?? throw new global::System.ArgumentNullException(nameof(repo));
+            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+            this.Public = @public;
+            this.CreatedAt = createdAt;
+            this.Org = org;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Event" /> class.
+        /// </summary>
+        public Event()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -72,6 +72,69 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Hyperparameters" /> class.
+        /// </summary>
+        /// <param name="earlyStoppingPatience">
+        /// Stops training if the loss metric does not improve beyond the value of<br/>
+        /// `early_stopping_threshold` after this many times of evaluation.
+        /// </param>
+        /// <param name="earlyStoppingThreshold">
+        /// How much the loss must improve to prevent early stopping.
+        /// </param>
+        /// <param name="trainBatchSize">
+        /// The batch size is the number of training examples included in a single<br/>
+        /// training pass.
+        /// </param>
+        /// <param name="trainEpochs">
+        /// The number of epochs to train for.
+        /// </param>
+        /// <param name="learningRate">
+        /// The learning rate to be used during training.
+        /// </param>
+        /// <param name="loraAlpha">
+        /// Controls the scaling factor for LoRA updates. Higher values make the<br/>
+        /// updates more impactful.
+        /// </param>
+        /// <param name="loraRank">
+        /// Specifies the rank for low-rank matrices. Lower ranks reduce parameters<br/>
+        /// but may limit model flexibility.
+        /// </param>
+        /// <param name="loraTargetModules">
+        /// The possible combinations of LoRA modules to target.<br/>
+        ///  - LORA_TARGET_MODULES_UNSPECIFIED: Unspecified LoRA target modules.<br/>
+        ///  - LORA_TARGET_MODULES_QV: LoRA adapts the query and value matrices in transformer attention layers.<br/>
+        ///  - LORA_TARGET_MODULES_QKVO: LoRA adapts query, key, value, and output matrices in attention layers.<br/>
+        ///  - LORA_TARGET_MODULES_QKVO_FFN: LoRA adapts attention projection matrices and feed-forward networks (FFN).<br/>
+        /// Default Value: LORA_TARGET_MODULES_UNSPECIFIED
+        /// </param>
+        public Hyperparameters(
+            int? earlyStoppingPatience,
+            double? earlyStoppingThreshold,
+            int? trainBatchSize,
+            int? trainEpochs,
+            double? learningRate,
+            int? loraAlpha,
+            int? loraRank,
+            global::G.LoraTargetModules? loraTargetModules)
+        {
+            this.EarlyStoppingPatience = earlyStoppingPatience;
+            this.EarlyStoppingThreshold = earlyStoppingThreshold;
+            this.TrainBatchSize = trainBatchSize;
+            this.TrainEpochs = trainEpochs;
+            this.LearningRate = learningRate;
+            this.LoraAlpha = loraAlpha;
+            this.LoraRank = loraRank;
+            this.LoraTargetModules = loraTargetModules;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Hyperparameters" /> class.
+        /// </summary>
+        public Hyperparameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

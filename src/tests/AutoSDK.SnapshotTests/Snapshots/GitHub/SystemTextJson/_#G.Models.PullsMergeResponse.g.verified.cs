@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsMergeResponse" /> class.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <param name="documentationUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PullsMergeResponse(
+            string? message,
+            string? documentationUrl)
+        {
+            this.Message = message;
+            this.DocumentationUrl = documentationUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsMergeResponse" /> class.
+        /// </summary>
+        public PullsMergeResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

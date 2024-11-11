@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter" /> class.
+        /// </summary>
+        /// <param name="input">
+        /// The input to the Code Interpreter tool call.
+        /// </param>
+        /// <param name="outputs">
+        /// The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items, including text (`logs`) or images (`image`). Each of these are represented by a different object type.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter(
+            string? input,
+            global::System.Collections.Generic.IList<global::G.RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreterOutput>? outputs)
+        {
+            this.Input = input;
+            this.Outputs = outputs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter" /> class.
+        /// </summary>
+        public RunStepDeltaStepDetailsToolCallsCodeObjectCodeInterpreter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

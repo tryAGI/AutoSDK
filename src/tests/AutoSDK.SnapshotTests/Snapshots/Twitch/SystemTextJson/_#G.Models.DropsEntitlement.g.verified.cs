@@ -68,6 +68,59 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DropsEntitlement" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// An ID that identifies the entitlement.
+        /// </param>
+        /// <param name="benefitId">
+        /// An ID that identifies the benefit (reward).
+        /// </param>
+        /// <param name="timestamp">
+        /// The UTC date and time (in RFC3339 format) of when the entitlement was granted.
+        /// </param>
+        /// <param name="userId">
+        /// An ID that identifies the user who was granted the entitlement.
+        /// </param>
+        /// <param name="gameId">
+        /// An ID that identifies the game the user was playing when the reward was entitled.
+        /// </param>
+        /// <param name="fulfillmentStatus">
+        /// The entitlement’s fulfillment status. Possible values are:   <br/>
+        ///   <br/>
+        /// * CLAIMED<br/>
+        /// * FULFILLED
+        /// </param>
+        /// <param name="lastUpdated">
+        /// The UTC date and time (in RFC3339 format) of when the entitlement was last updated.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DropsEntitlement(
+            string id,
+            string benefitId,
+            global::System.DateTime timestamp,
+            string userId,
+            string gameId,
+            global::G.DropsEntitlementFulfillmentStatus fulfillmentStatus,
+            global::System.DateTime lastUpdated)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.BenefitId = benefitId ?? throw new global::System.ArgumentNullException(nameof(benefitId));
+            this.Timestamp = timestamp;
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.GameId = gameId ?? throw new global::System.ArgumentNullException(nameof(gameId));
+            this.FulfillmentStatus = fulfillmentStatus;
+            this.LastUpdated = lastUpdated;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DropsEntitlement" /> class.
+        /// </summary>
+        public DropsEntitlement()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

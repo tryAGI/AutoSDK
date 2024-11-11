@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryPropertySpec" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the repository property to target
+        /// </param>
+        /// <param name="propertyValues">
+        /// The values to match for the repository property
+        /// </param>
+        /// <param name="source">
+        /// The source of the repository property. Defaults to 'custom' if not specified.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryRulesetConditionsRepositoryPropertySpec(
+            string name,
+            global::System.Collections.Generic.IList<string> propertyValues,
+            global::G.RepositoryRulesetConditionsRepositoryPropertySpecSource? source)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.PropertyValues = propertyValues ?? throw new global::System.ArgumentNullException(nameof(propertyValues));
+            this.Source = source;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryPropertySpec" /> class.
+        /// </summary>
+        public RepositoryRulesetConditionsRepositoryPropertySpec()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SourceDocument" /> class.
+        /// </summary>
+        /// <param name="fileId"></param>
+        /// <param name="name"></param>
+        /// <param name="highlights"></param>
+        /// <param name="publicUrl"></param>
+        /// <param name="labels"></param>
+        public SourceDocument(
+            string fileId,
+            string name,
+            global::System.Collections.Generic.IList<string> highlights,
+            string? publicUrl,
+            global::System.Collections.Generic.IList<string>? labels)
+        {
+            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Highlights = highlights ?? throw new global::System.ArgumentNullException(nameof(highlights));
+            this.PublicUrl = publicUrl;
+            this.Labels = labels;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SourceDocument" /> class.
+        /// </summary>
+        public SourceDocument()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

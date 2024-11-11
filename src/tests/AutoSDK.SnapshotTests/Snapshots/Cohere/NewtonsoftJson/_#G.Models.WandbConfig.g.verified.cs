@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WandbConfig" /> class.
+        /// </summary>
+        /// <param name="project">
+        /// The WandB project name to be used during training.
+        /// </param>
+        /// <param name="apiKey">
+        /// The WandB API key to be used during training.
+        /// </param>
+        /// <param name="entity">
+        /// The WandB entity name to be used during training.
+        /// </param>
+        public WandbConfig(
+            string project,
+            string apiKey,
+            string? entity)
+        {
+            this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
+            this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+            this.Entity = entity;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WandbConfig" /> class.
+        /// </summary>
+        public WandbConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

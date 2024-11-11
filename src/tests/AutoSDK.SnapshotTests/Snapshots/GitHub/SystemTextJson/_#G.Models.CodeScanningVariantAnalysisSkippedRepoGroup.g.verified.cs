@@ -30,6 +30,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisSkippedRepoGroup" /> class.
+        /// </summary>
+        /// <param name="repositoryCount">
+        /// The total number of repositories that were skipped for this reason.<br/>
+        /// Example: 2
+        /// </param>
+        /// <param name="repositories">
+        /// A list of repositories that were skipped. This list may not include all repositories that were skipped. This is only available when the repository was found and the user has access to it.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeScanningVariantAnalysisSkippedRepoGroup(
+            int repositoryCount,
+            global::System.Collections.Generic.IList<global::G.CodeScanningVariantAnalysisRepository> repositories)
+        {
+            this.RepositoryCount = repositoryCount;
+            this.Repositories = repositories ?? throw new global::System.ArgumentNullException(nameof(repositories));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisSkippedRepoGroup" /> class.
+        /// </summary>
+        public CodeScanningVariantAnalysisSkippedRepoGroup()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

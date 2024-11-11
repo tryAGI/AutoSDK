@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicSearchResultItemAliase" /> class.
+        /// </summary>
+        /// <param name="topicRelation"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TopicSearchResultItemAliase(
+            global::G.TopicSearchResultItemAliaseTopicRelation? topicRelation)
+        {
+            this.TopicRelation = topicRelation;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TopicSearchResultItemAliase" /> class.
+        /// </summary>
+        public TopicSearchResultItemAliase()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

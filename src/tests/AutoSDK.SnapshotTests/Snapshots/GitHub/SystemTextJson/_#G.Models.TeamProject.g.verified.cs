@@ -125,6 +125,75 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamProject" /> class.
+        /// </summary>
+        /// <param name="ownerUrl"></param>
+        /// <param name="url"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="columnsUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="name"></param>
+        /// <param name="body"></param>
+        /// <param name="number"></param>
+        /// <param name="state"></param>
+        /// <param name="creator">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="organizationPermission">
+        /// The organization permission for this project. Only present when owner is an organization.
+        /// </param>
+        /// <param name="private">
+        /// Whether the project is private or not. Only present when owner is an organization.
+        /// </param>
+        /// <param name="permissions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TeamProject(
+            string ownerUrl,
+            string url,
+            string htmlUrl,
+            string columnsUrl,
+            int id,
+            string nodeId,
+            string name,
+            string? body,
+            int number,
+            string state,
+            global::G.SimpleUser creator,
+            string createdAt,
+            string updatedAt,
+            global::G.TeamProjectPermissions permissions,
+            string? organizationPermission,
+            bool? @private)
+        {
+            this.OwnerUrl = ownerUrl ?? throw new global::System.ArgumentNullException(nameof(ownerUrl));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.ColumnsUrl = columnsUrl ?? throw new global::System.ArgumentNullException(nameof(columnsUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.Number = number;
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Permissions = permissions ?? throw new global::System.ArgumentNullException(nameof(permissions));
+            this.OrganizationPermission = organizationPermission;
+            this.Private = @private;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamProject" /> class.
+        /// </summary>
+        public TeamProject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

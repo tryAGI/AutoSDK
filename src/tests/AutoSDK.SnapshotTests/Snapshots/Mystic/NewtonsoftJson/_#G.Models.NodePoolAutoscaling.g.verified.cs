@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodePoolAutoscaling" /> class.
+        /// </summary>
+        /// <param name="minNodes"></param>
+        /// <param name="maxNodes"></param>
+        /// <param name="currentNodes"></param>
+        public NodePoolAutoscaling(
+            int minNodes,
+            int maxNodes,
+            int currentNodes)
+        {
+            this.MinNodes = minNodes;
+            this.MaxNodes = maxNodes;
+            this.CurrentNodes = currentNodes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodePoolAutoscaling" /> class.
+        /// </summary>
+        public NodePoolAutoscaling()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

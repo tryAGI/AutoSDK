@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectsListResponse" /> class.
+        /// </summary>
+        /// <param name="objects">
+        /// The actual list of Objects.
+        /// </param>
+        /// <param name="deprecations"></param>
+        /// <param name="totalResults">
+        /// The total number of Objects for the query. The number of items in a response may be smaller due to paging.
+        /// </param>
+        public ObjectsListResponse(
+            global::System.Collections.Generic.IList<global::G.Object>? objects,
+            global::System.Collections.Generic.IList<global::G.Deprecation>? deprecations,
+            long? totalResults)
+        {
+            this.Objects = objects;
+            this.Deprecations = deprecations;
+            this.TotalResults = totalResults;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ObjectsListResponse" /> class.
+        /// </summary>
+        public ObjectsListResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

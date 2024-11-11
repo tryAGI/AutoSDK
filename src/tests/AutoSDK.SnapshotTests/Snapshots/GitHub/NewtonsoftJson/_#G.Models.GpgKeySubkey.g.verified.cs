@@ -99,6 +99,62 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpgKeySubkey" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="primaryKeyId"></param>
+        /// <param name="keyId"></param>
+        /// <param name="publicKey"></param>
+        /// <param name="emails"></param>
+        /// <param name="subkeys"></param>
+        /// <param name="canSign"></param>
+        /// <param name="canEncryptComms"></param>
+        /// <param name="canEncryptStorage"></param>
+        /// <param name="canCertify"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="expiresAt"></param>
+        /// <param name="rawKey"></param>
+        /// <param name="revoked"></param>
+        public GpgKeySubkey(
+            long? id,
+            int? primaryKeyId,
+            string? keyId,
+            string? publicKey,
+            global::System.Collections.Generic.IList<global::G.GpgKeySubkeyEmail>? emails,
+            global::System.Collections.Generic.IList<object>? subkeys,
+            bool? canSign,
+            bool? canEncryptComms,
+            bool? canEncryptStorage,
+            bool? canCertify,
+            string? createdAt,
+            string? expiresAt,
+            string? rawKey,
+            bool? revoked)
+        {
+            this.Id = id;
+            this.PrimaryKeyId = primaryKeyId;
+            this.KeyId = keyId;
+            this.PublicKey = publicKey;
+            this.Emails = emails;
+            this.Subkeys = subkeys;
+            this.CanSign = canSign;
+            this.CanEncryptComms = canEncryptComms;
+            this.CanEncryptStorage = canEncryptStorage;
+            this.CanCertify = canCertify;
+            this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
+            this.RawKey = rawKey;
+            this.Revoked = revoked;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GpgKeySubkey" /> class.
+        /// </summary>
+        public GpgKeySubkey()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

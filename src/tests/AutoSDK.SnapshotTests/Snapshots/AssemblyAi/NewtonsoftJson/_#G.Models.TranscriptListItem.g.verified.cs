@@ -57,6 +57,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TranscriptListItem" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="resourceUrl"></param>
+        /// <param name="status">
+        /// The status of your transcript. Possible values are queued, processing, completed, or error.
+        /// </param>
+        /// <param name="created"></param>
+        /// <param name="completed"></param>
+        /// <param name="audioUrl"></param>
+        /// <param name="error">
+        /// Error message of why the transcript failed
+        /// </param>
+        public TranscriptListItem(
+            global::System.Guid id,
+            string resourceUrl,
+            global::G.TranscriptStatus status,
+            string created,
+            object completed,
+            string audioUrl,
+            object error)
+        {
+            this.Id = id;
+            this.ResourceUrl = resourceUrl ?? throw new global::System.ArgumentNullException(nameof(resourceUrl));
+            this.Status = status;
+            this.Created = created ?? throw new global::System.ArgumentNullException(nameof(created));
+            this.Completed = completed ?? throw new global::System.ArgumentNullException(nameof(completed));
+            this.AudioUrl = audioUrl ?? throw new global::System.ArgumentNullException(nameof(audioUrl));
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TranscriptListItem" /> class.
+        /// </summary>
+        public TranscriptListItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

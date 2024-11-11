@@ -28,6 +28,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposListCustomDeploymentRuleIntegrationsResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount">
+        /// The total number of custom deployment protection rule integrations available for this environment.<br/>
+        /// Example: 35
+        /// </param>
+        /// <param name="availableCustomDeploymentProtectionRuleIntegrations"></param>
+        public ReposListCustomDeploymentRuleIntegrationsResponse(
+            int? totalCount,
+            global::System.Collections.Generic.IList<global::G.CustomDeploymentRuleApp>? availableCustomDeploymentProtectionRuleIntegrations)
+        {
+            this.TotalCount = totalCount;
+            this.AvailableCustomDeploymentProtectionRuleIntegrations = availableCustomDeploymentProtectionRuleIntegrations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposListCustomDeploymentRuleIntegrationsResponse" /> class.
+        /// </summary>
+        public ReposListCustomDeploymentRuleIntegrationsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

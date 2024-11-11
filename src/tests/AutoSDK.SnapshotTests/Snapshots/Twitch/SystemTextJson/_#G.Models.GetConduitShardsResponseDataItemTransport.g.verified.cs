@@ -50,6 +50,49 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetConduitShardsResponseDataItemTransport" /> class.
+        /// </summary>
+        /// <param name="method">
+        /// The transport method. Possible values are:  <br/>
+        ///   <br/>
+        /// * webhook<br/>
+        /// * websocket
+        /// </param>
+        /// <param name="callback">
+        /// The callback URL where the notifications are sent. Included only if method is set to webhook.
+        /// </param>
+        /// <param name="sessionId">
+        /// An ID that identifies the WebSocket that notifications are sent to. Included only if method is set to websocket.
+        /// </param>
+        /// <param name="connectedAt">
+        /// The UTC date and time that the WebSocket connection was established. Included only if method is set to websocket.
+        /// </param>
+        /// <param name="disconnectedAt">
+        /// The UTC date and time that the WebSocket connection was lost. Included only if method is set to websocket.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetConduitShardsResponseDataItemTransport(
+            global::G.GetConduitShardsResponseDataItemTransportMethod method,
+            string? callback,
+            string? sessionId,
+            global::System.DateTime? connectedAt,
+            global::System.DateTime? disconnectedAt)
+        {
+            this.Method = method;
+            this.Callback = callback;
+            this.SessionId = sessionId;
+            this.ConnectedAt = connectedAt;
+            this.DisconnectedAt = disconnectedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetConduitShardsResponseDataItemTransport" /> class.
+        /// </summary>
+        public GetConduitShardsResponseDataItemTransport()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

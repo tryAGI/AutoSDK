@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClusterStatisticsResponse" /> class.
+        /// </summary>
+        /// <param name="statistics"></param>
+        /// <param name="synchronized"></param>
+        public ClusterStatisticsResponse(
+            global::System.Collections.Generic.IList<global::G.Statistics>? statistics,
+            bool? synchronized)
+        {
+            this.Statistics = statistics;
+            this.Synchronized = synchronized;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClusterStatisticsResponse" /> class.
+        /// </summary>
+        public ClusterStatisticsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -47,6 +47,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantMessage" /> class.
+        /// </summary>
+        /// <param name="role"></param>
+        /// <param name="toolCalls"></param>
+        /// <param name="toolPlan"></param>
+        /// <param name="content"></param>
+        /// <param name="citations"></param>
+        public AssistantMessage(
+            global::G.AssistantMessageRole role,
+            global::System.Collections.Generic.IList<global::G.ToolCallV2>? toolCalls,
+            string? toolPlan,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.TextContent>>>? content,
+            global::System.Collections.Generic.IList<global::G.Citation>? citations)
+        {
+            this.Role = role;
+            this.ToolCalls = toolCalls;
+            this.ToolPlan = toolPlan;
+            this.Content = content;
+            this.Citations = citations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantMessage" /> class.
+        /// </summary>
+        public AssistantMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

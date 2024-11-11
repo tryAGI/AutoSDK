@@ -42,6 +42,43 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatConnector" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The identifier of the connector.
+        /// </param>
+        /// <param name="userAccessToken">
+        /// When specified, this user access token will be passed to the connector in the Authorization header instead of the Cohere generated one.
+        /// </param>
+        /// <param name="continueOnFailure">
+        /// Defaults to `false`.<br/>
+        /// When `true`, the request will continue if this connector returned an error.
+        /// </param>
+        /// <param name="options">
+        /// Provides the connector with different settings at request time. The key/value pairs of this object are specific to each connector.<br/>
+        /// For example, the connector `web-search` supports the `site` option, which limits search results to the specified domain.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatConnector(
+            string id,
+            string? userAccessToken,
+            bool? continueOnFailure,
+            object? options)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.UserAccessToken = userAccessToken;
+            this.ContinueOnFailure = continueOnFailure;
+            this.Options = options;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatConnector" /> class.
+        /// </summary>
+        public ChatConnector()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

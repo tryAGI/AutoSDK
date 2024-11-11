@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogUserAdded" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The user ID.
+        /// </param>
+        /// <param name="data">
+        /// The payload used to add the user to the project.
+        /// </param>
+        public AuditLogUserAdded(
+            string? id,
+            global::G.AuditLogUserAddedData? data)
+        {
+            this.Id = id;
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogUserAdded" /> class.
+        /// </summary>
+        public AuditLogUserAdded()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

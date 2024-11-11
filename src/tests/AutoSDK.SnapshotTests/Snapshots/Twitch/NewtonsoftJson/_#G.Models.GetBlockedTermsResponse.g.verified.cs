@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetBlockedTermsResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The list of blocked terms. The list is in descending order of when they were created (see the `created_at` timestamp).
+        /// </param>
+        /// <param name="pagination">
+        /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
+        /// </param>
+        public GetBlockedTermsResponse(
+            global::System.Collections.Generic.IList<global::G.BlockedTerm> data,
+            global::G.GetBlockedTermsResponsePagination? pagination)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Pagination = pagination;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetBlockedTermsResponse" /> class.
+        /// </summary>
+        public GetBlockedTermsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

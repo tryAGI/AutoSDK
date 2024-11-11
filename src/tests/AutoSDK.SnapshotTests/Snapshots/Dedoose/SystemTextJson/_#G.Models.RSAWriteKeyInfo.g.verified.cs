@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RSAWriteKeyInfo" /> class.
+        /// </summary>
+        /// <param name="modulus"></param>
+        /// <param name="exponent"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RSAWriteKeyInfo(
+            string? modulus,
+            string? exponent)
+        {
+            this.Modulus = modulus;
+            this.Exponent = exponent;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RSAWriteKeyInfo" /> class.
+        /// </summary>
+        public RSAWriteKeyInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

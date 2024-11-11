@@ -54,6 +54,51 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisRepository" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// A unique identifier of the repository.<br/>
+        /// Example: 1296269
+        /// </param>
+        /// <param name="name">
+        /// The name of the repository.<br/>
+        /// Example: Hello-World
+        /// </param>
+        /// <param name="fullName">
+        /// The full, globally unique, name of the repository.<br/>
+        /// Example: octocat/Hello-World
+        /// </param>
+        /// <param name="private">
+        /// Whether the repository is private.
+        /// </param>
+        /// <param name="stargazersCount">
+        /// Example: 80
+        /// </param>
+        /// <param name="updatedAt"></param>
+        public CodeScanningVariantAnalysisRepository(
+            int id,
+            string name,
+            string fullName,
+            bool @private,
+            int stargazersCount,
+            global::System.DateTime? updatedAt)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
+            this.Private = @private;
+            this.StargazersCount = stargazersCount;
+            this.UpdatedAt = updatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisRepository" /> class.
+        /// </summary>
+        public CodeScanningVariantAnalysisRepository()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

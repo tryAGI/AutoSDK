@@ -30,6 +30,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilesUpdateRequest" /> class.
+        /// </summary>
+        /// <param name="publicUrl">
+        /// The public URL of the file, if any. This URL is not validated by<br/>
+        /// AI21 or used in any way. It is strictly a piece of metadata that you can<br/>
+        /// optionally attach to a file.
+        /// </param>
+        /// <param name="labels">
+        /// Any labels to associate with this file. Separate multiple labels with commas. If<br/>
+        /// provided, will overwrite all existing labels.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FilesUpdateRequest(
+            string? publicUrl,
+            global::System.Collections.Generic.IList<string>? labels)
+        {
+            this.PublicUrl = publicUrl;
+            this.Labels = labels;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FilesUpdateRequest" /> class.
+        /// </summary>
+        public FilesUpdateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

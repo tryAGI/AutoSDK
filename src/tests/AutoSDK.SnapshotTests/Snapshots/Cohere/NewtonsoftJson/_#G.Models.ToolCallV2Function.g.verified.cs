@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolCallV2Function" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="arguments"></param>
+        public ToolCallV2Function(
+            string? name,
+            string? arguments)
+        {
+            this.Name = name;
+            this.Arguments = arguments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolCallV2Function" /> class.
+        /// </summary>
+        public ToolCallV2Function()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -57,6 +57,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Blob" /> class.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="encoding"></param>
+        /// <param name="url"></param>
+        /// <param name="sha"></param>
+        /// <param name="size"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="highlightedContent"></param>
+        public Blob(
+            string content,
+            string encoding,
+            string url,
+            string sha,
+            int? size,
+            string nodeId,
+            string? highlightedContent)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Encoding = encoding ?? throw new global::System.ArgumentNullException(nameof(encoding));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Size = size;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.HighlightedContent = highlightedContent;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Blob" /> class.
+        /// </summary>
+        public Blob()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

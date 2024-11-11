@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCreateOrUpdateEnvironmentSecretRequest" /> class.
+        /// </summary>
+        /// <param name="encryptedValue">
+        /// Value for your secret, encrypted with [LibSodium](https://libsodium.gitbook.io/doc/bindings_for_other_languages) using the public key retrieved from the [Get an environment public key](https://docs.github.com/rest/actions/secrets#get-an-environment-public-key) endpoint.
+        /// </param>
+        /// <param name="keyId">
+        /// ID of the key you used to encrypt the secret.
+        /// </param>
+        public ActionsCreateOrUpdateEnvironmentSecretRequest(
+            string encryptedValue,
+            string keyId)
+        {
+            this.EncryptedValue = encryptedValue ?? throw new global::System.ArgumentNullException(nameof(encryptedValue));
+            this.KeyId = keyId ?? throw new global::System.ArgumentNullException(nameof(keyId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCreateOrUpdateEnvironmentSecretRequest" /> class.
+        /// </summary>
+        public ActionsCreateOrUpdateEnvironmentSecretRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

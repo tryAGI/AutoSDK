@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheermoteImages" /> class.
+        /// </summary>
+        /// <param name="light"></param>
+        /// <param name="dark"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CheermoteImages(
+            global::G.CheermoteImageTheme? light,
+            global::G.CheermoteImageTheme? dark)
+        {
+            this.Light = light;
+            this.Dark = dark;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheermoteImages" /> class.
+        /// </summary>
+        public CheermoteImages()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

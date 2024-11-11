@@ -34,6 +34,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadFileRequest" /> class.
+        /// </summary>
+        /// <param name="metadata">
+        /// Arbitrary object that will be attached as document metadata to the extracted document.
+        /// </param>
+        /// <param name="filename">
+        /// Optional multipart section to override the filename.
+        /// </param>
+        /// <param name="file">
+        /// Binary file contents. The file name of the file will be used as the document ID.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UploadFileRequest(
+            byte[] file,
+            object? metadata,
+            string? filename)
+        {
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Metadata = metadata;
+            this.Filename = filename;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadFileRequest" /> class.
+        /// </summary>
+        public UploadFileRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

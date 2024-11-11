@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageBlockSource" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The base64-encoded image data.
+        /// </param>
+        /// <param name="mediaType">
+        /// The media type of the image.
+        /// </param>
+        /// <param name="type">
+        /// The type of image source.
+        /// </param>
+        public ImageBlockSource(
+            string data,
+            global::G.ImageBlockSourceMediaType mediaType,
+            global::G.ImageBlockSourceType type)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.MediaType = mediaType;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageBlockSource" /> class.
+        /// </summary>
+        public ImageBlockSource()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

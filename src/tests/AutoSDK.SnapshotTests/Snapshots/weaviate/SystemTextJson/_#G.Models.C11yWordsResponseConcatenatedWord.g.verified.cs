@@ -39,6 +39,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yWordsResponseConcatenatedWord" /> class.
+        /// </summary>
+        /// <param name="concatenatedWord"></param>
+        /// <param name="singleWords"></param>
+        /// <param name="concatenatedVector">
+        /// A vector representation of the object. If provided at object creation, this wil take precedence over any vectorizer setting.
+        /// </param>
+        /// <param name="concatenatedNearestNeighbors">
+        /// C11y function to show the nearest neighbors to a word.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public C11yWordsResponseConcatenatedWord(
+            string? concatenatedWord,
+            global::System.Collections.Generic.IList<string>? singleWords,
+            global::System.Collections.Generic.IList<float>? concatenatedVector,
+            global::System.Collections.Generic.IList<global::G.C11yNearestNeighbor>? concatenatedNearestNeighbors)
+        {
+            this.ConcatenatedWord = concatenatedWord;
+            this.SingleWords = singleWords;
+            this.ConcatenatedVector = concatenatedVector;
+            this.ConcatenatedNearestNeighbors = concatenatedNearestNeighbors;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yWordsResponseConcatenatedWord" /> class.
+        /// </summary>
+        public C11yWordsResponseConcatenatedWord()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

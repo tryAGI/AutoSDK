@@ -51,6 +51,46 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsGetResponseCurrentRelease" /> class.
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="createdAt">
+        /// The time the release was created.
+        /// </param>
+        /// <param name="createdBy"></param>
+        /// <param name="model">
+        /// The model identifier string in the format of `{model_owner}/{model_name}`.
+        /// </param>
+        /// <param name="number">
+        /// The release number.
+        /// </param>
+        /// <param name="version">
+        /// The ID of the model version used in the release.
+        /// </param>
+        public DeploymentsGetResponseCurrentRelease(
+            global::G.DeploymentsGetResponseCurrentReleaseConfiguration? configuration,
+            global::System.DateTime? createdAt,
+            global::G.DeploymentsGetResponseCurrentReleaseCreatedBy? createdBy,
+            string? model,
+            int? number,
+            string? version)
+        {
+            this.Configuration = configuration;
+            this.CreatedAt = createdAt;
+            this.CreatedBy = createdBy;
+            this.Model = model;
+            this.Number = number;
+            this.Version = version;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeploymentsGetResponseCurrentRelease" /> class.
+        /// </summary>
+        public DeploymentsGetResponseCurrentRelease()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

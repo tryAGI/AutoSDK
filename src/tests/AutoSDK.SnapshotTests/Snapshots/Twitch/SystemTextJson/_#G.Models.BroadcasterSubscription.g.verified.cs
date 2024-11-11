@@ -104,6 +104,85 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BroadcasterSubscription" /> class.
+        /// </summary>
+        /// <param name="broadcasterId">
+        /// An ID that identifies the broadcaster.
+        /// </param>
+        /// <param name="broadcasterLogin">
+        /// The broadcaster’s login name.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The broadcaster’s display name.
+        /// </param>
+        /// <param name="gifterId">
+        /// The ID of the user that gifted the subscription to the user. Is an empty string if `is_gift` is **false**.
+        /// </param>
+        /// <param name="gifterLogin">
+        /// The gifter’s login name. Is an empty string if `is_gift` is **false**.
+        /// </param>
+        /// <param name="gifterName">
+        /// The gifter’s display name. Is an empty string if `is_gift` is **false**.
+        /// </param>
+        /// <param name="isGift">
+        /// A Boolean value that determines whether the subscription is a gift subscription. Is **true** if the subscription was gifted.
+        /// </param>
+        /// <param name="planName">
+        /// The name of the subscription.
+        /// </param>
+        /// <param name="tier">
+        /// The type of subscription. Possible values are:  <br/>
+        ///   <br/>
+        /// * 1000 — Tier 1<br/>
+        /// * 2000 — Tier 2<br/>
+        /// * 3000 — Tier 3
+        /// </param>
+        /// <param name="userId">
+        /// An ID that identifies the subscribing user.
+        /// </param>
+        /// <param name="userName">
+        /// The user’s display name.
+        /// </param>
+        /// <param name="userLogin">
+        /// The user’s login name.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BroadcasterSubscription(
+            string broadcasterId,
+            string broadcasterLogin,
+            string broadcasterName,
+            string gifterId,
+            string gifterLogin,
+            string gifterName,
+            bool isGift,
+            string planName,
+            global::G.BroadcasterSubscriptionTier tier,
+            string userId,
+            string userName,
+            string userLogin)
+        {
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+            this.GifterId = gifterId ?? throw new global::System.ArgumentNullException(nameof(gifterId));
+            this.GifterLogin = gifterLogin ?? throw new global::System.ArgumentNullException(nameof(gifterLogin));
+            this.GifterName = gifterName ?? throw new global::System.ArgumentNullException(nameof(gifterName));
+            this.IsGift = isGift;
+            this.PlanName = planName ?? throw new global::System.ArgumentNullException(nameof(planName));
+            this.Tier = tier;
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BroadcasterSubscription" /> class.
+        /// </summary>
+        public BroadcasterSubscription()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

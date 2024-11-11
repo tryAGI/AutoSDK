@@ -57,6 +57,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPk" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="id"></param>
+        /// <param name="modelAssetTextureImages"></param>
+        /// <param name="negativePrompt"></param>
+        /// <param name="prompt"></param>
+        /// <param name="seed"></param>
+        /// <param name="status">
+        /// The status of the current task.
+        /// </param>
+        public GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPk(
+            string? createdAt,
+            string? id,
+            global::System.Collections.Generic.IList<global::G.GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPkModelAssetTextureImage>? modelAssetTextureImages,
+            string? negativePrompt,
+            string? prompt,
+            int? seed,
+            global::G.JobStatus? status)
+        {
+            this.CreatedAt = createdAt;
+            this.Id = id;
+            this.ModelAssetTextureImages = modelAssetTextureImages;
+            this.NegativePrompt = negativePrompt;
+            this.Prompt = prompt;
+            this.Seed = seed;
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPk" /> class.
+        /// </summary>
+        public GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPk()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

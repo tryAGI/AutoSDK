@@ -111,6 +111,74 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssueCommentCreatedIssueVariant1Milestone" /> class.
+        /// </summary>
+        /// <param name="closedAt"></param>
+        /// <param name="closedIssues"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="creator"></param>
+        /// <param name="description"></param>
+        /// <param name="dueOn"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="labelsUrl"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="number">
+        /// The number of the milestone.
+        /// </param>
+        /// <param name="openIssues"></param>
+        /// <param name="state">
+        /// The state of the milestone.
+        /// </param>
+        /// <param name="title">
+        /// The title of the milestone.
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        public WebhookIssueCommentCreatedIssueVariant1Milestone(
+            global::System.DateTime? closedAt,
+            int closedIssues,
+            global::System.DateTime createdAt,
+            global::G.WebhookIssueCommentCreatedIssueVariant1MilestoneCreator? creator,
+            string? description,
+            global::System.DateTime? dueOn,
+            string htmlUrl,
+            int id,
+            string labelsUrl,
+            string nodeId,
+            int number,
+            int openIssues,
+            global::G.WebhookIssueCommentCreatedIssueVariant1MilestoneState state,
+            string title,
+            global::System.DateTime updatedAt,
+            string url)
+        {
+            this.ClosedAt = closedAt;
+            this.ClosedIssues = closedIssues;
+            this.CreatedAt = createdAt;
+            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.DueOn = dueOn;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Number = number;
+            this.OpenIssues = openIssues;
+            this.State = state;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssueCommentCreatedIssueVariant1Milestone" /> class.
+        /// </summary>
+        public WebhookIssueCommentCreatedIssueVariant1Milestone()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

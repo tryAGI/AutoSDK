@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchCorporaParametersVariant1" /> class.
+        /// </summary>
+        /// <param name="corpora">
+        /// The corpora that you want to search.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SearchCorporaParametersVariant1(
+            global::System.Collections.Generic.IList<global::G.KeyedSearchCorpus>? corpora)
+        {
+            this.Corpora = corpora;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SearchCorporaParametersVariant1" /> class.
+        /// </summary>
+        public SearchCorporaParametersVariant1()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

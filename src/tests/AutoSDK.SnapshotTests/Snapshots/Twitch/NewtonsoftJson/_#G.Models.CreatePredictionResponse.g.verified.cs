@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreatePredictionResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// A list that contains the single prediction that you created.
+        /// </param>
+        public CreatePredictionResponse(
+            global::System.Collections.Generic.IList<global::G.Prediction> data)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreatePredictionResponse" /> class.
+        /// </summary>
+        public CreatePredictionResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

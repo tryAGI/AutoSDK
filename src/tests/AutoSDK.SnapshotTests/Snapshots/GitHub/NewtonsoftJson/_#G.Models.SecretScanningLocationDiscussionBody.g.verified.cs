@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationDiscussionBody" /> class.
+        /// </summary>
+        /// <param name="discussionBodyUrl">
+        /// The URL to the discussion where the secret was detected.<br/>
+        /// Example: https://github.com/community/community/discussions/39082#discussion-4566270
+        /// </param>
+        public SecretScanningLocationDiscussionBody(
+            string discussionBodyUrl)
+        {
+            this.DiscussionBodyUrl = discussionBodyUrl ?? throw new global::System.ArgumentNullException(nameof(discussionBodyUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationDiscussionBody" /> class.
+        /// </summary>
+        public SecretScanningLocationDiscussionBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

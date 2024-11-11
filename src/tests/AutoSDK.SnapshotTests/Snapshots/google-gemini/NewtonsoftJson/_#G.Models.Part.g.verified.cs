@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Part" /> class.
+        /// </summary>
+        /// <param name="inlineData">
+        /// Raw media bytes. Text should not be sent as raw bytes, use the 'text' field.
+        /// </param>
+        /// <param name="text">
+        /// Inline text.
+        /// </param>
+        public Part(
+            global::G.Blob? inlineData,
+            string? text)
+        {
+            this.InlineData = inlineData;
+            this.Text = text;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Part" /> class.
+        /// </summary>
+        public Part()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

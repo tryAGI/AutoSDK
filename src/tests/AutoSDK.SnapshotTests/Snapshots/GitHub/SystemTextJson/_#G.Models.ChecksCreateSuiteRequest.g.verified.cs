@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksCreateSuiteRequest" /> class.
+        /// </summary>
+        /// <param name="headSha">
+        /// The sha of the head commit.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChecksCreateSuiteRequest(
+            string headSha)
+        {
+            this.HeadSha = headSha ?? throw new global::System.ArgumentNullException(nameof(headSha));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksCreateSuiteRequest" /> class.
+        /// </summary>
+        public ChecksCreateSuiteRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

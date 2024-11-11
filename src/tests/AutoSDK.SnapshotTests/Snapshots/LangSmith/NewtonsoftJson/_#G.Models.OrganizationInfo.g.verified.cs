@@ -75,6 +75,60 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationInfo" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="displayName"></param>
+        /// <param name="config">
+        /// Organization level configuration. May include any field that exists in tenant config and additional fields.
+        /// </param>
+        /// <param name="isPersonal"></param>
+        /// <param name="tier"></param>
+        /// <param name="reachedMaxWorkspaces">
+        /// Default Value: false
+        /// </param>
+        /// <param name="permissions">
+        /// Default Value: []
+        /// </param>
+        /// <param name="disabled">
+        /// Default Value: false
+        /// </param>
+        /// <param name="ssoOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="ssoLoginSlug"></param>
+        public OrganizationInfo(
+            global::G.OrganizationConfig config,
+            bool isPersonal,
+            global::System.Guid? id,
+            string? displayName,
+            global::G.PaymentPlanTier? tier,
+            bool? reachedMaxWorkspaces,
+            global::System.Collections.Generic.IList<string>? permissions,
+            bool? disabled,
+            bool? ssoOnly,
+            string? ssoLoginSlug)
+        {
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.IsPersonal = isPersonal;
+            this.Id = id;
+            this.DisplayName = displayName;
+            this.Tier = tier;
+            this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
+            this.Permissions = permissions;
+            this.Disabled = disabled;
+            this.SsoOnly = ssoOnly;
+            this.SsoLoginSlug = ssoLoginSlug;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrganizationInfo" /> class.
+        /// </summary>
+        public OrganizationInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

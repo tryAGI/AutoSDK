@@ -537,6 +537,383 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableMinimalRepository" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 1296269L
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
+        /// </param>
+        /// <param name="name">
+        /// Example: Hello-World
+        /// </param>
+        /// <param name="fullName">
+        /// Example: octocat/Hello-World
+        /// </param>
+        /// <param name="owner">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="private"></param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat/Hello-World
+        /// </param>
+        /// <param name="description">
+        /// Example: This your first repo!
+        /// </param>
+        /// <param name="fork"></param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World
+        /// </param>
+        /// <param name="archiveUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/{archive_format}{/ref}
+        /// </param>
+        /// <param name="assigneesUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/assignees{/user}
+        /// </param>
+        /// <param name="blobsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/blobs{/sha}
+        /// </param>
+        /// <param name="branchesUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/branches{/branch}
+        /// </param>
+        /// <param name="collaboratorsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/collaborators{/collaborator}
+        /// </param>
+        /// <param name="commentsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/comments{/number}
+        /// </param>
+        /// <param name="commitsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/commits{/sha}
+        /// </param>
+        /// <param name="compareUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/compare/{base}...{head}
+        /// </param>
+        /// <param name="contentsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/contents/{+path}
+        /// </param>
+        /// <param name="contributorsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/contributors
+        /// </param>
+        /// <param name="deploymentsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/deployments
+        /// </param>
+        /// <param name="downloadsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/downloads
+        /// </param>
+        /// <param name="eventsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/events
+        /// </param>
+        /// <param name="forksUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/forks
+        /// </param>
+        /// <param name="gitCommitsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/commits{/sha}
+        /// </param>
+        /// <param name="gitRefsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/refs{/sha}
+        /// </param>
+        /// <param name="gitTagsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/tags{/sha}
+        /// </param>
+        /// <param name="gitUrl"></param>
+        /// <param name="issueCommentUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/issues/comments{/number}
+        /// </param>
+        /// <param name="issueEventsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/issues/events{/number}
+        /// </param>
+        /// <param name="issuesUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/issues{/number}
+        /// </param>
+        /// <param name="keysUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/keys{/key_id}
+        /// </param>
+        /// <param name="labelsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/labels{/name}
+        /// </param>
+        /// <param name="languagesUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/languages
+        /// </param>
+        /// <param name="mergesUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/merges
+        /// </param>
+        /// <param name="milestonesUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/milestones{/number}
+        /// </param>
+        /// <param name="notificationsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/notifications{?since,all,participating}
+        /// </param>
+        /// <param name="pullsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/pulls{/number}
+        /// </param>
+        /// <param name="releasesUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/releases{/id}
+        /// </param>
+        /// <param name="sshUrl"></param>
+        /// <param name="stargazersUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/stargazers
+        /// </param>
+        /// <param name="statusesUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/statuses/{sha}
+        /// </param>
+        /// <param name="subscribersUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/subscribers
+        /// </param>
+        /// <param name="subscriptionUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/subscription
+        /// </param>
+        /// <param name="tagsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/tags
+        /// </param>
+        /// <param name="teamsUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/teams
+        /// </param>
+        /// <param name="treesUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/git/trees{/sha}
+        /// </param>
+        /// <param name="cloneUrl"></param>
+        /// <param name="mirrorUrl"></param>
+        /// <param name="hooksUrl">
+        /// Example: http://api.github.com/repos/octocat/Hello-World/hooks
+        /// </param>
+        /// <param name="svnUrl"></param>
+        /// <param name="homepage"></param>
+        /// <param name="language"></param>
+        /// <param name="forksCount"></param>
+        /// <param name="stargazersCount"></param>
+        /// <param name="watchersCount"></param>
+        /// <param name="size">
+        /// The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
+        /// </param>
+        /// <param name="defaultBranch"></param>
+        /// <param name="openIssuesCount"></param>
+        /// <param name="isTemplate"></param>
+        /// <param name="topics"></param>
+        /// <param name="hasIssues"></param>
+        /// <param name="hasProjects"></param>
+        /// <param name="hasWiki"></param>
+        /// <param name="hasPages"></param>
+        /// <param name="hasDownloads"></param>
+        /// <param name="hasDiscussions"></param>
+        /// <param name="archived"></param>
+        /// <param name="disabled"></param>
+        /// <param name="visibility"></param>
+        /// <param name="pushedAt"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="permissions"></param>
+        /// <param name="roleName">
+        /// Example: admin
+        /// </param>
+        /// <param name="tempCloneToken"></param>
+        /// <param name="deleteBranchOnMerge"></param>
+        /// <param name="subscribersCount"></param>
+        /// <param name="networkCount"></param>
+        /// <param name="codeOfConduct">
+        /// Code Of Conduct
+        /// </param>
+        /// <param name="license"></param>
+        /// <param name="forks">
+        /// Example: 0
+        /// </param>
+        /// <param name="openIssues">
+        /// Example: 0
+        /// </param>
+        /// <param name="watchers">
+        /// Example: 0
+        /// </param>
+        /// <param name="allowForking"></param>
+        /// <param name="webCommitSignoffRequired">
+        /// Example: false
+        /// </param>
+        /// <param name="securityAndAnalysis"></param>
+        public NullableMinimalRepository(
+            long id,
+            string nodeId,
+            string name,
+            string fullName,
+            global::G.SimpleUser owner,
+            bool @private,
+            string htmlUrl,
+            string? description,
+            bool fork,
+            string url,
+            string archiveUrl,
+            string assigneesUrl,
+            string blobsUrl,
+            string branchesUrl,
+            string collaboratorsUrl,
+            string commentsUrl,
+            string commitsUrl,
+            string compareUrl,
+            string contentsUrl,
+            string contributorsUrl,
+            string deploymentsUrl,
+            string downloadsUrl,
+            string eventsUrl,
+            string forksUrl,
+            string gitCommitsUrl,
+            string gitRefsUrl,
+            string gitTagsUrl,
+            string issueCommentUrl,
+            string issueEventsUrl,
+            string issuesUrl,
+            string keysUrl,
+            string labelsUrl,
+            string languagesUrl,
+            string mergesUrl,
+            string milestonesUrl,
+            string notificationsUrl,
+            string pullsUrl,
+            string releasesUrl,
+            string stargazersUrl,
+            string statusesUrl,
+            string subscribersUrl,
+            string subscriptionUrl,
+            string tagsUrl,
+            string teamsUrl,
+            string treesUrl,
+            string hooksUrl,
+            string? gitUrl,
+            string? sshUrl,
+            string? cloneUrl,
+            string? mirrorUrl,
+            string? svnUrl,
+            string? homepage,
+            string? language,
+            int? forksCount,
+            int? stargazersCount,
+            int? watchersCount,
+            int? size,
+            string? defaultBranch,
+            int? openIssuesCount,
+            bool? isTemplate,
+            global::System.Collections.Generic.IList<string>? topics,
+            bool? hasIssues,
+            bool? hasProjects,
+            bool? hasWiki,
+            bool? hasPages,
+            bool? hasDownloads,
+            bool? hasDiscussions,
+            bool? archived,
+            bool? disabled,
+            string? visibility,
+            global::System.DateTime? pushedAt,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
+            global::G.NullableMinimalRepositoryPermissions? permissions,
+            string? roleName,
+            string? tempCloneToken,
+            bool? deleteBranchOnMerge,
+            int? subscribersCount,
+            int? networkCount,
+            global::G.CodeOfConduct? codeOfConduct,
+            global::G.NullableMinimalRepositoryLicense? license,
+            int? forks,
+            int? openIssues,
+            int? watchers,
+            bool? allowForking,
+            bool? webCommitSignoffRequired,
+            global::G.SecurityAndAnalysis? securityAndAnalysis)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+            this.Private = @private;
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Fork = fork;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
+            this.AssigneesUrl = assigneesUrl ?? throw new global::System.ArgumentNullException(nameof(assigneesUrl));
+            this.BlobsUrl = blobsUrl ?? throw new global::System.ArgumentNullException(nameof(blobsUrl));
+            this.BranchesUrl = branchesUrl ?? throw new global::System.ArgumentNullException(nameof(branchesUrl));
+            this.CollaboratorsUrl = collaboratorsUrl ?? throw new global::System.ArgumentNullException(nameof(collaboratorsUrl));
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.CommitsUrl = commitsUrl ?? throw new global::System.ArgumentNullException(nameof(commitsUrl));
+            this.CompareUrl = compareUrl ?? throw new global::System.ArgumentNullException(nameof(compareUrl));
+            this.ContentsUrl = contentsUrl ?? throw new global::System.ArgumentNullException(nameof(contentsUrl));
+            this.ContributorsUrl = contributorsUrl ?? throw new global::System.ArgumentNullException(nameof(contributorsUrl));
+            this.DeploymentsUrl = deploymentsUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentsUrl));
+            this.DownloadsUrl = downloadsUrl ?? throw new global::System.ArgumentNullException(nameof(downloadsUrl));
+            this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
+            this.ForksUrl = forksUrl ?? throw new global::System.ArgumentNullException(nameof(forksUrl));
+            this.GitCommitsUrl = gitCommitsUrl ?? throw new global::System.ArgumentNullException(nameof(gitCommitsUrl));
+            this.GitRefsUrl = gitRefsUrl ?? throw new global::System.ArgumentNullException(nameof(gitRefsUrl));
+            this.GitTagsUrl = gitTagsUrl ?? throw new global::System.ArgumentNullException(nameof(gitTagsUrl));
+            this.IssueCommentUrl = issueCommentUrl ?? throw new global::System.ArgumentNullException(nameof(issueCommentUrl));
+            this.IssueEventsUrl = issueEventsUrl ?? throw new global::System.ArgumentNullException(nameof(issueEventsUrl));
+            this.IssuesUrl = issuesUrl ?? throw new global::System.ArgumentNullException(nameof(issuesUrl));
+            this.KeysUrl = keysUrl ?? throw new global::System.ArgumentNullException(nameof(keysUrl));
+            this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
+            this.LanguagesUrl = languagesUrl ?? throw new global::System.ArgumentNullException(nameof(languagesUrl));
+            this.MergesUrl = mergesUrl ?? throw new global::System.ArgumentNullException(nameof(mergesUrl));
+            this.MilestonesUrl = milestonesUrl ?? throw new global::System.ArgumentNullException(nameof(milestonesUrl));
+            this.NotificationsUrl = notificationsUrl ?? throw new global::System.ArgumentNullException(nameof(notificationsUrl));
+            this.PullsUrl = pullsUrl ?? throw new global::System.ArgumentNullException(nameof(pullsUrl));
+            this.ReleasesUrl = releasesUrl ?? throw new global::System.ArgumentNullException(nameof(releasesUrl));
+            this.StargazersUrl = stargazersUrl ?? throw new global::System.ArgumentNullException(nameof(stargazersUrl));
+            this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
+            this.SubscribersUrl = subscribersUrl ?? throw new global::System.ArgumentNullException(nameof(subscribersUrl));
+            this.SubscriptionUrl = subscriptionUrl ?? throw new global::System.ArgumentNullException(nameof(subscriptionUrl));
+            this.TagsUrl = tagsUrl ?? throw new global::System.ArgumentNullException(nameof(tagsUrl));
+            this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
+            this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
+            this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
+            this.GitUrl = gitUrl;
+            this.SshUrl = sshUrl;
+            this.CloneUrl = cloneUrl;
+            this.MirrorUrl = mirrorUrl;
+            this.SvnUrl = svnUrl;
+            this.Homepage = homepage;
+            this.Language = language;
+            this.ForksCount = forksCount;
+            this.StargazersCount = stargazersCount;
+            this.WatchersCount = watchersCount;
+            this.Size = size;
+            this.DefaultBranch = defaultBranch;
+            this.OpenIssuesCount = openIssuesCount;
+            this.IsTemplate = isTemplate;
+            this.Topics = topics;
+            this.HasIssues = hasIssues;
+            this.HasProjects = hasProjects;
+            this.HasWiki = hasWiki;
+            this.HasPages = hasPages;
+            this.HasDownloads = hasDownloads;
+            this.HasDiscussions = hasDiscussions;
+            this.Archived = archived;
+            this.Disabled = disabled;
+            this.Visibility = visibility;
+            this.PushedAt = pushedAt;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Permissions = permissions;
+            this.RoleName = roleName;
+            this.TempCloneToken = tempCloneToken;
+            this.DeleteBranchOnMerge = deleteBranchOnMerge;
+            this.SubscribersCount = subscribersCount;
+            this.NetworkCount = networkCount;
+            this.CodeOfConduct = codeOfConduct;
+            this.License = license;
+            this.Forks = forks;
+            this.OpenIssues = openIssues;
+            this.Watchers = watchers;
+            this.AllowForking = allowForking;
+            this.WebCommitSignoffRequired = webCommitSignoffRequired;
+            this.SecurityAndAnalysis = securityAndAnalysis;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableMinimalRepository" /> class.
+        /// </summary>
+        public NullableMinimalRepository()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

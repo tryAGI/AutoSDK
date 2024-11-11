@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListTokensResponse" /> class.
+        /// </summary>
+        /// <param name="tokens">
+        /// A list of API token resources.
+        /// </param>
+        /// <param name="nextPageToken">
+        /// Next page token.
+        /// </param>
+        /// <param name="totalSize">
+        /// Total number of API token resources.
+        /// </param>
+        public ListTokensResponse(
+            global::System.Collections.Generic.IList<global::G.ApiToken>? tokens,
+            string? nextPageToken,
+            int? totalSize)
+        {
+            this.Tokens = tokens;
+            this.NextPageToken = nextPageToken;
+            this.TotalSize = totalSize;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListTokensResponse" /> class.
+        /// </summary>
+        public ListTokensResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions" /> class.
+        /// </summary>
+        /// <param name="labeledRunners">
+        /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
+        /// </param>
+        public CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions(
+            bool? labeledRunners)
+        {
+            this.LabeledRunners = labeledRunners;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions" /> class.
+        /// </summary>
+        public CodeSecurityUpdateConfigurationRequestDependencyGraphAutosubmitActionOptions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

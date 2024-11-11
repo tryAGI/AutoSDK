@@ -33,6 +33,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateBranchProtectionRequestRequiredStatusChecks" /> class.
+        /// </summary>
+        /// <param name="strict">
+        /// Require branches to be up to date before merging.
+        /// </param>
+        /// <param name="checks">
+        /// The list of status checks to require in order to merge into this branch.
+        /// </param>
+        public ReposUpdateBranchProtectionRequestRequiredStatusChecks(
+            bool strict,
+            global::System.Collections.Generic.IList<string> contexts,
+            global::System.Collections.Generic.IList<global::G.ReposUpdateBranchProtectionRequestRequiredStatusChecksCheck>? checks)
+        {
+            this.Strict = strict;
+            this.Contexts = contexts ?? throw new global::System.ArgumentNullException(nameof(contexts));
+            this.Checks = checks;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateBranchProtectionRequestRequiredStatusChecks" /> class.
+        /// </summary>
+        public ReposUpdateBranchProtectionRequestRequiredStatusChecks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

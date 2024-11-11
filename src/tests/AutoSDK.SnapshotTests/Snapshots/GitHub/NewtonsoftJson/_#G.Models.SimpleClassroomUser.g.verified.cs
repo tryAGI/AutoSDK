@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleClassroomUser" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 1
+        /// </param>
+        /// <param name="login">
+        /// Example: octocat
+        /// </param>
+        /// <param name="avatarUrl">
+        /// Example: https://github.com/images/error/octocat_happy.gif
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat
+        /// </param>
+        public SimpleClassroomUser(
+            int id,
+            string login,
+            string avatarUrl,
+            string htmlUrl)
+        {
+            this.Id = id;
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.AvatarUrl = avatarUrl ?? throw new global::System.ArgumentNullException(nameof(avatarUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleClassroomUser" /> class.
+        /// </summary>
+        public SimpleClassroomUser()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityDetachConfigurationRequest" /> class.
+        /// </summary>
+        /// <param name="selectedRepositoryIds">
+        /// An array of repository IDs to detach from configurations.
+        /// </param>
+        public CodeSecurityDetachConfigurationRequest(
+            global::System.Collections.Generic.IList<int>? selectedRepositoryIds)
+        {
+            this.SelectedRepositoryIds = selectedRepositoryIds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityDetachConfigurationRequest" /> class.
+        /// </summary>
+        public CodeSecurityDetachConfigurationRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

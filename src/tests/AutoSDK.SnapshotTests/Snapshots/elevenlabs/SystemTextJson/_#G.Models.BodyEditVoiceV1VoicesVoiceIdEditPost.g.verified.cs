@@ -40,6 +40,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyEditVoiceV1VoicesVoiceIdEditPost" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
+        /// </param>
+        /// <param name="files">
+        /// Audio files to add to the voice
+        /// </param>
+        /// <param name="description">
+        /// How would you describe the voice?
+        /// </param>
+        /// <param name="labels">
+        /// Serialized labels dictionary for the voice.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyEditVoiceV1VoicesVoiceIdEditPost(
+            string name,
+            global::System.Collections.Generic.IList<byte[]>? files,
+            string? description,
+            string? labels)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Files = files;
+            this.Description = description;
+            this.Labels = labels;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyEditVoiceV1VoicesVoiceIdEditPost" /> class.
+        /// </summary>
+        public BodyEditVoiceV1VoicesVoiceIdEditPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

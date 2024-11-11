@@ -525,6 +525,277 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestHeadRepo" /> class.
+        /// </summary>
+        /// <param name="archiveUrl"></param>
+        /// <param name="assigneesUrl"></param>
+        /// <param name="blobsUrl"></param>
+        /// <param name="branchesUrl"></param>
+        /// <param name="collaboratorsUrl"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="commitsUrl"></param>
+        /// <param name="compareUrl"></param>
+        /// <param name="contentsUrl"></param>
+        /// <param name="contributorsUrl"></param>
+        /// <param name="deploymentsUrl"></param>
+        /// <param name="description"></param>
+        /// <param name="downloadsUrl"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="fork"></param>
+        /// <param name="forksUrl"></param>
+        /// <param name="fullName"></param>
+        /// <param name="gitCommitsUrl"></param>
+        /// <param name="gitRefsUrl"></param>
+        /// <param name="gitTagsUrl"></param>
+        /// <param name="hooksUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="issueCommentUrl"></param>
+        /// <param name="issueEventsUrl"></param>
+        /// <param name="issuesUrl"></param>
+        /// <param name="keysUrl"></param>
+        /// <param name="labelsUrl"></param>
+        /// <param name="languagesUrl"></param>
+        /// <param name="mergesUrl"></param>
+        /// <param name="milestonesUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="notificationsUrl"></param>
+        /// <param name="owner"></param>
+        /// <param name="private"></param>
+        /// <param name="pullsUrl"></param>
+        /// <param name="releasesUrl"></param>
+        /// <param name="stargazersUrl"></param>
+        /// <param name="statusesUrl"></param>
+        /// <param name="subscribersUrl"></param>
+        /// <param name="subscriptionUrl"></param>
+        /// <param name="tagsUrl"></param>
+        /// <param name="teamsUrl"></param>
+        /// <param name="treesUrl"></param>
+        /// <param name="url"></param>
+        /// <param name="cloneUrl"></param>
+        /// <param name="defaultBranch"></param>
+        /// <param name="forks"></param>
+        /// <param name="forksCount"></param>
+        /// <param name="gitUrl"></param>
+        /// <param name="hasDownloads"></param>
+        /// <param name="hasIssues"></param>
+        /// <param name="hasProjects"></param>
+        /// <param name="hasWiki"></param>
+        /// <param name="hasPages"></param>
+        /// <param name="hasDiscussions"></param>
+        /// <param name="homepage"></param>
+        /// <param name="language"></param>
+        /// <param name="masterBranch"></param>
+        /// <param name="archived"></param>
+        /// <param name="disabled"></param>
+        /// <param name="visibility">
+        /// The repository visibility: public, private, or internal.
+        /// </param>
+        /// <param name="mirrorUrl"></param>
+        /// <param name="openIssues"></param>
+        /// <param name="openIssuesCount"></param>
+        /// <param name="permissions"></param>
+        /// <param name="tempCloneToken"></param>
+        /// <param name="allowMergeCommit"></param>
+        /// <param name="allowSquashMerge"></param>
+        /// <param name="allowRebaseMerge"></param>
+        /// <param name="license"></param>
+        /// <param name="pushedAt"></param>
+        /// <param name="size"></param>
+        /// <param name="sshUrl"></param>
+        /// <param name="stargazersCount"></param>
+        /// <param name="svnUrl"></param>
+        /// <param name="topics"></param>
+        /// <param name="watchers"></param>
+        /// <param name="watchersCount"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="allowForking"></param>
+        /// <param name="isTemplate"></param>
+        /// <param name="webCommitSignoffRequired"></param>
+        public PullRequestHeadRepo(
+            string archiveUrl,
+            string assigneesUrl,
+            string blobsUrl,
+            string branchesUrl,
+            string collaboratorsUrl,
+            string commentsUrl,
+            string commitsUrl,
+            string compareUrl,
+            string contentsUrl,
+            string contributorsUrl,
+            string deploymentsUrl,
+            string? description,
+            string downloadsUrl,
+            string eventsUrl,
+            bool fork,
+            string forksUrl,
+            string fullName,
+            string gitCommitsUrl,
+            string gitRefsUrl,
+            string gitTagsUrl,
+            string hooksUrl,
+            string htmlUrl,
+            int id,
+            string nodeId,
+            string issueCommentUrl,
+            string issueEventsUrl,
+            string issuesUrl,
+            string keysUrl,
+            string labelsUrl,
+            string languagesUrl,
+            string mergesUrl,
+            string milestonesUrl,
+            string name,
+            string notificationsUrl,
+            global::G.PullRequestHeadRepoOwner owner,
+            bool @private,
+            string pullsUrl,
+            string releasesUrl,
+            string stargazersUrl,
+            string statusesUrl,
+            string subscribersUrl,
+            string subscriptionUrl,
+            string tagsUrl,
+            string teamsUrl,
+            string treesUrl,
+            string url,
+            string cloneUrl,
+            string defaultBranch,
+            int forks,
+            int forksCount,
+            string gitUrl,
+            bool hasDownloads,
+            bool hasIssues,
+            bool hasProjects,
+            bool hasWiki,
+            bool hasPages,
+            bool hasDiscussions,
+            string? homepage,
+            string? language,
+            bool archived,
+            bool disabled,
+            string? mirrorUrl,
+            int openIssues,
+            int openIssuesCount,
+            global::G.PullRequestHeadRepoLicense? license,
+            global::System.DateTime pushedAt,
+            int size,
+            string sshUrl,
+            int stargazersCount,
+            string svnUrl,
+            int watchers,
+            int watchersCount,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string? masterBranch,
+            string? visibility,
+            global::G.PullRequestHeadRepoPermissions? permissions,
+            string? tempCloneToken,
+            bool? allowMergeCommit,
+            bool? allowSquashMerge,
+            bool? allowRebaseMerge,
+            global::System.Collections.Generic.IList<string>? topics,
+            bool? allowForking,
+            bool? isTemplate,
+            bool? webCommitSignoffRequired)
+        {
+            this.ArchiveUrl = archiveUrl ?? throw new global::System.ArgumentNullException(nameof(archiveUrl));
+            this.AssigneesUrl = assigneesUrl ?? throw new global::System.ArgumentNullException(nameof(assigneesUrl));
+            this.BlobsUrl = blobsUrl ?? throw new global::System.ArgumentNullException(nameof(blobsUrl));
+            this.BranchesUrl = branchesUrl ?? throw new global::System.ArgumentNullException(nameof(branchesUrl));
+            this.CollaboratorsUrl = collaboratorsUrl ?? throw new global::System.ArgumentNullException(nameof(collaboratorsUrl));
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.CommitsUrl = commitsUrl ?? throw new global::System.ArgumentNullException(nameof(commitsUrl));
+            this.CompareUrl = compareUrl ?? throw new global::System.ArgumentNullException(nameof(compareUrl));
+            this.ContentsUrl = contentsUrl ?? throw new global::System.ArgumentNullException(nameof(contentsUrl));
+            this.ContributorsUrl = contributorsUrl ?? throw new global::System.ArgumentNullException(nameof(contributorsUrl));
+            this.DeploymentsUrl = deploymentsUrl ?? throw new global::System.ArgumentNullException(nameof(deploymentsUrl));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.DownloadsUrl = downloadsUrl ?? throw new global::System.ArgumentNullException(nameof(downloadsUrl));
+            this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
+            this.Fork = fork;
+            this.ForksUrl = forksUrl ?? throw new global::System.ArgumentNullException(nameof(forksUrl));
+            this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
+            this.GitCommitsUrl = gitCommitsUrl ?? throw new global::System.ArgumentNullException(nameof(gitCommitsUrl));
+            this.GitRefsUrl = gitRefsUrl ?? throw new global::System.ArgumentNullException(nameof(gitRefsUrl));
+            this.GitTagsUrl = gitTagsUrl ?? throw new global::System.ArgumentNullException(nameof(gitTagsUrl));
+            this.HooksUrl = hooksUrl ?? throw new global::System.ArgumentNullException(nameof(hooksUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.IssueCommentUrl = issueCommentUrl ?? throw new global::System.ArgumentNullException(nameof(issueCommentUrl));
+            this.IssueEventsUrl = issueEventsUrl ?? throw new global::System.ArgumentNullException(nameof(issueEventsUrl));
+            this.IssuesUrl = issuesUrl ?? throw new global::System.ArgumentNullException(nameof(issuesUrl));
+            this.KeysUrl = keysUrl ?? throw new global::System.ArgumentNullException(nameof(keysUrl));
+            this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
+            this.LanguagesUrl = languagesUrl ?? throw new global::System.ArgumentNullException(nameof(languagesUrl));
+            this.MergesUrl = mergesUrl ?? throw new global::System.ArgumentNullException(nameof(mergesUrl));
+            this.MilestonesUrl = milestonesUrl ?? throw new global::System.ArgumentNullException(nameof(milestonesUrl));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.NotificationsUrl = notificationsUrl ?? throw new global::System.ArgumentNullException(nameof(notificationsUrl));
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+            this.Private = @private;
+            this.PullsUrl = pullsUrl ?? throw new global::System.ArgumentNullException(nameof(pullsUrl));
+            this.ReleasesUrl = releasesUrl ?? throw new global::System.ArgumentNullException(nameof(releasesUrl));
+            this.StargazersUrl = stargazersUrl ?? throw new global::System.ArgumentNullException(nameof(stargazersUrl));
+            this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
+            this.SubscribersUrl = subscribersUrl ?? throw new global::System.ArgumentNullException(nameof(subscribersUrl));
+            this.SubscriptionUrl = subscriptionUrl ?? throw new global::System.ArgumentNullException(nameof(subscriptionUrl));
+            this.TagsUrl = tagsUrl ?? throw new global::System.ArgumentNullException(nameof(tagsUrl));
+            this.TeamsUrl = teamsUrl ?? throw new global::System.ArgumentNullException(nameof(teamsUrl));
+            this.TreesUrl = treesUrl ?? throw new global::System.ArgumentNullException(nameof(treesUrl));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.CloneUrl = cloneUrl ?? throw new global::System.ArgumentNullException(nameof(cloneUrl));
+            this.DefaultBranch = defaultBranch ?? throw new global::System.ArgumentNullException(nameof(defaultBranch));
+            this.Forks = forks;
+            this.ForksCount = forksCount;
+            this.GitUrl = gitUrl ?? throw new global::System.ArgumentNullException(nameof(gitUrl));
+            this.HasDownloads = hasDownloads;
+            this.HasIssues = hasIssues;
+            this.HasProjects = hasProjects;
+            this.HasWiki = hasWiki;
+            this.HasPages = hasPages;
+            this.HasDiscussions = hasDiscussions;
+            this.Homepage = homepage ?? throw new global::System.ArgumentNullException(nameof(homepage));
+            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.Archived = archived;
+            this.Disabled = disabled;
+            this.MirrorUrl = mirrorUrl ?? throw new global::System.ArgumentNullException(nameof(mirrorUrl));
+            this.OpenIssues = openIssues;
+            this.OpenIssuesCount = openIssuesCount;
+            this.License = license ?? throw new global::System.ArgumentNullException(nameof(license));
+            this.PushedAt = pushedAt;
+            this.Size = size;
+            this.SshUrl = sshUrl ?? throw new global::System.ArgumentNullException(nameof(sshUrl));
+            this.StargazersCount = stargazersCount;
+            this.SvnUrl = svnUrl ?? throw new global::System.ArgumentNullException(nameof(svnUrl));
+            this.Watchers = watchers;
+            this.WatchersCount = watchersCount;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.MasterBranch = masterBranch;
+            this.Visibility = visibility;
+            this.Permissions = permissions;
+            this.TempCloneToken = tempCloneToken;
+            this.AllowMergeCommit = allowMergeCommit;
+            this.AllowSquashMerge = allowSquashMerge;
+            this.AllowRebaseMerge = allowRebaseMerge;
+            this.Topics = topics;
+            this.AllowForking = allowForking;
+            this.IsTemplate = isTemplate;
+            this.WebCommitSignoffRequired = webCommitSignoffRequired;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestHeadRepo" /> class.
+        /// </summary>
+        public PullRequestHeadRepo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

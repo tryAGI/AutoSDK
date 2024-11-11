@@ -23,6 +23,27 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamResponseEnd" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Then end of stream will be denoted with an object<br/>
+        /// with the type `end`.<br/>
+        /// Default Value: end
+        /// </param>
+        public StreamResponseEnd(
+            string? type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamResponseEnd" /> class.
+        /// </summary>
+        public StreamResponseEnd()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

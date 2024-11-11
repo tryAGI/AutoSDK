@@ -34,6 +34,36 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotUpdateAlertRequest" /> class.
+        /// </summary>
+        /// <param name="state">
+        /// The state of the Dependabot alert.<br/>
+        /// A `dismissed_reason` must be provided when setting the state to `dismissed`.
+        /// </param>
+        /// <param name="dismissedReason">
+        /// **Required when `state` is `dismissed`.** A reason for dismissing the alert.
+        /// </param>
+        /// <param name="dismissedComment">
+        /// An optional comment associated with dismissing the alert.
+        /// </param>
+        public DependabotUpdateAlertRequest(
+            global::G.DependabotUpdateAlertRequestState state,
+            global::G.DependabotUpdateAlertRequestDismissedReason? dismissedReason,
+            string? dismissedComment)
+        {
+            this.State = state;
+            this.DismissedReason = dismissedReason;
+            this.DismissedComment = dismissedComment;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotUpdateAlertRequest" /> class.
+        /// </summary>
+        public DependabotUpdateAlertRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

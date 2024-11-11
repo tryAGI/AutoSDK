@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateOrUpdateCustomPropertiesValuesRequest" /> class.
+        /// </summary>
+        /// <param name="properties">
+        /// A list of custom property names and associated values to apply to the repositories.
+        /// </param>
+        public ReposCreateOrUpdateCustomPropertiesValuesRequest(
+            global::System.Collections.Generic.IList<global::G.CustomPropertyValue> properties)
+        {
+            this.Properties = properties ?? throw new global::System.ArgumentNullException(nameof(properties));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateOrUpdateCustomPropertiesValuesRequest" /> class.
+        /// </summary>
+        public ReposCreateOrUpdateCustomPropertiesValuesRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

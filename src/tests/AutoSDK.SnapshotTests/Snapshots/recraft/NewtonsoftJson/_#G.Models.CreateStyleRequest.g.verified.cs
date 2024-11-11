@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateStyleRequest" /> class.
+        /// </summary>
+        /// <param name="images"></param>
+        /// <param name="style"></param>
+        public CreateStyleRequest(
+            global::System.Collections.Generic.IList<byte[]> images,
+            global::G.ImageStyle style)
+        {
+            this.Images = images ?? throw new global::System.ArgumentNullException(nameof(images));
+            this.Style = style;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateStyleRequest" /> class.
+        /// </summary>
+        public CreateStyleRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

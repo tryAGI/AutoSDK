@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateStreamTextVariant2" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// A segment of text of the generation.
+        /// </param>
+        /// <param name="index">
+        /// Refers to the nth generation. Only present when `num_generations` is greater than zero, and only when text responses are being streamed.
+        /// </param>
+        /// <param name="isFinished"></param>
+        public GenerateStreamTextVariant2(
+            string text,
+            bool isFinished,
+            int? index)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.IsFinished = isFinished;
+            this.Index = index;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateStreamTextVariant2" /> class.
+        /// </summary>
+        public GenerateStreamTextVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

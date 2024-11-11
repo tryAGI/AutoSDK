@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatToolCallsChunkEventVariant2" /> class.
+        /// </summary>
+        /// <param name="toolCallDelta">
+        /// Contains the chunk of the tool call generation in the stream.
+        /// </param>
+        public ChatToolCallsChunkEventVariant2(
+            global::G.ToolCallDelta toolCallDelta)
+        {
+            this.ToolCallDelta = toolCallDelta ?? throw new global::System.ArgumentNullException(nameof(toolCallDelta));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatToolCallsChunkEventVariant2" /> class.
+        /// </summary>
+        public ChatToolCallsChunkEventVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

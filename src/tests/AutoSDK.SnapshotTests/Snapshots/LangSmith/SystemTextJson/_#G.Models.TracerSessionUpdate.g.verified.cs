@@ -52,6 +52,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TracerSessionUpdate" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="defaultDatasetId"></param>
+        /// <param name="endTime"></param>
+        /// <param name="extra"></param>
+        /// <param name="traceTier"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TracerSessionUpdate(
+            string? name,
+            string? description,
+            global::System.Guid? defaultDatasetId,
+            global::System.DateTime? endTime,
+            object? extra,
+            global::G.TraceTier? traceTier)
+        {
+            this.Name = name;
+            this.Description = description;
+            this.DefaultDatasetId = defaultDatasetId;
+            this.EndTime = endTime;
+            this.Extra = extra;
+            this.TraceTier = traceTier;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TracerSessionUpdate" /> class.
+        /// </summary>
+        public TracerSessionUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

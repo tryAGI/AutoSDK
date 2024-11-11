@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsListInstallationsForAuthenticatedUserResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="installations"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AppsListInstallationsForAuthenticatedUserResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.Installation> installations)
+        {
+            this.TotalCount = totalCount;
+            this.Installations = installations ?? throw new global::System.ArgumentNullException(nameof(installations));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsListInstallationsForAuthenticatedUserResponse" /> class.
+        /// </summary>
+        public AppsListInstallationsForAuthenticatedUserResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

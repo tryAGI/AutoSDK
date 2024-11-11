@@ -41,6 +41,35 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter" /> class.
+        /// </summary>
+        /// <param name="date"></param>
+        /// <param name="email"></param>
+        /// <param name="name">
+        /// The git author's name.
+        /// </param>
+        /// <param name="username"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter(
+            string? email,
+            string name,
+            global::System.DateTime? date,
+            string? username)
+        {
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Date = date;
+            this.Username = username;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter" /> class.
+        /// </summary>
+        public WebhookCheckSuiteCompletedCheckSuiteHeadCommitCommitter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

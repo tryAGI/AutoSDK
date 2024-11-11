@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkspaceCreate" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="displayName"></param>
+        /// <param name="tenantHandle"></param>
+        public WorkspaceCreate(
+            string displayName,
+            global::System.Guid? id,
+            string? tenantHandle)
+        {
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.Id = id;
+            this.TenantHandle = tenantHandle;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkspaceCreate" /> class.
+        /// </summary>
+        public WorkspaceCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

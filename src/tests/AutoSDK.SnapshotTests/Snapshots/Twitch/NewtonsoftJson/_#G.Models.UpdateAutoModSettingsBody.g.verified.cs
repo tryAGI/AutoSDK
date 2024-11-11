@@ -69,6 +69,65 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAutoModSettingsBody" /> class.
+        /// </summary>
+        /// <param name="aggression">
+        /// The Automod level for hostility involving aggression.
+        /// </param>
+        /// <param name="bullying">
+        /// The Automod level for hostility involving name calling or insults.
+        /// </param>
+        /// <param name="disability">
+        /// The Automod level for discrimination against disability.
+        /// </param>
+        /// <param name="misogyny">
+        /// The Automod level for discrimination against women.
+        /// </param>
+        /// <param name="overallLevel">
+        /// The default AutoMod level for the broadcaster.
+        /// </param>
+        /// <param name="raceEthnicityOrReligion">
+        /// The Automod level for racial discrimination.
+        /// </param>
+        /// <param name="sexBasedTerms">
+        /// The Automod level for sexual content.
+        /// </param>
+        /// <param name="sexualitySexOrGender">
+        /// The AutoMod level for discrimination based on sexuality, sex, or gender.
+        /// </param>
+        /// <param name="swearing">
+        /// The Automod level for profanity.
+        /// </param>
+        public UpdateAutoModSettingsBody(
+            int? aggression,
+            int? bullying,
+            int? disability,
+            int? misogyny,
+            int? overallLevel,
+            int? raceEthnicityOrReligion,
+            int? sexBasedTerms,
+            int? sexualitySexOrGender,
+            int? swearing)
+        {
+            this.Aggression = aggression;
+            this.Bullying = bullying;
+            this.Disability = disability;
+            this.Misogyny = misogyny;
+            this.OverallLevel = overallLevel;
+            this.RaceEthnicityOrReligion = raceEthnicityOrReligion;
+            this.SexBasedTerms = sexBasedTerms;
+            this.SexualitySexOrGender = sexualitySexOrGender;
+            this.Swearing = swearing;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAutoModSettingsBody" /> class.
+        /// </summary>
+        public UpdateAutoModSettingsBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

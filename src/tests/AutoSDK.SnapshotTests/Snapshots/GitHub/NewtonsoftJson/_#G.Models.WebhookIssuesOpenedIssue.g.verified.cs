@@ -195,6 +195,124 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesOpenedIssue" /> class.
+        /// </summary>
+        /// <param name="activeLockReason"></param>
+        /// <param name="assignee"></param>
+        /// <param name="assignees"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.
+        /// </param>
+        /// <param name="body">
+        /// Contents of the issue
+        /// </param>
+        /// <param name="closedAt"></param>
+        /// <param name="comments"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="draft"></param>
+        /// <param name="eventsUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="labels"></param>
+        /// <param name="labelsUrl"></param>
+        /// <param name="locked"></param>
+        /// <param name="milestone">
+        /// A collection of related issues and pull requests.
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="number"></param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="pullRequest"></param>
+        /// <param name="reactions"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="state">
+        /// State of the issue; either 'open' or 'closed'
+        /// </param>
+        /// <param name="stateReason"></param>
+        /// <param name="timelineUrl"></param>
+        /// <param name="title">
+        /// Title of the issue
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url">
+        /// URL for the issue
+        /// </param>
+        /// <param name="user"></param>
+        public WebhookIssuesOpenedIssue(
+            global::G.WebhookIssuesOpenedIssueActiveLockReason? activeLockReason,
+            global::System.Collections.Generic.IList<global::G.WebhookIssuesOpenedIssueAssignee2> assignees,
+            global::G.WebhookIssuesOpenedIssueAuthorAssociation authorAssociation,
+            string? body,
+            global::System.DateTime? closedAt,
+            int comments,
+            string commentsUrl,
+            global::System.DateTime createdAt,
+            string eventsUrl,
+            string htmlUrl,
+            long id,
+            string labelsUrl,
+            global::G.WebhookIssuesOpenedIssueMilestone? milestone,
+            string nodeId,
+            int number,
+            global::G.WebhookIssuesOpenedIssueReactions reactions,
+            string repositoryUrl,
+            string title,
+            global::System.DateTime updatedAt,
+            string url,
+            global::G.WebhookIssuesOpenedIssueUser? user,
+            global::G.WebhookIssuesOpenedIssueAssignee? assignee,
+            bool? draft,
+            global::System.Collections.Generic.IList<global::G.WebhookIssuesOpenedIssueLabel>? labels,
+            bool? locked,
+            global::G.WebhookIssuesOpenedIssuePerformedViaGithubApp? performedViaGithubApp,
+            global::G.WebhookIssuesOpenedIssuePullRequest? pullRequest,
+            global::G.WebhookIssuesOpenedIssueState? state,
+            string? stateReason,
+            string? timelineUrl)
+        {
+            this.ActiveLockReason = activeLockReason;
+            this.Assignees = assignees ?? throw new global::System.ArgumentNullException(nameof(assignees));
+            this.AuthorAssociation = authorAssociation;
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.ClosedAt = closedAt;
+            this.Comments = comments;
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.CreatedAt = createdAt;
+            this.EventsUrl = eventsUrl ?? throw new global::System.ArgumentNullException(nameof(eventsUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
+            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Number = number;
+            this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
+            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Assignee = assignee;
+            this.Draft = draft;
+            this.Labels = labels;
+            this.Locked = locked;
+            this.PerformedViaGithubApp = performedViaGithubApp;
+            this.PullRequest = pullRequest;
+            this.State = state;
+            this.StateReason = stateReason;
+            this.TimelineUrl = timelineUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesOpenedIssue" /> class.
+        /// </summary>
+        public WebhookIssuesOpenedIssue()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

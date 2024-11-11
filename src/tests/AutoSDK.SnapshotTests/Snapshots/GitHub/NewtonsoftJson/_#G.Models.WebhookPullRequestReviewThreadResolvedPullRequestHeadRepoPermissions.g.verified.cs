@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadResolvedPullRequestHeadRepoPermissions" /> class.
+        /// </summary>
+        /// <param name="admin"></param>
+        /// <param name="maintain"></param>
+        /// <param name="pull"></param>
+        /// <param name="push"></param>
+        /// <param name="triage"></param>
+        public WebhookPullRequestReviewThreadResolvedPullRequestHeadRepoPermissions(
+            bool admin,
+            bool pull,
+            bool push,
+            bool? maintain,
+            bool? triage)
+        {
+            this.Admin = admin;
+            this.Pull = pull;
+            this.Push = push;
+            this.Maintain = maintain;
+            this.Triage = triage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewThreadResolvedPullRequestHeadRepoPermissions" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewThreadResolvedPullRequestHeadRepoPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

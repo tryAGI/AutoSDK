@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetDatasetByIdResponseDatasetsByPkDatasetImage" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="id"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetDatasetByIdResponseDatasetsByPkDatasetImage(
+            string? createdAt,
+            string? id,
+            string? url)
+        {
+            this.CreatedAt = createdAt;
+            this.Id = id;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetDatasetByIdResponseDatasetsByPkDatasetImage" /> class.
+        /// </summary>
+        public GetDatasetByIdResponseDatasetsByPkDatasetImage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -39,6 +39,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripeBusinessInfoInput" /> class.
+        /// </summary>
+        /// <param name="companyInfo">
+        /// Stripe customer billing information.
+        /// </param>
+        /// <param name="taxId">
+        /// Stripe tax ID.
+        /// </param>
+        /// <param name="invoiceEmail"></param>
+        /// <param name="isBusiness">
+        /// Default Value: false
+        /// </param>
+        public StripeBusinessInfoInput(
+            global::G.StripeBusinessBillingInfo? companyInfo,
+            global::G.StripeTaxId? taxId,
+            string? invoiceEmail,
+            bool? isBusiness)
+        {
+            this.CompanyInfo = companyInfo;
+            this.TaxId = taxId;
+            this.InvoiceEmail = invoiceEmail;
+            this.IsBusiness = isBusiness;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StripeBusinessInfoInput" /> class.
+        /// </summary>
+        public StripeBusinessInfoInput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

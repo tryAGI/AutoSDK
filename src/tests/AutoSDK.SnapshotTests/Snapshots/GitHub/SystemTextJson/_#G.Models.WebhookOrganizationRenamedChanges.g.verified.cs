@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookOrganizationRenamedChanges" /> class.
+        /// </summary>
+        /// <param name="login"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookOrganizationRenamedChanges(
+            global::G.WebhookOrganizationRenamedChangesLogin? login)
+        {
+            this.Login = login;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookOrganizationRenamedChanges" /> class.
+        /// </summary>
+        public WebhookOrganizationRenamedChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

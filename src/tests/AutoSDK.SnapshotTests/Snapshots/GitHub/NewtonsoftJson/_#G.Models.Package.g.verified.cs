@@ -84,6 +84,74 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Package" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the package.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="name">
+        /// The name of the package.<br/>
+        /// Example: super-linter
+        /// </param>
+        /// <param name="packageType">
+        /// Example: docker
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/orgs/github/packages/container/super-linter
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/orgs/github/packages/container/package/super-linter
+        /// </param>
+        /// <param name="versionCount">
+        /// The number of versions of the package.<br/>
+        /// Example: 1
+        /// </param>
+        /// <param name="visibility">
+        /// Example: private
+        /// </param>
+        /// <param name="owner">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="repository">
+        /// Minimal Repository
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        public Package(
+            int id,
+            string name,
+            global::G.PackagePackageType packageType,
+            string url,
+            string htmlUrl,
+            int versionCount,
+            global::G.PackageVisibility visibility,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::G.NullableSimpleUser? owner,
+            global::G.NullableMinimalRepository? repository)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.PackageType = packageType;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.VersionCount = versionCount;
+            this.Visibility = visibility;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Owner = owner;
+            this.Repository = repository;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Package" /> class.
+        /// </summary>
+        public Package()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

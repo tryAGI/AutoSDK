@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepCompletionUsage" /> class.
+        /// </summary>
+        /// <param name="completionTokens">
+        /// Number of completion tokens used over the course of the run step.
+        /// </param>
+        /// <param name="promptTokens">
+        /// Number of prompt tokens used over the course of the run step.
+        /// </param>
+        /// <param name="totalTokens">
+        /// Total number of tokens used (prompt + completion).
+        /// </param>
+        public RunStepCompletionUsage(
+            int completionTokens,
+            int promptTokens,
+            int totalTokens)
+        {
+            this.CompletionTokens = completionTokens;
+            this.PromptTokens = promptTokens;
+            this.TotalTokens = totalTokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepCompletionUsage" /> class.
+        /// </summary>
+        public RunStepCompletionUsage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

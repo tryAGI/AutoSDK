@@ -71,6 +71,45 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMetaDeletedHook" /> class.
+        /// </summary>
+        /// <param name="active"></param>
+        /// <param name="config"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="events"></param>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="type"></param>
+        /// <param name="updatedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookMetaDeletedHook(
+            bool active,
+            global::G.WebhookMetaDeletedHookConfig config,
+            string createdAt,
+            global::System.Collections.Generic.IList<global::G.WebhookMetaDeletedHookEvent> events,
+            int id,
+            string name,
+            string type,
+            string updatedAt)
+        {
+            this.Active = active;
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMetaDeletedHook" /> class.
+        /// </summary>
+        public WebhookMetaDeletedHook()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

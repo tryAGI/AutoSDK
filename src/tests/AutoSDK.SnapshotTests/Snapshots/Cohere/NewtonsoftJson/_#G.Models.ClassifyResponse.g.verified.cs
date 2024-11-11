@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifyResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Included only in responses
+        /// </param>
+        /// <param name="classifications">
+        /// Included only in responses
+        /// </param>
+        /// <param name="meta"></param>
+        public ClassifyResponse(
+            global::G.ApiMeta? meta,
+            string id = default!,
+            global::System.Collections.Generic.IList<global::G.ClassifyResponseClassification> classifications = default!)
+        {
+            this.Id = id;
+            this.Classifications = classifications;
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassifyResponse" /> class.
+        /// </summary>
+        public ClassifyResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

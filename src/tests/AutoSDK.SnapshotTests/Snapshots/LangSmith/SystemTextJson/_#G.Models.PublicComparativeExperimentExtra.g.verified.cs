@@ -16,6 +16,15 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicComparativeExperimentExtra" /> class.
+        /// </summary>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PublicComparativeExperimentExtra(
+ )
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

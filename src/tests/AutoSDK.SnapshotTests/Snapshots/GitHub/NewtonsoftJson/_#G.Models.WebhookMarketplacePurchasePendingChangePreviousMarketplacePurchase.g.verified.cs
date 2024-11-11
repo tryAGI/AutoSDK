@@ -57,6 +57,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchase" /> class.
+        /// </summary>
+        /// <param name="account"></param>
+        /// <param name="billingCycle"></param>
+        /// <param name="freeTrialEndsOn"></param>
+        /// <param name="nextBillingDate"></param>
+        /// <param name="onFreeTrial"></param>
+        /// <param name="plan"></param>
+        /// <param name="unitCount"></param>
+        public WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchase(
+            global::G.WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchaseAccount account,
+            string billingCycle,
+            string? freeTrialEndsOn,
+            bool onFreeTrial,
+            global::G.WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchasePlan plan,
+            int unitCount,
+            string? nextBillingDate)
+        {
+            this.Account = account ?? throw new global::System.ArgumentNullException(nameof(account));
+            this.BillingCycle = billingCycle ?? throw new global::System.ArgumentNullException(nameof(billingCycle));
+            this.FreeTrialEndsOn = freeTrialEndsOn ?? throw new global::System.ArgumentNullException(nameof(freeTrialEndsOn));
+            this.OnFreeTrial = onFreeTrial;
+            this.Plan = plan ?? throw new global::System.ArgumentNullException(nameof(plan));
+            this.UnitCount = unitCount;
+            this.NextBillingDate = nextBillingDate;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchase" /> class.
+        /// </summary>
+        public WebhookMarketplacePurchasePendingChangePreviousMarketplacePurchase()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

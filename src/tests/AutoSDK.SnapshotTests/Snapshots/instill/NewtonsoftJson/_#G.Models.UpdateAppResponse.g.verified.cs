@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAppResponse" /> class.
+        /// </summary>
+        /// <param name="app">
+        /// The updated app.<br/>
+        /// Included only in responses
+        /// </param>
+        public UpdateAppResponse(
+            global::G.App? app)
+        {
+            this.App = app;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAppResponse" /> class.
+        /// </summary>
+        public UpdateAppResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -171,6 +171,99 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountVO" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="credits"></param>
+        /// <param name="cpupm"></param>
+        /// <param name="lastPayment"></param>
+        /// <param name="isActive"></param>
+        /// <param name="isPastDue"></param>
+        /// <param name="pastDueStartDate"></param>
+        /// <param name="crRunDate"></param>
+        /// <param name="lastPastDueNoticeDate"></param>
+        /// <param name="autoBillRefTransId"></param>
+        /// <param name="autoBillCVV2"></param>
+        /// <param name="autoBillActive"></param>
+        /// <param name="cpupmOverride"></param>
+        /// <param name="cpupmOverrideEnd"></param>
+        /// <param name="enforcePasswordPolicy"></param>
+        /// <param name="pwPolicyMinLength"></param>
+        /// <param name="pwPolicyRequireChar"></param>
+        /// <param name="pwPolicyRequireUpper"></param>
+        /// <param name="pwPolicyRequireNumber"></param>
+        /// <param name="pwPolicyRequireSymbol"></param>
+        /// <param name="pwPolicyMaxAge"></param>
+        /// <param name="pwPolicyRequire2Auth"></param>
+        /// <param name="pwPolicy2AuthOnRelog"></param>
+        /// <param name="pwPolicyIdleTimeout"></param>
+        /// <param name="adminIds"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AccountVO(
+            global::System.Guid? id,
+            global::System.DateTime? createStamp,
+            double? credits,
+            double? cpupm,
+            global::System.DateTime? lastPayment,
+            bool? isActive,
+            bool? isPastDue,
+            global::System.DateTime? pastDueStartDate,
+            global::System.DateTime? crRunDate,
+            global::System.DateTime? lastPastDueNoticeDate,
+            string? autoBillRefTransId,
+            string? autoBillCVV2,
+            bool? autoBillActive,
+            double? cpupmOverride,
+            global::System.DateTime? cpupmOverrideEnd,
+            bool? enforcePasswordPolicy,
+            int? pwPolicyMinLength,
+            bool? pwPolicyRequireChar,
+            bool? pwPolicyRequireUpper,
+            bool? pwPolicyRequireNumber,
+            bool? pwPolicyRequireSymbol,
+            int? pwPolicyMaxAge,
+            bool? pwPolicyRequire2Auth,
+            bool? pwPolicy2AuthOnRelog,
+            int? pwPolicyIdleTimeout,
+            global::System.Collections.Generic.IList<global::System.Guid>? adminIds)
+        {
+            this.Id = id;
+            this.CreateStamp = createStamp;
+            this.Credits = credits;
+            this.Cpupm = cpupm;
+            this.LastPayment = lastPayment;
+            this.IsActive = isActive;
+            this.IsPastDue = isPastDue;
+            this.PastDueStartDate = pastDueStartDate;
+            this.CrRunDate = crRunDate;
+            this.LastPastDueNoticeDate = lastPastDueNoticeDate;
+            this.AutoBillRefTransId = autoBillRefTransId;
+            this.AutoBillCVV2 = autoBillCVV2;
+            this.AutoBillActive = autoBillActive;
+            this.CpupmOverride = cpupmOverride;
+            this.CpupmOverrideEnd = cpupmOverrideEnd;
+            this.EnforcePasswordPolicy = enforcePasswordPolicy;
+            this.PwPolicyMinLength = pwPolicyMinLength;
+            this.PwPolicyRequireChar = pwPolicyRequireChar;
+            this.PwPolicyRequireUpper = pwPolicyRequireUpper;
+            this.PwPolicyRequireNumber = pwPolicyRequireNumber;
+            this.PwPolicyRequireSymbol = pwPolicyRequireSymbol;
+            this.PwPolicyMaxAge = pwPolicyMaxAge;
+            this.PwPolicyRequire2Auth = pwPolicyRequire2Auth;
+            this.PwPolicy2AuthOnRelog = pwPolicy2AuthOnRelog;
+            this.PwPolicyIdleTimeout = pwPolicyIdleTimeout;
+            this.AdminIds = adminIds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccountVO" /> class.
+        /// </summary>
+        public AccountVO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

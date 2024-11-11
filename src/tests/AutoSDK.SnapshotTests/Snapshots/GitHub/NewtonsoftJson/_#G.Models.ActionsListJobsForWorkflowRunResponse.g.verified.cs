@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListJobsForWorkflowRunResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="jobs"></param>
+        public ActionsListJobsForWorkflowRunResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.Job> jobs)
+        {
+            this.TotalCount = totalCount;
+            this.Jobs = jobs ?? throw new global::System.ArgumentNullException(nameof(jobs));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsListJobsForWorkflowRunResponse" /> class.
+        /// </summary>
+        public ActionsListJobsForWorkflowRunResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

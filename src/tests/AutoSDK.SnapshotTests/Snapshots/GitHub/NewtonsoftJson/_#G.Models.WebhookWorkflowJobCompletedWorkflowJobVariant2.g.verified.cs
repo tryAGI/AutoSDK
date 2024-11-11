@@ -153,6 +153,95 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowJobCompletedWorkflowJobVariant2" /> class.
+        /// </summary>
+        /// <param name="checkRunUrl"></param>
+        /// <param name="completedAt"></param>
+        /// <param name="conclusion"></param>
+        /// <param name="createdAt">
+        /// The time that the job created.
+        /// </param>
+        /// <param name="headSha"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="labels"></param>
+        /// <param name="name"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="runAttempt"></param>
+        /// <param name="runId"></param>
+        /// <param name="runUrl"></param>
+        /// <param name="runnerGroupId"></param>
+        /// <param name="runnerGroupName"></param>
+        /// <param name="runnerId"></param>
+        /// <param name="runnerName"></param>
+        /// <param name="startedAt"></param>
+        /// <param name="status"></param>
+        /// <param name="headBranch">
+        /// The name of the current branch.
+        /// </param>
+        /// <param name="workflowName">
+        /// The name of the workflow.
+        /// </param>
+        /// <param name="steps"></param>
+        /// <param name="url"></param>
+        public WebhookWorkflowJobCompletedWorkflowJobVariant2(
+            global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2Conclusion conclusion,
+            string? checkRunUrl,
+            string? completedAt,
+            string? createdAt,
+            string? headSha,
+            string? htmlUrl,
+            int? id,
+            global::System.Collections.Generic.IList<string>? labels,
+            string? name,
+            string? nodeId,
+            int? runAttempt,
+            int? runId,
+            string? runUrl,
+            double? runnerGroupId,
+            string? runnerGroupName,
+            double? runnerId,
+            string? runnerName,
+            string? startedAt,
+            string? status,
+            string? headBranch,
+            string? workflowName,
+            global::System.Collections.Generic.IList<object>? steps,
+            string? url)
+        {
+            this.Conclusion = conclusion;
+            this.CheckRunUrl = checkRunUrl;
+            this.CompletedAt = completedAt;
+            this.CreatedAt = createdAt;
+            this.HeadSha = headSha;
+            this.HtmlUrl = htmlUrl;
+            this.Id = id;
+            this.Labels = labels;
+            this.Name = name;
+            this.NodeId = nodeId;
+            this.RunAttempt = runAttempt;
+            this.RunId = runId;
+            this.RunUrl = runUrl;
+            this.RunnerGroupId = runnerGroupId;
+            this.RunnerGroupName = runnerGroupName;
+            this.RunnerId = runnerId;
+            this.RunnerName = runnerName;
+            this.StartedAt = startedAt;
+            this.Status = status;
+            this.HeadBranch = headBranch;
+            this.WorkflowName = workflowName;
+            this.Steps = steps;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookWorkflowJobCompletedWorkflowJobVariant2" /> class.
+        /// </summary>
+        public WebhookWorkflowJobCompletedWorkflowJobVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

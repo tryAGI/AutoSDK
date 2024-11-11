@@ -57,6 +57,56 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodeShardStatus" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the shard.
+        /// </param>
+        /// <param name="class">
+        /// The name of shard's class.
+        /// </param>
+        /// <param name="objectCount">
+        /// The number of objects in shard.
+        /// </param>
+        /// <param name="vectorIndexingStatus">
+        /// The status of the vector indexing process.
+        /// </param>
+        /// <param name="compressed">
+        /// The status of vector compression/quantization.
+        /// </param>
+        /// <param name="vectorQueueLength">
+        /// The length of the vector indexing queue.
+        /// </param>
+        /// <param name="loaded">
+        /// The load status of the shard.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public NodeShardStatus(
+            string? name,
+            string? @class,
+            double? objectCount,
+            string? vectorIndexingStatus,
+            bool? compressed,
+            double? vectorQueueLength,
+            bool? loaded)
+        {
+            this.Name = name;
+            this.Class = @class;
+            this.ObjectCount = objectCount;
+            this.VectorIndexingStatus = vectorIndexingStatus;
+            this.Compressed = compressed;
+            this.VectorQueueLength = vectorQueueLength;
+            this.Loaded = loaded;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodeShardStatus" /> class.
+        /// </summary>
+        public NodeShardStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

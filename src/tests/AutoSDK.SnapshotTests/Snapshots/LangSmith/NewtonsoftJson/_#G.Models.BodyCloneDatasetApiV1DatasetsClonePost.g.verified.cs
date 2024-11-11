@@ -39,6 +39,36 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyCloneDatasetApiV1DatasetsClonePost" /> class.
+        /// </summary>
+        /// <param name="targetDatasetId"></param>
+        /// <param name="sourceDatasetId"></param>
+        /// <param name="asOf">
+        /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
+        /// </param>
+        /// <param name="examples">
+        /// Default Value: []
+        /// </param>
+        public BodyCloneDatasetApiV1DatasetsClonePost(
+            global::System.Guid targetDatasetId,
+            global::System.Guid sourceDatasetId,
+            object? asOf,
+            global::System.Collections.Generic.IList<global::System.Guid>? examples)
+        {
+            this.TargetDatasetId = targetDatasetId;
+            this.SourceDatasetId = sourceDatasetId;
+            this.AsOf = asOf;
+            this.Examples = examples;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyCloneDatasetApiV1DatasetsClonePost" /> class.
+        /// </summary>
+        public BodyCloneDatasetApiV1DatasetsClonePost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -69,6 +69,65 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksUpdateRequestOutputAnnotation" /> class.
+        /// </summary>
+        /// <param name="path">
+        /// The path of the file to add an annotation to. For example, `assets/css/main.css`.
+        /// </param>
+        /// <param name="startLine">
+        /// The start line of the annotation. Line numbers start at 1.
+        /// </param>
+        /// <param name="endLine">
+        /// The end line of the annotation.
+        /// </param>
+        /// <param name="startColumn">
+        /// The start column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values. Column numbers start at 1.
+        /// </param>
+        /// <param name="endColumn">
+        /// The end column of the annotation. Annotations only support `start_column` and `end_column` on the same line. Omit this parameter if `start_line` and `end_line` have different values.
+        /// </param>
+        /// <param name="annotationLevel">
+        /// The level of the annotation.
+        /// </param>
+        /// <param name="message">
+        /// A short description of the feedback for these lines of code. The maximum size is 64 KB.
+        /// </param>
+        /// <param name="title">
+        /// The title that represents the annotation. The maximum size is 255 characters.
+        /// </param>
+        /// <param name="rawDetails">
+        /// Details about this annotation. The maximum size is 64 KB.
+        /// </param>
+        public ChecksUpdateRequestOutputAnnotation(
+            string path,
+            int startLine,
+            int endLine,
+            global::G.ChecksUpdateRequestOutputAnnotationAnnotationLevel annotationLevel,
+            string message,
+            int? startColumn,
+            int? endColumn,
+            string? title,
+            string? rawDetails)
+        {
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.StartLine = startLine;
+            this.EndLine = endLine;
+            this.AnnotationLevel = annotationLevel;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.StartColumn = startColumn;
+            this.EndColumn = endColumn;
+            this.Title = title;
+            this.RawDetails = rawDetails;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksUpdateRequestOutputAnnotation" /> class.
+        /// </summary>
+        public ChecksUpdateRequestOutputAnnotation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

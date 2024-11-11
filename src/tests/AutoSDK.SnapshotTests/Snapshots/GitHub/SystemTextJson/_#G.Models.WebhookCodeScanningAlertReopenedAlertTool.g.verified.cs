@@ -35,6 +35,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertReopenedAlertTool" /> class.
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <param name="name">
+        /// The name of the tool used to generate the code scanning analysis alert.
+        /// </param>
+        /// <param name="version">
+        /// The version of the tool used to detect the alert.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookCodeScanningAlertReopenedAlertTool(
+            string name,
+            string? version,
+            string? guid)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.Guid = guid;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCodeScanningAlertReopenedAlertTool" /> class.
+        /// </summary>
+        public WebhookCodeScanningAlertReopenedAlertTool()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

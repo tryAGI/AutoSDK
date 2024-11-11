@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Citation" /> class.
+        /// </summary>
+        /// <param name="start"></param>
+        /// <param name="end"></param>
+        /// <param name="text"></param>
+        /// <param name="sources"></param>
+        public Citation(
+            int? start,
+            int? end,
+            string? text,
+            global::System.Collections.Generic.IList<global::G.Source>? sources)
+        {
+            this.Start = start;
+            this.End = end;
+            this.Text = text;
+            this.Sources = sources;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Citation" /> class.
+        /// </summary>
+        public Citation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

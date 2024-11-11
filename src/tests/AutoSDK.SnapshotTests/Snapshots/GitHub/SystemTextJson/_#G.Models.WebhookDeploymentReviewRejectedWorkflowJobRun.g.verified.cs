@@ -63,6 +63,45 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRejectedWorkflowJobRun" /> class.
+        /// </summary>
+        /// <param name="conclusion"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="environment"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="status"></param>
+        /// <param name="updatedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookDeploymentReviewRejectedWorkflowJobRun(
+            string? conclusion,
+            string? createdAt,
+            string? environment,
+            string? htmlUrl,
+            int? id,
+            string? name,
+            string? status,
+            string? updatedAt)
+        {
+            this.Conclusion = conclusion;
+            this.CreatedAt = createdAt;
+            this.Environment = environment;
+            this.HtmlUrl = htmlUrl;
+            this.Id = id;
+            this.Name = name;
+            this.Status = status;
+            this.UpdatedAt = updatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentReviewRejectedWorkflowJobRun" /> class.
+        /// </summary>
+        public WebhookDeploymentReviewRejectedWorkflowJobRun()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

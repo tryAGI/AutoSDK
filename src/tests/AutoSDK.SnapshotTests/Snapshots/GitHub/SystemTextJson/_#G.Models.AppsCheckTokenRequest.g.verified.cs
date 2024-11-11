@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsCheckTokenRequest" /> class.
+        /// </summary>
+        /// <param name="accessToken">
+        /// The access_token of the OAuth or GitHub application.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AppsCheckTokenRequest(
+            string accessToken)
+        {
+            this.AccessToken = accessToken ?? throw new global::System.ArgumentNullException(nameof(accessToken));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsCheckTokenRequest" /> class.
+        /// </summary>
+        public AppsCheckTokenRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

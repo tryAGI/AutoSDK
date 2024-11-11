@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OidcCustomSub" /> class.
+        /// </summary>
+        /// <param name="includeClaimKeys">
+        /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
+        /// </param>
+        public OidcCustomSub(
+            global::System.Collections.Generic.IList<string> includeClaimKeys)
+        {
+            this.IncludeClaimKeys = includeClaimKeys ?? throw new global::System.ArgumentNullException(nameof(includeClaimKeys));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OidcCustomSub" /> class.
+        /// </summary>
+        public OidcCustomSub()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonalAccessTokenRequestPermissionsAdded" /> class.
+        /// </summary>
+        /// <param name="organization"></param>
+        /// <param name="repository"></param>
+        /// <param name="other"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PersonalAccessTokenRequestPermissionsAdded(
+            global::System.Collections.Generic.Dictionary<string, string>? organization,
+            global::System.Collections.Generic.Dictionary<string, string>? repository,
+            global::System.Collections.Generic.Dictionary<string, string>? other)
+        {
+            this.Organization = organization;
+            this.Repository = repository;
+            this.Other = other;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonalAccessTokenRequestPermissionsAdded" /> class.
+        /// </summary>
+        public PersonalAccessTokenRequestPermissionsAdded()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsCodeOutputImageObject" /> class.
+        /// </summary>
+        /// <param name="index">
+        /// The index of the output in the outputs array.
+        /// </param>
+        /// <param name="type">
+        /// Always `image`.
+        /// </param>
+        /// <param name="image"></param>
+        public RunStepDeltaStepDetailsToolCallsCodeOutputImageObject(
+            int index,
+            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectType type,
+            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputImageObjectImage? image)
+        {
+            this.Index = index;
+            this.Type = type;
+            this.Image = image;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsToolCallsCodeOutputImageObject" /> class.
+        /// </summary>
+        public RunStepDeltaStepDetailsToolCallsCodeOutputImageObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

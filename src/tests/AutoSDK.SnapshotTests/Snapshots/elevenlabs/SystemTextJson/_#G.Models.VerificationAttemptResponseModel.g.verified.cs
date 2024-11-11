@@ -56,6 +56,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerificationAttemptResponseModel" /> class.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="dateUnix"></param>
+        /// <param name="accepted"></param>
+        /// <param name="similarity"></param>
+        /// <param name="levenshteinDistance"></param>
+        /// <param name="recording"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public VerificationAttemptResponseModel(
+            string text,
+            int dateUnix,
+            bool accepted,
+            double similarity,
+            double levenshteinDistance,
+            global::G.RecordingResponseModel? recording)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.DateUnix = dateUnix;
+            this.Accepted = accepted;
+            this.Similarity = similarity;
+            this.LevenshteinDistance = levenshteinDistance;
+            this.Recording = recording;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VerificationAttemptResponseModel" /> class.
+        /// </summary>
+        public VerificationAttemptResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

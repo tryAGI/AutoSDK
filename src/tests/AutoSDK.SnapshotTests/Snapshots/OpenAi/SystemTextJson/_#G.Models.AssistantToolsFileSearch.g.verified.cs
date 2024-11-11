@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantToolsFileSearch" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of tool being defined: `file_search`
+        /// </param>
+        /// <param name="fileSearch">
+        /// Overrides for the file search tool.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AssistantToolsFileSearch(
+            global::G.AssistantToolsFileSearchType type,
+            global::G.AssistantToolsFileSearchFileSearch? fileSearch)
+        {
+            this.Type = type;
+            this.FileSearch = fileSearch;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantToolsFileSearch" /> class.
+        /// </summary>
+        public AssistantToolsFileSearch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

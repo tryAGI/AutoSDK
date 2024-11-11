@@ -78,6 +78,67 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningAlertInstance" /> class.
+        /// </summary>
+        /// <param name="ref">
+        /// The Git reference, formatted as `refs/pull/&lt;number&gt;/merge`, `refs/pull/&lt;number&gt;/head`,<br/>
+        /// `refs/heads/&lt;branch name&gt;` or simply `&lt;branch name&gt;`.
+        /// </param>
+        /// <param name="analysisKey">
+        /// Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
+        /// </param>
+        /// <param name="environment">
+        /// Identifies the variable values associated with the environment in which the analysis that generated this alert instance was performed, such as the language that was analyzed.
+        /// </param>
+        /// <param name="category">
+        /// Identifies the configuration under which the analysis was executed. Used to distinguish between multiple analyses for the same tool and commit, but performed on different languages or different parts of the code.
+        /// </param>
+        /// <param name="state">
+        /// State of a code scanning alert.
+        /// </param>
+        /// <param name="commitSha"></param>
+        /// <param name="message"></param>
+        /// <param name="location">
+        /// Describe a region within a file for the alert.
+        /// </param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="classifications">
+        /// Classifications that have been applied to the file that triggered the alert.<br/>
+        /// For example identifying it as documentation, or a generated file.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeScanningAlertInstance(
+            string? @ref,
+            string? analysisKey,
+            string? environment,
+            string? category,
+            global::G.CodeScanningAlertState? state,
+            string? commitSha,
+            global::G.CodeScanningAlertInstanceMessage? message,
+            global::G.CodeScanningAlertLocation? location,
+            string? htmlUrl,
+            global::System.Collections.Generic.IList<global::G.CodeScanningAlertClassification>? classifications)
+        {
+            this.Ref = @ref;
+            this.AnalysisKey = analysisKey;
+            this.Environment = environment;
+            this.Category = category;
+            this.State = state;
+            this.CommitSha = commitSha;
+            this.Message = message;
+            this.Location = location;
+            this.HtmlUrl = htmlUrl;
+            this.Classifications = classifications;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningAlertInstance" /> class.
+        /// </summary>
+        public CodeScanningAlertInstance()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequest" /> class.
+        /// </summary>
+        /// <param name="service">
+        /// The services to be chosen for calculating the API credit cost.
+        /// </param>
+        /// <param name="serviceParams">
+        /// Parameters for the service
+        /// </param>
+        public PricingCalculatorRequest(
+            global::G.PricingCalculatorServices? service,
+            global::G.PricingCalculatorRequestServiceParams? serviceParams)
+        {
+            this.Service = service;
+            this.ServiceParams = serviceParams;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequest" /> class.
+        /// </summary>
+        public PricingCalculatorRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest" /> class.
+        /// </summary>
+        /// <param name="querySuite">
+        /// CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured.<br/>
+        /// If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
+        /// </param>
+        public OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest(
+            global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite? querySuite)
+        {
+            this.QuerySuite = querySuite;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest" /> class.
+        /// </summary>
+        public OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -30,6 +30,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotAlertSecurityAdvisoryCvss" /> class.
+        /// </summary>
+        /// <param name="score">
+        /// The overall CVSS score of the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="vectorString">
+        /// The full CVSS vector string for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DependabotAlertSecurityAdvisoryCvss(
+            string? vectorString,
+            double score = default!)
+        {
+            this.Score = score;
+            this.VectorString = vectorString;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependabotAlertSecurityAdvisoryCvss" /> class.
+        /// </summary>
+        public DependabotAlertSecurityAdvisoryCvss()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

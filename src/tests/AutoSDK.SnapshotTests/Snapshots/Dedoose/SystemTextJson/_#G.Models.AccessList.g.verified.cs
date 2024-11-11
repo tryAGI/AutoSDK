@@ -75,6 +75,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccessList" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="accessTags"></param>
+        /// <param name="accessResources"></param>
+        /// <param name="accessExcerpts"></param>
+        /// <param name="accessDescriptors"></param>
+        /// <param name="accessDesFields"></param>
+        /// <param name="accessSecurity"></param>
+        /// <param name="accessUsers"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AccessList(
+            global::System.Guid? id,
+            string? title,
+            string? description,
+            int? accessTags,
+            int? accessResources,
+            int? accessExcerpts,
+            int? accessDescriptors,
+            int? accessDesFields,
+            int? accessSecurity,
+            int? accessUsers)
+        {
+            this.Id = id;
+            this.Title = title;
+            this.Description = description;
+            this.AccessTags = accessTags;
+            this.AccessResources = accessResources;
+            this.AccessExcerpts = accessExcerpts;
+            this.AccessDescriptors = accessDescriptors;
+            this.AccessDesFields = accessDesFields;
+            this.AccessSecurity = accessSecurity;
+            this.AccessUsers = accessUsers;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AccessList" /> class.
+        /// </summary>
+        public AccessList()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

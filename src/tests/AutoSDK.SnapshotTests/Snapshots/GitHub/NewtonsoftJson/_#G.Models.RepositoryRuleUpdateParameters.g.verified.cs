@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleUpdateParameters" /> class.
+        /// </summary>
+        /// <param name="updateAllowsFetchAndMerge">
+        /// Branch can pull changes from its upstream repository
+        /// </param>
+        public RepositoryRuleUpdateParameters(
+            bool updateAllowsFetchAndMerge)
+        {
+            this.UpdateAllowsFetchAndMerge = updateAllowsFetchAndMerge;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleUpdateParameters" /> class.
+        /// </summary>
+        public RepositoryRuleUpdateParameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

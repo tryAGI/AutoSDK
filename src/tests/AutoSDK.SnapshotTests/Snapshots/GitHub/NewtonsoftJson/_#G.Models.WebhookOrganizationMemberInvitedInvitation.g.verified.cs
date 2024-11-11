@@ -87,6 +87,56 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookOrganizationMemberInvitedInvitation" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="email"></param>
+        /// <param name="failedAt"></param>
+        /// <param name="failedReason"></param>
+        /// <param name="id"></param>
+        /// <param name="invitationTeamsUrl"></param>
+        /// <param name="inviter"></param>
+        /// <param name="login"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="role"></param>
+        /// <param name="teamCount"></param>
+        /// <param name="invitationSource"></param>
+        public WebhookOrganizationMemberInvitedInvitation(
+            global::System.DateTime createdAt,
+            string? email,
+            global::System.DateTime? failedAt,
+            string? failedReason,
+            double id,
+            string invitationTeamsUrl,
+            global::G.WebhookOrganizationMemberInvitedInvitationInviter? inviter,
+            string? login,
+            string nodeId,
+            string role,
+            double teamCount,
+            string? invitationSource)
+        {
+            this.CreatedAt = createdAt;
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.FailedAt = failedAt;
+            this.FailedReason = failedReason ?? throw new global::System.ArgumentNullException(nameof(failedReason));
+            this.Id = id;
+            this.InvitationTeamsUrl = invitationTeamsUrl ?? throw new global::System.ArgumentNullException(nameof(invitationTeamsUrl));
+            this.Inviter = inviter ?? throw new global::System.ArgumentNullException(nameof(inviter));
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
+            this.TeamCount = teamCount;
+            this.InvitationSource = invitationSource;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookOrganizationMemberInvitedInvitation" /> class.
+        /// </summary>
+        public WebhookOrganizationMemberInvitedInvitation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

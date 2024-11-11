@@ -29,6 +29,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsUpdateCardRequest" /> class.
+        /// </summary>
+        /// <param name="note">
+        /// The project card's note<br/>
+        /// Example: Update all gems
+        /// </param>
+        /// <param name="archived">
+        /// Whether or not the card is archived<br/>
+        /// Example: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectsUpdateCardRequest(
+            string? note,
+            bool? archived)
+        {
+            this.Note = note;
+            this.Archived = archived;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsUpdateCardRequest" /> class.
+        /// </summary>
+        public ProjectsUpdateCardRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

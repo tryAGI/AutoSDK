@@ -31,6 +31,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostApiKeyResponse" /> class.
+        /// </summary>
+        /// <param name="apiKey">
+        /// The API key to use when making authenticated requests with the API. This key will only be shown once.<br/>
+        /// Example: vkpDjaKdMNR8QJ83GjfNvFZJbnoi65XUp70MgZNtA2H9XE8yfDnmr_6BaRyQkF9hnJzu6mUPRLBmqlnZMwetJA
+        /// </param>
+        /// <param name="apiKeyId">
+        /// The ID of the API key. A URL safe base64 encoded UUID<br/>
+        /// Example: JRPVD7jWR1aTBYiJ0UFVOg==
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PostApiKeyResponse(
+            string apiKey,
+            string apiKeyId)
+        {
+            this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+            this.ApiKeyId = apiKeyId ?? throw new global::System.ArgumentNullException(nameof(apiKeyId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostApiKeyResponse" /> class.
+        /// </summary>
+        public PostApiKeyResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

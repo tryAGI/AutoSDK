@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependencyGraphSpdxSbom" /> class.
+        /// </summary>
+        /// <param name="sbom"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DependencyGraphSpdxSbom(
+            global::G.DependencyGraphSpdxSbomSbom sbom)
+        {
+            this.Sbom = sbom ?? throw new global::System.ArgumentNullException(nameof(sbom));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DependencyGraphSpdxSbom" /> class.
+        /// </summary>
+        public DependencyGraphSpdxSbom()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

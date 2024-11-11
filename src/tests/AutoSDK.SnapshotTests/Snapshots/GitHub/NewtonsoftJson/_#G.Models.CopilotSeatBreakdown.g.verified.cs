@@ -51,6 +51,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotSeatBreakdown" /> class.
+        /// </summary>
+        /// <param name="total">
+        /// The total number of seats being billed for the organization as of the current billing cycle.
+        /// </param>
+        /// <param name="addedThisCycle">
+        /// Seats added during the current billing cycle.
+        /// </param>
+        /// <param name="pendingCancellation">
+        /// The number of seats that are pending cancellation at the end of the current billing cycle.
+        /// </param>
+        /// <param name="pendingInvitation">
+        /// The number of seats that have been assigned to users that have not yet accepted an invitation to this organization.
+        /// </param>
+        /// <param name="activeThisCycle">
+        /// The number of seats that have used Copilot during the current billing cycle.
+        /// </param>
+        /// <param name="inactiveThisCycle">
+        /// The number of seats that have not used Copilot during the current billing cycle.
+        /// </param>
+        public CopilotSeatBreakdown(
+            int? total,
+            int? addedThisCycle,
+            int? pendingCancellation,
+            int? pendingInvitation,
+            int? activeThisCycle,
+            int? inactiveThisCycle)
+        {
+            this.Total = total;
+            this.AddedThisCycle = addedThisCycle;
+            this.PendingCancellation = pendingCancellation;
+            this.PendingInvitation = pendingInvitation;
+            this.ActiveThisCycle = activeThisCycle;
+            this.InactiveThisCycle = inactiveThisCycle;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopilotSeatBreakdown" /> class.
+        /// </summary>
+        public CopilotSeatBreakdown()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -39,6 +39,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemosFoldersAndLinks" /> class.
+        /// </summary>
+        /// <param name="memos"></param>
+        /// <param name="folders"></param>
+        /// <param name="links"></param>
+        /// <param name="folderLinks"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public MemosFoldersAndLinks(
+            global::System.Collections.Generic.IList<global::G.Memo>? memos,
+            global::System.Collections.Generic.IList<global::G.MemoFolder>? folders,
+            global::System.Collections.Generic.IList<global::G.MemoLink>? links,
+            global::System.Collections.Generic.IList<global::G.MemoFolderLink>? folderLinks)
+        {
+            this.Memos = memos;
+            this.Folders = folders;
+            this.Links = links;
+            this.FolderLinks = folderLinks;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MemosFoldersAndLinks" /> class.
+        /// </summary>
+        public MemosFoldersAndLinks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

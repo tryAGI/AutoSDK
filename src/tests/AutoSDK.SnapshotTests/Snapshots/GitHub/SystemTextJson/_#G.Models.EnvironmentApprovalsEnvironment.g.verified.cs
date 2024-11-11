@@ -59,6 +59,58 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnvironmentApprovalsEnvironment" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The id of the environment.<br/>
+        /// Example: 56780428
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDExOkVudmlyb25tZW50NTY3ODA0Mjg=
+        /// </param>
+        /// <param name="name">
+        /// The name of the environment.<br/>
+        /// Example: staging
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/github/hello-world/environments/staging
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/github/hello-world/deployments/activity_log?environments_filter=staging
+        /// </param>
+        /// <param name="createdAt">
+        /// The time that the environment was created, in ISO 8601 format.
+        /// </param>
+        /// <param name="updatedAt">
+        /// The time that the environment was last updated, in ISO 8601 format.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EnvironmentApprovalsEnvironment(
+            int? id,
+            string? nodeId,
+            string? name,
+            string? url,
+            string? htmlUrl,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt)
+        {
+            this.Id = id;
+            this.NodeId = nodeId;
+            this.Name = name;
+            this.Url = url;
+            this.HtmlUrl = htmlUrl;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnvironmentApprovalsEnvironment" /> class.
+        /// </summary>
+        public EnvironmentApprovalsEnvironment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

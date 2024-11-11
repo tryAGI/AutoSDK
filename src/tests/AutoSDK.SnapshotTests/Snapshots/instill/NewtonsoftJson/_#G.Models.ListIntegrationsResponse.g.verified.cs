@@ -36,6 +36,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListIntegrationsResponse" /> class.
+        /// </summary>
+        /// <param name="integrations">
+        /// A list of integrations matching the request parameters.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="nextPageToken">
+        /// Next page token.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="totalSize">
+        /// Total number of items.<br/>
+        /// Included only in responses
+        /// </param>
+        public ListIntegrationsResponse(
+            global::System.Collections.Generic.IList<global::G.Integration>? integrations,
+            string? nextPageToken,
+            int? totalSize)
+        {
+            this.Integrations = integrations;
+            this.NextPageToken = nextPageToken;
+            this.TotalSize = totalSize;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListIntegrationsResponse" /> class.
+        /// </summary>
+        public ListIntegrationsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

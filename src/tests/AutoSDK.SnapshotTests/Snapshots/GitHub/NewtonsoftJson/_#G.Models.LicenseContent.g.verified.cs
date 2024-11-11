@@ -93,6 +93,61 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LicenseContent" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="path"></param>
+        /// <param name="sha"></param>
+        /// <param name="size"></param>
+        /// <param name="url"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="gitUrl"></param>
+        /// <param name="downloadUrl"></param>
+        /// <param name="type"></param>
+        /// <param name="content"></param>
+        /// <param name="encoding"></param>
+        /// <param name="links"></param>
+        /// <param name="license">
+        /// License Simple
+        /// </param>
+        public LicenseContent(
+            string name,
+            string path,
+            string sha,
+            int size,
+            string url,
+            string? htmlUrl,
+            string? gitUrl,
+            string? downloadUrl,
+            string type,
+            string content,
+            string encoding,
+            global::G.LicenseContentLinks links,
+            global::G.NullableLicenseSimple? license)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Size = size;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.GitUrl = gitUrl ?? throw new global::System.ArgumentNullException(nameof(gitUrl));
+            this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Encoding = encoding ?? throw new global::System.ArgumentNullException(nameof(encoding));
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.License = license ?? throw new global::System.ArgumentNullException(nameof(license));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LicenseContent" /> class.
+        /// </summary>
+        public LicenseContent()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

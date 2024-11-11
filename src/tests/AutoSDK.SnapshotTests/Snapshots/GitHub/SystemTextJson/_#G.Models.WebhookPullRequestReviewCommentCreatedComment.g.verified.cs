@@ -207,6 +207,147 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewCommentCreatedComment" /> class.
+        /// </summary>
+        /// <param name="links"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.
+        /// </param>
+        /// <param name="body">
+        /// The text of the comment.
+        /// </param>
+        /// <param name="commitId">
+        /// The SHA of the commit to which the comment applies.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="diffHunk">
+        /// The diff of the line that the comment refers to.
+        /// </param>
+        /// <param name="htmlUrl">
+        /// HTML URL for the pull request review comment.
+        /// </param>
+        /// <param name="id">
+        /// The ID of the pull request review comment.
+        /// </param>
+        /// <param name="inReplyToId">
+        /// The comment ID to reply to.
+        /// </param>
+        /// <param name="line">
+        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+        /// </param>
+        /// <param name="nodeId">
+        /// The node ID of the pull request review comment.
+        /// </param>
+        /// <param name="originalCommitId">
+        /// The SHA of the original commit to which the comment applies.
+        /// </param>
+        /// <param name="originalLine">
+        /// The line of the blob to which the comment applies. The last line of the range for a multi-line comment
+        /// </param>
+        /// <param name="originalPosition">
+        /// The index of the original line in the diff to which the comment applies.
+        /// </param>
+        /// <param name="originalStartLine">
+        /// The first line of the range for a multi-line comment.
+        /// </param>
+        /// <param name="path">
+        /// The relative path of the file to which the comment applies.
+        /// </param>
+        /// <param name="position">
+        /// The line index in the diff to which the comment applies.
+        /// </param>
+        /// <param name="pullRequestReviewId">
+        /// The ID of the pull request review to which the comment belongs.
+        /// </param>
+        /// <param name="pullRequestUrl">
+        /// URL for the pull request that the review comment belongs to.
+        /// </param>
+        /// <param name="reactions"></param>
+        /// <param name="side">
+        /// The side of the first line of the range for a multi-line comment.
+        /// </param>
+        /// <param name="startLine">
+        /// The first line of the range for a multi-line comment.
+        /// </param>
+        /// <param name="startSide">
+        /// The side of the first line of the range for a multi-line comment.<br/>
+        /// Default Value: RIGHT
+        /// </param>
+        /// <param name="subjectType">
+        /// The level at which the comment is targeted, can be a diff line or a file.
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url">
+        /// URL for the pull request review comment
+        /// </param>
+        /// <param name="user"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookPullRequestReviewCommentCreatedComment(
+            global::G.WebhookPullRequestReviewCommentCreatedCommentLinks links,
+            global::G.WebhookPullRequestReviewCommentCreatedCommentAuthorAssociation authorAssociation,
+            string body,
+            string commitId,
+            global::System.DateTime createdAt,
+            string diffHunk,
+            string htmlUrl,
+            int id,
+            int? line,
+            string nodeId,
+            string originalCommitId,
+            int? originalLine,
+            int originalPosition,
+            int? originalStartLine,
+            string path,
+            int? position,
+            int? pullRequestReviewId,
+            string pullRequestUrl,
+            global::G.WebhookPullRequestReviewCommentCreatedCommentReactions reactions,
+            global::G.WebhookPullRequestReviewCommentCreatedCommentSide side,
+            int? startLine,
+            global::G.WebhookPullRequestReviewCommentCreatedCommentStartSide? startSide,
+            global::System.DateTime updatedAt,
+            string url,
+            global::G.WebhookPullRequestReviewCommentCreatedCommentUser? user,
+            int? inReplyToId,
+            global::G.WebhookPullRequestReviewCommentCreatedCommentSubjectType? subjectType)
+        {
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.AuthorAssociation = authorAssociation;
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.CommitId = commitId ?? throw new global::System.ArgumentNullException(nameof(commitId));
+            this.CreatedAt = createdAt;
+            this.DiffHunk = diffHunk ?? throw new global::System.ArgumentNullException(nameof(diffHunk));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.Line = line;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.OriginalCommitId = originalCommitId ?? throw new global::System.ArgumentNullException(nameof(originalCommitId));
+            this.OriginalLine = originalLine;
+            this.OriginalPosition = originalPosition;
+            this.OriginalStartLine = originalStartLine;
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Position = position;
+            this.PullRequestReviewId = pullRequestReviewId;
+            this.PullRequestUrl = pullRequestUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestUrl));
+            this.Reactions = reactions ?? throw new global::System.ArgumentNullException(nameof(reactions));
+            this.Side = side;
+            this.StartLine = startLine;
+            this.StartSide = startSide;
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.InReplyToId = inReplyToId;
+            this.SubjectType = subjectType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewCommentCreatedComment" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewCommentCreatedComment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

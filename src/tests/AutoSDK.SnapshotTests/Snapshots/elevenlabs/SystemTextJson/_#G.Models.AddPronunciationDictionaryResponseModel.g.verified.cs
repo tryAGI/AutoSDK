@@ -56,6 +56,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddPronunciationDictionaryResponseModel" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="createdBy"></param>
+        /// <param name="creationTimeUnix"></param>
+        /// <param name="versionId"></param>
+        /// <param name="description"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AddPronunciationDictionaryResponseModel(
+            string id,
+            string name,
+            string createdBy,
+            int creationTimeUnix,
+            string versionId,
+            string? description)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedBy = createdBy ?? throw new global::System.ArgumentNullException(nameof(createdBy));
+            this.CreationTimeUnix = creationTimeUnix;
+            this.VersionId = versionId ?? throw new global::System.ArgumentNullException(nameof(versionId));
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddPronunciationDictionaryResponseModel" /> class.
+        /// </summary>
+        public AddPronunciationDictionaryResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

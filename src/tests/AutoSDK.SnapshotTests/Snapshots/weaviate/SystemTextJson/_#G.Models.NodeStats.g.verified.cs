@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodeStats" /> class.
+        /// </summary>
+        /// <param name="shardCount">
+        /// The count of Weaviate's shards. To see this value, set `output` to `verbose`.
+        /// </param>
+        /// <param name="objectCount">
+        /// The total number of objects in DB.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public NodeStats(
+            double? shardCount,
+            double? objectCount)
+        {
+            this.ShardCount = shardCount;
+            this.ObjectCount = objectCount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NodeStats" /> class.
+        /// </summary>
+        public NodeStats()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

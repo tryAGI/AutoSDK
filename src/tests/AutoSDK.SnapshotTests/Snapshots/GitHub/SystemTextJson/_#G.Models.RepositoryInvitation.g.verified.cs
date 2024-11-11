@@ -88,6 +88,70 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryInvitation" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the repository invitation.<br/>
+        /// Example: 42L
+        /// </param>
+        /// <param name="repository">
+        /// Minimal Repository
+        /// </param>
+        /// <param name="invitee">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="inviter">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="permissions">
+        /// The permission associated with the invitation.<br/>
+        /// Example: read
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="expired">
+        /// Whether or not the invitation has expired
+        /// </param>
+        /// <param name="url">
+        /// URL for the repository invitation<br/>
+        /// Example: https://api.github.com/user/repository-invitations/1
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat/Hello-World/invitations
+        /// </param>
+        /// <param name="nodeId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryInvitation(
+            long id,
+            global::G.MinimalRepository repository,
+            global::G.NullableSimpleUser? invitee,
+            global::G.NullableSimpleUser? inviter,
+            global::G.RepositoryInvitationPermissions permissions,
+            global::System.DateTime createdAt,
+            string url,
+            string htmlUrl,
+            string nodeId,
+            bool? expired)
+        {
+            this.Id = id;
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Invitee = invitee ?? throw new global::System.ArgumentNullException(nameof(invitee));
+            this.Inviter = inviter ?? throw new global::System.ArgumentNullException(nameof(inviter));
+            this.Permissions = permissions;
+            this.CreatedAt = createdAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Expired = expired;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryInvitation" /> class.
+        /// </summary>
+        public RepositoryInvitation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

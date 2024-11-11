@@ -103,6 +103,75 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksTeam1" /> class.
+        /// </summary>
+        /// <param name="deleted"></param>
+        /// <param name="description">
+        /// Description of the team
+        /// </param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id">
+        /// Unique identifier of the team
+        /// </param>
+        /// <param name="membersUrl"></param>
+        /// <param name="name">
+        /// Name of the team
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="parent"></param>
+        /// <param name="permission">
+        /// Permission that the team will have for its repositories
+        /// </param>
+        /// <param name="privacy"></param>
+        /// <param name="notificationSetting">
+        /// Whether team members will receive notifications when their team is @mentioned
+        /// </param>
+        /// <param name="repositoriesUrl"></param>
+        /// <param name="slug"></param>
+        /// <param name="url">
+        /// URL for the team
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhooksTeam1(
+            int id,
+            string name,
+            bool? deleted,
+            string? description,
+            string? htmlUrl,
+            string? membersUrl,
+            string? nodeId,
+            global::G.WebhooksTeam1Parent? parent,
+            string? permission,
+            global::G.WebhooksTeam1Privacy? privacy,
+            global::G.WebhooksTeam1NotificationSetting? notificationSetting,
+            string? repositoriesUrl,
+            string? slug,
+            string? url)
+        {
+            this.Id = id;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Deleted = deleted;
+            this.Description = description;
+            this.HtmlUrl = htmlUrl;
+            this.MembersUrl = membersUrl;
+            this.NodeId = nodeId;
+            this.Parent = parent;
+            this.Permission = permission;
+            this.Privacy = privacy;
+            this.NotificationSetting = notificationSetting;
+            this.RepositoriesUrl = repositoriesUrl;
+            this.Slug = slug;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksTeam1" /> class.
+        /// </summary>
+        public WebhooksTeam1()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -105,6 +105,75 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Organization" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="displayName"></param>
+        /// <param name="config">
+        /// Organization level configuration. May include any field that exists in tenant config and additional fields.
+        /// </param>
+        /// <param name="connectedToStripe"></param>
+        /// <param name="connectedToMetronome"></param>
+        /// <param name="isPersonal"></param>
+        /// <param name="tier"></param>
+        /// <param name="paymentMethod">
+        /// Stripe customer billing info.
+        /// </param>
+        /// <param name="hasCancelled"></param>
+        /// <param name="endOfBillingPeriod"></param>
+        /// <param name="currentPlan">
+        /// Customer visible plan information.
+        /// </param>
+        /// <param name="upcomingPlan">
+        /// Customer visible plan information.
+        /// </param>
+        /// <param name="reachedMaxWorkspaces">
+        /// Default Value: false
+        /// </param>
+        /// <param name="permissions">
+        /// Default Value: []
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Organization(
+            global::G.OrganizationConfig config,
+            bool connectedToStripe,
+            bool connectedToMetronome,
+            bool isPersonal,
+            bool hasCancelled,
+            global::System.Guid? id,
+            string? displayName,
+            global::G.PaymentPlanTier? tier,
+            global::G.StripePaymentMethodInfo? paymentMethod,
+            global::System.DateTime? endOfBillingPeriod,
+            global::G.CustomerVisiblePlanInfo? currentPlan,
+            global::G.CustomerVisiblePlanInfo? upcomingPlan,
+            bool? reachedMaxWorkspaces,
+            global::System.Collections.Generic.IList<string>? permissions)
+        {
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.ConnectedToStripe = connectedToStripe;
+            this.ConnectedToMetronome = connectedToMetronome;
+            this.IsPersonal = isPersonal;
+            this.HasCancelled = hasCancelled;
+            this.Id = id;
+            this.DisplayName = displayName;
+            this.Tier = tier;
+            this.PaymentMethod = paymentMethod;
+            this.EndOfBillingPeriod = endOfBillingPeriod;
+            this.CurrentPlan = currentPlan;
+            this.UpcomingPlan = upcomingPlan;
+            this.ReachedMaxWorkspaces = reachedMaxWorkspaces;
+            this.Permissions = permissions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Organization" /> class.
+        /// </summary>
+        public Organization()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -40,6 +40,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManageHeldAutoModMessagesBody" /> class.
+        /// </summary>
+        /// <param name="userId">
+        /// The moderator who is approving or denying the held message. This ID must match the user ID in the access token.
+        /// </param>
+        /// <param name="msgId">
+        /// The ID of the message to allow or deny.
+        /// </param>
+        /// <param name="action">
+        /// The action to take for the message. Possible values are:  <br/>
+        ///   <br/>
+        /// * ALLOW<br/>
+        /// * DENY
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ManageHeldAutoModMessagesBody(
+            string userId,
+            string msgId,
+            global::G.ManageHeldAutoModMessagesBodyAction action)
+        {
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.MsgId = msgId ?? throw new global::System.ArgumentNullException(nameof(msgId));
+            this.Action = action;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManageHeldAutoModMessagesBody" /> class.
+        /// </summary>
+        public ManageHeldAutoModMessagesBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelInformation" /> class.
+        /// </summary>
+        /// <param name="generalArchitecture">
+        /// The architecture of the model.
+        /// </param>
+        /// <param name="generalFileType">
+        /// The file type of the model.
+        /// </param>
+        /// <param name="generalParameterCount">
+        /// The number of parameters in the model.
+        /// </param>
+        /// <param name="generalQuantizationVersion">
+        /// The number of parameters in the model.
+        /// </param>
+        public ModelInformation(
+            string? generalArchitecture,
+            int? generalFileType,
+            long? generalParameterCount,
+            int? generalQuantizationVersion)
+        {
+            this.GeneralArchitecture = generalArchitecture;
+            this.GeneralFileType = generalFileType;
+            this.GeneralParameterCount = generalParameterCount;
+            this.GeneralQuantizationVersion = generalQuantizationVersion;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ModelInformation" /> class.
+        /// </summary>
+        public ModelInformation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

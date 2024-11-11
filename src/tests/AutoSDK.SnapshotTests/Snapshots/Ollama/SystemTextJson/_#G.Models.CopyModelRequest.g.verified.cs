@@ -31,6 +31,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopyModelRequest" /> class.
+        /// </summary>
+        /// <param name="source">
+        /// Name of the model to copy.<br/>
+        /// Example: llama3.2
+        /// </param>
+        /// <param name="destination">
+        /// Name of the new model.<br/>
+        /// Example: llama3-backup
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CopyModelRequest(
+            string source,
+            string destination)
+        {
+            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.Destination = destination ?? throw new global::System.ArgumentNullException(nameof(destination));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CopyModelRequest" /> class.
+        /// </summary>
+        public CopyModelRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

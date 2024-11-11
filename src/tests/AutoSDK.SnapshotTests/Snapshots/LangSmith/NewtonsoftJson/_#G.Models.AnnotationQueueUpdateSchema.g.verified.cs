@@ -51,6 +51,42 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueUpdateSchema" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="defaultDataset"></param>
+        /// <param name="numReviewersPerItem">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="enableReservations">
+        /// Default Value: true
+        /// </param>
+        /// <param name="reservationMinutes"></param>
+        public AnnotationQueueUpdateSchema(
+            string? name,
+            string? description,
+            global::System.Guid? defaultDataset,
+            int? numReviewersPerItem,
+            bool? enableReservations,
+            int? reservationMinutes)
+        {
+            this.Name = name;
+            this.Description = description;
+            this.DefaultDataset = defaultDataset;
+            this.NumReviewersPerItem = numReviewersPerItem;
+            this.EnableReservations = enableReservations;
+            this.ReservationMinutes = reservationMinutes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueUpdateSchema" /> class.
+        /// </summary>
+        public AnnotationQueueUpdateSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -46,6 +46,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Reaction" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 1
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDg6UmVhY3Rpb24x
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="content">
+        /// The reaction to use<br/>
+        /// Example: heart
+        /// </param>
+        /// <param name="createdAt"></param>
+        public Reaction(
+            int id,
+            string nodeId,
+            global::G.NullableSimpleUser? user,
+            global::G.ReactionContent content,
+            global::System.DateTime createdAt)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Content = content;
+            this.CreatedAt = createdAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Reaction" /> class.
+        /// </summary>
+        public Reaction()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

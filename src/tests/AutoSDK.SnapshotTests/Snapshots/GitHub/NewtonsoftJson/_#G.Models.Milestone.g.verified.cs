@@ -115,6 +115,96 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Milestone" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/milestones/1
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Example: https://github.com/octocat/Hello-World/milestones/v1.0
+        /// </param>
+        /// <param name="labelsUrl">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/milestones/1/labels
+        /// </param>
+        /// <param name="id">
+        /// Example: 1002604
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDk6TWlsZXN0b25lMTAwMjYwNA==
+        /// </param>
+        /// <param name="number">
+        /// The number of the milestone.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="state">
+        /// The state of the milestone.<br/>
+        /// Default Value: open<br/>
+        /// Example: open
+        /// </param>
+        /// <param name="title">
+        /// The title of the milestone.<br/>
+        /// Example: v1.0
+        /// </param>
+        /// <param name="description">
+        /// Example: Tracking milestone for version 1.0
+        /// </param>
+        /// <param name="creator">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="openIssues">
+        /// Example: 4
+        /// </param>
+        /// <param name="closedIssues">
+        /// Example: 8
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="closedAt"></param>
+        /// <param name="dueOn"></param>
+        public Milestone(
+            string url,
+            string htmlUrl,
+            string labelsUrl,
+            int id,
+            string nodeId,
+            int number,
+            global::G.MilestoneState state,
+            string title,
+            string? description,
+            global::G.NullableSimpleUser? creator,
+            int openIssues,
+            int closedIssues,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::System.DateTime? closedAt,
+            global::System.DateTime? dueOn)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.LabelsUrl = labelsUrl ?? throw new global::System.ArgumentNullException(nameof(labelsUrl));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Number = number;
+            this.State = state;
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
+            this.OpenIssues = openIssues;
+            this.ClosedIssues = closedIssues;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.ClosedAt = closedAt;
+            this.DueOn = dueOn;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Milestone" /> class.
+        /// </summary>
+        public Milestone()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

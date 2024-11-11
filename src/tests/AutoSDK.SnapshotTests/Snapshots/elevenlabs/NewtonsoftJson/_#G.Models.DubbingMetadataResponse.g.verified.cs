@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DubbingMetadataResponse" /> class.
+        /// </summary>
+        /// <param name="dubbingId"></param>
+        /// <param name="name"></param>
+        /// <param name="status"></param>
+        /// <param name="targetLanguages"></param>
+        /// <param name="error"></param>
+        public DubbingMetadataResponse(
+            string dubbingId,
+            string name,
+            string status,
+            global::System.Collections.Generic.IList<string> targetLanguages,
+            string? error)
+        {
+            this.DubbingId = dubbingId ?? throw new global::System.ArgumentNullException(nameof(dubbingId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.TargetLanguages = targetLanguages ?? throw new global::System.ArgumentNullException(nameof(targetLanguages));
+            this.Error = error;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DubbingMetadataResponse" /> class.
+        /// </summary>
+        public DubbingMetadataResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

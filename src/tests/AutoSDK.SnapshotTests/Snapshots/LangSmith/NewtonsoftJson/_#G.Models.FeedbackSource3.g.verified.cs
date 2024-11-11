@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackSource3" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="metadata"></param>
+        /// <param name="userId"></param>
+        public FeedbackSource3(
+            string? type,
+            object? metadata,
+            global::System.Guid? userId)
+        {
+            this.Type = type;
+            this.Metadata = metadata;
+            this.UserId = userId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FeedbackSource3" /> class.
+        /// </summary>
+        public FeedbackSource3()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

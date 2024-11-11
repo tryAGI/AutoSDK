@@ -57,6 +57,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResourceTranscript" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="creator"></param>
+        /// <param name="projectId"></param>
+        /// <param name="resourceId"></param>
+        /// <param name="dataPath"></param>
+        /// <param name="created"></param>
+        public ResourceTranscript(
+            string? projectIdKey,
+            global::System.Guid? id,
+            global::System.Guid? creator,
+            global::System.Guid? projectId,
+            global::System.Guid? resourceId,
+            string? dataPath,
+            global::System.DateTime? created)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.Id = id;
+            this.Creator = creator;
+            this.ProjectId = projectId;
+            this.ResourceId = resourceId;
+            this.DataPath = dataPath;
+            this.Created = created;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ResourceTranscript" /> class.
+        /// </summary>
+        public ResourceTranscript()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

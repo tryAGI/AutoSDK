@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassVectorConfig" /> class.
+        /// </summary>
+        /// <param name="x_vectorName_">
+        /// Configuration of each named vector.
+        /// </param>
+        public ClassVectorConfig(
+            global::G.VectorConfig? x_vectorName_)
+        {
+            this.x_vectorName_ = x_vectorName_;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClassVectorConfig" /> class.
+        /// </summary>
+        public ClassVectorConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

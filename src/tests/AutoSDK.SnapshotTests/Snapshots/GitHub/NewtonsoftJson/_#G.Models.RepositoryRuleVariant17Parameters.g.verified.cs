@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleVariant17Parameters" /> class.
+        /// </summary>
+        /// <param name="maxFilePathLength">
+        /// The maximum amount of characters allowed in file paths
+        /// </param>
+        public RepositoryRuleVariant17Parameters(
+            int maxFilePathLength)
+        {
+            this.MaxFilePathLength = maxFilePathLength;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleVariant17Parameters" /> class.
+        /// </summary>
+        public RepositoryRuleVariant17Parameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

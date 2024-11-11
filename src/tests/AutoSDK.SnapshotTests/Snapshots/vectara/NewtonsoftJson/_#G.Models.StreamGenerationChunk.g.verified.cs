@@ -30,6 +30,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamGenerationChunk" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// When the streaming event contains the next chunk of generator output, the<br/>
+        /// type will be `generation_chunk`.<br/>
+        /// Default Value: generation_chunk
+        /// </param>
+        /// <param name="generationChunk">
+        /// Part of the message from the generator. All summary chunks must be appended together in order<br/>
+        /// to get the full summary.
+        /// </param>
+        public StreamGenerationChunk(
+            string? type,
+            string? generationChunk)
+        {
+            this.Type = type;
+            this.GenerationChunk = generationChunk;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamGenerationChunk" /> class.
+        /// </summary>
+        public StreamGenerationChunk()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

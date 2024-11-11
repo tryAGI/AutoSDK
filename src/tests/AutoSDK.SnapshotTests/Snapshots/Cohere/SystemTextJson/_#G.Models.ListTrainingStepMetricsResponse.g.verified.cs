@@ -28,6 +28,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListTrainingStepMetricsResponse" /> class.
+        /// </summary>
+        /// <param name="stepMetrics">
+        /// The metrics for each step the evaluation was run on.
+        /// </param>
+        /// <param name="nextPageToken">
+        /// Pagination token to retrieve the next page of results. If the value is "",<br/>
+        /// it means no further results for the request.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListTrainingStepMetricsResponse(
+            global::System.Collections.Generic.IList<global::G.TrainingStepMetrics>? stepMetrics,
+            string? nextPageToken)
+        {
+            this.StepMetrics = stepMetrics;
+            this.NextPageToken = nextPageToken;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListTrainingStepMetricsResponse" /> class.
+        /// </summary>
+        public ListTrainingStepMetricsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

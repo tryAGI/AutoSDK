@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleParamsWorkflowFileReference" /> class.
+        /// </summary>
+        /// <param name="path">
+        /// The path to the workflow file
+        /// </param>
+        /// <param name="ref">
+        /// The ref (branch or tag) of the workflow file to use
+        /// </param>
+        /// <param name="repositoryId">
+        /// The ID of the repository where the workflow is defined
+        /// </param>
+        /// <param name="sha">
+        /// The commit SHA of the workflow file to use
+        /// </param>
+        public RepositoryRuleParamsWorkflowFileReference(
+            string path,
+            int repositoryId,
+            string? @ref,
+            string? sha)
+        {
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.RepositoryId = repositoryId;
+            this.Ref = @ref;
+            this.Sha = sha;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleParamsWorkflowFileReference" /> class.
+        /// </summary>
+        public RepositoryRuleParamsWorkflowFileReference()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

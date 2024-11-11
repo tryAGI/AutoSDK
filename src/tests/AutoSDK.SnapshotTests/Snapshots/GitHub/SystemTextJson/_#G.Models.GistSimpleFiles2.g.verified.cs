@@ -57,6 +57,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistSimpleFiles2" /> class.
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="type"></param>
+        /// <param name="language"></param>
+        /// <param name="rawUrl"></param>
+        /// <param name="size"></param>
+        /// <param name="truncated"></param>
+        /// <param name="content"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GistSimpleFiles2(
+            string? filename,
+            string? type,
+            string? language,
+            string? rawUrl,
+            int? size,
+            bool? truncated,
+            string? content)
+        {
+            this.Filename = filename;
+            this.Type = type;
+            this.Language = language;
+            this.RawUrl = rawUrl;
+            this.Size = size;
+            this.Truncated = truncated;
+            this.Content = content;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistSimpleFiles2" /> class.
+        /// </summary>
+        public GistSimpleFiles2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

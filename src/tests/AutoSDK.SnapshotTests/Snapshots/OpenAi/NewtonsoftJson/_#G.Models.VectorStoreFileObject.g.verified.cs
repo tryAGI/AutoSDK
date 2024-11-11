@@ -63,6 +63,60 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorStoreFileObject" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The identifier, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store.file`.
+        /// </param>
+        /// <param name="usageBytes">
+        /// The total vector store usage in bytes. Note that this may be different from the original file size.
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the vector store file was created.
+        /// </param>
+        /// <param name="vectorStoreId">
+        /// The ID of the [vector store](/docs/api-reference/vector-stores/object) that the [File](/docs/api-reference/files) is attached to.
+        /// </param>
+        /// <param name="status">
+        /// The status of the vector store file, which can be either `in_progress`, `completed`, `cancelled`, or `failed`. The status `completed` indicates that the vector store file is ready for use.
+        /// </param>
+        /// <param name="lastError">
+        /// The last error associated with this vector store file. Will be `null` if there are no errors.
+        /// </param>
+        /// <param name="chunkingStrategy">
+        /// The strategy used to chunk the file.
+        /// </param>
+        public VectorStoreFileObject(
+            string id,
+            int usageBytes,
+            global::System.DateTimeOffset createdAt,
+            string vectorStoreId,
+            global::G.VectorStoreFileObjectStatus status,
+            global::G.VectorStoreFileObjectLastError? lastError,
+            global::G.VectorStoreFileObjectObject @object,
+            global::G.VectorStoreFileObjectChunkingStrategy? chunkingStrategy)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.UsageBytes = usageBytes;
+            this.CreatedAt = createdAt;
+            this.VectorStoreId = vectorStoreId ?? throw new global::System.ArgumentNullException(nameof(vectorStoreId));
+            this.Status = status;
+            this.LastError = lastError ?? throw new global::System.ArgumentNullException(nameof(lastError));
+            this.Object = @object;
+            this.ChunkingStrategy = chunkingStrategy;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorStoreFileObject" /> class.
+        /// </summary>
+        public VectorStoreFileObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

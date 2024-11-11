@@ -57,6 +57,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesCreateForAuthenticatedUserRequestVariant2" /> class.
+        /// </summary>
+        /// <param name="pullRequest">
+        /// Pull request number for this codespace
+        /// </param>
+        /// <param name="location">
+        /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
+        /// </param>
+        /// <param name="geo">
+        /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
+        /// </param>
+        /// <param name="machine">
+        /// Machine type to use for this codespace
+        /// </param>
+        /// <param name="devcontainerPath">
+        /// Path to devcontainer.json config to use for this codespace
+        /// </param>
+        /// <param name="workingDirectory">
+        /// Working directory for this codespace
+        /// </param>
+        /// <param name="idleTimeoutMinutes">
+        /// Time in minutes before codespace stops from inactivity
+        /// </param>
+        public CodespacesCreateForAuthenticatedUserRequestVariant2(
+            global::G.CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest pullRequest,
+            string? location,
+            global::G.CodespacesCreateForAuthenticatedUserRequestVariant2Geo? geo,
+            string? machine,
+            string? devcontainerPath,
+            string? workingDirectory,
+            int? idleTimeoutMinutes)
+        {
+            this.PullRequest = pullRequest ?? throw new global::System.ArgumentNullException(nameof(pullRequest));
+            this.Location = location;
+            this.Geo = geo;
+            this.Machine = machine;
+            this.DevcontainerPath = devcontainerPath;
+            this.WorkingDirectory = workingDirectory;
+            this.IdleTimeoutMinutes = idleTimeoutMinutes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesCreateForAuthenticatedUserRequestVariant2" /> class.
+        /// </summary>
+        public CodespacesCreateForAuthenticatedUserRequestVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

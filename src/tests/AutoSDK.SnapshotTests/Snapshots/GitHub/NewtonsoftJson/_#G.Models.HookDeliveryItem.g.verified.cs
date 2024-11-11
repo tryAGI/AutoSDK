@@ -97,6 +97,90 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HookDeliveryItem" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique identifier of the webhook delivery.<br/>
+        /// Example: 42
+        /// </param>
+        /// <param name="guid">
+        /// Unique identifier for the event (shared with all deliveries for all webhooks that subscribe to this event).<br/>
+        /// Example: 58474f00-b361-11eb-836d-0e4f3503ccbe
+        /// </param>
+        /// <param name="deliveredAt">
+        /// Time when the webhook delivery occurred.
+        /// </param>
+        /// <param name="redelivery">
+        /// Whether the webhook delivery is a redelivery.<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="duration">
+        /// Time spent delivering.<br/>
+        /// Example: 0.03
+        /// </param>
+        /// <param name="status">
+        /// Describes the response returned after attempting the delivery.<br/>
+        /// Example: failed to connect
+        /// </param>
+        /// <param name="statusCode">
+        /// Status code received when delivery was made.<br/>
+        /// Example: 502
+        /// </param>
+        /// <param name="event">
+        /// The event that triggered the delivery.<br/>
+        /// Example: issues
+        /// </param>
+        /// <param name="action">
+        /// The type of activity for the event that triggered the delivery.<br/>
+        /// Example: opened
+        /// </param>
+        /// <param name="installationId">
+        /// The id of the GitHub App installation associated with this event.<br/>
+        /// Example: 123
+        /// </param>
+        /// <param name="repositoryId">
+        /// The id of the repository associated with this event.<br/>
+        /// Example: 123
+        /// </param>
+        /// <param name="throttledAt">
+        /// Time when the webhook delivery was throttled.
+        /// </param>
+        public HookDeliveryItem(
+            int id,
+            string guid,
+            global::System.DateTime deliveredAt,
+            bool redelivery,
+            double duration,
+            string status,
+            int statusCode,
+            string @event,
+            string? action,
+            int? installationId,
+            int? repositoryId,
+            global::System.DateTime? throttledAt)
+        {
+            this.Id = id;
+            this.Guid = guid ?? throw new global::System.ArgumentNullException(nameof(guid));
+            this.DeliveredAt = deliveredAt;
+            this.Redelivery = redelivery;
+            this.Duration = duration;
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.StatusCode = statusCode;
+            this.Event = @event ?? throw new global::System.ArgumentNullException(nameof(@event));
+            this.Action = action ?? throw new global::System.ArgumentNullException(nameof(action));
+            this.InstallationId = installationId;
+            this.RepositoryId = repositoryId;
+            this.ThrottledAt = throttledAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="HookDeliveryItem" /> class.
+        /// </summary>
+        public HookDeliveryItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

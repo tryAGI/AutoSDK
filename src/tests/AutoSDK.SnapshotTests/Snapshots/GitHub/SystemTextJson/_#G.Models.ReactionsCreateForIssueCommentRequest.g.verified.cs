@@ -23,6 +23,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReactionsCreateForIssueCommentRequest" /> class.
+        /// </summary>
+        /// <param name="content">
+        /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReactionsCreateForIssueCommentRequest(
+            global::G.ReactionsCreateForIssueCommentRequestContent content)
+        {
+            this.Content = content;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReactionsCreateForIssueCommentRequest" /> class.
+        /// </summary>
+        public ReactionsCreateForIssueCommentRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -57,6 +57,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyUploadCsvDatasetApiV1DatasetsUploadPost" /> class.
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="filename"></param>
+        /// <param name="inputKeys"></param>
+        /// <param name="name"></param>
+        /// <param name="dataType">
+        /// Enum for dataset data types.
+        /// </param>
+        /// <param name="outputKeys">
+        /// Default Value: []
+        /// </param>
+        /// <param name="description"></param>
+        public BodyUploadCsvDatasetApiV1DatasetsUploadPost(
+            byte[] file,
+            string filename,
+            global::System.Collections.Generic.IList<string> inputKeys,
+            string? name,
+            global::G.DataType? dataType,
+            global::System.Collections.Generic.IList<string>? outputKeys,
+            string? description)
+        {
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.InputKeys = inputKeys ?? throw new global::System.ArgumentNullException(nameof(inputKeys));
+            this.Name = name;
+            this.DataType = dataType;
+            this.OutputKeys = outputKeys;
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyUploadCsvDatasetApiV1DatasetsUploadPost" /> class.
+        /// </summary>
+        public BodyUploadCsvDatasetApiV1DatasetsUploadPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

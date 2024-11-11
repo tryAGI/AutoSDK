@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsReviewPatGrantRequestsInBulkRequest" /> class.
+        /// </summary>
+        /// <param name="patRequestIds">
+        /// Unique identifiers of the requests for access via fine-grained personal access token. Must be formed of between 1 and 100 `pat_request_id` values.
+        /// </param>
+        /// <param name="action">
+        /// Action to apply to the requests.
+        /// </param>
+        /// <param name="reason">
+        /// Reason for approving or denying the requests. Max 1024 characters.
+        /// </param>
+        public OrgsReviewPatGrantRequestsInBulkRequest(
+            global::G.OrgsReviewPatGrantRequestsInBulkRequestAction action,
+            global::System.Collections.Generic.IList<int>? patRequestIds,
+            string? reason)
+        {
+            this.Action = action;
+            this.PatRequestIds = patRequestIds;
+            this.Reason = reason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsReviewPatGrantRequestsInBulkRequest" /> class.
+        /// </summary>
+        public OrgsReviewPatGrantRequestsInBulkRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -126,6 +126,102 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUnbanRequestsResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unban request ID.
+        /// </param>
+        /// <param name="broadcasterId">
+        /// User ID of broadcaster whose channel is receiving the unban request.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The broadcaster's display name.
+        /// </param>
+        /// <param name="broadcasterLogin">
+        /// The broadcaster's login name.
+        /// </param>
+        /// <param name="moderatorId">
+        /// User ID of moderator who approved/denied the request.
+        /// </param>
+        /// <param name="moderatorLogin">
+        /// The moderator's login name.
+        /// </param>
+        /// <param name="moderatorName">
+        /// The moderator's display name.
+        /// </param>
+        /// <param name="userId">
+        /// User ID of the requestor who is asking for an unban.
+        /// </param>
+        /// <param name="userLogin">
+        /// The user's login name.
+        /// </param>
+        /// <param name="userName">
+        /// The user's display name.
+        /// </param>
+        /// <param name="text">
+        /// Text of the request from the requesting user.
+        /// </param>
+        /// <param name="status">
+        /// Status of the request. One of:  <br/>
+        ///   <br/>
+        /// * pending<br/>
+        /// * approved<br/>
+        /// * denied<br/>
+        /// * acknowledged<br/>
+        /// * canceled
+        /// </param>
+        /// <param name="createdAt">
+        /// Timestamp of when the unban request was created.
+        /// </param>
+        /// <param name="resolvedAt">
+        /// Timestamp of when moderator/broadcaster approved or denied the request.
+        /// </param>
+        /// <param name="resolutionText">
+        /// Text input by the resolver (moderator) of the unban. request
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetUnbanRequestsResponseDataItem(
+            string id,
+            string broadcasterId,
+            string broadcasterName,
+            string broadcasterLogin,
+            string moderatorId,
+            string moderatorLogin,
+            string moderatorName,
+            string userId,
+            string userLogin,
+            string userName,
+            string text,
+            string status,
+            global::System.DateTime createdAt,
+            global::System.DateTime resolvedAt,
+            string resolutionText)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+            this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
+            this.ModeratorId = moderatorId ?? throw new global::System.ArgumentNullException(nameof(moderatorId));
+            this.ModeratorLogin = moderatorLogin ?? throw new global::System.ArgumentNullException(nameof(moderatorLogin));
+            this.ModeratorName = moderatorName ?? throw new global::System.ArgumentNullException(nameof(moderatorName));
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.CreatedAt = createdAt;
+            this.ResolvedAt = resolvedAt;
+            this.ResolutionText = resolutionText ?? throw new global::System.ArgumentNullException(nameof(resolutionText));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUnbanRequestsResponseDataItem" /> class.
+        /// </summary>
+        public GetUnbanRequestsResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

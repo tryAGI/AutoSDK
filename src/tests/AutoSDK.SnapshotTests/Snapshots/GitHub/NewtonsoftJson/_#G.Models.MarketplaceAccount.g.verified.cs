@@ -57,6 +57,41 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketplaceAccount" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="id"></param>
+        /// <param name="type"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="login"></param>
+        /// <param name="email"></param>
+        /// <param name="organizationBillingEmail"></param>
+        public MarketplaceAccount(
+            string url,
+            int id,
+            string type,
+            string login,
+            string? nodeId,
+            string? email,
+            string? organizationBillingEmail)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Id = id;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Login = login ?? throw new global::System.ArgumentNullException(nameof(login));
+            this.NodeId = nodeId;
+            this.Email = email;
+            this.OrganizationBillingEmail = organizationBillingEmail;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MarketplaceAccount" /> class.
+        /// </summary>
+        public MarketplaceAccount()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

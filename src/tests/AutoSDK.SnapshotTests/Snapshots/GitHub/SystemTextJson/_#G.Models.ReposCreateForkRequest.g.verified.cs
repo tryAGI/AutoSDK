@@ -33,6 +33,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateForkRequest" /> class.
+        /// </summary>
+        /// <param name="organization">
+        /// Optional parameter to specify the organization name if forking into an organization.
+        /// </param>
+        /// <param name="name">
+        /// When forking from an existing repository, a new name for the fork.
+        /// </param>
+        /// <param name="defaultBranchOnly">
+        /// When forking from an existing repository, fork with only the default branch.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposCreateForkRequest(
+            string? organization,
+            string? name,
+            bool? defaultBranchOnly)
+        {
+            this.Organization = organization;
+            this.Name = name;
+            this.DefaultBranchOnly = defaultBranchOnly;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateForkRequest" /> class.
+        /// </summary>
+        public ReposCreateForkRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

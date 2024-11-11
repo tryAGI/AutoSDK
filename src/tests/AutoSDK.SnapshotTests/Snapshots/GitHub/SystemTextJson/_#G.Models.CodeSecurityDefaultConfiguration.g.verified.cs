@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityDefaultConfiguration" /> class.
+        /// </summary>
+        /// <param name="defaultForNewRepos">
+        /// The visibility of newly created repositories for which the code security configuration will be applied to by default
+        /// </param>
+        /// <param name="configuration">
+        /// A code security configuration
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeSecurityDefaultConfiguration(
+            global::G.CodeSecurityDefaultConfigurationDefaultForNewRepos? defaultForNewRepos,
+            global::G.CodeSecurityConfiguration? configuration)
+        {
+            this.DefaultForNewRepos = defaultForNewRepos;
+            this.Configuration = configuration;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeSecurityDefaultConfiguration" /> class.
+        /// </summary>
+        public CodeSecurityDefaultConfiguration()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

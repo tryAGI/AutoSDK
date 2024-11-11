@@ -49,6 +49,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateRequestSecurityAndAnalysis" /> class.
+        /// </summary>
+        /// <param name="advancedSecurity">
+        /// Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "[About GitHub Advanced Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
+        /// </param>
+        /// <param name="secretScanning">
+        /// Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
+        /// </param>
+        /// <param name="secretScanningPushProtection">
+        /// Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
+        /// </param>
+        /// <param name="secretScanningAiDetection">
+        /// Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
+        /// </param>
+        /// <param name="secretScanningNonProviderPatterns">
+        /// Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReposUpdateRequestSecurityAndAnalysis(
+            global::G.ReposUpdateRequestSecurityAndAnalysisAdvancedSecurity? advancedSecurity,
+            global::G.ReposUpdateRequestSecurityAndAnalysisSecretScanning? secretScanning,
+            global::G.ReposUpdateRequestSecurityAndAnalysisSecretScanningPushProtection? secretScanningPushProtection,
+            global::G.ReposUpdateRequestSecurityAndAnalysisSecretScanningAiDetection? secretScanningAiDetection,
+            global::G.ReposUpdateRequestSecurityAndAnalysisSecretScanningNonProviderPatterns? secretScanningNonProviderPatterns)
+        {
+            this.AdvancedSecurity = advancedSecurity;
+            this.SecretScanning = secretScanning;
+            this.SecretScanningPushProtection = secretScanningPushProtection;
+            this.SecretScanningAiDetection = secretScanningAiDetection;
+            this.SecretScanningNonProviderPatterns = secretScanningNonProviderPatterns;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateRequestSecurityAndAnalysis" /> class.
+        /// </summary>
+        public ReposUpdateRequestSecurityAndAnalysis()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

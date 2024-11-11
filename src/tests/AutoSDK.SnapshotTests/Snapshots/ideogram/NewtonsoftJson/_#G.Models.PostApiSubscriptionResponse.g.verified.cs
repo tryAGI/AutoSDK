@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostApiSubscriptionResponse" /> class.
+        /// </summary>
+        /// <param name="rechargeSettings"></param>
+        public PostApiSubscriptionResponse(
+            global::G.RechargeSettingsResponse? rechargeSettings)
+        {
+            this.RechargeSettings = rechargeSettings;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostApiSubscriptionResponse" /> class.
+        /// </summary>
+        public PostApiSubscriptionResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

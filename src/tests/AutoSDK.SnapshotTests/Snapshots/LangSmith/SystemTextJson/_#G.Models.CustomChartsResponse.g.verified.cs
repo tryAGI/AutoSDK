@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsResponse" /> class.
+        /// </summary>
+        /// <param name="sections"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomChartsResponse(
+            global::System.Collections.Generic.IList<global::G.CustomChartsSection> sections)
+        {
+            this.Sections = sections ?? throw new global::System.ArgumentNullException(nameof(sections));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsResponse" /> class.
+        /// </summary>
+        public CustomChartsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

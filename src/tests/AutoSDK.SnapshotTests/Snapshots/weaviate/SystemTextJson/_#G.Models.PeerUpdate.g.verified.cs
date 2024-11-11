@@ -39,6 +39,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PeerUpdate" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The session ID of the peer.
+        /// </param>
+        /// <param name="name">
+        /// Human readable name.
+        /// </param>
+        /// <param name="uri">
+        /// The location where the peer is exposed to the internet.
+        /// </param>
+        /// <param name="schemaHash">
+        /// The latest known hash of the peer's schema.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PeerUpdate(
+            global::System.Guid? id,
+            string? name,
+            string? uri,
+            string? schemaHash)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Uri = uri;
+            this.SchemaHash = schemaHash;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PeerUpdate" /> class.
+        /// </summary>
+        public PeerUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

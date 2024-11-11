@@ -149,6 +149,136 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComponentDefinition" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Included only in responses
+        /// </param>
+        /// <param name="uid">
+        /// Component definition UUID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="id">
+        /// Component definition resource ID (used in `name` as the last segment). This<br/>
+        /// conforms to RFC-1034, which restricts to letters, numbers, and hyphen,<br/>
+        /// with the first character a letter, the last a letter or a number, and a 63<br/>
+        /// character maximum.
+        /// </param>
+        /// <param name="title">
+        /// Component definition title.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="documentationUrl">
+        /// Component definition documentation URL.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="icon">
+        /// Component definition icon. This is a path that's relative to the root of<br/>
+        /// the component implementation (see `source_url`) and that allows<br/>
+        /// frontend applications to pull and locate the icons.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="spec">
+        /// Component definition specification.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="type">
+        /// Component definition type.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="tombstone">
+        /// Component definition tombstone. If true, this configuration is permanently<br/>
+        /// off. Otherwise, the configuration is active.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="public">
+        /// The public flag determines whether this connector definition is available<br/>
+        /// to all workspaces.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="custom">
+        /// Component definition custom flag, i.e., whether this is a custom<br/>
+        /// component definition.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="vendor">
+        /// Component definition vendor name.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="vendorAttributes">
+        /// Vendor-specific attributes.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="sourceUrl">
+        /// Source code URL. This points to the source code where the component is<br/>
+        /// implemented.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="version">
+        /// Component definition version. This is a string that fulfills the SemVer<br/>
+        /// specification (e.g. `1.0.0-beta`).<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="tasks">
+        /// List of tasks that can be executed by the component.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="description">
+        /// Short description of the component.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="releaseStage">
+        /// Release stage.<br/>
+        /// Included only in responses
+        /// </param>
+        public ComponentDefinition(
+            string? name,
+            string? uid,
+            string? id,
+            string? title,
+            string? documentationUrl,
+            string? icon,
+            global::G.Spec? spec,
+            global::G.ComponentType? type,
+            bool? tombstone,
+            bool? @public,
+            bool? custom,
+            string? vendor,
+            object? vendorAttributes,
+            string? sourceUrl,
+            string? version,
+            global::System.Collections.Generic.IList<global::G.ComponentTask>? tasks,
+            string? description,
+            global::G.ComponentDefinitionReleaseStage? releaseStage)
+        {
+            this.Name = name;
+            this.Uid = uid;
+            this.Id = id;
+            this.Title = title;
+            this.DocumentationUrl = documentationUrl;
+            this.Icon = icon;
+            this.Spec = spec;
+            this.Type = type;
+            this.Tombstone = tombstone;
+            this.Public = @public;
+            this.Custom = custom;
+            this.Vendor = vendor;
+            this.VendorAttributes = vendorAttributes;
+            this.SourceUrl = sourceUrl;
+            this.Version = version;
+            this.Tasks = tasks;
+            this.Description = description;
+            this.ReleaseStage = releaseStage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ComponentDefinition" /> class.
+        /// </summary>
+        public ComponentDefinition()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

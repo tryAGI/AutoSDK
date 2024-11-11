@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManualVerificationFileResponseModel" /> class.
+        /// </summary>
+        /// <param name="fileId"></param>
+        /// <param name="fileName"></param>
+        /// <param name="mimeType"></param>
+        /// <param name="sizeBytes"></param>
+        /// <param name="uploadDateUnix"></param>
+        public ManualVerificationFileResponseModel(
+            string fileId,
+            string fileName,
+            string mimeType,
+            int sizeBytes,
+            int uploadDateUnix)
+        {
+            this.FileId = fileId ?? throw new global::System.ArgumentNullException(nameof(fileId));
+            this.FileName = fileName ?? throw new global::System.ArgumentNullException(nameof(fileName));
+            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
+            this.SizeBytes = sizeBytes;
+            this.UploadDateUnix = uploadDateUnix;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ManualVerificationFileResponseModel" /> class.
+        /// </summary>
+        public ManualVerificationFileResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -39,6 +39,34 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolMessage" /> class.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="name"></param>
+        /// <param name="role">
+        /// Default Value: tool
+        /// </param>
+        /// <param name="toolCallId"></param>
+        public ToolMessage(
+            string content,
+            string? name,
+            global::G.ToolMessageRole? role,
+            string? toolCallId)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Name = name;
+            this.Role = role;
+            this.ToolCallId = toolCallId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolMessage" /> class.
+        /// </summary>
+        public ToolMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

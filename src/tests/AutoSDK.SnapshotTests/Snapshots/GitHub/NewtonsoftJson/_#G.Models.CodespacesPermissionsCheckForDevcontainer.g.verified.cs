@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesPermissionsCheckForDevcontainer" /> class.
+        /// </summary>
+        /// <param name="accepted">
+        /// Whether the user has accepted the permissions defined by the devcontainer config<br/>
+        /// Example: true
+        /// </param>
+        public CodespacesPermissionsCheckForDevcontainer(
+            bool accepted)
+        {
+            this.Accepted = accepted;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesPermissionsCheckForDevcontainer" /> class.
+        /// </summary>
+        public CodespacesPermissionsCheckForDevcontainer()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

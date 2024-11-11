@@ -33,6 +33,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Response" /> class.
+        /// </summary>
+        /// <param name="href">
+        /// The Location to redirect to
+        /// </param>
+        /// <param name="clientId">
+        /// OAuth Client ID
+        /// </param>
+        /// <param name="scopes">
+        /// OAuth Scopes
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Response(
+            string? href,
+            string? clientId,
+            global::System.Collections.Generic.IList<string>? scopes)
+        {
+            this.Href = href;
+            this.ClientId = clientId;
+            this.Scopes = scopes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Response" /> class.
+        /// </summary>
+        public Response()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

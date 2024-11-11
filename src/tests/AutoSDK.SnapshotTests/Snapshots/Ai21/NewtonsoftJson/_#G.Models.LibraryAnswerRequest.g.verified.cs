@@ -87,6 +87,64 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LibraryAnswerRequest" /> class.
+        /// </summary>
+        /// <param name="question"></param>
+        /// <param name="maxSegments"></param>
+        /// <param name="path"></param>
+        /// <param name="labels"></param>
+        /// <param name="labelsFilter"></param>
+        /// <param name="labelsFilterMode">
+        /// Default Value: AND
+        /// </param>
+        /// <param name="fileIds"></param>
+        /// <param name="answerLength">
+        /// An enumeration.
+        /// </param>
+        /// <param name="mode">
+        /// An enumeration.
+        /// </param>
+        /// <param name="retrievalStrategy">
+        /// Default Value: default
+        /// </param>
+        /// <param name="retrievalSimilarityThreshold"></param>
+        /// <param name="hybridSearchAlpha"></param>
+        public LibraryAnswerRequest(
+            string question,
+            int? maxSegments,
+            string? path,
+            global::System.Collections.Generic.IList<string>? labels,
+            global::G.QueryFilter? labelsFilter,
+            global::G.LibraryAnswerRequestLabelsFilterMode? labelsFilterMode,
+            global::System.Collections.Generic.IList<global::System.Guid>? fileIds,
+            global::G.AnswerLength? answerLength,
+            global::G.Mode? mode,
+            global::G.RetrievalStrategy? retrievalStrategy,
+            double? retrievalSimilarityThreshold,
+            double? hybridSearchAlpha)
+        {
+            this.Question = question ?? throw new global::System.ArgumentNullException(nameof(question));
+            this.MaxSegments = maxSegments;
+            this.Path = path;
+            this.Labels = labels;
+            this.LabelsFilter = labelsFilter;
+            this.LabelsFilterMode = labelsFilterMode;
+            this.FileIds = fileIds;
+            this.AnswerLength = answerLength;
+            this.Mode = mode;
+            this.RetrievalStrategy = retrievalStrategy;
+            this.RetrievalSimilarityThreshold = retrievalSimilarityThreshold;
+            this.HybridSearchAlpha = hybridSearchAlpha;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LibraryAnswerRequest" /> class.
+        /// </summary>
+        public LibraryAnswerRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

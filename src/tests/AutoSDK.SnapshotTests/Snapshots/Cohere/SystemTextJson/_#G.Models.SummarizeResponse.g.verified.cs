@@ -33,6 +33,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SummarizeResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Generated ID for the summary
+        /// </param>
+        /// <param name="summary">
+        /// Generated summary for the text
+        /// </param>
+        /// <param name="meta"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SummarizeResponse(
+            string? id,
+            string? summary,
+            global::G.ApiMeta? meta)
+        {
+            this.Id = id;
+            this.Summary = summary;
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SummarizeResponse" /> class.
+        /// </summary>
+        public SummarizeResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

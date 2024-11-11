@@ -81,6 +81,53 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookBranchProtectionRuleEditedChanges" /> class.
+        /// </summary>
+        /// <param name="adminEnforced"></param>
+        /// <param name="authorizedActorNames"></param>
+        /// <param name="authorizedActorsOnly"></param>
+        /// <param name="authorizedDismissalActorsOnly"></param>
+        /// <param name="linearHistoryRequirementEnforcementLevel"></param>
+        /// <param name="lockBranchEnforcementLevel"></param>
+        /// <param name="lockAllowsForkSync"></param>
+        /// <param name="pullRequestReviewsEnforcementLevel"></param>
+        /// <param name="requireLastPushApproval"></param>
+        /// <param name="requiredStatusChecks"></param>
+        /// <param name="requiredStatusChecksEnforcementLevel"></param>
+        public WebhookBranchProtectionRuleEditedChanges(
+            global::G.WebhookBranchProtectionRuleEditedChangesAdminEnforced? adminEnforced,
+            global::G.WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames? authorizedActorNames,
+            global::G.WebhookBranchProtectionRuleEditedChangesAuthorizedActorsOnly? authorizedActorsOnly,
+            global::G.WebhookBranchProtectionRuleEditedChangesAuthorizedDismissalActorsOnly? authorizedDismissalActorsOnly,
+            global::G.WebhookBranchProtectionRuleEditedChangesLinearHistoryRequirementEnforcementLevel? linearHistoryRequirementEnforcementLevel,
+            global::G.WebhookBranchProtectionRuleEditedChangesLockBranchEnforcementLevel? lockBranchEnforcementLevel,
+            global::G.WebhookBranchProtectionRuleEditedChangesLockAllowsForkSync? lockAllowsForkSync,
+            global::G.WebhookBranchProtectionRuleEditedChangesPullRequestReviewsEnforcementLevel? pullRequestReviewsEnforcementLevel,
+            global::G.WebhookBranchProtectionRuleEditedChangesRequireLastPushApproval? requireLastPushApproval,
+            global::G.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecks? requiredStatusChecks,
+            global::G.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel? requiredStatusChecksEnforcementLevel)
+        {
+            this.AdminEnforced = adminEnforced;
+            this.AuthorizedActorNames = authorizedActorNames;
+            this.AuthorizedActorsOnly = authorizedActorsOnly;
+            this.AuthorizedDismissalActorsOnly = authorizedDismissalActorsOnly;
+            this.LinearHistoryRequirementEnforcementLevel = linearHistoryRequirementEnforcementLevel;
+            this.LockBranchEnforcementLevel = lockBranchEnforcementLevel;
+            this.LockAllowsForkSync = lockAllowsForkSync;
+            this.PullRequestReviewsEnforcementLevel = pullRequestReviewsEnforcementLevel;
+            this.RequireLastPushApproval = requireLastPushApproval;
+            this.RequiredStatusChecks = requiredStatusChecks;
+            this.RequiredStatusChecksEnforcementLevel = requiredStatusChecksEnforcementLevel;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookBranchProtectionRuleEditedChanges" /> class.
+        /// </summary>
+        public WebhookBranchProtectionRuleEditedChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

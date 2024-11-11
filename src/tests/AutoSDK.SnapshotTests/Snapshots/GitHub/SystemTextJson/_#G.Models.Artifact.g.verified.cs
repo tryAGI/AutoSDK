@@ -93,6 +93,70 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Artifact" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 5
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDEwOkNoZWNrU3VpdGU1
+        /// </param>
+        /// <param name="name">
+        /// The name of the artifact.<br/>
+        /// Example: AdventureWorks.Framework
+        /// </param>
+        /// <param name="sizeInBytes">
+        /// The size in bytes of the artifact.<br/>
+        /// Example: 12345
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5
+        /// </param>
+        /// <param name="archiveDownloadUrl">
+        /// Example: https://api.github.com/repos/github/hello-world/actions/artifacts/5/zip
+        /// </param>
+        /// <param name="expired">
+        /// Whether or not the artifact has expired.
+        /// </param>
+        /// <param name="createdAt"></param>
+        /// <param name="expiresAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="workflowRun"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Artifact(
+            int id,
+            string nodeId,
+            string name,
+            int sizeInBytes,
+            string url,
+            string archiveDownloadUrl,
+            bool expired,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? expiresAt,
+            global::System.DateTime? updatedAt,
+            global::G.ArtifactWorkflowRun? workflowRun)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.SizeInBytes = sizeInBytes;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.ArchiveDownloadUrl = archiveDownloadUrl ?? throw new global::System.ArgumentNullException(nameof(archiveDownloadUrl));
+            this.Expired = expired;
+            this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
+            this.UpdatedAt = updatedAt;
+            this.WorkflowRun = workflowRun;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Artifact" /> class.
+        /// </summary>
+        public Artifact()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

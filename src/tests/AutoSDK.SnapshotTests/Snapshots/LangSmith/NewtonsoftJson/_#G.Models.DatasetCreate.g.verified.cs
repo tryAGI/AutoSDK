@@ -69,6 +69,51 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetCreate" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="inputsSchemaDefinition"></param>
+        /// <param name="outputsSchemaDefinition"></param>
+        /// <param name="externallyManaged">
+        /// Default Value: false
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="extra"></param>
+        /// <param name="dataType">
+        /// Enum for dataset data types.
+        /// </param>
+        public DatasetCreate(
+            string name,
+            string? description,
+            global::System.DateTime? createdAt,
+            object? inputsSchemaDefinition,
+            object? outputsSchemaDefinition,
+            bool? externallyManaged,
+            global::System.Guid? id,
+            object? extra,
+            global::G.DataType? dataType)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description;
+            this.CreatedAt = createdAt;
+            this.InputsSchemaDefinition = inputsSchemaDefinition;
+            this.OutputsSchemaDefinition = outputsSchemaDefinition;
+            this.ExternallyManaged = externallyManaged;
+            this.Id = id;
+            this.Extra = extra;
+            this.DataType = dataType;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetCreate" /> class.
+        /// </summary>
+        public DatasetCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

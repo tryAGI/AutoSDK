@@ -35,6 +35,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Function" /> class.
+        /// </summary>
+        /// <param name="description"></param>
+        /// <param name="name"></param>
+        /// <param name="parameters"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Function(
+            string name,
+            object parameters,
+            string? description)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Parameters = parameters ?? throw new global::System.ArgumentNullException(nameof(parameters));
+            this.Description = description;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Function" /> class.
+        /// </summary>
+        public Function()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

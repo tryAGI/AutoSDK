@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisoryVulnerabilitie" /> class.
+        /// </summary>
+        /// <param name="firstPatchedVersion"></param>
+        /// <param name="package"></param>
+        /// <param name="severity"></param>
+        /// <param name="vulnerableVersionRange"></param>
+        public WebhooksSecurityAdvisoryVulnerabilitie(
+            global::G.WebhooksSecurityAdvisoryVulnerabilitieFirstPatchedVersion? firstPatchedVersion,
+            global::G.WebhooksSecurityAdvisoryVulnerabilitiePackage package,
+            string severity,
+            string vulnerableVersionRange)
+        {
+            this.FirstPatchedVersion = firstPatchedVersion ?? throw new global::System.ArgumentNullException(nameof(firstPatchedVersion));
+            this.Package = package ?? throw new global::System.ArgumentNullException(nameof(package));
+            this.Severity = severity ?? throw new global::System.ArgumentNullException(nameof(severity));
+            this.VulnerableVersionRange = vulnerableVersionRange ?? throw new global::System.ArgumentNullException(nameof(vulnerableVersionRange));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksSecurityAdvisoryVulnerabilitie" /> class.
+        /// </summary>
+        public WebhooksSecurityAdvisoryVulnerabilitie()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

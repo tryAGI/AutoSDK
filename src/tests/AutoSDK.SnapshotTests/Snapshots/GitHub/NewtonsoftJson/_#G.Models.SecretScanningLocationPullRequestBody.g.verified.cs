@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationPullRequestBody" /> class.
+        /// </summary>
+        /// <param name="pullRequestBodyUrl">
+        /// The API URL to get the pull request where the secret was detected.<br/>
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pull/2846
+        /// </param>
+        public SecretScanningLocationPullRequestBody(
+            string pullRequestBodyUrl)
+        {
+            this.PullRequestBodyUrl = pullRequestBodyUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestBodyUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationPullRequestBody" /> class.
+        /// </summary>
+        public SecretScanningLocationPullRequestBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RequestBodyForRunsGenerateQuery" /> class.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="feedbackKeys"></param>
+        public RequestBodyForRunsGenerateQuery(
+            string query,
+            global::System.Collections.Generic.IList<global::G.RunsGenerateQueryFeedbackKeys>? feedbackKeys)
+        {
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
+            this.FeedbackKeys = feedbackKeys;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RequestBodyForRunsGenerateQuery" /> class.
+        /// </summary>
+        public RequestBodyForRunsGenerateQuery()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

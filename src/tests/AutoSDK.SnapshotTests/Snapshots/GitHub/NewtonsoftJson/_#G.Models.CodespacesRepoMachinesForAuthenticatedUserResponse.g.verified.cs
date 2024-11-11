@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesRepoMachinesForAuthenticatedUserResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="machines"></param>
+        public CodespacesRepoMachinesForAuthenticatedUserResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.CodespaceMachine> machines)
+        {
+            this.TotalCount = totalCount;
+            this.Machines = machines ?? throw new global::System.ArgumentNullException(nameof(machines));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesRepoMachinesForAuthenticatedUserResponse" /> class.
+        /// </summary>
+        public CodespacesRepoMachinesForAuthenticatedUserResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

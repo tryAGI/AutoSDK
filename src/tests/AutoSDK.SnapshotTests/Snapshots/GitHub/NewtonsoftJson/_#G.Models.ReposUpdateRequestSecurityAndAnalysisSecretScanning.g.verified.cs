@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateRequestSecurityAndAnalysisSecretScanning" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// Can be `enabled` or `disabled`.
+        /// </param>
+        public ReposUpdateRequestSecurityAndAnalysisSecretScanning(
+            string? status)
+        {
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposUpdateRequestSecurityAndAnalysisSecretScanning" /> class.
+        /// </summary>
+        public ReposUpdateRequestSecurityAndAnalysisSecretScanning()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

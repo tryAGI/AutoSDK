@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExcerptWithTagApps" /> class.
+        /// </summary>
+        /// <param name="excerptData"></param>
+        /// <param name="tagApps"></param>
+        public ExcerptWithTagApps(
+            global::G.Excerpt? excerptData,
+            global::System.Collections.Generic.IList<global::G.TagAppDTO>? tagApps)
+        {
+            this.ExcerptData = excerptData;
+            this.TagApps = tagApps;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExcerptWithTagApps" /> class.
+        /// </summary>
+        public ExcerptWithTagApps()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

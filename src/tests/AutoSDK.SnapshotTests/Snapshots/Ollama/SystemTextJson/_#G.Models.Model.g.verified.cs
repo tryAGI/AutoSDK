@@ -49,6 +49,50 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Model" /> class.
+        /// </summary>
+        /// <param name="model1">
+        /// The model name. <br/>
+        /// Model names follow a `model:tag` format. Some examples are `orca-mini:3b-q4_1` and `llama3:70b`. The tag is optional and, if not provided, will default to `latest`. The tag is used to identify a specific version.<br/>
+        /// Example: llama3.2
+        /// </param>
+        /// <param name="modifiedAt">
+        /// Model modification date.
+        /// </param>
+        /// <param name="size">
+        /// Size of the model on disk.<br/>
+        /// Example: 7323310500L
+        /// </param>
+        /// <param name="digest">
+        /// The model's digest.<br/>
+        /// Example: sha256:bc07c81de745696fdf5afca05e065818a8149fb0c77266fb584d9b2cba3711a
+        /// </param>
+        /// <param name="details">
+        /// Details about a model.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Model(
+            string? model1,
+            global::System.DateTime? modifiedAt,
+            long? size,
+            string? digest,
+            global::G.ModelDetails? details)
+        {
+            this.Model1 = model1;
+            this.ModifiedAt = modifiedAt;
+            this.Size = size;
+            this.Digest = digest;
+            this.Details = details;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Model" /> class.
+        /// </summary>
+        public Model()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

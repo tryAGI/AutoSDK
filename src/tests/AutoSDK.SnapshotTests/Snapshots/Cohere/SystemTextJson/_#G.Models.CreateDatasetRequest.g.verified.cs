@@ -41,6 +41,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateDatasetRequest" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The file to upload
+        /// </param>
+        /// <param name="dataname">
+        /// The file to upload
+        /// </param>
+        /// <param name="evalData">
+        /// An optional evaluation file to upload
+        /// </param>
+        /// <param name="evalDataname">
+        /// An optional evaluation file to upload
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateDatasetRequest(
+            byte[] data,
+            string dataname,
+            byte[]? evalData,
+            string? evalDataname)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Dataname = dataname ?? throw new global::System.ArgumentNullException(nameof(dataname));
+            this.EvalData = evalData;
+            this.EvalDataname = evalDataname;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateDatasetRequest" /> class.
+        /// </summary>
+        public CreateDatasetRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

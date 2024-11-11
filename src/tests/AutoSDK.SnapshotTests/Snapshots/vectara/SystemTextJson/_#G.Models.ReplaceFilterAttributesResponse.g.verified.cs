@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReplaceFilterAttributesResponse" /> class.
+        /// </summary>
+        /// <param name="jobId">
+        /// Job that was created in order to replace filter attributes.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReplaceFilterAttributesResponse(
+            string jobId)
+        {
+            this.JobId = jobId ?? throw new global::System.ArgumentNullException(nameof(jobId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReplaceFilterAttributesResponse" /> class.
+        /// </summary>
+        public ReplaceFilterAttributesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

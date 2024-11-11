@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnsafeLoginRequest" /> class.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        public UnsafeLoginRequest(
+            string? username,
+            string? password)
+        {
+            this.Username = username;
+            this.Password = password;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UnsafeLoginRequest" /> class.
+        /// </summary>
+        public UnsafeLoginRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

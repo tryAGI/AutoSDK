@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportRunS3Metadata" /> class.
+        /// </summary>
+        /// <param name="prefix"></param>
+        /// <param name="startTime"></param>
+        /// <param name="endTime"></param>
+        public BulkExportRunS3Metadata(
+            string prefix,
+            global::System.DateTime startTime,
+            global::System.DateTime endTime)
+        {
+            this.Prefix = prefix ?? throw new global::System.ArgumentNullException(nameof(prefix));
+            this.StartTime = startTime;
+            this.EndTime = endTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BulkExportRunS3Metadata" /> class.
+        /// </summary>
+        public BulkExportRunS3Metadata()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

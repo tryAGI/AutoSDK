@@ -48,6 +48,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueRunSchema" /> class.
+        /// </summary>
+        /// <param name="runId"></param>
+        /// <param name="queueId"></param>
+        /// <param name="lastReviewedTime"></param>
+        /// <param name="addedAt"></param>
+        /// <param name="id"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AnnotationQueueRunSchema(
+            global::System.Guid runId,
+            global::System.Guid queueId,
+            global::System.Guid id,
+            global::System.DateTime? lastReviewedTime,
+            global::System.DateTime? addedAt)
+        {
+            this.RunId = runId;
+            this.QueueId = queueId;
+            this.Id = id;
+            this.LastReviewedTime = lastReviewedTime;
+            this.AddedAt = addedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AnnotationQueueRunSchema" /> class.
+        /// </summary>
+        public AnnotationQueueRunSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostApiSubscriptionError" /> class.
+        /// </summary>
+        /// <param name="messages">
+        /// Error messages about what the error could be.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PostApiSubscriptionError(
+            global::System.Collections.Generic.IList<string>? messages)
+        {
+            this.Messages = messages;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PostApiSubscriptionError" /> class.
+        /// </summary>
+        public PostApiSubscriptionError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

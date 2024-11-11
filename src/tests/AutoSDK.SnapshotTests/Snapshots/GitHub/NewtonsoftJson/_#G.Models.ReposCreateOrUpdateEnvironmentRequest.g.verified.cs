@@ -41,6 +41,42 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateOrUpdateEnvironmentRequest" /> class.
+        /// </summary>
+        /// <param name="waitTimer">
+        /// The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days).<br/>
+        /// Example: 30
+        /// </param>
+        /// <param name="preventSelfReview">
+        /// Whether or not a user who created the job is prevented from approving their own job.<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="reviewers">
+        /// The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed.
+        /// </param>
+        /// <param name="deploymentBranchPolicy">
+        /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
+        /// </param>
+        public ReposCreateOrUpdateEnvironmentRequest(
+            int? waitTimer,
+            bool? preventSelfReview,
+            global::System.Collections.Generic.IList<global::G.ReposCreateOrUpdateEnvironmentRequestReviewer>? reviewers,
+            global::G.DeploymentBranchPolicySettings? deploymentBranchPolicy)
+        {
+            this.WaitTimer = waitTimer;
+            this.PreventSelfReview = preventSelfReview;
+            this.Reviewers = reviewers;
+            this.DeploymentBranchPolicy = deploymentBranchPolicy;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposCreateOrUpdateEnvironmentRequest" /> class.
+        /// </summary>
+        public ReposCreateOrUpdateEnvironmentRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

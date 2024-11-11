@@ -99,6 +99,72 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPingHook" /> class.
+        /// </summary>
+        /// <param name="active">
+        /// Determines whether the hook is actually triggered for the events it subscribes to.
+        /// </param>
+        /// <param name="appId">
+        /// Only included for GitHub Apps. When you register a new GitHub App, GitHub sends a ping event to the webhook URL you specified during registration. The GitHub App ID sent in this field is required for authenticating an app.
+        /// </param>
+        /// <param name="config"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="deliveriesUrl"></param>
+        /// <param name="events">
+        /// Determines what events the hook is triggered for. Default: ['push'].
+        /// </param>
+        /// <param name="id">
+        /// Unique identifier of the webhook.
+        /// </param>
+        /// <param name="lastResponse"></param>
+        /// <param name="name">
+        /// The type of webhook. The only valid value is 'web'.
+        /// </param>
+        /// <param name="pingUrl"></param>
+        /// <param name="testUrl"></param>
+        /// <param name="type"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        public WebhookPingHook(
+            bool active,
+            global::G.WebhookPingHookConfig config,
+            global::System.DateTime createdAt,
+            global::System.Collections.Generic.IList<string> events,
+            int id,
+            string type,
+            global::System.DateTime updatedAt,
+            int? appId,
+            string? deliveriesUrl,
+            global::G.HookResponse? lastResponse,
+            global::G.WebhookPingHookName name,
+            string? pingUrl,
+            string? testUrl,
+            string? url)
+        {
+            this.Active = active;
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.CreatedAt = createdAt;
+            this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
+            this.Id = id;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.UpdatedAt = updatedAt;
+            this.AppId = appId;
+            this.DeliveriesUrl = deliveriesUrl;
+            this.LastResponse = lastResponse;
+            this.Name = name;
+            this.PingUrl = pingUrl;
+            this.TestUrl = testUrl;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPingHook" /> class.
+        /// </summary>
+        public WebhookPingHook()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

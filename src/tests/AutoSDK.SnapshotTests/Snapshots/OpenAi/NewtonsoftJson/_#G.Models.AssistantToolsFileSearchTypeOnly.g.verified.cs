@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantToolsFileSearchTypeOnly" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of tool being defined: `file_search`
+        /// </param>
+        public AssistantToolsFileSearchTypeOnly(
+            global::G.AssistantToolsFileSearchTypeOnlyType type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantToolsFileSearchTypeOnly" /> class.
+        /// </summary>
+        public AssistantToolsFileSearchTypeOnly()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

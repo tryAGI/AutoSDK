@@ -93,6 +93,62 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Resource" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="type"></param>
+        /// <param name="dataPath"></param>
+        /// <param name="length"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="createByUserIDL"></param>
+        /// <param name="isDataLocked"></param>
+        /// <param name="metaData"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Resource(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            string? title,
+            string? description,
+            int? type,
+            string? dataPath,
+            int? length,
+            global::System.DateTime? createStamp,
+            global::System.Guid? createByUserIDL,
+            bool? isDataLocked,
+            string? metaData)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.ProjectIDL = projectIDL;
+            this.Title = title;
+            this.Description = description;
+            this.Type = type;
+            this.DataPath = dataPath;
+            this.Length = length;
+            this.CreateStamp = createStamp;
+            this.CreateByUserIDL = createByUserIDL;
+            this.IsDataLocked = isDataLocked;
+            this.MetaData = metaData;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Resource" /> class.
+        /// </summary>
+        public Resource()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

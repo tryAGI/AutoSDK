@@ -43,6 +43,37 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SummarizeBody" /> class.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="sourceType">
+        /// An enumeration.
+        /// </param>
+        /// <param name="focus"></param>
+        /// <param name="summaryMethod">
+        /// An enumeration.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SummarizeBody(
+            string source,
+            global::G.DocumentType sourceType,
+            string? focus,
+            global::G.SummaryMethod? summaryMethod)
+        {
+            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.SourceType = sourceType;
+            this.Focus = focus;
+            this.SummaryMethod = summaryMethod;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SummarizeBody" /> class.
+        /// </summary>
+        public SummarizeBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

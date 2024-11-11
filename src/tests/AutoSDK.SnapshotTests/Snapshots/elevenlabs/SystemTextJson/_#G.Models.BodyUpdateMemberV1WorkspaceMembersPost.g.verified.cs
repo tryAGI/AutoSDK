@@ -35,6 +35,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyUpdateMemberV1WorkspaceMembersPost" /> class.
+        /// </summary>
+        /// <param name="email">
+        /// Email of the target user.
+        /// </param>
+        /// <param name="isLocked">
+        /// Whether to lock or unlock the user account.
+        /// </param>
+        /// <param name="workspaceRole">
+        /// Role dictating permissions in the workspace.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyUpdateMemberV1WorkspaceMembersPost(
+            string email,
+            bool? isLocked,
+            global::G.BodyUpdateMemberV1WorkspaceMembersPostWorkspaceRole? workspaceRole)
+        {
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.IsLocked = isLocked;
+            this.WorkspaceRole = workspaceRole;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyUpdateMemberV1WorkspaceMembersPost" /> class.
+        /// </summary>
+        public BodyUpdateMemberV1WorkspaceMembersPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

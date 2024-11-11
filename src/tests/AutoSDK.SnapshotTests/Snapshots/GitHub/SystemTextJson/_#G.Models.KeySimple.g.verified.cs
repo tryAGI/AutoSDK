@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="KeySimple" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="key"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public KeySimple(
+            int id,
+            string key)
+        {
+            this.Id = id;
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="KeySimple" /> class.
+        /// </summary>
+        public KeySimple()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

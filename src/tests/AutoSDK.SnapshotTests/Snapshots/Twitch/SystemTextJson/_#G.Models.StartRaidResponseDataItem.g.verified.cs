@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StartRaidResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="createdAt">
+        /// The UTC date and time, in RFC3339 format, of when the raid was requested.
+        /// </param>
+        /// <param name="isMature">
+        /// A Boolean value that indicates whether the channel being raided contains mature content.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StartRaidResponseDataItem(
+            global::System.DateTime createdAt,
+            bool isMature)
+        {
+            this.CreatedAt = createdAt;
+            this.IsMature = isMature;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StartRaidResponseDataItem" /> class.
+        /// </summary>
+        public StartRaidResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

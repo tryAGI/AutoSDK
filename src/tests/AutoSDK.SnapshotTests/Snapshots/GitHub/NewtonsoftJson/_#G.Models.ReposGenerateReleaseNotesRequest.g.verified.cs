@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposGenerateReleaseNotesRequest" /> class.
+        /// </summary>
+        /// <param name="tagName">
+        /// The tag name for the release. This can be an existing tag or a new one.
+        /// </param>
+        /// <param name="targetCommitish">
+        /// Specifies the commitish value that will be the target for the release's tag. Required if the supplied tag_name does not reference an existing tag. Ignored if the tag_name already exists.
+        /// </param>
+        /// <param name="previousTagName">
+        /// The name of the previous tag to use as the starting point for the release notes. Use to manually specify the range for the set of changes considered as part this release.
+        /// </param>
+        /// <param name="configurationFilePath">
+        /// Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.
+        /// </param>
+        public ReposGenerateReleaseNotesRequest(
+            string tagName,
+            string? targetCommitish,
+            string? previousTagName,
+            string? configurationFilePath)
+        {
+            this.TagName = tagName ?? throw new global::System.ArgumentNullException(nameof(tagName));
+            this.TargetCommitish = targetCommitish;
+            this.PreviousTagName = previousTagName;
+            this.ConfigurationFilePath = configurationFilePath;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposGenerateReleaseNotesRequest" /> class.
+        /// </summary>
+        public ReposGenerateReleaseNotesRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -34,6 +34,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiMetaApiVersion" /> class.
+        /// </summary>
+        /// <param name="version"></param>
+        /// <param name="isDeprecated"></param>
+        /// <param name="isExperimental"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ApiMetaApiVersion(
+            string version,
+            bool? isDeprecated,
+            bool? isExperimental)
+        {
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.IsDeprecated = isDeprecated;
+            this.IsExperimental = isExperimental;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiMetaApiVersion" /> class.
+        /// </summary>
+        public ApiMetaApiVersion()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

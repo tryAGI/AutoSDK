@@ -51,6 +51,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectUser" /> class.
+        /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.user`
+        /// </param>
+        /// <param name="id">
+        /// The identifier, which can be referenced in API endpoints
+        /// </param>
+        /// <param name="name">
+        /// The name of the user
+        /// </param>
+        /// <param name="email">
+        /// The email address of the user
+        /// </param>
+        /// <param name="role">
+        /// `owner` or `member`
+        /// </param>
+        /// <param name="addedAt">
+        /// The Unix timestamp (in seconds) of when the project was added.
+        /// </param>
+        public ProjectUser(
+            string id,
+            string name,
+            string email,
+            global::G.ProjectUserRole role,
+            global::System.DateTimeOffset addedAt,
+            global::G.ProjectUserObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Role = role;
+            this.AddedAt = addedAt;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectUser" /> class.
+        /// </summary>
+        public ProjectUser()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

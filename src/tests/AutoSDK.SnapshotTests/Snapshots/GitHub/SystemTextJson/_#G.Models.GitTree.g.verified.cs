@@ -44,6 +44,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitTree" /> class.
+        /// </summary>
+        /// <param name="sha"></param>
+        /// <param name="url"></param>
+        /// <param name="truncated"></param>
+        /// <param name="tree">
+        /// Objects specifying a tree structure<br/>
+        /// Example: []
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GitTree(
+            string sha,
+            string url,
+            bool truncated,
+            global::System.Collections.Generic.IList<global::G.GitTreeTreeItem> tree)
+        {
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Truncated = truncated;
+            this.Tree = tree ?? throw new global::System.ArgumentNullException(nameof(tree));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitTree" /> class.
+        /// </summary>
+        public GitTree()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -68,6 +68,63 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomProperty" /> class.
+        /// </summary>
+        /// <param name="propertyName">
+        /// The name of the property
+        /// </param>
+        /// <param name="url">
+        /// The URL that can be used to fetch, update, or delete info about this property via the API.
+        /// </param>
+        /// <param name="valueType">
+        /// The type of the value for the property<br/>
+        /// Example: single_select
+        /// </param>
+        /// <param name="required">
+        /// Whether the property is required.
+        /// </param>
+        /// <param name="defaultValue">
+        /// Default value of the property
+        /// </param>
+        /// <param name="description">
+        /// Short description of the property
+        /// </param>
+        /// <param name="allowedValues">
+        /// An ordered list of the allowed values of the property.<br/>
+        /// The property can have up to 200 allowed values.
+        /// </param>
+        /// <param name="valuesEditableBy">
+        /// Who can edit the values of the property<br/>
+        /// Example: org_actors
+        /// </param>
+        public CustomProperty(
+            string propertyName,
+            global::G.CustomPropertyValueType valueType,
+            string? url,
+            bool? required,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? defaultValue,
+            string? description,
+            global::System.Collections.Generic.IList<string>? allowedValues,
+            global::G.CustomPropertyValuesEditableBy? valuesEditableBy)
+        {
+            this.PropertyName = propertyName ?? throw new global::System.ArgumentNullException(nameof(propertyName));
+            this.ValueType = valueType;
+            this.Url = url;
+            this.Required = required;
+            this.DefaultValue = defaultValue;
+            this.Description = description;
+            this.AllowedValues = allowedValues;
+            this.ValuesEditableBy = valuesEditableBy;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomProperty" /> class.
+        /// </summary>
+        public CustomProperty()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

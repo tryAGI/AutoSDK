@@ -56,6 +56,49 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LicenseSimple" /> class.
+        /// </summary>
+        /// <param name="key">
+        /// Example: mit
+        /// </param>
+        /// <param name="name">
+        /// Example: MIT License
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/licenses/mit
+        /// </param>
+        /// <param name="spdxId">
+        /// Example: MIT
+        /// </param>
+        /// <param name="nodeId">
+        /// Example: MDc6TGljZW5zZW1pdA==
+        /// </param>
+        /// <param name="htmlUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public LicenseSimple(
+            string key,
+            string name,
+            string? url,
+            string? spdxId,
+            string nodeId,
+            string? htmlUrl)
+        {
+            this.Key = key ?? throw new global::System.ArgumentNullException(nameof(key));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.SpdxId = spdxId ?? throw new global::System.ArgumentNullException(nameof(spdxId));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.HtmlUrl = htmlUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LicenseSimple" /> class.
+        /// </summary>
+        public LicenseSimple()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

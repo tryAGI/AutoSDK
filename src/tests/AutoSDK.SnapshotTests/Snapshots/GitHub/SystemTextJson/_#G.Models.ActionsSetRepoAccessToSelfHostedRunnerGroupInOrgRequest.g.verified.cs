@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest" /> class.
+        /// </summary>
+        /// <param name="selectedRepositoryIds">
+        /// List of repository IDs that can access the runner group.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest(
+            global::System.Collections.Generic.IList<int> selectedRepositoryIds)
+        {
+            this.SelectedRepositoryIds = selectedRepositoryIds ?? throw new global::System.ArgumentNullException(nameof(selectedRepositoryIds));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest" /> class.
+        /// </summary>
+        public ActionsSetRepoAccessToSelfHostedRunnerGroupInOrgRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

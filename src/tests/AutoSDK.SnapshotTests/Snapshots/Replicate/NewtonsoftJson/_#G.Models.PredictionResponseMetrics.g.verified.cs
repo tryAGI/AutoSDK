@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PredictionResponseMetrics" /> class.
+        /// </summary>
+        /// <param name="imageCount"></param>
+        /// <param name="predictTime"></param>
+        /// <param name="totalTime"></param>
+        public PredictionResponseMetrics(
+            double? imageCount,
+            double? predictTime,
+            double? totalTime)
+        {
+            this.ImageCount = imageCount;
+            this.PredictTime = predictTime;
+            this.TotalTime = totalTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PredictionResponseMetrics" /> class.
+        /// </summary>
+        public PredictionResponseMetrics()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

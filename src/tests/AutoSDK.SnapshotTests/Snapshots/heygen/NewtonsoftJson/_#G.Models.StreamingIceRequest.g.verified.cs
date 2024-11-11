@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamingIceRequest" /> class.
+        /// </summary>
+        /// <param name="candidate"></param>
+        /// <param name="sessionId">
+        /// Example: &lt;SESSION_ID&gt;
+        /// </param>
+        public StreamingIceRequest(
+            global::G.StreamingIceRequestCandidate? candidate,
+            string? sessionId)
+        {
+            this.Candidate = candidate;
+            this.SessionId = sessionId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StreamingIceRequest" /> class.
+        /// </summary>
+        public StreamingIceRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

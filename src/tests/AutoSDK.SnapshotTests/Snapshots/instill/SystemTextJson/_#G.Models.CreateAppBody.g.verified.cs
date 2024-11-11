@@ -36,6 +36,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAppBody" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The app id.<br/>
+        /// the app id should be lowercase without any space or special character besides the hyphen,<br/>
+        /// it can not start with number or hyphen, and should be less than 32 characters.
+        /// </param>
+        /// <param name="description">
+        /// The app description.
+        /// </param>
+        /// <param name="tags">
+        /// The app tags.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateAppBody(
+            string id,
+            string? description,
+            global::System.Collections.Generic.IList<string>? tags)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Description = description;
+            this.Tags = tags;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAppBody" /> class.
+        /// </summary>
+        public CreateAppBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

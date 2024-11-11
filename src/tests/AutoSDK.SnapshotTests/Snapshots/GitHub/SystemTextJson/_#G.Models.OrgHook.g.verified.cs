@@ -91,6 +91,68 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgHook" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 1
+        /// </param>
+        /// <param name="url">
+        /// Example: https://api.github.com/orgs/octocat/hooks/1
+        /// </param>
+        /// <param name="pingUrl">
+        /// Example: https://api.github.com/orgs/octocat/hooks/1/pings
+        /// </param>
+        /// <param name="deliveriesUrl">
+        /// Example: https://api.github.com/orgs/octocat/hooks/1/deliveries
+        /// </param>
+        /// <param name="name">
+        /// Example: web
+        /// </param>
+        /// <param name="events">
+        /// Example: [push, pull_request]
+        /// </param>
+        /// <param name="active">
+        /// Example: true
+        /// </param>
+        /// <param name="config"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="type"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrgHook(
+            int id,
+            string url,
+            string pingUrl,
+            string name,
+            global::System.Collections.Generic.IList<string> events,
+            bool active,
+            global::G.OrgHookConfig config,
+            global::System.DateTime updatedAt,
+            global::System.DateTime createdAt,
+            string type,
+            string? deliveriesUrl)
+        {
+            this.Id = id;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.PingUrl = pingUrl ?? throw new global::System.ArgumentNullException(nameof(pingUrl));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Events = events ?? throw new global::System.ArgumentNullException(nameof(events));
+            this.Active = active;
+            this.Config = config ?? throw new global::System.ArgumentNullException(nameof(config));
+            this.UpdatedAt = updatedAt;
+            this.CreatedAt = createdAt;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.DeliveriesUrl = deliveriesUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgHook" /> class.
+        /// </summary>
+        public OrgHook()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

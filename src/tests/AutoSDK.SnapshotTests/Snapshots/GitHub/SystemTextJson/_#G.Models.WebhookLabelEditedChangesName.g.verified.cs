@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookLabelEditedChangesName" /> class.
+        /// </summary>
+        /// <param name="from">
+        /// The previous version of the name if the action was `edited`.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookLabelEditedChangesName(
+            string from)
+        {
+            this.From = from ?? throw new global::System.ArgumentNullException(nameof(from));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookLabelEditedChangesName" /> class.
+        /// </summary>
+        public WebhookLabelEditedChangesName()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

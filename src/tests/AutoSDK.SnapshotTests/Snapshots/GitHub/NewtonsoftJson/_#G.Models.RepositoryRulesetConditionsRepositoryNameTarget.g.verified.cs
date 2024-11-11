@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryNameTarget" /> class.
+        /// </summary>
+        /// <param name="repositoryName"></param>
+        public RepositoryRulesetConditionsRepositoryNameTarget(
+            global::G.RepositoryRulesetConditionsRepositoryNameTargetRepositoryName repositoryName)
+        {
+            this.RepositoryName = repositoryName ?? throw new global::System.ArgumentNullException(nameof(repositoryName));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryNameTarget" /> class.
+        /// </summary>
+        public RepositoryRulesetConditionsRepositoryNameTarget()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

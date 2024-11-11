@@ -39,6 +39,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PronunciationDictionaryPhonemeRuleRequestModel" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="stringToReplace"></param>
+        /// <param name="phoneme"></param>
+        /// <param name="alphabet"></param>
+        public PronunciationDictionaryPhonemeRuleRequestModel(
+            string stringToReplace,
+            string phoneme,
+            string alphabet,
+            global::G.PronunciationDictionaryPhonemeRuleRequestModelType type)
+        {
+            this.StringToReplace = stringToReplace ?? throw new global::System.ArgumentNullException(nameof(stringToReplace));
+            this.Phoneme = phoneme ?? throw new global::System.ArgumentNullException(nameof(phoneme));
+            this.Alphabet = alphabet ?? throw new global::System.ArgumentNullException(nameof(alphabet));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PronunciationDictionaryPhonemeRuleRequestModel" /> class.
+        /// </summary>
+        public PronunciationDictionaryPhonemeRuleRequestModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

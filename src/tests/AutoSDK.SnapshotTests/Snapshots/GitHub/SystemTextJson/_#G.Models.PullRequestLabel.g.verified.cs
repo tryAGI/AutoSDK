@@ -64,6 +64,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestLabel" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="color"></param>
+        /// <param name="default"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PullRequestLabel(
+            long id,
+            string nodeId,
+            string url,
+            string name,
+            string? description,
+            string color,
+            bool @default)
+        {
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Color = color ?? throw new global::System.ArgumentNullException(nameof(color));
+            this.Default = @default;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestLabel" /> class.
+        /// </summary>
+        public PullRequestLabel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

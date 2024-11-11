@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteDatasetByIdResponse" /> class.
+        /// </summary>
+        /// <param name="deleteDatasetsByPk">
+        /// columns and relationships of "datasets"
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DeleteDatasetByIdResponse(
+            global::G.DeleteDatasetByIdResponseDeleteDatasetsByPk? deleteDatasetsByPk)
+        {
+            this.DeleteDatasetsByPk = deleteDatasetsByPk;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteDatasetByIdResponse" /> class.
+        /// </summary>
+        public DeleteDatasetByIdResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -63,6 +63,62 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespaceExportDetails" /> class.
+        /// </summary>
+        /// <param name="state">
+        /// State of the latest export<br/>
+        /// Example: succeeded | failed | in_progress
+        /// </param>
+        /// <param name="completedAt">
+        /// Completion time of the last export operation
+        /// </param>
+        /// <param name="branch">
+        /// Name of the exported branch<br/>
+        /// Example: codespace-monalisa-octocat-hello-world-g4wpq6h95q
+        /// </param>
+        /// <param name="sha">
+        /// Git commit SHA of the exported branch<br/>
+        /// Example: fd95a81ca01e48ede9f39c799ecbcef817b8a3b2
+        /// </param>
+        /// <param name="id">
+        /// Id for the export details<br/>
+        /// Example: latest
+        /// </param>
+        /// <param name="exportUrl">
+        /// Url for fetching export details<br/>
+        /// Example: https://api.github.com/user/codespaces/:name/exports/latest
+        /// </param>
+        /// <param name="htmlUrl">
+        /// Web url for the exported branch<br/>
+        /// Example: https://github.com/octocat/hello-world/tree/:branch
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodespaceExportDetails(
+            string? state,
+            global::System.DateTime? completedAt,
+            string? branch,
+            string? sha,
+            string? id,
+            string? exportUrl,
+            string? htmlUrl)
+        {
+            this.State = state;
+            this.CompletedAt = completedAt;
+            this.Branch = branch;
+            this.Sha = sha;
+            this.Id = id;
+            this.ExportUrl = exportUrl;
+            this.HtmlUrl = htmlUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespaceExportDetails" /> class.
+        /// </summary>
+        public CodespaceExportDetails()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

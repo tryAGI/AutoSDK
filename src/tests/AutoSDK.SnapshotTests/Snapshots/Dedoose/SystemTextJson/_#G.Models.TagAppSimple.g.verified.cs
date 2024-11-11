@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagAppSimple" /> class.
+        /// </summary>
+        /// <param name="tagId"></param>
+        /// <param name="tagWeight"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TagAppSimple(
+            global::System.Guid? tagId,
+            double? tagWeight)
+        {
+            this.TagId = tagId;
+            this.TagWeight = tagWeight;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagAppSimple" /> class.
+        /// </summary>
+        public TagAppSimple()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

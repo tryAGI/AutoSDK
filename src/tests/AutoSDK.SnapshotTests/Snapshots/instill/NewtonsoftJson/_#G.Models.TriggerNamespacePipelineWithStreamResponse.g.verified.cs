@@ -30,6 +30,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerNamespacePipelineWithStreamResponse" /> class.
+        /// </summary>
+        /// <param name="outputs">
+        /// Model inference outputs.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="metadata">
+        /// Traces of the pipeline inference.<br/>
+        /// Included only in responses
+        /// </param>
+        public TriggerNamespacePipelineWithStreamResponse(
+            global::System.Collections.Generic.IList<object>? outputs,
+            global::G.TriggerMetadata? metadata)
+        {
+            this.Outputs = outputs;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TriggerNamespacePipelineWithStreamResponse" /> class.
+        /// </summary>
+        public TriggerNamespacePipelineWithStreamResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

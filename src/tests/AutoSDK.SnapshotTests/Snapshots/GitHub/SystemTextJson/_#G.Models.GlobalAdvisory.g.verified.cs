@@ -176,6 +176,139 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GlobalAdvisory" /> class.
+        /// </summary>
+        /// <param name="ghsaId">
+        /// The GitHub Security Advisory ID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="cveId">
+        /// The Common Vulnerabilities and Exposures (CVE) ID.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="url">
+        /// The API URL for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="htmlUrl">
+        /// The URL for the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="repositoryAdvisoryUrl">
+        /// The API URL for the repository advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="summary">
+        /// A short summary of the advisory.
+        /// </param>
+        /// <param name="description">
+        /// A detailed description of what the advisory entails.
+        /// </param>
+        /// <param name="type">
+        /// The type of advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="severity">
+        /// The severity of the advisory.
+        /// </param>
+        /// <param name="sourceCodeLocation">
+        /// The URL of the advisory's source code.
+        /// </param>
+        /// <param name="identifiers">
+        /// Included only in responses
+        /// </param>
+        /// <param name="references"></param>
+        /// <param name="publishedAt">
+        /// The date and time of when the advisory was published, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="updatedAt">
+        /// The date and time of when the advisory was last updated, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="githubReviewedAt">
+        /// The date and time of when the advisory was reviewed by GitHub, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="nvdPublishedAt">
+        /// The date and time when the advisory was published in the National Vulnerability Database, in ISO 8601 format.<br/>
+        /// This field is only populated when the advisory is imported from the National Vulnerability Database.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="withdrawnAt">
+        /// The date and time of when the advisory was withdrawn, in ISO 8601 format.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="vulnerabilities">
+        /// The products and respective version ranges affected by the advisory.
+        /// </param>
+        /// <param name="cvss"></param>
+        /// <param name="cvssSeverities"></param>
+        /// <param name="cwes"></param>
+        /// <param name="epss"></param>
+        /// <param name="credits">
+        /// The users who contributed to the advisory.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GlobalAdvisory(
+            string summary,
+            string? description,
+            global::G.GlobalAdvisorySeverity severity,
+            string? sourceCodeLocation,
+            global::System.Collections.Generic.IList<string>? references,
+            global::System.Collections.Generic.IList<global::G.Vulnerability>? vulnerabilities,
+            global::G.GlobalAdvisoryCvss? cvss,
+            global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCwe>? cwes,
+            string? cveId,
+            string? repositoryAdvisoryUrl,
+            global::System.Collections.Generic.IList<global::G.GlobalAdvisoryIdentifier>? identifiers,
+            global::System.DateTime? githubReviewedAt,
+            global::System.DateTime? nvdPublishedAt,
+            global::System.DateTime? withdrawnAt,
+            global::G.CvssSeverities? cvssSeverities,
+            global::G.GlobalAdvisoryEpss? epss,
+            global::System.Collections.Generic.IList<global::G.GlobalAdvisoryCredit>? credits,
+            string ghsaId = default!,
+            string url = default!,
+            string htmlUrl = default!,
+            global::G.GlobalAdvisoryType type = default!,
+            global::System.DateTime publishedAt = default!,
+            global::System.DateTime updatedAt = default!)
+        {
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Severity = severity;
+            this.SourceCodeLocation = sourceCodeLocation ?? throw new global::System.ArgumentNullException(nameof(sourceCodeLocation));
+            this.References = references ?? throw new global::System.ArgumentNullException(nameof(references));
+            this.Vulnerabilities = vulnerabilities ?? throw new global::System.ArgumentNullException(nameof(vulnerabilities));
+            this.Cvss = cvss ?? throw new global::System.ArgumentNullException(nameof(cvss));
+            this.Cwes = cwes ?? throw new global::System.ArgumentNullException(nameof(cwes));
+            this.GhsaId = ghsaId;
+            this.CveId = cveId;
+            this.Url = url;
+            this.HtmlUrl = htmlUrl;
+            this.RepositoryAdvisoryUrl = repositoryAdvisoryUrl;
+            this.Type = type;
+            this.Identifiers = identifiers;
+            this.PublishedAt = publishedAt;
+            this.UpdatedAt = updatedAt;
+            this.GithubReviewedAt = githubReviewedAt;
+            this.NvdPublishedAt = nvdPublishedAt;
+            this.WithdrawnAt = withdrawnAt;
+            this.CvssSeverities = cvssSeverities;
+            this.Epss = epss;
+            this.Credits = credits;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GlobalAdvisory" /> class.
+        /// </summary>
+        public GlobalAdvisory()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

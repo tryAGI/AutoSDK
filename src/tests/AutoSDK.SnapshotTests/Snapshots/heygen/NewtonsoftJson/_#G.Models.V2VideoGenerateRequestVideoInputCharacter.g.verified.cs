@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoGenerateRequestVideoInputCharacter" /> class.
+        /// </summary>
+        /// <param name="avatarId">
+        /// Example: Kristin_public_3_20240108
+        /// </param>
+        /// <param name="avatarStyle">
+        /// Example: normal
+        /// </param>
+        /// <param name="type">
+        /// Example: avatar
+        /// </param>
+        public V2VideoGenerateRequestVideoInputCharacter(
+            string? avatarId,
+            string? avatarStyle,
+            string? type)
+        {
+            this.AvatarId = avatarId;
+            this.AvatarStyle = avatarStyle;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2VideoGenerateRequestVideoInputCharacter" /> class.
+        /// </summary>
+        public V2VideoGenerateRequestVideoInputCharacter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

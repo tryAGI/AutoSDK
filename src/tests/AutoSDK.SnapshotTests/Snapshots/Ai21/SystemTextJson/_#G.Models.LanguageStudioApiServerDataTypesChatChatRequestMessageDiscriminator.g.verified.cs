@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminator" /> class.
+        /// </summary>
+        /// <param name="role"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminator(
+            global::G.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRole? role)
+        {
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminator" /> class.
+        /// </summary>
+        public LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminator()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -111,6 +111,84 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchProtection" /> class.
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="enabled"></param>
+        /// <param name="requiredStatusChecks">
+        /// Protected Branch Required Status Check
+        /// </param>
+        /// <param name="enforceAdmins">
+        /// Protected Branch Admin Enforced
+        /// </param>
+        /// <param name="requiredPullRequestReviews">
+        /// Protected Branch Pull Request Review
+        /// </param>
+        /// <param name="restrictions">
+        /// Branch Restriction Policy
+        /// </param>
+        /// <param name="requiredLinearHistory"></param>
+        /// <param name="allowForcePushes"></param>
+        /// <param name="allowDeletions"></param>
+        /// <param name="blockCreations"></param>
+        /// <param name="requiredConversationResolution"></param>
+        /// <param name="name">
+        /// Example: "branch/with/protection"
+        /// </param>
+        /// <param name="protectionUrl">
+        /// Example: "https://api.github.com/repos/owner-79e94e2d36b3fd06a32bb213/AAA_Public_Repo/branches/branch/with/protection/protection"
+        /// </param>
+        /// <param name="requiredSignatures"></param>
+        /// <param name="lockBranch">
+        /// Whether to set the branch as read-only. If this is true, users will not be able to push to the branch.
+        /// </param>
+        /// <param name="allowForkSyncing">
+        /// Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow fork syncing. Set to `false` to prevent fork syncing.
+        /// </param>
+        public BranchProtection(
+            string? url,
+            bool? enabled,
+            global::G.ProtectedBranchRequiredStatusCheck? requiredStatusChecks,
+            global::G.ProtectedBranchAdminEnforced? enforceAdmins,
+            global::G.ProtectedBranchPullRequestReview? requiredPullRequestReviews,
+            global::G.BranchRestrictionPolicy? restrictions,
+            global::G.BranchProtectionRequiredLinearHistory? requiredLinearHistory,
+            global::G.BranchProtectionAllowForcePushes? allowForcePushes,
+            global::G.BranchProtectionAllowDeletions? allowDeletions,
+            global::G.BranchProtectionBlockCreations? blockCreations,
+            global::G.BranchProtectionRequiredConversationResolution? requiredConversationResolution,
+            string? name,
+            string? protectionUrl,
+            global::G.BranchProtectionRequiredSignatures? requiredSignatures,
+            global::G.BranchProtectionLockBranch? lockBranch,
+            global::G.BranchProtectionAllowForkSyncing? allowForkSyncing)
+        {
+            this.Url = url;
+            this.Enabled = enabled;
+            this.RequiredStatusChecks = requiredStatusChecks;
+            this.EnforceAdmins = enforceAdmins;
+            this.RequiredPullRequestReviews = requiredPullRequestReviews;
+            this.Restrictions = restrictions;
+            this.RequiredLinearHistory = requiredLinearHistory;
+            this.AllowForcePushes = allowForcePushes;
+            this.AllowDeletions = allowDeletions;
+            this.BlockCreations = blockCreations;
+            this.RequiredConversationResolution = requiredConversationResolution;
+            this.Name = name;
+            this.ProtectionUrl = protectionUrl;
+            this.RequiredSignatures = requiredSignatures;
+            this.LockBranch = lockBranch;
+            this.AllowForkSyncing = allowForkSyncing;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchProtection" /> class.
+        /// </summary>
+        public BranchProtection()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

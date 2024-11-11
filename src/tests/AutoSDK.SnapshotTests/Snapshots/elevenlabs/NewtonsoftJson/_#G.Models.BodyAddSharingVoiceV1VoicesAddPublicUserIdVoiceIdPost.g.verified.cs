@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyAddSharingVoiceV1VoicesAddPublicUserIdVoiceIdPost" /> class.
+        /// </summary>
+        /// <param name="newName">
+        /// The name that identifies this voice. This will be displayed in the dropdown of the website.
+        /// </param>
+        public BodyAddSharingVoiceV1VoicesAddPublicUserIdVoiceIdPost(
+            string newName)
+        {
+            this.NewName = newName ?? throw new global::System.ArgumentNullException(nameof(newName));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyAddSharingVoiceV1VoicesAddPublicUserIdVoiceIdPost" /> class.
+        /// </summary>
+        public BodyAddSharingVoiceV1VoicesAddPublicUserIdVoiceIdPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

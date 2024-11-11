@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsSetDefaultWorkflowPermissions" /> class.
+        /// </summary>
+        /// <param name="defaultWorkflowPermissions">
+        /// The default workflow permissions granted to the GITHUB_TOKEN when running workflows.
+        /// </param>
+        /// <param name="canApprovePullRequestReviews">
+        /// Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsSetDefaultWorkflowPermissions(
+            global::G.ActionsDefaultWorkflowPermissions? defaultWorkflowPermissions,
+            bool? canApprovePullRequestReviews)
+        {
+            this.DefaultWorkflowPermissions = defaultWorkflowPermissions;
+            this.CanApprovePullRequestReviews = canApprovePullRequestReviews;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsSetDefaultWorkflowPermissions" /> class.
+        /// </summary>
+        public ActionsSetDefaultWorkflowPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

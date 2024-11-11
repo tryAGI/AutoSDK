@@ -69,6 +69,65 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="User" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The Vectara ID for the user.
+        /// </param>
+        /// <param name="email">
+        /// The email address for the user.
+        /// </param>
+        /// <param name="username">
+        /// The username for the user.
+        /// </param>
+        /// <param name="enabled">
+        /// Indicates whether the user is enabled or disabled.
+        /// </param>
+        /// <param name="description">
+        /// The description of the user.
+        /// </param>
+        /// <param name="createdAt">
+        /// When the user was created.
+        /// </param>
+        /// <param name="updatedAt">
+        /// When a user property was last updated.
+        /// </param>
+        /// <param name="apiRoles">
+        /// The role names of the user.
+        /// </param>
+        /// <param name="apiPolicy">
+        /// What actions a principal can take on the Vectara platform.
+        /// </param>
+        public User(
+            string? id,
+            string? email,
+            string? username,
+            bool? enabled,
+            string? description,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? updatedAt,
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles,
+            global::G.ApiPolicy? apiPolicy)
+        {
+            this.Id = id;
+            this.Email = email;
+            this.Username = username;
+            this.Enabled = enabled;
+            this.Description = description;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.ApiRoles = apiRoles;
+            this.ApiPolicy = apiPolicy;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="User" /> class.
+        /// </summary>
+        public User()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

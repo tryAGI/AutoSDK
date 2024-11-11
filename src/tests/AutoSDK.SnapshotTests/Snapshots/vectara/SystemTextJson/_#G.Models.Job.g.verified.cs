@@ -65,6 +65,59 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Job" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the job.
+        /// </param>
+        /// <param name="type">
+        /// The type of job.
+        /// </param>
+        /// <param name="corpusKeys">
+        /// The corpora that this job belongs to. It may not belong to any corpora.
+        /// </param>
+        /// <param name="state"></param>
+        /// <param name="createdAt">
+        /// Specifies when the job was created.
+        /// </param>
+        /// <param name="startedAt">
+        /// Specifies when the job was started.
+        /// </param>
+        /// <param name="completedAt">
+        /// Specifies when the job was completed.
+        /// </param>
+        /// <param name="createdByUsername">
+        /// The username of the user who created the job. This property may be missing, e.g., if the job was created by the system, not a user.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Job(
+            string? id,
+            global::G.JobType? type,
+            global::System.Collections.Generic.IList<string>? corpusKeys,
+            global::G.JobState? state,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? startedAt,
+            global::System.DateTime? completedAt,
+            string? createdByUsername)
+        {
+            this.Id = id;
+            this.Type = type;
+            this.CorpusKeys = corpusKeys;
+            this.State = state;
+            this.CreatedAt = createdAt;
+            this.StartedAt = startedAt;
+            this.CompletedAt = completedAt;
+            this.CreatedByUsername = createdByUsername;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Job" /> class.
+        /// </summary>
+        public Job()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

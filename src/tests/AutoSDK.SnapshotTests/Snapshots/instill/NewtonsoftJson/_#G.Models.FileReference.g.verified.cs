@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileReference" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// Name of the file.
+        /// </param>
+        /// <param name="type">
+        /// Format of the file (e.g., PDF, TXT, JPG).
+        /// </param>
+        /// <param name="size">
+        /// Size of the file in bytes.
+        /// </param>
+        /// <param name="url">
+        /// URL of the file (e.g., S3 URL).
+        /// </param>
+        public FileReference(
+            string name,
+            string type,
+            string size,
+            string url)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Size = size ?? throw new global::System.ArgumentNullException(nameof(size));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileReference" /> class.
+        /// </summary>
+        public FileReference()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

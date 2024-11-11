@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUserActiveExtensionsResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// The active extensions that the broadcaster has installed.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetUserActiveExtensionsResponse(
+            global::G.GetUserActiveExtensionsResponseData? data)
+        {
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetUserActiveExtensionsResponse" /> class.
+        /// </summary>
+        public GetUserActiveExtensionsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

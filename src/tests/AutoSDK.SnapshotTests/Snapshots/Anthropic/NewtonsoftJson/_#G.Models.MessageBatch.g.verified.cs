@@ -57,6 +57,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageBatch" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Unique object identifier for the message batch.
+        /// </param>
+        /// <param name="createdAt">
+        /// RFC 3339 datetime string representing the time at which the Message Batch was created.
+        /// </param>
+        /// <param name="expiresAt">
+        /// RFC 3339 datetime string representing the time at which the Message Batch will expire and end processing, which is 24 hours after creation.
+        /// </param>
+        /// <param name="processingStatus">
+        /// Processing status of the Message Batch.
+        /// </param>
+        /// <param name="requestCounts">
+        /// Tallies requests within the Message Batch, categorized by their status.
+        /// </param>
+        /// <param name="resultsUrl">
+        /// URL to a `.jsonl` file containing the results of the Message Batch requests. Specified only once processing ends.
+        /// </param>
+        /// <param name="type">
+        /// Object type. For Message Batches, this is always `"message_batch"`.
+        /// </param>
+        public MessageBatch(
+            string id,
+            global::System.DateTime createdAt,
+            global::System.DateTime expiresAt,
+            global::G.MessageBatchProcessingStatus processingStatus,
+            global::G.MessageBatchRequestCounts requestCounts,
+            string? resultsUrl,
+            global::G.MessageBatchType type)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.ExpiresAt = expiresAt;
+            this.ProcessingStatus = processingStatus;
+            this.RequestCounts = requestCounts ?? throw new global::System.ArgumentNullException(nameof(requestCounts));
+            this.ResultsUrl = resultsUrl;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageBatch" /> class.
+        /// </summary>
+        public MessageBatch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

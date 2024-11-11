@@ -29,6 +29,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDetailsMessageCreationObject" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Always `message_creation`.
+        /// </param>
+        /// <param name="messageCreation"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunStepDetailsMessageCreationObject(
+            global::G.RunStepDetailsMessageCreationObjectMessageCreation messageCreation,
+            global::G.RunStepDetailsMessageCreationObjectType type)
+        {
+            this.MessageCreation = messageCreation ?? throw new global::System.ArgumentNullException(nameof(messageCreation));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDetailsMessageCreationObject" /> class.
+        /// </summary>
+        public RunStepDetailsMessageCreationObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

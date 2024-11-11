@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableMinimalRepositoryPermissions" /> class.
+        /// </summary>
+        /// <param name="admin"></param>
+        /// <param name="maintain"></param>
+        /// <param name="push"></param>
+        /// <param name="triage"></param>
+        /// <param name="pull"></param>
+        public NullableMinimalRepositoryPermissions(
+            bool? admin,
+            bool? maintain,
+            bool? push,
+            bool? triage,
+            bool? pull)
+        {
+            this.Admin = admin;
+            this.Maintain = maintain;
+            this.Push = push;
+            this.Triage = triage;
+            this.Pull = pull;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="NullableMinimalRepositoryPermissions" /> class.
+        /// </summary>
+        public NullableMinimalRepositoryPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

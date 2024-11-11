@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeEvaluatorTopLevel" /> class.
+        /// </summary>
+        /// <param name="code"></param>
+        public CodeEvaluatorTopLevel(
+            string code)
+        {
+            this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeEvaluatorTopLevel" /> class.
+        /// </summary>
+        public CodeEvaluatorTopLevel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

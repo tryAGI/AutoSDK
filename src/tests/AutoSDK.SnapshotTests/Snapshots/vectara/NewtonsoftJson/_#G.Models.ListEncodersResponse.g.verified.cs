@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListEncodersResponse" /> class.
+        /// </summary>
+        /// <param name="encoders"></param>
+        /// <param name="metadata">
+        /// The standard metadata in the response of a list operation.
+        /// </param>
+        public ListEncodersResponse(
+            global::System.Collections.Generic.IList<global::G.Encoder>? encoders,
+            global::G.ListMetadata? metadata)
+        {
+            this.Encoders = encoders;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListEncodersResponse" /> class.
+        /// </summary>
+        public ListEncodersResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

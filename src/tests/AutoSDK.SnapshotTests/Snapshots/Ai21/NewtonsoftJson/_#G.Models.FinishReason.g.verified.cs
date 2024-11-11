@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinishReason" /> class.
+        /// </summary>
+        /// <param name="reason"></param>
+        /// <param name="length"></param>
+        /// <param name="sequence"></param>
+        public FinishReason(
+            string reason,
+            int? length,
+            string? sequence)
+        {
+            this.Reason = reason ?? throw new global::System.ArgumentNullException(nameof(reason));
+            this.Length = length;
+            this.Sequence = sequence;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinishReason" /> class.
+        /// </summary>
+        public FinishReason()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

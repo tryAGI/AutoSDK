@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchRequiredSignatures" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_signatures
+        /// </param>
+        /// <param name="enabled">
+        /// Example: true
+        /// </param>
+        public ProtectedBranchRequiredSignatures(
+            string url,
+            bool enabled)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Enabled = enabled;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProtectedBranchRequiredSignatures" /> class.
+        /// </summary>
+        public ProtectedBranchRequiredSignatures()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

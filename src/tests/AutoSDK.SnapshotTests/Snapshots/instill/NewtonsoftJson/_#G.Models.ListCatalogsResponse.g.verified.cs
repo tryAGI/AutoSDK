@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListCatalogsResponse" /> class.
+        /// </summary>
+        /// <param name="catalogs">
+        /// The catalogs container.
+        /// </param>
+        public ListCatalogsResponse(
+            global::System.Collections.Generic.IList<global::G.Catalog>? catalogs)
+        {
+            this.Catalogs = catalogs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListCatalogsResponse" /> class.
+        /// </summary>
+        public ListCatalogsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

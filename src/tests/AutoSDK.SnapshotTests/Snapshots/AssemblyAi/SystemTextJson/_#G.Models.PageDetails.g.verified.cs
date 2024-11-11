@@ -50,6 +50,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageDetails" /> class.
+        /// </summary>
+        /// <param name="limit">
+        /// The number of results this page is limited to
+        /// </param>
+        /// <param name="resultCount">
+        /// The actual number of results in the page
+        /// </param>
+        /// <param name="currentUrl">
+        /// The URL used to retrieve the current page of transcripts
+        /// </param>
+        /// <param name="prevUrl">
+        /// The URL to the next page of transcripts. The previous URL always points to a page with older transcripts.
+        /// </param>
+        /// <param name="nextUrl">
+        /// The URL to the next page of transcripts. The next URL always points to a page with newer transcripts.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PageDetails(
+            int limit,
+            int resultCount,
+            string currentUrl,
+            string prevUrl,
+            string nextUrl)
+        {
+            this.Limit = limit;
+            this.ResultCount = resultCount;
+            this.CurrentUrl = currentUrl ?? throw new global::System.ArgumentNullException(nameof(currentUrl));
+            this.PrevUrl = prevUrl ?? throw new global::System.ArgumentNullException(nameof(prevUrl));
+            this.NextUrl = nextUrl ?? throw new global::System.ArgumentNullException(nameof(nextUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PageDetails" /> class.
+        /// </summary>
+        public PageDetails()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

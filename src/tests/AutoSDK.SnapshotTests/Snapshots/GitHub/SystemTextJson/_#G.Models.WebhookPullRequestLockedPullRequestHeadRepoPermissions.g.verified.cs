@@ -48,6 +48,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestLockedPullRequestHeadRepoPermissions" /> class.
+        /// </summary>
+        /// <param name="admin"></param>
+        /// <param name="maintain"></param>
+        /// <param name="pull"></param>
+        /// <param name="push"></param>
+        /// <param name="triage"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookPullRequestLockedPullRequestHeadRepoPermissions(
+            bool admin,
+            bool pull,
+            bool push,
+            bool? maintain,
+            bool? triage)
+        {
+            this.Admin = admin;
+            this.Pull = pull;
+            this.Push = push;
+            this.Maintain = maintain;
+            this.Triage = triage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestLockedPullRequestHeadRepoPermissions" /> class.
+        /// </summary>
+        public WebhookPullRequestLockedPullRequestHeadRepoPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

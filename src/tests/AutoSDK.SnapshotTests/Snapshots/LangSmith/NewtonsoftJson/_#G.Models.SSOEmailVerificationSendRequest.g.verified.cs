@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SSOEmailVerificationSendRequest" /> class.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="samlProviderId"></param>
+        public SSOEmailVerificationSendRequest(
+            string email,
+            global::System.Guid samlProviderId)
+        {
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.SamlProviderId = samlProviderId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SSOEmailVerificationSendRequest" /> class.
+        /// </summary>
+        public SSOEmailVerificationSendRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

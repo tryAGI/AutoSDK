@@ -72,6 +72,67 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksUpdateRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the check. For example, "code-coverage".
+        /// </param>
+        /// <param name="detailsUrl">
+        /// The URL of the integrator's site that has the full details of the check.
+        /// </param>
+        /// <param name="externalId">
+        /// A reference for the run on the integrator's system.
+        /// </param>
+        /// <param name="startedAt">
+        /// This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// </param>
+        /// <param name="status">
+        /// The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
+        /// </param>
+        /// <param name="conclusion">
+        /// **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check. <br/>
+        /// **Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.
+        /// </param>
+        /// <param name="completedAt">
+        /// The time the check completed. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// </param>
+        /// <param name="output">
+        /// Check runs can accept a variety of data in the `output` object, including a `title` and `summary` and can optionally provide descriptive details about the run.
+        /// </param>
+        /// <param name="actions">
+        /// Possible further actions the integrator can perform, which a user may trigger. Each action includes a `label`, `identifier` and `description`. A maximum of three actions are accepted. To learn more about check runs and requested actions, see "[Check runs and requested actions](https://docs.github.com/rest/guides/using-the-rest-api-to-interact-with-checks#check-runs-and-requested-actions)."
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChecksUpdateRequest(
+            string? name,
+            string? detailsUrl,
+            string? externalId,
+            global::System.DateTime? startedAt,
+            global::G.ChecksUpdateRequestStatus? status,
+            global::G.ChecksUpdateRequestConclusion? conclusion,
+            global::System.DateTime? completedAt,
+            global::G.ChecksUpdateRequestOutput? output,
+            global::System.Collections.Generic.IList<global::G.ChecksUpdateRequestAction>? actions)
+        {
+            this.Name = name;
+            this.DetailsUrl = detailsUrl;
+            this.ExternalId = externalId;
+            this.StartedAt = startedAt;
+            this.Status = status;
+            this.Conclusion = conclusion;
+            this.CompletedAt = completedAt;
+            this.Output = output;
+            this.Actions = actions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksUpdateRequest" /> class.
+        /// </summary>
+        public ChecksUpdateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

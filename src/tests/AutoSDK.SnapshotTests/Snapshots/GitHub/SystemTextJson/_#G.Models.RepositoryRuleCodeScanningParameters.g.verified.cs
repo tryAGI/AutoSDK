@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleCodeScanningParameters" /> class.
+        /// </summary>
+        /// <param name="codeScanningTools">
+        /// Tools that must provide code scanning results for this rule to pass.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryRuleCodeScanningParameters(
+            global::System.Collections.Generic.IList<global::G.RepositoryRuleParamsCodeScanningTool> codeScanningTools)
+        {
+            this.CodeScanningTools = codeScanningTools ?? throw new global::System.ArgumentNullException(nameof(codeScanningTools));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleCodeScanningParameters" /> class.
+        /// </summary>
+        public RepositoryRuleCodeScanningParameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

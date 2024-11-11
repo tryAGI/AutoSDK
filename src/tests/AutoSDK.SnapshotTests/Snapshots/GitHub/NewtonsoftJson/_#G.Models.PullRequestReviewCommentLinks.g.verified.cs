@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestReviewCommentLinks" /> class.
+        /// </summary>
+        /// <param name="self"></param>
+        /// <param name="html"></param>
+        /// <param name="pullRequest"></param>
+        public PullRequestReviewCommentLinks(
+            global::G.PullRequestReviewCommentLinksSelf self,
+            global::G.PullRequestReviewCommentLinksHtml html,
+            global::G.PullRequestReviewCommentLinksPullRequest pullRequest)
+        {
+            this.Self = self ?? throw new global::System.ArgumentNullException(nameof(self));
+            this.Html = html ?? throw new global::System.ArgumentNullException(nameof(html));
+            this.PullRequest = pullRequest ?? throw new global::System.ArgumentNullException(nameof(pullRequest));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestReviewCommentLinks" /> class.
+        /// </summary>
+        public PullRequestReviewCommentLinks()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

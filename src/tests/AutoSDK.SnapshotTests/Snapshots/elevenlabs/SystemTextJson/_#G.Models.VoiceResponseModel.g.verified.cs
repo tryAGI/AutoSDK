@@ -131,6 +131,76 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VoiceResponseModel" /> class.
+        /// </summary>
+        /// <param name="voiceId"></param>
+        /// <param name="name"></param>
+        /// <param name="samples"></param>
+        /// <param name="category"></param>
+        /// <param name="fineTuning"></param>
+        /// <param name="labels"></param>
+        /// <param name="description"></param>
+        /// <param name="previewUrl"></param>
+        /// <param name="availableForTiers"></param>
+        /// <param name="settings"></param>
+        /// <param name="sharing"></param>
+        /// <param name="highQualityBaseModelIds"></param>
+        /// <param name="safetyControl"></param>
+        /// <param name="voiceVerification"></param>
+        /// <param name="permissionOnResource"></param>
+        /// <param name="isLegacy">
+        /// Default Value: false
+        /// </param>
+        /// <param name="isMixed">
+        /// Default Value: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public VoiceResponseModel(
+            string voiceId,
+            string name,
+            global::System.Collections.Generic.IList<global::G.SampleResponseModel> samples,
+            global::G.VoiceResponseModelCategory category,
+            global::G.FineTuningResponseModel fineTuning,
+            global::System.Collections.Generic.Dictionary<string, string> labels,
+            string description,
+            string previewUrl,
+            global::System.Collections.Generic.IList<string> availableForTiers,
+            global::G.VoiceSettingsResponseModel settings,
+            global::G.VoiceSharingResponseModel sharing,
+            global::System.Collections.Generic.IList<string> highQualityBaseModelIds,
+            global::G.VoiceResponseModelSafetyControl? safetyControl,
+            global::G.VoiceVerificationResponseModel? voiceVerification,
+            string? permissionOnResource,
+            bool? isLegacy,
+            bool? isMixed)
+        {
+            this.VoiceId = voiceId ?? throw new global::System.ArgumentNullException(nameof(voiceId));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Samples = samples ?? throw new global::System.ArgumentNullException(nameof(samples));
+            this.Category = category;
+            this.FineTuning = fineTuning ?? throw new global::System.ArgumentNullException(nameof(fineTuning));
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.PreviewUrl = previewUrl ?? throw new global::System.ArgumentNullException(nameof(previewUrl));
+            this.AvailableForTiers = availableForTiers ?? throw new global::System.ArgumentNullException(nameof(availableForTiers));
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
+            this.Sharing = sharing ?? throw new global::System.ArgumentNullException(nameof(sharing));
+            this.HighQualityBaseModelIds = highQualityBaseModelIds ?? throw new global::System.ArgumentNullException(nameof(highQualityBaseModelIds));
+            this.SafetyControl = safetyControl;
+            this.VoiceVerification = voiceVerification;
+            this.PermissionOnResource = permissionOnResource;
+            this.IsLegacy = isLegacy;
+            this.IsMixed = isMixed;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VoiceResponseModel" /> class.
+        /// </summary>
+        public VoiceResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

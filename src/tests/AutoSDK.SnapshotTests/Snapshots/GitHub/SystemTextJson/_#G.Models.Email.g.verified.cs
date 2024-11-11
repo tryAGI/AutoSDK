@@ -43,6 +43,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Email" /> class.
+        /// </summary>
+        /// <param name="email1">
+        /// Example: octocat@github.com
+        /// </param>
+        /// <param name="primary">
+        /// Example: true
+        /// </param>
+        /// <param name="verified">
+        /// Example: true
+        /// </param>
+        /// <param name="visibility">
+        /// Example: public
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Email(
+            string email1,
+            bool primary,
+            bool verified,
+            string? visibility)
+        {
+            this.Email1 = email1 ?? throw new global::System.ArgumentNullException(nameof(email1));
+            this.Primary = primary;
+            this.Verified = verified;
+            this.Visibility = visibility ?? throw new global::System.ArgumentNullException(nameof(visibility));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Email" /> class.
+        /// </summary>
+        public Email()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

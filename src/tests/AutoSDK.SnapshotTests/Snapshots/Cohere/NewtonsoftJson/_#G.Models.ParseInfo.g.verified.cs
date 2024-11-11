@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParseInfo" /> class.
+        /// </summary>
+        /// <param name="separator">
+        /// Included only in requests
+        /// </param>
+        /// <param name="delimiter">
+        /// Included only in requests
+        /// </param>
+        public ParseInfo(
+            string? separator,
+            string? delimiter)
+        {
+            this.Separator = separator;
+            this.Delimiter = delimiter;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParseInfo" /> class.
+        /// </summary>
+        public ParseInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

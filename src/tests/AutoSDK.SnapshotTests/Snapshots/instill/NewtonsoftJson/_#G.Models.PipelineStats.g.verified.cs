@@ -36,6 +36,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineStats" /> class.
+        /// </summary>
+        /// <param name="numberOfRuns">
+        /// Number of pipeline runs.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="lastRunTime">
+        /// Last run time.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="numberOfClones">
+        /// Number of times this pipeline has been cloned.<br/>
+        /// Included only in responses
+        /// </param>
+        public PipelineStats(
+            int? numberOfRuns,
+            global::System.DateTime? lastRunTime,
+            int? numberOfClones)
+        {
+            this.NumberOfRuns = numberOfRuns;
+            this.LastRunTime = lastRunTime;
+            this.NumberOfClones = numberOfClones;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineStats" /> class.
+        /// </summary>
+        public PipelineStats()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

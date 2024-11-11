@@ -31,6 +31,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SegmentationResponse" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// A unique ID for the request (not the message). Repeated identical requests<br/>
+        /// get different IDs. However, for a streaming response, the ID will be the same<br/>
+        /// for all responses in the stream.
+        /// </param>
+        /// <param name="segments"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SegmentationResponse(
+            string id,
+            global::System.Collections.Generic.IList<global::G.Segment> segments)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Segments = segments ?? throw new global::System.ArgumentNullException(nameof(segments));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SegmentationResponse" /> class.
+        /// </summary>
+        public SegmentationResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

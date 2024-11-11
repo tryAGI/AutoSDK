@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogLoginFailed" /> class.
+        /// </summary>
+        /// <param name="errorCode">
+        /// The error code of the failure.
+        /// </param>
+        /// <param name="errorMessage">
+        /// The error message of the failure.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AuditLogLoginFailed(
+            string? errorCode,
+            string? errorMessage)
+        {
+            this.ErrorCode = errorCode;
+            this.ErrorMessage = errorMessage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogLoginFailed" /> class.
+        /// </summary>
+        public AuditLogLoginFailed()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

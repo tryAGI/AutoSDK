@@ -94,6 +94,74 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorStoreObject" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The identifier, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `vector_store`.
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the vector store was created.
+        /// </param>
+        /// <param name="name">
+        /// The name of the vector store.
+        /// </param>
+        /// <param name="usageBytes">
+        /// The total number of bytes used by the files in the vector store.
+        /// </param>
+        /// <param name="fileCounts"></param>
+        /// <param name="status">
+        /// The status of the vector store, which can be either `expired`, `in_progress`, or `completed`. A status of `completed` indicates that the vector store is ready for use.
+        /// </param>
+        /// <param name="expiresAfter">
+        /// The expiration policy for a vector store.
+        /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) for when the vector store will expire.
+        /// </param>
+        /// <param name="lastActiveAt">
+        /// The Unix timestamp (in seconds) for when the vector store was last active.
+        /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public VectorStoreObject(
+            string id,
+            global::System.DateTimeOffset createdAt,
+            string name,
+            int usageBytes,
+            global::G.VectorStoreObjectFileCounts fileCounts,
+            global::G.VectorStoreObjectStatus status,
+            global::System.DateTimeOffset? lastActiveAt,
+            object? metadata,
+            global::G.VectorStoreObjectObject @object,
+            global::G.VectorStoreExpirationAfter? expiresAfter,
+            global::System.DateTimeOffset? expiresAt)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.UsageBytes = usageBytes;
+            this.FileCounts = fileCounts ?? throw new global::System.ArgumentNullException(nameof(fileCounts));
+            this.Status = status;
+            this.LastActiveAt = lastActiveAt;
+            this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.Object = @object;
+            this.ExpiresAfter = expiresAfter;
+            this.ExpiresAt = expiresAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorStoreObject" /> class.
+        /// </summary>
+        public VectorStoreObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

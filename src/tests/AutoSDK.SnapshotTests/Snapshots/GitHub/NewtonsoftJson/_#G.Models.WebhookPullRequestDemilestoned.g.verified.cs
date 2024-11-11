@@ -67,6 +67,60 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestDemilestoned" /> class.
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="enterprise">
+        /// An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured<br/>
+        /// on an enterprise account or an organization that's part of an enterprise account. For more information,<br/>
+        /// see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+        /// </param>
+        /// <param name="milestone">
+        /// A collection of related issues and pull requests.
+        /// </param>
+        /// <param name="number">
+        /// The pull request number.
+        /// </param>
+        /// <param name="organization">
+        /// A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an<br/>
+        /// organization, or when the event occurs from activity in a repository owned by an organization.
+        /// </param>
+        /// <param name="pullRequest"></param>
+        /// <param name="repository">
+        /// The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property<br/>
+        /// when the event occurs from activity in a repository.
+        /// </param>
+        /// <param name="sender">
+        /// A GitHub user.
+        /// </param>
+        public WebhookPullRequestDemilestoned(
+            int number,
+            global::G.WebhooksPullRequest5 pullRequest,
+            global::G.RepositoryWebhooks repository,
+            global::G.WebhookPullRequestDemilestonedAction action,
+            global::G.EnterpriseWebhooks? enterprise,
+            global::G.Milestone? milestone,
+            global::G.OrganizationSimpleWebhooks? organization,
+            global::G.SimpleUser? sender)
+        {
+            this.Number = number;
+            this.PullRequest = pullRequest ?? throw new global::System.ArgumentNullException(nameof(pullRequest));
+            this.Repository = repository ?? throw new global::System.ArgumentNullException(nameof(repository));
+            this.Action = action;
+            this.Enterprise = enterprise;
+            this.Milestone = milestone;
+            this.Organization = organization;
+            this.Sender = sender;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestDemilestoned" /> class.
+        /// </summary>
+        public WebhookPullRequestDemilestoned()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

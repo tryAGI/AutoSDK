@@ -42,6 +42,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchDeleteResponse" /> class.
+        /// </summary>
+        /// <param name="match">
+        /// Outlines how to find the objects to be deleted.
+        /// </param>
+        /// <param name="output">
+        /// Controls the verbosity of the output.<br/>
+        /// Default Value: minimal
+        /// </param>
+        /// <param name="dryRun">
+        /// If true, objects will not be deleted yet, but merely listed. Defaults to false.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="results"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BatchDeleteResponse(
+            global::G.BatchDeleteResponseMatch? match,
+            global::G.BatchDeleteResponseOutput? output,
+            bool? dryRun,
+            global::G.BatchDeleteResponseResults? results)
+        {
+            this.Match = match;
+            this.Output = output;
+            this.DryRun = dryRun;
+            this.Results = results;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchDeleteResponse" /> class.
+        /// </summary>
+        public BatchDeleteResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

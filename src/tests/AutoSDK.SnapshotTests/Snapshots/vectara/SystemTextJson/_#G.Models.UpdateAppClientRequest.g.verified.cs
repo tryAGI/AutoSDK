@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAppClientRequest" /> class.
+        /// </summary>
+        /// <param name="description">
+        /// The new App Client description.
+        /// </param>
+        /// <param name="apiRoles">
+        /// The new roles attached to the App Client. These roles will replace the current roles.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UpdateAppClientRequest(
+            string? description,
+            global::System.Collections.Generic.IList<global::G.ApiRole>? apiRoles)
+        {
+            this.Description = description;
+            this.ApiRoles = apiRoles;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateAppClientRequest" /> class.
+        /// </summary>
+        public UpdateAppClientRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

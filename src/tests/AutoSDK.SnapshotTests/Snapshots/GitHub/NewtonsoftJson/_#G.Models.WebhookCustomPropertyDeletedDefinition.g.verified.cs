@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCustomPropertyDeletedDefinition" /> class.
+        /// </summary>
+        /// <param name="propertyName">
+        /// The name of the property that was deleted.
+        /// </param>
+        public WebhookCustomPropertyDeletedDefinition(
+            string propertyName)
+        {
+            this.PropertyName = propertyName ?? throw new global::System.ArgumentNullException(nameof(propertyName));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCustomPropertyDeletedDefinition" /> class.
+        /// </summary>
+        public WebhookCustomPropertyDeletedDefinition()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

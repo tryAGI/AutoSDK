@@ -67,6 +67,56 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgMembership" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/orgs/octocat/memberships/defunkt
+        /// </param>
+        /// <param name="state">
+        /// The state of the member in the organization. The `pending` state indicates the user has not yet accepted an invitation.<br/>
+        /// Example: active
+        /// </param>
+        /// <param name="role">
+        /// The user's membership type in the organization.<br/>
+        /// Example: admin
+        /// </param>
+        /// <param name="organizationUrl">
+        /// Example: https://api.github.com/orgs/octocat
+        /// </param>
+        /// <param name="organization">
+        /// A GitHub organization.
+        /// </param>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="permissions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrgMembership(
+            string url,
+            global::G.OrgMembershipState state,
+            global::G.OrgMembershipRole role,
+            string organizationUrl,
+            global::G.OrganizationSimple organization,
+            global::G.NullableSimpleUser? user,
+            global::G.OrgMembershipPermissions? permissions)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.State = state;
+            this.Role = role;
+            this.OrganizationUrl = organizationUrl ?? throw new global::System.ArgumentNullException(nameof(organizationUrl));
+            this.Organization = organization ?? throw new global::System.ArgumentNullException(nameof(organization));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Permissions = permissions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgMembership" /> class.
+        /// </summary>
+        public OrgMembership()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

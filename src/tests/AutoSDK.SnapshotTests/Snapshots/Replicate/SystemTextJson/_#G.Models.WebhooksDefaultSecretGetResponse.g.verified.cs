@@ -21,6 +21,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksDefaultSecretGetResponse" /> class.
+        /// </summary>
+        /// <param name="key">
+        /// The signing secret.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhooksDefaultSecretGetResponse(
+            string? key)
+        {
+            this.Key = key;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhooksDefaultSecretGetResponse" /> class.
+        /// </summary>
+        public WebhooksDefaultSecretGetResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

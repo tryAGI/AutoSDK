@@ -44,6 +44,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Model12" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The model identifier, which can be referenced in the API endpoints.
+        /// </param>
+        /// <param name="created">
+        /// The Unix timestamp (in seconds) when the model was created.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "model".
+        /// </param>
+        /// <param name="ownedBy">
+        /// The organization that owns the model.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Model12(
+            string id,
+            global::System.DateTimeOffset created,
+            string ownedBy,
+            global::G.ModelObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Created = created;
+            this.OwnedBy = ownedBy ?? throw new global::System.ArgumentNullException(nameof(ownedBy));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Model12" /> class.
+        /// </summary>
+        public Model12()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVariationUpscaleResponse" /> class.
+        /// </summary>
+        /// <param name="sdUpscaleJob"></param>
+        public CreateVariationUpscaleResponse(
+            global::G.CreateVariationUpscaleResponseSdUpscaleJob? sdUpscaleJob)
+        {
+            this.SdUpscaleJob = sdUpscaleJob;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVariationUpscaleResponse" /> class.
+        /// </summary>
+        public CreateVariationUpscaleResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

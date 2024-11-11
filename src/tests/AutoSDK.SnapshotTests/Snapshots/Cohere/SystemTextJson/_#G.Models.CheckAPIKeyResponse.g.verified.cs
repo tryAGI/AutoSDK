@@ -34,6 +34,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckAPIKeyResponse" /> class.
+        /// </summary>
+        /// <param name="valid"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="ownerId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CheckAPIKeyResponse(
+            bool valid,
+            string? organizationId,
+            string? ownerId)
+        {
+            this.Valid = valid;
+            this.OrganizationId = organizationId;
+            this.OwnerId = ownerId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheckAPIKeyResponse" /> class.
+        /// </summary>
+        public CheckAPIKeyResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

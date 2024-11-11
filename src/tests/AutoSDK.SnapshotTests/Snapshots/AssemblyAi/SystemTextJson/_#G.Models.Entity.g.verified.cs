@@ -44,6 +44,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Entity" /> class.
+        /// </summary>
+        /// <param name="entityType">
+        /// The type of entity for the detected entity
+        /// </param>
+        /// <param name="text">
+        /// The text for the detected entity
+        /// </param>
+        /// <param name="start">
+        /// The starting time, in milliseconds, at which the detected entity appears in the audio file
+        /// </param>
+        /// <param name="end">
+        /// The ending time, in milliseconds, for the detected entity in the audio file
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Entity(
+            global::G.EntityType entityType,
+            string text,
+            int start,
+            int end)
+        {
+            this.EntityType = entityType;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Start = start;
+            this.End = end;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Entity" /> class.
+        /// </summary>
+        public Entity()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

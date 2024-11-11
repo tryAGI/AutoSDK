@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsResetTokenRequest" /> class.
+        /// </summary>
+        /// <param name="accessToken">
+        /// The access_token of the OAuth or GitHub application.
+        /// </param>
+        public AppsResetTokenRequest(
+            string accessToken)
+        {
+            this.AccessToken = accessToken ?? throw new global::System.ArgumentNullException(nameof(accessToken));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AppsResetTokenRequest" /> class.
+        /// </summary>
+        public AppsResetTokenRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

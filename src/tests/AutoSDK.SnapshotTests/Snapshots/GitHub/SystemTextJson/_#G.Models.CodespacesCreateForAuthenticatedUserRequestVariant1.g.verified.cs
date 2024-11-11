@@ -89,6 +89,81 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesCreateForAuthenticatedUserRequestVariant1" /> class.
+        /// </summary>
+        /// <param name="repositoryId">
+        /// Repository id for this codespace
+        /// </param>
+        /// <param name="ref">
+        /// Git ref (typically a branch name) for this codespace
+        /// </param>
+        /// <param name="location">
+        /// The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
+        /// </param>
+        /// <param name="geo">
+        /// The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
+        /// </param>
+        /// <param name="clientIp">
+        /// IP for location auto-detection when proxying a request
+        /// </param>
+        /// <param name="machine">
+        /// Machine type to use for this codespace
+        /// </param>
+        /// <param name="devcontainerPath">
+        /// Path to devcontainer.json config to use for this codespace
+        /// </param>
+        /// <param name="multiRepoPermissionsOptOut">
+        /// Whether to authorize requested permissions from devcontainer.json
+        /// </param>
+        /// <param name="workingDirectory">
+        /// Working directory for this codespace
+        /// </param>
+        /// <param name="idleTimeoutMinutes">
+        /// Time in minutes before codespace stops from inactivity
+        /// </param>
+        /// <param name="displayName">
+        /// Display name for this codespace
+        /// </param>
+        /// <param name="retentionPeriodMinutes">
+        /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodespacesCreateForAuthenticatedUserRequestVariant1(
+            int repositoryId,
+            string? @ref,
+            string? location,
+            global::G.CodespacesCreateForAuthenticatedUserRequestVariant1Geo? geo,
+            string? clientIp,
+            string? machine,
+            string? devcontainerPath,
+            bool? multiRepoPermissionsOptOut,
+            string? workingDirectory,
+            int? idleTimeoutMinutes,
+            string? displayName,
+            int? retentionPeriodMinutes)
+        {
+            this.RepositoryId = repositoryId;
+            this.Ref = @ref;
+            this.Location = location;
+            this.Geo = geo;
+            this.ClientIp = clientIp;
+            this.Machine = machine;
+            this.DevcontainerPath = devcontainerPath;
+            this.MultiRepoPermissionsOptOut = multiRepoPermissionsOptOut;
+            this.WorkingDirectory = workingDirectory;
+            this.IdleTimeoutMinutes = idleTimeoutMinutes;
+            this.DisplayName = displayName;
+            this.RetentionPeriodMinutes = retentionPeriodMinutes;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesCreateForAuthenticatedUserRequestVariant1" /> class.
+        /// </summary>
+        public CodespacesCreateForAuthenticatedUserRequestVariant1()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

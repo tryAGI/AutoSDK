@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APIKeyCreateRequest" /> class.
+        /// </summary>
+        /// <param name="description">
+        /// Default Value: Default API key
+        /// </param>
+        /// <param name="readOnly">
+        /// Default Value: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public APIKeyCreateRequest(
+            string? description,
+            bool? readOnly)
+        {
+            this.Description = description;
+            this.ReadOnly = readOnly;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="APIKeyCreateRequest" /> class.
+        /// </summary>
+        public APIKeyCreateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

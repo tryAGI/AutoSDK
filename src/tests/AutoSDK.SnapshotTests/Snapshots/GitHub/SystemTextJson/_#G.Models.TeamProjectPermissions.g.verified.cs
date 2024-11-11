@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamProjectPermissions" /> class.
+        /// </summary>
+        /// <param name="read"></param>
+        /// <param name="write"></param>
+        /// <param name="admin"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TeamProjectPermissions(
+            bool read,
+            bool write,
+            bool admin)
+        {
+            this.Read = read;
+            this.Write = write;
+            this.Admin = admin;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamProjectPermissions" /> class.
+        /// </summary>
+        public TeamProjectPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

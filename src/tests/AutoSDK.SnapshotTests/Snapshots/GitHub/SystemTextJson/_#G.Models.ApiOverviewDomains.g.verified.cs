@@ -51,6 +51,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiOverviewDomains" /> class.
+        /// </summary>
+        /// <param name="website"></param>
+        /// <param name="codespaces"></param>
+        /// <param name="copilot"></param>
+        /// <param name="packages"></param>
+        /// <param name="actions"></param>
+        /// <param name="artifactAttestations"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ApiOverviewDomains(
+            global::System.Collections.Generic.IList<string>? website,
+            global::System.Collections.Generic.IList<string>? codespaces,
+            global::System.Collections.Generic.IList<string>? copilot,
+            global::System.Collections.Generic.IList<string>? packages,
+            global::System.Collections.Generic.IList<string>? actions,
+            global::G.ApiOverviewDomainsArtifactAttestations? artifactAttestations)
+        {
+            this.Website = website;
+            this.Codespaces = codespaces;
+            this.Copilot = copilot;
+            this.Packages = packages;
+            this.Actions = actions;
+            this.ArtifactAttestations = artifactAttestations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ApiOverviewDomains" /> class.
+        /// </summary>
+        public ApiOverviewDomains()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -23,6 +23,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationPullRequestReviewComment" /> class.
+        /// </summary>
+        /// <param name="pullRequestReviewCommentUrl">
+        /// The API URL to get the pull request review comment where the secret was detected.<br/>
+        /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/comments/12
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SecretScanningLocationPullRequestReviewComment(
+            string pullRequestReviewCommentUrl)
+        {
+            this.PullRequestReviewCommentUrl = pullRequestReviewCommentUrl ?? throw new global::System.ArgumentNullException(nameof(pullRequestReviewCommentUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationPullRequestReviewComment" /> class.
+        /// </summary>
+        public SecretScanningLocationPullRequestReviewComment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

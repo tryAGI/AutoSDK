@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepoSearchResultItemPermissions" /> class.
+        /// </summary>
+        /// <param name="admin"></param>
+        /// <param name="maintain"></param>
+        /// <param name="push"></param>
+        /// <param name="triage"></param>
+        /// <param name="pull"></param>
+        public RepoSearchResultItemPermissions(
+            bool admin,
+            bool push,
+            bool pull,
+            bool? maintain,
+            bool? triage)
+        {
+            this.Admin = admin;
+            this.Push = push;
+            this.Pull = pull;
+            this.Maintain = maintain;
+            this.Triage = triage;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepoSearchResultItemPermissions" /> class.
+        /// </summary>
+        public RepoSearchResultItemPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

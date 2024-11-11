@@ -33,6 +33,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut" /> class.
+        /// </summary>
+        /// <param name="splitName"></param>
+        /// <param name="examples"></param>
+        /// <param name="remove">
+        /// Default Value: false
+        /// </param>
+        public BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut(
+            string splitName,
+            global::System.Collections.Generic.IList<global::System.Guid> examples,
+            bool? remove)
+        {
+            this.SplitName = splitName ?? throw new global::System.ArgumentNullException(nameof(splitName));
+            this.Examples = examples ?? throw new global::System.ArgumentNullException(nameof(examples));
+            this.Remove = remove;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut" /> class.
+        /// </summary>
+        public BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

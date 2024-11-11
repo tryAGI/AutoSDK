@@ -83,6 +83,71 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Guest" /> class.
+        /// </summary>
+        /// <param name="slotId">
+        /// ID representing this guest’s slot assignment.   <br/>
+        ///   <br/>
+        /// * Host is always in slot "0"<br/>
+        /// * Guests are assigned the following consecutive IDs (e.g, "1", "2", "3", etc)<br/>
+        /// * Screen Share is represented as a special guest with the ID "SCREENSHARE"<br/>
+        /// * The identifier here matches the ID referenced in browser source links used in broadcasting software.
+        /// </param>
+        /// <param name="isLive">
+        /// Flag determining whether or not the guest is visible in the browser source in the host’s streaming software.
+        /// </param>
+        /// <param name="userId">
+        /// User ID of the guest assigned to this slot.
+        /// </param>
+        /// <param name="userDisplayName">
+        /// Display name of the guest assigned to this slot.
+        /// </param>
+        /// <param name="userLogin">
+        /// Login of the guest assigned to this slot.
+        /// </param>
+        /// <param name="volume">
+        /// Value from 0 to 100 representing the host’s volume setting for this guest.
+        /// </param>
+        /// <param name="assignedAt">
+        /// Timestamp when this guest was assigned a slot in the session.
+        /// </param>
+        /// <param name="audioSettings">
+        /// Information about the guest’s audio settings
+        /// </param>
+        /// <param name="videoSettings">
+        /// Information about the guest’s video settings
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Guest(
+            string slotId,
+            bool isLive,
+            string userId,
+            string userDisplayName,
+            string userLogin,
+            int volume,
+            global::System.DateTime assignedAt,
+            global::G.GuestAudioSettings audioSettings,
+            global::G.GuestVideoSettings videoSettings)
+        {
+            this.SlotId = slotId ?? throw new global::System.ArgumentNullException(nameof(slotId));
+            this.IsLive = isLive;
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserDisplayName = userDisplayName ?? throw new global::System.ArgumentNullException(nameof(userDisplayName));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+            this.Volume = volume;
+            this.AssignedAt = assignedAt;
+            this.AudioSettings = audioSettings ?? throw new global::System.ArgumentNullException(nameof(audioSettings));
+            this.VideoSettings = videoSettings ?? throw new global::System.ArgumentNullException(nameof(videoSettings));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Guest" /> class.
+        /// </summary>
+        public Guest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

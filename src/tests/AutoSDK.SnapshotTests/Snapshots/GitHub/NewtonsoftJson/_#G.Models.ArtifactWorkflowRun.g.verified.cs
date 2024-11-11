@@ -45,6 +45,45 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArtifactWorkflowRun" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 10
+        /// </param>
+        /// <param name="repositoryId">
+        /// Example: 42
+        /// </param>
+        /// <param name="headRepositoryId">
+        /// Example: 42
+        /// </param>
+        /// <param name="headBranch">
+        /// Example: main
+        /// </param>
+        /// <param name="headSha">
+        /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
+        /// </param>
+        public ArtifactWorkflowRun(
+            int? id,
+            int? repositoryId,
+            int? headRepositoryId,
+            string? headBranch,
+            string? headSha)
+        {
+            this.Id = id;
+            this.RepositoryId = repositoryId;
+            this.HeadRepositoryId = headRepositoryId;
+            this.HeadBranch = headBranch;
+            this.HeadSha = headSha;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArtifactWorkflowRun" /> class.
+        /// </summary>
+        public ArtifactWorkflowRun()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

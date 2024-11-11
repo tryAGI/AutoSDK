@@ -109,6 +109,70 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgPendingIdentity" /> class.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="readOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="roleId"></param>
+        /// <param name="workspaceIds"></param>
+        /// <param name="workspaceRoleId"></param>
+        /// <param name="password"></param>
+        /// <param name="fullName"></param>
+        /// <param name="accessScope"></param>
+        /// <param name="id"></param>
+        /// <param name="userId"></param>
+        /// <param name="tenantId"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="roleName"></param>
+        /// <param name="tenantIds">
+        /// Default Value: []
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrgPendingIdentity(
+            string email,
+            global::System.Guid id,
+            global::System.DateTime createdAt,
+            bool? readOnly,
+            global::System.Guid? roleId,
+            global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds,
+            global::System.Guid? workspaceRoleId,
+            string? password,
+            string? fullName,
+            global::G.AccessScope? accessScope,
+            global::System.Guid? userId,
+            global::System.Guid? tenantId,
+            global::System.Guid? organizationId,
+            string? roleName,
+            global::System.Collections.Generic.IList<global::System.Guid>? tenantIds)
+        {
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Id = id;
+            this.CreatedAt = createdAt;
+            this.ReadOnly = readOnly;
+            this.RoleId = roleId;
+            this.WorkspaceIds = workspaceIds;
+            this.WorkspaceRoleId = workspaceRoleId;
+            this.Password = password;
+            this.FullName = fullName;
+            this.AccessScope = accessScope;
+            this.UserId = userId;
+            this.TenantId = tenantId;
+            this.OrganizationId = organizationId;
+            this.RoleName = roleName;
+            this.TenantIds = tenantIds;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgPendingIdentity" /> class.
+        /// </summary>
+        public OrgPendingIdentity()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

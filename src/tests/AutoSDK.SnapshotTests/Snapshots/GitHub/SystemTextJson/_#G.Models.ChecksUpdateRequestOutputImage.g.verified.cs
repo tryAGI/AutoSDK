@@ -35,6 +35,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksUpdateRequestOutputImage" /> class.
+        /// </summary>
+        /// <param name="alt">
+        /// The alternative text for the image.
+        /// </param>
+        /// <param name="imageUrl">
+        /// The full URL of the image.
+        /// </param>
+        /// <param name="caption">
+        /// A short image description.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChecksUpdateRequestOutputImage(
+            string alt,
+            string imageUrl,
+            string? caption)
+        {
+            this.Alt = alt ?? throw new global::System.ArgumentNullException(nameof(alt));
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
+            this.Caption = caption;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksUpdateRequestOutputImage" /> class.
+        /// </summary>
+        public ChecksUpdateRequestOutputImage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

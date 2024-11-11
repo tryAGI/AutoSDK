@@ -34,6 +34,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetIndexInfo" /> class.
+        /// </summary>
+        /// <param name="datasetId"></param>
+        /// <param name="tag">
+        /// Default Value: latest
+        /// </param>
+        /// <param name="lastUpdatedVersion"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DatasetIndexInfo(
+            global::System.Guid datasetId,
+            string? tag,
+            global::System.DateTime? lastUpdatedVersion)
+        {
+            this.DatasetId = datasetId;
+            this.Tag = tag;
+            this.LastUpdatedVersion = lastUpdatedVersion;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetIndexInfo" /> class.
+        /// </summary>
+        public DatasetIndexInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

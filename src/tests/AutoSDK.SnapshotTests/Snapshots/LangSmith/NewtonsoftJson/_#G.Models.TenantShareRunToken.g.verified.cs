@@ -63,6 +63,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantShareRunToken" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="shareToken"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="runId"></param>
+        /// <param name="runName"></param>
+        /// <param name="runType"></param>
+        /// <param name="sessionId"></param>
+        /// <param name="sessionName"></param>
+        public TenantShareRunToken(
+            string shareToken,
+            global::System.DateTime createdAt,
+            global::System.Guid runId,
+            global::G.TenantShareRunTokenType type,
+            string? runName,
+            string? runType,
+            global::System.Guid? sessionId,
+            string? sessionName)
+        {
+            this.ShareToken = shareToken ?? throw new global::System.ArgumentNullException(nameof(shareToken));
+            this.CreatedAt = createdAt;
+            this.RunId = runId;
+            this.Type = type;
+            this.RunName = runName;
+            this.RunType = runType;
+            this.SessionId = sessionId;
+            this.SessionName = sessionName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantShareRunToken" /> class.
+        /// </summary>
+        public TenantShareRunToken()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

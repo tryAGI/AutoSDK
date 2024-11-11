@@ -135,6 +135,120 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomReward" /> class.
+        /// </summary>
+        /// <param name="broadcasterId">
+        /// The ID that uniquely identifies the broadcaster.
+        /// </param>
+        /// <param name="broadcasterLogin">
+        /// The broadcaster’s login name.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The broadcaster’s display name.
+        /// </param>
+        /// <param name="id">
+        /// The ID that uniquely identifies this custom reward.
+        /// </param>
+        /// <param name="title">
+        /// The title of the reward.
+        /// </param>
+        /// <param name="prompt">
+        /// The prompt shown to the viewer when they redeem the reward if user input is required. See the `is_user_input_required` field.
+        /// </param>
+        /// <param name="cost">
+        /// The cost of the reward in Channel Points.
+        /// </param>
+        /// <param name="image">
+        /// A set of custom images for the reward. This field is **null** if the broadcaster didn’t upload images.
+        /// </param>
+        /// <param name="defaultImage">
+        /// A set of default images for the reward.
+        /// </param>
+        /// <param name="backgroundColor">
+        /// The background color to use for the reward. The color is in Hex format (for example, #00E5CB).
+        /// </param>
+        /// <param name="isEnabled">
+        /// A Boolean value that determines whether the reward is enabled. Is **true** if enabled; otherwise, **false**. Disabled rewards aren’t shown to the user.
+        /// </param>
+        /// <param name="isUserInputRequired">
+        /// A Boolean value that determines whether the user must enter information when they redeem the reward. Is **true** if the user is prompted.
+        /// </param>
+        /// <param name="maxPerStreamSetting">
+        /// The settings used to determine whether to apply a maximum to the number of redemptions allowed per live stream.
+        /// </param>
+        /// <param name="maxPerUserPerStreamSetting">
+        /// The settings used to determine whether to apply a maximum to the number of redemptions allowed per user per live stream.
+        /// </param>
+        /// <param name="globalCooldownSetting">
+        /// The settings used to determine whether to apply a cooldown period between redemptions and the length of the cooldown.
+        /// </param>
+        /// <param name="isPaused">
+        /// A Boolean value that determines whether the reward is currently paused. Is **true** if the reward is paused. Viewers can’t redeem paused rewards.
+        /// </param>
+        /// <param name="isInStock">
+        /// A Boolean value that determines whether the reward is currently in stock. Is **true** if the reward is in stock. Viewers can’t redeem out of stock rewards.
+        /// </param>
+        /// <param name="shouldRedemptionsSkipRequestQueue">
+        /// A Boolean value that determines whether redemptions should be set to FULFILLED status immediately when a reward is redeemed. If **false**, status is set to UNFULFILLED and follows the normal request queue process.
+        /// </param>
+        /// <param name="redemptionsRedeemedCurrentStream">
+        /// The number of redemptions redeemed during the current live stream. The number counts against the `max_per_stream_setting` limit. This field is **null** if the broadcaster’s stream isn’t live or _max\_per\_stream\_setting_ isn’t enabled.
+        /// </param>
+        /// <param name="cooldownExpiresAt">
+        /// The timestamp of when the cooldown period expires. Is **null** if the reward isn’t in a cooldown state. See the `global_cooldown_setting` field.
+        /// </param>
+        public CustomReward(
+            string broadcasterId,
+            string broadcasterLogin,
+            string broadcasterName,
+            string id,
+            string title,
+            string prompt,
+            long cost,
+            global::G.CustomRewardImage image,
+            global::G.CustomRewardDefaultImage defaultImage,
+            string backgroundColor,
+            bool isEnabled,
+            bool isUserInputRequired,
+            global::G.CustomRewardMaxPerStreamSetting maxPerStreamSetting,
+            global::G.CustomRewardMaxPerUserPerStreamSetting maxPerUserPerStreamSetting,
+            global::G.CustomRewardGlobalCooldownSetting globalCooldownSetting,
+            bool isPaused,
+            bool isInStock,
+            bool shouldRedemptionsSkipRequestQueue,
+            int? redemptionsRedeemedCurrentStream,
+            global::System.DateTime? cooldownExpiresAt)
+        {
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Cost = cost;
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.DefaultImage = defaultImage ?? throw new global::System.ArgumentNullException(nameof(defaultImage));
+            this.BackgroundColor = backgroundColor ?? throw new global::System.ArgumentNullException(nameof(backgroundColor));
+            this.IsEnabled = isEnabled;
+            this.IsUserInputRequired = isUserInputRequired;
+            this.MaxPerStreamSetting = maxPerStreamSetting ?? throw new global::System.ArgumentNullException(nameof(maxPerStreamSetting));
+            this.MaxPerUserPerStreamSetting = maxPerUserPerStreamSetting ?? throw new global::System.ArgumentNullException(nameof(maxPerUserPerStreamSetting));
+            this.GlobalCooldownSetting = globalCooldownSetting ?? throw new global::System.ArgumentNullException(nameof(globalCooldownSetting));
+            this.IsPaused = isPaused;
+            this.IsInStock = isInStock;
+            this.ShouldRedemptionsSkipRequestQueue = shouldRedemptionsSkipRequestQueue;
+            this.RedemptionsRedeemedCurrentStream = redemptionsRedeemedCurrentStream;
+            this.CooldownExpiresAt = cooldownExpiresAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomReward" /> class.
+        /// </summary>
+        public CustomReward()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

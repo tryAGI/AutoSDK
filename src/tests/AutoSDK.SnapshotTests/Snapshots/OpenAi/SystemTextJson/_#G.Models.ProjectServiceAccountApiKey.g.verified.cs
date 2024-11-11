@@ -50,6 +50,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectServiceAccountApiKey" /> class.
+        /// </summary>
+        /// <param name="object">
+        /// The object type, which is always `organization.project.service_account.api_key`
+        /// </param>
+        /// <param name="value"></param>
+        /// <param name="name"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="id"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ProjectServiceAccountApiKey(
+            string value,
+            string name,
+            int createdAt,
+            string id,
+            global::G.ProjectServiceAccountApiKeyObject @object)
+        {
+            this.Value = value ?? throw new global::System.ArgumentNullException(nameof(value));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedAt = createdAt;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectServiceAccountApiKey" /> class.
+        /// </summary>
+        public ProjectServiceAccountApiKey()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

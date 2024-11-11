@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GraphQLQuery" /> class.
+        /// </summary>
+        /// <param name="operationName">
+        /// The name of the operation if multiple exist in the query.
+        /// </param>
+        /// <param name="query">
+        /// Query based on GraphQL syntax.
+        /// </param>
+        /// <param name="variables">
+        /// Additional variables for the query.
+        /// </param>
+        public GraphQLQuery(
+            string? operationName,
+            string? query,
+            object? variables)
+        {
+            this.OperationName = operationName;
+            this.Query = query;
+            this.Variables = variables;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GraphQLQuery" /> class.
+        /// </summary>
+        public GraphQLQuery()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

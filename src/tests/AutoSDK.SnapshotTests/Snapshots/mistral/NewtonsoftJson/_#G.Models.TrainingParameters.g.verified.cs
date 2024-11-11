@@ -51,6 +51,46 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingParameters" /> class.
+        /// </summary>
+        /// <param name="epochs"></param>
+        /// <param name="fimRatio">
+        /// Default Value: 0.9
+        /// </param>
+        /// <param name="learningRate">
+        /// Default Value: 0.0001
+        /// </param>
+        /// <param name="trainingSteps"></param>
+        /// <param name="warmupFraction">
+        /// Default Value: 0.05
+        /// </param>
+        /// <param name="weightDecay">
+        /// Default Value: 0.1
+        /// </param>
+        public TrainingParameters(
+            double? epochs,
+            double? fimRatio,
+            double? learningRate,
+            int? trainingSteps,
+            double? warmupFraction,
+            double? weightDecay)
+        {
+            this.Epochs = epochs;
+            this.FimRatio = fimRatio;
+            this.LearningRate = learningRate;
+            this.TrainingSteps = trainingSteps;
+            this.WarmupFraction = warmupFraction;
+            this.WeightDecay = weightDecay;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingParameters" /> class.
+        /// </summary>
+        public TrainingParameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

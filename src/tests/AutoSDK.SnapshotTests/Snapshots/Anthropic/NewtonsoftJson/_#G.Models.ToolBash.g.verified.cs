@@ -35,6 +35,37 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolBash" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of tool.<br/>
+        /// Default Value: bash_20241022
+        /// </param>
+        /// <param name="name">
+        /// The name of the tool.<br/>
+        /// Default Value: bash
+        /// </param>
+        /// <param name="cacheControl">
+        /// The cache control settings.
+        /// </param>
+        public ToolBash(
+            string? type,
+            string? name,
+            global::G.CacheControlEphemeral? cacheControl)
+        {
+            this.Type = type;
+            this.Name = name;
+            this.CacheControl = cacheControl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolBash" /> class.
+        /// </summary>
+        public ToolBash()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

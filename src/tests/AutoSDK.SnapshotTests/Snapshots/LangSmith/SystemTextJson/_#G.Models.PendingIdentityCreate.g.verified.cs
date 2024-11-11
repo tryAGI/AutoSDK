@@ -58,6 +58,44 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingIdentityCreate" /> class.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="readOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="roleId"></param>
+        /// <param name="workspaceIds"></param>
+        /// <param name="workspaceRoleId"></param>
+        /// <param name="password"></param>
+        /// <param name="fullName"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PendingIdentityCreate(
+            string email,
+            bool? readOnly,
+            global::System.Guid? roleId,
+            global::System.Collections.Generic.IList<global::System.Guid>? workspaceIds,
+            global::System.Guid? workspaceRoleId,
+            string? password,
+            string? fullName)
+        {
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.ReadOnly = readOnly;
+            this.RoleId = roleId;
+            this.WorkspaceIds = workspaceIds;
+            this.WorkspaceRoleId = workspaceRoleId;
+            this.Password = password;
+            this.FullName = fullName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingIdentityCreate" /> class.
+        /// </summary>
+        public PendingIdentityCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -39,6 +39,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteFileOut" /> class.
+        /// </summary>
+        /// <param name="deleted">
+        /// The deletion status.<br/>
+        /// Example: false
+        /// </param>
+        /// <param name="id">
+        /// The ID of the deleted file.<br/>
+        /// Example: 497f6eca-6276-4993-bfeb-53cbbbba6f09
+        /// </param>
+        /// <param name="object">
+        /// The object type that was deleted<br/>
+        /// Example: file
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DeleteFileOut(
+            bool deleted,
+            global::System.Guid id,
+            string @object)
+        {
+            this.Deleted = deleted;
+            this.Id = id;
+            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteFileOut" /> class.
+        /// </summary>
+        public DeleteFileOut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

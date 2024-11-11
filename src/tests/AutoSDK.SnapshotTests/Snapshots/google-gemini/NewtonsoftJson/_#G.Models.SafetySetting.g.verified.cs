@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SafetySetting" /> class.
+        /// </summary>
+        /// <param name="category">
+        /// Required. The category for this setting.
+        /// </param>
+        /// <param name="threshold">
+        /// Required. Controls the probability threshold at which harm is blocked.
+        /// </param>
+        public SafetySetting(
+            global::G.SafetySettingCategory? category,
+            global::G.SafetySettingThreshold? threshold)
+        {
+            this.Category = category;
+            this.Threshold = threshold;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SafetySetting" /> class.
+        /// </summary>
+        public SafetySetting()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

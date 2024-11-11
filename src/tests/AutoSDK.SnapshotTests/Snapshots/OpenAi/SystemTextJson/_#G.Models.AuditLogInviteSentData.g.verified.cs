@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogInviteSentData" /> class.
+        /// </summary>
+        /// <param name="email">
+        /// The email invited to the organization.
+        /// </param>
+        /// <param name="role">
+        /// The role the email was invited to be. Is either `owner` or `member`.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AuditLogInviteSentData(
+            string? email,
+            string? role)
+        {
+            this.Email = email;
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogInviteSentData" /> class.
+        /// </summary>
+        public AuditLogInviteSentData()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

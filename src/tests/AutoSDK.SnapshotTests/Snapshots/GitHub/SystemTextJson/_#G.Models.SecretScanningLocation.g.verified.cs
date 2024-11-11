@@ -32,6 +32,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocation" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.<br/>
+        /// Example: commit
+        /// </param>
+        /// <param name="details"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SecretScanningLocation(
+            global::G.SecretScanningLocationType? type,
+            global::G.OneOf<global::G.SecretScanningLocationCommit, global::G.SecretScanningLocationWikiCommit, global::G.SecretScanningLocationIssueTitle, global::G.SecretScanningLocationIssueBody, global::G.SecretScanningLocationIssueComment, global::G.SecretScanningLocationDiscussionTitle, global::G.SecretScanningLocationDiscussionBody, global::G.SecretScanningLocationDiscussionComment, global::G.SecretScanningLocationPullRequestTitle, global::G.SecretScanningLocationPullRequestBody, global::G.SecretScanningLocationPullRequestComment, global::G.SecretScanningLocationPullRequestReview, global::G.SecretScanningLocationPullRequestReviewComment>? details)
+        {
+            this.Type = type;
+            this.Details = details;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocation" /> class.
+        /// </summary>
+        public SecretScanningLocation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -57,6 +57,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAdScheduleResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="snoozeCount">
+        /// The number of snoozes available for the broadcaster.
+        /// </param>
+        /// <param name="snoozeRefreshAt">
+        /// The UTC timestamp when the broadcaster will gain an additional snooze, in RFC3339 format.
+        /// </param>
+        /// <param name="nextAdAt">
+        /// The UTC timestamp of the broadcaster’s next scheduled ad, in RFC3339 format. Empty if the channel has no ad scheduled or is not live.
+        /// </param>
+        /// <param name="duration">
+        /// The length in seconds of the scheduled upcoming ad break.
+        /// </param>
+        /// <param name="lastAdAt">
+        /// The UTC timestamp of the broadcaster’s last ad-break, in RFC3339 format. Empty if the channel has not run an ad or is not live.
+        /// </param>
+        /// <param name="prerollFreeTime">
+        /// The amount of pre-roll free time remaining for the channel in seconds. Returns 0 if they are currently not pre-roll free.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetAdScheduleResponseDataItem(
+            int snoozeCount,
+            global::System.DateTime snoozeRefreshAt,
+            global::System.DateTime nextAdAt,
+            int duration,
+            global::System.DateTime lastAdAt,
+            int prerollFreeTime)
+        {
+            this.SnoozeCount = snoozeCount;
+            this.SnoozeRefreshAt = snoozeRefreshAt;
+            this.NextAdAt = nextAdAt;
+            this.Duration = duration;
+            this.LastAdAt = lastAdAt;
+            this.PrerollFreeTime = prerollFreeTime;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetAdScheduleResponseDataItem" /> class.
+        /// </summary>
+        public GetAdScheduleResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

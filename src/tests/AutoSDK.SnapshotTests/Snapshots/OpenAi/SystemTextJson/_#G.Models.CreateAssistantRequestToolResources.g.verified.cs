@@ -27,6 +27,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResources" /> class.
+        /// </summary>
+        /// <param name="codeInterpreter"></param>
+        /// <param name="fileSearch"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateAssistantRequestToolResources(
+            global::G.CreateAssistantRequestToolResourcesCodeInterpreter? codeInterpreter,
+            global::G.CreateAssistantRequestToolResourcesFileSearch? fileSearch)
+        {
+            this.CodeInterpreter = codeInterpreter;
+            this.FileSearch = fileSearch;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResources" /> class.
+        /// </summary>
+        public CreateAssistantRequestToolResources()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

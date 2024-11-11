@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2TemplateGenerateRequestVariables" /> class.
+        /// </summary>
+        /// <param name="firstName"></param>
+        public V2TemplateGenerateRequestVariables(
+            global::G.V2TemplateGenerateRequestVariablesFirstName? firstName)
+        {
+            this.FirstName = firstName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V2TemplateGenerateRequestVariables" /> class.
+        /// </summary>
+        public V2TemplateGenerateRequestVariables()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

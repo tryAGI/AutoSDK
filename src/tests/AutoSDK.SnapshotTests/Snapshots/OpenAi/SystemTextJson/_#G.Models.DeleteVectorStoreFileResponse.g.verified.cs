@@ -36,6 +36,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteVectorStoreFileResponse" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="deleted"></param>
+        /// <param name="object"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DeleteVectorStoreFileResponse(
+            string id,
+            bool deleted,
+            global::G.DeleteVectorStoreFileResponseObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Deleted = deleted;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DeleteVectorStoreFileResponse" /> class.
+        /// </summary>
+        public DeleteVectorStoreFileResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

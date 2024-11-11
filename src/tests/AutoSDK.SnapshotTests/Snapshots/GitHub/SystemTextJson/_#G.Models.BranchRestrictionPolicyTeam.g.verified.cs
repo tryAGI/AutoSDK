@@ -93,6 +93,60 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchRestrictionPolicyTeam" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="url"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="slug"></param>
+        /// <param name="description"></param>
+        /// <param name="privacy"></param>
+        /// <param name="notificationSetting"></param>
+        /// <param name="permission"></param>
+        /// <param name="membersUrl"></param>
+        /// <param name="repositoriesUrl"></param>
+        /// <param name="parent"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BranchRestrictionPolicyTeam(
+            int? id,
+            string? nodeId,
+            string? url,
+            string? htmlUrl,
+            string? name,
+            string? slug,
+            string? description,
+            string? privacy,
+            string? notificationSetting,
+            string? permission,
+            string? membersUrl,
+            string? repositoriesUrl,
+            string? parent)
+        {
+            this.Id = id;
+            this.NodeId = nodeId;
+            this.Url = url;
+            this.HtmlUrl = htmlUrl;
+            this.Name = name;
+            this.Slug = slug;
+            this.Description = description;
+            this.Privacy = privacy;
+            this.NotificationSetting = notificationSetting;
+            this.Permission = permission;
+            this.MembersUrl = membersUrl;
+            this.RepositoriesUrl = repositoriesUrl;
+            this.Parent = parent;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BranchRestrictionPolicyTeam" /> class.
+        /// </summary>
+        public BranchRestrictionPolicyTeam()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

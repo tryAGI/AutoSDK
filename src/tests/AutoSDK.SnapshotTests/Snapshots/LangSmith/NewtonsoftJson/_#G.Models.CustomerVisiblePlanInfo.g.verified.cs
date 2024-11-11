@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerVisiblePlanInfo" /> class.
+        /// </summary>
+        /// <param name="tier"></param>
+        /// <param name="startedOn"></param>
+        /// <param name="endsOn"></param>
+        public CustomerVisiblePlanInfo(
+            global::G.PaymentPlanTier tier,
+            global::System.DateTime startedOn,
+            global::System.DateTime? endsOn)
+        {
+            this.Tier = tier;
+            this.StartedOn = startedOn;
+            this.EndsOn = endsOn;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomerVisiblePlanInfo" /> class.
+        /// </summary>
+        public CustomerVisiblePlanInfo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

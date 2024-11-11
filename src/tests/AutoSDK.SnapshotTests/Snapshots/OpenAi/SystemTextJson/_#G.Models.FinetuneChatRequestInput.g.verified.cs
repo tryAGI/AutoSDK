@@ -42,6 +42,34 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneChatRequestInput" /> class.
+        /// </summary>
+        /// <param name="messages"></param>
+        /// <param name="tools">
+        /// A list of tools the model may generate JSON inputs for.
+        /// </param>
+        /// <param name="parallelToolCalls">
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FinetuneChatRequestInput(
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.ChatCompletionRequestSystemMessage, global::G.ChatCompletionRequestUserMessage, global::G.FineTuneChatCompletionRequestAssistantMessage?, global::G.ChatCompletionRequestToolMessage, global::G.ChatCompletionRequestFunctionMessage>>? messages,
+            global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? tools,
+            bool? parallelToolCalls)
+        {
+            this.Messages = messages;
+            this.Tools = tools;
+            this.ParallelToolCalls = parallelToolCalls;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneChatRequestInput" /> class.
+        /// </summary>
+        public FinetuneChatRequestInput()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

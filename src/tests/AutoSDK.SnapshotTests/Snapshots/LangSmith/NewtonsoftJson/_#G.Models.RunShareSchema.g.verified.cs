@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunShareSchema" /> class.
+        /// </summary>
+        /// <param name="runId"></param>
+        /// <param name="shareToken"></param>
+        public RunShareSchema(
+            global::System.Guid runId,
+            global::System.Guid shareToken)
+        {
+            this.RunId = runId;
+            this.ShareToken = shareToken;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunShareSchema" /> class.
+        /// </summary>
+        public RunShareSchema()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

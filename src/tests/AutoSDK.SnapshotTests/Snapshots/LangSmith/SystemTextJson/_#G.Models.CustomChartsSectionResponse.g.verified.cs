@@ -59,6 +59,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsSectionResponse" /> class.
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="index"></param>
+        /// <param name="id"></param>
+        /// <param name="chartCount"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="modifiedAt"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomChartsSectionResponse(
+            string title,
+            global::System.Guid id,
+            string? description,
+            int? index,
+            int? chartCount,
+            global::System.DateTime? createdAt,
+            global::System.DateTime? modifiedAt)
+        {
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Id = id;
+            this.Description = description;
+            this.Index = index;
+            this.ChartCount = chartCount;
+            this.CreatedAt = createdAt;
+            this.ModifiedAt = modifiedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsSectionResponse" /> class.
+        /// </summary>
+        public CustomChartsSectionResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

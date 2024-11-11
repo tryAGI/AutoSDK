@@ -41,6 +41,42 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateUploadRequest" /> class.
+        /// </summary>
+        /// <param name="filename">
+        /// The name of the file to upload.
+        /// </param>
+        /// <param name="purpose">
+        /// The intended purpose of the uploaded file.<br/>
+        /// See the [documentation on File purposes](/docs/api-reference/files/create#files-create-purpose).
+        /// </param>
+        /// <param name="bytes">
+        /// The number of bytes in the file you are uploading.
+        /// </param>
+        /// <param name="mimeType">
+        /// The MIME type of the file.<br/>
+        /// This must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.
+        /// </param>
+        public CreateUploadRequest(
+            string filename,
+            global::G.CreateUploadRequestPurpose purpose,
+            int bytes,
+            string mimeType)
+        {
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.Purpose = purpose;
+            this.Bytes = bytes;
+            this.MimeType = mimeType ?? throw new global::System.ArgumentNullException(nameof(mimeType));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateUploadRequest" /> class.
+        /// </summary>
+        public CreateUploadRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

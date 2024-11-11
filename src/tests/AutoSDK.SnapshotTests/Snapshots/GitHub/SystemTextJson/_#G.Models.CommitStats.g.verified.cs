@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitStats" /> class.
+        /// </summary>
+        /// <param name="additions"></param>
+        /// <param name="deletions"></param>
+        /// <param name="total"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CommitStats(
+            int? additions,
+            int? deletions,
+            int? total)
+        {
+            this.Additions = additions;
+            this.Deletions = deletions;
+            this.Total = total;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitStats" /> class.
+        /// </summary>
+        public CommitStats()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

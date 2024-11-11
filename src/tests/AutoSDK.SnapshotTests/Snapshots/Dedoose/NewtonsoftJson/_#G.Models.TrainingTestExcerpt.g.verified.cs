@@ -75,6 +75,52 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingTestExcerpt" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="trainingTestIDL"></param>
+        /// <param name="createDate"></param>
+        /// <param name="excerptDataPathURL"></param>
+        /// <param name="projectId"></param>
+        /// <param name="originalResourceId"></param>
+        /// <param name="originalExcerptId"></param>
+        /// <param name="originalStartLocation"></param>
+        /// <param name="originalEndLocation"></param>
+        public TrainingTestExcerpt(
+            string? projectIdKey,
+            global::System.Guid? id,
+            global::System.Guid? trainingTestIDL,
+            global::System.DateTime? createDate,
+            string? excerptDataPathURL,
+            global::System.Guid? projectId,
+            global::System.Guid? originalResourceId,
+            global::System.Guid? originalExcerptId,
+            int? originalStartLocation,
+            int? originalEndLocation)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.Id = id;
+            this.TrainingTestIDL = trainingTestIDL;
+            this.CreateDate = createDate;
+            this.ExcerptDataPathURL = excerptDataPathURL;
+            this.ProjectId = projectId;
+            this.OriginalResourceId = originalResourceId;
+            this.OriginalExcerptId = originalExcerptId;
+            this.OriginalStartLocation = originalStartLocation;
+            this.OriginalEndLocation = originalEndLocation;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TrainingTestExcerpt" /> class.
+        /// </summary>
+        public TrainingTestExcerpt()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

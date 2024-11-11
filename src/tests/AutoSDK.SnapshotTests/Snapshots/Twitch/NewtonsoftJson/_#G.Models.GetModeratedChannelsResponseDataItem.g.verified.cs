@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetModeratedChannelsResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="broadcasterId">
+        /// An ID that uniquely identifies the channel this user can moderate.
+        /// </param>
+        /// <param name="broadcasterLogin">
+        /// The channel’s login name.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The channels’ display name.
+        /// </param>
+        public GetModeratedChannelsResponseDataItem(
+            string broadcasterId,
+            string broadcasterLogin,
+            string broadcasterName)
+        {
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetModeratedChannelsResponseDataItem" /> class.
+        /// </summary>
+        public GetModeratedChannelsResponseDataItem()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

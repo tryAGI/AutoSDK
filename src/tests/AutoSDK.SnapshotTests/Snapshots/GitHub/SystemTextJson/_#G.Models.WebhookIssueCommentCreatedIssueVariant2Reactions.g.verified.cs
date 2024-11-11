@@ -75,6 +75,51 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssueCommentCreatedIssueVariant2Reactions" /> class.
+        /// </summary>
+        /// <param name="plus1"></param>
+        /// <param name="minus1"></param>
+        /// <param name="confused"></param>
+        /// <param name="eyes"></param>
+        /// <param name="heart"></param>
+        /// <param name="hooray"></param>
+        /// <param name="laugh"></param>
+        /// <param name="rocket"></param>
+        /// <param name="totalCount"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookIssueCommentCreatedIssueVariant2Reactions(
+            int? plus1,
+            int? minus1,
+            int? confused,
+            int? eyes,
+            int? heart,
+            int? hooray,
+            int? laugh,
+            int? rocket,
+            int? totalCount,
+            string? url)
+        {
+            this.Plus1 = plus1;
+            this.Minus1 = minus1;
+            this.Confused = confused;
+            this.Eyes = eyes;
+            this.Heart = heart;
+            this.Hooray = hooray;
+            this.Laugh = laugh;
+            this.Rocket = rocket;
+            this.TotalCount = totalCount;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssueCommentCreatedIssueVariant2Reactions" /> class.
+        /// </summary>
+        public WebhookIssueCommentCreatedIssueVariant2Reactions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

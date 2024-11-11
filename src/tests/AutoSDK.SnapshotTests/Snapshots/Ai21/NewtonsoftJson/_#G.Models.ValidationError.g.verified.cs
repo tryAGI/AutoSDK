@@ -35,6 +35,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationError" /> class.
+        /// </summary>
+        /// <param name="loc"></param>
+        /// <param name="msg"></param>
+        /// <param name="type"></param>
+        public ValidationError(
+            global::System.Collections.Generic.IList<global::G.AnyOf<string, int?>> loc,
+            string msg,
+            string type)
+        {
+            this.Loc = loc ?? throw new global::System.ArgumentNullException(nameof(loc));
+            this.Msg = msg ?? throw new global::System.ArgumentNullException(nameof(msg));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ValidationError" /> class.
+        /// </summary>
+        public ValidationError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

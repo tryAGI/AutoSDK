@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectsV2ItemReorderedChanges" /> class.
+        /// </summary>
+        /// <param name="previousProjectsV2ItemNodeId"></param>
+        public WebhookProjectsV2ItemReorderedChanges(
+            global::G.WebhookProjectsV2ItemReorderedChangesPreviousProjectsV2ItemNodeId? previousProjectsV2ItemNodeId)
+        {
+            this.PreviousProjectsV2ItemNodeId = previousProjectsV2ItemNodeId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookProjectsV2ItemReorderedChanges" /> class.
+        /// </summary>
+        public WebhookProjectsV2ItemReorderedChanges()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

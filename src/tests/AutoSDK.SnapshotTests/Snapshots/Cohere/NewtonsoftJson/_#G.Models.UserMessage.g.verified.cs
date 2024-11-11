@@ -30,6 +30,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserMessage" /> class.
+        /// </summary>
+        /// <param name="role"></param>
+        /// <param name="content">
+        /// The content of the message. This can be a string or a list of content blocks.<br/>
+        /// If a string is provided, it will be treated as a text content block.
+        /// </param>
+        public UserMessage(
+            global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Content>> content,
+            global::G.UserMessageRole role)
+        {
+            this.Content = content;
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserMessage" /> class.
+        /// </summary>
+        public UserMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

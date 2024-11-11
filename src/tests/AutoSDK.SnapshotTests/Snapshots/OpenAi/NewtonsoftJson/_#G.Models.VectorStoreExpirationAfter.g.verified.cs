@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorStoreExpirationAfter" /> class.
+        /// </summary>
+        /// <param name="anchor">
+        /// Anchor timestamp after which the expiration policy applies. Supported anchors: `last_active_at`.
+        /// </param>
+        /// <param name="days">
+        /// The number of days after the anchor time that the vector store will expire.
+        /// </param>
+        public VectorStoreExpirationAfter(
+            int days,
+            global::G.VectorStoreExpirationAfterAnchor anchor)
+        {
+            this.Days = days;
+            this.Anchor = anchor;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VectorStoreExpirationAfter" /> class.
+        /// </summary>
+        public VectorStoreExpirationAfter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -34,6 +34,36 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yExtension" /> class.
+        /// </summary>
+        /// <param name="concept">
+        /// The new concept you want to extend. Must be an all-lowercase single word, or a space delimited compound word. Examples: 'foobarium', 'my custom concept'<br/>
+        /// Example: foobarium
+        /// </param>
+        /// <param name="definition">
+        /// A list of space-delimited words or a sentence describing what the custom concept is about. Avoid using the custom concept itself. An Example definition for the custom concept 'foobarium': would be 'a naturally occurring element which can only be seen by programmers'
+        /// </param>
+        /// <param name="weight">
+        /// Weight of the definition of the new concept where 1='override existing definition entirely' and 0='ignore custom definition'. Note that if the custom concept is not present in the contextionary yet, the weight cannot be less than 1.
+        /// </param>
+        public C11yExtension(
+            string? concept,
+            string? definition,
+            float? weight)
+        {
+            this.Concept = concept;
+            this.Definition = definition;
+            this.Weight = weight;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="C11yExtension" /> class.
+        /// </summary>
+        public C11yExtension()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

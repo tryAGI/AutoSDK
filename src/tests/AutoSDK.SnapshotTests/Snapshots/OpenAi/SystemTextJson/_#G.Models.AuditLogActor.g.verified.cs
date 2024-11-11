@@ -34,6 +34,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogActor" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of actor. Is either `session` or `api_key`.
+        /// </param>
+        /// <param name="session">
+        /// The session in which the audit logged action was performed.
+        /// </param>
+        /// <param name="apiKey">
+        /// The API Key used to perform the audit logged action.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AuditLogActor(
+            global::G.AuditLogActorType? type,
+            global::G.AuditLogActorSession? session,
+            global::G.AuditLogActorApiKey? apiKey)
+        {
+            this.Type = type;
+            this.Session = session;
+            this.ApiKey = apiKey;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogActor" /> class.
+        /// </summary>
+        public AuditLogActor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

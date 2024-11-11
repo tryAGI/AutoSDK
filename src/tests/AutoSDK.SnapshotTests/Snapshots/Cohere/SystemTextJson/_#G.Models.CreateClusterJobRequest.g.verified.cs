@@ -55,6 +55,48 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateClusterJobRequest" /> class.
+        /// </summary>
+        /// <param name="embeddingsUrl"></param>
+        /// <param name="inputDatasetId"></param>
+        /// <param name="minClusterSize">
+        /// Defaults to `10`. Parameter for HDBSCAN. Only clusters with this number of elements will be returned with a positive cluster number.<br/>
+        /// Default Value: 10
+        /// </param>
+        /// <param name="nNeighbors">
+        /// Parameter for UMAP. A scalar governing how to balance global vs local structure in the data.<br/>
+        /// Default Value: 15
+        /// </param>
+        /// <param name="isDeterministic">
+        /// Parameter for UMAP. A boolean governing whether the embeddings from UMAP (that will be clustered with HDBSCAN) are deterministic.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="generateDescriptions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateClusterJobRequest(
+            string embeddingsUrl,
+            string? inputDatasetId,
+            int? minClusterSize,
+            int? nNeighbors,
+            bool? isDeterministic,
+            bool? generateDescriptions)
+        {
+            this.EmbeddingsUrl = embeddingsUrl ?? throw new global::System.ArgumentNullException(nameof(embeddingsUrl));
+            this.InputDatasetId = inputDatasetId;
+            this.MinClusterSize = minClusterSize;
+            this.NNeighbors = nNeighbors;
+            this.IsDeterministic = isDeterministic;
+            this.GenerateDescriptions = generateDescriptions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateClusterJobRequest" /> class.
+        /// </summary>
+        public CreateClusterJobRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

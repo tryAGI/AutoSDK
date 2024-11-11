@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PagesDeploymentStatus" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// The current status of the deployment.
+        /// </param>
+        public PagesDeploymentStatus(
+            global::G.PagesDeploymentStatusStatus? status)
+        {
+            this.Status = status;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PagesDeploymentStatus" /> class.
+        /// </summary>
+        public PagesDeploymentStatus()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

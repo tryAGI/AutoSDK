@@ -39,6 +39,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsDataPoint" /> class.
+        /// </summary>
+        /// <param name="seriesId"></param>
+        /// <param name="timestamp"></param>
+        /// <param name="value"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CustomChartsDataPoint(
+            string seriesId,
+            global::System.DateTime timestamp,
+            global::G.AnyOf<int?, double?, object>? value)
+        {
+            this.SeriesId = seriesId ?? throw new global::System.ArgumentNullException(nameof(seriesId));
+            this.Timestamp = timestamp;
+            this.Value = value;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CustomChartsDataPoint" /> class.
+        /// </summary>
+        public CustomChartsDataPoint()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

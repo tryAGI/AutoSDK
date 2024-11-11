@@ -48,6 +48,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CollaboratorPermissions" /> class.
+        /// </summary>
+        /// <param name="pull"></param>
+        /// <param name="triage"></param>
+        /// <param name="push"></param>
+        /// <param name="maintain"></param>
+        /// <param name="admin"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CollaboratorPermissions(
+            bool pull,
+            bool push,
+            bool admin,
+            bool? triage,
+            bool? maintain)
+        {
+            this.Pull = pull;
+            this.Push = push;
+            this.Admin = admin;
+            this.Triage = triage;
+            this.Maintain = maintain;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CollaboratorPermissions" /> class.
+        /// </summary>
+        public CollaboratorPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

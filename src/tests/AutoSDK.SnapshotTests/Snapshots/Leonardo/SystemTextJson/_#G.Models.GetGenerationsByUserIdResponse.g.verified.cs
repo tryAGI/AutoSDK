@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGenerationsByUserIdResponse" /> class.
+        /// </summary>
+        /// <param name="generations"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetGenerationsByUserIdResponse(
+            global::System.Collections.Generic.IList<global::G.GetGenerationsByUserIdResponseGeneration>? generations)
+        {
+            this.Generations = generations;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGenerationsByUserIdResponse" /> class.
+        /// </summary>
+        public GetGenerationsByUserIdResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

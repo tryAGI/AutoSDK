@@ -99,6 +99,84 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Dataset" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The dataset ID
+        /// </param>
+        /// <param name="name">
+        /// The name of the dataset
+        /// </param>
+        /// <param name="createdAt">
+        /// The creation date
+        /// </param>
+        /// <param name="updatedAt">
+        /// The last update date
+        /// </param>
+        /// <param name="datasetType">
+        /// The type of the dataset
+        /// </param>
+        /// <param name="validationStatus">
+        /// The validation status of the dataset
+        /// </param>
+        /// <param name="validationError">
+        /// Errors found during validation
+        /// </param>
+        /// <param name="schema">
+        /// the avro schema of the dataset
+        /// </param>
+        /// <param name="requiredFields"></param>
+        /// <param name="preserveFields"></param>
+        /// <param name="datasetParts">
+        /// the underlying files that make up the dataset
+        /// </param>
+        /// <param name="validationWarnings">
+        /// warnings found during validation
+        /// </param>
+        /// <param name="parseInfo">
+        /// Included only in requests
+        /// </param>
+        /// <param name="metrics"></param>
+        public Dataset(
+            string id,
+            string name,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            global::G.DatasetType datasetType,
+            global::G.DatasetValidationStatus validationStatus,
+            string? validationError,
+            string? schema,
+            global::System.Collections.Generic.IList<string>? requiredFields,
+            global::System.Collections.Generic.IList<string>? preserveFields,
+            global::System.Collections.Generic.IList<global::G.DatasetPart>? datasetParts,
+            global::System.Collections.Generic.IList<string>? validationWarnings,
+            global::G.ParseInfo? parseInfo,
+            global::G.Metrics? metrics)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.DatasetType = datasetType;
+            this.ValidationStatus = validationStatus;
+            this.ValidationError = validationError;
+            this.Schema = schema;
+            this.RequiredFields = requiredFields;
+            this.PreserveFields = preserveFields;
+            this.DatasetParts = datasetParts;
+            this.ValidationWarnings = validationWarnings;
+            this.ParseInfo = parseInfo;
+            this.Metrics = metrics;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Dataset" /> class.
+        /// </summary>
+        public Dataset()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

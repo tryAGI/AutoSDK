@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CacheControlEphemeral" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Default Value: ephemeral
+        /// </param>
+        public CacheControlEphemeral(
+            global::G.CacheControlEphemeralType? type)
+        {
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CacheControlEphemeral" /> class.
+        /// </summary>
+        public CacheControlEphemeral()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

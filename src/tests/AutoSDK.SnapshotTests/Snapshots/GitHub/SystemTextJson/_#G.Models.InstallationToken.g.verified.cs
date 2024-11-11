@@ -66,6 +66,53 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InstallationToken" /> class.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="expiresAt"></param>
+        /// <param name="permissions">
+        /// The permissions granted to the user access token.
+        /// </param>
+        /// <param name="repositorySelection"></param>
+        /// <param name="repositories"></param>
+        /// <param name="singleFile">
+        /// Example: README.md
+        /// </param>
+        /// <param name="hasMultipleSingleFiles">
+        /// Example: true
+        /// </param>
+        /// <param name="singleFilePaths">
+        /// Example: [config.yml, .github/issue_TEMPLATE.md]
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public InstallationToken(
+            string token,
+            string expiresAt,
+            global::G.AppPermissions? permissions,
+            global::G.InstallationTokenRepositorySelection? repositorySelection,
+            global::System.Collections.Generic.IList<global::G.Repository>? repositories,
+            string? singleFile,
+            bool? hasMultipleSingleFiles,
+            global::System.Collections.Generic.IList<string>? singleFilePaths)
+        {
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.ExpiresAt = expiresAt ?? throw new global::System.ArgumentNullException(nameof(expiresAt));
+            this.Permissions = permissions;
+            this.RepositorySelection = repositorySelection;
+            this.Repositories = repositories;
+            this.SingleFile = singleFile;
+            this.HasMultipleSingleFiles = hasMultipleSingleFiles;
+            this.SingleFilePaths = singleFilePaths;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InstallationToken" /> class.
+        /// </summary>
+        public InstallationToken()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

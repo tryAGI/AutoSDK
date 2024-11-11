@@ -141,6 +141,77 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentCreatedDeployment" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="creator"></param>
+        /// <param name="description"></param>
+        /// <param name="environment"></param>
+        /// <param name="id"></param>
+        /// <param name="nodeId"></param>
+        /// <param name="originalEnvironment"></param>
+        /// <param name="payload"></param>
+        /// <param name="performedViaGithubApp">
+        /// GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
+        /// </param>
+        /// <param name="productionEnvironment"></param>
+        /// <param name="ref"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="sha"></param>
+        /// <param name="statusesUrl"></param>
+        /// <param name="task"></param>
+        /// <param name="transientEnvironment"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookDeploymentCreatedDeployment(
+            string createdAt,
+            global::G.WebhookDeploymentCreatedDeploymentCreator? creator,
+            string? description,
+            string environment,
+            int id,
+            string nodeId,
+            string originalEnvironment,
+            global::G.OneOf<object, string> payload,
+            string @ref,
+            string repositoryUrl,
+            string sha,
+            string statusesUrl,
+            string task,
+            string updatedAt,
+            string url,
+            global::G.WebhookDeploymentCreatedDeploymentPerformedViaGithubApp? performedViaGithubApp,
+            bool? productionEnvironment,
+            bool? transientEnvironment)
+        {
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Creator = creator ?? throw new global::System.ArgumentNullException(nameof(creator));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Environment = environment ?? throw new global::System.ArgumentNullException(nameof(environment));
+            this.Id = id;
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.OriginalEnvironment = originalEnvironment ?? throw new global::System.ArgumentNullException(nameof(originalEnvironment));
+            this.Payload = payload;
+            this.Ref = @ref ?? throw new global::System.ArgumentNullException(nameof(@ref));
+            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
+            this.Task = task ?? throw new global::System.ArgumentNullException(nameof(task));
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.PerformedViaGithubApp = performedViaGithubApp;
+            this.ProductionEnvironment = productionEnvironment;
+            this.TransientEnvironment = transientEnvironment;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookDeploymentCreatedDeployment" /> class.
+        /// </summary>
+        public WebhookDeploymentCreatedDeployment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

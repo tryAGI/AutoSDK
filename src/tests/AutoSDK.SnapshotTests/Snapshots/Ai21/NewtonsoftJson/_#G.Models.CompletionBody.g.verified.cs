@@ -99,6 +99,78 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionBody" /> class.
+        /// </summary>
+        /// <param name="prompt"></param>
+        /// <param name="numResults">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="maxTokens">
+        /// Default Value: 16
+        /// </param>
+        /// <param name="minTokens">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="temperature">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="topP">
+        /// Default Value: 1
+        /// </param>
+        /// <param name="minP">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="stopSequences">
+        /// Default Value: []
+        /// </param>
+        /// <param name="topKReturn">
+        /// Default Value: 0
+        /// </param>
+        /// <param name="logitBias"></param>
+        /// <param name="frequencyPenalty"></param>
+        /// <param name="presencePenalty"></param>
+        /// <param name="countPenalty"></param>
+        /// <param name="epoch"></param>
+        public CompletionBody(
+            string prompt,
+            int? numResults,
+            int? maxTokens,
+            int? minTokens,
+            double? temperature,
+            double? topP,
+            double? minP,
+            global::System.Collections.Generic.IList<string>? stopSequences,
+            int? topKReturn,
+            object? logitBias,
+            global::G.Penalty? frequencyPenalty,
+            global::G.Penalty? presencePenalty,
+            global::G.Penalty? countPenalty,
+            int? epoch)
+        {
+            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.NumResults = numResults;
+            this.MaxTokens = maxTokens;
+            this.MinTokens = minTokens;
+            this.Temperature = temperature;
+            this.TopP = topP;
+            this.MinP = minP;
+            this.StopSequences = stopSequences;
+            this.TopKReturn = topKReturn;
+            this.LogitBias = logitBias;
+            this.FrequencyPenalty = frequencyPenalty;
+            this.PresencePenalty = presencePenalty;
+            this.CountPenalty = countPenalty;
+            this.Epoch = epoch;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionBody" /> class.
+        /// </summary>
+        public CompletionBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

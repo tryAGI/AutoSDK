@@ -57,6 +57,51 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitCommit1" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: https://api.github.com/repos/octocat/Hello-World/commits/6dcb09b5b57875f334f61aebed695e2e4193db5e
+        /// </param>
+        /// <param name="author">
+        /// Metaproperties for Git author/committer information.
+        /// </param>
+        /// <param name="committer">
+        /// Metaproperties for Git author/committer information.
+        /// </param>
+        /// <param name="message">
+        /// Example: Fix all the bugs
+        /// </param>
+        /// <param name="commentCount">
+        /// Example: 0
+        /// </param>
+        /// <param name="tree"></param>
+        /// <param name="verification"></param>
+        public CommitCommit1(
+            string url,
+            global::G.NullableGitUser? author,
+            global::G.NullableGitUser? committer,
+            string message,
+            int commentCount,
+            global::G.CommitCommit1Tree tree,
+            global::G.Verification? verification)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.CommentCount = commentCount;
+            this.Tree = tree ?? throw new global::System.ArgumentNullException(nameof(tree));
+            this.Verification = verification;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CommitCommit1" /> class.
+        /// </summary>
+        public CommitCommit1()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

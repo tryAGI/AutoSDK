@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldOptionVO" /> class.
+        /// </summary>
+        /// <param name="title"></param>
+        /// <param name="sortOrder"></param>
+        /// <param name="exitingOptionId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FieldOptionVO(
+            string? title,
+            int? sortOrder,
+            global::System.Guid? exitingOptionId)
+        {
+            this.Title = title;
+            this.SortOrder = sortOrder;
+            this.ExitingOptionId = exitingOptionId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FieldOptionVO" /> class.
+        /// </summary>
+        public FieldOptionVO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

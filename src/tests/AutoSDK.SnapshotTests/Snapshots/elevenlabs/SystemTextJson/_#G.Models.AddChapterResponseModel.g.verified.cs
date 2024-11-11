@@ -22,6 +22,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddChapterResponseModel" /> class.
+        /// </summary>
+        /// <param name="chapter"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AddChapterResponseModel(
+            global::G.ChapterResponseModel chapter)
+        {
+            this.Chapter = chapter ?? throw new global::System.ArgumentNullException(nameof(chapter));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AddChapterResponseModel" /> class.
+        /// </summary>
+        public AddChapterResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

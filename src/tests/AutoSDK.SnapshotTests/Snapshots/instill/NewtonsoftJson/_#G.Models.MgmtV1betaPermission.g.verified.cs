@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MgmtV1betaPermission" /> class.
+        /// </summary>
+        /// <param name="canEdit">
+        /// Defines whether the resource can be modified.<br/>
+        /// Included only in responses
+        /// </param>
+        public MgmtV1betaPermission(
+            bool? canEdit)
+        {
+            this.CanEdit = canEdit;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MgmtV1betaPermission" /> class.
+        /// </summary>
+        public MgmtV1betaPermission()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

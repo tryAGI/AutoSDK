@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GlobalAdvisoryEpss" /> class.
+        /// </summary>
+        /// <param name="percentage"></param>
+        /// <param name="percentile"></param>
+        public GlobalAdvisoryEpss(
+            double? percentage,
+            double? percentile)
+        {
+            this.Percentage = percentage;
+            this.Percentile = percentile;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GlobalAdvisoryEpss" /> class.
+        /// </summary>
+        public GlobalAdvisoryEpss()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

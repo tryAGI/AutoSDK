@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Image" /> class.
+        /// </summary>
+        /// <param name="b64Json"></param>
+        /// <param name="revisedPrompt"></param>
+        /// <param name="url"></param>
+        public Image(
+            string? b64Json,
+            string? revisedPrompt,
+            string? url)
+        {
+            this.B64Json = b64Json;
+            this.RevisedPrompt = revisedPrompt;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Image" /> class.
+        /// </summary>
+        public Image()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -47,6 +47,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetUpdate" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="inputsSchemaDefinition"></param>
+        /// <param name="outputsSchemaDefinition"></param>
+        /// <param name="patchExamples"></param>
+        public DatasetUpdate(
+            global::G.AnyOf<string, global::G.Missing>? name,
+            global::G.AnyOf<string, global::G.Missing>? description,
+            global::G.AnyOf<object, global::G.Missing>? inputsSchemaDefinition,
+            global::G.AnyOf<object, global::G.Missing>? outputsSchemaDefinition,
+            global::System.Collections.Generic.Dictionary<string, global::G.ExampleUpdate>? patchExamples)
+        {
+            this.Name = name;
+            this.Description = description;
+            this.InputsSchemaDefinition = inputsSchemaDefinition;
+            this.OutputsSchemaDefinition = outputsSchemaDefinition;
+            this.PatchExamples = patchExamples;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetUpdate" /> class.
+        /// </summary>
+        public DatasetUpdate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectSnapshotResponseModel" /> class.
+        /// </summary>
+        /// <param name="projectSnapshotId"></param>
+        /// <param name="projectId"></param>
+        /// <param name="createdAtUnix"></param>
+        /// <param name="name"></param>
+        /// <param name="audioUpload"></param>
+        /// <param name="zipUpload"></param>
+        public ProjectSnapshotResponseModel(
+            string projectSnapshotId,
+            string projectId,
+            int createdAtUnix,
+            string name,
+            global::G.ProjectSnapshotUploadResponseModel? audioUpload,
+            global::G.ProjectSnapshotUploadResponseModel? zipUpload)
+        {
+            this.ProjectSnapshotId = projectSnapshotId ?? throw new global::System.ArgumentNullException(nameof(projectSnapshotId));
+            this.ProjectId = projectId ?? throw new global::System.ArgumentNullException(nameof(projectId));
+            this.CreatedAtUnix = createdAtUnix;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.AudioUpload = audioUpload;
+            this.ZipUpload = zipUpload;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectSnapshotResponseModel" /> class.
+        /// </summary>
+        public ProjectSnapshotResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

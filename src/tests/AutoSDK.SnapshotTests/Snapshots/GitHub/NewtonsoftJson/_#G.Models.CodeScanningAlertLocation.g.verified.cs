@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningAlertLocation" /> class.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <param name="startLine"></param>
+        /// <param name="endLine"></param>
+        /// <param name="startColumn"></param>
+        /// <param name="endColumn"></param>
+        public CodeScanningAlertLocation(
+            string? path,
+            int? startLine,
+            int? endLine,
+            int? startColumn,
+            int? endColumn)
+        {
+            this.Path = path;
+            this.StartLine = startLine;
+            this.EndLine = endLine;
+            this.StartColumn = startColumn;
+            this.EndColumn = endColumn;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningAlertLocation" /> class.
+        /// </summary>
+        public CodeScanningAlertLocation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

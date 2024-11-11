@@ -39,6 +39,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgHookConfig" /> class.
+        /// </summary>
+        /// <param name="url">
+        /// Example: "http://example.com/2"
+        /// </param>
+        /// <param name="insecureSsl">
+        /// Example: "0"
+        /// </param>
+        /// <param name="contentType">
+        /// Example: "form"
+        /// </param>
+        /// <param name="secret">
+        /// Example: "********"
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrgHookConfig(
+            string? url,
+            string? insecureSsl,
+            string? contentType,
+            string? secret)
+        {
+            this.Url = url;
+            this.InsecureSsl = insecureSsl;
+            this.ContentType = contentType;
+            this.Secret = secret;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgHookConfig" /> class.
+        /// </summary>
+        public OrgHookConfig()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

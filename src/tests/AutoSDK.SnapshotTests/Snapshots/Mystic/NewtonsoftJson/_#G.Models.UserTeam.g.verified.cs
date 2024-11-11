@@ -40,6 +40,34 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserTeam" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="name"></param>
+        /// <param name="role"></param>
+        /// <param name="accountTier">
+        /// Defines various account tiers with different access levels and permissions.
+        /// </param>
+        public UserTeam(
+            string id,
+            string name,
+            string role,
+            global::G.AccountTier accountTier)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Role = role ?? throw new global::System.ArgumentNullException(nameof(role));
+            this.AccountTier = accountTier;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserTeam" /> class.
+        /// </summary>
+        public UserTeam()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

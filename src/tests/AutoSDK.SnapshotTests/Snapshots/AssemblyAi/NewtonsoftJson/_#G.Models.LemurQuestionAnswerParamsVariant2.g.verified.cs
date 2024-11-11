@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurQuestionAnswerParamsVariant2" /> class.
+        /// </summary>
+        /// <param name="questions">
+        /// A list of questions to ask
+        /// </param>
+        public LemurQuestionAnswerParamsVariant2(
+            global::System.Collections.Generic.IList<global::G.LemurQuestion> questions)
+        {
+            this.Questions = questions ?? throw new global::System.ArgumentNullException(nameof(questions));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurQuestionAnswerParamsVariant2" /> class.
+        /// </summary>
+        public LemurQuestionAnswerParamsVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

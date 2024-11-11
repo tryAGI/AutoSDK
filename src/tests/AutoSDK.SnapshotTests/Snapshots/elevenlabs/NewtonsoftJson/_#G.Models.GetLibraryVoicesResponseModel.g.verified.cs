@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetLibraryVoicesResponseModel" /> class.
+        /// </summary>
+        /// <param name="voices"></param>
+        /// <param name="hasMore"></param>
+        /// <param name="lastSortId"></param>
+        public GetLibraryVoicesResponseModel(
+            global::System.Collections.Generic.IList<global::G.LibraryVoiceResponseModel> voices,
+            bool hasMore,
+            string? lastSortId)
+        {
+            this.Voices = voices ?? throw new global::System.ArgumentNullException(nameof(voices));
+            this.HasMore = hasMore;
+            this.LastSortId = lastSortId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetLibraryVoicesResponseModel" /> class.
+        /// </summary>
+        public GetLibraryVoicesResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

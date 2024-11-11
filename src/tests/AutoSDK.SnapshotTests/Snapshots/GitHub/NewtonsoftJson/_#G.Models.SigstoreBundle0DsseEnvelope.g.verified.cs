@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0DsseEnvelope" /> class.
+        /// </summary>
+        /// <param name="payload"></param>
+        /// <param name="payloadType"></param>
+        /// <param name="signatures"></param>
+        public SigstoreBundle0DsseEnvelope(
+            string? payload,
+            string? payloadType,
+            global::System.Collections.Generic.IList<global::G.SigstoreBundle0DsseEnvelopeSignature>? signatures)
+        {
+            this.Payload = payload;
+            this.PayloadType = payloadType;
+            this.Signatures = signatures;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SigstoreBundle0DsseEnvelope" /> class.
+        /// </summary>
+        public SigstoreBundle0DsseEnvelope()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

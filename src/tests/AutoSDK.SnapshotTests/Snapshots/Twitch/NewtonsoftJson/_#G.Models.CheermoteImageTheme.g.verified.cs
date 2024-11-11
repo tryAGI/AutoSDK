@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheermoteImageTheme" /> class.
+        /// </summary>
+        /// <param name="animated"></param>
+        /// <param name="static"></param>
+        public CheermoteImageTheme(
+            global::G.CheermoteImageFormat? animated,
+            global::G.CheermoteImageFormat? @static)
+        {
+            this.Animated = animated;
+            this.Static = @static;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CheermoteImageTheme" /> class.
+        /// </summary>
+        public CheermoteImageTheme()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

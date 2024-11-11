@@ -126,6 +126,97 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Stream" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// An ID that identifies the stream. You can use this ID later to look up the video on demand (VOD).
+        /// </param>
+        /// <param name="userId">
+        /// The ID of the user that’s broadcasting the stream.
+        /// </param>
+        /// <param name="userLogin">
+        /// The user’s login name.
+        /// </param>
+        /// <param name="userName">
+        /// The user’s display name.
+        /// </param>
+        /// <param name="gameId">
+        /// The ID of the category or game being played.
+        /// </param>
+        /// <param name="gameName">
+        /// The ID of the category or game being played.
+        /// </param>
+        /// <param name="type">
+        /// The type of stream. Possible values are:  <br/>
+        ///   <br/>
+        /// * live<br/>
+        ///   <br/>
+        /// If an error occurs, this field is set to an empty string.
+        /// </param>
+        /// <param name="title">
+        /// The stream’s title. Is an empty string if not set.
+        /// </param>
+        /// <param name="viewerCount">
+        /// The number of users watching the stream.
+        /// </param>
+        /// <param name="startedAt">
+        /// The UTC date and time (in RFC3339 format) of when the broadcast began.
+        /// </param>
+        /// <param name="language">
+        /// The language that the stream uses. This is an ISO 639-1 two-letter language code or _other_ if the stream uses a language not in the list of [supported stream languages](https://help.twitch.tv/s/article/languages-on-twitch#streamlang).
+        /// </param>
+        /// <param name="thumbnailUrl">
+        /// A URL to an image of a frame from the last 5 minutes of the stream. Replace the width and height placeholders in the URL (`{width}x{height}`) with the size of the image you want, in pixels.
+        /// </param>
+        /// <param name="tags">
+        /// The tags applied to the stream.
+        /// </param>
+        /// <param name="isMature">
+        /// A Boolean value that indicates whether the stream is meant for mature audiences.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Stream(
+            string id,
+            string userId,
+            string userLogin,
+            string userName,
+            string gameId,
+            string gameName,
+            string title,
+            int viewerCount,
+            global::System.DateTime startedAt,
+            string language,
+            string thumbnailUrl,
+            global::System.Collections.Generic.IList<string> tagIds,
+            global::System.Collections.Generic.IList<string> tags,
+            bool isMature,
+            global::G.StreamType type)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.UserId = userId ?? throw new global::System.ArgumentNullException(nameof(userId));
+            this.UserLogin = userLogin ?? throw new global::System.ArgumentNullException(nameof(userLogin));
+            this.UserName = userName ?? throw new global::System.ArgumentNullException(nameof(userName));
+            this.GameId = gameId ?? throw new global::System.ArgumentNullException(nameof(gameId));
+            this.GameName = gameName ?? throw new global::System.ArgumentNullException(nameof(gameName));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.ViewerCount = viewerCount;
+            this.StartedAt = startedAt;
+            this.Language = language ?? throw new global::System.ArgumentNullException(nameof(language));
+            this.ThumbnailUrl = thumbnailUrl ?? throw new global::System.ArgumentNullException(nameof(thumbnailUrl));
+            this.TagIds = tagIds ?? throw new global::System.ArgumentNullException(nameof(tagIds));
+            this.Tags = tags ?? throw new global::System.ArgumentNullException(nameof(tags));
+            this.IsMature = isMature;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Stream" /> class.
+        /// </summary>
+        public Stream()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

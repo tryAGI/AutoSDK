@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicUserPlan" /> class.
+        /// </summary>
+        /// <param name="collaborators"></param>
+        /// <param name="name"></param>
+        /// <param name="space"></param>
+        /// <param name="privateRepos"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PublicUserPlan(
+            int collaborators,
+            string name,
+            int space,
+            int privateRepos)
+        {
+            this.Collaborators = collaborators;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Space = space;
+            this.PrivateRepos = privateRepos;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PublicUserPlan" /> class.
+        /// </summary>
+        public PublicUserPlan()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

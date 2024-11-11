@@ -225,6 +225,125 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions" /> class.
+        /// </summary>
+        /// <param name="actions"></param>
+        /// <param name="administration"></param>
+        /// <param name="checks"></param>
+        /// <param name="contentReferences"></param>
+        /// <param name="contents"></param>
+        /// <param name="deployments"></param>
+        /// <param name="discussions"></param>
+        /// <param name="emails"></param>
+        /// <param name="environments"></param>
+        /// <param name="issues"></param>
+        /// <param name="keys"></param>
+        /// <param name="members"></param>
+        /// <param name="metadata"></param>
+        /// <param name="organizationAdministration"></param>
+        /// <param name="organizationHooks"></param>
+        /// <param name="organizationPackages"></param>
+        /// <param name="organizationPlan"></param>
+        /// <param name="organizationProjects"></param>
+        /// <param name="organizationSecrets"></param>
+        /// <param name="organizationSelfHostedRunners"></param>
+        /// <param name="organizationUserBlocking"></param>
+        /// <param name="packages"></param>
+        /// <param name="pages"></param>
+        /// <param name="pullRequests"></param>
+        /// <param name="repositoryHooks"></param>
+        /// <param name="repositoryProjects"></param>
+        /// <param name="secretScanningAlerts"></param>
+        /// <param name="secrets"></param>
+        /// <param name="securityEvents"></param>
+        /// <param name="securityScanningAlert"></param>
+        /// <param name="singleFile"></param>
+        /// <param name="statuses"></param>
+        /// <param name="teamDiscussions"></param>
+        /// <param name="vulnerabilityAlerts"></param>
+        /// <param name="workflows"></param>
+        public WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions(
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsActions? actions,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsAdministration? administration,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsChecks? checks,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContentReferences? contentReferences,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsContents? contents,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDeployments? deployments,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsDiscussions? discussions,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEmails? emails,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsEnvironments? environments,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsIssues? issues,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsKeys? keys,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMembers? members,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsMetadata? metadata,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationAdministration? organizationAdministration,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationHooks? organizationHooks,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPackages? organizationPackages,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationPlan? organizationPlan,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationProjects? organizationProjects,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSecrets? organizationSecrets,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationSelfHostedRunners? organizationSelfHostedRunners,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsOrganizationUserBlocking? organizationUserBlocking,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPackages? packages,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPages? pages,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsPullRequests? pullRequests,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryHooks? repositoryHooks,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsRepositoryProjects? repositoryProjects,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecretScanningAlerts? secretScanningAlerts,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecrets? secrets,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityEvents? securityEvents,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSecurityScanningAlert? securityScanningAlert,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsSingleFile? singleFile,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsStatuses? statuses,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsTeamDiscussions? teamDiscussions,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsVulnerabilityAlerts? vulnerabilityAlerts,
+            global::G.WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissionsWorkflows? workflows)
+        {
+            this.Actions = actions;
+            this.Administration = administration;
+            this.Checks = checks;
+            this.ContentReferences = contentReferences;
+            this.Contents = contents;
+            this.Deployments = deployments;
+            this.Discussions = discussions;
+            this.Emails = emails;
+            this.Environments = environments;
+            this.Issues = issues;
+            this.Keys = keys;
+            this.Members = members;
+            this.Metadata = metadata;
+            this.OrganizationAdministration = organizationAdministration;
+            this.OrganizationHooks = organizationHooks;
+            this.OrganizationPackages = organizationPackages;
+            this.OrganizationPlan = organizationPlan;
+            this.OrganizationProjects = organizationProjects;
+            this.OrganizationSecrets = organizationSecrets;
+            this.OrganizationSelfHostedRunners = organizationSelfHostedRunners;
+            this.OrganizationUserBlocking = organizationUserBlocking;
+            this.Packages = packages;
+            this.Pages = pages;
+            this.PullRequests = pullRequests;
+            this.RepositoryHooks = repositoryHooks;
+            this.RepositoryProjects = repositoryProjects;
+            this.SecretScanningAlerts = secretScanningAlerts;
+            this.Secrets = secrets;
+            this.SecurityEvents = securityEvents;
+            this.SecurityScanningAlert = securityScanningAlert;
+            this.SingleFile = singleFile;
+            this.Statuses = statuses;
+            this.TeamDiscussions = teamDiscussions;
+            this.VulnerabilityAlerts = vulnerabilityAlerts;
+            this.Workflows = workflows;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions" /> class.
+        /// </summary>
+        public WebhookIssuesOpenedChangesOldIssuePerformedViaGithubAppPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

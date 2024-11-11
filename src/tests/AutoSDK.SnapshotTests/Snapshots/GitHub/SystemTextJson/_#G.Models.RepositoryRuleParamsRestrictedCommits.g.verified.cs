@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleParamsRestrictedCommits" /> class.
+        /// </summary>
+        /// <param name="oid">
+        /// Full or abbreviated commit hash to reject
+        /// </param>
+        /// <param name="reason">
+        /// Reason for restriction
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryRuleParamsRestrictedCommits(
+            string oid,
+            string? reason)
+        {
+            this.Oid = oid ?? throw new global::System.ArgumentNullException(nameof(oid));
+            this.Reason = reason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleParamsRestrictedCommits" /> class.
+        /// </summary>
+        public RepositoryRuleParamsRestrictedCommits()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

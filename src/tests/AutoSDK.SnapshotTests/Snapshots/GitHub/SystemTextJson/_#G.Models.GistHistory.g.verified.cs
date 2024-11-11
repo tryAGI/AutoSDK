@@ -45,6 +45,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistHistory" /> class.
+        /// </summary>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="version"></param>
+        /// <param name="committedAt"></param>
+        /// <param name="changeStatus"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GistHistory(
+            global::G.NullableSimpleUser? user,
+            string? version,
+            global::System.DateTime? committedAt,
+            global::G.GistHistoryChangeStatus? changeStatus,
+            string? url)
+        {
+            this.User = user;
+            this.Version = version;
+            this.CommittedAt = committedAt;
+            this.ChangeStatus = changeStatus;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistHistory" /> class.
+        /// </summary>
+        public GistHistory()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

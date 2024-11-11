@@ -53,6 +53,52 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleCommit" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// SHA for the commit<br/>
+        /// Example: 7638417db6d59f3c431d3e1f261cc637155684cd
+        /// </param>
+        /// <param name="treeId">
+        /// SHA for the commit's tree
+        /// </param>
+        /// <param name="message">
+        /// Message describing the purpose of the commit<br/>
+        /// Example: Fix #42
+        /// </param>
+        /// <param name="timestamp">
+        /// Timestamp of the commit
+        /// </param>
+        /// <param name="author">
+        /// Information about the Git author
+        /// </param>
+        /// <param name="committer">
+        /// Information about the Git committer
+        /// </param>
+        public SimpleCommit(
+            string id,
+            string treeId,
+            string message,
+            global::System.DateTime timestamp,
+            global::G.SimpleCommitAuthor? author,
+            global::G.SimpleCommitCommitter? committer)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.TreeId = treeId ?? throw new global::System.ArgumentNullException(nameof(treeId));
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Timestamp = timestamp;
+            this.Author = author ?? throw new global::System.ArgumentNullException(nameof(author));
+            this.Committer = committer ?? throw new global::System.ArgumentNullException(nameof(committer));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleCommit" /> class.
+        /// </summary>
+        public SimpleCommit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

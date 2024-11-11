@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateStreamEndVariant2" /> class.
+        /// </summary>
+        /// <param name="isFinished"></param>
+        /// <param name="finishReason"></param>
+        /// <param name="response"></param>
+        public GenerateStreamEndVariant2(
+            bool isFinished,
+            global::G.GenerateStreamEndVariant2Response response,
+            global::G.FinishReason? finishReason)
+        {
+            this.IsFinished = isFinished;
+            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
+            this.FinishReason = finishReason;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GenerateStreamEndVariant2" /> class.
+        /// </summary>
+        public GenerateStreamEndVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

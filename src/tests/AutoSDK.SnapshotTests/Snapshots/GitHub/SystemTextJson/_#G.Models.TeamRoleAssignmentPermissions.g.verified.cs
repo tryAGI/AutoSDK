@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamRoleAssignmentPermissions" /> class.
+        /// </summary>
+        /// <param name="pull"></param>
+        /// <param name="triage"></param>
+        /// <param name="push"></param>
+        /// <param name="maintain"></param>
+        /// <param name="admin"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TeamRoleAssignmentPermissions(
+            bool pull,
+            bool triage,
+            bool push,
+            bool maintain,
+            bool admin)
+        {
+            this.Pull = pull;
+            this.Triage = triage;
+            this.Push = push;
+            this.Maintain = maintain;
+            this.Admin = admin;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TeamRoleAssignmentPermissions" /> class.
+        /// </summary>
+        public TeamRoleAssignmentPermissions()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

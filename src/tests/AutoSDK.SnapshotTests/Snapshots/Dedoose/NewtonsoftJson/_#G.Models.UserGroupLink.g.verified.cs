@@ -51,6 +51,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserGroupLink" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="userIdL"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="groupIdl"></param>
+        public UserGroupLink(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? userIdL,
+            global::System.Guid? projectIDL,
+            global::System.Guid? groupIdl)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.UserIdL = userIdL;
+            this.ProjectIDL = projectIDL;
+            this.GroupIdl = groupIdl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserGroupLink" /> class.
+        /// </summary>
+        public UserGroupLink()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

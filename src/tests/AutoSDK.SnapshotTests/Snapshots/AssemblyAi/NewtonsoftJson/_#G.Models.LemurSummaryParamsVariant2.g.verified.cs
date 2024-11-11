@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurSummaryParamsVariant2" /> class.
+        /// </summary>
+        /// <param name="answerFormat">
+        /// How you want the summary to be returned. This can be any text. Examples: "TLDR", "bullet points"
+        /// </param>
+        public LemurSummaryParamsVariant2(
+            string? answerFormat)
+        {
+            this.AnswerFormat = answerFormat;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LemurSummaryParamsVariant2" /> class.
+        /// </summary>
+        public LemurSummaryParamsVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

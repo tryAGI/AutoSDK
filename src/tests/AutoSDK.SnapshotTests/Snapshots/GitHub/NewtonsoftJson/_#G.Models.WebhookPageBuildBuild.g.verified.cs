@@ -63,6 +63,44 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPageBuildBuild" /> class.
+        /// </summary>
+        /// <param name="commit"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="duration"></param>
+        /// <param name="error"></param>
+        /// <param name="pusher"></param>
+        /// <param name="status"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        public WebhookPageBuildBuild(
+            string? commit,
+            string createdAt,
+            int duration,
+            global::G.WebhookPageBuildBuildError error,
+            global::G.WebhookPageBuildBuildPusher? pusher,
+            string status,
+            string updatedAt,
+            string url)
+        {
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+            this.CreatedAt = createdAt ?? throw new global::System.ArgumentNullException(nameof(createdAt));
+            this.Duration = duration;
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.Pusher = pusher ?? throw new global::System.ArgumentNullException(nameof(pusher));
+            this.Status = status ?? throw new global::System.ArgumentNullException(nameof(status));
+            this.UpdatedAt = updatedAt ?? throw new global::System.ArgumentNullException(nameof(updatedAt));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPageBuildBuild" /> class.
+        /// </summary>
+        public WebhookPageBuildBuild()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

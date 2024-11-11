@@ -42,6 +42,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConduitShardsBodyShardTransport" /> class.
+        /// </summary>
+        /// <param name="method">
+        /// The transport method. Possible values are:  <br/>
+        ///   <br/>
+        /// * webhook<br/>
+        /// * websocket
+        /// </param>
+        /// <param name="callback">
+        /// The callback URL where the notifications are sent. The URL must use the HTTPS protocol and port 443\. See Processing an event.Specify this field only if method is set to webhook.NOTE: Redirects are not followed.
+        /// </param>
+        /// <param name="secret">
+        /// The secret used to verify the signature. The secret must be an ASCII string that’s a minimum of 10 characters long and a maximum of 100 characters long. For information about how the secret is used, see Verifying the event message.Specify this field only if method is set to webhook.
+        /// </param>
+        /// <param name="sessionId">
+        /// An ID that identifies the WebSocket to send notifications to. When you connect to EventSub using WebSockets, the server returns the ID in the Welcome message.Specify this field only if method is set to websocket.
+        /// </param>
+        public UpdateConduitShardsBodyShardTransport(
+            global::G.UpdateConduitShardsBodyShardTransportMethod? method,
+            string? callback,
+            string? secret,
+            string? sessionId)
+        {
+            this.Method = method;
+            this.Callback = callback;
+            this.Secret = secret;
+            this.SessionId = sessionId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConduitShardsBodyShardTransport" /> class.
+        /// </summary>
+        public UpdateConduitShardsBodyShardTransport()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

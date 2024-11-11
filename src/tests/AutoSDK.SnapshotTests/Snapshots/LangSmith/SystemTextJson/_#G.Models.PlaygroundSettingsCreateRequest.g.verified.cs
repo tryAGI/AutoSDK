@@ -28,6 +28,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlaygroundSettingsCreateRequest" /> class.
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="name"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PlaygroundSettingsCreateRequest(
+            object settings,
+            string? name)
+        {
+            this.Settings = settings ?? throw new global::System.ArgumentNullException(nameof(settings));
+            this.Name = name;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlaygroundSettingsCreateRequest" /> class.
+        /// </summary>
+        public PlaygroundSettingsCreateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

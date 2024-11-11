@@ -50,6 +50,50 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserExtension" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// An ID that identifies the extension.
+        /// </param>
+        /// <param name="version">
+        /// The extension's version.
+        /// </param>
+        /// <param name="name">
+        /// The extension's name.
+        /// </param>
+        /// <param name="canActivate">
+        /// A Boolean value that determines whether the extension is configured and can be activated. Is **true** if the extension is configured and can be activated.
+        /// </param>
+        /// <param name="type">
+        /// The extension types that you can activate for this extension. Possible values are:  <br/>
+        ///   <br/>
+        /// * component<br/>
+        /// * mobile<br/>
+        /// * overlay<br/>
+        /// * panel
+        /// </param>
+        public UserExtension(
+            string id,
+            string version,
+            string name,
+            bool canActivate,
+            global::System.Collections.Generic.IList<global::G.UserExtensionTypeItem> type)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Version = version ?? throw new global::System.ArgumentNullException(nameof(version));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.CanActivate = canActivate;
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserExtension" /> class.
+        /// </summary>
+        public UserExtension()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -29,6 +29,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyAudioIsolationV1AudioIsolationPost" /> class.
+        /// </summary>
+        /// <param name="audio">
+        /// The audio file from which vocals/speech will be isolated from.
+        /// </param>
+        /// <param name="audioname">
+        /// The audio file from which vocals/speech will be isolated from.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public BodyAudioIsolationV1AudioIsolationPost(
+            byte[] audio,
+            string audioname)
+        {
+            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
+            this.Audioname = audioname ?? throw new global::System.ArgumentNullException(nameof(audioname));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyAudioIsolationV1AudioIsolationPost" /> class.
+        /// </summary>
+        public BodyAudioIsolationV1AudioIsolationPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

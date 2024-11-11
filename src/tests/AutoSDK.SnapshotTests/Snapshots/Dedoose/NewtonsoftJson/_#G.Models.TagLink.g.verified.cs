@@ -57,6 +57,43 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagLink" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="tag1IDL"></param>
+        /// <param name="tag2IDL"></param>
+        /// <param name="isParentChildLink"></param>
+        public TagLink(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            global::System.Guid? tag1IDL,
+            global::System.Guid? tag2IDL,
+            bool? isParentChildLink)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.ProjectIDL = projectIDL;
+            this.Tag1IDL = tag1IDL;
+            this.Tag2IDL = tag2IDL;
+            this.IsParentChildLink = isParentChildLink;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagLink" /> class.
+        /// </summary>
+        public TagLink()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

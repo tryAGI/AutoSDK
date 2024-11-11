@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResourcesFileSearch" /> class.
+        /// </summary>
+        /// <param name="vectorStoreIds">
+        /// The [vector store](/docs/api-reference/vector-stores/object) attached to this assistant. There can be a maximum of 1 vector store attached to the assistant.
+        /// </param>
+        /// <param name="vectorStores">
+        /// A helper to create a [vector store](/docs/api-reference/vector-stores/object) with file_ids and attach it to this assistant. There can be a maximum of 1 vector store attached to the assistant.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateAssistantRequestToolResourcesFileSearch(
+            global::System.Collections.Generic.IList<string>? vectorStoreIds,
+            global::System.Collections.Generic.IList<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStore>? vectorStores)
+        {
+            this.VectorStoreIds = vectorStoreIds;
+            this.VectorStores = vectorStores;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResourcesFileSearch" /> class.
+        /// </summary>
+        public CreateAssistantRequestToolResourcesFileSearch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

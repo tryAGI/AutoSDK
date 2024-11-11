@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDatasetImageRequest" /> class.
+        /// </summary>
+        /// <param name="extension">
+        /// Has to be png, jpg, jpeg, or webp.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UploadDatasetImageRequest(
+            string extension)
+        {
+            this.Extension = extension ?? throw new global::System.ArgumentNullException(nameof(extension));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UploadDatasetImageRequest" /> class.
+        /// </summary>
+        public UploadDatasetImageRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksListForRefResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="checkRuns"></param>
+        public ChecksListForRefResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.CheckRun> checkRuns)
+        {
+            this.TotalCount = totalCount;
+            this.CheckRuns = checkRuns ?? throw new global::System.ArgumentNullException(nameof(checkRuns));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChecksListForRefResponse" /> class.
+        /// </summary>
+        public ChecksListForRefResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

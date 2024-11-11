@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetConduitShardsResponse" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// List of information about a conduit's shards.
+        /// </param>
+        /// <param name="pagination">
+        /// Contains information used to page through a list of results. The object is empty if there are no more pages left to page through.
+        /// </param>
+        public GetConduitShardsResponse(
+            global::System.Collections.Generic.IList<global::G.GetConduitShardsResponseDataItem> data,
+            global::G.GetConduitShardsResponsePagination? pagination)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Pagination = pagination;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetConduitShardsResponse" /> class.
+        /// </summary>
+        public GetConduitShardsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -159,6 +159,136 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLog" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of this log.
+        /// </param>
+        /// <param name="type">
+        /// The event type.
+        /// </param>
+        /// <param name="effectiveAt">
+        /// The Unix timestamp (in seconds) of the event.
+        /// </param>
+        /// <param name="project">
+        /// The project that the action was scoped to. Absent for actions not scoped to projects.
+        /// </param>
+        /// <param name="actor">
+        /// The actor who performed the audit logged action.
+        /// </param>
+        /// <param name="apiKeyCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="apiKeyUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="apiKeyDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="inviteSent">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="inviteAccepted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="inviteDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="loginFailed">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="logoutFailed">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="organizationUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="projectCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="projectUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="projectArchived">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="serviceAccountCreated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="serviceAccountUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="serviceAccountDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="userAdded">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="userUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="userDeleted">
+        /// The details for events with this `type`.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AuditLog(
+            string id,
+            global::G.AuditLogEventType type,
+            global::System.DateTimeOffset effectiveAt,
+            global::G.AuditLogActor actor,
+            global::G.AuditLogProject? project,
+            global::G.AuditLogApiKeyCreated? apiKeyCreated,
+            global::G.AuditLogApiKeyUpdated? apiKeyUpdated,
+            global::G.AuditLogApiKeyDeleted? apiKeyDeleted,
+            global::G.AuditLogInviteSent? inviteSent,
+            global::G.AuditLogInviteAccepted? inviteAccepted,
+            global::G.AuditLogInviteDeleted? inviteDeleted,
+            global::G.AuditLogLoginFailed? loginFailed,
+            global::G.AuditLogLogoutFailed? logoutFailed,
+            global::G.AuditLogOrganizationUpdated? organizationUpdated,
+            global::G.AuditLogProjectCreated? projectCreated,
+            global::G.AuditLogProjectUpdated? projectUpdated,
+            global::G.AuditLogProjectArchived? projectArchived,
+            global::G.AuditLogServiceAccountCreated? serviceAccountCreated,
+            global::G.AuditLogServiceAccountUpdated? serviceAccountUpdated,
+            global::G.AuditLogServiceAccountDeleted? serviceAccountDeleted,
+            global::G.AuditLogUserAdded? userAdded,
+            global::G.AuditLogUserUpdated? userUpdated,
+            global::G.AuditLogUserDeleted? userDeleted)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Type = type;
+            this.EffectiveAt = effectiveAt;
+            this.Actor = actor ?? throw new global::System.ArgumentNullException(nameof(actor));
+            this.Project = project;
+            this.ApiKeyCreated = apiKeyCreated;
+            this.ApiKeyUpdated = apiKeyUpdated;
+            this.ApiKeyDeleted = apiKeyDeleted;
+            this.InviteSent = inviteSent;
+            this.InviteAccepted = inviteAccepted;
+            this.InviteDeleted = inviteDeleted;
+            this.LoginFailed = loginFailed;
+            this.LogoutFailed = logoutFailed;
+            this.OrganizationUpdated = organizationUpdated;
+            this.ProjectCreated = projectCreated;
+            this.ProjectUpdated = projectUpdated;
+            this.ProjectArchived = projectArchived;
+            this.ServiceAccountCreated = serviceAccountCreated;
+            this.ServiceAccountUpdated = serviceAccountUpdated;
+            this.ServiceAccountDeleted = serviceAccountDeleted;
+            this.UserAdded = userAdded;
+            this.UserUpdated = userUpdated;
+            this.UserDeleted = userDeleted;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLog" /> class.
+        /// </summary>
+        public AuditLog()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

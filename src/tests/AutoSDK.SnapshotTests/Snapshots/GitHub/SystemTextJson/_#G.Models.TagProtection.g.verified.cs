@@ -46,6 +46,46 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagProtection" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Example: 2
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="updatedAt">
+        /// Example: 2011-01-26T19:01:12Z
+        /// </param>
+        /// <param name="enabled">
+        /// Example: true
+        /// </param>
+        /// <param name="pattern">
+        /// Example: v1.*
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TagProtection(
+            string pattern,
+            int? id,
+            string? createdAt,
+            string? updatedAt,
+            bool? enabled)
+        {
+            this.Pattern = pattern ?? throw new global::System.ArgumentNullException(nameof(pattern));
+            this.Id = id;
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Enabled = enabled;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TagProtection" /> class.
+        /// </summary>
+        public TagProtection()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -28,6 +28,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleParamsStatusCheckConfiguration" /> class.
+        /// </summary>
+        /// <param name="context">
+        /// The status check context name that must be present on the commit.
+        /// </param>
+        /// <param name="integrationId">
+        /// The optional integration ID that this status check must originate from.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryRuleParamsStatusCheckConfiguration(
+            string context,
+            int? integrationId)
+        {
+            this.Context = context ?? throw new global::System.ArgumentNullException(nameof(context));
+            this.IntegrationId = integrationId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleParamsStatusCheckConfiguration" /> class.
+        /// </summary>
+        public RepositoryRuleParamsStatusCheckConfiguration()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

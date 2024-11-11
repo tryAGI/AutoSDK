@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LookUpPipelineAdminResponse" /> class.
+        /// </summary>
+        /// <param name="pipeline">
+        /// The requested pipeline.
+        /// </param>
+        public LookUpPipelineAdminResponse(
+            global::G.Pipeline? pipeline)
+        {
+            this.Pipeline = pipeline;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LookUpPipelineAdminResponse" /> class.
+        /// </summary>
+        public LookUpPipelineAdminResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

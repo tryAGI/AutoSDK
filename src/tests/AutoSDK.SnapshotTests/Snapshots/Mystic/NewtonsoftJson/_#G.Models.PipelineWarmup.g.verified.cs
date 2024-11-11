@@ -27,6 +27,28 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineWarmup" /> class.
+        /// </summary>
+        /// <param name="minimumNodes"></param>
+        /// <param name="duration">
+        /// Default Value: 300
+        /// </param>
+        public PipelineWarmup(
+            int minimumNodes,
+            int? duration)
+        {
+            this.MinimumNodes = minimumNodes;
+            this.Duration = duration;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PipelineWarmup" /> class.
+        /// </summary>
+        public PipelineWarmup()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

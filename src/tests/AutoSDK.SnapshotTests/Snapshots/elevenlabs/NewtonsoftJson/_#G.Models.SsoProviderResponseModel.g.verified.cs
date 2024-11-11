@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SsoProviderResponseModel" /> class.
+        /// </summary>
+        /// <param name="providerType"></param>
+        /// <param name="providerId"></param>
+        /// <param name="domains"></param>
+        public SsoProviderResponseModel(
+            global::G.SsoProviderResponseModelProviderType providerType,
+            string providerId,
+            global::System.Collections.Generic.IList<string> domains)
+        {
+            this.ProviderType = providerType;
+            this.ProviderId = providerId ?? throw new global::System.ArgumentNullException(nameof(providerId));
+            this.Domains = domains ?? throw new global::System.ArgumentNullException(nameof(domains));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SsoProviderResponseModel" /> class.
+        /// </summary>
+        public SsoProviderResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

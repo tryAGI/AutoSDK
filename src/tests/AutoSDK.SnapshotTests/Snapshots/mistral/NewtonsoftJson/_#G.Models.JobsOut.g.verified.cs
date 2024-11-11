@@ -33,6 +33,33 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobsOut" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// Default Value: []
+        /// </param>
+        /// <param name="object">
+        /// Default Value: list
+        /// </param>
+        /// <param name="total"></param>
+        public JobsOut(
+            int total,
+            global::System.Collections.Generic.IList<global::G.JobOut>? data,
+            global::G.JobsOutObject? @object)
+        {
+            this.Total = total;
+            this.Data = data;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobsOut" /> class.
+        /// </summary>
+        public JobsOut()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

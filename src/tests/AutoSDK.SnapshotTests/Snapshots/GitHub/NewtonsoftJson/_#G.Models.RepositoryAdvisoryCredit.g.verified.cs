@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCredit" /> class.
+        /// </summary>
+        /// <param name="user">
+        /// A GitHub user.
+        /// </param>
+        /// <param name="type">
+        /// The type of credit the user is receiving.
+        /// </param>
+        /// <param name="state">
+        /// The state of the user's acceptance of the credit.
+        /// </param>
+        public RepositoryAdvisoryCredit(
+            global::G.SimpleUser user,
+            global::G.SecurityAdvisoryCreditTypes type,
+            global::G.RepositoryAdvisoryCreditState state)
+        {
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Type = type;
+            this.State = state;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryAdvisoryCredit" /> class.
+        /// </summary>
+        public RepositoryAdvisoryCredit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

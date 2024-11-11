@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCheckRunRerequestedFormEncoded" /> class.
+        /// </summary>
+        /// <param name="payload">
+        /// A URL-encoded string of the check_run.rerequested JSON payload. The decoded payload is a JSON object.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookCheckRunRerequestedFormEncoded(
+            string payload)
+        {
+            this.Payload = payload ?? throw new global::System.ArgumentNullException(nameof(payload));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookCheckRunRerequestedFormEncoded" /> class.
+        /// </summary>
+        public WebhookCheckRunRerequestedFormEncoded()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

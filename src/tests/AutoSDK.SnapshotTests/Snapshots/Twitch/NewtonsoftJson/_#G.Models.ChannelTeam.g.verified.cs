@@ -87,6 +87,80 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelTeam" /> class.
+        /// </summary>
+        /// <param name="broadcasterId">
+        /// An ID that identifies the broadcaster.
+        /// </param>
+        /// <param name="broadcasterLogin">
+        /// The broadcaster’s login name.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The broadcaster’s display name.
+        /// </param>
+        /// <param name="backgroundImageUrl">
+        /// A URL to the team’s background image.
+        /// </param>
+        /// <param name="banner">
+        /// A URL to the team’s banner.
+        /// </param>
+        /// <param name="createdAt">
+        /// The UTC date and time (in RFC3339 format) of when the team was created.
+        /// </param>
+        /// <param name="updatedAt">
+        /// The UTC date and time (in RFC3339 format) of the last time the team was updated.
+        /// </param>
+        /// <param name="info">
+        /// The team’s description. The description may contain formatting such as Markdown, HTML, newline (\\n) characters, etc.
+        /// </param>
+        /// <param name="thumbnailUrl">
+        /// A URL to a thumbnail image of the team’s logo.
+        /// </param>
+        /// <param name="teamName">
+        /// The team’s name.
+        /// </param>
+        /// <param name="teamDisplayName">
+        /// The team’s display name.
+        /// </param>
+        /// <param name="id">
+        /// An ID that identifies the team.
+        /// </param>
+        public ChannelTeam(
+            string broadcasterId,
+            string broadcasterLogin,
+            string broadcasterName,
+            string backgroundImageUrl,
+            string banner,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string info,
+            string thumbnailUrl,
+            string teamName,
+            string teamDisplayName,
+            string id)
+        {
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+            this.BackgroundImageUrl = backgroundImageUrl ?? throw new global::System.ArgumentNullException(nameof(backgroundImageUrl));
+            this.Banner = banner ?? throw new global::System.ArgumentNullException(nameof(banner));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.Info = info ?? throw new global::System.ArgumentNullException(nameof(info));
+            this.ThumbnailUrl = thumbnailUrl ?? throw new global::System.ArgumentNullException(nameof(thumbnailUrl));
+            this.TeamName = teamName ?? throw new global::System.ArgumentNullException(nameof(teamName));
+            this.TeamDisplayName = teamDisplayName ?? throw new global::System.ArgumentNullException(nameof(teamDisplayName));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChannelTeam" /> class.
+        /// </summary>
+        public ChannelTeam()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

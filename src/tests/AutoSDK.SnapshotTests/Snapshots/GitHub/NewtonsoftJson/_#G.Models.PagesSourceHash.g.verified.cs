@@ -27,6 +27,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PagesSourceHash" /> class.
+        /// </summary>
+        /// <param name="branch"></param>
+        /// <param name="path"></param>
+        public PagesSourceHash(
+            string branch,
+            string path)
+        {
+            this.Branch = branch ?? throw new global::System.ArgumentNullException(nameof(branch));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PagesSourceHash" /> class.
+        /// </summary>
+        public PagesSourceHash()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

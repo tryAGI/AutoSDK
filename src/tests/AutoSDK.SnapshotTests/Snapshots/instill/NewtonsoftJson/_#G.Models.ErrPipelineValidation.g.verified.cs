@@ -28,6 +28,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrPipelineValidation" /> class.
+        /// </summary>
+        /// <param name="location"></param>
+        /// <param name="error"></param>
+        public ErrPipelineValidation(
+            string? location,
+            string? error)
+        {
+            this.Location = location;
+            this.Error = error;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrPipelineValidation" /> class.
+        /// </summary>
+        public ErrPipelineValidation()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

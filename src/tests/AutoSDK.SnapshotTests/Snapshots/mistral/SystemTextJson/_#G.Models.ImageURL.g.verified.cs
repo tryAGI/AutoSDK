@@ -28,6 +28,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageURL" /> class.
+        /// </summary>
+        /// <param name="detail"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ImageURL(
+            string url,
+            string? detail)
+        {
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Detail = detail;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageURL" /> class.
+        /// </summary>
+        public ImageURL()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

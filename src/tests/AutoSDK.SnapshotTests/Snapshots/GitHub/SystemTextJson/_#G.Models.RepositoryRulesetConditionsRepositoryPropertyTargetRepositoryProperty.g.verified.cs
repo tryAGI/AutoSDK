@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty" /> class.
+        /// </summary>
+        /// <param name="include">
+        /// The repository properties and values to include. All of these properties must match for the condition to pass.
+        /// </param>
+        /// <param name="exclude">
+        /// The repository properties and values to exclude. The condition will not pass if any of these properties match.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
+            global::System.Collections.Generic.IList<global::G.RepositoryRulesetConditionsRepositoryPropertySpec>? include,
+            global::System.Collections.Generic.IList<global::G.RepositoryRulesetConditionsRepositoryPropertySpec>? exclude)
+        {
+            this.Include = include;
+            this.Exclude = exclude;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty" /> class.
+        /// </summary>
+        public RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

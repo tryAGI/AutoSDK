@@ -105,6 +105,86 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Prediction" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// An ID that identifies this prediction.
+        /// </param>
+        /// <param name="broadcasterId">
+        /// An ID that identifies the broadcaster that created the prediction.
+        /// </param>
+        /// <param name="broadcasterName">
+        /// The broadcaster’s display name.
+        /// </param>
+        /// <param name="broadcasterLogin">
+        /// The broadcaster’s login name.
+        /// </param>
+        /// <param name="title">
+        /// The question that the prediction asks. For example, _Will I finish this entire pizza?_
+        /// </param>
+        /// <param name="winningOutcomeId">
+        /// The ID of the winning outcome. Is **null** unless `status` is RESOLVED.
+        /// </param>
+        /// <param name="outcomes">
+        /// The list of possible outcomes for the prediction.
+        /// </param>
+        /// <param name="predictionWindow">
+        /// The length of time (in seconds) that the prediction will run for.
+        /// </param>
+        /// <param name="status">
+        /// The prediction’s status. Valid values are:  <br/>
+        ///   <br/>
+        /// * ACTIVE — The Prediction is running and viewers can make predictions.<br/>
+        /// * CANCELED — The broadcaster canceled the Prediction and refunded the Channel Points to the participants.<br/>
+        /// * LOCKED — The broadcaster locked the Prediction, which means viewers can no longer make predictions.<br/>
+        /// * RESOLVED — The winning outcome was determined and the Channel Points were distributed to the viewers who predicted the correct outcome.
+        /// </param>
+        /// <param name="createdAt">
+        /// The UTC date and time of when the Prediction began.
+        /// </param>
+        /// <param name="endedAt">
+        /// The UTC date and time of when the Prediction ended. If `status` is ACTIVE, this is set to **null**.
+        /// </param>
+        /// <param name="lockedAt">
+        /// The UTC date and time of when the Prediction was locked. If `status` is not LOCKED, this is set to **null**.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Prediction(
+            string id,
+            string broadcasterId,
+            string broadcasterName,
+            string broadcasterLogin,
+            string title,
+            string? winningOutcomeId,
+            global::System.Collections.Generic.IList<global::G.PredictionOutcome> outcomes,
+            int predictionWindow,
+            global::G.PredictionStatus status,
+            global::System.DateTime createdAt,
+            global::System.DateTime? endedAt,
+            global::System.DateTime? lockedAt)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.BroadcasterId = broadcasterId ?? throw new global::System.ArgumentNullException(nameof(broadcasterId));
+            this.BroadcasterName = broadcasterName ?? throw new global::System.ArgumentNullException(nameof(broadcasterName));
+            this.BroadcasterLogin = broadcasterLogin ?? throw new global::System.ArgumentNullException(nameof(broadcasterLogin));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.WinningOutcomeId = winningOutcomeId ?? throw new global::System.ArgumentNullException(nameof(winningOutcomeId));
+            this.Outcomes = outcomes ?? throw new global::System.ArgumentNullException(nameof(outcomes));
+            this.PredictionWindow = predictionWindow;
+            this.Status = status;
+            this.CreatedAt = createdAt;
+            this.EndedAt = endedAt;
+            this.LockedAt = lockedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Prediction" /> class.
+        /// </summary>
+        public Prediction()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

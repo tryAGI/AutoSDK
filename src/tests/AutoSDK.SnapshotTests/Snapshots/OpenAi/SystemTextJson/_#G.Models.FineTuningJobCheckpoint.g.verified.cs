@@ -65,6 +65,56 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJobCheckpoint" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The checkpoint identifier, which can be referenced in the API endpoints.
+        /// </param>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the checkpoint was created.
+        /// </param>
+        /// <param name="fineTunedModelCheckpoint">
+        /// The name of the fine-tuned checkpoint model that is created.
+        /// </param>
+        /// <param name="stepNumber">
+        /// The step number that the checkpoint was created at.
+        /// </param>
+        /// <param name="metrics">
+        /// Metrics at the step number during the fine-tuning job.
+        /// </param>
+        /// <param name="fineTuningJobId">
+        /// The name of the fine-tuning job that this checkpoint was created from.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always "fine_tuning.job.checkpoint".
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FineTuningJobCheckpoint(
+            string id,
+            global::System.DateTimeOffset createdAt,
+            string fineTunedModelCheckpoint,
+            int stepNumber,
+            global::G.FineTuningJobCheckpointMetrics metrics,
+            string fineTuningJobId,
+            global::G.FineTuningJobCheckpointObject @object)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.FineTunedModelCheckpoint = fineTunedModelCheckpoint ?? throw new global::System.ArgumentNullException(nameof(fineTunedModelCheckpoint));
+            this.StepNumber = stepNumber;
+            this.Metrics = metrics ?? throw new global::System.ArgumentNullException(nameof(metrics));
+            this.FineTuningJobId = fineTuningJobId ?? throw new global::System.ArgumentNullException(nameof(fineTuningJobId));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FineTuningJobCheckpoint" /> class.
+        /// </summary>
+        public FineTuningJobCheckpoint()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

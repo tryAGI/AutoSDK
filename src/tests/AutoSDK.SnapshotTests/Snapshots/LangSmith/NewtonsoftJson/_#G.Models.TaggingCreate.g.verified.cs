@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaggingCreate" /> class.
+        /// </summary>
+        /// <param name="tagValueId"></param>
+        /// <param name="resourceType"></param>
+        /// <param name="resourceId"></param>
+        public TaggingCreate(
+            global::System.Guid tagValueId,
+            global::G.ResourceType resourceType,
+            global::System.Guid resourceId)
+        {
+            this.TagValueId = tagValueId;
+            this.ResourceType = resourceType;
+            this.ResourceId = resourceId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TaggingCreate" /> class.
+        /// </summary>
+        public TaggingCreate()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -28,6 +28,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsMessageCreationObject" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// Always `message_creation`.
+        /// </param>
+        /// <param name="messageCreation"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RunStepDeltaStepDetailsMessageCreationObject(
+            global::G.RunStepDeltaStepDetailsMessageCreationObjectType type,
+            global::G.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? messageCreation)
+        {
+            this.Type = type;
+            this.MessageCreation = messageCreation;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunStepDeltaStepDetailsMessageCreationObject" /> class.
+        /// </summary>
+        public RunStepDeltaStepDetailsMessageCreationObject()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

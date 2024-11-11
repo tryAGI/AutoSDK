@@ -344,6 +344,181 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestDequeuedPullRequest" /> class.
+        /// </summary>
+        /// <param name="links"></param>
+        /// <param name="activeLockReason"></param>
+        /// <param name="additions"></param>
+        /// <param name="assignee"></param>
+        /// <param name="assignees"></param>
+        /// <param name="authorAssociation">
+        /// How the author is associated with the repository.
+        /// </param>
+        /// <param name="autoMerge">
+        /// The status of auto merging a pull request.
+        /// </param>
+        /// <param name="base"></param>
+        /// <param name="body"></param>
+        /// <param name="changedFiles"></param>
+        /// <param name="closedAt"></param>
+        /// <param name="comments"></param>
+        /// <param name="commentsUrl"></param>
+        /// <param name="commits"></param>
+        /// <param name="commitsUrl"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="deletions"></param>
+        /// <param name="diffUrl"></param>
+        /// <param name="draft">
+        /// Indicates whether or not the pull request is a draft.
+        /// </param>
+        /// <param name="head"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="id"></param>
+        /// <param name="issueUrl"></param>
+        /// <param name="labels"></param>
+        /// <param name="locked"></param>
+        /// <param name="maintainerCanModify">
+        /// Indicates whether maintainers can modify the pull request.
+        /// </param>
+        /// <param name="mergeCommitSha"></param>
+        /// <param name="mergeable"></param>
+        /// <param name="mergeableState"></param>
+        /// <param name="merged"></param>
+        /// <param name="mergedAt"></param>
+        /// <param name="mergedBy"></param>
+        /// <param name="milestone">
+        /// A collection of related issues and pull requests.
+        /// </param>
+        /// <param name="nodeId"></param>
+        /// <param name="number">
+        /// Number uniquely identifying the pull request within its repository.
+        /// </param>
+        /// <param name="patchUrl"></param>
+        /// <param name="rebaseable"></param>
+        /// <param name="requestedReviewers"></param>
+        /// <param name="requestedTeams"></param>
+        /// <param name="reviewCommentUrl"></param>
+        /// <param name="reviewComments"></param>
+        /// <param name="reviewCommentsUrl"></param>
+        /// <param name="state">
+        /// State of this Pull Request. Either `open` or `closed`.
+        /// </param>
+        /// <param name="statusesUrl"></param>
+        /// <param name="title">
+        /// The title of the pull request.
+        /// </param>
+        /// <param name="updatedAt"></param>
+        /// <param name="url"></param>
+        /// <param name="user"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookPullRequestDequeuedPullRequest(
+            global::G.WebhookPullRequestDequeuedPullRequestLinks links,
+            global::G.WebhookPullRequestDequeuedPullRequestActiveLockReason? activeLockReason,
+            global::G.WebhookPullRequestDequeuedPullRequestAssignee? assignee,
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestDequeuedPullRequestAssignee2> assignees,
+            global::G.WebhookPullRequestDequeuedPullRequestAuthorAssociation authorAssociation,
+            global::G.WebhookPullRequestDequeuedPullRequestAutoMerge? autoMerge,
+            global::G.WebhookPullRequestDequeuedPullRequestBase @base,
+            string? body,
+            global::System.DateTime? closedAt,
+            string commentsUrl,
+            string commitsUrl,
+            global::System.DateTime createdAt,
+            string diffUrl,
+            bool draft,
+            global::G.WebhookPullRequestDequeuedPullRequestHead head,
+            string htmlUrl,
+            int id,
+            string issueUrl,
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestDequeuedPullRequestLabel> labels,
+            bool locked,
+            string? mergeCommitSha,
+            global::System.DateTime? mergedAt,
+            global::G.WebhookPullRequestDequeuedPullRequestMilestone? milestone,
+            string nodeId,
+            int number,
+            string patchUrl,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant1, global::G.WebhookPullRequestDequeuedPullRequestRequestedReviewerVariant2>> requestedReviewers,
+            global::System.Collections.Generic.IList<global::G.WebhookPullRequestDequeuedPullRequestRequestedTeam> requestedTeams,
+            string reviewCommentUrl,
+            string reviewCommentsUrl,
+            global::G.WebhookPullRequestDequeuedPullRequestState state,
+            string statusesUrl,
+            string title,
+            global::System.DateTime updatedAt,
+            string url,
+            global::G.WebhookPullRequestDequeuedPullRequestUser? user,
+            int? additions,
+            int? changedFiles,
+            int? comments,
+            int? commits,
+            int? deletions,
+            bool? maintainerCanModify,
+            bool? mergeable,
+            string? mergeableState,
+            bool? merged,
+            global::G.WebhookPullRequestDequeuedPullRequestMergedBy? mergedBy,
+            bool? rebaseable,
+            int? reviewComments)
+        {
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.ActiveLockReason = activeLockReason;
+            this.Assignee = assignee ?? throw new global::System.ArgumentNullException(nameof(assignee));
+            this.Assignees = assignees ?? throw new global::System.ArgumentNullException(nameof(assignees));
+            this.AuthorAssociation = authorAssociation;
+            this.AutoMerge = autoMerge ?? throw new global::System.ArgumentNullException(nameof(autoMerge));
+            this.Base = @base ?? throw new global::System.ArgumentNullException(nameof(@base));
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+            this.ClosedAt = closedAt;
+            this.CommentsUrl = commentsUrl ?? throw new global::System.ArgumentNullException(nameof(commentsUrl));
+            this.CommitsUrl = commitsUrl ?? throw new global::System.ArgumentNullException(nameof(commitsUrl));
+            this.CreatedAt = createdAt;
+            this.DiffUrl = diffUrl ?? throw new global::System.ArgumentNullException(nameof(diffUrl));
+            this.Draft = draft;
+            this.Head = head ?? throw new global::System.ArgumentNullException(nameof(head));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.Id = id;
+            this.IssueUrl = issueUrl ?? throw new global::System.ArgumentNullException(nameof(issueUrl));
+            this.Labels = labels ?? throw new global::System.ArgumentNullException(nameof(labels));
+            this.Locked = locked;
+            this.MergeCommitSha = mergeCommitSha ?? throw new global::System.ArgumentNullException(nameof(mergeCommitSha));
+            this.MergedAt = mergedAt;
+            this.Milestone = milestone ?? throw new global::System.ArgumentNullException(nameof(milestone));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Number = number;
+            this.PatchUrl = patchUrl ?? throw new global::System.ArgumentNullException(nameof(patchUrl));
+            this.RequestedReviewers = requestedReviewers ?? throw new global::System.ArgumentNullException(nameof(requestedReviewers));
+            this.RequestedTeams = requestedTeams ?? throw new global::System.ArgumentNullException(nameof(requestedTeams));
+            this.ReviewCommentUrl = reviewCommentUrl ?? throw new global::System.ArgumentNullException(nameof(reviewCommentUrl));
+            this.ReviewCommentsUrl = reviewCommentsUrl ?? throw new global::System.ArgumentNullException(nameof(reviewCommentsUrl));
+            this.State = state;
+            this.StatusesUrl = statusesUrl ?? throw new global::System.ArgumentNullException(nameof(statusesUrl));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.UpdatedAt = updatedAt;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.User = user ?? throw new global::System.ArgumentNullException(nameof(user));
+            this.Additions = additions;
+            this.ChangedFiles = changedFiles;
+            this.Comments = comments;
+            this.Commits = commits;
+            this.Deletions = deletions;
+            this.MaintainerCanModify = maintainerCanModify;
+            this.Mergeable = mergeable;
+            this.MergeableState = mergeableState;
+            this.Merged = merged;
+            this.MergedBy = mergedBy;
+            this.Rebaseable = rebaseable;
+            this.ReviewComments = reviewComments;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestDequeuedPullRequest" /> class.
+        /// </summary>
+        public WebhookPullRequestDequeuedPullRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -39,6 +39,40 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentTraffic" /> class.
+        /// </summary>
+        /// <param name="path">
+        /// Example: /github/hubot
+        /// </param>
+        /// <param name="title">
+        /// Example: github/hubot: A customizable life embetterment robot.
+        /// </param>
+        /// <param name="count">
+        /// Example: 3542
+        /// </param>
+        /// <param name="uniques">
+        /// Example: 2225
+        /// </param>
+        public ContentTraffic(
+            string path,
+            string title,
+            int count,
+            int uniques)
+        {
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Title = title ?? throw new global::System.ArgumentNullException(nameof(title));
+            this.Count = count;
+            this.Uniques = uniques;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentTraffic" /> class.
+        /// </summary>
+        public ContentTraffic()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

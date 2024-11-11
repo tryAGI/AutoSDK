@@ -30,6 +30,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheList" /> class.
+        /// </summary>
+        /// <param name="totalCount">
+        /// Total number of caches<br/>
+        /// Example: 2
+        /// </param>
+        /// <param name="actionsCaches">
+        /// Array of caches
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsCacheList(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.ActionsCacheListActionsCache> actionsCaches)
+        {
+            this.TotalCount = totalCount;
+            this.ActionsCaches = actionsCaches ?? throw new global::System.ArgumentNullException(nameof(actionsCaches));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheList" /> class.
+        /// </summary>
+        public ActionsCacheList()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

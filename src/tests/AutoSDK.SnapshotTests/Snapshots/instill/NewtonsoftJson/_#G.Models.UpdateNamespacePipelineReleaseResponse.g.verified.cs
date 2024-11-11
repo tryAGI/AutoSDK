@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateNamespacePipelineReleaseResponse" /> class.
+        /// </summary>
+        /// <param name="release">
+        /// The updated pipeline release resource.<br/>
+        /// Included only in responses
+        /// </param>
+        public UpdateNamespacePipelineReleaseResponse(
+            global::G.PipelineRelease? release)
+        {
+            this.Release = release;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateNamespacePipelineReleaseResponse" /> class.
+        /// </summary>
+        public UpdateNamespacePipelineReleaseResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

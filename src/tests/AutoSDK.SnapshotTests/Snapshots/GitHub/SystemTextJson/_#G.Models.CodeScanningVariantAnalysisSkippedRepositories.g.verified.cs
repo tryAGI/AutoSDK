@@ -43,6 +43,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisSkippedRepositories" /> class.
+        /// </summary>
+        /// <param name="accessMismatchRepos"></param>
+        /// <param name="notFoundRepos"></param>
+        /// <param name="noCodeqlDbRepos"></param>
+        /// <param name="overLimitRepos"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodeScanningVariantAnalysisSkippedRepositories(
+            global::G.CodeScanningVariantAnalysisSkippedRepoGroup accessMismatchRepos,
+            global::G.CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos notFoundRepos,
+            global::G.CodeScanningVariantAnalysisSkippedRepoGroup noCodeqlDbRepos,
+            global::G.CodeScanningVariantAnalysisSkippedRepoGroup overLimitRepos)
+        {
+            this.AccessMismatchRepos = accessMismatchRepos ?? throw new global::System.ArgumentNullException(nameof(accessMismatchRepos));
+            this.NotFoundRepos = notFoundRepos ?? throw new global::System.ArgumentNullException(nameof(notFoundRepos));
+            this.NoCodeqlDbRepos = noCodeqlDbRepos ?? throw new global::System.ArgumentNullException(nameof(noCodeqlDbRepos));
+            this.OverLimitRepos = overLimitRepos ?? throw new global::System.ArgumentNullException(nameof(overLimitRepos));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodeScanningVariantAnalysisSkippedRepositories" /> class.
+        /// </summary>
+        public CodeScanningVariantAnalysisSkippedRepositories()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

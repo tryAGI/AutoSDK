@@ -62,6 +62,56 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleClassroomRepository" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// A unique identifier of the repository.<br/>
+        /// Example: 1296269
+        /// </param>
+        /// <param name="fullName">
+        /// The full, globally unique name of the repository.<br/>
+        /// Example: octocat/Hello-World
+        /// </param>
+        /// <param name="htmlUrl">
+        /// The URL to view the repository on GitHub.com.<br/>
+        /// Example: https://github.com/octocat/Hello-World
+        /// </param>
+        /// <param name="nodeId">
+        /// The GraphQL identifier of the repository.<br/>
+        /// Example: MDEwOlJlcG9zaXRvcnkxMjk2MjY5
+        /// </param>
+        /// <param name="private">
+        /// Whether the repository is private.
+        /// </param>
+        /// <param name="defaultBranch">
+        /// The default branch for the repository.<br/>
+        /// Example: main
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SimpleClassroomRepository(
+            int id,
+            string fullName,
+            string htmlUrl,
+            string nodeId,
+            bool @private,
+            string defaultBranch)
+        {
+            this.Id = id;
+            this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.NodeId = nodeId ?? throw new global::System.ArgumentNullException(nameof(nodeId));
+            this.Private = @private;
+            this.DefaultBranch = defaultBranch ?? throw new global::System.ArgumentNullException(nameof(defaultBranch));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SimpleClassroomRepository" /> class.
+        /// </summary>
+        public SimpleClassroomRepository()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

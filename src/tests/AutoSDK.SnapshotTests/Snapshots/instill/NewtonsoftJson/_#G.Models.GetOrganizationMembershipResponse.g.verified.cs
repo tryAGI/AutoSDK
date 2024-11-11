@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetOrganizationMembershipResponse" /> class.
+        /// </summary>
+        /// <param name="membership">
+        /// The requested organization membership.<br/>
+        /// Included only in responses
+        /// </param>
+        public GetOrganizationMembershipResponse(
+            global::G.OrganizationMembership? membership)
+        {
+            this.Membership = membership;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetOrganizationMembershipResponse" /> class.
+        /// </summary>
+        public GetOrganizationMembershipResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

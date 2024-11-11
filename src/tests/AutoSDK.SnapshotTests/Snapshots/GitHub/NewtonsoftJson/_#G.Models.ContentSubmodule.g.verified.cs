@@ -81,6 +81,53 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentSubmodule" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="submoduleGitUrl"></param>
+        /// <param name="size"></param>
+        /// <param name="name"></param>
+        /// <param name="path"></param>
+        /// <param name="sha"></param>
+        /// <param name="url"></param>
+        /// <param name="gitUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="downloadUrl"></param>
+        /// <param name="links"></param>
+        public ContentSubmodule(
+            string submoduleGitUrl,
+            int size,
+            string name,
+            string path,
+            string sha,
+            string url,
+            string? gitUrl,
+            string? htmlUrl,
+            string? downloadUrl,
+            global::G.ContentSubmoduleLinks links,
+            global::G.ContentSubmoduleType type)
+        {
+            this.SubmoduleGitUrl = submoduleGitUrl ?? throw new global::System.ArgumentNullException(nameof(submoduleGitUrl));
+            this.Size = size;
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Path = path ?? throw new global::System.ArgumentNullException(nameof(path));
+            this.Sha = sha ?? throw new global::System.ArgumentNullException(nameof(sha));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.GitUrl = gitUrl ?? throw new global::System.ArgumentNullException(nameof(gitUrl));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.DownloadUrl = downloadUrl ?? throw new global::System.ArgumentNullException(nameof(downloadUrl));
+            this.Links = links ?? throw new global::System.ArgumentNullException(nameof(links));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentSubmodule" /> class.
+        /// </summary>
+        public ContentSubmodule()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

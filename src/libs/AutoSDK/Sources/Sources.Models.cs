@@ -101,6 +101,35 @@ public sealed partial class {modelData.Parents[level].ClassName}
         {jsonSerializer.GenerateExtensionDataAttribute()}
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
+        /// </summary>
+{modelData.Properties.Where(static x => !x.IsDeprecated).Select(x => $@"
+        {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
+        {(modelData.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase) ? "[global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]" : " ")}
+        public {modelData.ClassName}(
+ {string.Join(",",
+    modelData.Properties.Where(static x => x.IsRequired).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName}").Concat(
+    modelData.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false } && (x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName}")).Concat(
+        modelData.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false } && !(x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))).Select(x => $@"
+            {x.Type.CSharpType} {x.ParameterName}{GetDefaultValue(x, isRequiredKeywordSupported).TrimEnd(';')}")))})
+        {{
+{modelData.Properties.Where(static x => x.IsRequired).Select(x => $@"
+            this.{x.Name} = {x.ParameterName}{(x.Type.IsValueType ? "" : $" ?? throw new global::System.ArgumentNullException(nameof({x.ParameterName}))")};").Inject()}
+{modelData.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
+            this.{x.Name} = {x.ParameterName};").Inject()}
+        }}
+{(modelData.Properties.Any(static x => !x.IsDeprecated) ? $@"
+        /// <summary>
+        /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
+        /// </summary>
+        public {modelData.ClassName}()
+        {{
+        }}
+ " : " ")}
+
 {json}
     }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }

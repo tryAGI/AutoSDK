@@ -57,6 +57,55 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParams" /> class.
+        /// </summary>
+        /// <param name="iMAGEGENERATION">
+        /// Parameters for IMAGE_GENERATION service
+        /// </param>
+        /// <param name="fANTASYAVATARGENERATION">
+        /// Parameters for FANTASY_AVATAR_GENERATION service
+        /// </param>
+        /// <param name="mOTIONGENERATION">
+        /// Parameters for MOTION_GENERATION service
+        /// </param>
+        /// <param name="lCMGENERATION">
+        /// Parameters for LCM_GENERATION service
+        /// </param>
+        /// <param name="mODELTRAINING">
+        /// Parameters for MODEL_TRAINING service
+        /// </param>
+        /// <param name="tEXTUREGENERATION">
+        /// Parameters for TEXTURE_GENERATION service
+        /// </param>
+        /// <param name="uNIVERSALUPSCALER">
+        /// Parameters for UNIVERSAL_UPSCALER service
+        /// </param>
+        public PricingCalculatorRequestServiceParams(
+            global::G.PricingCalculatorRequestServiceParamsIMAGEGENERATION? iMAGEGENERATION,
+            global::G.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? fANTASYAVATARGENERATION,
+            global::G.PricingCalculatorRequestServiceParamsMOTIONGENERATION? mOTIONGENERATION,
+            global::G.PricingCalculatorRequestServiceParamsLCMGENERATION? lCMGENERATION,
+            global::G.PricingCalculatorRequestServiceParamsMODELTRAINING? mODELTRAINING,
+            global::G.PricingCalculatorRequestServiceParamsTEXTUREGENERATION? tEXTUREGENERATION,
+            global::G.PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER? uNIVERSALUPSCALER)
+        {
+            this.IMAGEGENERATION = iMAGEGENERATION;
+            this.FANTASYAVATARGENERATION = fANTASYAVATARGENERATION;
+            this.MOTIONGENERATION = mOTIONGENERATION;
+            this.LCMGENERATION = lCMGENERATION;
+            this.MODELTRAINING = mODELTRAINING;
+            this.TEXTUREGENERATION = tEXTUREGENERATION;
+            this.UNIVERSALUPSCALER = uNIVERSALUPSCALER;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PricingCalculatorRequestServiceParams" /> class.
+        /// </summary>
+        public PricingCalculatorRequestServiceParams()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

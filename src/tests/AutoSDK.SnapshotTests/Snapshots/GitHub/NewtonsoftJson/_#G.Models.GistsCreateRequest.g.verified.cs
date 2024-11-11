@@ -36,6 +36,34 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistsCreateRequest" /> class.
+        /// </summary>
+        /// <param name="description">
+        /// Description of the gist<br/>
+        /// Example: Example Ruby script
+        /// </param>
+        /// <param name="files">
+        /// Names and content for the files that make up the gist
+        /// </param>
+        /// <param name="public"></param>
+        public GistsCreateRequest(
+            global::System.Collections.Generic.Dictionary<string, global::G.GistsCreateRequestFiles2> files,
+            string? description,
+            global::G.OneOf<bool?, global::G.GistsCreateRequestPublic?>? @public)
+        {
+            this.Files = files ?? throw new global::System.ArgumentNullException(nameof(files));
+            this.Description = description;
+            this.Public = @public;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GistsCreateRequest" /> class.
+        /// </summary>
+        public GistsCreateRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

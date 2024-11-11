@@ -34,6 +34,36 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodySoundGenerationV1SoundGenerationPost" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// The text that will get converted into a sound effect.
+        /// </param>
+        /// <param name="durationSeconds">
+        /// The duration of the sound which will be generated in seconds. Must be at least 0.5 and at most 22. If set to None we will guess the optimal duration using the prompt. Defaults to None.
+        /// </param>
+        /// <param name="promptInfluence">
+        /// A higher prompt influence makes your generation follow the prompt more closely while also making generations less variable. Must be a value between 0 and 1. Defaults to 0.3.<br/>
+        /// Default Value: 0.3
+        /// </param>
+        public BodySoundGenerationV1SoundGenerationPost(
+            string text,
+            double? durationSeconds,
+            double? promptInfluence)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.DurationSeconds = durationSeconds;
+            this.PromptInfluence = promptInfluence;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodySoundGenerationV1SoundGenerationPost" /> class.
+        /// </summary>
+        public BodySoundGenerationV1SoundGenerationPost()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

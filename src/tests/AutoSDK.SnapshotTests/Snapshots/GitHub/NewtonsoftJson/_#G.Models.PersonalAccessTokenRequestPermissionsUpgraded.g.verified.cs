@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonalAccessTokenRequestPermissionsUpgraded" /> class.
+        /// </summary>
+        /// <param name="organization"></param>
+        /// <param name="repository"></param>
+        /// <param name="other"></param>
+        public PersonalAccessTokenRequestPermissionsUpgraded(
+            global::System.Collections.Generic.Dictionary<string, string>? organization,
+            global::System.Collections.Generic.Dictionary<string, string>? repository,
+            global::System.Collections.Generic.Dictionary<string, string>? other)
+        {
+            this.Organization = organization;
+            this.Repository = repository;
+            this.Other = other;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PersonalAccessTokenRequestPermissionsUpgraded" /> class.
+        /// </summary>
+        public PersonalAccessTokenRequestPermissionsUpgraded()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

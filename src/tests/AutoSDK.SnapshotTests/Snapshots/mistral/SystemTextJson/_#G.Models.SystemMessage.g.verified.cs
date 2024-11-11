@@ -32,6 +32,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SystemMessage" /> class.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="role">
+        /// Default Value: system
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SystemMessage(
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.TextChunk>> content,
+            global::G.SystemMessageRole? role)
+        {
+            this.Content = content;
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SystemMessage" /> class.
+        /// </summary>
+        public SystemMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

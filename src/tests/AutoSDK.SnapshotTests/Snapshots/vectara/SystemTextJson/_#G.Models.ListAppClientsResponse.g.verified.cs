@@ -27,6 +27,31 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAppClientsResponse" /> class.
+        /// </summary>
+        /// <param name="appClients">
+        /// List of App Clients.
+        /// </param>
+        /// <param name="metadata">
+        /// The standard metadata in the response of a list operation.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ListAppClientsResponse(
+            global::System.Collections.Generic.IList<global::G.AppClient>? appClients,
+            global::G.ListMetadata? metadata)
+        {
+            this.AppClients = appClients;
+            this.Metadata = metadata;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAppClientsResponse" /> class.
+        /// </summary>
+        public ListAppClientsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

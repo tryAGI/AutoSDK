@@ -30,6 +30,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingDeploymentReviewer" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of reviewer.<br/>
+        /// Example: User
+        /// </param>
+        /// <param name="reviewer"></param>
+        public PendingDeploymentReviewer(
+            global::G.DeploymentReviewerType? type,
+            global::G.AnyOf<global::G.SimpleUser, global::G.Team>? reviewer)
+        {
+            this.Type = type;
+            this.Reviewer = reviewer;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PendingDeploymentReviewer" /> class.
+        /// </summary>
+        public PendingDeploymentReviewer()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

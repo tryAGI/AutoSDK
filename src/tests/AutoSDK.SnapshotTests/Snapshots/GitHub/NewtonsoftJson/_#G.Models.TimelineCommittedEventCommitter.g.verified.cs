@@ -35,6 +35,37 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineCommittedEventCommitter" /> class.
+        /// </summary>
+        /// <param name="date">
+        /// Timestamp of the commit
+        /// </param>
+        /// <param name="email">
+        /// Git email address of the user<br/>
+        /// Example: monalisa.octocat@example.com
+        /// </param>
+        /// <param name="name">
+        /// Name of the git user<br/>
+        /// Example: Monalisa Octocat
+        /// </param>
+        public TimelineCommittedEventCommitter(
+            global::System.DateTime date,
+            string email,
+            string name)
+        {
+            this.Date = date;
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TimelineCommittedEventCommitter" /> class.
+        /// </summary>
+        public TimelineCommittedEventCommitter()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

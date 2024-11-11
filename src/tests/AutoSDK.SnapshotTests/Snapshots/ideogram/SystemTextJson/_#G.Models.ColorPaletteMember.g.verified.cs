@@ -31,6 +31,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColorPaletteMember" /> class.
+        /// </summary>
+        /// <param name="colorHex">
+        /// The hexadecimal representation of the color with an optional chosen weight<br/>
+        /// Example: #FFFFFF
+        /// </param>
+        /// <param name="colorWeight">
+        /// The weight of the color in the color palette.<br/>
+        /// Example: 0.25
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ColorPaletteMember(
+            string colorHex,
+            double colorWeight)
+        {
+            this.ColorHex = colorHex ?? throw new global::System.ArgumentNullException(nameof(colorHex));
+            this.ColorWeight = colorWeight;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ColorPaletteMember" /> class.
+        /// </summary>
+        public ColorPaletteMember()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

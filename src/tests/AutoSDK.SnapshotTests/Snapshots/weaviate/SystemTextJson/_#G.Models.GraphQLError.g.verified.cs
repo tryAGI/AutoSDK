@@ -33,6 +33,30 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GraphQLError" /> class.
+        /// </summary>
+        /// <param name="locations"></param>
+        /// <param name="message"></param>
+        /// <param name="path"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GraphQLError(
+            global::System.Collections.Generic.IList<global::G.GraphQLErrorLocation>? locations,
+            string? message,
+            global::System.Collections.Generic.IList<string>? path)
+        {
+            this.Locations = locations;
+            this.Message = message;
+            this.Path = path;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GraphQLError" /> class.
+        /// </summary>
+        public GraphQLError()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

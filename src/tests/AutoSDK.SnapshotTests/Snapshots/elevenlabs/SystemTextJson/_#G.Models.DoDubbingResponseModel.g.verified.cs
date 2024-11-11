@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DoDubbingResponseModel" /> class.
+        /// </summary>
+        /// <param name="dubbingId"></param>
+        /// <param name="expectedDurationSec"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DoDubbingResponseModel(
+            string dubbingId,
+            double expectedDurationSec)
+        {
+            this.DubbingId = dubbingId ?? throw new global::System.ArgumentNullException(nameof(dubbingId));
+            this.ExpectedDurationSec = expectedDurationSec;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DoDubbingResponseModel" /> class.
+        /// </summary>
+        public DoDubbingResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

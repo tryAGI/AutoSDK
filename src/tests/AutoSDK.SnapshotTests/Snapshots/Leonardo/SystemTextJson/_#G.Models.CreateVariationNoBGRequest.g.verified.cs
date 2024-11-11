@@ -28,6 +28,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVariationNoBGRequest" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="isVariation"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CreateVariationNoBGRequest(
+            string id,
+            bool? isVariation)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.IsVariation = isVariation;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateVariationNoBGRequest" /> class.
+        /// </summary>
+        public CreateVariationNoBGRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConduitShardsBodyShard" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// Shard ID.
+        /// </param>
+        /// <param name="transport">
+        /// The transport details that you want Twitch to use when sending you notifications.
+        /// </param>
+        public UpdateConduitShardsBodyShard(
+            string id,
+            global::G.UpdateConduitShardsBodyShardTransport transport)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Transport = transport ?? throw new global::System.ArgumentNullException(nameof(transport));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateConduitShardsBodyShard" /> class.
+        /// </summary>
+        public UpdateConduitShardsBodyShard()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

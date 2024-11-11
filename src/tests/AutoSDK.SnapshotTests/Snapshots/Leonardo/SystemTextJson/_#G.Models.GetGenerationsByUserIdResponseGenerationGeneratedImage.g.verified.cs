@@ -75,6 +75,61 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGenerationsByUserIdResponseGenerationGeneratedImage" /> class.
+        /// </summary>
+        /// <param name="generatedImageVariationGenerics"></param>
+        /// <param name="id"></param>
+        /// <param name="imageToVideo">
+        /// If it is an image to video generation.
+        /// </param>
+        /// <param name="likeCount"></param>
+        /// <param name="motion">
+        /// If generation is of motion type.
+        /// </param>
+        /// <param name="motionModel">
+        /// The name of the motion model.
+        /// </param>
+        /// <param name="motionMP4URL">
+        /// The URL of the motion MP4.
+        /// </param>
+        /// <param name="motionStrength">
+        /// The motion strength.
+        /// </param>
+        /// <param name="nsfw"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetGenerationsByUserIdResponseGenerationGeneratedImage(
+            global::System.Collections.Generic.IList<global::G.GetGenerationsByUserIdResponseGenerationGeneratedImageGeneratedImageVariationGeneric>? generatedImageVariationGenerics,
+            string? id,
+            bool? imageToVideo,
+            int? likeCount,
+            bool? motion,
+            string? motionModel,
+            string? motionMP4URL,
+            int? motionStrength,
+            bool? nsfw,
+            string? url)
+        {
+            this.GeneratedImageVariationGenerics = generatedImageVariationGenerics;
+            this.Id = id;
+            this.ImageToVideo = imageToVideo;
+            this.LikeCount = likeCount;
+            this.Motion = motion;
+            this.MotionModel = motionModel;
+            this.MotionMP4URL = motionMP4URL;
+            this.MotionStrength = motionStrength;
+            this.Nsfw = nsfw;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetGenerationsByUserIdResponseGenerationGeneratedImage" /> class.
+        /// </summary>
+        public GetGenerationsByUserIdResponseGenerationGeneratedImage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

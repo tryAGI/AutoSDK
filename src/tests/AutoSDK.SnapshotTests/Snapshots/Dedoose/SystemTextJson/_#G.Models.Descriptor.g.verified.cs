@@ -69,6 +69,50 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Descriptor" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="createByIDL"></param>
+        /// <param name="descriptorSetIDL"></param>
+        /// <param name="valuesData"></param>
+        /// <param name="dynamicValuesData"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Descriptor(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            global::System.DateTime? createStamp,
+            global::System.Guid? createByIDL,
+            global::System.Guid? descriptorSetIDL,
+            byte[]? valuesData,
+            byte[]? dynamicValuesData)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.ProjectIDL = projectIDL;
+            this.CreateStamp = createStamp;
+            this.CreateByIDL = createByIDL;
+            this.DescriptorSetIDL = descriptorSetIDL;
+            this.ValuesData = valuesData;
+            this.DynamicValuesData = dynamicValuesData;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Descriptor" /> class.
+        /// </summary>
+        public Descriptor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

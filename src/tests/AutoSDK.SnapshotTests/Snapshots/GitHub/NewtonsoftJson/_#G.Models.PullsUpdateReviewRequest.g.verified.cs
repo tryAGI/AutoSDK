@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsUpdateReviewRequest" /> class.
+        /// </summary>
+        /// <param name="body">
+        /// The body text of the pull request review.
+        /// </param>
+        public PullsUpdateReviewRequest(
+            string body)
+        {
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsUpdateReviewRequest" /> class.
+        /// </summary>
+        public PullsUpdateReviewRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

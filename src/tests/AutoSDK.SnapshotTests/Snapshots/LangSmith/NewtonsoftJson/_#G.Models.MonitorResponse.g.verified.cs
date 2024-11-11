@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MonitorResponse" /> class.
+        /// </summary>
+        /// <param name="blocks"></param>
+        public MonitorResponse(
+            global::System.Collections.Generic.IList<global::G.MonitorBlock> blocks)
+        {
+            this.Blocks = blocks ?? throw new global::System.ArgumentNullException(nameof(blocks));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MonitorResponse" /> class.
+        /// </summary>
+        public MonitorResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -39,6 +39,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestedVariant1PullRequestAutoMerge" /> class.
+        /// </summary>
+        /// <param name="commitMessage">
+        /// Commit message for the merge commit.
+        /// </param>
+        /// <param name="commitTitle">
+        /// Title for the merge commit message.
+        /// </param>
+        /// <param name="enabledBy"></param>
+        /// <param name="mergeMethod">
+        /// The merge method to use.
+        /// </param>
+        public WebhookPullRequestReviewRequestedVariant1PullRequestAutoMerge(
+            string? commitMessage,
+            string? commitTitle,
+            global::G.WebhookPullRequestReviewRequestedVariant1PullRequestAutoMergeEnabledBy? enabledBy,
+            global::G.WebhookPullRequestReviewRequestedVariant1PullRequestAutoMergeMergeMethod mergeMethod)
+        {
+            this.CommitMessage = commitMessage ?? throw new global::System.ArgumentNullException(nameof(commitMessage));
+            this.CommitTitle = commitTitle ?? throw new global::System.ArgumentNullException(nameof(commitTitle));
+            this.EnabledBy = enabledBy ?? throw new global::System.ArgumentNullException(nameof(enabledBy));
+            this.MergeMethod = mergeMethod;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPullRequestReviewRequestedVariant1PullRequestAutoMerge" /> class.
+        /// </summary>
+        public WebhookPullRequestReviewRequestedVariant1PullRequestAutoMerge()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

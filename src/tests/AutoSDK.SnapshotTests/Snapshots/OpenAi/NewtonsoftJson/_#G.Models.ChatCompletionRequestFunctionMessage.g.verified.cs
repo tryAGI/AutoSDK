@@ -37,6 +37,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestFunctionMessage" /> class.
+        /// </summary>
+        /// <param name="role">
+        /// The role of the messages author, in this case `function`.
+        /// </param>
+        /// <param name="content">
+        /// The contents of the function message.
+        /// </param>
+        /// <param name="name">
+        /// The name of the function to call.
+        /// </param>
+        public ChatCompletionRequestFunctionMessage(
+            string? content,
+            string name,
+            global::G.ChatCompletionRequestFunctionMessageRole role)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestFunctionMessage" /> class.
+        /// </summary>
+        public ChatCompletionRequestFunctionMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

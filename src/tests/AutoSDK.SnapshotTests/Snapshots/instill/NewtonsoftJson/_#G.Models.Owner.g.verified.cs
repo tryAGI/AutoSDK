@@ -29,6 +29,32 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Owner" /> class.
+        /// </summary>
+        /// <param name="user">
+        /// User.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="organization">
+        /// Organization.<br/>
+        /// Included only in responses
+        /// </param>
+        public Owner(
+            global::G.User? user,
+            global::G.Organization? organization)
+        {
+            this.User = user;
+            this.Organization = organization;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Owner" /> class.
+        /// </summary>
+        public Owner()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

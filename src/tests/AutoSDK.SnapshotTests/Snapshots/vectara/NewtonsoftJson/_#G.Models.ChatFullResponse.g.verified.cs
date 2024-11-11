@@ -66,6 +66,63 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatFullResponse" /> class.
+        /// </summary>
+        /// <param name="chatId">
+        /// If the chat response was stored, the ID of the chat.
+        /// </param>
+        /// <param name="turnId">
+        /// If the chat response was stored, the ID of the turn.
+        /// </param>
+        /// <param name="answer">
+        /// The message from the chat model for the chat message.
+        /// </param>
+        /// <param name="responseLanguage">
+        /// Languages that the Vectara platform supports.<br/>
+        /// Default Value: auto
+        /// </param>
+        /// <param name="searchResults">
+        /// The ranked search results that the chat model used.
+        /// </param>
+        /// <param name="factualConsistencyScore">
+        /// The probability that the summary is factually consistent with the results.
+        /// </param>
+        /// <param name="renderedPrompt">
+        /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available<br/>
+        /// to Scale customers.
+        /// </param>
+        /// <param name="rephrasedQuery">
+        /// If you are on the Scale plan, you can view the actual query made to backend that was rephrased <br/>
+        /// by the LLM from the input query.
+        /// </param>
+        public ChatFullResponse(
+            string? chatId,
+            string? turnId,
+            string? answer,
+            global::G.Language? responseLanguage,
+            global::System.Collections.Generic.IList<global::G.IndividualSearchResult>? searchResults,
+            float? factualConsistencyScore,
+            string? renderedPrompt,
+            string? rephrasedQuery)
+        {
+            this.ChatId = chatId;
+            this.TurnId = turnId;
+            this.Answer = answer;
+            this.ResponseLanguage = responseLanguage;
+            this.SearchResults = searchResults;
+            this.FactualConsistencyScore = factualConsistencyScore;
+            this.RenderedPrompt = renderedPrompt;
+            this.RephrasedQuery = rephrasedQuery;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatFullResponse" /> class.
+        /// </summary>
+        public ChatFullResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

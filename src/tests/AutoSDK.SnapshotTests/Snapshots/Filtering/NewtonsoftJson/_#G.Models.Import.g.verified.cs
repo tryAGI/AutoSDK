@@ -153,6 +153,91 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Import" /> class.
+        /// </summary>
+        /// <param name="vcs"></param>
+        /// <param name="useLfs"></param>
+        /// <param name="vcsUrl">
+        /// The URL of the originating repository.
+        /// </param>
+        /// <param name="svcRoot"></param>
+        /// <param name="tfvcProject"></param>
+        /// <param name="status"></param>
+        /// <param name="statusText"></param>
+        /// <param name="failedStep"></param>
+        /// <param name="errorMessage"></param>
+        /// <param name="importPercent"></param>
+        /// <param name="commitCount"></param>
+        /// <param name="pushPercent"></param>
+        /// <param name="hasLargeFiles"></param>
+        /// <param name="largeFilesSize"></param>
+        /// <param name="largeFilesCount"></param>
+        /// <param name="projectChoices"></param>
+        /// <param name="message"></param>
+        /// <param name="authorsCount"></param>
+        /// <param name="url"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="authorsUrl"></param>
+        /// <param name="repositoryUrl"></param>
+        /// <param name="svnRoot"></param>
+        public Import(
+            string? vcs,
+            string vcsUrl,
+            global::G.ImportStatus status,
+            string url,
+            string htmlUrl,
+            string authorsUrl,
+            string repositoryUrl,
+            bool? useLfs,
+            string? svcRoot,
+            string? tfvcProject,
+            string? statusText,
+            string? failedStep,
+            string? errorMessage,
+            int? importPercent,
+            int? commitCount,
+            int? pushPercent,
+            bool? hasLargeFiles,
+            int? largeFilesSize,
+            int? largeFilesCount,
+            global::System.Collections.Generic.IList<global::G.ImportProjectChoice>? projectChoices,
+            string? message,
+            int? authorsCount,
+            string? svnRoot)
+        {
+            this.Vcs = vcs ?? throw new global::System.ArgumentNullException(nameof(vcs));
+            this.VcsUrl = vcsUrl ?? throw new global::System.ArgumentNullException(nameof(vcsUrl));
+            this.Status = status;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.HtmlUrl = htmlUrl ?? throw new global::System.ArgumentNullException(nameof(htmlUrl));
+            this.AuthorsUrl = authorsUrl ?? throw new global::System.ArgumentNullException(nameof(authorsUrl));
+            this.RepositoryUrl = repositoryUrl ?? throw new global::System.ArgumentNullException(nameof(repositoryUrl));
+            this.UseLfs = useLfs;
+            this.SvcRoot = svcRoot;
+            this.TfvcProject = tfvcProject;
+            this.StatusText = statusText;
+            this.FailedStep = failedStep;
+            this.ErrorMessage = errorMessage;
+            this.ImportPercent = importPercent;
+            this.CommitCount = commitCount;
+            this.PushPercent = pushPercent;
+            this.HasLargeFiles = hasLargeFiles;
+            this.LargeFilesSize = largeFilesSize;
+            this.LargeFilesCount = largeFilesCount;
+            this.ProjectChoices = projectChoices;
+            this.Message = message;
+            this.AuthorsCount = authorsCount;
+            this.SvnRoot = svnRoot;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Import" /> class.
+        /// </summary>
+        public Import()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

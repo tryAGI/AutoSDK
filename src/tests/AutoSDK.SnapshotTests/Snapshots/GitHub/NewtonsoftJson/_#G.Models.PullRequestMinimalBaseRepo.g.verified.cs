@@ -33,6 +33,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestMinimalBaseRepo" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="url"></param>
+        /// <param name="name"></param>
+        public PullRequestMinimalBaseRepo(
+            long id,
+            string url,
+            string name)
+        {
+            this.Id = id;
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullRequestMinimalBaseRepo" /> class.
+        /// </summary>
+        public PullRequestMinimalBaseRepo()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

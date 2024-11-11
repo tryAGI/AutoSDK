@@ -28,6 +28,31 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WatchNamespaceLatestModelResponse" /> class.
+        /// </summary>
+        /// <param name="state">
+        /// State.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="message">
+        /// Included only in responses
+        /// </param>
+        public WatchNamespaceLatestModelResponse(
+            global::G.State? state,
+            string? message)
+        {
+            this.State = state;
+            this.Message = message;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WatchNamespaceLatestModelResponse" /> class.
+        /// </summary>
+        public WatchNamespaceLatestModelResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

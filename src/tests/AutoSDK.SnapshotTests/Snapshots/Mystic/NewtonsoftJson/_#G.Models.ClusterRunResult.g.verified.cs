@@ -69,6 +69,51 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClusterRunResult" /> class.
+        /// </summary>
+        /// <param name="inputs"></param>
+        /// <param name="outputs"></param>
+        /// <param name="error">
+        /// Base model for schemas.
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="updatedAt"></param>
+        /// <param name="pipelineId"></param>
+        /// <param name="state">
+        /// An enumeration.
+        /// </param>
+        /// <param name="queuePosition"></param>
+        public ClusterRunResult(
+            string id,
+            global::System.DateTime createdAt,
+            global::System.DateTime updatedAt,
+            string pipelineId,
+            global::G.RunState state,
+            global::System.Collections.Generic.IList<global::G.RunInput>? inputs,
+            global::System.Collections.Generic.IList<global::G.RunOutput>? outputs,
+            global::G.ContainerRunError? error,
+            int? queuePosition)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.CreatedAt = createdAt;
+            this.UpdatedAt = updatedAt;
+            this.PipelineId = pipelineId ?? throw new global::System.ArgumentNullException(nameof(pipelineId));
+            this.State = state;
+            this.Inputs = inputs;
+            this.Outputs = outputs;
+            this.Error = error;
+            this.QueuePosition = queuePosition;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClusterRunResult" /> class.
+        /// </summary>
+        public ClusterRunResult()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

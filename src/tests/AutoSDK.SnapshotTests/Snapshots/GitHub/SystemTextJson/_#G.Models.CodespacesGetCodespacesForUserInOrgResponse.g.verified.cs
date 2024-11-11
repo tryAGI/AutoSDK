@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesGetCodespacesForUserInOrgResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount"></param>
+        /// <param name="codespaces"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CodespacesGetCodespacesForUserInOrgResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.Codespace> codespaces)
+        {
+            this.TotalCount = totalCount;
+            this.Codespaces = codespaces ?? throw new global::System.ArgumentNullException(nameof(codespaces));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CodespacesGetCodespacesForUserInOrgResponse" /> class.
+        /// </summary>
+        public CodespacesGetCodespacesForUserInOrgResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

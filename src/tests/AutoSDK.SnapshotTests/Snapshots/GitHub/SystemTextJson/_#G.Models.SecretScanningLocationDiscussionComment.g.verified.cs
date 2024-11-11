@@ -23,6 +23,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationDiscussionComment" /> class.
+        /// </summary>
+        /// <param name="discussionCommentUrl">
+        /// The API URL to get the discussion comment where the secret was detected.<br/>
+        /// Example: https://github.com/community/community/discussions/39082#discussioncomment-4158232
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SecretScanningLocationDiscussionComment(
+            string discussionCommentUrl)
+        {
+            this.DiscussionCommentUrl = discussionCommentUrl ?? throw new global::System.ArgumentNullException(nameof(discussionCommentUrl));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SecretScanningLocationDiscussionComment" /> class.
+        /// </summary>
+        public SecretScanningLocationDiscussionComment()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

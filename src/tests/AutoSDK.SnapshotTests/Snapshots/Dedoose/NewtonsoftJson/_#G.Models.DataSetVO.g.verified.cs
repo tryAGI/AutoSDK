@@ -93,6 +93,61 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataSetVO" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="projectId"></param>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="createdById"></param>
+        /// <param name="createStamp"></param>
+        /// <param name="title"></param>
+        /// <param name="desciption"></param>
+        /// <param name="objectIdLists"></param>
+        /// <param name="areExcerptsFiltered"></param>
+        /// <param name="areResourcesFiltered"></param>
+        /// <param name="areTagsFiltered"></param>
+        /// <param name="areUsersFiltered"></param>
+        /// <param name="areDescriptorsFiltered"></param>
+        public DataSetVO(
+            global::System.Guid? id,
+            global::System.Guid? projectId,
+            string? projectIdKey,
+            global::System.Guid? createdById,
+            global::System.DateTime? createStamp,
+            string? title,
+            string? desciption,
+            global::G.DataSetObjectIds? objectIdLists,
+            bool? areExcerptsFiltered,
+            bool? areResourcesFiltered,
+            bool? areTagsFiltered,
+            bool? areUsersFiltered,
+            bool? areDescriptorsFiltered)
+        {
+            this.Id = id;
+            this.ProjectId = projectId;
+            this.ProjectIdKey = projectIdKey;
+            this.CreatedById = createdById;
+            this.CreateStamp = createStamp;
+            this.Title = title;
+            this.Desciption = desciption;
+            this.ObjectIdLists = objectIdLists;
+            this.AreExcerptsFiltered = areExcerptsFiltered;
+            this.AreResourcesFiltered = areResourcesFiltered;
+            this.AreTagsFiltered = areTagsFiltered;
+            this.AreUsersFiltered = areUsersFiltered;
+            this.AreDescriptorsFiltered = areDescriptorsFiltered;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataSetVO" /> class.
+        /// </summary>
+        public DataSetVO()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

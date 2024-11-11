@@ -93,6 +93,62 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Tag" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="isWeighted"></param>
+        /// <param name="weightMin"></param>
+        /// <param name="weightMax"></param>
+        /// <param name="weightDefault"></param>
+        /// <param name="sortOrder"></param>
+        /// <param name="color"></param>
+        /// <param name="allowDecimalWeight"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Tag(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            string? title,
+            string? description,
+            bool? isWeighted,
+            double? weightMin,
+            double? weightMax,
+            double? weightDefault,
+            int? sortOrder,
+            int? color,
+            bool? allowDecimalWeight)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.ProjectIDL = projectIDL;
+            this.Title = title;
+            this.Description = description;
+            this.IsWeighted = isWeighted;
+            this.WeightMin = weightMin;
+            this.WeightMax = weightMax;
+            this.WeightDefault = weightDefault;
+            this.SortOrder = sortOrder;
+            this.Color = color;
+            this.AllowDecimalWeight = allowDecimalWeight;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Tag" /> class.
+        /// </summary>
+        public Tag()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

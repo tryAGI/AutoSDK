@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsMoveColumnRequest" /> class.
+        /// </summary>
+        /// <param name="position">
+        /// The position of the column in a project. Can be one of: `first`, `last`, or `after:&lt;column_id&gt;` to place after the specified column.<br/>
+        /// Example: last
+        /// </param>
+        public ProjectsMoveColumnRequest(
+            string position)
+        {
+            this.Position = position ?? throw new global::System.ArgumentNullException(nameof(position));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectsMoveColumnRequest" /> class.
+        /// </summary>
+        public ProjectsMoveColumnRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -45,6 +45,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesOpenedChangesOldIssuePullRequest" /> class.
+        /// </summary>
+        /// <param name="diffUrl"></param>
+        /// <param name="htmlUrl"></param>
+        /// <param name="mergedAt"></param>
+        /// <param name="patchUrl"></param>
+        /// <param name="url"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WebhookIssuesOpenedChangesOldIssuePullRequest(
+            string? diffUrl,
+            string? htmlUrl,
+            global::System.DateTime? mergedAt,
+            string? patchUrl,
+            string? url)
+        {
+            this.DiffUrl = diffUrl;
+            this.HtmlUrl = htmlUrl;
+            this.MergedAt = mergedAt;
+            this.PatchUrl = patchUrl;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookIssuesOpenedChangesOldIssuePullRequest" /> class.
+        /// </summary>
+        public WebhookIssuesOpenedChangesOldIssuePullRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

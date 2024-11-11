@@ -29,6 +29,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Link" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// Text contains the message to display.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="url">
+        /// URL contains the reference the link will redirect to.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Link(
+            string? text,
+            string? url)
+        {
+            this.Text = text;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Link" /> class.
+        /// </summary>
+        public Link()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

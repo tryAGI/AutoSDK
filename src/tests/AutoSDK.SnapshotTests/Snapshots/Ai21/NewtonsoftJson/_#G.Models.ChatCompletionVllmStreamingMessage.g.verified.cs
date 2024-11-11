@@ -41,6 +41,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionVllmStreamingMessage" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// A unique ID for the request (not the message). Repeated identical requests<br/>
+        /// get different IDs. However, for a streaming response, the ID will be the same<br/>
+        /// for all responses in the stream.
+        /// </param>
+        /// <param name="choices">
+        /// The message
+        /// </param>
+        /// <param name="usage"></param>
+        /// <param name="meta"></param>
+        public ChatCompletionVllmStreamingMessage(
+            string id,
+            global::System.Collections.Generic.IList<global::G.ChatCompletionResponseDeltaChoice> choices,
+            global::G.UsageInfo? usage,
+            object? meta)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
+            this.Usage = usage;
+            this.Meta = meta;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionVllmStreamingMessage" /> class.
+        /// </summary>
+        public ChatCompletionVllmStreamingMessage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -49,6 +49,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantShareDatasetToken" /> class.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="shareToken"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="datasetId"></param>
+        /// <param name="datasetName"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TenantShareDatasetToken(
+            string shareToken,
+            global::System.DateTime createdAt,
+            global::System.Guid datasetId,
+            global::G.TenantShareDatasetTokenType type,
+            string? datasetName)
+        {
+            this.ShareToken = shareToken ?? throw new global::System.ArgumentNullException(nameof(shareToken));
+            this.CreatedAt = createdAt;
+            this.DatasetId = datasetId;
+            this.Type = type;
+            this.DatasetName = datasetName;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantShareDatasetToken" /> class.
+        /// </summary>
+        public TenantShareDatasetToken()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

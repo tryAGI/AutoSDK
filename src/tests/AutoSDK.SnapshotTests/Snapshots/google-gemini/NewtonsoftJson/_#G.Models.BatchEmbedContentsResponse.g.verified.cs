@@ -22,6 +22,26 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchEmbedContentsResponse" /> class.
+        /// </summary>
+        /// <param name="embeddings">
+        /// Output only. The embeddings for each request, in the same order as provided in the batch request.<br/>
+        /// Included only in responses
+        /// </param>
+        public BatchEmbedContentsResponse(
+            global::System.Collections.Generic.IList<global::G.ContentEmbedding>? embeddings)
+        {
+            this.Embeddings = embeddings;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BatchEmbedContentsResponse" /> class.
+        /// </summary>
+        public BatchEmbedContentsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

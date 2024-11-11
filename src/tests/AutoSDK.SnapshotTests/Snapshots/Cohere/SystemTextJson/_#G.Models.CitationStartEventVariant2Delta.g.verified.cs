@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CitationStartEventVariant2Delta" /> class.
+        /// </summary>
+        /// <param name="message"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CitationStartEventVariant2Delta(
+            global::G.CitationStartEventVariant2DeltaMessage? message)
+        {
+            this.Message = message;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CitationStartEventVariant2Delta" /> class.
+        /// </summary>
+        public CitationStartEventVariant2Delta()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

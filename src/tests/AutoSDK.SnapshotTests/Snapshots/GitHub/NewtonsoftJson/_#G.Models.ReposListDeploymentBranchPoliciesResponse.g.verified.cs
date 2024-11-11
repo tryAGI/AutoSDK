@@ -28,6 +28,29 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposListDeploymentBranchPoliciesResponse" /> class.
+        /// </summary>
+        /// <param name="totalCount">
+        /// The number of deployment branch policies for the environment.<br/>
+        /// Example: 2
+        /// </param>
+        /// <param name="branchPolicies"></param>
+        public ReposListDeploymentBranchPoliciesResponse(
+            int totalCount,
+            global::System.Collections.Generic.IList<global::G.DeploymentBranchPolicy> branchPolicies)
+        {
+            this.TotalCount = totalCount;
+            this.BranchPolicies = branchPolicies ?? throw new global::System.ArgumentNullException(nameof(branchPolicies));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReposListDeploymentBranchPoliciesResponse" /> class.
+        /// </summary>
+        public ReposListDeploymentBranchPoliciesResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

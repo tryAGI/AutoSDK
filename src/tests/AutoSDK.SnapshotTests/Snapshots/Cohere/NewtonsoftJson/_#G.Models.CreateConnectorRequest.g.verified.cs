@@ -65,6 +65,58 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConnectorRequest" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// A human-readable name for the connector.
+        /// </param>
+        /// <param name="description">
+        /// A description of the connector.
+        /// </param>
+        /// <param name="url">
+        /// The URL of the connector that will be used to search for documents.
+        /// </param>
+        /// <param name="excludes">
+        /// A list of fields to exclude from the prompt (fields remain in the document).
+        /// </param>
+        /// <param name="oauth"></param>
+        /// <param name="active">
+        /// Whether the connector is active or not.<br/>
+        /// Default Value: true
+        /// </param>
+        /// <param name="continueOnFailure">
+        /// Whether a chat request should continue or not if the request to this connector fails.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="serviceAuth"></param>
+        public CreateConnectorRequest(
+            string name,
+            string url,
+            string? description,
+            global::System.Collections.Generic.IList<string>? excludes,
+            global::G.CreateConnectorOAuth? oauth,
+            bool? active,
+            bool? continueOnFailure,
+            global::G.CreateConnectorServiceAuth? serviceAuth)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Description = description;
+            this.Excludes = excludes;
+            this.Oauth = oauth;
+            this.Active = active;
+            this.ContinueOnFailure = continueOnFailure;
+            this.ServiceAuth = serviceAuth;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CreateConnectorRequest" /> class.
+        /// </summary>
+        public CreateConnectorRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

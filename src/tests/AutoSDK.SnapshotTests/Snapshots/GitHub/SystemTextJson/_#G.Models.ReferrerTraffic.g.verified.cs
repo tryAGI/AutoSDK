@@ -36,6 +36,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferrerTraffic" /> class.
+        /// </summary>
+        /// <param name="referrer">
+        /// Example: Google
+        /// </param>
+        /// <param name="count">
+        /// Example: 4
+        /// </param>
+        /// <param name="uniques">
+        /// Example: 3
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ReferrerTraffic(
+            string referrer,
+            int count,
+            int uniques)
+        {
+            this.Referrer = referrer ?? throw new global::System.ArgumentNullException(nameof(referrer));
+            this.Count = count;
+            this.Uniques = uniques;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ReferrerTraffic" /> class.
+        /// </summary>
+        public ReferrerTraffic()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -35,6 +35,38 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolTextEditor" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of tool.<br/>
+        /// Default Value: text_editor_20241022
+        /// </param>
+        /// <param name="name">
+        /// The name of the tool.<br/>
+        /// Default Value: str_replace_editor
+        /// </param>
+        /// <param name="cacheControl">
+        /// The cache control settings.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ToolTextEditor(
+            string? type,
+            string? name,
+            global::G.CacheControlEphemeral? cacheControl)
+        {
+            this.Type = type;
+            this.Name = name;
+            this.CacheControl = cacheControl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolTextEditor" /> class.
+        /// </summary>
+        public ToolTextEditor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

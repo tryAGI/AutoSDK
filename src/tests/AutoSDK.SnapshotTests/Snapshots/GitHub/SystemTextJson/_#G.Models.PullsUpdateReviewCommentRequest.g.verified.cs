@@ -22,6 +22,26 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsUpdateReviewCommentRequest" /> class.
+        /// </summary>
+        /// <param name="body">
+        /// The text of the reply to the review comment.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PullsUpdateReviewCommentRequest(
+            string body)
+        {
+            this.Body = body ?? throw new global::System.ArgumentNullException(nameof(body));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PullsUpdateReviewCommentRequest" /> class.
+        /// </summary>
+        public PullsUpdateReviewCommentRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

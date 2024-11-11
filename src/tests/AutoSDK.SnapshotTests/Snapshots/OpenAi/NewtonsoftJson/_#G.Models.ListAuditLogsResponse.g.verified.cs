@@ -45,6 +45,39 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAuditLogsResponse" /> class.
+        /// </summary>
+        /// <param name="object"></param>
+        /// <param name="data"></param>
+        /// <param name="firstId">
+        /// Example: audit_log-defb456h8dks
+        /// </param>
+        /// <param name="lastId">
+        /// Example: audit_log-hnbkd8s93s
+        /// </param>
+        /// <param name="hasMore"></param>
+        public ListAuditLogsResponse(
+            global::System.Collections.Generic.IList<global::G.AuditLog> data,
+            string firstId,
+            string lastId,
+            bool hasMore,
+            global::G.ListAuditLogsResponseObject @object)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.HasMore = hasMore;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ListAuditLogsResponse" /> class.
+        /// </summary>
+        public ListAuditLogsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

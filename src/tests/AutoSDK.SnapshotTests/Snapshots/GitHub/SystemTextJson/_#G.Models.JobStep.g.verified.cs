@@ -59,6 +59,54 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobStep" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// The phase of the lifecycle that the job is currently in.<br/>
+        /// Example: queued
+        /// </param>
+        /// <param name="conclusion">
+        /// The outcome of the job.<br/>
+        /// Example: success
+        /// </param>
+        /// <param name="name">
+        /// The name of the job.<br/>
+        /// Example: test-coverage
+        /// </param>
+        /// <param name="number">
+        /// Example: 1
+        /// </param>
+        /// <param name="startedAt">
+        /// The time that the step started, in ISO 8601 format.
+        /// </param>
+        /// <param name="completedAt">
+        /// The time that the job finished, in ISO 8601 format.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public JobStep(
+            global::G.JobStepStatus status,
+            string? conclusion,
+            string name,
+            int number,
+            global::System.DateTime? startedAt,
+            global::System.DateTime? completedAt)
+        {
+            this.Status = status;
+            this.Conclusion = conclusion ?? throw new global::System.ArgumentNullException(nameof(conclusion));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Number = number;
+            this.StartedAt = startedAt;
+            this.CompletedAt = completedAt;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="JobStep" /> class.
+        /// </summary>
+        public JobStep()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

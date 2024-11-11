@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Hovercard" /> class.
+        /// </summary>
+        /// <param name="contexts"></param>
+        public Hovercard(
+            global::System.Collections.Generic.IList<global::G.HovercardContext> contexts)
+        {
+            this.Contexts = contexts ?? throw new global::System.ArgumentNullException(nameof(contexts));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Hovercard" /> class.
+        /// </summary>
+        public Hovercard()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

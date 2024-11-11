@@ -30,6 +30,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SegmentationBody" /> class.
+        /// </summary>
+        /// <param name="sourceType">
+        /// An enumeration.
+        /// </param>
+        /// <param name="source"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public SegmentationBody(
+            global::G.DocumentType sourceType,
+            string source)
+        {
+            this.SourceType = sourceType;
+            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SegmentationBody" /> class.
+        /// </summary>
+        public SegmentationBody()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

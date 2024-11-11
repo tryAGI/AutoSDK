@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommit" /> class.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="commit"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FileCommit(
+            global::G.FileCommitContent? content,
+            global::G.FileCommitCommit commit)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.Commit = commit ?? throw new global::System.ArgumentNullException(nameof(commit));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileCommit" /> class.
+        /// </summary>
+        public FileCommit()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

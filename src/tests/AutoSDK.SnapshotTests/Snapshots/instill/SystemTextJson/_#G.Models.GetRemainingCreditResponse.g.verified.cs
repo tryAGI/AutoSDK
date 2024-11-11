@@ -38,6 +38,40 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetRemainingCreditResponse" /> class.
+        /// </summary>
+        /// <param name="perishable">
+        /// Amount of perishable credit, i.e. credit with an expiration date.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="imperishable">
+        /// Amount of imperishable credit, e.g. purchased credit, which doesn't<br/>
+        /// expire.<br/>
+        /// Included only in responses
+        /// </param>
+        /// <param name="total">
+        /// Total remaining credit.<br/>
+        /// Included only in responses
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public GetRemainingCreditResponse(
+            float? perishable,
+            float? imperishable,
+            float? total)
+        {
+            this.Perishable = perishable;
+            this.Imperishable = imperishable;
+            this.Total = total;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetRemainingCreditResponse" /> class.
+        /// </summary>
+        public GetRemainingCreditResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

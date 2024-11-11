@@ -44,6 +44,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryCorpusRequest" /> class.
+        /// </summary>
+        /// <param name="query">
+        /// The search query string, which is the question the user is asking.
+        /// </param>
+        /// <param name="search">
+        /// The parameters to search one corpus.
+        /// </param>
+        /// <param name="generation">
+        /// The parameters to control generation.
+        /// </param>
+        /// <param name="streamResponse">
+        /// Indicates whether the response should be streamed or not.<br/>
+        /// Default Value: false
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public QueryCorpusRequest(
+            string query,
+            global::G.AllOf<global::G.SearchCorpus, global::G.SearchParameters>? search,
+            global::G.GenerationParameters? generation,
+            bool? streamResponse)
+        {
+            this.Query = query ?? throw new global::System.ArgumentNullException(nameof(query));
+            this.Search = search;
+            this.Generation = generation;
+            this.StreamResponse = streamResponse;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="QueryCorpusRequest" /> class.
+        /// </summary>
+        public QueryCorpusRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

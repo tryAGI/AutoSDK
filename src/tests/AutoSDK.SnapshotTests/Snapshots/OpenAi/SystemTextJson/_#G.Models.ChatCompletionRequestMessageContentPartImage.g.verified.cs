@@ -29,6 +29,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartImage" /> class.
+        /// </summary>
+        /// <param name="type">
+        /// The type of the content part.
+        /// </param>
+        /// <param name="imageUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatCompletionRequestMessageContentPartImage(
+            global::G.ChatCompletionRequestMessageContentPartImageImageUrl imageUrl,
+            global::G.ChatCompletionRequestMessageContentPartImageType type)
+        {
+            this.ImageUrl = imageUrl ?? throw new global::System.ArgumentNullException(nameof(imageUrl));
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestMessageContentPartImage" /> class.
+        /// </summary>
+        public ChatCompletionRequestMessageContentPartImage()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

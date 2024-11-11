@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogApiKeyCreated" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The tracking ID of the API key.
+        /// </param>
+        /// <param name="data">
+        /// The payload used to create the API key.
+        /// </param>
+        public AuditLogApiKeyCreated(
+            string? id,
+            global::G.AuditLogApiKeyCreatedData? data)
+        {
+            this.Id = id;
+            this.Data = data;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuditLogApiKeyCreated" /> class.
+        /// </summary>
+        public AuditLogApiKeyCreated()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

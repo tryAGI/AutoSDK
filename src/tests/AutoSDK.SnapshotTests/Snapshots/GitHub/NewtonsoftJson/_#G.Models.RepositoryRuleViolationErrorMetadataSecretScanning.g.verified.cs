@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleViolationErrorMetadataSecretScanning" /> class.
+        /// </summary>
+        /// <param name="bypassPlaceholders"></param>
+        public RepositoryRuleViolationErrorMetadataSecretScanning(
+            global::System.Collections.Generic.IList<global::G.RepositoryRuleViolationErrorMetadataSecretScanningBypassPlaceholder>? bypassPlaceholders)
+        {
+            this.BypassPlaceholders = bypassPlaceholders;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleViolationErrorMetadataSecretScanning" /> class.
+        /// </summary>
+        public RepositoryRuleViolationErrorMetadataSecretScanning()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

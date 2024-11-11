@@ -40,6 +40,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DomainsResponse" /> class.
+        /// </summary>
+        /// <param name="ip">
+        /// Example: 1.1.1.1
+        /// </param>
+        /// <param name="page">
+        /// Example: 1
+        /// </param>
+        /// <param name="total">
+        /// Example: 17939
+        /// </param>
+        /// <param name="domains"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DomainsResponse(
+            int total,
+            string? ip,
+            int? page,
+            global::System.Collections.Generic.IList<string>? domains)
+        {
+            this.Total = total;
+            this.Ip = ip;
+            this.Page = page;
+            this.Domains = domains;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DomainsResponse" /> class.
+        /// </summary>
+        public DomainsResponse()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

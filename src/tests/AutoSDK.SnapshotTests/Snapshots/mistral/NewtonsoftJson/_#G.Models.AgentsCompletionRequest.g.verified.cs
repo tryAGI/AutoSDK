@@ -79,6 +79,68 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AgentsCompletionRequest" /> class.
+        /// </summary>
+        /// <param name="agentId">
+        /// The ID of the agent to use for this completion.
+        /// </param>
+        /// <param name="maxTokens">
+        /// The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model's context length.
+        /// </param>
+        /// <param name="messages">
+        /// The prompt(s) to generate completions for, encoded as a list of dict with role and content.<br/>
+        /// Example: []
+        /// </param>
+        /// <param name="minTokens">
+        /// The minimum number of tokens to generate in the completion.
+        /// </param>
+        /// <param name="randomSeed">
+        /// The seed to use for random sampling. If set, different calls will generate deterministic results.
+        /// </param>
+        /// <param name="responseFormat"></param>
+        /// <param name="stop">
+        /// Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
+        /// </param>
+        /// <param name="stream">
+        /// Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="toolChoice">
+        /// Default Value: auto
+        /// </param>
+        /// <param name="tools"></param>
+        public AgentsCompletionRequest(
+            string agentId,
+            global::System.Collections.Generic.IList<global::G.MessagesItem> messages,
+            int? maxTokens,
+            int? minTokens,
+            int? randomSeed,
+            global::G.ResponseFormat? responseFormat,
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? stop,
+            bool? stream,
+            global::G.AnyOf<global::G.ToolChoice3, global::G.ToolChoiceEnum?>? toolChoice,
+            global::System.Collections.Generic.IList<global::G.Tool>? tools)
+        {
+            this.AgentId = agentId ?? throw new global::System.ArgumentNullException(nameof(agentId));
+            this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
+            this.MaxTokens = maxTokens;
+            this.MinTokens = minTokens;
+            this.RandomSeed = randomSeed;
+            this.ResponseFormat = responseFormat;
+            this.Stop = stop;
+            this.Stream = stream;
+            this.ToolChoice = toolChoice;
+            this.Tools = tools;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AgentsCompletionRequest" /> class.
+        /// </summary>
+        public AgentsCompletionRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

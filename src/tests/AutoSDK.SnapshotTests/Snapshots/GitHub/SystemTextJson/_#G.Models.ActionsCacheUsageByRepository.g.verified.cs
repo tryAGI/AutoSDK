@@ -39,6 +39,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheUsageByRepository" /> class.
+        /// </summary>
+        /// <param name="fullName">
+        /// The repository owner and name for the cache usage being shown.<br/>
+        /// Example: octo-org/Hello-World
+        /// </param>
+        /// <param name="activeCachesSizeInBytes">
+        /// The sum of the size in bytes of all the active cache items in the repository.<br/>
+        /// Example: 2322142
+        /// </param>
+        /// <param name="activeCachesCount">
+        /// The number of active caches in the repository.<br/>
+        /// Example: 3
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ActionsCacheUsageByRepository(
+            string fullName,
+            int activeCachesSizeInBytes,
+            int activeCachesCount)
+        {
+            this.FullName = fullName ?? throw new global::System.ArgumentNullException(nameof(fullName));
+            this.ActiveCachesSizeInBytes = activeCachesSizeInBytes;
+            this.ActiveCachesCount = activeCachesCount;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ActionsCacheUsageByRepository" /> class.
+        /// </summary>
+        public ActionsCacheUsageByRepository()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -25,6 +25,29 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsSetMembershipForUserRequest" /> class.
+        /// </summary>
+        /// <param name="role">
+        /// The role to give the user in the organization. Can be one of:  <br/>
+        ///  * `admin` - The user will become an owner of the organization.  <br/>
+        ///  * `member` - The user will become a non-owner member of the organization.<br/>
+        /// Default Value: member
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public OrgsSetMembershipForUserRequest(
+            global::G.OrgsSetMembershipForUserRequestRole? role)
+        {
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="OrgsSetMembershipForUserRequest" /> class.
+        /// </summary>
+        public OrgsSetMembershipForUserRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

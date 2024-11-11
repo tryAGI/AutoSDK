@@ -33,6 +33,32 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PerformInstantRefineResponseLcmGenerationJob" /> class.
+        /// </summary>
+        /// <param name="imageDataUrl"></param>
+        /// <param name="requestTimestamp"></param>
+        /// <param name="apiCreditCost">
+        /// API credits cost, available for Production API users.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public PerformInstantRefineResponseLcmGenerationJob(
+            global::System.Collections.Generic.IList<string>? imageDataUrl,
+            string? requestTimestamp,
+            int? apiCreditCost)
+        {
+            this.ImageDataUrl = imageDataUrl;
+            this.RequestTimestamp = requestTimestamp;
+            this.ApiCreditCost = apiCreditCost;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PerformInstantRefineResponseLcmGenerationJob" /> class.
+        /// </summary>
+        public PerformInstantRefineResponseLcmGenerationJob()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

@@ -42,6 +42,33 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserPublicGet" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="username"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="avatarColour"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public UserPublicGet(
+            string id,
+            string username,
+            global::System.DateTime createdAt,
+            string? avatarColour)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
+            this.CreatedAt = createdAt;
+            this.AvatarColour = avatarColour;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UserPublicGet" /> class.
+        /// </summary>
+        public UserPublicGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

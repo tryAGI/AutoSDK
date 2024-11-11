@@ -29,6 +29,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParticipationStats" /> class.
+        /// </summary>
+        /// <param name="all"></param>
+        /// <param name="owner"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ParticipationStats(
+            global::System.Collections.Generic.IList<int> all,
+            global::System.Collections.Generic.IList<int> owner)
+        {
+            this.All = all ?? throw new global::System.ArgumentNullException(nameof(all));
+            this.Owner = owner ?? throw new global::System.ArgumentNullException(nameof(owner));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ParticipationStats" /> class.
+        /// </summary>
+        public ParticipationStats()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

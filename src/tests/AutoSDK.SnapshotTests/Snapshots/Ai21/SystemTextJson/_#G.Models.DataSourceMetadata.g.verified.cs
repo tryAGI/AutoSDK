@@ -50,6 +50,36 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataSourceMetadata" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="type"></param>
+        /// <param name="description"></param>
+        /// <param name="icon"></param>
+        /// <param name="connected"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DataSourceMetadata(
+            string name,
+            string type,
+            string description,
+            string icon,
+            bool connected)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Description = description ?? throw new global::System.ArgumentNullException(nameof(description));
+            this.Icon = icon ?? throw new global::System.ArgumentNullException(nameof(icon));
+            this.Connected = connected;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DataSourceMetadata" /> class.
+        /// </summary>
+        public DataSourceMetadata()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

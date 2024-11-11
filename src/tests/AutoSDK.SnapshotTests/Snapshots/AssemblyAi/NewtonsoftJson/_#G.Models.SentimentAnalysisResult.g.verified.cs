@@ -51,6 +51,48 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SentimentAnalysisResult" /> class.
+        /// </summary>
+        /// <param name="text">
+        /// The transcript of the sentence
+        /// </param>
+        /// <param name="start">
+        /// The starting time, in milliseconds, of the sentence
+        /// </param>
+        /// <param name="end">
+        /// The ending time, in milliseconds, of the sentence
+        /// </param>
+        /// <param name="sentiment"></param>
+        /// <param name="confidence">
+        /// The confidence score for the detected sentiment of the sentence, from 0 to 1
+        /// </param>
+        /// <param name="speaker">
+        /// The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null
+        /// </param>
+        public SentimentAnalysisResult(
+            string text,
+            int start,
+            int end,
+            global::G.Sentiment sentiment,
+            double confidence,
+            object? speaker)
+        {
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Start = start;
+            this.End = end;
+            this.Sentiment = sentiment;
+            this.Confidence = confidence;
+            this.Speaker = speaker;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SentimentAnalysisResult" /> class.
+        /// </summary>
+        public SentimentAnalysisResult()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyV1LibraryUpload" /> class.
+        /// </summary>
+        /// <param name="file"></param>
+        /// <param name="filename"></param>
+        /// <param name="path"></param>
+        /// <param name="labels"></param>
+        /// <param name="publicUrl"></param>
+        /// <param name="customConfigs"></param>
+        public BodyV1LibraryUpload(
+            byte[] file,
+            string filename,
+            string? path,
+            global::System.Collections.Generic.IList<string>? labels,
+            string? publicUrl,
+            string? customConfigs)
+        {
+            this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.Path = path;
+            this.Labels = labels;
+            this.PublicUrl = publicUrl;
+            this.CustomConfigs = customConfigs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BodyV1LibraryUpload" /> class.
+        /// </summary>
+        public BodyV1LibraryUpload()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

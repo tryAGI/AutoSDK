@@ -45,6 +45,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPackagePublishedPackageRegistry" /> class.
+        /// </summary>
+        /// <param name="aboutUrl"></param>
+        /// <param name="name"></param>
+        /// <param name="type"></param>
+        /// <param name="url"></param>
+        /// <param name="vendor"></param>
+        public WebhookPackagePublishedPackageRegistry(
+            string aboutUrl,
+            string name,
+            string type,
+            string url,
+            string vendor)
+        {
+            this.AboutUrl = aboutUrl ?? throw new global::System.ArgumentNullException(nameof(aboutUrl));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
+            this.Url = url ?? throw new global::System.ArgumentNullException(nameof(url));
+            this.Vendor = vendor ?? throw new global::System.ArgumentNullException(nameof(vendor));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebhookPackagePublishedPackageRegistry" /> class.
+        /// </summary>
+        public WebhookPackagePublishedPackageRegistry()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

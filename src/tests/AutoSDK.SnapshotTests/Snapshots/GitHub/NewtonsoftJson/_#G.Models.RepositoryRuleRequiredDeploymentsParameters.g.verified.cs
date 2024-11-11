@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleRequiredDeploymentsParameters" /> class.
+        /// </summary>
+        /// <param name="requiredDeploymentEnvironments">
+        /// The environments that must be successfully deployed to before branches can be merged.
+        /// </param>
+        public RepositoryRuleRequiredDeploymentsParameters(
+            global::System.Collections.Generic.IList<string> requiredDeploymentEnvironments)
+        {
+            this.RequiredDeploymentEnvironments = requiredDeploymentEnvironments ?? throw new global::System.ArgumentNullException(nameof(requiredDeploymentEnvironments));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RepositoryRuleRequiredDeploymentsParameters" /> class.
+        /// </summary>
+        public RepositoryRuleRequiredDeploymentsParameters()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

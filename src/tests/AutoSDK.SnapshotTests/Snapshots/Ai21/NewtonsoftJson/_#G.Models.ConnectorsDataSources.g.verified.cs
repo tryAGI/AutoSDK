@@ -21,6 +21,23 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectorsDataSources" /> class.
+        /// </summary>
+        /// <param name="dataSources"></param>
+        public ConnectorsDataSources(
+            global::System.Collections.Generic.IList<global::G.DataSourceMetadata> dataSources)
+        {
+            this.DataSources = dataSources ?? throw new global::System.ArgumentNullException(nameof(dataSources));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ConnectorsDataSources" /> class.
+        /// </summary>
+        public ConnectorsDataSources()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

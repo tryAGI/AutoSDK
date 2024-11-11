@@ -62,6 +62,42 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClusterGet" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="provider"></param>
+        /// <param name="name"></param>
+        /// <param name="state"></param>
+        /// <param name="credentialId"></param>
+        /// <param name="errorMessage"></param>
+        /// <param name="location"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ClusterGet(
+            string id,
+            string provider,
+            string name,
+            string state,
+            string credentialId,
+            string? errorMessage,
+            string? location)
+        {
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Provider = provider ?? throw new global::System.ArgumentNullException(nameof(provider));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.State = state ?? throw new global::System.ArgumentNullException(nameof(state));
+            this.CredentialId = credentialId ?? throw new global::System.ArgumentNullException(nameof(credentialId));
+            this.ErrorMessage = errorMessage;
+            this.Location = location;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ClusterGet" /> class.
+        /// </summary>
+        public ClusterGet()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

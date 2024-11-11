@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowUsageBillableWINDOWS" /> class.
+        /// </summary>
+        /// <param name="totalMs"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public WorkflowUsageBillableWINDOWS(
+            int? totalMs)
+        {
+            this.TotalMs = totalMs;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowUsageBillableWINDOWS" /> class.
+        /// </summary>
+        public WorkflowUsageBillableWINDOWS()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

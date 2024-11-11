@@ -21,6 +21,25 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetIndexRequest" /> class.
+        /// </summary>
+        /// <param name="tag">
+        /// Default Value: latest
+        /// </param>
+        public DatasetIndexRequest(
+            string? tag)
+        {
+            this.Tag = tag;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DatasetIndexRequest" /> class.
+        /// </summary>
+        public DatasetIndexRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

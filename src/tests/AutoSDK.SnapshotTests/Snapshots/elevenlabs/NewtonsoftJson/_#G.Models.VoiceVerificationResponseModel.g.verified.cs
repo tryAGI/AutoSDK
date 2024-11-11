@@ -51,6 +51,38 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VoiceVerificationResponseModel" /> class.
+        /// </summary>
+        /// <param name="requiresVerification"></param>
+        /// <param name="isVerified"></param>
+        /// <param name="verificationFailures"></param>
+        /// <param name="verificationAttemptsCount"></param>
+        /// <param name="language"></param>
+        /// <param name="verificationAttempts"></param>
+        public VoiceVerificationResponseModel(
+            bool requiresVerification,
+            bool isVerified,
+            global::System.Collections.Generic.IList<string> verificationFailures,
+            int verificationAttemptsCount,
+            string? language,
+            global::System.Collections.Generic.IList<global::G.VerificationAttemptResponseModel>? verificationAttempts)
+        {
+            this.RequiresVerification = requiresVerification;
+            this.IsVerified = isVerified;
+            this.VerificationFailures = verificationFailures ?? throw new global::System.ArgumentNullException(nameof(verificationFailures));
+            this.VerificationAttemptsCount = verificationAttemptsCount;
+            this.Language = language;
+            this.VerificationAttempts = verificationAttempts;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="VoiceVerificationResponseModel" /> class.
+        /// </summary>
+        public VoiceVerificationResponseModel()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

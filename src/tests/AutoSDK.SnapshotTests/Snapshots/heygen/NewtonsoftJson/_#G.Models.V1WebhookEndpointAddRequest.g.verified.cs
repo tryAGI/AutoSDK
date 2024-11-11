@@ -27,6 +27,30 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1WebhookEndpointAddRequest" /> class.
+        /// </summary>
+        /// <param name="events">
+        /// Example: []
+        /// </param>
+        /// <param name="url">
+        /// Example: &lt;url&gt;
+        /// </param>
+        public V1WebhookEndpointAddRequest(
+            global::System.Collections.Generic.IList<object>? events,
+            string? url)
+        {
+            this.Events = events;
+            this.Url = url;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="V1WebhookEndpointAddRequest" /> class.
+        /// </summary>
+        public V1WebhookEndpointAddRequest()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

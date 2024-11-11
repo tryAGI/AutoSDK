@@ -39,6 +39,41 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Reranker" /> class.
+        /// </summary>
+        /// <param name="id">
+        /// The ID of the reranker.
+        /// </param>
+        /// <param name="name">
+        /// The name of the reranker.
+        /// </param>
+        /// <param name="description">
+        /// The description of the reranker.
+        /// </param>
+        /// <param name="enabled">
+        /// Whether the reranker is enabled.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Reranker(
+            string? id,
+            string? name,
+            string? description,
+            bool? enabled)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Description = description;
+            this.Enabled = enabled;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Reranker" /> class.
+        /// </summary>
+        public Reranker()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

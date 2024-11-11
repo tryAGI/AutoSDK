@@ -21,6 +21,24 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CitationEndEventVariant2" /> class.
+        /// </summary>
+        /// <param name="index"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CitationEndEventVariant2(
+            int? index)
+        {
+            this.Index = index;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CitationEndEventVariant2" /> class.
+        /// </summary>
+        public CitationEndEventVariant2()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

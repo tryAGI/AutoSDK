@@ -79,6 +79,53 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantForUser" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="organizationId"></param>
+        /// <param name="createdAt"></param>
+        /// <param name="displayName"></param>
+        /// <param name="isPersonal"></param>
+        /// <param name="tenantHandle"></param>
+        /// <param name="readOnly">
+        /// Default Value: false
+        /// </param>
+        /// <param name="roleId"></param>
+        /// <param name="roleName"></param>
+        /// <param name="permissions"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public TenantForUser(
+            global::System.Guid id,
+            global::System.DateTime createdAt,
+            string displayName,
+            bool isPersonal,
+            global::System.Guid? organizationId,
+            string? tenantHandle,
+            bool? readOnly,
+            global::System.Guid? roleId,
+            string? roleName,
+            global::System.Collections.Generic.IList<string>? permissions)
+        {
+            this.Id = id;
+            this.CreatedAt = createdAt;
+            this.DisplayName = displayName ?? throw new global::System.ArgumentNullException(nameof(displayName));
+            this.IsPersonal = isPersonal;
+            this.OrganizationId = organizationId;
+            this.TenantHandle = tenantHandle;
+            this.ReadOnly = readOnly;
+            this.RoleId = roleId;
+            this.RoleName = roleName;
+            this.Permissions = permissions;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TenantForUser" /> class.
+        /// </summary>
+        public TenantForUser()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

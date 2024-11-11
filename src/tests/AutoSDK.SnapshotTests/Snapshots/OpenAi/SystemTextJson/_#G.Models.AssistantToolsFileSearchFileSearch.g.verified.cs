@@ -22,6 +22,27 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantToolsFileSearchFileSearch" /> class.
+        /// </summary>
+        /// <param name="maxNumResults">
+        /// The maximum number of results the file search tool should output. The default is 20 for `gpt-4*` models and 5 for `gpt-3.5-turbo`. This number should be between 1 and 50 inclusive.<br/>
+        /// Note that the file search tool may output fewer than `max_num_results` results. See the [file search tool documentation](/docs/assistants/tools/file-search/number-of-chunks-returned) for more information.
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public AssistantToolsFileSearchFileSearch(
+            int? maxNumResults)
+        {
+            this.MaxNumResults = maxNumResults;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AssistantToolsFileSearchFileSearch" /> class.
+        /// </summary>
+        public AssistantToolsFileSearchFileSearch()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

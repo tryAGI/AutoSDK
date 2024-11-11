@@ -45,6 +45,39 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentSafetyLabelsResult" /> class.
+        /// </summary>
+        /// <param name="status">
+        /// Either success, or unavailable in the rare case that the model failed
+        /// </param>
+        /// <param name="results"></param>
+        /// <param name="summary">
+        /// A summary of the Content Moderation confidence results for the entire audio file
+        /// </param>
+        /// <param name="severityScoreSummary">
+        /// A summary of the Content Moderation severity results for the entire audio file
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ContentSafetyLabelsResult(
+            global::G.AudioIntelligenceModelStatus status,
+            global::System.Collections.Generic.IList<global::G.ContentSafetyLabelResult> results,
+            global::System.Collections.Generic.Dictionary<string, double> summary,
+            global::System.Collections.Generic.Dictionary<string, global::G.SeverityScoreSummary> severityScoreSummary)
+        {
+            this.Status = status;
+            this.Results = results ?? throw new global::System.ArgumentNullException(nameof(results));
+            this.Summary = summary ?? throw new global::System.ArgumentNullException(nameof(summary));
+            this.SeverityScoreSummary = severityScoreSummary ?? throw new global::System.ArgumentNullException(nameof(severityScoreSummary));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ContentSafetyLabelsResult" /> class.
+        /// </summary>
+        public ContentSafetyLabelsResult()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

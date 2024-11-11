@@ -63,6 +63,47 @@ namespace G
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorFieldOption" /> class.
+        /// </summary>
+        /// <param name="projectIdKey">
+        /// Included only in responses
+        /// </param>
+        /// <param name="projectId"></param>
+        /// <param name="id"></param>
+        /// <param name="projectIDL"></param>
+        /// <param name="fieldIDL"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="sortOrder"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public DescriptorFieldOption(
+            string? projectIdKey,
+            global::System.Guid? projectId,
+            global::System.Guid? id,
+            global::System.Guid? projectIDL,
+            global::System.Guid? fieldIDL,
+            string? title,
+            string? description,
+            int? sortOrder)
+        {
+            this.ProjectIdKey = projectIdKey;
+            this.ProjectId = projectId;
+            this.Id = id;
+            this.ProjectIDL = projectIDL;
+            this.FieldIDL = fieldIDL;
+            this.Title = title;
+            this.Description = description;
+            this.SortOrder = sortOrder;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DescriptorFieldOption" /> class.
+        /// </summary>
+        public DescriptorFieldOption()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

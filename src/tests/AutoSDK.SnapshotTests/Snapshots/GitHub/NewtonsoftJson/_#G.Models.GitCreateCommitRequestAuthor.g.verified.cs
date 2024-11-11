@@ -33,6 +33,35 @@ namespace G
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitCreateCommitRequestAuthor" /> class.
+        /// </summary>
+        /// <param name="name">
+        /// The name of the author (or committer) of the commit
+        /// </param>
+        /// <param name="email">
+        /// The email of the author (or committer) of the commit
+        /// </param>
+        /// <param name="date">
+        /// Indicates when this commit was authored (or committed). This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
+        /// </param>
+        public GitCreateCommitRequestAuthor(
+            string name,
+            string email,
+            global::System.DateTime? date)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.Date = date;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GitCreateCommitRequestAuthor" /> class.
+        /// </summary>
+        public GitCreateCommitRequestAuthor()
+        {
+        }
+
 
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.
