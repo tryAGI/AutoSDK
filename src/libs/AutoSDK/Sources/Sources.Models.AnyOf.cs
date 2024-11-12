@@ -54,8 +54,7 @@ public static partial class Sources
 ").Inject()}
         }}" : " ";
         
-        return $@"using System.Linq;
-{(anyOfData.IsNamed ? @"#pragma warning disable CS0618 // Type or member is obsolete
+        return $@"{(anyOfData.IsNamed ? @"#pragma warning disable CS0618 // Type or member is obsolete
 " : "")}
 #nullable enable
 
@@ -172,8 +171,8 @@ namespace {anyOfData.Namespace}
             static int HashCodeAggregator(int hashCode, object? value) => value == null
                 ? (hashCode ^ 0) * prime
                 : (hashCode ^ value.GetHashCode()) * prime;
-    
-            return fields.Aggregate(offset, HashCodeAggregator);
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
         }}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}

@@ -9,9 +9,7 @@ public static partial class Sources
         Settings settings,
         CancellationToken cancellationToken = default)
     {
-        return $@"using System.Linq;
-
-#nullable enable
+        return $@"#nullable enable
 
 namespace {settings.Namespace}
 {{
@@ -114,7 +112,11 @@ namespace {settings.Namespace}
             string delimiter = "","",
             bool explode = false)
         {{
-            AddRequiredParameter(name, value.Select(selector).ToArray(), delimiter, explode);
+            AddRequiredParameter(
+                name,
+                global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(value, selector)),
+                delimiter,
+                explode);
 
             return this;
         }}
@@ -178,7 +180,11 @@ namespace {settings.Namespace}
         {{
             if (value is not null)
             {{
-                AddRequiredParameter(name, value.Select(selector).ToArray(), delimiter, explode);
+                AddRequiredParameter(
+                    name,
+                    global::System.Linq.Enumerable.ToArray(global::System.Linq.Enumerable.Select(value, selector)),
+                    delimiter,
+                    explode);
             }}
 
             return this;

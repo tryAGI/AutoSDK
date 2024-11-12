@@ -118,7 +118,7 @@ public readonly struct EquatableArray<T> : IEquatable<EquatableArray<T>>, IEnume
             return ImmutableArray<T>.Empty;
         }
         
-        return Unsafe.As<T[]?, ImmutableArray<T>>(ref Unsafe.AsRef(in _array));
+        return Unsafe.As<T[], ImmutableArray<T>>(ref Unsafe.AsRef(in _array));
     }
 
     /// <summary>
