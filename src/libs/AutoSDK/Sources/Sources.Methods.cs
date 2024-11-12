@@ -361,7 +361,9 @@ namespace {endPoint.Namespace}
         };
 
         var errors = endPoint.Settings.GenerateExceptions ? endPoint.ErrorResponses.Select(x => $@"
-            if ((int)__response.StatusCode == {x.StatusCode})
+{(x.IsDefault ? @" 
+            if (!__response.IsSuccessStatusCode)" : @$" 
+            if ((int)__response.StatusCode == {x.StatusCode})")}
             {{
                 string? __content_{x.StatusCode} = null;
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 

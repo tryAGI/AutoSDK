@@ -68,7 +68,7 @@ namespace G
             ProcessListPetsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            if ((int)__response.StatusCode == default)
+            if (!__response.IsSuccessStatusCode)
             {
                 string? __content_default = null;
                 global::G.Error? __value_default = null;

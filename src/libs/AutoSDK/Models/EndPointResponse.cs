@@ -5,6 +5,7 @@ namespace AutoSDK.Models;
 
 public readonly record struct EndPointResponse(
     bool IsSuccess,
+    bool IsDefault,
     string StatusCode,
     string MimeType,
     ContentType ContentType,
@@ -13,6 +14,7 @@ public readonly record struct EndPointResponse(
 {
     public static EndPointResponse Default => new(
         IsSuccess: true,
+        IsDefault: false,
         StatusCode: "200",
         MimeType: string.Empty,
         ContentType: ContentType.String,
@@ -64,6 +66,7 @@ public readonly record struct EndPointResponse(
 
         var endPoint = new EndPointResponse(
             IsSuccess: responseWithStatusCode.Key.StartsWith("2", StringComparison.OrdinalIgnoreCase),
+            IsDefault: responseWithStatusCode.Key == "default",
             StatusCode: responseWithStatusCode.Key,
             MimeType: response.MimeType,
             ContentType: contentType,

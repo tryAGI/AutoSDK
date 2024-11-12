@@ -117,7 +117,7 @@ namespace G
                         h => h.Value),
                 };
             }
-            if ((int)__response.StatusCode == default)
+            if (!__response.IsSuccessStatusCode)
             {
                 string? __content_default = null;
                 global::G.RpcStatus? __value_default = null;
