@@ -13,7 +13,7 @@ namespace G
         /// <param name="asOf"></param>
         /// <param name="tag"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetVersion> GetDatasetVersionAsync(
             global::System.Guid datasetId,
             global::System.DateTime? asOf = default,

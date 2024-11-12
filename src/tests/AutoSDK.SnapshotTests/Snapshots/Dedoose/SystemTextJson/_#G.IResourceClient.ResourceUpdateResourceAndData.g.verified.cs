@@ -17,7 +17,7 @@ namespace G
         /// <param name="length"></param>
         /// <param name="isLocked"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> ResourceUpdateResourceAndDataAsync(
             string? token = default,
             global::System.Guid? projectId = default,

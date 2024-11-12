@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Email>> UsersAddEmailForAuthenticatedUserAsync(
             global::G.OneOf<global::G.UsersAddEmailForAuthenticatedUserRequest2, global::System.Collections.Generic.IList<string>, string> request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -72,6 +72,7 @@ namespace G
             ProcessUsersAddEmailForAuthenticatedUserResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // Validation failed, or the endpoint has been spammed.
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
@@ -99,6 +100,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // 
             if ((int)__response.StatusCode == 304)
             {
                 string? __content_304 = null;
@@ -122,6 +124,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Resource not found
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
@@ -149,6 +152,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Forbidden
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
@@ -176,6 +180,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Requires authentication
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
@@ -223,7 +228,17 @@ namespace G
                 }
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {
-                    throw new global::System.InvalidOperationException(__content, __ex);
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
                 }
 
                 return
@@ -232,7 +247,24 @@ namespace G
             }
             else
             {
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
                 var __responseValue = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.Email>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__responseStream)));

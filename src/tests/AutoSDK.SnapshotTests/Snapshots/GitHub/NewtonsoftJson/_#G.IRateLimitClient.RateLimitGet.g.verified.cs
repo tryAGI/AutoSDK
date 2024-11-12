@@ -23,7 +23,7 @@ namespace G
         /// &gt; The `rate` object is deprecated. If you're writing new API client code or updating existing code, you should use the `core` object instead of the `rate` object. The `core` object contains the same information that is present in the `rate` object.
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.RateLimitOverview> RateLimitGetAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -11,7 +11,7 @@ namespace G
         /// <param name="tagKeyId"></param>
         /// <param name="tagValueId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.TagValue> GetTagValueAsync(
             global::System.Guid tagKeyId,
             global::System.Guid tagValueId,

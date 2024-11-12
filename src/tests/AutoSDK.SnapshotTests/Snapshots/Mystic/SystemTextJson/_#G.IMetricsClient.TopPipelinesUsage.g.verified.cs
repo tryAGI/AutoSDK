@@ -21,7 +21,7 @@ namespace G
         /// </param>
         /// <param name="intervalValue"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> TopPipelinesUsageAsync(
             global::System.DateTime start,
             global::System.DateTime end,

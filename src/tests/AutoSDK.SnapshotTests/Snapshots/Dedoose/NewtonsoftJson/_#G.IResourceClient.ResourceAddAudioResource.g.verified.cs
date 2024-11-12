@@ -15,7 +15,7 @@ namespace G
         /// <param name="description"></param>
         /// <param name="videoUploadURL"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> ResourceAddAudioResourceAsync(
             string? token = default,
             global::System.Guid? projectId = default,

@@ -13,7 +13,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="runnerGroupId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ActionsDeleteSelfHostedRunnerGroupFromOrgAsync(
             string org,
             int runnerGroupId,

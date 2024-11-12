@@ -15,7 +15,7 @@ namespace G
         /// <param name="environmentName"></param>
         /// <param name="branchPolicyId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ReposDeleteDeploymentBranchPolicyAsync(
             string owner,
             string repo,

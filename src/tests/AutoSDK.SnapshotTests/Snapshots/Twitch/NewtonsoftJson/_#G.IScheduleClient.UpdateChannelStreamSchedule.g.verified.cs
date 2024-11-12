@@ -17,7 +17,7 @@ namespace G
         /// <param name="vacationEndTime"></param>
         /// <param name="timezone"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task UpdateChannelStreamScheduleAsync(
             string broadcasterId,
             bool? isVacationEnabled = default,

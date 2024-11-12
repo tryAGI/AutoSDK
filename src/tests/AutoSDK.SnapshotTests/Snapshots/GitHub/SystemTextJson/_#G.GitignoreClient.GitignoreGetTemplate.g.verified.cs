@@ -30,7 +30,7 @@ namespace G
         /// </summary>
         /// <param name="name"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.GitignoreTemplate> GitignoreGetTemplateAsync(
             string name,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -68,6 +68,7 @@ namespace G
             ProcessGitignoreGetTemplateResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // 
             if ((int)__response.StatusCode == 304)
             {
                 string? __content_304 = null;
@@ -111,7 +112,17 @@ namespace G
                 }
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {
-                    throw new global::System.InvalidOperationException(__content, __ex);
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
                 }
 
                 return
@@ -120,7 +131,24 @@ namespace G
             }
             else
             {
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 var __responseValue = await global::G.GitignoreTemplate.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);

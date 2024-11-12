@@ -14,7 +14,7 @@ namespace G
         /// <param name="modelId"></param>
         /// <param name="version"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> ModelPublicServiceDeleteNamespaceModelVersionAsync(
             string namespaceId,
             string modelId,

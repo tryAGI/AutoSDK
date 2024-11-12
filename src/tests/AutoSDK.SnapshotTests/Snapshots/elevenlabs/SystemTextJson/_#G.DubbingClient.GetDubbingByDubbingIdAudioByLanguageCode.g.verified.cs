@@ -40,7 +40,7 @@ namespace G
         /// Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the 'Profile' tab on the website.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> GetDubbingByDubbingIdAudioByLanguageCodeAsync(
             string dubbingId,
             string languageCode,
@@ -90,6 +90,7 @@ namespace G
             ProcessGetDubbingByDubbingIdAudioByLanguageCodeResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // Validation Error
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
@@ -127,14 +128,46 @@ namespace G
                     httpResponseMessage: __response,
                     content: ref __content);
 
-
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
 
                     return __content;
             }
             else
             {
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 var __responseValue = await global::System.Text.Json.JsonSerializer.DeserializeAsync<byte[]?>(__responseStream, JsonSerializerOptions).ConfigureAwait(false);

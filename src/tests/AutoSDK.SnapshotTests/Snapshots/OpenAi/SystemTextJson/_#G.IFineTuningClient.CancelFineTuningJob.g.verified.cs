@@ -12,7 +12,7 @@ namespace G
         /// Example: ft-AF1WoRqd3aJAHsqc9NY7iL8F
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FineTuningJob> CancelFineTuningJobAsync(
             string fineTuningJobId,
             global::System.Threading.CancellationToken cancellationToken = default);

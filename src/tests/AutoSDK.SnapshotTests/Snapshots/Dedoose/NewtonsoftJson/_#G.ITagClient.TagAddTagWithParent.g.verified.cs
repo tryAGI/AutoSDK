@@ -20,7 +20,7 @@ namespace G
         /// <param name="allowDecimalWeights"></param>
         /// <param name="color"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Tag> TagAddTagWithParentAsync(
             string? token = default,
             global::System.Guid? proejctId = default,

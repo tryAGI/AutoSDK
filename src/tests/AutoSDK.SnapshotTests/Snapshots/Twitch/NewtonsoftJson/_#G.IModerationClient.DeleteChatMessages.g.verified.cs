@@ -15,7 +15,7 @@ namespace G
         /// <param name="moderatorId"></param>
         /// <param name="messageId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task DeleteChatMessagesAsync(
             string broadcasterId,
             string moderatorId,

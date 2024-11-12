@@ -32,7 +32,7 @@ namespace G
         /// <param name="since"></param>
         /// <param name="before"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Repository>> ReposListForAuthenticatedUserAsync(
             global::G.ReposListForAuthenticatedUserVisibility? visibility = default,
             string? affiliation = default,

@@ -19,7 +19,7 @@ namespace G
         /// <param name="username"></param>
         /// <param name="packageVersionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task PackagesRestorePackageVersionForUserAsync(
             global::G.PackagesRestorePackageVersionForUserPackageType packageType,
             string packageName,

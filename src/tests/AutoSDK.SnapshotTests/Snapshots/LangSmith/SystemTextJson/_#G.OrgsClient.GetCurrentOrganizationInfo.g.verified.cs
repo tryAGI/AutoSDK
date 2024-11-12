@@ -24,7 +24,7 @@ namespace G
         /// Get Current Organization Info
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.OrganizationInfo> GetCurrentOrganizationInfoAsync(
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -95,7 +95,17 @@ namespace G
                 }
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {
-                    throw new global::System.InvalidOperationException(__content, __ex);
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
                 }
 
                 return
@@ -104,7 +114,24 @@ namespace G
             }
             else
             {
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 var __responseValue = await global::G.OrganizationInfo.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);

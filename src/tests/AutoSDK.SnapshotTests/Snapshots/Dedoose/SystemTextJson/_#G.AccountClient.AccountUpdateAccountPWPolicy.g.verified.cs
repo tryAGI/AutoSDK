@@ -60,7 +60,7 @@ namespace G
         /// <param name="relogin2Auth"></param>
         /// <param name="idleTimeoutInMinutes"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.AccountVO> AccountUpdateAccountPWPolicyAsync(
             string? token = default,
             global::System.Guid? accountId = default,
@@ -150,6 +150,7 @@ namespace G
             ProcessAccountUpdateAccountPWPolicyResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // Token is null.
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
@@ -177,6 +178,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Token is invalid.
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
@@ -224,7 +226,17 @@ namespace G
                 }
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {
-                    throw new global::System.InvalidOperationException(__content, __ex);
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
                 }
 
                 return
@@ -233,7 +245,24 @@ namespace G
             }
             else
             {
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 var __responseValue = await global::G.AccountVO.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);

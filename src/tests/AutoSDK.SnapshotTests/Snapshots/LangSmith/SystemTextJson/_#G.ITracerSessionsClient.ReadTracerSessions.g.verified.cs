@@ -33,7 +33,7 @@ namespace G
         /// </param>
         /// <param name="accept"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TracerSession>> ReadTracerSessionsAsync(
             bool? referenceFree = default,
             global::System.Collections.Generic.IList<global::System.Guid>? referenceDataset = default,

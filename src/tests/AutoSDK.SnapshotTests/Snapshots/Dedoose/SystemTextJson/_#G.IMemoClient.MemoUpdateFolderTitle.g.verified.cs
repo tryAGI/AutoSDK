@@ -13,7 +13,7 @@ namespace G
         /// <param name="folderId"></param>
         /// <param name="title"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.MemoFolder> MemoUpdateFolderTitleAsync(
             string? token = default,
             global::System.Guid? projectId = default,

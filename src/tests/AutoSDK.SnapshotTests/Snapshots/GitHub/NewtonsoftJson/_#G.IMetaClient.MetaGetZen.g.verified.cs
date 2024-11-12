@@ -10,7 +10,7 @@ namespace G
         /// Get a random sentence from the Zen of GitHub
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> MetaGetZenAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }

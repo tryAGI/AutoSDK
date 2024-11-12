@@ -13,7 +13,7 @@ namespace G
         /// <param name="codespaceName"></param>
         /// <param name="exportId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CodespaceExportDetails> CodespacesGetExportDetailsForAuthenticatedUserAsync(
             string codespaceName,
             string exportId,

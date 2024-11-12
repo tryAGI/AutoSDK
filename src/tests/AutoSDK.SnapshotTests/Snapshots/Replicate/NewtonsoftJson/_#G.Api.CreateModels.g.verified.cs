@@ -49,7 +49,7 @@ namespace G
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task CreateModelsAsync(
             global::G.ModelsCreateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -111,7 +111,23 @@ namespace G
             ProcessCreateModelsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            __response.EnsureSuccessStatusCode();
+            try
+            {
+                __response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {
+                throw new global::G.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
         }
 
         /// <summary>

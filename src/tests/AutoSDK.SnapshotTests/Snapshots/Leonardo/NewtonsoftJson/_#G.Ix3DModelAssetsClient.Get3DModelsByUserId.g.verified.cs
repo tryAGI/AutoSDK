@@ -18,7 +18,7 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Get3DModelsByUserIdResponse> Get3DModelsByUserIdAsync(
             string userId,
             global::G.Get3DModelsByUserIdRequest request,

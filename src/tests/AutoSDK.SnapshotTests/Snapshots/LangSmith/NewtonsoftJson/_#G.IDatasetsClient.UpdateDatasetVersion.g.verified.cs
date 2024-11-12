@@ -12,7 +12,7 @@ namespace G
         /// <param name="datasetId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetVersion> UpdateDatasetVersionAsync(
             global::System.Guid datasetId,
             global::G.PutDatasetVersionsSchema request,

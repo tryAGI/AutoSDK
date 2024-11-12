@@ -27,7 +27,7 @@ namespace G
         /// </param>
         /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Example>> ReadSharedExamplesAsync(
             global::System.Guid shareToken,
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,

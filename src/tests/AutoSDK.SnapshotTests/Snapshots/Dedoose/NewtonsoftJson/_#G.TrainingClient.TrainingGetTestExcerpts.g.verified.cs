@@ -33,7 +33,7 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="testId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.TrainingTestExcerpt>> TrainingGetTestExcerptsAsync(
             string? token = default,
             global::System.Guid? projectId = default,
@@ -87,6 +87,7 @@ namespace G
             ProcessTrainingGetTestExcerptsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // Token is null.
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
@@ -114,6 +115,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Token is invalid.
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
@@ -161,7 +163,17 @@ namespace G
                 }
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {
-                    throw new global::System.InvalidOperationException(__content, __ex);
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
                 }
 
                 return
@@ -170,7 +182,24 @@ namespace G
             }
             else
             {
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
                 var __responseValue = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.TrainingTestExcerpt>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__responseStream)));

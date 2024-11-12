@@ -13,7 +13,7 @@ namespace G
         /// <param name="filter"></param>
         /// <param name="maxResults"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UserGetFilteredUsersAsync(
             string? token = default,
             global::System.Guid? projectId = default,

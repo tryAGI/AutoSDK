@@ -17,7 +17,7 @@ namespace G
         /// <param name="packageName"></param>
         /// <param name="token"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task PackagesRestorePackageForAuthenticatedUserAsync(
             global::G.PackagesRestorePackageForAuthenticatedUserPackageType packageType,
             string packageName,

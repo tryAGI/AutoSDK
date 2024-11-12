@@ -12,7 +12,7 @@ namespace G
         /// <param name="namespaceId"></param>
         /// <param name="catalogId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DeleteCatalogResponse> DeleteCatalogAsync(
             string namespaceId,
             string catalogId,

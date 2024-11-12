@@ -21,7 +21,7 @@ namespace G
         /// <param name="deploymentOwner"></param>
         /// <param name="deploymentName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task DeleteDeploymentsAsync(
             string deploymentOwner,
             string deploymentName,

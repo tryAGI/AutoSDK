@@ -38,7 +38,7 @@ namespace G
         /// </param>
         /// <param name="xClientName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListConnectorsResponse> ListConnectorsAsync(
             double? limit = default,
             double? offset = default,
@@ -108,6 +108,7 @@ namespace G
             ProcessListConnectorsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // This error is returned when the request is not well formed. This could be because:   - JSON is invalid   - The request is missing required fields   - The request contains an invalid combination of fields 
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
@@ -135,6 +136,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error indicates that the operation attempted to be performed is not allowed. This could be because:   - The api token is invalid   - The user does not have the necessary permissions 
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
@@ -162,6 +164,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error indicates that the operation attempted to be performed is not allowed. This could be because:   - The api token is invalid   - The user does not have the necessary permissions 
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
@@ -189,6 +192,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error is returned when a resource is not found. This could be because:   - The endpoint does not exist   - The resource does not exist eg model id, dataset id 
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
@@ -216,6 +220,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error is returned when the request is not well formed. This could be because:   - JSON is invalid   - The request is missing required fields   - The request contains an invalid combination of fields 
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
@@ -243,6 +248,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Too many requests
             if ((int)__response.StatusCode == 429)
             {
                 string? __content_429 = null;
@@ -270,6 +276,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error is returned when a request or response contains a deny-listed token. 
             if ((int)__response.StatusCode == 498)
             {
                 string? __content_498 = null;
@@ -297,6 +304,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error is returned when a request is cancelled by the user. 
             if ((int)__response.StatusCode == 499)
             {
                 string? __content_499 = null;
@@ -324,6 +332,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error is returned when an uncategorised internal server error occurs. 
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;
@@ -351,6 +360,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error is returned when the requested feature is not implemented. 
             if ((int)__response.StatusCode == 501)
             {
                 string? __content_501 = null;
@@ -378,6 +388,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error is returned when the service is unavailable. This could be due to:   - Too many users trying to access the service at the same time 
             if ((int)__response.StatusCode == 503)
             {
                 string? __content_503 = null;
@@ -405,6 +416,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // This error is returned when a request to the server times out. This could be due to:   - An internal services taking too long to respond 
             if ((int)__response.StatusCode == 504)
             {
                 string? __content_504 = null;
@@ -452,7 +464,17 @@ namespace G
                 }
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {
-                    throw new global::System.InvalidOperationException(__content, __ex);
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
                 }
 
                 return
@@ -461,7 +483,24 @@ namespace G
             }
             else
             {
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
                 var __responseValue = await global::G.ListConnectorsResponse.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);

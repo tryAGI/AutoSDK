@@ -20,7 +20,7 @@ namespace G
         /// <param name="id4"></param>
         /// <param name="position4"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> MemoLinkObjectAsync(
             string? token = default,
             global::System.Guid? projectId = default,

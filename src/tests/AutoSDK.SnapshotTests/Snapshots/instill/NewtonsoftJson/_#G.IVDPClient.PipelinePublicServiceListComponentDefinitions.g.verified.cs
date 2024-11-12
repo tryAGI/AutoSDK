@@ -16,7 +16,7 @@ namespace G
         /// <param name="filter"></param>
         /// <param name="page"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListComponentDefinitionsResponse> PipelinePublicServiceListComponentDefinitionsAsync(
             int? pageSize = default,
             global::G.PipelinePublicServiceListComponentDefinitionsView? view = default,

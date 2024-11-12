@@ -15,7 +15,7 @@ namespace G
         /// <param name="broadcasterId"></param>
         /// <param name="moderatorId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetChannelGuestStarSettingsResponse> GetChannelGuestStarSettingsAsync(
             string broadcasterId,
             string moderatorId,

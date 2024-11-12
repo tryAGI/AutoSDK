@@ -20,7 +20,7 @@ namespace G
         /// <param name="dataset"></param>
         /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<int> CountExamplesAsync(
             global::System.Collections.Generic.IList<global::System.Guid>? id = default,
             global::G.AnyOf<global::System.DateTime?, string>? asOf = default,

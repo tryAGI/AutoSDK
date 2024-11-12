@@ -13,7 +13,7 @@ namespace G
         /// <param name="passSalt"></param>
         /// <param name="connectionKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UserValidateUserAsync(
             string? token = default,
             string? username = default,

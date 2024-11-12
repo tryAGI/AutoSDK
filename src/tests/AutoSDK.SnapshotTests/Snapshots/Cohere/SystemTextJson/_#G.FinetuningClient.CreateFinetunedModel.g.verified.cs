@@ -30,7 +30,7 @@ namespace G
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateFinetunedModelResponse> CreateFinetunedModelAsync(
             global::G.FinetunedModel request,
             string? xClientName = default,
@@ -101,6 +101,7 @@ namespace G
             ProcessCreateFinetunedModelResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // Bad Request
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
@@ -128,6 +129,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Unauthorized
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
@@ -155,6 +157,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Forbidden
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
@@ -182,6 +185,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Not Found
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
@@ -209,6 +213,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Internal Server Error
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;
@@ -236,6 +241,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Status Service Unavailable
             if ((int)__response.StatusCode == 503)
             {
                 string? __content_503 = null;
@@ -283,7 +289,17 @@ namespace G
                 }
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {
-                    throw new global::System.InvalidOperationException(__content, __ex);
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
                 }
 
                 return
@@ -292,7 +308,24 @@ namespace G
             }
             else
             {
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 var __responseValue = await global::G.CreateFinetunedModelResponse.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);

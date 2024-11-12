@@ -13,7 +13,7 @@ namespace G
         /// </summary>
         /// <param name="secretName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CodespacesSecret> CodespacesGetSecretForAuthenticatedUserAsync(
             string secretName,
             global::System.Threading.CancellationToken cancellationToken = default);

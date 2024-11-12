@@ -17,7 +17,7 @@ namespace G
         /// <param name="conversationId"></param>
         /// <param name="ifAll"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.ListConversationsResponse> AppPublicServiceListConversationsAsync(
             string namespaceId,
             string appId,

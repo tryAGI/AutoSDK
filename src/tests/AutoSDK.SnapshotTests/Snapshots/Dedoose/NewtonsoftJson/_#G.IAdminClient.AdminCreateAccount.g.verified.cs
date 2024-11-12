@@ -12,7 +12,7 @@ namespace G
         /// <param name="adminId"></param>
         /// <param name="credits"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> AdminCreateAccountAsync(
             string? token = default,
             global::System.Guid? adminId = default,

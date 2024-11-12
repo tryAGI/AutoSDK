@@ -13,7 +13,7 @@ namespace G
         /// <param name="page"></param>
         /// <param name="pageSize"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.Descriptor>> DescriptorGetProjectDescriptorsPagedAsync(
             string? token = default,
             global::System.Guid? projectId = default,

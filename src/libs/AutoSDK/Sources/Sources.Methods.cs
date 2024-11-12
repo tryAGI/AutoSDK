@@ -211,7 +211,7 @@ namespace {endPoint.Namespace}
 {(string.IsNullOrWhiteSpace(endPoint.RequestType.CSharpType) ? " " : @" 
         /// <param name=""request""></param>")}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
-        /// <exception cref=""global::System.InvalidOperationException""></exception>
+        /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>
         {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
         {(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks &&
           !string.IsNullOrWhiteSpace(endPoint.ExperimentalStage)
@@ -324,8 +324,24 @@ namespace {endPoint.Namespace}
     {
         if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
         {
-            return @" 
-            __response.EnsureSuccessStatusCode();
+            return $@" 
+            try
+            {{
+                __response.EnsureSuccessStatusCode();
+            }}
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {{
+                throw new global::{endPoint.Settings.Namespace}.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {{
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                }};
+            }}
  ";
         }
         
@@ -337,7 +353,23 @@ namespace {endPoint.Namespace}
         if (endPoint.Stream)
         {
             return $@" 
-            __response.EnsureSuccessStatusCode();
+            try
+            {{
+                __response.EnsureSuccessStatusCode();
+            }}
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {{
+                throw new global::{endPoint.Settings.Namespace}.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {{
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                }};
+            }}
 
             using var __stream = await __response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
             using var __reader = new global::System.IO.StreamReader(__stream);
@@ -361,6 +393,7 @@ namespace {endPoint.Namespace}
         };
 
         var errors = endPoint.Settings.GenerateExceptions ? endPoint.ErrorResponses.Select(x => $@"
+            // {x.Description.Replace('\n', ' ').Replace('\r', ' ')}
 {(x.IsDefault ? @" 
             if (!__response.IsSuccessStatusCode)" : @$" 
             if ((int)__response.StatusCode == {x.StatusCode})")}
@@ -413,16 +446,27 @@ namespace {endPoint.Namespace}
                     httpResponseMessage: __response,
                     content: ref __content);
 
-{(endPoint.ContentType == ContentType.String ? @" 
                 try
-                {
+                {{
                     __response.EnsureSuccessStatusCode();
-                }
+                }}
                 catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::System.InvalidOperationException(__content, __ex);
-                }" : @"
-                __response.EnsureSuccessStatusCode();")}
+                {{
+                    throw new global::{endPoint.Settings.Namespace}.ApiException(
+{(endPoint.ContentType == ContentType.String ? $@" 
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty," : @" 
+                        message: __response.ReasonPhrase ?? string.Empty,")}
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {{
+{(endPoint.ContentType == ContentType.String ? $@" 
+                        ResponseBody = __content," : " ")}
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    }};
+                }}
 
 {(endPoint.ContentType == ContentType.String && endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" ? $@" 
                 return
@@ -432,8 +476,24 @@ namespace {endPoint.Namespace}
             }}
             else
             {{
-                __response.EnsureSuccessStatusCode();
-                
+                try
+                {{
+                    __response.EnsureSuccessStatusCode();
+                }}
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {{
+                    throw new global::{endPoint.Settings.Namespace}.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {{
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    }};
+                }}
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
 
                 var __responseValue = {jsonSerializer.GenerateDeserializeFromStreamCall("__responseStream", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)};

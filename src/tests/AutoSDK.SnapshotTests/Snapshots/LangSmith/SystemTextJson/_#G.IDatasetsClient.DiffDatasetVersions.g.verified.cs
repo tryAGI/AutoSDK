@@ -13,7 +13,7 @@ namespace G
         /// <param name="fromVersion"></param>
         /// <param name="toVersion"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.DatasetDiffInfo> DiffDatasetVersionsAsync(
             global::System.Guid datasetId,
             global::G.AnyOf<global::System.DateTime?, string> fromVersion,

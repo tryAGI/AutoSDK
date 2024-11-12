@@ -36,7 +36,7 @@ namespace G
         /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task<global::G.Object> ObjectsUpdateAsync(
             global::System.Guid id,
@@ -108,6 +108,7 @@ namespace G
             ProcessObjectsUpdateResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            // Unauthorized or invalid credentials.
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
@@ -131,6 +132,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Forbidden
             if ((int)__response.StatusCode == 403)
             {
                 string? __content_403 = null;
@@ -158,6 +160,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Successful query result but no resource was found.
             if ((int)__response.StatusCode == 404)
             {
                 string? __content_404 = null;
@@ -181,6 +184,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // Request body is well-formed (i.e., syntactically correct), but semantically erroneous. Are you sure the class is defined in the configuration file?
             if ((int)__response.StatusCode == 422)
             {
                 string? __content_422 = null;
@@ -208,6 +212,7 @@ namespace G
                         h => h.Value),
                 };
             }
+            // An error has occurred while trying to fulfill the request. Most likely the ErrorResponse will contain more information about the error.
             if ((int)__response.StatusCode == 500)
             {
                 string? __content_500 = null;
@@ -255,7 +260,17 @@ namespace G
                 }
                 catch (global::System.Net.Http.HttpRequestException __ex)
                 {
-                    throw new global::System.InvalidOperationException(__content, __ex);
+                    throw new global::G.ApiException(
+                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseBody = __content,
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
                 }
 
                 return
@@ -264,7 +279,24 @@ namespace G
             }
             else
             {
-                __response.EnsureSuccessStatusCode();
+                try
+                {
+                    __response.EnsureSuccessStatusCode();
+                }
+                catch (global::System.Net.Http.HttpRequestException __ex)
+                {
+                    throw new global::G.ApiException(
+                        message: __response.ReasonPhrase ?? string.Empty,
+                        innerException: __ex,
+                        statusCode: __response.StatusCode)
+                    {
+                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                            __response.Headers,
+                            h => h.Key,
+                            h => h.Value),
+                    };
+                }
+
                 using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 var __responseValue = await global::G.Object.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);

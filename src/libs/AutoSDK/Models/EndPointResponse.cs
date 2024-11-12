@@ -4,18 +4,23 @@ using AutoSDK.Extensions;
 namespace AutoSDK.Models;
 
 public readonly record struct EndPointResponse(
-    bool IsSuccess,
-    bool IsDefault,
     string StatusCode,
+    string Description,
     string MimeType,
     ContentType ContentType,
     TypeData Type
 )
 {
+    public bool Is1XX => StatusCode.StartsWith("1", StringComparison.OrdinalIgnoreCase);
+    public bool Is2XX => StatusCode.StartsWith("2", StringComparison.OrdinalIgnoreCase);
+    public bool Is3XX => StatusCode.StartsWith("3", StringComparison.OrdinalIgnoreCase);
+    public bool Is4XX => StatusCode.StartsWith("4", StringComparison.OrdinalIgnoreCase);
+    public bool Is5XX => StatusCode.StartsWith("5", StringComparison.OrdinalIgnoreCase);
+    public bool IsDefault => StatusCode == "default";
+    
     public static EndPointResponse Default => new(
-        IsSuccess: true,
-        IsDefault: false,
         StatusCode: "200",
+        Description: string.Empty,
         MimeType: string.Empty,
         ContentType: ContentType.String,
         Type: TypeData.Default);
@@ -35,7 +40,6 @@ public readonly record struct EndPointResponse(
         {
             return Default with
             {
-                IsSuccess = responseWithStatusCode.Key.StartsWith("2", StringComparison.OrdinalIgnoreCase),
                 StatusCode = responseWithStatusCode.Key,
             };
         }
@@ -65,9 +69,8 @@ public readonly record struct EndPointResponse(
         }
 
         var endPoint = new EndPointResponse(
-            IsSuccess: responseWithStatusCode.Key.StartsWith("2", StringComparison.OrdinalIgnoreCase),
-            IsDefault: responseWithStatusCode.Key == "default",
             StatusCode: responseWithStatusCode.Key,
+            Description: response.Response.Description,
             MimeType: response.MimeType,
             ContentType: contentType,
             Type: responseType ?? TypeData.Default);

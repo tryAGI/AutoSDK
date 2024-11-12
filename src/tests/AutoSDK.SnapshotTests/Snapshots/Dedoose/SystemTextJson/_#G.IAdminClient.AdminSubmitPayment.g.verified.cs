@@ -26,7 +26,7 @@ namespace G
         /// <param name="expYear"></param>
         /// <param name="saveAsReoccuring"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> AdminSubmitPaymentAsync(
             string? token = default,
             global::System.Guid? accountId = default,

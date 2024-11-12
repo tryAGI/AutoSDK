@@ -13,7 +13,7 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="releaseId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task ReposDeleteReleaseAsync(
             string owner,
             string repo,

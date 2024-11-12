@@ -15,7 +15,7 @@ namespace G
         /// <param name="excerptId"></param>
         /// <param name="tagApps"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> TagAddExcerptTagApplicationsAsync(
             string? token = default,
             global::System.Guid? userId = default,

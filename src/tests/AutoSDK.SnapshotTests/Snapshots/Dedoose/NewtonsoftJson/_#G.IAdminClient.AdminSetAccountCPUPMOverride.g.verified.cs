@@ -13,7 +13,7 @@ namespace G
         /// <param name="cpupmOverride"></param>
         /// <param name="endDate"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> AdminSetAccountCPUPMOverrideAsync(
             string? token = default,
             global::System.Guid? accountId = default,

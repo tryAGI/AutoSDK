@@ -13,7 +13,7 @@ namespace G
         /// <param name="amount"></param>
         /// <param name="memo"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> AdminProcessPaymentAsync(
             string? token = default,
             global::System.Guid? accountId = default,

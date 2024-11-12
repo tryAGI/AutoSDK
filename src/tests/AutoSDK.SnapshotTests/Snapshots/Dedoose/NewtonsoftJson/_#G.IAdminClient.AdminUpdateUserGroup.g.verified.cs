@@ -16,7 +16,7 @@ namespace G
         /// <param name="title"></param>
         /// <param name="accessListIDL"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> AdminUpdateUserGroupAsync(
             string? token = default,
             string? projectIdKey = default,

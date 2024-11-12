@@ -30,7 +30,7 @@ namespace G
         /// </param>
         /// <param name="orderBy"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.PaginatedRunGet> IndexAsync(
             string? pipelineId = default,
             bool? includePointers = default,

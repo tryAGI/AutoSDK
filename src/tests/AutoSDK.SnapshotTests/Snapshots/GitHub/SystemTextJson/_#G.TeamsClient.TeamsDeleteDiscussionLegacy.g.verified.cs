@@ -29,7 +29,7 @@ namespace G
         /// <param name="teamId"></param>
         /// <param name="discussionNumber"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
         public async global::System.Threading.Tasks.Task TeamsDeleteDiscussionLegacyAsync(
             int teamId,
@@ -71,7 +71,23 @@ namespace G
             ProcessTeamsDeleteDiscussionLegacyResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            __response.EnsureSuccessStatusCode();
+            try
+            {
+                __response.EnsureSuccessStatusCode();
+            }
+            catch (global::System.Net.Http.HttpRequestException __ex)
+            {
+                throw new global::G.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
         }
     }
 }

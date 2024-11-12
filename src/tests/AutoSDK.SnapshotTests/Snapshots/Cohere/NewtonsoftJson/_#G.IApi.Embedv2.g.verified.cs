@@ -14,7 +14,7 @@ namespace G
         /// <param name="xClientName"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.EmbedByTypeResponse> Embedv2Async(
             global::G.Embedv2Request request,
             string? xClientName = default,

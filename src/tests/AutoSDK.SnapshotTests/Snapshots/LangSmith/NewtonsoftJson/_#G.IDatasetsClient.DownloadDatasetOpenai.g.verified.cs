@@ -14,7 +14,7 @@ namespace G
         /// Only modifications made on or before this time are included. If None, the latest version of the dataset is used.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> DownloadDatasetOpenaiAsync(
             global::System.Guid datasetId,
             global::System.DateTime? asOf = default,

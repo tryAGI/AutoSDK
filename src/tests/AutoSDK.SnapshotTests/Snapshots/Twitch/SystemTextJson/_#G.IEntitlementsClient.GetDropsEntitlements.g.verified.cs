@@ -30,7 +30,7 @@ namespace G
         /// <param name="after"></param>
         /// <param name="first"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.GetDropsEntitlementsResponse> GetDropsEntitlementsAsync(
             global::System.Collections.Generic.IList<string>? id = default,
             string? userId = default,

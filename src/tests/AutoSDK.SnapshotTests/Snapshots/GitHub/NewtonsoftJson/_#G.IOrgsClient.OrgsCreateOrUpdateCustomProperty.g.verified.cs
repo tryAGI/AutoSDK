@@ -16,7 +16,7 @@ namespace G
         /// <param name="customPropertyName"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.CustomProperty> OrgsCreateOrUpdateCustomPropertyAsync(
             string org,
             string customPropertyName,

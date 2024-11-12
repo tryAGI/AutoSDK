@@ -12,7 +12,7 @@ namespace G
         /// Example: gpt-4o-mini
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.Model12> RetrieveModelAsync(
             string model,
             global::System.Threading.CancellationToken cancellationToken = default);

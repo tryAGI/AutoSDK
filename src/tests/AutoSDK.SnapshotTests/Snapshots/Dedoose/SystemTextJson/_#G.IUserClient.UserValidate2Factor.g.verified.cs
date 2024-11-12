@@ -13,7 +13,7 @@ namespace G
         /// <param name="connectionKey"></param>
         /// <param name="encryptedAuthToken"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.User> UserValidate2FactorAsync(
             string? token = default,
             string? username = default,

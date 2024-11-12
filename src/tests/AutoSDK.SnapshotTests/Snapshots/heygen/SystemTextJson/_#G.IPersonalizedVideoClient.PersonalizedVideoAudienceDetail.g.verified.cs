@@ -13,7 +13,7 @@ namespace G
         /// Example: &lt;video-id&gt;
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task PersonalizedVideoAudienceDetailAsync(
             string? id = default,
             global::System.Threading.CancellationToken cancellationToken = default);

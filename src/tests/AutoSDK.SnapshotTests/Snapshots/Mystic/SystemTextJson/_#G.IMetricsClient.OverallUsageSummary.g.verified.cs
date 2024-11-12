@@ -12,7 +12,7 @@ namespace G
         /// <param name="end"></param>
         /// <param name="pipelineId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.OverallUsageSummary> OverallUsageSummaryAsync(
             global::System.DateTime start,
             global::System.DateTime end,
