@@ -392,7 +392,14 @@ namespace {endPoint.Namespace}
             _ => "ByteArray",
         };
 
-        var errors = endPoint.Settings.GenerateExceptions ? endPoint.ErrorResponses.Select(x => $@"
+        // If a response range is defined using an explicit code, the explicit code definition takes precedence over the range definition for that code  
+        var orderedErrorResponses = endPoint.ErrorResponses
+            .Where(x => x is { IsPattern: false, IsDefault: false })
+            .Concat(endPoint.ErrorResponses.Where(x => x is { IsPattern: true, IsDefault: false }))
+            .Concat(endPoint.ErrorResponses.Where(x => x.IsDefault))
+            .ToArray();
+        
+        var errors = endPoint.Settings.GenerateExceptions ? orderedErrorResponses.Select(x => $@"
             // {x.Description.Replace('\n', ' ').Replace('\r', ' ')}
 {(x.IsDefault ? @" 
             if (!__response.IsSuccessStatusCode)" : @$" 
