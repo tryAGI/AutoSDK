@@ -23,6 +23,10 @@ public class SdkGenerator : IIncrementalGenerator
                 .AsFileWithName(), context, Id)
             .AddSource(context);
         settings
+            .SelectAndReportExceptions((x, c) => Sources.Exceptions(x, c)
+                .AsFileWithName(), context, Id)
+            .AddSource(context);
+        settings
             .SelectAndReportExceptions((x, c) => Sources.PathBuilder(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);

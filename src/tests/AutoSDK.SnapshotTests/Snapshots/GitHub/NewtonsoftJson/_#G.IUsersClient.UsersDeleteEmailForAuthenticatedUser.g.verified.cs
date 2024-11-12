@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> UsersDeleteEmailForAuthenticatedUserAsync(
+        global::System.Threading.Tasks.Task UsersDeleteEmailForAuthenticatedUserAsync(
             global::G.OneOf<global::G.UsersDeleteEmailForAuthenticatedUserRequest2, global::System.Collections.Generic.IList<string>, string> request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -22,7 +22,7 @@ namespace G
         /// </summary>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> UsersDeleteEmailForAuthenticatedUserAsync(
+        global::System.Threading.Tasks.Task UsersDeleteEmailForAuthenticatedUserAsync(
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

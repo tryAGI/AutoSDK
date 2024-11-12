@@ -17,7 +17,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsDeleteAsync(
+        global::System.Threading.Tasks.Task ObjectsDeleteAsync(
             global::System.Guid id,
             global::G.ObjectsDeleteConsistencyLevel? consistencyLevel = default,
             string? tenant = default,

@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> ProjectsAddCollaboratorAsync(
+        global::System.Threading.Tasks.Task ProjectsAddCollaboratorAsync(
             int projectId,
             string username,
             global::G.ProjectsAddCollaboratorRequest request,
@@ -33,7 +33,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> ProjectsAddCollaboratorAsync(
+        global::System.Threading.Tasks.Task ProjectsAddCollaboratorAsync(
             int projectId,
             string username,
             global::G.ProjectsAddCollaboratorRequestPermission? permission = default,

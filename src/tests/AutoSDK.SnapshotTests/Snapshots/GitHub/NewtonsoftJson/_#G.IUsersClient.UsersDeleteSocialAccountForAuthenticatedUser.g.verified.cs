@@ -13,7 +13,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ValidationError> UsersDeleteSocialAccountForAuthenticatedUserAsync(
+        global::System.Threading.Tasks.Task UsersDeleteSocialAccountForAuthenticatedUserAsync(
             global::G.UsersDeleteSocialAccountForAuthenticatedUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -28,7 +28,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ValidationError> UsersDeleteSocialAccountForAuthenticatedUserAsync(
+        global::System.Threading.Tasks.Task UsersDeleteSocialAccountForAuthenticatedUserAsync(
             global::System.Collections.Generic.IList<string> accountUrls,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -23,11 +23,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessObjectsClassHeadResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Check if an object exists.<br/>
         /// Checks if a data object exists based on its collection and uuid without retrieving it. &lt;br/&gt;&lt;br/&gt;Internally it skips reading the object from disk other than checking if it is present. Thus it does not use resources on marshalling, parsing, etc., and is faster. Note the resulting HTTP request has no body; the existence of an object is indicated solely by the status code.
@@ -40,7 +35,7 @@ namespace G
         /// <param name="tenant"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsClassHeadAsync(
+        public async global::System.Threading.Tasks.Task ObjectsClassHeadAsync(
             string className,
             global::System.Guid id,
             global::G.ObjectsClassHeadConsistencyLevel? consistencyLevel = default,
@@ -106,44 +101,7 @@ namespace G
             ProcessObjectsClassHeadResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessObjectsClassHeadResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::System.InvalidOperationException(__content, __ex);
-                }
-
-                return
-                    global::G.ErrorResponse.FromJson(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-            }
-            else
-            {
-                __response.EnsureSuccessStatusCode();
-                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-
-                var __responseValue = await global::G.ErrorResponse.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
-            }
+            __response.EnsureSuccessStatusCode();
         }
     }
 }

@@ -48,7 +48,7 @@ namespace {endPoint.Namespace}
         partial void Process{endPoint.NotAsyncMethodName}Response(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
-{(string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType) || endPoint.Stream ? " " : $@"
+{(string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType) || endPoint.Stream ? " " : $@"
         partial void Process{endPoint.NotAsyncMethodName}ResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
@@ -100,12 +100,12 @@ namespace {endPoint.Namespace}
         EndPoint endPoint, bool isInterface = false)
     {
         var taskType = endPoint.Stream
-            ? string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
+            ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
-                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType.CSharpTypeWithoutNullability}>"
-            : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
+                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>"
+            : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
-                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType.CSharpTypeWithoutNullability}>";
+                : $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>";
         var httpCompletionOption = endPoint.Stream
             ? nameof(HttpCompletionOption.ResponseHeadersRead)
             : nameof(HttpCompletionOption.ResponseContentRead);
@@ -322,7 +322,7 @@ namespace {endPoint.Namespace}
     public static string GenerateResponse(
         EndPoint endPoint)
     {
-        if (string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType))
+        if (string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType))
         {
             return @" 
             __response.EnsureSuccessStatusCode();
@@ -345,7 +345,7 @@ namespace {endPoint.Namespace}
             while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
             {{
                 var __content = await __reader.ReadLineAsync().ConfigureAwait(false) ?? string.Empty;
-                var __streamedResponse = {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
+                var __streamedResponse = {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
                                        throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");
 
                 yield return __streamedResponse;
@@ -359,8 +359,44 @@ namespace {endPoint.Namespace}
             ContentType.Stream => "Stream",
             _ => "ByteArray",
         };
+
+        var errors = endPoint.Settings.GenerateExceptions ? endPoint.ErrorResponses.Select(x => $@"
+            if ((int)__response.StatusCode == {x.StatusCode})
+            {{
+                string? __content_{x.StatusCode} = null;
+{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
+                {x.Type.CSharpTypeWithoutNullability}? __value_{x.StatusCode} = null;" : " ")}
+                if (ReadResponseAsString)
+                {{
+                    __content_{x.StatusCode} = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
+                    __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeCall($"__content_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
+                }}
+                else
+                {{
+                    var __contentStream_{x.StatusCode} = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
+                    __value_{x.StatusCode} = {jsonSerializer.GenerateDeserializeFromStreamCall($"__contentStream_{x.StatusCode}", x.Type, endPoint.Settings.JsonSerializerContext)};" : " ")}
+                }}
+
+{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
+                throw new global::{endPoint.Settings.Namespace}.ApiException<{x.Type.CSharpTypeWithNullabilityForValueTypes}>(" : $@" 
+                throw new global::{endPoint.Settings.Namespace}.ApiException(")}
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {{
+                    ResponseBody = __content_{x.StatusCode},
+{(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
+                    ResponseObject = __value_{x.StatusCode}," : " ")}
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                }};
+            }}").Inject() : " ";
         
-        return @$"
+        return @$"{errors}
+
             if (ReadResponseAsString)
             {{
                 var __content = await __response.Content.ReadAs{contentType}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
@@ -386,9 +422,9 @@ namespace {endPoint.Namespace}
                 }" : @"
                 __response.EnsureSuccessStatusCode();")}
 
-{(endPoint.ContentType == ContentType.String && endPoint.ResponseType.CSharpTypeWithoutNullability is not "string" ? $@" 
+{(endPoint.ContentType == ContentType.String && endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" ? $@" 
                 return
-                    {jsonSerializer.GenerateDeserializeCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)} ??
+                    {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
                     throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
                     return __content;")}
             }}
@@ -398,7 +434,7 @@ namespace {endPoint.Namespace}
                 
                 using var __responseStream = await __response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
 
-                {jsonSerializer.GenerateDeserializeFromStreamCall(endPoint.ResponseType, endPoint.Settings.JsonSerializerContext)}
+                var __responseValue = {jsonSerializer.GenerateDeserializeFromStreamCall("__responseStream", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)};
 
                 return
                     __responseValue ??
@@ -475,18 +511,18 @@ namespace {endPoint.Namespace}
         }
         
         var taskType = endPoint.Stream
-            ? string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
+            ? string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? throw new InvalidOperationException($"Streamed responses must have a response type. OperationId: {endPoint.Id}.")
-                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.ResponseType.CSharpTypeWithoutNullability}>"
-            : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
+                : $"global::System.Collections.Generic.IAsyncEnumerable<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>"
+            : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
-                : $"global::System.Threading.Tasks.Task<{endPoint.ResponseType.CSharpTypeWithoutNullability}>";
+                : $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>";
         var cancellationTokenAttribute = endPoint.Stream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
         var response = endPoint.Stream
             ? "var __enumerable = "
-            : string.IsNullOrWhiteSpace(endPoint.ResponseType.CSharpType)
+            : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "await "
                 : "return await ";
         var configureAwaitResponse = !endPoint.Stream

@@ -20,7 +20,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> OrgsListPatGrantRepositoriesAsync(
+        global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::G.MinimalRepository>> OrgsListPatGrantRepositoriesAsync(
             string org,
             int patId,
             int? perPage = default,

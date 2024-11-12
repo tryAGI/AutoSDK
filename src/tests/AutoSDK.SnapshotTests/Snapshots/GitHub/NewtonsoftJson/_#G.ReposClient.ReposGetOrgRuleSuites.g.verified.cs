@@ -142,6 +142,60 @@ namespace G
             ProcessReposGetOrgRuleSuitesResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            if ((int)__response.StatusCode == 404)
+            {
+                string? __content_404 = null;
+                global::G.BasicError? __value_404 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_404 = global::G.BasicError.FromJson(__content_404, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_404 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_404, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.BasicError>(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_404,
+                    ResponseObject = __value_404,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            if ((int)__response.StatusCode == 500)
+            {
+                string? __content_500 = null;
+                global::G.BasicError? __value_500 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = global::G.BasicError.FromJson(__content_500, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_500, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.BasicError>(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_500,
+                    ResponseObject = __value_500,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {
@@ -174,10 +228,7 @@ namespace G
                 __response.EnsureSuccessStatusCode();
                 using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
-            using var __streamReader = new global::System.IO.StreamReader(__responseStream);
-            using var __jsonReader = new global::Newtonsoft.Json.JsonTextReader(__streamReader);
-            var __serializer = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions);
-            var __responseValue = __serializer.Deserialize<global::System.Collections.Generic.IList<global::G.RuleSuite>?>(__jsonReader);
+                var __responseValue = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.RuleSuite>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__responseStream)));
 
                 return
                     __responseValue ??

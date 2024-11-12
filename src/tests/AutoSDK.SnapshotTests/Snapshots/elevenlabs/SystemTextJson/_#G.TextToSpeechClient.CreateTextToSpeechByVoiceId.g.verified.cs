@@ -27,11 +27,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCreateTextToSpeechByVoiceIdResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Text To Speech<br/>
         /// Converts text into speech using a voice of your choice and returns audio.
@@ -73,7 +68,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateTextToSpeechByVoiceIdAsync(
+        public async global::System.Threading.Tasks.Task CreateTextToSpeechByVoiceIdAsync(
             string voiceId,
             global::G.BodyTextToSpeechV1TextToSpeechVoiceIdPost request,
             bool? enableLogging = default,
@@ -144,44 +139,7 @@ namespace G
             ProcessCreateTextToSpeechByVoiceIdResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessCreateTextToSpeechByVoiceIdResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::System.InvalidOperationException(__content, __ex);
-                }
-
-                return
-                    global::G.HTTPValidationError.FromJson(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-            }
-            else
-            {
-                __response.EnsureSuccessStatusCode();
-                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-
-                var __responseValue = await global::G.HTTPValidationError.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
-            }
+            __response.EnsureSuccessStatusCode();
         }
 
         /// <summary>
@@ -258,7 +216,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateTextToSpeechByVoiceIdAsync(
+        public async global::System.Threading.Tasks.Task CreateTextToSpeechByVoiceIdAsync(
             string voiceId,
             string text,
             bool? enableLogging = default,
@@ -290,7 +248,7 @@ namespace G
                 NextRequestIds = nextRequestIds,
             };
 
-            return await CreateTextToSpeechByVoiceIdAsync(
+            await CreateTextToSpeechByVoiceIdAsync(
                 voiceId: voiceId,
                 enableLogging: enableLogging,
                 optimizeStreamingLatency: optimizeStreamingLatency,

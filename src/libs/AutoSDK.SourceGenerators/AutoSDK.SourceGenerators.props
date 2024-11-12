@@ -61,6 +61,8 @@
     <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateModels"/>
     <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateModelValidationMethods"/>
+    <!-- true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_ValidateAnyOfs"/>
     <!-- Class/Record/ReadonlyRecordStruct. Default: Class -->
     <CompilerVisibleProperty Include="AutoSDK_ModelStyle"/>
@@ -76,6 +78,8 @@
     
     <!-- true/false. Default: true -->
     <CompilerVisibleProperty Include="AutoSDK_GeneratePolyfills"/>
+    <!-- true/false. Default: true -->
+    <CompilerVisibleProperty Include="AutoSDK_GenerateExceptions"/>
     
     <!-- Generates full sdk(all methods/models) -->
     <!-- true/false. Default: true -->

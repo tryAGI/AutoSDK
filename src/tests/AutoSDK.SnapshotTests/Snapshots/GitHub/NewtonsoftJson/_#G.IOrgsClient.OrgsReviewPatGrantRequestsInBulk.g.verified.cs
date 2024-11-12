@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> OrgsReviewPatGrantRequestsInBulkAsync(
+        global::System.Threading.Tasks.Task<string> OrgsReviewPatGrantRequestsInBulkAsync(
             string org,
             global::G.OrgsReviewPatGrantRequestsInBulkRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -36,7 +36,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> OrgsReviewPatGrantRequestsInBulkAsync(
+        global::System.Threading.Tasks.Task<string> OrgsReviewPatGrantRequestsInBulkAsync(
             string org,
             global::G.OrgsReviewPatGrantRequestsInBulkRequestAction action,
             global::System.Collections.Generic.IList<int>? patRequestIds = default,

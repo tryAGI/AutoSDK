@@ -14,7 +14,7 @@ namespace G
         /// <param name="repositoryId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> AppsAddRepoToInstallationForAuthenticatedUserAsync(
+        global::System.Threading.Tasks.Task AppsAddRepoToInstallationForAuthenticatedUserAsync(
             int installationId,
             int repositoryId,
             global::System.Threading.CancellationToken cancellationToken = default);

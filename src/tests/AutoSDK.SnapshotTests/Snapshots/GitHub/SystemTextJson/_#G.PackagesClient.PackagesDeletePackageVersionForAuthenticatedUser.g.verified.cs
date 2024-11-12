@@ -21,11 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessPackagesDeletePackageVersionForAuthenticatedUserResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Delete a package version for the authenticated user<br/>
         /// Deletes a specific package version for a package owned by the authenticated user.  If the package is public and the package version has more than 5,000 downloads, you cannot delete the package version. In this scenario, contact GitHub support for further assistance.<br/>
@@ -37,7 +32,7 @@ namespace G
         /// <param name="packageVersionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BasicError> PackagesDeletePackageVersionForAuthenticatedUserAsync(
+        public async global::System.Threading.Tasks.Task PackagesDeletePackageVersionForAuthenticatedUserAsync(
             global::G.PackagesDeletePackageVersionForAuthenticatedUserPackageType packageType,
             string packageName,
             int packageVersionId,
@@ -80,44 +75,7 @@ namespace G
             ProcessPackagesDeletePackageVersionForAuthenticatedUserResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessPackagesDeletePackageVersionForAuthenticatedUserResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::System.InvalidOperationException(__content, __ex);
-                }
-
-                return
-                    global::G.BasicError.FromJson(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-            }
-            else
-            {
-                __response.EnsureSuccessStatusCode();
-                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-
-                var __responseValue = await global::G.BasicError.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
-            }
+            __response.EnsureSuccessStatusCode();
         }
     }
 }

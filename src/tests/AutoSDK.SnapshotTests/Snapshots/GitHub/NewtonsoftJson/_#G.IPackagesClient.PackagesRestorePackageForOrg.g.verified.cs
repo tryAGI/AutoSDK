@@ -20,7 +20,7 @@ namespace G
         /// <param name="token"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> PackagesRestorePackageForOrgAsync(
+        global::System.Threading.Tasks.Task PackagesRestorePackageForOrgAsync(
             global::G.PackagesRestorePackageForOrgPackageType packageType,
             string packageName,
             string org,

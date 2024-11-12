@@ -86,6 +86,33 @@ namespace G
             ProcessTeamsListResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            if ((int)__response.StatusCode == 403)
+            {
+                string? __content_403 = null;
+                global::G.BasicError? __value_403 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_403 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = global::G.BasicError.FromJson(__content_403, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_403 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_403 = await global::G.BasicError.FromJsonStreamAsync(__contentStream_403, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.BasicError>(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_403,
+                    ResponseObject = __value_403,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {
@@ -118,10 +145,7 @@ namespace G
                 __response.EnsureSuccessStatusCode();
                 using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
-            using var __streamReader = new global::System.IO.StreamReader(__responseStream);
-            using var __jsonReader = new global::Newtonsoft.Json.JsonTextReader(__streamReader);
-            var __serializer = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions);
-            var __responseValue = __serializer.Deserialize<global::System.Collections.Generic.IList<global::G.Team>?>(__jsonReader);
+                var __responseValue = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.Team>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__responseStream)));
 
                 return
                     __responseValue ??

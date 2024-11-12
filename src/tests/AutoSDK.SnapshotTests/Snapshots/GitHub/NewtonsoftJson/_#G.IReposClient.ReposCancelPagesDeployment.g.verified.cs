@@ -15,7 +15,7 @@ namespace G
         /// <param name="pagesDeploymentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> ReposCancelPagesDeploymentAsync(
+        global::System.Threading.Tasks.Task ReposCancelPagesDeploymentAsync(
             string owner,
             string repo,
             global::G.OneOf<int?, string> pagesDeploymentId,

@@ -21,11 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessProjectsAddCollaboratorResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Add project collaborator<br/>
         /// Adds a collaborator to an organization project and sets their permission level. You must be an organization owner or a project `admin` to add a collaborator.
@@ -35,7 +30,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BasicError> ProjectsAddCollaboratorAsync(
+        public async global::System.Threading.Tasks.Task ProjectsAddCollaboratorAsync(
             int projectId,
             string username,
             global::G.ProjectsAddCollaboratorRequest request,
@@ -86,44 +81,7 @@ namespace G
             ProcessProjectsAddCollaboratorResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessProjectsAddCollaboratorResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::System.InvalidOperationException(__content, __ex);
-                }
-
-                return
-                    global::G.BasicError.FromJson(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-            }
-            else
-            {
-                __response.EnsureSuccessStatusCode();
-                using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
-
-                var __responseValue = await global::G.BasicError.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
-            }
+            __response.EnsureSuccessStatusCode();
         }
 
         /// <summary>
@@ -139,7 +97,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.BasicError> ProjectsAddCollaboratorAsync(
+        public async global::System.Threading.Tasks.Task ProjectsAddCollaboratorAsync(
             int projectId,
             string username,
             global::G.ProjectsAddCollaboratorRequestPermission? permission = default,
@@ -150,7 +108,7 @@ namespace G
                 Permission = permission,
             };
 
-            return await ProjectsAddCollaboratorAsync(
+            await ProjectsAddCollaboratorAsync(
                 projectId: projectId,
                 username: username,
                 request: __request,

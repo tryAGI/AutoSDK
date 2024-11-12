@@ -21,11 +21,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessObjectsPatchResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Update an object using patch semantics.<br/>
         /// Update an object based on its UUID (using patch semantics). This method supports json-merge style patch semantics (RFC 7396). Provided meta-data and schema values are validated. LastUpdateTime is set to the time this function is called.
@@ -38,7 +33,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsPatchAsync(
+        public async global::System.Threading.Tasks.Task ObjectsPatchAsync(
             global::System.Guid id,
             global::G.Object request,
             global::G.ObjectsPatchConsistencyLevel? consistencyLevel = default,
@@ -108,44 +103,7 @@ namespace G
             ProcessObjectsPatchResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessObjectsPatchResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::System.InvalidOperationException(__content, __ex);
-                }
-
-                return
-                    global::G.ErrorResponse.FromJson(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-            }
-            else
-            {
-                __response.EnsureSuccessStatusCode();
-                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-
-                var __responseValue = await global::G.ErrorResponse.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
-            }
+            __response.EnsureSuccessStatusCode();
         }
 
         /// <summary>
@@ -189,7 +147,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsPatchAsync(
+        public async global::System.Threading.Tasks.Task ObjectsPatchAsync(
             global::System.Guid id,
             global::G.ObjectsPatchConsistencyLevel? consistencyLevel = default,
             string? @class = default,
@@ -218,7 +176,7 @@ namespace G
                 Additional = additional,
             };
 
-            return await ObjectsPatchAsync(
+            await ObjectsPatchAsync(
                 id: id,
                 consistencyLevel: consistencyLevel,
                 request: __request,

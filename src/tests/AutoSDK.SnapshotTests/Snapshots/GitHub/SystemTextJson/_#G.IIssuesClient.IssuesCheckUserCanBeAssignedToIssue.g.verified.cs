@@ -17,7 +17,7 @@ namespace G
         /// <param name="assignee"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> IssuesCheckUserCanBeAssignedToIssueAsync(
+        global::System.Threading.Tasks.Task IssuesCheckUserCanBeAssignedToIssueAsync(
             string owner,
             string repo,
             int issueNumber,

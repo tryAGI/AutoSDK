@@ -12,7 +12,7 @@ namespace G
         /// <param name="commentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> GistsDeleteCommentAsync(
+        global::System.Threading.Tasks.Task GistsDeleteCommentAsync(
             string gistId,
             long commentId,
             global::System.Threading.CancellationToken cancellationToken = default);

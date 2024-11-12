@@ -13,7 +13,7 @@ namespace G
         /// <param name="username"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> OrgsCheckBlockedUserAsync(
+        global::System.Threading.Tasks.Task OrgsCheckBlockedUserAsync(
             string org,
             string username,
             global::System.Threading.CancellationToken cancellationToken = default);

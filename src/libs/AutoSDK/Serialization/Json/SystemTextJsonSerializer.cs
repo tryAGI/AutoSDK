@@ -105,31 +105,31 @@ public class SystemTextJsonSerializer : IJsonSerializer
             : $"global::System.Text.Json.JsonSerializer.Serialize(request, request.GetType(), JsonSerializerContext)";
     }
     
-    public string GenerateDeserializeCall(TypeData type, string jsonSerializerContext)
+    public string GenerateDeserializeCall(string variableName, TypeData type, string jsonSerializerContext)
     {
         if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
         {
             return string.IsNullOrWhiteSpace(jsonSerializerContext)
-                ? $"{type.CSharpTypeWithoutNullability}.FromJson(__content, JsonSerializerOptions)"
-                : $"{type.CSharpTypeWithoutNullability}.FromJson(__content, JsonSerializerContext)";
+                ? $"{type.CSharpTypeWithoutNullability}.FromJson({variableName}, JsonSerializerOptions)"
+                : $"{type.CSharpTypeWithoutNullability}.FromJson({variableName}, JsonSerializerContext)";
         }
         
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
-            ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type.CSharpTypeWithNullability}>(__content, JsonSerializerOptions)"
-            : $"global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof({type.CSharpTypeWithNullabilityForValueTypes}), JsonSerializerContext) as {type.CSharpTypeWithNullabilityForValueTypes}";
+            ? $"global::System.Text.Json.JsonSerializer.Deserialize<{type.CSharpTypeWithNullability}>({variableName}, JsonSerializerOptions)"
+            : $"global::System.Text.Json.JsonSerializer.Deserialize({variableName}, typeof({type.CSharpTypeWithNullabilityForValueTypes}), JsonSerializerContext) as {type.CSharpTypeWithNullabilityForValueTypes}";
     }
 
-    public string GenerateDeserializeFromStreamCall(TypeData type, string jsonSerializerContext)
+    public string GenerateDeserializeFromStreamCall(string variableName, TypeData type, string jsonSerializerContext)
     {
         if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
         {
             return string.IsNullOrWhiteSpace(jsonSerializerContext)
-                ? $"var __responseValue = await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);"
-                : $"var __responseValue = await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync(__responseStream, JsonSerializerContext).ConfigureAwait(false);";
+                ? $"await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync({variableName}, JsonSerializerOptions).ConfigureAwait(false)"
+                : $"await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync({variableName}, JsonSerializerContext).ConfigureAwait(false)";
         }
         
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
-            ? $"var __responseValue = await global::System.Text.Json.JsonSerializer.DeserializeAsync<{type.CSharpTypeWithNullability}>(__responseStream, JsonSerializerOptions).ConfigureAwait(false);"
-            : $"var __responseValue = await global::System.Text.Json.JsonSerializer.DeserializeAsync(__responseStream, typeof({type.CSharpTypeWithNullabilityForValueTypes}), JsonSerializerContext).ConfigureAwait(false) as {type.CSharpTypeWithNullabilityForValueTypes};";
+            ? $"await global::System.Text.Json.JsonSerializer.DeserializeAsync<{type.CSharpTypeWithNullability}>({variableName}, JsonSerializerOptions).ConfigureAwait(false)"
+            : $"await global::System.Text.Json.JsonSerializer.DeserializeAsync({variableName}, typeof({type.CSharpTypeWithNullabilityForValueTypes}), JsonSerializerContext).ConfigureAwait(false) as {type.CSharpTypeWithNullabilityForValueTypes}";
     }
 }

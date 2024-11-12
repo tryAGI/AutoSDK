@@ -14,7 +14,7 @@ namespace G
         /// <param name="username"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Error> ResetUserPasswordAsync(
+        global::System.Threading.Tasks.Task ResetUserPasswordAsync(
             string username,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

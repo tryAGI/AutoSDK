@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> OrgsUpdatePatAccessesAsync(
+        global::System.Threading.Tasks.Task<string> OrgsUpdatePatAccessesAsync(
             string org,
             global::G.OrgsUpdatePatAccessesRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -33,7 +33,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> OrgsUpdatePatAccessesAsync(
+        global::System.Threading.Tasks.Task<string> OrgsUpdatePatAccessesAsync(
             string org,
             global::System.Collections.Generic.IList<int> patIds,
             global::G.OrgsUpdatePatAccessesRequestAction action = default,

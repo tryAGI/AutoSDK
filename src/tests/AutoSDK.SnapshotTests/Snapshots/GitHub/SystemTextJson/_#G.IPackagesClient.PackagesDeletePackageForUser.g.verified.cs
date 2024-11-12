@@ -16,7 +16,7 @@ namespace G
         /// <param name="username"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> PackagesDeletePackageForUserAsync(
+        global::System.Threading.Tasks.Task PackagesDeletePackageForUserAsync(
             global::G.PackagesDeletePackageForUserPackageType packageType,
             string packageName,
             string username,

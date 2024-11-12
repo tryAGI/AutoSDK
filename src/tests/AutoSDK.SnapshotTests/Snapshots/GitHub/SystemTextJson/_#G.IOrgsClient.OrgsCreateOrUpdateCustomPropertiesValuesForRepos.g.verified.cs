@@ -19,7 +19,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> OrgsCreateOrUpdateCustomPropertiesValuesForReposAsync(
+        global::System.Threading.Tasks.Task OrgsCreateOrUpdateCustomPropertiesValuesForReposAsync(
             string org,
             global::G.OrgsCreateOrUpdateCustomPropertiesValuesForReposRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -43,7 +43,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> OrgsCreateOrUpdateCustomPropertiesValuesForReposAsync(
+        global::System.Threading.Tasks.Task OrgsCreateOrUpdateCustomPropertiesValuesForReposAsync(
             string org,
             global::System.Collections.Generic.IList<string> repositoryNames,
             global::System.Collections.Generic.IList<global::G.CustomPropertyValue> properties,

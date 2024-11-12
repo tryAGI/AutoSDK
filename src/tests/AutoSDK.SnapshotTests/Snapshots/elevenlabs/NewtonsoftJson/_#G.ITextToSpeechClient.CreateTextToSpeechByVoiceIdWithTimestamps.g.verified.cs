@@ -46,7 +46,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateTextToSpeechByVoiceIdWithTimestampsAsync(
+        global::System.Threading.Tasks.Task CreateTextToSpeechByVoiceIdWithTimestampsAsync(
             string voiceId,
             global::G.BodyTextToSpeechWithTimestampsV1TextToSpeechVoiceIdWithTimestampsPost request,
             bool? enableLogging = default,
@@ -129,7 +129,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateTextToSpeechByVoiceIdWithTimestampsAsync(
+        global::System.Threading.Tasks.Task CreateTextToSpeechByVoiceIdWithTimestampsAsync(
             string voiceId,
             string text,
             bool? enableLogging = default,

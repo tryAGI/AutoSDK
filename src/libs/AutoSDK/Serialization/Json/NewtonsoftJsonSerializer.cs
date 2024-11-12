@@ -47,27 +47,23 @@ public class NewtonsoftJsonSerializer : IJsonSerializer
         return "global::Newtonsoft.Json.JsonConvert.SerializeObject(request, JsonSerializerOptions)";
     }
     
-    public string GenerateDeserializeCall(TypeData type, string jsonSerializerContext)
+    public string GenerateDeserializeCall(string variableName, TypeData type, string jsonSerializerContext)
     {
         if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
         {
-            return $"{type.CSharpTypeWithoutNullability}.FromJson(__content, JsonSerializerOptions)";
+            return $"{type.CSharpTypeWithoutNullability}.FromJson({variableName}, JsonSerializerOptions)";
         }
         
-        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type.CSharpTypeWithNullability}>(__content, JsonSerializerOptions)";
+        return $"global::Newtonsoft.Json.JsonConvert.DeserializeObject<{type.CSharpTypeWithNullability}>({variableName}, JsonSerializerOptions)";
     }
 
-    public string GenerateDeserializeFromStreamCall(TypeData type, string jsonSerializerContext)
+    public string GenerateDeserializeFromStreamCall(string variableName, TypeData type, string jsonSerializerContext)
     {
         if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
         {
-            return $"var __responseValue = await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);";
+            return $"await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync({variableName}, JsonSerializerOptions).ConfigureAwait(false)";
         }
 
-        return $@" 
-            using var __streamReader = new global::System.IO.StreamReader(__responseStream);
-            using var __jsonReader = new global::Newtonsoft.Json.JsonTextReader(__streamReader);
-            var __serializer = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions);
-            var __responseValue = __serializer.Deserialize<{type.CSharpTypeWithNullability}>(__jsonReader);";
+        return $"global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<{type.CSharpTypeWithNullability}>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader({variableName})))";
     }
 }

@@ -103,6 +103,56 @@ namespace G
             ProcessSecretScanningListLocationsForAlertResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            if ((int)__response.StatusCode == 404)
+            {
+                string? __content_404 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                }
+                else
+                {
+                    var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_404,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            if ((int)__response.StatusCode == 503)
+            {
+                string? __content_503 = null;
+                global::G.SecretScanningListLocationsForAlertResponse? __value_503 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_503 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_503 = global::G.SecretScanningListLocationsForAlertResponse.FromJson(__content_503, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_503 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_503 = await global::G.SecretScanningListLocationsForAlertResponse.FromJsonStreamAsync(__contentStream_503, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.SecretScanningListLocationsForAlertResponse>(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_503,
+                    ResponseObject = __value_503,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {
@@ -135,10 +185,7 @@ namespace G
                 __response.EnsureSuccessStatusCode();
                 using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
-            using var __streamReader = new global::System.IO.StreamReader(__responseStream);
-            using var __jsonReader = new global::Newtonsoft.Json.JsonTextReader(__streamReader);
-            var __serializer = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions);
-            var __responseValue = __serializer.Deserialize<global::System.Collections.Generic.IList<global::G.SecretScanningLocation>?>(__jsonReader);
+                var __responseValue = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.SecretScanningLocation>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__responseStream)));
 
                 return
                     __responseValue ??

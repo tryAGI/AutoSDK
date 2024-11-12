@@ -24,40 +24,20 @@ public class SettingsBinder(
         
         var namespaceValue = bindingContext.ParseResult.GetValueForOption(@namespace);
         
-        return new Settings(
-            TargetFramework: bindingContext.ParseResult.GetValueForOption(targetFramework)!,
-            Namespace: namespaceValue!,
-            ClassName: bindingContext.ParseResult.GetValueForOption(clientClassName)!,
-            ClsCompliantEnumPrefix: bindingContext.ParseResult.GetValueForOption(clsCompliantEnumPrefix)!,
-            NamingConvention: default,
-            JsonSerializerType: default,
-            UseRequiredKeyword: default,
-            UseExperimentalAttributes: default,
-            GenerateConstructors: false,
-            GroupByTags: true,
-            GenerateMethods: false,
-            MethodNamingConvention: bindingContext.ParseResult.GetValueForOption(methodNamingConvention),
-            MethodNamingConventionFallback: MethodNamingConvention.MethodAndPath,
-            GenerateMethodsAsHttpClientExtensions: false,
-            GenerateMethodsUsingSystemNetHttpJson: false,
-            IncludeOperationIds: [],
-            ExcludeOperationIds: [],
-            IncludeTags: [],
-            ExcludeTags: [],
-            ExcludeDeprecatedOperations: bindingContext.ParseResult.GetValueForOption(excludeDeprecatedOperations),
-            JsonSerializerContext: $"{namespaceValue}.SourceGenerationContext",
-            GenerateJsonSerializerContextTypes: true,
-            GenerateModels: false,
-            GenerateModelValidationMethods: bindingContext.ParseResult.GetValueForOption(validation),
-            ValidateAnyOfs: false,
-            ModelStyle: default,
-            IncludeModels: [],
-            ExcludeModels: [],
-            GeneratePolyfills: true,
-            IgnoreOpenApiErrors: bindingContext.ParseResult.GetValueForOption(ignoreOpenApiErrors),
-            IgnoreOpenApiWarnings: bindingContext.ParseResult.GetValueForOption(ignoreOpenApiWarnings),
-            GenerateSdk: true,
-            FromCli: true
-        );
+        return Settings.Default with
+        {
+            TargetFramework = bindingContext.ParseResult.GetValueForOption(targetFramework)!,
+            Namespace = namespaceValue!,
+            ClassName = bindingContext.ParseResult.GetValueForOption(clientClassName)!,
+            ClsCompliantEnumPrefix = bindingContext.ParseResult.GetValueForOption(clsCompliantEnumPrefix)!,
+            MethodNamingConvention = bindingContext.ParseResult.GetValueForOption(methodNamingConvention),
+            ExcludeDeprecatedOperations = bindingContext.ParseResult.GetValueForOption(excludeDeprecatedOperations),
+            JsonSerializerContext = $"{namespaceValue}.SourceGenerationContext",
+            GenerateJsonSerializerContextTypes = true,
+            GenerateModelValidationMethods = bindingContext.ParseResult.GetValueForOption(validation),
+            IgnoreOpenApiErrors = bindingContext.ParseResult.GetValueForOption(ignoreOpenApiErrors),
+            IgnoreOpenApiWarnings = bindingContext.ParseResult.GetValueForOption(ignoreOpenApiWarnings),
+            FromCli = true,
+        };
     }
 }

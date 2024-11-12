@@ -19,7 +19,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsClassReferencesPutAsync(
+        global::System.Threading.Tasks.Task ObjectsClassReferencesPutAsync(
             string className,
             global::System.Guid id,
             string propertyName,

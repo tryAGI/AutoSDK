@@ -14,7 +14,7 @@ namespace G
         /// <param name="packageName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> PackagesDeletePackageForAuthenticatedUserAsync(
+        global::System.Threading.Tasks.Task PackagesDeletePackageForAuthenticatedUserAsync(
             global::G.PackagesDeletePackageForAuthenticatedUserPackageType packageType,
             string packageName,
             global::System.Threading.CancellationToken cancellationToken = default);

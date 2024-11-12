@@ -14,7 +14,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> PipelineCooldownAsync(
+        global::System.Threading.Tasks.Task PipelineCooldownAsync(
             string pipelineIdOrPointer,
             global::G.PipelineCooldown request,
             string? pipelineId = default,
@@ -32,7 +32,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> PipelineCooldownAsync(
+        global::System.Threading.Tasks.Task PipelineCooldownAsync(
             string pipelineIdOrPointer,
             string? pipelineId = default,
             string? pointer = default,

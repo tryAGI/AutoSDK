@@ -63,6 +63,7 @@ public static class OptionsExtensions
                             []).ToImmutableArray(),
             
             GeneratePolyfills: options.GetBoolGlobalOption(nameof(Settings.GeneratePolyfills), prefix, defaultValue: true),
+            GenerateExceptions: options.GetBoolGlobalOption(nameof(Settings.GenerateExceptions), prefix, defaultValue: true),
             
             IgnoreOpenApiErrors: options.GetBoolGlobalOption(nameof(Settings.IgnoreOpenApiErrors), prefix),
             IgnoreOpenApiWarnings: options.GetBoolGlobalOption(nameof(Settings.IgnoreOpenApiWarnings), prefix, defaultValue: true),

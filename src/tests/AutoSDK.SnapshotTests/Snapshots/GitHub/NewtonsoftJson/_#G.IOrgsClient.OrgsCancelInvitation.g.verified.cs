@@ -14,7 +14,7 @@ namespace G
         /// <param name="invitationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ValidationError> OrgsCancelInvitationAsync(
+        global::System.Threading.Tasks.Task OrgsCancelInvitationAsync(
             string org,
             int invitationId,
             global::System.Threading.CancellationToken cancellationToken = default);

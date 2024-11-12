@@ -14,9 +14,11 @@ public readonly record struct EndPoint(
     bool Stream,
     string Path,
     string RequestMediaType,
-    ImmutableArray<MethodParameter> Parameters,
-    ImmutableArray<Authorization> Authorizations,
-    ImmutableArray<MethodParameter> QueryParameters,
+    EquatableArray<MethodParameter> Parameters,
+    EndPointResponse SuccessResponse,
+    EquatableArray<EndPointResponse> ErrorResponses,
+    EquatableArray<Authorization> Authorizations,
+    EquatableArray<MethodParameter> QueryParameters,
     OperationType HttpMethod,
     ContentType ContentType,
     string Summary,
@@ -24,8 +26,7 @@ public readonly record struct EndPoint(
     Settings Settings,
     bool IsDeprecated,
     string ExperimentalStage,
-    TypeData RequestType,
-    TypeData ResponseType
+    TypeData RequestType
 )
 {
     public string MethodName => $"{NotAsyncMethodName}Async";
@@ -96,30 +97,12 @@ public readonly record struct EndPoint(
         }
 
         var responses = (operation.Operation.Responses ?? [])
-            .SelectMany(x => x.Value?.ResolveIfRequired().Content?.Select(y => (Response: x, MediaType: y)) ?? [])
+            .Select(x => EndPointResponse.FromResponse(x, operation))
             .ToArray();
         var contentType = responses
-            .Any(x => x.MediaType.Key.Contains("application/octet-stream"))
+            .Any(x => x.MimeType.Contains("application/octet-stream"))
             ? ContentType.ByteArray
             : ContentType.String;
-        var responseContext = operation.Schemas.FirstOrDefault(x => x.Hint == Hint.Response);
-        TypeData? responseType = contentType switch
-        {
-            ContentType.ByteArray => TypeData.Default with
-            {
-                CSharpTypeRaw = "byte[]",
-            },
-            _ => responseContext?.TypeData,
-        };
-        if (responseType?.CSharpTypeWithoutNullability == "object")
-        {
-            contentType = ContentType.String;
-            responseType = TypeData.Default with
-            {
-                CSharpTypeRaw = "string",
-                IsNullable = true,
-            };
-        }
 
         foreach (var requestProperty in requestContext?.ResolvedReference?.ClassData?.Properties ??
                                         requestContext?.ClassData?.Properties ??
@@ -161,10 +144,14 @@ public readonly record struct EndPoint(
                 : operation.Settings.ClassName.Replace(".", string.Empty),
             BaseUrl: string.Empty,
             Stream: responses
-                .Any(x => x.MediaType.Key.Contains("application/x-ndjson")), // text/event-stream
+                .Any(x => x.MimeType.Contains("application/x-ndjson")), // text/event-stream
             Path: preparedPath,
             RequestMediaType: requestMediaType,
             Parameters: parameters.ToImmutableArray(),
+            SuccessResponse: responses.Any(x => x.IsSuccess)
+                ? responses.First(x => x.IsSuccess)
+                : EndPointResponse.Default,
+            ErrorResponses: responses.Where(x => !x.IsSuccess).ToImmutableArray(),
             QueryParameters: queryParameters.ToImmutableArray(),
             Authorizations: authorizations,
             HttpMethod: operation.OperationType,
@@ -174,8 +161,7 @@ public readonly record struct EndPoint(
             Settings: operation.Settings,
             IsDeprecated: operation.Operation.Deprecated,
             ExperimentalStage: operation.Operation.GetExperimentalStage(),
-            RequestType: requestType ?? TypeData.Default,
-            ResponseType: responseType ?? TypeData.Default);
+            RequestType: requestType ?? TypeData.Default);
         
         return endPoint;
     }

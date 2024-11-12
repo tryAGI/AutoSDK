@@ -19,7 +19,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsClassReferencesDeleteAsync(
+        global::System.Threading.Tasks.Task ObjectsClassReferencesDeleteAsync(
             string className,
             global::System.Guid id,
             string propertyName,
@@ -56,7 +56,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsClassReferencesDeleteAsync(
+        global::System.Threading.Tasks.Task ObjectsClassReferencesDeleteAsync(
             string className,
             global::System.Guid id,
             string propertyName,

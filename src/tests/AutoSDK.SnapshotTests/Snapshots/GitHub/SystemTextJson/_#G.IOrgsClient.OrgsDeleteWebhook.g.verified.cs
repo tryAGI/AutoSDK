@@ -15,7 +15,7 @@ namespace G
         /// <param name="hookId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> OrgsDeleteWebhookAsync(
+        global::System.Threading.Tasks.Task OrgsDeleteWebhookAsync(
             string org,
             int hookId,
             global::System.Threading.CancellationToken cancellationToken = default);

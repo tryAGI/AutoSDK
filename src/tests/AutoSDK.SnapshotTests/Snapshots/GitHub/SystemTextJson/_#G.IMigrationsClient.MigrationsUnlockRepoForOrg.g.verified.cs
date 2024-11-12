@@ -14,7 +14,7 @@ namespace G
         /// <param name="repoName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> MigrationsUnlockRepoForOrgAsync(
+        global::System.Threading.Tasks.Task MigrationsUnlockRepoForOrgAsync(
             string org,
             int migrationId,
             string repoName,

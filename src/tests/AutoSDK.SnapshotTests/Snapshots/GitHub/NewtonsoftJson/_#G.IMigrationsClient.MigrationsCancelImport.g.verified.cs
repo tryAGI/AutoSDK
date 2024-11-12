@@ -16,7 +16,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.BasicError> MigrationsCancelImportAsync(
+        global::System.Threading.Tasks.Task MigrationsCancelImportAsync(
             string owner,
             string repo,
             global::System.Threading.CancellationToken cancellationToken = default);

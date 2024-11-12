@@ -16,7 +16,7 @@ namespace G
         /// <param name="org"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> PackagesDeletePackageForOrgAsync(
+        global::System.Threading.Tasks.Task PackagesDeletePackageForOrgAsync(
             global::G.PackagesDeletePackageForOrgPackageType packageType,
             string packageName,
             string org,

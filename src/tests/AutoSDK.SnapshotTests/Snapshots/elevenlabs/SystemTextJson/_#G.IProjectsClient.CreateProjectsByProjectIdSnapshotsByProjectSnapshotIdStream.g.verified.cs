@@ -21,7 +21,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateProjectsByProjectIdSnapshotsByProjectSnapshotIdStreamAsync(
+        global::System.Threading.Tasks.Task CreateProjectsByProjectIdSnapshotsByProjectSnapshotIdStreamAsync(
             string projectId,
             string projectSnapshotId,
             global::G.BodyStreamProjectAudioV1ProjectsProjectIdSnapshotsProjectSnapshotIdStreamPost request,
@@ -47,7 +47,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateProjectsByProjectIdSnapshotsByProjectSnapshotIdStreamAsync(
+        global::System.Threading.Tasks.Task CreateProjectsByProjectIdSnapshotsByProjectSnapshotIdStreamAsync(
             string projectId,
             string projectSnapshotId,
             string? xiApiKey = default,

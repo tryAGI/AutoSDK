@@ -11,7 +11,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> SetPodInfoAsync(
+        global::System.Threading.Tasks.Task SetPodInfoAsync(
             global::G.ResourcePodInfo request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -27,7 +27,7 @@ namespace G
         /// <param name="currentRun"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> SetPodInfoAsync(
+        global::System.Threading.Tasks.Task SetPodInfoAsync(
             string podName,
             string podIp,
             string nodeName,

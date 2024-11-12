@@ -17,7 +17,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> ReposCreateDispatchEventAsync(
+        global::System.Threading.Tasks.Task ReposCreateDispatchEventAsync(
             string owner,
             string repo,
             global::G.ReposCreateDispatchEventRequest request,
@@ -40,7 +40,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> ReposCreateDispatchEventAsync(
+        global::System.Threading.Tasks.Task ReposCreateDispatchEventAsync(
             string owner,
             string repo,
             string eventType,

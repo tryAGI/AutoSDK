@@ -19,7 +19,7 @@ namespace G
         /// <param name="deploymentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> ReposDeleteDeploymentAsync(
+        global::System.Threading.Tasks.Task ReposDeleteDeploymentAsync(
             string owner,
             string repo,
             int deploymentId,

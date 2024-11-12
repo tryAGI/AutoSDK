@@ -17,7 +17,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.BasicError> CodespacesDeleteCodespacesAccessUsersAsync(
+        global::System.Threading.Tasks.Task CodespacesDeleteCodespacesAccessUsersAsync(
             string org,
             global::G.CodespacesDeleteCodespacesAccessUsersRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -36,7 +36,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.BasicError> CodespacesDeleteCodespacesAccessUsersAsync(
+        global::System.Threading.Tasks.Task CodespacesDeleteCodespacesAccessUsersAsync(
             string org,
             global::System.Collections.Generic.IList<string> selectedUsernames,
             global::System.Threading.CancellationToken cancellationToken = default);

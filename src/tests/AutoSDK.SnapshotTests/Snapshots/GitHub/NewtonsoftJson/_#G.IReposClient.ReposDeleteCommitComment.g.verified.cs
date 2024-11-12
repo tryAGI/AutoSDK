@@ -13,7 +13,7 @@ namespace G
         /// <param name="commentId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> ReposDeleteCommitCommentAsync(
+        global::System.Threading.Tasks.Task ReposDeleteCommitCommentAsync(
             string owner,
             string repo,
             long commentId,

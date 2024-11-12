@@ -12,7 +12,7 @@ namespace G
         /// <param name="cardId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ProjectsDeleteCardResponse> ProjectsDeleteCardAsync(
+        global::System.Threading.Tasks.Task ProjectsDeleteCardAsync(
             int cardId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

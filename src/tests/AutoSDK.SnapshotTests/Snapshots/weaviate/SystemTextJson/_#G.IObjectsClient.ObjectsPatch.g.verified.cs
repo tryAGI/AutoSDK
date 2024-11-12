@@ -17,7 +17,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsPatchAsync(
+        global::System.Threading.Tasks.Task ObjectsPatchAsync(
             global::System.Guid id,
             global::G.Object request,
             global::G.ObjectsPatchConsistencyLevel? consistencyLevel = default,
@@ -64,7 +64,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsPatchAsync(
+        global::System.Threading.Tasks.Task ObjectsPatchAsync(
             global::System.Guid id,
             global::G.ObjectsPatchConsistencyLevel? consistencyLevel = default,
             string? @class = default,

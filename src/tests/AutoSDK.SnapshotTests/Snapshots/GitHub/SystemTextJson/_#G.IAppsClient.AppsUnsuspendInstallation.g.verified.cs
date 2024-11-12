@@ -13,7 +13,7 @@ namespace G
         /// <param name="installationId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> AppsUnsuspendInstallationAsync(
+        global::System.Threading.Tasks.Task AppsUnsuspendInstallationAsync(
             int installationId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -1,5 +1,4 @@
 ﻿//HintName: AllOf.1.g.cs
-using System.Linq;
 
 #nullable enable
 
@@ -113,7 +112,8 @@ namespace G
             static int HashCodeAggregator(int hashCode, object? value) => value == null
                 ? (hashCode ^ 0) * prime
                 : (hashCode ^ value.GetHashCode()) * prime;
-            return fields.Aggregate(offset, HashCodeAggregator);
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
         }
 
         /// <summary>

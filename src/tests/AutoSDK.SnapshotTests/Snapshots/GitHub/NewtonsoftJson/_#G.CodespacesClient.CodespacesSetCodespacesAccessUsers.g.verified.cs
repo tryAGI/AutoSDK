@@ -19,11 +19,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessCodespacesSetCodespacesAccessUsersResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Add users to Codespaces access for an organization<br/>
         /// Codespaces for the specified users will be billed to the organization.<br/>
@@ -36,7 +31,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.BasicError> CodespacesSetCodespacesAccessUsersAsync(
+        public async global::System.Threading.Tasks.Task CodespacesSetCodespacesAccessUsersAsync(
             string org,
             global::G.CodespacesSetCodespacesAccessUsersRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -84,44 +79,7 @@ namespace G
             ProcessCodespacesSetCodespacesAccessUsersResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessCodespacesSetCodespacesAccessUsersResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::System.InvalidOperationException(__content, __ex);
-                }
-
-                return
-                    global::G.BasicError.FromJson(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-            }
-            else
-            {
-                __response.EnsureSuccessStatusCode();
-                using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
-
-                var __responseValue = await global::G.BasicError.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
-            }
+            __response.EnsureSuccessStatusCode();
         }
 
         /// <summary>
@@ -138,7 +96,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        public async global::System.Threading.Tasks.Task<global::G.BasicError> CodespacesSetCodespacesAccessUsersAsync(
+        public async global::System.Threading.Tasks.Task CodespacesSetCodespacesAccessUsersAsync(
             string org,
             global::System.Collections.Generic.IList<string> selectedUsernames,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -148,7 +106,7 @@ namespace G
                 SelectedUsernames = selectedUsernames,
             };
 
-            return await CodespacesSetCodespacesAccessUsersAsync(
+            await CodespacesSetCodespacesAccessUsersAsync(
                 org: org,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

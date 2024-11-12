@@ -14,7 +14,7 @@ namespace G
         /// <param name="chatId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Error> DeleteChatAsync(
+        global::System.Threading.Tasks.Task DeleteChatAsync(
             string chatId,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

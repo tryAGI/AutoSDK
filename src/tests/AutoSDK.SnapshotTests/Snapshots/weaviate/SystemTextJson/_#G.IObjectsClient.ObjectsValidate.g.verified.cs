@@ -12,7 +12,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsValidateAsync(
+        global::System.Threading.Tasks.Task ObjectsValidateAsync(
             global::G.Object request,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -52,7 +52,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsValidateAsync(
+        global::System.Threading.Tasks.Task ObjectsValidateAsync(
             string? @class = default,
             object? vectorWeights = default,
             object? properties = default,

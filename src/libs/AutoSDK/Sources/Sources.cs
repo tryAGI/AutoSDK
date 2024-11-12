@@ -281,6 +281,15 @@ public static partial class Sources
             Text: GeneratePolyfills(settings));
     }
     
+    public static FileWithName Exceptions(
+        Settings settings,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{settings.Namespace}.Exceptions.g.cs",
+            Text: GenerateExceptions(settings));
+    }
+    
     public static FileWithName PathBuilder(
         Settings settings,
         CancellationToken cancellationToken = default)

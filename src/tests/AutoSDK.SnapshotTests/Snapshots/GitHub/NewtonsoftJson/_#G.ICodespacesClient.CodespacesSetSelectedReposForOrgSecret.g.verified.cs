@@ -17,7 +17,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> CodespacesSetSelectedReposForOrgSecretAsync(
+        global::System.Threading.Tasks.Task CodespacesSetSelectedReposForOrgSecretAsync(
             string org,
             string secretName,
             global::G.CodespacesSetSelectedReposForOrgSecretRequest request,
@@ -37,7 +37,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> CodespacesSetSelectedReposForOrgSecretAsync(
+        global::System.Threading.Tasks.Task CodespacesSetSelectedReposForOrgSecretAsync(
             string org,
             string secretName,
             global::System.Collections.Generic.IList<int> selectedRepositoryIds,

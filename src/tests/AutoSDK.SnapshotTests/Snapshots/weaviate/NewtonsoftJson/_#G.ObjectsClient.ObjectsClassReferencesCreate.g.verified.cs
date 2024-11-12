@@ -27,11 +27,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessObjectsClassReferencesCreateResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Add a cross-reference.<br/>
         /// Add a single reference to an object. This adds a reference to the array of cross-references of the given property in the source object specified by its collection name and id
@@ -46,7 +41,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsClassReferencesCreateAsync(
+        public async global::System.Threading.Tasks.Task ObjectsClassReferencesCreateAsync(
             string className,
             global::System.Guid id,
             string propertyName,
@@ -133,44 +128,7 @@ namespace G
             ProcessObjectsClassReferencesCreateResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessObjectsClassReferencesCreateResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::System.InvalidOperationException(__content, __ex);
-                }
-
-                return
-                    global::G.ErrorResponse.FromJson(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-            }
-            else
-            {
-                __response.EnsureSuccessStatusCode();
-                using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
-
-                var __responseValue = await global::G.ErrorResponse.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
-            }
+            __response.EnsureSuccessStatusCode();
         }
 
         /// <summary>
@@ -201,7 +159,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsClassReferencesCreateAsync(
+        public async global::System.Threading.Tasks.Task ObjectsClassReferencesCreateAsync(
             string className,
             global::System.Guid id,
             string propertyName,
@@ -223,7 +181,7 @@ namespace G
                 Classification = classification,
             };
 
-            return await ObjectsClassReferencesCreateAsync(
+            await ObjectsClassReferencesCreateAsync(
                 className: className,
                 id: id,
                 propertyName: propertyName,

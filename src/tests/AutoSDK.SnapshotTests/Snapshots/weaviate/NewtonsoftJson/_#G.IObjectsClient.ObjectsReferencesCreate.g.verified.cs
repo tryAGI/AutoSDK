@@ -16,7 +16,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsReferencesCreateAsync(
+        global::System.Threading.Tasks.Task ObjectsReferencesCreateAsync(
             global::System.Guid id,
             string propertyName,
             global::G.SingleRef request,
@@ -48,7 +48,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsReferencesCreateAsync(
+        global::System.Threading.Tasks.Task ObjectsReferencesCreateAsync(
             global::System.Guid id,
             string propertyName,
             string? tenant = default,

@@ -15,7 +15,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> CodespacesSetRepositoriesForSecretForAuthenticatedUserAsync(
+        global::System.Threading.Tasks.Task CodespacesSetRepositoriesForSecretForAuthenticatedUserAsync(
             string secretName,
             global::G.CodespacesSetRepositoriesForSecretForAuthenticatedUserRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -32,7 +32,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> CodespacesSetRepositoriesForSecretForAuthenticatedUserAsync(
+        global::System.Threading.Tasks.Task CodespacesSetRepositoriesForSecretForAuthenticatedUserAsync(
             string secretName,
             global::System.Collections.Generic.IList<int> selectedRepositoryIds,
             global::System.Threading.CancellationToken cancellationToken = default);

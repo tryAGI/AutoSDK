@@ -17,7 +17,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.TeamsAddOrUpdateProjectPermissionsLegacyResponse> TeamsAddOrUpdateProjectPermissionsLegacyAsync(
+        global::System.Threading.Tasks.Task TeamsAddOrUpdateProjectPermissionsLegacyAsync(
             int teamId,
             int projectId,
             global::G.TeamsAddOrUpdateProjectPermissionsLegacyRequest request,
@@ -37,7 +37,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         [global::System.Obsolete("This method marked as deprecated.")]
-        global::System.Threading.Tasks.Task<global::G.TeamsAddOrUpdateProjectPermissionsLegacyResponse> TeamsAddOrUpdateProjectPermissionsLegacyAsync(
+        global::System.Threading.Tasks.Task TeamsAddOrUpdateProjectPermissionsLegacyAsync(
             int teamId,
             int projectId,
             global::G.TeamsAddOrUpdateProjectPermissionsLegacyRequestPermission? permission = default,

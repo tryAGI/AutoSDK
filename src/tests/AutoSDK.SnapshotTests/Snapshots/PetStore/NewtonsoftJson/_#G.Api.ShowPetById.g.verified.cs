@@ -65,6 +65,33 @@ namespace G
             ProcessShowPetByIdResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
+            if ((int)__response.StatusCode == default)
+            {
+                string? __content_default = null;
+                global::G.Error? __value_default = null;
+                if (ReadResponseAsString)
+                {
+                    __content_default = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_default = global::G.Error.FromJson(__content_default, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_default = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_default = await global::G.Error.FromJsonStreamAsync(__contentStream_default, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.Error>(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_default,
+                    ResponseObject = __value_default,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
 
             if (ReadResponseAsString)
             {

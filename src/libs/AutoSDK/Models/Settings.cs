@@ -40,6 +40,7 @@ public readonly record struct Settings(
     bool IgnoreOpenApiWarnings,
 
     bool GeneratePolyfills,
+    bool GenerateExceptions,
 
     bool GenerateSdk,
     bool FromCli)
@@ -76,6 +77,7 @@ public readonly record struct Settings(
         IgnoreOpenApiErrors: false,
         IgnoreOpenApiWarnings: true,
         GeneratePolyfills: true,
+        GenerateExceptions: true,
         GenerateSdk: true,
         FromCli: false
     );

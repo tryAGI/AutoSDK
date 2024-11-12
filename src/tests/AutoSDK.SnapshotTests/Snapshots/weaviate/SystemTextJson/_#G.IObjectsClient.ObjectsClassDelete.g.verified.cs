@@ -17,7 +17,7 @@ namespace G
         /// <param name="tenant"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.ErrorResponse> ObjectsClassDeleteAsync(
+        global::System.Threading.Tasks.Task ObjectsClassDeleteAsync(
             string className,
             global::System.Guid id,
             global::G.ObjectsClassDeleteConsistencyLevel? consistencyLevel = default,

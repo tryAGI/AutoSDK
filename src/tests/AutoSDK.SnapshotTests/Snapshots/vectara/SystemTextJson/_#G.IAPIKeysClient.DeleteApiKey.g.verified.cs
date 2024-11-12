@@ -14,7 +14,7 @@ namespace G
         /// <param name="apiKeyId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Error> DeleteApiKeyAsync(
+        global::System.Threading.Tasks.Task DeleteApiKeyAsync(
             string apiKeyId,
             int? requestTimeout = default,
             int? requestTimeoutMillis = default,

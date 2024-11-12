@@ -13,7 +13,7 @@ namespace G
         /// <param name="repoName"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.BasicError> MigrationsUnlockRepoForAuthenticatedUserAsync(
+        global::System.Threading.Tasks.Task MigrationsUnlockRepoForAuthenticatedUserAsync(
             int migrationId,
             string repoName,
             global::System.Threading.CancellationToken cancellationToken = default);

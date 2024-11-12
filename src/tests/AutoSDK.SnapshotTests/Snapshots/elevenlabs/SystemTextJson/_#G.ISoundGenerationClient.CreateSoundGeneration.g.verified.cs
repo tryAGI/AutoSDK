@@ -15,7 +15,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateSoundGenerationAsync(
+        global::System.Threading.Tasks.Task CreateSoundGenerationAsync(
             global::G.BodySoundGenerationV1SoundGenerationPost request,
             string? xiApiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -39,7 +39,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::G.HTTPValidationError> CreateSoundGenerationAsync(
+        global::System.Threading.Tasks.Task CreateSoundGenerationAsync(
             string text,
             string? xiApiKey = default,
             double? durationSeconds = default,

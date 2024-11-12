@@ -23,11 +23,6 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessTeamsAddOrUpdateProjectPermissionsInOrgResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Add or update team project permissions<br/>
         /// Adds an organization project to a team. To add a project to a team or update the team's permission on a project, the authenticated user must have `admin` permissions for the project. The project and team must be part of the same organization.<br/>
@@ -40,7 +35,7 @@ namespace G
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TeamsAddOrUpdateProjectPermissionsInOrgResponse> TeamsAddOrUpdateProjectPermissionsInOrgAsync(
+        public async global::System.Threading.Tasks.Task TeamsAddOrUpdateProjectPermissionsInOrgAsync(
             string org,
             string teamSlug,
             int projectId,
@@ -94,44 +89,7 @@ namespace G
             ProcessTeamsAddOrUpdateProjectPermissionsInOrgResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
-            {
-                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessTeamsAddOrUpdateProjectPermissionsInOrgResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::System.InvalidOperationException(__content, __ex);
-                }
-
-                return
-                    global::G.TeamsAddOrUpdateProjectPermissionsInOrgResponse.FromJson(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-            }
-            else
-            {
-                __response.EnsureSuccessStatusCode();
-                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-
-                var __responseValue = await global::G.TeamsAddOrUpdateProjectPermissionsInOrgResponse.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
-            }
+            __response.EnsureSuccessStatusCode();
         }
 
         /// <summary>
@@ -148,7 +106,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.TeamsAddOrUpdateProjectPermissionsInOrgResponse> TeamsAddOrUpdateProjectPermissionsInOrgAsync(
+        public async global::System.Threading.Tasks.Task TeamsAddOrUpdateProjectPermissionsInOrgAsync(
             string org,
             string teamSlug,
             int projectId,
@@ -160,7 +118,7 @@ namespace G
                 Permission = permission,
             };
 
-            return await TeamsAddOrUpdateProjectPermissionsInOrgAsync(
+            await TeamsAddOrUpdateProjectPermissionsInOrgAsync(
                 org: org,
                 teamSlug: teamSlug,
                 projectId: projectId,
