@@ -113,6 +113,11 @@ namespace G
         /// <param name="isLive">
         /// A Boolean value that determines whether the broadcaster is streaming live. Is **true** if the broadcaster is streaming live; otherwise, **false**.
         /// </param>
+        /// <param name="tagIds">
+        /// **IMPORTANT** As of February 28, 2023, this field is deprecated and returns only an empty array. If you use this field, please update your code to use the `tags` field.  <br/>
+        ///   <br/>
+        /// The list of tags that apply to the stream. The list contains IDs only when the channel is steaming live. For a list of possible tags, see [List of All Tags](https://www.twitch.tv/directory/all/tags). The list doesn’t include Category Tags.
+        /// </param>
         /// <param name="tags">
         /// The tags applied to the channel.
         /// </param>

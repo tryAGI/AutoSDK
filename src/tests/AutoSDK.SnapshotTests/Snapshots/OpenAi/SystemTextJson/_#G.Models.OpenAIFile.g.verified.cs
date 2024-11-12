@@ -95,6 +95,9 @@ namespace G
         /// <param name="purpose">
         /// The intended purpose of the file. Supported values are `assistants`, `assistants_output`, `batch`, `batch_output`, `fine-tune`, `fine-tune-results` and `vision`.
         /// </param>
+        /// <param name="status">
+        /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public OpenAIFile(
             string id,

@@ -911,6 +911,11 @@ namespace G
         /// Example: true
         /// </param>
         /// <param name="hasPages"></param>
+        /// <param name="hasDownloads">
+        /// Whether downloads are enabled.<br/>
+        /// Default Value: true<br/>
+        /// Example: true
+        /// </param>
         /// <param name="hasDiscussions">
         /// Whether discussions are enabled.<br/>
         /// Default Value: false<br/>

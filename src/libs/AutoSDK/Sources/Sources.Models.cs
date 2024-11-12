@@ -105,7 +105,7 @@ public sealed partial class {modelData.Parents[level].ClassName}
         /// <summary>
         /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
         /// </summary>
-{modelData.Properties.Where(static x => !x.IsDeprecated).Select(x => $@"
+{modelData.Properties.Where(static x => x.IsRequired || !x.IsDeprecated).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
         {(modelData.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase) ? "[global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]" : " ")}
         public {modelData.ClassName}(

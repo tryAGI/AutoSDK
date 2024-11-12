@@ -588,6 +588,12 @@ namespace G
         /// <param name="error">
         /// Error message of why the transcript failed
         /// </param>
+        /// <param name="languageModel">
+        /// The language model that was used for the transcript
+        /// </param>
+        /// <param name="acousticModel">
+        /// The acoustic model that was used for the transcript
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public Transcript(
             global::System.Guid id,
