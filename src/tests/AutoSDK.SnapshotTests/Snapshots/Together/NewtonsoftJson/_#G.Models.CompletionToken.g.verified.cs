@@ -38,5 +38,31 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionToken" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="logprob"></param>
+        /// <param name="special"></param>
+        /// <param name="text"></param>
+        public CompletionToken(
+            int id,
+            double logprob,
+            bool special,
+            string text)
+        {
+            this.Id = id;
+            this.Logprob = logprob;
+            this.Special = special;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionToken" /> class.
+        /// </summary>
+        public CompletionToken()
+        {
+        }
     }
 }

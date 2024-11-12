@@ -18,6 +18,7 @@ namespace G
         /// <summary>
         /// Example: function_name
         /// </summary>
+        /// <example>function_name</example>
         [global::Newtonsoft.Json.JsonProperty("name", Required = global::Newtonsoft.Json.Required.Always)]
         public string Name { get; set; } = default!;
 
@@ -26,5 +27,27 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolChoiceFunction" /> class.
+        /// </summary>
+        /// <param name="arguments"></param>
+        /// <param name="name">
+        /// Example: function_name
+        /// </param>
+        public ToolChoiceFunction(
+            string arguments,
+            string name)
+        {
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolChoiceFunction" /> class.
+        /// </summary>
+        public ToolChoiceFunction()
+        {
+        }
     }
 }

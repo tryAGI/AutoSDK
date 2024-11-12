@@ -16,14 +16,14 @@ namespace G
         /// Default Value: 32
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("batch_size")]
-        public int? BatchSize { get; set; } = 32;
+        public int? BatchSize { get; set; }
 
         /// <summary>
         /// Learning rate multiplier to use for training<br/>
         /// Default Value: 1E-05F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("learning_rate")]
-        public float? LearningRate { get; set; } = 1E-05F;
+        public float? LearningRate { get; set; }
 
         /// <summary>
         /// Name of the base model to run fine-tune job on
@@ -36,21 +36,21 @@ namespace G
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_checkpoints")]
-        public int? NCheckpoints { get; set; } = 1;
+        public int? NCheckpoints { get; set; }
 
         /// <summary>
         /// Number of epochs for fine-tuning<br/>
         /// Default Value: 1
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_epochs")]
-        public int? NEpochs { get; set; } = 1;
+        public int? NEpochs { get; set; }
 
         /// <summary>
         /// Number of evaluations to be run on a given validation set during training<br/>
         /// Default Value: 0
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_evals")]
-        public int? NEvals { get; set; } = 0;
+        public int? NEvals { get; set; }
 
         /// <summary>
         /// Suffix that will be added to your fine-tuned model name
@@ -87,5 +87,77 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Request" /> class.
+        /// </summary>
+        /// <param name="batchSize">
+        /// Batch size for fine-tuning<br/>
+        /// Default Value: 32
+        /// </param>
+        /// <param name="learningRate">
+        /// Learning rate multiplier to use for training<br/>
+        /// Default Value: 1E-05F
+        /// </param>
+        /// <param name="model">
+        /// Name of the base model to run fine-tune job on
+        /// </param>
+        /// <param name="nCheckpoints">
+        /// Number of checkpoints to save during fine-tuning<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="nEpochs">
+        /// Number of epochs for fine-tuning<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="nEvals">
+        /// Number of evaluations to be run on a given validation set during training<br/>
+        /// Default Value: 0
+        /// </param>
+        /// <param name="suffix">
+        /// Suffix that will be added to your fine-tuned model name
+        /// </param>
+        /// <param name="trainingFile">
+        /// File-ID of a training file uploaded to the Together API
+        /// </param>
+        /// <param name="trainingType"></param>
+        /// <param name="validationFile">
+        /// File-ID of a validation file uploaded to the Together API
+        /// </param>
+        /// <param name="wandbApiKey">
+        /// API key for Weights &amp; Biases integration
+        /// </param>
+        public Request(
+            string model,
+            string trainingFile,
+            int? batchSize,
+            float? learningRate,
+            int? nCheckpoints,
+            int? nEpochs,
+            int? nEvals,
+            string? suffix,
+            global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? trainingType,
+            string? validationFile,
+            string? wandbApiKey)
+        {
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.TrainingFile = trainingFile ?? throw new global::System.ArgumentNullException(nameof(trainingFile));
+            this.BatchSize = batchSize;
+            this.LearningRate = learningRate;
+            this.NCheckpoints = nCheckpoints;
+            this.NEpochs = nEpochs;
+            this.NEvals = nEvals;
+            this.Suffix = suffix;
+            this.TrainingType = trainingType;
+            this.ValidationFile = validationFile;
+            this.WandbApiKey = wandbApiKey;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Request" /> class.
+        /// </summary>
+        public Request()
+        {
+        }
     }
 }

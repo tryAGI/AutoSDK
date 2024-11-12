@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: jsonl
         /// </summary>
+        /// <example>jsonl</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("FileType")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FileResponseFileTypeJsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -34,6 +35,7 @@ namespace G
         /// <summary>
         /// Example: 2664
         /// </summary>
+        /// <example>2664</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("bytes")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Bytes { get; set; }
@@ -41,6 +43,7 @@ namespace G
         /// <summary>
         /// Example: 1715021438
         /// </summary>
+        /// <example>1715021438</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("created_at")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int CreatedAt { get; set; }
@@ -48,6 +51,7 @@ namespace G
         /// <summary>
         /// Example: my_file.jsonl
         /// </summary>
+        /// <example>my_file.jsonl</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("filename")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Filename { get; set; }
@@ -62,6 +66,7 @@ namespace G
         /// <summary>
         /// Example: file
         /// </summary>
+        /// <example>file</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Object { get; set; }
@@ -69,6 +74,7 @@ namespace G
         /// <summary>
         /// Example: fine-tune
         /// </summary>
+        /// <example>fine-tune</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("purpose")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FileResponsePurposeJsonConverter))]
         public global::G.FileResponsePurpose Purpose { get; set; }
@@ -78,5 +84,59 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileResponse" /> class.
+        /// </summary>
+        /// <param name="fileType">
+        /// Example: jsonl
+        /// </param>
+        /// <param name="lineCount"></param>
+        /// <param name="processed"></param>
+        /// <param name="bytes">
+        /// Example: 2664
+        /// </param>
+        /// <param name="createdAt">
+        /// Example: 1715021438
+        /// </param>
+        /// <param name="filename">
+        /// Example: my_file.jsonl
+        /// </param>
+        /// <param name="id"></param>
+        /// <param name="object">
+        /// Example: file
+        /// </param>
+        /// <param name="purpose">
+        /// Example: fine-tune
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FileResponse(
+            global::G.FileResponseFileType fileType,
+            int lineCount,
+            bool processed,
+            int bytes,
+            int createdAt,
+            string filename,
+            string id,
+            string @object,
+            global::G.FileResponsePurpose purpose)
+        {
+            this.FileType = fileType;
+            this.LineCount = lineCount;
+            this.Processed = processed;
+            this.Bytes = bytes;
+            this.CreatedAt = createdAt;
+            this.Filename = filename ?? throw new global::System.ArgumentNullException(nameof(filename));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
+            this.Purpose = purpose;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileResponse" /> class.
+        /// </summary>
+        public FileResponse()
+        {
+        }
     }
 }

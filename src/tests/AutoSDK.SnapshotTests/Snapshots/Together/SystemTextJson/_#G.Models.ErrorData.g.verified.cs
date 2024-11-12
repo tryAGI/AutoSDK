@@ -21,5 +21,23 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorData" /> class.
+        /// </summary>
+        /// <param name="error"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ErrorData(
+            global::G.ErrorDataError error)
+        {
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorData" /> class.
+        /// </summary>
+        public ErrorData()
+        {
+        }
     }
 }

@@ -20,5 +20,23 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionChoice" /> class.
+        /// </summary>
+        /// <param name="text"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CompletionChoice(
+            string? text)
+        {
+            this.Text = text;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionChoice" /> class.
+        /// </summary>
+        public CompletionChoice()
+        {
+        }
     }
 }

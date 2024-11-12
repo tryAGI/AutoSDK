@@ -38,5 +38,32 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileObject" /> class.
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="id"></param>
+        /// <param name="object"></param>
+        /// <param name="size"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FileObject(
+            string? filename,
+            string? id,
+            string? @object,
+            int? size)
+        {
+            this.Filename = filename;
+            this.Id = id;
+            this.Object = @object;
+            this.Size = size;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileObject" /> class.
+        /// </summary>
+        public FileObject()
+        {
+        }
     }
 }

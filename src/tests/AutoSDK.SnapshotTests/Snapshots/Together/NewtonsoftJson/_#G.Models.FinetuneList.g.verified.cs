@@ -20,5 +20,22 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneList" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        public FinetuneList(
+            global::System.Collections.Generic.IList<global::G.FinetuneResponse> data)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneList" /> class.
+        /// </summary>
+        public FinetuneList()
+        {
+        }
     }
 }

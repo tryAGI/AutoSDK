@@ -35,5 +35,29 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingsResponseDataItem" /> class.
+        /// </summary>
+        /// <param name="embedding"></param>
+        /// <param name="index"></param>
+        /// <param name="object"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public EmbeddingsResponseDataItem(
+            global::System.Collections.Generic.IList<double> embedding,
+            int index,
+            global::G.EmbeddingsResponseDataItemObject @object)
+        {
+            this.Embedding = embedding ?? throw new global::System.ArgumentNullException(nameof(embedding));
+            this.Index = index;
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmbeddingsResponseDataItem" /> class.
+        /// </summary>
+        public EmbeddingsResponseDataItem()
+        {
+        }
     }
 }

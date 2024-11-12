@@ -32,5 +32,28 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionToolMessageParam" /> class.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="role"></param>
+        /// <param name="toolCallId"></param>
+        public ChatCompletionToolMessageParam(
+            string content,
+            string toolCallId,
+            global::G.ChatCompletionToolMessageParamRole role)
+        {
+            this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
+            this.ToolCallId = toolCallId ?? throw new global::System.ArgumentNullException(nameof(toolCallId));
+            this.Role = role;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionToolMessageParam" /> class.
+        /// </summary>
+        public ChatCompletionToolMessageParam()
+        {
+        }
     }
 }

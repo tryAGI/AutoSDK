@@ -18,6 +18,7 @@ namespace G
         /// <summary>
         /// Example: &lt;s&gt;[INST] What is the capital of France? [/INST]
         /// </summary>
+        /// <example>&lt;s&gt;[INST] What is the capital of France? [/INST]</example>
         [global::Newtonsoft.Json.JsonProperty("text")]
         public string? Text { get; set; }
 
@@ -26,5 +27,27 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptPartItem" /> class.
+        /// </summary>
+        /// <param name="logprobs"></param>
+        /// <param name="text">
+        /// Example: &lt;s&gt;[INST] What is the capital of France? [/INST]
+        /// </param>
+        public PromptPartItem(
+            global::G.LogprobsPart? logprobs,
+            string? text)
+        {
+            this.Logprobs = logprobs;
+            this.Text = text;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PromptPartItem" /> class.
+        /// </summary>
+        public PromptPartItem()
+        {
+        }
     }
 }

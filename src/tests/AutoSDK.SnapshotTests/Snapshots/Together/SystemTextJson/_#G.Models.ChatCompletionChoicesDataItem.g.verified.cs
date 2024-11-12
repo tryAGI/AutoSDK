@@ -51,5 +51,38 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionChoicesDataItem" /> class.
+        /// </summary>
+        /// <param name="finishReason"></param>
+        /// <param name="index"></param>
+        /// <param name="logprobs"></param>
+        /// <param name="message"></param>
+        /// <param name="seed"></param>
+        /// <param name="text"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatCompletionChoicesDataItem(
+            global::G.FinishReason? finishReason,
+            int? index,
+            global::G.LogprobsPart? logprobs,
+            global::G.ChatCompletionMessage? message,
+            int? seed,
+            string? text)
+        {
+            this.FinishReason = finishReason;
+            this.Index = index;
+            this.Logprobs = logprobs;
+            this.Message = message;
+            this.Seed = seed;
+            this.Text = text;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionChoicesDataItem" /> class.
+        /// </summary>
+        public ChatCompletionChoicesDataItem()
+        {
+        }
     }
 }

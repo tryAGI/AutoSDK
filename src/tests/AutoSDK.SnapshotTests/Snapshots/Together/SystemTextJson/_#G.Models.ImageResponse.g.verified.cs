@@ -33,6 +33,7 @@ namespace G
         /// <summary>
         /// Example: list
         /// </summary>
+        /// <example>list</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ImageResponseObjectJsonConverter))]
         public global::G.ImageResponseObject Object { get; set; }
@@ -42,5 +43,34 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageResponse" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <param name="object">
+        /// Example: list
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ImageResponse(
+            global::System.Collections.Generic.IList<global::G.ImageResponseDataItem> data,
+            string id,
+            string model,
+            global::G.ImageResponseObject @object)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageResponse" /> class.
+        /// </summary>
+        public ImageResponse()
+        {
+        }
     }
 }

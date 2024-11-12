@@ -30,6 +30,7 @@ namespace G
         /// <summary>
         /// Example: list
         /// </summary>
+        /// <example>list</example>
         [global::Newtonsoft.Json.JsonProperty("object")]
         public global::G.ImageResponseObject Object { get; set; }
 
@@ -38,5 +39,33 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageResponse" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="id"></param>
+        /// <param name="model"></param>
+        /// <param name="object">
+        /// Example: list
+        /// </param>
+        public ImageResponse(
+            global::System.Collections.Generic.IList<global::G.ImageResponseDataItem> data,
+            string id,
+            string model,
+            global::G.ImageResponseObject @object)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Model = model ?? throw new global::System.ArgumentNullException(nameof(model));
+            this.Object = @object;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ImageResponse" /> class.
+        /// </summary>
+        public ImageResponse()
+        {
+        }
     }
 }

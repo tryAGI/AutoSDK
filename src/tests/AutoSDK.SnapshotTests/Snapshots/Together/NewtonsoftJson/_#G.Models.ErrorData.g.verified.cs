@@ -20,5 +20,22 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorData" /> class.
+        /// </summary>
+        /// <param name="error"></param>
+        public ErrorData(
+            global::G.ErrorDataError error)
+        {
+            this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ErrorData" /> class.
+        /// </summary>
+        public ErrorData()
+        {
+        }
     }
 }

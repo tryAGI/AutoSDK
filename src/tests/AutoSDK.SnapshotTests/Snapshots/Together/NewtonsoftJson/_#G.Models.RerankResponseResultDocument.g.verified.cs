@@ -20,5 +20,22 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RerankResponseResultDocument" /> class.
+        /// </summary>
+        /// <param name="text"></param>
+        public RerankResponseResultDocument(
+            string? text)
+        {
+            this.Text = text;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RerankResponseResultDocument" /> class.
+        /// </summary>
+        public RerankResponseResultDocument()
+        {
+        }
     }
 }

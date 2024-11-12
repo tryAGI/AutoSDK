@@ -29,5 +29,25 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionChoiceDeltaFunctionCall" /> class.
+        /// </summary>
+        /// <param name="arguments"></param>
+        /// <param name="name"></param>
+        public ChatCompletionChoiceDeltaFunctionCall(
+            string arguments,
+            string name)
+        {
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionChoiceDeltaFunctionCall" /> class.
+        /// </summary>
+        public ChatCompletionChoiceDeltaFunctionCall()
+        {
+        }
     }
 }

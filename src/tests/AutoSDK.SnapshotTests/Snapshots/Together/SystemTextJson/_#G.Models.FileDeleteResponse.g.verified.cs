@@ -26,5 +26,26 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileDeleteResponse" /> class.
+        /// </summary>
+        /// <param name="deleted"></param>
+        /// <param name="id"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FileDeleteResponse(
+            bool? deleted,
+            string? id)
+        {
+            this.Deleted = deleted;
+            this.Id = id;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FileDeleteResponse" /> class.
+        /// </summary>
+        public FileDeleteResponse()
+        {
+        }
     }
 }

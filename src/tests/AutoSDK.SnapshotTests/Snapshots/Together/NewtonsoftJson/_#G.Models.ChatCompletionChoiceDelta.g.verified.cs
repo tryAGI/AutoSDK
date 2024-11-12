@@ -45,5 +45,31 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionChoiceDelta" /> class.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="role"></param>
+        /// <param name="tokenId"></param>
+        /// <param name="toolCalls"></param>
+        public ChatCompletionChoiceDelta(
+            global::G.ChatCompletionChoiceDeltaRole role,
+            string? content,
+            int? tokenId,
+            global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
+        {
+            this.Role = role;
+            this.Content = content;
+            this.TokenId = tokenId;
+            this.ToolCalls = toolCalls;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionChoiceDelta" /> class.
+        /// </summary>
+        public ChatCompletionChoiceDelta()
+        {
+        }
     }
 }

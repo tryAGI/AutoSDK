@@ -1,5 +1,4 @@
 ﻿//HintName: G.Models.ChatCompletionMessageParam.g.cs
-using System.Linq;
 #pragma warning disable CS0618 // Type or member is obsolete
 
 #nullable enable
@@ -11,6 +10,11 @@ namespace G
     /// </summary>
     public readonly partial struct ChatCompletionMessageParam : global::System.IEquatable<ChatCompletionMessageParam>
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::G.ChatCompletionMessageParamDiscriminatorRole? Role { get; }
+
         /// <summary>
         /// 
         /// </summary>
@@ -190,6 +194,7 @@ namespace G
         /// 
         /// </summary>
         public ChatCompletionMessageParam(
+            global::G.ChatCompletionMessageParamDiscriminatorRole? role,
             global::G.ChatCompletionSystemMessageParam? system,
             global::G.ChatCompletionUserMessageParam? user,
             global::G.ChatCompletionAssistantMessageParam? assistant,
@@ -197,6 +202,8 @@ namespace G
             global::G.ChatCompletionFunctionMessageParam? function
             )
         {
+            Role = role;
+
             System = system;
             User = user;
             Assistant = assistant;
@@ -324,7 +331,8 @@ namespace G
             static int HashCodeAggregator(int hashCode, object? value) => value == null
                 ? (hashCode ^ 0) * prime
                 : (hashCode ^ value.GetHashCode()) * prime;
-            return fields.Aggregate(offset, HashCodeAggregator);
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
         }
 
         /// <summary>

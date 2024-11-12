@@ -12,6 +12,7 @@ namespace G
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("base")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Base { get; set; }
@@ -19,6 +20,7 @@ namespace G
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("finetune")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Finetune { get; set; }
@@ -26,6 +28,7 @@ namespace G
         /// <summary>
         /// Example: 0
         /// </summary>
+        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("hourly")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Hourly { get; set; }
@@ -33,6 +36,7 @@ namespace G
         /// <summary>
         /// Example: 0.3
         /// </summary>
+        /// <example>0.3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Input { get; set; }
@@ -40,6 +44,7 @@ namespace G
         /// <summary>
         /// Example: 0.3
         /// </summary>
+        /// <example>0.3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("output")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Output { get; set; }
@@ -49,5 +54,45 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Pricing" /> class.
+        /// </summary>
+        /// <param name="base">
+        /// Example: 0
+        /// </param>
+        /// <param name="finetune">
+        /// Example: 0
+        /// </param>
+        /// <param name="hourly">
+        /// Example: 0
+        /// </param>
+        /// <param name="input">
+        /// Example: 0.3
+        /// </param>
+        /// <param name="output">
+        /// Example: 0.3
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public Pricing(
+            double @base,
+            double finetune,
+            double hourly,
+            double input,
+            double output)
+        {
+            this.Base = @base;
+            this.Finetune = finetune;
+            this.Hourly = hourly;
+            this.Input = input;
+            this.Output = output;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Pricing" /> class.
+        /// </summary>
+        public Pricing()
+        {
+        }
     }
 }

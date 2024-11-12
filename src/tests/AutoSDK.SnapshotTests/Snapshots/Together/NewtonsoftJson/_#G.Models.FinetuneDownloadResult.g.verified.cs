@@ -44,5 +44,34 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneDownloadResult" /> class.
+        /// </summary>
+        /// <param name="checkpointStep"></param>
+        /// <param name="filename"></param>
+        /// <param name="id"></param>
+        /// <param name="object"></param>
+        /// <param name="size"></param>
+        public FinetuneDownloadResult(
+            int? checkpointStep,
+            string? filename,
+            string? id,
+            global::G.FinetuneDownloadResultObject? @object,
+            int? size)
+        {
+            this.CheckpointStep = checkpointStep;
+            this.Filename = filename;
+            this.Id = id;
+            this.Object = @object;
+            this.Size = size;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneDownloadResult" /> class.
+        /// </summary>
+        public FinetuneDownloadResult()
+        {
+        }
     }
 }

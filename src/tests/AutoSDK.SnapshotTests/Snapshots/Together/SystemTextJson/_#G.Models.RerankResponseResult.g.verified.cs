@@ -35,5 +35,29 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RerankResponseResult" /> class.
+        /// </summary>
+        /// <param name="document"></param>
+        /// <param name="index"></param>
+        /// <param name="relevanceScore"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public RerankResponseResult(
+            global::G.RerankResponseResultDocument document,
+            int index,
+            double relevanceScore)
+        {
+            this.Document = document ?? throw new global::System.ArgumentNullException(nameof(document));
+            this.Index = index;
+            this.RelevanceScore = relevanceScore;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RerankResponseResult" /> class.
+        /// </summary>
+        public RerankResponseResult()
+        {
+        }
     }
 }

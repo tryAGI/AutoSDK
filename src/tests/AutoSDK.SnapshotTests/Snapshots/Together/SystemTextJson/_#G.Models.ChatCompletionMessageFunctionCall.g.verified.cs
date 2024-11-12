@@ -31,5 +31,26 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionMessageFunctionCall" /> class.
+        /// </summary>
+        /// <param name="arguments"></param>
+        /// <param name="name"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatCompletionMessageFunctionCall(
+            string arguments,
+            string name)
+        {
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionMessageFunctionCall" /> class.
+        /// </summary>
+        public ChatCompletionMessageFunctionCall()
+        {
+        }
     }
 }

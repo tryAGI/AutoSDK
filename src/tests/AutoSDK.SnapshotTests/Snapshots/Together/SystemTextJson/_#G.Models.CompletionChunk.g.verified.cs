@@ -56,5 +56,38 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionChunk" /> class.
+        /// </summary>
+        /// <param name="choices"></param>
+        /// <param name="finishReason"></param>
+        /// <param name="id"></param>
+        /// <param name="seed"></param>
+        /// <param name="token"></param>
+        /// <param name="usage"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public CompletionChunk(
+            global::System.Collections.Generic.IList<global::G.CompletionChoice> choices,
+            global::G.FinishReason finishReason,
+            string id,
+            global::G.CompletionToken token,
+            global::G.UsageData? usage,
+            int? seed)
+        {
+            this.Choices = choices ?? throw new global::System.ArgumentNullException(nameof(choices));
+            this.FinishReason = finishReason;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Token = token ?? throw new global::System.ArgumentNullException(nameof(token));
+            this.Usage = usage ?? throw new global::System.ArgumentNullException(nameof(usage));
+            this.Seed = seed;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CompletionChunk" /> class.
+        /// </summary>
+        public CompletionChunk()
+        {
+        }
     }
 }

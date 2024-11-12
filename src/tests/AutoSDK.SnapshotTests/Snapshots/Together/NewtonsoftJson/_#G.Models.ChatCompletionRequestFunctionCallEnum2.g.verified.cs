@@ -20,5 +20,22 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestFunctionCallEnum2" /> class.
+        /// </summary>
+        /// <param name="name"></param>
+        public ChatCompletionRequestFunctionCallEnum2(
+            string name)
+        {
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestFunctionCallEnum2" /> class.
+        /// </summary>
+        public ChatCompletionRequestFunctionCallEnum2()
+        {
+        }
     }
 }

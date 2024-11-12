@@ -11,7 +11,7 @@ namespace G
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
-        /// <exception cref="global::System.InvalidOperationException"></exception>
+        /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::G.FinetuneResponse> CreateFineTunesAsync(
             global::G.Request request,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -61,11 +61,11 @@ namespace G
         global::System.Threading.Tasks.Task<global::G.FinetuneResponse> CreateFineTunesAsync(
             string model,
             string trainingFile,
-            int? batchSize = 32,
-            float? learningRate = 1E-05F,
-            int? nCheckpoints = 1,
-            int? nEpochs = 1,
-            int? nEvals = 0,
+            int? batchSize = default,
+            float? learningRate = default,
+            int? nCheckpoints = default,
+            int? nEpochs = default,
+            int? nEvals = default,
             string? suffix = default,
             global::G.OneOf<global::G.FullTrainingType, global::G.LoRATrainingType>? trainingType = default,
             string? validationFile = default,

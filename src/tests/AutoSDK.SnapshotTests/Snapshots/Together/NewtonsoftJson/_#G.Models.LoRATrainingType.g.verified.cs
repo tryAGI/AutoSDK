@@ -19,7 +19,7 @@ namespace G
         /// Default Value: 0F
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lora_dropout")]
-        public float? LoraDropout { get; set; } = 0F;
+        public float? LoraDropout { get; set; }
 
         /// <summary>
         /// 
@@ -31,7 +31,7 @@ namespace G
         /// Default Value: all-linear
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("lora_trainable_modules")]
-        public string? LoraTrainableModules { get; set; } = "all-linear";
+        public string? LoraTrainableModules { get; set; }
 
         /// <summary>
         /// 
@@ -44,5 +44,38 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoRATrainingType" /> class.
+        /// </summary>
+        /// <param name="loraAlpha"></param>
+        /// <param name="loraDropout">
+        /// Default Value: 0F
+        /// </param>
+        /// <param name="loraR"></param>
+        /// <param name="loraTrainableModules">
+        /// Default Value: all-linear
+        /// </param>
+        /// <param name="type"></param>
+        public LoRATrainingType(
+            int loraAlpha,
+            int loraR,
+            float? loraDropout,
+            string? loraTrainableModules,
+            global::G.LoRATrainingTypeType type)
+        {
+            this.LoraAlpha = loraAlpha;
+            this.LoraR = loraR;
+            this.LoraDropout = loraDropout;
+            this.LoraTrainableModules = loraTrainableModules;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LoRATrainingType" /> class.
+        /// </summary>
+        public LoRATrainingType()
+        {
+        }
     }
 }

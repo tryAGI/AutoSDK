@@ -11,6 +11,27 @@ namespace G
     public partial interface IFilesClient : global::System.IDisposable
     {
         /// <summary>
+        /// The HttpClient instance.
+        /// </summary>
+        public global::System.Net.Http.HttpClient HttpClient { get; }
+
+        /// <summary>
+        /// The base URL for the API.
+        /// </summary>
+        public System.Uri? BaseUri { get; }
+
+        /// <summary>
+        /// The authorizations to use for the requests.
+        /// </summary>
+        public global::System.Collections.Generic.List<global::G.EndPointAuthorization> Authorizations { get; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the response content should be read as a string.
+        /// True by default in debug builds, false otherwise.
+        /// </summary>
+        public bool ReadResponseAsString { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         global::System.Text.Json.JsonSerializerOptions JsonSerializerOptions { get; set; }

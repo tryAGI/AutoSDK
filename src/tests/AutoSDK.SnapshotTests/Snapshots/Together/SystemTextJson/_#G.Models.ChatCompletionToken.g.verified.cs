@@ -42,5 +42,32 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionToken" /> class.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="logprob"></param>
+        /// <param name="special"></param>
+        /// <param name="text"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatCompletionToken(
+            int id,
+            float logprob,
+            bool special,
+            string text)
+        {
+            this.Id = id;
+            this.Logprob = logprob;
+            this.Special = special;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionToken" /> class.
+        /// </summary>
+        public ChatCompletionToken()
+        {
+        }
     }
 }

@@ -19,6 +19,7 @@ namespace G
         /// The type of the response format.<br/>
         /// Example: json
         /// </summary>
+        /// <example>json</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string? Type { get; set; }
 
@@ -27,5 +28,31 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestResponseFormat" /> class.
+        /// </summary>
+        /// <param name="schema">
+        /// The schema of the response format.
+        /// </param>
+        /// <param name="type">
+        /// The type of the response format.<br/>
+        /// Example: json
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatCompletionRequestResponseFormat(
+            global::System.Collections.Generic.Dictionary<string, string>? schema,
+            string? type)
+        {
+            this.Schema = schema;
+            this.Type = type;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionRequestResponseFormat" /> class.
+        /// </summary>
+        public ChatCompletionRequestResponseFormat()
+        {
+        }
     }
 }

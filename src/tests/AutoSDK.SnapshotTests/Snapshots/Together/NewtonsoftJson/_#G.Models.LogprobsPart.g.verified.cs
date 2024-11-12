@@ -32,5 +32,34 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogprobsPart" /> class.
+        /// </summary>
+        /// <param name="tokenIds">
+        /// List of token IDs corresponding to the logprobs
+        /// </param>
+        /// <param name="tokenLogprobs">
+        /// List of token log probabilities
+        /// </param>
+        /// <param name="tokens">
+        /// List of token strings
+        /// </param>
+        public LogprobsPart(
+            global::System.Collections.Generic.IList<double>? tokenIds,
+            global::System.Collections.Generic.IList<double>? tokenLogprobs,
+            global::System.Collections.Generic.IList<string>? tokens)
+        {
+            this.TokenIds = tokenIds;
+            this.TokenLogprobs = tokenLogprobs;
+            this.Tokens = tokens;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="LogprobsPart" /> class.
+        /// </summary>
+        public LogprobsPart()
+        {
+        }
     }
 }

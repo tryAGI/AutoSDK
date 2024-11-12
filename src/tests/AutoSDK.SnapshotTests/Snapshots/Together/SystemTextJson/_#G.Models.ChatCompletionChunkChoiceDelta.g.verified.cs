@@ -47,5 +47,32 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionChunkChoiceDelta" /> class.
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="role"></param>
+        /// <param name="tokenId"></param>
+        /// <param name="toolCalls"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ChatCompletionChunkChoiceDelta(
+            global::G.ChatCompletionChunkChoiceDeltaRole role,
+            string? content,
+            int? tokenId,
+            global::System.Collections.Generic.IList<global::G.ToolChoice2>? toolCalls)
+        {
+            this.Role = role;
+            this.Content = content;
+            this.TokenId = tokenId;
+            this.ToolCalls = toolCalls;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ChatCompletionChunkChoiceDelta" /> class.
+        /// </summary>
+        public ChatCompletionChunkChoiceDelta()
+        {
+        }
     }
 }

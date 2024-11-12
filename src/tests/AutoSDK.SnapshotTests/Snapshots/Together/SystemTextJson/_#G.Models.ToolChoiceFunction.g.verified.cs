@@ -19,6 +19,7 @@ namespace G
         /// <summary>
         /// Example: function_name
         /// </summary>
+        /// <example>function_name</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Name { get; set; }
@@ -28,5 +29,28 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolChoiceFunction" /> class.
+        /// </summary>
+        /// <param name="arguments"></param>
+        /// <param name="name">
+        /// Example: function_name
+        /// </param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public ToolChoiceFunction(
+            string arguments,
+            string name)
+        {
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ToolChoiceFunction" /> class.
+        /// </summary>
+        public ToolChoiceFunction()
+        {
+        }
     }
 }

@@ -71,5 +71,47 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneEvent2" /> class.
+        /// </summary>
+        /// <param name="createdAt"></param>
+        /// <param name="hash"></param>
+        /// <param name="level"></param>
+        /// <param name="message"></param>
+        /// <param name="object"></param>
+        /// <param name="paramCount"></param>
+        /// <param name="tokenCount"></param>
+        /// <param name="type"></param>
+        /// <param name="wandbUrl"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public FinetuneEvent2(
+            string? createdAt,
+            string? hash,
+            global::G.FinetuneEventLevels? level,
+            string? message,
+            global::G.FinetuneEventObject2? @object,
+            int? paramCount,
+            int? tokenCount,
+            global::G.FinetuneEventType2? type,
+            string? wandbUrl)
+        {
+            this.CreatedAt = createdAt;
+            this.Hash = hash;
+            this.Level = level;
+            this.Message = message;
+            this.Object = @object;
+            this.ParamCount = paramCount;
+            this.TokenCount = tokenCount;
+            this.Type = type;
+            this.WandbUrl = wandbUrl;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="FinetuneEvent2" /> class.
+        /// </summary>
+        public FinetuneEvent2()
+        {
+        }
     }
 }

@@ -33,6 +33,8 @@ namespace G
             typeof(global::G.JsonConverters.ChatCompletionUserMessageParamRoleNullableJsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionToolMessageParamRoleJsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionToolMessageParamRoleNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionMessageParamDiscriminatorRoleJsonConverter),
+            typeof(global::G.JsonConverters.ChatCompletionMessageParamDiscriminatorRoleNullableJsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionRequestFunctionCallEnumJsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionRequestFunctionCallEnumNullableJsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionRequestMessageRoleJsonConverter),
@@ -73,6 +75,8 @@ namespace G
             typeof(global::G.JsonConverters.FullTrainingTypeTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.LoRATrainingTypeTypeJsonConverter),
             typeof(global::G.JsonConverters.LoRATrainingTypeTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneResponseTrainingTypeDiscriminatorTypeJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneResponseTrainingTypeDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ImageResponseObjectJsonConverter),
             typeof(global::G.JsonConverters.ImageResponseObjectNullableJsonConverter),
             typeof(global::G.JsonConverters.ModelInfoTypeJsonConverter),
@@ -83,6 +87,7 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.ChatCompletionStreamJsonConverter),
             typeof(global::G.JsonConverters.CompletionStreamJsonConverter),
+            typeof(global::G.JsonConverters.FinetuneResponseTrainingTypeJsonConverter),
         };
     }
 }
