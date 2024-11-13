@@ -17,18 +17,13 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessGetPredictionsResponseContent(
-            global::System.Net.Http.HttpClient httpClient,
-            global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
-
         /// <summary>
         /// Get a prediction<br/>
         /// Get the current state of a prediction.<br/>
         /// Example cURL request:<br/>
         /// ```console<br/>
         /// curl -s \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu<br/>
         /// ```<br/>
         /// The response will be the prediction object:<br/>
@@ -73,7 +68,7 @@ namespace G
         /// <param name="predictionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.PredictionResponse> GetPredictionsAsync(
+        public async global::System.Threading.Tasks.Task GetPredictionsAsync(
             string predictionId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -126,70 +121,22 @@ namespace G
             ProcessGetPredictionsResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-
-            if (ReadResponseAsString)
+            try
             {
-                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-
-                ProcessResponseContent(
-                    client: HttpClient,
-                    response: __response,
-                    content: ref __content);
-                ProcessGetPredictionsResponseContent(
-                    httpClient: HttpClient,
-                    httpResponseMessage: __response,
-                    content: ref __content);
-
-                try
-                {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::G.ApiException(
-                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseBody = __content,
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
-
-                return
-                    global::G.PredictionResponse.FromJson(__content, JsonSerializerOptions) ??
-                    throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                __response.EnsureSuccessStatusCode();
             }
-            else
+            catch (global::System.Net.Http.HttpRequestException __ex)
             {
-                try
+                throw new global::G.ApiException(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    innerException: __ex,
+                    statusCode: __response.StatusCode)
                 {
-                    __response.EnsureSuccessStatusCode();
-                }
-                catch (global::System.Net.Http.HttpRequestException __ex)
-                {
-                    throw new global::G.ApiException(
-                        message: __response.ReasonPhrase ?? string.Empty,
-                        innerException: __ex,
-                        statusCode: __response.StatusCode)
-                    {
-                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
-                            __response.Headers,
-                            h => h.Key,
-                            h => h.Value),
-                    };
-                }
-
-                using var __responseStream = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-
-                var __responseValue = await global::G.PredictionResponse.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
             }
         }
     }

@@ -27,7 +27,7 @@ namespace G
         /// Example cURL request:<br/>
         /// ```command<br/>
         /// curl -s -X DELETE \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   https://api.replicate.com/v1/deployments/acme/my-app-image-generator<br/>
         /// ```<br/>
         /// The response will be an empty 204, indicating the deployment has been deleted.

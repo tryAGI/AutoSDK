@@ -22,7 +22,7 @@ public class ValidationTests : VerifyBase
     [DataRow("ollama.yaml")]
     [DataRow("openai.yaml")]
     [DataRow("petstore.yaml")]
-    [DataRow("replicate.yaml")]
+    [DataRow("replicate.json")]
     [DataRow("special-cases.yaml")]
     [DataRow("together.yaml")]
     [DataRow("mystic.yaml")]

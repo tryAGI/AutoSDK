@@ -7,99 +7,46 @@ namespace G
     {
         /// <summary>
         /// Create a prediction<br/>
-        /// Start a new prediction for the model version and inputs you provide.<br/>
-        /// Example request body:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",<br/>
-        ///   "input": {<br/>
-        ///     "text": "Alice"<br/>
-        ///   }<br/>
-        /// }<br/>
-        /// ```<br/>
+        /// Create a prediction for the model version and inputs you provide.<br/>
         /// Example cURL request:<br/>
         /// ```console<br/>
-        /// curl -s -X POST \<br/>
+        /// curl -s -X POST -H 'Prefer: wait' \<br/>
         ///   -d '{"version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa", "input": {"text": "Alice"}}' \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   -H 'Content-Type: application/json' \<br/>
         ///   https://api.replicate.com/v1/predictions<br/>
         /// ```<br/>
-        /// The response will be the prediction object:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "id": "gm3qorzdhgbfurvjtvhg6dckhu",<br/>
-        ///   "model": "replicate/hello-world",<br/>
-        ///   "version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",<br/>
-        ///   "input": {<br/>
-        ///     "text": "Alice"<br/>
-        ///   },<br/>
-        ///   "output": null,<br/>
-        ///   "logs": "",<br/>
-        ///   "error": null,<br/>
-        ///   "status": "starting",<br/>
-        ///   "created_at": "2023-09-08T16:19:34.765994657Z",<br/>
-        ///   "urls": {<br/>
-        ///     "cancel": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu/cancel",<br/>
-        ///     "get": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu"<br/>
-        ///   }<br/>
-        /// }<br/>
-        /// ```<br/>
-        /// As models can take several seconds or more to run, the output will not be available immediately. To get the final result of the prediction you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a prediction](#predictions.get) endpoint until it has finished.<br/>
-        /// Input and output (including any files) will be automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.<br/>
-        /// Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
+        /// The request will wait up to 60 seconds for the model to run. If this time is exceeded the prediction will be returned in a `"starting"` state and need to be retrieved using the `predictions.get` endpiont.<br/>
+        /// For a complete overview of the `predictions.create` API check out our documentation on [creating a prediction](https://replicate.com/docs/topics/predictions/create-a-prediction) which covers a variety of use cases.
         /// </summary>
+        /// <param name="prefer">
+        /// Example: wait=5
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task CreatePredictionsAsync(
             global::G.VersionPredictionRequest request,
+            string? prefer = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create a prediction<br/>
-        /// Start a new prediction for the model version and inputs you provide.<br/>
-        /// Example request body:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",<br/>
-        ///   "input": {<br/>
-        ///     "text": "Alice"<br/>
-        ///   }<br/>
-        /// }<br/>
-        /// ```<br/>
+        /// Create a prediction for the model version and inputs you provide.<br/>
         /// Example cURL request:<br/>
         /// ```console<br/>
-        /// curl -s -X POST \<br/>
+        /// curl -s -X POST -H 'Prefer: wait' \<br/>
         ///   -d '{"version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa", "input": {"text": "Alice"}}' \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   -H 'Content-Type: application/json' \<br/>
         ///   https://api.replicate.com/v1/predictions<br/>
         /// ```<br/>
-        /// The response will be the prediction object:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "id": "gm3qorzdhgbfurvjtvhg6dckhu",<br/>
-        ///   "model": "replicate/hello-world",<br/>
-        ///   "version": "5c7d5dc6dd8bf75c1acaa8565735e7986bc5b66206b55cca93cb72c9bf15ccaa",<br/>
-        ///   "input": {<br/>
-        ///     "text": "Alice"<br/>
-        ///   },<br/>
-        ///   "output": null,<br/>
-        ///   "logs": "",<br/>
-        ///   "error": null,<br/>
-        ///   "status": "starting",<br/>
-        ///   "created_at": "2023-09-08T16:19:34.765994657Z",<br/>
-        ///   "urls": {<br/>
-        ///     "cancel": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu/cancel",<br/>
-        ///     "get": "https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu"<br/>
-        ///   }<br/>
-        /// }<br/>
-        /// ```<br/>
-        /// As models can take several seconds or more to run, the output will not be available immediately. To get the final result of the prediction you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a prediction](#predictions.get) endpoint until it has finished.<br/>
-        /// Input and output (including any files) will be automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.<br/>
-        /// Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
+        /// The request will wait up to 60 seconds for the model to run. If this time is exceeded the prediction will be returned in a `"starting"` state and need to be retrieved using the `predictions.get` endpiont.<br/>
+        /// For a complete overview of the `predictions.create` API check out our documentation on [creating a prediction](https://replicate.com/docs/topics/predictions/create-a-prediction) which covers a variety of use cases.
         /// </summary>
+        /// <param name="prefer">
+        /// Example: wait=5
+        /// </param>
         /// <param name="input">
         /// The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.<br/>
         /// Files should be passed as HTTP URLs or data URLs.<br/>
@@ -147,6 +94,7 @@ namespace G
         global::System.Threading.Tasks.Task CreatePredictionsAsync(
             object input,
             string version,
+            string? prefer = default,
             bool? stream = default,
             string? webhook = default,
             global::System.Collections.Generic.IList<global::G.VersionPredictionRequestWebhookEventsFilterItem>? webhookEventsFilter = default,

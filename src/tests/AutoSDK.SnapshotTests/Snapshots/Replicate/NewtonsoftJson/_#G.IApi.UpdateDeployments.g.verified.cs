@@ -12,7 +12,7 @@ namespace G
         /// ```console<br/>
         /// curl -s \<br/>
         ///   -X PATCH \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   -H "Content-Type: application/json" \<br/>
         ///   -d '{"min_instances": 3, "max_instances": 10}' \<br/>
         ///   https://api.replicate.com/v1/deployments/acme/my-app-image-generator<br/>
@@ -61,7 +61,7 @@ namespace G
         /// ```console<br/>
         /// curl -s \<br/>
         ///   -X PATCH \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   -H "Content-Type: application/json" \<br/>
         ///   -d '{"min_instances": 3, "max_instances": 10}' \<br/>
         ///   https://api.replicate.com/v1/deployments/acme/my-app-image-generator<br/>

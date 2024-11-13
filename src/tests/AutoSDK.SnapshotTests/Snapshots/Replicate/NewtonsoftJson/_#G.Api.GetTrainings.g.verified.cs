@@ -23,7 +23,7 @@ namespace G
         /// Example cURL request:<br/>
         /// ```console<br/>
         /// curl -s \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   https://api.replicate.com/v1/trainings/zz4ibbonubfz7carwiefibzgga<br/>
         /// ```<br/>
         /// The response will be the training object:<br/>

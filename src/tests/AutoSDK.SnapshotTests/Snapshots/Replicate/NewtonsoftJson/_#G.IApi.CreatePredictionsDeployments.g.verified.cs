@@ -7,48 +7,23 @@ namespace G
     {
         /// <summary>
         /// Create a prediction using a deployment<br/>
-        /// Start a new prediction for a deployment of a model using inputs you provide.<br/>
-        /// Example request body:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "input": {<br/>
-        ///     "text": "Alice"<br/>
-        ///   }<br/>
-        /// }<br/>
-        /// ```<br/>
+        /// Create a prediction for the deployment and inputs you provide.<br/>
         /// Example cURL request:<br/>
         /// ```console<br/>
-        /// curl -s -X POST \<br/>
-        ///   -d '{"input": {"text": "Alice"}}' \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        /// curl -s -X POST -H 'Prefer: wait' \<br/>
+        ///   -d '{"input": {"prompt": "A photo of a bear riding a bicycle over the moon"}}' \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   -H 'Content-Type: application/json' \<br/>
-        ///   "https://api.replicate.com/v1/deployments/replicate/hello-world/predictions"<br/>
+        ///   https://api.replicate.com/v1/deployments/acme/my-app-image-generator/predictions<br/>
         /// ```<br/>
-        /// The response will be the prediction object:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "id": "86b6trbv99rgp0cf1h886f69ew",<br/>
-        ///   "model": "replicate/hello-world",<br/>
-        ///   "version": "dp-8e43d61c333b5ddc7a921130bc3ab3ea",<br/>
-        ///   "input": {<br/>
-        ///     "text": "Alice"<br/>
-        ///   },<br/>
-        ///   "logs": "",<br/>
-        ///   "error": null,<br/>
-        ///   "status": "starting",<br/>
-        ///   "created_at": "2024-04-23T18:55:52.138Z",<br/>
-        ///   "urls": {<br/>
-        ///     "cancel": "https://api.replicate.com/v1/predictions/86b6trbv99rgp0cf1h886f69ew/cancel",<br/>
-        ///     "get": "https://api.replicate.com/v1/predictions/86b6trbv99rgp0cf1h886f69ew"<br/>
-        ///   }<br/>
-        /// }<br/>
-        /// ```<br/>
-        /// As models can take several seconds or more to run, the output will not be available immediately. To get the final result of the prediction you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a prediction](#predictions.get) endpoint until it has finished.<br/>
-        /// Input and output (including any files) will be automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.<br/>
-        /// Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
+        /// The request will wait up to 60 seconds for the model to run. If this time is exceeded the prediction will be returned in a `"starting"` state and need to be retrieved using the `predictions.get` endpiont.<br/>
+        /// For a complete overview of the `deployments.predictions.create` API check out our documentation on [creating a prediction](https://replicate.com/docs/topics/predictions/create-a-prediction) which covers a variety of use cases.
         /// </summary>
         /// <param name="deploymentOwner"></param>
         /// <param name="deploymentName"></param>
+        /// <param name="prefer">
+        /// Example: wait=5
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
@@ -56,52 +31,28 @@ namespace G
             string deploymentOwner,
             string deploymentName,
             global::G.PredictionRequest request,
+            string? prefer = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create a prediction using a deployment<br/>
-        /// Start a new prediction for a deployment of a model using inputs you provide.<br/>
-        /// Example request body:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "input": {<br/>
-        ///     "text": "Alice"<br/>
-        ///   }<br/>
-        /// }<br/>
-        /// ```<br/>
+        /// Create a prediction for the deployment and inputs you provide.<br/>
         /// Example cURL request:<br/>
         /// ```console<br/>
-        /// curl -s -X POST \<br/>
-        ///   -d '{"input": {"text": "Alice"}}' \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        /// curl -s -X POST -H 'Prefer: wait' \<br/>
+        ///   -d '{"input": {"prompt": "A photo of a bear riding a bicycle over the moon"}}' \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   -H 'Content-Type: application/json' \<br/>
-        ///   "https://api.replicate.com/v1/deployments/replicate/hello-world/predictions"<br/>
+        ///   https://api.replicate.com/v1/deployments/acme/my-app-image-generator/predictions<br/>
         /// ```<br/>
-        /// The response will be the prediction object:<br/>
-        /// ```json<br/>
-        /// {<br/>
-        ///   "id": "86b6trbv99rgp0cf1h886f69ew",<br/>
-        ///   "model": "replicate/hello-world",<br/>
-        ///   "version": "dp-8e43d61c333b5ddc7a921130bc3ab3ea",<br/>
-        ///   "input": {<br/>
-        ///     "text": "Alice"<br/>
-        ///   },<br/>
-        ///   "logs": "",<br/>
-        ///   "error": null,<br/>
-        ///   "status": "starting",<br/>
-        ///   "created_at": "2024-04-23T18:55:52.138Z",<br/>
-        ///   "urls": {<br/>
-        ///     "cancel": "https://api.replicate.com/v1/predictions/86b6trbv99rgp0cf1h886f69ew/cancel",<br/>
-        ///     "get": "https://api.replicate.com/v1/predictions/86b6trbv99rgp0cf1h886f69ew"<br/>
-        ///   }<br/>
-        /// }<br/>
-        /// ```<br/>
-        /// As models can take several seconds or more to run, the output will not be available immediately. To get the final result of the prediction you should either provide a `webhook` HTTPS URL for us to call when the results are ready, or poll the [get a prediction](#predictions.get) endpoint until it has finished.<br/>
-        /// Input and output (including any files) will be automatically deleted after an hour, so you must save a copy of any files in the output if you'd like to continue using them.<br/>
-        /// Output files are served by `replicate.delivery` and its subdomains. If you use an allow list of external domains for your assets, add `replicate.delivery` and `*.replicate.delivery` to it.
+        /// The request will wait up to 60 seconds for the model to run. If this time is exceeded the prediction will be returned in a `"starting"` state and need to be retrieved using the `predictions.get` endpiont.<br/>
+        /// For a complete overview of the `deployments.predictions.create` API check out our documentation on [creating a prediction](https://replicate.com/docs/topics/predictions/create-a-prediction) which covers a variety of use cases.
         /// </summary>
         /// <param name="deploymentOwner"></param>
         /// <param name="deploymentName"></param>
+        /// <param name="prefer">
+        /// Example: wait=5
+        /// </param>
         /// <param name="input">
         /// The model's input as a JSON object. The input schema depends on what model you are running. To see the available inputs, click the "API" tab on the model you are running or [get the model version](#models.versions.get) and look at its `openapi_schema` property. For example, [stability-ai/sdxl](https://replicate.com/stability-ai/sdxl) takes `prompt` as an input.<br/>
         /// Files should be passed as HTTP URLs or data URLs.<br/>
@@ -146,6 +97,7 @@ namespace G
             string deploymentOwner,
             string deploymentName,
             object input,
+            string? prefer = default,
             bool? stream = default,
             string? webhook = default,
             global::System.Collections.Generic.IList<global::G.PredictionRequestWebhookEventsFilterItem>? webhookEventsFilter = default,

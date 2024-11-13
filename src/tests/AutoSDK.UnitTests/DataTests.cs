@@ -19,7 +19,7 @@ public partial class DataTests
     [DataRow("ollama.yaml")]
     [DataRow("openai.yaml")]
     [DataRow("petstore.yaml")]
-    [DataRow("replicate.yaml")]
+    [DataRow("replicate.json")]
     [DataRow("special-cases.yaml")]
     [DataRow("together.yaml")]
     [DataRow("mystic.yaml")]
@@ -44,13 +44,14 @@ public partial class DataTests
                 MethodNamingConvention = resourceName switch
                 {
                     "mystic.yaml" => MethodNamingConvention.Summary,
-                    "replicate.yaml" => MethodNamingConvention.OperationIdWithDots,
+                    "replicate.json" => MethodNamingConvention.OperationIdWithDots,
                     _ => default,
                 },
                 IgnoreOpenApiErrors = resourceName switch
                 {
                     "elevenlabs.json" => true,
                     "ai21.json" => true,
+                    "replicate.json" => true,
                     _ => false,
                 },
             })),

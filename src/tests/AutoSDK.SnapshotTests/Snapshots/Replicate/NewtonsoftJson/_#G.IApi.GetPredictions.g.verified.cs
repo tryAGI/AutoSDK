@@ -11,7 +11,7 @@ namespace G
         /// Example cURL request:<br/>
         /// ```console<br/>
         /// curl -s \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   https://api.replicate.com/v1/predictions/gm3qorzdhgbfurvjtvhg6dckhu<br/>
         /// ```<br/>
         /// The response will be the prediction object:<br/>
@@ -56,7 +56,7 @@ namespace G
         /// <param name="predictionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.PredictionResponse> GetPredictionsAsync(
+        global::System.Threading.Tasks.Task GetPredictionsAsync(
             string predictionId,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

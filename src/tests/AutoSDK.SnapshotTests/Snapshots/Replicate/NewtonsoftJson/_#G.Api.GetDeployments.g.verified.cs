@@ -30,7 +30,7 @@ namespace G
         /// Example cURL request:<br/>
         /// ```console<br/>
         /// curl -s \<br/>
-        ///   -H "Authorization: Bearer &lt;paste-your-token-here&gt;" \<br/>
+        ///   -H "Authorization: Bearer $REPLICATE_API_TOKEN" \<br/>
         ///   https://api.replicate.com/v1/deployments/replicate/my-app-image-generator<br/>
         /// ```<br/>
         /// The response will be a JSON object describing the deployment:<br/>

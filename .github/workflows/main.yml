@@ -38,7 +38,7 @@ jobs:
           - ollama.yaml
           - openai.yaml
           - petstore.yaml
-          - replicate.yaml
+          - replicate.json
           - special-cases.yaml
           - together.yaml
           - heygen.yaml

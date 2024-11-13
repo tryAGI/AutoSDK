@@ -12,7 +12,7 @@ public class CliTests
     [DataRow("ollama.yaml")]
     [DataRow("openai.yaml")]
     [DataRow("petstore.yaml")]
-    [DataRow("replicate.yaml")]
+    [DataRow("replicate.json")]
     [DataRow("huggingface.yaml")]
     [DataRow("ai21.json")]
     [DataRow("cohere.yaml")]

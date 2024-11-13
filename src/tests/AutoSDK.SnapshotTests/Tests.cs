@@ -37,8 +37,8 @@ public partial class Tests
     [DataRow("OpenAi", "openai.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("PetStore", "petstore.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("PetStore", "petstore.yaml", JsonSerializerType.SystemTextJson)]
-    [DataRow("Replicate", "replicate.yaml", JsonSerializerType.NewtonsoftJson)]
-    [DataRow("Replicate", "replicate.yaml", JsonSerializerType.SystemTextJson)]
+    [DataRow("Replicate", "replicate.json", JsonSerializerType.NewtonsoftJson)]
+    [DataRow("Replicate", "replicate.json", JsonSerializerType.SystemTextJson)]
     [DataRow("SpecialCases", "special-cases.yaml", JsonSerializerType.NewtonsoftJson)]
     [DataRow("SpecialCases", "special-cases.yaml", JsonSerializerType.SystemTextJson)]
     [DataRow("Together", "together.yaml", JsonSerializerType.NewtonsoftJson)]
@@ -91,6 +91,7 @@ public partial class Tests
             "Replicate" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_MethodNamingConvention"] = "OperationIdWithDots",
+                ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
                 //["build_property.AutoSDK_GenerateSdk"] = "false",
                 //["build_property.AutoSDK_GenerateModels"] = "true",
                 //["build_property.AutoSDK_IncludeModels"] = "prediction_request",
