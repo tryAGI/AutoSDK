@@ -69,6 +69,7 @@ jobs:
           TestCompany
           --output TestProject
           --add-tests false
+          --framework net9.0
 
       - name: Generate code
         run: dotnet run --project src/libs/AutoSDK.CLI
