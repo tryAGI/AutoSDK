@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup Label="Base packages">
@@ -9,10 +9,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="H.Generators.Extensions" Version="1.22.0" />
-    <PackageReference Include="H.Generators.Tests.Extensions" Version="1.22.0" />
+    <PackageReference Include="H.Generators.Extensions" Version="1.24.0" />
+    <PackageReference Include="H.Generators.Tests.Extensions" Version="1.24.0" />
     <PackageReference Include="Microsoft.OpenApi" Version="1.6.22" />
-    <PackageReference Include="MSTest" Version="3.6.2" />
+    <PackageReference Include="MSTest" Version="3.6.3" />
     <PackageReference Include="FluentAssertions" Version="6.12.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
@@ -20,8 +20,8 @@
   <ItemGroup Label="Generator tests packages">
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.SourceGenerators.Testing.MSTest" Version="1.1.2" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.11.0" />
-    <PackageReference Include="System.Formats.Asn1" Version="8.0.1" />
-    <PackageReference Include="Verify.MSTest" Version="28.2.0" />
+    <PackageReference Include="System.Formats.Asn1" Version="9.0.0" />
+    <PackageReference Include="Verify.MSTest" Version="28.2.1" />
     <PackageReference Include="Verify.SourceGenerators" Version="2.5.0" />
     <PackageReference Include="H.Resources.Generator" Version="1.6.1">
       <PrivateAssets>all</PrivateAssets>
