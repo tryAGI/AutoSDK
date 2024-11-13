@@ -3,7 +3,7 @@ using AutoSDK.Helpers;
 
 namespace AutoSDK.CLI.Commands;
 
-public class ConvertCommand : Command
+internal sealed class ConvertCommand : Command
 {
     public ConvertCommand() : base(name: "convert-to-openapi30", description: "Converts OpenAPI 3.1 spec to OpenAPI 3.0.")
     {

@@ -6,7 +6,7 @@ using AutoSDK.Models;
 
 namespace AutoSDK.CLI.Commands;
 
-public class SimplifyCommand : Command
+internal sealed class SimplifyCommand : Command
 {
     public SimplifyCommand() : base(name: "simplify", description: "Simplifies OpenAPI spec.")
     {

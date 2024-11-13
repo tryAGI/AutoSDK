@@ -1,6 +1,6 @@
 namespace AutoSDK.CLI;
 
-public static class Helpers
+internal static class Helpers
 {
     public static string GetSettingsFolder()
     {

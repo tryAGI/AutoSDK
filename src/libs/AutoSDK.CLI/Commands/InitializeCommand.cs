@@ -3,7 +3,7 @@ using System.Globalization;
 
 namespace AutoSDK.CLI.Commands;
 
-public class InitializeCommand : Command
+internal sealed class InitializeCommand : Command
 {
     public InitializeCommand() : base(name: "init", description: "Creates a new solution with GitHub Actions.")
     {

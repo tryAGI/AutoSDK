@@ -4,7 +4,7 @@ using OpenAI;
 
 namespace AutoSDK.CLI.Commands.AI;
 
-public class SpecFromDocsCommand : Command
+internal sealed class SpecFromDocsCommand : Command
 {
     public SpecFromDocsCommand() : base(name: "spec-from-docs", description: "Generates OpenAPI spec from SPA HTML docs.")
     {
@@ -73,7 +73,7 @@ public class SpecFromDocsCommand : Command
     }
 }
 
-public class OpenApiSpecResponse
+internal sealed class OpenApiSpecResponse
 {
     public string YamlSpecFullBody { get; set; } = string.Empty;
 }

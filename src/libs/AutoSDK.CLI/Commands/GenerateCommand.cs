@@ -6,7 +6,7 @@ using AutoSDK.Naming.Methods;
 
 namespace AutoSDK.CLI.Commands;
 
-public class GenerateCommand : Command
+internal sealed class GenerateCommand : Command
 {
     public GenerateCommand() : base(name: "generate", description: "Generates client sdk using a OpenAPI spec.")
     {
@@ -158,7 +158,7 @@ public class GenerateCommand : Command
                     Sources.AnyOf(x),
                     Sources.AnyOfJsonExtensions(x),
                     Sources.AnyOfJsonConverter(x),
-                    Sources.AnyOfJsonConverterFactory(x),
+                    //Sources.AnyOfJsonConverterFactory(x),
                     Sources.AnyOfValidation(x),
                 }))
             .Concat([Sources.JsonSerializerContext(data.Converters, data.Types)])

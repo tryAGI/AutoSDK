@@ -5,7 +5,7 @@ using AutoSDK.Naming.Methods;
 
 namespace AutoSDK.CLI.Commands;
 
-public class SettingsBinder(
+internal sealed class SettingsBinder(
     Option<string> targetFramework,
     Option<string> @namespace,
     Option<string> clientClassName,
