@@ -180,12 +180,10 @@ namespace G
                     };
                 }
 
-                using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
-
-                var __responseValue = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.Package>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__responseStream)));
+                using var __content = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
                 return
-                    __responseValue ??
+                    global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<global::System.Collections.Generic.IList<global::G.Package>?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__content))) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }

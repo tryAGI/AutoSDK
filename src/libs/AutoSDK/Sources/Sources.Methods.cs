@@ -385,13 +385,6 @@ namespace {endPoint.Namespace}
  ";
         }
 
-        var contentType = endPoint.ContentType switch
-        {
-            ContentType.String => "String",
-            ContentType.Stream => "Stream",
-            _ => "ByteArray",
-        };
-
         // If a response range is defined using an explicit code, the explicit code definition takes precedence over the range definition for that code  
         var orderedErrorResponses = endPoint.ErrorResponses
             .Where(x => x is { IsPattern: false, IsDefault: false })
@@ -441,7 +434,12 @@ namespace {endPoint.Namespace}
 
             if (ReadResponseAsString)
             {{
-                var __content = await __response.Content.ReadAs{contentType}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+                var __content = await __response.Content.ReadAs{endPoint.ContentType switch
+                {
+                    ContentType.String => "String",
+                    ContentType.Stream => "Stream",
+                    _ => "ByteArray",
+                }}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
 
 {(endPoint.ContentType == ContentType.String ? @" 
                 ProcessResponseContent(
@@ -479,7 +477,7 @@ namespace {endPoint.Namespace}
                 return
                     {jsonSerializer.GenerateDeserializeCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
                     throw new global::System.InvalidOperationException($""Response deserialization failed for \""{{__content}}\"" "");" : @" 
-                    return __content;")}
+                return __content;")}
             }}
             else
             {{
@@ -501,13 +499,24 @@ namespace {endPoint.Namespace}
                     }};
                 }}
 
-                using var __responseStream = await __response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+                {endPoint.ContentType switch
+                {
+                    ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" => "using ",
+                    ContentType.Stream => "using ",
+                    _ => string.Empty,
+                }}var __content = await __response.Content.ReadAs{endPoint.ContentType switch
+                {
+                    ContentType.String when endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is "string" => "String",
+                    ContentType.String => "Stream",
+                    ContentType.Stream => "Stream",
+                    _ => "ByteArray",
+                }}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
 
-                var __responseValue = {jsonSerializer.GenerateDeserializeFromStreamCall("__responseStream", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)};
-
+{(endPoint.ContentType == ContentType.String && endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" ? $@" 
                 return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException(""Response deserialization failed."");
+                    {jsonSerializer.GenerateDeserializeFromStreamCall("__content", endPoint.SuccessResponse.Type, endPoint.Settings.JsonSerializerContext)} ??
+                    throw new global::System.InvalidOperationException(""Response deserialization failed."");" : @" 
+                return __content;")}
             }}
  ";
     }

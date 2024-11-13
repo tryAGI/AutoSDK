@@ -98,7 +98,7 @@ namespace G
                     };
                 }
 
-                    return __content;
+                return __content;
             }
             else
             {
@@ -120,13 +120,9 @@ namespace G
                     };
                 }
 
-                using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
 
-                var __responseValue = global::Newtonsoft.Json.JsonSerializer.Create(JsonSerializerOptions).Deserialize<string?>(new global::Newtonsoft.Json.JsonTextReader(new global::System.IO.StreamReader(__responseStream)));
-
-                return
-                    __responseValue ??
-                    throw new global::System.InvalidOperationException("Response deserialization failed.");
+                return __content;
             }
         }
     }

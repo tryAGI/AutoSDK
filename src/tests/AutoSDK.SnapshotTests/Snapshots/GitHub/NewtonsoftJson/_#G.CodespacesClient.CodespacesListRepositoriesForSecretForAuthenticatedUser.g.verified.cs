@@ -237,12 +237,10 @@ namespace G
                     };
                 }
 
-                using var __responseStream = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
-
-                var __responseValue = await global::G.CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.FromJsonStreamAsync(__responseStream, JsonSerializerOptions).ConfigureAwait(false);
+                using var __content = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
 
                 return
-                    __responseValue ??
+                    await global::G.CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }
