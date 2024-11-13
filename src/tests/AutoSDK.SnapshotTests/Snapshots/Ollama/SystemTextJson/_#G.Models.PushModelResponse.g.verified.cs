@@ -15,7 +15,7 @@ namespace G
         /// Status pushing the model.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("status")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.PushModelResponseStatus?>))]
         public global::G.AnyOf<string, global::G.PushModelResponseStatus?>? Status { get; set; }
 
         /// <summary>

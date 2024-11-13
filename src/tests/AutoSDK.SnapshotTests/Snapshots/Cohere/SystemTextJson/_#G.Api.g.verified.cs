@@ -171,9 +171,7 @@ namespace G
                     new global::G.JsonConverters.ChatToolCallsChunkEventJsonConverter(),
                     new global::G.JsonConverters.StreamedChatResponseJsonConverter(),
                     new global::G.JsonConverters.ContentJsonConverter(),
-                    new global::G.JsonConverters.OneOfJsonConverterFactory2(),
                     new global::G.JsonConverters.SourceJsonConverter(),
-                    new global::G.JsonConverters.OneOfJsonConverterFactory1(),
                     new global::G.JsonConverters.ToolContentJsonConverter(),
                     new global::G.JsonConverters.ChatMessageV2JsonConverter(),
                     new global::G.JsonConverters.ResponseFormatV2JsonConverter(),
@@ -194,6 +192,18 @@ namespace G
                     new global::G.JsonConverters.GenerateStreamEndJsonConverter(),
                     new global::G.JsonConverters.GenerateStreamErrorJsonConverter(),
                     new global::G.JsonConverters.GenerateStreamedResponseJsonConverter(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Content>>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.TextContent>>>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.TextContent>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.TextContent>>>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.TextContent>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ToolContent>>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::G.Document>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::G.RerankDocument>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::G.RerankDocument>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.ChatResponse, global::G.StreamedChatResponseV2?>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>(),
                 }
             };
 

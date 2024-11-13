@@ -90,11 +90,11 @@ namespace G
                     new global::G.JsonConverters.SearchRerankerJsonConverter(),
                     new global::G.JsonConverters.SearchCorporaParametersJsonConverter(),
                     new global::G.JsonConverters.KeyedSearchCorpusJsonConverter(),
-                    new global::G.JsonConverters.AllOfJsonConverterFactory2(),
                     new global::G.JsonConverters.QueryStreamedResponseJsonConverter(),
                     new global::G.JsonConverters.CreateDocumentRequestJsonConverter(),
                     new global::G.JsonConverters.ChatStreamedResponseJsonConverter(),
                     new global::G.JsonConverters.CreateAppClientRequestJsonConverter(),
+                    new global::G.JsonConverters.AllOfJsonConverter<global::G.SearchCorpus, global::G.SearchParameters>(),
                 }
             };
 

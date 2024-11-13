@@ -28,7 +28,7 @@ namespace G
         /// The search query
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("query")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.ApiSchemasRankTextDoc>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::G.ApiSchemasRankTextDoc> Query { get; set; }
 
@@ -36,7 +36,7 @@ namespace G
         /// A list of text documents or strings to rerank. If a document is provided the text fields is required and all other fields will be preserved in the response.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.ApiSchemasRankTextDoc>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.ApiSchemasRankTextDoc>> Documents { get; set; }
 

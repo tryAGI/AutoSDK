@@ -15,7 +15,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image_url")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ImageURL, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<global::G.ImageURL, string> ImageUrl { get; set; }
 

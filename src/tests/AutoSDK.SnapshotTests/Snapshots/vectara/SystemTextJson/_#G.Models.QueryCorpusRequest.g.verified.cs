@@ -22,7 +22,7 @@ namespace G
         /// The parameters to search one corpus.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("search")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.SearchCorpus, global::G.SearchParameters>))]
         public global::G.AllOf<global::G.SearchCorpus, global::G.SearchParameters>? Search { get; set; }
 
         /// <summary>

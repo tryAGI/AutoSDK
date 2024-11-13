@@ -28,7 +28,7 @@ namespace G
         /// The team through which the assignee is granted access to GitHub Copilot, if applicable.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("assigning_team")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.Team, global::G.EnterpriseTeam>))]
         public global::G.OneOf<global::G.Team, global::G.EnterpriseTeam>? AssigningTeam { get; set; }
 
         /// <summary>

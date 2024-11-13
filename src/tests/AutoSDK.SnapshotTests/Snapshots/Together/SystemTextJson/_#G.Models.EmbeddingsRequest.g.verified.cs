@@ -16,7 +16,7 @@ namespace G
         /// </summary>
         /// <default>"Our solar system orbits the Milky Way galaxy at about 515,000 mph"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; } = "Our solar system orbits the Milky Way galaxy at about 515,000 mph";
 

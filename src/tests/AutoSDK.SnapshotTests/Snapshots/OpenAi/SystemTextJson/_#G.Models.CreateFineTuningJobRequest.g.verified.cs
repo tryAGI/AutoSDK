@@ -18,7 +18,7 @@ namespace G
         /// </summary>
         /// <example>gpt-4o-mini</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateFineTuningJobRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::G.CreateFineTuningJobRequestModel?> Model { get; set; }
 

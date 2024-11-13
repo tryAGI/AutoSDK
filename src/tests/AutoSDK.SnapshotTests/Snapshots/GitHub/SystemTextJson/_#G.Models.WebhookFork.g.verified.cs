@@ -23,7 +23,7 @@ namespace G
         /// The created [`repository`](https://docs.github.com/rest/repos/repos#get-a-repository) resource.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("forkee")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookForkForkeeVariant1, global::G.WebhookForkForkeeVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.WebhookForkForkeeVariant1, global::G.WebhookForkForkeeVariant2> Forkee { get; set; }
 

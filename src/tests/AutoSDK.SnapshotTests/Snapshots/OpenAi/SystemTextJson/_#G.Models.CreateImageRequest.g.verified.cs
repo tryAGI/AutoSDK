@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         /// <example>dall-e-3</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateImageRequestModel?>))]
         public global::G.AnyOf<string, global::G.CreateImageRequestModel?>? Model { get; set; }
 
         /// <summary>

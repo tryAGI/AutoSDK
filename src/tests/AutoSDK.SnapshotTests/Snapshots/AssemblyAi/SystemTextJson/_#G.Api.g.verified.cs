@@ -75,8 +75,6 @@ namespace G
                     new global::G.JsonConverters.LemurModelNullableJsonConverter(),
                     new global::G.JsonConverters.TranscriptWebhookNotificationJsonConverter(),
                     new global::G.JsonConverters.RedactedAudioNotificationJsonConverter(),
-                    new global::G.JsonConverters.OneOfJsonConverterFactory2(),
-                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
                     new global::G.JsonConverters.TranscriptParamsJsonConverter(),
                     new global::G.JsonConverters.LemurStringResponseJsonConverter(),
                     new global::G.JsonConverters.LemurTaskResponseJsonConverter(),
@@ -88,6 +86,19 @@ namespace G
                     new global::G.JsonConverters.LemurSummaryParamsJsonConverter(),
                     new global::G.JsonConverters.LemurQuestionAnswerParamsJsonConverter(),
                     new global::G.JsonConverters.LemurActionItemsParamsJsonConverter(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.TranscriptLanguageCode?, string>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.SubstitutionPolicy?, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.TranscriptLanguageCode?, string>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.AutoHighlightsResult2, object>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.RedactPiiAudioQuality?, object>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.ContentSafetyLabelsResult, object>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.TopicDetectionModelResult, object>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, object>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.LemurModel?, string>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, object>(),
                 }
             };
 

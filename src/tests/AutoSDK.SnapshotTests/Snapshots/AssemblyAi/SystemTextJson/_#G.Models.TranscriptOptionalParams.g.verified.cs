@@ -17,7 +17,7 @@ namespace G
         /// Default Value: en_us
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("language_code")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>))]
         public global::G.OneOf<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>? LanguageCode { get; set; }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace G
         /// Default Value: best
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("speech_model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>))]
         public global::G.OneOf<global::G.SpeechModel2?, object>? SpeechModel { get; set; }
 
         /// <summary>
@@ -165,7 +165,7 @@ namespace G
         /// Default Value: hash
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("redact_pii_sub")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SubstitutionPolicy?, object>))]
         public global::G.OneOf<global::G.SubstitutionPolicy?, object>? RedactPiiSub { get; set; }
 
         /// <summary>

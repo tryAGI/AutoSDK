@@ -121,11 +121,11 @@ public class SdkGenerator : IIncrementalGenerator
             .SelectAndReportExceptions((x, c) => Sources.AnyOfJsonConverter(x, c)
                 .AsFileWithName(), context, Id)
             .AddSource(context);
-        data
-            .SelectMany(static (x, _) => x.AnyOfs)
-            .SelectAndReportExceptions((x, c) => Sources.AnyOfJsonConverterFactory(x, c)
-                .AsFileWithName(), context, Id)
-            .AddSource(context);
+        // data
+        //     .SelectMany(static (x, _) => x.AnyOfs)
+        //     .SelectAndReportExceptions((x, c) => Sources.AnyOfJsonConverterFactory(x, c)
+        //         .AsFileWithName(), context, Id)
+        //     .AddSource(context);
         
         data
             .Select(static (x, _) => x.Converters)

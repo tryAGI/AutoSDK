@@ -77,7 +77,7 @@ namespace G
                     new global::G.JsonConverters.MigrationsListForOrgExcludeItemNullableJsonConverter(),
                     new global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemJsonConverter(),
                     new global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemNullableJsonConverter(),
-                    new global::G.JsonConverters.OneOfJsonConverterFactory3(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, int?, global::System.Collections.Generic.IList<string>>(),
                 }
             };
 

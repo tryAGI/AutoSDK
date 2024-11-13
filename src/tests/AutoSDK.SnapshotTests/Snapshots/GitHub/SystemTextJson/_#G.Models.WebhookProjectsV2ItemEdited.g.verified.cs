@@ -23,7 +23,7 @@ namespace G
         /// It includes altered values for text, number, date, single select, and iteration fields, along with the GraphQL node ID of the changed field.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("changes")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.WebhookProjectsV2ItemEditedChangesVariant1, global::G.WebhookProjectsV2ItemEditedChangesVariant2>))]
         public global::G.OneOf<global::G.WebhookProjectsV2ItemEditedChangesVariant1, global::G.WebhookProjectsV2ItemEditedChangesVariant2>? Changes { get; set; }
 
         /// <summary>

@@ -47,7 +47,7 @@ namespace G
             typeof(global::G.JsonConverters.MigrationsListForOrgExcludeItemNullableJsonConverter),
             typeof(global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemJsonConverter),
             typeof(global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemNullableJsonConverter),
-            typeof(global::G.JsonConverters.OneOfJsonConverterFactory3),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, int?, global::System.Collections.Generic.IList<string>>),
         };
     }
 }

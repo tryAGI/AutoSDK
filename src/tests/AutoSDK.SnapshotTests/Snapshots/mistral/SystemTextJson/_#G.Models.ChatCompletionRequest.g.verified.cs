@@ -64,7 +64,7 @@ namespace G
         /// Stop generation if this token is detected. Or if one of these tokens is detected when providing an array
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         public global::G.AnyOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ToolChoice3, global::G.ToolChoiceEnum?>))]
         public global::G.AnyOf<global::G.ToolChoice3, global::G.ToolChoiceEnum?>? ToolChoice { get; set; }
 
         /// <summary>

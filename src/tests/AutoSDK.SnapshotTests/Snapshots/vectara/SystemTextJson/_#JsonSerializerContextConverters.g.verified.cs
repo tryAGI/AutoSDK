@@ -42,11 +42,11 @@ namespace G
             typeof(global::G.JsonConverters.SearchRerankerJsonConverter),
             typeof(global::G.JsonConverters.SearchCorporaParametersJsonConverter),
             typeof(global::G.JsonConverters.KeyedSearchCorpusJsonConverter),
-            typeof(global::G.JsonConverters.AllOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.QueryStreamedResponseJsonConverter),
             typeof(global::G.JsonConverters.CreateDocumentRequestJsonConverter),
             typeof(global::G.JsonConverters.ChatStreamedResponseJsonConverter),
             typeof(global::G.JsonConverters.CreateAppClientRequestJsonConverter),
+            typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.SearchCorpus, global::G.SearchParameters>),
         };
     }
 }

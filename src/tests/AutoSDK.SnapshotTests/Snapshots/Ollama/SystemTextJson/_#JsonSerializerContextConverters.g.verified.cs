@@ -28,7 +28,7 @@ namespace G
             typeof(global::G.JsonConverters.DoneReasonJsonConverter),
             typeof(global::G.JsonConverters.CreateModelStatusJsonConverter),
             typeof(global::G.JsonConverters.PullModelStatusJsonConverter),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.PushModelResponseStatus?>),
         };
     }
 }

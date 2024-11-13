@@ -67,12 +67,14 @@ namespace G
                     new global::G.JsonConverters.BlockDeltaDiscriminatorTypeNullableJsonConverter(),
                     new global::G.JsonConverters.MessageStreamEventDiscriminatorTypeJsonConverter(),
                     new global::G.JsonConverters.MessageStreamEventDiscriminatorTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
-                    new global::G.JsonConverters.OneOfJsonConverterFactory2(),
                     new global::G.JsonConverters.BlockJsonConverter(),
                     new global::G.JsonConverters.ToolJsonConverter(),
                     new global::G.JsonConverters.MessageStreamEventJsonConverter(),
                     new global::G.JsonConverters.BlockDeltaJsonConverter(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateMessageRequestModel?>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>(),
                 }
             };
 

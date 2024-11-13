@@ -24,7 +24,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("account")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.SimpleUser, global::G.Enterprise>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<global::G.SimpleUser, global::G.Enterprise>? Account { get; set; }
 

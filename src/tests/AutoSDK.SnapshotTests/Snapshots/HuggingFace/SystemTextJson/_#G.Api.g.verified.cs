@@ -41,7 +41,7 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
-                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
                 }
             };
 

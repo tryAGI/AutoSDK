@@ -29,8 +29,9 @@ namespace G
             typeof(global::G.JsonConverters.OrderByNullableJsonConverter),
             typeof(global::G.JsonConverters.ScalingConfigTypeJsonConverter),
             typeof(global::G.JsonConverters.ScalingConfigTypeNullableJsonConverter),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
-            typeof(global::G.JsonConverters.AllOfJsonConverterFactory1),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
+            typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.Accelerator?>),
+            typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.OrderBy?>),
         };
     }
 }

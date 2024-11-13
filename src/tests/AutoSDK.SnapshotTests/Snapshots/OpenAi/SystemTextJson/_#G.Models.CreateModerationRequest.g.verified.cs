@@ -15,7 +15,7 @@ namespace G
         /// The input text to classify
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; }
 
@@ -27,7 +27,7 @@ namespace G
         /// </summary>
         /// <example>text-moderation-stable</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateModerationRequestModel?>))]
         public global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? Model { get; set; }
 
         /// <summary>

@@ -34,7 +34,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnum?, global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnum2>))]
         public global::G.AnyOf<global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnum?, global::G.ReposUpdateInformationAboutPagesSiteRequestSourceEnum2>? Source { get; set; }
 
         /// <summary>

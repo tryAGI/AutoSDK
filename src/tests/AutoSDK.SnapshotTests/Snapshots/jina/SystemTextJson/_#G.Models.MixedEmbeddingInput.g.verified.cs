@@ -32,7 +32,7 @@ namespace G
         /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.MixedEmbeddingInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.MixedEmbeddingInputEmbeddingTypeItem>>))]
         public global::G.AnyOf<global::G.MixedEmbeddingInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.MixedEmbeddingInputEmbeddingTypeItem>>? EmbeddingType { get; set; }
 
         /// <summary>

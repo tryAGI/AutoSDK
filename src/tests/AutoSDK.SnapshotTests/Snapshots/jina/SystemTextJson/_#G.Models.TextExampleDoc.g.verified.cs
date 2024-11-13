@@ -30,7 +30,7 @@ namespace G
         /// The label of the text
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("label")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<bool?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<bool?, string> Label { get; set; }
 

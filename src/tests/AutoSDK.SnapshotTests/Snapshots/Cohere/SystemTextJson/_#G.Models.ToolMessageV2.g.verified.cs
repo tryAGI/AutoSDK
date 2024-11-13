@@ -29,7 +29,7 @@ namespace G
         /// A single or list of outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ToolContent>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ToolContent>> ToolContent { get; set; }
 

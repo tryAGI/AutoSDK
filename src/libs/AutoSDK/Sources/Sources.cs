@@ -139,20 +139,21 @@ public static partial class Sources
             Text: GenerateEnumNullableJsonConverter(data, cancellationToken: cancellationToken));
     }
 
-    public static FileWithName AnyOfJsonConverterFactory(
-        AnyOfData anyOf,
-        CancellationToken cancellationToken = default)
-    {
-        if (anyOf.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ||
-            anyOf.IsNamed)
-        {
-            return FileWithName.Empty;
-        }
-        
-        return new FileWithName(
-            Name: $"JsonConverters.{anyOf.SubType}Factory{anyOf.Count}.g.cs",
-            Text: GenerateAnyOfJsonConverterFactory(anyOf, cancellationToken: cancellationToken));
-    }
+    // Not used in the current implementation because not compatible with NativeAOT
+    // public static FileWithName AnyOfJsonConverterFactory(
+    //     AnyOfData anyOf,
+    //     CancellationToken cancellationToken = default)
+    // {
+    //     if (anyOf.Settings.JsonSerializerType == JsonSerializerType.NewtonsoftJson ||
+    //         anyOf.IsNamed)
+    //     {
+    //         return FileWithName.Empty;
+    //     }
+    //     
+    //     return new FileWithName(
+    //         Name: $"JsonConverters.{anyOf.SubType}Factory{anyOf.Count}.g.cs",
+    //         Text: GenerateAnyOfJsonConverterFactory(anyOf, cancellationToken: cancellationToken));
+    // }
     
     public static FileWithName UnixTimestampJsonConverter(
         Settings settings,

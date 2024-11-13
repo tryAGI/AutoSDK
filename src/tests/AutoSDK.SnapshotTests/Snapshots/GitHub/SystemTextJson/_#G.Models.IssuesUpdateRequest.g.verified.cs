@@ -15,7 +15,7 @@ namespace G
         /// The title of the issue.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("title")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, int?>))]
         public global::G.OneOf<string, int?>? Title { get; set; }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("milestone")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, int?>))]
         public global::G.OneOf<string, int?>? Milestone { get; set; }
 
         /// <summary>

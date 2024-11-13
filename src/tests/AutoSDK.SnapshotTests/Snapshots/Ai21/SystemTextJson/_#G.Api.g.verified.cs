@@ -91,9 +91,12 @@ namespace G
                     new global::G.JsonConverters.UserMessageRoleNullableJsonConverter(),
                     new global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleJsonConverter(),
                     new global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleNullableJsonConverter(),
-                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
                     new global::G.JsonConverters.QueryFilterJsonConverter(),
                     new global::G.JsonConverters.MessagesItemJsonConverter(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.ChatStreamingFirstDelta, global::G.ChatStreamingContentDelta>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>(),
                 }
             };
 

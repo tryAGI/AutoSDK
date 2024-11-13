@@ -31,7 +31,7 @@ namespace G
         /// </summary>
         /// <example>whisper-1</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateTranscriptionRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::G.CreateTranscriptionRequestModel?> Model { get; set; }
 

@@ -200,20 +200,33 @@ public static class Data
             .Select(x => Authorization.FromOpenApiSecurityScheme(x.Key, settings))
             .ToArray();
 
-        var converters = enums
-            .Where(x =>
-                x.Style == ModelStyle.Enumeration &&
-                x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
-            .SelectMany(x => new[]
-            {
-                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}JsonConverter",
-                $"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter"
-            })
+        var converters =
+            // Enum converters
+            enums
+                .Where(x =>
+                    x.Style == ModelStyle.Enumeration &&
+                    x.Settings.JsonSerializerType != JsonSerializerType.NewtonsoftJson)
+                .SelectMany(x => new[]
+                {
+                    $"global::{settings.Namespace}.JsonConverters.{x.ClassName}JsonConverter",
+                    $"global::{settings.Namespace}.JsonConverters.{x.ClassName}NullableJsonConverter"
+                })
+            // Named AnyOf converters
             .Concat(anyOfDatas
-                .Where(x => x.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson)
-                .Select(x => string.IsNullOrWhiteSpace(x.Name)
-                    ? $"global::{settings.Namespace}.JsonConverters.{x.SubType}JsonConverterFactory{x.Count}"
-                    : $"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter"))
+                .Where(x =>
+                    x.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
+                    !string.IsNullOrWhiteSpace(x.Name))
+                .Select(x => $"global::{settings.Namespace}.JsonConverters.{x.Name}JsonConverter"))
+            // Generic AnyOf converters
+            .Concat(filteredSchemas
+                .Where(x =>
+                    x.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson &&
+                    x.AnyOfData.HasValue &&
+                    string.IsNullOrWhiteSpace(x.AnyOfData.Value.Name))
+                .Select(x => $"global::{settings.Namespace}.JsonConverters.{x.AnyOfData?.SubType}JsonConverter<{
+                    string.Join(", ", x.Children
+                        .Where(y => y.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf)
+                        .Select(y => y.TypeData.CSharpTypeWithNullabilityForValueTypes))}>"))
             .ToImmutableArray();
         
         var includedTags = allTags

@@ -37,12 +37,14 @@ namespace G
             typeof(global::G.JsonConverters.BlockDeltaDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.MessageStreamEventDiscriminatorTypeJsonConverter),
             typeof(global::G.JsonConverters.MessageStreamEventDiscriminatorTypeNullableJsonConverter),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
-            typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.BlockJsonConverter),
             typeof(global::G.JsonConverters.ToolJsonConverter),
             typeof(global::G.JsonConverters.MessageStreamEventJsonConverter),
             typeof(global::G.JsonConverters.BlockDeltaJsonConverter),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateMessageRequestModel?>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>),
         };
     }
 }

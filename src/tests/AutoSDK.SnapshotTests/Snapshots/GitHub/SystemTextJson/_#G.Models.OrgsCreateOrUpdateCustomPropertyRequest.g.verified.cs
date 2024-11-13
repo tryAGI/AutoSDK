@@ -31,7 +31,7 @@ namespace G
         /// Default value of the property
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("default_value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? DefaultValue { get; set; }
 
         /// <summary>

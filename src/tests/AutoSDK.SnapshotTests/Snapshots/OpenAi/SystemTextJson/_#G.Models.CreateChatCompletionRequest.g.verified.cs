@@ -24,7 +24,7 @@ namespace G
         /// </summary>
         /// <example>gpt-4o</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateChatCompletionRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::G.CreateChatCompletionRequestModel?> Model { get; set; }
 
@@ -113,7 +113,7 @@ namespace G
         /// Up to 4 sequences where the API will stop generating further tokens.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stop")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
 
         /// <summary>
@@ -190,7 +190,7 @@ namespace G
         /// `none` is the default when no functions are present. `auto` is the default if functions are present.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("function_call")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateChatCompletionRequestFunctionCall?, global::G.ChatCompletionFunctionCallOption>))]
         public global::G.OneOf<global::G.CreateChatCompletionRequestFunctionCall?, global::G.ChatCompletionFunctionCallOption>? FunctionCall { get; set; }
 
         /// <summary>

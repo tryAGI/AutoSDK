@@ -15,7 +15,7 @@ namespace G
         /// The contents of the assistant message. Required unless `tool_calls` or `function_call` is specified.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessageContentPart>>))]
         public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestAssistantMessageContentPart>>? Content { get; set; }
 
         /// <summary>

@@ -139,9 +139,7 @@ namespace G
             typeof(global::G.JsonConverters.ChatToolCallsChunkEventJsonConverter),
             typeof(global::G.JsonConverters.StreamedChatResponseJsonConverter),
             typeof(global::G.JsonConverters.ContentJsonConverter),
-            typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.SourceJsonConverter),
-            typeof(global::G.JsonConverters.OneOfJsonConverterFactory1),
             typeof(global::G.JsonConverters.ToolContentJsonConverter),
             typeof(global::G.JsonConverters.ChatMessageV2JsonConverter),
             typeof(global::G.JsonConverters.ResponseFormatV2JsonConverter),
@@ -162,6 +160,18 @@ namespace G
             typeof(global::G.JsonConverters.GenerateStreamEndJsonConverter),
             typeof(global::G.JsonConverters.GenerateStreamErrorJsonConverter),
             typeof(global::G.JsonConverters.GenerateStreamedResponseJsonConverter),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Content>>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.TextContent>>>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.TextContent>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.TextContent>>>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.TextContent>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ToolContent>>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::G.Document>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::G.RerankDocument>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::G.RerankDocument>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ChatResponse, global::G.StreamedChatResponseV2?>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>),
         };
     }
 }

@@ -61,9 +61,12 @@ namespace G
             typeof(global::G.JsonConverters.UserMessageRoleNullableJsonConverter),
             typeof(global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleJsonConverter),
             typeof(global::G.JsonConverters.LanguageStudioApiServerDataTypesChatChatRequestMessageDiscriminatorRoleNullableJsonConverter),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.QueryFilterJsonConverter),
             typeof(global::G.JsonConverters.MessagesItemJsonConverter),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ChatStreamingFirstDelta, global::G.ChatStreamingContentDelta>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>),
         };
     }
 }

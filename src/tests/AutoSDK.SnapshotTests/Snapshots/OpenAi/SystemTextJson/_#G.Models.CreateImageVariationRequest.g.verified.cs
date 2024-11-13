@@ -32,7 +32,7 @@ namespace G
         /// </summary>
         /// <example>dall-e-2</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateImageVariationRequestModel?>))]
         public global::G.AnyOf<string, global::G.CreateImageVariationRequestModel?>? Model { get; set; }
 
         /// <summary>

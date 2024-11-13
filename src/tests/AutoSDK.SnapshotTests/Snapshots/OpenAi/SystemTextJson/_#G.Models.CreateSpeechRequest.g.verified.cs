@@ -15,7 +15,7 @@ namespace G
         /// One of the available [TTS models](/docs/models/tts): `tts-1` or `tts-1-hd`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateSpeechRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::G.CreateSpeechRequestModel?> Model { get; set; }
 

@@ -30,7 +30,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("public")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<bool?, global::G.GistsCreateRequestPublic?>))]
         public global::G.OneOf<bool?, global::G.GistsCreateRequestPublic?>? Public { get; set; }
 
         /// <summary>

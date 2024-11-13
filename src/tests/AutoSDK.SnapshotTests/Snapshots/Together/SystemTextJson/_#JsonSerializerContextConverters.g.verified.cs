@@ -84,10 +84,14 @@ namespace G
             typeof(global::G.JsonConverters.RerankResponseObjectJsonConverter),
             typeof(global::G.JsonConverters.RerankResponseObjectNullableJsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionMessageParamJsonConverter),
-            typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.ChatCompletionStreamJsonConverter),
             typeof(global::G.JsonConverters.CompletionStreamJsonConverter),
             typeof(global::G.JsonConverters.FinetuneResponseTrainingTypeJsonConverter),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ChatCompletionRequestFunctionCallEnum?, global::G.ChatCompletionRequestFunctionCallEnum2>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::G.ToolChoice2>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.FullTrainingType, global::G.LoRATrainingType>),
         };
     }
 }

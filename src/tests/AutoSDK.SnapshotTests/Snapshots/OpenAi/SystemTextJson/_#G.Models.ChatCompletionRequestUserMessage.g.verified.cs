@@ -15,7 +15,7 @@ namespace G
         /// The contents of the user message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestUserMessageContentPart>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestUserMessageContentPart>> Content { get; set; }
 

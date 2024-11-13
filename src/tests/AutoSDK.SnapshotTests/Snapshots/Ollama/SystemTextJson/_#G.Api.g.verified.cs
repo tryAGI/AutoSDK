@@ -58,7 +58,7 @@ namespace G
                     new global::G.JsonConverters.DoneReasonJsonConverter(),
                     new global::G.JsonConverters.CreateModelStatusJsonConverter(),
                     new global::G.JsonConverters.PullModelStatusJsonConverter(),
-                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, global::G.PushModelResponseStatus?>(),
                 }
             };
 

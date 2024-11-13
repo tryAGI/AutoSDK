@@ -22,7 +22,7 @@ namespace G
         /// Any context about the transcripts you wish to provide. This can be a string or any object.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("context")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>))]
         public global::G.OneOf<string, object>? Context { get; set; }
 
         /// <summary>

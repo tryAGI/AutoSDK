@@ -83,8 +83,9 @@ namespace G
             typeof(global::G.JsonConverters.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetFormatTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownTypeJsonConverter),
             typeof(global::G.JsonConverters.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownTypeNullableJsonConverter),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
-            typeof(global::G.JsonConverters.AllOfJsonConverterFactory1),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
+            typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.VoiceSettingsResponseModel>),
         };
     }
 }

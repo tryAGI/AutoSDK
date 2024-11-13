@@ -75,11 +75,11 @@ public readonly record struct TypeData(
             : IsEnum || (IsAnyOfLike && (IsComponent || HasDiscriminator))
                 ? $"global::{Settings.Namespace}.JsonConverters.{ShortCSharpTypeWithoutNullability}JsonConverter"
                 : AnyOfCount > 0
-                    ? $"global::{Settings.Namespace}.JsonConverters.AnyOfJsonConverterFactory{AnyOfCount}"
+                    ? $"global::{Settings.Namespace}.JsonConverters.AnyOfJsonConverter<{string.Join(", ", SubTypes.Select(y => y.CSharpTypeWithNullabilityForValueTypes))}>"
                     : OneOfCount > 0
-                        ? $"global::{Settings.Namespace}.JsonConverters.OneOfJsonConverterFactory{OneOfCount}"
+                        ? $"global::{Settings.Namespace}.JsonConverters.OneOfJsonConverter<{string.Join(", ", SubTypes.Select(y => y.CSharpTypeWithNullabilityForValueTypes))}>"
                         : AllOfCount > 0
-                            ? $"global::{Settings.Namespace}.JsonConverters.AllOfJsonConverterFactory{AllOfCount}"
+                            ? $"global::{Settings.Namespace}.JsonConverters.AllOfJsonConverter<{string.Join(", ", SubTypes.Select(y => y.CSharpTypeWithNullabilityForValueTypes))}>"
                             : string.Empty;
     
     public static TypeData FromSchemaContext(SchemaContext context)

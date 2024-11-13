@@ -66,7 +66,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("payload")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<object, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<object, string> Payload { get; set; }
 

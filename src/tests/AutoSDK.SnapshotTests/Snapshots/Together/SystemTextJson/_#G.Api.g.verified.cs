@@ -114,10 +114,14 @@ namespace G
                     new global::G.JsonConverters.RerankResponseObjectJsonConverter(),
                     new global::G.JsonConverters.RerankResponseObjectNullableJsonConverter(),
                     new global::G.JsonConverters.ChatCompletionMessageParamJsonConverter(),
-                    new global::G.JsonConverters.OneOfJsonConverterFactory2(),
                     new global::G.JsonConverters.ChatCompletionStreamJsonConverter(),
                     new global::G.JsonConverters.CompletionStreamJsonConverter(),
                     new global::G.JsonConverters.FinetuneResponseTrainingTypeJsonConverter(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.ChatCompletionRequestFunctionCallEnum?, global::G.ChatCompletionRequestFunctionCallEnum2>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::G.ToolChoice2>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>>(),
+                    new global::G.JsonConverters.OneOfJsonConverter<global::G.FullTrainingType, global::G.LoRATrainingType>(),
                 }
             };
 

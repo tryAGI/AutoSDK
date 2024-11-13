@@ -24,7 +24,7 @@ namespace G
         /// </summary>
         /// <example>gpt-4o</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateRunRequestModel?>))]
         public global::G.AnyOf<string, global::G.CreateRunRequestModel?>? Model { get; set; }
 
         /// <summary>

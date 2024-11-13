@@ -41,7 +41,7 @@ namespace G
         /// Image representation that can hold URL of an image or a base64 representation
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, byte[]>))]
         public global::G.AnyOf<string, byte[]>? Image { get; set; }
 
         /// <summary>

@@ -45,8 +45,6 @@ namespace G
             typeof(global::G.JsonConverters.LemurModelNullableJsonConverter),
             typeof(global::G.JsonConverters.TranscriptWebhookNotificationJsonConverter),
             typeof(global::G.JsonConverters.RedactedAudioNotificationJsonConverter),
-            typeof(global::G.JsonConverters.OneOfJsonConverterFactory2),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.TranscriptParamsJsonConverter),
             typeof(global::G.JsonConverters.LemurStringResponseJsonConverter),
             typeof(global::G.JsonConverters.LemurTaskResponseJsonConverter),
@@ -58,6 +56,19 @@ namespace G
             typeof(global::G.JsonConverters.LemurSummaryParamsJsonConverter),
             typeof(global::G.JsonConverters.LemurQuestionAnswerParamsJsonConverter),
             typeof(global::G.JsonConverters.LemurActionItemsParamsJsonConverter),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.TranscriptLanguageCode?, string>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SubstitutionPolicy?, object>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.TranscriptLanguageCode?, string>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SpeechModel2?, object>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.AutoHighlightsResult2, object>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.RedactPiiAudioQuality?, object>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ContentSafetyLabelsResult, object>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.TopicDetectionModelResult, object>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.LemurModel?, string>),
+            typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>),
         };
     }
 }

@@ -60,7 +60,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_job")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.WebhookWorkflowJobCompletedWorkflowJobVariant1, global::G.WebhookWorkflowJobCompletedWorkflowJobVariant2> WorkflowJob { get; set; }
 

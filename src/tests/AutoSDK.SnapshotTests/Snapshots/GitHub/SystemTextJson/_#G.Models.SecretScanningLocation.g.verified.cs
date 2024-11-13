@@ -24,7 +24,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("details")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory13))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.SecretScanningLocationCommit, global::G.SecretScanningLocationWikiCommit, global::G.SecretScanningLocationIssueTitle, global::G.SecretScanningLocationIssueBody, global::G.SecretScanningLocationIssueComment, global::G.SecretScanningLocationDiscussionTitle, global::G.SecretScanningLocationDiscussionBody, global::G.SecretScanningLocationDiscussionComment, global::G.SecretScanningLocationPullRequestTitle, global::G.SecretScanningLocationPullRequestBody, global::G.SecretScanningLocationPullRequestComment, global::G.SecretScanningLocationPullRequestReview, global::G.SecretScanningLocationPullRequestReviewComment>))]
         public global::G.OneOf<global::G.SecretScanningLocationCommit, global::G.SecretScanningLocationWikiCommit, global::G.SecretScanningLocationIssueTitle, global::G.SecretScanningLocationIssueBody, global::G.SecretScanningLocationIssueComment, global::G.SecretScanningLocationDiscussionTitle, global::G.SecretScanningLocationDiscussionBody, global::G.SecretScanningLocationDiscussionComment, global::G.SecretScanningLocationPullRequestTitle, global::G.SecretScanningLocationPullRequestBody, global::G.SecretScanningLocationPullRequestComment, global::G.SecretScanningLocationPullRequestReview, global::G.SecretScanningLocationPullRequestReviewComment>? Details { get; set; }
 
         /// <summary>

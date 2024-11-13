@@ -113,8 +113,9 @@ namespace G
                     new global::G.JsonConverters.GetTranscriptForDubV1DubbingDubbingIdTranscriptLanguageCodeGetFormatTypeNullableJsonConverter(),
                     new global::G.JsonConverters.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownTypeJsonConverter(),
                     new global::G.JsonConverters.GetCharactersUsageMetricsV1UsageCharacterStatsGetBreakdownTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
-                    new global::G.JsonConverters.AllOfJsonConverterFactory1(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<global::G.VoiceSettingsResponseModel>(),
                 }
             };
 

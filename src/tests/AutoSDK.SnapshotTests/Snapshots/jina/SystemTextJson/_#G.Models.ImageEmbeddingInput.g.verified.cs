@@ -25,7 +25,7 @@ namespace G
         /// List of images to embed
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ApiSchemasEmbeddingImageDoc, global::System.Collections.Generic.IList<global::G.ApiSchemasEmbeddingImageDoc>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<global::G.ApiSchemasEmbeddingImageDoc, global::System.Collections.Generic.IList<global::G.ApiSchemasEmbeddingImageDoc>> Input { get; set; }
 
@@ -33,7 +33,7 @@ namespace G
         /// The format in which you want the embeddings to be returned.Possible value are `float`, `base64`, `binary`, `ubinary` or a list containing any of them. Defaults to `float`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embedding_type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ImageEmbeddingInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.ImageEmbeddingInputEmbeddingTypeItem>>))]
         public global::G.AnyOf<global::G.ImageEmbeddingInputEmbeddingType?, global::System.Collections.Generic.IList<global::G.ImageEmbeddingInputEmbeddingTypeItem>>? EmbeddingType { get; set; }
 
         /// <summary>

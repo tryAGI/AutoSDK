@@ -16,7 +16,7 @@ namespace G
         /// Default Value: [, , , ]
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("documents")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>> Documents { get; set; }
 

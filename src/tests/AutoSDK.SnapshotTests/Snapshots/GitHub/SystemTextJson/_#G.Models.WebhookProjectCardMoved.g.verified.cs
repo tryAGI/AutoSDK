@@ -51,7 +51,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("project_card")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookProjectCardMovedProjectCardVariant1, global::G.WebhookProjectCardMovedProjectCardVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.WebhookProjectCardMovedProjectCardVariant1, global::G.WebhookProjectCardMovedProjectCardVariant2> ProjectCard { get; set; }
 

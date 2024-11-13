@@ -18,7 +18,7 @@ namespace G
         /// </summary>
         /// <default>global::G.FineTuningJobHyperparametersNEpochs.Auto</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.FineTuningJobHyperparametersNEpochs?, int?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.OneOf<global::G.FineTuningJobHyperparametersNEpochs?, int?> NEpochs { get; set; } = global::G.FineTuningJobHyperparametersNEpochs.Auto;
 

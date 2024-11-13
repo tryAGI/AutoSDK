@@ -41,7 +41,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_cost")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<double?, string> PromptCost { get; set; }
 
@@ -49,7 +49,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("completion_cost")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<double?, string>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<double?, string> CompletionCost { get; set; }
 

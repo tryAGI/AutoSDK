@@ -102,7 +102,6 @@ namespace G
             typeof(global::G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeJsonConverter),
             typeof(global::G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseDiscriminatorTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.MessagesItemJsonConverter),
-            typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2),
             typeof(global::G.JsonConverters.ContentChunkJsonConverter),
             typeof(global::G.JsonConverters.MessagesItem2JsonConverter),
             typeof(global::G.JsonConverters.ChatCompletionResponseJsonConverter),
@@ -117,6 +116,18 @@ namespace G
             typeof(global::G.JsonConverters.RepositoriesItem3JsonConverter),
             typeof(global::G.JsonConverters.DataItemJsonConverter),
             typeof(global::G.JsonConverters.RetrieveModelV1ModelsModelIdGetResponseJsonConverter),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.ContentChunk>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ImageURL, string>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<object, string>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ToolChoice3, global::G.ToolChoiceEnum?>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.TextChunk>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ToolChoice3, global::G.ToolChoiceEnum?>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
+            typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.JobOut, global::G.LegacyJobMetadataOut>),
         };
     }
 }

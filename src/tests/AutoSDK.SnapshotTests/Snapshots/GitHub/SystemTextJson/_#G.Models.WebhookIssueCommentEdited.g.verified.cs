@@ -52,7 +52,7 @@ namespace G
         /// The [issue](https://docs.github.com/rest/issues/issues#get-an-issue) the comment belongs to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("issue")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.WebhookIssueCommentEditedIssueVariant1, global::G.WebhookIssueCommentEditedIssueVariant2>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AllOf<global::G.WebhookIssueCommentEditedIssueVariant1, global::G.WebhookIssueCommentEditedIssueVariant2> Issue { get; set; }
 

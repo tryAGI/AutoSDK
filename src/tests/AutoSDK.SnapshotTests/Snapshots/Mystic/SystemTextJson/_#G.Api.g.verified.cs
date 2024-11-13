@@ -58,8 +58,9 @@ namespace G
                     new global::G.JsonConverters.OrderByNullableJsonConverter(),
                     new global::G.JsonConverters.ScalingConfigTypeJsonConverter(),
                     new global::G.JsonConverters.ScalingConfigTypeNullableJsonConverter(),
-                    new global::G.JsonConverters.AnyOfJsonConverterFactory2(),
-                    new global::G.JsonConverters.AllOfJsonConverterFactory1(),
+                    new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<global::G.Accelerator?>(),
+                    new global::G.JsonConverters.AllOfJsonConverter<global::G.OrderBy?>(),
                 }
             };
 

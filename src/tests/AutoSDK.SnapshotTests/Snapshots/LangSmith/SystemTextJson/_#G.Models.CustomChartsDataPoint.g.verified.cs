@@ -29,7 +29,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("value")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory3))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<int?, double?, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<int?, double?, object>? Value { get; set; }
 

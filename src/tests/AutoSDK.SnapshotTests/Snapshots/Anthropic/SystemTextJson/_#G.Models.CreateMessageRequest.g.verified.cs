@@ -19,7 +19,7 @@ namespace G
         /// </summary>
         /// <example>claude-3-5-sonnet-20241022</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("model")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateMessageRequestModel?>))]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::G.AnyOf<string, global::G.CreateMessageRequestModel?> Model { get; set; }
 
@@ -135,7 +135,7 @@ namespace G
         /// [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("system")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverterFactory2))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>))]
         public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Block>>? System { get; set; }
 
         /// <summary>
