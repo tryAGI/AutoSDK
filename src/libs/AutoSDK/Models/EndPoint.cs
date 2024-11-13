@@ -148,11 +148,13 @@ public readonly record struct EndPoint(
             Path: preparedPath,
             RequestMediaType: requestMediaType,
             Parameters: parameters.ToImmutableArray(),
-            SuccessResponse: responses.Any(x => x.Is2XX)
-                ? responses.First(x => x.Is2XX)
-                : responses.Any(x => x.IsDefault)
-                    ? responses.First(x => x.IsDefault)
-                    : EndPointResponse.Default,
+            SuccessResponse: responses.Any(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
+                ? responses.First(x => x.Is2XX && !string.IsNullOrWhiteSpace(x.Type.CSharpTypeRaw))
+                : responses.Any(x => x.Is2XX)
+                    ? responses.First(x => x.Is2XX)
+                    : responses.Any(x => x.IsDefault)
+                        ? responses.First(x => x.IsDefault)
+                        : EndPointResponse.Default,
             ErrorResponses: responses.Where(x => !x.Is2XX).ToImmutableArray(),
             QueryParameters: queryParameters.ToImmutableArray(),
             Authorizations: authorizations,
