@@ -61,7 +61,7 @@ jobs:
           dotnet-version: 9.0.x
 
       - name: Generate code
-        run: dotnet run --project src/libs/AutoSDK.CLI
+        run: dotnet run --framework net9.0 --project src/libs/AutoSDK.CLI
           init
           TestSolution
           TestApi
@@ -69,13 +69,12 @@ jobs:
           TestCompany
           --output TestProject
           --add-tests false
-          --framework net9.0
 
       - name: Generate code
-        run: dotnet run --project src/libs/AutoSDK.CLI
+        run: dotnet run --framework net9.0 --project src/libs/AutoSDK.CLI
           generate specs/${{ matrix.spec }}
           --namespace TestSolution
-          --targetFramework net8.0
+          --targetFramework net9.0
           --output TestProject/src/libs/TestSolution/Generated
           --ignore-openapi-errors
 
