@@ -95,6 +95,7 @@ namespace G
                     new global::G.JsonConverters.ChatStreamedResponseJsonConverter(),
                     new global::G.JsonConverters.CreateAppClientRequestJsonConverter(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.SearchCorpus, global::G.SearchParameters>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

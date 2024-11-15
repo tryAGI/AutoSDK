@@ -99,6 +99,7 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverter<string, object>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.LemurModel?, string>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, object>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

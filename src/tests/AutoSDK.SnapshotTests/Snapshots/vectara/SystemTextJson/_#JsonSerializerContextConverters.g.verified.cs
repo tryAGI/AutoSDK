@@ -47,6 +47,7 @@ namespace G
             typeof(global::G.JsonConverters.ChatStreamedResponseJsonConverter),
             typeof(global::G.JsonConverters.CreateAppClientRequestJsonConverter),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.SearchCorpus, global::G.SearchParameters>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

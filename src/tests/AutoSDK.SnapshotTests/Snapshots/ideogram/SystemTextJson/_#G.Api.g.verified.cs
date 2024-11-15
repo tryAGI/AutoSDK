@@ -54,6 +54,7 @@ namespace G
                     new global::G.JsonConverters.ColorPalettePresetNameJsonConverter(),
                     new global::G.JsonConverters.ColorPalettePresetNameNullableJsonConverter(),
                     new global::G.JsonConverters.ColorPaletteWithPresetNameOrMembersJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

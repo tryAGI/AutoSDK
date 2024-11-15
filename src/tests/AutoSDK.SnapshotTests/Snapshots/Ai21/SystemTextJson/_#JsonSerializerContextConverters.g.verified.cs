@@ -67,6 +67,7 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.ChatCompletion, global::System.Collections.Generic.IList<global::G.ChatCompletionVllmStreamingMessage>>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

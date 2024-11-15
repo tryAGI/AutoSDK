@@ -45,6 +45,7 @@ namespace G
                     new global::G.JsonConverters.AsnResponseTypeNullableJsonConverter(),
                     new global::G.JsonConverters.CompanyTypeJsonConverter(),
                     new global::G.JsonConverters.CompanyTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

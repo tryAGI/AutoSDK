@@ -61,6 +61,7 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.Accelerator?>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.OrderBy?>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

@@ -78,6 +78,7 @@ namespace G
                     new global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemJsonConverter(),
                     new global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemNullableJsonConverter(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, int?, global::System.Collections.Generic.IList<string>>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

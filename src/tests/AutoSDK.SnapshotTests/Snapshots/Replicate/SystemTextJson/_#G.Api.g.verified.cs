@@ -59,6 +59,7 @@ namespace G
                     new global::G.JsonConverters.DeploymentsGetResponseCurrentReleaseCreatedByTypeNullableJsonConverter(),
                     new global::G.JsonConverters.DeploymentsUpdateResponseCurrentReleaseCreatedByTypeJsonConverter(),
                     new global::G.JsonConverters.DeploymentsUpdateResponseCurrentReleaseCreatedByTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

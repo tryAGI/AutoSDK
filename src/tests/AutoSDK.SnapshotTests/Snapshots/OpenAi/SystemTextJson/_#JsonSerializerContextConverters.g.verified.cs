@@ -621,6 +621,7 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.CreateThreadAndRunRequestModel?>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateTranscriptionResponseJson, global::G.CreateTranscriptionResponseVerboseJson>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateTranslationResponseJson, global::G.CreateTranslationResponseVerboseJson>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

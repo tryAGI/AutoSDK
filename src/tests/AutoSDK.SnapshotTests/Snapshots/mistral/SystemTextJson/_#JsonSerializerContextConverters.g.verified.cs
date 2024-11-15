@@ -128,6 +128,7 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.JobOut, global::G.LegacyJobMetadataOut>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

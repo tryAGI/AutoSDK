@@ -73,6 +73,7 @@ namespace G
                     new global::G.JsonConverters.CanvasRequestTypeNullableJsonConverter(),
                     new global::G.JsonConverters.CreateGenerationRequestTransparencyJsonConverter(),
                     new global::G.JsonConverters.CreateGenerationRequestTransparencyNullableJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

@@ -45,6 +45,7 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

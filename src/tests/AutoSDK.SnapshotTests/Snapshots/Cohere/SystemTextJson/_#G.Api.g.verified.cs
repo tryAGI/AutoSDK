@@ -204,6 +204,7 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.ChatResponse, global::G.StreamedChatResponseV2?>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

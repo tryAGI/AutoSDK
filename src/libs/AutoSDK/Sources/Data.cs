@@ -227,6 +227,10 @@ public static class Data
                     string.Join(", ", x.Children
                         .Where(y => y.Hint is Hint.AnyOf or Hint.OneOf or Hint.AllOf)
                         .Select(y => y.TypeData.CSharpTypeWithNullabilityForValueTypes))}>"))
+            // Unix Timestamp converter
+            .Concat([
+                $"global::{settings.Namespace}.JsonConverters.UnixTimestampJsonConverter",
+            ])
             .ToImmutableArray();
         
         var includedTags = allTags

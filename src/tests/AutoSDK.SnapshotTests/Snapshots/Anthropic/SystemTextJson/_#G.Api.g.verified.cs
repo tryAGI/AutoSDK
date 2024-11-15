@@ -75,6 +75,7 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>(),
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<global::G.Block>>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

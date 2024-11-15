@@ -15,6 +15,7 @@ namespace G
             typeof(global::G.JsonConverters.AsnResponseTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.CompanyTypeJsonConverter),
             typeof(global::G.JsonConverters.CompanyTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

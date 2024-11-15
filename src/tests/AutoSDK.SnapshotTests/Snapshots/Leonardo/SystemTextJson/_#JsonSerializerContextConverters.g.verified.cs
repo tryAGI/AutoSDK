@@ -43,6 +43,7 @@ namespace G
             typeof(global::G.JsonConverters.CanvasRequestTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.CreateGenerationRequestTransparencyJsonConverter),
             typeof(global::G.JsonConverters.CreateGenerationRequestTransparencyNullableJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

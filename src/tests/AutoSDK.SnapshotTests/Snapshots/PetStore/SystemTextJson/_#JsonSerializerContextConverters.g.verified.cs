@@ -11,6 +11,7 @@ namespace G
     {
         private readonly global::System.Type[] _types = new global::System.Type[]
         {
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

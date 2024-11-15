@@ -92,6 +92,7 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.FullTrainingType, global::G.LoRATrainingType>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

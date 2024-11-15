@@ -5862,6 +5862,7 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.PrivateUser, global::G.PublicUser>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.PrivateUser, global::G.PublicUser>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.StarredRepository>, global::System.Collections.Generic.IList<global::G.Repository>>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

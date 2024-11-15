@@ -29,6 +29,7 @@ namespace G
             typeof(global::G.JsonConverters.DeploymentsGetResponseCurrentReleaseCreatedByTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.DeploymentsUpdateResponseCurrentReleaseCreatedByTypeJsonConverter),
             typeof(global::G.JsonConverters.DeploymentsUpdateResponseCurrentReleaseCreatedByTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

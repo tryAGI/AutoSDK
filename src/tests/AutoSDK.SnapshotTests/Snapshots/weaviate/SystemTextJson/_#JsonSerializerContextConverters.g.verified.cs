@@ -99,6 +99,7 @@ namespace G
             typeof(global::G.JsonConverters.NodesGetClassOutputNullableJsonConverter),
             typeof(global::G.JsonConverters.BatchReferenceResponseJsonConverter),
             typeof(global::G.JsonConverters.ObjectsGetResponseJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

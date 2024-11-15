@@ -133,6 +133,7 @@ namespace G
             typeof(global::G.JsonConverters.PipelinePublicServiceGetNamespaceConnectionViewNullableJsonConverter),
             typeof(global::G.JsonConverters.PipelinePublicServiceGetIntegrationViewJsonConverter),
             typeof(global::G.JsonConverters.PipelinePublicServiceGetIntegrationViewNullableJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

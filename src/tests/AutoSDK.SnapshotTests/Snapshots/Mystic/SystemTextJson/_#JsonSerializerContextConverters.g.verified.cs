@@ -32,6 +32,7 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.Accelerator?>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.OrderBy?>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

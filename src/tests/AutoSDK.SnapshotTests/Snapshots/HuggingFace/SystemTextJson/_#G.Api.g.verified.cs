@@ -42,6 +42,7 @@ namespace G
                 Converters =
                 {
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

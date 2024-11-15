@@ -69,6 +69,7 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.LemurModel?, string>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, object>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

@@ -199,6 +199,7 @@ namespace G
                     new global::G.JsonConverters.GetVideosSortNullableJsonConverter(),
                     new global::G.JsonConverters.GetVideosTypeJsonConverter(),
                     new global::G.JsonConverters.GetVideosTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

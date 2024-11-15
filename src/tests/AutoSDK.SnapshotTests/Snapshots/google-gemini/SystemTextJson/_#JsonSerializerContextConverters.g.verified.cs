@@ -25,6 +25,7 @@ namespace G
             typeof(global::G.JsonConverters.SafetySettingThresholdNullableJsonConverter),
             typeof(global::G.JsonConverters.PromptFeedbackBlockReasonJsonConverter),
             typeof(global::G.JsonConverters.PromptFeedbackBlockReasonNullableJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

@@ -21,6 +21,7 @@ namespace G
             typeof(global::G.JsonConverters.ImageSizeNullableJsonConverter),
             typeof(global::G.JsonConverters.ImageSubStyleJsonConverter),
             typeof(global::G.JsonConverters.ImageSubStyleNullableJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

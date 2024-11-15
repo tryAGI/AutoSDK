@@ -213,6 +213,7 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.ExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.FeedbackIngestTokenSchema, global::System.Collections.Generic.IList<global::G.FeedbackIngestTokenSchema>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.PublicExampleWithRuns>, global::System.Collections.Generic.IList<global::G.ExampleWithRunsCH>>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

@@ -29,6 +29,7 @@ namespace G
             typeof(global::G.JsonConverters.CreateModelStatusJsonConverter),
             typeof(global::G.JsonConverters.PullModelStatusJsonConverter),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, global::G.PushModelResponseStatus?>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

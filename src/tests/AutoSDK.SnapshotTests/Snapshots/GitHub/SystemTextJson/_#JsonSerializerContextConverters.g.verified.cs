@@ -5832,6 +5832,7 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.PrivateUser, global::G.PublicUser>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.PrivateUser, global::G.PublicUser>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.StarredRepository>, global::System.Collections.Generic.IList<global::G.Repository>>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

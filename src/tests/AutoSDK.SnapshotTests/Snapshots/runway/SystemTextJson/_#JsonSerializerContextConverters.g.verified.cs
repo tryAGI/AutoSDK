@@ -23,6 +23,7 @@ namespace G
             typeof(global::G.JsonConverters.CancelOrDeleteTaskXRunwayVersionNullableJsonConverter),
             typeof(global::G.JsonConverters.GetTaskDetailResponseStatusJsonConverter),
             typeof(global::G.JsonConverters.GetTaskDetailResponseStatusNullableJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

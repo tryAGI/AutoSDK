@@ -55,6 +55,7 @@ namespace G
                     new global::G.JsonConverters.SafetySettingThresholdNullableJsonConverter(),
                     new global::G.JsonConverters.PromptFeedbackBlockReasonJsonConverter(),
                     new global::G.JsonConverters.PromptFeedbackBlockReasonNullableJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

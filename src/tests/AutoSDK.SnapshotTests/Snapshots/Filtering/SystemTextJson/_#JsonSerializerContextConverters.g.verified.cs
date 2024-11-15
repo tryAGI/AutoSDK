@@ -48,6 +48,7 @@ namespace G
             typeof(global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemJsonConverter),
             typeof(global::G.JsonConverters.MigrationsGetStatusForOrgExcludeItemNullableJsonConverter),
             typeof(global::G.JsonConverters.OneOfJsonConverter<string, int?, global::System.Collections.Generic.IList<string>>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

@@ -138,6 +138,7 @@ namespace G
                     new global::G.JsonConverters.NodesGetClassOutputNullableJsonConverter(),
                     new global::G.JsonConverters.BatchReferenceResponseJsonConverter(),
                     new global::G.JsonConverters.ObjectsGetResponseJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

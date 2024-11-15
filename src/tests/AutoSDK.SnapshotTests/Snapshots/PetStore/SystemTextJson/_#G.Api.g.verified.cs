@@ -40,6 +40,7 @@ namespace G
                 DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
                 Converters =
                 {
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

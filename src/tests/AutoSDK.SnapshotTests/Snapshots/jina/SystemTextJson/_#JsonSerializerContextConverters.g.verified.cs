@@ -56,6 +56,7 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<bool?, string>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextExampleDoc, global::G.ImageExampleDoc>>, global::G.TextExampleDoc, global::G.ImageExampleDoc>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.TextExampleDoc, global::G.ImageExampleDoc>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

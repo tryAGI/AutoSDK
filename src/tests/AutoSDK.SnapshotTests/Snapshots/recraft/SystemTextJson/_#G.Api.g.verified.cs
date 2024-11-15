@@ -50,6 +50,7 @@ namespace G
                     new global::G.JsonConverters.ImageSizeNullableJsonConverter(),
                     new global::G.JsonConverters.ImageSubStyleJsonConverter(),
                     new global::G.JsonConverters.ImageSubStyleNullableJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

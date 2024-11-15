@@ -24,6 +24,7 @@ namespace G
             typeof(global::G.JsonConverters.ColorPalettePresetNameJsonConverter),
             typeof(global::G.JsonConverters.ColorPalettePresetNameNullableJsonConverter),
             typeof(global::G.JsonConverters.ColorPaletteWithPresetNameOrMembersJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

@@ -158,6 +158,7 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.JobOut, global::G.LegacyJobMetadataOut>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

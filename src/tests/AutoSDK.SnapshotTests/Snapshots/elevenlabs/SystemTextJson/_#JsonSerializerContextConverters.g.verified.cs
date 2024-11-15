@@ -86,6 +86,7 @@ namespace G
             typeof(global::G.JsonConverters.AnyOfJsonConverter<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>),
             typeof(global::G.JsonConverters.AnyOfJsonConverter<string, int?>),
             typeof(global::G.JsonConverters.AllOfJsonConverter<global::G.VoiceSettingsResponseModel>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

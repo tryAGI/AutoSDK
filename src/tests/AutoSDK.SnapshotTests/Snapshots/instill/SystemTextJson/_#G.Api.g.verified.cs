@@ -163,6 +163,7 @@ namespace G
                     new global::G.JsonConverters.PipelinePublicServiceGetNamespaceConnectionViewNullableJsonConverter(),
                     new global::G.JsonConverters.PipelinePublicServiceGetIntegrationViewJsonConverter(),
                     new global::G.JsonConverters.PipelinePublicServiceGetIntegrationViewNullableJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

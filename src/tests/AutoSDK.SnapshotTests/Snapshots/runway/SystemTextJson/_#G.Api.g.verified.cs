@@ -53,6 +53,7 @@ namespace G
                     new global::G.JsonConverters.CancelOrDeleteTaskXRunwayVersionNullableJsonConverter(),
                     new global::G.JsonConverters.GetTaskDetailResponseStatusJsonConverter(),
                     new global::G.JsonConverters.GetTaskDetailResponseStatusNullableJsonConverter(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

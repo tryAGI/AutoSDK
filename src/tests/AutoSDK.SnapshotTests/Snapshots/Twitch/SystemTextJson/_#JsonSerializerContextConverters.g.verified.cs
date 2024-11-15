@@ -161,6 +161,7 @@ namespace G
             typeof(global::G.JsonConverters.GetVideosSortNullableJsonConverter),
             typeof(global::G.JsonConverters.GetVideosTypeJsonConverter),
             typeof(global::G.JsonConverters.GetVideosTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

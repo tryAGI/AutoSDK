@@ -122,6 +122,7 @@ namespace G
                     new global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>>(),
                     new global::G.JsonConverters.OneOfJsonConverter<global::G.FullTrainingType, global::G.LoRATrainingType>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 

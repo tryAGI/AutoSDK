@@ -172,6 +172,7 @@ namespace G
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.NonStreamedChatResponse, global::G.StreamedChatResponse?>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.ChatResponse, global::G.StreamedChatResponseV2?>),
             typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.EmbedFloatsResponse, global::G.EmbedByTypeResponse>),
+            typeof(global::G.JsonConverters.UnixTimestampJsonConverter),
         };
     }
 }

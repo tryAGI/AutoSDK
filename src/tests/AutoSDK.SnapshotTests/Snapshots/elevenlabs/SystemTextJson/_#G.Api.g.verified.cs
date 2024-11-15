@@ -116,6 +116,7 @@ namespace G
                     new global::G.JsonConverters.AnyOfJsonConverter<global::G.PronunciationDictionaryAliasRuleRequestModel, global::G.PronunciationDictionaryPhonemeRuleRequestModel>(),
                     new global::G.JsonConverters.AnyOfJsonConverter<string, int?>(),
                     new global::G.JsonConverters.AllOfJsonConverter<global::G.VoiceSettingsResponseModel>(),
+                    new global::G.JsonConverters.UnixTimestampJsonConverter(),
                 }
             };
 
