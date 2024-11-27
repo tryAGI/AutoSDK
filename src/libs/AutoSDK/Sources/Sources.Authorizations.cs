@@ -15,10 +15,6 @@ public static partial class Sources
         }
         if (authorization.Type is SecuritySchemeType.OAuth2)
         {
-            var jsonSerializerContext = !string.IsNullOrWhiteSpace(authorization.Settings.JsonSerializerContext)
-                ? $", global::{authorization.Settings.JsonSerializerContext}.Default.DictionaryStringString"
-                : string.Empty;
-
             return $@"
 #nullable enable
 
@@ -56,7 +52,9 @@ namespace {authorization.Settings.Namespace}
             response.EnsureSuccessStatusCode();
 
             var json = await response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-            var dictionary = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.Dictionary<string, string>>(json{jsonSerializerContext}) ??
+            var dictionary = global::System.Text.Json.JsonSerializer.Deserialize<global::System.Collections.Generic.Dictionary<string, string>>(json{(!string.IsNullOrWhiteSpace(authorization.Settings.JsonSerializerContext)
+                            ? $", global::{authorization.Settings.JsonSerializerContext}.Default.DictionaryStringString"
+                            : string.Empty)}) ??
                              throw new global::System.InvalidOperationException(""Deserialization failed."");
 
             var accessToken = dictionary[""access_token""];
@@ -77,29 +75,6 @@ namespace {authorization.Settings.Namespace}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
         }
         
-        var name = (authorization.Type, authorization.Scheme, authorization.In) switch
-        {
-            (SecuritySchemeType.Http, "bearer", _) => "Bearer",
-            (SecuritySchemeType.Http, "basic", _) => "Basic",
-            (SecuritySchemeType.ApiKey, _, _) => authorization.Name,
-            _ => string.Empty,
-        };
-        var value = (authorization.Type, authorization.Scheme, authorization.In) switch
-        {
-            (SecuritySchemeType.Http, "bearer", _) => "apiKey",
-            (SecuritySchemeType.Http, "basic", _) => @"global::System.Convert.ToBase64String(
-                    global::System.Text.Encoding.UTF8.GetBytes($""{username}:{password}""))",
-            (SecuritySchemeType.ApiKey, _, _) => "apiKey",
-            _ => string.Empty,
-        };
-        var xmlDocs = (authorization.Type, authorization.Scheme, authorization.In) switch
-        {
-            (SecuritySchemeType.Http, "bearer", _) => "Authorize using bearer authentication.",
-            (SecuritySchemeType.Http, "basic", _) => "Authorize using basic authentication.",
-            (SecuritySchemeType.ApiKey, _, _) => "Authorize using ApiKey authentication.",
-            _ => string.Empty,
-        };
-        
         return $@"
 #nullable enable
 
@@ -108,7 +83,13 @@ namespace {authorization.Settings.Namespace}
     public sealed partial class {authorization.Settings.ClassName}
     {{
         /// <summary>
-        /// {xmlDocs}
+        /// {(authorization.Type, authorization.Scheme.ToUpperInvariant(), authorization.In) switch
+        {
+            (SecuritySchemeType.Http, "BEARER", _) => "Authorize using bearer authentication.",
+            (SecuritySchemeType.Http, "BASIC", _) => "Authorize using basic authentication.",
+            (SecuritySchemeType.ApiKey, _, _) => "Authorize using ApiKey authentication.",
+            _ => string.Empty,
+        }}
         /// </summary>
 {authorization.Parameters.Select(x => $@"
         /// <param name=""{x}""></param>").Inject()}
@@ -124,8 +105,21 @@ namespace {authorization.Settings.Namespace}
             {{
                 Type = ""{authorization.Type:G}"",
                 Location = ""{authorization.In:G}"",
-                Name = ""{name}"",
-                Value = {value},
+                Name = ""{(authorization.Type, authorization.Scheme.ToUpperInvariant(), authorization.In) switch
+                {
+                    (SecuritySchemeType.Http, "BEARER", _) => "Bearer",
+                    (SecuritySchemeType.Http, "BASIC", _) => "Basic",
+                    (SecuritySchemeType.ApiKey, _, _) => authorization.Name,
+                    _ => string.Empty,
+                }}"",
+                Value = {(authorization.Type, authorization.Scheme.ToUpperInvariant(), authorization.In) switch
+                {
+                    (SecuritySchemeType.Http, "BEARER", _) => "apiKey",
+                    (SecuritySchemeType.Http, "BASIC", _) => @"global::System.Convert.ToBase64String(
+                    global::System.Text.Encoding.UTF8.GetBytes($""{username}:{password}""))",
+                    (SecuritySchemeType.ApiKey, _, _) => "apiKey",
+                    _ => "\"\"",
+                }},
             }});
         }}
     }}

@@ -24,19 +24,19 @@ public readonly record struct Authorization(
     {
         scheme = scheme ?? throw new ArgumentNullException(nameof(scheme));
 
-        var friendlyName = (scheme.Type, scheme.Scheme, scheme.In) switch
+        var friendlyName = (scheme.Type, scheme.Scheme?.ToUpperInvariant(), scheme.In) switch
         {
-            (SecuritySchemeType.Http, "bearer", _) => "Bearer",
-            (SecuritySchemeType.Http, "basic", _) => "Basic",
+            (SecuritySchemeType.Http, "BEARER", _) => "Bearer",
+            (SecuritySchemeType.Http, "BASIC", _) => "Basic",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => "ApiKeyInHeader",
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => "ApiKeyInQuery",
             (SecuritySchemeType.OAuth2, _, _) => "OAuth2",
             _ => scheme.Scheme?.ToPropertyName() ?? string.Empty,
         };
-        string[] parameters = (scheme.Type, scheme.Scheme, scheme.In) switch
+        string[] parameters = (scheme.Type, scheme.Scheme?.ToUpperInvariant(), scheme.In) switch
         {
-            (SecuritySchemeType.Http, "bearer", _) => ["apiKey"],
-            (SecuritySchemeType.Http, "basic", _) => ["username", "password"],
+            (SecuritySchemeType.Http, "BEARER", _) => ["apiKey"],
+            (SecuritySchemeType.Http, "BASIC", _) => ["username", "password"],
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Header) => ["apiKey"],
             (SecuritySchemeType.ApiKey, _, ParameterLocation.Query) => ["apiKey"],
             _ => [],
@@ -45,9 +45,9 @@ public readonly record struct Authorization(
         return new Authorization(
             FriendlyName: friendlyName,
             Type: scheme.Type,
-            In: (scheme.Type, scheme.Scheme) switch
+            In: (scheme.Type, scheme.Scheme?.ToUpperInvariant()) switch
             {
-                (SecuritySchemeType.Http, "bearer") => ParameterLocation.Header,
+                (SecuritySchemeType.Http, "BEARER") => ParameterLocation.Header,
                 (SecuritySchemeType.OAuth2, _) => ParameterLocation.Header,
                 _ => scheme.In,
             },
