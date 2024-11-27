@@ -6,10 +6,7 @@ namespace G
 {
     public sealed partial class Api
     {
-        /// <summary>
-        /// Authorize using bearer authentication.
-        /// </summary>
-        /// <param name="apiKey"></param>
+        /// <inheritdoc/>
         public void AuthorizeUsingBearer(
             string apiKey)
         {

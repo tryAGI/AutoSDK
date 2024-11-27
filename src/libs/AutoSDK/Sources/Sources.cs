@@ -257,6 +257,15 @@ public static partial class Sources
             Text: GenerateAuthorization(authorization));
     }
     
+    public static FileWithName AuthorizationInterface(
+        Authorization authorization,
+        CancellationToken cancellationToken = default)
+    {
+        return new FileWithName(
+            Name: $"{authorization.Settings.Namespace}.I{authorization.Settings.ClassName}.Authorizations.{authorization.FriendlyName}.g.cs",
+            Text: GenerateAuthorizationInterface(authorization));
+    }
+    
     public static FileWithName MainAuthorizationConstructor(
         EquatableArray<Authorization> authorizations,
         CancellationToken cancellationToken = default)

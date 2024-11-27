@@ -6,13 +6,7 @@ namespace G
 {
     public sealed partial class Api
     {
-        /// <summary>
-        /// Authorize using OAuth2 authentication with client credentials.
-        /// </summary>
-        /// <param name="clientId"></param>
-        /// <param name="clientSecret"></param>
-        /// <param name="scope"></param>
-        /// <param name="cancellationToken"></param>
+        /// <inheritdoc/>
         public async global::System.Threading.Tasks.Task AuthorizeUsingOAuth2WithCredentialsAsync(
             string clientId,
             string clientSecret,

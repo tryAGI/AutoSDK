@@ -24,13 +24,7 @@ namespace {authorization.Settings.Namespace}
     {{
 {authorization.Flows.Select(x => x.Type switch {
     nameof(OpenApiOAuthFlows.ClientCredentials) => $@"
-        /// <summary>
-        /// Authorize using OAuth2 authentication with client credentials.
-        /// </summary>
-        /// <param name=""clientId""></param>
-        /// <param name=""clientSecret""></param>
-        /// <param name=""scope""></param>
-        /// <param name=""cancellationToken""></param>
+        /// <inheritdoc/>
         public async global::System.Threading.Tasks.Task {authorization.MethodName}WithCredentialsAsync(
             string clientId,
             string clientSecret,
@@ -82,17 +76,7 @@ namespace {authorization.Settings.Namespace}
 {{
     public sealed partial class {authorization.Settings.ClassName}
     {{
-        /// <summary>
-        /// {(authorization.Type, authorization.Scheme.ToUpperInvariant(), authorization.In) switch
-        {
-            (SecuritySchemeType.Http, "BEARER", _) => "Authorize using bearer authentication.",
-            (SecuritySchemeType.Http, "BASIC", _) => "Authorize using basic authentication.",
-            (SecuritySchemeType.ApiKey, _, _) => "Authorize using ApiKey authentication.",
-            _ => string.Empty,
-        }}
-        /// </summary>
-{authorization.Parameters.Select(x => $@"
-        /// <param name=""{x}""></param>").Inject()}
+        /// <inheritdoc/>
         public void {authorization.MethodName}(
 {authorization.Parameters.Select(x => $@"
             string {x},").Inject().TrimEnd(',')})
@@ -122,6 +106,68 @@ namespace {authorization.Settings.Namespace}
                 }},
             }});
         }}
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+    
+    public static string GenerateAuthorizationInterface(
+        Authorization authorization)
+    {
+        if (authorization.Type is SecuritySchemeType.OpenIdConnect)
+        {
+            return string.Empty;
+        }
+        if (authorization.Type is SecuritySchemeType.OAuth2)
+        {
+            return $@"
+#nullable enable
+
+namespace {authorization.Settings.Namespace}
+{{
+    public partial interface I{authorization.Settings.ClassName}
+    {{
+{authorization.Flows.Select(x => x.Type switch {
+    nameof(OpenApiOAuthFlows.ClientCredentials) => $@"
+        /// <summary>
+        /// Authorize using OAuth2 authentication with client credentials.
+        /// </summary>
+        /// <param name=""clientId""></param>
+        /// <param name=""clientSecret""></param>
+        /// <param name=""scope""></param>
+        /// <param name=""cancellationToken""></param>
+        public global::System.Threading.Tasks.Task {authorization.MethodName}WithCredentialsAsync(
+            string clientId,
+            string clientSecret,
+            string scope,
+            global::System.Threading.CancellationToken cancellationToken = default);
+",
+    _ => string.Empty,
+}).Inject()}
+    }}
+}}".RemoveBlankLinesWhereOnlyWhitespaces();
+        }
+        
+        return $@"
+#nullable enable
+
+namespace {authorization.Settings.Namespace}
+{{
+    public partial interface I{authorization.Settings.ClassName}
+    {{
+        /// <summary>
+        /// {(authorization.Type, authorization.Scheme.ToUpperInvariant(), authorization.In) switch
+        {
+            (SecuritySchemeType.Http, "BEARER", _) => "Authorize using bearer authentication.",
+            (SecuritySchemeType.Http, "BASIC", _) => "Authorize using basic authentication.",
+            (SecuritySchemeType.ApiKey, _, _) => "Authorize using ApiKey authentication.",
+            _ => string.Empty,
+        }}
+        /// </summary>
+{authorization.Parameters.Select(x => $@"
+        /// <param name=""{x}""></param>").Inject()}
+        public void {authorization.MethodName}(
+{authorization.Parameters.Select(x => $@"
+            string {x},").Inject().TrimEnd(',')});
     }}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }

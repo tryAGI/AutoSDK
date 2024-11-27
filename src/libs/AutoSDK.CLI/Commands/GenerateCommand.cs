@@ -150,7 +150,11 @@ internal sealed class GenerateCommand : Command
                     Sources.ClientInterface(x),
                 }))
             .Concat(data.Authorizations
-                .Select(x => Sources.Authorization(x)))
+                .SelectMany(x => new []
+                {
+                    Sources.Authorization(x),
+                    Sources.AuthorizationInterface(x),
+                }))
             .Concat([Sources.MainAuthorizationConstructor(data.Authorizations)])
             .Concat(data.AnyOfs
                 .SelectMany(x => new []

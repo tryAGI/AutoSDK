@@ -6,10 +6,7 @@ namespace G
 {
     public sealed partial class Api
     {
-        /// <summary>
-        /// Authorize using ApiKey authentication.
-        /// </summary>
-        /// <param name="apiKey"></param>
+        /// <inheritdoc/>
         public void AuthorizeUsingApiKeyInQuery(
             string apiKey)
         {
