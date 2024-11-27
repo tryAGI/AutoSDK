@@ -253,14 +253,20 @@ public readonly record struct TypeData(
             ("string", _) when context.Schema.Enum.Any() =>
                 $"global::{context.Settings.Namespace}.{context.Id}",
 
-            ("boolean", _) => "bool",
             (null, "boolean") => "bool",
-            ("integer", "int32") => "int",
-            ("integer", "int64") => "long",
-            ("number", "float") => "float",
             (null, "float") => "float",
-            ("number", "double") => "double",
             (null, "double") => "double",
+            
+            // https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/include-metadata?view=aspnetcore-9.0&tabs=minimal-apis#type-and-format
+            ("boolean", _) => "bool",
+            ("integer", "int64") => "long",
+            ("integer", "int32") => "int",
+            ("integer", "int16") => "short",
+            ("integer", "uint8") => "byte",
+            ("number", "float") => "float",
+            ("number", "double") => "double",
+            ("number", "decimal") => "decimal",
+            ("string", "char") => "char",
             ("string", "byte") => "byte[]",
             ("string", "binary") => "byte[]",
             ("string", "date") => "global::System.DateTime",
@@ -270,6 +276,7 @@ public readonly record struct TypeData(
             // Possible future types - not supported yet
             // ("string", "time") => "global::System.TimeOnly",
             // ("string", "date") => "global::System.DateOnly",
+            // ("string", "date-time") => "global::System.DateTimeOffset",
             // ("string", "period") => "global::System.TimeSpan",
             // ("string", "duration") => "global::System.TimeSpan",
             // ("string", "uri") => "global::System.Uri",
