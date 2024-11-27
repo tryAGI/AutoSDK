@@ -140,6 +140,13 @@ namespace {endPoint.Namespace}
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: {GetHttpMethod(endPoint.Settings.TargetFramework, endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+#if NET6_0_OR_GREATER
+{           // Use HTTP/3.0 or HTTP/2.0 if available
+            // https://learn.microsoft.com/en-us/dotnet/core/extensions/httpclient-http3#httpclient-settings
+    " "}
+            __httpRequest.Version = global::System.Net.HttpVersion.Version11;
+            __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
+#endif
 {(endPoint.Authorizations.Any(x => x is
     { Type: SecuritySchemeType.ApiKey, In: ParameterLocation.Header } or
     { Type: SecuritySchemeType.Http } or
