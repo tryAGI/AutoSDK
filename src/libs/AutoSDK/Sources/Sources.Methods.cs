@@ -106,9 +106,6 @@ namespace {endPoint.Namespace}
             : string.IsNullOrWhiteSpace(endPoint.SuccessResponse.Type.CSharpType)
                 ? "global::System.Threading.Tasks.Task"
                 : $"global::System.Threading.Tasks.Task<{endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability}>";
-        var httpCompletionOption = endPoint.Stream
-            ? nameof(HttpCompletionOption.ResponseHeadersRead)
-            : nameof(HttpCompletionOption.ResponseContentRead);
         var cancellationTokenAttribute = endPoint.Stream && !isInterface
             ? "[global::System.Runtime.CompilerServices.EnumeratorCancellation] "
             : string.Empty;
@@ -192,7 +189,10 @@ namespace {endPoint.Namespace}
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.{httpCompletionOption},
+                completionOption: global::System.Net.Http.HttpCompletionOption.{(endPoint.Stream
+                    // https://learn.microsoft.com/en-us/dotnet/fundamentals/networking/http/httpclient-migrate-from-httpwebrequest#usage-of-buffering-properties
+                    ? nameof(HttpCompletionOption.ResponseHeadersRead)
+                    : nameof(HttpCompletionOption.ResponseContentRead))},
                 cancellationToken: cancellationToken).ConfigureAwait(false);
 
             ProcessResponse(
