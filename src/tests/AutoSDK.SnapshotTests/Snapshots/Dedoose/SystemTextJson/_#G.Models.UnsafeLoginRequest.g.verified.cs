@@ -13,13 +13,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("username")]
-        public string? Username { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Username { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("password")]
-        public string? Password { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Password { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,11 +36,11 @@ namespace G
         /// <param name="password"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public UnsafeLoginRequest(
-            string? username,
-            string? password)
+            string username,
+            string password)
         {
-            this.Username = username;
-            this.Password = password;
+            this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
+            this.Password = password ?? throw new global::System.ArgumentNullException(nameof(password));
         }
 
         /// <summary>

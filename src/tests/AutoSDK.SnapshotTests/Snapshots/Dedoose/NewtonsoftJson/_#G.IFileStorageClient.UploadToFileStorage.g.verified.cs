@@ -6,9 +6,9 @@ namespace G
     public partial interface IFileStorageClient
     {
         /// <summary>
-        /// Returns data path.
+        /// Upload File<br/>
+        /// Uploads a file to the storage system and returns the file path.
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="name"></param>
         /// <param name="projectId"></param>
         /// <param name="uploadType"></param>
@@ -16,11 +16,10 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> UploadToFileStorageAsync(
+            string name,
+            global::System.Guid projectId,
+            int uploadType,
             byte[] request,
-            string? token = default,
-            string? name = default,
-            global::System.Guid? projectId = default,
-            int? uploadType = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

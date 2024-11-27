@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("excerptData")]
-        public global::G.Excerpt? ExcerptData { get; set; }
+        public global::G.Excerpt2? ExcerptData { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// <param name="excerptData"></param>
         /// <param name="tagApps"></param>
         public ExcerptWithTagApps(
-            global::G.Excerpt? excerptData,
+            global::G.Excerpt2? excerptData,
             global::System.Collections.Generic.IList<global::G.TagAppDTO>? tagApps)
         {
             this.ExcerptData = excerptData;

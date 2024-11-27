@@ -23,7 +23,8 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Login to Dedoose API use raw password.
+        /// Unsafe Login to Dedoose API<br/>
+        /// Authenticates a user and returns an access token.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -41,12 +42,28 @@ namespace G
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/unsafelogin",
+                path: "/api/v1/login/unsafelogin",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
+
+            foreach (var __authorization in Authorizations)
+            {
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
+            }
             var __httpRequestContentBody = request.ToJson(JsonSerializerOptions);
             var __httpRequestContent = new global::System.Net.Http.StringContent(
                 content: __httpRequestContentBody,
@@ -73,23 +90,23 @@ namespace G
             ProcessUnsafeLoginResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Request is null.
+            // Bad Request
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
-                string? __value_400 = null;
+                global::G.HttpValidationProblemDetails? __value_400 = null;
                 if (ReadResponseAsString)
                 {
                     __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = global::System.Text.Json.JsonSerializer.Deserialize<string?>(__content_400, JsonSerializerOptions);
+                    __value_400 = global::G.HttpValidationProblemDetails.FromJson(__content_400, JsonSerializerOptions);
                 }
                 else
                 {
                     var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = await global::System.Text.Json.JsonSerializer.DeserializeAsync<string?>(__contentStream_400, JsonSerializerOptions).ConfigureAwait(false);
+                    __value_400 = await global::G.HttpValidationProblemDetails.FromJsonStreamAsync(__contentStream_400, JsonSerializerOptions).ConfigureAwait(false);
                 }
 
-                throw new global::G.ApiException<string>(
+                throw new global::G.ApiException<global::G.HttpValidationProblemDetails>(
                     message: __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
@@ -101,28 +118,28 @@ namespace G
                         h => h.Value),
                 };
             }
-            // Credentials are invalid.
-            if ((int)__response.StatusCode == 404)
+            // Internal Server Error
+            if ((int)__response.StatusCode == 500)
             {
-                string? __content_404 = null;
-                string? __value_404 = null;
+                string? __content_500 = null;
+                global::G.ProblemDetails? __value_500 = null;
                 if (ReadResponseAsString)
                 {
-                    __content_404 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_404 = global::System.Text.Json.JsonSerializer.Deserialize<string?>(__content_404, JsonSerializerOptions);
+                    __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = global::G.ProblemDetails.FromJson(__content_500, JsonSerializerOptions);
                 }
                 else
                 {
-                    var __contentStream_404 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_404 = await global::System.Text.Json.JsonSerializer.DeserializeAsync<string?>(__contentStream_404, JsonSerializerOptions).ConfigureAwait(false);
+                    var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = await global::G.ProblemDetails.FromJsonStreamAsync(__contentStream_500, JsonSerializerOptions).ConfigureAwait(false);
                 }
 
-                throw new global::G.ApiException<string>(
+                throw new global::G.ApiException<global::G.ProblemDetails>(
                     message: __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
-                    ResponseBody = __content_404,
-                    ResponseObject = __value_404,
+                    ResponseBody = __content_500,
+                    ResponseObject = __value_500,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,
@@ -191,15 +208,16 @@ namespace G
         }
 
         /// <summary>
-        /// Login to Dedoose API use raw password.
+        /// Unsafe Login to Dedoose API<br/>
+        /// Authenticates a user and returns an access token.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<string> UnsafeLoginAsync(
-            string? username = default,
-            string? password = default,
+            string username,
+            string password,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.UnsafeLoginRequest

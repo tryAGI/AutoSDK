@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("accountData")]
-        public global::G.AccountVO? AccountData { get; set; }
+        public global::G.AccountVO2? AccountData { get; set; }
 
         /// <summary>
         /// 
@@ -40,7 +40,7 @@ namespace G
         /// <param name="billingTransactionItems"></param>
         /// <param name="creditTransactionItems"></param>
         public AccountWithLogs(
-            global::G.AccountVO? accountData,
+            global::G.AccountVO2? accountData,
             global::System.Collections.Generic.IList<global::G.BillingTransaction>? billingTransactionItems,
             global::System.Collections.Generic.IList<global::G.CreditTransaction>? creditTransactionItems)
         {

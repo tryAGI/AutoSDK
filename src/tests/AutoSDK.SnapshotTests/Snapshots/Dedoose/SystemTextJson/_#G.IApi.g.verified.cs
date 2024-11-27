@@ -5,6 +5,7 @@
 namespace G
 {
     /// <summary>
+    /// Dedoose.Apis.OpenAPI<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -85,21 +86,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FileStorageClient FileStorage { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public LoginClient Login { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsersClient Users { get; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public MemoClient Memo { get; }
 
         /// <summary>
@@ -136,6 +122,26 @@ namespace G
         /// 
         /// </summary>
         public UserClient User { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FileStorageClient FileStorage { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LoginClient Login { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InformationClient Information { get; }
 
     }
 }

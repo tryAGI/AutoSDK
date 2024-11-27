@@ -22,7 +22,7 @@ namespace G
         public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
-        /// Included only in responses
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("projectIdKey")]
         public string? ProjectIdKey { get; set; }
@@ -74,9 +74,7 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="projectId"></param>
-        /// <param name="projectIdKey">
-        /// Included only in responses
-        /// </param>
+        /// <param name="projectIdKey"></param>
         /// <param name="setId"></param>
         /// <param name="descriptorId"></param>
         /// <param name="fieldId"></param>

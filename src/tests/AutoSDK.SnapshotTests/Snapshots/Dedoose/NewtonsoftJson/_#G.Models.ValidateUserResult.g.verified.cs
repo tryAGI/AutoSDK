@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("userData")]
-        public global::G.User? UserData { get; set; }
+        public global::G.User2? UserData { get; set; }
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// <param name="accountRequire2FactorOnRelog"></param>
         /// <param name="isValidated"></param>
         public ValidateUserResult(
-            global::G.User? userData,
+            global::G.User2? userData,
             bool? isFederated,
             int? accountIdleTimeout,
             bool? accountRequire2Factor,

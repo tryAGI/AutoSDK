@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("username")]
-        public string? Username { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("username", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Username { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("rsaEncryptedPassword")]
-        public string? RsaEncryptedPassword { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("rsaEncryptedPassword", Required = global::Newtonsoft.Json.Required.Always)]
+        public string RsaEncryptedPassword { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,11 +33,11 @@ namespace G
         /// <param name="username"></param>
         /// <param name="rsaEncryptedPassword"></param>
         public LoginRequest(
-            string? username,
-            string? rsaEncryptedPassword)
+            string username,
+            string rsaEncryptedPassword)
         {
-            this.Username = username;
-            this.RsaEncryptedPassword = rsaEncryptedPassword;
+            this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
+            this.RsaEncryptedPassword = rsaEncryptedPassword ?? throw new global::System.ArgumentNullException(nameof(rsaEncryptedPassword));
         }
 
         /// <summary>

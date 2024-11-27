@@ -6,15 +6,14 @@ namespace G
     public partial interface IFileStorageClient
     {
         /// <summary>
-        /// Returns file data as string by a data path.
+        /// Get String<br/>
+        /// Retrieves file data from the storage system based on the specified data path.
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="dataPath"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         global::System.Threading.Tasks.Task<string> GetStringFromFileStorageAsync(
-            string? token = default,
-            string? dataPath = default,
+            string dataPath,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

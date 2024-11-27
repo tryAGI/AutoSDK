@@ -11,9 +11,9 @@ namespace G
     public sealed partial class TagClient : global::G.ITagClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        /// Production
         /// </summary>
-        public const string DefaultBaseUrl = "";
+        public const string DefaultBaseUrl = "https://api.dedoose.com";
 
         private bool _disposeHttpClient = true;
 

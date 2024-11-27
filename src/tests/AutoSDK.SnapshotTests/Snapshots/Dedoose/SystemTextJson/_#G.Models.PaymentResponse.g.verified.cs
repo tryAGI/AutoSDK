@@ -31,13 +31,13 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creditTransactionLog")]
-        public global::G.CreditTransaction? CreditTransactionLog { get; set; }
+        public global::G.CreditTransaction2? CreditTransactionLog { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("billingTransactionLog")]
-        public global::G.BillingTransaction? BillingTransactionLog { get; set; }
+        public global::G.BillingTransaction2? BillingTransactionLog { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -58,8 +58,8 @@ namespace G
             bool? isSuccessfull,
             string? transactionId,
             global::System.Collections.Generic.IList<string>? errors,
-            global::G.CreditTransaction? creditTransactionLog,
-            global::G.BillingTransaction? billingTransactionLog)
+            global::G.CreditTransaction2? creditTransactionLog,
+            global::G.BillingTransaction2? billingTransactionLog)
         {
             this.IsSuccessfull = isSuccessfull;
             this.TransactionId = transactionId;

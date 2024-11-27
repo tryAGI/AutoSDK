@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item")]
-        public global::G.Descriptor? Item { get; set; }
+        public global::G.Descriptor2? Item { get; set; }
 
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace G
         /// <param name="values"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public DescriptorWithValues(
-            global::G.Descriptor? item,
+            global::G.Descriptor2? item,
             global::System.Collections.Generic.IList<global::G.DescriptorValueDTO>? values)
         {
             this.Item = item;

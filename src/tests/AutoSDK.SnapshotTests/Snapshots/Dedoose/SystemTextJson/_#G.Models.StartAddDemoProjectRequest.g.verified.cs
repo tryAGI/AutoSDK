@@ -1,0 +1,43 @@
+﻿//HintName: G.Models.StartAddDemoProjectRequest.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class StartAddDemoProjectRequest
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("userId")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Guid UserId { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StartAddDemoProjectRequest" /> class.
+        /// </summary>
+        /// <param name="userId"></param>
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+        public StartAddDemoProjectRequest(
+            global::System.Guid userId)
+        {
+            this.UserId = userId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="StartAddDemoProjectRequest" /> class.
+        /// </summary>
+        public StartAddDemoProjectRequest()
+        {
+        }
+    }
+}

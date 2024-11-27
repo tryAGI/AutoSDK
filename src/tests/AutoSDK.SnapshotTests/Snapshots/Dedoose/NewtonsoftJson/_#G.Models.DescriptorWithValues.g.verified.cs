@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("item")]
-        public global::G.Descriptor? Item { get; set; }
+        public global::G.Descriptor2? Item { get; set; }
 
         /// <summary>
         /// 
@@ -33,7 +33,7 @@ namespace G
         /// <param name="item"></param>
         /// <param name="values"></param>
         public DescriptorWithValues(
-            global::G.Descriptor? item,
+            global::G.Descriptor2? item,
             global::System.Collections.Generic.IList<global::G.DescriptorValueDTO>? values)
         {
             this.Item = item;

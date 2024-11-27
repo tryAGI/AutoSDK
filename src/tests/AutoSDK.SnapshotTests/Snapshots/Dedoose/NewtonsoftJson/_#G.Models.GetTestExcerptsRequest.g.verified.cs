@@ -1,0 +1,50 @@
+﻿//HintName: G.Models.GetTestExcerptsRequest.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class GetTestExcerptsRequest
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("projectId", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Guid ProjectId { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("testId", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Guid TestId { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTestExcerptsRequest" /> class.
+        /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="testId"></param>
+        public GetTestExcerptsRequest(
+            global::System.Guid projectId,
+            global::System.Guid testId)
+        {
+            this.ProjectId = projectId;
+            this.TestId = testId;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GetTestExcerptsRequest" /> class.
+        /// </summary>
+        public GetTestExcerptsRequest()
+        {
+        }
+    }
+}

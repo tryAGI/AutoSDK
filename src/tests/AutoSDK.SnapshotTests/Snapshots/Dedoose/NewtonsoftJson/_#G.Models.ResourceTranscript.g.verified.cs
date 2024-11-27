@@ -10,7 +10,7 @@ namespace G
     public sealed partial class ResourceTranscript
     {
         /// <summary>
-        /// Included only in responses
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectIdKey")]
         public string? ProjectIdKey { get; set; }
@@ -60,9 +60,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ResourceTranscript" /> class.
         /// </summary>
-        /// <param name="projectIdKey">
-        /// Included only in responses
-        /// </param>
+        /// <param name="projectIdKey"></param>
         /// <param name="id"></param>
         /// <param name="creator"></param>
         /// <param name="projectId"></param>

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("field")]
-        public global::G.DescriptorField? Field { get; set; }
+        public global::G.DescriptorField2? Field { get; set; }
 
         /// <summary>
         /// 
@@ -34,7 +34,7 @@ namespace G
         /// <param name="options"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public DescriptorFieldWithOptions(
-            global::G.DescriptorField? field,
+            global::G.DescriptorField2? field,
             global::System.Collections.Generic.IList<global::G.DescriptorFieldOption>? options)
         {
             this.Field = field;

@@ -13,7 +13,7 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("userData")]
-        public global::G.User? UserData { get; set; }
+        public global::G.User2? UserData { get; set; }
 
         /// <summary>
         /// 
@@ -62,7 +62,7 @@ namespace G
         /// <param name="isValidated"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ValidateUserResult(
-            global::G.User? userData,
+            global::G.User2? userData,
             bool? isFederated,
             int? accountIdleTimeout,
             bool? accountRequire2Factor,

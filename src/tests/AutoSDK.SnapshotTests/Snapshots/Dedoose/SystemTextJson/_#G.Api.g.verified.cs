@@ -5,15 +5,16 @@
 namespace G
 {
     /// <summary>
+    /// Dedoose.Apis.OpenAPI<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
     public sealed partial class Api : global::G.IApi, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        /// Production
         /// </summary>
-        public const string DefaultBaseUrl = "";
+        public const string DefaultBaseUrl = "https://api.dedoose.com";
 
         private bool _disposeHttpClient = true;
 
@@ -129,33 +130,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public FileStorageClient FileStorage => new FileStorageClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public LoginClient Login => new LoginClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerOptions = JsonSerializerOptions,
-        };
-
-        /// <summary>
-        /// 
-        /// </summary>
         public MemoClient Memo => new MemoClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -220,6 +194,42 @@ namespace G
         /// 
         /// </summary>
         public UserClient User => new UserClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public FileStorageClient FileStorage => new FileStorageClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public LoginClient Login => new LoginClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public InformationClient Information => new InformationClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

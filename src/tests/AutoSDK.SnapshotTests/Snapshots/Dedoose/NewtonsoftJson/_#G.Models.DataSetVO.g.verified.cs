@@ -22,7 +22,7 @@ namespace G
         public global::System.Guid? ProjectId { get; set; }
 
         /// <summary>
-        /// Included only in responses
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectIdKey")]
         public string? ProjectIdKey { get; set; }
@@ -98,9 +98,7 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="projectId"></param>
-        /// <param name="projectIdKey">
-        /// Included only in responses
-        /// </param>
+        /// <param name="projectIdKey"></param>
         /// <param name="createdById"></param>
         /// <param name="createStamp"></param>
         /// <param name="title"></param>

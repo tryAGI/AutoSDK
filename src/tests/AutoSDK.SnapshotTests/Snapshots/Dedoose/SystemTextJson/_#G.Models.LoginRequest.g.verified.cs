@@ -13,13 +13,15 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("username")]
-        public string? Username { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Username { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rsaEncryptedPassword")]
-        public string? RsaEncryptedPassword { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string RsaEncryptedPassword { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,11 +36,11 @@ namespace G
         /// <param name="rsaEncryptedPassword"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public LoginRequest(
-            string? username,
-            string? rsaEncryptedPassword)
+            string username,
+            string rsaEncryptedPassword)
         {
-            this.Username = username;
-            this.RsaEncryptedPassword = rsaEncryptedPassword;
+            this.Username = username ?? throw new global::System.ArgumentNullException(nameof(username));
+            this.RsaEncryptedPassword = rsaEncryptedPassword ?? throw new global::System.ArgumentNullException(nameof(rsaEncryptedPassword));
         }
 
         /// <summary>

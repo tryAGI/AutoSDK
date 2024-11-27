@@ -8,13 +8,11 @@ namespace G
     {
         partial void PrepareGetStringFromFileStorageArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? token,
-            ref string? dataPath);
+            ref string dataPath);
         partial void PrepareGetStringFromFileStorageRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? token,
-            string? dataPath);
+            string dataPath);
         partial void ProcessGetStringFromFileStorageResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -25,40 +23,48 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Returns file data as string by a data path.
+        /// Get String<br/>
+        /// Retrieves file data from the storage system based on the specified data path.
         /// </summary>
-        /// <param name="token"></param>
         /// <param name="dataPath"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<string> GetStringFromFileStorageAsync(
-            string? token = default,
-            string? dataPath = default,
+            string dataPath,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareGetStringFromFileStorageArguments(
                 httpClient: HttpClient,
-                token: ref token,
                 dataPath: ref dataPath);
 
             var __pathBuilder = new PathBuilder(
-                path: "/api/v1/getstringfromfilestorage",
+                path: "/api/v1/login/api/v1/filestorage/getstring",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
-                .AddOptionalParameter("dataPath", dataPath) 
+                .AddRequiredParameter("dataPath", dataPath) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 
-            if (token != default)
+            foreach (var __authorization in Authorizations)
             {
-                __httpRequest.Headers.TryAddWithoutValidation("token", token.ToString());
+                if (__authorization.Type == "Http" ||
+                    __authorization.Type == "OAuth2")
+                {
+                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
+                        scheme: __authorization.Name,
+                        parameter: __authorization.Value);
+                }
+                else if (__authorization.Type == "ApiKey" &&
+                         __authorization.Location == "Header")
+                {
+                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
+                }
             }
-
 
             PrepareRequest(
                 client: HttpClient,
@@ -66,7 +72,6 @@ namespace G
             PrepareGetStringFromFileStorageRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                token: token,
                 dataPath: dataPath);
 
             using var __response = await HttpClient.SendAsync(
@@ -80,23 +85,23 @@ namespace G
             ProcessGetStringFromFileStorageResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
-            // Token is null.
+            // Bad Request
             if ((int)__response.StatusCode == 400)
             {
                 string? __content_400 = null;
-                string? __value_400 = null;
+                global::G.HttpValidationProblemDetails? __value_400 = null;
                 if (ReadResponseAsString)
                 {
                     __content_400 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = global::System.Text.Json.JsonSerializer.Deserialize<string?>(__content_400, JsonSerializerOptions);
+                    __value_400 = global::G.HttpValidationProblemDetails.FromJson(__content_400, JsonSerializerOptions);
                 }
                 else
                 {
                     var __contentStream_400 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_400 = await global::System.Text.Json.JsonSerializer.DeserializeAsync<string?>(__contentStream_400, JsonSerializerOptions).ConfigureAwait(false);
+                    __value_400 = await global::G.HttpValidationProblemDetails.FromJsonStreamAsync(__contentStream_400, JsonSerializerOptions).ConfigureAwait(false);
                 }
 
-                throw new global::G.ApiException<string>(
+                throw new global::G.ApiException<global::G.HttpValidationProblemDetails>(
                     message: __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
@@ -108,28 +113,56 @@ namespace G
                         h => h.Value),
                 };
             }
-            // Token is invalid.
+            // Unauthorized
             if ((int)__response.StatusCode == 401)
             {
                 string? __content_401 = null;
-                string? __value_401 = null;
+                global::G.ProblemDetails? __value_401 = null;
                 if (ReadResponseAsString)
                 {
                     __content_401 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
-                    __value_401 = global::System.Text.Json.JsonSerializer.Deserialize<string?>(__content_401, JsonSerializerOptions);
+                    __value_401 = global::G.ProblemDetails.FromJson(__content_401, JsonSerializerOptions);
                 }
                 else
                 {
                     var __contentStream_401 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
-                    __value_401 = await global::System.Text.Json.JsonSerializer.DeserializeAsync<string?>(__contentStream_401, JsonSerializerOptions).ConfigureAwait(false);
+                    __value_401 = await global::G.ProblemDetails.FromJsonStreamAsync(__contentStream_401, JsonSerializerOptions).ConfigureAwait(false);
                 }
 
-                throw new global::G.ApiException<string>(
+                throw new global::G.ApiException<global::G.ProblemDetails>(
                     message: __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,
                     ResponseObject = __value_401,
+                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                        __response.Headers,
+                        h => h.Key,
+                        h => h.Value),
+                };
+            }
+            // Internal Server Error
+            if ((int)__response.StatusCode == 500)
+            {
+                string? __content_500 = null;
+                global::G.ProblemDetails? __value_500 = null;
+                if (ReadResponseAsString)
+                {
+                    __content_500 = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = global::G.ProblemDetails.FromJson(__content_500, JsonSerializerOptions);
+                }
+                else
+                {
+                    var __contentStream_500 = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                    __value_500 = await global::G.ProblemDetails.FromJsonStreamAsync(__contentStream_500, JsonSerializerOptions).ConfigureAwait(false);
+                }
+
+                throw new global::G.ApiException<global::G.ProblemDetails>(
+                    message: __response.ReasonPhrase ?? string.Empty,
+                    statusCode: __response.StatusCode)
+                {
+                    ResponseBody = __content_500,
+                    ResponseObject = __value_500,
                     ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
                         __response.Headers,
                         h => h.Key,

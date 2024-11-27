@@ -10,7 +10,7 @@ namespace G
     public sealed partial class DescriptorFieldOption
     {
         /// <summary>
-        /// Included only in responses
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("projectIdKey")]
         public string? ProjectIdKey { get; set; }
@@ -66,9 +66,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DescriptorFieldOption" /> class.
         /// </summary>
-        /// <param name="projectIdKey">
-        /// Included only in responses
-        /// </param>
+        /// <param name="projectIdKey"></param>
         /// <param name="projectId"></param>
         /// <param name="id"></param>
         /// <param name="projectIDL"></param>
