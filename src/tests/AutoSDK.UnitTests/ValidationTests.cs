@@ -37,6 +37,7 @@ public class ValidationTests : VerifyBase
     [DataRow("elevenlabs.json")]
     [DataRow("jina.json")]
     [DataRow("recraft.yaml")]
+    [DataRow("luma.yaml")]
     public async Task Validation(string resourceName)
     {
         var yamlOrJson = new H.Resource(resourceName).AsString();

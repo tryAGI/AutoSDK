@@ -1,0 +1,575 @@
+﻿components:
+  schemas:
+    AspectRatio:
+      default: 16:9
+      description: The aspect ratio of the generation
+      enum:
+        - 1:1
+        - 16:9
+        - 9:16
+        - 4:3
+        - 3:4
+        - 21:9
+        - 9:21
+      example: 16:9
+      type: string
+    Assets:
+      description: The assets of the generation
+      example:
+        summary: Video
+        value:
+          video: https://example.com/video.mp4
+      properties:
+        image:
+          description: The URL of the image
+          format: uri
+          type: string
+        video:
+          description: The URL of the video
+          format: uri
+          type: string
+      type: object
+    Credits:
+      description: The credits object
+      properties:
+        credit_balance:
+          description: Available credits balance in USD cents
+          format: float
+          type: number
+      required:
+        - credit_balance
+      type: object
+    Error:
+      description: The error object
+      example:
+        detail: Invalid API key is provided
+      properties:
+        detail:
+          description: The error message
+          type: string
+      type: object
+    Generation:
+      description: The generation response object
+      example:
+        assets:
+          video: https://example.com/video.mp4
+        created_at: 2023-06-01T12:00:00Z
+        failure_reason: null
+        id: 123e4567-e89b-12d3-a456-426614174000
+        model: ray-1-6
+        request:
+          aspect_ratio: 16:9
+          keyframes:
+            frame0:
+              type: image
+              url: https://example.com/image.jpg
+            frame1:
+              id: 123e4567-e89b-12d3-a456-426614174000
+              type: generation
+          loop: true
+          prompt: A serene lake surrounded by mountains at sunset
+        state: completed
+      properties:
+        assets:
+          $ref: '#/components/schemas/Assets'
+          description: The assets of the generation
+        created_at:
+          description: The date and time when the generation was created
+          format: date-time
+          type: string
+        failure_reason:
+          description: The reason for the state of the generation
+          type: string
+        generation_type:
+          $ref: '#/components/schemas/GenerationType'
+          default: video
+          description: The type of the generation
+        id:
+          description: The ID of the generation
+          format: uuid
+          type: string
+        model:
+          description: The model used for the generation
+          type: string
+        request:
+          description: The request of the generation
+          oneOf:
+            - $ref: '#/components/schemas/GenerationRequest'
+            - $ref: '#/components/schemas/ImageGenerationRequest'
+        state:
+          $ref: '#/components/schemas/State'
+          description: The state of the generation
+      type: object
+    GenerationReference:
+      description: The generation reference object
+      example:
+        id: 123e4567-e89b-12d3-a456-426614174002
+        type: generation
+      properties:
+        id:
+          description: The ID of the generation
+          format: uuid
+          type: string
+        type:
+          default: generation
+          enum:
+            - generation
+          type: string
+      required:
+        - type
+        - id
+      type: object
+    GenerationRequest:
+      description: The generation request object
+      example:
+        summary: Text to video
+        value:
+          aspect_ratio: 16:9
+          loop: true
+          prompt: A serene lake surrounded by mountains at sunset
+      properties:
+        aspect_ratio:
+          $ref: '#/components/schemas/AspectRatio'
+          description: The aspect ratio of the generation
+        callback_url:
+          description: The callback URL of the generation, a POST request with Generation object will be sent to the callback URL when the generation is dreaming, completed, or failed
+          format: uri
+          type: string
+        generation_type:
+          default: video
+          enum:
+            - video
+          type: string
+        keyframes:
+          $ref: '#/components/schemas/Keyframes'
+          description: The keyframes of the generation
+        loop:
+          description: Whether to loop the video
+          type: boolean
+        prompt:
+          description: The prompt of the generation
+          type: string
+      type: object
+    GenerationType:
+      enum:
+        - video
+        - image
+      type: string
+    ImageGenerationRequest:
+      description: The image generation request object
+      properties:
+        aspect_ratio:
+          $ref: '#/components/schemas/AspectRatio'
+          description: The aspect ratio of the generation
+        callback_url:
+          description: The callback URL for the generation
+          format: uri
+          type: string
+        character_ref:
+          properties:
+            identity0:
+              $ref: '#/components/schemas/ImageIdentity'
+          type: object
+        generation_type:
+          default: image
+          enum:
+            - image
+          type: string
+        image_ref:
+          items:
+            $ref: '#/components/schemas/ImageRef'
+          type: array
+        model:
+          $ref: '#/components/schemas/ImageModel'
+          description: The model used for the generation
+        modify_image_ref:
+          $ref: '#/components/schemas/ModifyImageRef'
+        prompt:
+          description: The prompt of the generation
+          type: string
+        style_ref:
+          items:
+            $ref: '#/components/schemas/ImageRef'
+          type: array
+      type: object
+    ImageIdentity:
+      description: The image identity object
+      properties:
+        images:
+          description: The URLs of the image identity
+          items:
+            format: uri
+            type: string
+          type: array
+      type: object
+    ImageModel:
+      default: photon-1
+      description: The image model used for the generation
+      enum:
+        - photon-1
+        - photon-flash-1
+      type: string
+    ImageRef:
+      description: The image reference object
+      properties:
+        url:
+          description: The URL of the image reference
+          format: uri
+          type: string
+        weight:
+          description: The weight of the image reference
+          type: number
+      type: object
+    ImageReference:
+      description: The image object
+      example:
+        type: image
+        url: https://example.com/image.jpg
+      properties:
+        type:
+          default: image
+          enum:
+            - image
+          type: string
+        url:
+          description: The URL of the image
+          format: uri
+          type: string
+      required:
+        - type
+        - url
+      type: object
+    Keyframe:
+      description: A keyframe can be either a Generation reference, an Image, or a Video
+      discriminator:
+        mapping:
+          generation: '#/components/schemas/GenerationReference'
+          image: '#/components/schemas/ImageReference'
+        propertyName: type
+      example:
+        summary: Generation reference
+        value:
+          id: 123e4567-e89b-12d3-a456-426614174000
+          type: generation
+      oneOf:
+        - $ref: '#/components/schemas/GenerationReference'
+        - $ref: '#/components/schemas/ImageReference'
+    Keyframes:
+      description: The keyframes of the generation
+      example:
+        frame0:
+          type: image
+          url: https://example.com/image.jpg
+        frame1:
+          id: 123e4567-e89b-12d3-a456-426614174000
+          type: generation
+      properties:
+        frame0:
+          $ref: '#/components/schemas/Keyframe'
+          description: The frame 0 of the generation
+        frame1:
+          $ref: '#/components/schemas/Keyframe'
+          description: The frame 1 of the generation
+      type: object
+    ListGenerationResponse:
+      description: The generations response object
+      example:
+        count: 1
+        generations:
+          - assets:
+              video: https://example.com/video.mp4
+            created_at: 2023-06-01T12:00:00Z
+            failure_reason: null
+            id: 123e4567-e89b-12d3-a456-426614174000
+            request:
+              aspect_ratio: 16:9
+              keyframes:
+                frame0:
+                  type: image
+                  url: https://example.com/image.jpg
+                frame1:
+                  id: 123e4567-e89b-12d3-a456-426614174000
+                  type: generation
+              loop: true
+              prompt: A serene lake surrounded by mountains at sunset
+            state: completed
+            version: v1.6
+        has_more: false
+        limit: 100
+        offset: 0
+      properties:
+        count:
+          description: The number of generations returned
+          type: integer
+        generations:
+          description: The generations requested
+          items:
+            $ref: '#/components/schemas/Generation'
+          type: array
+        has_more:
+          description: Whether there are more generations
+          type: boolean
+        limit:
+          description: The limit of the generations requested
+          type: integer
+        offset:
+          description: The offset of the generations requested
+          type: integer
+      required:
+        - generations
+      type: object
+    ModifyImageRef:
+      description: The modify image reference object
+      properties:
+        url:
+          description: The URL of the image reference
+          format: uri
+          type: string
+        weight:
+          description: The weight of the modify image reference
+          type: number
+      type: object
+    State:
+      description: The state of the generation
+      enum:
+        - queued
+        - dreaming
+        - completed
+        - failed
+      example: completed
+      type: string
+  securitySchemes:
+    BearerAuth:
+      bearerFormat: JWT
+      scheme: bearer
+      type: http
+info:
+  contact:
+    email: support@lumalabs.ai
+    name: Luma AI, Inc.
+    url: https://lumalabs.ai
+  description: Generate videos using Dream Machine.
+  license:
+    name: Proprietary
+    url: https://lumalabs.ai/legal/tos
+  summary: A RESTful API for interacting with the Dream Machine
+  termsOfService: https://lumalabs.ai/legal/tos
+  title: Dream Machine API
+  version: 1.1.0
+openapi: 3.0.3
+paths:
+  /credits:
+    get:
+      description: Get the credits information for the api user
+      operationId: getCredits
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Credits'
+          description: Credits found
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+      summary: Get credits
+      tags:
+        - Credits
+  /generations:
+    get:
+      description: Retrieve a list of generations with optional filtering and sorting
+      operationId: listGenerations
+      parameters:
+        - in: query
+          name: limit
+          required: false
+          schema:
+            default: 100
+            type: integer
+        - in: query
+          name: offset
+          required: false
+          schema:
+            default: 0
+            type: integer
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListGenerationResponse'
+          description: Generations found
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+      summary: List generations
+      tags:
+        - Generations
+    post:
+      description: Initiate a new generation with the provided prompt
+      operationId: createGeneration
+      requestBody:
+        content:
+          application/json:
+            examples:
+              default:
+                value:
+                  aspect_ratio: 16:9
+                  keyframes:
+                    frame0:
+                      type: image
+                      url: https://example.com/image.jpg
+                    frame1:
+                      id: 123e4567-e89b-12d3-a456-426614174000
+                      type: generation
+                  loop: true
+                  prompt: A serene lake surrounded by mountains at sunset
+            schema:
+              $ref: '#/components/schemas/GenerationRequest'
+        description: The generation request object
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Generation'
+          description: Generation created
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+      summary: Create a generation
+      tags:
+        - Generations
+  /generations/camera_motion/list:
+    get:
+      description: Get all possible camera motions
+      operationId: getCameraMotion
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  type: string
+                type: array
+          description: Camera motion found
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+      summary: Get camera motions
+      tags:
+        - Generations
+  /generations/image:
+    post:
+      description: Generate an image with the provided prompt
+      operationId: generateImage
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImageGenerationRequest'
+        description: The image generation request object
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Generation'
+          description: Image generated
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+      summary: Generate an image
+      tags:
+        - Generations
+        - Image
+  /generations/{id}:
+    delete:
+      description: Remove a specific generation by its ID
+      operationId: deleteGeneration
+      parameters:
+        - description: The ID of the generation
+          in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Generation deleted
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+      summary: Delete a generation
+      tags:
+        - Generations
+    get:
+      description: Retrieve details of a specific generation by its ID
+      operationId: getGeneration
+      parameters:
+        - description: The ID of the generation
+          in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Generation'
+          description: Generation found
+        default:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Error
+      summary: Get a generation
+      tags:
+        - Generations
+  /ping:
+    get:
+      description: Check if the API is running
+      operationId: ping
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                example:
+                  message: pong
+                properties:
+                  message:
+                    description: The message
+                    type: string
+                type: object
+          description: API is running
+      summary: Ping
+      tags:
+        - Ping
+security:
+  - BearerAuth: []
+servers:
+  - url: https://api.lumalabs.ai/dream-machine/v1

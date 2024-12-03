@@ -51,6 +51,7 @@ jobs:
           - elevenlabs.json
           - jina.json
           - recraft.yaml
+          - luma.yaml
     steps:
       - name: Checkout
         uses: actions/checkout@v4

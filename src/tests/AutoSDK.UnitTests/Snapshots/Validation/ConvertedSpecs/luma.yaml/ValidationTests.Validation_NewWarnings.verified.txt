@@ -1,0 +1,17 @@
+﻿[
+  {
+    RuleName: MediaTypeMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/paths/~1generations/post/requestBody/content/application~1json/examples/default/value/aspect_ratio
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/Generation/example/failure_reason
+  },
+  {
+    RuleName: SchemaMismatchedDataType,
+    Message: Data and type mismatch found.,
+    Pointer: #/components/schemas/ListGenerationResponse/example/generations/0/failure_reason
+  }
+]

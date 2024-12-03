@@ -34,6 +34,7 @@ public partial class DataTests
     [DataRow("elevenlabs.json")]
     [DataRow("jina.json")]
     [DataRow("recraft.yaml")]
+    [DataRow("luma.yaml")]
     public Task PrepareData(string resourceName)
     {
         return VerifyAsync(Data.Prepare((
@@ -52,6 +53,7 @@ public partial class DataTests
                     "elevenlabs.json" => true,
                     "ai21.json" => true,
                     "replicate.json" => true,
+                    "luma.yaml" => true,
                     _ => false,
                 },
             })),

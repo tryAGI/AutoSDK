@@ -1,0 +1,6 @@
+﻿[
+  {
+    Message: summary is not a valid property at #/info,
+    Pointer: 
+  }
+]
