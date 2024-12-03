@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using AutoSDK.Extensions;
 using AutoSDK.Naming.AnyOfs;
+using AutoSDK.Naming.Properties;
 using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.Models;
@@ -39,7 +40,8 @@ public readonly record struct AnyOfData(
             context.Schema.Discriminator.Mapping.Count != 0)
         {
             discriminatorType = context.Children.FirstOrDefault(x => x.Hint == Hint.Discriminator)?.TypeData;
-            discriminatorPropertyName = context.Schema.Discriminator.PropertyName.ToPropertyName();
+            discriminatorPropertyName = context.Schema.Discriminator.PropertyName.ToPropertyName()
+                .ToCSharpName(context.Settings, context.Parent);
         }
         
         var count = context.IsAnyOf

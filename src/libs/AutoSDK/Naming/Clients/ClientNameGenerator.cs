@@ -1,6 +1,7 @@
 using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using AutoSDK.Naming.Properties;
 
 namespace AutoSDK.Naming.Clients;
 
@@ -25,6 +26,6 @@ public static class ClientNameGenerator
             .SkipWhile(c => !char.IsDigit(c) && !char.IsLetter(c))
             .ToArray());
         
-        return PropertyData.SanitizeName(name.ToClassName(), settings.ClsCompliantEnumPrefix);
+        return CSharpPropertyNameGenerator.SanitizeName(name.ToClassName(), settings.ClsCompliantEnumPrefix);
     }
 }

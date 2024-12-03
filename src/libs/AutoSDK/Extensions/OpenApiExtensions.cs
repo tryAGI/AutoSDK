@@ -8,6 +8,7 @@ using Microsoft.OpenApi.Interfaces;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using AutoSDK.Models;
+using AutoSDK.Naming.Properties;
 using AutoSDK.Serialization.Form;
 using Microsoft.OpenApi.Validations;
 
@@ -571,20 +572,6 @@ public static class OpenApiExtensions
         };
     }
 
-    internal static string ToCSharpName(this string text, Settings settings, SchemaContext? parent)
-    {
-        var name = text.ToPropertyName();
-        
-        name = PropertyData.HandleWordSeparators(name);
-
-        if (parent != null)
-        {
-            name = name.FixPropertyName(parent.Id);
-        }
-
-        return PropertyData.SanitizeName(name, settings.ClsCompliantEnumPrefix, true);
-    }
-
     public static T ResolveIfRequired<T>(this T referenceable) where T : class, IOpenApiReferenceable
     {
         referenceable = referenceable ?? throw new ArgumentNullException(nameof(referenceable));
@@ -693,7 +680,7 @@ public static class OpenApiExtensions
         return PropertyData.Default with
         {
             Id = id,
-            Name = PropertyData.SanitizeName(name, settings.ClsCompliantEnumPrefix),
+            Name = CSharpPropertyNameGenerator.SanitizeName(name, settings.ClsCompliantEnumPrefix),
             Summary = ClearForXml(ExtractEnumSummaryFromDescription(id, description)),
         };
     }

@@ -23,14 +23,14 @@ namespace G.JsonConverters
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
             global::G.GenerationRequest? video = default;
-            if (discriminator?.Generation_type == global::G.GenerationRequestDiscriminatorGeneration_type.Video)
+            if (discriminator?.GenerationType == global::G.GenerationRequestDiscriminatorGenerationType.Video)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerationRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.GenerationRequest)}");
                 video = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
             global::G.ImageGenerationRequest? image = default;
-            if (discriminator?.Generation_type == global::G.GenerationRequestDiscriminatorGeneration_type.Image)
+            if (discriminator?.GenerationType == global::G.GenerationRequestDiscriminatorGenerationType.Image)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ImageGenerationRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ImageGenerationRequest> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ImageGenerationRequest)}");
@@ -38,7 +38,7 @@ namespace G.JsonConverters
             }
 
             var result = new global::G.Request(
-                discriminator?.Generation_type,
+                discriminator?.GenerationType,
                 video,
                 image
                 );

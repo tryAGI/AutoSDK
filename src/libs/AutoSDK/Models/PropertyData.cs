@@ -1,4 +1,5 @@
 using AutoSDK.Extensions;
+using AutoSDK.Naming.Properties;
 
 namespace AutoSDK.Models;
 
@@ -37,7 +38,6 @@ public readonly record struct PropertyData(
     public static PropertyData FromSchemaContext(SchemaContext context)
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
-        var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
         var type = context.TypeData;
         
         // OpenAPI doesn't allow metadata for references so sometimes allOf with single item is used to add metadata.
@@ -50,21 +50,11 @@ public readonly record struct PropertyData(
             };
         }
 
-        var name = propertyName.ToPropertyName();
-        
-        name = HandleWordSeparators(name);
-
-        if (context.Parent != null)
-        {
-            name = name.FixPropertyName(context.Parent.Id);
-        }
-
-        name = SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
-        
         var requiredProperties = context.Parent != null
             ? new HashSet<string>(context.Parent.Schema.Required)
             : [];
         
+        var propertyName = context.PropertyName ?? throw new InvalidOperationException("Property name or parameter name is required.");
         var isRequired =
             requiredProperties.Contains(propertyName) &&
             context.Schema is { WriteOnly: false };
@@ -76,7 +66,7 @@ public readonly record struct PropertyData(
         
         return new PropertyData(
             Id: propertyName,
-            Name: name,
+            Name: CSharpPropertyNameGenerator.ComputePropertyName(context),
             Type: type with
             {
                 CSharpTypeNullability = type.CSharpTypeNullability || context.Schema is { WriteOnly: true },
@@ -99,70 +89,6 @@ public readonly record struct PropertyData(
             DiscriminatorValue: string.Empty);
     }
     
-    internal static string SanitizeName(string? name, string clsCompliantEnumPrefix, bool skipHandlingWordSeparators = false)
-    {
-        static bool InvalidFirstChar(char ch)
-            => ch is not ('_' or >= 'A' and <= 'Z' or >= 'a' and <= 'z');
-
-        static bool InvalidSubsequentChar(char ch)
-            => ch is not (
-                    '_'
-                    or >= 'A' and <= 'Z'
-                    or >= 'a' and <= 'z'
-                    or >= '0' and <= '9'
-                );
-        
-        if (name is null || name.Length == 0)
-        {
-            return "";
-        }
-
-        if (!skipHandlingWordSeparators)
-        {
-            name = HandleWordSeparators(name);
-        }
-
-        if (name.Length == 0)
-        {
-            return string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
-                ? "_"
-                : clsCompliantEnumPrefix;
-        }
-        
-        if (InvalidFirstChar(name[0]))
-        {
-            name = (string.IsNullOrWhiteSpace(clsCompliantEnumPrefix)
-                ? "_"
-                : clsCompliantEnumPrefix) + name;
-        }
-
-        if (!name.Skip(1).Any(InvalidSubsequentChar))
-        {
-            return name;
-        }
-
-        Span<char> buf = stackalloc char[name.Length];
-        name.AsSpan().CopyTo(buf);
-        
-        for (var i = 1; i < buf.Length; i++)
-        {
-            if (InvalidSubsequentChar(buf[i]))
-            {
-                buf[i] = '_';
-            }
-        }
-
-        // Span<char>.ToString implementation checks for char type, new string(&buf[0], buf.length)
-        return buf.ToString();
-    }
-
-    internal static string HandleWordSeparators(string name)
-    {
-        return name
-            .ReplacePlusAndMinusOnStart()
-            .UseWordSeparator('_', '+', '-', '.', '/', '(', '[', ']', ')');
-    }
-
     public string ParameterName => Name
         .Replace(".", string.Empty)
         .ToParameterName()

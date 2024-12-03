@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.GenerationRequestDiscriminatorGeneration_type? Generation_type { get; }
+        public global::G.GenerationRequestDiscriminatorGenerationType? GenerationType { get; }
 
         /// <summary>
         /// The generation request object
@@ -89,12 +89,12 @@ namespace G
         /// 
         /// </summary>
         public Request(
-            global::G.GenerationRequestDiscriminatorGeneration_type? generation_type,
+            global::G.GenerationRequestDiscriminatorGenerationType? generationType,
             global::G.GenerationRequest? video,
             global::G.ImageGenerationRequest? image
             )
         {
-            Generation_type = generation_type;
+            GenerationType = generationType;
 
             Video = video;
             Image = image;

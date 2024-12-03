@@ -1,6 +1,7 @@
 using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
 using AutoSDK.Models;
+using AutoSDK.Naming.Properties;
 
 namespace AutoSDK.Naming.Models;
 
@@ -112,7 +113,7 @@ public static class ModelNameGenerator
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         
-        context.ClassName = PropertyData.SanitizeName(context.ComputeClassName(), context.Settings.ClsCompliantEnumPrefix);
+        context.ClassName = CSharpPropertyNameGenerator.SanitizeName(context.ComputeClassName(), context.Settings.ClsCompliantEnumPrefix);
         context.Id = context.ClassName;
         
         return context.Id;

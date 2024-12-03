@@ -1,6 +1,7 @@
 using System.Collections.Immutable;
 using Microsoft.OpenApi.Models;
 using AutoSDK.Extensions;
+using AutoSDK.Naming.Properties;
 using AutoSDK.Serialization.Json;
 
 namespace AutoSDK.Models;
@@ -66,7 +67,7 @@ public readonly record struct MethodParameter(
             name = name.FixPropertyName(context.Parent.Id);
         }
 
-        name = PropertyData.SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
+        name = CSharpPropertyNameGenerator.SanitizeName(name, context.Settings.ClsCompliantEnumPrefix, true);
         
         var isRequired =
             parameter.Required ||
