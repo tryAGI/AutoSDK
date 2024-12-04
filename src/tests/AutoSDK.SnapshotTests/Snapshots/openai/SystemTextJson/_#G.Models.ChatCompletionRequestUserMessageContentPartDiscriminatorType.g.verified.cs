@@ -17,6 +17,10 @@ namespace G
         /// 
         /// </summary>
         ImageUrl,
+        /// <summary>
+        /// 
+        /// </summary>
+        InputAudio,
     }
 
     /// <summary>
@@ -33,6 +37,7 @@ namespace G
             {
                 ChatCompletionRequestUserMessageContentPartDiscriminatorType.Text => "text",
                 ChatCompletionRequestUserMessageContentPartDiscriminatorType.ImageUrl => "image_url",
+                ChatCompletionRequestUserMessageContentPartDiscriminatorType.InputAudio => "input_audio",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -45,6 +50,7 @@ namespace G
             {
                 "text" => ChatCompletionRequestUserMessageContentPartDiscriminatorType.Text,
                 "image_url" => ChatCompletionRequestUserMessageContentPartDiscriminatorType.ImageUrl,
+                "input_audio" => ChatCompletionRequestUserMessageContentPartDiscriminatorType.InputAudio,
                 _ => null,
             };
         }

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Occurs when a [run step](/docs/api-reference/runs/step-object) fails.
+    /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
     /// </summary>
     public sealed partial class AssistantStreamEventVariant18
     {

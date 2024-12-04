@@ -13,7 +13,8 @@ namespace G
             ref int? limit,
             ref global::G.ListRunStepsOrder? order,
             ref string? after,
-            ref string? before);
+            ref string? before,
+            global::System.Collections.Generic.IList<global::G.ListRunStepsIncludeItem>? include);
         partial void PrepareListRunStepsRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -22,7 +23,8 @@ namespace G
             int? limit,
             global::G.ListRunStepsOrder? order,
             string? after,
-            string? before);
+            string? before,
+            global::System.Collections.Generic.IList<global::G.ListRunStepsIncludeItem>? include);
         partial void ProcessListRunStepsResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -45,6 +47,7 @@ namespace G
         /// </param>
         /// <param name="after"></param>
         /// <param name="before"></param>
+        /// <param name="include"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
@@ -55,6 +58,7 @@ namespace G
             global::G.ListRunStepsOrder? order = default,
             string? after = default,
             string? before = default,
+            global::System.Collections.Generic.IList<global::G.ListRunStepsIncludeItem>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -66,7 +70,8 @@ namespace G
                 limit: ref limit,
                 order: ref order,
                 after: ref after,
-                before: ref before);
+                before: ref before,
+                include: include);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/threads/{threadId}/runs/{runId}/steps",
@@ -113,7 +118,8 @@ namespace G
                 limit: limit,
                 order: order,
                 after: after,
-                before: before);
+                before: before,
+                include: include);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

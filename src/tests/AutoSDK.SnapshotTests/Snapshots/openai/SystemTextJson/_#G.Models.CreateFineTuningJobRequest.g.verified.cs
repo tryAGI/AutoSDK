@@ -13,7 +13,7 @@ namespace G
     {
         /// <summary>
         /// The name of the model to fine-tune. You can select one of the<br/>
-        /// [supported models](/docs/guides/fine-tuning/which-models-can-be-fine-tuned).<br/>
+        /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
         /// Example: gpt-4o-mini
         /// </summary>
         /// <example>gpt-4o-mini</example>
@@ -42,7 +42,7 @@ namespace G
         public global::G.CreateFineTuningJobRequestHyperparameters? Hyperparameters { get; set; }
 
         /// <summary>
-        /// A string of up to 18 characters that will be added to your fine-tuned model name.<br/>
+        /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
         /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("suffix")]
@@ -88,7 +88,7 @@ namespace G
         /// </summary>
         /// <param name="model">
         /// The name of the model to fine-tune. You can select one of the<br/>
-        /// [supported models](/docs/guides/fine-tuning/which-models-can-be-fine-tuned).<br/>
+        /// [supported models](/docs/guides/fine-tuning#which-models-can-be-fine-tuned).<br/>
         /// Example: gpt-4o-mini
         /// </param>
         /// <param name="trainingFile">
@@ -103,7 +103,7 @@ namespace G
         /// The hyperparameters used for the fine-tuning job.
         /// </param>
         /// <param name="suffix">
-        /// A string of up to 18 characters that will be added to your fine-tuned model name.<br/>
+        /// A string of up to 64 characters that will be added to your fine-tuned model name.<br/>
         /// For example, a `suffix` of "custom-model-name" would produce a model name like `ft:gpt-4o-mini:openai:custom-model-name:7p4lURel`.
         /// </param>
         /// <param name="validationFile">

@@ -12,18 +12,20 @@ namespace G
     public sealed partial class CreateModerationRequest
     {
         /// <summary>
-        /// The input text to classify
+        /// Input (or inputs) to classify. Can be a single string, an array of strings, or<br/>
+        /// an array of multi-modal input objects similar to other models.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>> Input { get; set; } = default!;
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>> Input { get; set; } = default!;
 
         /// <summary>
-        /// Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.<br/>
-        /// The default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.<br/>
-        /// Default Value: text-moderation-latest<br/>
-        /// Example: text-moderation-stable
+        /// The content moderation model you would like to use. Learn more in<br/>
+        /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
+        /// available models [here](/docs/models#moderation).<br/>
+        /// Default Value: omni-moderation-latest<br/>
+        /// Example: omni-moderation-2024-09-26
         /// </summary>
-        /// <example>text-moderation-stable</example>
+        /// <example>omni-moderation-2024-09-26</example>
         [global::Newtonsoft.Json.JsonProperty("model")]
         public global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? Model { get; set; }
 
@@ -37,16 +39,18 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateModerationRequest" /> class.
         /// </summary>
         /// <param name="input">
-        /// The input text to classify
+        /// Input (or inputs) to classify. Can be a single string, an array of strings, or<br/>
+        /// an array of multi-modal input objects similar to other models.
         /// </param>
         /// <param name="model">
-        /// Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.<br/>
-        /// The default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.<br/>
-        /// Default Value: text-moderation-latest<br/>
-        /// Example: text-moderation-stable
+        /// The content moderation model you would like to use. Learn more in<br/>
+        /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
+        /// available models [here](/docs/models#moderation).<br/>
+        /// Default Value: omni-moderation-latest<br/>
+        /// Example: omni-moderation-2024-09-26
         /// </param>
         public CreateModerationRequest(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<string>> input,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>> input,
             global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? model)
         {
             this.Input = input;

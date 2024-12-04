@@ -30,7 +30,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::G.Model12> RetrieveModelAsync(
+        public async global::System.Threading.Tasks.Task<global::G.Model15> RetrieveModelAsync(
             string model,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -121,7 +121,7 @@ namespace G
                 }
 
                 return
-                    global::G.Model12.FromJson(__content, JsonSerializerContext) ??
+                    global::G.Model15.FromJson(__content, JsonSerializerContext) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -147,7 +147,7 @@ namespace G
                 using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
 
                 return
-                    await global::G.Model12.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                    await global::G.Model15.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }

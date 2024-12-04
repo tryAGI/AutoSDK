@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Learn about [image inputs](/docs/guides/vision).
     /// </summary>
     public sealed partial class ChatCompletionRequestMessageContentPartImage
     {

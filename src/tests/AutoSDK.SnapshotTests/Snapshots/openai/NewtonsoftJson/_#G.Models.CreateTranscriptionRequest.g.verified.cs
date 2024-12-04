@@ -38,17 +38,17 @@ namespace G
         public string? Language { get; set; }
 
         /// <summary>
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should match the audio language.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public global::G.CreateTranscriptionRequestResponseFormat? ResponseFormat { get; set; }
+        public global::G.AudioResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
@@ -87,10 +87,10 @@ namespace G
         /// The language of the input audio. Supplying the input language in [ISO-639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) format will improve accuracy and latency.
         /// </param>
         /// <param name="prompt">
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should match the audio language.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should match the audio language.
         /// </param>
         /// <param name="responseFormat">
-        /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
         /// Default Value: json
         /// </param>
         /// <param name="temperature">
@@ -107,7 +107,7 @@ namespace G
             global::G.AnyOf<string, global::G.CreateTranscriptionRequestModel?> model,
             string? language,
             string? prompt,
-            global::G.CreateTranscriptionRequestResponseFormat? responseFormat,
+            global::G.AudioResponseFormat? responseFormat,
             double? temperature,
             global::System.Collections.Generic.IList<global::G.CreateTranscriptionRequestTimestampGranularitie>? timestampGranularities)
         {

@@ -10,7 +10,8 @@ namespace G
     public sealed partial class CreateAssistantRequestToolResourcesCodeInterpreter
     {
         /// <summary>
-        /// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+        /// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.<br/>
+        /// Default Value: []
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_ids")]
         public global::System.Collections.Generic.IList<string>? FileIds { get; set; }
@@ -25,7 +26,8 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateAssistantRequestToolResourcesCodeInterpreter" /> class.
         /// </summary>
         /// <param name="fileIds">
-        /// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.
+        /// A list of [file](/docs/api-reference/files) IDs made available to the `code_interpreter` tool. There can be a maximum of 20 files associated with the tool.<br/>
+        /// Default Value: []
         /// </param>
         public CreateAssistantRequestToolResourcesCodeInterpreter(
             global::System.Collections.Generic.IList<string>? fileIds)

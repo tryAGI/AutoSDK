@@ -12,14 +12,17 @@ namespace G
     public sealed partial class CreateChatCompletionRequest
     {
         /// <summary>
-        /// A list of messages comprising the conversation so far. [Example Python code](https://cookbook.openai.com/examples/how_to_format_inputs_to_chatgpt_models).
+        /// A list of messages comprising the conversation so far. Depending on the<br/>
+        /// [model](/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](/docs/guides/text-generation),<br/>
+        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("messages")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> Messages { get; set; }
 
         /// <summary>
-        /// ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
+        /// ID of the model to use. See the [model endpoint compatibility](/docs/models#model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
         /// Example: gpt-4o
         /// </summary>
         /// <example>gpt-4o</example>
@@ -29,8 +32,23 @@ namespace G
         public required global::G.AnyOf<string, global::G.CreateChatCompletionRequestModel?> Model { get; set; }
 
         /// <summary>
+        /// Whether or not to store the output of this chat completion request<br/>
+        /// for use in our [model distillation](/docs/guides/distillation) or [evals](/docs/guides/evals) products.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("store")]
+        public bool? Store { get; set; }
+
+        /// <summary>
+        /// Developer-defined tags and values used for filtering completions<br/>
+        /// in the [dashboard](https://platform.openai.com/chat-completions).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("metadata")]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; }
+
+        /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
-        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
+        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("frequency_penalty")]
@@ -57,11 +75,18 @@ namespace G
         public int? TopLogprobs { get; set; }
 
         /// <summary>
-        /// The maximum number of [tokens](/tokenizer) that can be generated in the chat completion.<br/>
-        /// The total length of input tokens and generated tokens is limited by the model's context length. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.
+        /// The maximum number of [tokens](/tokenizer) that can be generated in the chat completion. This value can be used to control [costs](https://openai.com/api/pricing/) for text generated via API.<br/>
+        /// This value is now deprecated in favor of `max_completion_tokens`, and is not compatible with [o1 series models](/docs/guides/reasoning).
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("max_tokens")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public int? MaxTokens { get; set; }
+
+        /// <summary>
+        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("max_completion_tokens")]
+        public int? MaxCompletionTokens { get; set; }
 
         /// <summary>
         /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
@@ -73,17 +98,45 @@ namespace G
         public int? N { get; set; }
 
         /// <summary>
+        /// Output types that you would like the model to generate for this request.<br/>
+        /// Most models are capable of generating text, which is the default:<br/>
+        /// `["text"]`<br/>
+        /// The `gpt-4o-audio-preview` model can also be used to [generate audio](/docs/guides/audio). To<br/>
+        /// request that this model generate both text and audio responses, you can<br/>
+        /// use:<br/>
+        /// `["text", "audio"]`
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("modalities")]
+        public global::System.Collections.Generic.IList<global::G.ChatCompletionModalitie>? Modalities { get; set; }
+
+        /// <summary>
+        /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
+        /// which can greatly improve response times when large parts of the model<br/>
+        /// response are known ahead of time. This is most common when you are<br/>
+        /// regenerating a file with only minor changes to most of the content.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("prediction")]
+        public global::G.PredictionContent? Prediction { get; set; }
+
+        /// <summary>
+        /// Parameters for audio output. Required when audio output is requested with<br/>
+        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        public global::G.CreateChatCompletionRequestAudio? Audio { get; set; }
+
+        /// <summary>
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
-        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
+        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("presence_penalty")]
         public double? PresencePenalty { get; set; }
 
         /// <summary>
-        /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4o mini](/docs/models/gpt-4o-mini), [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which guarantees the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.<br/>
+        /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4o mini](/docs/models#gpt-4o-mini), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("response_format")]
@@ -100,10 +153,12 @@ namespace G
 
         /// <summary>
         /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', the system will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_tier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.CreateChatCompletionRequestServiceTierJsonConverter))]
@@ -168,13 +223,14 @@ namespace G
         public global::G.ChatCompletionToolChoiceOption? ToolChoice { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         public bool? ParallelToolCalls { get; set; }
 
         /// <summary>
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </summary>
         /// <example>user-1234</example>
@@ -211,15 +267,27 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateChatCompletionRequest" /> class.
         /// </summary>
         /// <param name="messages">
-        /// A list of messages comprising the conversation so far. [Example Python code](https://cookbook.openai.com/examples/how_to_format_inputs_to_chatgpt_models).
+        /// A list of messages comprising the conversation so far. Depending on the<br/>
+        /// [model](/docs/models) you use, different message types (modalities) are<br/>
+        /// supported, like [text](/docs/guides/text-generation),<br/>
+        /// [images](/docs/guides/vision), and [audio](/docs/guides/audio).
         /// </param>
         /// <param name="model">
-        /// ID of the model to use. See the [model endpoint compatibility](/docs/models/model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
+        /// ID of the model to use. See the [model endpoint compatibility](/docs/models#model-endpoint-compatibility) table for details on which models work with the Chat API.<br/>
         /// Example: gpt-4o
+        /// </param>
+        /// <param name="store">
+        /// Whether or not to store the output of this chat completion request<br/>
+        /// for use in our [model distillation](/docs/guides/distillation) or [evals](/docs/guides/evals) products.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="metadata">
+        /// Developer-defined tags and values used for filtering completions<br/>
+        /// in the [dashboard](https://platform.openai.com/chat-completions).
         /// </param>
         /// <param name="frequencyPenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.<br/>
-        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
+        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </param>
         /// <param name="logitBias">
@@ -233,24 +301,42 @@ namespace G
         /// <param name="topLogprobs">
         /// An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability. `logprobs` must be set to `true` if this parameter is used.
         /// </param>
-        /// <param name="maxTokens">
-        /// The maximum number of [tokens](/tokenizer) that can be generated in the chat completion.<br/>
-        /// The total length of input tokens and generated tokens is limited by the model's context length. [Example Python code](https://cookbook.openai.com/examples/how_to_count_tokens_with_tiktoken) for counting tokens.
+        /// <param name="maxCompletionTokens">
+        /// An upper bound for the number of tokens that can be generated for a completion, including visible output tokens and [reasoning tokens](/docs/guides/reasoning).
         /// </param>
         /// <param name="n">
         /// How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep `n` as `1` to minimize costs.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
+        /// <param name="modalities">
+        /// Output types that you would like the model to generate for this request.<br/>
+        /// Most models are capable of generating text, which is the default:<br/>
+        /// `["text"]`<br/>
+        /// The `gpt-4o-audio-preview` model can also be used to [generate audio](/docs/guides/audio). To<br/>
+        /// request that this model generate both text and audio responses, you can<br/>
+        /// use:<br/>
+        /// `["text", "audio"]`
+        /// </param>
+        /// <param name="prediction">
+        /// Configuration for a [Predicted Output](/docs/guides/predicted-outputs),<br/>
+        /// which can greatly improve response times when large parts of the model<br/>
+        /// response are known ahead of time. This is most common when you are<br/>
+        /// regenerating a file with only minor changes to most of the content.
+        /// </param>
+        /// <param name="audio">
+        /// Parameters for audio output. Required when audio output is requested with<br/>
+        /// `modalities: ["audio"]`. [Learn more](/docs/guides/audio).
+        /// </param>
         /// <param name="presencePenalty">
         /// Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.<br/>
-        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation/parameter-details)<br/>
+        /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </param>
         /// <param name="responseFormat">
-        /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models/gpt-4o), [GPT-4o mini](/docs/models/gpt-4o-mini), [GPT-4 Turbo](/docs/models/gpt-4-and-gpt-4-turbo) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
-        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which guarantees the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
-        /// Setting to `{ "type": "json_object" }` enables JSON mode, which guarantees the message the model generates is valid JSON.<br/>
+        /// An object specifying the format that the model must output. Compatible with [GPT-4o](/docs/models#gpt-4o), [GPT-4o mini](/docs/models#gpt-4o-mini), [GPT-4 Turbo](/docs/models#gpt-4-turbo-and-gpt-4) and all GPT-3.5 Turbo models newer than `gpt-3.5-turbo-1106`.<br/>
+        /// Setting to `{ "type": "json_schema", "json_schema": {...} }` enables Structured Outputs which ensures the model will match your supplied JSON schema. Learn more in the [Structured Outputs guide](/docs/guides/structured-outputs).<br/>
+        /// Setting to `{ "type": "json_object" }` enables JSON mode, which ensures the message the model generates is valid JSON.<br/>
         /// **Important:** when using JSON mode, you **must** also instruct the model to produce JSON yourself via a system or user message. Without this, the model may generate an unending stream of whitespace until the generation reaches the token limit, resulting in a long-running and seemingly "stuck" request. Also note that the message content may be partially cut off if `finish_reason="length"`, which indicates the generation exceeded `max_tokens` or the conversation exceeded the max context length.
         /// </param>
         /// <param name="seed">
@@ -260,10 +346,12 @@ namespace G
         /// </param>
         /// <param name="serviceTier">
         /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-        ///   - If set to 'auto', the system will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.<br/>
+        ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
         ///   - When not set, the default behavior is 'auto'.<br/>
-        ///   When this parameter is set, the response body will include the `service_tier` utilized.
+        ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+        /// Default Value: auto
         /// </param>
         /// <param name="stop">
         /// Up to 4 sequences where the API will stop generating further tokens.
@@ -299,22 +387,28 @@ namespace G
         /// `none` is the default when no tools are present. `auto` is the default if tools are present.
         /// </param>
         /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Default Value: true
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CreateChatCompletionRequest(
             global::System.Collections.Generic.IList<global::G.ChatCompletionRequestMessage> messages,
             global::G.AnyOf<string, global::G.CreateChatCompletionRequestModel?> model,
+            bool? store,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             double? frequencyPenalty,
             global::System.Collections.Generic.Dictionary<string, int>? logitBias,
             bool? logprobs,
             int? topLogprobs,
-            int? maxTokens,
+            int? maxCompletionTokens,
             int? n,
+            global::System.Collections.Generic.IList<global::G.ChatCompletionModalitie>? modalities,
+            global::G.PredictionContent? prediction,
+            global::G.CreateChatCompletionRequestAudio? audio,
             double? presencePenalty,
             global::G.ResponseFormat? responseFormat,
             int? seed,
@@ -331,12 +425,17 @@ namespace G
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
+            this.Store = store;
+            this.Metadata = metadata;
             this.FrequencyPenalty = frequencyPenalty;
             this.LogitBias = logitBias;
             this.Logprobs = logprobs;
             this.TopLogprobs = topLogprobs;
-            this.MaxTokens = maxTokens;
+            this.MaxCompletionTokens = maxCompletionTokens;
             this.N = n;
+            this.Modalities = modalities;
+            this.Prediction = prediction;
+            this.Audio = audio;
             this.PresencePenalty = presencePenalty;
             this.ResponseFormat = responseFormat;
             this.Seed = seed;

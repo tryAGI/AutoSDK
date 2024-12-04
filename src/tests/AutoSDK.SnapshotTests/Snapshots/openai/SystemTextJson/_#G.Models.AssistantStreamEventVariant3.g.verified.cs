@@ -10,6 +10,12 @@ namespace G
     public sealed partial class AssistantStreamEventVariant3
     {
         /// <summary>
+        /// Whether to enable input audio transcription.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enabled")]
+        public bool? Enabled { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("event")]
@@ -32,6 +38,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AssistantStreamEventVariant3" /> class.
         /// </summary>
+        /// <param name="enabled">
+        /// Whether to enable input audio transcription.
+        /// </param>
         /// <param name="event"></param>
         /// <param name="data">
         /// Represents a thread that contains [messages](/docs/api-reference/messages).
@@ -39,9 +48,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public AssistantStreamEventVariant3(
             global::G.ThreadObject data,
+            bool? enabled,
             global::G.AssistantStreamEventVariant3Event @event)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Enabled = enabled;
             this.Event = @event;
         }
 

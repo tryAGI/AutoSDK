@@ -30,7 +30,7 @@ namespace G
         public global::G.AssistantStreamEventDiscriminatorEvent? Event { get; }
 
         /// <summary>
-        /// Occurs when an [error](/docs/guides/error-codes/api-errors) occurs. This can happen due to an internal server error or a timeout.
+        /// Occurs when an [error](/docs/guides/error-codes#api-errors) occurs. This can happen due to an internal server error or a timeout.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ErrorEvent? Error { get; init; }
@@ -485,7 +485,7 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/runs/step-object) is created.
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is created.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantStreamEventVariant14? ThreadRunStepCreated { get; init; }
@@ -520,7 +520,7 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/runs/step-object) moves to an `in_progress` state.
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) moves to an `in_progress` state.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantStreamEventVariant15? ThreadRunStepInProgress { get; init; }
@@ -555,7 +555,7 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when parts of a [run step](/docs/api-reference/runs/step-object) are being streamed.
+        /// Occurs when parts of a [run step](/docs/api-reference/run-steps/step-object) are being streamed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantStreamEventVariant16? ThreadRunStepDelta { get; init; }
@@ -590,7 +590,7 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/runs/step-object) is completed.
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is completed.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantStreamEventVariant17? ThreadRunStepCompleted { get; init; }
@@ -625,7 +625,7 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/runs/step-object) fails.
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) fails.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantStreamEventVariant18? ThreadRunStepFailed { get; init; }
@@ -660,7 +660,7 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/runs/step-object) is cancelled.
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantStreamEventVariant19? ThreadRunStepCancelled { get; init; }
@@ -695,7 +695,7 @@ namespace G
         }
 
         /// <summary>
-        /// Occurs when a [run step](/docs/api-reference/runs/step-object) expires.
+        /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) expires.
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.AssistantStreamEventVariant20? ThreadRunStepExpired { get; init; }

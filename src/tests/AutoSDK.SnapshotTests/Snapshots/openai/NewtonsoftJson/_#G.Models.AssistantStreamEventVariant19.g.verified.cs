@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Occurs when a [run step](/docs/api-reference/runs/step-object) is cancelled.
+    /// Occurs when a [run step](/docs/api-reference/run-steps/step-object) is cancelled.
     /// </summary>
     public sealed partial class AssistantStreamEventVariant19
     {

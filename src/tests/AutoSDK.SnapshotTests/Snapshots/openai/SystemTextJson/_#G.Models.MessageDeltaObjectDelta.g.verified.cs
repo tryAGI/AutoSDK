@@ -20,7 +20,7 @@ namespace G
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
-        public global::System.Collections.Generic.IList<global::G.ContentItem2>? Content { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ContentItem>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public MessageDeltaObjectDelta(
             global::G.MessageDeltaObjectDeltaRole? role,
-            global::System.Collections.Generic.IList<global::G.ContentItem2>? content)
+            global::System.Collections.Generic.IList<global::G.ContentItem>? content)
         {
             this.Role = role;
             this.Content = content;

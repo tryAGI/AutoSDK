@@ -16,7 +16,7 @@ namespace G
         public global::G.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestMessageContentPartText? Text { get; init; }

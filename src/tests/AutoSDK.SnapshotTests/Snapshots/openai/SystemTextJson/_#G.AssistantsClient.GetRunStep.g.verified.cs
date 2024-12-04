@@ -10,13 +10,15 @@ namespace G
             global::System.Net.Http.HttpClient httpClient,
             ref string threadId,
             ref string runId,
-            ref string stepId);
+            ref string stepId,
+            global::System.Collections.Generic.IList<global::G.GetRunStepIncludeItem>? include);
         partial void PrepareGetRunStepRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string threadId,
             string runId,
-            string stepId);
+            string stepId,
+            global::System.Collections.Generic.IList<global::G.GetRunStepIncludeItem>? include);
         partial void ProcessGetRunStepResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -32,6 +34,7 @@ namespace G
         /// <param name="threadId"></param>
         /// <param name="runId"></param>
         /// <param name="stepId"></param>
+        /// <param name="include"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
@@ -39,6 +42,7 @@ namespace G
             string threadId,
             string runId,
             string stepId,
+            global::System.Collections.Generic.IList<global::G.GetRunStepIncludeItem>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -47,7 +51,8 @@ namespace G
                 httpClient: HttpClient,
                 threadId: ref threadId,
                 runId: ref runId,
-                stepId: ref stepId);
+                stepId: ref stepId,
+                include: include);
 
             var __pathBuilder = new PathBuilder(
                 path: $"/threads/{threadId}/runs/{runId}/steps/{stepId}",
@@ -85,7 +90,8 @@ namespace G
                 httpRequestMessage: __httpRequest,
                 threadId: threadId,
                 runId: runId,
-                stepId: stepId);
+                stepId: stepId,
+                include: include);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

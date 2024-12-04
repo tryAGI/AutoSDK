@@ -18,6 +18,7 @@ namespace G
         /// </param>
         /// <param name="after"></param>
         /// <param name="before"></param>
+        /// <param name="include"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
@@ -28,6 +29,7 @@ namespace G
             global::G.ListRunStepsOrder? order = default,
             string? after = default,
             string? before = default,
+            global::System.Collections.Generic.IList<global::G.ListRunStepsIncludeItem>? include = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

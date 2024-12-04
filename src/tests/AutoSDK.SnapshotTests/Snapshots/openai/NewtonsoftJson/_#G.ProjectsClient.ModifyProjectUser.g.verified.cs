@@ -8,10 +8,14 @@ namespace G
     {
         partial void PrepareModifyProjectUserArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string projectId,
+            ref string userId,
             global::G.ProjectUserUpdateRequest request);
         partial void PrepareModifyProjectUserRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string projectId,
+            string userId,
             global::G.ProjectUserUpdateRequest request);
         partial void ProcessModifyProjectUserResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,10 +29,14 @@ namespace G
         /// <summary>
         /// Modifies a user's role in the project.
         /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="userId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectUser> ModifyProjectUserAsync(
+            string projectId,
+            string userId,
             global::G.ProjectUserUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -38,10 +46,12 @@ namespace G
                 client: HttpClient);
             PrepareModifyProjectUserArguments(
                 httpClient: HttpClient,
+                projectId: ref projectId,
+                userId: ref userId,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/organization/projects/{project_id}/users/{user_id}",
+                path: $"/organization/projects/{projectId}/users/{userId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -80,6 +90,8 @@ namespace G
             PrepareModifyProjectUserRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                projectId: projectId,
+                userId: userId,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -189,12 +201,16 @@ namespace G
         /// <summary>
         /// Modifies a user's role in the project.
         /// </summary>
+        /// <param name="projectId"></param>
+        /// <param name="userId"></param>
         /// <param name="role">
         /// `owner` or `member`
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectUser> ModifyProjectUserAsync(
+            string projectId,
+            string userId,
             global::G.ProjectUserUpdateRequestRole role,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -204,6 +220,8 @@ namespace G
             };
 
             return await ModifyProjectUserAsync(
+                projectId: projectId,
+                userId: userId,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

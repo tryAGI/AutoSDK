@@ -62,6 +62,8 @@ public static class StringExtensions
             "" => string.Empty,
             "Event" => "@event",
             "event" => "@event",
+            "Object" => "@object",
+            "object" => "@object",
             "Namespace" => "@namespace",
             "namespace" => "@namespace",
 #pragma warning disable CA1308 // Normalize strings to uppercase

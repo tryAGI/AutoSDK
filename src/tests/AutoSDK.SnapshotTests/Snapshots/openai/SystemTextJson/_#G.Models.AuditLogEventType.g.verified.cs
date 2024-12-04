@@ -80,6 +80,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        RateLimitUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        RateLimitDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
         UserAdded,
         /// <summary>
         /// 
@@ -120,6 +128,8 @@ namespace G
                 AuditLogEventType.ServiceAccountCreated => "service_account.created",
                 AuditLogEventType.ServiceAccountUpdated => "service_account.updated",
                 AuditLogEventType.ServiceAccountDeleted => "service_account.deleted",
+                AuditLogEventType.RateLimitUpdated => "rate_limit.updated",
+                AuditLogEventType.RateLimitDeleted => "rate_limit.deleted",
                 AuditLogEventType.UserAdded => "user.added",
                 AuditLogEventType.UserUpdated => "user.updated",
                 AuditLogEventType.UserDeleted => "user.deleted",
@@ -150,6 +160,8 @@ namespace G
                 "service_account.created" => AuditLogEventType.ServiceAccountCreated,
                 "service_account.updated" => AuditLogEventType.ServiceAccountUpdated,
                 "service_account.deleted" => AuditLogEventType.ServiceAccountDeleted,
+                "rate_limit.updated" => AuditLogEventType.RateLimitUpdated,
+                "rate_limit.deleted" => AuditLogEventType.RateLimitDeleted,
                 "user.added" => AuditLogEventType.UserAdded,
                 "user.updated" => AuditLogEventType.UserUpdated,
                 "user.deleted" => AuditLogEventType.UserDeleted,

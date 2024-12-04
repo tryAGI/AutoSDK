@@ -120,6 +120,18 @@ namespace G
         /// <summary>
         /// The details for events with this `type`.
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rate_limit.updated")]
+        public global::G.AuditLogRateLimitUpdated? RateLimitUpdated { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("rate_limit.deleted")]
+        public global::G.AuditLogRateLimitDeleted? RateLimitDeleted { get; set; }
+
+        /// <summary>
+        /// The details for events with this `type`.
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("service_account.created")]
         public global::G.AuditLogServiceAccountCreated? ServiceAccountCreated { get; set; }
 
@@ -213,6 +225,12 @@ namespace G
         /// <param name="projectArchived">
         /// The details for events with this `type`.
         /// </param>
+        /// <param name="rateLimitUpdated">
+        /// The details for events with this `type`.
+        /// </param>
+        /// <param name="rateLimitDeleted">
+        /// The details for events with this `type`.
+        /// </param>
         /// <param name="serviceAccountCreated">
         /// The details for events with this `type`.
         /// </param>
@@ -250,6 +268,8 @@ namespace G
             global::G.AuditLogProjectCreated? projectCreated,
             global::G.AuditLogProjectUpdated? projectUpdated,
             global::G.AuditLogProjectArchived? projectArchived,
+            global::G.AuditLogRateLimitUpdated? rateLimitUpdated,
+            global::G.AuditLogRateLimitDeleted? rateLimitDeleted,
             global::G.AuditLogServiceAccountCreated? serviceAccountCreated,
             global::G.AuditLogServiceAccountUpdated? serviceAccountUpdated,
             global::G.AuditLogServiceAccountDeleted? serviceAccountDeleted,
@@ -274,6 +294,8 @@ namespace G
             this.ProjectCreated = projectCreated;
             this.ProjectUpdated = projectUpdated;
             this.ProjectArchived = projectArchived;
+            this.RateLimitUpdated = rateLimitUpdated;
+            this.RateLimitDeleted = rateLimitDeleted;
             this.ServiceAccountCreated = serviceAccountCreated;
             this.ServiceAccountUpdated = serviceAccountUpdated;
             this.ServiceAccountDeleted = serviceAccountDeleted;

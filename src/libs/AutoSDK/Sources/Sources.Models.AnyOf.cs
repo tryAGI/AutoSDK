@@ -53,6 +53,11 @@ public static partial class Sources
             {x.Name} = {x.ParameterName};
 ").Inject()}
         }}" : " ";
+        var objectProperty =
+            anyOfData.Properties.Any(x => x.ParameterName == "object") ||
+            anyOfData.DiscriminatorPropertyName == "Object"
+                ? "Object1"
+                : "Object";
         
         return $@"{(anyOfData.IsNamed ? @"#pragma warning disable CS0618 // Type or member is obsolete
 " : "")}
@@ -102,7 +107,7 @@ namespace {anyOfData.Namespace}
 {constructorWithAllValues}
 
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
-        public object? Object =>
+        public object? {objectProperty} =>
 {anyOfData.Properties.Reverse().Select(x => $@" 
             {x.Name} as object ??
 ").Inject().TrimEnd('?', '\n')}

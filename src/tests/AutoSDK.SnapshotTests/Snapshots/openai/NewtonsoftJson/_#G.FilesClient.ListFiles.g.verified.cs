@@ -8,11 +8,17 @@ namespace G
     {
         partial void PrepareListFilesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? purpose);
+            ref string? purpose,
+            ref int? limit,
+            ref global::G.ListFilesOrder? order,
+            ref string? after);
         partial void PrepareListFilesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? purpose);
+            string? purpose,
+            int? limit,
+            global::G.ListFilesOrder? order,
+            string? after);
         partial void ProcessListFilesResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -23,26 +29,48 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Returns a list of files that belong to the user's organization.
+        /// Returns a list of files.
         /// </summary>
         /// <param name="purpose"></param>
+        /// <param name="limit">
+        /// Default Value: 10000
+        /// </param>
+        /// <param name="order">
+        /// Default Value: desc
+        /// </param>
+        /// <param name="after"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ListFilesResponse> ListFilesAsync(
             string? purpose = default,
+            int? limit = default,
+            global::G.ListFilesOrder? order = default,
+            string? after = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
                 client: HttpClient);
             PrepareListFilesArguments(
                 httpClient: HttpClient,
-                purpose: ref purpose);
+                purpose: ref purpose,
+                limit: ref limit,
+                order: ref order,
+                after: ref after);
 
+            var orderValue = order switch
+            {
+                global::G.ListFilesOrder.Asc => "asc",
+                global::G.ListFilesOrder.Desc => "desc",
+                _ => throw new global::System.NotImplementedException("Enum value not implemented."),
+            };
             var __pathBuilder = new PathBuilder(
                 path: "/files",
                 baseUri: HttpClient.BaseAddress); 
             __pathBuilder 
                 .AddOptionalParameter("purpose", purpose) 
+                .AddOptionalParameter("limit", limit?.ToString()) 
+                .AddOptionalParameter("order", orderValue?.ToString()) 
+                .AddOptionalParameter("after", after) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -75,7 +103,10 @@ namespace G
             PrepareListFilesRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                purpose: purpose);
+                purpose: purpose,
+                limit: limit,
+                order: order,
+                after: after);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

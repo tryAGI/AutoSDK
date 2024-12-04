@@ -138,7 +138,7 @@ namespace G
         };
 
         /// <summary>
-        /// Given a input text, outputs if the model classifies it as potentially harmful.
+        /// Given text and/or image inputs, classifies if those inputs are potentially harmful.
         /// </summary>
         public ModerationsClient Moderations => new ModerationsClient(HttpClient, authorizations: Authorizations)
         {
@@ -158,7 +158,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VectorStoresClient VectorStores => new VectorStoresClient(HttpClient, authorizations: Authorizations)
+        public UsageClient Usage => new UsageClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,
@@ -176,6 +176,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerOptions = JsonSerializerOptions,
+        };
+
+        /// <summary>
+        /// 
+        /// </summary>
         public UsersClient Users => new UsersClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
@@ -185,7 +194,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public ProjectsClient Projects => new ProjectsClient(HttpClient, authorizations: Authorizations)
+        public VectorStoresClient VectorStores => new VectorStoresClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerOptions = JsonSerializerOptions,

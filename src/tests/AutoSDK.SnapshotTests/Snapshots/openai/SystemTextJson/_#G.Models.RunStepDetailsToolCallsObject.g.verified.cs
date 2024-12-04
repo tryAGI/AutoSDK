@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ToolCallsItem> ToolCalls { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.ToolCallsItem2> ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace G
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RunStepDetailsToolCallsObject(
-            global::System.Collections.Generic.IList<global::G.ToolCallsItem> toolCalls,
+            global::System.Collections.Generic.IList<global::G.ToolCallsItem2> toolCalls,
             global::G.RunStepDetailsToolCallsObjectType type)
         {
             this.ToolCalls = toolCalls ?? throw new global::System.ArgumentNullException(nameof(toolCalls));

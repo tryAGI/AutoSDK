@@ -31,6 +31,13 @@ namespace G
         public required global::G.CreateModerationResponseResultCategoryScores CategoryScores { get; set; }
 
         /// <summary>
+        /// A list of the categories along with the input type(s) that the score applies to.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("category_applied_input_types")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.CreateModerationResponseResultCategoryAppliedInputTypes CategoryAppliedInputTypes { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -48,15 +55,20 @@ namespace G
         /// <param name="categoryScores">
         /// A list of the categories along with their scores as predicted by model.
         /// </param>
+        /// <param name="categoryAppliedInputTypes">
+        /// A list of the categories along with the input type(s) that the score applies to.
+        /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public CreateModerationResponseResult(
             bool flagged,
             global::G.CreateModerationResponseResultCategories categories,
-            global::G.CreateModerationResponseResultCategoryScores categoryScores)
+            global::G.CreateModerationResponseResultCategoryScores categoryScores,
+            global::G.CreateModerationResponseResultCategoryAppliedInputTypes categoryAppliedInputTypes)
         {
             this.Flagged = flagged;
             this.Categories = categories ?? throw new global::System.ArgumentNullException(nameof(categories));
             this.CategoryScores = categoryScores ?? throw new global::System.ArgumentNullException(nameof(categoryScores));
+            this.CategoryAppliedInputTypes = categoryAppliedInputTypes ?? throw new global::System.ArgumentNullException(nameof(categoryAppliedInputTypes));
         }
 
         /// <summary>

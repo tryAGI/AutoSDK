@@ -18,6 +18,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-2024-11-20")]
+        Gpt4o20241120,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gpt-4o-2024-08-06")]
         Gpt4o20240806,
         /// <summary>
@@ -140,6 +145,7 @@ namespace G
             return value switch
             {
                 CreateAssistantRequestModel.Gpt4o => "gpt-4o",
+                CreateAssistantRequestModel.Gpt4o20241120 => "gpt-4o-2024-11-20",
                 CreateAssistantRequestModel.Gpt4o20240806 => "gpt-4o-2024-08-06",
                 CreateAssistantRequestModel.Gpt4o20240513 => "gpt-4o-2024-05-13",
                 CreateAssistantRequestModel.Gpt4oMini => "gpt-4o-mini",
@@ -173,6 +179,7 @@ namespace G
             return value switch
             {
                 "gpt-4o" => CreateAssistantRequestModel.Gpt4o,
+                "gpt-4o-2024-11-20" => CreateAssistantRequestModel.Gpt4o20241120,
                 "gpt-4o-2024-08-06" => CreateAssistantRequestModel.Gpt4o20240806,
                 "gpt-4o-2024-05-13" => CreateAssistantRequestModel.Gpt4o20240513,
                 "gpt-4o-mini" => CreateAssistantRequestModel.Gpt4oMini,

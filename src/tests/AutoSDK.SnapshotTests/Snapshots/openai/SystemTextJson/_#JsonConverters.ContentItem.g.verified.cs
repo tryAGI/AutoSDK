@@ -18,45 +18,45 @@ namespace G.JsonConverters
 
 
             var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageObjectContentItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageObjectContentItemDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageObjectContentItemDiscriminator)}");
+            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaObjectDeltaContentItemDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaObjectDeltaContentItemDiscriminator> ??
+                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageDeltaObjectDeltaContentItemDiscriminator)}");
             var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
 
-            global::G.MessageContentImageFileObject? imageFile = default;
-            if (discriminator?.Type == global::G.MessageObjectContentItemDiscriminatorType.ImageFile)
+            global::G.MessageDeltaContentImageFileObject? imageFile = default;
+            if (discriminator?.Type == global::G.MessageDeltaObjectDeltaContentItemDiscriminatorType.ImageFile)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentImageFileObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentImageFileObject> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentImageFileObject)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentImageFileObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentImageFileObject> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageDeltaContentImageFileObject)}");
                 imageFile = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.MessageContentImageUrlObject? imageUrl = default;
-            if (discriminator?.Type == global::G.MessageObjectContentItemDiscriminatorType.ImageUrl)
+            global::G.MessageDeltaContentTextObject? text = default;
+            if (discriminator?.Type == global::G.MessageDeltaObjectDeltaContentItemDiscriminatorType.Text)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentImageUrlObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentImageUrlObject> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentImageUrlObject)}");
-                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::G.MessageContentTextObject? text = default;
-            if (discriminator?.Type == global::G.MessageObjectContentItemDiscriminatorType.Text)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextObject> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentTextObject)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentTextObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentTextObject> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageDeltaContentTextObject)}");
                 text = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.MessageContentRefusalObject? refusal = default;
-            if (discriminator?.Type == global::G.MessageObjectContentItemDiscriminatorType.Refusal)
+            global::G.MessageDeltaContentRefusalObject? refusal = default;
+            if (discriminator?.Type == global::G.MessageDeltaObjectDeltaContentItemDiscriminatorType.Refusal)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentRefusalObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentRefusalObject> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageContentRefusalObject)}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentRefusalObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentRefusalObject> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageDeltaContentRefusalObject)}");
                 refusal = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::G.MessageDeltaContentImageUrlObject? imageUrl = default;
+            if (discriminator?.Type == global::G.MessageDeltaObjectDeltaContentItemDiscriminatorType.ImageUrl)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentImageUrlObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentImageUrlObject> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.MessageDeltaContentImageUrlObject)}");
+                imageUrl = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
 
             var result = new global::G.ContentItem(
                 discriminator?.Type,
                 imageFile,
-                imageUrl,
                 text,
-                refusal
+                refusal,
+                imageUrl
                 );
 
             return result;
@@ -73,27 +73,27 @@ namespace G.JsonConverters
 
             if (value.IsImageFile)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentImageFileObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentImageFileObject?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentImageFileObject).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentImageFileObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentImageFileObject?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageDeltaContentImageFileObject).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageFile, typeInfo);
-            }
-            else if (value.IsImageUrl)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentImageUrlObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentImageUrlObject?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentImageUrlObject).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
             }
             else if (value.IsText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentTextObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentTextObject?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentTextObject).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentTextObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentTextObject?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageDeltaContentTextObject).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Text, typeInfo);
             }
             else if (value.IsRefusal)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageContentRefusalObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageContentRefusalObject?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageContentRefusalObject).Name}");
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentRefusalObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentRefusalObject?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageDeltaContentRefusalObject).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Refusal, typeInfo);
+            }
+            else if (value.IsImageUrl)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.MessageDeltaContentImageUrlObject), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.MessageDeltaContentImageUrlObject?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.MessageDeltaContentImageUrlObject).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ImageUrl, typeInfo);
             }
         }
     }

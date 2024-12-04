@@ -23,7 +23,8 @@ namespace G
             ref string content);
 
         /// <summary>
-        /// Classifies if text is potentially harmful.
+        /// Classifies if text and/or image inputs are potentially harmful. Learn<br/>
+        /// more in the [moderation guide](/docs/guides/moderation).
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -159,21 +160,24 @@ namespace G
         }
 
         /// <summary>
-        /// Classifies if text is potentially harmful.
+        /// Classifies if text and/or image inputs are potentially harmful. Learn<br/>
+        /// more in the [moderation guide](/docs/guides/moderation).
         /// </summary>
         /// <param name="input">
-        /// The input text to classify
+        /// Input (or inputs) to classify. Can be a single string, an array of strings, or<br/>
+        /// an array of multi-modal input objects similar to other models.
         /// </param>
         /// <param name="model">
-        /// Two content moderations models are available: `text-moderation-stable` and `text-moderation-latest`.<br/>
-        /// The default is `text-moderation-latest` which will be automatically upgraded over time. This ensures you are always using our most accurate model. If you use `text-moderation-stable`, we will provide advanced notice before updating the model. Accuracy of `text-moderation-stable` may be slightly lower than for `text-moderation-latest`.<br/>
-        /// Default Value: text-moderation-latest<br/>
-        /// Example: text-moderation-stable
+        /// The content moderation model you would like to use. Learn more in<br/>
+        /// [the moderation guide](/docs/guides/moderation), and learn about<br/>
+        /// available models [here](/docs/models#moderation).<br/>
+        /// Default Value: omni-moderation-latest<br/>
+        /// Example: omni-moderation-2024-09-26
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateModerationResponse> CreateModerationAsync(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<string>> input,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>> input,
             global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

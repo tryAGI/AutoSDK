@@ -20,7 +20,7 @@ namespace G
         /// An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_calls")]
-        public global::System.Collections.Generic.IList<global::G.ToolCallsItem2>? ToolCalls { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolCallsItem>? ToolCalls { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,7 +40,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RunStepDeltaStepDetailsToolCallsObject(
             global::G.RunStepDeltaStepDetailsToolCallsObjectType type,
-            global::System.Collections.Generic.IList<global::G.ToolCallsItem2>? toolCalls)
+            global::System.Collections.Generic.IList<global::G.ToolCallsItem>? toolCalls)
         {
             this.Type = type;
             this.ToolCalls = toolCalls;

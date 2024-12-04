@@ -1,7 +1,1 @@
-﻿[
-  {
-    RuleName: SchemaMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/components/schemas/CreateCompletionRequest/properties/logprobs/default
-  }
-]
+﻿[]

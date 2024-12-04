@@ -166,7 +166,7 @@ namespace G
         /// Example: The quick brown fox jumped over the lazy dog
         /// </param>
         /// <param name="model">
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models/overview) for descriptions of them.<br/>
+        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.<br/>
         /// Example: text-embedding-3-small
         /// </param>
         /// <param name="encodingFormat">
@@ -178,7 +178,7 @@ namespace G
         /// The number of dimensions the resulting output embeddings should have. Only supported in `text-embedding-3` and later models.
         /// </param>
         /// <param name="user">
-        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).<br/>
+        /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
         /// Example: user-1234
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

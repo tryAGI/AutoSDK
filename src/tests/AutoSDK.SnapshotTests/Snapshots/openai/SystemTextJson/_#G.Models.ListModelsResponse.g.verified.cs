@@ -21,7 +21,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.Model12> Data { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.Model15> Data { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,7 +36,7 @@ namespace G
         /// <param name="data"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ListModelsResponse(
-            global::System.Collections.Generic.IList<global::G.Model12> data,
+            global::System.Collections.Generic.IList<global::G.Model15> data,
             global::G.ListModelsResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

@@ -32,17 +32,17 @@ namespace G
         public global::G.AnyOf<string, global::G.CreateTranslationRequestModel?> Model { get; set; } = default!;
 
         /// <summary>
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("prompt")]
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
         /// Default Value: json
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
-        public string? ResponseFormat { get; set; }
+        public global::G.AudioResponseFormat? ResponseFormat { get; set; }
 
         /// <summary>
         /// The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. If set to 0, the model will use [log probability](https://en.wikipedia.org/wiki/Log_probability) to automatically increase the temperature until certain thresholds are hit.<br/>
@@ -71,10 +71,10 @@ namespace G
         /// Example: whisper-1
         /// </param>
         /// <param name="prompt">
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.
         /// </param>
         /// <param name="responseFormat">
-        /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
         /// Default Value: json
         /// </param>
         /// <param name="temperature">
@@ -86,7 +86,7 @@ namespace G
             string filename,
             global::G.AnyOf<string, global::G.CreateTranslationRequestModel?> model,
             string? prompt,
-            string? responseFormat,
+            global::G.AudioResponseFormat? responseFormat,
             double? temperature)
         {
             this.File = file ?? throw new global::System.ArgumentNullException(nameof(file));

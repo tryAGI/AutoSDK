@@ -1,0 +1,28 @@
+﻿//HintName: G.Models.RealtimeSessionModalities.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The set of modalities the model can respond with. To disable audio,<br/>
+    /// set this to ["text"].
+    /// </summary>
+    public sealed partial class RealtimeSessionModalities
+    {
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RealtimeSessionModalities" /> class.
+        /// </summary>
+        public RealtimeSessionModalities(
+ )
+        {
+        }
+    }
+}

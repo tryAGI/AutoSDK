@@ -16,7 +16,7 @@ namespace G
         public global::G.ChatCompletionRequestUserMessageContentPartDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// 
+        /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestMessageContentPartText? Text { get; init; }
@@ -51,7 +51,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ChatCompletionRequestMessageContentPartImage? ImageUrl { get; init; }
@@ -86,24 +86,62 @@ namespace G
         }
 
         /// <summary>
+        /// Learn about [audio inputs](/docs/guides/audio).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionRequestMessageContentPartAudio? InputAudio { get; init; }
+#else
+        public global::G.ChatCompletionRequestMessageContentPartAudio? InputAudio { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
+#endif
+        public bool IsInputAudio => InputAudio != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartAudio value) => new ChatCompletionRequestUserMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartAudio?(ChatCompletionRequestUserMessageContentPart @this) => @this.InputAudio;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartAudio? value)
+        {
+            InputAudio = value;
+        }
+
+        /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(
             global::G.ChatCompletionRequestUserMessageContentPartDiscriminatorType? type,
             global::G.ChatCompletionRequestMessageContentPartText? text,
-            global::G.ChatCompletionRequestMessageContentPartImage? imageUrl
+            global::G.ChatCompletionRequestMessageContentPartImage? imageUrl,
+            global::G.ChatCompletionRequestMessageContentPartAudio? inputAudio
             )
         {
             Type = type;
 
             Text = text;
             ImageUrl = imageUrl;
+            InputAudio = inputAudio;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            InputAudio as object ??
             ImageUrl as object ??
             Text as object 
             ;
@@ -113,7 +151,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageUrl || !IsText && IsImageUrl;
+            return IsText && !IsImageUrl && !IsInputAudio || !IsText && IsImageUrl && !IsInputAudio || !IsText && !IsImageUrl && IsInputAudio;
         }
 
         /// <summary>
@@ -122,6 +160,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
             global::System.Func<global::G.ChatCompletionRequestMessageContentPartImage?, TResult>? imageUrl = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartAudio?, TResult>? inputAudio = null,
             bool validate = true)
         {
             if (validate)
@@ -137,6 +176,10 @@ namespace G
             {
                 return imageUrl(ImageUrl!);
             }
+            else if (IsInputAudio && inputAudio != null)
+            {
+                return inputAudio(InputAudio!);
+            }
 
             return default(TResult);
         }
@@ -147,6 +190,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? text = null,
             global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage?>? imageUrl = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartAudio?>? inputAudio = null,
             bool validate = true)
         {
             if (validate)
@@ -162,6 +206,10 @@ namespace G
             {
                 imageUrl?.Invoke(ImageUrl!);
             }
+            else if (IsInputAudio)
+            {
+                inputAudio?.Invoke(InputAudio!);
+            }
         }
 
         /// <summary>
@@ -175,6 +223,8 @@ namespace G
                 typeof(global::G.ChatCompletionRequestMessageContentPartText),
                 ImageUrl,
                 typeof(global::G.ChatCompletionRequestMessageContentPartImage),
+                InputAudio,
+                typeof(global::G.ChatCompletionRequestMessageContentPartAudio),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -192,7 +242,8 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(ImageUrl, other.ImageUrl) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(ImageUrl, other.ImageUrl) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartAudio?>.Default.Equals(InputAudio, other.InputAudio) 
                 ;
         }
 

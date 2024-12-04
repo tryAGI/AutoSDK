@@ -17,7 +17,7 @@ namespace G
         public required string Url { get; set; }
 
         /// <summary>
-        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).<br/>
+        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).<br/>
         /// Default Value: auto
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("detail")]
@@ -37,7 +37,7 @@ namespace G
         /// Either a URL of the image or the base64 encoded image data.
         /// </param>
         /// <param name="detail">
-        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision/low-or-high-fidelity-image-understanding).<br/>
+        /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).<br/>
         /// Default Value: auto
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

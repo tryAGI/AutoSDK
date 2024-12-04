@@ -8,10 +8,12 @@ namespace G
     {
         partial void PrepareModifyProjectArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string projectId,
             global::G.ProjectUpdateRequest request);
         partial void PrepareModifyProjectRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string projectId,
             global::G.ProjectUpdateRequest request);
         partial void ProcessModifyProjectResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,10 +27,12 @@ namespace G
         /// <summary>
         /// Modifies a project in the organization.
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Project> ModifyProjectAsync(
+            string projectId,
             global::G.ProjectUpdateRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -38,10 +42,11 @@ namespace G
                 client: HttpClient);
             PrepareModifyProjectArguments(
                 httpClient: HttpClient,
+                projectId: ref projectId,
                 request: request);
 
             var __pathBuilder = new PathBuilder(
-                path: "/organization/projects/{project_id}",
+                path: $"/organization/projects/{projectId}",
                 baseUri: HttpClient.BaseAddress); 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -80,6 +85,7 @@ namespace G
             PrepareModifyProjectRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                projectId: projectId,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -189,12 +195,14 @@ namespace G
         /// <summary>
         /// Modifies a project in the organization.
         /// </summary>
+        /// <param name="projectId"></param>
         /// <param name="name">
         /// The updated name of the project, this name appears in reports.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.Project> ModifyProjectAsync(
+            string projectId,
             string name,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -204,6 +212,7 @@ namespace G
             };
 
             return await ModifyProjectAsync(
+                projectId: projectId,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -28,7 +28,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("file_search")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required object FileSearch { get; set; }
+        public required global::G.RunStepDetailsToolCallsFileSearchObjectFileSearch FileSearch { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -51,7 +51,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public RunStepDetailsToolCallsFileSearchObject(
             string id,
-            object fileSearch,
+            global::G.RunStepDetailsToolCallsFileSearchObjectFileSearch fileSearch,
             global::G.RunStepDetailsToolCallsFileSearchObjectType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

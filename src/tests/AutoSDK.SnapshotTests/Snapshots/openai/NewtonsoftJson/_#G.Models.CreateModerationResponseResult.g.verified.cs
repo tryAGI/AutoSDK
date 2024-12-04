@@ -28,6 +28,12 @@ namespace G
         public global::G.CreateModerationResponseResultCategoryScores CategoryScores { get; set; } = default!;
 
         /// <summary>
+        /// A list of the categories along with the input type(s) that the score applies to.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("category_applied_input_types", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.CreateModerationResponseResultCategoryAppliedInputTypes CategoryAppliedInputTypes { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -45,14 +51,19 @@ namespace G
         /// <param name="categoryScores">
         /// A list of the categories along with their scores as predicted by model.
         /// </param>
+        /// <param name="categoryAppliedInputTypes">
+        /// A list of the categories along with the input type(s) that the score applies to.
+        /// </param>
         public CreateModerationResponseResult(
             bool flagged,
             global::G.CreateModerationResponseResultCategories categories,
-            global::G.CreateModerationResponseResultCategoryScores categoryScores)
+            global::G.CreateModerationResponseResultCategoryScores categoryScores,
+            global::G.CreateModerationResponseResultCategoryAppliedInputTypes categoryAppliedInputTypes)
         {
             this.Flagged = flagged;
             this.Categories = categories ?? throw new global::System.ArgumentNullException(nameof(categories));
             this.CategoryScores = categoryScores ?? throw new global::System.ArgumentNullException(nameof(categoryScores));
+            this.CategoryAppliedInputTypes = categoryAppliedInputTypes ?? throw new global::System.ArgumentNullException(nameof(categoryAppliedInputTypes));
         }
 
         /// <summary>

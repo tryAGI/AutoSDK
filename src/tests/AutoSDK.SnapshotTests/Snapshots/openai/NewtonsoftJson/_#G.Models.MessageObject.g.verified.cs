@@ -67,7 +67,7 @@ namespace G
         /// The content of the message in array of text and/or images.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.ContentItem> Content { get; set; } = default!;
+        public global::System.Collections.Generic.IList<global::G.ContentItem2> Content { get; set; } = default!;
 
         /// <summary>
         /// If applicable, the ID of the [assistant](/docs/api-reference/assistants) that authored this message.
@@ -88,7 +88,7 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.MessageObjectAttachment>? Attachments { get; set; } = default!;
 
         /// <summary>
-        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
         public object? Metadata { get; set; } = default!;
@@ -142,7 +142,7 @@ namespace G
         /// A list of files attached to the message, and the tools they were added to.
         /// </param>
         /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maxium of 512 characters long.
+        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
         /// </param>
         public MessageObject(
             string id,
@@ -153,7 +153,7 @@ namespace G
             global::System.DateTimeOffset? completedAt,
             global::System.DateTimeOffset? incompleteAt,
             global::G.MessageObjectRole role,
-            global::System.Collections.Generic.IList<global::G.ContentItem> content,
+            global::System.Collections.Generic.IList<global::G.ContentItem2> content,
             string? assistantId,
             string? runId,
             global::System.Collections.Generic.IList<global::G.MessageObjectAttachment>? attachments,

@@ -6,10 +6,12 @@ namespace G
 {
     /// <summary>
     /// Specifies the latency tier to use for processing the request. This parameter is relevant for customers subscribed to the scale tier service:<br/>
-    ///   - If set to 'auto', the system will utilize scale tier credits until they are exhausted.<br/>
+    ///   - If set to 'auto', and the Project is Scale tier enabled, the system will utilize scale tier credits until they are exhausted.<br/>
+    ///   - If set to 'auto', and the Project is not Scale tier enabled, the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
     ///   - If set to 'default', the request will be processed using the default service tier with a lower uptime SLA and no latency guarentee.<br/>
     ///   - When not set, the default behavior is 'auto'.<br/>
-    ///   When this parameter is set, the response body will include the `service_tier` utilized.
+    ///   When this parameter is set, the response body will include the `service_tier` utilized.<br/>
+    /// Default Value: auto
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CreateChatCompletionRequestServiceTier

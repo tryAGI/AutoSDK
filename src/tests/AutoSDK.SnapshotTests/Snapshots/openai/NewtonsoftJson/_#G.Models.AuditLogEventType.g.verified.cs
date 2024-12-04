@@ -98,6 +98,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="rate_limit.updated")]
+        RateLimitUpdated,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="rate_limit.deleted")]
+        RateLimitDeleted,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="user.added")]
         UserAdded,
         /// <summary>
@@ -141,6 +151,8 @@ namespace G
                 AuditLogEventType.ServiceAccountCreated => "service_account.created",
                 AuditLogEventType.ServiceAccountUpdated => "service_account.updated",
                 AuditLogEventType.ServiceAccountDeleted => "service_account.deleted",
+                AuditLogEventType.RateLimitUpdated => "rate_limit.updated",
+                AuditLogEventType.RateLimitDeleted => "rate_limit.deleted",
                 AuditLogEventType.UserAdded => "user.added",
                 AuditLogEventType.UserUpdated => "user.updated",
                 AuditLogEventType.UserDeleted => "user.deleted",
@@ -171,6 +183,8 @@ namespace G
                 "service_account.created" => AuditLogEventType.ServiceAccountCreated,
                 "service_account.updated" => AuditLogEventType.ServiceAccountUpdated,
                 "service_account.deleted" => AuditLogEventType.ServiceAccountDeleted,
+                "rate_limit.updated" => AuditLogEventType.RateLimitUpdated,
+                "rate_limit.deleted" => AuditLogEventType.RateLimitDeleted,
                 "user.added" => AuditLogEventType.UserAdded,
                 "user.updated" => AuditLogEventType.UserUpdated,
                 "user.deleted" => AuditLogEventType.UserDeleted,

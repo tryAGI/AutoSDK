@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RunStepDetailsToolCallsObjectToolCallDiscriminatorType? Type { get; }
+        public global::G.RunStepDeltaStepDetailsToolCallsObjectToolCallDiscriminatorType? Type { get; }
 
         /// <summary>
         /// Details of the Code Interpreter tool call the run step was involved in.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStepDetailsToolCallsCodeObject? CodeInterpreter { get; init; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeObject? CodeInterpreter { get; init; }
 #else
-        public global::G.RunStepDetailsToolCallsCodeObject? CodeInterpreter { get; }
+        public global::G.RunStepDeltaStepDetailsToolCallsCodeObject? CodeInterpreter { get; }
 #endif
 
         /// <summary>
@@ -35,17 +35,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolCallsItem(global::G.RunStepDetailsToolCallsCodeObject value) => new ToolCallsItem(value);
+        public static implicit operator ToolCallsItem(global::G.RunStepDeltaStepDetailsToolCallsCodeObject value) => new ToolCallsItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStepDetailsToolCallsCodeObject?(ToolCallsItem @this) => @this.CodeInterpreter;
+        public static implicit operator global::G.RunStepDeltaStepDetailsToolCallsCodeObject?(ToolCallsItem @this) => @this.CodeInterpreter;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolCallsItem(global::G.RunStepDetailsToolCallsCodeObject? value)
+        public ToolCallsItem(global::G.RunStepDeltaStepDetailsToolCallsCodeObject? value)
         {
             CodeInterpreter = value;
         }
@@ -54,9 +54,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStepDetailsToolCallsFileSearchObject? FileSearch { get; init; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? FileSearch { get; init; }
 #else
-        public global::G.RunStepDetailsToolCallsFileSearchObject? FileSearch { get; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? FileSearch { get; }
 #endif
 
         /// <summary>
@@ -70,17 +70,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolCallsItem(global::G.RunStepDetailsToolCallsFileSearchObject value) => new ToolCallsItem(value);
+        public static implicit operator ToolCallsItem(global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject value) => new ToolCallsItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStepDetailsToolCallsFileSearchObject?(ToolCallsItem @this) => @this.FileSearch;
+        public static implicit operator global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?(ToolCallsItem @this) => @this.FileSearch;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolCallsItem(global::G.RunStepDetailsToolCallsFileSearchObject? value)
+        public ToolCallsItem(global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? value)
         {
             FileSearch = value;
         }
@@ -89,9 +89,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RunStepDetailsToolCallsFunctionObject? Function { get; init; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? Function { get; init; }
 #else
-        public global::G.RunStepDetailsToolCallsFunctionObject? Function { get; }
+        public global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? Function { get; }
 #endif
 
         /// <summary>
@@ -105,17 +105,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolCallsItem(global::G.RunStepDetailsToolCallsFunctionObject value) => new ToolCallsItem(value);
+        public static implicit operator ToolCallsItem(global::G.RunStepDeltaStepDetailsToolCallsFunctionObject value) => new ToolCallsItem(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RunStepDetailsToolCallsFunctionObject?(ToolCallsItem @this) => @this.Function;
+        public static implicit operator global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?(ToolCallsItem @this) => @this.Function;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolCallsItem(global::G.RunStepDetailsToolCallsFunctionObject? value)
+        public ToolCallsItem(global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? value)
         {
             Function = value;
         }
@@ -124,10 +124,10 @@ namespace G
         /// 
         /// </summary>
         public ToolCallsItem(
-            global::G.RunStepDetailsToolCallsObjectToolCallDiscriminatorType? type,
-            global::G.RunStepDetailsToolCallsCodeObject? codeInterpreter,
-            global::G.RunStepDetailsToolCallsFileSearchObject? fileSearch,
-            global::G.RunStepDetailsToolCallsFunctionObject? function
+            global::G.RunStepDeltaStepDetailsToolCallsObjectToolCallDiscriminatorType? type,
+            global::G.RunStepDeltaStepDetailsToolCallsCodeObject? codeInterpreter,
+            global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject? fileSearch,
+            global::G.RunStepDeltaStepDetailsToolCallsFunctionObject? function
             )
         {
             Type = type;
@@ -158,9 +158,9 @@ namespace G
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RunStepDetailsToolCallsCodeObject?, TResult>? codeInterpreter = null,
-            global::System.Func<global::G.RunStepDetailsToolCallsFileSearchObject?, TResult>? fileSearch = null,
-            global::System.Func<global::G.RunStepDetailsToolCallsFunctionObject?, TResult>? function = null,
+            global::System.Func<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?, TResult>? codeInterpreter = null,
+            global::System.Func<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?, TResult>? fileSearch = null,
+            global::System.Func<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?, TResult>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -188,9 +188,9 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RunStepDetailsToolCallsCodeObject?>? codeInterpreter = null,
-            global::System.Action<global::G.RunStepDetailsToolCallsFileSearchObject?>? fileSearch = null,
-            global::System.Action<global::G.RunStepDetailsToolCallsFunctionObject?>? function = null,
+            global::System.Action<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?>? codeInterpreter = null,
+            global::System.Action<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?>? fileSearch = null,
+            global::System.Action<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?>? function = null,
             bool validate = true)
         {
             if (validate)
@@ -220,11 +220,11 @@ namespace G
             var fields = new object?[]
             {
                 CodeInterpreter,
-                typeof(global::G.RunStepDetailsToolCallsCodeObject),
+                typeof(global::G.RunStepDeltaStepDetailsToolCallsCodeObject),
                 FileSearch,
-                typeof(global::G.RunStepDetailsToolCallsFileSearchObject),
+                typeof(global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject),
                 Function,
-                typeof(global::G.RunStepDetailsToolCallsFunctionObject),
+                typeof(global::G.RunStepDeltaStepDetailsToolCallsFunctionObject),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -241,9 +241,9 @@ namespace G
         public bool Equals(ToolCallsItem other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDetailsToolCallsCodeObject?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDetailsToolCallsFileSearchObject?>.Default.Equals(FileSearch, other.FileSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDetailsToolCallsFunctionObject?>.Default.Equals(Function, other.Function) 
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDeltaStepDetailsToolCallsCodeObject?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDeltaStepDetailsToolCallsFileSearchObject?>.Default.Equals(FileSearch, other.FileSearch) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.RunStepDeltaStepDetailsToolCallsFunctionObject?>.Default.Equals(Function, other.Function) 
                 ;
         }
 

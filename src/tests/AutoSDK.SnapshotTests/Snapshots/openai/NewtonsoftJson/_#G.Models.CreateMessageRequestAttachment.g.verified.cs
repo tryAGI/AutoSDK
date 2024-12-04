@@ -19,7 +19,7 @@ namespace G
         /// The tools to add this file to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
-        public global::System.Collections.Generic.IList<global::G.ToolsItem8>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolsItem3>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +38,7 @@ namespace G
         /// </param>
         public CreateMessageRequestAttachment(
             string? fileId,
-            global::System.Collections.Generic.IList<global::G.ToolsItem8>? tools)
+            global::System.Collections.Generic.IList<global::G.ToolsItem3>? tools)
         {
             this.FileId = fileId;
             this.Tools = tools;

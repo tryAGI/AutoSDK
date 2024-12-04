@@ -41,6 +41,13 @@ namespace G
         public global::G.ChatCompletionResponseMessageFunctionCall? FunctionCall { get; set; }
 
         /// <summary>
+        /// If the audio output modality is requested, this object contains data<br/>
+        /// about the audio response from the model. [Learn more](/docs/guides/audio).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("audio")]
+        public global::G.ChatCompletionResponseMessageAudio? Audio { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -61,16 +68,22 @@ namespace G
         /// <param name="role">
         /// The role of the author of this message.
         /// </param>
+        /// <param name="audio">
+        /// If the audio output modality is requested, this object contains data<br/>
+        /// about the audio response from the model. [Learn more](/docs/guides/audio).
+        /// </param>
         public ChatCompletionResponseMessage(
             string? content,
             string? refusal,
             global::System.Collections.Generic.IList<global::G.ChatCompletionMessageToolCall>? toolCalls,
-            global::G.ChatCompletionResponseMessageRole role)
+            global::G.ChatCompletionResponseMessageRole role,
+            global::G.ChatCompletionResponseMessageAudio? audio)
         {
             this.Content = content ?? throw new global::System.ArgumentNullException(nameof(content));
             this.Refusal = refusal ?? throw new global::System.ArgumentNullException(nameof(refusal));
             this.ToolCalls = toolCalls;
             this.Role = role;
+            this.Audio = audio;
         }
 
         /// <summary>

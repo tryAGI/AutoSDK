@@ -29,10 +29,10 @@ namespace G
         /// Example: whisper-1
         /// </param>
         /// <param name="prompt">
-        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text/prompting) should be in English.
+        /// An optional text to guide the model's style or continue a previous audio segment. The [prompt](/docs/guides/speech-to-text#prompting) should be in English.
         /// </param>
         /// <param name="responseFormat">
-        /// The format of the transcript output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
+        /// The format of the output, in one of these options: `json`, `text`, `srt`, `verbose_json`, or `vtt`.<br/>
         /// Default Value: json
         /// </param>
         /// <param name="temperature">
@@ -46,7 +46,7 @@ namespace G
             string filename,
             global::G.AnyOf<string, global::G.CreateTranslationRequestModel?> model,
             string? prompt = default,
-            string? responseFormat = default,
+            global::G.AudioResponseFormat? responseFormat = default,
             double? temperature = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

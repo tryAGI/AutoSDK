@@ -19,7 +19,7 @@ namespace G
         /// The tools to add this file to.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::G.ToolsItem7>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.ToolsItem6>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,7 +39,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public MessageObjectAttachment(
             string? fileId,
-            global::System.Collections.Generic.IList<global::G.ToolsItem7>? tools)
+            global::System.Collections.Generic.IList<global::G.ToolsItem6>? tools)
         {
             this.FileId = fileId;
             this.Tools = tools;

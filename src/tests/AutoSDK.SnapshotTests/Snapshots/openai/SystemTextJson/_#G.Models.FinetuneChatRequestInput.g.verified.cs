@@ -24,7 +24,8 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.ChatCompletionTool>? Tools { get; set; }
 
         /// <summary>
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("parallel_tool_calls")]
         public bool? ParallelToolCalls { get; set; }
@@ -50,7 +51,8 @@ namespace G
         /// A list of tools the model may generate JSON inputs for.
         /// </param>
         /// <param name="parallelToolCalls">
-        /// Whether to enable [parallel function calling](/docs/guides/function-calling/parallel-function-calling) during tool use.
+        /// Whether to enable [parallel function calling](/docs/guides/function-calling#configuring-parallel-function-calling) during tool use.<br/>
+        /// Default Value: true
         /// </param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public FinetuneChatRequestInput(

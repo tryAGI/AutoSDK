@@ -94,7 +94,7 @@ namespace G
         public ModelsClient Models { get; }
 
         /// <summary>
-        /// Given a input text, outputs if the model classifies it as potentially harmful.
+        /// Given text and/or image inputs, classifies if those inputs are potentially harmful.
         /// </summary>
         public ModerationsClient Moderations { get; }
 
@@ -106,7 +106,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public VectorStoresClient VectorStores { get; }
+        public UsageClient Usage { get; }
 
         /// <summary>
         /// 
@@ -116,12 +116,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public ProjectsClient Projects { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public UsersClient Users { get; }
 
         /// <summary>
         /// 
         /// </summary>
-        public ProjectsClient Projects { get; }
+        public VectorStoresClient VectorStores { get; }
 
     }
 }

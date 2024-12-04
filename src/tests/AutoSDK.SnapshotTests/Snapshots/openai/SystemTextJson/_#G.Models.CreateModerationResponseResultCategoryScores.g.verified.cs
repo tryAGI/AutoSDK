@@ -38,6 +38,20 @@ namespace G
         public required double HarassmentThreatening { get; set; }
 
         /// <summary>
+        /// The score for the category 'illicit'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("illicit")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double Illicit { get; set; }
+
+        /// <summary>
+        /// The score for the category 'illicit/violent'.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("illicit/violent")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double IllicitViolent { get; set; }
+
+        /// <summary>
         /// The score for the category 'self-harm'.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("self-harm")]
@@ -107,6 +121,12 @@ namespace G
         /// <param name="harassmentThreatening">
         /// The score for the category 'harassment/threatening'.
         /// </param>
+        /// <param name="illicit">
+        /// The score for the category 'illicit'.
+        /// </param>
+        /// <param name="illicitViolent">
+        /// The score for the category 'illicit/violent'.
+        /// </param>
         /// <param name="selfHarm">
         /// The score for the category 'self-harm'.
         /// </param>
@@ -134,6 +154,8 @@ namespace G
             double hateThreatening,
             double harassment,
             double harassmentThreatening,
+            double illicit,
+            double illicitViolent,
             double selfHarm,
             double selfHarmIntent,
             double selfHarmInstructions,
@@ -146,6 +168,8 @@ namespace G
             this.HateThreatening = hateThreatening;
             this.Harassment = harassment;
             this.HarassmentThreatening = harassmentThreatening;
+            this.Illicit = illicit;
+            this.IllicitViolent = illicitViolent;
             this.SelfHarm = selfHarm;
             this.SelfHarmIntent = selfHarmIntent;
             this.SelfHarmInstructions = selfHarmInstructions;

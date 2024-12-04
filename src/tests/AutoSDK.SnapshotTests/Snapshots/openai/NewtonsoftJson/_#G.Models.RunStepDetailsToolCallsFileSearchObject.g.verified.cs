@@ -25,7 +25,7 @@ namespace G
         /// For now, this is always going to be an empty object.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_search", Required = global::Newtonsoft.Json.Required.Always)]
-        public object FileSearch { get; set; } = default!;
+        public global::G.RunStepDetailsToolCallsFileSearchObjectFileSearch FileSearch { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -47,7 +47,7 @@ namespace G
         /// </param>
         public RunStepDetailsToolCallsFileSearchObject(
             string id,
-            object fileSearch,
+            global::G.RunStepDetailsToolCallsFileSearchObjectFileSearch fileSearch,
             global::G.RunStepDetailsToolCallsFileSearchObjectType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));

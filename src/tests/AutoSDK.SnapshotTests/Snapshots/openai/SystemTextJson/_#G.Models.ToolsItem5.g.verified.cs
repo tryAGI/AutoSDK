@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateRunRequestToolDiscriminatorType? Type { get; }
+        public global::G.CreateThreadAndRunRequestToolDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -124,7 +124,7 @@ namespace G
         /// 
         /// </summary>
         public ToolsItem5(
-            global::G.CreateRunRequestToolDiscriminatorType? type,
+            global::G.CreateThreadAndRunRequestToolDiscriminatorType? type,
             global::G.AssistantToolsCode? codeInterpreter,
             global::G.AssistantToolsFileSearch? fileSearch,
             global::G.AssistantToolsFunction? function

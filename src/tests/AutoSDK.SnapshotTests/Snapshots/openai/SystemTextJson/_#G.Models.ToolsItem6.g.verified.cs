@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.CreateThreadAndRunRequestToolDiscriminatorType? Type { get; }
+        public global::G.MessageObjectAttachmentToolDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -54,9 +54,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.AssistantToolsFileSearch? FileSearch { get; init; }
+        public global::G.AssistantToolsFileSearchTypeOnly? FileSearch { get; init; }
 #else
-        public global::G.AssistantToolsFileSearch? FileSearch { get; }
+        public global::G.AssistantToolsFileSearchTypeOnly? FileSearch { get; }
 #endif
 
         /// <summary>
@@ -70,17 +70,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ToolsItem6(global::G.AssistantToolsFileSearch value) => new ToolsItem6(value);
+        public static implicit operator ToolsItem6(global::G.AssistantToolsFileSearchTypeOnly value) => new ToolsItem6(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.AssistantToolsFileSearch?(ToolsItem6 @this) => @this.FileSearch;
+        public static implicit operator global::G.AssistantToolsFileSearchTypeOnly?(ToolsItem6 @this) => @this.FileSearch;
 
         /// <summary>
         /// 
         /// </summary>
-        public ToolsItem6(global::G.AssistantToolsFileSearch? value)
+        public ToolsItem6(global::G.AssistantToolsFileSearchTypeOnly? value)
         {
             FileSearch = value;
         }
@@ -88,60 +88,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.AssistantToolsFunction? Function { get; init; }
-#else
-        public global::G.AssistantToolsFunction? Function { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Function))]
-#endif
-        public bool IsFunction => Function != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ToolsItem6(global::G.AssistantToolsFunction value) => new ToolsItem6(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.AssistantToolsFunction?(ToolsItem6 @this) => @this.Function;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ToolsItem6(global::G.AssistantToolsFunction? value)
-        {
-            Function = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ToolsItem6(
-            global::G.CreateThreadAndRunRequestToolDiscriminatorType? type,
+            global::G.MessageObjectAttachmentToolDiscriminatorType? type,
             global::G.AssistantToolsCode? codeInterpreter,
-            global::G.AssistantToolsFileSearch? fileSearch,
-            global::G.AssistantToolsFunction? function
+            global::G.AssistantToolsFileSearchTypeOnly? fileSearch
             )
         {
             Type = type;
 
             CodeInterpreter = codeInterpreter;
             FileSearch = fileSearch;
-            Function = function;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Function as object ??
             FileSearch as object ??
             CodeInterpreter as object 
             ;
@@ -151,7 +113,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsCodeInterpreter && !IsFileSearch && !IsFunction || !IsCodeInterpreter && IsFileSearch && !IsFunction || !IsCodeInterpreter && !IsFileSearch && IsFunction;
+            return IsCodeInterpreter && !IsFileSearch || !IsCodeInterpreter && IsFileSearch;
         }
 
         /// <summary>
@@ -159,8 +121,7 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.AssistantToolsCode?, TResult>? codeInterpreter = null,
-            global::System.Func<global::G.AssistantToolsFileSearch?, TResult>? fileSearch = null,
-            global::System.Func<global::G.AssistantToolsFunction?, TResult>? function = null,
+            global::System.Func<global::G.AssistantToolsFileSearchTypeOnly?, TResult>? fileSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -176,10 +137,6 @@ namespace G
             {
                 return fileSearch(FileSearch!);
             }
-            else if (IsFunction && function != null)
-            {
-                return function(Function!);
-            }
 
             return default(TResult);
         }
@@ -189,8 +146,7 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.AssistantToolsCode?>? codeInterpreter = null,
-            global::System.Action<global::G.AssistantToolsFileSearch?>? fileSearch = null,
-            global::System.Action<global::G.AssistantToolsFunction?>? function = null,
+            global::System.Action<global::G.AssistantToolsFileSearchTypeOnly?>? fileSearch = null,
             bool validate = true)
         {
             if (validate)
@@ -206,10 +162,6 @@ namespace G
             {
                 fileSearch?.Invoke(FileSearch!);
             }
-            else if (IsFunction)
-            {
-                function?.Invoke(Function!);
-            }
         }
 
         /// <summary>
@@ -222,9 +174,7 @@ namespace G
                 CodeInterpreter,
                 typeof(global::G.AssistantToolsCode),
                 FileSearch,
-                typeof(global::G.AssistantToolsFileSearch),
-                Function,
-                typeof(global::G.AssistantToolsFunction),
+                typeof(global::G.AssistantToolsFileSearchTypeOnly),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -242,8 +192,7 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsCode?>.Default.Equals(CodeInterpreter, other.CodeInterpreter) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsFileSearch?>.Default.Equals(FileSearch, other.FileSearch) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsFunction?>.Default.Equals(Function, other.Function) 
+                global::System.Collections.Generic.EqualityComparer<global::G.AssistantToolsFileSearchTypeOnly?>.Default.Equals(FileSearch, other.FileSearch) 
                 ;
         }
 
