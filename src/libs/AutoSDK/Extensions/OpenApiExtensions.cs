@@ -606,10 +606,29 @@ public static class OpenApiExtensions
     {
         context = context ?? throw new ArgumentNullException(nameof(context));
         
-        return context.Schema.Enum.ComputeEnum(
+        var @enum = context.Schema.Enum.ComputeEnum(
             enumName: context.Id,
             description: context.Parameter?.Description ?? context.Schema.Description ?? string.Empty,
             context.Settings);
+        
+        if (context.Schema.Extensions.TryGetValue("x-enum-descriptions", out var descriptions) &&
+            descriptions is OpenApiArray descriptionsArray)
+        {
+            var i = 0;
+            foreach (var description in descriptionsArray)
+            {
+                if (description is OpenApiString @string)
+                {
+                    @enum[@enum.Keys.ElementAt(i)] = @enum[@enum.Keys.ElementAt(i)] with
+                    {
+                        Summary = ClearForXml(@string.Value),
+                    };
+                }
+                i++;
+            }
+        }
+
+        return @enum;
     }
     
     public static Dictionary<string, PropertyData> ComputeEnum(

@@ -10,39 +10,39 @@ namespace G
     public enum ModelEnum
     {
         /// <summary>
-        /// 
+        /// Fast and cost-effective model
         /// </summary>
         Claude35HaikuLatest,
         /// <summary>
-        /// 
+        /// Fast and cost-effective model
         /// </summary>
         Claude3Haiku20241022,
         /// <summary>
-        /// 
+        /// Our most intelligent model
         /// </summary>
         Claude35SonnetLatest,
         /// <summary>
-        /// 
+        /// Our most intelligent model
         /// </summary>
         Claude35Sonnet20241022,
         /// <summary>
-        /// 
+        /// Our previous most intelligent model
         /// </summary>
         Claude35Sonnet20240620,
         /// <summary>
-        /// 
+        /// Excels at writing and complex tasks
         /// </summary>
         Claude3OpusLatest,
         /// <summary>
-        /// 
+        /// Excels at writing and complex tasks
         /// </summary>
         Claude3Opus20240229,
         /// <summary>
-        /// 
+        /// Balance of speed and intelligence
         /// </summary>
         Claude3Sonnet20240229,
         /// <summary>
-        /// 
+        /// Our previous fast and cost-effective
         /// </summary>
         Claude3Haiku20240307,
         /// <summary>
