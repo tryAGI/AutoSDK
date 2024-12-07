@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Default Value: ephemeral
+    /// 
     /// </summary>
     public enum CacheControlEphemeralType
     {

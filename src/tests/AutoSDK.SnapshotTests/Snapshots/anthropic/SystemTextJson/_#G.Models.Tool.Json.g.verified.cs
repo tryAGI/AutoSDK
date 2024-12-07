@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public readonly partial struct Tool
+    public sealed partial class Tool
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -42,7 +42,7 @@ namespace G
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::G.Tool),
-                jsonSerializerContext) as global::G.Tool?;
+                jsonSerializerContext) as global::G.Tool;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace G
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::G.Tool),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.Tool?;
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.Tool;
         }
 
         /// <summary>

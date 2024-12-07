@@ -12,15 +12,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        MessageStart,
-        /// <summary>
-        /// 
-        /// </summary>
-        MessageDelta,
-        /// <summary>
-        /// 
-        /// </summary>
-        MessageStop,
+        ContentBlockDelta,
         /// <summary>
         /// 
         /// </summary>
@@ -28,19 +20,19 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        ContentBlockDelta,
-        /// <summary>
-        /// 
-        /// </summary>
         ContentBlockStop,
         /// <summary>
         /// 
         /// </summary>
-        Ping,
+        MessageDelta,
         /// <summary>
         /// 
         /// </summary>
-        Error,
+        MessageStart,
+        /// <summary>
+        /// 
+        /// </summary>
+        MessageStop,
     }
 
     /// <summary>
@@ -55,14 +47,12 @@ namespace G
         {
             return value switch
             {
-                MessageStreamEventDiscriminatorType.MessageStart => "message_start",
-                MessageStreamEventDiscriminatorType.MessageDelta => "message_delta",
-                MessageStreamEventDiscriminatorType.MessageStop => "message_stop",
-                MessageStreamEventDiscriminatorType.ContentBlockStart => "content_block_start",
                 MessageStreamEventDiscriminatorType.ContentBlockDelta => "content_block_delta",
+                MessageStreamEventDiscriminatorType.ContentBlockStart => "content_block_start",
                 MessageStreamEventDiscriminatorType.ContentBlockStop => "content_block_stop",
-                MessageStreamEventDiscriminatorType.Ping => "ping",
-                MessageStreamEventDiscriminatorType.Error => "error",
+                MessageStreamEventDiscriminatorType.MessageDelta => "message_delta",
+                MessageStreamEventDiscriminatorType.MessageStart => "message_start",
+                MessageStreamEventDiscriminatorType.MessageStop => "message_stop",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -73,14 +63,12 @@ namespace G
         {
             return value switch
             {
-                "message_start" => MessageStreamEventDiscriminatorType.MessageStart,
-                "message_delta" => MessageStreamEventDiscriminatorType.MessageDelta,
-                "message_stop" => MessageStreamEventDiscriminatorType.MessageStop,
-                "content_block_start" => MessageStreamEventDiscriminatorType.ContentBlockStart,
                 "content_block_delta" => MessageStreamEventDiscriminatorType.ContentBlockDelta,
+                "content_block_start" => MessageStreamEventDiscriminatorType.ContentBlockStart,
                 "content_block_stop" => MessageStreamEventDiscriminatorType.ContentBlockStop,
-                "ping" => MessageStreamEventDiscriminatorType.Ping,
-                "error" => MessageStreamEventDiscriminatorType.Error,
+                "message_delta" => MessageStreamEventDiscriminatorType.MessageDelta,
+                "message_start" => MessageStreamEventDiscriminatorType.MessageStart,
+                "message_stop" => MessageStreamEventDiscriminatorType.MessageStop,
                 _ => null,
             };
         }

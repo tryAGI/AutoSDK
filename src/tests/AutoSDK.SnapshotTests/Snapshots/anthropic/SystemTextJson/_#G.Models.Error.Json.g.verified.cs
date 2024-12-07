@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class Error
+    public readonly partial struct Error
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -42,7 +42,7 @@ namespace G
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::G.Error),
-                jsonSerializerContext) as global::G.Error;
+                jsonSerializerContext) as global::G.Error?;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace G
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::G.Error),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.Error;
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.Error?;
         }
 
         /// <summary>

@@ -5,24 +5,24 @@
 namespace G
 {
     /// <summary>
-    /// A stop event in a streaming content block.
+    /// 
     /// </summary>
     public sealed partial class ContentBlockStopEvent
     {
         /// <summary>
-        /// The index of the content block.
+        /// Default Value: content_block_stop
+        /// </summary>
+        /// <default>global::G.ContentBlockStopEventType.ContentBlockStop</default>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ContentBlockStopEventTypeJsonConverter))]
+        public global::G.ContentBlockStopEventType Type { get; set; } = global::G.ContentBlockStopEventType.ContentBlockStop;
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Index { get; set; }
-
-        /// <summary>
-        /// The type of a streaming event.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageStreamEventTypeJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.MessageStreamEventType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -33,16 +33,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockStopEvent" /> class.
         /// </summary>
-        /// <param name="index">
-        /// The index of the content block.
-        /// </param>
         /// <param name="type">
-        /// The type of a streaming event.
+        /// Default Value: content_block_stop
         /// </param>
+        /// <param name="index"></param>
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
         public ContentBlockStopEvent(
             int index,
-            global::G.MessageStreamEventType type)
+            global::G.ContentBlockStopEventType type = global::G.ContentBlockStopEventType.ContentBlockStop)
         {
             this.Index = index;
             this.Type = type;

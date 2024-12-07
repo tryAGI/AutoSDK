@@ -64,20 +64,6 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ContentBlockStopEvent)}");
                 contentBlockStop = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
-            global::G.PingEvent? ping = default;
-            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.Ping)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PingEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.PingEvent)}");
-                ping = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
-            global::G.ErrorEvent? error = default;
-            if (discriminator?.Type == global::G.MessageStreamEventDiscriminatorType.Error)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ErrorEvent> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ErrorEvent)}");
-                error = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
-            }
 
             var result = new global::G.MessageStreamEvent(
                 discriminator?.Type,
@@ -86,9 +72,7 @@ namespace G.JsonConverters
                 messageStop,
                 contentBlockStart,
                 contentBlockDelta,
-                contentBlockStop,
-                ping,
-                error
+                contentBlockStop
                 );
 
             return result;
@@ -138,18 +122,6 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ContentBlockStopEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ContentBlockStopEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ContentBlockStopEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ContentBlockStop, typeInfo);
-            }
-            else if (value.IsPing)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.PingEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.PingEvent?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.PingEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Ping, typeInfo);
-            }
-            else if (value.IsError)
-            {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ErrorEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ErrorEvent?> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ErrorEvent).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Error, typeInfo);
             }
         }
     }
