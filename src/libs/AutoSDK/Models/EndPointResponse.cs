@@ -18,6 +18,8 @@ public readonly record struct EndPointResponse(
     public bool Is5XX => StatusCode.StartsWith("5", StringComparison.OrdinalIgnoreCase);
     public bool IsDefault => StatusCode == "default";
     public bool IsPattern => StatusCode.Contains("XX");
+    public int Min => int.TryParse(StatusCode.Replace("XX", "00"), out var code) ? code : 0;
+    public int Max => int.TryParse(StatusCode.Replace("XX", "99"), out var code) ? code : 0;
     
     public static EndPointResponse Default => new(
         StatusCode: "200",

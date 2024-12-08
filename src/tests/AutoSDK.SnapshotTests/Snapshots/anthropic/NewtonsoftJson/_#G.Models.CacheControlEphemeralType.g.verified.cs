@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Default Value: ephemeral
+    /// 
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CacheControlEphemeralType

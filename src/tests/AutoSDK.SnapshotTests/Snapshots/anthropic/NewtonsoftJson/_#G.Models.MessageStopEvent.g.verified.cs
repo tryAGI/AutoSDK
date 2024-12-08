@@ -5,15 +5,16 @@
 namespace G
 {
     /// <summary>
-    /// A stop event in a streaming conversation.
+    /// 
     /// </summary>
     public sealed partial class MessageStopEvent
     {
         /// <summary>
-        /// The type of a streaming event.
+        /// Default Value: message_stop
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageStreamEventType Type { get; set; } = default!;
+        /// <default>global::G.MessageStopEventType.MessageStop</default>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageStopEventType Type { get; set; } = global::G.MessageStopEventType.MessageStop;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -25,10 +26,10 @@ namespace G
         /// Initializes a new instance of the <see cref="MessageStopEvent" /> class.
         /// </summary>
         /// <param name="type">
-        /// The type of a streaming event.
+        /// Default Value: message_stop
         /// </param>
         public MessageStopEvent(
-            global::G.MessageStreamEventType type)
+            global::G.MessageStopEventType type = global::G.MessageStopEventType.MessageStop)
         {
             this.Type = type;
         }

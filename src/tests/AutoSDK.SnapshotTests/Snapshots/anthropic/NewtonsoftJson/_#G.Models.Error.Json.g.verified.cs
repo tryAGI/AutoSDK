@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class Error
+    public readonly partial struct Error
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

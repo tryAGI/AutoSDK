@@ -1,0 +1,80 @@
+﻿//HintName: G.Models.BetaListResponseMessageBatch.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public sealed partial class BetaListResponseMessageBatch
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.BetaMessageBatch> Data { get; set; } = default!;
+
+        /// <summary>
+        /// Indicates if there are more results in the requested page direction.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool HasMore { get; set; } = default!;
+
+        /// <summary>
+        /// First ID in the `data` list. Can be used as the `before_id` for the previous page.<br/>
+        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// </summary>
+        /// <example>msgbatch_013Zva2CMHLNnXjNJJKqJ2EF</example>
+        [global::Newtonsoft.Json.JsonProperty("first_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string? FirstId { get; set; } = default!;
+
+        /// <summary>
+        /// Last ID in the `data` list. Can be used as the `after_id` for the next page.<br/>
+        /// Example: msgbatch_01HkcTjaV5uDC8jWR4ZsDV8d
+        /// </summary>
+        /// <example>msgbatch_01HkcTjaV5uDC8jWR4ZsDV8d</example>
+        [global::Newtonsoft.Json.JsonProperty("last_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string? LastId { get; set; } = default!;
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaListResponseMessageBatch" /> class.
+        /// </summary>
+        /// <param name="data"></param>
+        /// <param name="hasMore">
+        /// Indicates if there are more results in the requested page direction.
+        /// </param>
+        /// <param name="firstId">
+        /// First ID in the `data` list. Can be used as the `before_id` for the previous page.<br/>
+        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// </param>
+        /// <param name="lastId">
+        /// Last ID in the `data` list. Can be used as the `after_id` for the next page.<br/>
+        /// Example: msgbatch_01HkcTjaV5uDC8jWR4ZsDV8d
+        /// </param>
+        public BetaListResponseMessageBatch(
+            global::System.Collections.Generic.IList<global::G.BetaMessageBatch> data,
+            bool hasMore,
+            string? firstId,
+            string? lastId)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.HasMore = hasMore;
+            this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="BetaListResponseMessageBatch" /> class.
+        /// </summary>
+        public BetaListResponseMessageBatch()
+        {
+        }
+    }
+}

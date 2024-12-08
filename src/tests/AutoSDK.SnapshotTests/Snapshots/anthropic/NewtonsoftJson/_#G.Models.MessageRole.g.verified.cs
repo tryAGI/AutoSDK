@@ -5,16 +5,13 @@
 namespace G
 {
     /// <summary>
-    /// The role of the messages author.
+    /// Conversational role of the generated message.<br/>
+    /// This will always be `"assistant"`.<br/>
+    /// Default Value: assistant
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum MessageRole
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="user")]
-        User,
         /// <summary>
         /// 
         /// </summary>
@@ -34,7 +31,6 @@ namespace G
         {
             return value switch
             {
-                MessageRole.User => "user",
                 MessageRole.Assistant => "assistant",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -46,7 +42,6 @@ namespace G
         {
             return value switch
             {
-                "user" => MessageRole.User,
                 "assistant" => MessageRole.Assistant,
                 _ => null,
             };

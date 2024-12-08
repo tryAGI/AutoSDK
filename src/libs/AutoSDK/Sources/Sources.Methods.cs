@@ -401,8 +401,11 @@ namespace {endPoint.Namespace}
         
         var errors = endPoint.Settings.GenerateExceptions ? orderedErrorResponses.Select(x => $@"
             // {x.Description.Replace('\n', ' ').Replace('\r', ' ')}
-{(x.IsDefault ? @" 
-            if (!__response.IsSuccessStatusCode)" : @$" 
+{(    x.IsDefault ? @" 
+            if (!__response.IsSuccessStatusCode)"
+    : x.IsPattern ? $@" 
+            if ((int)__response.StatusCode >= {x.Min} && (int)__response.StatusCode <= {x.Max})"
+    : @$" 
             if ((int)__response.StatusCode == {x.StatusCode})")}
             {{
                 string? __content_{x.StatusCode} = null;

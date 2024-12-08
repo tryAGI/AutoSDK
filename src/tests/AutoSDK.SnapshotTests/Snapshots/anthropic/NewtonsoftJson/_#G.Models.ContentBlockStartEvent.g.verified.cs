@@ -5,27 +5,28 @@
 namespace G
 {
     /// <summary>
-    /// A start event in a streaming content block.
+    /// 
     /// </summary>
     public sealed partial class ContentBlockStartEvent
     {
         /// <summary>
-        /// A block of content in a message.
+        /// Default Value: content_block_start
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content_block", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Block ContentBlock { get; set; } = default!;
+        /// <default>global::G.ContentBlockStartEventType.ContentBlockStart</default>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ContentBlockStartEventType Type { get; set; } = global::G.ContentBlockStartEventType.ContentBlockStart;
 
         /// <summary>
-        /// The index of the content block.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
         public int Index { get; set; } = default!;
 
         /// <summary>
-        /// The type of a streaming event.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageStreamEventType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("content_block", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.ContentBlock2 ContentBlock { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,22 +37,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockStartEvent" /> class.
         /// </summary>
-        /// <param name="contentBlock">
-        /// A block of content in a message.
-        /// </param>
-        /// <param name="index">
-        /// The index of the content block.
-        /// </param>
         /// <param name="type">
-        /// The type of a streaming event.
+        /// Default Value: content_block_start
         /// </param>
+        /// <param name="index"></param>
+        /// <param name="contentBlock"></param>
         public ContentBlockStartEvent(
-            global::G.Block contentBlock,
             int index,
-            global::G.MessageStreamEventType type)
+            global::G.ContentBlock2 contentBlock,
+            global::G.ContentBlockStartEventType type = global::G.ContentBlockStartEventType.ContentBlockStart)
         {
-            this.ContentBlock = contentBlock;
             this.Index = index;
+            this.ContentBlock = contentBlock;
             this.Type = type;
         }
 

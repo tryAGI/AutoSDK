@@ -5,27 +5,28 @@
 namespace G
 {
     /// <summary>
-    /// A delta event in a streaming content block.
+    /// 
     /// </summary>
     public sealed partial class ContentBlockDeltaEvent
     {
         /// <summary>
-        /// A delta in a streaming message.
+        /// Default Value: content_block_delta
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.BlockDelta Delta { get; set; } = default!;
+        /// <default>global::G.ContentBlockDeltaEventType.ContentBlockDelta</default>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ContentBlockDeltaEventType Type { get; set; } = global::G.ContentBlockDeltaEventType.ContentBlockDelta;
 
         /// <summary>
-        /// The index of the content block.
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
         public int Index { get; set; } = default!;
 
         /// <summary>
-        /// The type of a streaming event.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageStreamEventType Type { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("delta", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Delta2 Delta { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,22 +37,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockDeltaEvent" /> class.
         /// </summary>
-        /// <param name="delta">
-        /// A delta in a streaming message.
-        /// </param>
-        /// <param name="index">
-        /// The index of the content block.
-        /// </param>
         /// <param name="type">
-        /// The type of a streaming event.
+        /// Default Value: content_block_delta
         /// </param>
+        /// <param name="index"></param>
+        /// <param name="delta"></param>
         public ContentBlockDeltaEvent(
-            global::G.BlockDelta delta,
             int index,
-            global::G.MessageStreamEventType type)
+            global::G.Delta2 delta,
+            global::G.ContentBlockDeltaEventType type = global::G.ContentBlockDeltaEventType.ContentBlockDelta)
         {
-            this.Delta = delta;
             this.Index = index;
+            this.Delta = delta;
             this.Type = type;
         }
 

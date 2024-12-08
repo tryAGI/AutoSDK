@@ -111,7 +111,7 @@ namespace G
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Error response.  See our [errors documentation](https://docs.anthropic.com/en/api/errors) for more details.
-            if ((int)__response.StatusCode == 4XX)
+            if ((int)__response.StatusCode >= 400 && (int)__response.StatusCode <= 499)
             {
                 string? __content_4XX = null;
                 global::G.ErrorResponse? __value_4XX = null;

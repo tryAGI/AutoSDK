@@ -6,7 +6,7 @@
 namespace G
 {
     /// <summary>
-    /// A event in a streaming conversation.
+    /// 
     /// </summary>
     public readonly partial struct MessageStreamEvent : global::System.IEquatable<MessageStreamEvent>
     {
@@ -16,7 +16,7 @@ namespace G
         public global::G.MessageStreamEventDiscriminatorType? Type { get; }
 
         /// <summary>
-        /// A start event in a streaming conversation.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStartEvent? MessageStart { get; init; }
@@ -51,7 +51,7 @@ namespace G
         }
 
         /// <summary>
-        /// A delta event in a streaming conversation.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageDeltaEvent? MessageDelta { get; init; }
@@ -86,7 +86,7 @@ namespace G
         }
 
         /// <summary>
-        /// A stop event in a streaming conversation.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.MessageStopEvent? MessageStop { get; init; }
@@ -121,7 +121,7 @@ namespace G
         }
 
         /// <summary>
-        /// A start event in a streaming content block.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContentBlockStartEvent? ContentBlockStart { get; init; }
@@ -156,7 +156,7 @@ namespace G
         }
 
         /// <summary>
-        /// A delta event in a streaming content block.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContentBlockDeltaEvent? ContentBlockDelta { get; init; }
@@ -191,7 +191,7 @@ namespace G
         }
 
         /// <summary>
-        /// A stop event in a streaming content block.
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ContentBlockStopEvent? ContentBlockStop { get; init; }
@@ -226,76 +226,6 @@ namespace G
         }
 
         /// <summary>
-        /// A ping event in a streaming conversation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.PingEvent? Ping { get; init; }
-#else
-        public global::G.PingEvent? Ping { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Ping))]
-#endif
-        public bool IsPing => Ping != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.PingEvent value) => new MessageStreamEvent(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.PingEvent?(MessageStreamEvent @this) => @this.Ping;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MessageStreamEvent(global::G.PingEvent? value)
-        {
-            Ping = value;
-        }
-
-        /// <summary>
-        /// An error event in a streaming conversation.
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ErrorEvent? Error { get; init; }
-#else
-        public global::G.ErrorEvent? Error { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
-#endif
-        public bool IsError => Error != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator MessageStreamEvent(global::G.ErrorEvent value) => new MessageStreamEvent(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ErrorEvent?(MessageStreamEvent @this) => @this.Error;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public MessageStreamEvent(global::G.ErrorEvent? value)
-        {
-            Error = value;
-        }
-
-        /// <summary>
         /// 
         /// </summary>
         public MessageStreamEvent(
@@ -305,9 +235,7 @@ namespace G
             global::G.MessageStopEvent? messageStop,
             global::G.ContentBlockStartEvent? contentBlockStart,
             global::G.ContentBlockDeltaEvent? contentBlockDelta,
-            global::G.ContentBlockStopEvent? contentBlockStop,
-            global::G.PingEvent? ping,
-            global::G.ErrorEvent? error
+            global::G.ContentBlockStopEvent? contentBlockStop
             )
         {
             Type = type;
@@ -318,16 +246,12 @@ namespace G
             ContentBlockStart = contentBlockStart;
             ContentBlockDelta = contentBlockDelta;
             ContentBlockStop = contentBlockStop;
-            Ping = ping;
-            Error = error;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Error as object ??
-            Ping as object ??
             ContentBlockStop as object ??
             ContentBlockDelta as object ??
             ContentBlockStart as object ??
@@ -341,7 +265,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop && !IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && IsPing && !IsError || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop && !IsPing && IsError;
+            return IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && !IsMessageDelta && IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && !IsMessageDelta && !IsMessageStop && IsContentBlockStart && !IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && IsContentBlockDelta && !IsContentBlockStop || !IsMessageStart && !IsMessageDelta && !IsMessageStop && !IsContentBlockStart && !IsContentBlockDelta && IsContentBlockStop;
         }
 
         /// <summary>
@@ -354,8 +278,6 @@ namespace G
             global::System.Func<global::G.ContentBlockStartEvent?, TResult>? contentBlockStart = null,
             global::System.Func<global::G.ContentBlockDeltaEvent?, TResult>? contentBlockDelta = null,
             global::System.Func<global::G.ContentBlockStopEvent?, TResult>? contentBlockStop = null,
-            global::System.Func<global::G.PingEvent?, TResult>? ping = null,
-            global::System.Func<global::G.ErrorEvent?, TResult>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -387,14 +309,6 @@ namespace G
             {
                 return contentBlockStop(ContentBlockStop!);
             }
-            else if (IsPing && ping != null)
-            {
-                return ping(Ping!);
-            }
-            else if (IsError && error != null)
-            {
-                return error(Error!);
-            }
 
             return default(TResult);
         }
@@ -409,8 +323,6 @@ namespace G
             global::System.Action<global::G.ContentBlockStartEvent?>? contentBlockStart = null,
             global::System.Action<global::G.ContentBlockDeltaEvent?>? contentBlockDelta = null,
             global::System.Action<global::G.ContentBlockStopEvent?>? contentBlockStop = null,
-            global::System.Action<global::G.PingEvent?>? ping = null,
-            global::System.Action<global::G.ErrorEvent?>? error = null,
             bool validate = true)
         {
             if (validate)
@@ -442,14 +354,6 @@ namespace G
             {
                 contentBlockStop?.Invoke(ContentBlockStop!);
             }
-            else if (IsPing)
-            {
-                ping?.Invoke(Ping!);
-            }
-            else if (IsError)
-            {
-                error?.Invoke(Error!);
-            }
         }
 
         /// <summary>
@@ -471,10 +375,6 @@ namespace G
                 typeof(global::G.ContentBlockDeltaEvent),
                 ContentBlockStop,
                 typeof(global::G.ContentBlockStopEvent),
-                Ping,
-                typeof(global::G.PingEvent),
-                Error,
-                typeof(global::G.ErrorEvent),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -496,9 +396,7 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.MessageStopEvent?>.Default.Equals(MessageStop, other.MessageStop) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ContentBlockStartEvent?>.Default.Equals(ContentBlockStart, other.ContentBlockStart) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ContentBlockDeltaEvent?>.Default.Equals(ContentBlockDelta, other.ContentBlockDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ContentBlockStopEvent?>.Default.Equals(ContentBlockStop, other.ContentBlockStop) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PingEvent?>.Default.Equals(Ping, other.Ping) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ErrorEvent?>.Default.Equals(Error, other.Error) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ContentBlockStopEvent?>.Default.Equals(ContentBlockStop, other.ContentBlockStop) 
                 ;
         }
 

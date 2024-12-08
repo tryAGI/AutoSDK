@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class ToolChoice
+    public readonly partial struct ToolChoice
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

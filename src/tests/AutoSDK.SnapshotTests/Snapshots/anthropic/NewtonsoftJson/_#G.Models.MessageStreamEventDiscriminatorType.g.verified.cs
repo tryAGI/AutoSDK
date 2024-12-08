@@ -13,18 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="message_start")]
-        MessageStart,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="message_delta")]
-        MessageDelta,
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="message_stop")]
-        MessageStop,
+        [global::System.Runtime.Serialization.EnumMember(Value="content_block_delta")]
+        ContentBlockDelta,
         /// <summary>
         /// 
         /// </summary>
@@ -33,23 +23,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="content_block_delta")]
-        ContentBlockDelta,
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="content_block_stop")]
         ContentBlockStop,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="ping")]
-        Ping,
+        [global::System.Runtime.Serialization.EnumMember(Value="message_delta")]
+        MessageDelta,
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="error")]
-        Error,
+        [global::System.Runtime.Serialization.EnumMember(Value="message_start")]
+        MessageStart,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="message_stop")]
+        MessageStop,
     }
 
     /// <summary>
@@ -64,14 +54,12 @@ namespace G
         {
             return value switch
             {
-                MessageStreamEventDiscriminatorType.MessageStart => "message_start",
-                MessageStreamEventDiscriminatorType.MessageDelta => "message_delta",
-                MessageStreamEventDiscriminatorType.MessageStop => "message_stop",
-                MessageStreamEventDiscriminatorType.ContentBlockStart => "content_block_start",
                 MessageStreamEventDiscriminatorType.ContentBlockDelta => "content_block_delta",
+                MessageStreamEventDiscriminatorType.ContentBlockStart => "content_block_start",
                 MessageStreamEventDiscriminatorType.ContentBlockStop => "content_block_stop",
-                MessageStreamEventDiscriminatorType.Ping => "ping",
-                MessageStreamEventDiscriminatorType.Error => "error",
+                MessageStreamEventDiscriminatorType.MessageDelta => "message_delta",
+                MessageStreamEventDiscriminatorType.MessageStart => "message_start",
+                MessageStreamEventDiscriminatorType.MessageStop => "message_stop",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -82,14 +70,12 @@ namespace G
         {
             return value switch
             {
-                "message_start" => MessageStreamEventDiscriminatorType.MessageStart,
-                "message_delta" => MessageStreamEventDiscriminatorType.MessageDelta,
-                "message_stop" => MessageStreamEventDiscriminatorType.MessageStop,
-                "content_block_start" => MessageStreamEventDiscriminatorType.ContentBlockStart,
                 "content_block_delta" => MessageStreamEventDiscriminatorType.ContentBlockDelta,
+                "content_block_start" => MessageStreamEventDiscriminatorType.ContentBlockStart,
                 "content_block_stop" => MessageStreamEventDiscriminatorType.ContentBlockStop,
-                "ping" => MessageStreamEventDiscriminatorType.Ping,
-                "error" => MessageStreamEventDiscriminatorType.Error,
+                "message_delta" => MessageStreamEventDiscriminatorType.MessageDelta,
+                "message_start" => MessageStreamEventDiscriminatorType.MessageStart,
+                "message_stop" => MessageStreamEventDiscriminatorType.MessageStop,
                 _ => null,
             };
         }

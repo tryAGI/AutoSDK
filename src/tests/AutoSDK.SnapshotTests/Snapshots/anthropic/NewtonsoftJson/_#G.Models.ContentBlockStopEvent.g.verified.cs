@@ -5,21 +5,22 @@
 namespace G
 {
     /// <summary>
-    /// A stop event in a streaming content block.
+    /// 
     /// </summary>
     public sealed partial class ContentBlockStopEvent
     {
         /// <summary>
-        /// The index of the content block.
+        /// Default Value: content_block_stop
+        /// </summary>
+        /// <default>global::G.ContentBlockStopEventType.ContentBlockStop</default>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ContentBlockStopEventType Type { get; set; } = global::G.ContentBlockStopEventType.ContentBlockStop;
+
+        /// <summary>
+        /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
         public int Index { get; set; } = default!;
-
-        /// <summary>
-        /// The type of a streaming event.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.MessageStreamEventType Type { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,15 +31,13 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ContentBlockStopEvent" /> class.
         /// </summary>
-        /// <param name="index">
-        /// The index of the content block.
-        /// </param>
         /// <param name="type">
-        /// The type of a streaming event.
+        /// Default Value: content_block_stop
         /// </param>
+        /// <param name="index"></param>
         public ContentBlockStopEvent(
             int index,
-            global::G.MessageStreamEventType type)
+            global::G.ContentBlockStopEventType type = global::G.ContentBlockStopEventType.ContentBlockStop)
         {
             this.Index = index;
             this.Type = type;

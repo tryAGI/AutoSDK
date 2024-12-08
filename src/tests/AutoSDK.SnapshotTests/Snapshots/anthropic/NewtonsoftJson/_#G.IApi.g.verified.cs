@@ -5,7 +5,6 @@
 namespace G
 {
     /// <summary>
-    /// API Spec for Anthropic API. Please see https://docs.anthropic.com/en/api for more details.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -37,6 +36,21 @@ namespace G
         /// </summary>
         global::Newtonsoft.Json.JsonSerializerSettings JsonSerializerOptions { get; set; }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessagesClient Messages { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TextCompletionsClient TextCompletions { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public MessageBatchesClient MessageBatches { get; }
 
     }
 }
