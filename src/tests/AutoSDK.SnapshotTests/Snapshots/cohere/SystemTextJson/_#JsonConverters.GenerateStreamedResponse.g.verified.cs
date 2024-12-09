@@ -92,19 +92,19 @@ namespace G.JsonConverters
 
             if (value.IsStreamText)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamText?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamText), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamText> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamText).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamText, typeInfo);
             }
             else if (value.IsStreamEnd)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEnd?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamEnd), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamEnd> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamEnd).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamEnd, typeInfo);
             }
             else if (value.IsStreamError)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamError?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.GenerateStreamError), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.GenerateStreamError> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.GenerateStreamError).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamError, typeInfo);
             }

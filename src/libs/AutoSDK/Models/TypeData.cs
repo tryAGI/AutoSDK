@@ -59,6 +59,9 @@ public readonly record struct TypeData(
     public string CSharpTypeWithNullabilityForValueTypes => IsValueType
         ? CSharpTypeWithNullability
         : CSharpTypeWithoutNullability;
+    public string CSharpTypeWithNullabilityForNonValueTypes => IsValueType
+        ? CSharpTypeWithoutNullability
+        : CSharpTypeWithNullability;
     public string CSharpType => CSharpTypeNullability
         ? CSharpTypeWithNullability
         : CSharpTypeWithoutNullability;

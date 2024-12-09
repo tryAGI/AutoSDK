@@ -142,7 +142,7 @@ namespace {anyOfData.Namespace}.JsonConverters
             {(i == 0 ? "" : "else ")}if (value.Is{x.Name})
             {{
 {(anyOfData.IsTrimming ? $@" 
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithNullability}> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof({x.Type.CSharpTypeWithoutNullability}), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<{x.Type.CSharpTypeWithNullabilityForNonValueTypes}> ??
                                throw new global::System.InvalidOperationException($""Cannot get type info for {{typeof({x.Type.CSharpTypeWithoutNullability}).Name}}"");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.{x.Name}, typeInfo);
  " : $@" 

@@ -79,7 +79,7 @@ namespace G.JsonConverters
             }
             else if (value.IsValue2)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusEnum?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.CreateModelStatusEnum), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.CreateModelStatusEnum> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.CreateModelStatusEnum).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2, typeInfo);
             }

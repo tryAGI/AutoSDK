@@ -73,7 +73,7 @@ namespace G.JsonConverters
 
             if (value.IsValue1)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionResponse?> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCompletionResponse), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCompletionResponse> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCompletionResponse).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1, typeInfo);
             }
