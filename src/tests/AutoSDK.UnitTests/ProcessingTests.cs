@@ -13,6 +13,7 @@ public class ProcessingTests : VerifyBase
 {
     [DataTestMethod]
     [DataRow("openai.yaml")]
+    [DataRow("cohere.yaml")]
     public async Task ComputeDiscriminators(string resourceName)
     {
         var yamlOrJson = new H.Resource(resourceName).AsString();
