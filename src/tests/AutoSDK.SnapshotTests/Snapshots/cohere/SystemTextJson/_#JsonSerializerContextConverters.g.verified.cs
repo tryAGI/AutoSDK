@@ -19,6 +19,8 @@ namespace G
             typeof(global::G.JsonConverters.FinishReasonNullableJsonConverter),
             typeof(global::G.JsonConverters.ChatStreamEventEventTypeJsonConverter),
             typeof(global::G.JsonConverters.ChatStreamEventEventTypeNullableJsonConverter),
+            typeof(global::G.JsonConverters.ChatStreamEventDiscriminatorEventTypeJsonConverter),
+            typeof(global::G.JsonConverters.ChatStreamEventDiscriminatorEventTypeNullableJsonConverter),
             typeof(global::G.JsonConverters.ChatStreamEndEventVariant2FinishReasonJsonConverter),
             typeof(global::G.JsonConverters.ChatStreamEndEventVariant2FinishReasonNullableJsonConverter),
             typeof(global::G.JsonConverters.TextContentTypeJsonConverter),

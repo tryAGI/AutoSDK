@@ -51,6 +51,8 @@ namespace G
                     new global::G.JsonConverters.FinishReasonNullableJsonConverter(),
                     new global::G.JsonConverters.ChatStreamEventEventTypeJsonConverter(),
                     new global::G.JsonConverters.ChatStreamEventEventTypeNullableJsonConverter(),
+                    new global::G.JsonConverters.ChatStreamEventDiscriminatorEventTypeJsonConverter(),
+                    new global::G.JsonConverters.ChatStreamEventDiscriminatorEventTypeNullableJsonConverter(),
                     new global::G.JsonConverters.ChatStreamEndEventVariant2FinishReasonJsonConverter(),
                     new global::G.JsonConverters.ChatStreamEndEventVariant2FinishReasonNullableJsonConverter(),
                     new global::G.JsonConverters.TextContentTypeJsonConverter(),

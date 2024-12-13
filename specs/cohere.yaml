@@ -7486,6 +7486,15 @@ components:
           type: string
           x-fern-audiences:
             - public
+      discriminator:
+        propertyName: event_type
+        mapping:
+          stream-start: '#/components/schemas/ChatStreamStartEvent'
+          search-queries-generation: '#/components/schemas/ChatSearchQueriesGenerationEvent'
+          search-results: '#/components/schemas/ChatSearchResultsEvent'
+          text-generation: '#/components/schemas/ChatTextGenerationEvent'
+          citation-generation: '#/components/schemas/ChatCitationGenerationEvent'
+          stream-end: '#/components/schemas/ChatStreamEndEvent'
     ChatStreamStartEvent:
       allOf:
         - $ref: '#/components/schemas/ChatStreamEvent'
