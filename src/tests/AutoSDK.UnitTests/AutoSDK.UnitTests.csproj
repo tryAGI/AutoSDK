@@ -11,7 +11,7 @@
     </PackageReference>
     <PackageReference Include="MSTest" Version="3.6.4" />
     <PackageReference Include="FluentAssertions" Version="7.0.0" />
-    <PackageReference Include="Verify.MSTest" Version="28.4.0" />
+    <PackageReference Include="Verify.MSTest" Version="28.5.0" />
   </ItemGroup>
 
   <ItemGroup Label="GlobalUsings">
