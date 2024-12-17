@@ -12,9 +12,9 @@ public class SchemaContext
     public IList<SchemaContext> Children { get; set; } = [];
     
     public required Settings Settings { get; init; }
-    public required OpenApiSchema Schema { get; init; }
+    public required OpenApiSchema Schema { get; set; }
     public required string Id { get; set; }
-    public required string Type { get; init; }
+    public required string Type { get; set; }
     
     public string? ReferenceId { get; init; }
     public bool IsReference => ReferenceId != null;
@@ -52,7 +52,9 @@ public class SchemaContext
     
     public TypeData TypeData { get; set; } = TypeData.Default;
     
-    public bool IsClass => Type == "class";// || ResolvedReference?.IsClass == true;
+    public bool IsClass =>
+        Type == "class" ||
+        IsDerivedClass;// || ResolvedReference?.IsClass == true;
     //public ModelData? ClassData { get; set; }
     public ModelData? ClassData => IsClass
         ? //IsReference
@@ -78,7 +80,32 @@ public class SchemaContext
     
     public bool IsAnyOf => Schema.IsAnyOf();
     public bool IsOneOf => Schema.IsOneOf();
-    public bool IsAllOf => Schema.IsAllOf();
+    public bool IsAllOf => Schema.IsAllOf() && !IsDerivedClass;
+    public bool IsBaseClass => this is { IsComponent: true, Schema.Discriminator.Mapping: not null };
+    public bool IsDerivedClass => Schema.IsAllOf() &&
+                                  Schema.AllOf is { Count: 2 } allOf &&
+                                  (allOf[0].Reference != null &&
+                                  allOf[0].ResolveIfRequired().Discriminator?.Mapping != null ||
+                                  allOf[1].Reference != null &&
+                                  allOf[1].ResolveIfRequired().Discriminator?.Mapping != null);
+    public SchemaContext DerivedClassContext =>
+        Schema.IsAllOf() &&
+        Schema.AllOf is { Count: 2 } allOf
+        ? allOf[0].Reference != null &&
+          allOf[0].ResolveIfRequired().Discriminator?.Mapping != null
+            ? Children.First(x => x.ReferenceId == allOf[1].Reference?.Id)
+            : Children.First(x => x.ReferenceId == allOf[0].Reference?.Id)
+            : throw new InvalidOperationException("Schema is not derived class.");
+    
+    public SchemaContext BaseClassContext =>
+        Schema.IsAllOf() &&
+        Schema.AllOf is { Count: 2 } allOf
+        ? allOf[0].Reference != null &&
+          allOf[0].ResolveIfRequired().Discriminator?.Mapping != null
+            ? Children.First(x => x.ReferenceId == allOf[0].Reference?.Id)
+            : Children.First(x => x.ReferenceId == allOf[1].Reference?.Id)
+            : throw new InvalidOperationException("Schema is not derived class.");
+    
     public bool IsAnyOfLikeStructure => IsAnyOf || IsOneOf || IsAllOf;
     public bool IsNamedAnyOfLike => IsAnyOfLikeStructure &&
                                     (IsComponent || Schema.Discriminator != null);

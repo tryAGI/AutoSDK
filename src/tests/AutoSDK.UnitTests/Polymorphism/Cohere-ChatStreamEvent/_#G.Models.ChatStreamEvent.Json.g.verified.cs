@@ -28,6 +28,7 @@ namespace G
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
             return global::System.Text.Json.JsonSerializer.Serialize(
+                this,
                 typeof(ChatStreamEvent),
                 jsonSerializerOptions);
         }

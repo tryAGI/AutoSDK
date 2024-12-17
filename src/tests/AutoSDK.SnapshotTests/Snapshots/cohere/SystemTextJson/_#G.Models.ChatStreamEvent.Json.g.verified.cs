@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class ChatStreamEvent
+    public partial class ChatStreamEvent
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.

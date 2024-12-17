@@ -9,7 +9,7 @@ public static partial class Sources
         ModelData modelData,
         CancellationToken cancellationToken = default)
     {
-        return GenerateModelFromToJsonMethods(
+        return GenerateModelValidationMethods(
             @namespace: modelData.Namespace,
             className: modelData.ClassName,
             settings: modelData.Settings,
@@ -26,7 +26,7 @@ public static partial class Sources
             ? $"{anyOfData.SubType}{types}"
             : anyOfData.Name;
         
-        return GenerateModelFromToJsonMethods(
+        return GenerateModelValidationMethods(
             @namespace: anyOfData.Namespace,
             className: className,
             settings: anyOfData.Settings,

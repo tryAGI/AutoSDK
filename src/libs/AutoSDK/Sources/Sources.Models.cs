@@ -81,13 +81,23 @@ public sealed partial class {modelData.Parents[level].ClassName}
         var additionalPropertiesPostfix = modelData.ClassName == "AdditionalProperties"
             ? "2"
             : string.Empty;
+        var properties = modelData.Properties.Where(x =>
+            !modelData.IsBaseClass ||
+            x.Id != modelData.DiscriminatorPropertyName).ToArray();
         
         return $@" 
     {modelData.Summary.ToXmlDocumentationSummary(level: 4)}
     {(modelData.IsDeprecated ? "[global::System.Obsolete(\"This model marked as deprecated.\")]" : " ")}
-    public sealed partial class {modelData.ClassName}
+    {(modelData.Settings.JsonSerializerType == JsonSerializerType.SystemTextJson && modelData.IsBaseClass ? @$" 
+    [global::System.Text.Json.Serialization.JsonPolymorphic(
+        TypeDiscriminatorPropertyName = ""{modelData.DiscriminatorPropertyName}"",
+        IgnoreUnrecognizedTypeDiscriminators = true,
+        UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
+{modelData.DerivedTypes.Select(x => $@"
+    [global::System.Text.Json.Serialization.JsonDerivedType(typeof({modelData.Namespace}.{x.ClassName}), typeDiscriminator: ""{x.Discriminator}"")]").Inject()}" : " ")}
+    public{(modelData.IsBaseClass ? "" : " sealed")} partial class {modelData.ClassName}{(!string.IsNullOrWhiteSpace(modelData.BaseClass) ? $" : {modelData.BaseClass}" : "")}
     {{
-{modelData.Properties.Select(property => @$"
+{properties.Select(property => @$"
         {property.Summary.ToXmlDocumentationSummary(level: 8)}
         {property.DefaultValue?.ClearForXml().ToXmlDocumentationDefault(level: 8)}
         {property.Example?.ToXmlDocumentationExample(level: 8)}
@@ -98,31 +108,35 @@ public sealed partial class {modelData.Parents[level].ClassName}
         public{(property.IsRequired ? requiredKeyword : "")} {property.Type.CSharpType} {property.Name} {{ get; set; }}{GetDefaultValue(property, isRequiredKeywordSupported)}
 ").Inject()}
 
+{(!modelData.IsDerivedClass ? $@" 
         {"Additional properties that are not explicitly defined in the schema".ToXmlDocumentationSummary(level: 8)}
         {jsonSerializer.GenerateExtensionDataAttribute()}
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties{additionalPropertiesPostfix} {{ get; set; }} = new global::System.Collections.Generic.Dictionary<string, object>();
-
+ " : " ")}
+ 
+{( properties.Any(static x => x.IsRequired || !x.IsDeprecated) ? $@"
         /// <summary>
         /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
         /// </summary>
-{modelData.Properties.Where(static x => x.IsRequired || !x.IsDeprecated).Select(x => $@"
+{properties.Where(static x => x.IsRequired || !x.IsDeprecated).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
         {(modelData.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase) ? "[global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]" : " ")}
         public {modelData.ClassName}(
  {string.Join(",",
-    modelData.Properties.Where(static x => x.IsRequired).Select(x => $@"
+     properties.Where(static x => x.IsRequired).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName}").Concat(
-    modelData.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false } && (x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))).Select(x => $@"
+         properties.Where(static x => x is { IsRequired: false, IsDeprecated: false } && (x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName}")).Concat(
-        modelData.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false } && !(x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))).Select(x => $@"
+         properties.Where(static x => x is { IsRequired: false, IsDeprecated: false } && !(x.Type.CSharpTypeNullability || string.IsNullOrWhiteSpace(x.DefaultValue))).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName}{GetDefaultValue(x, isRequiredKeywordSupported).TrimEnd(';')}")))})
         {{
-{modelData.Properties.Where(static x => x.IsRequired).Select(x => $@"
+{properties.Where(static x => x.IsRequired).Select(x => $@"
             this.{x.Name} = {x.ParameterName}{(x.Type.IsValueType ? "" : $" ?? throw new global::System.ArgumentNullException(nameof({x.ParameterName}))")};").Inject()}
-{modelData.Properties.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
+{properties.Where(static x => x is { IsRequired: false, IsDeprecated: false }).Select(x => $@"
             this.{x.Name} = {x.ParameterName};").Inject()}
         }}
-{(modelData.Properties.Any(static x => !x.IsDeprecated) ? $@"
+ " : " ")}
+{(properties.Any(static x => !x.IsDeprecated) ? $@"
         /// <summary>
         /// Initializes a new instance of the <see cref=""{modelData.ClassName}"" /> class.
         /// </summary>

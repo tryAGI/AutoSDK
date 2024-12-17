@@ -98,6 +98,8 @@
     ApiMeta(ref),
   ChatStreamEvent(class),
     ChatStreamEventEventType(enum),
+    ChatStreamEventDiscriminator(class),
+      ChatStreamEventDiscriminatorEventType(enum),
   ChatStreamStartEvent(allOf),
     ChatStreamEvent(ref),
     ChatStreamStartEventVariant2(class),

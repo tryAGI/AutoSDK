@@ -187,49 +187,49 @@ namespace G.JsonConverters
 
             if (value.IsStreamStartEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatStreamStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatStreamStartEvent> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatStreamStartEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatStreamStartEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatStreamStartEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamStartEvent, typeInfo);
             }
             else if (value.IsSearchQueriesGenerationEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatSearchQueriesGenerationEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatSearchQueriesGenerationEvent> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatSearchQueriesGenerationEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatSearchQueriesGenerationEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatSearchQueriesGenerationEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchQueriesGenerationEvent, typeInfo);
             }
             else if (value.IsSearchResultsEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatSearchResultsEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatSearchResultsEvent> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatSearchResultsEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatSearchResultsEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatSearchResultsEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.SearchResultsEvent, typeInfo);
             }
             else if (value.IsTextGenerationEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatTextGenerationEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatTextGenerationEvent> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatTextGenerationEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatTextGenerationEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatTextGenerationEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextGenerationEvent, typeInfo);
             }
             else if (value.IsCitationGenerationEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCitationGenerationEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCitationGenerationEvent> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatCitationGenerationEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatCitationGenerationEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatCitationGenerationEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.CitationGenerationEvent, typeInfo);
             }
             else if (value.IsToolCallsGenerationEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallsGenerationEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallsGenerationEvent> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallsGenerationEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallsGenerationEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallsGenerationEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallsGenerationEvent, typeInfo);
             }
             else if (value.IsStreamEndEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatStreamEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatStreamEndEvent> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatStreamEndEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatStreamEndEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatStreamEndEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.StreamEndEvent, typeInfo);
             }
             else if (value.IsToolCallsChunkEvent)
             {
-                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallsChunkEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallsChunkEvent> ??
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChatToolCallsChunkEvent), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChatToolCallsChunkEvent?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.ChatToolCallsChunkEvent).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.ToolCallsChunkEvent, typeInfo);
             }

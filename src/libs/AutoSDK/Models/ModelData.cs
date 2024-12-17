@@ -13,7 +13,12 @@ public readonly record struct ModelData(
     ImmutableArray<PropertyData> Properties,
     ImmutableArray<PropertyData> EnumValues,
     string Summary,
-    bool IsDeprecated
+    bool IsDeprecated,
+    string BaseClass,
+    bool IsBaseClass,
+    bool IsDerivedClass,
+    string DiscriminatorPropertyName,
+    EquatableArray<(string ClassName, string Discriminator)> DerivedTypes
 )
 {
     public static ModelData FromSchemaContext(
@@ -41,16 +46,31 @@ public readonly record struct ModelData(
             Namespace: context.Settings.Namespace,
             Style: context.Schema.IsEnum() ? ModelStyle.Enumeration : context.Settings.ModelStyle,
             Settings: context.Settings,
-            Properties: !context.Schema.IsEnum()
-                ? context.Children
+            Properties: context.IsDerivedClass
+                ? context.DerivedClassContext.Children
                     .Where(x => x is { IsProperty: true, PropertyData: not null })
                     .SelectMany(x => x.ComputedProperties)
-                    .ToImmutableArray() : [],
+                    .ToImmutableArray()
+                : !context.Schema.IsEnum()
+                    ? context.Children
+                        .Where(x => x is { IsProperty: true, PropertyData: not null })
+                        .SelectMany(x => x.ComputedProperties)
+                        .ToImmutableArray()
+                    : [],
             EnumValues: context.Schema.IsEnum()
                 ? context.ComputeEnum().Values.ToImmutableArray()
                 : [],
             Summary: context.Schema.GetSummary(),
-            IsDeprecated: context.Schema.Deprecated
+            IsDeprecated: context.Schema.Deprecated,
+            BaseClass: context.IsDerivedClass
+                ? context.BaseClassContext.Id
+                : string.Empty,
+            IsBaseClass: context.IsBaseClass,
+            IsDerivedClass: context.IsDerivedClass,
+            DiscriminatorPropertyName: context.Schema.Discriminator?.PropertyName ?? string.Empty,
+            DerivedTypes: context.Schema.Discriminator?.Mapping?
+                .Select(x => (ClassName: x.Value.Replace("#/components/schemas/", string.Empty), Discriminator: x.Key))
+                .ToImmutableArray() ?? []
             );
     }
 
