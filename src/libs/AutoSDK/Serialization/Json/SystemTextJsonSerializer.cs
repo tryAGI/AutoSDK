@@ -107,11 +107,12 @@ public class SystemTextJsonSerializer : IJsonSerializer
     
     public string GenerateDeserializeCall(string variableName, TypeData type, string jsonSerializerContext)
     {
+        var typeToDeserializeIfRequired = type.IsDerivedClass || type.IsBaseClass ? $"<{type.CSharpTypeWithoutNullability}>" : "";
         if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
         {
             return string.IsNullOrWhiteSpace(jsonSerializerContext)
-                ? $"{type.CSharpTypeWithoutNullability}.FromJson({variableName}, JsonSerializerOptions)"
-                : $"{type.CSharpTypeWithoutNullability}.FromJson({variableName}, JsonSerializerContext)";
+                ? $"{type.CSharpTypeWithoutNullability}.FromJson{typeToDeserializeIfRequired}({variableName}, JsonSerializerOptions)"
+                : $"{type.CSharpTypeWithoutNullability}.FromJson{typeToDeserializeIfRequired}({variableName}, JsonSerializerContext)";
         }
         
         return string.IsNullOrWhiteSpace(jsonSerializerContext)
@@ -121,11 +122,12 @@ public class SystemTextJsonSerializer : IJsonSerializer
 
     public string GenerateDeserializeFromStreamCall(string variableName, TypeData type, string jsonSerializerContext)
     {
+        var typeToDeserializeIfRequired =  type.IsDerivedClass || type.IsBaseClass ? $"<{type.CSharpTypeWithoutNullability}>" : "";
         if (type.CSharpType.StartsWith($"global::{type.Settings.Namespace}", StringComparison.Ordinal))
         {
             return string.IsNullOrWhiteSpace(jsonSerializerContext)
-                ? $"await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync({variableName}, JsonSerializerOptions).ConfigureAwait(false)"
-                : $"await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync({variableName}, JsonSerializerContext).ConfigureAwait(false)";
+                ? $"await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync{typeToDeserializeIfRequired}({variableName}, JsonSerializerOptions).ConfigureAwait(false)"
+                : $"await {type.CSharpTypeWithoutNullability}.FromJsonStreamAsync{typeToDeserializeIfRequired}({variableName}, JsonSerializerContext).ConfigureAwait(false)";
         }
         
         return string.IsNullOrWhiteSpace(jsonSerializerContext)

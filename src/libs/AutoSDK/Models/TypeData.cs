@@ -6,6 +6,8 @@ namespace AutoSDK.Models;
 public readonly record struct TypeData(
     string CSharpTypeRaw,
     bool CSharpTypeNullability,
+    bool IsBaseClass,
+    bool IsDerivedClass,
     bool IsArray,
     bool IsNullable,
     bool IsEnum,
@@ -30,6 +32,8 @@ public readonly record struct TypeData(
     public static TypeData Default => new(
         CSharpTypeRaw: string.Empty,
         CSharpTypeNullability: false,
+        IsBaseClass: false,
+        IsDerivedClass: false,
         IsArray: false,
         IsNullable: false,
         IsEnum: false,
@@ -161,6 +165,8 @@ public readonly record struct TypeData(
         return new TypeData(
             CSharpTypeRaw: type,
             CSharpTypeNullability: GetCSharpNullability(context),
+            IsBaseClass: context.IsBaseClass,
+            IsDerivedClass: context.IsDerivedClass,
             IsValueType: ContextIsValueType(context),
             IsNullable: context.Schema.Nullable,
             IsArray: context.Schema.IsArray(),

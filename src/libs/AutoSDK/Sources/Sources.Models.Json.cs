@@ -57,7 +57,6 @@ public static partial class Sources
         var modifiers = isValueType
             ? "readonly partial struct"
             : $"{(isBaseClass ? "" : "sealed ")}partial class";
-        var isDerivedClass = !string.IsNullOrWhiteSpace(baseClassName);
         
         return settings.JsonSerializerType == JsonSerializerType.SystemTextJson
             ? @$"#nullable enable
@@ -72,7 +71,7 @@ namespace {@namespace}
         {{
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                {(isDerivedClass ? $"typeof({baseClassName})" : "this.GetType()")},
+                {(isBaseClass ? $"typeof({className})" : "this.GetType()")},
                 jsonSerializerContext);
         }}
 
@@ -86,20 +85,20 @@ namespace {@namespace}
         {{
             return global::System.Text.Json.JsonSerializer.Serialize(
                 this,
-                {(isDerivedClass ? $"typeof({baseClassName})," : string.Empty)}
+                {(isBaseClass ? $"typeof({className})," : string.Empty)}
                 jsonSerializerOptions);
         }}
 
         {"Deserializes a JSON string using the provided JsonSerializerContext.".ToXmlDocumentationSummary(level: 8)}
-        public static {typeName}? FromJson{(isDerivedClass ? "<T>" : string.Empty)}(
+        public static {(isBaseClass ? "T" : typeName)}? FromJson{(isBaseClass ? "<T>" : string.Empty)}(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-            {(isDerivedClass ? $"where T : {baseClassName}" : string.Empty)}
+            {(isBaseClass ? $"where T : {className}" : string.Empty)}
         {{
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof({(isDerivedClass ? baseClassName : typeName)}),
-                jsonSerializerContext) as {(isDerivedClass ? "T" : typeName)}{(isValueType ? "?" : "")};
+                typeof({(isBaseClass ? className : typeName)}),
+                jsonSerializerContext) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
         }}
 
         {"Deserializes a JSON string using the provided JsonSerializerOptions.".ToXmlDocumentationSummary(level: 8)}
@@ -107,30 +106,31 @@ namespace {@namespace}
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
 #endif
-        public static {typeName}? FromJson{(isDerivedClass ? "<T>" : string.Empty)}(
+        public static {(isBaseClass ? "T" : typeName)}? FromJson{(isBaseClass ? "<T>" : string.Empty)}(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-            {(isDerivedClass ? $"where T : {baseClassName}" : string.Empty)}
+            {(isBaseClass ? $"where T : {className}" : string.Empty)}
         {{
-            return global::System.Text.Json.JsonSerializer.Deserialize<{(isDerivedClass ? baseClassName : typeName)}>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<{(isBaseClass ? className : typeName)}>(
                 json,
-                jsonSerializerOptions){(isDerivedClass ? " as T" : string.Empty)};
+                jsonSerializerOptions){(isBaseClass ? " as T" : string.Empty)};
         }}
 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<{typeName}?> FromJsonStreamAsync{(isDerivedClass ? "<T>" : string.Empty)}(
+        public static async global::System.Threading.Tasks.ValueTask<{(isBaseClass ? "T?" : $"{typeName}?")}> FromJsonStreamAsync{(isBaseClass ? "<T>" : string.Empty)}(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
-            {(isDerivedClass ? $"where T : {baseClassName}" : string.Empty)}
+            {(isBaseClass ? $"where T : {className}" : string.Empty)}
         {{
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof({(isDerivedClass ? baseClassName : typeName)}),
-                jsonSerializerContext).ConfigureAwait(false)) as {(isDerivedClass ? "T" : typeName)}{(isValueType ? "?" : "")};
+                typeof({(isBaseClass ? className : typeName)}),
+                jsonSerializerContext).ConfigureAwait(false)) as {(isBaseClass ? "T" : typeName)}{(isValueType ? "?" : "")};
         }}
 
+{(isBaseClass ? $@" 
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerOptions.
         /// </summary>
@@ -138,15 +138,30 @@ namespace {@namespace}
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<{typeName}?> FromJsonStreamAsync{(isDerivedClass ? "<T>" : string.Empty)}(
+        public static async global::System.Threading.Tasks.ValueTask<T?> FromJsonStreamAsync<T>(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
-            {(isDerivedClass ? $"where T : {baseClassName}" : string.Empty)}
+            where T : {className}
+        {{
+            return (await global::System.Text.Json.JsonSerializer.DeserializeAsync<{className}?>(
+                jsonStream,
+                jsonSerializerOptions).ConfigureAwait(false)) as T{(isValueType ? "?" : "")};
+        }}" : $@" 
+        /// <summary>
+        /// Deserializes a JSON stream using the provided JsonSerializerOptions.
+        /// </summary>
+#if NET8_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode(""JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved."")]
+        [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode(""JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications."")]
+#endif
+        public static global::System.Threading.Tasks.ValueTask<{typeName}?> FromJsonStreamAsync(
+            global::System.IO.Stream jsonStream,
+            global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {{
             return global::System.Text.Json.JsonSerializer.DeserializeAsync<{typeName}?>(
                 jsonStream,
-                jsonSerializerOptions){(isDerivedClass ? " as T" : string.Empty)};
-        }}
+                jsonSerializerOptions);
+        }}")}
     }}
 }}
 ".RemoveBlankLinesWhereOnlyWhitespaces()
