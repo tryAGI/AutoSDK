@@ -29,6 +29,12 @@ namespace {types[0].Namespace}
     {{
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
         public global::System.Collections.Generic.Dictionary<string, string>? StringStringDictionary {{ get; set; }}
+        
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public global::System.Collections.Generic.Dictionary<string, object>? StringObjectDictionary {{ get; set; }}
+        
+        {string.Empty.ToXmlDocumentationSummary(level: 8)}
+        public global::System.Text.Json.JsonElement? JsonElement {{ get; set; }}
 
 {types.Select(x => x.CSharpTypeWithNullability).Distinct().Select((type, i) => @$"
         {string.Empty.ToXmlDocumentationSummary(level: 8)}
