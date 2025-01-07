@@ -648,7 +648,7 @@ namespace {endPoint.Namespace}
         {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
         {(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks &&
           !string.IsNullOrWhiteSpace(endPoint.ExperimentalStage)
-            ? $"[global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: \"{endPoint.Settings.Namespace.ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001\")]"
+            ? $"[global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: \"{endPoint.Settings.Namespace.Replace(".", "_").ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001\")]"
             : " ")}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
 {endPoint.Parameters.Where(static x => x.IsRequired).Select(x => $@"
