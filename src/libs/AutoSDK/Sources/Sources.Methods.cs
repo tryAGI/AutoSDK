@@ -219,11 +219,7 @@ namespace {endPoint.Namespace}
         /// <param name=""request""></param>")}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::{endPoint.Settings.Namespace}.ApiException""></exception>
-        {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
-        {(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks &&
-          !string.IsNullOrWhiteSpace(endPoint.ExperimentalStage)
-            ? $"[global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: \"{endPoint.Settings.Namespace.ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001\")]"
-            : " ")}
+        {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
 {endPoint.Parameters.Where(x => x is { Location: not null, IsRequired: true }).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
@@ -645,11 +641,7 @@ namespace {endPoint.Namespace}
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
         /// <param name=""cancellationToken"">The token to cancel the operation with</param>
         /// <exception cref=""global::System.InvalidOperationException""></exception>
-        {(endPoint.IsDeprecated ? "[global::System.Obsolete(\"This method marked as deprecated.\")]" : " ")}
-        {(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks &&
-          !string.IsNullOrWhiteSpace(endPoint.ExperimentalStage)
-            ? $"[global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: \"{endPoint.Settings.Namespace.Replace(".", "_").ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001\")]"
-            : " ")}
+        {GenerateEndPointAttributes(endPoint)}
         {(isInterface ? "" : "public async ")}{taskType} {endPoint.MethodName}(
 {endPoint.Parameters.Where(static x => x.IsRequired).Select(x => $@"
             {x.Type.CSharpType} {x.ParameterName},").Inject()}
@@ -657,5 +649,20 @@ namespace {endPoint.Namespace}
             {x.Type.CSharpType} {x.ParameterName} = {x.ParameterDefaultValue},").Inject()}
             {cancellationTokenAttribute}global::System.Threading.CancellationToken cancellationToken = default){body}
  ".RemoveBlankLinesWhereOnlyWhitespaces();
+    }
+
+    private static string GenerateEndPointAttributes(EndPoint endPoint)
+    {
+        return @$" 
+{(endPoint.IsDeprecated ? @" 
+        [global::System.Obsolete(""This method marked as deprecated."")]" : " ")}
+ 
+{(endPoint.Settings.UseExperimentalAttributes is
+      SdkFeatureUsage.Always or
+      SdkFeatureUsage.InSupportedTargetFrameworks &&
+    !string.IsNullOrWhiteSpace(endPoint.ExperimentalStage)
+            ? $@" 
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: ""{endPoint.Settings.Namespace.Replace(".", "_").ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001"")]"
+            : " ")}";
     }
 }
