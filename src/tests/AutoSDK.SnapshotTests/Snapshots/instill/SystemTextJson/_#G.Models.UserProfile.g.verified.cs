@@ -74,7 +74,9 @@ namespace G
         /// Social profile links list the links to the user's social profiles.<br/>
         /// The key represents the provider, and the value is the corresponding URL.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserProfile(
             string? displayName,
             string? bio,

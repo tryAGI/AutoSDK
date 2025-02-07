@@ -34,7 +34,9 @@ namespace G
         /// The total number of Copilot seats the enterprise is being billed for. Users with access through multiple organizations or enterprise teams are only counted once.
         /// </param>
         /// <param name="seats"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CopilotListCopilotSeatsForEnterpriseResponse(
             int? totalSeats,
             global::System.Collections.Generic.IList<global::G.CopilotSeatDetails>? seats)

@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="UpdateUserGroupRequest" /> class.
         /// </summary>
         /// <param name="group"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateUserGroupRequest(
             global::G.UserGroup group)
         {

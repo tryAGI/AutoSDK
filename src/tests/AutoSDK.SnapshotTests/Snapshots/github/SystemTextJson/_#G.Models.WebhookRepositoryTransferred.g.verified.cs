@@ -93,7 +93,9 @@ namespace G
         /// <param name="sender">
         /// A GitHub user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRepositoryTransferred(
             global::G.WebhookRepositoryTransferredChanges changes,
             global::G.RepositoryWebhooks repository,

@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GetDeleteTagByJobResponseRequest" /> class.
         /// </summary>
         /// <param name="jobId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetDeleteTagByJobResponseRequest(
             string jobId)
         {

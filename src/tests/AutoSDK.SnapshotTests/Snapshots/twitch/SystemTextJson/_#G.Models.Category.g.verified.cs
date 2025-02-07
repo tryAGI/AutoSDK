@@ -48,7 +48,9 @@ namespace G
         /// <param name="id">
         /// An ID that uniquely identifies the game or category.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Category(
             string boxArtUrl,
             string name,

@@ -27,7 +27,9 @@ namespace G
         /// <param name="pageKey">
         /// When requesting the next page of this list, this is needed as a query parameter.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListMetadata(
             string? pageKey)
         {

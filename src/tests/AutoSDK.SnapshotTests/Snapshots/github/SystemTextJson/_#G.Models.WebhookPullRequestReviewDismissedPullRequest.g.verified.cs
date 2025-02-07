@@ -317,7 +317,9 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestReviewDismissedPullRequest(
             global::G.WebhookPullRequestReviewDismissedPullRequestLinks links,
             global::G.WebhookPullRequestReviewDismissedPullRequestActiveLockReason? activeLockReason,

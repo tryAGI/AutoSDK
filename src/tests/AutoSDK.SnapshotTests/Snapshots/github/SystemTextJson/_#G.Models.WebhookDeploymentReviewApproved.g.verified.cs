@@ -137,7 +137,9 @@ namespace G
         /// <param name="workflowJobRun"></param>
         /// <param name="workflowJobRuns"></param>
         /// <param name="workflowRun"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookDeploymentReviewApproved(
             global::G.OrganizationSimpleWebhooks organization,
             global::G.RepositoryWebhooks repository,

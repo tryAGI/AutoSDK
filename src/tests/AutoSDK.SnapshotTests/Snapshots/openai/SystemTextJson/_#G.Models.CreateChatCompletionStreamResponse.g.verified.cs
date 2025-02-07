@@ -106,7 +106,9 @@ namespace G
         /// An optional field that will only be present when you set `stream_options: {"include_usage": true}` in your request.<br/>
         /// When present, it contains a null value except for the last chunk which contains the token usage statistics for the entire request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChatCompletionStreamResponse(
             string id,
             global::System.Collections.Generic.IList<global::G.CreateChatCompletionStreamResponseChoice> choices,

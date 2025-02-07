@@ -80,7 +80,9 @@ namespace G
         /// <param name="purpose">
         /// Default Value: fine-tune
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FilesApiRoutesUploadFileRequest(
             byte[] file,
             string filename,

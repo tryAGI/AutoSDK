@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="modulus"></param>
         /// <param name="exponent"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RSAWriteKeyInfo(
             string? modulus,
             string? exponent)

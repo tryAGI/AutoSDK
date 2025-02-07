@@ -64,7 +64,9 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="split"></param>
         /// <param name="id"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExampleUpdateWithID(
             global::System.Guid id,
             global::System.Guid? datasetId,

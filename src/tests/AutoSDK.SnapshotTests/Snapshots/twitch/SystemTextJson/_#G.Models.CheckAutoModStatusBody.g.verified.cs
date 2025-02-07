@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of messages to check. The list must contain at least one message and may contain up to a maximum of 100 messages.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckAutoModStatusBody(
             global::System.Collections.Generic.IList<global::G.CheckAutoModStatusBodyDataItem> data)
         {

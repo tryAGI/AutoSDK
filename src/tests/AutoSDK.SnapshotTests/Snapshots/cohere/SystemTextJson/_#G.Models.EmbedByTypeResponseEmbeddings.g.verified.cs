@@ -72,7 +72,9 @@ namespace G
         /// <param name="ubinary">
         /// An array of packed unsigned binary embeddings. The length of each binary embedding is 1/8 the length of the float embeddings of the provided model. Each value is between 0 and 255.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmbedByTypeResponseEmbeddings(
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? @float,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? int8,

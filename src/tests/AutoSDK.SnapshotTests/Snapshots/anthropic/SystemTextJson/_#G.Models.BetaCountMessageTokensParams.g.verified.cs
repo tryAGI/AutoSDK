@@ -261,7 +261,9 @@ namespace G
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaCountMessageTokensParams(
             global::System.Collections.Generic.IList<global::G.BetaInputMessage> messages,
             global::G.Model model,

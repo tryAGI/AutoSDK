@@ -115,7 +115,9 @@ namespace G
         /// <param name="lateChunking">
         /// Flag to determine if late chunking is applied. If True, all the sentences in inputs will be concatenated and used as input for late chunking.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TextEmbeddingInput(
             string model,
             global::G.AnyOf<global::System.Collections.Generic.IList<string>, string, global::System.Collections.Generic.IList<global::G.ApiSchemasEmbeddingTextDoc>, global::G.ApiSchemasEmbeddingTextDoc>? input,

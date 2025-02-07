@@ -66,7 +66,9 @@ namespace G
         /// <param name="phone"></param>
         /// <param name="email"></param>
         /// <param name="active"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateAccountUserRequest(
             global::System.Guid userId,
             string firstName,

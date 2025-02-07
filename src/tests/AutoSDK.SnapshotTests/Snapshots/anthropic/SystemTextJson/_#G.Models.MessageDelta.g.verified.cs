@@ -35,7 +35,9 @@ namespace G
         /// </summary>
         /// <param name="stopReason"></param>
         /// <param name="stopSequence"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDelta(
             global::G.MessageDeltaStopReason? stopReason,
             string? stopSequence)

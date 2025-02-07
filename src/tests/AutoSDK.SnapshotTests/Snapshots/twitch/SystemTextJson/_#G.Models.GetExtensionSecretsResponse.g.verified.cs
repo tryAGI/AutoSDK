@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of shared secrets that the extension created.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetExtensionSecretsResponse(
             global::System.Collections.Generic.IList<global::G.ExtensionSecret> data)
         {

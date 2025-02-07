@@ -40,7 +40,9 @@ namespace G
         /// <param name="results">
         /// A temporally-sequential array of Key Phrases
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AutoHighlightsResult2(
             global::G.AudioIntelligenceModelStatus status,
             global::System.Collections.Generic.IList<global::G.AutoHighlightResult> results)

@@ -53,7 +53,9 @@ namespace G
         /// <param name="object">
         /// Example: list
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImageResponse(
             global::System.Collections.Generic.IList<global::G.ImageResponseDataItem> data,
             string id,

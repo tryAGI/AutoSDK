@@ -31,7 +31,9 @@ namespace G
         /// Full URLs for the social media profiles to add.<br/>
         /// Example: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsersAddSocialAccountForAuthenticatedUserRequest(
             global::System.Collections.Generic.IList<string> accountUrls)
         {

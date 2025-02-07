@@ -48,7 +48,9 @@ namespace G
         /// <param name="expiresAt">
         /// The UTC date and time (in RFC3339 format) that you must stop using this secret to decode a JWT.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExtensionSecretSecret(
             string content,
             global::System.DateTime activeAt,

@@ -47,7 +47,9 @@ namespace G
         /// <param name="total">
         /// The total number of users that are connected to the broadcaster’s chat room. As you page through the list, the number of users may change as users join and leave the chat room.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetChattersResponse(
             global::System.Collections.Generic.IList<global::G.Chatter> data,
             int total,

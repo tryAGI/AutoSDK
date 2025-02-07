@@ -62,7 +62,9 @@ namespace G
         /// An enumeration.
         /// </param>
         /// <param name="args"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ScalingConfigCreate(
             string name,
             object args,

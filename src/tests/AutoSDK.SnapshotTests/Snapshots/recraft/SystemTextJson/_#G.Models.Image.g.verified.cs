@@ -39,7 +39,9 @@ namespace G
         /// <param name="b64Json"></param>
         /// <param name="revisedPrompt"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Image(
             string? b64Json,
             string? revisedPrompt,

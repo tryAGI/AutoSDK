@@ -88,7 +88,9 @@ namespace G
         /// <param name="accessDesFields"></param>
         /// <param name="accessSecurity"></param>
         /// <param name="accessUsers"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AccessList(
             global::System.Guid? id,
             string? title,

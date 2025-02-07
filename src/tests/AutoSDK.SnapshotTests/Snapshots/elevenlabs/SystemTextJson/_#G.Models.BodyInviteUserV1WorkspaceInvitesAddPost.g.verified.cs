@@ -28,7 +28,9 @@ namespace G
         /// <param name="email">
         /// Email of the target user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyInviteUserV1WorkspaceInvitesAddPost(
             string email)
         {

@@ -82,7 +82,9 @@ namespace G
         /// The value type of the filter.<br/>
         /// Example: text
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FilterAttribute(
             string name,
             global::G.FilterAttributeLevel level,

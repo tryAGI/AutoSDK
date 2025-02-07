@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="SSOEmailVerificationStatusResponse" /> class.
         /// </summary>
         /// <param name="emailConfirmedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SSOEmailVerificationStatusResponse(
             global::System.DateTime? emailConfirmedAt)
         {

@@ -36,7 +36,9 @@ namespace G
         /// <param name="name">
         /// The project title.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogProject(
             string? id,
             string? name)

@@ -50,7 +50,9 @@ namespace G
         /// <param name="clientSecret"></param>
         /// <param name="tenantId"></param>
         /// <param name="subscriptionId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AzureAuthCreate(
             string clientId,
             string clientSecret,

@@ -38,7 +38,9 @@ namespace G
         /// <param name="msgText">
         /// The message to check.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckAutoModStatusBodyDataItem(
             string msgId,
             string msgText)

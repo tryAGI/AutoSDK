@@ -201,7 +201,9 @@ namespace G
         /// <param name="repository">
         /// A GitHub repository.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DependabotAlertWithRepository(
             global::G.NullableSimpleUser? dismissedBy,
             global::G.DependabotAlertWithRepositoryDismissedReason? dismissedReason,

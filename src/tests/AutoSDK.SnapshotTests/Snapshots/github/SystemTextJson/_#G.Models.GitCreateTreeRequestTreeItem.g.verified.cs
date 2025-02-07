@@ -73,7 +73,9 @@ namespace G
         ///   <br/>
         /// **Note:** Use either `tree.sha` or `content` to specify the contents of the entry. Using both `tree.sha` and `content` will return an error.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GitCreateTreeRequestTreeItem(
             string? path,
             global::G.GitCreateTreeRequestTreeItemMode? mode,

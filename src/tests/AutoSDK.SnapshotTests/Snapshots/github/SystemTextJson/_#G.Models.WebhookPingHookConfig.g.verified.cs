@@ -62,7 +62,9 @@ namespace G
         /// The URL to which the payloads will be delivered.<br/>
         /// Example: https://example.com/webhook
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPingHookConfig(
             string? contentType,
             global::G.WebhookConfigInsecureSsl? insecureSsl,

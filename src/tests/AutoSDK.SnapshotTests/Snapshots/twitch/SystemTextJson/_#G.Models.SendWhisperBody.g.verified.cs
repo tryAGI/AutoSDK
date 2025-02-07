@@ -42,7 +42,9 @@ namespace G
         ///   <br/>
         /// Messages that exceed the maximum length are truncated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SendWhisperBody(
             string message)
         {

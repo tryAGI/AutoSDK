@@ -38,7 +38,9 @@ namespace G
         /// <param name="guests">
         /// List of guests currently interacting with the Guest Star session.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GuestStarSession(
             string id,
             global::System.Collections.Generic.IList<global::G.Guest> guests)

@@ -88,7 +88,9 @@ namespace G
         /// <param name="lastEditStamp"></param>
         /// <param name="folderId"></param>
         /// <param name="dataURI"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Memo(
             string? projectIdKey,
             global::System.Guid? id,

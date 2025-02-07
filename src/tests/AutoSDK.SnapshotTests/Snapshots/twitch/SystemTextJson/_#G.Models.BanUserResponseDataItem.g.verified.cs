@@ -68,7 +68,9 @@ namespace G
         /// <param name="endTime">
         /// The UTC date and time (in RFC3339 format) that the timeout will end. Is **null** if the user was banned instead of being put in a timeout.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BanUserResponseDataItem(
             string broadcasterId,
             string moderatorId,

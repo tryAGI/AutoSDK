@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="login"></param>
         /// <param name="slug"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookInstallationTargetRenamedChanges(
             global::G.WebhookInstallationTargetRenamedChangesLogin? login,
             global::G.WebhookInstallationTargetRenamedChangesSlug? slug)

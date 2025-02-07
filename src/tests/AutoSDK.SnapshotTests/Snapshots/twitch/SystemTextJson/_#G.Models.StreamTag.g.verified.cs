@@ -58,7 +58,9 @@ namespace G
         /// <param name="localizationDescriptions">
         /// A dictionary that contains the localized descriptions of the tag. The key is in the form, &lt;locale&gt;-&lt;coutry/region&gt;. For example, en-us. The value is the localized description.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StreamTag(
             string tagId,
             bool isAuto,

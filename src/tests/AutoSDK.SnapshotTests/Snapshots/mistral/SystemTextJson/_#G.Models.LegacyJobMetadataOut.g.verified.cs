@@ -148,7 +148,9 @@ namespace G
         /// The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.<br/>
         /// Example: 10
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LegacyJobMetadataOut(
             string details,
             double? cost,

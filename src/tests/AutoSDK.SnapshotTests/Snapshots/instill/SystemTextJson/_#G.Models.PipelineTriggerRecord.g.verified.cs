@@ -109,7 +109,9 @@ namespace G
         /// If a release of the pipeline was triggered, release UUID.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelineTriggerRecord(
             global::System.DateTime? triggerTime,
             string? pipelineTriggerId,

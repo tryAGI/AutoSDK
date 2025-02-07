@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="position"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ObjectIdWithPos(
             global::System.Guid? id,
             int? position)

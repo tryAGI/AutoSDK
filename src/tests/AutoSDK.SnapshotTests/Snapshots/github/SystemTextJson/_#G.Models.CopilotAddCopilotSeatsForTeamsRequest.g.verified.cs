@@ -28,7 +28,9 @@ namespace G
         /// <param name="selectedTeams">
         /// List of team names within the organization to which to grant access to GitHub Copilot.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CopilotAddCopilotSeatsForTeamsRequest(
             global::System.Collections.Generic.IList<string> selectedTeams)
         {

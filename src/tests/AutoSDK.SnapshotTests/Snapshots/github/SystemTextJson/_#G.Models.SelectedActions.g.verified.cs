@@ -49,7 +49,9 @@ namespace G
         /// &gt; [!NOTE]<br/>
         /// &gt; The `patterns_allowed` setting only applies to public repositories.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SelectedActions(
             bool? githubOwnedAllowed,
             bool? verifiedAllowed,

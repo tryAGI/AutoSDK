@@ -72,7 +72,9 @@ namespace G
         /// <param name="audioEndMs">
         /// The duration up to which the audio was truncated, in milliseconds.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventConversationItemTruncated(
             string eventId,
             string itemId,

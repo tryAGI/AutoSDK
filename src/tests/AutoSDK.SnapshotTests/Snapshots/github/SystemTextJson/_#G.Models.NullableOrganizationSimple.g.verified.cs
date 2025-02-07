@@ -150,7 +150,9 @@ namespace G
         /// <param name="description">
         /// Example: A great organization
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NullableOrganizationSimple(
             string login,
             int id,

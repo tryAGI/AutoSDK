@@ -28,7 +28,9 @@ namespace G
         /// <param name="generatedText">
         /// The resulting completion up to and excluding the stop sequences.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateTextResponseValue(
             string generatedText)
         {

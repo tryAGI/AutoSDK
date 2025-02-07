@@ -109,7 +109,9 @@ namespace G
         ///  - LORA_TARGET_MODULES_QKVO_FFN: LoRA adapts attention projection matrices and feed-forward networks (FFN).<br/>
         /// Default Value: LORA_TARGET_MODULES_UNSPECIFIED
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Hyperparameters(
             int? earlyStoppingPatience,
             double? earlyStoppingThreshold,

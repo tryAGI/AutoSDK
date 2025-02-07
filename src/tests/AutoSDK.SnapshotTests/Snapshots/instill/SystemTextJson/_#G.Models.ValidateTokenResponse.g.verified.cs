@@ -29,7 +29,9 @@ namespace G
         /// If token is valid, UUID of the user that owns it.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ValidateTokenResponse(
             string? userUid)
         {

@@ -29,7 +29,9 @@ namespace G
         /// <param name="tier">
         /// Enum for payment plans that the user can change to. Developer plans are permanent and enterprise plans will be changed manually.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChangePaymentPlanSchema(
             global::G.ChangePaymentPlanReq tier)
         {

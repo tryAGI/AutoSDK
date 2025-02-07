@@ -37,7 +37,9 @@ namespace G
         /// Default Value: content_block_stop
         /// </param>
         /// <param name="index"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ContentBlockStopEvent(
             int index,
             global::G.ContentBlockStopEventType type = global::G.ContentBlockStopEventType.ContentBlockStop)

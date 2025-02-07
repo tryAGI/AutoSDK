@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains information about the available content classification labels.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetContentClassificationLabelsResponse(
             global::System.Collections.Generic.IList<global::G.ContentClassificationLabel> data)
         {

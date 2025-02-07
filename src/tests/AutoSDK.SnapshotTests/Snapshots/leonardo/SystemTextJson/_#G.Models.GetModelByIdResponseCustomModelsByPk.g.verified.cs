@@ -113,7 +113,9 @@ namespace G
         /// Default Value: GENERAL
         /// </param>
         /// <param name="updatedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetModelByIdResponseCustomModelsByPk(
             string? createdAt,
             string? description,

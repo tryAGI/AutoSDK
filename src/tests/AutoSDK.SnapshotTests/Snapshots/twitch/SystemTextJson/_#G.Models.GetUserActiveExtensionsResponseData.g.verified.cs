@@ -45,7 +45,9 @@ namespace G
         /// <param name="component">
         /// A dictionary that contains the data for a video-component extension. The dictionary’s key is a sequential number beginning with 1\. The following fields contain the component’s data for each key.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUserActiveExtensionsResponseData(
             global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionPanel>? panel,
             global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionOverlay>? overlay,

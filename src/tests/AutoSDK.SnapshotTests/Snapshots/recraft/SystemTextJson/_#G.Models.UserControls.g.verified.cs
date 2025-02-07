@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="backgroundColor"></param>
         /// <param name="colors"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserControls(
             global::G.ImageColor? backgroundColor,
             global::System.Collections.Generic.IList<global::G.ImageColor>? colors)

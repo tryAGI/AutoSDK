@@ -43,7 +43,9 @@ namespace G
         /// </param>
         /// <param name="message"></param>
         /// <param name="currentRun"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelineContainerState(
             global::G.PipelineState state,
             string? message,

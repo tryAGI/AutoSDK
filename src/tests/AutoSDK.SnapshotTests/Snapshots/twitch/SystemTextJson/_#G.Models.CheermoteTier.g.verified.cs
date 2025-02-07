@@ -93,7 +93,9 @@ namespace G
         /// <param name="showInBitsCard">
         /// A Boolean value that determines whether this tier level is shown in the Bits card. Is **true** if this tier level is shown in the Bits card.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheermoteTier(
             int minBits,
             global::G.CheermoteTierId id,

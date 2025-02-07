@@ -58,7 +58,9 @@ namespace G
         /// <param name="sizeBytes"></param>
         /// <param name="uploadDateUnix"></param>
         /// <param name="transcription"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RecordingResponseModel(
             string recordingId,
             string mimeType,

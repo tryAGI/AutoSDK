@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="event"></param>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ErrorEvent(
             global::G.Error data,
             global::G.ErrorEventEvent @event)

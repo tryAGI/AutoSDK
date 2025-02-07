@@ -74,7 +74,9 @@ namespace G
         /// <param name="resourceType"></param>
         /// <param name="fileURL"></param>
         /// <param name="length"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddResourceRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

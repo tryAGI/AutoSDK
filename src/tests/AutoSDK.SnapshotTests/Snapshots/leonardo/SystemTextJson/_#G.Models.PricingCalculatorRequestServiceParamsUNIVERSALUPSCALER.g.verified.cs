@@ -27,7 +27,9 @@ namespace G
         /// <param name="megapixel">
         /// The maximum upscaled image size is 20 megapixels.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequestServiceParamsUNIVERSALUPSCALER(
             int? megapixel)
         {

@@ -38,7 +38,9 @@ namespace G
         /// <param name="totalActiveCachesSizeInBytes">
         /// The total size in bytes of all active cache items across all repositories of an enterprise or an organization.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsCacheUsageOrgEnterprise(
             int totalActiveCachesCount,
             int totalActiveCachesSizeInBytes)

@@ -45,7 +45,9 @@ namespace G
         /// <param name="object">
         /// Default Value: model
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ArchiveFTModelOut(
             string id,
             bool? archived,

@@ -120,7 +120,9 @@ namespace G
         /// <param name="sessionCount"></param>
         /// <param name="modifiedAt"></param>
         /// <param name="lastSessionStartTime"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Dataset(
             string name,
             global::System.Guid id,

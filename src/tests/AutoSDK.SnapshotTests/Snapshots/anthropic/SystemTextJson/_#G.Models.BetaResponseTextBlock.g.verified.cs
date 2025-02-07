@@ -37,7 +37,9 @@ namespace G
         /// Default Value: text
         /// </param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaResponseTextBlock(
             string text,
             global::G.BetaResponseTextBlockType type = global::G.BetaResponseTextBlockType.Text)

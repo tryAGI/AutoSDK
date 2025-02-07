@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectIDL"></param>
         /// <param name="excerptId"></param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateExcerptTextRequest(
             global::System.Guid projectIDL,
             global::System.Guid excerptId,

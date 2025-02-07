@@ -44,7 +44,9 @@ namespace G
         /// The amount of the currency in the common denomination. For example, in USD this is cents.<br/>
         /// Example: 1050
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Price(
             string currencyCode,
             double amount)

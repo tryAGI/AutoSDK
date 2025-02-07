@@ -28,7 +28,9 @@ namespace G
         /// <param name="title">
         /// The text of one of the outcomes that the viewer may select. The title is limited to a maximum of 25 characters.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreatePredictionBodyOutcome(
             string title)
         {

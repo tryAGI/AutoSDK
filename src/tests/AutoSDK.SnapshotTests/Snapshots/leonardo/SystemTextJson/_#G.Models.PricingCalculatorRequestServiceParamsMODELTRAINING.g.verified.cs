@@ -27,7 +27,9 @@ namespace G
         /// <param name="resolution">
         /// The resolution for training. Must be 512 or 768.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequestServiceParamsMODELTRAINING(
             int? resolution)
         {

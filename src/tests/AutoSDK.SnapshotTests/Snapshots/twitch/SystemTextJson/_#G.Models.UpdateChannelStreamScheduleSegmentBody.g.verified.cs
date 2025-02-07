@@ -80,7 +80,9 @@ namespace G
         /// <param name="timezone">
         /// The time zone where the broadcast takes place. Specify the time zone using [IANA time zone database](https://www.iana.org/time-zones) format (for example, America/New\_York).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateChannelStreamScheduleSegmentBody(
             global::System.DateTime? startTime,
             string? duration,

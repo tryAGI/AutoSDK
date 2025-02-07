@@ -113,7 +113,9 @@ namespace G
         /// A list of previous messages between the user and the model, meant to give the model conversational context for responding to the user's `message`.
         /// </param>
         /// <param name="meta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NonStreamedChatResponse(
             string text,
             global::System.Guid? generationId,

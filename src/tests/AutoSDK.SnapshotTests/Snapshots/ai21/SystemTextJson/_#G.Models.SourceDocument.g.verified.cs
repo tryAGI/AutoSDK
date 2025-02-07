@@ -56,7 +56,9 @@ namespace G
         /// <param name="highlights"></param>
         /// <param name="publicUrl"></param>
         /// <param name="labels"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SourceDocument(
             string fileId,
             string name,

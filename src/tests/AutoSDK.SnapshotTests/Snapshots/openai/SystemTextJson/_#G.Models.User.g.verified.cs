@@ -80,7 +80,9 @@ namespace G
         /// <param name="addedAt">
         /// The Unix timestamp (in seconds) of when the user was added.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public User(
             string id,
             string name,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="name"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SimpleExperimentInfo(
             global::System.Guid id,
             string name)

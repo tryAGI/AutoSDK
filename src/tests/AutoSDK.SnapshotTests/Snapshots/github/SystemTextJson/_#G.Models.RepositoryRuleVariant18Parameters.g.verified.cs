@@ -28,7 +28,9 @@ namespace G
         /// <param name="restrictedFileExtensions">
         /// The file extensions that are restricted from being pushed to the commit graph.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleVariant18Parameters(
             global::System.Collections.Generic.IList<string> restrictedFileExtensions)
         {

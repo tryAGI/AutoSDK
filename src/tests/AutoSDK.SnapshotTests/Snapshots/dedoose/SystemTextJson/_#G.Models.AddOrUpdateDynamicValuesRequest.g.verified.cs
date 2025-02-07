@@ -58,7 +58,9 @@ namespace G
         /// <param name="setId"></param>
         /// <param name="descriptorId"></param>
         /// <param name="values"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddOrUpdateDynamicValuesRequest(
             global::System.Guid projectId,
             global::System.Guid resourceId,

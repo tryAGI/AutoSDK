@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of IDs of the videos that were deleted.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteVideosResponse(
             global::System.Collections.Generic.IList<string> data)
         {

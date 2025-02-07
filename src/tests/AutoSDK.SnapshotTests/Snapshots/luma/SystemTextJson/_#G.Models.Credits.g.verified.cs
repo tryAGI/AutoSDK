@@ -28,7 +28,9 @@ namespace G
         /// <param name="creditBalance">
         /// Available credits balance in USD cents
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Credits(
             float creditBalance)
         {

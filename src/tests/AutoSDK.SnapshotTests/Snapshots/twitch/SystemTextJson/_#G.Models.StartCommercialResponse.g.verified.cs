@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// An array that contains a single object with the status of your start commercial request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartCommercialResponse(
             global::System.Collections.Generic.IList<global::G.StartCommercialResponseDataItem> data)
         {

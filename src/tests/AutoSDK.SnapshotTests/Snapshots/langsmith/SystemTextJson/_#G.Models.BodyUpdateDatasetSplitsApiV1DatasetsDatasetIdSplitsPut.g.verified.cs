@@ -43,7 +43,9 @@ namespace G
         /// <param name="remove">
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyUpdateDatasetSplitsApiV1DatasetsDatasetIdSplitsPut(
             string splitName,
             global::System.Collections.Generic.IList<global::System.Guid> examples,

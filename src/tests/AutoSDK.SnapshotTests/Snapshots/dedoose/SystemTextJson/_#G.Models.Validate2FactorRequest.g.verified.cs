@@ -42,7 +42,9 @@ namespace G
         /// <param name="username"></param>
         /// <param name="connectionKey"></param>
         /// <param name="encryptedAuthToken"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Validate2FactorRequest(
             string username,
             global::System.Guid connectionKey,

@@ -109,7 +109,9 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="permissions"></param>
         /// <param name="events"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BranchRestrictionPolicyApp(
             int? id,
             string? slug,

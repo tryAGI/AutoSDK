@@ -63,7 +63,9 @@ namespace G
         /// The MIME type of the file.<br/>
         /// This must fall within the supported MIME types for your file purpose. See the supported MIME types for assistants and vision.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateUploadRequest(
             string filename,
             global::G.CreateUploadRequestPurpose purpose,

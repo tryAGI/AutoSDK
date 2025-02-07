@@ -36,7 +36,9 @@ namespace G
         /// "auto" decides the optimal number of epochs based on the size of the dataset. If setting the number manually, we support any number between 1 and 50 epochs.<br/>
         /// Default Value: auto
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningJobHyperparameters(
             global::G.OneOf<global::G.FineTuningJobHyperparametersNEpochs?, int?> nEpochs)
         {

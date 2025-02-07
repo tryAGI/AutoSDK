@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GetDataSetsByProjectRequest" /> class.
         /// </summary>
         /// <param name="projectId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetDataSetsByProjectRequest(
             global::System.Guid projectId)
         {

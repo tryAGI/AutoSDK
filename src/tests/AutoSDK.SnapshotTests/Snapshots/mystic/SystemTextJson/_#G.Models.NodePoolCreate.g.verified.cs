@@ -35,7 +35,9 @@ namespace G
         /// <param name="spot">
         /// Default Value: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NodePoolCreate(
             global::System.Collections.Generic.IList<global::G.Accelerator> accelerators,
             bool? spot)

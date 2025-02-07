@@ -207,7 +207,9 @@ namespace G
         /// <param name="checkRunsUrl"></param>
         /// <param name="rerequestable"></param>
         /// <param name="runsRerequestable"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckSuite(
             int id,
             string nodeId,

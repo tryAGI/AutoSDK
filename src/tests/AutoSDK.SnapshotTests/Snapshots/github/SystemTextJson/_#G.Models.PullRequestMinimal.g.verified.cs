@@ -58,7 +58,9 @@ namespace G
         /// <param name="url"></param>
         /// <param name="head"></param>
         /// <param name="base"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullRequestMinimal(
             long id,
             int number,

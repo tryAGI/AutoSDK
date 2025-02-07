@@ -27,7 +27,9 @@ namespace G
         /// <param name="cursor">
         /// The cursor used to get the next page of results. Set the request’s _after_ query parameter to this value to page forwards through the results.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetAllStreamTagsResponsePagination(
             string? cursor)
         {

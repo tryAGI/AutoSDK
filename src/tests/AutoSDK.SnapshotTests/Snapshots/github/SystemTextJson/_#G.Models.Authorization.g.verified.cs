@@ -140,7 +140,9 @@ namespace G
         /// </param>
         /// <param name="installation"></param>
         /// <param name="expiresAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Authorization(
             long id,
             string url,

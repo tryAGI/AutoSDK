@@ -36,7 +36,9 @@ namespace G
         /// <param name="email">
         /// The email of the author (or committer) of the commit
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposDeleteFileRequestAuthor(
             string? name,
             string? email)

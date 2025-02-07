@@ -359,7 +359,9 @@ namespace G
         /// Recommended for advanced use cases only. You usually only need to use `temperature`.<br/>
         /// Example: 0.7
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaCreateMessageParams(
             global::G.Model model,
             global::System.Collections.Generic.IList<global::G.BetaInputMessage> messages,

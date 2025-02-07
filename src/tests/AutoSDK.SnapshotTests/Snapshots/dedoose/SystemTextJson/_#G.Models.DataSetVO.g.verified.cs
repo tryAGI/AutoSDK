@@ -109,7 +109,9 @@ namespace G
         /// <param name="areTagsFiltered"></param>
         /// <param name="areUsersFiltered"></param>
         /// <param name="areDescriptorsFiltered"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DataSetVO(
             global::System.Guid? id,
             global::System.Guid? projectId,

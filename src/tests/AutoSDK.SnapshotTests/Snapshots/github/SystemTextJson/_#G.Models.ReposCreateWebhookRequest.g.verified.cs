@@ -58,7 +58,9 @@ namespace G
         /// Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.<br/>
         /// Default Value: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateWebhookRequest(
             string? name,
             global::G.ReposCreateWebhookRequestConfig? config,

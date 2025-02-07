@@ -81,7 +81,9 @@ namespace G
         /// <param name="input">
         /// List of text and images and labels or a single text and image and label to train the classifier
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TrainingAPIInput(
             global::G.AnyOf<global::System.Collections.Generic.IList<global::G.AnyOf<global::G.TextExampleDoc, global::G.ImageExampleDoc>>, global::G.TextExampleDoc, global::G.ImageExampleDoc> input,
             string? model,

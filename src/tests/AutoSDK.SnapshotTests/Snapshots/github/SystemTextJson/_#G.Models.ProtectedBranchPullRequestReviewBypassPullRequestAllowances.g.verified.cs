@@ -45,7 +45,9 @@ namespace G
         /// <param name="apps">
         /// The list of apps allowed to bypass pull request requirements.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProtectedBranchPullRequestReviewBypassPullRequestAllowances(
             global::System.Collections.Generic.IList<global::G.SimpleUser>? users,
             global::System.Collections.Generic.IList<global::G.Team>? teams,

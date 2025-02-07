@@ -118,7 +118,9 @@ namespace G
         /// <param name="retentionPeriodMinutes">
         /// Duration in minutes after codespace has gone idle in which it will be deleted. Must be integer minutes between 0 and 43200 (30 days).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesCreateWithRepoForAuthenticatedUserRequest(
             string? @ref,
             string? location,

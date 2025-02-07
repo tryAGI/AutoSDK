@@ -38,7 +38,9 @@ namespace G
         /// <param name="experiment">
         /// TracerSession schema.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExperimentResultsUploadResult(
             global::G.Dataset dataset,
             global::G.TracerSession experiment)

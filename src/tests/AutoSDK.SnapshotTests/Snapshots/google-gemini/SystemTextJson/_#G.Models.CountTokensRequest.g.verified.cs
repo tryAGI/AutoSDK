@@ -27,7 +27,9 @@ namespace G
         /// <param name="contents">
         /// Required. The input given to the model as a prompt.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CountTokensRequest(
             global::System.Collections.Generic.IList<global::G.Content>? contents)
         {

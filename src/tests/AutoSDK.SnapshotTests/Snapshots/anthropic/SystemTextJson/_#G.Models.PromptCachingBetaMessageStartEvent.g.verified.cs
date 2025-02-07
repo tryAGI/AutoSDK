@@ -37,7 +37,9 @@ namespace G
         /// Default Value: message_start
         /// </param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptCachingBetaMessageStartEvent(
             global::G.PromptCachingBetaMessage message,
             global::G.PromptCachingBetaMessageStartEventType type = global::G.PromptCachingBetaMessageStartEventType.MessageStart)

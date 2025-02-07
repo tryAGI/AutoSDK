@@ -55,7 +55,9 @@ namespace G
         /// <param name="selectedRepositoryIds">
         /// An array of repository ids that can access the organization variable. You can only provide a list of repository ids when the `visibility` is set to `selected`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsUpdateOrgVariableRequest(
             string? name,
             string? value,

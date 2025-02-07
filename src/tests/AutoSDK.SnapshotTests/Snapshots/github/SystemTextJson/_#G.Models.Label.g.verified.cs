@@ -107,7 +107,9 @@ namespace G
         /// Whether this label comes by default in a new repository.<br/>
         /// Example: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Label(
             long id,
             string nodeId,

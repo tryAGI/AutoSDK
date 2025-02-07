@@ -50,7 +50,9 @@ namespace G
         /// <param name="resourceIds"></param>
         /// <param name="includeDescriptorInfo"></param>
         /// <param name="includeCodeCounts"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartExportResourcesJobRequest(
             global::System.Guid projectId,
             global::System.Collections.Generic.IList<global::System.Guid> resourceIds,

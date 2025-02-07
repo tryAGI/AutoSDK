@@ -31,7 +31,9 @@ namespace G
         /// The API URL to get the issue comment where the secret was detected.<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/issues/comments/1081119451
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecretScanningLocationIssueComment(
             string issueCommentUrl)
         {

@@ -78,7 +78,9 @@ namespace G
         /// <param name="markers">
         /// The list of markers in this video. The list in ascending order by when the marker was created.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StreamMarkers(
             string userId,
             string userName,

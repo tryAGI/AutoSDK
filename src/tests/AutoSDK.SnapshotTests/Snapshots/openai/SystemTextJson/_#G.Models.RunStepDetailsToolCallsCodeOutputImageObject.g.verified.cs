@@ -36,7 +36,9 @@ namespace G
         /// Always `image`.
         /// </param>
         /// <param name="image"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDetailsToolCallsCodeOutputImageObject(
             global::G.RunStepDetailsToolCallsCodeOutputImageObjectImage image,
             global::G.RunStepDetailsToolCallsCodeOutputImageObjectType type)

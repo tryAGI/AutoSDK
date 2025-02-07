@@ -44,7 +44,9 @@ namespace G
         /// The ID of the API key. A URL safe base64 encoded UUID<br/>
         /// Example: JRPVD7jWR1aTBYiJ0UFVOg==
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PostApiKeyResponse(
             string apiKey,
             string apiKeyId)

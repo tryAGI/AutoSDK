@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains the poll that you ended.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EndPollResponse(
             global::System.Collections.Generic.IList<global::G.Poll> data)
         {

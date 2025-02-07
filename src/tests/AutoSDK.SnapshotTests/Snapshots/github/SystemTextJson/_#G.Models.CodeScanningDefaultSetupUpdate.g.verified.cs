@@ -47,7 +47,9 @@ namespace G
         /// <param name="languages">
         /// CodeQL languages to be analyzed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningDefaultSetupUpdate(
             global::G.CodeScanningDefaultSetupUpdateState? state,
             global::G.CodeScanningDefaultSetupUpdateQuerySuite? querySuite,

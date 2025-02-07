@@ -33,7 +33,9 @@ namespace G
         /// Default Value: write<br/>
         /// Example: write
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectsAddCollaboratorRequest(
             global::G.ProjectsAddCollaboratorRequestPermission? permission)
         {

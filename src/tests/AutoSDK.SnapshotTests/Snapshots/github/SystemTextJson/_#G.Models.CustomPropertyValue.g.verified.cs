@@ -41,7 +41,9 @@ namespace G
         /// <param name="value">
         /// The value assigned to the property
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomPropertyValue(
             string propertyName,
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? value)

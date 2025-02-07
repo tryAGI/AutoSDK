@@ -62,7 +62,9 @@ namespace G
         /// Output only. The mean loss of the training examples for this step.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TuningSnapshot(
             int? step,
             string? computeTime,

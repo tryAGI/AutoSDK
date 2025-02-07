@@ -50,7 +50,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="title"></param>
         /// <param name="createdAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SshSigningKey(
             string key,
             int id,

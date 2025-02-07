@@ -75,7 +75,9 @@ namespace G
         /// <param name="conduitId">
         /// An ID that identifies the conduit to send notifications to. When you create a conduit, the server returns the conduit ID. Specify this field only if `method` is set to **conduit**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateEventSubSubscriptionBodyTransport(
             global::G.CreateEventSubSubscriptionBodyTransportMethod method,
             string? callback,

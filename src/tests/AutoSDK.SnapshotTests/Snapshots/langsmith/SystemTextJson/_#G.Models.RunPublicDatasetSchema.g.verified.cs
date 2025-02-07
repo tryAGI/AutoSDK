@@ -302,7 +302,9 @@ namespace G
         /// <param name="priceModelId"></param>
         /// <param name="firstTokenTime"></param>
         /// <param name="sessionId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunPublicDatasetSchema(
             string name,
             global::G.RunTypeEnum runType,

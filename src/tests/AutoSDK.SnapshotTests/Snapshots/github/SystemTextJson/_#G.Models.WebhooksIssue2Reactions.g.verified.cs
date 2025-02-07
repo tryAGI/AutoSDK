@@ -98,7 +98,9 @@ namespace G
         /// <param name="rocket"></param>
         /// <param name="totalCount"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksIssue2Reactions(
             int plus1,
             int minus1,

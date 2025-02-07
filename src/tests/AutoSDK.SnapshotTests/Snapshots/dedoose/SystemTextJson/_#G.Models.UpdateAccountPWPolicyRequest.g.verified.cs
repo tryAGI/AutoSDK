@@ -106,7 +106,9 @@ namespace G
         /// <param name="require2Auth"></param>
         /// <param name="relogin2Auth"></param>
         /// <param name="idleTimeoutInMinutes"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateAccountPWPolicyRequest(
             global::System.Guid accountId,
             bool enforcePolicy,

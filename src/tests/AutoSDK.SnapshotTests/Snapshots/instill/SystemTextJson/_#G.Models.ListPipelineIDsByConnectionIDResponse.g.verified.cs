@@ -51,7 +51,9 @@ namespace G
         /// Total number of items.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListPipelineIDsByConnectionIDResponse(
             global::System.Collections.Generic.IList<string>? pipelineIds,
             string? nextPageToken,

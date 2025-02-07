@@ -37,7 +37,9 @@ namespace G
         /// <param name="pagination">
         /// Contains information used to page through a list of results. The object is empty if there are no more pages left to page through.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUnbanRequestsResponse(
             global::System.Collections.Generic.IList<global::G.GetUnbanRequestsResponseDataItem> data,
             global::G.GetUnbanRequestsResponsePagination? pagination)

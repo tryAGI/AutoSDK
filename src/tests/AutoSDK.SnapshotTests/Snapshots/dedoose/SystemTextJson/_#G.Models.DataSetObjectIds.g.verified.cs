@@ -60,7 +60,9 @@ namespace G
         /// <param name="includedExcerptIds"></param>
         /// <param name="includedUserIds"></param>
         /// <param name="excludedExcerptIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DataSetObjectIds(
             global::System.Collections.Generic.IList<global::System.Guid>? includedTagIds,
             global::System.Collections.Generic.IList<global::System.Guid>? includedDescriptorIds,

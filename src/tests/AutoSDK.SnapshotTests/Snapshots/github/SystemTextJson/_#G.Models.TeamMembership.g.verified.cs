@@ -54,7 +54,9 @@ namespace G
         /// <param name="state">
         /// The state of the user's membership in the team.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TeamMembership(
             string url,
             global::G.TeamMembershipRole role,

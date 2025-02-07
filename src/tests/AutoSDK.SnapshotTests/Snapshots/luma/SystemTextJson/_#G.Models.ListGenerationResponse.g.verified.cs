@@ -64,7 +64,9 @@ namespace G
         /// <param name="offset">
         /// The offset of the generations requested
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListGenerationResponse(
             global::System.Collections.Generic.IList<global::G.Generation> generations,
             int? count,

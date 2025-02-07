@@ -50,7 +50,9 @@ namespace G
         /// <param name="attachmentFileName"></param>
         /// <param name="emailAddress"></param>
         /// <param name="subject"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmailFileRequest(
             string fileURI,
             string attachmentFileName,

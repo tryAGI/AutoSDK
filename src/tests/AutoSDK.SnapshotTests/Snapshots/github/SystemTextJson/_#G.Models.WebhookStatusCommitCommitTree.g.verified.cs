@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="sha"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookStatusCommitCommitTree(
             string sha,
             string url)

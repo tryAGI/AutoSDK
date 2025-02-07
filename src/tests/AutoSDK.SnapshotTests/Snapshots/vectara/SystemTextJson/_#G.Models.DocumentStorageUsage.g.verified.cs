@@ -39,7 +39,9 @@ namespace G
         /// <param name="metadataBytesUsed">
         /// Number of metadata bytes used by a document.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DocumentStorageUsage(
             long? bytesUsed,
             long? metadataBytesUsed)

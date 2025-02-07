@@ -70,7 +70,9 @@ namespace G
         /// <param name="hasMore">
         /// Example: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListRunsResponse(
             string @object,
             global::System.Collections.Generic.IList<global::G.RunObject> data,

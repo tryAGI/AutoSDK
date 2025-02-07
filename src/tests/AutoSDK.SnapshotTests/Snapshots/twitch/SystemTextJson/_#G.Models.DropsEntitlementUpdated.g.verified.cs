@@ -51,7 +51,9 @@ namespace G
         /// <param name="ids">
         /// The list of entitlements that the status in the `status` field applies to.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DropsEntitlementUpdated(
             global::G.DropsEntitlementUpdatedStatus status,
             global::System.Collections.Generic.IList<string> ids)

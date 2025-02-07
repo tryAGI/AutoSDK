@@ -43,7 +43,9 @@ namespace G
         /// <param name="requestId">
         /// ID of the request that can be used to help Vectara support debug what went wrong.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NotFoundError(
             string? id,
             global::System.Collections.Generic.IList<string>? messages,

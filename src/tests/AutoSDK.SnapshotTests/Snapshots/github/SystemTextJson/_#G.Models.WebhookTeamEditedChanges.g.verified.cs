@@ -53,7 +53,9 @@ namespace G
         /// <param name="privacy"></param>
         /// <param name="notificationSetting"></param>
         /// <param name="repository"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookTeamEditedChanges(
             global::G.WebhookTeamEditedChangesDescription? description,
             global::G.WebhookTeamEditedChangesName? name,

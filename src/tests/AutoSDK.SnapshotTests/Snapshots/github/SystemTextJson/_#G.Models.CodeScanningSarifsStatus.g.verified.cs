@@ -50,7 +50,9 @@ namespace G
         /// Any errors that ocurred during processing of the delivery.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningSarifsStatus(
             global::G.CodeScanningSarifsStatusProcessingStatus? processingStatus,
             string? analysesUrl,

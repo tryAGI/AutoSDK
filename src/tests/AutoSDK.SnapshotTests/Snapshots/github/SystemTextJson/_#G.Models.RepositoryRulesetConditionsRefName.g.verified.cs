@@ -36,7 +36,9 @@ namespace G
         /// <param name="exclude">
         /// Array of ref names or patterns to exclude. The condition will not pass if any of these patterns match.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRulesetConditionsRefName(
             global::System.Collections.Generic.IList<string>? include,
             global::System.Collections.Generic.IList<string>? exclude)

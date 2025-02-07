@@ -62,7 +62,9 @@ namespace G
         /// <param name="fileSize"></param>
         /// <param name="fileUploadTime"></param>
         /// <param name="fileProcessStatus"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Metadata(
             string? fileUid,
             string? fileId,

@@ -118,7 +118,9 @@ namespace G
         /// <param name="total">
         /// The current total amount raised.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public HypeTrainEventEventData(
             string broadcasterId,
             global::System.DateTime cooldownEndTime,

@@ -161,7 +161,9 @@ namespace G
         /// <param name="codeEvaluators"></param>
         /// <param name="alerts"></param>
         /// <param name="webhooks"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunRulesCreateSchema(
             string displayName,
             double samplingRate,

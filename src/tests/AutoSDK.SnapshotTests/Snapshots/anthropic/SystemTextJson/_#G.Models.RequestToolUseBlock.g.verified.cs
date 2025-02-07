@@ -50,7 +50,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="input"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RequestToolUseBlock(
             string id,
             string name,

@@ -137,7 +137,9 @@ namespace G
         /// <param name="shouldRedemptionsSkipRequestQueue">
         /// A Boolean value that determines whether redemptions should be set to FULFILLED status immediately when a reward is redeemed. If **false**, status is set to UNFULFILLED and follows the normal request queue process. The default is **false**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateCustomRewardsBody(
             string title,
             long cost,

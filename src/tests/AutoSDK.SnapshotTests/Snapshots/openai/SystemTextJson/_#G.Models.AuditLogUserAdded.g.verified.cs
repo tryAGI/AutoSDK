@@ -36,7 +36,9 @@ namespace G
         /// <param name="data">
         /// The payload used to add the user to the project.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogUserAdded(
             string? id,
             global::G.AuditLogUserAddedData? data)

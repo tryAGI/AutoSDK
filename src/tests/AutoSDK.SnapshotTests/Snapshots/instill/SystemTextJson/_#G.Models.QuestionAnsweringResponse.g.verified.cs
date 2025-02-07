@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="answer"></param>
         /// <param name="similarChunks"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public QuestionAnsweringResponse(
             string? answer,
             global::System.Collections.Generic.IList<global::G.SimilarityChunk>? similarChunks)

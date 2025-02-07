@@ -47,7 +47,9 @@ namespace G
         /// <param name="entity">
         /// The WandB entity name to be used during training.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WandbConfig(
             string project,
             string apiKey,

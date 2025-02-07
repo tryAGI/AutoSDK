@@ -99,7 +99,9 @@ namespace G
         /// Web url for the exported branch<br/>
         /// Example: https://github.com/octocat/hello-world/tree/:branch
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespaceExportDetails(
             string? state,
             global::System.DateTime? completedAt,

@@ -79,7 +79,9 @@ namespace G
         /// <param name="fullName"></param>
         /// <param name="avatarUrl"></param>
         /// <param name="password"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserWithPassword(
             global::System.Guid id,
             global::System.Guid lsUserId,

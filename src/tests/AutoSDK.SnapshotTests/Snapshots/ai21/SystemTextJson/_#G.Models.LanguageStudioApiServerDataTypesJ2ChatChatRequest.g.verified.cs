@@ -120,7 +120,9 @@ namespace G
         /// <param name="stopSequences">
         /// Default Value: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LanguageStudioApiServerDataTypesJ2ChatChatRequest(
             global::System.Collections.Generic.IList<global::G.ChatMessage> messages,
             string system,

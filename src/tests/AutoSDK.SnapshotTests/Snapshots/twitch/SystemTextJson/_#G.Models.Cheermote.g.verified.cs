@@ -91,7 +91,9 @@ namespace G
         /// <param name="isCharitable">
         /// A Boolean value that indicates whether this Cheermote provides a charitable contribution match during charity campaigns.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Cheermote(
             string prefix,
             global::System.Collections.Generic.IList<global::G.CheermoteTier> tiers,

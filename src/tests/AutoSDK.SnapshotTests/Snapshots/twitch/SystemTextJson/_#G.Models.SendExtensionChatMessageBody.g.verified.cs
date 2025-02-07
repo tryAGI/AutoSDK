@@ -48,7 +48,9 @@ namespace G
         /// <param name="extensionVersion">
         /// The extension’s version number.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SendExtensionChatMessageBody(
             string text,
             string extensionId,

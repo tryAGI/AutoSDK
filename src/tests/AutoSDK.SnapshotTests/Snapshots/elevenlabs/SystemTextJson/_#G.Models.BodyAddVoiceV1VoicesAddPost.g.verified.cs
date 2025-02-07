@@ -67,7 +67,9 @@ namespace G
         /// <param name="labels">
         /// Serialized labels dictionary for the voice.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyAddVoiceV1VoicesAddPost(
             string name,
             global::System.Collections.Generic.IList<byte[]> files,

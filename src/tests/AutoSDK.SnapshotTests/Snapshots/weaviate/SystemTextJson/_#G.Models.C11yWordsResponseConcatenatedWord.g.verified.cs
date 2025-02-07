@@ -50,7 +50,9 @@ namespace G
         /// <param name="concatenatedNearestNeighbors">
         /// C11y function to show the nearest neighbors to a word.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public C11yWordsResponseConcatenatedWord(
             string? concatenatedWord,
             global::System.Collections.Generic.IList<string>? singleWords,

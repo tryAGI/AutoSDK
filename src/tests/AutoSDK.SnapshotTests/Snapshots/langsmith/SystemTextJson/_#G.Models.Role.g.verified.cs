@@ -73,7 +73,9 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="permissions"></param>
         /// <param name="accessScope"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Role(
             global::System.Guid id,
             string name,

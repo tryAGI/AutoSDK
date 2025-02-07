@@ -161,7 +161,9 @@ namespace G
         ///   <br/>
         /// Is **true** if the broadcaster requires unique messages only; otherwise, **false**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatSettings(
             string broadcasterId,
             bool emoteMode,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="adminId"></param>
         /// <param name="credits"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateAccountRequest(
             global::System.Guid adminId,
             double credits)

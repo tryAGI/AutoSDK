@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="ListEmbedJobResponse" /> class.
         /// </summary>
         /// <param name="embedJobs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListEmbedJobResponse(
             global::System.Collections.Generic.IList<global::G.EmbedJob>? embedJobs)
         {

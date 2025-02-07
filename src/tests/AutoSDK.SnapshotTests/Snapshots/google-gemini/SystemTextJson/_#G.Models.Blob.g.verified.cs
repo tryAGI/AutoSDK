@@ -36,7 +36,9 @@ namespace G
         /// <param name="data">
         /// Raw bytes for media formats.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Blob(
             string? mimeType,
             byte[]? data)

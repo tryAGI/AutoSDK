@@ -29,7 +29,9 @@ namespace G
         /// Whether to convert the audio to mpeg format.<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyStreamChapterAudioV1ProjectsProjectIdChaptersChapterIdSnapshotsChapterSnapshotIdStreamPost(
             bool? convertToMpeg)
         {

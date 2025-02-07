@@ -51,7 +51,9 @@ namespace G
         /// Total number of secret resources.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListNamespaceSecretsResponse(
             global::System.Collections.Generic.IList<global::G.Secret>? secrets,
             string? nextPageToken,

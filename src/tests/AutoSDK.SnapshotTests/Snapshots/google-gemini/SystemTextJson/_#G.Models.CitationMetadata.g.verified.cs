@@ -27,7 +27,9 @@ namespace G
         /// <param name="citationSources">
         /// Citations to sources for a specific response.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CitationMetadata(
             global::System.Collections.Generic.IList<global::G.CitationSource>? citationSources)
         {

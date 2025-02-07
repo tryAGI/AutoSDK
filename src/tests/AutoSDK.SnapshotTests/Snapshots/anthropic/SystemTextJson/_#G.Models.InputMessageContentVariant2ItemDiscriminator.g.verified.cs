@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="InputMessageContentVariant2ItemDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InputMessageContentVariant2ItemDiscriminator(
             global::G.InputMessageContentVariant2ItemDiscriminatorType? type)
         {

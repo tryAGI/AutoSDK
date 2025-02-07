@@ -66,7 +66,9 @@ namespace G
         /// <param name="updatedTextDataURI"></param>
         /// <param name="updatedLength"></param>
         /// <param name="excerpts"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateDocumentDataAndExcerptsRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

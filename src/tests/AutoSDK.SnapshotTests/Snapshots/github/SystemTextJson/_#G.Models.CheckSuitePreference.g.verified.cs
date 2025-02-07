@@ -36,7 +36,9 @@ namespace G
         /// <param name="repository">
         /// Minimal Repository
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckSuitePreference(
             global::G.CheckSuitePreferencePreferences preferences,
             global::G.MinimalRepository repository)

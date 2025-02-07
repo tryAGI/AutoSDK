@@ -65,7 +65,9 @@ namespace G
         /// <param name="tfvcProject">
         /// For a tfvc import, the name of the project that is being imported.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MigrationsStartImportRequest(
             string vcsUrl,
             global::G.MigrationsStartImportRequestVcs? vcs,

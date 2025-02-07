@@ -45,7 +45,9 @@ namespace G
         /// <param name="defaultBranchOnly">
         /// When forking from an existing repository, fork with only the default branch.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateForkRequest(
             string? organization,
             string? name,

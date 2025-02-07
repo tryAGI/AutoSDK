@@ -88,7 +88,9 @@ namespace G
         /// <param name="trainingTestExcerptId"></param>
         /// <param name="projectIDL"></param>
         /// <param name="trainingTestResultIDL"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TrainingTestTagApp(
             string? projectIdKey,
             global::System.Guid? projectId,

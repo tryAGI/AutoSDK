@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of chat badges. The list is sorted in ascending order by `set_id`, and within a set, the list is sorted in ascending order by `id`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetChannelChatBadgesResponse(
             global::System.Collections.Generic.IList<global::G.ChatBadge> data)
         {

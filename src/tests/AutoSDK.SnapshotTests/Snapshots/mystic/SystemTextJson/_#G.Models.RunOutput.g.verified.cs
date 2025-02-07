@@ -45,7 +45,9 @@ namespace G
         /// <param name="file">
         /// Base model for schemas.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunOutput(
             global::G.RunIOType type,
             object? value,

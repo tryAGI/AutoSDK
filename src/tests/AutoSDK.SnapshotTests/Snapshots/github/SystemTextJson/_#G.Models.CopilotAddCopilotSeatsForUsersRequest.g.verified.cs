@@ -28,7 +28,9 @@ namespace G
         /// <param name="selectedUsernames">
         /// The usernames of the organization members to be granted access to GitHub Copilot.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CopilotAddCopilotSeatsForUsersRequest(
             global::System.Collections.Generic.IList<string> selectedUsernames)
         {

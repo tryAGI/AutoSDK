@@ -39,7 +39,9 @@ namespace G
         /// <param name="allowedActions">
         /// The permissions policy that controls the actions and reusable workflows that are allowed to run.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsSetGithubActionsPermissionsOrganizationRequest(
             global::G.EnabledRepositories enabledRepositories,
             global::G.AllowedActions? allowedActions)

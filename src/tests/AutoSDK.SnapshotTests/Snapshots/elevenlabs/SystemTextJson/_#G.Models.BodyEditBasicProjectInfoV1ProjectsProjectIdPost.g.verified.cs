@@ -86,7 +86,9 @@ namespace G
         /// When the project is downloaded, should the returned audio have postprocessing in order to make it compliant with audiobook normalized volume requirements<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyEditBasicProjectInfoV1ProjectsProjectIdPost(
             string name,
             string defaultTitleVoiceId,

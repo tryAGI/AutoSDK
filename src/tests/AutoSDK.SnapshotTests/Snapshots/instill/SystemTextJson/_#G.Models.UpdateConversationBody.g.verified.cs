@@ -39,7 +39,9 @@ namespace G
         /// <param name="newConversationId"></param>
         /// <param name="lastUsedCatalogUid"></param>
         /// <param name="lastUsedTopK"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateConversationBody(
             string? newConversationId,
             string? lastUsedCatalogUid,

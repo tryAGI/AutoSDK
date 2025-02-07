@@ -81,7 +81,9 @@ namespace G
         /// <param name="descriptorSetIDL"></param>
         /// <param name="valuesData"></param>
         /// <param name="dynamicValuesData"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Descriptor2(
             string? projectIdKey,
             global::System.Guid? projectId,

@@ -28,7 +28,9 @@ namespace G
         /// <param name="audioUrl">
         /// The URL of the audio or video file to transcribe.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TranscriptParamsVariant1(
             string audioUrl)
         {

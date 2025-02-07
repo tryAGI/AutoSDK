@@ -133,7 +133,9 @@ namespace G
         /// <param name="presencePenalty"></param>
         /// <param name="countPenalty"></param>
         /// <param name="epoch"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CompletionBody(
             string prompt,
             int? numResults,

@@ -47,7 +47,9 @@ namespace G
         /// <param name="dropReason">
         /// The reason the message was dropped, if any.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SendChatMessageResponseDataItem(
             string messageId,
             bool isSent,

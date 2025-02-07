@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that indicates which entitlements were successfully updated and those that weren’t.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateDropsEntitlementsResponse(
             global::System.Collections.Generic.IList<global::G.DropsEntitlementUpdated> data)
         {

@@ -48,7 +48,9 @@ namespace G
         /// <param name="url4x">
         /// The URL to a large version of the image.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomRewardDefaultImage(
             string url1x,
             string url2x,

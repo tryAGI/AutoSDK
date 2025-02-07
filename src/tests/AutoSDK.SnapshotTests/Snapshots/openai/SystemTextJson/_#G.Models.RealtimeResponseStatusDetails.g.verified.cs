@@ -59,7 +59,9 @@ namespace G
         /// A description of the error that caused the response to fail, <br/>
         /// populated when the `status` is `failed`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseStatusDetails(
             global::G.RealtimeResponseStatusDetailsType? type,
             global::G.RealtimeResponseStatusDetailsReason? reason,

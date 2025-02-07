@@ -38,7 +38,9 @@ namespace G
         /// <param name="generationId">
         /// Unique identifier for the generated search query. Useful for submitting feedback.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatSearchQuery(
             string text,
             global::System.Guid generationId)

@@ -84,7 +84,9 @@ namespace G
         /// <param name="avatarUrl">
         /// Example: https://github.com/images/error/octocat_happy.gif
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SimpleClassroomOrganization(
             int id,
             string login,

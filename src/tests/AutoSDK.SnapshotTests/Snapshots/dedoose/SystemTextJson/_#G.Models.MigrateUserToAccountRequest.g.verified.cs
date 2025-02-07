@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="userToBeMovedId"></param>
         /// <param name="accountIdToMoveTo"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MigrateUserToAccountRequest(
             global::System.Guid userToBeMovedId,
             global::System.Guid accountIdToMoveTo)

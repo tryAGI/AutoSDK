@@ -35,7 +35,9 @@ namespace G
         /// Pipeline input parameters, it will be deprecated soon.
         /// </param>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TriggerNamespacePipelineReleaseBody(
             global::System.Collections.Generic.IList<object>? inputs,
             global::System.Collections.Generic.IList<global::G.TriggerData>? data)

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="totalCount"></param>
         /// <param name="devcontainers"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse(
             int totalCount,
             global::System.Collections.Generic.IList<global::G.CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponseDevcontainer> devcontainers)

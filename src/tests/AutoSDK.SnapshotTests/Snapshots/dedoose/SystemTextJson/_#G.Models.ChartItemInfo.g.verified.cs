@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="title"></param>
         /// <param name="value"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChartItemInfo(
             string? title,
             double? value)

@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains the single prediction that you updated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EndPredictionResponse(
             global::System.Collections.Generic.IList<global::G.Prediction> data)
         {

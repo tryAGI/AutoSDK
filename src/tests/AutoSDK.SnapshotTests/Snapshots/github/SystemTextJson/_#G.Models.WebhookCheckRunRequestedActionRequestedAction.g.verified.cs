@@ -27,7 +27,9 @@ namespace G
         /// <param name="identifier">
         /// The integrator reference of the action requested by the user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookCheckRunRequestedActionRequestedAction(
             string? identifier)
         {

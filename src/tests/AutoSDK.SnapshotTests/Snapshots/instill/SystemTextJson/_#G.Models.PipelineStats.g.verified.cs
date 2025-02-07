@@ -51,7 +51,9 @@ namespace G
         /// Number of times this pipeline has been cloned.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelineStats(
             int? numberOfRuns,
             global::System.DateTime? lastRunTime,

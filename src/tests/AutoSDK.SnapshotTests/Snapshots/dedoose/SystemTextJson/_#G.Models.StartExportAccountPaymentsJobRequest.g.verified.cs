@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="StartExportAccountPaymentsJobRequest" /> class.
         /// </summary>
         /// <param name="accountId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartExportAccountPaymentsJobRequest(
             global::System.Guid accountId)
         {

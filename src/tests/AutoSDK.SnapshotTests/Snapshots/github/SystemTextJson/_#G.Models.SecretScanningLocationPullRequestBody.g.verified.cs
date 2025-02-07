@@ -31,7 +31,9 @@ namespace G
         /// The API URL to get the pull request where the secret was detected.<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/pull/2846
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecretScanningLocationPullRequestBody(
             string pullRequestBodyUrl)
         {

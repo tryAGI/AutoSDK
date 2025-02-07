@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list of Bits products that the extension created. The list is in ascending SKU order. The list is empty if the extension hasn’t created any products or they’re all expired or disabled.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetExtensionBitsProductsResponse(
             global::System.Collections.Generic.IList<global::G.ExtensionBitsProduct> data)
         {

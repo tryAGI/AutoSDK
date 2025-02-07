@@ -34,7 +34,9 @@ namespace G
         /// Total number of Copilot seats for the organization currently being billed.
         /// </param>
         /// <param name="seats"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CopilotListCopilotSeatsResponse(
             int? totalSeats,
             global::System.Collections.Generic.IList<global::G.CopilotSeatDetails>? seats)

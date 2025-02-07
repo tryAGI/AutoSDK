@@ -122,7 +122,9 @@ namespace G
         /// <param name="productData">
         /// Contains details about the digital product.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExtensionTransaction(
             string id,
             global::System.DateTime timestamp,

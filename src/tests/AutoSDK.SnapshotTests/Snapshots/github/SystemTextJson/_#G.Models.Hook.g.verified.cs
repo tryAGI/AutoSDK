@@ -155,7 +155,9 @@ namespace G
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks/1/deliveries
         /// </param>
         /// <param name="lastResponse"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Hook(
             string type,
             int id,

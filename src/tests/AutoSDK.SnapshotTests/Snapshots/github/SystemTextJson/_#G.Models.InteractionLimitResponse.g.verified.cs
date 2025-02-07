@@ -51,7 +51,9 @@ namespace G
         /// Example: repository
         /// </param>
         /// <param name="expiresAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InteractionLimitResponse(
             global::G.InteractionGroup limit,
             string origin,

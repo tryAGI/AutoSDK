@@ -37,7 +37,9 @@ namespace G
         /// <param name="content">
         /// The content of the message in array of text and/or images.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDeltaObjectDelta(
             global::G.MessageDeltaObjectDeltaRole? role,
             global::System.Collections.Generic.IList<global::G.ContentItem>? content)

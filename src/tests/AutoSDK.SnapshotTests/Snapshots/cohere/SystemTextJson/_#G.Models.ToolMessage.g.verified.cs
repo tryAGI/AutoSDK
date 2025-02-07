@@ -36,7 +36,9 @@ namespace G
         /// One of `CHATBOT`, `SYSTEM`, `TOOL` or `USER` to identify who the message is coming from.
         /// </param>
         /// <param name="toolResults"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolMessage(
             global::G.ChatRole role,
             global::System.Collections.Generic.IList<global::G.ToolResult>? toolResults)

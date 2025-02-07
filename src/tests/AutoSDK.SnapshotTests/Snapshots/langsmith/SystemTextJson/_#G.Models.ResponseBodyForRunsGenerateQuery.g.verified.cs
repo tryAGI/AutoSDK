@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="filter"></param>
         /// <param name="feedbackUrls"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ResponseBodyForRunsGenerateQuery(
             string filter,
             global::System.Collections.Generic.Dictionary<string, string> feedbackUrls)

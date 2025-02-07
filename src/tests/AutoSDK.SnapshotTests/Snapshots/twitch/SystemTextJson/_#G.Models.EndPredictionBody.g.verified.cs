@@ -74,7 +74,9 @@ namespace G
         /// <param name="winningOutcomeId">
         /// The ID of the winning outcome. You must set this parameter if you set `status` to RESOLVED.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EndPredictionBody(
             string broadcasterId,
             string id,

@@ -38,7 +38,9 @@ namespace G
         /// <param name="arguments">
         /// The arguments that the model expects you to pass to the function.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunToolCallObjectFunction(
             string name,
             string arguments)

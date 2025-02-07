@@ -229,7 +229,9 @@ namespace G
         /// <param name="youtubeUsername"></param>
         /// <param name="tiktokUsername"></param>
         /// <param name="imageUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LibraryVoiceResponseModel(
             string publicOwnerId,
             string voiceId,

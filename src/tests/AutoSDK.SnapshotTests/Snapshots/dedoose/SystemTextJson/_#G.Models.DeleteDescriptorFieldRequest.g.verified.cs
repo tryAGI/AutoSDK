@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="DeleteDescriptorFieldRequest" /> class.
         /// </summary>
         /// <param name="field"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteDescriptorFieldRequest(
             global::G.DescriptorField field)
         {

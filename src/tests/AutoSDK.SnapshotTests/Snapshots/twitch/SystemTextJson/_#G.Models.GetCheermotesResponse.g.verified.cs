@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of Cheermotes. The list is in ascending order by the `order` field’s value.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetCheermotesResponse(
             global::System.Collections.Generic.IList<global::G.Cheermote> data)
         {

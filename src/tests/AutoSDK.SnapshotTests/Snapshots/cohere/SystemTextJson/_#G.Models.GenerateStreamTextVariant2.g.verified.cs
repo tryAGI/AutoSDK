@@ -45,7 +45,9 @@ namespace G
         /// Refers to the nth generation. Only present when `num_generations` is greater than zero, and only when text responses are being streamed.
         /// </param>
         /// <param name="isFinished"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateStreamTextVariant2(
             string text,
             bool isFinished,

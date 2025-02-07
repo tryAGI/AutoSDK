@@ -116,7 +116,9 @@ namespace G
         /// <param name="state"></param>
         /// <param name="submittedAt"></param>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestReviewDismissedReview(
             global::G.WebhookPullRequestReviewDismissedReviewLinks links,
             global::G.WebhookPullRequestReviewDismissedReviewAuthorAssociation authorAssociation,

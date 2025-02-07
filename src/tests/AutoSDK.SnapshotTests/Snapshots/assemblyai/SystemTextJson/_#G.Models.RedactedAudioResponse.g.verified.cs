@@ -38,7 +38,9 @@ namespace G
         /// <param name="redactedAudioUrl">
         /// The URL of the redacted audio file
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RedactedAudioResponse(
             string redactedAudioUrl,
             global::G.RedactedAudioStatus status)

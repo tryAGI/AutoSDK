@@ -45,7 +45,9 @@ namespace G
         /// <param name="canRelease">
         /// Defines whether the pipeline can be released.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelineV1betaPermission(
             bool? canEdit,
             bool? canTrigger,

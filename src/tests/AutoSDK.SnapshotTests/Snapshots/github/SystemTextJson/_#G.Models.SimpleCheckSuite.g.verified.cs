@@ -151,7 +151,9 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/repos/github/hello-world/check-suites/5
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SimpleCheckSuite(
             string? after,
             global::G.Integration? app,

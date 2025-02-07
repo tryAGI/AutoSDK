@@ -49,7 +49,9 @@ namespace G
         /// <param name="severity">
         /// The severity of the alert.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookCodeScanningAlertReopenedByUserAlertRule(
             string description,
             string id,

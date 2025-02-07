@@ -30,7 +30,9 @@ namespace G
         /// Whether a private vulnerability report was accepted by the repository's administrators.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryAdvisorySubmission(
             bool accepted = default!)
         {

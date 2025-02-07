@@ -173,7 +173,9 @@ namespace G
         /// <param name="endedAt">
         /// The UTC date and time (in RFC3339 format) of when the poll ended. If `status` is ACTIVE, this field is set to **null**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Poll(
             string id,
             string broadcasterId,

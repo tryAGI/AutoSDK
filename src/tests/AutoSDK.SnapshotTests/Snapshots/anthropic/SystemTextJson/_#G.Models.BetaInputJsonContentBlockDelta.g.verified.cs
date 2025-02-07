@@ -37,7 +37,9 @@ namespace G
         /// Default Value: input_json_delta
         /// </param>
         /// <param name="partialJson"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaInputJsonContentBlockDelta(
             string partialJson,
             global::G.BetaInputJsonContentBlockDeltaType type = global::G.BetaInputJsonContentBlockDeltaType.InputJsonDelta)

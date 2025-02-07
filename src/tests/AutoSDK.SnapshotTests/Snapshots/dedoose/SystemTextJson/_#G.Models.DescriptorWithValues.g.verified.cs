@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="item"></param>
         /// <param name="values"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DescriptorWithValues(
             global::G.Descriptor2? item,
             global::System.Collections.Generic.IList<global::G.DescriptorValueDTO>? values)

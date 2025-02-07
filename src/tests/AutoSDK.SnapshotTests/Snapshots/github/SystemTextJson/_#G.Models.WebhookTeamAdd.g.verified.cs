@@ -87,7 +87,9 @@ namespace G
         /// <param name="team">
         /// Groups of organization members that gives permissions on specified repositories.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookTeamAdd(
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,

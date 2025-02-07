@@ -83,7 +83,9 @@ namespace G
         /// <param name="sectionId"></param>
         /// <param name="metadata"></param>
         /// <param name="series"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartResponse(
             global::System.Guid id,
             string title,

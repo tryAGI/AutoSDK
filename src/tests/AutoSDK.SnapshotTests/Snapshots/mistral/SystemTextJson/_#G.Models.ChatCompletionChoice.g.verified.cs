@@ -49,7 +49,9 @@ namespace G
         /// Example: 0
         /// </param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionChoice(
             global::G.ChatCompletionChoiceFinishReason finishReason,
             int index,

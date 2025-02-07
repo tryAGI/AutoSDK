@@ -74,7 +74,9 @@ namespace G
         /// <param name="maximumCharacters"></param>
         /// <param name="minimumAccentStrength"></param>
         /// <param name="maximumAccentStrength"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VoiceGenerationParameterResponseModel(
             global::System.Collections.Generic.IList<global::G.VoiceGenerationParameterOptionResponseModel> genders,
             global::System.Collections.Generic.IList<global::G.VoiceGenerationParameterOptionResponseModel> accents,

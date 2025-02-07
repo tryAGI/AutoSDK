@@ -83,7 +83,9 @@ namespace G
         /// <param name="canBeDownloaded"></param>
         /// <param name="state"></param>
         /// <param name="statistics"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChapterResponseModel(
             string chapterId,
             string name,

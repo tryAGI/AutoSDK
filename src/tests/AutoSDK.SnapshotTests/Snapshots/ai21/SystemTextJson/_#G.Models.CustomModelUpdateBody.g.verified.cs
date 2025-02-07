@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="CustomModelUpdateBody" /> class.
         /// </summary>
         /// <param name="defaultEpoch"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomModelUpdateBody(
             int? defaultEpoch)
         {

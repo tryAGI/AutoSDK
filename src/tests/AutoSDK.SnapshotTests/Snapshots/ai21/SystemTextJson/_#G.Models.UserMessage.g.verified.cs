@@ -56,7 +56,9 @@ namespace G
         /// Default Value: user
         /// </param>
         /// <param name="content"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserMessage(
             string content,
             global::G.UserMessageRole? role)

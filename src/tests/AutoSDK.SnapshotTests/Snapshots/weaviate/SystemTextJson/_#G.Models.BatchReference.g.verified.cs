@@ -51,7 +51,9 @@ namespace G
         /// <param name="tenant">
         /// Name of the reference tenant.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchReference(
             string? from,
             string? to,

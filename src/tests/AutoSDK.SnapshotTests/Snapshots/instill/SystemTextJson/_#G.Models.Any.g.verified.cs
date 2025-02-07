@@ -142,7 +142,9 @@ namespace G
         /// Schemes other than `http`, `https` (or the empty scheme) might be<br/>
         /// used with implementation specific semantics.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Any(
             string? x_type)
         {

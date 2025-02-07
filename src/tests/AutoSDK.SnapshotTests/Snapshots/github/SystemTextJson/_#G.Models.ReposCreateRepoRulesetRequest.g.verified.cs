@@ -78,7 +78,9 @@ namespace G
         /// <param name="rules">
         /// An array of rules within the ruleset.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateRepoRulesetRequest(
             string name,
             global::G.RepositoryRuleEnforcement enforcement,

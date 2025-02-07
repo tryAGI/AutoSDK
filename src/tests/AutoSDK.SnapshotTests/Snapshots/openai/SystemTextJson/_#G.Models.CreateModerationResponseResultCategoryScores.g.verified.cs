@@ -148,7 +148,9 @@ namespace G
         /// <param name="violenceGraphic">
         /// The score for the category 'violence/graphic'.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModerationResponseResultCategoryScores(
             double hate,
             double hateThreatening,

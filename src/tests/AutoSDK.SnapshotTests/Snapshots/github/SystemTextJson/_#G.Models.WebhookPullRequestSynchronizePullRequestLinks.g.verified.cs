@@ -82,7 +82,9 @@ namespace G
         /// <param name="reviewComments"></param>
         /// <param name="self"></param>
         /// <param name="statuses"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestSynchronizePullRequestLinks(
             global::G.WebhookPullRequestSynchronizePullRequestLinksComments comments,
             global::G.WebhookPullRequestSynchronizePullRequestLinksCommits commits,

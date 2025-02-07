@@ -66,7 +66,9 @@ namespace G
         /// <param name="newDescription"></param>
         /// <param name="creatorId"></param>
         /// <param name="mergeCodes"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MergeProjectsRequest(
             global::System.Guid project1Id,
             global::System.Guid project2Id,

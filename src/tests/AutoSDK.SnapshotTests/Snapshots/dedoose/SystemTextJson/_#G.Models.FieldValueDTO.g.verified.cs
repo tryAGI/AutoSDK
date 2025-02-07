@@ -46,7 +46,9 @@ namespace G
         /// <param name="fieldId"></param>
         /// <param name="value"></param>
         /// <param name="optionId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FieldValueDTO(
             global::System.Guid? descriptorId,
             global::System.Guid? fieldId,

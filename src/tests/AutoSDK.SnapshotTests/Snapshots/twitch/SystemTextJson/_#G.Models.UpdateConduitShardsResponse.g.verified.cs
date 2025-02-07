@@ -38,7 +38,9 @@ namespace G
         /// <param name="errors">
         /// List of unsuccessful updates.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateConduitShardsResponse(
             global::System.Collections.Generic.IList<global::G.UpdateConduitShardsResponseDataItem> data,
             global::System.Collections.Generic.IList<global::G.UpdateConduitShardsResponseError> errors)

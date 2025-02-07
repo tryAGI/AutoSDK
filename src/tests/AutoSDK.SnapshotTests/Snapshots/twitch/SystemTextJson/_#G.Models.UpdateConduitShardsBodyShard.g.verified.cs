@@ -38,7 +38,9 @@ namespace G
         /// <param name="transport">
         /// The transport details that you want Twitch to use when sending you notifications.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateConduitShardsBodyShard(
             string id,
             global::G.UpdateConduitShardsBodyShardTransport transport)

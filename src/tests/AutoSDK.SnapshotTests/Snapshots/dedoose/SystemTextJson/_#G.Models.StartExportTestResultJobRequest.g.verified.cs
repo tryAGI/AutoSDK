@@ -50,7 +50,9 @@ namespace G
         /// <param name="testResultId"></param>
         /// <param name="fileExtension"></param>
         /// <param name="cryptoKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartExportTestResultJobRequest(
             global::System.Guid projectId,
             global::System.Guid testResultId,

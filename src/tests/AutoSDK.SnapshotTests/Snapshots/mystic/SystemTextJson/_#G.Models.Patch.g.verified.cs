@@ -109,7 +109,9 @@ namespace G
         /// <param name="accelerators"></param>
         /// <param name="extras"></param>
         /// <param name="scalingConfig"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Patch(
             bool? @public,
             string? description,

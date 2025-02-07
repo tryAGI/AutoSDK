@@ -50,7 +50,9 @@ namespace G
         /// <param name="fileStorageType"></param>
         /// <param name="extension"></param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StoreProjectFileStringRequest(
             global::System.Guid projectId,
             int fileStorageType,

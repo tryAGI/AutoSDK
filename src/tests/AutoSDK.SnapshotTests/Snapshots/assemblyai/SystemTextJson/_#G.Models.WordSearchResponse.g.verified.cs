@@ -48,7 +48,9 @@ namespace G
         /// <param name="matches">
         /// The matches of the search
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WordSearchResponse(
             global::System.Guid id,
             int totalCount,

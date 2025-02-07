@@ -37,7 +37,9 @@ namespace G
         /// <param name="inputs">
         /// Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when `inputs` are omitted.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsCreateWorkflowDispatchRequest(
             string @ref,
             object? inputs)

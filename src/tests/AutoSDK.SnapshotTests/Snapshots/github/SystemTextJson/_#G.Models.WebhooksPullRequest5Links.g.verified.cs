@@ -82,7 +82,9 @@ namespace G
         /// <param name="reviewComments"></param>
         /// <param name="self"></param>
         /// <param name="statuses"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksPullRequest5Links(
             global::G.WebhooksPullRequest5LinksComments comments,
             global::G.WebhooksPullRequest5LinksCommits commits,

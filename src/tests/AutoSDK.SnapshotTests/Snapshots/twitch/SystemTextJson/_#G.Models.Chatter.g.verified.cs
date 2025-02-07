@@ -48,7 +48,9 @@ namespace G
         /// <param name="userName">
         /// The user’s display name.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Chatter(
             string userId,
             string userLogin,

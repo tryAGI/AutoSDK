@@ -74,7 +74,9 @@ namespace G
         /// <param name="resourceId"></param>
         /// <param name="data"></param>
         /// <param name="optionId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddDynamicValueRequest(
             global::System.Guid projectId,
             global::System.Guid setId,

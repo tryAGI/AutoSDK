@@ -60,7 +60,9 @@ namespace G
         /// <param name="usage">
         /// Total usage of the request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RankingOutput(
             string model,
             global::System.Collections.Generic.IList<object> results,

@@ -81,7 +81,9 @@ namespace G
         /// Example: false
         /// </param>
         /// <param name="service"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PrivacyResponse(
             bool vpn,
             bool proxy,

@@ -57,7 +57,9 @@ namespace G
         /// <param name="user">
         /// The ID of the user that made the contribution.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public HypeTrainEventEventDataTopContribution(
             int total,
             global::G.HypeTrainEventEventDataTopContributionType type,

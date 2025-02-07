@@ -88,7 +88,9 @@ namespace G
         /// <param name="lastPastDueNoticeDate"></param>
         /// <param name="lastPaymentAmmount"></param>
         /// <param name="isPastLateGracePeriod"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserAccountVO(
             bool? isPastDue,
             bool? isDisabled,

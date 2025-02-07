@@ -130,7 +130,9 @@ namespace G
         /// <param name="wandbApiKey">
         /// API key for Weights &amp; Biases integration
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Request(
             string model,
             string trainingFile,

@@ -72,7 +72,9 @@ namespace G
         /// number of objects which could not be classified - see error message for details<br/>
         /// Example: 7
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClassificationMeta(
             global::System.DateTime? started,
             global::System.DateTime? completed,

@@ -54,7 +54,9 @@ namespace G
         /// <param name="startIndex">
         /// Optional. Start of segment of the response that is attributed to this source. Index indicates the start of the segment, measured in bytes.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CitationSource(
             string? license,
             string? uri,

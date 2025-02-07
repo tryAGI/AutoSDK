@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="Missing" /> class.
         /// </summary>
         /// <param name="missing1"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Missing(
             global::G.MissingMissing1 missing1)
         {

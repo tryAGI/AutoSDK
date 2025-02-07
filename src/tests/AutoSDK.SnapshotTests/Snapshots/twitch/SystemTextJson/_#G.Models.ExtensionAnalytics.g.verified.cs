@@ -58,7 +58,9 @@ namespace G
         /// <param name="dateRange">
         /// The reporting window’s start and end dates, in RFC3339 format.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExtensionAnalytics(
             string extensionId,
             string uRL,

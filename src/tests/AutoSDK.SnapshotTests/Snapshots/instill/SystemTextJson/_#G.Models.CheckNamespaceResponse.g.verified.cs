@@ -29,7 +29,9 @@ namespace G
         /// <param name="type">
         /// Namespace type.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckNamespaceResponse(
             global::G.CheckNamespaceResponseNamespace? type)
         {

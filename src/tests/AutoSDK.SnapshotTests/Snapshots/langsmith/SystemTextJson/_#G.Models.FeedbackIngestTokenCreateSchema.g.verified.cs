@@ -57,7 +57,9 @@ namespace G
         /// <param name="runId"></param>
         /// <param name="feedbackKey"></param>
         /// <param name="feedbackConfig"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackIngestTokenCreateSchema(
             global::System.Guid runId,
             string feedbackKey,

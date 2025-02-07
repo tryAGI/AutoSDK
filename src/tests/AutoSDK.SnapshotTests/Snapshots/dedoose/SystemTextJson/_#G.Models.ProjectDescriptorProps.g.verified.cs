@@ -39,7 +39,9 @@ namespace G
         /// <param name="projectDescriptorSets"></param>
         /// <param name="projectDescriptorFields"></param>
         /// <param name="projectDescriptorFieldOptions"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectDescriptorProps(
             global::System.Collections.Generic.IList<global::G.DescriptorSet>? projectDescriptorSets,
             global::System.Collections.Generic.IList<global::G.DescriptorField>? projectDescriptorFields,

@@ -50,7 +50,9 @@ namespace G
         /// <param name="summary">
         /// The overall relevance of topic to the entire audio file
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TopicDetectionModelResult(
             global::G.AudioIntelligenceModelStatus status,
             global::System.Collections.Generic.IList<global::G.TopicDetectionResult> results,

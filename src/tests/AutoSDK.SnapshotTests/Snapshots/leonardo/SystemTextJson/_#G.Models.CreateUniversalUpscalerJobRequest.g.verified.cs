@@ -88,7 +88,9 @@ namespace G
         /// <param name="prompt">
         /// The prompt for the universal upscaler
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateUniversalUpscalerJobRequest(
             string? initImageId,
             string? generatedImageId,

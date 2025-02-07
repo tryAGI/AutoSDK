@@ -54,7 +54,9 @@ namespace G
         /// <param name="generalQuantizationVersion">
         /// The number of parameters in the model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModelInformation(
             string? generalArchitecture,
             int? generalFileType,

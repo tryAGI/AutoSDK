@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of AutoMod settings. The list contains a single object that contains all the AutoMod settings.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetAutoModSettingsResponse(
             global::System.Collections.Generic.IList<global::G.AutoModSettings> data)
         {

@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="JobOutRepositorieDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public JobOutRepositorieDiscriminator(
             global::G.JobOutRepositorieDiscriminatorType? type)
         {

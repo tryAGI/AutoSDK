@@ -40,7 +40,9 @@ namespace G
         /// <param name="message">
         /// Default Value: Permission denied
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaPermissionError(
             string message,
             global::G.BetaPermissionErrorType type = global::G.BetaPermissionErrorType.PermissionError)

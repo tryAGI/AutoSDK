@@ -134,7 +134,9 @@ namespace G
         /// <param name="cost">
         /// The amount that the subscription counts against your limit. [Learn More](https://dev.twitch.tv/docs/eventsub/manage-subscriptions/#subscription-limits)
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EventSubSubscription(
             string id,
             global::G.EventSubSubscriptionStatus status,

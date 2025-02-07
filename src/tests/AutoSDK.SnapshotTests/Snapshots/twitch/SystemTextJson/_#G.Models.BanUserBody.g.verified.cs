@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// Identifies the user and type of ban.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BanUserBody(
             global::G.BanUserBodyData data)
         {

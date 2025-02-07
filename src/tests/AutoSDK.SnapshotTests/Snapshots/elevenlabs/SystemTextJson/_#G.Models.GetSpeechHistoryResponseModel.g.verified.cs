@@ -42,7 +42,9 @@ namespace G
         /// <param name="history"></param>
         /// <param name="lastHistoryItemId"></param>
         /// <param name="hasMore"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetSpeechHistoryResponseModel(
             global::System.Collections.Generic.IList<global::G.SpeechHistoryItemResponseModel> history,
             string lastHistoryItemId,

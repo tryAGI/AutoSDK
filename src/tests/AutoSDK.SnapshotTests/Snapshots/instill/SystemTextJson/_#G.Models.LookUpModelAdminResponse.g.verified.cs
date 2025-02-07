@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="LookUpModelAdminResponse" /> class.
         /// </summary>
         /// <param name="model"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LookUpModelAdminResponse(
             global::G.Model? model)
         {

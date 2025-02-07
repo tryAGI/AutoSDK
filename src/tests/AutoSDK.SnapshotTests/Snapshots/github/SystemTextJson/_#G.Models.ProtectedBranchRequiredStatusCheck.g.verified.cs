@@ -62,7 +62,9 @@ namespace G
         /// <param name="checks"></param>
         /// <param name="contextsUrl"></param>
         /// <param name="strict"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProtectedBranchRequiredStatusCheck(
             global::System.Collections.Generic.IList<string> contexts,
             global::System.Collections.Generic.IList<global::G.ProtectedBranchRequiredStatusCheckCheck> checks,

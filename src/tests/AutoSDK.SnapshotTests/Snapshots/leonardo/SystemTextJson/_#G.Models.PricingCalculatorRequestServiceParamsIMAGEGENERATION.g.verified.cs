@@ -144,7 +144,9 @@ namespace G
         /// <param name="isSDXLLightning">
         /// Enable to use SDXL Lightning model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequestServiceParamsIMAGEGENERATION(
             int? imageHeight,
             int? imageWidth,

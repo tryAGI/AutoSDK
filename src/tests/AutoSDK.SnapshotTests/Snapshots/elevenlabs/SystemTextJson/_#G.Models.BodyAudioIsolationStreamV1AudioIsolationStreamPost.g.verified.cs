@@ -38,7 +38,9 @@ namespace G
         /// <param name="audioname">
         /// The audio file from which vocals/speech will be isolated from.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyAudioIsolationStreamV1AudioIsolationStreamPost(
             byte[] audio,
             string audioname)

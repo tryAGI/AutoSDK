@@ -288,7 +288,9 @@ namespace G
         /// <param name="url"></param>
         /// <param name="workflowId"></param>
         /// <param name="workflowUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookDeploymentReviewApprovedWorkflowRun(
             global::G.WebhookDeploymentReviewApprovedWorkflowRunActor? actor,
             int checkSuiteId,

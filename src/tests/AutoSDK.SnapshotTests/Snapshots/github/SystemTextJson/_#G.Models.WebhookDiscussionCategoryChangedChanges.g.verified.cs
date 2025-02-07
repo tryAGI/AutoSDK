@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookDiscussionCategoryChangedChanges" /> class.
         /// </summary>
         /// <param name="category"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookDiscussionCategoryChangedChanges(
             global::G.WebhookDiscussionCategoryChangedChangesCategory category)
         {

@@ -411,7 +411,9 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestReviewRequestedVariant1PullRequest(
             global::G.WebhookPullRequestReviewRequestedVariant1PullRequestLinks links,
             global::G.WebhookPullRequestReviewRequestedVariant1PullRequestActiveLockReason? activeLockReason,

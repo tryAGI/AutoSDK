@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains the specified extension.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetReleasedExtensionsResponse(
             global::System.Collections.Generic.IList<global::G.Extension> data)
         {

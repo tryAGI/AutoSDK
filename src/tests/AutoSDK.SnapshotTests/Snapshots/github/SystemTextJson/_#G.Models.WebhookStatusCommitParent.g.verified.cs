@@ -42,7 +42,9 @@ namespace G
         /// <param name="htmlUrl"></param>
         /// <param name="sha"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookStatusCommitParent(
             string htmlUrl,
             string sha,

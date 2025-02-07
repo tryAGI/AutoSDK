@@ -37,7 +37,9 @@ namespace G
         /// Default Value: message_start
         /// </param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageStartEvent(
             global::G.Message message,
             global::G.MessageStartEventType type = global::G.MessageStartEventType.MessageStart)

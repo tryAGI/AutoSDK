@@ -64,7 +64,9 @@ namespace G
         /// <param name="updatedAt">
         /// The date and time at which the variable was last updated, in ISO 8601 format':' YYYY-MM-DDTHH:MM:SSZ.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsVariable(
             string name,
             string value,

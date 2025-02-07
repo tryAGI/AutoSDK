@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="tags"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateTagOrdersRequest(
             global::System.Guid projectId,
             global::System.Collections.Generic.IList<global::G.Tag> tags)

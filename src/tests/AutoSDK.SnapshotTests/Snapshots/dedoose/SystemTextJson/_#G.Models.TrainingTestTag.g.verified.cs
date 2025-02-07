@@ -116,7 +116,9 @@ namespace G
         /// <param name="weightDefault"></param>
         /// <param name="sortOrder"></param>
         /// <param name="projectIDL"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TrainingTestTag(
             string? projectIdKey,
             global::System.Guid? projectId,

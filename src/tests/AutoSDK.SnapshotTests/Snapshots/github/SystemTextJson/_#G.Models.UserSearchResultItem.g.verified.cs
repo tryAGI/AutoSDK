@@ -275,7 +275,9 @@ namespace G
         /// <param name="blog"></param>
         /// <param name="company"></param>
         /// <param name="suspendedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserSearchResultItem(
             string login,
             long id,

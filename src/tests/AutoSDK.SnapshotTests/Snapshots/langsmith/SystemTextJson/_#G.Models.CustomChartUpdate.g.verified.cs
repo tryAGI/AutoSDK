@@ -84,7 +84,9 @@ namespace G
         /// <param name="sectionId"></param>
         /// <param name="metadata"></param>
         /// <param name="commonFilters"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartUpdate(
             global::G.AnyOf<string, global::G.Missing>? title,
             global::G.AnyOf<string, global::G.Missing>? description,

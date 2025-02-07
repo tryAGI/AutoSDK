@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="updatedTitle"></param>
         /// <param name="updatedDescription"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateProjectRequest2(
             global::System.Guid projectId,
             string updatedTitle,

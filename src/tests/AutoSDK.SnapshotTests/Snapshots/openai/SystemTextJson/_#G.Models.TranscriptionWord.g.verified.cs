@@ -48,7 +48,9 @@ namespace G
         /// <param name="end">
         /// End time of the word in seconds.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TranscriptionWord(
             string word,
             float start,

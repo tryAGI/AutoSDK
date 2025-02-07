@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="Topic" /> class.
         /// </summary>
         /// <param name="names"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Topic(
             global::System.Collections.Generic.IList<string> names)
         {

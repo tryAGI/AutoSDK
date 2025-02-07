@@ -50,7 +50,9 @@ namespace G
         /// <param name="session">
         /// Realtime session object configuration.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventSessionCreated(
             string eventId,
             global::G.RealtimeSession session,

@@ -192,7 +192,9 @@ namespace G
         /// <param name="isFeatured">
         /// A Boolean value that indicates if the clip is featured or not.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Clip(
             string id,
             string url,

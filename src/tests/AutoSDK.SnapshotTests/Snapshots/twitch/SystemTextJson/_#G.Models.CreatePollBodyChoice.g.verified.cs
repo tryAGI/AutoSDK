@@ -28,7 +28,9 @@ namespace G
         /// <param name="title">
         /// One of the choices the viewer may select. The choice may contain a maximum of 25 characters.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreatePollBodyChoice(
             string title)
         {

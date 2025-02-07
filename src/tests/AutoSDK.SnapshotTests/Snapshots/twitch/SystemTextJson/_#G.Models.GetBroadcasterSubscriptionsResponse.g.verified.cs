@@ -57,7 +57,9 @@ namespace G
         /// <param name="total">
         /// The total number of users that subscribe to this broadcaster.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetBroadcasterSubscriptionsResponse(
             global::System.Collections.Generic.IList<global::G.BroadcasterSubscription> data,
             int points,

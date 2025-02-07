@@ -90,7 +90,9 @@ namespace G
         /// <param name="minEntriesToMergeWaitMinutes">
         /// The time merge queue should wait after the first PR is added to the queue for the minimum group size to be met. After this time has elapsed, the minimum group size will be ignored and a smaller group will be merged.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleMergeQueueParameters(
             int checkResponseTimeoutMinutes,
             global::G.RepositoryRuleMergeQueueParametersGroupingStrategy groupingStrategy,

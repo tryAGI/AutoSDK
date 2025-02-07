@@ -28,7 +28,9 @@ namespace G
         /// <param name="status">
         /// Status creating the model
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModelResponse(
             global::G.CreateModelStatus? status)
         {

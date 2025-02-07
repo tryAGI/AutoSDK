@@ -169,7 +169,9 @@ namespace G
         /// <param name="referenceExampleId"></param>
         /// <param name="inputAttachments"></param>
         /// <param name="outputAttachments"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchIngestRunsRequestPostItem(
             string name,
             global::G.BatchIngestRunsRequestPostItemRunType runType,

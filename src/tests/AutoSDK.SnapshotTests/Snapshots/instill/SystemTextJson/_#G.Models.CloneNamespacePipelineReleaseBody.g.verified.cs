@@ -57,7 +57,9 @@ namespace G
         /// <param name="targetPipelineId">
         /// Target Pipeline ID.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CloneNamespacePipelineReleaseBody(
             string targetNamespaceId,
             string targetPipelineId,

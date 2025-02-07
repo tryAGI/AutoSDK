@@ -50,7 +50,9 @@ namespace G
         /// <param name="owner"></param>
         /// <param name="repo"></param>
         /// <param name="commit"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateEventRequest(
             global::G.CreateEventRequestEventType eventType,
             string owner,

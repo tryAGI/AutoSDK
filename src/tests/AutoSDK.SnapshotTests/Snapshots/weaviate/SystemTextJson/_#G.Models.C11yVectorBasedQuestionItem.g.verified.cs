@@ -36,7 +36,9 @@ namespace G
         /// <param name="classProps">
         /// Vectorized properties.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public C11yVectorBasedQuestionItem(
             global::System.Collections.Generic.IList<float>? classVectors,
             global::System.Collections.Generic.IList<global::G.C11yVectorBasedQuestionItemClassProp>? classProps)

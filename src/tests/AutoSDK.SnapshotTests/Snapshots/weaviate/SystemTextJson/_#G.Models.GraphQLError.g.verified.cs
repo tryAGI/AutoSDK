@@ -39,7 +39,9 @@ namespace G
         /// <param name="locations"></param>
         /// <param name="message"></param>
         /// <param name="path"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GraphQLError(
             global::System.Collections.Generic.IList<global::G.GraphQLErrorLocation>? locations,
             string? message,

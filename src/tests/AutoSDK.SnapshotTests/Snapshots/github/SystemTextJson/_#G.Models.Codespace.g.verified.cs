@@ -353,7 +353,9 @@ namespace G
         /// The text to display to a user when a codespace has been stopped for a potentially actionable reason.<br/>
         /// Example: you've used 100% of your spending limit for Codespaces
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Codespace(
             long id,
             string name,

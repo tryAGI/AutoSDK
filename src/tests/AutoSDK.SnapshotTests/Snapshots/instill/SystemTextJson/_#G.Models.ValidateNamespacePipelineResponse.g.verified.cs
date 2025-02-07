@@ -38,7 +38,9 @@ namespace G
         /// The validated pipeline resource.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ValidateNamespacePipelineResponse(
             bool? success,
             global::System.Collections.Generic.IList<global::G.ErrPipelineValidation>? errors)

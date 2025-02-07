@@ -996,7 +996,9 @@ namespace G
         /// <param name="openIssues"></param>
         /// <param name="watchers"></param>
         /// <param name="masterBranch"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TeamRepository(
             int id,
             string nodeId,

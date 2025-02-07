@@ -143,7 +143,9 @@ namespace G
         ///   <br/>
         /// Set to **true** if the broadcaster allows only unique messages; otherwise, **false**. The default is **false**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateChatSettingsBody(
             bool? emoteMode,
             bool? followerMode,

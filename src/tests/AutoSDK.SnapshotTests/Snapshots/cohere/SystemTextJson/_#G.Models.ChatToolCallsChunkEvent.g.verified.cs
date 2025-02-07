@@ -23,7 +23,9 @@ namespace G
         /// <param name="toolCallDelta">
         /// Contains the chunk of the tool call generation in the stream.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatToolCallsChunkEvent(
             global::G.ToolCallDelta toolCallDelta)
         {

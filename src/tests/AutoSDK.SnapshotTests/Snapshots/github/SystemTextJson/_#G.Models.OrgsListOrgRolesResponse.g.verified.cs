@@ -36,7 +36,9 @@ namespace G
         /// <param name="roles">
         /// The list of organization roles available to the organization.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsListOrgRolesResponse(
             int? totalCount,
             global::System.Collections.Generic.IList<global::G.OrganizationRole>? roles)

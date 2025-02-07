@@ -47,7 +47,9 @@ namespace G
         /// <param name="commitMessage">
         /// Commit message to use for the merge commit. If omitted, a default message will be used.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposMergeRequest(
             string @base,
             string head,

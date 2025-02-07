@@ -29,7 +29,9 @@ namespace G
         /// <param name="id">
         /// The namespace ID to be checked.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckNamespaceRequest(
             string id)
         {

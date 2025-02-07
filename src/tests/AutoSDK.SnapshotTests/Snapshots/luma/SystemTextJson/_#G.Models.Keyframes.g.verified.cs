@@ -38,7 +38,9 @@ namespace G
         /// <param name="frame1">
         /// A keyframe can be either a Generation reference, an Image, or a Video
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Keyframes(
             global::G.Keyframe? frame0,
             global::G.Keyframe? frame1)

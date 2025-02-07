@@ -49,7 +49,9 @@ namespace G
         /// <param name="filename"></param>
         /// <param name="inputKeys"></param>
         /// <param name="outputKeys"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyUploadExamplesApiV1ExamplesUploadDatasetIdPost(
             byte[] file,
             string filename,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="ref"></param>
         /// <param name="sha"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestEditedChangesBase(
             global::G.WebhookPullRequestEditedChangesBaseRef @ref,
             global::G.WebhookPullRequestEditedChangesBaseSha sha)

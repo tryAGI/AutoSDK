@@ -40,7 +40,9 @@ namespace G
         /// API Credits Cost for Random Prompt Generation. Available for Production API Users.<br/>
         /// Default Value: 4
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptImproveResponsePromptGeneration(
             string? prompt,
             int? apiCreditCost)

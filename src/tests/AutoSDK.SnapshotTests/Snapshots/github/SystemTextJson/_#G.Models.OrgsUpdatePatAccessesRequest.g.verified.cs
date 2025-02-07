@@ -38,7 +38,9 @@ namespace G
         /// <param name="patIds">
         /// The IDs of the fine-grained personal access tokens.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsUpdatePatAccessesRequest(
             global::System.Collections.Generic.IList<int> patIds,
             global::G.OrgsUpdatePatAccessesRequestAction action)

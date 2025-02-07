@@ -61,7 +61,9 @@ namespace G
         /// <param name="sessionId">
         /// An ID that identifies the WebSocket to send notifications to. When you connect to EventSub using WebSockets, the server returns the ID in the Welcome message.Specify this field only if method is set to websocket.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateConduitShardsBodyShardTransport(
             global::G.UpdateConduitShardsBodyShardTransportMethod? method,
             string? callback,

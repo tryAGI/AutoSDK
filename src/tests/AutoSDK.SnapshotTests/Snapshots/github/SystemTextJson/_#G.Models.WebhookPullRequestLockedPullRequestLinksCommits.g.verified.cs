@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookPullRequestLockedPullRequestLinksCommits" /> class.
         /// </summary>
         /// <param name="href"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestLockedPullRequestLinksCommits(
             string href)
         {

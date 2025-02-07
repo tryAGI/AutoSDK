@@ -117,7 +117,9 @@ namespace G
         /// Default Value: END<br/>
         /// Included only in requests
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Embedv2Request(
             global::System.Collections.Generic.IList<string>? texts,
             string? model,

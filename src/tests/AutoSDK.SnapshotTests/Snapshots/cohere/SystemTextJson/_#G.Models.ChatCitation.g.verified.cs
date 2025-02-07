@@ -58,7 +58,9 @@ namespace G
         /// <param name="documentIds">
         /// Identifiers of documents cited by this section of the generated reply.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCitation(
             int start,
             int end,

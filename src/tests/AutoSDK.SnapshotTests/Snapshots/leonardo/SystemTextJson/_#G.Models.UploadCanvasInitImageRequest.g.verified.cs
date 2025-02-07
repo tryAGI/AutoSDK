@@ -38,7 +38,9 @@ namespace G
         /// <param name="maskExtension">
         /// Has to be png, jpg, jpeg, or webp.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UploadCanvasInitImageRequest(
             string initExtension,
             string maskExtension)

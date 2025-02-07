@@ -38,7 +38,9 @@ namespace G
         /// <param name="promptTokens">
         /// Same as total_tokens
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiSchemasRankUsage(
             int totalTokens,
             int promptTokens)

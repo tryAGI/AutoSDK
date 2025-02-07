@@ -249,7 +249,9 @@ namespace G
         /// <param name="userDeleted">
         /// The details for events with this `type`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLog(
             string id,
             global::G.AuditLogEventType type,

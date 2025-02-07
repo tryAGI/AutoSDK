@@ -44,7 +44,9 @@ namespace G
         /// The Base64 encoded public key.<br/>
         /// Example: hBT5WZEj8ZoOv6TYJsfWq7MxTEQopZO5/IT3ZCVQPzs=
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesUserPublicKey(
             string keyId,
             string key)

@@ -214,7 +214,9 @@ namespace G
         /// Enable returning the factual consistency score with query results.<br/>
         /// Default Value: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerationParameters(
             string? generationPresetName,
             int? maxUsedSearchResults,

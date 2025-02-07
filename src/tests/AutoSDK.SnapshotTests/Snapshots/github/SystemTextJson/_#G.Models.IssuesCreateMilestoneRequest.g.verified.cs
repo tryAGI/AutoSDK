@@ -58,7 +58,9 @@ namespace G
         /// <param name="dueOn">
         /// The milestone due date. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public IssuesCreateMilestoneRequest(
             string title,
             global::G.IssuesCreateMilestoneRequestState? state,

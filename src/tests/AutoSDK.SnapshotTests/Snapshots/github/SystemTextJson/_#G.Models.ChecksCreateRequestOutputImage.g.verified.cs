@@ -47,7 +47,9 @@ namespace G
         /// <param name="caption">
         /// A short image description.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChecksCreateRequestOutputImage(
             string alt,
             string imageUrl,

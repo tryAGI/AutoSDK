@@ -60,7 +60,9 @@ namespace G
         /// <param name="projectIDL"></param>
         /// <param name="memoId"></param>
         /// <param name="memoFolderId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MemoFolderLink(
             string? projectIdKey,
             global::System.Guid? projectId,

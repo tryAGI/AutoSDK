@@ -45,7 +45,9 @@ namespace G
         /// </param>
         /// <param name="tokenStrings"></param>
         /// <param name="meta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TokenizeResponse(
             global::System.Collections.Generic.IList<string> tokenStrings,
             global::G.ApiMeta? meta,

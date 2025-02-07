@@ -58,7 +58,9 @@ namespace G
         /// able to access on the user's behalf.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OAuthConfig(
             string? authUrl,
             string? accessUrl,

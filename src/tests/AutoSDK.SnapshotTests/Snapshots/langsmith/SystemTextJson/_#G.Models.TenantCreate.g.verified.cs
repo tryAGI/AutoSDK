@@ -56,7 +56,9 @@ namespace G
         /// <param name="isPersonal">
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TenantCreate(
             string displayName,
             global::System.Guid? id,

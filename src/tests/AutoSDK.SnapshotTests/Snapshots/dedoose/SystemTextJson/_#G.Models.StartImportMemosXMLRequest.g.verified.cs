@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="fileURI"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartImportMemosXMLRequest(
             global::System.Guid projectId,
             string fileURI)

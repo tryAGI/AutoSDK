@@ -48,7 +48,9 @@ namespace G
         /// <param name="prefix"></param>
         /// <param name="region"></param>
         /// <param name="endpointUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BulkExportDestinationS3Config(
             string bucketName,
             string? prefix,

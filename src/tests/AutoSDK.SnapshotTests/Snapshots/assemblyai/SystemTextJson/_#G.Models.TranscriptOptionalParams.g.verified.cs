@@ -421,7 +421,9 @@ namespace G
         /// <param name="topics">
         /// The list of custom topics
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TranscriptOptionalParams(
             global::G.OneOf<global::G.AnyOf<global::G.TranscriptLanguageCode?, string>?, object>? languageCode,
             bool? languageDetection,

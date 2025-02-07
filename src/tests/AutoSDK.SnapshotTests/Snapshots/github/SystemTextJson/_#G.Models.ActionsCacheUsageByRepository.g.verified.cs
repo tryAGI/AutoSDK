@@ -57,7 +57,9 @@ namespace G
         /// The number of active caches in the repository.<br/>
         /// Example: 3
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsCacheUsageByRepository(
             string fullName,
             int activeCachesSizeInBytes,

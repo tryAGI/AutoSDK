@@ -74,7 +74,9 @@ namespace G
         /// <param name="onFreeTrial"></param>
         /// <param name="plan"></param>
         /// <param name="unitCount"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksMarketplacePurchase(
             global::G.WebhooksMarketplacePurchaseAccount account,
             string billingCycle,

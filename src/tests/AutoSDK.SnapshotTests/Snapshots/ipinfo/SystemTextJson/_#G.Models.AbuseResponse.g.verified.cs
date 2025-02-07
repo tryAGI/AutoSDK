@@ -78,7 +78,9 @@ namespace G
         /// <param name="phone">
         /// Example: +1-650-253-0000
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AbuseResponse(
             string? address,
             string? country,

@@ -120,7 +120,9 @@ namespace G
         /// <param name="creatorUid">
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public App(
             string appId,
             string? description,

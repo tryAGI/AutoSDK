@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BasicAuthUserPatch(
             string? password,
             string? fullName)

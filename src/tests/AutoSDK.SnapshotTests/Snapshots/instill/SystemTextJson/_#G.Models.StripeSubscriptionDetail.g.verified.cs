@@ -107,7 +107,9 @@ namespace G
         /// Description of the subscription.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripeSubscriptionDetail(
             string? productName,
             string? id,

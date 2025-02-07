@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="settings"></param>
         /// <param name="name"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PlaygroundSettingsCreateRequest(
             object settings,
             string? name)

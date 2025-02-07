@@ -75,7 +75,9 @@ namespace G
         /// <param name="isBroadcast">
         /// A Boolean value that determines whether Bits product purchase events are broadcast to all instances of the extension on a channel. The events are broadcast via the `onTransactionComplete` helper callback. The default is **false**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateExtensionBitsProductBody(
             string sku,
             global::G.UpdateExtensionBitsProductBodyCost cost,

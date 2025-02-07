@@ -68,7 +68,9 @@ namespace G
         /// <param name="bitsVotes">
         /// Not used; will be set to 0.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PollChoice(
             string id,
             string title,

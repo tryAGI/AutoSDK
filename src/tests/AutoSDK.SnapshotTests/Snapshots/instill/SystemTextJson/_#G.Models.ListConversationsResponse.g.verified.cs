@@ -45,7 +45,9 @@ namespace G
         /// <param name="totalSize">
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListConversationsResponse(
             global::System.Collections.Generic.IList<global::G.Conversation>? conversations,
             string? nextPageToken,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="username"></param>
         /// <param name="rsaEncryptedPassword"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LoginRequest(
             string username,
             string rsaEncryptedPassword)

@@ -46,7 +46,9 @@ namespace G
         /// or delete the file. You don't need to store the value though, as it is returned<br/>
         /// along with all file information in any file GET request. Example: da13301a-14e4-4487-aa2f-cc6048e73cdc
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FileUploadResponse(
             string id,
             string fileId)

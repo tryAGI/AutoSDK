@@ -124,7 +124,9 @@ namespace G
         /// <param name="tenantIds">
         /// Default Value: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgMemberIdentity(
             global::System.Guid id,
             global::System.Guid organizationId,

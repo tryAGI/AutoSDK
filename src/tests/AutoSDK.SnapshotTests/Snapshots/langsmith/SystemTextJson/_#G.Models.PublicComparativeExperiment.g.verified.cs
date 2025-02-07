@@ -78,7 +78,9 @@ namespace G
         /// <param name="extra"></param>
         /// <param name="experimentsInfo"></param>
         /// <param name="feedbackStats"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PublicComparativeExperiment(
             global::System.Guid id,
             global::System.DateTime createdAt,

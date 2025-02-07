@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="folderIds"></param>
         /// <param name="memoIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LinkFoldersToMemosRequest(
             global::System.Guid projectId,
             global::System.Collections.Generic.IList<string> folderIds,

@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of users and the color code they use for their name.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUserChatColorResponse(
             global::System.Collections.Generic.IList<global::G.UserChatColor> data)
         {

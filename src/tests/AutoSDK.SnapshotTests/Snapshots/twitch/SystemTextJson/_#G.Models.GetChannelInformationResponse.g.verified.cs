@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains information about the specified channels. The list is empty if the specified channels weren’t found.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetChannelInformationResponse(
             global::System.Collections.Generic.IList<global::G.ChannelInformation> data)
         {

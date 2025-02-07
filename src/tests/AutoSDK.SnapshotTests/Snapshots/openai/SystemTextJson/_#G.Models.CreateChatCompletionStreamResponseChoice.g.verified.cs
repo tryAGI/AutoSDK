@@ -64,7 +64,9 @@ namespace G
         /// <param name="index">
         /// The index of the choice in the list of choices.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChatCompletionStreamResponseChoice(
             global::G.ChatCompletionStreamResponseDelta delta,
             global::G.CreateChatCompletionStreamResponseChoiceFinishReason? finishReason,

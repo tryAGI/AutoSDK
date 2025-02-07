@@ -691,7 +691,9 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="allowForking"></param>
         /// <param name="webCommitSignoffRequired"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullRequestBaseRepo(
             string archiveUrl,
             string assigneesUrl,

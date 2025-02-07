@@ -62,7 +62,9 @@ namespace G
         /// through the training dataset.<br/>
         /// Default Value: auto
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateFineTuningJobRequestHyperparameters(
             global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? batchSize,
             global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? learningRateMultiplier,

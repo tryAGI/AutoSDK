@@ -51,7 +51,9 @@ namespace G
         /// <param name="creditsTotal"></param>
         /// <param name="startDate"></param>
         /// <param name="endDate"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUpcomingInvoice(
             int creditsUsed,
             int creditsTotal,

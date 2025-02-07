@@ -43,7 +43,9 @@ namespace G
         /// Body of the project<br/>
         /// Example: This project represents the sprint of the first week in January
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectsCreateForAuthenticatedUserRequest(
             string name,
             string? body)

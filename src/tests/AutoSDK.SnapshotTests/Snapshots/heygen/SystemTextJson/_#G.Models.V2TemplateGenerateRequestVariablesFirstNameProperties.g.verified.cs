@@ -28,7 +28,9 @@ namespace G
         /// <param name="content">
         /// Example: John
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public V2TemplateGenerateRequestVariablesFirstNameProperties(
             string? content)
         {

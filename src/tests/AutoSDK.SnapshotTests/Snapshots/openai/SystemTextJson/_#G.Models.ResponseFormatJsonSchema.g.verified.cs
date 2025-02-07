@@ -36,7 +36,9 @@ namespace G
         /// The type of response format being defined: `json_schema`
         /// </param>
         /// <param name="jsonSchema"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ResponseFormatJsonSchema(
             global::G.ResponseFormatJsonSchemaJsonSchema jsonSchema,
             global::G.ResponseFormatJsonSchemaType type)

@@ -52,7 +52,9 @@ namespace G
         /// <param name="stepNumber">
         /// The step number that the checkpoint was created at.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckpointOut(
             global::System.DateTimeOffset createdAt,
             global::G.MetricOut metrics,

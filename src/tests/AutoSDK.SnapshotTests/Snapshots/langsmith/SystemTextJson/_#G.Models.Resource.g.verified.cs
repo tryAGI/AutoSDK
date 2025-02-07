@@ -42,7 +42,9 @@ namespace G
         /// <param name="taggingId"></param>
         /// <param name="resourceName"></param>
         /// <param name="resourceId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Resource(
             global::System.Guid taggingId,
             string resourceName,

@@ -36,7 +36,9 @@ namespace G
         /// <param name="weight">
         /// The weight of the image reference
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImageRef(
             string? url,
             double? weight)

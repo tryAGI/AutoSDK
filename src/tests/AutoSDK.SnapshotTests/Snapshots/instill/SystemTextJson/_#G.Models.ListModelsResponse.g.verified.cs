@@ -51,7 +51,9 @@ namespace G
         /// Total number of models.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListModelsResponse(
             global::System.Collections.Generic.IList<global::G.Model>? models,
             string? nextPageToken,

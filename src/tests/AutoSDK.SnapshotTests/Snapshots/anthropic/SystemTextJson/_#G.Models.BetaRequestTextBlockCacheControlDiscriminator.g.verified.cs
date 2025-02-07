@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="BetaRequestTextBlockCacheControlDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaRequestTextBlockCacheControlDiscriminator(
             global::G.BetaRequestTextBlockCacheControlDiscriminatorType? type)
         {

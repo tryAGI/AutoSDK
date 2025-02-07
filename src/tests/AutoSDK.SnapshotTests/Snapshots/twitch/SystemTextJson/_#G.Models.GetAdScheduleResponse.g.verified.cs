@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains information related to the channel’s ad schedule.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetAdScheduleResponse(
             global::System.Collections.Generic.IList<global::G.GetAdScheduleResponseDataItem> data)
         {

@@ -38,7 +38,9 @@ namespace G
         /// <param name="maxPerUserPerStream">
         /// The maximum number of redemptions allowed per user per live stream.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomRewardMaxPerUserPerStreamSetting(
             bool isEnabled,
             long maxPerUserPerStream)

@@ -95,7 +95,9 @@ namespace G
         /// <param name="accepted"></param>
         /// <param name="processed"></param>
         /// <param name="autoGroupId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserInvitation(
             string? projectIdKey,
             global::System.Guid? projectId,

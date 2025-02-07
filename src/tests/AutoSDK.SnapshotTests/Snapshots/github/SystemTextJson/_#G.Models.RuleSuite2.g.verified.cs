@@ -126,7 +126,9 @@ namespace G
         /// <param name="ruleEvaluations">
         /// Details on the evaluated rules.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RuleSuite2(
             int? id,
             int? actorId,

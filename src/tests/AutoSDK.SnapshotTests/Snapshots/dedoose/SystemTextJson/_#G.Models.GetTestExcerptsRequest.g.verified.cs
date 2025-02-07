@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="testId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetTestExcerptsRequest(
             global::System.Guid projectId,
             global::System.Guid testId)

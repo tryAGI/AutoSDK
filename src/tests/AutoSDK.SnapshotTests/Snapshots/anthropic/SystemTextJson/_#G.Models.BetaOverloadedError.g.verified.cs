@@ -40,7 +40,9 @@ namespace G
         /// <param name="message">
         /// Default Value: Overloaded
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaOverloadedError(
             string message,
             global::G.BetaOverloadedErrorType type = global::G.BetaOverloadedErrorType.OverloadedError)

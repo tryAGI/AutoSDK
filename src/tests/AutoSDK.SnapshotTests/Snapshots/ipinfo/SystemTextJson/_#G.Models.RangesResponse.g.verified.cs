@@ -48,7 +48,9 @@ namespace G
         /// Example: 37330
         /// </param>
         /// <param name="ranges"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RangesResponse(
             string domain,
             string numRanges,

@@ -27,7 +27,9 @@ namespace G
         /// <param name="data">
         /// The active extensions that the broadcaster has installed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUserActiveExtensionsResponse(
             global::G.GetUserActiveExtensionsResponseData? data)
         {

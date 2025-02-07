@@ -46,7 +46,9 @@ namespace G
         /// <param name="end"></param>
         /// <param name="text"></param>
         /// <param name="sources"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Citation(
             int? start,
             int? end,

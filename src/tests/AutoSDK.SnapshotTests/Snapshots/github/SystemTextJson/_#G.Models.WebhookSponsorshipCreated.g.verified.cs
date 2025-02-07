@@ -92,7 +92,9 @@ namespace G
         /// A GitHub user.
         /// </param>
         /// <param name="sponsorship"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookSponsorshipCreated(
             global::G.SimpleUser sender,
             global::G.WebhooksSponsorship sponsorship,

@@ -38,7 +38,9 @@ namespace G
         /// <param name="text">
         /// The text content.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionRequestMessageContentPartText(
             string text,
             global::G.ChatCompletionRequestMessageContentPartTextType type)

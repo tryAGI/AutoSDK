@@ -47,7 +47,9 @@ namespace G
         /// Contents of the chat message.
         /// </param>
         /// <param name="toolCalls"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatMessage(
             global::G.ChatRole role,
             string message,

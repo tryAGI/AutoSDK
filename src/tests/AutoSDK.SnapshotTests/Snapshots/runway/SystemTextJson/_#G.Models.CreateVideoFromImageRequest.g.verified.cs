@@ -90,7 +90,9 @@ namespace G
         /// Aspect ratio of the video.<br/>
         /// Default Value: 16:9
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateVideoFromImageRequest(
             string promptImage,
             global::G.CreateVideoFromImageRequestModel model,

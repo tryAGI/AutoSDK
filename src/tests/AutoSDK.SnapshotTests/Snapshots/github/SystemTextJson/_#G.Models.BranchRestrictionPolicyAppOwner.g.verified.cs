@@ -212,7 +212,9 @@ namespace G
         /// <param name="siteAdmin">
         /// Example: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BranchRestrictionPolicyAppOwner(
             string? login,
             int? id,

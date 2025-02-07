@@ -50,7 +50,9 @@ namespace G
         /// <param name="limit"></param>
         /// <param name="total"></param>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PaginatedPipelineMetrics(
             int skip,
             int limit,

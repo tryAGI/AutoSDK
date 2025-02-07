@@ -54,7 +54,9 @@ namespace G
         /// <param name="version">
         /// The ID of the model version that you want to deploy
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeploymentsUpdateRequest(
             string? hardware,
             int? maxInstances,

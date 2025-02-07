@@ -84,7 +84,9 @@ namespace G
         /// <param name="createdAt">
         /// Example: 2011-01-26T19:01:12Z
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesPublicKey(
             string keyId,
             string key,

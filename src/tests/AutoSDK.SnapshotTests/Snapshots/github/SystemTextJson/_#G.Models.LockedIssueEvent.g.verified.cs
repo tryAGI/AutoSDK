@@ -105,7 +105,9 @@ namespace G
         /// <param name="lockReason">
         /// Example: "off-topic"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LockedIssueEvent(
             int id,
             string nodeId,

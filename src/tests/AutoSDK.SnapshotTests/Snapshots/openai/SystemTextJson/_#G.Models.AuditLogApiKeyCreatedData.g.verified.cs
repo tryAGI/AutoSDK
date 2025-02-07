@@ -27,7 +27,9 @@ namespace G
         /// <param name="scopes">
         /// A list of scopes allowed for the API key, e.g. `["api.model.request"]`
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogApiKeyCreatedData(
             global::System.Collections.Generic.IList<string>? scopes)
         {

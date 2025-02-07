@@ -73,7 +73,9 @@ namespace G
         /// <param name="private">
         /// Whether or not this project can be seen by everyone.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectsUpdateRequest(
             string? name,
             string? body,

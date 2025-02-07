@@ -132,7 +132,9 @@ namespace G
         /// Default Value: []
         /// </param>
         /// <param name="responseFormat"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LanguageStudioApiServerDataTypesChatChatRequest(
             global::G.ModelName model,
             global::System.Collections.Generic.IList<global::G.MessagesItem> messages,

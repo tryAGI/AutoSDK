@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The broadcaster’s streaming schedule.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetChannelStreamScheduleResponse(
             global::G.GetChannelStreamScheduleResponseData data)
         {

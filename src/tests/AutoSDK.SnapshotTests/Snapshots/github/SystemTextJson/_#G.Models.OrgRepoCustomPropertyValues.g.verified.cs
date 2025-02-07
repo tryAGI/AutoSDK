@@ -61,7 +61,9 @@ namespace G
         /// <param name="properties">
         /// List of custom property names and associated values
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgRepoCustomPropertyValues(
             int repositoryId,
             string repositoryName,

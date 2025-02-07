@@ -58,7 +58,9 @@ namespace G
         /// <param name="resourceId"></param>
         /// <param name="excerptId"></param>
         /// <param name="tagApps"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddExcerptTagApplicationsRequest(
             global::System.Guid userId,
             global::System.Guid projectId,

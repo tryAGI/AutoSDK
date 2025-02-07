@@ -102,7 +102,9 @@ namespace G
         /// <param name="tagger"></param>
         /// <param name="object"></param>
         /// <param name="verification"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GitTag(
             string nodeId,
             string tag,

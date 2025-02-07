@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="cweId"></param>
         /// <param name="name"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwe(
             string cweId,
             string name)

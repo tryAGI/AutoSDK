@@ -34,7 +34,9 @@ namespace G
         /// The unique identifier of the document
         /// </param>
         /// <param name="toolOutput"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolSource(
             string? id,
             object? toolOutput)

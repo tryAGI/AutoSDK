@@ -64,7 +64,9 @@ namespace G
         /// </param>
         /// <param name="content"></param>
         /// <param name="toolCallId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolMessage(
             string content,
             string toolCallId,

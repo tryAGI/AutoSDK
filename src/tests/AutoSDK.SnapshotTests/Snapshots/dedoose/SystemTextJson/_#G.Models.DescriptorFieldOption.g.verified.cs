@@ -74,7 +74,9 @@ namespace G
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="sortOrder"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DescriptorFieldOption(
             string? projectIdKey,
             global::System.Guid? projectId,

@@ -27,7 +27,9 @@ namespace G
         /// <param name="assignees">
         /// Usernames of assignees to remove from an issue. _NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise._
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public IssuesRemoveAssigneesRequest(
             global::System.Collections.Generic.IList<string>? assignees)
         {

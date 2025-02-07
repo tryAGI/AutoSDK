@@ -45,7 +45,9 @@ namespace G
         /// <param name="protected">
         /// Whether renaming of target repositories is prevented.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRulesetConditionsRepositoryNameTargetRepositoryName(
             global::System.Collections.Generic.IList<string>? include,
             global::System.Collections.Generic.IList<string>? exclude,

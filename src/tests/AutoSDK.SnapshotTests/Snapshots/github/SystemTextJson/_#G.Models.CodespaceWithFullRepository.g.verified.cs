@@ -341,7 +341,9 @@ namespace G
         /// <param name="retentionExpiresAt">
         /// When a codespace will be auto-deleted based on the "retention_period_minutes" and "last_used_at"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespaceWithFullRepository(
             long id,
             string name,

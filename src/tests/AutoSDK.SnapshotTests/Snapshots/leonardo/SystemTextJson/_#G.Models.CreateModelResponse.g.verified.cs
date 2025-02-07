@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateModelResponse" /> class.
         /// </summary>
         /// <param name="sdTrainingJob"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModelResponse(
             global::G.CreateModelResponseSdTrainingJob? sdTrainingJob)
         {

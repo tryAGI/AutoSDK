@@ -65,7 +65,9 @@ namespace G
         /// <param name="model"></param>
         /// <param name="object"></param>
         /// <param name="usage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionResponse(
             global::System.Collections.Generic.IList<global::G.ChatCompletionChoicesDataItem> choices,
             int created,

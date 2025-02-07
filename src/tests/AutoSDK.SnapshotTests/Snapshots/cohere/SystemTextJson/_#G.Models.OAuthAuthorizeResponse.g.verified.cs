@@ -27,7 +27,9 @@ namespace G
         /// <param name="redirectUrl">
         /// The OAuth 2.0 redirect url. Redirect the user to this url to authorize the connector.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OAuthAuthorizeResponse(
             string? redirectUrl)
         {

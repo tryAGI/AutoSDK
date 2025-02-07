@@ -420,7 +420,9 @@ namespace G
         /// <param name="canvasMaskId">
         /// The ID of a mask image to use in Canvas Editor request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateGenerationRequest(
             string prompt,
             bool? alchemy,

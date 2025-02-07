@@ -46,7 +46,9 @@ namespace G
         /// Processing result for this request.<br/>
         /// Contains a Message output if processing was successful, an error response if processing failed, or the reason why processing was not attempted, such as cancellation or expiration.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaMessageBatchIndividualResponse(
             string customId,
             global::G.BetaMessageBatchResult result)

@@ -59,7 +59,9 @@ namespace G
         /// <param name="end">
         /// The ending time, in milliseconds, for the detected entity in the audio file
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Entity(
             global::G.EntityType entityType,
             string text,

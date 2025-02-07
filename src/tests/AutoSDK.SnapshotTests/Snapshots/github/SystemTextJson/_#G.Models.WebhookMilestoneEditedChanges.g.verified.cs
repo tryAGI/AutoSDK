@@ -39,7 +39,9 @@ namespace G
         /// <param name="description"></param>
         /// <param name="dueOn"></param>
         /// <param name="title"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookMilestoneEditedChanges(
             global::G.WebhookMilestoneEditedChangesDescription? description,
             global::G.WebhookMilestoneEditedChangesDueOn? dueOn,

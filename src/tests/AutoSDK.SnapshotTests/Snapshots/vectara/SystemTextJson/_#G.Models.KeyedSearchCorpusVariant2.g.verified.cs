@@ -30,7 +30,9 @@ namespace G
         /// A user-provided key for a corpus.<br/>
         /// Example: my-corpus
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public KeyedSearchCorpusVariant2(
             string? corpusKey)
         {

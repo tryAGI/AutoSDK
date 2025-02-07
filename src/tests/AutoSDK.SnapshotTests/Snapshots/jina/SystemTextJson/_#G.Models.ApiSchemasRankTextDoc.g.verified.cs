@@ -38,7 +38,9 @@ namespace G
         /// Example: e10b550cf99e2e072e22420af5c6eb47
         /// </param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiSchemasRankTextDoc(
             string text,
             string? id)

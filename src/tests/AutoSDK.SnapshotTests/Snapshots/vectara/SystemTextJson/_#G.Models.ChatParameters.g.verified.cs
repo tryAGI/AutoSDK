@@ -29,7 +29,9 @@ namespace G
         /// Indicates whether to store chat message and response message.<br/>
         /// Default Value: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatParameters(
             bool? store)
         {

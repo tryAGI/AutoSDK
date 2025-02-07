@@ -38,7 +38,9 @@ namespace G
         /// <param name="selectedUsernames">
         /// The usernames of the organization members who should have access to codespaces in the organization. Required when `visibility` is `selected_members`. The provided list of usernames will replace any existing value.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesSetCodespacesAccessRequest(
             global::G.CodespacesSetCodespacesAccessRequestVisibility visibility,
             global::System.Collections.Generic.IList<string>? selectedUsernames)

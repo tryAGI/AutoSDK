@@ -57,7 +57,9 @@ namespace G
         /// The category of reference to an external resource this reference refers to.<br/>
         /// Example: purl
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DependencyGraphSpdxSbomSbomPackageExternalRef(
             string referenceCategory,
             string referenceLocator,

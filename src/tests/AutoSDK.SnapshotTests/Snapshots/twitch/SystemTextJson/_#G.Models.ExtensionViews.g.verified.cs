@@ -68,7 +68,9 @@ namespace G
         /// <param name="config">
         /// Describes the view that is shown to broadcasters while they are configuring your extension within the Extension Manager.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExtensionViews(
             global::G.ExtensionViewsMobile mobile,
             global::G.ExtensionViewsPanel panel,

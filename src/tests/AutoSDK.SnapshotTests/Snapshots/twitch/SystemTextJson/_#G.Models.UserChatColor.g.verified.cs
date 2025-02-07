@@ -58,7 +58,9 @@ namespace G
         /// <param name="color">
         /// The Hex color code that the user uses in chat for their name. If the user hasn’t specified a color in their settings, the string is empty.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserChatColor(
             string userId,
             string userLogin,

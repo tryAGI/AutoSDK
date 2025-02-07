@@ -36,7 +36,9 @@ namespace G
         /// <param name="cachedTokens">
         /// Cached tokens present in the prompt.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CompletionUsagePromptTokensDetails(
             int? audioTokens,
             int? cachedTokens)

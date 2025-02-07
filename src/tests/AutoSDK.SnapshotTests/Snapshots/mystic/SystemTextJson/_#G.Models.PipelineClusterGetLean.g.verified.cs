@@ -48,7 +48,9 @@ namespace G
         /// <param name="nodePool"></param>
         /// <param name="name"></param>
         /// <param name="provider"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelineClusterGetLean(
             string id,
             string nodePool,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="branch"></param>
         /// <param name="path"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PagesSourceHash(
             string branch,
             string path)

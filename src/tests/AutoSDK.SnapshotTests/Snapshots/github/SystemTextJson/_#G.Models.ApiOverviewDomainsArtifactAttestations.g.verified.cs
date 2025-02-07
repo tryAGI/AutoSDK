@@ -35,7 +35,9 @@ namespace G
         /// Example: [example]
         /// </param>
         /// <param name="services"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiOverviewDomainsArtifactAttestations(
             string? trustDomain,
             global::System.Collections.Generic.IList<string>? services)

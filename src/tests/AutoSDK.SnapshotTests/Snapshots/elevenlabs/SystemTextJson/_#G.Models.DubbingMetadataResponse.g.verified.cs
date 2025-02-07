@@ -57,7 +57,9 @@ namespace G
         /// <param name="status"></param>
         /// <param name="targetLanguages"></param>
         /// <param name="error"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DubbingMetadataResponse(
             string dubbingId,
             string name,

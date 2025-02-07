@@ -224,7 +224,9 @@ namespace G
         /// <param name="errorRate"></param>
         /// <param name="streamingRate"></param>
         /// <param name="testRunNumber"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TracerSession(
             global::System.Guid id,
             global::System.Guid tenantId,

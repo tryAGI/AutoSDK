@@ -70,7 +70,9 @@ namespace G
         /// <param name="oidcToken">
         /// The OIDC token issued by GitHub Actions certifying the origin of the deployment.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreatePagesDeploymentRequest(
             string pagesBuildVersion,
             string oidcToken,

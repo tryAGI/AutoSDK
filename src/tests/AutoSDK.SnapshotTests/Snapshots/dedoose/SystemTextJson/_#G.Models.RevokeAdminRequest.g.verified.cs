@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="accountId"></param>
         /// <param name="userId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RevokeAdminRequest(
             global::System.Guid accountId,
             global::System.Guid userId)

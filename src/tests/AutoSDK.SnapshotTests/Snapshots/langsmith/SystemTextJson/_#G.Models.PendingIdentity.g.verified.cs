@@ -122,7 +122,9 @@ namespace G
         /// <param name="organizationId"></param>
         /// <param name="createdAt"></param>
         /// <param name="roleName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PendingIdentity(
             string email,
             global::System.Guid id,

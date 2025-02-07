@@ -55,7 +55,9 @@ namespace G
         /// A message from the assistant role can contain text and tool call information.
         /// </param>
         /// <param name="usage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatResponse(
             string id,
             global::G.ChatFinishReason finishReason,

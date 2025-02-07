@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list of custom rewards. The list is in ascending order by `id`. If the broadcaster hasn’t created custom rewards, the list is empty.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetCustomRewardResponse(
             global::System.Collections.Generic.IList<global::G.CustomReward> data)
         {

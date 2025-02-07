@@ -74,7 +74,9 @@ namespace G
         /// <param name="displayNumber">
         /// The X11 display number (e.g. 0, 1) for the display.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaComputerUseTool20241022(
             int displayHeightPx,
             int displayWidthPx,

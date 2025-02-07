@@ -90,7 +90,9 @@ namespace G
         /// <param name="parents"></param>
         /// <param name="sha"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookStatusCommit(
             global::G.WebhookStatusCommitAuthor? author,
             string commentsUrl,

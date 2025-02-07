@@ -58,7 +58,9 @@ namespace G
         /// <param name="usage">
         /// The usage information for the request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateEmbeddingResponse(
             global::System.Collections.Generic.IList<global::G.Embedding> data,
             string model,

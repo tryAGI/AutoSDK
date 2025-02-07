@@ -34,7 +34,9 @@ namespace G
         /// <param name="value">
         /// String with valuename.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public C11yVectorBasedQuestionItemClassProp(
             global::System.Collections.Generic.IList<float>? propsVectors,
             string? value)

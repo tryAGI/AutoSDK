@@ -27,7 +27,9 @@ namespace G
         /// <param name="catalogs">
         /// The catalogs container.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListCatalogsResponse(
             global::System.Collections.Generic.IList<global::G.Catalog>? catalogs)
         {

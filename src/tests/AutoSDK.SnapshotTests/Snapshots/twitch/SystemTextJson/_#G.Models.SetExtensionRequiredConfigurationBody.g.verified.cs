@@ -48,7 +48,9 @@ namespace G
         /// <param name="requiredConfiguration">
         /// The required\_configuration string to use with the extension.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SetExtensionRequiredConfigurationBody(
             string extensionId,
             string extensionVersion,

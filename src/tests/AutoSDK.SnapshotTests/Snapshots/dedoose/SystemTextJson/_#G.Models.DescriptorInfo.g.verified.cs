@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="descriptorId"></param>
         /// <param name="fieldValues"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DescriptorInfo(
             global::System.Guid? descriptorId,
             global::System.Collections.Generic.IList<global::G.FieldValueDTO>? fieldValues)

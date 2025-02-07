@@ -43,7 +43,9 @@ namespace G
         /// <param name="type"></param>
         /// <param name="mediaType"></param>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Base64ImageSource(
             global::G.Base64ImageSourceMediaType mediaType,
             byte[] data,

@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="testId"></param>
         /// <param name="testResultId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetTestResultTagAppsRequest(
             global::System.Guid projectId,
             global::System.Guid testId,

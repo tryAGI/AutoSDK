@@ -74,7 +74,9 @@ namespace G
         /// <param name="name"></param>
         /// <param name="url"></param>
         /// <param name="importUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PorterAuthor(
             int id,
             string remoteId,

@@ -74,7 +74,9 @@ namespace G
         /// <param name="name"></param>
         /// <param name="status"></param>
         /// <param name="updatedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookDeploymentReviewApprovedWorkflowJobRun(
             object? conclusion,
             string? createdAt,

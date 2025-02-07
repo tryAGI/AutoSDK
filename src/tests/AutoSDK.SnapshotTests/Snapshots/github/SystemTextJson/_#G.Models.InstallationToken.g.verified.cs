@@ -88,7 +88,9 @@ namespace G
         /// <param name="singleFilePaths">
         /// Example: [config.yml, .github/issue_TEMPLATE.md]
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InstallationToken(
             string token,
             string expiresAt,

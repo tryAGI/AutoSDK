@@ -28,7 +28,9 @@ namespace G
         /// <param name="name">
         /// The friendly name of the project, this name appears in reports.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectCreateRequest(
             string name)
         {

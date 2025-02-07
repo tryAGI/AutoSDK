@@ -95,7 +95,9 @@ namespace G
         /// <param name="activeProjectId"></param>
         /// <param name="activeProjectTitle"></param>
         /// <param name="connKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActiveUser(
             global::System.Guid? id,
             global::System.Guid? userId,

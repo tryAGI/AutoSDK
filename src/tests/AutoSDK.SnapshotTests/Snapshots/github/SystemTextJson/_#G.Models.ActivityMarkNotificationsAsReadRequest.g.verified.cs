@@ -36,7 +36,9 @@ namespace G
         /// <param name="read">
         /// Whether the notification has been read.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActivityMarkNotificationsAsReadRequest(
             global::System.DateTime? lastReadAt,
             bool? read)

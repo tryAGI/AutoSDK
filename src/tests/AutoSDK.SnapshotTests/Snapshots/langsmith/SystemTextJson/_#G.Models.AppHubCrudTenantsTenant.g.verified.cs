@@ -49,7 +49,9 @@ namespace G
         /// <param name="displayName"></param>
         /// <param name="createdAt"></param>
         /// <param name="tenantHandle"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AppHubCrudTenantsTenant(
             global::System.Guid id,
             string displayName,

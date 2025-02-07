@@ -38,7 +38,9 @@ namespace G
         /// <param name="globalCooldownSeconds">
         /// The cooldown period, in seconds.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomRewardGlobalCooldownSetting(
             bool isEnabled,
             long globalCooldownSeconds)

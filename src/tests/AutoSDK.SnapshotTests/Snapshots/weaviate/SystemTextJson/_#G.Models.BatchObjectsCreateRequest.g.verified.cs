@@ -34,7 +34,9 @@ namespace G
         /// Define which fields need to be returned. Default value is ALL
         /// </param>
         /// <param name="objects"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchObjectsCreateRequest(
             global::System.Collections.Generic.IList<global::G.BatchObjectsCreateRequestField>? fields,
             global::System.Collections.Generic.IList<global::G.Object>? objects)

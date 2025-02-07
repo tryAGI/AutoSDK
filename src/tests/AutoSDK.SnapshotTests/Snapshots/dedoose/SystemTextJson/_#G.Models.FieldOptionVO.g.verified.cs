@@ -39,7 +39,9 @@ namespace G
         /// <param name="title"></param>
         /// <param name="sortOrder"></param>
         /// <param name="exitingOptionId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FieldOptionVO(
             string? title,
             int? sortOrder,

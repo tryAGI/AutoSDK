@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains the single custom reward you created.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateCustomRewardsResponse(
             global::System.Collections.Generic.IList<global::G.CustomReward> data)
         {

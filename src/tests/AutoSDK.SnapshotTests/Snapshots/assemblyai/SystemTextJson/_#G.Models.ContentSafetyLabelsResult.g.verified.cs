@@ -58,7 +58,9 @@ namespace G
         /// <param name="severityScoreSummary">
         /// A summary of the Content Moderation severity results for the entire audio file
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ContentSafetyLabelsResult(
             global::G.AudioIntelligenceModelStatus status,
             global::System.Collections.Generic.IList<global::G.ContentSafetyLabelResult> results,

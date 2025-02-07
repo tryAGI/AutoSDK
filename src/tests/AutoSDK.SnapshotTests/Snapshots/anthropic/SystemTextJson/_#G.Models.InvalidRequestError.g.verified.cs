@@ -40,7 +40,9 @@ namespace G
         /// <param name="message">
         /// Default Value: Invalid request
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InvalidRequestError(
             string message,
             global::G.InvalidRequestErrorType type = global::G.InvalidRequestErrorType.InvalidRequestError)

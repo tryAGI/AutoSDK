@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="folderId"></param>
         /// <param name="title"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateFolderTitleRequest(
             global::System.Guid projectId,
             global::System.Guid folderId,

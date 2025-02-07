@@ -68,7 +68,9 @@ namespace G
         /// <param name="url">
         /// A URL that opens the video in Twitch Highlighter.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StreamMarkersMarker(
             string id,
             global::System.DateTime createdAt,

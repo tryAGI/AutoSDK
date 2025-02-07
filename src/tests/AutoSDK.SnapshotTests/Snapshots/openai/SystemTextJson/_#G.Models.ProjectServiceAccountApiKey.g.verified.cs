@@ -60,7 +60,9 @@ namespace G
         /// <param name="name"></param>
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectServiceAccountApiKey(
             string value,
             string name,

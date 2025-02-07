@@ -45,7 +45,9 @@ namespace G
         /// Messages API creation parameters for the individual request. <br/>
         /// See the [Messages API reference](/en/api/messages) for full documentation on available parameters.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaMessageBatchIndividualRequestParams(
             string customId,
             global::G.BetaCreateMessageParams @params)

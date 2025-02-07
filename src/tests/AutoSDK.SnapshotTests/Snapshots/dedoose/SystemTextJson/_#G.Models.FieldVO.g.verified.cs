@@ -67,7 +67,9 @@ namespace G
         /// <param name="description"></param>
         /// <param name="sortOrder"></param>
         /// <param name="isActive"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FieldVO(
             global::System.Guid? fieldId,
             string? title,

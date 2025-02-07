@@ -60,7 +60,9 @@ namespace G
         /// <param name="username"></param>
         /// <param name="createStamp"></param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatMessageVO(
             global::System.Guid? id,
             global::System.Guid? projectId,

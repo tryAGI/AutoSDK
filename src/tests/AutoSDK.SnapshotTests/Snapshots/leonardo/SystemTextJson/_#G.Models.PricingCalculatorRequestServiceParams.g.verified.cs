@@ -81,7 +81,9 @@ namespace G
         /// <param name="uNIVERSALUPSCALER">
         /// Parameters for UNIVERSAL_UPSCALER service
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequestServiceParams(
             global::G.PricingCalculatorRequestServiceParamsIMAGEGENERATION? iMAGEGENERATION,
             global::G.PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION? fANTASYAVATARGENERATION,

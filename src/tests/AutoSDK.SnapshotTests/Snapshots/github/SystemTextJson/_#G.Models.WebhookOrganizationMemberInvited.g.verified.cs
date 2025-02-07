@@ -102,7 +102,9 @@ namespace G
         /// A GitHub user.
         /// </param>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookOrganizationMemberInvited(
             global::G.WebhookOrganizationMemberInvitedInvitation invitation,
             global::G.OrganizationSimpleWebhooks organization,

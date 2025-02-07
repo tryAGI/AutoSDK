@@ -28,7 +28,9 @@ namespace G
         /// <param name="from">
         /// The `edited` event types include the details about the change when someone edits a sponsorship to change the privacy.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookSponsorshipEditedChangesPrivacyLevel(
             string from)
         {

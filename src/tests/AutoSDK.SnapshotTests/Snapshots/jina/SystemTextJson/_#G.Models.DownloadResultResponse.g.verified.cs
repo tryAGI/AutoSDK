@@ -38,7 +38,9 @@ namespace G
         /// <param name="downloadUrl">
         /// The URL to download the result file
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DownloadResultResponse(
             string id,
             string downloadUrl)

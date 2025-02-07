@@ -98,7 +98,9 @@ namespace G
         /// <param name="state"></param>
         /// <param name="country"></param>
         /// <param name="zip"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateUserInfoRequest2(
             global::System.Guid userId,
             string firstName,

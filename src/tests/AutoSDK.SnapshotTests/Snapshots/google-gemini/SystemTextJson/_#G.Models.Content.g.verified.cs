@@ -36,7 +36,9 @@ namespace G
         /// <param name="parts">
         /// Ordered `Parts` that constitute a single message. Parts may have different MIME types.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Content(
             string? role,
             global::System.Collections.Generic.IList<global::G.Part>? parts)

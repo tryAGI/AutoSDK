@@ -55,7 +55,9 @@ namespace G
         /// <param name="readme"></param>
         /// <param name="isPublic"></param>
         /// <param name="tags"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateRepoRequest(
             string repoHandle,
             bool isPublic,

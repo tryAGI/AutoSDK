@@ -66,7 +66,9 @@ namespace G
         /// <param name="email"></param>
         /// <param name="teamId"></param>
         /// <param name="teamName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TeamInviteGet(
             string id,
             global::System.DateTime createdAt,

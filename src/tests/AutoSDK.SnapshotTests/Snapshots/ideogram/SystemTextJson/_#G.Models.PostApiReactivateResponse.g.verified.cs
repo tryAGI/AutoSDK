@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="PostApiReactivateResponse" /> class.
         /// </summary>
         /// <param name="rechargeSettings"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PostApiReactivateResponse(
             global::G.RechargeSettingsResponse? rechargeSettings)
         {

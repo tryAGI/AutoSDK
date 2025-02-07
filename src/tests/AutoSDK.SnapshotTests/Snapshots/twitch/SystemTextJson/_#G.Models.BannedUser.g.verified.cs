@@ -108,7 +108,9 @@ namespace G
         /// <param name="moderatorName">
         /// The moderator’s display name.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BannedUser(
             string userId,
             string userLogin,

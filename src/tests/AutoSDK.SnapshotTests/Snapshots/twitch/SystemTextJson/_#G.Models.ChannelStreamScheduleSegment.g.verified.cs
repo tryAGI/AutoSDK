@@ -88,7 +88,9 @@ namespace G
         /// <param name="isRecurring">
         /// A Boolean value that determines whether the broadcast is part of a recurring series that streams at the same time each week or is a one-time broadcast. Is **true** if the broadcast is part of a recurring series.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChannelStreamScheduleSegment(
             string id,
             global::System.DateTime startTime,

@@ -45,7 +45,9 @@ namespace G
         /// <param name="totalSize">
         /// Total number of model definitions.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListModelDefinitionsResponse(
             global::System.Collections.Generic.IList<global::G.ModelDefinition>? modelDefinitions,
             string? nextPageToken,

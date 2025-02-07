@@ -282,7 +282,9 @@ namespace G
         /// URL for the pull request review comment
         /// </param>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestReviewThreadUnresolvedThreadComment(
             global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentLinks links,
             global::G.WebhookPullRequestReviewThreadUnresolvedThreadCommentAuthorAssociation authorAssociation,

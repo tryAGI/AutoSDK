@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="encryptedPass"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateCurrentUserPasswordRequest(
             global::System.Guid userId,
             string encryptedPass)

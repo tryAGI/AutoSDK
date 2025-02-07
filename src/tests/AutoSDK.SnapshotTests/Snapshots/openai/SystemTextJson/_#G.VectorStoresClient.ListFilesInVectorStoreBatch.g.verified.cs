@@ -50,7 +50,9 @@ namespace G
         /// <param name="filter"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
+#if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "G_BETA_001")]
+#endif
         public async global::System.Threading.Tasks.Task<global::G.ListVectorStoreFilesResponse> ListFilesInVectorStoreBatchAsync(
             string vectorStoreId,
             string batchId,
@@ -136,7 +138,11 @@ namespace G
 
             if (ReadResponseAsString)
             {
-                var __content = await __response.Content.ReadAsStringAsync(cancellationToken).ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
                 ProcessResponseContent(
                     client: HttpClient,
@@ -190,7 +196,11 @@ namespace G
                     };
                 }
 
-                using var __content = await __response.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+                using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
                 return
                     await global::G.ListVectorStoreFilesResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??

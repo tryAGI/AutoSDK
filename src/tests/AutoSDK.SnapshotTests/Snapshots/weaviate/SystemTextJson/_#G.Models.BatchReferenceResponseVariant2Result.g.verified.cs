@@ -37,7 +37,9 @@ namespace G
         /// <param name="errors">
         /// An error response given by Weaviate end-points.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchReferenceResponseVariant2Result(
             global::G.BatchReferenceResponseVariant2ResultStatus? status,
             global::G.ErrorResponse? errors)

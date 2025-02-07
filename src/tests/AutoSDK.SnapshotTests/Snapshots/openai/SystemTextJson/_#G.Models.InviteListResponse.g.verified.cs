@@ -63,7 +63,9 @@ namespace G
         /// <param name="hasMore">
         /// The `has_more` property is used for pagination to indicate there are additional results.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InviteListResponse(
             global::System.Collections.Generic.IList<global::G.Invite> data,
             global::G.InviteListResponseObject @object,

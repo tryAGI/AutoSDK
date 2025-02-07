@@ -55,7 +55,9 @@ namespace G
         /// <param name="inputs"></param>
         /// <param name="outputs"></param>
         /// <param name="sessionId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepoExampleResponse(
             global::System.Guid id,
             global::System.Guid sessionId,

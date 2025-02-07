@@ -48,7 +48,9 @@ namespace G
         /// <param name="dismissedComment">
         /// The dismissal comment associated with the dismissal of the alert.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningUpdateAlertRequest(
             global::G.CodeScanningAlertSetState state,
             global::G.CodeScanningAlertDismissedReason? dismissedReason,

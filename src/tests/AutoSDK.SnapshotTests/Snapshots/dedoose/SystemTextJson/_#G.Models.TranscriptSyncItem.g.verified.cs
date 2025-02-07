@@ -67,7 +67,9 @@ namespace G
         /// <param name="transcriptId"></param>
         /// <param name="resourcePosition"></param>
         /// <param name="transcriptPosition"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TranscriptSyncItem(
             string? projectIdKey,
             global::System.Guid? id,

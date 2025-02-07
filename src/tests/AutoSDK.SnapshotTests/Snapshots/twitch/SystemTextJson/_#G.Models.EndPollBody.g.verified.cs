@@ -55,7 +55,9 @@ namespace G
         /// * TERMINATED — Ends the poll before the poll is scheduled to end. The poll remains publicly visible.<br/>
         /// * ARCHIVED — Ends the poll before the poll is scheduled to end, and then archives it so it's no longer publicly visible.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EndPollBody(
             string broadcasterId,
             string id,

@@ -31,7 +31,9 @@ namespace G
         /// The URL to the discussion where the secret was detected.<br/>
         /// Example: https://github.com/community/community/discussions/39082
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecretScanningLocationDiscussionTitle(
             string discussionTitleUrl)
         {

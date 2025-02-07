@@ -68,7 +68,9 @@ namespace G
         /// <param name="score">
         /// The number of Bits the user has cheered.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BitsLeaderboard(
             string userId,
             string userLogin,

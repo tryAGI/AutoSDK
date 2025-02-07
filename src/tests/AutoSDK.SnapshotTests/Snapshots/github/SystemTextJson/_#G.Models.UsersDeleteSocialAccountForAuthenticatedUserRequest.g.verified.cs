@@ -31,7 +31,9 @@ namespace G
         /// Full URLs for the social media profiles to delete.<br/>
         /// Example: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsersDeleteSocialAccountForAuthenticatedUserRequest(
             global::System.Collections.Generic.IList<string> accountUrls)
         {

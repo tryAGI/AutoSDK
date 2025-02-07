@@ -27,7 +27,9 @@ namespace G
         /// <param name="x_moduleName_">
         /// E.g. `text2vec-transformers`, `text2vec-openai`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PropertyModuleConfig(
             global::G.PropertyModuleConfig2? x_moduleName_)
         {

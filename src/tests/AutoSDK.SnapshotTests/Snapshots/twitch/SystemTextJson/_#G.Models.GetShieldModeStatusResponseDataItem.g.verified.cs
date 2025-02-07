@@ -68,7 +68,9 @@ namespace G
         /// <param name="lastActivatedAt">
         /// The UTC timestamp (in RFC3339 format) of when Shield Mode was last activated. Is an empty string if Shield Mode hasn’t been previously activated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetShieldModeStatusResponseDataItem(
             bool isActive,
             string moderatorId,

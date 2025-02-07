@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="comments"></param>
         /// <param name="nodeId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestReviewThreadUnresolvedThread(
             global::System.Collections.Generic.IList<global::G.WebhookPullRequestReviewThreadUnresolvedThreadComment> comments,
             string nodeId)

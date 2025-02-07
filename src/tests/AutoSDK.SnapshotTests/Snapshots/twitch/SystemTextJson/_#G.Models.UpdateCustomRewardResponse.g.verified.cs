@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list contains the single reward that you updated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateCustomRewardResponse(
             global::System.Collections.Generic.IList<global::G.CustomReward> data)
         {

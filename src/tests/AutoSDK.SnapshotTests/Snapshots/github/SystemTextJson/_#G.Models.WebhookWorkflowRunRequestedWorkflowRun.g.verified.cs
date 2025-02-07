@@ -299,7 +299,9 @@ namespace G
         /// <param name="workflowId"></param>
         /// <param name="workflowUrl"></param>
         /// <param name="displayTitle"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookWorkflowRunRequestedWorkflowRun(
             global::G.WebhookWorkflowRunRequestedWorkflowRunActor? actor,
             string artifactsUrl,

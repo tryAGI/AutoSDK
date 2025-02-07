@@ -53,7 +53,9 @@ namespace G
         /// If you are on the Scale plan, you can view the actual query made to backend that was rephrased <br/>
         /// by the LLM from the input query.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerationInfo(
             string? type,
             string? renderedPrompt,

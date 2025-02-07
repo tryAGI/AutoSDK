@@ -48,7 +48,9 @@ namespace G
         /// <param name="output">
         /// The output of the function. This will be `null` if the outputs have not been [submitted](/docs/api-reference/runs/submitToolOutputs) yet.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDetailsToolCallsFunctionObjectFunction(
             string name,
             string arguments,

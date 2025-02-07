@@ -64,7 +64,9 @@ namespace G
         /// <param name="code">
         /// Error codes used to represent a specific error condition while attempting to update shards.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateConduitShardsResponseError(
             string id,
             string message,

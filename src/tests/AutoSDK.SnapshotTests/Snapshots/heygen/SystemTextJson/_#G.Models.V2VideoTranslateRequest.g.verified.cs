@@ -68,7 +68,9 @@ namespace G
         /// <param name="videoUrl">
         /// Example: https://static.heygen.ai/heygen/asset/originalnew.mp4
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public V2VideoTranslateRequest(
             string? outputLanguage,
             double? speakerNum,

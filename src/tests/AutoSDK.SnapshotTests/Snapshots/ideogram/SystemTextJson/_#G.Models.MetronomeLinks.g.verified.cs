@@ -54,7 +54,9 @@ namespace G
         /// <param name="creditsIframeDarkModeUrl">
         /// The URL to display the customer invoice and API usage.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MetronomeLinks(
             string? invoicesIframeUrl,
             string? invoicesIframeDarkModeUrl,

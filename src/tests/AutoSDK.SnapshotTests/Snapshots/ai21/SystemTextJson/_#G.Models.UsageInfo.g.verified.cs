@@ -56,7 +56,9 @@ namespace G
         /// <param name="totalTokens">
         /// `prompt_tokens` + `completion_tokens`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsageInfo(
             int promptTokens,
             int completionTokens,

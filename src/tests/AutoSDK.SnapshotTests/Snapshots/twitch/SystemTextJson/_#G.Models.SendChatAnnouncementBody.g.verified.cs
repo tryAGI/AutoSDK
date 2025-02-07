@@ -54,7 +54,9 @@ namespace G
         ///   <br/>
         /// If `color` is set to _primary_ or is not set, the channel’s accent color is used to highlight the announcement (see **Profile Accent Color** under [profile settings](https://www.twitch.tv/settings/profile), **Channel and Videos**, and **Brand**).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SendChatAnnouncementBody(
             string message,
             global::G.SendChatAnnouncementBodyColor? color)

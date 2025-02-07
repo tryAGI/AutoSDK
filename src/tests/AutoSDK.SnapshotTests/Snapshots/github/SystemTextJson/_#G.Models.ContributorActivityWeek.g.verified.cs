@@ -46,7 +46,9 @@ namespace G
         /// <param name="a"></param>
         /// <param name="d"></param>
         /// <param name="c"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ContributorActivityWeek(
             int? w,
             int? a,

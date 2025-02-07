@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="projectIDL"></param>
         /// <param name="descriptorSetId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ForceDeleteDescriptorSetPolledRequest(
             global::System.Guid projectIDL,
             global::System.Guid descriptorSetId)

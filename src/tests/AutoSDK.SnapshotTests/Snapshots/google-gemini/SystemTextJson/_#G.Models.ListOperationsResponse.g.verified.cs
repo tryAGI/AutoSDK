@@ -36,7 +36,9 @@ namespace G
         /// <param name="nextPageToken">
         /// The standard List next-page token.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListOperationsResponse(
             global::System.Collections.Generic.IList<global::G.Operation>? operations,
             string? nextPageToken)

@@ -39,7 +39,9 @@ namespace G
         /// <param name="role">
         /// Default Value: user
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserMessage(
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentChunk>> content,
             global::G.UserMessageRole? role)

@@ -121,7 +121,9 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="vulnerabilities"></param>
         /// <param name="withdrawnAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookSecurityAdvisoryWithdrawnSecurityAdvisory(
             global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCvss cvss,
             global::System.Collections.Generic.IList<global::G.WebhookSecurityAdvisoryWithdrawnSecurityAdvisoryCwe> cwes,

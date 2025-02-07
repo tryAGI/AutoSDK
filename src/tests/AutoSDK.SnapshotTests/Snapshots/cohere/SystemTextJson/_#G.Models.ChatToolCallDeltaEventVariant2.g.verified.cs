@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="index"></param>
         /// <param name="delta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatToolCallDeltaEventVariant2(
             int? index,
             global::G.ChatToolCallDeltaEventVariant2Delta? delta)

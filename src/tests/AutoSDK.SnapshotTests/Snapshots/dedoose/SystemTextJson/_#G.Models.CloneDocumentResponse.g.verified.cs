@@ -42,7 +42,9 @@ namespace G
         /// <param name="document"></param>
         /// <param name="excerpts"></param>
         /// <param name="tagApps"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CloneDocumentResponse(
             global::G.Resource document,
             global::System.Collections.Generic.IList<global::G.Excerpt> excerpts,

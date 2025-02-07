@@ -82,7 +82,9 @@ namespace G
         /// <param name="end"></param>
         /// <param name="text"></param>
         /// <param name="tagApps"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddPDFSwfTextExcerptRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

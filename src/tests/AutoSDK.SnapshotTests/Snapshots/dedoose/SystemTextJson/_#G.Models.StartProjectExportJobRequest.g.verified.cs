@@ -58,7 +58,9 @@ namespace G
         /// <param name="email"></param>
         /// <param name="extension"></param>
         /// <param name="encryptedSymKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartProjectExportJobRequest(
             global::System.Guid projectId,
             string password,

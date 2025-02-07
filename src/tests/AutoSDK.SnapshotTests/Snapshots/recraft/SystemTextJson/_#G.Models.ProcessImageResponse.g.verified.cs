@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="created"></param>
         /// <param name="image"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProcessImageResponse(
             int created,
             global::G.Image image)

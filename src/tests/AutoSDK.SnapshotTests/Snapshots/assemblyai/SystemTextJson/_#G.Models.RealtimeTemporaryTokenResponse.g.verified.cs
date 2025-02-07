@@ -28,7 +28,9 @@ namespace G
         /// <param name="token">
         /// The temporary authentication token for Streaming Speech-to-Text
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeTemporaryTokenResponse(
             string token)
         {

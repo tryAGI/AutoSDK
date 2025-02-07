@@ -62,7 +62,9 @@ namespace G
         /// <param name="uniques">
         /// Example: 2225
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ContentTraffic(
             string path,
             string title,

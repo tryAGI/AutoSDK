@@ -50,7 +50,9 @@ namespace G
         /// <param name="name"></param>
         /// <param name="space"></param>
         /// <param name="privateRepos"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PrivateUserPlan(
             int collaborators,
             string name,

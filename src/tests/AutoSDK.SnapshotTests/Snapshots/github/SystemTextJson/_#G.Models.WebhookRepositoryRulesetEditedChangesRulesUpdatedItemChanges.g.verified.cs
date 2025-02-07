@@ -39,7 +39,9 @@ namespace G
         /// <param name="configuration"></param>
         /// <param name="ruleType"></param>
         /// <param name="pattern"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChanges(
             global::G.WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChangesConfiguration? configuration,
             global::G.WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChangesRuleType? ruleType,

@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="title"></param>
         /// <param name="parentItems"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChartHierarchicalExportInfo(
             string? title,
             global::System.Collections.Generic.IList<global::G.ChartHierarchicalItemInfo>? parentItems)

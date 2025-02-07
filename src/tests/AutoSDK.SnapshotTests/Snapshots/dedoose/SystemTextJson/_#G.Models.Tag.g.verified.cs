@@ -109,7 +109,9 @@ namespace G
         /// <param name="sortOrder"></param>
         /// <param name="color"></param>
         /// <param name="allowDecimalWeight"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Tag(
             string? projectIdKey,
             global::System.Guid? projectId,

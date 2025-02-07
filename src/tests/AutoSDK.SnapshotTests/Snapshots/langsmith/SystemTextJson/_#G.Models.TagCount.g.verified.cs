@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="tag"></param>
         /// <param name="count"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TagCount(
             string tag,
             int count)

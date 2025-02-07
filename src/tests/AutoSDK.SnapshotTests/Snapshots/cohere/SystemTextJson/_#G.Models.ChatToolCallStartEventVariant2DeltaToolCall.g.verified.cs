@@ -40,7 +40,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="type"></param>
         /// <param name="function"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatToolCallStartEventVariant2DeltaToolCall(
             string? id,
             global::G.ChatToolCallStartEventVariant2DeltaToolCallType? type,

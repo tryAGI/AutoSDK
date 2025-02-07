@@ -98,7 +98,9 @@ namespace G
         /// <param name="self">
         /// Hypermedia Link
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullRequestSimpleLinks(
             global::G.Link comments,
             global::G.Link commits,

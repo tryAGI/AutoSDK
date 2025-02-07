@@ -58,7 +58,9 @@ namespace G
         /// <param name="tagValue"></param>
         /// <param name="tagValueId"></param>
         /// <param name="resources"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TaggingsResponse(
             string tagKey,
             global::System.Guid tagKeyId,

@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="description"></param>
         /// <param name="name"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateFTModelIn(
             string? description,
             string? name)

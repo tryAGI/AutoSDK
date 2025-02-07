@@ -45,7 +45,9 @@ namespace G
         /// Always `image_file`.
         /// </param>
         /// <param name="imageFile"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDeltaContentImageFileObject(
             int index,
             global::G.MessageDeltaContentImageFileObjectType type,

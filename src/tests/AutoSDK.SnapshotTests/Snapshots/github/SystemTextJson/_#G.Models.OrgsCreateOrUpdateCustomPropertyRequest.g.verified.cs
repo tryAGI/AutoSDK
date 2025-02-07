@@ -73,7 +73,9 @@ namespace G
         /// An ordered list of the allowed values of the property.<br/>
         /// The property can have up to 200 allowed values.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsCreateOrUpdateCustomPropertyRequest(
             global::G.OrgsCreateOrUpdateCustomPropertyRequestValueType valueType,
             bool? required,

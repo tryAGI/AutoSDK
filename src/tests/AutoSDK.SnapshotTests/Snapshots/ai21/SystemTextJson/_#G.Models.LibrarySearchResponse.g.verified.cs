@@ -40,7 +40,9 @@ namespace G
         /// for all responses in the stream.
         /// </param>
         /// <param name="results"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LibrarySearchResponse(
             string id,
             global::System.Collections.Generic.IList<global::G.LibrarySearchResult> results)

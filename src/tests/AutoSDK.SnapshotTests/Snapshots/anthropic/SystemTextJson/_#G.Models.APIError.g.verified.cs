@@ -40,7 +40,9 @@ namespace G
         /// <param name="message">
         /// Default Value: Internal server error
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public APIError(
             string message,
             global::G.APIErrorType type = global::G.APIErrorType.ApiError)

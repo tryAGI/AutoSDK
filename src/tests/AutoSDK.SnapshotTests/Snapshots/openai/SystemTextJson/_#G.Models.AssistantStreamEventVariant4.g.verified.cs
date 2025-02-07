@@ -36,7 +36,9 @@ namespace G
         /// <param name="data">
         /// Represents an execution run on a [thread](/docs/api-reference/threads).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantStreamEventVariant4(
             global::G.RunObject data,
             global::G.AssistantStreamEventVariant4Event @event)

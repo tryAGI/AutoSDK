@@ -37,7 +37,9 @@ namespace G
         /// <param name="includeClaimKeys">
         /// Array of unique strings. Each claim key can only contain alphanumeric characters and underscores.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OidcCustomSubRepo(
             bool useDefault,
             global::System.Collections.Generic.IList<string>? includeClaimKeys)

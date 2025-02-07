@@ -47,7 +47,9 @@ namespace G
         /// <param name="autoTenantActivation">
         /// Existing tenants should (not) be turned HOT implicitly when they are accessed and in another activity status
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MultiTenancyConfig(
             bool? enabled,
             bool? autoTenantCreation,

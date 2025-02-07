@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="accountId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddUserToAccountRequest(
             global::System.Guid userId,
             global::System.Guid accountId)

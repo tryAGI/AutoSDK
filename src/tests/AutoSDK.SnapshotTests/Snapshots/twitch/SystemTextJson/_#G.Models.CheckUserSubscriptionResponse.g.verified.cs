@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains a single object with information about the user’s subscription.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckUserSubscriptionResponse(
             global::System.Collections.Generic.IList<global::G.UserSubscription> data)
         {

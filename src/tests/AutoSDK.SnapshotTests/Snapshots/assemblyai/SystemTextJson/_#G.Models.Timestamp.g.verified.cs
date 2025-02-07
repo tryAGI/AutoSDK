@@ -38,7 +38,9 @@ namespace G
         /// <param name="end">
         /// The end time in milliseconds
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Timestamp(
             int start,
             int end)

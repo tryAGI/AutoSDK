@@ -67,7 +67,9 @@ namespace G
         /// <param name="app">
         /// A GitHub App that is providing a custom deployment protection rule.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeploymentProtectionRule(
             int id,
             string nodeId,

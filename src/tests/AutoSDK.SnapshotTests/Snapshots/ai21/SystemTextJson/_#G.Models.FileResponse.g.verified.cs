@@ -159,7 +159,9 @@ namespace G
         /// File status. One of the following values: "DB_RECORD_CREATED",<br/>
         /// "UPLOADED", "UPLOAD_FAILED", "PROCESSED", "PROCESSING_FAILED"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FileResponse(
             global::System.Guid fileId,
             string name,

@@ -58,7 +58,9 @@ namespace G
         /// <param name="excerptId"></param>
         /// <param name="newStart"></param>
         /// <param name="newEnd"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdatePDFSwfImageExcerptRegionRequest(
             global::System.Guid projectId,
             global::System.Guid currentUserId,

@@ -70,7 +70,9 @@ namespace G
         /// <param name="workspaceRoleId"></param>
         /// <param name="password"></param>
         /// <param name="fullName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PendingIdentityCreate(
             string email,
             bool? readOnly,

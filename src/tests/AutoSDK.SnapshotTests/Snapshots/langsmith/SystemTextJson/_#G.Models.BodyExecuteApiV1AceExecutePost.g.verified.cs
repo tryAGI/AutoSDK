@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="args"></param>
         /// <param name="code"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyExecuteApiV1AceExecutePost(
             global::System.Collections.Generic.IList<object> args,
             string code)

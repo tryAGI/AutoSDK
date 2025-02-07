@@ -27,7 +27,9 @@ namespace G
         /// <param name="customModelsByPk">
         /// columns and relationships of "custom_models"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetModelByIdResponse(
             global::G.GetModelByIdResponseCustomModelsByPk? customModelsByPk)
         {

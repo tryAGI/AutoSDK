@@ -42,7 +42,9 @@ namespace G
         /// Part of the message from the generator. All summary chunks must be appended together in order<br/>
         /// to get the full summary.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StreamGenerationChunk(
             string? type,
             string? generationChunk)

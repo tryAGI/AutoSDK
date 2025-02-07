@@ -48,7 +48,9 @@ namespace G
         /// <param name="title"></param>
         /// <param name="duration"></param>
         /// <param name="startDate"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectsV2IterationSetting(
             string id,
             string title,

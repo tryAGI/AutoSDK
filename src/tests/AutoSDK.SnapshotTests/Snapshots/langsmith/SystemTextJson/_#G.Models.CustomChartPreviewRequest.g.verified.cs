@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="bucketInfo"></param>
         /// <param name="chart"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartPreviewRequest(
             global::G.CustomChartsRequestBase bucketInfo,
             global::G.CustomChartCreatePreview chart)

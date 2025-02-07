@@ -73,7 +73,9 @@ namespace G
         /// last AI assistant app top k<br/>
         /// If the last AI assistant app top k is empty, the last AI assistant app top k will be set to empty.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateAppBody(
             string? newAppId,
             string? newDescription,

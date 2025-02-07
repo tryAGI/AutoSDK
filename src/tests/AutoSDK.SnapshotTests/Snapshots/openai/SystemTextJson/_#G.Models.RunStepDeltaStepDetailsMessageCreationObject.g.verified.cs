@@ -35,7 +35,9 @@ namespace G
         /// Always `message_creation`.
         /// </param>
         /// <param name="messageCreation"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDeltaStepDetailsMessageCreationObject(
             global::G.RunStepDeltaStepDetailsMessageCreationObjectType type,
             global::G.RunStepDeltaStepDetailsMessageCreationObjectMessageCreation? messageCreation)

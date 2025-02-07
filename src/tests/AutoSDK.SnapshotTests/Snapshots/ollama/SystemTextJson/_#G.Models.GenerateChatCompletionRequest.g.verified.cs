@@ -103,7 +103,9 @@ namespace G
         /// <param name="tools">
         /// A list of tools the model may call.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateChatCompletionRequest(
             string model,
             global::System.Collections.Generic.IList<global::G.Message> messages,

@@ -38,7 +38,9 @@ namespace G
         /// Default Value: error
         /// </param>
         /// <param name="error"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ErrorResponse(
             global::G.Error2 error,
             global::G.ErrorResponseType type = global::G.ErrorResponseType.Error)

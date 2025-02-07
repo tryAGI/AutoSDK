@@ -36,7 +36,9 @@ namespace G
         /// <param name="metadata">
         /// The standard metadata in the response of a list operation.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListChatsResponse(
             global::System.Collections.Generic.IList<global::G.Chat>? chats,
             global::G.ListMetadata? metadata)

@@ -594,7 +594,9 @@ namespace G
         /// <param name="acousticModel">
         /// The acoustic model that was used for the transcript
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Transcript(
             global::System.Guid id,
             string audioUrl,

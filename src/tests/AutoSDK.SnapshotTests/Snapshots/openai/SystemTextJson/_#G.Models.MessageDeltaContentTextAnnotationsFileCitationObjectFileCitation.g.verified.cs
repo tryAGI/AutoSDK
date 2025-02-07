@@ -36,7 +36,9 @@ namespace G
         /// <param name="quote">
         /// The specific quote in the file.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDeltaContentTextAnnotationsFileCitationObjectFileCitation(
             string? fileId,
             string? quote)

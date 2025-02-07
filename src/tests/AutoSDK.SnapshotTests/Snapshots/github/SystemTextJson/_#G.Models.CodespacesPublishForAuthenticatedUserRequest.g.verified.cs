@@ -38,7 +38,9 @@ namespace G
         /// Whether the new repository should be private.<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesPublishForAuthenticatedUserRequest(
             string? name,
             bool? @private)

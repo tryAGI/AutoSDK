@@ -65,7 +65,9 @@ namespace G
         /// <param name="workspaceAccess">
         /// Should be one of 'editor' or 'viewer'. If not provided, defaults to no access.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyAddAPronunciationDictionaryV1PronunciationDictionariesAddFromFilePost(
             string name,
             byte[]? file,

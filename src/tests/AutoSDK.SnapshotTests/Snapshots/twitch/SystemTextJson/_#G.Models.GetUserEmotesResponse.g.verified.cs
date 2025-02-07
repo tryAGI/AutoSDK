@@ -53,7 +53,9 @@ namespace G
         ///   <br/>
         ///  For more information about pagination support, see [Twitch API Guide - Pagination](https://dev.twitch.tv/docs/api/guide#pagination).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUserEmotesResponse(
             global::System.Collections.Generic.IList<global::G.GetUserEmotesResponseDataItem> data,
             string template,

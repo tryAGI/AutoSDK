@@ -109,7 +109,9 @@ namespace G
         /// <param name="tokenLastUsedAt">
         /// Date and time when the associated fine-grained personal access token was last used for authentication.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrganizationProgrammaticAccessGrant(
             int id,
             global::G.SimpleUser owner,

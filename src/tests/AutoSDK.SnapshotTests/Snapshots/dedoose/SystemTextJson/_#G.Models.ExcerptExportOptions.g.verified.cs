@@ -116,7 +116,9 @@ namespace G
         /// <param name="tagWeight"></param>
         /// <param name="tagRange"></param>
         /// <param name="memos"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExcerptExportOptions(
             string? fileExtension,
             int? exCopyMode,

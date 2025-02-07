@@ -39,7 +39,9 @@ namespace G
         /// <param name="format">
         /// The format of the encoded audio data. Currently supports "wav" and "mp3".
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionRequestMessageContentPartAudioInputAudio(
             string data,
             global::G.ChatCompletionRequestMessageContentPartAudioInputAudioFormat format)

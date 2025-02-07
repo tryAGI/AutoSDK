@@ -148,7 +148,9 @@ namespace G
         /// <param name="projectUrl">
         /// Example: https://api.github.com/projects/120
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectCard(
             string url,
             long id,

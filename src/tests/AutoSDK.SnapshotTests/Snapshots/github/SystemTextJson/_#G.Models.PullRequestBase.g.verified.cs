@@ -58,7 +58,9 @@ namespace G
         /// <param name="repo"></param>
         /// <param name="sha"></param>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullRequestBase(
             string label,
             string @ref,

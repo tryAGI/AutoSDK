@@ -49,7 +49,9 @@ namespace G
         /// <param name="reviewId"></param>
         /// <param name="dismissalMessage"></param>
         /// <param name="dismissalCommitId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReviewDismissedIssueEventDismissedReview(
             string state,
             int reviewId,

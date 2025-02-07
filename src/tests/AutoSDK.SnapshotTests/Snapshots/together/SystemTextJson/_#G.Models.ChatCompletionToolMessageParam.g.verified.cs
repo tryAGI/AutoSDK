@@ -42,7 +42,9 @@ namespace G
         /// <param name="content"></param>
         /// <param name="role"></param>
         /// <param name="toolCallId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionToolMessageParam(
             string content,
             string toolCallId,

@@ -68,7 +68,9 @@ namespace G
         /// <param name="end">
         /// The starting time, in milliseconds, for the chapter
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Chapter(
             string gist,
             string headline,

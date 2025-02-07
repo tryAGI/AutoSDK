@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="SigstoreBundle0VerificationMaterialX509CertificateChain" /> class.
         /// </summary>
         /// <param name="certificates"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SigstoreBundle0VerificationMaterialX509CertificateChain(
             global::System.Collections.Generic.IList<global::G.SigstoreBundle0VerificationMaterialX509CertificateChainCertificate>? certificates)
         {

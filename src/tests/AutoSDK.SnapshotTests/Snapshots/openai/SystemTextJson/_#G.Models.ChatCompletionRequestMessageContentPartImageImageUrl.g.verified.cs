@@ -40,7 +40,9 @@ namespace G
         /// Specifies the detail level of the image. Learn more in the [Vision guide](/docs/guides/vision#low-or-high-fidelity-image-understanding).<br/>
         /// Default Value: auto
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionRequestMessageContentPartImageImageUrl(
             string url,
             global::G.ChatCompletionRequestMessageContentPartImageImageUrlDetail? detail)

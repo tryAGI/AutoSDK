@@ -38,7 +38,9 @@ namespace G
         /// <param name="encodedJitConfig">
         /// The base64 encoded runner configuration.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsGenerateRunnerJitconfigForRepoResponse(
             global::G.Runner runner,
             string encodedJitConfig)

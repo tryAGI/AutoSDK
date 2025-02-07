@@ -51,7 +51,9 @@ namespace G
         /// <param name="isEnabled">
         /// Boolean flag indicating whether the label should be enabled (true) or disabled for the channel.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModifyChannelInformationBodyContentClassificationLabel(
             global::G.ModifyChannelInformationBodyContentClassificationLabelId id,
             bool isEnabled)

@@ -177,7 +177,9 @@ namespace G
         /// <param name="validationFiles">
         /// Default Value: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DetailedJobOut(
             bool autoStart,
             int createdAt,

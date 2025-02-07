@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="userId"></param>
         /// <param name="connectionKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RegisterConnectionRequest(
             global::System.Guid userId,
             global::System.Guid connectionKey)

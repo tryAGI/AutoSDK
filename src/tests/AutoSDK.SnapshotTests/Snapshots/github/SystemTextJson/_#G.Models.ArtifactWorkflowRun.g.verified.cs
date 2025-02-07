@@ -68,7 +68,9 @@ namespace G
         /// <param name="headSha">
         /// Example: 009b8a3a9ccbb128af87f9b1c0f4c62e8a304f6d
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ArtifactWorkflowRun(
             int? id,
             int? repositoryId,

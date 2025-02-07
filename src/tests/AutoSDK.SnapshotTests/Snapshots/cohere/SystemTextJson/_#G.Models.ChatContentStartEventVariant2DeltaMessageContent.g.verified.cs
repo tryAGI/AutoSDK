@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="text"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatContentStartEventVariant2DeltaMessageContent(
             string? text,
             global::G.ChatContentStartEventVariant2DeltaMessageContentType? type)

@@ -74,7 +74,9 @@ namespace G
         /// <param name="description"></param>
         /// <param name="createStamp"></param>
         /// <param name="createdByUserId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DescriptorSet(
             string? projectIdKey,
             global::System.Guid? projectId,

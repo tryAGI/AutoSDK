@@ -64,7 +64,9 @@ namespace G
         /// <param name="code"></param>
         /// <param name="index"></param>
         /// <param name="value"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ValidationErrorError(
             string code,
             string? resource,

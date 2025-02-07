@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="currentProjectId"></param>
         /// <param name="excerptIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartDeleteExcerptsJobRequest(
             global::System.Guid currentProjectId,
             global::System.Collections.Generic.IList<global::System.Guid> excerptIds)

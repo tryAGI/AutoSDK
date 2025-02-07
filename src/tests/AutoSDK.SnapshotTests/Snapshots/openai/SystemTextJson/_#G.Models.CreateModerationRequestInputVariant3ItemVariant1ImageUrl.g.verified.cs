@@ -31,7 +31,9 @@ namespace G
         /// Either a URL of the image or the base64 encoded image data.<br/>
         /// Example: https://example.com/image.jpg
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModerationRequestInputVariant3ItemVariant1ImageUrl(
             string url)
         {

@@ -72,7 +72,9 @@ namespace G
         /// <param name="maxOutputTokens">
         /// Optional. The maximum number of tokens to include in a candidate. Note: The default value varies by model, see the `Model.output_token_limit` attribute of the `Model` returned from the `getModel` function.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerationConfig(
             float? temperature,
             global::System.Collections.Generic.IList<string>? stopSequences,

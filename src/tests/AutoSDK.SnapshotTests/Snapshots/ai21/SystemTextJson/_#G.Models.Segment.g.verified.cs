@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="segmentText"></param>
         /// <param name="segmentType"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Segment(
             string segmentText,
             string segmentType)

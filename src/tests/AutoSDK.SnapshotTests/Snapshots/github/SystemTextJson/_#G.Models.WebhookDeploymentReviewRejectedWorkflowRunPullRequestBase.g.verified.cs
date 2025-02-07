@@ -42,7 +42,9 @@ namespace G
         /// <param name="ref"></param>
         /// <param name="repo"></param>
         /// <param name="sha"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookDeploymentReviewRejectedWorkflowRunPullRequestBase(
             string @ref,
             global::G.WebhookDeploymentReviewRejectedWorkflowRunPullRequestBaseRepo repo,

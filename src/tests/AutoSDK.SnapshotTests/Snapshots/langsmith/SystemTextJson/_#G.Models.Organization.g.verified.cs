@@ -134,7 +134,9 @@ namespace G
         /// <param name="permissions">
         /// Default Value: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Organization(
             global::G.OrganizationConfig config,
             bool connectedToStripe,

@@ -659,7 +659,9 @@ namespace G
         /// <param name="allowMergeCommit"></param>
         /// <param name="subscribersCount"></param>
         /// <param name="networkCount"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NullableRepositoryWebhooksTemplateRepository(
             int? id,
             string? nodeId,

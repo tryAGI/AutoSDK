@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="domain"></param>
         /// <param name="altDomain"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PagesHealthCheck(
             global::G.PagesHealthCheckDomain? domain,
             global::G.PagesHealthCheckAltDomain? altDomain)

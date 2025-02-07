@@ -74,7 +74,9 @@ namespace G
         /// <param name="weight"></param>
         /// <param name="userId"></param>
         /// <param name="createStamp"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TagAppDTO(
             global::System.Guid? id,
             global::System.Guid? projectId,

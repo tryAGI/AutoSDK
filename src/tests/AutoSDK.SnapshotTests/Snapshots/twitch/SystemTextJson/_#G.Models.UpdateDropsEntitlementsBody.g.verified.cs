@@ -43,7 +43,9 @@ namespace G
         /// * CLAIMED — The user claimed the benefit.<br/>
         /// * FULFILLED — The developer granted the benefit that the user claimed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateDropsEntitlementsBody(
             global::System.Collections.Generic.IList<string>? entitlementIds,
             global::G.UpdateDropsEntitlementsBodyFulfillmentStatus? fulfillmentStatus)

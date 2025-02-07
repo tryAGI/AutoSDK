@@ -79,7 +79,9 @@ namespace G
         /// <param name="totalComputeTimeMs"></param>
         /// <param name="successfulRunCountChange"></param>
         /// <param name="failedRunCountChange"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OverallUsageSummary(
             double start,
             double end,

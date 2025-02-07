@@ -90,7 +90,9 @@ namespace G
         /// <param name="planType">
         /// The Copilot plan of the organization, or the parent enterprise, when applicable.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CopilotOrganizationDetails(
             global::G.CopilotSeatBreakdown seatBreakdown,
             global::G.CopilotOrganizationDetailsPublicCodeSuggestions publicCodeSuggestions,

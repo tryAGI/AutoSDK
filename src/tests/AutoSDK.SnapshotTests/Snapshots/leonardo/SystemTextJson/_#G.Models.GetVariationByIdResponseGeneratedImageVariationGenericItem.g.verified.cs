@@ -59,7 +59,9 @@ namespace G
         /// The type of variation.
         /// </param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetVariationByIdResponseGeneratedImageVariationGenericItem(
             string? createdAt,
             string? id,

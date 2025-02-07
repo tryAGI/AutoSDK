@@ -102,7 +102,9 @@ namespace G
         /// <param name="usage">
         /// Usage statistics for the completion request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChatCompletionResponse(
             string id,
             global::System.Collections.Generic.IList<global::G.CreateChatCompletionResponseChoice> choices,

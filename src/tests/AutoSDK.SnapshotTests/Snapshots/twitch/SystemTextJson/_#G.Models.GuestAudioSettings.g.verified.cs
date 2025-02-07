@@ -48,7 +48,9 @@ namespace G
         /// <param name="isAvailable">
         /// Flag determining whether the guest has an appropriate audio device available to be transmitted to the session.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GuestAudioSettings(
             bool isHostEnabled,
             bool isGuestEnabled,

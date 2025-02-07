@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="email"></param>
         /// <param name="groupId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InviteUserToProjectRequest(
             global::System.Guid projectId,
             string email,

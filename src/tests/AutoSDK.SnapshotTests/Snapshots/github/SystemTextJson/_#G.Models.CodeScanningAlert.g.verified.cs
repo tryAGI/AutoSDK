@@ -176,7 +176,9 @@ namespace G
         /// <param name="rule"></param>
         /// <param name="tool"></param>
         /// <param name="mostRecentInstance"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningAlert(
             global::G.CodeScanningAlertState state,
             global::G.NullableSimpleUser? dismissedBy,

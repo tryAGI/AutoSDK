@@ -62,7 +62,9 @@ namespace G
         /// <param name="htmlUrl">
         /// Example: https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeOfConductSimple(
             string url,
             string key,

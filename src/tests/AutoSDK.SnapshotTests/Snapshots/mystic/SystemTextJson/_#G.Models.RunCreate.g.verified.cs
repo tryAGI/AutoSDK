@@ -57,7 +57,9 @@ namespace G
         /// </param>
         /// <param name="waitForResources"></param>
         /// <param name="runId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunCreate(
             string pipeline,
             global::System.Collections.Generic.IList<global::G.RunInput> inputs,

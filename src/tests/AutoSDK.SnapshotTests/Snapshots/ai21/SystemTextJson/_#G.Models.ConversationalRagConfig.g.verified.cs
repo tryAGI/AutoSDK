@@ -93,7 +93,9 @@ namespace G
         /// <param name="hybridSearchAlpha">
         /// Default Value: 0.98
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ConversationalRagConfig(
             global::System.Collections.Generic.IList<global::G.Message> messages,
             string? path,

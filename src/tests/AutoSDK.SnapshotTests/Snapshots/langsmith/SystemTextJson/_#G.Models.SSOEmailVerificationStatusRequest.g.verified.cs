@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="email"></param>
         /// <param name="samlProviderId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SSOEmailVerificationStatusRequest(
             string email,
             global::System.Guid samlProviderId)

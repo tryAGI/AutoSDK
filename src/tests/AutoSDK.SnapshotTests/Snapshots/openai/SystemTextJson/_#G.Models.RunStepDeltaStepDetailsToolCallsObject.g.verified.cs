@@ -37,7 +37,9 @@ namespace G
         /// <param name="toolCalls">
         /// An array of tool calls the run step was involved in. These can be associated with one of three types of tools: `code_interpreter`, `file_search`, or `function`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDeltaStepDetailsToolCallsObject(
             global::G.RunStepDeltaStepDetailsToolCallsObjectType type,
             global::System.Collections.Generic.IList<global::G.ToolCallsItem>? toolCalls)

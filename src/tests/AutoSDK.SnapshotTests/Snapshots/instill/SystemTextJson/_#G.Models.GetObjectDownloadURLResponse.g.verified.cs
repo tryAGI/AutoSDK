@@ -39,7 +39,9 @@ namespace G
         /// <param name="downloadUrl"></param>
         /// <param name="urlExpireAt"></param>
         /// <param name="object"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetObjectDownloadURLResponse(
             string? downloadUrl,
             global::System.DateTime? urlExpireAt,

@@ -45,7 +45,9 @@ namespace G
         /// An enumeration.
         /// </param>
         /// <param name="finishReason"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatOutput(
             string text,
             global::G.RoleType role,

@@ -41,7 +41,9 @@ namespace G
         /// <param name="credentialId"></param>
         /// <param name="serviceAccountFile"></param>
         /// <param name="serviceAccountFilename"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyCreateGcpServiceAccountV4CloudProviderGcpServiceAccountsPost(
             byte[] serviceAccountFile,
             string serviceAccountFilename,

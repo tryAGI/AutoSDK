@@ -64,7 +64,9 @@ namespace G
         /// Higher values penalize new tokens based on whether they appear in the text so far,<br/>
         /// increasing the model's likelihood to talk about new topics.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerationParametersModelParameters(
             int? maxTokens,
             float? temperature,

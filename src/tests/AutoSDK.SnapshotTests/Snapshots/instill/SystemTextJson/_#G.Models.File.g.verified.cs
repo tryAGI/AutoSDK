@@ -168,7 +168,9 @@ namespace G
         /// Included only in responses
         /// </param>
         /// <param name="externalMetadata"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public File(
             string name,
             global::G.FileType type,

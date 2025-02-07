@@ -46,7 +46,9 @@ namespace G
         /// <param name="documentationUrl"></param>
         /// <param name="url"></param>
         /// <param name="status"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BasicError(
             string? message,
             string? documentationUrl,

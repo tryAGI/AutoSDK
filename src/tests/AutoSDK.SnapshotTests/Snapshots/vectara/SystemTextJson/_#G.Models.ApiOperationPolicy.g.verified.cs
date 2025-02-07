@@ -46,7 +46,9 @@ namespace G
         /// A body or path resource is within the operation body, and an implicit<br/>
         /// resource is a resource implied by the request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiOperationPolicy(
             bool allowAnyResource,
             global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? allowedResources)

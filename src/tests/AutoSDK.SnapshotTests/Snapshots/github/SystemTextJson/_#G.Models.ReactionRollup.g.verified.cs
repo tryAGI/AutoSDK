@@ -98,7 +98,9 @@ namespace G
         /// <param name="hooray"></param>
         /// <param name="eyes"></param>
         /// <param name="rocket"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReactionRollup(
             string url,
             int totalCount,

@@ -185,7 +185,9 @@ namespace G
         /// The optional link added to the status.
         /// </param>
         /// <param name="updatedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookStatus(
             global::System.Collections.Generic.IList<global::G.WebhookStatusBranche> branches,
             global::G.WebhookStatusCommit commit,

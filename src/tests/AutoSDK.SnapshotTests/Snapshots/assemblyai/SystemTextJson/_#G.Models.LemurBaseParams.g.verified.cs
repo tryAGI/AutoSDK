@@ -90,7 +90,9 @@ namespace G
         /// Can be any value between 0.0 and 1.0 inclusive.<br/>
         /// Default Value: 0F
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LemurBaseParams(
             global::System.Collections.Generic.IList<global::System.Guid>? transcriptIds,
             string? inputText,

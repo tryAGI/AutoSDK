@@ -37,7 +37,9 @@ namespace G
         /// <param name="type">
         /// The type of credit the user is receiving.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryAdvisoryCredit2(
             string? login,
             global::G.SecurityAdvisoryCreditTypes? type)

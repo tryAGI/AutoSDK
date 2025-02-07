@@ -28,7 +28,9 @@ namespace G
         /// <param name="status">
         /// The current status of the deployment.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PagesDeploymentStatus(
             global::G.PagesDeploymentStatusStatus? status)
         {

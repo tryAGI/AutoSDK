@@ -42,7 +42,9 @@ namespace G
         /// Default Value: latest
         /// </param>
         /// <param name="lastUpdatedVersion"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DatasetIndexInfo(
             global::System.Guid datasetId,
             string? tag,

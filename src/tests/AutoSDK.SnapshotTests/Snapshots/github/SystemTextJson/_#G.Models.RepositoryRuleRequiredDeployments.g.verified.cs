@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         /// <param name="parameters"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleRequiredDeployments(
             global::G.RepositoryRuleRequiredDeploymentsType type,
             global::G.RepositoryRuleRequiredDeploymentsParameters? parameters)

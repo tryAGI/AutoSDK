@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GetTextureGenerationsByModelIdResponse" /> class.
         /// </summary>
         /// <param name="modelAssetTextureGenerations"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetTextureGenerationsByModelIdResponse(
             global::System.Collections.Generic.IList<global::G.GetTextureGenerationsByModelIdResponseModelAssetTextureGeneration>? modelAssetTextureGenerations)
         {

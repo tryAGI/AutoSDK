@@ -64,7 +64,9 @@ namespace G
         /// <param name="private">
         /// Whether the repository is private or public.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksRepositorie(
             string fullName,
             int id,

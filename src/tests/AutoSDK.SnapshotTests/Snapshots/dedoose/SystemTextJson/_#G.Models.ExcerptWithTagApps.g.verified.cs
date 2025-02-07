@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="excerptData"></param>
         /// <param name="tagApps"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExcerptWithTagApps(
             global::G.Excerpt2? excerptData,
             global::System.Collections.Generic.IList<global::G.TagAppDTO>? tagApps)

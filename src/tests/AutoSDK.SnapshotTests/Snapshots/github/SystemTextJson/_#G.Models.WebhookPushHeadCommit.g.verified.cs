@@ -121,7 +121,9 @@ namespace G
         /// <param name="url">
         /// URL that points to the commit API resource.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPushHeadCommit(
             global::G.WebhookPushHeadCommitAuthor author,
             global::G.WebhookPushHeadCommitCommitter committer,

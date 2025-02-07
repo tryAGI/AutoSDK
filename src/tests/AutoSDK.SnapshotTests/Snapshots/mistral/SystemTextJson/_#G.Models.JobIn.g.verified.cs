@@ -93,7 +93,9 @@ namespace G
         /// <param name="validationFiles">
         /// A list containing the IDs of uploaded files that contain validation data. If you provide these files, the data is used to generate validation metrics periodically during fine-tuning. These metrics can be viewed in `checkpoints` when getting the status of a running fine-tuning job. The same data should not be present in both train and validation files.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public JobIn(
             global::G.TrainingParametersIn hyperparameters,
             global::G.FineTuneableModel model,

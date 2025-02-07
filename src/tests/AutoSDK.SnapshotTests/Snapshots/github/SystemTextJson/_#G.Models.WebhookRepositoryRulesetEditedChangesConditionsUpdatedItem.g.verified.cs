@@ -34,7 +34,9 @@ namespace G
         /// Parameters for a repository ruleset ref name condition
         /// </param>
         /// <param name="changes"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRepositoryRulesetEditedChangesConditionsUpdatedItem(
             global::G.RepositoryRulesetConditions? condition,
             global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges? changes)

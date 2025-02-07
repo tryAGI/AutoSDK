@@ -70,7 +70,9 @@ namespace G
         /// <param name="createdAt">
         /// The Unix timestamp (in seconds) of when the service account was created
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectServiceAccount(
             string id,
             string name,

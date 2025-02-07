@@ -104,7 +104,9 @@ namespace G
         /// <param name="visibility">
         /// Whether the model should be public or private. A public model can be viewed and run by anyone, whereas a private model can be viewed and run only by the user or organization members that own the model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModelsCreateRequest(
             string hardware,
             string name,

@@ -39,7 +39,9 @@ namespace G
         /// <param name="event"></param>
         /// <param name="nodeId"></param>
         /// <param name="comments"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TimelineLineCommentedEvent(
             string? @event,
             string? nodeId,

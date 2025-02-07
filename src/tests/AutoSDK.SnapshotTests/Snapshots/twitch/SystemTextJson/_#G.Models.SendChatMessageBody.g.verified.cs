@@ -57,7 +57,9 @@ namespace G
         /// <param name="replyParentMessageId">
         /// The ID of the chat message being replied to.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SendChatMessageBody(
             string broadcasterId,
             string senderId,

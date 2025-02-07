@@ -28,7 +28,9 @@ namespace G
         /// <param name="from">
         /// The changes to the project if the action was `edited`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookProjectEditedChangesName(
             string from)
         {

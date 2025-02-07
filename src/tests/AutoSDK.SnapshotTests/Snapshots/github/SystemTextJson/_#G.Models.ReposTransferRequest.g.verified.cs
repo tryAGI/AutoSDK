@@ -46,7 +46,9 @@ namespace G
         /// <param name="teamIds">
         /// ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposTransferRequest(
             string newOwner,
             string? newName,

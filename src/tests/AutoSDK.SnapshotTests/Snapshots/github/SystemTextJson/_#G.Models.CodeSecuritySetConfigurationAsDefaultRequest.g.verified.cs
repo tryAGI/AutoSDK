@@ -28,7 +28,9 @@ namespace G
         /// <param name="defaultForNewRepos">
         /// Specify which types of repository this security configuration should be applied to by default.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeSecuritySetConfigurationAsDefaultRequest(
             global::G.CodeSecuritySetConfigurationAsDefaultRequestDefaultForNewRepos? defaultForNewRepos)
         {

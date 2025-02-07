@@ -50,7 +50,9 @@ namespace G
         /// <param name="finishReason"></param>
         /// <param name="index"></param>
         /// <param name="logprobs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionChoice(
             global::G.ChatCompletionChoiceDelta delta,
             global::G.FinishReason finishReason,

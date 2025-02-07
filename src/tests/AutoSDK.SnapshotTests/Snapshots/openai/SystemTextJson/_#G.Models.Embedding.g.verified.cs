@@ -48,7 +48,9 @@ namespace G
         /// <param name="object">
         /// The object type, which is always "embedding".
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Embedding(
             int index,
             global::System.Collections.Generic.IList<double> embedding1,

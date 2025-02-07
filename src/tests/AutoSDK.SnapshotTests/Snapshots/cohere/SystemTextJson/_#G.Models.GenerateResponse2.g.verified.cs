@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GenerateResponse2" /> class.
         /// </summary>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateResponse2(
             string? data)
         {

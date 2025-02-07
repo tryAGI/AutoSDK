@@ -28,7 +28,9 @@ namespace G
         /// <param name="regions">
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListAvailableRegionsResponse(
             global::System.Collections.Generic.IList<global::G.Region>? regions)
         {

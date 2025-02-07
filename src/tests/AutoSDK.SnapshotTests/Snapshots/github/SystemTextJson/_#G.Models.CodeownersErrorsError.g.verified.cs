@@ -115,7 +115,9 @@ namespace G
         /// The path of the file where the error occured.<br/>
         /// Example: .github/CODEOWNERS
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeownersErrorsError(
             int line,
             int column,

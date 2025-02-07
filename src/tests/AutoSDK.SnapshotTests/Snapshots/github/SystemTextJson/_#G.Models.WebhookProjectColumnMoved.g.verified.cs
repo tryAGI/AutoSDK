@@ -92,7 +92,9 @@ namespace G
         /// <param name="sender">
         /// A GitHub user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookProjectColumnMoved(
             global::G.WebhooksProjectColumn projectColumn,
             global::G.SimpleUser sender,

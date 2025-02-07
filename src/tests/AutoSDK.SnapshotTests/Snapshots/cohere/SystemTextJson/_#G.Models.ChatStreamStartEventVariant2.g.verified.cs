@@ -28,7 +28,9 @@ namespace G
         /// <param name="generationId">
         /// Unique identifier for the generated reply. Useful for submitting feedback.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatStreamStartEventVariant2(
             global::System.Guid generationId)
         {

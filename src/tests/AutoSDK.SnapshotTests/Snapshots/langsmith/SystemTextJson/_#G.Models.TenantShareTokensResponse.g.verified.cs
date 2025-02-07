@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="TenantShareTokensResponse" /> class.
         /// </summary>
         /// <param name="entities"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TenantShareTokensResponse(
             global::System.Collections.Generic.IList<global::G.EntitiesItem> entities)
         {

@@ -200,7 +200,9 @@ namespace G
         /// <param name="pwPolicy2AuthOnRelog"></param>
         /// <param name="pwPolicyIdleTimeout"></param>
         /// <param name="adminIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AccountVO(
             global::System.Guid? id,
             global::System.DateTime? createStamp,

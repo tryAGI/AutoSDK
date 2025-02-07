@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="LookUpUserAdminResponse" /> class.
         /// </summary>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LookUpUserAdminResponse(
             global::G.User? user)
         {

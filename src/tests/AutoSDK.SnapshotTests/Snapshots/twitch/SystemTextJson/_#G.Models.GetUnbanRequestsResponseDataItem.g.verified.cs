@@ -180,7 +180,9 @@ namespace G
         /// <param name="resolutionText">
         /// Text input by the resolver (moderator) of the unban. request
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUnbanRequestsResponseDataItem(
             string id,
             string broadcasterId,

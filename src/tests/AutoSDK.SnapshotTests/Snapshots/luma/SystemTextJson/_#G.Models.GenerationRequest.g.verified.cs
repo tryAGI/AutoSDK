@@ -79,7 +79,9 @@ namespace G
         /// <param name="prompt">
         /// The prompt of the generation
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerationRequest(
             global::G.AspectRatio? aspectRatio,
             string? callbackUrl,

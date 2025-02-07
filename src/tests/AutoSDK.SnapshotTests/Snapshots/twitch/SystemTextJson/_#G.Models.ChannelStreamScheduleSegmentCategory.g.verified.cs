@@ -38,7 +38,9 @@ namespace G
         /// <param name="name">
         /// The name of the category. For example, the game’s title if the broadcaster will play a game or Just Chatting if the broadcaster will host a talk show.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChannelStreamScheduleSegmentCategory(
             string id,
             string name)

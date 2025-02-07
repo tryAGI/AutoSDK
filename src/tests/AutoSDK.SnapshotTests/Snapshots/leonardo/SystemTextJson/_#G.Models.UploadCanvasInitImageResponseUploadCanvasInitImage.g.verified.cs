@@ -74,7 +74,9 @@ namespace G
         /// <param name="maskFields"></param>
         /// <param name="maskKey"></param>
         /// <param name="maskUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UploadCanvasInitImageResponseUploadCanvasInitImage(
             string? initImageId,
             string? initFields,

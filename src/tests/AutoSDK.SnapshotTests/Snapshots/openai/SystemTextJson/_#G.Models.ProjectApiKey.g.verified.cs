@@ -77,7 +77,9 @@ namespace G
         /// The identifier, which can be referenced in API endpoints
         /// </param>
         /// <param name="owner"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectApiKey(
             string redactedValue,
             string name,

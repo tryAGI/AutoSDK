@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="statistics"></param>
         /// <param name="synchronized"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClusterStatisticsResponse(
             global::System.Collections.Generic.IList<global::G.Statistics>? statistics,
             bool? synchronized)

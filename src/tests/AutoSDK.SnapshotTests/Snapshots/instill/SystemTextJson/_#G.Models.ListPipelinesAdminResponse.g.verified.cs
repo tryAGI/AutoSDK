@@ -48,7 +48,9 @@ namespace G
         /// <param name="totalSize">
         /// Total number of pipelines.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListPipelinesAdminResponse(
             global::System.Collections.Generic.IList<global::G.Pipeline>? pipelines,
             string? nextPageToken,

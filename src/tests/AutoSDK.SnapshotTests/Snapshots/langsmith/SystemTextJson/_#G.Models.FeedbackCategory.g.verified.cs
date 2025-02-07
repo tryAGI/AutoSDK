@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="value"></param>
         /// <param name="label"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackCategory(
             double value,
             string? label)

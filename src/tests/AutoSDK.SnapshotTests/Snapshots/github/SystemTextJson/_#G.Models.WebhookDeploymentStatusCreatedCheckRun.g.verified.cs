@@ -126,7 +126,9 @@ namespace G
         /// The current status of the check run. Can be `queued`, `in_progress`, or `completed`.
         /// </param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookDeploymentStatusCreatedCheckRun(
             global::System.DateTime? completedAt,
             global::G.WebhookDeploymentStatusCreatedCheckRunConclusion? conclusion,

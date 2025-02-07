@@ -34,7 +34,9 @@ namespace G
         /// The data that makes up the text.
         /// </param>
         /// <param name="annotations"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDeltaContentTextObjectText(
             string? value,
             global::System.Collections.Generic.IList<global::G.AnnotationsItem2>? annotations)

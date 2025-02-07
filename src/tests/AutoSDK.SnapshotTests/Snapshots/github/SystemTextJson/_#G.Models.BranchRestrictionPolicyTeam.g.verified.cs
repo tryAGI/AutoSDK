@@ -109,7 +109,9 @@ namespace G
         /// <param name="membersUrl"></param>
         /// <param name="repositoriesUrl"></param>
         /// <param name="parent"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BranchRestrictionPolicyTeam(
             int? id,
             string? nodeId,

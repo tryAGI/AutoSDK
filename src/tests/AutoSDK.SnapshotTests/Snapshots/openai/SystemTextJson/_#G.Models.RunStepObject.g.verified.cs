@@ -186,7 +186,9 @@ namespace G
         /// <param name="usage">
         /// Usage statistics related to the run step. This value will be `null` while the run step's status is `in_progress`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepObject(
             string id,
             global::System.DateTimeOffset createdAt,

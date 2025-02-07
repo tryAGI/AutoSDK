@@ -54,7 +54,9 @@ namespace G
         /// <param name="err">
         /// Error message
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateStreamErrorVariant2(
             bool isFinished,
             global::G.FinishReason finishReason,

@@ -82,7 +82,9 @@ namespace G
         /// <param name="referenceDatasetId"></param>
         /// <param name="traceTier"></param>
         /// <param name="id"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TracerSessionCreate(
             global::System.DateTime? startTime,
             global::System.DateTime? endTime,

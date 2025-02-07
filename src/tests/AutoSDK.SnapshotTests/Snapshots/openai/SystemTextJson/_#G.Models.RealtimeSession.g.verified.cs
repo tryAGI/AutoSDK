@@ -173,7 +173,9 @@ namespace G
         /// limit output tokens, or `inf` for the maximum available tokens for a<br/>
         /// given model. Defaults to `inf`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSession(
             global::System.Collections.Generic.IList<global::G.RealtimeSessionModalitie>? modalities,
             string? instructions,

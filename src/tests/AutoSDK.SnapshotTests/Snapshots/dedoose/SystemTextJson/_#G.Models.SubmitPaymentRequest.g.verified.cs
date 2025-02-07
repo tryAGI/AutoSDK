@@ -146,7 +146,9 @@ namespace G
         /// <param name="expMonth"></param>
         /// <param name="expYear"></param>
         /// <param name="saveAsReoccuring"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SubmitPaymentRequest(
             global::System.Guid accountId,
             double amount,

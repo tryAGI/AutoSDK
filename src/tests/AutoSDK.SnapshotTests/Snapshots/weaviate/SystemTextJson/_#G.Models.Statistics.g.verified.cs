@@ -118,7 +118,9 @@ namespace G
         /// <param name="raft">
         /// The definition of Raft statistics.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Statistics(
             string? name,
             global::G.StatisticsStatus? status,

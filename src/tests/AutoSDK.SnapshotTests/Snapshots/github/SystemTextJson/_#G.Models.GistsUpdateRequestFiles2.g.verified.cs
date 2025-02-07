@@ -36,7 +36,9 @@ namespace G
         /// <param name="filename">
         /// The new filename for the file.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GistsUpdateRequestFiles2(
             string? content,
             string? filename)

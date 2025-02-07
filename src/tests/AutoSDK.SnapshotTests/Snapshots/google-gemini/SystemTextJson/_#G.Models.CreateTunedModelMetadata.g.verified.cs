@@ -63,7 +63,9 @@ namespace G
         /// <param name="completedPercent">
         /// The completed percentage for the tuning operation.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateTunedModelMetadata(
             int? totalSteps,
             string? tunedModel,

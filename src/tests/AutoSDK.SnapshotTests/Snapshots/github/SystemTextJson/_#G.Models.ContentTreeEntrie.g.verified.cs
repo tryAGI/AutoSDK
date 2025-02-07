@@ -98,7 +98,9 @@ namespace G
         /// <param name="htmlUrl"></param>
         /// <param name="downloadUrl"></param>
         /// <param name="links"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ContentTreeEntrie(
             string type,
             int size,

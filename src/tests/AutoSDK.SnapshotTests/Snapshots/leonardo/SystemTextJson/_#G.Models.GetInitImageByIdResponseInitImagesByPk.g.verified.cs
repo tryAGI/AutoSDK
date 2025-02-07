@@ -39,7 +39,9 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="id"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetInitImageByIdResponseInitImagesByPk(
             string? createdAt,
             string? id,

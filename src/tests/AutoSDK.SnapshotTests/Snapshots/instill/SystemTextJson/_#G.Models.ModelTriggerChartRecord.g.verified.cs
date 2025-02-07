@@ -64,7 +64,9 @@ namespace G
         /// The ID of the namespace that requested the model triggers.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModelTriggerChartRecord(
             string? modelId,
             global::System.Collections.Generic.IList<global::System.DateTime>? timeBuckets,

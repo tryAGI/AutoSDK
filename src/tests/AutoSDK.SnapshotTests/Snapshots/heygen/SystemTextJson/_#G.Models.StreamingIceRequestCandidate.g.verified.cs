@@ -58,7 +58,9 @@ namespace G
         /// <param name="usernameFragment">
         /// Example: &lt;USERNAME_FRAGMENT&gt;
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StreamingIceRequestCandidate(
             string? candidate,
             string? sdpMLineIndex,

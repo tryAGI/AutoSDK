@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains information about the channel’s snoozes and next upcoming ad after successfully snoozing.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SnoozeNextAdResponse(
             global::System.Collections.Generic.IList<global::G.SnoozeNextAdResponseDataItem> data)
         {

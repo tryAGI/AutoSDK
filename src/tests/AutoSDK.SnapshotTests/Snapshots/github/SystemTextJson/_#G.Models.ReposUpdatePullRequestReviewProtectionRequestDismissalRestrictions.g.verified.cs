@@ -45,7 +45,9 @@ namespace G
         /// <param name="apps">
         /// The list of app `slug`s with dismissal access
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions(
             global::System.Collections.Generic.IList<string>? users,
             global::System.Collections.Generic.IList<string>? teams,

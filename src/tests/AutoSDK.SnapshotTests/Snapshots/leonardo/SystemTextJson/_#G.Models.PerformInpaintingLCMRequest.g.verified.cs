@@ -121,7 +121,9 @@ namespace G
         /// Default Value: 512
         /// </param>
         /// <param name="seed"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PerformInpaintingLCMRequest(
             string imageDataUrl,
             string maskDataUrl,

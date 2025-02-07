@@ -78,7 +78,9 @@ namespace G
         /// <param name="amount">
         /// An object that contains the amount of money that the user donated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CharityCampaignDonation(
             string id,
             string campaignId,

@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="BetaComputerUseTool20241022CacheControlDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaComputerUseTool20241022CacheControlDiscriminator(
             global::G.BetaComputerUseTool20241022CacheControlDiscriminatorType? type)
         {

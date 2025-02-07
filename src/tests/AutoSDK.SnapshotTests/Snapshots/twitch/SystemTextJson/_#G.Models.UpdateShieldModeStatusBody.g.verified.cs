@@ -28,7 +28,9 @@ namespace G
         /// <param name="isActive">
         /// A Boolean value that determines whether to activate Shield Mode. Set to **true** to activate Shield Mode; otherwise, **false** to deactivate Shield Mode.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateShieldModeStatusBody(
             bool isActive)
         {

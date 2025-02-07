@@ -88,7 +88,9 @@ namespace G
         /// <param name="broadcast">
         /// A Boolean value that determines whether the data was broadcast to all instances of the extension. Is **true** if the data was broadcast to all instances.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExtensionTransactionProductData(
             string sku,
             string domain,

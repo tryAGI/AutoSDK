@@ -88,7 +88,9 @@ namespace G
         /// <param name="excerptCount"></param>
         /// <param name="tagCount"></param>
         /// <param name="creator"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TrainingTest(
             string? projectIdKey,
             global::System.Guid? id,

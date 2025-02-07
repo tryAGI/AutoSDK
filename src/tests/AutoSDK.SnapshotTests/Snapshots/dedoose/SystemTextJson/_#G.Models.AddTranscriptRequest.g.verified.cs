@@ -50,7 +50,9 @@ namespace G
         /// <param name="currentUserId"></param>
         /// <param name="resourceId"></param>
         /// <param name="transcriptData"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddTranscriptRequest(
             global::System.Guid projectId,
             global::System.Guid currentUserId,

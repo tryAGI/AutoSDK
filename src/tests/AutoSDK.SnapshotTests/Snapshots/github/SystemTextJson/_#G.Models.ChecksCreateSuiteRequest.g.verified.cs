@@ -28,7 +28,9 @@ namespace G
         /// <param name="headSha">
         /// The sha of the head commit.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChecksCreateSuiteRequest(
             string headSha)
         {

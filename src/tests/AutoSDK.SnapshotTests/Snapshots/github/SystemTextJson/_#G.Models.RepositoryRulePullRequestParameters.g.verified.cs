@@ -68,7 +68,9 @@ namespace G
         /// <param name="requiredReviewThreadResolution">
         /// All conversations on code must be resolved before a pull request can be merged.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRulePullRequestParameters(
             bool dismissStaleReviewsOnPush,
             bool requireCodeOwnerReview,

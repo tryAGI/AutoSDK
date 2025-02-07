@@ -60,7 +60,9 @@ namespace G
         /// <param name="projectIDL"></param>
         /// <param name="descriptorIDL"></param>
         /// <param name="resourceIDL"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DescriptorLink(
             string? projectIdKey,
             global::System.Guid? projectId,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="amountDueCents"></param>
         /// <param name="nextPaymentAttemptUnix"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InvoiceResponseModel(
             int amountDueCents,
             int nextPaymentAttemptUnix)

@@ -56,7 +56,9 @@ namespace G
         /// <param name="outputs"></param>
         /// <param name="metadata"></param>
         /// <param name="split"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExampleUpdate(
             global::System.Guid? datasetId,
             object? inputs,

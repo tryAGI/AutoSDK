@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="StripeSetupIntentResponse" /> class.
         /// </summary>
         /// <param name="clientSecret"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripeSetupIntentResponse(
             string clientSecret)
         {

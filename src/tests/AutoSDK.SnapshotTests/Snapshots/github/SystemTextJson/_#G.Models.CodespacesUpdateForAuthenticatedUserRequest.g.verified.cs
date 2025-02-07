@@ -45,7 +45,9 @@ namespace G
         /// <param name="recentFolders">
         /// Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesUpdateForAuthenticatedUserRequest(
             string? machine,
             string? displayName,

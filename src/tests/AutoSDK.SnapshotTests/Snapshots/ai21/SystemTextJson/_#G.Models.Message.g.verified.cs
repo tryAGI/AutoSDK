@@ -55,7 +55,9 @@ namespace G
         ///   charming French accent."
         /// </param>
         /// <param name="content"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Message(
             global::G.MessageRole role,
             string content)

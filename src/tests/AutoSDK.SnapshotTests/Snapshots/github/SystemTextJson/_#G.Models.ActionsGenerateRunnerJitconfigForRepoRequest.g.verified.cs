@@ -59,7 +59,9 @@ namespace G
         /// The working directory to be used for job execution, relative to the runner install directory.<br/>
         /// Default Value: _work
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsGenerateRunnerJitconfigForRepoRequest(
             string name,
             int runnerGroupId,

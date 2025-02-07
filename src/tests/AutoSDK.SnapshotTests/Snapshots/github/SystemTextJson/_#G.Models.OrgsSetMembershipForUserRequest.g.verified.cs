@@ -34,7 +34,9 @@ namespace G
         ///  * `member` - The user will become a non-owner member of the organization.<br/>
         /// Default Value: member
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsSetMembershipForUserRequest(
             global::G.OrgsSetMembershipForUserRequestRole? role)
         {

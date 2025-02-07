@@ -89,7 +89,9 @@ namespace G
         /// <param name="arguments">
         /// The final arguments as a JSON string.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventResponseFunctionCallArgumentsDone(
             string eventId,
             string responseId,

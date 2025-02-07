@@ -91,7 +91,9 @@ namespace G
         /// NOTE: This field is currently not populated by the system.<br/>
         /// The maximum per-second addition of new documents to corpus.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CorpusLimits(
             long? usedDocs,
             long? usedParts,

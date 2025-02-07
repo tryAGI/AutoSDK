@@ -102,7 +102,9 @@ namespace G
         /// <param name="lastModifiedTime"></param>
         /// <param name="createdTime"></param>
         /// <param name="updatedTime"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AIObject(
             string? uid,
             string? name,

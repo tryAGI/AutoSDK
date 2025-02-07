@@ -46,7 +46,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="projectId"></param>
         /// <param name="title"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MemoFolder(
             string? projectIdKey,
             global::System.Guid? id,

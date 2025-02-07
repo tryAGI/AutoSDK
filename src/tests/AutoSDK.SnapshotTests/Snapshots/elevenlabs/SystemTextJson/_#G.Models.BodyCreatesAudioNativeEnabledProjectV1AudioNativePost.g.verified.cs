@@ -142,7 +142,9 @@ namespace G
         /// Whether to auto convert the project to audio or not.<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyCreatesAudioNativeEnabledProjectV1AudioNativePost(
             string name,
             string? image,

@@ -43,7 +43,9 @@ namespace G
         /// <param name="tagValueId"></param>
         /// <param name="resourceType"></param>
         /// <param name="resourceId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TaggingCreate(
             global::System.Guid tagValueId,
             global::G.ResourceType resourceType,

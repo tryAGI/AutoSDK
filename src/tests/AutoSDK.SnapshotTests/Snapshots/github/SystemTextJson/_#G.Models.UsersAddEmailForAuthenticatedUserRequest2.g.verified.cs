@@ -31,7 +31,9 @@ namespace G
         /// Adds one or more email addresses to your GitHub account. Must contain at least one email address. **Note:** Alternatively, you can pass a single email address or an `array` of emails addresses directly, but we recommend that you pass an object using the `emails` key.<br/>
         /// Example: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsersAddEmailForAuthenticatedUserRequest2(
             global::System.Collections.Generic.IList<string> emails)
         {

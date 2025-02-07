@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="DeleteMemoRequest" /> class.
         /// </summary>
         /// <param name="memo"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteMemoRequest(
             global::G.Memo memo)
         {

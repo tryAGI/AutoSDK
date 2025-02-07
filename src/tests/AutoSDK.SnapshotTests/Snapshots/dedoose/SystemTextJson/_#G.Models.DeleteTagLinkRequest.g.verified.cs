@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="currentProjectId"></param>
         /// <param name="link"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteTagLinkRequest(
             global::System.Guid currentProjectId,
             global::G.TagLink link)

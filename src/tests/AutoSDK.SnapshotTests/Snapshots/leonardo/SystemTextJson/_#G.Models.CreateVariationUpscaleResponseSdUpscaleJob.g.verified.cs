@@ -34,7 +34,9 @@ namespace G
         /// <param name="apiCreditCost">
         /// API Credits Cost for Upscale Variation. Available for Production API Users.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateVariationUpscaleResponseSdUpscaleJob(
             string? id,
             int? apiCreditCost)

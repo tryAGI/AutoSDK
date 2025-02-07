@@ -28,7 +28,9 @@ namespace G
         /// <param name="body">
         /// The text of the reply to the review comment.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullsUpdateReviewCommentRequest(
             string body)
         {

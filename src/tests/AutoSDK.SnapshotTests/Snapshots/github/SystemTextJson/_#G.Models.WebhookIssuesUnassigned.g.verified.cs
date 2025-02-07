@@ -104,7 +104,9 @@ namespace G
         /// <param name="sender">
         /// A GitHub user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookIssuesUnassigned(
             global::G.WebhooksIssue issue,
             global::G.RepositoryWebhooks repository,

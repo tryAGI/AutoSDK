@@ -37,7 +37,9 @@ namespace G
         /// <param name="fromUrl">
         /// An optional URL from which we will extract content to initialize the project. If this is set, 'from_url' must be null. If neither 'from_url' or 'from_document' are provided we will initialize the project as blank.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyAddChapterToAProjectV1ProjectsProjectIdChaptersAddPost(
             string name,
             string? fromUrl)

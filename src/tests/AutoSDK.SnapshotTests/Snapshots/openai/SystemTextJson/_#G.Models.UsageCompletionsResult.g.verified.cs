@@ -110,7 +110,9 @@ namespace G
         /// <param name="batch">
         /// When `group_by=batch`, this field tells whether the grouped usage result is batch or not.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsageCompletionsResult(
             int inputTokens,
             int outputTokens,

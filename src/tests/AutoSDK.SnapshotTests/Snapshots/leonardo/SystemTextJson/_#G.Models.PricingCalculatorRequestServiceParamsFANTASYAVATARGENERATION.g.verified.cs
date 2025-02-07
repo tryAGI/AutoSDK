@@ -45,7 +45,9 @@ namespace G
         /// <param name="numImages">
         /// The number of images to generate. Must be between 1 and 8. If either width or height is over 768, must be between 1 and 4.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequestServiceParamsFANTASYAVATARGENERATION(
             int? imageHeight,
             int? imageWidth,

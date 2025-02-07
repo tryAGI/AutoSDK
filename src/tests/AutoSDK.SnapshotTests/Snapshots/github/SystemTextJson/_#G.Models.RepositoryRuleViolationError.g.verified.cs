@@ -46,7 +46,9 @@ namespace G
         /// <param name="documentationUrl"></param>
         /// <param name="status"></param>
         /// <param name="metadata"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleViolationError(
             string? message,
             string? documentationUrl,

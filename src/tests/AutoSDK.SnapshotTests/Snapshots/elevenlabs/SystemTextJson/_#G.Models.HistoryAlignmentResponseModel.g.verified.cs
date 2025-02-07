@@ -42,7 +42,9 @@ namespace G
         /// <param name="characters"></param>
         /// <param name="characterStartTimesSeconds"></param>
         /// <param name="characterEndTimesSeconds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public HistoryAlignmentResponseModel(
             global::System.Collections.Generic.IList<string> characters,
             global::System.Collections.Generic.IList<double> characterStartTimesSeconds,

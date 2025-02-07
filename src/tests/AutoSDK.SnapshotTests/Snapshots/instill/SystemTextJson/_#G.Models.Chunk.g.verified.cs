@@ -67,7 +67,9 @@ namespace G
         /// <param name="tokens"></param>
         /// <param name="createTime"></param>
         /// <param name="originalFileUid"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Chunk(
             string? chunkUid,
             bool? retrievable,

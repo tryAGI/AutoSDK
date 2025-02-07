@@ -74,7 +74,9 @@ namespace G
         /// <param name="excerptsErrored"></param>
         /// <param name="errors"></param>
         /// <param name="finished"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectImportStatus(
             int? resourcesToProcess,
             int? resourcesProcessed,

@@ -36,7 +36,9 @@ namespace G
         /// <param name="ipAddress">
         /// The IP address from which the action was performed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogActorSession(
             global::G.AuditLogActorUser? user,
             string? ipAddress)

@@ -37,7 +37,9 @@ namespace G
         /// <param name="reason">
         /// Reason for restriction
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleParamsRestrictedCommits(
             string oid,
             string? reason)

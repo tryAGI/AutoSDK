@@ -44,7 +44,9 @@ namespace G
         /// The piece of content associated with the card<br/>
         /// Example: PullRequest
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectsCreateCardRequestVariant2(
             int contentId,
             string contentType)

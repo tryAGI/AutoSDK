@@ -28,7 +28,9 @@ namespace G
         /// <param name="selectedRepositoryIds">
         /// The IDs of the repositories that can access the organization variable.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsSetSelectedReposForOrgVariableRequest(
             global::System.Collections.Generic.IList<int> selectedRepositoryIds)
         {

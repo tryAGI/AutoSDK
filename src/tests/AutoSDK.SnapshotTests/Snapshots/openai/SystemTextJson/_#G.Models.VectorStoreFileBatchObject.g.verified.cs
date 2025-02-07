@@ -78,7 +78,9 @@ namespace G
         /// The status of the vector store files batch, which can be either `in_progress`, `completed`, `cancelled` or `failed`.
         /// </param>
         /// <param name="fileCounts"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VectorStoreFileBatchObject(
             string id,
             global::System.DateTimeOffset createdAt,

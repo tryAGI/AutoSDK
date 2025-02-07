@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="title"></param>
         /// <param name="items"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChartSeriesInfo(
             string? title,
             global::System.Collections.Generic.IList<global::G.ChartItemInfo>? items)

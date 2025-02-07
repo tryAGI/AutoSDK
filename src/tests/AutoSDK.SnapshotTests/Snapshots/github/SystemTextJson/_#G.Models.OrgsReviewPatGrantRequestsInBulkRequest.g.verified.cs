@@ -47,7 +47,9 @@ namespace G
         /// <param name="reason">
         /// Reason for approving or denying the requests. Max 1024 characters.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsReviewPatGrantRequestsInBulkRequest(
             global::G.OrgsReviewPatGrantRequestsInBulkRequestAction action,
             global::System.Collections.Generic.IList<int>? patRequestIds,

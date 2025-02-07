@@ -38,7 +38,9 @@ namespace G
         /// <param name="variablesList">
         /// Example: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PersonalizedVideoAddContactRequest(
             string? projectId,
             global::System.Collections.Generic.IList<global::G.PersonalizedVideoAddContactRequestVariablesListItem>? variablesList)

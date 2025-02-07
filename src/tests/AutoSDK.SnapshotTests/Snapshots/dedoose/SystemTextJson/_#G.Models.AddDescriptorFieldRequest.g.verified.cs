@@ -74,7 +74,9 @@ namespace G
         /// <param name="isDynamic"></param>
         /// <param name="setId"></param>
         /// <param name="fieldOptions"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddDescriptorFieldRequest(
             global::System.Guid projectId,
             string title,

@@ -28,7 +28,9 @@ namespace G
         /// <param name="contexts">
         /// The name of the status checks
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposAddStatusCheckContextsRequest2(
             global::System.Collections.Generic.IList<string> contexts)
         {

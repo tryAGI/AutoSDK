@@ -130,7 +130,9 @@ namespace G
         /// Example: https://github.com/actions/setup-ruby/workflows/CI/badge.svg
         /// </param>
         /// <param name="deletedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Workflow(
             int id,
             string nodeId,

@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains the channel’s stream key.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetStreamKeyResponse(
             global::System.Collections.Generic.IList<global::G.GetStreamKeyResponseDataItem> data)
         {

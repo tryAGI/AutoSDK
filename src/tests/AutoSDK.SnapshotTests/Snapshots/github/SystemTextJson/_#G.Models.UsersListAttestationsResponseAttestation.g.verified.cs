@@ -34,7 +34,9 @@ namespace G
         /// Sigstore Bundle v0.1
         /// </param>
         /// <param name="repositoryId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsersListAttestationsResponseAttestation(
             global::G.SigstoreBundle0? bundle,
             int? repositoryId)

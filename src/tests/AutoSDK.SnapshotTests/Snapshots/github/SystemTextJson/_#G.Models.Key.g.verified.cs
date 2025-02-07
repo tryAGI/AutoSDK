@@ -74,7 +74,9 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="verified"></param>
         /// <param name="readOnly"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Key(
             string key1,
             long id,

@@ -51,7 +51,9 @@ namespace G
         /// <param name="rateLimits">
         /// List of rate limit information.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventRateLimitsUpdated(
             string eventId,
             global::System.Collections.Generic.IList<global::G.RealtimeServerEventRateLimitsUpdatedRateLimit> rateLimits,

@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="field"></param>
         /// <param name="options"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DescriptorFieldWithOptions(
             global::G.DescriptorField2? field,
             global::System.Collections.Generic.IList<global::G.DescriptorFieldOption>? options)

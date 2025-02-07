@@ -123,7 +123,9 @@ namespace G
         /// The GitHub URL to get the associated wiki commit<br/>
         /// Example: https://github.com/octocat/Hello-World/wiki/_compare/302c0b7e200761c9dd9b57e57db540ee0b4293a5
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecretScanningLocationWikiCommit(
             string path,
             double startLine,

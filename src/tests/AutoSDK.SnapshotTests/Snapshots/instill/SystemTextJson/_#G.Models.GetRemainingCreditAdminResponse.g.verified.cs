@@ -28,7 +28,9 @@ namespace G
         /// <param name="amount">
         /// The requested credit.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetRemainingCreditAdminResponse(
             float? amount)
         {

@@ -79,7 +79,9 @@ namespace G
         /// <param name="repositoryUrl">
         /// Example: https://api.github.com/repos/octocat/example
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositorySubscription(
             bool subscribed,
             bool ignored,

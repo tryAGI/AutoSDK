@@ -36,7 +36,9 @@ namespace G
         /// <param name="ratePerSecond">
         /// How many objects are approximately processed from the batch queue per second.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchStats(
             double? queueLength,
             double? ratePerSecond)

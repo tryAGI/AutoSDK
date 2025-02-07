@@ -294,7 +294,9 @@ namespace G
         /// <param name="completionCost"></param>
         /// <param name="priceModelId"></param>
         /// <param name="firstTokenTime"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunPublicSchema(
             string name,
             global::G.RunTypeEnum runType,

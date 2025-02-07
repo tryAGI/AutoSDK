@@ -88,7 +88,9 @@ namespace G
         /// <param name="lastFailedAt"></param>
         /// <param name="avgComputeTimeMs"></param>
         /// <param name="totalComputeTimeMs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelineMetrics(
             string pipelineId,
             string pipelineName,

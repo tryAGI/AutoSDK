@@ -38,7 +38,9 @@ namespace G
         /// <param name="shardCount">
         /// The new number of shards for this conduit.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateConduitsBody(
             string id,
             int shardCount)

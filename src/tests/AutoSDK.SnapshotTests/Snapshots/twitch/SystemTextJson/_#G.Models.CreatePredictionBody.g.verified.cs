@@ -58,7 +58,9 @@ namespace G
         /// <param name="predictionWindow">
         /// The length of time (in seconds) that the prediction will run for. The minimum is 30 seconds and the maximum is 1800 seconds (30 minutes).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreatePredictionBody(
             string broadcasterId,
             string title,

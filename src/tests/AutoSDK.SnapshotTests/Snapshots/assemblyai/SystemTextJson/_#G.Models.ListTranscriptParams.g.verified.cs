@@ -77,7 +77,9 @@ namespace G
         /// Only get throttled transcripts, overrides the status filter<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListTranscriptParams(
             long? limit,
             global::G.TranscriptStatus? status,

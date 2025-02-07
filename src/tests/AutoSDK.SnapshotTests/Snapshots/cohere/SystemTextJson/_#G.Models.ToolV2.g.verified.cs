@@ -35,7 +35,9 @@ namespace G
         /// <param name="function">
         /// The function to be executed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolV2(
             global::G.ToolV2Type? type,
             global::G.ToolV2Function? function)

@@ -40,7 +40,9 @@ namespace G
         /// <param name="version"></param>
         /// <param name="isDeprecated"></param>
         /// <param name="isExperimental"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiMetaApiVersion(
             string version,
             bool? isDeprecated,

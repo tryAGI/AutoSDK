@@ -95,7 +95,9 @@ namespace G
         /// <param name="lastUpdated">
         /// The UTC date and time (in RFC3339 format) of when the entitlement was last updated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DropsEntitlement(
             string id,
             string benefitId,

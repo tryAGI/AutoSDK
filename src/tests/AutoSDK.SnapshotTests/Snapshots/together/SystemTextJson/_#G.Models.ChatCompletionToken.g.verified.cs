@@ -50,7 +50,9 @@ namespace G
         /// <param name="logprob"></param>
         /// <param name="special"></param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionToken(
             int id,
             float logprob,

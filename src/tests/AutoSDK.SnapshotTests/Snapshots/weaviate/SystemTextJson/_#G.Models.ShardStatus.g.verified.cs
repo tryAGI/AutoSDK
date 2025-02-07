@@ -27,7 +27,9 @@ namespace G
         /// <param name="status">
         /// Status of the shard
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ShardStatus(
             string? status)
         {

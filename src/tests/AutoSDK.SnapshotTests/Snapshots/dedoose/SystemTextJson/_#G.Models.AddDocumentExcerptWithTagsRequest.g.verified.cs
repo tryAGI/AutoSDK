@@ -90,7 +90,9 @@ namespace G
         /// <param name="endIndex"></param>
         /// <param name="excerptText"></param>
         /// <param name="tagApps"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddDocumentExcerptWithTagsRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

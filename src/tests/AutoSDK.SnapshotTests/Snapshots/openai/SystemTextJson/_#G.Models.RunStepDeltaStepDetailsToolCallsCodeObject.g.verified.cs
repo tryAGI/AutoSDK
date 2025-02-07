@@ -56,7 +56,9 @@ namespace G
         /// <param name="codeInterpreter">
         /// The Code Interpreter tool call definition.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDeltaStepDetailsToolCallsCodeObject(
             int index,
             string? id,

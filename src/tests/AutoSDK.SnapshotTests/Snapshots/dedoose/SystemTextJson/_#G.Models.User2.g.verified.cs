@@ -165,7 +165,9 @@ namespace G
         /// <param name="changePass"></param>
         /// <param name="chagePassDate"></param>
         /// <param name="isVerified"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public User2(
             global::System.Guid? id,
             string? username,

@@ -38,7 +38,9 @@ namespace G
         /// <param name="submitToolOutputs">
         /// Details on the tool outputs needed for this run to continue.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunObjectRequiredAction(
             global::G.RunObjectRequiredActionSubmitToolOutputs submitToolOutputs,
             global::G.RunObjectRequiredActionType type)

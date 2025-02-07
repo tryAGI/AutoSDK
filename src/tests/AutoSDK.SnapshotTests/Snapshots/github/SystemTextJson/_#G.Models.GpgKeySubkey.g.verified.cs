@@ -116,7 +116,9 @@ namespace G
         /// <param name="expiresAt"></param>
         /// <param name="rawKey"></param>
         /// <param name="revoked"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GpgKeySubkey(
             long? id,
             int? primaryKeyId,

@@ -43,7 +43,9 @@ namespace G
         /// <param name="totalResults">
         /// The total number of Objects for the query. The number of items in a response may be smaller due to paging.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ObjectsListResponse(
             global::System.Collections.Generic.IList<global::G.Object>? objects,
             global::System.Collections.Generic.IList<global::G.Deprecation>? deprecations,

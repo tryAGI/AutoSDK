@@ -110,7 +110,9 @@ namespace G
         /// <param name="breakdown">
         /// Breakdown of Copilot code completions usage by language and editor
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CopilotUsageMetrics(
             global::System.DateTime day,
             global::System.Collections.Generic.IList<global::G.CopilotUsageMetricsBreakdownItem>? breakdown,

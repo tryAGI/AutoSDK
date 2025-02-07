@@ -28,7 +28,9 @@ namespace G
         /// <param name="accessToken">
         /// The access_token of the OAuth or GitHub application.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AppsResetTokenRequest(
             string accessToken)
         {

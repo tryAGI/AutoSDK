@@ -188,7 +188,9 @@ namespace G
         /// <param name="isbnNumber"></param>
         /// <param name="volumeNormalization"></param>
         /// <param name="state"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectResponseModel(
             string projectId,
             string name,

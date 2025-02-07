@@ -90,7 +90,9 @@ namespace G
         /// <param name="weightDefault"></param>
         /// <param name="allowDecimalWeights"></param>
         /// <param name="color"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddTagRequest(
             global::System.Guid projectId,
             string title,

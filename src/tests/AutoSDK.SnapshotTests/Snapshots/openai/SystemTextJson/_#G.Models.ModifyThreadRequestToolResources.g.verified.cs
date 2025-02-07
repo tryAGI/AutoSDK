@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="codeInterpreter"></param>
         /// <param name="fileSearch"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModifyThreadRequestToolResources(
             global::G.ModifyThreadRequestToolResourcesCodeInterpreter? codeInterpreter,
             global::G.ModifyThreadRequestToolResourcesFileSearch? fileSearch)

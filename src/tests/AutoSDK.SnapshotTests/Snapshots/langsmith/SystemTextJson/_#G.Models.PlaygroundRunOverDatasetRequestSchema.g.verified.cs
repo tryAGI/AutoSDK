@@ -96,7 +96,9 @@ namespace G
         /// <param name="repetitions">
         /// Default Value: 1
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PlaygroundRunOverDatasetRequestSchema(
             object manifest,
             global::System.Collections.Generic.Dictionary<string, string> secrets,

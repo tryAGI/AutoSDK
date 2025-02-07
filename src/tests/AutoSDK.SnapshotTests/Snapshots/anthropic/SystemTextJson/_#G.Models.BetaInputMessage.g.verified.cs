@@ -38,7 +38,9 @@ namespace G
         /// </summary>
         /// <param name="role"></param>
         /// <param name="content"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaInputMessage(
             global::G.BetaInputMessageRole role,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaInputContentBlock>> content)

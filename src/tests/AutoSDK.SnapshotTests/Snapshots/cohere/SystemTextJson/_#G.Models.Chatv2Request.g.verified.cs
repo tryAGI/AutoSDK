@@ -201,7 +201,9 @@ namespace G
         /// Defaults to `0.75`. min value of `0.01`, max value of `0.99`.<br/>
         /// Default Value: 0.75F
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Chatv2Request(
             string model,
             global::System.Collections.Generic.IList<global::G.ChatMessageV2> messages,

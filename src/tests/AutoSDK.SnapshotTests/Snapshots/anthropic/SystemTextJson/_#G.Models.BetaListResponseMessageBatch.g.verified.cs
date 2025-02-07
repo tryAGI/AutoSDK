@@ -62,7 +62,9 @@ namespace G
         /// Last ID in the `data` list. Can be used as the `after_id` for the next page.<br/>
         /// Example: msgbatch_01HkcTjaV5uDC8jWR4ZsDV8d
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaListResponseMessageBatch(
             global::System.Collections.Generic.IList<global::G.BetaMessageBatch> data,
             bool hasMore,

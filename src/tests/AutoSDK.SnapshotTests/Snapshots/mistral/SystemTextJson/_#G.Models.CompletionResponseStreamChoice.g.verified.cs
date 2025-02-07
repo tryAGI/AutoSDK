@@ -43,7 +43,9 @@ namespace G
         /// <param name="delta"></param>
         /// <param name="finishReason"></param>
         /// <param name="index"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CompletionResponseStreamChoice(
             global::G.DeltaMessage delta,
             global::G.CompletionResponseStreamChoiceFinishReason? finishReason,

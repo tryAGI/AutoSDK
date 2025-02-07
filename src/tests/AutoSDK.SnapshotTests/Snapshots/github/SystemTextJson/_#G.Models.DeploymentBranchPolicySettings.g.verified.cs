@@ -38,7 +38,9 @@ namespace G
         /// <param name="customBranchPolicies">
         /// Whether only branches that match the specified name patterns can deploy to this environment.  If `custom_branch_policies` is `true`, `protected_branches` must be `false`; if `custom_branch_policies` is `false`, `protected_branches` must be `true`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeploymentBranchPolicySettings(
             bool protectedBranches,
             bool customBranchPolicies)

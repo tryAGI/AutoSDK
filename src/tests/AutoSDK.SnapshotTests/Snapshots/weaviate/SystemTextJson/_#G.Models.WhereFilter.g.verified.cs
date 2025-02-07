@@ -205,7 +205,9 @@ namespace G
         /// <param name="valueGeoRange">
         /// filter within a distance of a georange
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WhereFilter(
             global::System.Collections.Generic.IList<global::G.WhereFilter>? operands,
             global::G.WhereFilterOperator? @operator,

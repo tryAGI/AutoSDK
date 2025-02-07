@@ -203,7 +203,9 @@ namespace G
         /// <param name="targetOid"></param>
         /// <param name="updatedAt"></param>
         /// <param name="version"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRegistryPackageUpdatedRegistryPackagePackageVersion(
             global::G.WebhookRegistryPackageUpdatedRegistryPackagePackageVersionAuthor author,
             string body,

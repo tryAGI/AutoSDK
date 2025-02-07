@@ -117,7 +117,9 @@ namespace G
         /// <param name="deploymentBranchPolicy">
         /// The type of deployment branch policy for this environment. To allow all branches to deploy, set to `null`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Environment(
             long id,
             string nodeId,

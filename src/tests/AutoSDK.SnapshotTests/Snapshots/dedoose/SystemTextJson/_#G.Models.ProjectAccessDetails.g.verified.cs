@@ -53,7 +53,9 @@ namespace G
         /// <param name="groupId"></param>
         /// <param name="groupTitle"></param>
         /// <param name="accessGroupId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectAccessDetails(
             global::System.Guid? projectId,
             string? projectTitle,

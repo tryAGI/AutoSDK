@@ -29,7 +29,9 @@ namespace G
         /// Whether to enable debug logging for the re-run.<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsReRunJobForWorkflowRunRequest(
             bool? enableDebugLogging)
         {

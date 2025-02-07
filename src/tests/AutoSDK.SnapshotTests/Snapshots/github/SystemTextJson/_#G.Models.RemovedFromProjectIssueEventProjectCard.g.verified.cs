@@ -65,7 +65,9 @@ namespace G
         /// <param name="projectUrl"></param>
         /// <param name="columnName"></param>
         /// <param name="previousColumnName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RemovedFromProjectIssueEventProjectCard(
             int id,
             string url,

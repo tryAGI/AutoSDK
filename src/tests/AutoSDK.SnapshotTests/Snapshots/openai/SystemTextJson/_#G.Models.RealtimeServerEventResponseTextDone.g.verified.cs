@@ -89,7 +89,9 @@ namespace G
         /// <param name="text">
         /// The final text content.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventResponseTextDone(
             string eventId,
             string responseId,

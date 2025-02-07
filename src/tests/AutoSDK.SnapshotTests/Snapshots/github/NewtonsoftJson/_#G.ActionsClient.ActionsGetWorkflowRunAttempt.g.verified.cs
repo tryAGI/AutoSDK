@@ -104,7 +104,11 @@ namespace G
 
             if (ReadResponseAsString)
             {
-                var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
                 ProcessResponseContent(
                     client: HttpClient,
@@ -158,7 +162,11 @@ namespace G
                     };
                 }
 
-                using var __content = await __response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+                using var __content = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
                 return
                     await global::G.WorkflowRun.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??

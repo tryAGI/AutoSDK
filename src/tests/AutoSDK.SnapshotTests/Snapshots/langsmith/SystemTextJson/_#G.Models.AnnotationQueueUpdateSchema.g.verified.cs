@@ -64,7 +64,9 @@ namespace G
         /// Default Value: true
         /// </param>
         /// <param name="reservationMinutes"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AnnotationQueueUpdateSchema(
             string? name,
             string? description,

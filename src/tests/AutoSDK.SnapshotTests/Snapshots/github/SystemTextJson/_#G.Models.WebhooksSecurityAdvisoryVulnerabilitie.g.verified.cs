@@ -50,7 +50,9 @@ namespace G
         /// <param name="package"></param>
         /// <param name="severity"></param>
         /// <param name="vulnerableVersionRange"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksSecurityAdvisoryVulnerabilitie(
             global::G.WebhooksSecurityAdvisoryVulnerabilitieFirstPatchedVersion? firstPatchedVersion,
             global::G.WebhooksSecurityAdvisoryVulnerabilitiePackage package,

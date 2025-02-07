@@ -188,7 +188,9 @@ namespace G
         /// </param>
         /// <param name="steps"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookWorkflowJobInProgressWorkflowJobVariant2(
             global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2Status status,
             global::System.Collections.Generic.IList<global::G.WebhookWorkflowJobInProgressWorkflowJobVariant2Step> steps,

@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="SessionFeedbackDelta" /> class.
         /// </summary>
         /// <param name="feedbackDeltas"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SessionFeedbackDelta(
             global::System.Collections.Generic.Dictionary<string, global::G.FeedbackDelta> feedbackDeltas)
         {

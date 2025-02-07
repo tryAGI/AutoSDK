@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of goals. The list is empty if the broadcaster hasn’t created goals.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetCreatorGoalsResponse(
             global::System.Collections.Generic.IList<global::G.CreatorGoal> data)
         {

@@ -60,7 +60,9 @@ namespace G
         /// <param name="packages"></param>
         /// <param name="actions"></param>
         /// <param name="artifactAttestations"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiOverviewDomains(
             global::System.Collections.Generic.IList<string>? website,
             global::System.Collections.Generic.IList<string>? codespaces,

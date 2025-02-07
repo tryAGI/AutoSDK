@@ -109,7 +109,9 @@ namespace G
         /// <param name="purpose">
         /// Example: fine-tune
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FileResponse(
             global::G.FileResponseFileType fileType,
             int lineCount,

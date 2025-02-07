@@ -94,7 +94,9 @@ namespace G
         /// <param name="style"></param>
         /// <param name="styleId"></param>
         /// <param name="substyle"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateImageRequest(
             string prompt,
             global::G.UserControls? controls,

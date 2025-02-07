@@ -79,7 +79,9 @@ namespace G
         /// <param name="email"></param>
         /// <param name="marketplacePendingChange"></param>
         /// <param name="marketplacePurchase1"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MarketplacePurchase(
             string url,
             string type,

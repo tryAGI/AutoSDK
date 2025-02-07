@@ -112,7 +112,9 @@ namespace G
         /// <param name="permission">
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Organization(
             global::G.OrganizationProfile profile,
             string? name,

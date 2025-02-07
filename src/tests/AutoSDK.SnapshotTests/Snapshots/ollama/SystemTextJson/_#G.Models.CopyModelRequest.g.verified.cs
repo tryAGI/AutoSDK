@@ -44,7 +44,9 @@ namespace G
         /// Name of the new model.<br/>
         /// Example: llama3-backup
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CopyModelRequest(
             string source,
             string destination)

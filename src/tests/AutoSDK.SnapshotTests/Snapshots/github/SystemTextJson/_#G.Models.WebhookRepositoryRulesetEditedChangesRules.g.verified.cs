@@ -39,7 +39,9 @@ namespace G
         /// <param name="added"></param>
         /// <param name="deleted"></param>
         /// <param name="updated"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRepositoryRulesetEditedChangesRules(
             global::System.Collections.Generic.IList<global::G.RepositoryRule>? added,
             global::System.Collections.Generic.IList<global::G.RepositoryRule>? deleted,

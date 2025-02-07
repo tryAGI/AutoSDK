@@ -58,7 +58,9 @@ namespace G
         /// <param name="indexes">
         /// An array of all index locations for that word within the `words` array of the completed transcript
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WordSearchMatch(
             string text,
             int count,

@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GetMergeStatusRequest" /> class.
         /// </summary>
         /// <param name="mergedProjectId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetMergeStatusRequest(
             global::System.Guid mergedProjectId)
         {

@@ -118,7 +118,9 @@ namespace G
         /// <param name="noSpeechProb">
         /// Probability of no speech in the segment. If the value is higher than 1.0 and the `avg_logprob` is below -1, consider this segment silent.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TranscriptionSegment(
             int id,
             int seek,

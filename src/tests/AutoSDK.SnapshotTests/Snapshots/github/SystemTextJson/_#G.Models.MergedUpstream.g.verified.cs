@@ -40,7 +40,9 @@ namespace G
         /// <param name="message"></param>
         /// <param name="mergeType"></param>
         /// <param name="baseBranch"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MergedUpstream(
             string? message,
             global::G.MergedUpstreamMergeType? mergeType,

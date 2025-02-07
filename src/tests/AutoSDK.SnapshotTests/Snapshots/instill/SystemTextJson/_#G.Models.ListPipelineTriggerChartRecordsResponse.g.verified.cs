@@ -28,7 +28,9 @@ namespace G
         /// <param name="pipelineTriggerChartRecords">
         /// A list of pipeline trigger records.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListPipelineTriggerChartRecordsResponse(
             global::System.Collections.Generic.IList<global::G.PipelineTriggerChartRecord>? pipelineTriggerChartRecords)
         {

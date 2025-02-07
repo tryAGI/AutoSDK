@@ -28,7 +28,9 @@ namespace G
         /// <param name="type">
         /// Always `other`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OtherChunkingStrategyResponseParam(
             global::G.OtherChunkingStrategyResponseParamType type)
         {

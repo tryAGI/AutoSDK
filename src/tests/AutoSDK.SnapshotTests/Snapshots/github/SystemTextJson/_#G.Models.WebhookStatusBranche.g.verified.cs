@@ -42,7 +42,9 @@ namespace G
         /// <param name="commit"></param>
         /// <param name="name"></param>
         /// <param name="protected"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookStatusBranche(
             global::G.WebhookStatusBrancheCommit commit,
             string name,

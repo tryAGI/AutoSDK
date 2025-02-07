@@ -180,7 +180,9 @@ namespace G
         /// <param name="isMature">
         /// A Boolean value that indicates whether the stream is meant for mature audiences.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Stream(
             string id,
             string userId,

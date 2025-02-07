@@ -299,7 +299,9 @@ namespace G
         /// <param name="customProperties">
         /// The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateInOrgRequest(
             string name,
             string? description,

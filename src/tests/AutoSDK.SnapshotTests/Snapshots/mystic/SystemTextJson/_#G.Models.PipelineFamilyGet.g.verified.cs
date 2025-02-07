@@ -64,7 +64,9 @@ namespace G
         /// <param name="latestAt"></param>
         /// <param name="pipelineId"></param>
         /// <param name="imageUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelineFamilyGet(
             string name,
             int runCount,

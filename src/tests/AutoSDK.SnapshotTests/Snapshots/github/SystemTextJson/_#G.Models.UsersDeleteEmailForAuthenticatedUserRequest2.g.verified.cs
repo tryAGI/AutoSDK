@@ -28,7 +28,9 @@ namespace G
         /// <param name="emails">
         /// Email addresses associated with the GitHub user account.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsersDeleteEmailForAuthenticatedUserRequest2(
             global::System.Collections.Generic.IList<string> emails)
         {

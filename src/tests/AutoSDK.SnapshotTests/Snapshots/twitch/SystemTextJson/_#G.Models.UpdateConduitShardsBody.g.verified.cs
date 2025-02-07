@@ -38,7 +38,9 @@ namespace G
         /// <param name="shards">
         /// List of shards to update.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateConduitShardsBody(
             string conduitId,
             global::System.Collections.Generic.IList<global::G.UpdateConduitShardsBodyShard> shards)

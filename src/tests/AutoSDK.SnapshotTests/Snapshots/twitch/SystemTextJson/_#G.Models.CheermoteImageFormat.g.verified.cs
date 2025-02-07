@@ -53,7 +53,9 @@ namespace G
         /// <param name="x3"></param>
         /// <param name="x4"></param>
         /// <param name="x15"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheermoteImageFormat(
             string? x1,
             string? x2,

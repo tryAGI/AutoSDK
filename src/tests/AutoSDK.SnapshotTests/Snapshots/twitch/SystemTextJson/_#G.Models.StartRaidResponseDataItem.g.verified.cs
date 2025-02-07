@@ -38,7 +38,9 @@ namespace G
         /// <param name="isMature">
         /// A Boolean value that indicates whether the channel being raided contains mature content.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartRaidResponseDataItem(
             global::System.DateTime createdAt,
             bool isMature)

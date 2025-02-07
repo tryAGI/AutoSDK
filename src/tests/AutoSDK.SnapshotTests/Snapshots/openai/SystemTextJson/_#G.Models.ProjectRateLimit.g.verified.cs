@@ -104,7 +104,9 @@ namespace G
         /// <param name="batch1DayMaxInputTokens">
         /// The maximum batch input tokens per day. Only present for relevant models.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectRateLimit(
             string id,
             string model,

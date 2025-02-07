@@ -151,7 +151,9 @@ namespace G
         /// Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.<br/>
         /// Default Value: 1
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionRequest(
             global::System.Collections.Generic.IList<global::G.MessagesItem2> messages,
             string? model,

@@ -199,7 +199,9 @@ namespace G
         /// <param name="deployment">
         /// A deployment created as the result of an Actions check run from a workflow that references an environment
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckRun(
             long id,
             string headSha,

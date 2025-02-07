@@ -59,7 +59,9 @@ namespace G
         /// <param name="numEpochs"></param>
         /// <param name="datasetId"></param>
         /// <param name="modelName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomModelInput(
             global::G.CustomModelType modelType,
             string datasetId,

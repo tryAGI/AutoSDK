@@ -138,7 +138,9 @@ namespace G
         /// <param name="id">
         /// An ID that identifies the team.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChannelTeam(
             string broadcasterId,
             string broadcasterLogin,

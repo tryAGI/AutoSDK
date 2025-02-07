@@ -71,7 +71,9 @@ namespace G
         /// <param name="login"></param>
         /// <param name="email"></param>
         /// <param name="organizationBillingEmail"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MarketplaceAccount(
             string url,
             int id,

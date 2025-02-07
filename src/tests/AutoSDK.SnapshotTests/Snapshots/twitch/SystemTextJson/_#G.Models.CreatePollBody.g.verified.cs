@@ -76,7 +76,9 @@ namespace G
         /// <param name="channelPointsPerVote">
         /// The number of points that the viewer must spend to cast one additional vote. The minimum is 1 and the maximum is 1000000\. Set only if `ChannelPointsVotingEnabled` is **true**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreatePollBody(
             string broadcasterId,
             string title,

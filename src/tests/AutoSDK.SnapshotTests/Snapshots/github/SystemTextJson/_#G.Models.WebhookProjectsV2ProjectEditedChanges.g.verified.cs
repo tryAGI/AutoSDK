@@ -46,7 +46,9 @@ namespace G
         /// <param name="public"></param>
         /// <param name="shortDescription"></param>
         /// <param name="title"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookProjectsV2ProjectEditedChanges(
             global::G.WebhookProjectsV2ProjectEditedChangesDescription? description,
             global::G.WebhookProjectsV2ProjectEditedChangesPublic? @public,

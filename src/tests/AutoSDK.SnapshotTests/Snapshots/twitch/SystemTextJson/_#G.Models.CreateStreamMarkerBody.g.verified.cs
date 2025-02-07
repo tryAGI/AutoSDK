@@ -37,7 +37,9 @@ namespace G
         /// <param name="description">
         /// A short description of the marker to help the user remember why they marked the location. The maximum length of the description is 140 characters.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateStreamMarkerBody(
             string userId,
             string? description)

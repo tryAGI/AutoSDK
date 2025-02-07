@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GetProjectUsersRequest" /> class.
         /// </summary>
         /// <param name="projectId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetProjectUsersRequest(
             global::System.Guid projectId)
         {

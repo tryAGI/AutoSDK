@@ -27,7 +27,9 @@ namespace G
         /// <param name="x_vectorName_">
         /// Configuration of each named vector.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClassVectorConfig(
             global::G.VectorConfig? x_vectorName_)
         {

@@ -27,7 +27,9 @@ namespace G
         /// <param name="weight">
         /// Controls whether the assistant message is trained against (0 or 1)
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuneChatCompletionRequestAssistantMessageVariant1(
             int? weight)
         {

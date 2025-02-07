@@ -37,7 +37,9 @@ namespace G
         /// Default Value: text_delta
         /// </param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TextContentBlockDelta(
             string text,
             global::G.TextContentBlockDeltaType type = global::G.TextContentBlockDeltaType.TextDelta)

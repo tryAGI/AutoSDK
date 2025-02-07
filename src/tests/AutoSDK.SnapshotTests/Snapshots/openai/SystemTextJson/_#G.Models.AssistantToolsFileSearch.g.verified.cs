@@ -37,7 +37,9 @@ namespace G
         /// <param name="fileSearch">
         /// Overrides for the file search tool.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantToolsFileSearch(
             global::G.AssistantToolsFileSearchType type,
             global::G.AssistantToolsFileSearchFileSearch? fileSearch)

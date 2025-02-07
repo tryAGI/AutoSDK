@@ -63,7 +63,9 @@ namespace G
         /// By default the search will use the most powerful reranker available to the customer's plan.<br/>
         /// To disable reranking set the reranker `type` to `"none"`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SearchParameters(
             int? offset,
             int? limit,

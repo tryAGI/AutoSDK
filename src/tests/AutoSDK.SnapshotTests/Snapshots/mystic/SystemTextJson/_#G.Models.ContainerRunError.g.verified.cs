@@ -44,7 +44,9 @@ namespace G
         /// </param>
         /// <param name="message"></param>
         /// <param name="traceback"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ContainerRunError(
             global::G.ContainerRunErrorType type,
             string message,

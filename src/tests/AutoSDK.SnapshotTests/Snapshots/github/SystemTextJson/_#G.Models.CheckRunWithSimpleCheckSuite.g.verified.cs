@@ -199,7 +199,9 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/repos/github/hello-world/check-runs/4
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckRunWithSimpleCheckSuite(
             global::G.NullableIntegration? app,
             global::G.SimpleCheckSuite checkSuite,

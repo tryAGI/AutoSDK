@@ -39,7 +39,9 @@ namespace G
         /// <param name="self"></param>
         /// <param name="git"></param>
         /// <param name="html"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FileCommitContentLinks(
             string? self,
             string? git,

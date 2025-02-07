@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="displayName"></param>
         /// <param name="isPersonal"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrganizationCreate(
             string displayName,
             bool isPersonal)

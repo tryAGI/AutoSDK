@@ -42,7 +42,9 @@ namespace G
         /// <param name="document"></param>
         /// <param name="index"></param>
         /// <param name="relevanceScore"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RerankResponseResult(
             global::G.RerankResponseResultDocument document,
             int index,

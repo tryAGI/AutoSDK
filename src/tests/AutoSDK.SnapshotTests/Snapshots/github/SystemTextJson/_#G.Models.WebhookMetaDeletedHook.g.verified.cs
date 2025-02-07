@@ -82,7 +82,9 @@ namespace G
         /// <param name="name"></param>
         /// <param name="type"></param>
         /// <param name="updatedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookMetaDeletedHook(
             bool active,
             global::G.WebhookMetaDeletedHookConfig config,

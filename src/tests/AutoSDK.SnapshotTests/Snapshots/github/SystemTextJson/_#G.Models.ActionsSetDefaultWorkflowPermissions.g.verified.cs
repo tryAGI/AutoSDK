@@ -37,7 +37,9 @@ namespace G
         /// <param name="canApprovePullRequestReviews">
         /// Whether GitHub Actions can approve pull requests. Enabling this can be a security risk.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsSetDefaultWorkflowPermissions(
             global::G.ActionsDefaultWorkflowPermissions? defaultWorkflowPermissions,
             bool? canApprovePullRequestReviews)

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="comments"></param>
         /// <param name="total"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListCommentsResponse(
             global::System.Collections.Generic.IList<global::G.Comment> comments,
             int total)

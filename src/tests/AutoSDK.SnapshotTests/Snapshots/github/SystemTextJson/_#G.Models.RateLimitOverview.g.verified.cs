@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="resources"></param>
         /// <param name="rate"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RateLimitOverview(
             global::G.RateLimitOverviewResources resources,
             global::G.RateLimit rate)

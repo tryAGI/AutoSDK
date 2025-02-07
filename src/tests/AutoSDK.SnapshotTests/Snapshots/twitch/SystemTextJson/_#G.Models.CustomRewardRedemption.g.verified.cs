@@ -137,7 +137,9 @@ namespace G
         /// <param name="redeemedAt">
         /// The date and time of when the reward was redeemed, in RFC3339 format.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomRewardRedemption(
             string broadcasterId,
             string broadcasterLogin,

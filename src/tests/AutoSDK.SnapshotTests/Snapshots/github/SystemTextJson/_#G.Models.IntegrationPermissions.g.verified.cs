@@ -53,7 +53,9 @@ namespace G
         /// <param name="metadata"></param>
         /// <param name="contents"></param>
         /// <param name="deployments"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public IntegrationPermissions(
             string? issues,
             string? checks,

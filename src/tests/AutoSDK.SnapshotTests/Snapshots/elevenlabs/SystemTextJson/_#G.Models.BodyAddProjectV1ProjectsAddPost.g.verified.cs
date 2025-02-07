@@ -237,7 +237,9 @@ namespace G
         /// <param name="callbackUrl">
         /// [Deprecated] A url that will be called by our service when the project is converted with a json containing the status of the conversion
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyAddProjectV1ProjectsAddPost(
             string name,
             string defaultTitleVoiceId,

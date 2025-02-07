@@ -89,7 +89,9 @@ namespace G
         /// <param name="object">
         /// The object type, which is always "fine_tuning.job.checkpoint".
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningJobCheckpoint(
             string id,
             global::System.DateTimeOffset createdAt,

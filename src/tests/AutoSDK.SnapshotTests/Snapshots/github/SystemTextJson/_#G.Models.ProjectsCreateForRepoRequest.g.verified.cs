@@ -37,7 +37,9 @@ namespace G
         /// <param name="body">
         /// The description of the project.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectsCreateForRepoRequest(
             string name,
             string? body)

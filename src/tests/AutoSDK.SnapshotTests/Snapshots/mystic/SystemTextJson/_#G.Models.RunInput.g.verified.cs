@@ -57,7 +57,9 @@ namespace G
         /// <param name="fileName"></param>
         /// <param name="filePath"></param>
         /// <param name="fileUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunInput(
             global::G.RunIOType type,
             object? value,

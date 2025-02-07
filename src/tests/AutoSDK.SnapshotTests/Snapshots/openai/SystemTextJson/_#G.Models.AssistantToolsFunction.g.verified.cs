@@ -36,7 +36,9 @@ namespace G
         /// The type of tool being defined: `function`
         /// </param>
         /// <param name="function"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantToolsFunction(
             global::G.FunctionObject function,
             global::G.AssistantToolsFunctionType type)

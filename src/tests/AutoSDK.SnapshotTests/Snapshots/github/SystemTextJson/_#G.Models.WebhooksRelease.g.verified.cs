@@ -184,7 +184,9 @@ namespace G
         /// <param name="uploadUrl"></param>
         /// <param name="url"></param>
         /// <param name="zipballUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksRelease(
             global::System.Collections.Generic.IList<global::G.WebhooksReleaseAsset> assets,
             string assetsUrl,

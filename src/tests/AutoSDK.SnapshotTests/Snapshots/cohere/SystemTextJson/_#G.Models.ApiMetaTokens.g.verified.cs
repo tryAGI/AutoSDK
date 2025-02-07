@@ -36,7 +36,9 @@ namespace G
         /// <param name="outputTokens">
         /// The number of tokens produced by the model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiMetaTokens(
             double? inputTokens,
             double? outputTokens)

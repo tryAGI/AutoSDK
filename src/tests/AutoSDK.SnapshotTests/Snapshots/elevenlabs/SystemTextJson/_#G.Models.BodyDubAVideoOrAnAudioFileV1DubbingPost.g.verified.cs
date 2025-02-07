@@ -145,7 +145,9 @@ namespace G
         /// <param name="useProfanityFilter">
         /// [BETA] Whether transcripts should have profanities censored with the words '[censored]'
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyDubAVideoOrAnAudioFileV1DubbingPost(
             byte[]? file,
             string? filename,

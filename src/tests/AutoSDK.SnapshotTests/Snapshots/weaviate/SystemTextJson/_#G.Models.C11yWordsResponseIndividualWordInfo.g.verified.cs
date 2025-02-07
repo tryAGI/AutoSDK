@@ -36,7 +36,9 @@ namespace G
         /// <param name="nearestNeighbors">
         /// C11y function to show the nearest neighbors to a word.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public C11yWordsResponseIndividualWordInfo(
             global::System.Collections.Generic.IList<float>? vector,
             global::System.Collections.Generic.IList<global::G.C11yNearestNeighbor>? nearestNeighbors)

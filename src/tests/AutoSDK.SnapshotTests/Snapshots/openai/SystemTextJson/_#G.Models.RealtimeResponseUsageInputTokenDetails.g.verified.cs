@@ -45,7 +45,9 @@ namespace G
         /// <param name="audioTokens">
         /// The number of audio tokens used in the Response.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseUsageInputTokenDetails(
             int? cachedTokens,
             int? textTokens,

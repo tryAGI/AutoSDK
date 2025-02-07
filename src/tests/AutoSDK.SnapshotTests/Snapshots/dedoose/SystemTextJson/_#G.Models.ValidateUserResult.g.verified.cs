@@ -60,7 +60,9 @@ namespace G
         /// <param name="accountRequire2Factor"></param>
         /// <param name="accountRequire2FactorOnRelog"></param>
         /// <param name="isValidated"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ValidateUserResult(
             global::G.User2? userData,
             bool? isFederated,

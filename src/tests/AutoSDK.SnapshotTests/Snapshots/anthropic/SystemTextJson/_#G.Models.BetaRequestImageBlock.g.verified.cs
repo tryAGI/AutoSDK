@@ -41,7 +41,9 @@ namespace G
         /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="source"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaRequestImageBlock(
             global::G.BetaBase64ImageSource source,
             global::G.BetaCacheControlEphemeral? cacheControl,

@@ -69,7 +69,9 @@ namespace G
         /// <param name="image">
         /// Image representation that can hold URL of an image or a base64 representation
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiSchemasEmbeddingImageDoc(
             string? id,
             string? url,

@@ -102,7 +102,9 @@ namespace G
         /// <param name="numSubComments"></param>
         /// <param name="numLikes"></param>
         /// <param name="likedByAuthUser"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Comment(
             global::System.Guid id,
             global::System.Guid commentOn,

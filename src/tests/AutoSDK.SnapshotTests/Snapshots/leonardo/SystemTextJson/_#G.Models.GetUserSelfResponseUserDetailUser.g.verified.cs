@@ -34,7 +34,9 @@ namespace G
         /// <param name="username">
         /// Username of the user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUserSelfResponseUserDetailUser(
             string? id,
             string? username)

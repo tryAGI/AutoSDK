@@ -48,7 +48,9 @@ namespace G
         /// <param name="totalTokens">
         /// Total number of tokens used (prompt + completion).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunCompletionUsage(
             int completionTokens,
             int promptTokens,

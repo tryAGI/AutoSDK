@@ -66,7 +66,9 @@ namespace G
         /// <param name="rtl"></param>
         /// <param name="exportExtension"></param>
         /// <param name="encryptedSymKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartExportDocumentJobWithRTLRequest(
             global::System.Guid projectId,
             global::System.Guid resourceId,

@@ -132,7 +132,9 @@ namespace G
         /// Example: https://github.com/{user}/{repo}/discussions/categories/{category}
         /// </param>
         /// <param name="links"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Feed(
             string timelineUrl,
             string userUrl,

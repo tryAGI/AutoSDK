@@ -124,7 +124,9 @@ namespace G
         /// Example: https://github.com/octocat/Hello-World/invitations
         /// </param>
         /// <param name="nodeId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryInvitation(
             long id,
             global::G.MinimalRepository repository,

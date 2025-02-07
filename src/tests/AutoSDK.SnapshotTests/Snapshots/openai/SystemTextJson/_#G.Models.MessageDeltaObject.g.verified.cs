@@ -48,7 +48,9 @@ namespace G
         /// <param name="delta">
         /// The delta containing the fields that have changed on the Message.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageDeltaObject(
             string id,
             global::G.MessageDeltaObjectDelta delta,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="pfile"></param>
         /// <param name="pfilename"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyCreateV4FilesPost(
             byte[] pfile,
             string pfilename)

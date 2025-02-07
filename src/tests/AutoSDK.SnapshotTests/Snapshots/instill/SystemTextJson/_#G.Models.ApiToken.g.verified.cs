@@ -150,7 +150,9 @@ namespace G
         /// <param name="expireTime">
         /// Expiration time.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiToken(
             global::System.DateTime? lastUseTime,
             string? name,

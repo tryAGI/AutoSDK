@@ -40,7 +40,9 @@ namespace G
         /// <param name="message">
         /// Default Value: Authentication error
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaAuthenticationError(
             string message,
             global::G.BetaAuthenticationErrorType type = global::G.BetaAuthenticationErrorType.AuthenticationError)

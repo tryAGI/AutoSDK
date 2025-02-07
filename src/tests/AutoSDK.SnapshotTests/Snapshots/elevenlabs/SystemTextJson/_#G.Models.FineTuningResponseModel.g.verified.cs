@@ -107,7 +107,9 @@ namespace G
         /// <param name="verificationAttempts"></param>
         /// <param name="sliceIds"></param>
         /// <param name="manualVerification"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningResponseModel(
             bool isAllowedToFineTune,
             global::System.Collections.Generic.Dictionary<string, global::G.FineTuningResponseModelState2> state,

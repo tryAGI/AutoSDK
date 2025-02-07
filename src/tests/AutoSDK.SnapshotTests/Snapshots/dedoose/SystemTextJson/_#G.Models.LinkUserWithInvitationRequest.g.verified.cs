@@ -50,7 +50,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="groupId"></param>
         /// <param name="invitationId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LinkUserWithInvitationRequest(
             global::System.Guid userId,
             global::System.Guid projectId,

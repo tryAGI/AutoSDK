@@ -138,7 +138,9 @@ namespace G
         /// Results in the file are not guaranteed to be in the same order as requests. Use the `custom_id` field to match results to requests.<br/>
         /// Example: https://api.anthropic.com/v1/messages/batches/msgbatch_013Zva2CMHLNnXjNJJKqJ2EF/results
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaMessageBatch(
             string id,
             global::G.BetaMessageBatchProcessingStatus processingStatus,

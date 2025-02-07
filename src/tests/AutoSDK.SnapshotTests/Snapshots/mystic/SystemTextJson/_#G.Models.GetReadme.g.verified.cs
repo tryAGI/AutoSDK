@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GetReadme" /> class.
         /// </summary>
         /// <param name="readme"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetReadme(
             string? readme)
         {

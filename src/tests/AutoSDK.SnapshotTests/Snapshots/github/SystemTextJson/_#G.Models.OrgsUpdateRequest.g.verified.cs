@@ -304,7 +304,9 @@ namespace G
         /// <param name="secretScanningPushProtectionCustomLink">
         /// If `secret_scanning_push_protection_custom_link_enabled` is true, the URL that will be displayed to contributors who are blocked from pushing a secret.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsUpdateRequest(
             string? billingEmail,
             string? company,

@@ -27,7 +27,9 @@ namespace G
         /// <param name="organizationUsage">
         /// The total number of bytes used by the organization.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetDatasetUsageResponse(
             double? organizationUsage)
         {

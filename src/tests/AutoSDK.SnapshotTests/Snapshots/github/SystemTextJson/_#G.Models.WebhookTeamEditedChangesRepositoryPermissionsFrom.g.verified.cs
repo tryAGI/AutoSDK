@@ -45,7 +45,9 @@ namespace G
         /// <param name="push">
         /// The previous version of the team member's `push` permission on a repository, if the action was `edited`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookTeamEditedChangesRepositoryPermissionsFrom(
             bool? admin,
             bool? pull,

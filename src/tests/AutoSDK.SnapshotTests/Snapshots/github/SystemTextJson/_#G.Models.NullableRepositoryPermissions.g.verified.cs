@@ -56,7 +56,9 @@ namespace G
         /// <param name="triage"></param>
         /// <param name="push"></param>
         /// <param name="maintain"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NullableRepositoryPermissions(
             bool admin,
             bool pull,

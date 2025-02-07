@@ -27,7 +27,9 @@ namespace G
         /// <param name="cursor">
         /// The cursor used to get the next page of results. Use the cursor to set the request's _after_ query parameter.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetPollsResponsePagination(
             string? cursor)
         {

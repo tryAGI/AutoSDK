@@ -42,7 +42,9 @@ namespace G
         /// <param name="providerId"></param>
         /// <param name="organizationId"></param>
         /// <param name="organizationDisplayName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SSOProviderSlim(
             global::System.Guid providerId,
             global::System.Guid organizationId,

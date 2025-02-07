@@ -36,7 +36,9 @@ namespace G
         /// <param name="longitude">
         /// The longitude of the point on earth in decimal form
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GeoCoordinates(
             float? latitude,
             float? longitude)

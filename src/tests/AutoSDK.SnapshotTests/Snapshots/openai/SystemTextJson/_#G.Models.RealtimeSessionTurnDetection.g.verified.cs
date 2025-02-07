@@ -66,7 +66,9 @@ namespace G
         /// to 500ms. With shorter values the model will respond more quickly, <br/>
         /// but may jump in on short pauses from the user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionTurnDetection(
             string? type,
             double? threshold,

@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="ErrorData" /> class.
         /// </summary>
         /// <param name="error"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ErrorData(
             global::G.ErrorDataError error)
         {

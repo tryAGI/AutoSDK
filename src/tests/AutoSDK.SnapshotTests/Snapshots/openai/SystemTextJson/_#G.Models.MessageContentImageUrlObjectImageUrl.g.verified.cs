@@ -40,7 +40,9 @@ namespace G
         /// Specifies the detail level of the image. `low` uses fewer tokens, you can opt in to high resolution using `high`. Default value is `auto`<br/>
         /// Default Value: auto
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageContentImageUrlObjectImageUrl(
             string url,
             global::G.MessageContentImageUrlObjectImageUrlDetail? detail)

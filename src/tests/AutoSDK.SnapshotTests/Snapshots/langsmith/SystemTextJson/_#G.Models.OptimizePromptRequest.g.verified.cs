@@ -50,7 +50,9 @@ namespace G
         /// <param name="metaprompt"></param>
         /// <param name="examples"></param>
         /// <param name="overallFeedback"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OptimizePromptRequest(
             string prompt,
             object metaprompt,

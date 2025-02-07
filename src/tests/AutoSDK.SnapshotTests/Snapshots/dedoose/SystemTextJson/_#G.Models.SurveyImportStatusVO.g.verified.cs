@@ -39,7 +39,9 @@ namespace G
         /// <param name="isComplete"></param>
         /// <param name="errors"></param>
         /// <param name="exceptionCount"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SurveyImportStatusVO(
             bool? isComplete,
             global::System.Collections.Generic.IList<string>? errors,

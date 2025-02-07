@@ -27,7 +27,9 @@ namespace G
         /// <param name="requests">
         /// Required. Embed requests for the batch. The model in each of these requests must match the model specified `BatchEmbedContentsRequest.model`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchEmbedContentsRequest(
             global::System.Collections.Generic.IList<global::G.EmbedContentRequest>? requests)
         {

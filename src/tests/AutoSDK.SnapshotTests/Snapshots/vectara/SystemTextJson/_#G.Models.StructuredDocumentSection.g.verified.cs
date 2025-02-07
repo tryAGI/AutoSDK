@@ -68,7 +68,9 @@ namespace G
         /// <param name="sections">
         /// The sections that this section contains.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StructuredDocumentSection(
             string text,
             int? id,

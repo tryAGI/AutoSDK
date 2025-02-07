@@ -107,7 +107,9 @@ namespace G
         /// </param>
         /// <param name="nsfw"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetGenerationByIdResponseGenerationsByPkGeneratedImage(
             global::System.Collections.Generic.IList<global::G.GetGenerationByIdResponseGenerationsByPkGeneratedImageGeneratedImageVariationGeneric>? generatedImageVariationGenerics,
             bool? fantasyAvatar,

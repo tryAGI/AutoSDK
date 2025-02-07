@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="ChatCompletionMessageParamDiscriminator" /> class.
         /// </summary>
         /// <param name="role"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionMessageParamDiscriminator(
             global::G.ChatCompletionMessageParamDiscriminatorRole? role)
         {

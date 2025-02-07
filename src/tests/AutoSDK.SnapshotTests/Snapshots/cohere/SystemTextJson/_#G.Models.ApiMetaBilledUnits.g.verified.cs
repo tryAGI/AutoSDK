@@ -54,7 +54,9 @@ namespace G
         /// <param name="classifications">
         /// The number of billed classifications units.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ApiMetaBilledUnits(
             double? inputTokens,
             double? outputTokens,

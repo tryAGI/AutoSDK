@@ -76,7 +76,9 @@ namespace G
         /// <param name="speaker">
         /// The speaker of the sentence if [Speaker Diarization](https://www.assemblyai.com/docs/models/speaker-diarization) is enabled, else null
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SentimentAnalysisResult(
             string text,
             int start,

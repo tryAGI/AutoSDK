@@ -222,7 +222,9 @@ namespace G
         /// </param>
         /// <param name="steps"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookWorkflowJobCompletedWorkflowJobVariant1(
             string checkRunUrl,
             string? completedAt,

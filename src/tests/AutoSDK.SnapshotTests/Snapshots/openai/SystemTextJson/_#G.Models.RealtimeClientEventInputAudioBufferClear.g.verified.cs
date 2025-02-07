@@ -38,7 +38,9 @@ namespace G
         /// <param name="type">
         /// The event type, must be `input_audio_buffer.clear`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeClientEventInputAudioBufferClear(
             string? eventId,
             global::G.RealtimeClientEventInputAudioBufferClearType type)

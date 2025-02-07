@@ -50,7 +50,9 @@ namespace G
         /// <param name="setId"></param>
         /// <param name="fieldId"></param>
         /// <param name="newFieldType"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartConvertFieldTypeJobRequest(
             global::System.Guid projectId,
             global::System.Guid setId,

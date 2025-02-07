@@ -36,7 +36,9 @@ namespace G
         /// The type of the content part. Always `input_audio`.
         /// </param>
         /// <param name="inputAudio"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionRequestMessageContentPartAudio(
             global::G.ChatCompletionRequestMessageContentPartAudioInputAudio inputAudio,
             global::G.ChatCompletionRequestMessageContentPartAudioType type)

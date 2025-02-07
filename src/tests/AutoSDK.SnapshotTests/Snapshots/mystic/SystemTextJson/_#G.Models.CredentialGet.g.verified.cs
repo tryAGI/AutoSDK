@@ -42,7 +42,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="provider"></param>
         /// <param name="authError"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CredentialGet(
             string id,
             string provider,

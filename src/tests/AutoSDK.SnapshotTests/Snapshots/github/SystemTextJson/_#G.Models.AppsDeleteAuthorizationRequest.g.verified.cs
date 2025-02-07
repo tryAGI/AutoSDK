@@ -28,7 +28,9 @@ namespace G
         /// <param name="accessToken">
         /// The OAuth access token used to authenticate to the GitHub API.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AppsDeleteAuthorizationRequest(
             string accessToken)
         {

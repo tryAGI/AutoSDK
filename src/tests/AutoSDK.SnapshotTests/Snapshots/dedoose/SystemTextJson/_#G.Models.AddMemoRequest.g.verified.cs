@@ -58,7 +58,9 @@ namespace G
         /// <param name="dataPath"></param>
         /// <param name="folderIds"></param>
         /// <param name="linkedObjects"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddMemoRequest(
             global::System.Guid projectId,
             string title,

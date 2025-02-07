@@ -40,7 +40,9 @@ namespace G
         /// <param name="reason"></param>
         /// <param name="length"></param>
         /// <param name="sequence"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FinishReason(
             string reason,
             int? length,

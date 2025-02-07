@@ -50,7 +50,9 @@ namespace G
         /// <param name="title"></param>
         /// <param name="decription"></param>
         /// <param name="symKeyHash"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddProjectEncryptedByUserRequest(
             global::System.Guid userId,
             string title,

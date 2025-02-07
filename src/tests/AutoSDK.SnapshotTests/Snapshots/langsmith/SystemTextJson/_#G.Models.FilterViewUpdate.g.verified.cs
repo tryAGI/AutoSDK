@@ -53,7 +53,9 @@ namespace G
         /// <param name="description"></param>
         /// <param name="traceFilterString"></param>
         /// <param name="treeFilterString"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FilterViewUpdate(
             string? filterString,
             string? displayName,

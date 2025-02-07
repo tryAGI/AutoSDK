@@ -27,7 +27,9 @@ namespace G
         /// <param name="catalog">
         /// The updated catalog.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateCatalogResponse(
             global::G.Catalog? catalog)
         {

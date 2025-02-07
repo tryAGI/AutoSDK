@@ -50,7 +50,9 @@ namespace G
         /// <param name="url4x">
         /// A URL to the large version (112px x 112px) of the emote.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmoteImages(
             string url1x,
             string url2x,

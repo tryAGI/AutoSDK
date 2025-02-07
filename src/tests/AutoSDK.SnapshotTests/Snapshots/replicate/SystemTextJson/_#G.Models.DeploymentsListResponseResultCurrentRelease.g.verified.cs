@@ -68,7 +68,9 @@ namespace G
         /// <param name="version">
         /// The ID of the model version used in the release.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeploymentsListResponseResultCurrentRelease(
             global::G.DeploymentsListResponseResultCurrentReleaseConfiguration? configuration,
             global::System.DateTime? createdAt,

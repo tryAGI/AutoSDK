@@ -35,6 +35,12 @@ public partial class Tests : VerifyBase
             JsonSerializerType.NewtonsoftJson => "Never",
             _ => throw new ArgumentOutOfRangeException(nameof(jsonSerializerType), jsonSerializerType, null)
         });
+        globalOptions.TryAdd("build_property.AutoSDK_UseSetsRequiredMembersAttributes", jsonSerializerType switch
+        {
+            JsonSerializerType.SystemTextJson => "InSupportedTargetFrameworks",
+            JsonSerializerType.NewtonsoftJson => "Never",
+            _ => throw new ArgumentOutOfRangeException(nameof(jsonSerializerType), jsonSerializerType, null)
+        });
 
         var referenceAssemblies = jsonSerializerType switch
         {

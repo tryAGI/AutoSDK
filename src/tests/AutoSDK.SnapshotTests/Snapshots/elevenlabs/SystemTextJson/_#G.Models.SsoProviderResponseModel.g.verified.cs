@@ -43,7 +43,9 @@ namespace G
         /// <param name="providerType"></param>
         /// <param name="providerId"></param>
         /// <param name="domains"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SsoProviderResponseModel(
             global::G.SsoProviderResponseModelProviderType providerType,
             string providerId,

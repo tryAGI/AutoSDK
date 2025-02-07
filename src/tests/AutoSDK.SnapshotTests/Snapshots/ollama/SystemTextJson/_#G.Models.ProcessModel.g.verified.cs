@@ -84,7 +84,9 @@ namespace G
         /// Size of the model on disk.<br/>
         /// Example: 7323310500L
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProcessModel(
             string? model,
             long? size,

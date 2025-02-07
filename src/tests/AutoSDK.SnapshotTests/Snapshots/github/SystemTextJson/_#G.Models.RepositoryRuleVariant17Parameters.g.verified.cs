@@ -28,7 +28,9 @@ namespace G
         /// <param name="maxFilePathLength">
         /// The maximum amount of characters allowed in file paths
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleVariant17Parameters(
             int maxFilePathLength)
         {

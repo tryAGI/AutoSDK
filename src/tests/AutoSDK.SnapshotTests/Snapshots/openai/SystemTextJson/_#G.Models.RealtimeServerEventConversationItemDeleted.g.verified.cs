@@ -50,7 +50,9 @@ namespace G
         /// <param name="itemId">
         /// The ID of the item that was deleted.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventConversationItemDeleted(
             string eventId,
             string itemId,

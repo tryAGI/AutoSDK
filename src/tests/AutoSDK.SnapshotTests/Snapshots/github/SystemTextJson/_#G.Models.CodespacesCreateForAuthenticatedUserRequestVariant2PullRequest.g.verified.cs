@@ -38,7 +38,9 @@ namespace G
         /// <param name="repositoryId">
         /// Repository id for this codespace
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesCreateForAuthenticatedUserRequestVariant2PullRequest(
             int pullRequestNumber,
             int repositoryId)

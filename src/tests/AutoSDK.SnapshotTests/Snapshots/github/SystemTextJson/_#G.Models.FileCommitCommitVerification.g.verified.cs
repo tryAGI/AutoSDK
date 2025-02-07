@@ -46,7 +46,9 @@ namespace G
         /// <param name="reason"></param>
         /// <param name="signature"></param>
         /// <param name="payload"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FileCommitCommitVerification(
             bool? verified,
             string? reason,

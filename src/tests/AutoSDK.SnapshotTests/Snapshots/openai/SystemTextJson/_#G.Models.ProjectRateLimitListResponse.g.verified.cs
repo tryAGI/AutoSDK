@@ -58,7 +58,9 @@ namespace G
         /// <param name="firstId"></param>
         /// <param name="lastId"></param>
         /// <param name="hasMore"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectRateLimitListResponse(
             global::System.Collections.Generic.IList<global::G.ProjectRateLimit> data,
             string firstId,

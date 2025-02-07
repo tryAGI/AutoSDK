@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains the charity campaign that the broadcaster is currently running. The list is empty if the broadcaster is not running a charity campaign; the campaign information is not available after the campaign ends.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetCharityCampaignResponse(
             global::System.Collections.Generic.IList<global::G.CharityCampaign> data)
         {

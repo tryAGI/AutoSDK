@@ -75,7 +75,9 @@ namespace G
         /// phase of backup restoration process<br/>
         /// Default Value: STARTED
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BackupRestoreResponse(
             string? id,
             global::System.Collections.Generic.IList<string>? classes,

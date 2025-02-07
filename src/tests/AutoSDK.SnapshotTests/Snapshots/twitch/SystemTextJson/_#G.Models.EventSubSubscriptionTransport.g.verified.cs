@@ -71,7 +71,9 @@ namespace G
         /// <param name="disconnectedAt">
         /// The UTC date and time that the WebSocket connection was lost. Included only if `method` is set to **websocket**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EventSubSubscriptionTransport(
             global::G.EventSubSubscriptionTransportMethod method,
             string? callback,

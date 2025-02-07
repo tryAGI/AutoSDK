@@ -27,7 +27,9 @@ namespace G
         /// <param name="function">
         /// The function the model wants to call.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolCall(
             global::G.ToolCallFunction? function)
         {

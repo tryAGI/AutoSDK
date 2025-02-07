@@ -62,7 +62,9 @@ namespace G
         /// <param name="secretScanningPushProtection"></param>
         /// <param name="secretScanningNonProviderPatterns"></param>
         /// <param name="secretScanningAiDetection"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecurityAndAnalysis(
             global::G.SecurityAndAnalysisAdvancedSecurity? advancedSecurity,
             global::G.SecurityAndAnalysisDependabotSecurityUpdates? dependabotSecurityUpdates,

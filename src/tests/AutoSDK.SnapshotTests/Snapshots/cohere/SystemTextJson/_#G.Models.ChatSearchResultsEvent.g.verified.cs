@@ -31,7 +31,9 @@ namespace G
         /// <param name="documents">
         /// Documents fetched from searches or provided by the user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatSearchResultsEvent(
             global::System.Collections.Generic.IList<global::G.ChatSearchResult>? searchResults,
             global::System.Collections.Generic.IList<global::G.ChatDocument>? documents)

@@ -119,7 +119,9 @@ namespace G
         /// <param name="collaboratingTeams">
         /// A list of team slugs which have been granted write access to the advisory.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryAdvisoryUpdate(
             string? summary,
             string? description,

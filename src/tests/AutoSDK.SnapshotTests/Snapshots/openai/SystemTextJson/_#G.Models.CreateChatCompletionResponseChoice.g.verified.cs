@@ -65,7 +65,9 @@ namespace G
         /// <param name="logprobs">
         /// Log probability information for the choice.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChatCompletionResponseChoice(
             global::G.CreateChatCompletionResponseChoiceFinishReason finishReason,
             int index,

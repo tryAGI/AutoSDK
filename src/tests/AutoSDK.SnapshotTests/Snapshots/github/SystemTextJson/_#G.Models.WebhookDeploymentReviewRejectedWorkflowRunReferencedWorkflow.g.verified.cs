@@ -41,7 +41,9 @@ namespace G
         /// <param name="path"></param>
         /// <param name="ref"></param>
         /// <param name="sha"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookDeploymentReviewRejectedWorkflowRunReferencedWorkflow(
             string path,
             string sha,

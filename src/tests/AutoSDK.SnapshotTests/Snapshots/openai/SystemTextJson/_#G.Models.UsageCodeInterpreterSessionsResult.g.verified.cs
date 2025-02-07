@@ -45,7 +45,9 @@ namespace G
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsageCodeInterpreterSessionsResult(
             int sessions,
             global::G.UsageCodeInterpreterSessionsResultObject @object,

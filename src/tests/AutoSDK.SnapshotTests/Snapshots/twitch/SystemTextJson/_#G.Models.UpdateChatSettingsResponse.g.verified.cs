@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of chat settings. The list contains a single object with all the settings.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateChatSettingsResponse(
             global::System.Collections.Generic.IList<global::G.ChatSettingsUpdated> data)
         {

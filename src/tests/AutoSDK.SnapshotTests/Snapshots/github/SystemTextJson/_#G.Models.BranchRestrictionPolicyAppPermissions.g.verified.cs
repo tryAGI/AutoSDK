@@ -46,7 +46,9 @@ namespace G
         /// <param name="contents"></param>
         /// <param name="issues"></param>
         /// <param name="singleFile"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BranchRestrictionPolicyAppPermissions(
             string? metadata,
             string? contents,

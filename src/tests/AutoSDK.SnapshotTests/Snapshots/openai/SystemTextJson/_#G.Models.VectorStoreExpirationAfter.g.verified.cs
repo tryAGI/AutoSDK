@@ -38,7 +38,9 @@ namespace G
         /// <param name="days">
         /// The number of days after the anchor time that the vector store will expire.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VectorStoreExpirationAfter(
             int days,
             global::G.VectorStoreExpirationAfterAnchor anchor)

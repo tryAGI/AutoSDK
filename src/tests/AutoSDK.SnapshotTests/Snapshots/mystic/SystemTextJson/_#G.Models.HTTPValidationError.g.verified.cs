@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="HTTPValidationError" /> class.
         /// </summary>
         /// <param name="detail"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public HTTPValidationError(
             global::System.Collections.Generic.IList<global::G.ValidationError>? detail)
         {

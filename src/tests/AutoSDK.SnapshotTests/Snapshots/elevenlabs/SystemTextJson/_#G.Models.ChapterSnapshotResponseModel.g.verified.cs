@@ -58,7 +58,9 @@ namespace G
         /// <param name="chapterId"></param>
         /// <param name="createdAtUnix"></param>
         /// <param name="name"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChapterSnapshotResponseModel(
             string chapterSnapshotId,
             string projectId,

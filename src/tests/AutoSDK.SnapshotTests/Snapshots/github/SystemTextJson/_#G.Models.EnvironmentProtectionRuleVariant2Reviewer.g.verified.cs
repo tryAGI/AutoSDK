@@ -41,7 +41,9 @@ namespace G
         /// Example: User
         /// </param>
         /// <param name="reviewer"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EnvironmentProtectionRuleVariant2Reviewer(
             global::G.DeploymentReviewerType? type,
             global::G.AnyOf<global::G.SimpleUser, global::G.Team>? reviewer)

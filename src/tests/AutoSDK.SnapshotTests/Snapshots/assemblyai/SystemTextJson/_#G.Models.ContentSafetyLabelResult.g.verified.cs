@@ -68,7 +68,9 @@ namespace G
         /// <param name="timestamp">
         /// Timestamp containing a start and end property in milliseconds
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ContentSafetyLabelResult(
             string text,
             global::System.Collections.Generic.IList<global::G.ContentSafetyLabel> labels,

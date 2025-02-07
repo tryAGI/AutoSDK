@@ -48,7 +48,9 @@ namespace G
         /// <param name="totalSize">
         /// Total number of pipeline releases.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListPipelineReleasesAdminResponse(
             global::System.Collections.Generic.IList<global::G.PipelineRelease>? releases,
             string? nextPageToken,

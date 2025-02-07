@@ -36,7 +36,9 @@ namespace G
         /// <param name="video">
         /// The URL of the video
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Assets(
             string? image,
             string? video)

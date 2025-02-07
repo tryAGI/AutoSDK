@@ -75,7 +75,9 @@ namespace G
         /// <param name="object"></param>
         /// <param name="systemFingerprint"></param>
         /// <param name="usage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionChunk(
             global::System.Collections.Generic.IList<global::G.ChatCompletionChunkChoice> choices,
             int created,

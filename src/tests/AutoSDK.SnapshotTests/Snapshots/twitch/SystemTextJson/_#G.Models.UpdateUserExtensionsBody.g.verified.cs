@@ -36,7 +36,9 @@ namespace G
         ///   <br/>
         /// For component extensions, the key’s value includes the above fields plus the `x` and `y` fields, which identify the coordinate where the extension is placed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateUserExtensionsBody(
             global::G.UpdateUserExtensionsBodyData data)
         {

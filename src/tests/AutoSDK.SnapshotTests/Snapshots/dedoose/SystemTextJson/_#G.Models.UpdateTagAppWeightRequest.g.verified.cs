@@ -42,7 +42,9 @@ namespace G
         /// <param name="currentProjectId"></param>
         /// <param name="tagAppId"></param>
         /// <param name="newWeight"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateTagAppWeightRequest(
             global::System.Guid currentProjectId,
             global::System.Guid tagAppId,

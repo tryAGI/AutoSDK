@@ -56,7 +56,9 @@ namespace G
         /// The process by which the GitHub Pages site will be built. `workflow` means that the site is built by a custom GitHub Actions workflow. `legacy` means that the site is built by GitHub when changes are pushed to a specific branch.
         /// </param>
         /// <param name="source"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposUpdateInformationAboutPagesSiteRequest(
             string? cname,
             bool? httpsEnforced,

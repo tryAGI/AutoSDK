@@ -50,7 +50,9 @@ namespace G
         /// <param name="path"></param>
         /// <param name="oid"></param>
         /// <param name="size"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PorterLargeFile(
             string refName,
             string path,

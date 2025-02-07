@@ -68,7 +68,9 @@ namespace G
         /// <param name="tagger">
         /// An object with information about the individual creating the tag.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GitCreateTagRequest(
             string tag,
             string message,

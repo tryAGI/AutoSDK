@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="from"></param>
         /// <param name="to"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookProjectsV2StatusUpdateEditedChangesStartDate(
             global::System.DateTime? from,
             global::System.DateTime? to)

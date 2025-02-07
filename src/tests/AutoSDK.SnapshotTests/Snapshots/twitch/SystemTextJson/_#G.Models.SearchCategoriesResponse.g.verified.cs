@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of games or categories that match the query. The list is empty if there are no matches.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SearchCategoriesResponse(
             global::System.Collections.Generic.IList<global::G.Category> data)
         {

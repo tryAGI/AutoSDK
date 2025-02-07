@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="location"></param>
         /// <param name="error"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ErrPipelineValidation(
             string? location,
             string? error)

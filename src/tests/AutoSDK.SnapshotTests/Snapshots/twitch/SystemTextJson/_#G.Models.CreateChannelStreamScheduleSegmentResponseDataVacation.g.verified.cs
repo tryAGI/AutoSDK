@@ -38,7 +38,9 @@ namespace G
         /// <param name="endTime">
         /// The UTC date and time (in RFC3339 format) of when the broadcaster’s vacation ends.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChannelStreamScheduleSegmentResponseDataVacation(
             global::System.DateTime startTime,
             global::System.DateTime endTime)

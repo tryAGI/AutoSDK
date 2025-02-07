@@ -46,7 +46,9 @@ namespace G
         /// <param name="enforcement"></param>
         /// <param name="conditions"></param>
         /// <param name="rules"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRepositoryRulesetEditedChanges(
             global::G.WebhookRepositoryRulesetEditedChangesName? name,
             global::G.WebhookRepositoryRulesetEditedChangesEnforcement? enforcement,

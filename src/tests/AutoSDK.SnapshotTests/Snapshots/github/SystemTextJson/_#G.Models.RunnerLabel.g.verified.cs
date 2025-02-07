@@ -47,7 +47,9 @@ namespace G
         /// <param name="type">
         /// The type of label. Read-only labels are applied automatically when the runner is configured.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunnerLabel(
             string name,
             int? id,

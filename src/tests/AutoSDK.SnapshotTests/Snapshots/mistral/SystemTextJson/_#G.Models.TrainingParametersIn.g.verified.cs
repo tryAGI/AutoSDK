@@ -76,7 +76,9 @@ namespace G
         /// (Advanced Usage) Weight decay adds a term to the loss function that is proportional to the sum of the squared weights. This term reduces the magnitude of the weights and prevents them from growing too large.<br/>
         /// Default Value: 0.1
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TrainingParametersIn(
             double? epochs,
             double? fimRatio,

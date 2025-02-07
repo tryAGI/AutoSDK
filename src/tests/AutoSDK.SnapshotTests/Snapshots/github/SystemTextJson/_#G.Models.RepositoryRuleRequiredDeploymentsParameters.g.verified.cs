@@ -28,7 +28,9 @@ namespace G
         /// <param name="requiredDeploymentEnvironments">
         /// The environments that must be successfully deployed to before branches can be merged.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleRequiredDeploymentsParameters(
             global::System.Collections.Generic.IList<string> requiredDeploymentEnvironments)
         {

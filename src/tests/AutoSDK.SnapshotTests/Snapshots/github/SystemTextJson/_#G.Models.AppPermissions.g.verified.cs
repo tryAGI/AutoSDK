@@ -498,7 +498,9 @@ namespace G
         /// <param name="starring">
         /// The level of permission to grant the access token to list and manage repositories a user is starring.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AppPermissions(
             global::G.AppPermissionsActions? actions,
             global::G.AppPermissionsAdministration? administration,

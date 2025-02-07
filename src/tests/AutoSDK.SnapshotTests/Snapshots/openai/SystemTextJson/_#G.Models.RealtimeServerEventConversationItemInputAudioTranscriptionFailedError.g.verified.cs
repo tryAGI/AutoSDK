@@ -54,7 +54,9 @@ namespace G
         /// <param name="param">
         /// Parameter related to the error, if any.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(
             string? type,
             string? code,

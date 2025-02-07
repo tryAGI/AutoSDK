@@ -50,7 +50,9 @@ namespace G
         /// <param name="pointer"></param>
         /// <param name="pipelineId"></param>
         /// <param name="locked"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PointerGet(
             string id,
             string pointer,

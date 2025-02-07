@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of redemptions for the specified reward. The list is empty if there are no redemptions that match the redemption criteria.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetCustomRewardRedemptionResponse(
             global::System.Collections.Generic.IList<global::G.CustomRewardRedemption> data)
         {

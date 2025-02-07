@@ -41,7 +41,9 @@ namespace G
         /// Element used for the generation.
         /// </param>
         /// <param name="weightApplied"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetGenerationsByUserIdResponseGenerationGenerationElement(
             int? id,
             global::G.GetGenerationsByUserIdResponseGenerationGenerationElementLora? lora,

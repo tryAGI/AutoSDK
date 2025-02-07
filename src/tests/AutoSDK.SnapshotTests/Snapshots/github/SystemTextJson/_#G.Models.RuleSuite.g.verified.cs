@@ -117,7 +117,9 @@ namespace G
         /// <param name="evaluationResult">
         /// The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RuleSuite(
             int? id,
             int? actorId,

@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="SecurityAndAnalysisSecretScanningAiDetection" /> class.
         /// </summary>
         /// <param name="status"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecurityAndAnalysisSecretScanningAiDetection(
             global::G.SecurityAndAnalysisSecretScanningAiDetectionStatus? status)
         {

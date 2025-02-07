@@ -38,7 +38,9 @@ namespace G
         /// <param name="refusal">
         /// A list of message refusal tokens with log probability information.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChatCompletionStreamResponseChoiceLogprobs(
             global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? content,
             global::System.Collections.Generic.IList<global::G.ChatCompletionTokenLogprob>? refusal)

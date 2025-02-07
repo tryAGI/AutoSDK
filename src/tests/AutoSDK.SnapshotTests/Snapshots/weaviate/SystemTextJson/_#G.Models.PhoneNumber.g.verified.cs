@@ -81,7 +81,9 @@ namespace G
         /// <param name="valid">
         /// Read-only. Indicates whether the parsed number is a valid phone number
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PhoneNumber(
             string? input,
             string? internationalFormatted,

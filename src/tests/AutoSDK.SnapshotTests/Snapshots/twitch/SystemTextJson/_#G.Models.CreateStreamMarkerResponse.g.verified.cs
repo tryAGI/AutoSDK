@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains the single marker that you added.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateStreamMarkerResponse(
             global::System.Collections.Generic.IList<global::G.StreamMarkerCreated> data)
         {

@@ -29,7 +29,9 @@ namespace G
         /// Desired CPU core utilization ranging from 1%-80%<br/>
         /// Default Value: 50
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RestoreConfig(
             int? cPUPercentage)
         {

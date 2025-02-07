@@ -82,7 +82,9 @@ namespace G
         /// <param name="fullName"></param>
         /// <param name="workspaceRoleId"></param>
         /// <param name="workspaceIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BasicAuthMemberCreate(
             string email,
             global::System.Guid? userId,

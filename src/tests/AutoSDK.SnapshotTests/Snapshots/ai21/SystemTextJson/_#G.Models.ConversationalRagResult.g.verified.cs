@@ -71,7 +71,9 @@ namespace G
         /// <param name="contextRetrieved"></param>
         /// <param name="answerInContext"></param>
         /// <param name="sources"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ConversationalRagResult(
             string id,
             global::System.Collections.Generic.IList<global::G.Message> choices,

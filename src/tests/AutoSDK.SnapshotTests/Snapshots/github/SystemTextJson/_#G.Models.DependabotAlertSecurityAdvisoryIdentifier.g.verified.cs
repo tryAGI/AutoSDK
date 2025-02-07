@@ -44,7 +44,9 @@ namespace G
         /// The value of the advisory identifer.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DependabotAlertSecurityAdvisoryIdentifier(
             global::G.DependabotAlertSecurityAdvisoryIdentifierType type = default!,
             string value = default!)

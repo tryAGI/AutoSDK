@@ -53,6 +53,8 @@ public sealed partial class {modelData.Parents[level].ClassName}
             SdkFeatureUsage.Always => true,
             SdkFeatureUsage.InSupportedTargetFrameworks
                 when targetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase) => true,
+            SdkFeatureUsage.InSupportedTargetFrameworks
+                when targetFramework.StartsWith("net9", StringComparison.OrdinalIgnoreCase) => true,
             _ => false,
         };
     }
@@ -120,7 +122,13 @@ public sealed partial class {modelData.Parents[level].ClassName}
         /// </summary>
 {properties.Where(static x => x.IsRequired || !x.IsDeprecated).Select(x => $@"
         {x.Summary.ToXmlDocumentationForParam(x.ParameterName, level: 8)}").Inject()}
-        {(modelData.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase) ? "[global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]" : " ")}
+{(modelData.Settings.UseSetsRequiredMembersAttributes is SdkFeatureUsage.Always or SdkFeatureUsage.InSupportedTargetFrameworks ? @$" 
+{(modelData.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
+#if NET7_0_OR_GREATER" : " ")}
+        [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+{(modelData.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
+#endif" : " ")}
+ " : " ")}
         public {modelData.ClassName}(
  {string.Join(",",
      properties.Where(static x => x.IsRequired).Select(x => $@"

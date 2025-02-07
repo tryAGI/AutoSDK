@@ -391,7 +391,9 @@ namespace G
         /// <param name="lastReviewedTime"></param>
         /// <param name="addedAt"></param>
         /// <param name="effectiveAddedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunSchemaWithAnnotationQueueInfo(
             string name,
             global::G.RunTypeEnum runType,

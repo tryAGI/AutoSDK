@@ -66,7 +66,9 @@ namespace G
         /// <param name="description"></param>
         /// <param name="options"></param>
         /// <param name="deletedOptionIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateFieldAndOptionsRequest(
             global::System.Guid projectId,
             global::System.Guid fieldId,

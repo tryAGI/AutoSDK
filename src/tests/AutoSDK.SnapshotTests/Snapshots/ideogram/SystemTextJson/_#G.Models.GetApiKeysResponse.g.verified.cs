@@ -27,7 +27,9 @@ namespace G
         /// <param name="currentApiKeys">
         /// The current API keys that are active. Only returns redacted keys.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetApiKeysResponse(
             global::System.Collections.Generic.IList<global::G.RedactedApiKey>? currentApiKeys)
         {

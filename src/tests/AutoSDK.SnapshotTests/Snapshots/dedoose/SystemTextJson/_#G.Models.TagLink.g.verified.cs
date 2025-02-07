@@ -67,7 +67,9 @@ namespace G
         /// <param name="tag1IDL"></param>
         /// <param name="tag2IDL"></param>
         /// <param name="isParentChildLink"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TagLink(
             string? projectIdKey,
             global::System.Guid? projectId,

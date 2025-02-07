@@ -29,7 +29,9 @@ namespace G
         /// Whether to block all notifications from a thread.<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActivitySetThreadSubscriptionRequest(
             bool? ignored)
         {

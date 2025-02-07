@@ -46,7 +46,9 @@ namespace G
         /// <param name="nodeId"></param>
         /// <param name="commitId"></param>
         /// <param name="comments"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TimelineCommitCommentedEvent(
             string? @event,
             string? nodeId,

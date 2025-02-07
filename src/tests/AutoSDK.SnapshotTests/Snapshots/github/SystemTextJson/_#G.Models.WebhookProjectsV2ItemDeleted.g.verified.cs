@@ -71,7 +71,9 @@ namespace G
         /// <param name="sender">
         /// A GitHub user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookProjectsV2ItemDeleted(
             global::G.OrganizationSimpleWebhooks organization,
             global::G.ProjectsV2Item projectsV2Item,

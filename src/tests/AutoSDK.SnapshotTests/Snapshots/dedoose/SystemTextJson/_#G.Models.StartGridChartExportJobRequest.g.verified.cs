@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="export"></param>
         /// <param name="extension"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartGridChartExportJobRequest(
             global::System.Guid projectId,
             global::G.GridChartExportVO export,

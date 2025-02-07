@@ -138,7 +138,9 @@ namespace G
         /// Whether or not to use sampling, use greedy decoding otherwise.<br/>
         /// Default Value: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateTextRequestParameters(
             int? topK,
             double? topP,

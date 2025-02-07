@@ -108,7 +108,9 @@ namespace G
         /// A lean representation of a cluster when returned from an API call
         /// </param>
         /// <param name="accelerators"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetMetaAndPointers(
             bool @public,
             global::System.Collections.Generic.IList<string> pointers,

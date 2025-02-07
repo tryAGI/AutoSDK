@@ -54,7 +54,9 @@ namespace G
         /// <param name="line">
         /// The line number of the input file where the error occurred, if applicable.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchErrorsDataItem(
             string? code,
             string? message,

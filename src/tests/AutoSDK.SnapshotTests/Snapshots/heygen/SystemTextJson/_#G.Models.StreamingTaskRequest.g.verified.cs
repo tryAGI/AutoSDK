@@ -38,7 +38,9 @@ namespace G
         /// <param name="text">
         /// Example: Hey, there!
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StreamingTaskRequest(
             string? sessionId,
             string? text)

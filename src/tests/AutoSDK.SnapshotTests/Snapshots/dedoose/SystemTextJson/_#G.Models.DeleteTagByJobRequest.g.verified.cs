@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="currentProjectId"></param>
         /// <param name="tag"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteTagByJobRequest(
             global::System.Guid currentProjectId,
             global::G.Tag tag)

@@ -28,7 +28,9 @@ namespace G
         /// <param name="members">
         /// A list of ColorPaletteMembers that define the color palette.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ColorPaletteWithMembers(
             global::System.Collections.Generic.IList<global::G.ColorPaletteMember> members)
         {

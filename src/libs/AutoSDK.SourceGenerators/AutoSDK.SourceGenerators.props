@@ -28,6 +28,8 @@
     <CompilerVisibleProperty Include="AutoSDK_UseRequiredKeyword"/>
     <!-- InSupportedTargetFrameworks/Never/Always. Default: InSupportedTargetFrameworks -->
     <CompilerVisibleProperty Include="AutoSDK_UseExperimentalAttributes"/>
+    <!-- InSupportedTargetFrameworks/Never/Always. Default: InSupportedTargetFrameworks -->
+    <CompilerVisibleProperty Include="AutoSDK_UseSetsRequiredMembersAttributes"/>
 
     <!-- Methods generation -->
     <!-- true/false. Default: false -->

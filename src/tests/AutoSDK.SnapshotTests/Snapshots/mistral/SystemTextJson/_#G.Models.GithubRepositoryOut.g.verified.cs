@@ -68,7 +68,9 @@ namespace G
         /// <param name="weight">
         /// Default Value: 1
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GithubRepositoryOut(
             string commitId,
             string name,

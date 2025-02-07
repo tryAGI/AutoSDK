@@ -28,7 +28,9 @@ namespace G
         /// <param name="stepDetails">
         /// The details of the run step.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDeltaObjectDelta(
             global::G.RunStepDeltaObjectDeltaStepDetails? stepDetails)
         {

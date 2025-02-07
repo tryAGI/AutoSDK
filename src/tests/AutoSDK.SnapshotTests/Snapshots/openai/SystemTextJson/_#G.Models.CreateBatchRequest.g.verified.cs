@@ -62,7 +62,9 @@ namespace G
         /// <param name="metadata">
         /// Optional custom metadata for the batch.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateBatchRequest(
             string inputFileId,
             global::G.CreateBatchRequestEndpoint endpoint,

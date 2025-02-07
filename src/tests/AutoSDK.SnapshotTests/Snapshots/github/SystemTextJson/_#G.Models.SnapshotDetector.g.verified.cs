@@ -57,7 +57,9 @@ namespace G
         /// The url of the detector used.<br/>
         /// Example: http://example.com/docker-buildtimer-detector
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SnapshotDetector(
             string name,
             string version,

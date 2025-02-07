@@ -1,4 +1,4 @@
-﻿openapi: 3.0.1
+﻿openapi: 3.0.4
 info:
   title: OpenAI API
   description: The OpenAI REST API. Please see https://platform.openai.com/docs/api-reference for more details.

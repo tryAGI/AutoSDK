@@ -68,7 +68,9 @@ namespace G
         /// <param name="channelPointsWon">
         /// The number of Channel Points distributed to the viewer.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PredictionOutcomeTopPredictor(
             string userId,
             string userName,

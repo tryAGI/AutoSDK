@@ -36,7 +36,9 @@ namespace G
         /// <param name="data">
         /// Represents a message within a [thread](/docs/api-reference/threads).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantStreamEventVariant22(
             global::G.MessageObject data,
             global::G.AssistantStreamEventVariant22Event @event)

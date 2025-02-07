@@ -40,7 +40,9 @@ namespace G
         /// <param name="manifest"></param>
         /// <param name="parentCommit"></param>
         /// <param name="exampleRunIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateRepoCommitRequest(
             object manifest,
             string? parentCommit,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="context"></param>
         /// <param name="appId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProtectedBranchRequiredStatusCheckCheck(
             string context,
             int? appId)

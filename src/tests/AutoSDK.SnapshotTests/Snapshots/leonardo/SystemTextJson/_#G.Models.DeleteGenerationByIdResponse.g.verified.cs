@@ -27,7 +27,9 @@ namespace G
         /// <param name="deleteGenerationsByPk">
         /// columns and relationships of "generations"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteGenerationByIdResponse(
             global::G.DeleteGenerationByIdResponseDeleteGenerationsByPk? deleteGenerationsByPk)
         {

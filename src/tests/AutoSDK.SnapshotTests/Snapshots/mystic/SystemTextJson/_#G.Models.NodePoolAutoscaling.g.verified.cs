@@ -42,7 +42,9 @@ namespace G
         /// <param name="minNodes"></param>
         /// <param name="maxNodes"></param>
         /// <param name="currentNodes"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NodePoolAutoscaling(
             int minNodes,
             int maxNodes,

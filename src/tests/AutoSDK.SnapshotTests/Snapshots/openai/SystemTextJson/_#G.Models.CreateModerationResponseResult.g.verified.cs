@@ -58,7 +58,9 @@ namespace G
         /// <param name="categoryAppliedInputTypes">
         /// A list of the categories along with the input type(s) that the score applies to.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModerationResponseResult(
             bool flagged,
             global::G.CreateModerationResponseResultCategories categories,

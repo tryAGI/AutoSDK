@@ -51,7 +51,9 @@ namespace G
         /// Metrics you can chart.
         /// </param>
         /// <param name="feedbackKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartSeriesCreate(
             string name,
             global::G.CustomChartMetric metric,

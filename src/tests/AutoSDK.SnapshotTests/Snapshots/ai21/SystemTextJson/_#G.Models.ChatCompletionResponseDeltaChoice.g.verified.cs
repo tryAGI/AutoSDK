@@ -69,7 +69,9 @@ namespace G
         ///      or because the model generated a stop sequence provided in the request.<br/>
         ///   - `length`:  The response ended by reaching `max_tokens`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionResponseDeltaChoice(
             int index,
             global::G.AnyOf<global::G.ChatStreamingFirstDelta, global::G.ChatStreamingContentDelta> delta,

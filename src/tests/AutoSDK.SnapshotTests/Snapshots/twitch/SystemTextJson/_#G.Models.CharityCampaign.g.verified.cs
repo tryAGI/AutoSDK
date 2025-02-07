@@ -118,7 +118,9 @@ namespace G
         /// <param name="targetAmount">
         /// The campaign’s fundraising goal. This field is **null** if the broadcaster has not defined a fundraising goal.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CharityCampaign(
             string id,
             string broadcasterId,

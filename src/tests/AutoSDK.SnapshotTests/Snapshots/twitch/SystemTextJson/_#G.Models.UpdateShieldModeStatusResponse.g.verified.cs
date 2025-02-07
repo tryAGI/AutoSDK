@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains a single object with the broadcaster’s updated Shield Mode status.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateShieldModeStatusResponse(
             global::System.Collections.Generic.IList<global::G.UpdateShieldModeStatusResponseDataItem> data)
         {

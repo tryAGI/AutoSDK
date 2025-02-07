@@ -76,7 +76,9 @@ namespace G
         /// <param name="zen">
         /// Random string of GitHub zen.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPing(
             global::G.WebhookPingHook? hook,
             int? hookId,

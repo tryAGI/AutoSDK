@@ -38,7 +38,9 @@ namespace G
         /// <param name="endedAt">
         /// The reporting window’s end date.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetBitsLeaderboardResponseDateRange(
             global::System.DateTime startedAt,
             global::System.DateTime endedAt)

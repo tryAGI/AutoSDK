@@ -68,7 +68,9 @@ namespace G
         /// <param name="vacation">
         /// The dates when the broadcaster is on vacation and not streaming. Is set to **null** if vacation mode is not enabled.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChannelStreamScheduleSegmentResponseData(
             global::System.Collections.Generic.IList<global::G.ChannelStreamScheduleSegment> segments,
             string broadcasterId,

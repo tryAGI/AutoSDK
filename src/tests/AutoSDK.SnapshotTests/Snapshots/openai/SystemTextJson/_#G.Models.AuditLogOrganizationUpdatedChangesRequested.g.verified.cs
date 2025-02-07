@@ -52,7 +52,9 @@ namespace G
         /// The organization name.
         /// </param>
         /// <param name="settings"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogOrganizationUpdatedChangesRequested(
             string? title,
             string? description,

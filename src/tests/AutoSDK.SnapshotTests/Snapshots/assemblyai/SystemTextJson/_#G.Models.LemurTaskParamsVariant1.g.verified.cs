@@ -28,7 +28,9 @@ namespace G
         /// <param name="prompt">
         /// Your text to prompt the model to produce a desired output, including any context you want to pass into the model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LemurTaskParamsVariant1(
             string prompt)
         {

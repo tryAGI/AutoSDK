@@ -36,7 +36,9 @@ namespace G
         /// <param name="repo">
         /// A repository on GitHub.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StarredRepository(
             global::System.DateTime starredAt,
             global::G.Repository repo)

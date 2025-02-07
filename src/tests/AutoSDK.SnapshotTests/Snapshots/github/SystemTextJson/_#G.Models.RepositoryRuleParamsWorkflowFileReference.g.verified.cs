@@ -56,7 +56,9 @@ namespace G
         /// <param name="sha">
         /// The commit SHA of the workflow file to use
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleParamsWorkflowFileReference(
             string path,
             int repositoryId,

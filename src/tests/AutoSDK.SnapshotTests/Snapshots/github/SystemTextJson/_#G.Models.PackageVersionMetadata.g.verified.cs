@@ -44,7 +44,9 @@ namespace G
         /// </param>
         /// <param name="container"></param>
         /// <param name="docker"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PackageVersionMetadata(
             global::G.PackageVersionMetadataPackageType packageType,
             global::G.PackageVersionMetadataContainer? container,

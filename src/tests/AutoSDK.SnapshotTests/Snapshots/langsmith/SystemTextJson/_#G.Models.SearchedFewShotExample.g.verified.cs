@@ -49,7 +49,9 @@ namespace G
         /// <param name="outputs"></param>
         /// <param name="id"></param>
         /// <param name="debugInfo"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SearchedFewShotExample(
             object inputs,
             object outputs,

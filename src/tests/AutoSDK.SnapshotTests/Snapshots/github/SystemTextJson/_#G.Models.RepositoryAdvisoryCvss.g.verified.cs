@@ -39,7 +39,9 @@ namespace G
         /// The CVSS score.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryAdvisoryCvss(
             string? vectorString,
             double? score)

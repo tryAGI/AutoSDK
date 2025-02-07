@@ -70,7 +70,9 @@ namespace G
         /// <param name="contextsUrl">
         /// Example: https://api.github.com/repos/octocat/Hello-World/branches/master/protection/required_status_checks/contexts
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StatusCheckPolicy(
             string url,
             bool strict,

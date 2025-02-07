@@ -72,7 +72,9 @@ namespace G
         /// <param name="credentialId"></param>
         /// <param name="errorMessage"></param>
         /// <param name="location"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClusterGet(
             string id,
             string provider,

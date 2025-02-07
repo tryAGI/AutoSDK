@@ -98,7 +98,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="tenantId"></param>
         /// <param name="lastRunStartTimeLive"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TracerSessionWithoutVirtualFields(
             global::System.Guid id,
             global::System.Guid tenantId,

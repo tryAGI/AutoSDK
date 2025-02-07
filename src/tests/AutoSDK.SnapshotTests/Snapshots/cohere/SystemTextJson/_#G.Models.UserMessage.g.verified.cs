@@ -41,7 +41,9 @@ namespace G
         /// The content of the message. This can be a string or a list of content blocks.<br/>
         /// If a string is provided, it will be treated as a text content block.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserMessage(
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.Content>> content,
             global::G.UserMessageRole role)

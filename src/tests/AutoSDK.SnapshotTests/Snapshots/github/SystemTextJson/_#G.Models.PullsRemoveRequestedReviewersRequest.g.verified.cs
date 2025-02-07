@@ -37,7 +37,9 @@ namespace G
         /// <param name="teamReviewers">
         /// An array of team `slug`s that will be removed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullsRemoveRequestedReviewersRequest(
             global::System.Collections.Generic.IList<string> reviewers,
             global::System.Collections.Generic.IList<string>? teamReviewers)

@@ -64,7 +64,9 @@ namespace G
         /// <param name="maintainerCanModify">
         /// Indicates whether [maintainers can modify](https://docs.github.com/articles/allowing-changes-to-a-pull-request-branch-created-from-a-fork/) the pull request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullsUpdateRequest(
             string? title,
             string? body,

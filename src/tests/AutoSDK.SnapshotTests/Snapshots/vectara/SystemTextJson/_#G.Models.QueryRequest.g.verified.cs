@@ -62,7 +62,9 @@ namespace G
         /// Indicates whether the response should be streamed or not.<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public QueryRequest(
             string query,
             global::G.SearchCorporaParameters search,

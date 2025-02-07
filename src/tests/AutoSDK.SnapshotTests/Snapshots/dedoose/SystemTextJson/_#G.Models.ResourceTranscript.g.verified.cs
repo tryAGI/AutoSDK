@@ -67,7 +67,9 @@ namespace G
         /// <param name="resourceId"></param>
         /// <param name="dataPath"></param>
         /// <param name="created"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ResourceTranscript(
             string? projectIdKey,
             global::System.Guid? id,

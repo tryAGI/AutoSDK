@@ -43,7 +43,9 @@ namespace G
         /// <param name="panel"></param>
         /// <param name="overlay"></param>
         /// <param name="component"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateUserExtensionsBodyData(
             global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionPanelUpdate>? panel,
             global::System.Collections.Generic.Dictionary<string, global::G.UserExtensionOverlayUpdate>? overlay,

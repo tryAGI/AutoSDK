@@ -66,7 +66,9 @@ namespace G
         /// <param name="schedule">
         /// The frequency of the periodic analysis.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningDefaultSetup(
             global::G.CodeScanningDefaultSetupState? state,
             global::System.Collections.Generic.IList<global::G.CodeScanningDefaultSetupLanguage>? languages,

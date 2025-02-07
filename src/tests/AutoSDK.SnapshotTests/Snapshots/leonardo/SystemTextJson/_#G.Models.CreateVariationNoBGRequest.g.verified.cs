@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="id"></param>
         /// <param name="isVariation"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateVariationNoBGRequest(
             string id,
             bool? isVariation)

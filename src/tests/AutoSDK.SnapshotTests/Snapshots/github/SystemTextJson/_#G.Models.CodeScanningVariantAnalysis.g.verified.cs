@@ -140,7 +140,9 @@ namespace G
         /// <param name="skippedRepositories">
         /// Information about repositories that were skipped from processing. This information is only available to the user that initiated the variant analysis.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningVariantAnalysis(
             int id,
             global::G.SimpleRepository controllerRepo,

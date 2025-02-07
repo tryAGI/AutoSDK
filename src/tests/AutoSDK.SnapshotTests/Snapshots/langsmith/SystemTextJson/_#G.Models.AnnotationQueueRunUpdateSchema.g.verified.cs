@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="lastReviewedTime"></param>
         /// <param name="addedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AnnotationQueueRunUpdateSchema(
             global::System.DateTime? lastReviewedTime,
             global::System.DateTime? addedAt)

@@ -39,7 +39,9 @@ namespace G
         /// <param name="status">
         /// The status of the transcript. Either completed or error.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TranscriptReadyNotification(
             global::System.Guid transcriptId,
             global::G.TranscriptReadyStatus status)

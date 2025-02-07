@@ -82,7 +82,9 @@ namespace G
         /// <param name="model">
         /// When `group_by=model`, this field provides the model name of the grouped usage result.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsageEmbeddingsResult(
             int inputTokens,
             int numModelRequests,

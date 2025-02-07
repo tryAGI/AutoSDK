@@ -46,7 +46,9 @@ namespace G
         /// <param name="version">
         /// The extension’s version.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserExtensionOverlayUpdate(
             bool active,
             string? id,

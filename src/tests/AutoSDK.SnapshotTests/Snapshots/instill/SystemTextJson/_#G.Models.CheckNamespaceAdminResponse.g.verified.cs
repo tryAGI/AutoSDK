@@ -56,7 +56,9 @@ namespace G
         /// <param name="organization">
         /// Organization.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckNamespaceAdminResponse(
             global::G.CheckNamespaceAdminResponseNamespace? type,
             string? uid,

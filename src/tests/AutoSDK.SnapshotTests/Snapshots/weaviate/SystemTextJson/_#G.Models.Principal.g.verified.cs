@@ -34,7 +34,9 @@ namespace G
         /// The username that was extracted either from the authentication information
         /// </param>
         /// <param name="groups"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Principal(
             string? username,
             global::System.Collections.Generic.IList<string>? groups)

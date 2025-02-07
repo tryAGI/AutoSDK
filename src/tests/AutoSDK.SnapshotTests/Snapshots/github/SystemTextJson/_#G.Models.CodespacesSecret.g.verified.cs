@@ -75,7 +75,9 @@ namespace G
         /// The API URL at which the list of repositories this secret is visible to can be retrieved<br/>
         /// Example: https://api.github.com/user/secrets/SECRET_NAME/repositories
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesSecret(
             string name,
             global::System.DateTime createdAt,

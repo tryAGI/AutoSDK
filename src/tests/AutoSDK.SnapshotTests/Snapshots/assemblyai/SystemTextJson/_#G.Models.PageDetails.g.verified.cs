@@ -68,7 +68,9 @@ namespace G
         /// <param name="nextUrl">
         /// The URL to the next page of transcripts. The next URL always points to a page with newer transcripts.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PageDetails(
             int limit,
             int resultCount,

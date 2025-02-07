@@ -59,7 +59,9 @@ namespace G
         /// Provides the connector with different settings at request time. The key/value pairs of this object are specific to each connector.<br/>
         /// For example, the connector `web-search` supports the `site` option, which limits search results to the specified domain.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatConnector(
             string id,
             string? userAccessToken,

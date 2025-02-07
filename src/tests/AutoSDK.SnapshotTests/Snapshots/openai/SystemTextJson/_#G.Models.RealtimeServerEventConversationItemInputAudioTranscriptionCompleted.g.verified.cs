@@ -78,7 +78,9 @@ namespace G
         /// <param name="transcript">
         /// The transcribed text.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
             string eventId,
             string itemId,

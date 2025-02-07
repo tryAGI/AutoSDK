@@ -61,7 +61,9 @@ namespace G
         /// <param name="endTime"></param>
         /// <param name="extra"></param>
         /// <param name="traceTier"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TracerSessionUpdate(
             string? name,
             string? description,

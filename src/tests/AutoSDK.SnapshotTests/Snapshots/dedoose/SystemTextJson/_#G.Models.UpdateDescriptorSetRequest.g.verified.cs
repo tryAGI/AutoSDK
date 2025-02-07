@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="UpdateDescriptorSetRequest" /> class.
         /// </summary>
         /// <param name="set"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateDescriptorSetRequest(
             global::G.DescriptorSet set)
         {

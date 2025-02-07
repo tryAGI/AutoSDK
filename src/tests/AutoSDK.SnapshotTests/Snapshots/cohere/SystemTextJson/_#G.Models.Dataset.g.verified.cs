@@ -146,7 +146,9 @@ namespace G
         /// Included only in requests
         /// </param>
         /// <param name="metrics"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Dataset(
             string id,
             string name,

@@ -54,7 +54,9 @@ namespace G
         /// <param name="answerInContext"></param>
         /// <param name="answer"></param>
         /// <param name="sources"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LibraryAnswerResponse(
             string id,
             bool answerInContext,

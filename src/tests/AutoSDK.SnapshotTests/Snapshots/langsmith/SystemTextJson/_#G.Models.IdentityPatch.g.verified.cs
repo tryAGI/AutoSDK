@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="readOnly"></param>
         /// <param name="roleId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public IdentityPatch(
             global::System.Guid roleId,
             bool? readOnly)

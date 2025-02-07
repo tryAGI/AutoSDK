@@ -58,7 +58,9 @@ namespace G
         /// <param name="mimeType"></param>
         /// <param name="sizeBytes"></param>
         /// <param name="hash"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SampleResponseModel(
             string sampleId,
             string fileName,

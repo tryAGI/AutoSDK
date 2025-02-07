@@ -27,7 +27,9 @@ namespace G
         /// <param name="cursor">
         /// The cursor value that you set the _after_ query parameter to.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetEventSubSubscriptionsResponsePagination(
             string? cursor)
         {

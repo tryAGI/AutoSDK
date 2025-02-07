@@ -88,7 +88,9 @@ namespace G
         /// <param name="delta">
         /// Base64-encoded audio data delta.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventResponseAudioDelta(
             string eventId,
             string responseId,

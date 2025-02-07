@@ -114,7 +114,9 @@ namespace G
         /// <param name="packageVersion"></param>
         /// <param name="registry"></param>
         /// <param name="updatedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPackageUpdatedPackage(
             string createdAt,
             string? description,

@@ -64,7 +64,9 @@ namespace G
         /// completion tokens for purposes of billing, output, and context window<br/>
         /// limits.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CompletionUsageCompletionTokensDetails(
             int? acceptedPredictionTokens,
             int? audioTokens,

@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="cvssV3"></param>
         /// <param name="cvssV4"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CvssSeverities(
             global::G.CvssSeveritiesCvssV3? cvssV3,
             global::G.CvssSeveritiesCvssV4? cvssV4)

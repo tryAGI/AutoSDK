@@ -38,7 +38,9 @@ namespace G
         /// <param name="usage">
         /// The usage numbers for the LeMUR request
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LemurBaseResponse(
             global::System.Guid requestId,
             global::G.LemurUsage usage)

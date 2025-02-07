@@ -64,7 +64,9 @@ namespace G
         /// <param name="images">
         /// Adds images to the output displayed in the GitHub pull request UI.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChecksUpdateRequestOutput(
             string summary,
             string? title,

@@ -28,7 +28,9 @@ namespace G
         /// <param name="isActive">
         /// Whether or not the recharge setting is currently active.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RechargeSettingsResponse(
             bool isActive)
         {

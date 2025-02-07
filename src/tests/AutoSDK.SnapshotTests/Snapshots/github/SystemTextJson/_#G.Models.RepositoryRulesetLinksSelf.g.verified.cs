@@ -27,7 +27,9 @@ namespace G
         /// <param name="href">
         /// The URL of the ruleset
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRulesetLinksSelf(
             string? href)
         {

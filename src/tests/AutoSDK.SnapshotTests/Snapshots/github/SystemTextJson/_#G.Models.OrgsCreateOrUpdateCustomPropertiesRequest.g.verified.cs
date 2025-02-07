@@ -28,7 +28,9 @@ namespace G
         /// <param name="properties">
         /// The array of custom properties to create or update.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsCreateOrUpdateCustomPropertiesRequest(
             global::System.Collections.Generic.IList<global::G.CustomProperty> properties)
         {

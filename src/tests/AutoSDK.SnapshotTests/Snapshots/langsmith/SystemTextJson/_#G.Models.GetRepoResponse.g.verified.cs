@@ -28,7 +28,9 @@ namespace G
         /// <param name="repo">
         /// All database fields for repos, plus helpful computed fields.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetRepoResponse(
             global::G.RepoWithLookups repo)
         {

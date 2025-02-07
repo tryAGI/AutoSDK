@@ -29,7 +29,9 @@ namespace G
         /// <param name="useLfs">
         /// Whether to store large files during the import. `opt_in` means large files will be stored using Git LFS. `opt_out` means large files will be removed during the import.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MigrationsSetLfsPreferenceRequest(
             global::G.MigrationsSetLfsPreferenceRequestUseLfs useLfs)
         {

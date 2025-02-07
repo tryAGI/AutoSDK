@@ -48,7 +48,9 @@ namespace G
         /// <param name="deleted">
         /// Whether the request data was deleted
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PurgeLemurRequestDataResponse(
             global::System.Guid requestId,
             global::System.Guid requestIdToPurge,

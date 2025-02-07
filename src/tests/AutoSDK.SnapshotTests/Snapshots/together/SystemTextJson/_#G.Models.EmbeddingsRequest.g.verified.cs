@@ -48,7 +48,9 @@ namespace G
         /// Default Value: togethercomputer/m2-bert-80M-8k-retrieval<br/>
         /// Example: togethercomputer/m2-bert-80M-8k-retrieval
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmbeddingsRequest(
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>> input,
             string model)

@@ -41,7 +41,9 @@ namespace G
         /// <param name="users"></param>
         /// <param name="teams"></param>
         /// <param name="apps"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProtectedBranchRequiredPullRequestReviewsBypassPullRequestAllowances(
             global::System.Collections.Generic.IList<global::G.SimpleUser> users,
             global::System.Collections.Generic.IList<global::G.Team> teams,

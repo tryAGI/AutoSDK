@@ -38,7 +38,9 @@ namespace G
         /// <param name="parameters">
         /// The name and value of the parameters to use when invoking a tool.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolCall(
             string name,
             object parameters)

@@ -191,7 +191,9 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="closedAt"></param>
         /// <param name="dueOn"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Milestone(
             string url,
             string htmlUrl,

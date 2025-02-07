@@ -96,7 +96,11 @@ namespace G
 
             if (ReadResponseAsString)
             {
-                var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
                 ProcessResponseContent(
                     client: HttpClient,
@@ -148,7 +152,11 @@ namespace G
                     };
                 }
 
-                var __content = await __response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var __content = await __response.Content.ReadAsStringAsync(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
                 return __content;
             }

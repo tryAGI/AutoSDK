@@ -36,7 +36,9 @@ namespace G
         /// <param name="data">
         /// Represents a run step delta i.e. any changed fields on a run step during streaming.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantStreamEventVariant16(
             global::G.RunStepDeltaObject data,
             global::G.AssistantStreamEventVariant16Event @event)

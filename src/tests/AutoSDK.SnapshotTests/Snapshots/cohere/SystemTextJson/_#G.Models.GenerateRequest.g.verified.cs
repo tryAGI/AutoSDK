@@ -257,7 +257,9 @@ namespace G
         /// <param name="rawPrompting">
         /// When enabled, the user's prompt will be sent to the model without any pre-processing.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateRequest(
             string? prompt,
             string? model,

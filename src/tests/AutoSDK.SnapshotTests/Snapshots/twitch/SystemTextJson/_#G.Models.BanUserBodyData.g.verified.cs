@@ -54,7 +54,9 @@ namespace G
         /// <param name="reason">
         /// The reason the you’re banning the user or putting them in a timeout. The text is user defined and is limited to a maximum of 500 characters.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BanUserBodyData(
             string userId,
             int? duration,

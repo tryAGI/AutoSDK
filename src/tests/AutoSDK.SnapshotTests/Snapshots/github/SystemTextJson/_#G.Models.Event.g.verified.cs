@@ -85,7 +85,9 @@ namespace G
         /// <param name="payload"></param>
         /// <param name="public"></param>
         /// <param name="createdAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Event(
             string id,
             string? type,

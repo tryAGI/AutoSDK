@@ -46,7 +46,9 @@ namespace G
         /// <param name="defaultWorkspaceIds"></param>
         /// <param name="metadataUrl"></param>
         /// <param name="metadataXml"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SSOSettingsUpdate(
             global::System.Guid? defaultWorkspaceRoleId,
             global::System.Collections.Generic.IList<global::System.Guid>? defaultWorkspaceIds,

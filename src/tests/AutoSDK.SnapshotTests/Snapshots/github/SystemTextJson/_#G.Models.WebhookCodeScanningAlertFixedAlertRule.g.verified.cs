@@ -86,7 +86,9 @@ namespace G
         /// The severity of the alert.
         /// </param>
         /// <param name="tags"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookCodeScanningAlertFixedAlertRule(
             string description,
             string id,

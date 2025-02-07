@@ -43,7 +43,9 @@ namespace G
         /// <param name="owner">
         /// The owner of the deployment.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeploymentsGetResponse(
             global::G.DeploymentsGetResponseCurrentRelease? currentRelease,
             string? name,

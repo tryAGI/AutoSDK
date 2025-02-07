@@ -42,7 +42,9 @@ namespace G
         /// <param name="prefix"></param>
         /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BulkExportRunS3Metadata(
             string prefix,
             global::System.DateTime startTime,

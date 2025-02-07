@@ -33,7 +33,9 @@ namespace G
         /// The model to use for transcription, `whisper-1` is the only currently <br/>
         /// supported model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionInputAudioTranscription(
             string? model)
         {

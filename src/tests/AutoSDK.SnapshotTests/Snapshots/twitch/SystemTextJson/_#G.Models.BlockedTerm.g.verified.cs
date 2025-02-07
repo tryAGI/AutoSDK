@@ -96,7 +96,9 @@ namespace G
         ///   <br/>
         /// This field is **null** if the term was added manually or was permanently blocked by AutoMod.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BlockedTerm(
             string broadcasterId,
             string moderatorId,

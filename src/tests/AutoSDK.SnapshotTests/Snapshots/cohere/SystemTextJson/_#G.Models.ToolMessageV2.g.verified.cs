@@ -49,7 +49,9 @@ namespace G
         /// <param name="toolContent">
         /// A single or list of outputs from a tool. The content should formatted as a JSON object string, or a list of tool content blocks
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolMessageV2(
             string toolCallId,
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ToolContent>> toolContent,

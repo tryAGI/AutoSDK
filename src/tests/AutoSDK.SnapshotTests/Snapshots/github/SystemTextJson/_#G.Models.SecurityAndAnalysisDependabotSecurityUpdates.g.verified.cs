@@ -28,7 +28,9 @@ namespace G
         /// <param name="status">
         /// The enablement status of Dependabot security updates for the repository.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecurityAndAnalysisDependabotSecurityUpdates(
             global::G.SecurityAndAnalysisDependabotSecurityUpdatesStatus? status)
         {

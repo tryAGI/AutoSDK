@@ -48,7 +48,9 @@ namespace G
         /// <param name="removals">
         /// stopwords to be removed from consideration. Can be any array of custom strings.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StopwordConfig(
             global::G.StopwordConfigPreset? preset,
             global::System.Collections.Generic.IList<string>? additions,

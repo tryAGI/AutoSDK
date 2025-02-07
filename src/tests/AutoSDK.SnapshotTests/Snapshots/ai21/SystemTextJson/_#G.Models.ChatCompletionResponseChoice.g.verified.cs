@@ -63,7 +63,9 @@ namespace G
         ///     or because the model generated a stop sequence provided in the request.<br/>
         ///   - `length`:  The response ended by reaching `max_tokens`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionResponseChoice(
             int index,
             global::G.AssistantMessage message,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="data"></param>
         /// <param name="object"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListFilesOut(
             global::System.Collections.Generic.IList<global::G.FileSchema> data,
             string @object)

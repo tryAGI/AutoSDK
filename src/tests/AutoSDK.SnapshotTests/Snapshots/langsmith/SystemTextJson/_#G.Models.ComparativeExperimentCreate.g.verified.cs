@@ -76,7 +76,9 @@ namespace G
         /// <param name="modifiedAt"></param>
         /// <param name="referenceDatasetId"></param>
         /// <param name="extra"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ComparativeExperimentCreate(
             global::System.Collections.Generic.IList<global::System.Guid> experimentIds,
             global::System.Guid referenceDatasetId,

@@ -214,7 +214,9 @@ namespace G
         /// Example: https://api.github.com/organizations/1/team/2343027/discussions/1
         /// </param>
         /// <param name="reactions"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TeamDiscussion(
             global::G.NullableSimpleUser? author,
             string body,

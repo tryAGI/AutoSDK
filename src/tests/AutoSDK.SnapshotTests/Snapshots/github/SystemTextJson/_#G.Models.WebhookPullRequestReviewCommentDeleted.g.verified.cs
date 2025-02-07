@@ -103,7 +103,9 @@ namespace G
         /// <param name="sender">
         /// A GitHub user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestReviewCommentDeleted(
             global::G.WebhooksReviewComment comment,
             global::G.WebhookPullRequestReviewCommentDeletedPullRequest pullRequest,

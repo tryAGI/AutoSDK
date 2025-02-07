@@ -67,7 +67,9 @@ namespace G
         /// <param name="validMeanTokenAccuracy"></param>
         /// <param name="fullValidLoss"></param>
         /// <param name="fullValidMeanTokenAccuracy"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningJobCheckpointMetrics(
             double? step,
             double? trainLoss,

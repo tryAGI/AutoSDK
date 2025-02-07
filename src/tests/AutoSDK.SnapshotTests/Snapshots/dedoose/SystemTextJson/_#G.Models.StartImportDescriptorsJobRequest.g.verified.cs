@@ -50,7 +50,9 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="setId"></param>
         /// <param name="descriptorInfos"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartImportDescriptorsJobRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

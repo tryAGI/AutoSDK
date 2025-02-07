@@ -41,7 +41,9 @@ namespace G
         /// <param name="content"></param>
         /// <param name="name"></param>
         /// <param name="role"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionUserMessageParam(
             string content,
             string? name,

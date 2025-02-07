@@ -68,7 +68,9 @@ namespace G
         /// <param name="total">
         /// The total number of files.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VectorStoreFileBatchObjectFileCounts(
             int inProgress,
             int completed,

@@ -37,7 +37,9 @@ namespace G
         /// <param name="pagination">
         /// Contains the information used to page through the list of results. The object is empty if there are no more pages left to page through. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetGameAnalyticsResponse(
             global::System.Collections.Generic.IList<global::G.GameAnalytics> data,
             global::G.GetGameAnalyticsResponsePagination? pagination)

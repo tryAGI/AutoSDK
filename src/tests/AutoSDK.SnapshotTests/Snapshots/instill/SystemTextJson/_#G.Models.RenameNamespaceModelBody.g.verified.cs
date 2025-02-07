@@ -30,7 +30,9 @@ namespace G
         /// The new resource ID. This will transform the resource name into<br/>
         /// `namespaces/{namespace.id}/models/{new_model_id}`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RenameNamespaceModelBody(
             string newModelId)
         {

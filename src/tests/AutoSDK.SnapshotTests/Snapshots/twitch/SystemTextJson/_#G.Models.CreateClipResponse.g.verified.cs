@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="CreateClipResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateClipResponse(
             global::System.Collections.Generic.IList<global::G.CreateClipResponseDataItem> data)
         {

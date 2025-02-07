@@ -36,7 +36,9 @@ namespace G
         /// <param name="exclude">
         /// The repository properties and values to exclude. The condition will not pass if any of these properties match.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRulesetConditionsRepositoryPropertyTargetRepositoryProperty(
             global::System.Collections.Generic.IList<global::G.RepositoryRulesetConditionsRepositoryPropertySpec>? include,
             global::System.Collections.Generic.IList<global::G.RepositoryRulesetConditionsRepositoryPropertySpec>? exclude)

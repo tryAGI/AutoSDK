@@ -38,7 +38,9 @@ namespace G
         /// <param name="offset">
         /// The offset, in seconds, from the beginning of the video to where the muted segment begins.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VideoMutedSegment(
             int duration,
             int offset)

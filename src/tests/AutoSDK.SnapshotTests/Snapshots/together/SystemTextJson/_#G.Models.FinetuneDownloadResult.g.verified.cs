@@ -54,7 +54,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="object"></param>
         /// <param name="size"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FinetuneDownloadResult(
             int? checkpointStep,
             string? filename,

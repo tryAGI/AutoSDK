@@ -108,7 +108,9 @@ namespace G
         /// <param name="additional">
         /// (Response only) Additional meta information about a single object.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Object(
             string? @class,
             object? vectorWeights,

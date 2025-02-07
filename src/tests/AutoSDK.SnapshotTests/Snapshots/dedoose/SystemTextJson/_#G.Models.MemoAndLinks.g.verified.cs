@@ -39,7 +39,9 @@ namespace G
         /// <param name="memoData"></param>
         /// <param name="links"></param>
         /// <param name="folderLinks"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MemoAndLinks(
             global::G.Memo? memoData,
             global::System.Collections.Generic.IList<global::G.MemoLink>? links,

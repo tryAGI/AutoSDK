@@ -117,7 +117,9 @@ namespace G
         /// <param name="type">
         /// Example: chat
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModelInfo(
             int created,
             string id,

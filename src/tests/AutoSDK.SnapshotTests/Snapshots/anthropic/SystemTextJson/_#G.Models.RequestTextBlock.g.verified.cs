@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RequestTextBlock(
             string text,
             global::G.RequestTextBlockType type)

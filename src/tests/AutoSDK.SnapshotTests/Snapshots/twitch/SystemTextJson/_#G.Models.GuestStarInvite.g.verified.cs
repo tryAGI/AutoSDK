@@ -96,7 +96,9 @@ namespace G
         /// <param name="isAudioAvailable">
         /// Flag signaling that the invited user has an audio device available for sharing.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GuestStarInvite(
             string userId,
             global::System.DateTime invitedAt,

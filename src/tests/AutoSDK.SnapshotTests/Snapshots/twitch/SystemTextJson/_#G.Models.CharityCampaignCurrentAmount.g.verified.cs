@@ -52,7 +52,9 @@ namespace G
         /// <param name="currency">
         /// The ISO-4217 three-letter currency code that identifies the type of currency in `value`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CharityCampaignCurrentAmount(
             int value,
             int decimalPlaces,

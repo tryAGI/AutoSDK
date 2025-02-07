@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="UpdateTagLinkRequest" /> class.
         /// </summary>
         /// <param name="link"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateTagLinkRequest(
             global::G.TagLink link)
         {

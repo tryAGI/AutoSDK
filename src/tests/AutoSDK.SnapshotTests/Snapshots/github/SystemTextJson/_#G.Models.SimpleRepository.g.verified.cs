@@ -607,7 +607,9 @@ namespace G
         /// The API URL to list the hooks on the repository.<br/>
         /// Example: https://api.github.com/repos/octocat/Hello-World/hooks
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SimpleRepository(
             long id,
             string nodeId,

@@ -69,7 +69,9 @@ namespace G
         /// Total bytes transferred.<br/>
         /// Example: 2142590208L
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullModelResponse(
             global::G.PullModelStatus? status,
             string? digest,

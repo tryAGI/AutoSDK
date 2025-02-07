@@ -58,7 +58,9 @@ namespace G
         /// <param name="cost">
         /// The reward’s cost, in Channel Points.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomRewardRedemptionReward(
             string id,
             string title,

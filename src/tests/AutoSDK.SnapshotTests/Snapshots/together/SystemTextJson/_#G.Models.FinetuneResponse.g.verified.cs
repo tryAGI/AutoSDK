@@ -211,7 +211,9 @@ namespace G
         /// <param name="validationFile"></param>
         /// <param name="wandbProjectName"></param>
         /// <param name="wandbUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FinetuneResponse(
             global::System.Guid id,
             global::G.FinetuneJobStatus status,

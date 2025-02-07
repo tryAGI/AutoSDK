@@ -94,7 +94,9 @@ namespace G
         /// <param name="roleId"></param>
         /// <param name="roleName"></param>
         /// <param name="permissions"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TenantForUser(
             global::System.Guid id,
             global::System.DateTime createdAt,

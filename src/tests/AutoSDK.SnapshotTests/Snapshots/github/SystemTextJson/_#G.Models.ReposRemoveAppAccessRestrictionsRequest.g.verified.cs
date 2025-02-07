@@ -28,7 +28,9 @@ namespace G
         /// <param name="apps">
         /// The GitHub Apps that have push access to this branch. Use the slugified version of the app name. **Note**: The list of users, apps, and teams in total is limited to 100 items.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposRemoveAppAccessRestrictionsRequest(
             global::System.Collections.Generic.IList<string> apps)
         {

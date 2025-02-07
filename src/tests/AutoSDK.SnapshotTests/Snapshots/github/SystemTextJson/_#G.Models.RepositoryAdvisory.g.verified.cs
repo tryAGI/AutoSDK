@@ -292,7 +292,9 @@ namespace G
         /// A temporary private fork of the advisory's repository for collaborating on a fix.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryAdvisory(
             string? cveId,
             string summary,

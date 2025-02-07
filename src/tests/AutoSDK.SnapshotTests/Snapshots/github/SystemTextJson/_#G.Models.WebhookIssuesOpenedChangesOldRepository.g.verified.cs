@@ -804,7 +804,9 @@ namespace G
         /// <param name="webCommitSignoffRequired">
         /// Whether to require commit signoff.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookIssuesOpenedChangesOldRepository(
             string archiveUrl,
             bool archived,

@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="ChatContentStartEventVariant2Delta" /> class.
         /// </summary>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatContentStartEventVariant2Delta(
             global::G.ChatContentStartEventVariant2DeltaMessage? message)
         {

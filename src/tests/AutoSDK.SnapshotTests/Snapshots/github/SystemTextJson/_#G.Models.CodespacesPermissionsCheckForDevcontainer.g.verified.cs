@@ -31,7 +31,9 @@ namespace G
         /// Whether the user has accepted the permissions defined by the devcontainer config<br/>
         /// Example: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodespacesPermissionsCheckForDevcontainer(
             bool accepted)
         {

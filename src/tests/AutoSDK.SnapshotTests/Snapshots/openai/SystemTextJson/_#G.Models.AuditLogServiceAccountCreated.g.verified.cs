@@ -36,7 +36,9 @@ namespace G
         /// <param name="data">
         /// The payload used to create the service account.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogServiceAccountCreated(
             string? id,
             global::G.AuditLogServiceAccountCreatedData? data)

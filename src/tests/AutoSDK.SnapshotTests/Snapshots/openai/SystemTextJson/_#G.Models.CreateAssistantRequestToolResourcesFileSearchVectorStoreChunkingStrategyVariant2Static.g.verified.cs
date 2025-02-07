@@ -40,7 +40,9 @@ namespace G
         /// The number of tokens that overlap between chunks. The default value is `400`.<br/>
         /// Note that the overlap must not exceed half of `max_chunk_size_tokens`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static(
             int maxChunkSizeTokens,
             int chunkOverlapTokens)

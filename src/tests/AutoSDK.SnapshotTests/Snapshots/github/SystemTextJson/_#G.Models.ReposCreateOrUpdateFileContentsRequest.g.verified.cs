@@ -74,7 +74,9 @@ namespace G
         /// <param name="author">
         /// The author of the file. Default: The `committer` or the authenticated user if you omit `committer`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateOrUpdateFileContentsRequest(
             string message,
             string content,

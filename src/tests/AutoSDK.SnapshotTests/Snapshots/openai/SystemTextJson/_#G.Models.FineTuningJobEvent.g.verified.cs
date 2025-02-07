@@ -59,7 +59,9 @@ namespace G
         /// <param name="level"></param>
         /// <param name="message"></param>
         /// <param name="object"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningJobEvent(
             string id,
             int createdAt,

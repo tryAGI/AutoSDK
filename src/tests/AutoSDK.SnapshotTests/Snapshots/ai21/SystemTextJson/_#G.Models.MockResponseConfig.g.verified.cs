@@ -36,7 +36,9 @@ namespace G
         /// <param name="streamResponseDelayBetweenDeltasSeconds">
         /// Default Value: 0.1
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MockResponseConfig(
             double? responseDelaySeconds,
             double? streamResponseDelayBetweenDeltasSeconds)

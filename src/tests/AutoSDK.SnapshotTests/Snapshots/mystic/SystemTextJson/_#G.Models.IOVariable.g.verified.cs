@@ -148,7 +148,9 @@ namespace G
         /// <param name="dictSchema"></param>
         /// <param name="default"></param>
         /// <param name="optional"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public IOVariable(
             global::G.RunIOType runIoType,
             string? title,

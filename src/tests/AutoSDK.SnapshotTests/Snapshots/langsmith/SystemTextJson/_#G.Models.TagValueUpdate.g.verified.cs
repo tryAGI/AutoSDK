@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="value"></param>
         /// <param name="description"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TagValueUpdate(
             string? value,
             string? description)

@@ -45,7 +45,9 @@ namespace G
         /// <param name="vectorQueueSize">
         /// Size of the vector queue of the shard
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ShardStatusGetResponse(
             string? name,
             string? status,

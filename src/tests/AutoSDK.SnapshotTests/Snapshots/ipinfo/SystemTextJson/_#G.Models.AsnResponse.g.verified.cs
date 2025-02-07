@@ -148,7 +148,9 @@ namespace G
         /// <param name="peers"></param>
         /// <param name="upstreams"></param>
         /// <param name="downstreams"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AsnResponse(
             string asn,
             string name,

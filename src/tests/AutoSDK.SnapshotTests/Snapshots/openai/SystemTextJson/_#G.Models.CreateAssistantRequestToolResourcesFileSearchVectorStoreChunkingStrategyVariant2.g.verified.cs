@@ -36,7 +36,9 @@ namespace G
         /// Always `static`.
         /// </param>
         /// <param name="static"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2(
             global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Static @static,
             global::G.CreateAssistantRequestToolResourcesFileSearchVectorStoreChunkingStrategyVariant2Type type)

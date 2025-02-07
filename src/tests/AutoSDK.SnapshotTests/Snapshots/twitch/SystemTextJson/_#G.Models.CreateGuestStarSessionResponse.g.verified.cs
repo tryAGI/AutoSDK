@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// Summary of the session details.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateGuestStarSessionResponse(
             global::System.Collections.Generic.IList<global::G.GuestStarSession> data)
         {

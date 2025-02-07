@@ -102,7 +102,9 @@ namespace G
         /// <param name="deployment">
         /// A request for a specific ref(branch,sha,tag) to be deployed
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookWorkflowJobQueued(
             global::G.RepositoryWebhooks repository,
             global::G.SimpleUser sender,

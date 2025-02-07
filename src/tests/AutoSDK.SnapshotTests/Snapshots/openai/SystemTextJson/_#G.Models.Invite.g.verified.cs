@@ -102,7 +102,9 @@ namespace G
         /// <param name="acceptedAt">
         /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Invite(
             string id,
             string email,

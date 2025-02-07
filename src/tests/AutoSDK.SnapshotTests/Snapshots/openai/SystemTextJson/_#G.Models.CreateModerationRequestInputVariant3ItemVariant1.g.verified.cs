@@ -38,7 +38,9 @@ namespace G
         /// <param name="imageUrl">
         /// Contains either an image URL or a data URL for a base64 encoded image.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModerationRequestInputVariant3ItemVariant1(
             global::G.CreateModerationRequestInputVariant3ItemVariant1ImageUrl imageUrl,
             global::G.CreateModerationRequestInputVariant3ItemVariant1Type type)

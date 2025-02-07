@@ -181,7 +181,9 @@ namespace G
         /// <param name="exclude">
         /// Exclude related items from being returned in the response in order to improve performance of the request. The array can include any of: `"repositories"`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Migration(
             long id,
             global::G.NullableSimpleUser? owner,

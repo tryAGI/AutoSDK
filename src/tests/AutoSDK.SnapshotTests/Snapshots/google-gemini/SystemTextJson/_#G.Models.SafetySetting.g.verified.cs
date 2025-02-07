@@ -38,7 +38,9 @@ namespace G
         /// <param name="threshold">
         /// Required. Controls the probability threshold at which harm is blocked.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SafetySetting(
             global::G.SafetySettingCategory? category,
             global::G.SafetySettingThreshold? threshold)

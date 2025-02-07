@@ -69,7 +69,9 @@ namespace G
         /// <param name="videoInputs">
         /// Example: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public V2VideoGenerateRequest(
             object? aspectRatio,
             object? callbackId,

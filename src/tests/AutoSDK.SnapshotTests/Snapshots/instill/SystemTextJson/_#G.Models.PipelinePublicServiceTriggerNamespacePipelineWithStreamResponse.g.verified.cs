@@ -48,7 +48,9 @@ namespace G
         /// You can find out more about this error model and how to work with it in the<br/>
         /// [API Design Guide](https://cloud.google.com/apis/design/errors).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelinePublicServiceTriggerNamespacePipelineWithStreamResponse(
             global::G.TriggerNamespacePipelineWithStreamResponse? result,
             global::G.RpcStatus? error)

@@ -90,7 +90,9 @@ namespace G
         /// <param name="actionsRunnerRegistration"></param>
         /// <param name="scim"></param>
         /// <param name="dependencySnapshots"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RateLimitOverviewResources(
             global::G.RateLimit core,
             global::G.RateLimit search,

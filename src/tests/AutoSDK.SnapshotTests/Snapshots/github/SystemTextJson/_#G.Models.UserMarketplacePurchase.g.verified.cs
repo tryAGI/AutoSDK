@@ -90,7 +90,9 @@ namespace G
         /// <param name="plan">
         /// Marketplace Listing Plan
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserMarketplacePurchase(
             string billingCycle,
             global::System.DateTime? nextBillingDate,

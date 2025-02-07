@@ -50,7 +50,9 @@ namespace G
         /// <param name="excerptIds"></param>
         /// <param name="options"></param>
         /// <param name="symKeyEncrypted"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartExcerptsExportRequest(
             global::System.Guid projectId,
             global::System.Collections.Generic.IList<global::System.Guid> excerptIds,

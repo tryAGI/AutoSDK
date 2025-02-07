@@ -215,7 +215,9 @@ namespace G
         /// <param name="updatedAt"></param>
         /// <param name="user"></param>
         /// <param name="labels"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Discussion(
             string? activeLockReason,
             string? answerChosenAt,

@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list contains the single user that you updated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateUserResponse(
             global::System.Collections.Generic.IList<global::G.User> data)
         {

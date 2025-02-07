@@ -47,7 +47,9 @@ namespace G
         /// <param name="workspaceRole">
         /// Role dictating permissions in the workspace.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyUpdateMemberV1WorkspaceMembersPost(
             string email,
             bool? isLocked,

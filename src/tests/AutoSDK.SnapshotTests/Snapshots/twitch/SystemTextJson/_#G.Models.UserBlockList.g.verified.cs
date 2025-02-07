@@ -48,7 +48,9 @@ namespace G
         /// <param name="displayName">
         /// The blocked user’s display name.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserBlockList(
             string userId,
             string userLogin,

@@ -117,7 +117,9 @@ namespace G
         /// <param name="supportedGenerationMethods">
         /// The model's supported generation methods. The method names are defined as Pascal case strings, such as `generateMessage` which correspond to API methods.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Model(
             string? name,
             string? displayName,

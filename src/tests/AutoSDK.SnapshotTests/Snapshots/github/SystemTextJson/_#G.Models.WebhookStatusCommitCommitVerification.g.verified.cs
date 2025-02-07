@@ -51,7 +51,9 @@ namespace G
         /// <param name="reason"></param>
         /// <param name="signature"></param>
         /// <param name="verified"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookStatusCommitCommitVerification(
             string? payload,
             global::G.WebhookStatusCommitCommitVerificationReason reason,

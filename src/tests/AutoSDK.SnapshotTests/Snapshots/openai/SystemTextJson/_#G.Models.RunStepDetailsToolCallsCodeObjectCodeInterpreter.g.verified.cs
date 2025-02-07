@@ -38,7 +38,9 @@ namespace G
         /// <param name="outputs">
         /// The outputs from the Code Interpreter tool call. Code Interpreter can output one or more items, including text (`logs`) or images (`image`). Each of these are represented by a different object type.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDetailsToolCallsCodeObjectCodeInterpreter(
             string input,
             global::System.Collections.Generic.IList<global::G.RunStepDetailsToolCallsCodeObjectCodeInterpreterOutput> outputs)

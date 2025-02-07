@@ -41,7 +41,9 @@ namespace G
         /// <param name="pointerOrPipelineId"></param>
         /// <param name="pointer"></param>
         /// <param name="locked"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PointerCreate(
             string pointerOrPipelineId,
             string pointer,

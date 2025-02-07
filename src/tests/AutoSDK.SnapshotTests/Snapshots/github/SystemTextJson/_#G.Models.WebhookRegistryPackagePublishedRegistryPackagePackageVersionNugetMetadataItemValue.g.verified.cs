@@ -46,7 +46,9 @@ namespace G
         /// <param name="branch"></param>
         /// <param name="commit"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRegistryPackagePublishedRegistryPackagePackageVersionNugetMetadataItemValue(
             string? url,
             string? branch,

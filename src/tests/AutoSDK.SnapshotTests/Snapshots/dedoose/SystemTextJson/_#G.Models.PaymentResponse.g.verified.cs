@@ -53,7 +53,9 @@ namespace G
         /// <param name="errors"></param>
         /// <param name="creditTransactionLog"></param>
         /// <param name="billingTransactionLog"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PaymentResponse(
             bool? isSuccessfull,
             string? transactionId,

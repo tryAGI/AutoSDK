@@ -62,7 +62,9 @@ namespace G
         /// <param name="advisoryUrl">
         /// Example: https://github.com/advisories/GHSA-rf4j-j272-fj86
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DependencyGraphDiffItemVulnerabilitie(
             string severity,
             string advisoryGhsaId,

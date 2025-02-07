@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="UploadCanvasInitImageResponse" /> class.
         /// </summary>
         /// <param name="uploadCanvasInitImage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UploadCanvasInitImageResponse(
             global::G.UploadCanvasInitImageResponseUploadCanvasInitImage? uploadCanvasInitImage)
         {

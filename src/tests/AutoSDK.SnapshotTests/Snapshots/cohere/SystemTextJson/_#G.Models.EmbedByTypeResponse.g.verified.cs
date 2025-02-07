@@ -63,7 +63,9 @@ namespace G
         /// The text entries for which embeddings were returned.
         /// </param>
         /// <param name="meta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmbedByTypeResponse(
             string id,
             global::System.Collections.Generic.IList<string> texts,

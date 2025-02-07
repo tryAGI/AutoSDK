@@ -54,7 +54,9 @@ namespace G
         /// <param name="schemaHash">
         /// The latest known hash of the peer's schema.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PeerUpdate(
             global::System.Guid? id,
             string? name,

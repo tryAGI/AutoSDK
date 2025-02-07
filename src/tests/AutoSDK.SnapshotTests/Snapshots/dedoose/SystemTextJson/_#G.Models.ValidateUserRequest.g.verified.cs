@@ -42,7 +42,9 @@ namespace G
         /// <param name="username"></param>
         /// <param name="passSalt"></param>
         /// <param name="connectionKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ValidateUserRequest(
             string username,
             string passSalt,

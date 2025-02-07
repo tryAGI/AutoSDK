@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookRepositoryTransferredChanges" /> class.
         /// </summary>
         /// <param name="owner"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRepositoryTransferredChanges(
             global::G.WebhookRepositoryTransferredChangesOwner owner)
         {

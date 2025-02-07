@@ -62,7 +62,9 @@ namespace G
         /// <param name="labels"></param>
         /// <param name="publicUrl"></param>
         /// <param name="customConfigs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyV1LibraryUpload(
             byte[] file,
             string filename,

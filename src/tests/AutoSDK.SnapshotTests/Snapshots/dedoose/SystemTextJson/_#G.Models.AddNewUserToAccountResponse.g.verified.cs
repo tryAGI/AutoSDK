@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="userData"></param>
         /// <param name="userGroupLinkData"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddNewUserToAccountResponse(
             global::G.User userData,
             global::G.UserGroupLink userGroupLinkData)

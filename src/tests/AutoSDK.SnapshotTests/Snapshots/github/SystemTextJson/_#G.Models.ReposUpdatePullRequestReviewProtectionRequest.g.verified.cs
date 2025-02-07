@@ -74,7 +74,9 @@ namespace G
         /// <param name="bypassPullRequestAllowances">
         /// Allow specific users, teams, or apps to bypass pull request requirements.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposUpdatePullRequestReviewProtectionRequest(
             global::G.ReposUpdatePullRequestReviewProtectionRequestDismissalRestrictions? dismissalRestrictions,
             bool? dismissStaleReviews,

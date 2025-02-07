@@ -109,7 +109,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="feedbackSource"></param>
         /// <param name="feedbackConfig"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackCreateCoreSchema(
             string key,
             global::System.DateTime? createdAt,

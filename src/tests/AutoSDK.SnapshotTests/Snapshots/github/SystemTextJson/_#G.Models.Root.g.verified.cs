@@ -280,7 +280,9 @@ namespace G
         /// <param name="userOrganizationsUrl"></param>
         /// <param name="userRepositoriesUrl"></param>
         /// <param name="userSearchUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Root(
             string currentUserUrl,
             string currentUserAuthorizationsHtmlUrl,

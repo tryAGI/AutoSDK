@@ -40,7 +40,9 @@ namespace G
         /// <param name="mediaType"></param>
         /// <param name="verificationMaterial"></param>
         /// <param name="dsseEnvelope"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposListAttestationsResponseAttestationBundle(
             string? mediaType,
             object? verificationMaterial,

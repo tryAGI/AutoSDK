@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="Rerankv2Response5" /> class.
         /// </summary>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Rerankv2Response5(
             string? data)
         {

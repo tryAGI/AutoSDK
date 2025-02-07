@@ -53,7 +53,9 @@ namespace G
         /// <param name="tags"></param>
         /// <param name="isPublic"></param>
         /// <param name="isArchived"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateRepoRequest(
             string? description,
             string? readme,

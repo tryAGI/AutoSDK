@@ -38,7 +38,9 @@ namespace G
         /// <param name="label">
         /// The IAB taxonomical label for the label of the detected topic, where &gt; denotes supertopic/subtopic relationship
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TopicDetectionResultLabel(
             double relevance,
             string label)

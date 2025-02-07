@@ -42,7 +42,9 @@ namespace G
         /// <param name="accountId"></param>
         /// <param name="credits"></param>
         /// <param name="reason"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddCreditsToAccountRequest(
             global::System.Guid accountId,
             double credits,

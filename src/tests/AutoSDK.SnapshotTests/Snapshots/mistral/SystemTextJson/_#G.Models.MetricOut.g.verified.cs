@@ -39,7 +39,9 @@ namespace G
         /// <param name="trainLoss"></param>
         /// <param name="validLoss"></param>
         /// <param name="validMeanTokenAccuracy"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MetricOut(
             double? trainLoss,
             double? validLoss,

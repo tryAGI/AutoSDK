@@ -155,7 +155,9 @@ namespace G
         /// <param name="createdAt">
         /// The UTC date and time that the user's account was created. The timestamp is in RFC3339 format.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public User(
             string id,
             string login,

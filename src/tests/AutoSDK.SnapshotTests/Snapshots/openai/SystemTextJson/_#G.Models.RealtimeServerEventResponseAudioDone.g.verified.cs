@@ -79,7 +79,9 @@ namespace G
         /// <param name="contentIndex">
         /// The index of the content part in the item's content array.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventResponseAudioDone(
             string eventId,
             string responseId,

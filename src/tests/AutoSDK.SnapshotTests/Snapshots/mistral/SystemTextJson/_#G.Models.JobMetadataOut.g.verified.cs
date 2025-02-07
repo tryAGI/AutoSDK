@@ -67,7 +67,9 @@ namespace G
         /// <param name="expectedDurationSeconds"></param>
         /// <param name="trainTokens"></param>
         /// <param name="trainTokensPerStep"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public JobMetadataOut(
             double? cost,
             string? costCurrency,

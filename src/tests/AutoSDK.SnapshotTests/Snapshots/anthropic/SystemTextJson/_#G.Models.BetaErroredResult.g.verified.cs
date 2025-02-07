@@ -37,7 +37,9 @@ namespace G
         /// Default Value: errored
         /// </param>
         /// <param name="error"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaErroredResult(
             global::G.BetaErrorResponse error,
             global::G.BetaErroredResultType type = global::G.BetaErroredResultType.Errored)

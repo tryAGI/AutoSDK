@@ -46,7 +46,9 @@ namespace G
         /// <param name="target"></param>
         /// <param name="include"></param>
         /// <param name="exclude"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChanges(
             global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesConditionType? conditionType,
             global::G.WebhookRepositoryRulesetEditedChangesConditionsUpdatedItemChangesTarget? target,

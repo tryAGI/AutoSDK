@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of teams that the broadcaster is a member of. Returns an empty array if the broadcaster is not a member of a team.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetChannelTeamsResponse(
             global::System.Collections.Generic.IList<global::G.ChannelTeam> data)
         {

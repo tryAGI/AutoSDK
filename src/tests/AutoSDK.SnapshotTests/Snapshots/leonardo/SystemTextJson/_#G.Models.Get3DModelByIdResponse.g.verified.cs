@@ -27,7 +27,9 @@ namespace G
         /// <param name="modelAssetsByPk">
         /// columns and relationships of "model_assets"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Get3DModelByIdResponse(
             global::G.Get3DModelByIdResponseModelAssetsByPk? modelAssetsByPk)
         {

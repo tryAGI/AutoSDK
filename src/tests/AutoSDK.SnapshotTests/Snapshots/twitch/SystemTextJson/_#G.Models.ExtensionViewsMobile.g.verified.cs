@@ -28,7 +28,9 @@ namespace G
         /// <param name="viewerUrl">
         /// The HTML file that is shown to viewers on mobile devices. This page is presented to viewers as a panel behind the chat area of the mobile app.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExtensionViewsMobile(
             string viewerUrl)
         {

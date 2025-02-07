@@ -84,7 +84,9 @@ namespace G
         /// <param name="shards">
         /// The list of the shards with it's statistics.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NodeStatus(
             string? name,
             global::G.NodeStatusStatus? status,

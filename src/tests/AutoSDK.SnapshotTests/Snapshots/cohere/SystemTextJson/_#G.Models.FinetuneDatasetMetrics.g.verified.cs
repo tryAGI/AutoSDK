@@ -93,7 +93,9 @@ namespace G
         /// <param name="rerankerDataMetrics"></param>
         /// <param name="chatDataMetrics"></param>
         /// <param name="classifyDataMetrics"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FinetuneDatasetMetrics(
             double? trainableTokenCount,
             double? totalExamples,

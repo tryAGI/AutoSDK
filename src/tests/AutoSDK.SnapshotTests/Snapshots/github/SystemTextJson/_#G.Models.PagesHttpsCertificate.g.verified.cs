@@ -61,7 +61,9 @@ namespace G
         /// Example: [example.com, www.example.com]
         /// </param>
         /// <param name="expiresAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PagesHttpsCertificate(
             global::G.PagesHttpsCertificateState state,
             string description,

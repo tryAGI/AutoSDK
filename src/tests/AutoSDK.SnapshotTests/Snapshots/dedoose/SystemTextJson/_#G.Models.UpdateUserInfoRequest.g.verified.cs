@@ -50,7 +50,9 @@ namespace G
         /// <param name="username"></param>
         /// <param name="email"></param>
         /// <param name="phone"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateUserInfoRequest(
             global::System.Guid userId,
             string username,

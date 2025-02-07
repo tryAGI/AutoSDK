@@ -28,7 +28,9 @@ namespace G
         /// <param name="codeScanningTools">
         /// Tools that must provide code scanning results for this rule to pass.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleCodeScanningParameters(
             global::System.Collections.Generic.IList<global::G.RepositoryRuleParamsCodeScanningTool> codeScanningTools)
         {

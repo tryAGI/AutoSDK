@@ -38,7 +38,9 @@ namespace G
         /// <param name="width">
         /// Example: 1280
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public V2VideoGenerateRequestDimension(
             double? height,
             double? width)

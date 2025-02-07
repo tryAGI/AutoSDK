@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of blocked users. The list is in descending order by when the user was blocked.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUserBlockListResponse(
             global::System.Collections.Generic.IList<global::G.UserBlockList> data)
         {

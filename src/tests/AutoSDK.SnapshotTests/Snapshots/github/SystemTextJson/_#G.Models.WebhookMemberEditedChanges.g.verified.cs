@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="oldPermission"></param>
         /// <param name="permission"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookMemberEditedChanges(
             global::G.WebhookMemberEditedChangesOldPermission? oldPermission,
             global::G.WebhookMemberEditedChangesPermission? permission)

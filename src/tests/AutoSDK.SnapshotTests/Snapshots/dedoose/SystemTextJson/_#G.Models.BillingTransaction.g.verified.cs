@@ -60,7 +60,9 @@ namespace G
         /// <param name="amountPaid"></param>
         /// <param name="creditsAdded"></param>
         /// <param name="memo"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BillingTransaction(
             global::System.Guid? id,
             global::System.Guid? accountId,

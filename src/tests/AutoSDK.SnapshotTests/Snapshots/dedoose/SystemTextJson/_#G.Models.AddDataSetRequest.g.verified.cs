@@ -138,7 +138,9 @@ namespace G
         /// <param name="resourceIds"></param>
         /// <param name="tagIds"></param>
         /// <param name="excludedExcerptIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddDataSetRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

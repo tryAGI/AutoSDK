@@ -36,7 +36,9 @@ namespace G
         /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
         /// </param>
         /// <param name="repositoryId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsListAttestationsResponseAttestation(
             global::G.OrgsListAttestationsResponseAttestationBundle? bundle,
             int? repositoryId)

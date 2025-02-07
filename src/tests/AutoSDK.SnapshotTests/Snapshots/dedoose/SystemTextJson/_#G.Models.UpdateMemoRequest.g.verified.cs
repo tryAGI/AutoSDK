@@ -42,7 +42,9 @@ namespace G
         /// <param name="memo"></param>
         /// <param name="folderIds"></param>
         /// <param name="linkedObjects"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateMemoRequest(
             global::G.Memo memo,
             global::System.Collections.Generic.IList<global::System.Guid> folderIds,

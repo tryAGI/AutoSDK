@@ -80,7 +80,9 @@ namespace G
         /// Index length of properties<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InvertedIndexConfig(
             double? cleanupIntervalSeconds,
             global::G.BM25Config? bm25,

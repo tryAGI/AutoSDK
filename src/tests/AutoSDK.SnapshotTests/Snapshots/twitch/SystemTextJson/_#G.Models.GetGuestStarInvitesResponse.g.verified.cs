@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list of invite objects describing the invited user as well as their ready status.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetGuestStarInvitesResponse(
             global::System.Collections.Generic.IList<global::G.GuestStarInvite> data)
         {

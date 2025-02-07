@@ -43,7 +43,9 @@ namespace G
         /// <param name="applyToAllProjects">
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpsertTTLSettingsRequest(
             global::G.TraceTier defaultTraceTier,
             global::System.Guid? tenantId,

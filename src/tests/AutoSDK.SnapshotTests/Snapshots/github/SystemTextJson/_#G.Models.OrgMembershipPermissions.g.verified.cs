@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="OrgMembershipPermissions" /> class.
         /// </summary>
         /// <param name="canCreateRepository"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgMembershipPermissions(
             bool canCreateRepository)
         {

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="languageId"></param>
         /// <param name="name"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LanguageResponseModel(
             string languageId,
             string name)

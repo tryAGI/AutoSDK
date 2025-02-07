@@ -155,7 +155,9 @@ namespace G
         /// <param name="languages"></param>
         /// <param name="modelRates"></param>
         /// <param name="concurrencyGroup"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModelResponseModel(
             string modelId,
             string name,

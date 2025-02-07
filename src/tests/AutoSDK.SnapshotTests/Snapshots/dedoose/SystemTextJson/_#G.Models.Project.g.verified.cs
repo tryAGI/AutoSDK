@@ -67,7 +67,9 @@ namespace G
         /// <param name="createStamp"></param>
         /// <param name="createdBy"></param>
         /// <param name="symmetricHash"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Project(
             global::System.Guid? id,
             string? title,

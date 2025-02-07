@@ -39,7 +39,9 @@ namespace G
         /// <param name="x100x100"></param>
         /// <param name="x24x24"></param>
         /// <param name="x300x200"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExtensionIconUrls(
             string? x100x100,
             string? x24x24,

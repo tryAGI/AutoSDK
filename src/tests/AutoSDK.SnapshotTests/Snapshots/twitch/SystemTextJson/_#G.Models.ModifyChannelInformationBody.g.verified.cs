@@ -85,7 +85,9 @@ namespace G
         /// <param name="isBrandedContent">
         /// Boolean flag indicating if the channel has branded content.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModifyChannelInformationBody(
             string? gameId,
             string? broadcasterLanguage,

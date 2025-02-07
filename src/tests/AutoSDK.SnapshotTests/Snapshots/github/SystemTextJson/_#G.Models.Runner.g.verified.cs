@@ -98,7 +98,9 @@ namespace G
         /// </param>
         /// <param name="busy"></param>
         /// <param name="labels"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Runner(
             int id,
             string name,

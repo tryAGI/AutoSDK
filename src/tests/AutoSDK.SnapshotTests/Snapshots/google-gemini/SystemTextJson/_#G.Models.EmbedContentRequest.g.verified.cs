@@ -64,7 +64,9 @@ namespace G
         /// <param name="outputDimensionality">
         /// Optional. Optional reduced dimension for the output embedding. If set, excessive values in the output embedding are truncated from the end. Supported by newer models since 2024, and the earlier model (`models/embedding-001`) cannot specify this value.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmbedContentRequest(
             string? title,
             global::G.Content? content,

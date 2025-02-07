@@ -36,7 +36,9 @@ namespace G
         /// <param name="ignored">
         /// Determines if all notifications should be blocked from this repository.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActivitySetRepoSubscriptionRequest(
             bool? subscribed,
             bool? ignored)

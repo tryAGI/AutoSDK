@@ -96,7 +96,9 @@ namespace G
         /// <param name="state">
         /// State of a code scanning alert.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookCodeScanningAlertCreatedAlertMostRecentInstance(
             string analysisKey,
             string environment,

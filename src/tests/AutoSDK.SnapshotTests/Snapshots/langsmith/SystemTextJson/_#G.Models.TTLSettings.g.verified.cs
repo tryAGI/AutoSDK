@@ -84,7 +84,9 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="configuredBy"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TTLSettings(
             global::G.TraceTier defaultTraceTier,
             global::System.Guid id,

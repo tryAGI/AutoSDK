@@ -42,7 +42,9 @@ namespace G
         /// <param name="text"></param>
         /// <param name="startIndex"></param>
         /// <param name="endIndex"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Highlight(
             string text,
             int startIndex,

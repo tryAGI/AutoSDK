@@ -45,7 +45,9 @@ namespace G
         /// <param name="description">
         /// A short description of the label. Must be 100 characters or fewer.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public IssuesUpdateLabelRequest(
             string? newName,
             string? color,

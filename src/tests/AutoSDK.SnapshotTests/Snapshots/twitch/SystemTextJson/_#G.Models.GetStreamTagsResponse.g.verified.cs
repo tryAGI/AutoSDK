@@ -30,7 +30,9 @@ namespace G
         /// <param name="data">
         /// The list of stream tags. The list is empty if the broadcaster or Twitch hasn’t added tags to the broadcaster’s channel.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetStreamTagsResponse(
             global::System.Collections.Generic.IList<global::G.StreamTag> data)
         {

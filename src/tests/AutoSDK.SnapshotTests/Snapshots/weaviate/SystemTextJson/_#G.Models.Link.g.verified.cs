@@ -54,7 +54,9 @@ namespace G
         /// <param name="documentationHref">
         /// weaviate documentation about this resource group
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Link(
             string? href,
             string? rel,

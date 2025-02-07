@@ -68,7 +68,9 @@ namespace G
         /// The rendered prompt sent to the LLM. Useful when creating customer `prompt_text` templates. Only available<br/>
         /// to Scale customers.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public QueryFullResponse(
             string? summary,
             global::G.Language? responseLanguage,

@@ -63,7 +63,9 @@ namespace G
         /// How much storage the document used. This information is currently not returned when<br/>
         /// retrieving the document, and only returned when indexing a document.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Document(
             string? id,
             object? metadata,

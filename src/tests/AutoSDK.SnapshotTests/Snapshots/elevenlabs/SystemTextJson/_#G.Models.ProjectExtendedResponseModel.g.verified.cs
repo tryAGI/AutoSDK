@@ -213,7 +213,9 @@ namespace G
         /// <param name="originalPublicationDate"></param>
         /// <param name="matureContent"></param>
         /// <param name="isbnNumber"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectExtendedResponseModel(
             string projectId,
             string name,

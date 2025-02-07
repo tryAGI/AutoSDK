@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="character"></param>
         /// <param name="voice"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public V2VideoGenerateRequestVideoInput(
             global::G.V2VideoGenerateRequestVideoInputCharacter? character,
             global::G.V2VideoGenerateRequestVideoInputVoice? voice)

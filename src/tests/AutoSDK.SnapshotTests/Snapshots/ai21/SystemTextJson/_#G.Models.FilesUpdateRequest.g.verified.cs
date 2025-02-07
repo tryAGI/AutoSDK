@@ -42,7 +42,9 @@ namespace G
         /// Any labels to associate with this file. Separate multiple labels with commas. If<br/>
         /// provided, will overwrite all existing labels.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FilesUpdateRequest(
             string? publicUrl,
             global::System.Collections.Generic.IList<string>? labels)

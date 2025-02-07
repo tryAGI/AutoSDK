@@ -36,7 +36,9 @@ namespace G
         /// Stripe customer billing information.
         /// </param>
         /// <param name="setupIntent"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripePaymentInformation(
             global::G.StripeCustomerBillingInfo billingInfo,
             string setupIntent)

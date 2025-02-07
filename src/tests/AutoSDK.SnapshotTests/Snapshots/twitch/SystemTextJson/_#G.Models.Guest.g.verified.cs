@@ -118,7 +118,9 @@ namespace G
         /// <param name="videoSettings">
         /// Information about the guest’s video settings
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Guest(
             string slotId,
             bool isLive,

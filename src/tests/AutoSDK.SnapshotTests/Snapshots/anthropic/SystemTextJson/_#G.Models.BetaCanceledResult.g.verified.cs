@@ -29,7 +29,9 @@ namespace G
         /// <param name="type">
         /// Default Value: canceled
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaCanceledResult(
             global::G.BetaCanceledResultType type = global::G.BetaCanceledResultType.Canceled)
         {

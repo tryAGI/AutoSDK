@@ -66,7 +66,9 @@ namespace G
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <param name="tagIdsToApply"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddPDFSwfImageExcerptRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

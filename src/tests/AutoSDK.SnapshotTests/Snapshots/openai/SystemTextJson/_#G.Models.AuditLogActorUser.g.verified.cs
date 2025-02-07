@@ -36,7 +36,9 @@ namespace G
         /// <param name="email">
         /// The user email.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogActorUser(
             string? id,
             string? email)

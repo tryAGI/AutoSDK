@@ -112,7 +112,9 @@ namespace G
         /// Width of the image to generate in number of pixels.<br/>
         /// Default Value: 1024
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Request2(
             string model,
             string prompt,

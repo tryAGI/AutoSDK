@@ -689,7 +689,9 @@ namespace G
         /// <param name="allowForking"></param>
         /// <param name="isTemplate"></param>
         /// <param name="webCommitSignoffRequired"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullRequestHeadRepo(
             string archiveUrl,
             string assigneesUrl,

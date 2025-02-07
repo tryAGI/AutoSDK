@@ -42,7 +42,9 @@ namespace G
         /// <param name="accountId"></param>
         /// <param name="transactionId"></param>
         /// <param name="email"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SendPaymentReceiptRequest(
             global::System.Guid accountId,
             global::System.Guid transactionId,

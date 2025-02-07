@@ -176,7 +176,9 @@ namespace G
         /// Warning generated when processing the analysis<br/>
         /// Example: 123 results were ignored
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningAnalysis(
             string @ref,
             string commitSha,

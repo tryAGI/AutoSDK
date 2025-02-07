@@ -108,7 +108,9 @@ namespace G
         /// <param name="apiPlanTokenRenewalDate">
         /// API Plan Token Renewal Date.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUserSelfResponseUserDetail(
             global::G.GetUserSelfResponseUserDetailUser? user,
             string? tokenRenewalDate,

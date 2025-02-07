@@ -50,7 +50,9 @@ namespace G
         /// <param name="name"></param>
         /// <param name="state"></param>
         /// <param name="displayName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectGet(
             string projectId,
             string name,

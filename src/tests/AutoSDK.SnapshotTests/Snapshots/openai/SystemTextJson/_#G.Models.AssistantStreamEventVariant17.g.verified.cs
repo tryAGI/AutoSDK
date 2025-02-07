@@ -36,7 +36,9 @@ namespace G
         /// <param name="data">
         /// Represents a step in execution of a run.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantStreamEventVariant17(
             global::G.RunStepObject data,
             global::G.AssistantStreamEventVariant17Event @event)

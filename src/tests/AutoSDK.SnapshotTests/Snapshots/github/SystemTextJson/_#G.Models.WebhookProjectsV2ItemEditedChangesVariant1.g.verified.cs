@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookProjectsV2ItemEditedChangesVariant1" /> class.
         /// </summary>
         /// <param name="fieldValue"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookProjectsV2ItemEditedChangesVariant1(
             global::G.WebhookProjectsV2ItemEditedChangesVariant1FieldValue fieldValue)
         {

@@ -37,7 +37,9 @@ namespace G
         /// Total number of connectors.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListConnectorsResponse(
             global::System.Collections.Generic.IList<global::G.Connector> connectors,
             double? totalCount)

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="code"></param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Error(
             int code,
             string message)

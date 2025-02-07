@@ -38,7 +38,9 @@ namespace G
         /// <param name="text">
         /// Text content to be sent to the model
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageRequestContentTextObject(
             string text,
             global::G.MessageRequestContentTextObjectType type)

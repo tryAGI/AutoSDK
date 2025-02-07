@@ -66,7 +66,9 @@ namespace G
         /// <param name="phone"></param>
         /// <param name="institution"></param>
         /// <param name="comments"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SendContactRequestEmailRequest(
             string firstname,
             string lastname,

@@ -42,7 +42,9 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="title"></param>
         /// <param name="decription"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddProjectByUserRequest(
             global::System.Guid userId,
             string title,

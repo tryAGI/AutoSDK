@@ -95,7 +95,9 @@ namespace G
         /// <param name="requireLastPushApproval"></param>
         /// <param name="requiredStatusChecks"></param>
         /// <param name="requiredStatusChecksEnforcementLevel"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookBranchProtectionRuleEditedChanges(
             global::G.WebhookBranchProtectionRuleEditedChangesAdminEnforced? adminEnforced,
             global::G.WebhookBranchProtectionRuleEditedChangesAuthorizedActorNames? authorizedActorNames,

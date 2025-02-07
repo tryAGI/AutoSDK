@@ -176,7 +176,9 @@ namespace G
         /// <param name="pushProtectionBypassedAt">
         /// The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecretScanningAlertWebhook(
             int? number,
             global::System.DateTime? createdAt,

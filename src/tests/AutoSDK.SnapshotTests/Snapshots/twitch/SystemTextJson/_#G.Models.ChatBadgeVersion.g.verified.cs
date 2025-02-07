@@ -98,7 +98,9 @@ namespace G
         /// <param name="clickUrl">
         /// The URL to navigate to when clicking on the badge. Set to `null` if no URL is specified.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatBadgeVersion(
             string id,
             string imageUrl1x,

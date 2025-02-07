@@ -58,7 +58,9 @@ namespace G
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="videoUploadURL"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddAudioResourceRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

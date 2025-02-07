@@ -44,7 +44,9 @@ namespace G
         /// Whether automated security fixes are paused for the repository.<br/>
         /// Example: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckAutomatedSecurityFixes(
             bool enabled,
             bool paused)

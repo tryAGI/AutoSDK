@@ -48,7 +48,9 @@ namespace G
         /// <param name="createdAt">
         /// The date and time, in RFC3339 format, when the user became one of the broadcaster’s editors.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChannelEditor(
             string userId,
             string userName,

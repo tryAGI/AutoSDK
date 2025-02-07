@@ -58,7 +58,9 @@ namespace G
         /// <param name="type"></param>
         /// <param name="url"></param>
         /// <param name="vendor"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPackageUpdatedPackageRegistry(
             string aboutUrl,
             string name,

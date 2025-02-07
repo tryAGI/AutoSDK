@@ -38,7 +38,9 @@ namespace G
         /// <param name="selectedRepositoryIds">
         /// An array of repository IDs to attach the configuration to. You can only provide a list of repository ids when the `scope` is set to `selected`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeSecurityAttachConfigurationRequest(
             global::G.CodeSecurityAttachConfigurationRequestScope scope,
             global::System.Collections.Generic.IList<int>? selectedRepositoryIds)

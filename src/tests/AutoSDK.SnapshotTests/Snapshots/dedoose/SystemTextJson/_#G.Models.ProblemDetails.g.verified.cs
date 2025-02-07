@@ -53,7 +53,9 @@ namespace G
         /// <param name="status"></param>
         /// <param name="detail"></param>
         /// <param name="instance"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProblemDetails(
             string? type,
             string? title,

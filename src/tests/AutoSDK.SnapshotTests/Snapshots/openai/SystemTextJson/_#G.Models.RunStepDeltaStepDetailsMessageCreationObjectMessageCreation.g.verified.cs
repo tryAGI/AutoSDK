@@ -27,7 +27,9 @@ namespace G
         /// <param name="messageId">
         /// The ID of the message that was created by this run step.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDeltaStepDetailsMessageCreationObjectMessageCreation(
             string? messageId)
         {

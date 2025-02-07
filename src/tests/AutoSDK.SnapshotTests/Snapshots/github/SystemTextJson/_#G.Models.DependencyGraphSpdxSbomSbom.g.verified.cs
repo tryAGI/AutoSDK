@@ -109,7 +109,9 @@ namespace G
         /// Example: https://github.com/example/dependency_graph/sbom-123
         /// </param>
         /// <param name="packages"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DependencyGraphSpdxSbomSbom(
             string sPDXID,
             string spdxVersion,

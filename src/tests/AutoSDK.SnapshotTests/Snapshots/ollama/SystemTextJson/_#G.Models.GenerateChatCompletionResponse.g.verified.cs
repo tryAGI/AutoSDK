@@ -148,7 +148,9 @@ namespace G
         /// Time in nanoseconds spent generating the response.<br/>
         /// Example: 1325948000L
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateChatCompletionResponse(
             global::G.Message message,
             string model,

@@ -50,7 +50,9 @@ namespace G
         /// <param name="insecureSsl"></param>
         /// <param name="secret"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookMetaDeletedHookConfig(
             global::G.WebhookMetaDeletedHookConfigContentType contentType,
             string insecureSsl,

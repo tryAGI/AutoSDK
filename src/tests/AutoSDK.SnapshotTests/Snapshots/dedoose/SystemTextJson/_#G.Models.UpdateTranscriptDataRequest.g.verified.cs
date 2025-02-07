@@ -42,7 +42,9 @@ namespace G
         /// <param name="transcript"></param>
         /// <param name="transcriptData"></param>
         /// <param name="syncItems"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateTranscriptDataRequest(
             global::G.ResourceTranscript transcript,
             string transcriptData,

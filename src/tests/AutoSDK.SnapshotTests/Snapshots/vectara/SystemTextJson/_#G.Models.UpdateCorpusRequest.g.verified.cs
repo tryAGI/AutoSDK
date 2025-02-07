@@ -54,7 +54,9 @@ namespace G
         /// Description of the corpus. If unset or null, then the corpus will remain in the same state.<br/>
         /// Example: New description of the corpus.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateCorpusRequest(
             bool? enabled,
             string? name,

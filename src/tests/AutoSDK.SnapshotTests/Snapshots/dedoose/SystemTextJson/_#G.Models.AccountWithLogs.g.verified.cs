@@ -39,7 +39,9 @@ namespace G
         /// <param name="accountData"></param>
         /// <param name="billingTransactionItems"></param>
         /// <param name="creditTransactionItems"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AccountWithLogs(
             global::G.AccountVO2? accountData,
             global::System.Collections.Generic.IList<global::G.BillingTransaction>? billingTransactionItems,

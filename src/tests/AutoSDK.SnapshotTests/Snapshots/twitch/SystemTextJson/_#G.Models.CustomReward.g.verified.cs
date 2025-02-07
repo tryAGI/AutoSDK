@@ -218,7 +218,9 @@ namespace G
         /// <param name="cooldownExpiresAt">
         /// The timestamp of when the cooldown period expires. Is **null** if the reward isn’t in a cooldown state. See the `global_cooldown_setting` field.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomReward(
             string broadcasterId,
             string broadcasterLogin,

@@ -36,7 +36,9 @@ namespace G
         /// <param name="results">
         /// The results of the file search.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDetailsToolCallsFileSearchObjectFileSearch(
             global::G.RunStepDetailsToolCallsFileSearchRankingOptionsObject? rankingOptions,
             global::System.Collections.Generic.IList<global::G.RunStepDetailsToolCallsFileSearchResultObject>? results)

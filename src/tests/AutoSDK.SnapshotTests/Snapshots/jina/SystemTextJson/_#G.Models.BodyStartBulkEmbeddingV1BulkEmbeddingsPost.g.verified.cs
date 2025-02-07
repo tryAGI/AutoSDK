@@ -49,7 +49,9 @@ namespace G
         /// <param name="filename"></param>
         /// <param name="email"></param>
         /// <param name="model"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyStartBulkEmbeddingV1BulkEmbeddingsPost(
             byte[] file,
             string filename,

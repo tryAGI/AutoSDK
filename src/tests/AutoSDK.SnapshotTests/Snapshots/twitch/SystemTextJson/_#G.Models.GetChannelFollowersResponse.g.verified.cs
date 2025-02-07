@@ -47,7 +47,9 @@ namespace G
         /// <param name="total">
         /// The total number of users that follow this broadcaster. As someone pages through the list, the number of users may change as users follow or unfollow the broadcaster.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetChannelFollowersResponse(
             global::System.Collections.Generic.IList<global::G.GetChannelFollowersResponseDataItem> data,
             int total,

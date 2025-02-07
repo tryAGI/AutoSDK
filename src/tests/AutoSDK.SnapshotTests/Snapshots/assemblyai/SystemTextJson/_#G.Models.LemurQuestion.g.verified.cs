@@ -58,7 +58,9 @@ namespace G
         /// <param name="answerOptions">
         /// What discrete options to return. Useful for precise responses. Can't be used with answer_format. Example: ["Yes", "No"]
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LemurQuestion(
             string question,
             global::G.OneOf<string, object>? context,

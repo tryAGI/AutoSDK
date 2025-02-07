@@ -29,7 +29,9 @@ namespace G
         /// Whether the name of the collection is used in determining the object vector.<br/>
         /// Default Value: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CollectionModuleConfig(
             bool? vectorizeClassName)
         {

@@ -74,7 +74,9 @@ namespace G
         /// <param name="createdUserId"></param>
         /// <param name="exIds"></param>
         /// <param name="tagIds"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddTestRequest(
             global::System.Guid projectId,
             int trainingTestType,

@@ -50,7 +50,9 @@ namespace G
         /// <param name="data"></param>
         /// <param name="hasMore"></param>
         /// <param name="nextPage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UsageResponse(
             global::System.Collections.Generic.IList<global::G.UsageTimeBucket> data,
             bool hasMore,

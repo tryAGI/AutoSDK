@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="body"></param>
         /// <param name="name"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookProjectEditedChanges(
             global::G.WebhookProjectEditedChangesBody? body,
             global::G.WebhookProjectEditedChangesName? name)

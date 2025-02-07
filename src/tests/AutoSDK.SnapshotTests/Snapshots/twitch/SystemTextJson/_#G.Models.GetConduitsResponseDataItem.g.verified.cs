@@ -38,7 +38,9 @@ namespace G
         /// <param name="shardCount">
         /// Number of shards associated with this conduit.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetConduitsResponseDataItem(
             string id,
             int shardCount)

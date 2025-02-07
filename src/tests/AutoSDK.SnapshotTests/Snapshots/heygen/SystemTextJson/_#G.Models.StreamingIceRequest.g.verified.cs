@@ -35,7 +35,9 @@ namespace G
         /// <param name="sessionId">
         /// Example: &lt;SESSION_ID&gt;
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StreamingIceRequest(
             global::G.StreamingIceRequestCandidate? candidate,
             string? sessionId)

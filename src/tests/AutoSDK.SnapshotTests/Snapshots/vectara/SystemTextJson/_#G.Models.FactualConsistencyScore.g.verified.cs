@@ -40,7 +40,9 @@ namespace G
         /// <param name="factualConsistencyScore1">
         /// The probability that the summary is factually consistent with the results.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FactualConsistencyScore(
             string? type,
             float? factualConsistencyScore1)

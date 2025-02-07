@@ -31,7 +31,9 @@ namespace G
         /// The URL of the reference.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DependabotAlertSecurityAdvisoryReference(
             string url = default!)
         {

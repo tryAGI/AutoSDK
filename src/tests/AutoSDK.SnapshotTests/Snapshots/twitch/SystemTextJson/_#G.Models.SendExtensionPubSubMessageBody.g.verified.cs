@@ -69,7 +69,9 @@ namespace G
         /// <param name="message">
         /// The message to send. The message can be a plain-text string or a string-encoded JSON object. The message is limited to a maximum of 5 KB.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SendExtensionPubSubMessageBody(
             global::System.Collections.Generic.IList<global::G.SendExtensionPubSubMessageBodyTargetItem> target,
             string broadcasterId,

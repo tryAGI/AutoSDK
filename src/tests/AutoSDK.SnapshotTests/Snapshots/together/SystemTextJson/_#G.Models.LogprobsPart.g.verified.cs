@@ -45,7 +45,9 @@ namespace G
         /// <param name="tokens">
         /// List of token strings
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LogprobsPart(
             global::System.Collections.Generic.IList<double>? tokenIds,
             global::System.Collections.Generic.IList<double>? tokenLogprobs,

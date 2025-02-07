@@ -42,7 +42,9 @@ namespace G
         /// <param name="data"></param>
         /// <param name="model"></param>
         /// <param name="object"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmbeddingsResponse(
             global::System.Collections.Generic.IList<global::G.EmbeddingsResponseDataItem> data,
             string model,

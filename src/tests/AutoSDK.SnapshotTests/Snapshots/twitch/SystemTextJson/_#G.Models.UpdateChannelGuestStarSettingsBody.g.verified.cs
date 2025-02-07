@@ -74,7 +74,9 @@ namespace G
         /// <param name="regenerateBrowserSources">
         /// Flag determining if Guest Star should regenerate the auth token associated with the channel’s browser sources. Providing a true value for this will immediately invalidate all browser sources previously configured in your streaming software.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateChannelGuestStarSettingsBody(
             bool? isModeratorSendLiveEnabled,
             int? slotCount,

@@ -44,7 +44,9 @@ namespace G
         /// <param name="title"></param>
         /// <param name="description"></param>
         /// <param name="index"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartsSectionUpdate(
             global::G.AnyOf<string, global::G.Missing>? title,
             global::G.AnyOf<string, global::G.Missing>? description,

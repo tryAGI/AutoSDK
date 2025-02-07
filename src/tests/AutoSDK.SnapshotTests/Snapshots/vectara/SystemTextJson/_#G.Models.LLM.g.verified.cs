@@ -73,7 +73,9 @@ namespace G
         /// If this is the default LLM, it is used in queries when the generator<br/>
         /// is not specified.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LLM(
             string? id,
             string? name,

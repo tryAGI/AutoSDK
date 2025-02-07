@@ -110,7 +110,9 @@ namespace G
         /// <param name="file">
         /// The `File` object represents a document that has been uploaded to OpenAI.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Upload(
             string id,
             global::System.DateTimeOffset createdAt,

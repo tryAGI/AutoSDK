@@ -37,7 +37,9 @@ namespace G
         /// <param name="blockReason">
         /// Optional. If set, the prompt was blocked and no candidates are returned. Rephrase your prompt.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptFeedback(
             global::System.Collections.Generic.IList<global::G.SafetyRating>? safetyRatings,
             global::G.PromptFeedbackBlockReason? blockReason)

@@ -48,7 +48,9 @@ namespace G
         /// Example: 128
         /// </param>
         /// <param name="clones"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CloneTraffic(
             int count,
             int uniques,

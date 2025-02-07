@@ -37,7 +37,9 @@ namespace G
         /// <param name="source">
         /// The source branch and directory used to publish your Pages site.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreatePagesSiteRequest(
             global::G.ReposCreatePagesSiteRequestBuildType? buildType,
             global::G.ReposCreatePagesSiteRequestSource? source)

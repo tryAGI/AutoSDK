@@ -56,7 +56,9 @@ namespace G
         /// <param name="push"></param>
         /// <param name="maintain"></param>
         /// <param name="admin"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NullableCollaboratorPermissions(
             bool pull,
             bool push,

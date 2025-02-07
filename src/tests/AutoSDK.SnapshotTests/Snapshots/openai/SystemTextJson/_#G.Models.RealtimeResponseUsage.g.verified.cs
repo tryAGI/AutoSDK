@@ -72,7 +72,9 @@ namespace G
         /// <param name="outputTokenDetails">
         /// Details about the output tokens used in the Response.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponseUsage(
             int? totalTokens,
             int? inputTokens,

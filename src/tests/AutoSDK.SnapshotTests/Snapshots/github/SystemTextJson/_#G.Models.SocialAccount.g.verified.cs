@@ -40,7 +40,9 @@ namespace G
         /// <param name="url">
         /// Example: https://www.linkedin.com/company/github/
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SocialAccount(
             string provider,
             string url)

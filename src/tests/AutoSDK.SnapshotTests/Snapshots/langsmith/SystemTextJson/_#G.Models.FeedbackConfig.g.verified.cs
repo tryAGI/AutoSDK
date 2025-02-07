@@ -50,7 +50,9 @@ namespace G
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <param name="categories"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackConfig(
             global::G.FeedbackType type,
             double? min,

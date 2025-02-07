@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list that contains the user you successfully banned or put in a timeout.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BanUserResponse(
             global::System.Collections.Generic.IList<global::G.BanUserResponseDataItem> data)
         {

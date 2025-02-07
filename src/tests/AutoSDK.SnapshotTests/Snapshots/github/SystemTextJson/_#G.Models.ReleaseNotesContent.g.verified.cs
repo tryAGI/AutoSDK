@@ -41,7 +41,9 @@ namespace G
         /// <param name="body">
         /// The generated body describing the contents of the release supporting markdown formatting
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReleaseNotesContent(
             string name,
             string body)

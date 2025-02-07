@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="billedUnits"></param>
         /// <param name="tokens"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Usage(
             global::G.UsageBilledUnits? billedUnits,
             global::G.UsageTokens? tokens)

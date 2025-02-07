@@ -28,7 +28,9 @@ namespace G
         /// <param name="branch">
         /// The name of the branch which should be updated to match upstream.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposMergeUpstreamRequest(
             string branch)
         {

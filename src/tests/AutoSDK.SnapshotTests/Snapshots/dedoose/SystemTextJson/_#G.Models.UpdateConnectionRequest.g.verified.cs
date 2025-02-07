@@ -42,7 +42,9 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="connectionKey"></param>
         /// <param name="projectId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateConnectionRequest(
             global::System.Guid? userId,
             global::System.Guid connectionKey,

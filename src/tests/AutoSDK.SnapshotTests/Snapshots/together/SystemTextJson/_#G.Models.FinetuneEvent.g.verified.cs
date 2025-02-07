@@ -131,7 +131,9 @@ namespace G
         /// <param name="trainingOffset"></param>
         /// <param name="type"></param>
         /// <param name="wandbUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuneEvent(
             string checkpointPath,
             string createdAt,

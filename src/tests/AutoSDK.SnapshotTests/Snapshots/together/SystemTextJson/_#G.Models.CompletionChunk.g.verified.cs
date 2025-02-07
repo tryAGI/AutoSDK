@@ -66,7 +66,9 @@ namespace G
         /// <param name="seed"></param>
         /// <param name="token"></param>
         /// <param name="usage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CompletionChunk(
             global::System.Collections.Generic.IList<global::G.CompletionChoice> choices,
             global::G.FinishReason finishReason,

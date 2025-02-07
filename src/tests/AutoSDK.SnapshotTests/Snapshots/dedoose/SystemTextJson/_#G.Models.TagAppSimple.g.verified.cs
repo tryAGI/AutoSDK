@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="tagId"></param>
         /// <param name="tagWeight"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TagAppSimple(
             global::System.Guid? tagId,
             double? tagWeight)

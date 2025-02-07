@@ -104,7 +104,9 @@ namespace G
         /// * 2000 — Tier 2<br/>
         /// * 3000 — Tier 3
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserSubscription(
             string broadcasterId,
             string broadcasterLogin,

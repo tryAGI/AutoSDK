@@ -54,7 +54,9 @@ namespace G
         /// <param name="page">
         /// The requested page offset.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListRepositoryTagsResponse(
             global::System.Collections.Generic.IList<global::G.RepositoryTag>? tags,
             int? totalSize,

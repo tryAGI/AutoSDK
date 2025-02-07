@@ -82,7 +82,9 @@ namespace G
         /// Items to the Conversation, thus output from previous turns (text and <br/>
         /// audio tokens) will become the input for later turns.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeResponse(
             string? id,
             global::G.RealtimeResponseObject? @object,

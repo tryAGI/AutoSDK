@@ -53,7 +53,9 @@ namespace G
         /// <param name="expMonth"></param>
         /// <param name="expYear"></param>
         /// <param name="email"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripePaymentMethodInfo(
             string? brand,
             string? last4,

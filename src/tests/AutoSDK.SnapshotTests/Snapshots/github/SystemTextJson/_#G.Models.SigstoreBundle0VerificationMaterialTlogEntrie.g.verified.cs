@@ -67,7 +67,9 @@ namespace G
         /// <param name="inclusionPromise"></param>
         /// <param name="inclusionProof"></param>
         /// <param name="canonicalizedBody"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SigstoreBundle0VerificationMaterialTlogEntrie(
             string? logIndex,
             global::G.SigstoreBundle0VerificationMaterialTlogEntrieLogId? logId,

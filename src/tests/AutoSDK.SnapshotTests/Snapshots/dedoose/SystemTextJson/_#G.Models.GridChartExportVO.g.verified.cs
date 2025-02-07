@@ -60,7 +60,9 @@ namespace G
         /// <param name="rows"></param>
         /// <param name="maxCount"></param>
         /// <param name="colorByTotal"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GridChartExportVO(
             string? title,
             global::System.Collections.Generic.IList<string>? columnLabels,

@@ -32,7 +32,9 @@ namespace G
         /// This should be a uuid, hash value, or other opaque identifier. Anthropic may use this id to help detect abuse. Do not include any identifying information such as name, email address, or phone number.<br/>
         /// Example: 13803d75-b4b5-4c3e-b2a2-6f21399b021b
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Metadata(
             string? userId)
         {

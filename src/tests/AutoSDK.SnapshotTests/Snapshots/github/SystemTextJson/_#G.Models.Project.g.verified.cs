@@ -179,7 +179,9 @@ namespace G
         /// <param name="private">
         /// Whether or not this project can be seen by everyone. Only present if owner is an organization.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Project(
             string ownerUrl,
             string url,

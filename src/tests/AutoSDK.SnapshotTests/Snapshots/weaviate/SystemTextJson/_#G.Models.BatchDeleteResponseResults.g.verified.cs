@@ -63,7 +63,9 @@ namespace G
         /// <param name="objects">
         /// With output set to "minimal" only objects with error occurred will the be described. Successfully deleted objects would be omitted. Output set to "verbose" will list all of the objets with their respective statuses.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchDeleteResponseResults(
             double? matches,
             double? limit,

@@ -38,7 +38,9 @@ namespace G
         /// <param name="minimumBalanceThreshold">
         /// Represents a price.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RechargeSettings(
             global::G.Price topUpBalance,
             global::G.Price minimumBalanceThreshold)

@@ -27,7 +27,9 @@ namespace G
         /// <param name="catalog">
         /// The catalog identifier.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteCatalogResponse(
             global::G.Catalog? catalog)
         {

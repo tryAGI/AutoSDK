@@ -106,7 +106,9 @@ namespace G
         /// <param name="tagName"></param>
         /// <param name="targetCommitish"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPackageUpdatedPackagePackageVersionRelease(
             global::G.WebhookPackageUpdatedPackagePackageVersionReleaseAuthor? author,
             string createdAt,

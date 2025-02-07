@@ -178,7 +178,9 @@ namespace G
         /// <param name="truncated"></param>
         /// <param name="forks"></param>
         /// <param name="history"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BaseGist(
             string url,
             string forksUrl,

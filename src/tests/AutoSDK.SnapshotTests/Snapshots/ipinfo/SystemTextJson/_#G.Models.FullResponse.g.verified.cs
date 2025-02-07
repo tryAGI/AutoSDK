@@ -154,7 +154,9 @@ namespace G
         /// <param name="carrier"></param>
         /// <param name="privacy"></param>
         /// <param name="domains"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FullResponse(
             string ip,
             bool? bogon,

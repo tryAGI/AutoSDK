@@ -39,7 +39,9 @@ namespace G
         /// <param name="uBUNTU"></param>
         /// <param name="mACOS"></param>
         /// <param name="wINDOWS"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WorkflowUsageBillable(
             global::G.WorkflowUsageBillableUBUNTU? uBUNTU,
             global::G.WorkflowUsageBillableMACOS? mACOS,

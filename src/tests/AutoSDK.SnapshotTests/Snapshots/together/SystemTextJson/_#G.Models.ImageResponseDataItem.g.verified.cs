@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="b64Json"></param>
         /// <param name="index"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImageResponseDataItem(
             string b64Json,
             int index)

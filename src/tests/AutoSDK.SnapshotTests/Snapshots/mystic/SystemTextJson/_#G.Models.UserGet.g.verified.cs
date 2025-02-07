@@ -113,7 +113,9 @@ namespace G
         /// <param name="roles"></param>
         /// <param name="teams"></param>
         /// <param name="selectedTeam"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserGet(
             string email,
             string username,

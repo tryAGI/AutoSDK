@@ -74,7 +74,9 @@ namespace G
         /// <param name="email"></param>
         /// <param name="phone"></param>
         /// <param name="encryptedPass"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddNewUserToAccountRequest(
             global::System.Guid accountId,
             string username,

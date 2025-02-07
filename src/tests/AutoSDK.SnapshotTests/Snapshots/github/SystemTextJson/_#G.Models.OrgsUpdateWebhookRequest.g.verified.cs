@@ -59,7 +59,9 @@ namespace G
         /// <param name="name">
         /// Example: "web"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsUpdateWebhookRequest(
             global::G.OrgsUpdateWebhookRequestConfig? config,
             global::System.Collections.Generic.IList<string>? events,

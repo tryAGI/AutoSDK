@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// List of information about the client’s conduits.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateConduitsResponse(
             global::System.Collections.Generic.IList<global::G.CreateConduitsResponseDataItem> data)
         {

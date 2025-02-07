@@ -75,7 +75,9 @@ namespace G
         /// <param name="browserSourceToken">
         /// View only token to generate browser source URLs
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetChannelGuestStarSettingsResponse(
             bool isModeratorSendLiveEnabled,
             int slotCount,

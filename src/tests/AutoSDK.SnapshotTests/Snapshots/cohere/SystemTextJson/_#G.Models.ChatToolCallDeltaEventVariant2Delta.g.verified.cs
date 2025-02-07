@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="ChatToolCallDeltaEventVariant2Delta" /> class.
         /// </summary>
         /// <param name="toolCall"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatToolCallDeltaEventVariant2Delta(
             global::G.ChatToolCallDeltaEventVariant2DeltaToolCall? toolCall)
         {

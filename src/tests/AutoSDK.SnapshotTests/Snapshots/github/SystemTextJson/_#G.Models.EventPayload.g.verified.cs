@@ -50,7 +50,9 @@ namespace G
         /// Comments provide a way for people to collaborate on an issue.
         /// </param>
         /// <param name="pages"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EventPayload(
             string? action,
             global::G.Issue? issue,

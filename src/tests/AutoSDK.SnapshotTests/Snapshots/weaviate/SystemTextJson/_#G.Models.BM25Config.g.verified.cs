@@ -40,7 +40,9 @@ namespace G
         /// Calibrates term-weight scaling based on the document length<br/>
         /// Default Value: 0.75F
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BM25Config(
             float? k1,
             float? b)

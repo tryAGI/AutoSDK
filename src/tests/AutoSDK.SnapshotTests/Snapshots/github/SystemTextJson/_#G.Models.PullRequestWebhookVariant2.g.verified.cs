@@ -120,7 +120,9 @@ namespace G
         /// Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.**<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullRequestWebhookVariant2(
             bool? allowAutoMerge,
             bool? allowUpdateBranch,

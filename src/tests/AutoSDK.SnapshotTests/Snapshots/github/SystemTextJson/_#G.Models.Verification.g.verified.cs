@@ -50,7 +50,9 @@ namespace G
         /// <param name="reason"></param>
         /// <param name="payload"></param>
         /// <param name="signature"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Verification(
             bool verified,
             string reason,

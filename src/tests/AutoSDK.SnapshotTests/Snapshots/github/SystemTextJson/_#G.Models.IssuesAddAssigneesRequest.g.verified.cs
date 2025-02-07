@@ -27,7 +27,9 @@ namespace G
         /// <param name="assignees">
         /// Usernames of people to assign this issue to. _NOTE: Only users with push access can add assignees to an issue. Assignees are silently ignored otherwise._
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public IssuesAddAssigneesRequest(
             global::System.Collections.Generic.IList<string>? assignees)
         {

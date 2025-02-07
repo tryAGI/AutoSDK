@@ -67,7 +67,9 @@ namespace G
         /// <param name="seed">
         /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same seed and parameters should return the same result. Determinism is not guaranteed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodySpeechToSpeechV1SpeechToSpeechVoiceIdPost(
             byte[] audio,
             string audioname,

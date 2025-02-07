@@ -62,7 +62,9 @@ namespace G
         /// Example: "********"
         /// </param>
         /// <param name="insecureSsl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsUpdateWebhookConfigForOrgRequest(
             string? url,
             string? contentType,

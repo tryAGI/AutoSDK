@@ -67,7 +67,9 @@ namespace G
         /// <param name="pagination">
         /// An object that contains the cursor used to get the next page of subscriptions. The object is empty if there are no more pages to get. The number of subscriptions returned per page is undertermined.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetEventSubSubscriptionsResponse(
             global::System.Collections.Generic.IList<global::G.EventSubSubscription> data,
             int total,

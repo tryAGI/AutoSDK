@@ -39,7 +39,9 @@ namespace G
         /// <param name="reason"></param>
         /// <param name="createdAt"></param>
         /// <param name="htmlUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GistsGetCommentResponseBlock(
             string? reason,
             string? createdAt,

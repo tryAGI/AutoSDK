@@ -59,7 +59,9 @@ namespace G
         /// <param name="parameters">
         /// Parameters of the function in JSON Schema.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeSessionTool(
             global::G.RealtimeSessionToolType? type,
             string? name,

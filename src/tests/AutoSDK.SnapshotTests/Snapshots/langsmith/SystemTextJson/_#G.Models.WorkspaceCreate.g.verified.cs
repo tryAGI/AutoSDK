@@ -40,7 +40,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="displayName"></param>
         /// <param name="tenantHandle"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WorkspaceCreate(
             string displayName,
             global::System.Guid? id,

@@ -89,7 +89,9 @@ namespace G
         /// <param name="selectedWorkflows">
         /// List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ActionsCreateSelfHostedRunnerGroupForOrgRequest(
             string name,
             global::G.ActionsCreateSelfHostedRunnerGroupForOrgRequestVisibility? visibility,

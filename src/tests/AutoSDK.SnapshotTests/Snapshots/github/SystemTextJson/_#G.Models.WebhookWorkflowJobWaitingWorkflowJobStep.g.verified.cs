@@ -68,7 +68,9 @@ namespace G
         /// <param name="number"></param>
         /// <param name="startedAt"></param>
         /// <param name="status"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookWorkflowJobWaitingWorkflowJobStep(
             string? completedAt,
             global::G.WebhookWorkflowJobWaitingWorkflowJobStepConclusion? conclusion,

@@ -79,7 +79,9 @@ namespace G
         /// <param name="safetyRatings">
         /// List of ratings for the safety of a response candidate. There is at most one rating per category.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Candidate(
             global::G.Content? content,
             global::G.CandidateFinishReason? finishReason,

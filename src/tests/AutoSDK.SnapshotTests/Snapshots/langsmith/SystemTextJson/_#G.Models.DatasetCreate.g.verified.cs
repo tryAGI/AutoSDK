@@ -87,7 +87,9 @@ namespace G
         /// <param name="dataType">
         /// Enum for dataset data types.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DatasetCreate(
             string name,
             string? description,

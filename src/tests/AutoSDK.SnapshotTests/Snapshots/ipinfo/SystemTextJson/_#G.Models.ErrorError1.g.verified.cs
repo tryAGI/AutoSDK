@@ -40,7 +40,9 @@ namespace G
         /// <param name="message">
         /// Example: Please provide a valid IP address
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ErrorError1(
             string title,
             string message)

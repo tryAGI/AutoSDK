@@ -63,7 +63,9 @@ namespace G
         /// <param name="classification">
         /// This meta field contains additional info about the classified reference property
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SingleRef(
             string? @class,
             object? schema,

@@ -33,6 +33,7 @@ public static class OptionsExtensions
             JsonSerializerType: options.GetEnumGlobalOption<JsonSerializerType>(nameof(Settings.JsonSerializerType), prefix),
             UseRequiredKeyword: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseRequiredKeyword), prefix),
             UseExperimentalAttributes: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseExperimentalAttributes), prefix),
+            UseSetsRequiredMembersAttributes: options.GetEnumGlobalOption<SdkFeatureUsage>(nameof(Settings.UseSetsRequiredMembersAttributes), prefix),
             
             GenerateConstructors: options.GetBoolGlobalOption(nameof(Settings.GenerateConstructors), prefix),
             GroupByTags: options.GetBoolGlobalOption(nameof(Settings.GroupByTags), prefix, defaultValue: true),

@@ -40,7 +40,9 @@ namespace G
         /// Data specifications.<br/>
         /// The key represents the task, and the value is the corresponding data_specification.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Spec(
             object componentSpecification,
             global::System.Collections.Generic.Dictionary<string, global::G.DataSpecification> dataSpecifications)

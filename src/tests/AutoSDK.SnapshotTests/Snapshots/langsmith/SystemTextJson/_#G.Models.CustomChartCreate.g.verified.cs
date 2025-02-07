@@ -80,7 +80,9 @@ namespace G
         /// <param name="sectionId"></param>
         /// <param name="metadata"></param>
         /// <param name="commonFilters"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartCreate(
             string title,
             global::G.CustomChartType chartType,

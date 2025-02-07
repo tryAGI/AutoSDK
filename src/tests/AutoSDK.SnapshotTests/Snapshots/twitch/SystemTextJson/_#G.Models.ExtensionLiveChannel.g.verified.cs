@@ -68,7 +68,9 @@ namespace G
         /// <param name="title">
         /// The title of the broadcaster’s stream. May be an empty string if not specified.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExtensionLiveChannel(
             string broadcasterId,
             string broadcasterName,

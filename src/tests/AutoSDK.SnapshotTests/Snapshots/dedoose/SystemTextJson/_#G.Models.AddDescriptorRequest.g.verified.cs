@@ -50,7 +50,9 @@ namespace G
         /// <param name="userId"></param>
         /// <param name="setId"></param>
         /// <param name="fieldValues"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddDescriptorRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

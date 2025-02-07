@@ -38,7 +38,9 @@ namespace G
         /// <param name="sha">
         /// The SHA1 value for this reference.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GitCreateRefRequest(
             string @ref,
             string sha)

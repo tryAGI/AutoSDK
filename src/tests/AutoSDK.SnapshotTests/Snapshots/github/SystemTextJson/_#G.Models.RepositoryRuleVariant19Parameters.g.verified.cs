@@ -28,7 +28,9 @@ namespace G
         /// <param name="maxFileSize">
         /// The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleVariant19Parameters(
             int maxFileSize)
         {

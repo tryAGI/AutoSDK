@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="TopicSearchResultItemAliase" /> class.
         /// </summary>
         /// <param name="topicRelation"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TopicSearchResultItemAliase(
             global::G.TopicSearchResultItemAliaseTopicRelation? topicRelation)
         {

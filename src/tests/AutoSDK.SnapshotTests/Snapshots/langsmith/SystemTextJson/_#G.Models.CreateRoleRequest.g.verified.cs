@@ -42,7 +42,9 @@ namespace G
         /// <param name="displayName"></param>
         /// <param name="description"></param>
         /// <param name="permissions"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateRoleRequest(
             string displayName,
             string description,

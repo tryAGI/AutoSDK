@@ -46,7 +46,9 @@ namespace G
         /// <param name="start"></param>
         /// <param name="end"></param>
         /// <param name="description"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ServiceMessage(
             string? title,
             global::System.DateTime? start,

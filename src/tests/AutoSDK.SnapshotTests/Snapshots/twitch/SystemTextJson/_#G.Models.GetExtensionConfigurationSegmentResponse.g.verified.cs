@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of requested configuration segments. The list is returned in the same order that you specified the list of segments in the request.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetExtensionConfigurationSegmentResponse(
             global::System.Collections.Generic.IList<global::G.ExtensionConfigurationSegment> data)
         {

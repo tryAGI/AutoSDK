@@ -54,7 +54,9 @@ namespace G
         /// <param name="accountTier">
         /// Defines various account tiers with different access levels and permissions.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserTeam(
             string id,
             string name,

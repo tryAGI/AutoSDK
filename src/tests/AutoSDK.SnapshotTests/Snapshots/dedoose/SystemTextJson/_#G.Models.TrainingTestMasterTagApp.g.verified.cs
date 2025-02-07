@@ -81,7 +81,9 @@ namespace G
         /// <param name="weight"></param>
         /// <param name="projectIDL"></param>
         /// <param name="trainingTestExcerptId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TrainingTestMasterTagApp(
             string? projectIdKey,
             global::System.Guid? projectId,

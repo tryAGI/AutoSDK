@@ -68,7 +68,9 @@ namespace G
         /// Either `true` to create a new private repository or `false` to create a new public one.<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateUsingTemplateRequest(
             string name,
             string? owner,

@@ -46,7 +46,9 @@ namespace G
         /// <param name="serviceAccount">
         /// Represents an individual service account in a project.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectApiKeyOwner(
             global::G.ProjectApiKeyOwnerType? type,
             global::G.ProjectUser? user,

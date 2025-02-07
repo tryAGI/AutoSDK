@@ -48,7 +48,9 @@ namespace G
         /// <param name="estimatedStorageForMonth">
         /// Estimated sum of free and paid storage space (GB) used in billing cycle.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CombinedBillingUsage(
             int daysLeftInBillingCycle,
             int estimatedPaidStorageForMonth,

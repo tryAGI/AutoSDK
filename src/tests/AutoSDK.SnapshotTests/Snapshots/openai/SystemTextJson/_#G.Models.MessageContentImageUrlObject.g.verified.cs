@@ -36,7 +36,9 @@ namespace G
         /// The type of the content part.
         /// </param>
         /// <param name="imageUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MessageContentImageUrlObject(
             global::G.MessageContentImageUrlObjectImageUrl imageUrl,
             global::G.MessageContentImageUrlObjectType type)

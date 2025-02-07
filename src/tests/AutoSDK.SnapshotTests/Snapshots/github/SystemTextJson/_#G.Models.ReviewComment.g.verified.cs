@@ -312,7 +312,9 @@ namespace G
         /// The original first line of the range for a multi-line comment.<br/>
         /// Example: 2
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReviewComment(
             string url,
             long? pullRequestReviewId,

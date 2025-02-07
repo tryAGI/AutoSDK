@@ -38,7 +38,9 @@ namespace G
         /// <param name="lastMessages">
         /// The number of most recent messages from the thread when constructing the context for the run.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TruncationObject(
             global::G.TruncationObjectType type,
             int? lastMessages)

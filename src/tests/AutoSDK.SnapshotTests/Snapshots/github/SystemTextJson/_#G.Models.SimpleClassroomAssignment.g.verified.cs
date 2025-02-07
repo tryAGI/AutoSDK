@@ -245,7 +245,9 @@ namespace G
         /// <param name="classroom">
         /// A GitHub Classroom classroom
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SimpleClassroomAssignment(
             int id,
             bool publicRepo,

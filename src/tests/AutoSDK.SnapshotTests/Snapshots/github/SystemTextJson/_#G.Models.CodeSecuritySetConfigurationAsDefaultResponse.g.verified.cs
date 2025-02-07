@@ -37,7 +37,9 @@ namespace G
         /// <param name="configuration">
         /// A code security configuration
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeSecuritySetConfigurationAsDefaultResponse(
             global::G.CodeSecuritySetConfigurationAsDefaultResponseDefaultForNewRepos? defaultForNewRepos,
             global::G.CodeSecurityConfiguration? configuration)

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="filter"></param>
         /// <param name="maxResults"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetFilteredProjectsAndUsersRequest(
             string filter,
             int maxResults)

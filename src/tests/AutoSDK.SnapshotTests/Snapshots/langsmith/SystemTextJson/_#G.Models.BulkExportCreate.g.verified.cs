@@ -66,7 +66,9 @@ namespace G
         /// <param name="endTime"></param>
         /// <param name="format"></param>
         /// <param name="compression"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BulkExportCreate(
             global::System.Guid bulkExportDestinationId,
             global::System.Guid sessionId,

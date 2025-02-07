@@ -146,7 +146,9 @@ namespace G
         /// <param name="promptCost"></param>
         /// <param name="completionCost"></param>
         /// <param name="groupCount"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunGroupStats(
             int runCount,
             int groupCount,

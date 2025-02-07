@@ -50,7 +50,9 @@ namespace G
         /// <param name="setId"></param>
         /// <param name="descriptorIds"></param>
         /// <param name="fileExtension"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartExportDescriptorsJobRequest(
             global::System.Guid projectId,
             global::System.Guid setId,

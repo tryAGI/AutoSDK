@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="detail"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImageURL(
             string url,
             string? detail)

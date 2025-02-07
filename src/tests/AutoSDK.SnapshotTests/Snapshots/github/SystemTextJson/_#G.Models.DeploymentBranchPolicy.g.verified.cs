@@ -65,7 +65,9 @@ namespace G
         /// Whether this rule targets a branch or tag.<br/>
         /// Example: branch
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeploymentBranchPolicy(
             int? id,
             string? nodeId,

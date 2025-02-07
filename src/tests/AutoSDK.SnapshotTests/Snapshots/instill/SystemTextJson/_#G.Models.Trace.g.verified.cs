@@ -73,7 +73,9 @@ namespace G
         /// Computation time in seconds.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Trace(
             global::System.Collections.Generic.IList<global::G.TraceStatus>? statuses,
             global::System.Collections.Generic.IList<object>? inputs,

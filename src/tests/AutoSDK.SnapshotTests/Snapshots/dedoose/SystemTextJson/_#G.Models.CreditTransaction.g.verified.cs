@@ -74,7 +74,9 @@ namespace G
         /// <param name="prevBal"></param>
         /// <param name="remBal"></param>
         /// <param name="memo"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreditTransaction(
             global::System.Guid? id,
             global::System.Guid? accountId,

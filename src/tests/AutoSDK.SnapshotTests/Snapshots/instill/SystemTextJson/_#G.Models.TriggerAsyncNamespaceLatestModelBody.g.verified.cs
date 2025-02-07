@@ -29,7 +29,9 @@ namespace G
         /// <param name="taskInputs">
         /// Model inference inputs.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TriggerAsyncNamespaceLatestModelBody(
             global::System.Collections.Generic.IList<object> taskInputs)
         {

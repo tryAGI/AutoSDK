@@ -51,7 +51,9 @@ namespace G
         /// <param name="stride">
         /// Timedelta input.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartsRequestBase(
             global::System.DateTime startTime,
             string? timezone,

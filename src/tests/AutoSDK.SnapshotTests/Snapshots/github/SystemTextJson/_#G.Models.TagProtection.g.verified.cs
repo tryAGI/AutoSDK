@@ -69,7 +69,9 @@ namespace G
         /// <param name="pattern">
         /// Example: v1.*
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TagProtection(
             string pattern,
             int? id,

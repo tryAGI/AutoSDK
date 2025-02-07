@@ -37,7 +37,9 @@ namespace G
         /// <param name="pagination">
         /// This field contains the cursor used to page through the results. The field is empty if there are no more pages left to page through. Note that this field is a string compared to other endpoints that use a **Pagination** object. [Read More](https://dev.twitch.tv/docs/api/guide#pagination)
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetExtensionLiveChannelsResponse(
             global::System.Collections.Generic.IList<global::G.ExtensionLiveChannel> data,
             string? pagination)

@@ -78,7 +78,9 @@ namespace G
         /// <param name="prerollFreeTime">
         /// The amount of pre-roll free time remaining for the channel in seconds. Returns 0 if they are currently not pre-roll free.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetAdScheduleResponseDataItem(
             int snoozeCount,
             global::System.DateTime snoozeRefreshAt,

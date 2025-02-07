@@ -119,7 +119,9 @@ namespace G
         /// <param name="nestedProperties">
         /// The properties of the nested object(s). Applies to object and object[] data types.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Property(
             global::System.Collections.Generic.IList<global::G.DataTypeItem> dataType,
             string name,

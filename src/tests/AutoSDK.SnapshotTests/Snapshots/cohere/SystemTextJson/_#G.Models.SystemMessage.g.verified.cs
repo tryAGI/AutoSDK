@@ -37,7 +37,9 @@ namespace G
         /// </summary>
         /// <param name="role"></param>
         /// <param name="content"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SystemMessage(
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.OneOf<global::G.TextContent>>> content,
             global::G.SystemMessageRole role)

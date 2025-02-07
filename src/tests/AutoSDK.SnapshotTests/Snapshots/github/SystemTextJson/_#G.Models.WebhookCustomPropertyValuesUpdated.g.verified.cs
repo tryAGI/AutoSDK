@@ -105,7 +105,9 @@ namespace G
         /// <param name="oldPropertyValues">
         /// The old custom property values for the repository.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookCustomPropertyValuesUpdated(
             global::G.RepositoryWebhooks repository,
             global::G.OrganizationSimpleWebhooks organization,

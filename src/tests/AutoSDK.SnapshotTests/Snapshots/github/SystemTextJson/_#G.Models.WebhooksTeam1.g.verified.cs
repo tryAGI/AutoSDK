@@ -132,7 +132,9 @@ namespace G
         /// <param name="url">
         /// URL for the team
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksTeam1(
             int id,
             string name,

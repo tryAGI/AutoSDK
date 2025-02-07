@@ -142,7 +142,9 @@ namespace G
         /// <param name="startedAt">
         /// The UTC date and time (in RFC3339 format) of when the broadcaster started streaming. The string is empty if the broadcaster is not streaming live.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Channel(
             string broadcasterLanguage,
             string broadcasterLogin,

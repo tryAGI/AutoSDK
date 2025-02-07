@@ -245,7 +245,9 @@ namespace G
         /// <param name="roleName">
         /// Example: admin
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Collaborator(
             string login,
             long id,

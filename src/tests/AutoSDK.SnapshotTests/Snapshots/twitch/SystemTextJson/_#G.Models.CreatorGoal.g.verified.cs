@@ -137,7 +137,9 @@ namespace G
         /// <param name="createdAt">
         /// The UTC date and time (in RFC3339 format) that the broadcaster created the goal.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreatorGoal(
             string id,
             string broadcasterId,

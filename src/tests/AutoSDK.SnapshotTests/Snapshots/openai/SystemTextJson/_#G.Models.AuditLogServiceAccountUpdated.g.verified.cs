@@ -36,7 +36,9 @@ namespace G
         /// <param name="changesRequested">
         /// The payload used to updated the service account.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogServiceAccountUpdated(
             string? id,
             global::G.AuditLogServiceAccountUpdatedChangesRequested? changesRequested)

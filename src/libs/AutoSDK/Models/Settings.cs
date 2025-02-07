@@ -13,6 +13,7 @@ public readonly record struct Settings(
     JsonSerializerType JsonSerializerType,
     SdkFeatureUsage UseRequiredKeyword,
     SdkFeatureUsage UseExperimentalAttributes,
+    SdkFeatureUsage UseSetsRequiredMembersAttributes,
 
     bool GenerateConstructors,
     bool GroupByTags,
@@ -54,6 +55,7 @@ public readonly record struct Settings(
         JsonSerializerType: default,
         UseRequiredKeyword: default,
         UseExperimentalAttributes: default,
+        UseSetsRequiredMembersAttributes: default,
         GenerateConstructors: false,
         GroupByTags: true,
         GenerateMethods: false,

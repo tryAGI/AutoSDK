@@ -147,7 +147,9 @@ namespace G
         /// <param name="userLogin">
         /// The user’s login name.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BroadcasterSubscription(
             string broadcasterId,
             string broadcasterLogin,

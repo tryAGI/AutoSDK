@@ -28,7 +28,9 @@ namespace G
         /// <param name="toolCalls">
         /// A list of the relevant tool calls.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunObjectRequiredActionSubmitToolOutputs(
             global::System.Collections.Generic.IList<global::G.RunToolCallObject> toolCalls)
         {

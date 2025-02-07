@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         /// <param name="properties"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InputSchema(
             global::G.InputSchemaType type,
             object? properties)

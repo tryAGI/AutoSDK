@@ -124,7 +124,9 @@ namespace G
         /// <param name="repositoryUrl"></param>
         /// <param name="updatedAt"></param>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksAnswer(
             global::G.WebhooksAnswerAuthorAssociation authorAssociation,
             string body,

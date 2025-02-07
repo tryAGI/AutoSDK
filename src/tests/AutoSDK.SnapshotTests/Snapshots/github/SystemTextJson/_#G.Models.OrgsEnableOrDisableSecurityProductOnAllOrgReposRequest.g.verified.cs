@@ -30,7 +30,9 @@ namespace G
         /// CodeQL query suite to be used. If you specify the `query_suite` parameter, the default setup will be configured with this query suite only on all repositories that didn't have default setup already configured. It will not change the query suite on repositories that already have default setup configured.<br/>
         /// If you don't specify any `query_suite` in your request, the preferred query suite of the organization will be applied.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsEnableOrDisableSecurityProductOnAllOrgReposRequest(
             global::G.OrgsEnableOrDisableSecurityProductOnAllOrgReposRequestQuerySuite? querySuite)
         {

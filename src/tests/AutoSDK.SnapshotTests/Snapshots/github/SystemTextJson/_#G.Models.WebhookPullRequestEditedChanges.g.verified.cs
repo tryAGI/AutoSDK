@@ -39,7 +39,9 @@ namespace G
         /// <param name="base"></param>
         /// <param name="body"></param>
         /// <param name="title"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestEditedChanges(
             global::G.WebhookPullRequestEditedChangesBase? @base,
             global::G.WebhookPullRequestEditedChangesBody? body,

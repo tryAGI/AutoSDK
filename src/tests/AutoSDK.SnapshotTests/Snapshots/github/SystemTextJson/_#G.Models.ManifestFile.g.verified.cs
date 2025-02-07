@@ -30,7 +30,9 @@ namespace G
         /// The path of the manifest file relative to the root of the Git repository.<br/>
         /// Example: /src/build/package-lock.json
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ManifestFile(
             string? sourceLocation)
         {

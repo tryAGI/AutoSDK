@@ -70,7 +70,9 @@ namespace G
         /// The url of the classroom on GitHub Classroom.<br/>
         /// Example: https://classroom.github.com/classrooms/1-programming-elixir
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SimpleClassroom(
             int id,
             string name,

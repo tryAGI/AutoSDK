@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="account"></param>
         /// <param name="users"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetAccountDetailsForCurrentUserResponse(
             global::G.AccountVO account,
             global::System.Collections.Generic.IList<global::G.User> users)

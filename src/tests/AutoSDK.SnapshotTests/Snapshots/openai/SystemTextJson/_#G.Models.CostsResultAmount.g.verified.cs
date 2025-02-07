@@ -36,7 +36,9 @@ namespace G
         /// <param name="currency">
         /// Lowercase ISO-4217 currency e.g. "usd"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CostsResultAmount(
             double? value,
             string? currency)

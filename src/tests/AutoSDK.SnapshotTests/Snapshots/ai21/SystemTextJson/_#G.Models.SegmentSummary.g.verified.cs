@@ -64,7 +64,9 @@ namespace G
         /// <param name="segmentType"></param>
         /// <param name="hasSummary"></param>
         /// <param name="highlights"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SegmentSummary(
             string segmentText,
             string segmentType,

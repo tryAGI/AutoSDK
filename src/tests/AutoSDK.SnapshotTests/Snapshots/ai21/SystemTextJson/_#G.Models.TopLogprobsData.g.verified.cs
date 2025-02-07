@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="token"></param>
         /// <param name="logprob"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TopLogprobsData(
             string token,
             double logprob)

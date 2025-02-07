@@ -27,7 +27,9 @@ namespace G
         /// <param name="fileUid">
         /// The file uid.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteCatalogFileResponse(
             string? fileUid)
         {

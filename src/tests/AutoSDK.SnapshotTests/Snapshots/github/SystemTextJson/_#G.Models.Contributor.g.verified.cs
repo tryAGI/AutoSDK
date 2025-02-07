@@ -167,7 +167,9 @@ namespace G
         /// <param name="contributions"></param>
         /// <param name="email"></param>
         /// <param name="name"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Contributor(
             string type,
             int contributions,

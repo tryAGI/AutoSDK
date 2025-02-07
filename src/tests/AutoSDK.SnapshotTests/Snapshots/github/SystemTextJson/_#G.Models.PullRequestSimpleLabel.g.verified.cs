@@ -74,7 +74,9 @@ namespace G
         /// <param name="description"></param>
         /// <param name="color"></param>
         /// <param name="default"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullRequestSimpleLabel(
             long id,
             string nodeId,

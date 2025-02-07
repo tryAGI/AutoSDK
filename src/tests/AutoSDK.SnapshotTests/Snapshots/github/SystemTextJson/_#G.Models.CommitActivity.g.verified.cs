@@ -51,7 +51,9 @@ namespace G
         /// <param name="week">
         /// Example: 1336280400
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CommitActivity(
             global::System.Collections.Generic.IList<int> days,
             int total,

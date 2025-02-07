@@ -58,7 +58,9 @@ namespace G
         /// <param name="excerptId"></param>
         /// <param name="start"></param>
         /// <param name="end"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateImageExcerptRegionRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

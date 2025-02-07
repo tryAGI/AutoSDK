@@ -99,7 +99,9 @@ namespace G
         /// <param name="swearing">
         /// The Automod level for profanity.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateAutoModSettingsBody(
             int? aggression,
             int? bullying,

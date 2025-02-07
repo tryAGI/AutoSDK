@@ -38,7 +38,9 @@ namespace G
         /// <param name="newRepository">
         /// A git repository
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookIssuesTransferredChanges(
             global::G.WebhookIssuesTransferredChangesNewIssue newIssue,
             global::G.WebhookIssuesTransferredChangesNewRepository newRepository)

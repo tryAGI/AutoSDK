@@ -82,7 +82,9 @@ namespace G
         /// <param name="phone"></param>
         /// <param name="encryptedPass"></param>
         /// <param name="groupId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddNewUserToAccountRequest2(
             global::System.Guid projectId,
             string username,

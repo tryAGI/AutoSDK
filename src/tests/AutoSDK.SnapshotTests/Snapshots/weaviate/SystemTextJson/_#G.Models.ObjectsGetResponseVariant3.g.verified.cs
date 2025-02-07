@@ -27,7 +27,9 @@ namespace G
         /// <param name="result">
         /// Results for this specific Object.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ObjectsGetResponseVariant3(
             global::G.ObjectsGetResponseVariant3Result? result)
         {

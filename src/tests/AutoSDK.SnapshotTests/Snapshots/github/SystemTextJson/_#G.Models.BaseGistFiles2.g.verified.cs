@@ -53,7 +53,9 @@ namespace G
         /// <param name="language"></param>
         /// <param name="rawUrl"></param>
         /// <param name="size"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BaseGistFiles2(
             string? filename,
             string? type,

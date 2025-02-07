@@ -34,7 +34,9 @@ namespace G
         /// <param name="object">
         /// Default Value: list
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModelList(
             global::System.Collections.Generic.IList<global::G.DataItem>? data,
             string? @object)

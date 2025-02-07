@@ -38,7 +38,9 @@ namespace G
         /// <param name="to">
         /// Word or phrase to replace with
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TranscriptCustomSpelling(
             global::System.Collections.Generic.IList<string> from,
             string to)

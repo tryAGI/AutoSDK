@@ -74,7 +74,9 @@ namespace G
         /// <param name="adminId"></param>
         /// <param name="adminUsername"></param>
         /// <param name="adminEmail"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AccountProjectInfo(
             global::System.Guid? projectId,
             string? projectTitle,

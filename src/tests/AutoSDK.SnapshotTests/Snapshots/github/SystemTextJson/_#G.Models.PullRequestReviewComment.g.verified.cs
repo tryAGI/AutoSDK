@@ -354,7 +354,9 @@ namespace G
         /// <param name="bodyText">
         /// Example: "comment body"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullRequestReviewComment(
             string url,
             long? pullRequestReviewId,

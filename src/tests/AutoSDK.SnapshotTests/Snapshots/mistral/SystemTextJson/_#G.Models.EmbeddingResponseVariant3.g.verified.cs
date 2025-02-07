@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="EmbeddingResponseVariant3" /> class.
         /// </summary>
         /// <param name="choices"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmbeddingResponseVariant3(
             global::System.Collections.Generic.IList<global::G.ChatCompletionChoice>? choices)
         {

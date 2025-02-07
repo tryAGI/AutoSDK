@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhooksChanges8" /> class.
         /// </summary>
         /// <param name="tier"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksChanges8(
             global::G.WebhooksChanges8Tier tier)
         {

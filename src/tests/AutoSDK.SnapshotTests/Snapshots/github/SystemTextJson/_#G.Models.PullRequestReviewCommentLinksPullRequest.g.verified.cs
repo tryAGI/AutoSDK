@@ -29,7 +29,9 @@ namespace G
         /// <param name="href">
         /// Example: https://api.github.com/repos/octocat/Hello-World/pulls/1
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullRequestReviewCommentLinksPullRequest(
             string href)
         {

@@ -29,7 +29,9 @@ namespace G
         /// The updated pipeline release resource.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateNamespacePipelineReleaseResponse(
             global::G.PipelineRelease? release)
         {

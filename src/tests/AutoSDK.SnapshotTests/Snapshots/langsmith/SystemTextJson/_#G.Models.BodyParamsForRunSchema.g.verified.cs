@@ -171,7 +171,9 @@ namespace G
         /// <param name="order">
         /// Enum for run start date order.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyParamsForRunSchema(
             global::System.Collections.Generic.IList<global::System.Guid>? id,
             global::System.Guid? trace,

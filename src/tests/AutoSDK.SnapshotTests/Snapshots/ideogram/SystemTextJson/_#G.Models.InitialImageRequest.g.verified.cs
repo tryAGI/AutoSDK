@@ -30,7 +30,9 @@ namespace G
         /// Default Value: 50<br/>
         /// Example: 50
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public InitialImageRequest(
             int? imageWeight)
         {

@@ -40,7 +40,9 @@ namespace G
         /// <param name="status">
         /// Example: queued
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PageBuildStatus(
             string url,
             string status)

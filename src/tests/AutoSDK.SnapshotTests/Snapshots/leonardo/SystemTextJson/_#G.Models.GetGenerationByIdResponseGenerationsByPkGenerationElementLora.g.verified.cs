@@ -77,7 +77,9 @@ namespace G
         /// <param name="weightDefault"></param>
         /// <param name="weightMax"></param>
         /// <param name="weightMin"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetGenerationByIdResponseGenerationsByPkGenerationElementLora(
             global::G.Lora? akUUID,
             global::G.SdVersions? baseModel,

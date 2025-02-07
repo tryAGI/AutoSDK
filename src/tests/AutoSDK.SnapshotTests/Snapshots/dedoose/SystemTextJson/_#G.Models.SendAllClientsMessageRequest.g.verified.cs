@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="title"></param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SendAllClientsMessageRequest(
             string title,
             string message)

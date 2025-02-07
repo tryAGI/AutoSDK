@@ -37,7 +37,9 @@ namespace G
         /// Example: 10
         /// </param>
         /// <param name="customDeploymentProtectionRules"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposGetAllDeploymentProtectionRulesResponse(
             int? totalCount,
             global::System.Collections.Generic.IList<global::G.DeploymentProtectionRule>? customDeploymentProtectionRules)

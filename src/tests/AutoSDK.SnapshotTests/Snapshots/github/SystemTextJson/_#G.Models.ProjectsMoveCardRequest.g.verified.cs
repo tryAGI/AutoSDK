@@ -43,7 +43,9 @@ namespace G
         /// The unique identifier of the column the card should be moved to<br/>
         /// Example: 42
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectsMoveCardRequest(
             string position,
             int? columnId)

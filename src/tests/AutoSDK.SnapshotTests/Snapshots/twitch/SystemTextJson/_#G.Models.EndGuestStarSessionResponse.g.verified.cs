@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// Summary of the session details when the session was ended.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EndGuestStarSessionResponse(
             global::System.Collections.Generic.IList<global::G.GuestStarSession> data)
         {

@@ -109,7 +109,9 @@ namespace G
         /// <param name="createByUserIDL"></param>
         /// <param name="isDataLocked"></param>
         /// <param name="metaData"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Resource(
             string? projectIdKey,
             global::System.Guid? projectId,

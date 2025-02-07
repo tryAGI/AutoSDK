@@ -65,7 +65,9 @@ namespace G
         /// <param name="continueOnFailure">
         /// Whether a chat request should continue or not if the request to this connector fails.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatSearchResult(
             global::G.ChatSearchResultConnector connector,
             global::System.Collections.Generic.IList<string> documentIds,

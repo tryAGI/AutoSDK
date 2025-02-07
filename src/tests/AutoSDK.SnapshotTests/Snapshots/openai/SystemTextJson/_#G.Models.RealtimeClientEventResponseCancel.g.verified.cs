@@ -39,7 +39,9 @@ namespace G
         /// <param name="type">
         /// The event type, must be `response.cancel`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeClientEventResponseCancel(
             string? eventId,
             global::G.RealtimeClientEventResponseCancelType type)

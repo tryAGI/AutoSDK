@@ -27,7 +27,9 @@ namespace G
         /// <param name="models">
         /// List of models available locally.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ModelsResponse(
             global::System.Collections.Generic.IList<global::G.Model>? models)
         {

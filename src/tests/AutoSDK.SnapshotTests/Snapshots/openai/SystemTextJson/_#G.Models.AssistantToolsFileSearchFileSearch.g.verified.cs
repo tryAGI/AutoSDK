@@ -40,7 +40,9 @@ namespace G
         /// The ranking options for the file search. If not specified, the file search tool will use the `auto` ranker and a score_threshold of 0.<br/>
         /// See the [file search tool documentation](/docs/assistants/tools/file-search#customizing-file-search-settings) for more information.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantToolsFileSearchFileSearch(
             int? maxNumResults,
             global::G.FileSearchRankingOptions? rankingOptions)

@@ -57,7 +57,9 @@ namespace G
         /// The object type that was deleted<br/>
         /// Example: file
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteFileOut(
             bool deleted,
             global::System.Guid id,

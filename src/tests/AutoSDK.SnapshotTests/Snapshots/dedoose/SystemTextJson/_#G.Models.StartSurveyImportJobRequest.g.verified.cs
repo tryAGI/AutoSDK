@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="surveyUploadedFileURL"></param>
         /// <param name="encryptedSymKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartSurveyImportJobRequest(
             global::System.Guid projectId,
             string surveyUploadedFileURL,

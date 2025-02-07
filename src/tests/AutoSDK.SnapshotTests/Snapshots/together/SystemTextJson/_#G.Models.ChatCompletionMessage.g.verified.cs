@@ -48,7 +48,9 @@ namespace G
         /// <param name="content"></param>
         /// <param name="role"></param>
         /// <param name="toolCalls"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionMessage(
             string? content,
             global::G.ChatCompletionMessageRole role,

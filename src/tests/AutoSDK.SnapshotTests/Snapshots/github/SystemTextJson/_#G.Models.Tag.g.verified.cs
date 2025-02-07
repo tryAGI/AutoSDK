@@ -67,7 +67,9 @@ namespace G
         /// Example: https://github.com/octocat/Hello-World/tarball/v0.1
         /// </param>
         /// <param name="nodeId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Tag(
             string name,
             global::G.TagCommit commit,

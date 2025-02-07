@@ -50,7 +50,9 @@ namespace G
         /// <param name="args"></param>
         /// <param name="minimumNodes"></param>
         /// <param name="maximumNodes"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ScalingConfigPatch(
             global::G.ScalingConfigType? type,
             object? args,

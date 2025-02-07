@@ -49,7 +49,9 @@ namespace G
         /// <param name="vectorIndexConfig">
         /// Vector index type specific settings. See the [vector index configuration page](https://weaviate.io/developers/weaviate/config-refs/schema/vector-index) for more details
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VectorConfig(
             global::G.Vectorizer? vectorizer,
             global::G.VectorIndexType? vectorIndexType,

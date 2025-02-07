@@ -159,7 +159,9 @@ namespace G
         /// <param name="bullets">
         /// Example: [Up to 25 private repositories, 11 concurrent builds]
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MarketplaceListingPlan(
             string url,
             string accountsUrl,

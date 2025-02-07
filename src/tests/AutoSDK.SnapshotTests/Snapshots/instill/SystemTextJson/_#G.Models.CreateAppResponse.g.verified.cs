@@ -29,7 +29,9 @@ namespace G
         /// The created app.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateAppResponse(
             global::G.App? app)
         {

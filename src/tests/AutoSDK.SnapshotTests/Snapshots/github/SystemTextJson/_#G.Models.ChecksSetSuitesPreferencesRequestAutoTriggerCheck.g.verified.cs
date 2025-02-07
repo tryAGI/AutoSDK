@@ -41,7 +41,9 @@ namespace G
         /// Set to `true` to enable automatic creation of CheckSuite events upon pushes to the repository, or `false` to disable them.<br/>
         /// Default Value: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChecksSetSuitesPreferencesRequestAutoTriggerCheck(
             int appId,
             bool setting)

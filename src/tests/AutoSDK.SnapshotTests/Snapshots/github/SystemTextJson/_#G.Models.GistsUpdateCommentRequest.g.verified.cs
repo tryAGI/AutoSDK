@@ -31,7 +31,9 @@ namespace G
         /// The comment text.<br/>
         /// Example: Body of the attachment
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GistsUpdateCommentRequest(
             string body)
         {

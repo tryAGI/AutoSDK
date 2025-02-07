@@ -45,7 +45,9 @@ namespace G
         /// - `ERROR_TOXIC` - the model generated a reply that was deemed toxic
         /// </param>
         /// <param name="response"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatStreamEndEventVariant2(
             global::G.ChatStreamEndEventVariant2FinishReason finishReason,
             global::G.NonStreamedChatResponse response)

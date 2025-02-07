@@ -45,7 +45,9 @@ namespace G
         /// <param name="modules">
         /// Module-specific meta information.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Meta(
             string? hostname,
             string? version,

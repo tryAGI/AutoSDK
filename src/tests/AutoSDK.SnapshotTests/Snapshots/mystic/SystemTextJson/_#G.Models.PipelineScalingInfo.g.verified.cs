@@ -42,7 +42,9 @@ namespace G
         /// <param name="currentReplicas"></param>
         /// <param name="desiredReplicas"></param>
         /// <param name="currentPipelineStates"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelineScalingInfo(
             int currentReplicas,
             int desiredReplicas,

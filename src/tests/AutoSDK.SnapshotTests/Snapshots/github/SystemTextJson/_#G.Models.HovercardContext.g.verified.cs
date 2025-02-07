@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="message"></param>
         /// <param name="octicon"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public HovercardContext(
             string message,
             string octicon)

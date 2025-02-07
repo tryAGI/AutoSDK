@@ -28,7 +28,9 @@ namespace G
         /// <param name="users">
         /// The username for users
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposAddUserAccessRestrictionsRequest(
             global::System.Collections.Generic.IList<string> users)
         {

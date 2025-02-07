@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="type"></param>
         /// <param name="source"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RequestImageBlock(
             global::G.Base64ImageSource source,
             global::G.RequestImageBlockType type)

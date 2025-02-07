@@ -40,7 +40,9 @@ namespace G
         /// <param name="name"></param>
         /// <param name="description"></param>
         /// <param name="parameters"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FunctionToolDefinition(
             string name,
             string? description,

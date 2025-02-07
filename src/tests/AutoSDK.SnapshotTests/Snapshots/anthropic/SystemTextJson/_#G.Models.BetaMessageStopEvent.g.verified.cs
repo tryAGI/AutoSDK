@@ -29,7 +29,9 @@ namespace G
         /// <param name="type">
         /// Default Value: message_stop
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaMessageStopEvent(
             global::G.BetaMessageStopEventType type = global::G.BetaMessageStopEventType.MessageStop)
         {

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="status"></param>
         /// <param name="acxVolumeNormalization"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectSnapshotUploadResponseModel(
             global::G.ProjectSnapshotUploadResponseModelStatus status,
             bool? acxVolumeNormalization)

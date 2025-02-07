@@ -46,7 +46,9 @@ namespace G
         /// <param name="content"></param>
         /// <param name="createTime"></param>
         /// <param name="updateTime"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SourceFile(
             string? originalFileUid,
             string? content,

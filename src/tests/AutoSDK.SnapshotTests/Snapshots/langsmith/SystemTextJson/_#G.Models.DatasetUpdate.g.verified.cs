@@ -59,7 +59,9 @@ namespace G
         /// <param name="inputsSchemaDefinition"></param>
         /// <param name="outputsSchemaDefinition"></param>
         /// <param name="patchExamples"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DatasetUpdate(
             global::G.AnyOf<string, global::G.Missing>? name,
             global::G.AnyOf<string, global::G.Missing>? description,

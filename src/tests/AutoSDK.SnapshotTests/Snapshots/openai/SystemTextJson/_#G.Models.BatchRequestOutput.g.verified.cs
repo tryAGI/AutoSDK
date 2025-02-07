@@ -50,7 +50,9 @@ namespace G
         /// <param name="error">
         /// For requests that failed with a non-HTTP error, this will contain more information on the cause of the failure.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BatchRequestOutput(
             string? id,
             string? customId,

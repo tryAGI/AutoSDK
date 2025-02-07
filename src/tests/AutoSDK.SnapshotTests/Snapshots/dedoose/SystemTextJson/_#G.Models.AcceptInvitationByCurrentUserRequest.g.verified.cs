@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="AcceptInvitationByCurrentUserRequest" /> class.
         /// </summary>
         /// <param name="invitationId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AcceptInvitationByCurrentUserRequest(
             global::System.Guid invitationId)
         {

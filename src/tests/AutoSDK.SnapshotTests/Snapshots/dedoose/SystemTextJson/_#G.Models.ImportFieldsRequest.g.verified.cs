@@ -58,7 +58,9 @@ namespace G
         /// <param name="fieldInfos"></param>
         /// <param name="existingSetId"></param>
         /// <param name="newSetTitle"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImportFieldsRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

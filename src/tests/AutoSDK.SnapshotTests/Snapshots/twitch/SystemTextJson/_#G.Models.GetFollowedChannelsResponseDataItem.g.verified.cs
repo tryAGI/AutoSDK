@@ -58,7 +58,9 @@ namespace G
         /// <param name="followedAt">
         /// The UTC timestamp when the user started following the broadcaster.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetFollowedChannelsResponseDataItem(
             string broadcasterId,
             string broadcasterLogin,

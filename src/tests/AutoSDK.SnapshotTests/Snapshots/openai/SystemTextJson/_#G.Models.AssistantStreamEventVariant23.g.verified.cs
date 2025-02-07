@@ -36,7 +36,9 @@ namespace G
         /// <param name="data">
         /// Represents a message delta i.e. any changed fields on a message during streaming.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantStreamEventVariant23(
             global::G.MessageDeltaObject data,
             global::G.AssistantStreamEventVariant23Event @event)

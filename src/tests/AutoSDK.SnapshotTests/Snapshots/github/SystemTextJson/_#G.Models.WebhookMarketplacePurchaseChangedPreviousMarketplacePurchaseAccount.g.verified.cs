@@ -58,7 +58,9 @@ namespace G
         /// <param name="nodeId"></param>
         /// <param name="organizationBillingEmail"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookMarketplacePurchaseChangedPreviousMarketplacePurchaseAccount(
             int id,
             string login,

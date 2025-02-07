@@ -50,7 +50,9 @@ namespace G
         /// The git author's name.
         /// </param>
         /// <param name="username"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPushCommitCommitter(
             string? email,
             string name,

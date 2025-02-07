@@ -59,7 +59,9 @@ namespace G
         /// <param name="apiRoles">
         /// API roles that the client credentials will have.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateClientCredentialsRequest(
             string name,
             string type,

@@ -54,7 +54,9 @@ namespace G
         /// Name of the git user<br/>
         /// Example: Monalisa Octocat
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TimelineCommittedEventCommitter(
             global::System.DateTime date,
             string email,

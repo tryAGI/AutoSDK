@@ -98,7 +98,9 @@ namespace G
         /// <param name="status">
         /// Deprecated. The current status of the file, which can be either `uploaded`, `processed`, or `error`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OpenAIFile(
             string id,
             int bytes,

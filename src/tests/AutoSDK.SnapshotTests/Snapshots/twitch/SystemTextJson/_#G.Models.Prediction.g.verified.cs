@@ -149,7 +149,9 @@ namespace G
         /// <param name="lockedAt">
         /// The UTC date and time of when the Prediction was locked. If `status` is not LOCKED, this is set to **null**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Prediction(
             string id,
             string broadcasterId,

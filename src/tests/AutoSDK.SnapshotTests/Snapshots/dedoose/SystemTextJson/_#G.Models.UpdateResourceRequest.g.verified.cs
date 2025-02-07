@@ -50,7 +50,9 @@ namespace G
         /// <param name="resourceId"></param>
         /// <param name="title"></param>
         /// <param name="description"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateResourceRequest(
             global::System.Guid projectId,
             global::System.Guid resourceId,

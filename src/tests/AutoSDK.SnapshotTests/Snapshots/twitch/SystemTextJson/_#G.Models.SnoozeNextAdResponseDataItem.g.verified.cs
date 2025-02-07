@@ -48,7 +48,9 @@ namespace G
         /// <param name="nextAdAt">
         /// The UTC timestamp of the broadcaster’s next scheduled ad, in RFC3339 format.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SnoozeNextAdResponseDataItem(
             int snoozeCount,
             global::System.DateTime snoozeRefreshAt,

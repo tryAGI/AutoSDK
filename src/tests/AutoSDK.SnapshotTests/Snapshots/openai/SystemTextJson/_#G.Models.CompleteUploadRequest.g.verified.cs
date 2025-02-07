@@ -37,7 +37,9 @@ namespace G
         /// <param name="md5">
         /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CompleteUploadRequest(
             global::System.Collections.Generic.IList<string> partIds,
             string? md5)

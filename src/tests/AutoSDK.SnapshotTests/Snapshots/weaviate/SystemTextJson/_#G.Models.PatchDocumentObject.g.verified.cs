@@ -64,7 +64,9 @@ namespace G
         /// The value to be used within the operations.
         /// </param>
         /// <param name="merge"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PatchDocumentObject(
             global::G.PatchDocumentObjectOp op,
             string path,

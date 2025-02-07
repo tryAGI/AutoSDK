@@ -118,7 +118,9 @@ namespace G
         /// <param name="feedbackSource">
         /// The feedback source loaded from the database.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackSchema(
             string key,
             global::System.Guid id,

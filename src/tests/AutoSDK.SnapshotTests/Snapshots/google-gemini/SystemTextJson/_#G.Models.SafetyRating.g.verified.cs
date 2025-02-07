@@ -47,7 +47,9 @@ namespace G
         /// <param name="blocked">
         /// Was this content blocked because of this rating?
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SafetyRating(
             global::G.SafetyRatingCategory? category,
             global::G.SafetyRatingProbability? probability,

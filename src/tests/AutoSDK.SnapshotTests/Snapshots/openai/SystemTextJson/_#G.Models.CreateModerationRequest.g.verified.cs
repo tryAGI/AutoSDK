@@ -52,7 +52,9 @@ namespace G
         /// Default Value: omni-moderation-latest<br/>
         /// Example: omni-moderation-2024-09-26
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModerationRequest(
             global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>> input,
             global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? model)

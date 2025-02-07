@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="reviewer"></param>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookDeploymentReviewRequestedReviewer(
             global::G.WebhookDeploymentReviewRequestedReviewerReviewer? reviewer,
             global::G.WebhookDeploymentReviewRequestedReviewerType? type)

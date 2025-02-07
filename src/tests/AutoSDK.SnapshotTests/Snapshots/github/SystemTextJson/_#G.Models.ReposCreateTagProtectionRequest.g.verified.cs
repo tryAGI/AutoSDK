@@ -28,7 +28,9 @@ namespace G
         /// <param name="pattern">
         /// An optional glob pattern to match against when enforcing tag protection.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateTagProtectionRequest(
             string pattern)
         {

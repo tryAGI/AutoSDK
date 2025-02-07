@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="text"></param>
         /// <param name="indices"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SearchResultTextMatcheMatche(
             string? text,
             global::System.Collections.Generic.IList<int>? indices)

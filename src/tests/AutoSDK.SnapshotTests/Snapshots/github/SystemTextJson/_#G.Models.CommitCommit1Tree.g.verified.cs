@@ -40,7 +40,9 @@ namespace G
         /// <param name="url">
         /// Example: https://api.github.com/repos/octocat/Hello-World/tree/827efc6d56897b048c772eb4087f854f46256132
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CommitCommit1Tree(
             string sha,
             string url)

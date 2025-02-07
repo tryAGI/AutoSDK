@@ -28,7 +28,9 @@ namespace G
         /// <param name="requests">
         /// List of requests for prompt completion. Each is an individual request to create a Message.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaCreateMessageBatchParams(
             global::System.Collections.Generic.IList<global::G.BetaMessageBatchIndividualRequestParams> requests)
         {

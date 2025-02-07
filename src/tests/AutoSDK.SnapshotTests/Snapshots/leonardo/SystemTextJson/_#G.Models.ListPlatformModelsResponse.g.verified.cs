@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="ListPlatformModelsResponse" /> class.
         /// </summary>
         /// <param name="customModels"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListPlatformModelsResponse(
             global::System.Collections.Generic.IList<global::G.ListPlatformModelsResponseCustomModel>? customModels)
         {

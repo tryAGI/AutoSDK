@@ -36,7 +36,9 @@ namespace G
         /// <param name="usageDashboardVisibility">
         /// Visibility of the usage dashboard which shows activity and costs for your organization. One of `ANY_ROLE` or `OWNERS`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogOrganizationUpdatedChangesRequestedSettings(
             string? threadsUiVisibility,
             string? usageDashboardVisibility)

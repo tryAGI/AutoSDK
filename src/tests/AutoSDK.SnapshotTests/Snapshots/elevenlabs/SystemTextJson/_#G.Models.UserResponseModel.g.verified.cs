@@ -89,7 +89,9 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="xiApiKeyPreview"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserResponseModel(
             global::G.SubscriptionResponseModel subscription,
             bool isNewUser,

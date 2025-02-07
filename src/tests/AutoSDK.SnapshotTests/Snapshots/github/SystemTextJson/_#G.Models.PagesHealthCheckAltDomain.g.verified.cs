@@ -214,7 +214,9 @@ namespace G
         /// <param name="httpsError"></param>
         /// <param name="isHttpsEligible"></param>
         /// <param name="caaError"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PagesHealthCheckAltDomain(
             string? host,
             string? uri,

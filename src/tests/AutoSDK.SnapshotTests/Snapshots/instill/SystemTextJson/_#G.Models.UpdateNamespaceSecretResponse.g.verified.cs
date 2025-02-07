@@ -27,7 +27,9 @@ namespace G
         /// <param name="secret">
         /// The updated secret resource.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateNamespaceSecretResponse(
             global::G.Secret? secret)
         {

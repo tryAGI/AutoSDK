@@ -42,7 +42,9 @@ namespace G
         /// <param name="id">
         /// An ID that uniquely identifies the clip.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateClipResponseDataItem(
             string editUrl,
             string id)

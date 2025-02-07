@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="RepositoryRuleNonFastForward" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleNonFastForward(
             global::G.RepositoryRuleNonFastForwardType type)
         {

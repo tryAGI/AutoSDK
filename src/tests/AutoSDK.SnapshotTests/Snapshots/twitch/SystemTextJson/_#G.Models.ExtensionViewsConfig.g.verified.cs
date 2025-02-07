@@ -38,7 +38,9 @@ namespace G
         /// <param name="canLinkExternalContent">
         /// A Boolean value that determines whether the extension can link to non-Twitch domains.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExtensionViewsConfig(
             string viewerUrl,
             bool canLinkExternalContent)

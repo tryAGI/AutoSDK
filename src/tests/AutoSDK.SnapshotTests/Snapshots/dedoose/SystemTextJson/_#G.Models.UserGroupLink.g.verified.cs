@@ -60,7 +60,9 @@ namespace G
         /// <param name="userIdL"></param>
         /// <param name="projectIDL"></param>
         /// <param name="groupIdl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UserGroupLink(
             string? projectIdKey,
             global::System.Guid? projectId,

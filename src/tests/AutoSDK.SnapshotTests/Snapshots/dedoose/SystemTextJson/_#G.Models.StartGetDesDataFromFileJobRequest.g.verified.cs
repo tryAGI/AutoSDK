@@ -42,7 +42,9 @@ namespace G
         /// <param name="localFileURL"></param>
         /// <param name="setId"></param>
         /// <param name="projectId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartGetDesDataFromFileJobRequest(
             string localFileURL,
             global::System.Guid setId,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="content"></param>
         /// <param name="commit"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FileCommit(
             global::G.FileCommitContent? content,
             global::G.FileCommitCommit commit)

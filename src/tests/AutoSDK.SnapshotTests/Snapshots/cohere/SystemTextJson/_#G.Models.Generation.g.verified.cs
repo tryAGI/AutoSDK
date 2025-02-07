@@ -52,7 +52,9 @@ namespace G
         /// List of generated results
         /// </param>
         /// <param name="meta"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Generation(
             string id,
             global::System.Collections.Generic.IList<global::G.SingleGeneration> generations,

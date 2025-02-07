@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="BetaRequestToolResultBlockContentVariant2ItemDiscriminator" /> class.
         /// </summary>
         /// <param name="type"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaRequestToolResultBlockContentVariant2ItemDiscriminator(
             global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? type)
         {

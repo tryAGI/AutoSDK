@@ -74,7 +74,9 @@ namespace G
         /// <param name="version">
         /// The version number that identifies this definition of the segment’s data. If not specified, the latest definition is updated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SetExtensionConfigurationSegmentBody(
             string extensionId,
             global::G.SetExtensionConfigurationSegmentBodySegment segment,

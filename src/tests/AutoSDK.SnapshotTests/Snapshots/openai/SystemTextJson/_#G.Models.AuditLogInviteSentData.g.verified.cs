@@ -36,7 +36,9 @@ namespace G
         /// <param name="role">
         /// The role the email was invited to be. Is either `owner` or `member`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogInviteSentData(
             string? email,
             string? role)

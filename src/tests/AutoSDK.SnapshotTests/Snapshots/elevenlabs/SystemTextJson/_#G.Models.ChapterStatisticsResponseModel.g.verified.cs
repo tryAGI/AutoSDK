@@ -50,7 +50,9 @@ namespace G
         /// <param name="charactersConverted"></param>
         /// <param name="paragraphsConverted"></param>
         /// <param name="paragraphsUnconverted"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChapterStatisticsResponseModel(
             int charactersUnconverted,
             int charactersConverted,

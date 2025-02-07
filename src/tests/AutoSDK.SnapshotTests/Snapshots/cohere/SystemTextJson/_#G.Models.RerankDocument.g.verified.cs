@@ -28,7 +28,9 @@ namespace G
         /// <param name="text">
         /// The text of the document to rerank.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RerankDocument(
             string text)
         {

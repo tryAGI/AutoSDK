@@ -68,7 +68,9 @@ namespace G
         /// <param name="item">
         /// The item to add to the conversation.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventResponseOutputItemAdded(
             string eventId,
             string responseId,

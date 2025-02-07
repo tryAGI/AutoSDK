@@ -38,7 +38,9 @@ namespace G
         /// <param name="versions">
         /// The list of chat badges in this set.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatBadge(
             string setId,
             global::System.Collections.Generic.IList<global::G.ChatBadgeVersion> versions)

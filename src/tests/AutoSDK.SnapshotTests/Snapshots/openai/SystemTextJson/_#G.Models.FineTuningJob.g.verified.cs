@@ -192,7 +192,9 @@ namespace G
         /// <param name="estimatedFinish">
         /// The Unix timestamp (in seconds) for when the fine-tuning job is estimated to finish. The value will be null if the fine-tuning job is not running.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FineTuningJob(
             string id,
             global::System.DateTimeOffset createdAt,

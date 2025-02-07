@@ -47,7 +47,9 @@ namespace G
         /// Whether to disable parallel tool use.<br/>
         /// Defaults to `false`. If set to `true`, the model will output exactly one tool use.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaToolChoiceTool(
             string name,
             global::G.BetaToolChoiceToolType type,

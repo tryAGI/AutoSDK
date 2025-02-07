@@ -62,7 +62,9 @@ namespace G
         /// <param name="apiCreditCost">
         /// API credits cost, available for Production API users.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PerformAlchemyUpscaleLCMResponseLcmGenerationJob(
             global::System.Collections.Generic.IList<string>? imageDataUrl,
             global::System.Collections.Generic.IList<string>? generationId,

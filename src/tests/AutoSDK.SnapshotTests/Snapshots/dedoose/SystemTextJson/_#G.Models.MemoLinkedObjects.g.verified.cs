@@ -46,7 +46,9 @@ namespace G
         /// <param name="excerpts"></param>
         /// <param name="descriptors"></param>
         /// <param name="tags"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MemoLinkedObjects(
             global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? resources,
             global::System.Collections.Generic.IList<global::G.ObjectIdWithPos>? excerpts,

@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="animated"></param>
         /// <param name="static"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheermoteImageTheme(
             global::G.CheermoteImageFormat? animated,
             global::G.CheermoteImageFormat? @static)

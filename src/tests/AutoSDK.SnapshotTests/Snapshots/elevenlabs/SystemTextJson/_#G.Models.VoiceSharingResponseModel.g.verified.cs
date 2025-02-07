@@ -257,7 +257,9 @@ namespace G
         /// <param name="twitterUsername"></param>
         /// <param name="youtubeUsername"></param>
         /// <param name="tiktokUsername"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VoiceSharingResponseModel(
             global::G.VoiceSharingResponseModelStatus status,
             string historyItemSampleId,

@@ -119,7 +119,9 @@ namespace G
         /// </param>
         /// <param name="tool"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookCodeScanningAlertAppearedInBranchAlert(
             global::System.DateTime createdAt,
             global::System.DateTime? dismissedAt,

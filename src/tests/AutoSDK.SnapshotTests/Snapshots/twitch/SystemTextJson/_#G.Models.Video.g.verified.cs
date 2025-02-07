@@ -197,7 +197,9 @@ namespace G
         /// <param name="mutedSegments">
         /// The segments that Twitch Audio Recognition muted; otherwise, **null**.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Video(
             string id,
             string? streamId,

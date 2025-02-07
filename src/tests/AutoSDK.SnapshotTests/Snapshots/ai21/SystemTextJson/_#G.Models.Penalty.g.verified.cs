@@ -71,7 +71,9 @@ namespace G
         /// <param name="applyToEmojis">
         /// Default Value: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Penalty(
             double scale,
             bool? applyToWhitespaces,

@@ -90,7 +90,9 @@ namespace G
         /// <param name="includeExcerpts"></param>
         /// <param name="includeDescriptors"></param>
         /// <param name="symKey"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartExportMemosRequest(
             global::System.Guid projectId,
             global::System.Collections.Generic.IList<global::System.Guid> memoIds,

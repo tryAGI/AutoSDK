@@ -63,7 +63,9 @@ namespace G
         /// <param name="ignoreSchemaSync">
         /// The cluster check at startup can be ignored (to recover from an out-of-sync situation).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SchemaClusterStatus(
             bool? healthy,
             string? error,

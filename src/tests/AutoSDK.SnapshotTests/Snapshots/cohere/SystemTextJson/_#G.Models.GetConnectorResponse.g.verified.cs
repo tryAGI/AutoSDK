@@ -30,7 +30,9 @@ namespace G
         /// A connector allows you to integrate data sources with the '/chat' endpoint to create grounded generations with citations to the data source.<br/>
         /// documents to help answer users.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetConnectorResponse(
             global::G.Connector connector)
         {

@@ -45,7 +45,9 @@ namespace G
         /// Name of the tool.<br/>
         /// This is how the tool will be called by the model and in tool_use blocks.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaTextEditor20241022(
             global::G.BetaCacheControlEphemeral? cacheControl,
             global::G.BetaTextEditor20241022Type type,

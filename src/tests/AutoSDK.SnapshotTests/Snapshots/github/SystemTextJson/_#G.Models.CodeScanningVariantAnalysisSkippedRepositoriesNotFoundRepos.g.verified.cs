@@ -41,7 +41,9 @@ namespace G
         /// <param name="repositoryFullNames">
         /// A list of full repository names that were skipped. This list may not include all repositories that were skipped.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos(
             int repositoryCount,
             global::System.Collections.Generic.IList<string> repositoryFullNames)

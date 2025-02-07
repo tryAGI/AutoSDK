@@ -27,7 +27,9 @@ namespace G
         /// <param name="totalTokens">
         /// The number of tokens that the `model` tokenizes the `prompt` into. Always non-negative.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CountTokensResponse(
             int? totalTokens)
         {

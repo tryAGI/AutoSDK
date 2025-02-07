@@ -146,7 +146,9 @@ namespace G
         /// <param name="snapshotVersionMin"></param>
         /// <param name="state"></param>
         /// <param name="term"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RaftStatistics(
             string? appliedIndex,
             string? commitIndex,

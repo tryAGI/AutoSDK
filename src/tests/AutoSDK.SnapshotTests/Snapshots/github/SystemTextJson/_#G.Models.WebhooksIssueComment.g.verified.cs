@@ -125,7 +125,9 @@ namespace G
         /// URL for the issue comment
         /// </param>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksIssueComment(
             global::G.WebhooksIssueCommentAuthorAssociation authorAssociation,
             string body,

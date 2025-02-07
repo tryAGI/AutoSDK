@@ -88,7 +88,9 @@ namespace G
         /// <param name="delta">
         /// The transcript delta.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventResponseAudioTranscriptDelta(
             string eventId,
             string responseId,

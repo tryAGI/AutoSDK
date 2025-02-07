@@ -70,7 +70,9 @@ namespace G
         /// <param name="status">
         /// The status of the current task.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetTextureGenerationByIdResponseModelAssetTextureGenerationsByPk(
             string? createdAt,
             string? id,

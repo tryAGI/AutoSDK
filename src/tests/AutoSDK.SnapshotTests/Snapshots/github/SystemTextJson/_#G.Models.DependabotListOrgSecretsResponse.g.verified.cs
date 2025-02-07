@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="totalCount"></param>
         /// <param name="secrets"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DependabotListOrgSecretsResponse(
             int totalCount,
             global::System.Collections.Generic.IList<global::G.OrganizationDependabotSecret> secrets)

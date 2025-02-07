@@ -45,7 +45,9 @@ namespace G
         /// <param name="details">
         /// A list of messages that carry the error details. There is a common set of message types for APIs to use.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Status(
             int? code,
             string? message,

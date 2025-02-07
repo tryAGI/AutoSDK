@@ -27,7 +27,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GenerateStreamEvent" /> class.
         /// </summary>
         /// <param name="eventType"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateStreamEvent(
             global::G.GenerateStreamEventEventType eventType)
         {

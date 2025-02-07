@@ -50,7 +50,9 @@ namespace G
         /// <param name="notFoundRepos"></param>
         /// <param name="noCodeqlDbRepos"></param>
         /// <param name="overLimitRepos"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningVariantAnalysisSkippedRepositories(
             global::G.CodeScanningVariantAnalysisSkippedRepoGroup accessMismatchRepos,
             global::G.CodeScanningVariantAnalysisSkippedRepositoriesNotFoundRepos notFoundRepos,

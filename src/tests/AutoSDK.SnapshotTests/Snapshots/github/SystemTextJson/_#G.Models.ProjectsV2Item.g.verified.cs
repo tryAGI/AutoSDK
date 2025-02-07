@@ -92,7 +92,9 @@ namespace G
         /// <param name="createdAt"></param>
         /// <param name="updatedAt"></param>
         /// <param name="archivedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProjectsV2Item(
             double id,
             string contentNodeId,

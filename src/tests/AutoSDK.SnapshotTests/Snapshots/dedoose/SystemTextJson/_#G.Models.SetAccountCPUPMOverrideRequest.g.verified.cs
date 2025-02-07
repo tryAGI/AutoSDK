@@ -42,7 +42,9 @@ namespace G
         /// <param name="accountId"></param>
         /// <param name="cpupmOverride"></param>
         /// <param name="endDate"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SetAccountCPUPMOverrideRequest(
             global::System.Guid accountId,
             double cpupmOverride,

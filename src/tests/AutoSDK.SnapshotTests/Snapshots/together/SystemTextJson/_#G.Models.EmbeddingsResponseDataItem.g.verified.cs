@@ -42,7 +42,9 @@ namespace G
         /// <param name="embedding"></param>
         /// <param name="index"></param>
         /// <param name="object"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public EmbeddingsResponseDataItem(
             global::System.Collections.Generic.IList<double> embedding,
             int index,

@@ -30,7 +30,9 @@ namespace G
         /// The attestation's Sigstore Bundle.<br/>
         /// Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateAttestationRequest(
             global::G.ReposCreateAttestationRequestBundle bundle)
         {

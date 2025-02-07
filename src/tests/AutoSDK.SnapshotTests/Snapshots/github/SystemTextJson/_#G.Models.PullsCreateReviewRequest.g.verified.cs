@@ -55,7 +55,9 @@ namespace G
         /// <param name="comments">
         /// Use the following table to specify the location, destination, and contents of the draft review comment.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PullsCreateReviewRequest(
             string? commitId,
             string? body,

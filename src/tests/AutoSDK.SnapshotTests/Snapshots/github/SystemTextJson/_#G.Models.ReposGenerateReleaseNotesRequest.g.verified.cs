@@ -55,7 +55,9 @@ namespace G
         /// <param name="configurationFilePath">
         /// Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposGenerateReleaseNotesRequest(
             string tagName,
             string? targetCommitish,

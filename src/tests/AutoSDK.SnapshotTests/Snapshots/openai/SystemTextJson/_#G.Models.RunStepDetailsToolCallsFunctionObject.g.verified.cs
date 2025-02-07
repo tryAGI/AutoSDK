@@ -48,7 +48,9 @@ namespace G
         /// <param name="function">
         /// The definition of the function that was called.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDetailsToolCallsFunctionObject(
             string id,
             global::G.RunStepDetailsToolCallsFunctionObjectFunction function,

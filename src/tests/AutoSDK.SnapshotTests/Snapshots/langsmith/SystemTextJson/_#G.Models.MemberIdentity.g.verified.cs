@@ -115,7 +115,9 @@ namespace G
         /// <param name="email"></param>
         /// <param name="fullName"></param>
         /// <param name="avatarUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MemberIdentity(
             global::System.Guid id,
             global::System.Guid organizationId,

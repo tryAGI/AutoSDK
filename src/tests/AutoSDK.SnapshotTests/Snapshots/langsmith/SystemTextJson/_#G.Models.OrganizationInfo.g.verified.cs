@@ -101,7 +101,9 @@ namespace G
         /// Default Value: false
         /// </param>
         /// <param name="ssoLoginSlug"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrganizationInfo(
             global::G.OrganizationConfig config,
             bool isPersonal,

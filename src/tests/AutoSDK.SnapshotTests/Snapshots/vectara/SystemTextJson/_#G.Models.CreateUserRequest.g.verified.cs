@@ -55,7 +55,9 @@ namespace G
         /// <param name="apiRoles">
         /// The role names assigned to the user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateUserRequest(
             string email,
             string? username,

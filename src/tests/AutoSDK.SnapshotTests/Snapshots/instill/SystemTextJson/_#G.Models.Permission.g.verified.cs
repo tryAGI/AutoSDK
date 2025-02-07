@@ -36,7 +36,9 @@ namespace G
         /// <param name="canTrigger">
         /// Defines whether the pipeline can be executed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Permission(
             bool? canEdit,
             bool? canTrigger)

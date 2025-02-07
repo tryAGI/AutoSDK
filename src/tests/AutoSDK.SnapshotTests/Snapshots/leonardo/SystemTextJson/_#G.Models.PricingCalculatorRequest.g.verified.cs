@@ -37,7 +37,9 @@ namespace G
         /// <param name="serviceParams">
         /// Parameters for the service
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PricingCalculatorRequest(
             global::G.PricingCalculatorServices? service,
             global::G.PricingCalculatorRequestServiceParams? serviceParams)

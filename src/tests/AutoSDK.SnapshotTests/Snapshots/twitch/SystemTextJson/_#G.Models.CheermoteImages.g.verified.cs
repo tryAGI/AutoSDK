@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="light"></param>
         /// <param name="dark"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheermoteImages(
             global::G.CheermoteImageTheme? light,
             global::G.CheermoteImageTheme? dark)

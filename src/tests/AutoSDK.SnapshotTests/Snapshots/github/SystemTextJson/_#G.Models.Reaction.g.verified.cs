@@ -72,7 +72,9 @@ namespace G
         /// Example: heart
         /// </param>
         /// <param name="createdAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Reaction(
             int id,
             string nodeId,

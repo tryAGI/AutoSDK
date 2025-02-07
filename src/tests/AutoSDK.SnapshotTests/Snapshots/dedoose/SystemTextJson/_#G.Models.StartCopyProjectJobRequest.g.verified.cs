@@ -50,7 +50,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="title"></param>
         /// <param name="decription"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartCopyProjectJobRequest(
             global::System.Guid userId,
             global::System.Guid projectId,

@@ -74,7 +74,9 @@ namespace G
         /// <param name="overallRating"></param>
         /// <param name="traineeTagApps"></param>
         /// <param name="completed"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateTestResultRequest(
             global::System.Guid projectId,
             global::System.Guid traineeUserId,

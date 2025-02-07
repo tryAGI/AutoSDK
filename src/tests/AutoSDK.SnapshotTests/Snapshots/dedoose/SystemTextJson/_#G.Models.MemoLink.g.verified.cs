@@ -95,7 +95,9 @@ namespace G
         /// <param name="createStamp"></param>
         /// <param name="createUserId"></param>
         /// <param name="position"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MemoLink(
             string? projectIdKey,
             global::System.Guid? id,

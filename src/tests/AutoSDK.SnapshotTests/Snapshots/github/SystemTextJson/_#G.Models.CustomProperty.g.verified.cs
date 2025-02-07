@@ -105,7 +105,9 @@ namespace G
         /// Who can edit the values of the property<br/>
         /// Example: org_actors
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomProperty(
             string propertyName,
             global::G.CustomPropertyValueType valueType,

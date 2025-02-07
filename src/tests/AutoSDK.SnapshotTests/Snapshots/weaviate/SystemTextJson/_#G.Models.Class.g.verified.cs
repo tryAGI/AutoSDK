@@ -131,7 +131,9 @@ namespace G
         /// <param name="properties">
         /// Define properties of the collection.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Class(
             string class1,
             global::G.ClassVectorConfig? vectorConfig,

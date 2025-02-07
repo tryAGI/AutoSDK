@@ -48,7 +48,9 @@ namespace G
         /// <param name="imageFilename">
         /// An image binary; only JPEG, WEBPs and PNGs are supported at this time
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpscaleImageRequest(
             global::G.UpscaleInitialImageRequest imageRequest,
             byte[] imageFile,

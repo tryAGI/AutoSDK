@@ -134,7 +134,9 @@ namespace G
         /// Timestamp for the latest request to this fine-tuned model.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateFinetunedModelRequest(
             string name,
             global::G.Settings settings,

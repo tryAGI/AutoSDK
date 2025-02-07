@@ -40,7 +40,9 @@ namespace G
         /// <param name="message">
         /// Default Value: Rate limited
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RateLimitError(
             string message,
             global::G.RateLimitErrorType type = global::G.RateLimitErrorType.RateLimitError)

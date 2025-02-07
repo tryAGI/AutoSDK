@@ -54,7 +54,9 @@ namespace G
         /// <param name="senderProfiles">
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListMessagesResponse(
             global::System.Collections.Generic.IList<global::G.AppV1alphaMessage>? messages,
             string? nextPageToken,

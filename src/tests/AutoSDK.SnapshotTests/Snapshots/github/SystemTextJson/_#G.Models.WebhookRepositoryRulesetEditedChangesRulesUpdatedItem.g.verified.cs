@@ -35,7 +35,9 @@ namespace G
         /// A repository rule.
         /// </param>
         /// <param name="changes"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookRepositoryRulesetEditedChangesRulesUpdatedItem(
             global::G.RepositoryRule? rule,
             global::G.WebhookRepositoryRulesetEditedChangesRulesUpdatedItemChanges? changes)

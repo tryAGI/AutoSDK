@@ -53,7 +53,9 @@ namespace G
         /// <param name="typeInt"></param>
         /// <param name="listOptions"></param>
         /// <param name="isDynamic"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FieldInfo(
             string? title,
             string? description,

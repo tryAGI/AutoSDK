@@ -66,7 +66,9 @@ namespace G
         /// <param name="excerpt"></param>
         /// <param name="descriptor"></param>
         /// <param name="tag"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public LinkObjectRequest(
             global::System.Guid projectId,
             global::System.Guid memoId,

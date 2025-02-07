@@ -41,7 +41,9 @@ namespace G
         /// <param name="totalMs"></param>
         /// <param name="jobs"></param>
         /// <param name="jobRuns"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WorkflowRunUsageBillableMACOS(
             int totalMs,
             int jobs,

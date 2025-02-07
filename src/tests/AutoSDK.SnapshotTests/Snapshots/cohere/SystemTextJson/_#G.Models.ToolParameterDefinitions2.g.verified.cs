@@ -48,7 +48,9 @@ namespace G
         /// Denotes whether the parameter is always present (required) or not. Defaults to not required.<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolParameterDefinitions2(
             string type,
             string? description,

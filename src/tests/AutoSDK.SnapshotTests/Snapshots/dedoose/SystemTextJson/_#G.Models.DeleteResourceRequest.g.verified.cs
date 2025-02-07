@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="currentProjectId"></param>
         /// <param name="resource"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteResourceRequest(
             global::System.Guid currentProjectId,
             global::G.Resource resource)

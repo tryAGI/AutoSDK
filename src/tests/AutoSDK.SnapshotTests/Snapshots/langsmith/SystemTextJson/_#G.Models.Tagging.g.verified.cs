@@ -59,7 +59,9 @@ namespace G
         /// <param name="resourceId"></param>
         /// <param name="id"></param>
         /// <param name="createdAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Tagging(
             global::System.Guid tagValueId,
             global::G.ResourceType resourceType,

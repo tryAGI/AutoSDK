@@ -36,7 +36,9 @@ namespace G
         /// <param name="readOnly">
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public APIKeyCreateRequest(
             string? description,
             bool? readOnly)

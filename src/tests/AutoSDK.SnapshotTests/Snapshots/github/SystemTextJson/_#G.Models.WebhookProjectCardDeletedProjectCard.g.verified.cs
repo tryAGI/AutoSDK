@@ -124,7 +124,9 @@ namespace G
         /// <param name="projectUrl"></param>
         /// <param name="updatedAt"></param>
         /// <param name="url"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookProjectCardDeletedProjectCard(
             bool archived,
             int? columnId,

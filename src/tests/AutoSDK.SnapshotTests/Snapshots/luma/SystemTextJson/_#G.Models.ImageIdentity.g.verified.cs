@@ -27,7 +27,9 @@ namespace G
         /// <param name="images">
         /// The URLs of the image identity
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImageIdentity(
             global::System.Collections.Generic.IList<string>? images)
         {

@@ -55,7 +55,9 @@ namespace G
         /// <param name="exclude">
         /// List of collections to exclude from the backup creation process. If not set, all collections are included. Cannot be used together with `include`.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BackupCreateRequest(
             string id,
             global::G.BackupConfig? config,

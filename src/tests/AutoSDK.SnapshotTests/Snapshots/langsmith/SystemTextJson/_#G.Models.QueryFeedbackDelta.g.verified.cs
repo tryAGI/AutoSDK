@@ -74,7 +74,9 @@ namespace G
         /// Default Value: 100
         /// </param>
         /// <param name="comparativeExperimentId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public QueryFeedbackDelta(
             global::System.Guid baselineSessionId,
             global::System.Collections.Generic.IList<global::System.Guid> comparisonSessionIds,

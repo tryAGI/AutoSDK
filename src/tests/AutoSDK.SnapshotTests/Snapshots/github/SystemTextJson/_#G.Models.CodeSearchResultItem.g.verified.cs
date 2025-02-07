@@ -122,7 +122,9 @@ namespace G
         /// Example: [73..77, 77..78]
         /// </param>
         /// <param name="textMatches"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeSearchResultItem(
             string name,
             string path,

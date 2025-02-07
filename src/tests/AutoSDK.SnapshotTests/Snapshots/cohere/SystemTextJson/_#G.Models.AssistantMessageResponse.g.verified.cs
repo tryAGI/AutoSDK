@@ -54,7 +54,9 @@ namespace G
         /// <param name="toolPlan"></param>
         /// <param name="content"></param>
         /// <param name="citations"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantMessageResponse(
             global::G.AssistantMessageResponseRole role,
             global::System.Collections.Generic.IList<global::G.ToolCallV2>? toolCalls,

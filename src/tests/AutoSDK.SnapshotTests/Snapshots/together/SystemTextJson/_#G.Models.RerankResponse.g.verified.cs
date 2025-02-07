@@ -74,7 +74,9 @@ namespace G
         /// Example: [, ]
         /// </param>
         /// <param name="usage"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RerankResponse(
             string model,
             global::System.Collections.Generic.IList<global::G.RerankResponseResult> results,

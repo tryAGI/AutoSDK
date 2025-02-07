@@ -39,7 +39,9 @@ namespace G
         ///   <br/>
         /// Setting the status to CANCELED refunds the user’s channel points.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateRedemptionStatusBody(
             global::G.UpdateRedemptionStatusBodyStatus status)
         {

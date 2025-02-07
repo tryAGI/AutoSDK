@@ -48,7 +48,9 @@ namespace G
         /// <param name="identifier">
         /// A reference for the action on the integrator's system. The maximum size is 20 characters.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChecksUpdateRequestAction(
             string label,
             string description,

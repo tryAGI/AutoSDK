@@ -46,7 +46,9 @@ namespace G
         /// <param name="folders"></param>
         /// <param name="links"></param>
         /// <param name="folderLinks"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MemosFoldersAndLinks(
             global::System.Collections.Generic.IList<global::G.Memo>? memos,
             global::System.Collections.Generic.IList<global::G.MemoFolder>? folders,

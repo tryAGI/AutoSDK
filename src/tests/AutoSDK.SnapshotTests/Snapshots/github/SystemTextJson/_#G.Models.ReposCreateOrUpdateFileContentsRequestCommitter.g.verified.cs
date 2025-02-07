@@ -48,7 +48,9 @@ namespace G
         /// <param name="date">
         /// Example: "2013-01-05T13:13:22+05:00"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateOrUpdateFileContentsRequestCommitter(
             string name,
             string email,

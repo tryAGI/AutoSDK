@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="desired"></param>
         /// <param name="current"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PipelineScaling(
             int desired,
             int current)

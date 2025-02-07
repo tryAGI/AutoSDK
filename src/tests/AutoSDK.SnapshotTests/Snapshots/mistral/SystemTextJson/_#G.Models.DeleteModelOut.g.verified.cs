@@ -56,7 +56,9 @@ namespace G
         /// The object type that was deleted<br/>
         /// Default Value: model
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeleteModelOut(
             string id,
             bool? deleted,

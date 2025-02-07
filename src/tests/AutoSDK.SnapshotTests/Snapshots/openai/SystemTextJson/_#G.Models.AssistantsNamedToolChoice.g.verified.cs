@@ -36,7 +36,9 @@ namespace G
         /// The type of the tool. If type is `function`, the function name must be set
         /// </param>
         /// <param name="function"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AssistantsNamedToolChoice(
             global::G.AssistantsNamedToolChoiceType type,
             global::G.AssistantsNamedToolChoiceFunction? function)

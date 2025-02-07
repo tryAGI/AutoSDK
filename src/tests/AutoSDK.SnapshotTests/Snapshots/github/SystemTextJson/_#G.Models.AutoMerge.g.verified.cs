@@ -59,7 +59,9 @@ namespace G
         /// <param name="commitMessage">
         /// Commit message for the merge commit.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AutoMerge(
             global::G.SimpleUser enabledBy,
             global::G.AutoMergeMergeMethod mergeMethod,

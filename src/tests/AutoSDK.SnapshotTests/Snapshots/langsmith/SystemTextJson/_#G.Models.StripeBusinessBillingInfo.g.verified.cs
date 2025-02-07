@@ -35,7 +35,9 @@ namespace G
         /// <param name="address">
         /// Stripe customer address.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripeBusinessBillingInfo(
             string name,
             global::G.StripeCustomerAddress? address)

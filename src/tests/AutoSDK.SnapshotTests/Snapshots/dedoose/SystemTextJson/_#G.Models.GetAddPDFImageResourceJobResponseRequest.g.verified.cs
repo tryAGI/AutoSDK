@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="GetAddPDFImageResourceJobResponseRequest" /> class.
         /// </summary>
         /// <param name="jobId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetAddPDFImageResourceJobResponseRequest(
             string jobId)
         {

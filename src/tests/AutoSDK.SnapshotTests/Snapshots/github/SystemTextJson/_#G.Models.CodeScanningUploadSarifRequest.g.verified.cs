@@ -96,7 +96,9 @@ namespace G
         /// Whether the SARIF file will be validated according to the code scanning specifications.<br/>
         /// This parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningUploadSarifRequest(
             string commitSha,
             string @ref,

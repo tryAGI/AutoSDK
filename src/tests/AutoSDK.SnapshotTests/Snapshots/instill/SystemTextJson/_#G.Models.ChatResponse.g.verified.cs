@@ -38,7 +38,9 @@ namespace G
         /// <param name="chunks">
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatResponse(
             global::System.Collections.Generic.IList<object>? outputs,
             global::System.Collections.Generic.IList<global::G.SimilarityChunk>? chunks)

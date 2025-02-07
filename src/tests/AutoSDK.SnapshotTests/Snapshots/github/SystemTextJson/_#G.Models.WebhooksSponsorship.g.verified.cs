@@ -75,7 +75,9 @@ namespace G
         /// <param name="tier">
         /// The `tier_changed` and `pending_tier_change` will include the original tier before the change or pending change. For more information, see the pending tier change payload.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksSponsorship(
             string createdAt,
             string nodeId,

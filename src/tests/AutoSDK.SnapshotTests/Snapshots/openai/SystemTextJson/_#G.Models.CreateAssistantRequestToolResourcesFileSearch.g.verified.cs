@@ -36,7 +36,9 @@ namespace G
         /// <param name="vectorStores">
         /// A helper to create a [vector store](/docs/api-reference/vector-stores/object) with file_ids and attach it to this assistant. There can be a maximum of 1 vector store attached to the assistant.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateAssistantRequestToolResourcesFileSearch(
             global::System.Collections.Generic.IList<string>? vectorStoreIds,
             global::System.Collections.Generic.IList<global::G.CreateAssistantRequestToolResourcesFileSearchVectorStore>? vectorStores)

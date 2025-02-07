@@ -36,7 +36,9 @@ namespace G
         /// <param name="candidates">
         /// Candidate responses from the model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateContentResponse(
             global::G.PromptFeedback? promptFeedback,
             global::System.Collections.Generic.IList<global::G.Candidate>? candidates)

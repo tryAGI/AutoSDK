@@ -84,7 +84,9 @@ namespace G
         /// <param name="committer">
         /// Information about the Git committer
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NullableSimpleCommit(
             string id,
             string treeId,

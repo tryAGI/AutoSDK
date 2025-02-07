@@ -40,7 +40,9 @@ namespace G
         /// for all responses in the stream.
         /// </param>
         /// <param name="summary"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SummarizationResponse(
             string id,
             string summary)

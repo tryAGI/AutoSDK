@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="groupTitle"></param>
         /// <param name="groupACLId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddGroupToProjectRequest(
             global::System.Guid projectId,
             string groupTitle,

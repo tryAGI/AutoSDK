@@ -74,7 +74,9 @@ namespace G
         /// <param name="message"></param>
         /// <param name="currentTarget"></param>
         /// <param name="stacktrace"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProcessUIErrorRequest(
             string projectId,
             string userId,

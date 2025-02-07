@@ -155,7 +155,9 @@ namespace G
         /// <param name="createdAt">
         /// Indicates when the corpus was created.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Corpus(
             string? id,
             string? key,

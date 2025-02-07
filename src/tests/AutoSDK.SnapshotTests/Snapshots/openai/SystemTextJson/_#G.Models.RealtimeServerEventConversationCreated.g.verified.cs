@@ -48,7 +48,9 @@ namespace G
         /// <param name="conversation">
         /// The conversation resource.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeServerEventConversationCreated(
             string eventId,
             global::G.RealtimeServerEventConversationCreatedConversation conversation,

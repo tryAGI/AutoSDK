@@ -91,7 +91,9 @@ namespace G
         /// <param name="runName"></param>
         /// <param name="error"></param>
         /// <param name="runMetadata"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ExperimentResultRow(
             object inputs,
             global::System.DateTime startTime,

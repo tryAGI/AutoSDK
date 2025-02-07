@@ -50,7 +50,9 @@ namespace G
         /// <param name="confidence"></param>
         /// <param name="audioDuration"></param>
         /// <param name="paragraphs"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ParagraphsResponse(
             global::System.Guid id,
             double confidence,

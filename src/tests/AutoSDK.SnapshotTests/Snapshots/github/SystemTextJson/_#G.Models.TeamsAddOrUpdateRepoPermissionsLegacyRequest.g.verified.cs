@@ -28,7 +28,9 @@ namespace G
         /// <param name="permission">
         /// The permission to grant the team on this repository. If no permission is specified, the team's `permission` attribute will be used to determine what permission to grant the team on this repository.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TeamsAddOrUpdateRepoPermissionsLegacyRequest(
             global::G.TeamsAddOrUpdateRepoPermissionsLegacyRequestPermission? permission)
         {

@@ -37,7 +37,9 @@ namespace G
         /// <param name="outputFormat">
         /// Output format to transcode the audio file, can be wav or default.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyDownloadHistoryItemsV1HistoryDownloadPost(
             global::System.Collections.Generic.IList<string> historyItemIds,
             string? outputFormat)

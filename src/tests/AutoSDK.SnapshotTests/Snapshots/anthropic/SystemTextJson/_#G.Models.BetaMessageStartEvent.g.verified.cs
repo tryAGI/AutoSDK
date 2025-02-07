@@ -37,7 +37,9 @@ namespace G
         /// Default Value: message_start
         /// </param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaMessageStartEvent(
             global::G.BetaMessage message,
             global::G.BetaMessageStartEventType type = global::G.BetaMessageStartEventType.MessageStart)

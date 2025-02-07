@@ -46,7 +46,9 @@ namespace G
         /// </param>
         /// <param name="index"></param>
         /// <param name="contentBlock"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaContentBlockStartEvent(
             int index,
             global::G.ContentBlock contentBlock,

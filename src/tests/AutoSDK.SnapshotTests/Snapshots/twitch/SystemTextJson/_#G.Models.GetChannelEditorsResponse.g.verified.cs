@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// A list of users that are editors for the specified broadcaster. The list is empty if the broadcaster doesn’t have editors.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetChannelEditorsResponse(
             global::System.Collections.Generic.IList<global::G.ChannelEditor> data)
         {

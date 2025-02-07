@@ -75,7 +75,9 @@ namespace G
         /// <param name="teamsUrl">
         /// Example: "https://api.github.com/repos/the-org/an-org-repo/branches/master/protection/dismissal_restrictions/teams"
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProtectedBranchPullRequestReviewDismissalRestrictions(
             global::System.Collections.Generic.IList<global::G.SimpleUser>? users,
             global::System.Collections.Generic.IList<global::G.Team>? teams,

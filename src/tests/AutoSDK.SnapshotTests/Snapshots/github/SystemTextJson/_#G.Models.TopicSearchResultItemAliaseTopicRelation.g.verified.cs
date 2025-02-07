@@ -46,7 +46,9 @@ namespace G
         /// <param name="name"></param>
         /// <param name="topicId"></param>
         /// <param name="relationType"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TopicSearchResultItemAliaseTopicRelation(
             int? id,
             string? name,

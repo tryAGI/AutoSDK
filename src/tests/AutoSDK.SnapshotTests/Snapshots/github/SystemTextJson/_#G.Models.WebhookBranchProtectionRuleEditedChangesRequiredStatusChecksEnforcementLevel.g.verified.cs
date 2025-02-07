@@ -27,7 +27,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel" /> class.
         /// </summary>
         /// <param name="from"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevel(
             global::G.WebhookBranchProtectionRuleEditedChangesRequiredStatusChecksEnforcementLevelFrom from)
         {

@@ -75,7 +75,9 @@ namespace G
         /// <param name="title">
         /// The broadcast’s title. The title may contain a maximum of 140 characters.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateChannelStreamScheduleSegmentBody(
             global::System.DateTime startTime,
             string timezone,

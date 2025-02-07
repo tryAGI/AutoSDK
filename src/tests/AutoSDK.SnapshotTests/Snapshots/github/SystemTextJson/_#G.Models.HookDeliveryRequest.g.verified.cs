@@ -38,7 +38,9 @@ namespace G
         /// <param name="payload">
         /// The webhook payload.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public HookDeliveryRequest(
             object? headers,
             object? payload)

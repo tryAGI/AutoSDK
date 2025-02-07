@@ -37,7 +37,9 @@ namespace G
         /// <param name="workflows">
         /// Workflows that must pass for this rule to pass.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RepositoryRuleWorkflowsParameters(
             global::System.Collections.Generic.IList<global::G.RepositoryRuleParamsWorkflowFileReference> workflows,
             bool? doNotEnforceOnCreate)

@@ -42,7 +42,9 @@ namespace G
         /// <param name="accountId"></param>
         /// <param name="amount"></param>
         /// <param name="memo"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ProcessPaymentRequest(
             global::System.Guid accountId,
             double amount,

@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="projectId"></param>
         /// <param name="links"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddLinksRequest(
             global::System.Guid projectId,
             global::System.Collections.Generic.IList<global::G.DescriptorLinkVO> links)

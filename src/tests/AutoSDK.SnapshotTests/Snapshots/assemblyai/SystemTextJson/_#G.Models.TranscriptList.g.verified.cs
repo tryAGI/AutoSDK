@@ -36,7 +36,9 @@ namespace G
         /// Details of the transcript page. Transcripts are sorted from newest to oldest. The previous URL always points to a page with older transcripts.
         /// </param>
         /// <param name="transcripts"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TranscriptList(
             global::G.PageDetails pageDetails,
             global::System.Collections.Generic.IList<global::G.TranscriptListItem> transcripts)

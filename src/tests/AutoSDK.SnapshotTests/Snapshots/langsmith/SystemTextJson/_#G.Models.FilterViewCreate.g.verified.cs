@@ -54,7 +54,9 @@ namespace G
         /// <param name="treeFilterString"></param>
         /// <param name="displayName"></param>
         /// <param name="description"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FilterViewCreate(
             string displayName,
             string? filterString,

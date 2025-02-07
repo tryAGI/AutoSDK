@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="html"></param>
         /// <param name="self"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BranchWithProtectionLinks(
             string html,
             string self)

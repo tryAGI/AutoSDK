@@ -57,7 +57,9 @@ namespace G
         /// <param name="mergeMethod">
         /// The merge method to use.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookPullRequestLabeledPullRequestAutoMerge(
             string? commitMessage,
             string? commitTitle,

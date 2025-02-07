@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="Get3DModelByIdRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Get3DModelByIdRequest(
             string? id)
         {

@@ -48,7 +48,9 @@ namespace G
         /// <param name="total">
         /// The number of ranked users in `data`. This is the value in the _count_ query parameter or the total number of entries on the leaderboard, whichever is less.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetBitsLeaderboardResponse(
             global::System.Collections.Generic.IList<global::G.BitsLeaderboard> data,
             global::G.GetBitsLeaderboardResponseDateRange dateRange,

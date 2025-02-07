@@ -65,7 +65,9 @@ namespace G
         /// <param name="default">
         /// Indicates if this prompt is the default prompt used with the LLM.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Prompt(
             string? id,
             string? name,

@@ -41,7 +41,9 @@ namespace G
         /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="text"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public PromptCachingBetaRequestTextBlock(
             string text,
             global::G.CacheControlEphemeral? cacheControl,

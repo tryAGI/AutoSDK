@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="cluster"></param>
         /// <param name="accelerators"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClonePipeline(
             global::G.PipelineClusterConfig cluster,
             global::System.Collections.Generic.IList<global::G.Accelerator>? accelerators)

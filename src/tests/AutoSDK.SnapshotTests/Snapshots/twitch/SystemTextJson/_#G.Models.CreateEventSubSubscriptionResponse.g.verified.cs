@@ -58,7 +58,9 @@ namespace G
         /// <param name="maxTotalCost">
         /// The maximum total cost that you’re allowed to incur for all subscriptions you create.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateEventSubSubscriptionResponse(
             global::System.Collections.Generic.IList<global::G.EventSubSubscription> data,
             int total,

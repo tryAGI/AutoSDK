@@ -81,7 +81,9 @@ namespace G
         /// <param name="activeUsers">
         /// The number of users who were shown Copilot completion suggestions in the editor specified during the day specified.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CopilotUsageMetricsBreakdownItem(
             string? language,
             string? editor,

@@ -39,7 +39,9 @@ namespace G
         /// <param name="scoreThreshold">
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FileSearchRankingOptions(
             double scoreThreshold,
             global::G.FileSearchRankingOptionsRanker? ranker)

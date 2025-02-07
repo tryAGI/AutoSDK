@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The extensions that the broadcaster updated.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateUserExtensionsResponse(
             global::G.UpdateUserExtensionsResponseData data)
         {

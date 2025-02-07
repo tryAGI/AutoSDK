@@ -52,7 +52,9 @@ namespace G
         /// <param name="examples">
         /// Default Value: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BodyCloneDatasetApiV1DatasetsClonePost(
             global::System.Guid targetDatasetId,
             global::System.Guid sourceDatasetId,

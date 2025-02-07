@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of extensions that the user has installed.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetUserExtensionsResponse(
             global::System.Collections.Generic.IList<global::G.UserExtension> data)
         {

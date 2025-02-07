@@ -29,7 +29,9 @@ namespace G
         /// <param name="content">
         /// The [reaction type](https://docs.github.com/rest/reactions/reactions#about-reactions) to add to the issue comment.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReactionsCreateForIssueCommentRequest(
             global::G.ReactionsCreateForIssueCommentRequestContent content)
         {

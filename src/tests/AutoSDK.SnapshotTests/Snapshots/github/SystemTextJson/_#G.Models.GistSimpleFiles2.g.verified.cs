@@ -67,7 +67,9 @@ namespace G
         /// <param name="size"></param>
         /// <param name="truncated"></param>
         /// <param name="content"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GistSimpleFiles2(
             string? filename,
             string? type,

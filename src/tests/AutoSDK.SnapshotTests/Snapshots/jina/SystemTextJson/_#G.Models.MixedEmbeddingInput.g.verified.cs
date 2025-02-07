@@ -65,7 +65,9 @@ namespace G
         /// <param name="normalized">
         /// Flag to determine if the embeddings should be normalized to have a unit L2 norm
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MixedEmbeddingInput(
             string model,
             global::System.Collections.Generic.IList<global::G.AnyOf<global::G.ApiSchemasEmbeddingImageDoc, global::G.ApiSchemasEmbeddingTextDoc, string>> input,

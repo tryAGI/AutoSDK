@@ -81,14 +81,9 @@ namespace {endPoint.Namespace}
 }}".RemoveBlankLinesWhereOnlyWhitespaces();
     }
     
-    public static string GetHttpMethod(string targetFramework, OperationType operationType)
+    public static string GetHttpMethod(OperationType operationType)
     {
-        targetFramework = targetFramework ?? throw new ArgumentNullException(nameof(targetFramework));
-        
-        if (operationType == OperationType.Patch// &&
-            //(targetFramework.StartsWith("net4", StringComparison.OrdinalIgnoreCase) ||
-            //targetFramework.StartsWith("netstandard", StringComparison.OrdinalIgnoreCase))
-            )
+        if (operationType == OperationType.Patch)
         {
             return "new global::System.Net.Http.HttpMethod(\"PATCH\")";
         }
@@ -138,7 +133,7 @@ namespace {endPoint.Namespace}
             }};").Inject() : " ")}
 {GeneratePathAndQuery(endPoint)}
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
-                method: {GetHttpMethod(endPoint.Settings.TargetFramework, endPoint.HttpMethod)},
+                method: {GetHttpMethod(endPoint.HttpMethod)},
                 requestUri: new global::System.Uri(__path, global::System.UriKind.RelativeOrAbsolute));
 #if NET6_0_OR_GREATER
 {           // Use HTTP/3.0 or HTTP/2.0 if available
@@ -349,9 +344,6 @@ namespace {endPoint.Namespace}
         }
         
         var jsonSerializer = endPoint.Settings.JsonSerializerType.GetSerializer();
-        var cancellationTokenInsideReadAsync = endPoint.Settings.TargetFramework.StartsWith("net8", StringComparison.OrdinalIgnoreCase)
-            ? "cancellationToken"
-            : string.Empty;
         
         if (endPoint.Stream)
         {
@@ -374,7 +366,11 @@ namespace {endPoint.Namespace}
                 }};
             }}
 
-            using var __stream = await __response.Content.ReadAsStreamAsync({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+            using var __stream = await __response.Content.ReadAsStreamAsync(
+#if NET5_0_OR_GREATER
+                cancellationToken
+#endif
+            ).ConfigureAwait(false);
             using var __reader = new global::System.IO.StreamReader(__stream);
 
             while (!__reader.EndOfStream && !cancellationToken.IsCancellationRequested)
@@ -445,7 +441,11 @@ namespace {endPoint.Namespace}
                     ContentType.String => "String",
                     ContentType.Stream => "Stream",
                     _ => "ByteArray",
-                }}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+                }}Async(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
 {(endPoint.ContentType == ContentType.String ? @" 
                 ProcessResponseContent(
@@ -516,7 +516,11 @@ namespace {endPoint.Namespace}
                     ContentType.String => "Stream",
                     ContentType.Stream => "Stream",
                     _ => "ByteArray",
-                }}Async({cancellationTokenInsideReadAsync}).ConfigureAwait(false);
+                }}Async(
+#if NET5_0_OR_GREATER
+                    cancellationToken
+#endif
+                ).ConfigureAwait(false);
 
 {(endPoint.ContentType == ContentType.String && endPoint.SuccessResponse.Type.CSharpTypeWithoutNullability is not "string" ? $@" 
                 return
@@ -662,7 +666,11 @@ namespace {endPoint.Namespace}
       SdkFeatureUsage.InSupportedTargetFrameworks &&
     !string.IsNullOrWhiteSpace(endPoint.ExperimentalStage)
             ? $@" 
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: ""{endPoint.Settings.Namespace.Replace(".", "_").ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001"")]"
+{(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
+#if NET8_0_OR_GREATER" : " ")}
+        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: ""{endPoint.Settings.Namespace.Replace(".", "_").ToUpperInvariant()}_{endPoint.ExperimentalStage.ToUpperInvariant()}_001"")]
+{(endPoint.Settings.UseExperimentalAttributes is SdkFeatureUsage.InSupportedTargetFrameworks ? @" 
+#endif" : " ")}"
             : " ")}";
     }
 }

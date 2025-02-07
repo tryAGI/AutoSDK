@@ -52,7 +52,9 @@ namespace G
         /// <param name="isBusiness">
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StripeBusinessInfoOutput(
             global::G.StripeBusinessBillingInfo? companyInfo,
             global::G.StripeTaxId? taxId,

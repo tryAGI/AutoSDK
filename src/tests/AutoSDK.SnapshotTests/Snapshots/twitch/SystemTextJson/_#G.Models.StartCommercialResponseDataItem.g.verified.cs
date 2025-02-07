@@ -48,7 +48,9 @@ namespace G
         /// <param name="retryAfter">
         /// The number of seconds you must wait before running another commercial.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StartCommercialResponseDataItem(
             int length,
             string message,

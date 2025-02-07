@@ -45,7 +45,9 @@ namespace G
         /// <param name="minInstances">
         /// The minimum number of instances for scaling.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DeploymentsCreateResponseCurrentReleaseConfiguration(
             string? hardware,
             int? maxInstances,

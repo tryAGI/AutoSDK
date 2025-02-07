@@ -42,7 +42,9 @@ namespace G
         /// <param name="projectId"></param>
         /// <param name="tag1Id"></param>
         /// <param name="tag2Id"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public MergeTagsRequest(
             global::System.Guid projectId,
             global::System.Guid tag1Id,

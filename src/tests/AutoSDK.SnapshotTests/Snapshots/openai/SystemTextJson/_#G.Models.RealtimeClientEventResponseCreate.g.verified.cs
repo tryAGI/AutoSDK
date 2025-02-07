@@ -58,7 +58,9 @@ namespace G
         /// <param name="response">
         /// Realtime session object configuration.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeClientEventResponseCreate(
             global::G.RealtimeSession response,
             string? eventId,

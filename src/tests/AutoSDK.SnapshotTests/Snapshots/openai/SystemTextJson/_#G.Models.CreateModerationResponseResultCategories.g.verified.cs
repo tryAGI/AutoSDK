@@ -148,7 +148,9 @@ namespace G
         /// <param name="violenceGraphic">
         /// Content that depicts death, violence, or physical injury in graphic detail.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateModerationResponseResultCategories(
             bool hate,
             bool hateThreatening,

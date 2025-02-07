@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WebhookProjectCardMovedChanges" /> class.
         /// </summary>
         /// <param name="columnId"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhookProjectCardMovedChanges(
             global::G.WebhookProjectCardMovedChangesColumnId columnId)
         {

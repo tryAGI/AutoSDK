@@ -42,7 +42,9 @@ namespace G
         ///   <br/>
         /// * bits — The minimum price is 1 and the maximum is 10000.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateExtensionBitsProductBodyCost(
             int amount,
             global::G.UpdateExtensionBitsProductBodyCostType type)

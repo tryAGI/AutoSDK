@@ -73,7 +73,9 @@ namespace G
         /// <param name="limit">
         /// Default Value: 10
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunGroupRequest(
             global::System.Guid sessionId,
             global::G.RunGroupBy groupBy,

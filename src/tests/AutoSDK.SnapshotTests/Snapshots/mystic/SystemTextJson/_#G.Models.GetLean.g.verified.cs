@@ -56,7 +56,9 @@ namespace G
         /// <param name="pointers"></param>
         /// <param name="createdAt"></param>
         /// <param name="imageUrl"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetLean(
             string id,
             string name,

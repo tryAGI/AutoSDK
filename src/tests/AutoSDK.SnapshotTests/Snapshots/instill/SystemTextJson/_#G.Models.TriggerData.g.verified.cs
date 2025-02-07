@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="variable"></param>
         /// <param name="secret"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TriggerData(
             object? variable,
             global::System.Collections.Generic.Dictionary<string, string>? secret)

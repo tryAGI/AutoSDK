@@ -39,7 +39,9 @@ namespace G
         /// <param name="role">
         /// The role of the messages author. Choice between: system, user, or assistant.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatCompletionRequestMessage(
             string content,
             global::G.ChatCompletionRequestMessageRole role)

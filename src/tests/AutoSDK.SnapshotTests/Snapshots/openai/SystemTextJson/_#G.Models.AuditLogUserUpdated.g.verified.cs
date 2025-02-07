@@ -36,7 +36,9 @@ namespace G
         /// <param name="changesRequested">
         /// The payload used to update the user.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AuditLogUserUpdated(
             string? id,
             global::G.AuditLogUserUpdatedChangesRequested? changesRequested)

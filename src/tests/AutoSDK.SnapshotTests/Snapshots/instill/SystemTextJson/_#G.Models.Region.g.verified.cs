@@ -33,7 +33,9 @@ namespace G
         /// </summary>
         /// <param name="regionName"></param>
         /// <param name="hardware"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Region(
             string? regionName,
             global::System.Collections.Generic.IList<string>? hardware)

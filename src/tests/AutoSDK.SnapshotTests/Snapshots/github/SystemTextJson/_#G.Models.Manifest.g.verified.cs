@@ -56,7 +56,9 @@ namespace G
         /// <param name="resolved">
         /// A collection of resolved package dependencies.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Manifest(
             string name,
             global::G.ManifestFile? file,

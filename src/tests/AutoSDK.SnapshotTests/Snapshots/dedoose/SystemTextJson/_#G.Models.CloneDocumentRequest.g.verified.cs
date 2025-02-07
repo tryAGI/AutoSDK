@@ -50,7 +50,9 @@ namespace G
         /// <param name="resourceId"></param>
         /// <param name="cloneExcerpts"></param>
         /// <param name="cloneTagApps"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CloneDocumentRequest(
             global::System.Guid projectId,
             global::System.Guid resourceId,

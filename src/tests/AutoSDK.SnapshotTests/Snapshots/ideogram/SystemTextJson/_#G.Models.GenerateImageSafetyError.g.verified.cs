@@ -29,7 +29,9 @@ namespace G
         /// <param name="error">
         /// Example: Prompt provided failed safety check due to the inclusion of prohibited content.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateImageSafetyError(
             string error)
         {

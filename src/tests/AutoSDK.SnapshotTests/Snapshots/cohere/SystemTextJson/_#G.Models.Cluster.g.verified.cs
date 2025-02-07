@@ -53,7 +53,9 @@ namespace G
         /// <param name="description"></param>
         /// <param name="size"></param>
         /// <param name="sampleElements"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Cluster(
             string? id,
             global::System.Collections.Generic.IList<string>? keywords,

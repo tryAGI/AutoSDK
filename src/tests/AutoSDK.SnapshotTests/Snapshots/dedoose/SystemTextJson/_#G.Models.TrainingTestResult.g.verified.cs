@@ -81,7 +81,9 @@ namespace G
         /// <param name="trainingTestIDL"></param>
         /// <param name="overallRating"></param>
         /// <param name="completed"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TrainingTestResult(
             string? projectIdKey,
             global::System.Guid? projectId,

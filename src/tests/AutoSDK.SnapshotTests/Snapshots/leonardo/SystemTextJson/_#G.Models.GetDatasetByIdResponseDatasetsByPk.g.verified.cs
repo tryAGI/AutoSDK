@@ -60,7 +60,9 @@ namespace G
         /// <param name="id"></param>
         /// <param name="name"></param>
         /// <param name="updatedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetDatasetByIdResponseDatasetsByPk(
             string? createdAt,
             global::System.Collections.Generic.IList<global::G.GetDatasetByIdResponseDatasetsByPkDatasetImage>? datasetImages,

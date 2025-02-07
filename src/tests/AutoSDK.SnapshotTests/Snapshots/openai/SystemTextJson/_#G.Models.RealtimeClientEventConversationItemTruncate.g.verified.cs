@@ -81,7 +81,9 @@ namespace G
         /// the audio_end_ms is greater than the actual audio duration, the server <br/>
         /// will respond with an error.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeClientEventConversationItemTruncate(
             string itemId,
             int contentIndex,

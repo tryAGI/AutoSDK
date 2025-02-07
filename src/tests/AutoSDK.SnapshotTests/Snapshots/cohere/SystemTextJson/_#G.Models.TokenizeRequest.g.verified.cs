@@ -38,7 +38,9 @@ namespace G
         /// <param name="model">
         /// An optional parameter to provide the model name. This will ensure that the tokenization uses the tokenizer used by that model.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TokenizeRequest(
             string text,
             string model)

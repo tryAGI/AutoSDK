@@ -322,7 +322,9 @@ namespace G
         /// Default Value: false<br/>
         /// Example: true
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ReposCreateForAuthenticatedUserRequest(
             string name,
             string? description,

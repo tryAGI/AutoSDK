@@ -124,7 +124,9 @@ namespace G
         /// If a seed is not specified, one will be generated for you.<br/>
         /// Example: 42
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateFineTuningJobRequest(
             global::G.AnyOf<string, global::G.CreateFineTuningJobRequestModel?> model,
             string trainingFile,

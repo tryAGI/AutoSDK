@@ -38,7 +38,9 @@ namespace G
         /// <param name="logs">
         /// The text output from the Code Interpreter tool call.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunStepDetailsToolCallsCodeOutputLogsObject(
             string logs,
             global::G.RunStepDetailsToolCallsCodeOutputLogsObjectType type)

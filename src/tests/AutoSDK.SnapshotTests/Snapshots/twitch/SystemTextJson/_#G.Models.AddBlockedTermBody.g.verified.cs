@@ -36,7 +36,9 @@ namespace G
         ///   <br/>
         /// If the blocked term already exists, the response contains the existing blocked term.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AddBlockedTermBody(
             string text)
         {

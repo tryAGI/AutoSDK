@@ -34,7 +34,9 @@ namespace G
         /// <param name="issue">
         /// Issues are a great way to keep track of tasks, enhancements, and bugs for your projects.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TimelineCrossReferencedEventSource(
             string? type,
             global::G.Issue? issue)

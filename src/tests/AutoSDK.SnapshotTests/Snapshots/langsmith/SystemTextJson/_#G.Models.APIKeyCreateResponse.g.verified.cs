@@ -73,7 +73,9 @@ namespace G
         /// </param>
         /// <param name="lastUsedAt"></param>
         /// <param name="key"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public APIKeyCreateResponse(
             global::System.Guid id,
             string shortKey,

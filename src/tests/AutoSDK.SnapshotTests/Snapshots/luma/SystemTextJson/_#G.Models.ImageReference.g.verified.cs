@@ -39,7 +39,9 @@ namespace G
         /// <param name="url">
         /// The URL of the image
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImageReference(
             string url,
             global::G.ImageReferenceType type = global::G.ImageReferenceType.Image)

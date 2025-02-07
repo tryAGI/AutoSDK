@@ -45,7 +45,9 @@ namespace G
         /// <param name="name">
         /// The name of the rule source.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RuleSuiteRuleEvaluationRuleSource(
             string? type,
             int? id,

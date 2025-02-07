@@ -58,7 +58,9 @@ namespace G
         /// <param name="description">
         /// A description that the user gave the marker to help them remember why they marked the location.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StreamMarkerCreated(
             string id,
             global::System.DateTime createdAt,

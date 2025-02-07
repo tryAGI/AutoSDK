@@ -31,7 +31,9 @@ namespace G
         /// The API URL to get the discussion comment where the secret was detected.<br/>
         /// Example: https://github.com/community/community/discussions/39082#discussioncomment-4158232
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecretScanningLocationDiscussionComment(
             string discussionCommentUrl)
         {

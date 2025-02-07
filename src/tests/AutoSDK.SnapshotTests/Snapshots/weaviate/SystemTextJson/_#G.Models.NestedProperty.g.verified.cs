@@ -99,7 +99,9 @@ namespace G
         /// <param name="nestedProperties">
         /// Specify the properties of the nested object(s) as required.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public NestedProperty(
             string name,
             global::System.Collections.Generic.IList<global::G.DataTypeItem> dataType,

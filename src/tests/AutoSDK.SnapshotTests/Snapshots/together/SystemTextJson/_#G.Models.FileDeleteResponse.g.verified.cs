@@ -32,7 +32,9 @@ namespace G
         /// </summary>
         /// <param name="deleted"></param>
         /// <param name="id"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FileDeleteResponse(
             bool? deleted,
             string? id)

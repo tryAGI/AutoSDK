@@ -266,7 +266,9 @@ namespace G
         /// URL for the issue
         /// </param>
         /// <param name="user"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksIssue2(
             global::G.WebhooksIssue2ActiveLockReason? activeLockReason,
             global::System.Collections.Generic.IList<global::G.WebhooksIssue2Assignee2> assignees,

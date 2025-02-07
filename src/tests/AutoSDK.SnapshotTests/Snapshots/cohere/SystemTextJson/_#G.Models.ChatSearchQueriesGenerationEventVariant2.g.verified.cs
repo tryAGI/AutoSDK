@@ -28,7 +28,9 @@ namespace G
         /// <param name="searchQueries">
         /// Generated search queries, meant to be used as part of the RAG flow.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ChatSearchQueriesGenerationEventVariant2(
             global::System.Collections.Generic.IList<global::G.ChatSearchQuery> searchQueries)
         {

@@ -96,7 +96,9 @@ namespace G
         /// <param name="startedAt"></param>
         /// <param name="endedAt"></param>
         /// <param name="accelerators"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RunGet(
             string id,
             global::System.DateTime createdAt,

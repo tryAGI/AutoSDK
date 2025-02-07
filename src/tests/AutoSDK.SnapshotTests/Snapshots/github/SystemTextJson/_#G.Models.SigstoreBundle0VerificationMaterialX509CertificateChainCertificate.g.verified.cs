@@ -25,7 +25,9 @@ namespace G
         /// Initializes a new instance of the <see cref="SigstoreBundle0VerificationMaterialX509CertificateChainCertificate" /> class.
         /// </summary>
         /// <param name="rawBytes"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SigstoreBundle0VerificationMaterialX509CertificateChainCertificate(
             string? rawBytes)
         {

@@ -28,7 +28,9 @@ namespace G
         /// <param name="data">
         /// The list of messages and whether Twitch would approve them for chat.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckAutoModStatusResponse(
             global::System.Collections.Generic.IList<global::G.AutoModStatus> data)
         {

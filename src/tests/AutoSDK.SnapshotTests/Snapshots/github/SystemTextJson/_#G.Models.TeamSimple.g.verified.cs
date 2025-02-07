@@ -174,7 +174,9 @@ namespace G
         /// Distinguished Name (DN) that team maps to within LDAP environment<br/>
         /// Example: uid=example,ou=users,dc=github,dc=com
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TeamSimple(
             int id,
             string nodeId,

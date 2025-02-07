@@ -119,7 +119,9 @@ namespace G
         /// <param name="score"></param>
         /// <param name="nodeId"></param>
         /// <param name="textMatches"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CommitSearchResultItem(
             string url,
             string sha,

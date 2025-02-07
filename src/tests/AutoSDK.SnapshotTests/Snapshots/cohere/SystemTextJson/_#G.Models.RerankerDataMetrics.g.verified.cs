@@ -72,7 +72,9 @@ namespace G
         /// <param name="numEvalHardNegatives">
         /// The sum of all hard negatives of valid eval examples.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RerankerDataMetrics(
             double? numTrainQueries,
             double? numTrainRelevantPassages,

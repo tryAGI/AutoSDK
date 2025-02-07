@@ -27,7 +27,9 @@ namespace G
         /// <param name="labeledRunners">
         /// Whether to use runners labeled with 'dependency-submission' or standard GitHub runners.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeSecurityConfigurationDependencyGraphAutosubmitActionOptions(
             bool? labeledRunners)
         {

@@ -79,7 +79,9 @@ namespace G
         /// <param name="error">
         /// Error message of why the transcript failed
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TranscriptListItem(
             global::System.Guid id,
             string resourceUrl,

@@ -26,7 +26,9 @@ namespace G
         /// Initializes a new instance of the <see cref="WorkspacePatch" /> class.
         /// </summary>
         /// <param name="displayName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WorkspacePatch(
             string displayName)
         {

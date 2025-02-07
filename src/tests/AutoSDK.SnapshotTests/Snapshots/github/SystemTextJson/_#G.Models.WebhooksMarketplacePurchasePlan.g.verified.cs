@@ -91,7 +91,9 @@ namespace G
         /// <param name="priceModel"></param>
         /// <param name="unitName"></param>
         /// <param name="yearlyPriceInCents"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public WebhooksMarketplacePurchasePlan(
             global::System.Collections.Generic.IList<string> bullets,
             string description,

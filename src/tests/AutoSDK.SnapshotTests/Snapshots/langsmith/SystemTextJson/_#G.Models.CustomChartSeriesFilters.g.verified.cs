@@ -46,7 +46,9 @@ namespace G
         /// <param name="traceFilter"></param>
         /// <param name="treeFilter"></param>
         /// <param name="session"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CustomChartSeriesFilters(
             string? filter,
             string? traceFilter,

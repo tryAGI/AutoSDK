@@ -130,7 +130,9 @@ namespace G
         /// understand where the context before ends and the document part begins.<br/>
         /// Example: &lt;/em&gt;
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ContextConfiguration(
             int? charactersBefore,
             int? charactersAfter,

@@ -195,7 +195,9 @@ namespace G
         /// <param name="validity">
         /// The token status as of the latest validity check.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecretScanningAlert(
             int? number,
             global::System.DateTime? createdAt,

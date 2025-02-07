@@ -34,7 +34,9 @@ namespace G
         /// </summary>
         /// <param name="object"></param>
         /// <param name="data"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ListModelsResponse(
             global::System.Collections.Generic.IList<global::G.Model15> data,
             global::G.ListModelsResponseObject @object)

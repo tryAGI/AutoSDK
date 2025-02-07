@@ -39,7 +39,9 @@ namespace G
         /// <param name="vcs"></param>
         /// <param name="tfvcProject"></param>
         /// <param name="humanName"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ImportProjectChoice(
             string? vcs,
             string? tfvcProject,

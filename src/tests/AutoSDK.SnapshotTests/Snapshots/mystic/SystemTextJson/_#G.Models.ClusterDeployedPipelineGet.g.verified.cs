@@ -60,7 +60,9 @@ namespace G
         /// <param name="replicas">
         /// Base model for schemas.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ClusterDeployedPipelineGet(
             string id,
             string name,

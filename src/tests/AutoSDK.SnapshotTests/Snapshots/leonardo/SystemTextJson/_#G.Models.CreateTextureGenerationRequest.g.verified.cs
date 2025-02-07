@@ -74,7 +74,9 @@ namespace G
         /// <param name="prompt"></param>
         /// <param name="sdVersion"></param>
         /// <param name="seed"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CreateTextureGenerationRequest(
             int? frontRotationOffset,
             string? modelAssetId,

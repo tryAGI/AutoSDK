@@ -170,7 +170,9 @@ namespace G
         /// Base model for schemas.
         /// </param>
         /// <param name="pointers"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public AppSchemasPipelineGetDetailed(
             bool @public,
             string name,

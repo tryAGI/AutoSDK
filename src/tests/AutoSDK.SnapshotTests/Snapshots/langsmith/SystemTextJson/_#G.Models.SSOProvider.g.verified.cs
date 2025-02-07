@@ -72,7 +72,9 @@ namespace G
         /// <param name="defaultWorkspaceIds"></param>
         /// <param name="metadataUrl"></param>
         /// <param name="metadataXml"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SSOProvider(
             global::System.Guid id,
             global::System.Guid organizationId,

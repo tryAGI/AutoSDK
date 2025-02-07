@@ -40,7 +40,9 @@ namespace G
         /// URL contains the reference the link will redirect to.<br/>
         /// Included only in responses
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public Link(
             string? text,
             string? url)

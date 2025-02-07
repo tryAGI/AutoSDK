@@ -57,7 +57,9 @@ namespace G
         /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
         /// `input_audio_format` field in the session configuration.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RealtimeClientEventInputAudioBufferAppend(
             string audio,
             string? eventId,

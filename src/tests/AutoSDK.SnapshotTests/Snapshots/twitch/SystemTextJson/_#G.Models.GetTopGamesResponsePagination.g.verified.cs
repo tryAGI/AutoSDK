@@ -27,7 +27,9 @@ namespace G
         /// <param name="cursor">
         /// The cursor used to get the next page of results. Use the cursor to set the request’s _after_ or _before_ query parameter to get the next or previous page of results.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GetTopGamesResponsePagination(
             string? cursor)
         {

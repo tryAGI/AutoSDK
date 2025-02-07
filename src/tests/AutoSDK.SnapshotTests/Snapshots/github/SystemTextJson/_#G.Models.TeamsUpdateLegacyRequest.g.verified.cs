@@ -92,7 +92,9 @@ namespace G
         /// <param name="parentTeamId">
         /// The ID of a team to set as the parent team.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TeamsUpdateLegacyRequest(
             string name,
             string? description,

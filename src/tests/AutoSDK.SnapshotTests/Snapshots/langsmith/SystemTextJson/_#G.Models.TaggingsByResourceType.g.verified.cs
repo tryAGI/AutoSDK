@@ -81,7 +81,9 @@ namespace G
         /// <param name="dashboards">
         /// Default Value: []
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TaggingsByResourceType(
             global::System.Collections.Generic.IList<global::G.Resource>? prompts,
             global::System.Collections.Generic.IList<global::G.Resource>? projects,

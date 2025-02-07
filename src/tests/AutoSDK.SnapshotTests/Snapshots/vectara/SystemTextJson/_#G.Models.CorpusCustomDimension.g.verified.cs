@@ -80,7 +80,9 @@ namespace G
         /// Default Value: 0<br/>
         /// Example: 0
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CorpusCustomDimension(
             string name,
             string? description,

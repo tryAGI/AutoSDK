@@ -47,7 +47,9 @@ namespace G
         /// <param name="parameters">
         /// A map of parameter names to their values.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public ToolsPartFunction(
             string? description,
             string? name,

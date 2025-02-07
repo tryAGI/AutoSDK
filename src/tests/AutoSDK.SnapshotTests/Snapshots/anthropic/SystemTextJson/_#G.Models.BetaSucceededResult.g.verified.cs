@@ -37,7 +37,9 @@ namespace G
         /// Default Value: succeeded
         /// </param>
         /// <param name="message"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public BetaSucceededResult(
             global::G.BetaMessage message,
             global::G.BetaSucceededResultType type = global::G.BetaSucceededResultType.Succeeded)

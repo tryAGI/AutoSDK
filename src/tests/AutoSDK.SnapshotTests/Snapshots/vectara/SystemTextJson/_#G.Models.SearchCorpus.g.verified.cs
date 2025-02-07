@@ -71,7 +71,9 @@ namespace G
         /// Indicates whether to consider a query against this corpus as a query or a response.<br/>
         /// Default Value: default
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SearchCorpus(
             global::System.Collections.Generic.Dictionary<string, double>? customDimensions,
             string? metadataFilter,

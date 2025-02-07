@@ -29,7 +29,9 @@ namespace G
         /// When set to `true`, the request will be performed asynchronously. Returns a 202 status code when the job is successfully queued.<br/>
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrgsConvertMemberToOutsideCollaboratorRequest(
             bool? async)
         {

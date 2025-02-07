@@ -38,7 +38,9 @@ namespace G
         /// <param name="data">
         /// A list of ImageObjects that contain the generated image(s).
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public GenerateImageResponse(
             global::System.DateTime created,
             global::System.Collections.Generic.IList<global::G.ImageObject> data)

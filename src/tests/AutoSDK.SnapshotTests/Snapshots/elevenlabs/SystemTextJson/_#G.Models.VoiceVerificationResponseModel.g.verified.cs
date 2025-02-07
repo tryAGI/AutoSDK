@@ -64,7 +64,9 @@ namespace G
         /// <param name="verificationAttemptsCount"></param>
         /// <param name="language"></param>
         /// <param name="verificationAttempts"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public VoiceVerificationResponseModel(
             bool requiresVerification,
             bool isVerified,

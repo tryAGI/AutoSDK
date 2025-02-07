@@ -66,7 +66,9 @@ namespace G
         /// <param name="newStart"></param>
         /// <param name="newEnd"></param>
         /// <param name="updatedTextURI"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public UpdateExcerptRangeRequest(
             global::System.Guid projectId,
             global::System.Guid userId,

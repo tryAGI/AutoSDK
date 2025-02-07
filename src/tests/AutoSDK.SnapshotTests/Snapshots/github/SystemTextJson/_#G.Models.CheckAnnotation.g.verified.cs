@@ -125,7 +125,9 @@ namespace G
         /// Example: Do you mean 'bananas' or 'banana'?
         /// </param>
         /// <param name="blobHref"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CheckAnnotation(
             string path,
             int startLine,

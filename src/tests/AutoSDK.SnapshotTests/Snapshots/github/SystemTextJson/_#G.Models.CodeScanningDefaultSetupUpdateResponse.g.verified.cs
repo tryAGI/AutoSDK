@@ -37,7 +37,9 @@ namespace G
         /// <param name="runUrl">
         /// URL of the corresponding run.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningDefaultSetupUpdateResponse(
             int? runId,
             string? runUrl)

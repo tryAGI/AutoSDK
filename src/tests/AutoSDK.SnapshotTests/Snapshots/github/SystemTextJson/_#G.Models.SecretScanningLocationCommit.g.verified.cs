@@ -117,7 +117,9 @@ namespace G
         /// <param name="commitUrl">
         /// The API URL to get the associated commit resource
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public SecretScanningLocationCommit(
             string path,
             double startLine,

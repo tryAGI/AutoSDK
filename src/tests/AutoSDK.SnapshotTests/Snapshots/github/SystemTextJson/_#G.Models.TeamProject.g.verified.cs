@@ -150,7 +150,9 @@ namespace G
         /// Whether the project is private or not. Only present when owner is an organization.
         /// </param>
         /// <param name="permissions"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public TeamProject(
             string ownerUrl,
             string url,

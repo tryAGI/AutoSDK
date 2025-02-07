@@ -97,7 +97,9 @@ namespace G
         /// <param name="repositoryId"></param>
         /// <param name="slug"></param>
         /// <param name="updatedAt"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public DiscussionCategory(
             global::System.DateTime createdAt,
             string description,

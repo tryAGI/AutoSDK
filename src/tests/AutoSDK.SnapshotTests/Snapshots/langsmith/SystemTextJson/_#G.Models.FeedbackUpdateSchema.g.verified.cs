@@ -58,7 +58,9 @@ namespace G
         /// <param name="comment"></param>
         /// <param name="correction"></param>
         /// <param name="feedbackConfig"></param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public FeedbackUpdateSchema(
             global::G.AnyOf<double?, int?, bool?>? score,
             global::G.AnyOf<double?, int?, bool?, string, object>? value,

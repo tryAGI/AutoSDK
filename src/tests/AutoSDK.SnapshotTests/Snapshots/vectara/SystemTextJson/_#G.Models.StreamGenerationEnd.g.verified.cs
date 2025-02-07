@@ -32,7 +32,9 @@ namespace G
         /// with the type `generation_end`.<br/>
         /// Default Value: generation_end
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public StreamGenerationEnd(
             string? type)
         {

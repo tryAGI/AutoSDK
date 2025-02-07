@@ -101,7 +101,9 @@ namespace G
         /// The number of top results to return.<br/>
         /// Example: 2
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public RerankRequest(
             global::G.OneOf<global::System.Collections.Generic.IList<object>, global::System.Collections.Generic.IList<string>> documents,
             string model,

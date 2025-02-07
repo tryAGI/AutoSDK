@@ -127,7 +127,9 @@ namespace G
         /// <param name="disabled">
         /// Default Value: false
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public OrganizationBillingInfo(
             string displayName,
             global::G.OrganizationConfig config,

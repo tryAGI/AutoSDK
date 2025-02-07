@@ -58,7 +58,9 @@ namespace G
         /// <param name="limit">
         /// Default Value: 20
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public QueryExampleSchemaWithRuns(
             global::System.Collections.Generic.IList<global::System.Guid> sessionIds,
             global::System.Guid? comparativeExperimentId,

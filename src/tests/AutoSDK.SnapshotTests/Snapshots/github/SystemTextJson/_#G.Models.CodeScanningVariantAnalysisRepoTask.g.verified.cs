@@ -93,7 +93,9 @@ namespace G
         /// <param name="artifactUrl">
         /// The URL of the artifact. This is only available for successful analyses.
         /// </param>
+#if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
+#endif
         public CodeScanningVariantAnalysisRepoTask(
             global::G.SimpleRepository repository,
             global::G.CodeScanningVariantAnalysisStatus analysisStatus,
