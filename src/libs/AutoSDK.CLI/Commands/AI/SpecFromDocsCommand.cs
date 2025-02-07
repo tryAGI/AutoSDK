@@ -1,6 +1,6 @@
 using System.CommandLine;
 using Firecrawl;
-using OpenAI;
+using tryAGI.OpenAI;
 
 namespace AutoSDK.CLI.Commands.AI;
 
@@ -47,7 +47,7 @@ internal sealed class SpecFromDocsCommand : Command
         
         Console.WriteLine("Generating...");
         
-        using var openAiApi = new OpenAiApi(apiKey:
+        using var openAiApi = new OpenAiClient(apiKey:
             Environment.GetEnvironmentVariable("OPENAI_API_KEY") ??
             throw new InvalidOperationException("Please set OPENAI_API_KEY environment variable."));
 
