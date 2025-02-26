@@ -13,7 +13,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::G.BetaContentBlockSourceContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
@@ -89,7 +89,7 @@ namespace G
         /// 
         /// </summary>
         public ContentVariant2Item(
-            global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
+            global::G.BetaContentBlockSourceContentVariant2ItemDiscriminatorType? type,
             global::G.BetaRequestTextBlock? text,
             global::G.BetaRequestImageBlock? image
             )

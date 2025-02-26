@@ -159,9 +159,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.BetaRequestPDFBlock? Document { get; init; }
+        public global::G.BetaRequestDocumentBlock? Document { get; init; }
 #else
-        public global::G.BetaRequestPDFBlock? Document { get; }
+        public global::G.BetaRequestDocumentBlock? Document { get; }
 #endif
 
         /// <summary>
@@ -175,17 +175,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator BetaInputContentBlock(global::G.BetaRequestPDFBlock value) => new BetaInputContentBlock(value);
+        public static implicit operator BetaInputContentBlock(global::G.BetaRequestDocumentBlock value) => new BetaInputContentBlock(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.BetaRequestPDFBlock?(BetaInputContentBlock @this) => @this.Document;
+        public static implicit operator global::G.BetaRequestDocumentBlock?(BetaInputContentBlock @this) => @this.Document;
 
         /// <summary>
         /// 
         /// </summary>
-        public BetaInputContentBlock(global::G.BetaRequestPDFBlock? value)
+        public BetaInputContentBlock(global::G.BetaRequestDocumentBlock? value)
         {
             Document = value;
         }
@@ -199,7 +199,7 @@ namespace G
             global::G.BetaRequestImageBlock? image,
             global::G.BetaRequestToolUseBlock? toolUse,
             global::G.BetaRequestToolResultBlock? toolResult,
-            global::G.BetaRequestPDFBlock? document
+            global::G.BetaRequestDocumentBlock? document
             )
         {
             Type = type;
@@ -238,7 +238,7 @@ namespace G
             global::System.Func<global::G.BetaRequestImageBlock?, TResult>? image = null,
             global::System.Func<global::G.BetaRequestToolUseBlock?, TResult>? toolUse = null,
             global::System.Func<global::G.BetaRequestToolResultBlock?, TResult>? toolResult = null,
-            global::System.Func<global::G.BetaRequestPDFBlock?, TResult>? document = null,
+            global::System.Func<global::G.BetaRequestDocumentBlock?, TResult>? document = null,
             bool validate = true)
         {
             if (validate)
@@ -278,7 +278,7 @@ namespace G
             global::System.Action<global::G.BetaRequestImageBlock?>? image = null,
             global::System.Action<global::G.BetaRequestToolUseBlock?>? toolUse = null,
             global::System.Action<global::G.BetaRequestToolResultBlock?>? toolResult = null,
-            global::System.Action<global::G.BetaRequestPDFBlock?>? document = null,
+            global::System.Action<global::G.BetaRequestDocumentBlock?>? document = null,
             bool validate = true)
         {
             if (validate)
@@ -324,7 +324,7 @@ namespace G
                 ToolResult,
                 typeof(global::G.BetaRequestToolResultBlock),
                 Document,
-                typeof(global::G.BetaRequestPDFBlock),
+                typeof(global::G.BetaRequestDocumentBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -345,7 +345,7 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestToolResultBlock?>.Default.Equals(ToolResult, other.ToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestPDFBlock?>.Default.Equals(Document, other.Document) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestDocumentBlock?>.Default.Equals(Document, other.Document) 
                 ;
         }
 

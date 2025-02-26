@@ -14,6 +14,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cache_control")]
+        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RequestToolResultBlockType Type { get; set; }
 
@@ -33,7 +39,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item5>>? Content { get; set; }
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item4>>? Content { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,17 +50,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestToolResultBlock" /> class.
         /// </summary>
+        /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="toolUseId"></param>
         /// <param name="isError"></param>
         /// <param name="content"></param>
         public RequestToolResultBlock(
             string toolUseId,
+            global::G.CacheControlEphemeral? cacheControl,
             global::G.RequestToolResultBlockType type,
             bool? isError,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item5>>? content)
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item4>>? content)
         {
             this.ToolUseId = toolUseId ?? throw new global::System.ArgumentNullException(nameof(toolUseId));
+            this.CacheControl = cacheControl;
             this.Type = type;
             this.IsError = isError;
             this.Content = content;

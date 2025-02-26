@@ -22,18 +22,14 @@ namespace G
         public bool HasMore { get; set; } = default!;
 
         /// <summary>
-        /// First ID in the `data` list. Can be used as the `before_id` for the previous page.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
         /// </summary>
-        /// <example>msgbatch_013Zva2CMHLNnXjNJJKqJ2EF</example>
         [global::Newtonsoft.Json.JsonProperty("first_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string? FirstId { get; set; } = default!;
 
         /// <summary>
-        /// Last ID in the `data` list. Can be used as the `after_id` for the next page.<br/>
-        /// Example: msgbatch_01HkcTjaV5uDC8jWR4ZsDV8d
+        /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
         /// </summary>
-        /// <example>msgbatch_01HkcTjaV5uDC8jWR4ZsDV8d</example>
         [global::Newtonsoft.Json.JsonProperty("last_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string? LastId { get; set; } = default!;
 
@@ -51,12 +47,10 @@ namespace G
         /// Indicates if there are more results in the requested page direction.
         /// </param>
         /// <param name="firstId">
-        /// First ID in the `data` list. Can be used as the `before_id` for the previous page.<br/>
-        /// Example: msgbatch_013Zva2CMHLNnXjNJJKqJ2EF
+        /// First ID in the `data` list. Can be used as the `before_id` for the previous page.
         /// </param>
         /// <param name="lastId">
-        /// Last ID in the `data` list. Can be used as the `after_id` for the next page.<br/>
-        /// Example: msgbatch_01HkcTjaV5uDC8jWR4ZsDV8d
+        /// Last ID in the `data` list. Can be used as the `after_id` for the next page.
         /// </param>
         public BetaListResponseMessageBatch(
             global::System.Collections.Generic.IList<global::G.BetaMessageBatch> data,

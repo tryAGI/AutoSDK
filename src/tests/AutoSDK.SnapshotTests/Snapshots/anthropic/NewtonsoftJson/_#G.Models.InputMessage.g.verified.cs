@@ -9,19 +9,13 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class InputMessage
+    public partial class InputMessage
     {
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.InputMessageRole Role { get; set; } = default!;
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>> Content { get; set; } = default!;
+        public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputContentBlock>> Content { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,13 +26,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InputMessage" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content"></param>
         public InputMessage(
-            global::G.InputMessageRole role,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.ContentVariant2Item2>> content)
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.InputContentBlock>> content)
         {
-            this.Role = role;
             this.Content = content;
         }
 

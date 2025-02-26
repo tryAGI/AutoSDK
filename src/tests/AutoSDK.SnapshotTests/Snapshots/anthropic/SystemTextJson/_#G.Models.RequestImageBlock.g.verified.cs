@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RequestImageBlockTypeJsonConverter))]
         public global::G.RequestImageBlockType Type { get; set; }
@@ -32,6 +38,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestImageBlock" /> class.
         /// </summary>
+        /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="source"></param>
 #if NET7_0_OR_GREATER
@@ -39,9 +46,11 @@ namespace G
 #endif
         public RequestImageBlock(
             global::G.Base64ImageSource source,
+            global::G.CacheControlEphemeral? cacheControl,
             global::G.RequestImageBlockType type)
         {
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.CacheControl = cacheControl;
             this.Type = type;
         }
 

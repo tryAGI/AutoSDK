@@ -18,14 +18,20 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.BetaRequestTextBlockType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("citations")]
+        public global::System.Collections.Generic.IList<global::G.CitationsItem>? Citations { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.BetaRequestTextBlockType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,15 +43,18 @@ namespace G
         /// Initializes a new instance of the <see cref="BetaRequestTextBlock" /> class.
         /// </summary>
         /// <param name="cacheControl"></param>
-        /// <param name="type"></param>
+        /// <param name="citations"></param>
         /// <param name="text"></param>
+        /// <param name="type"></param>
         public BetaRequestTextBlock(
             string text,
             global::G.BetaCacheControlEphemeral? cacheControl,
+            global::System.Collections.Generic.IList<global::G.CitationsItem>? citations,
             global::G.BetaRequestTextBlockType type)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.CacheControl = cacheControl;
+            this.Citations = citations;
             this.Type = type;
         }
 

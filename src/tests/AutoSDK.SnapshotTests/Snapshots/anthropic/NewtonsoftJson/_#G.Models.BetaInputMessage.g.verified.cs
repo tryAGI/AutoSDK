@@ -9,14 +9,8 @@ namespace G
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BetaInputMessage
+    public partial class BetaInputMessage
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.BetaInputMessageRole Role { get; set; } = default!;
-
         /// <summary>
         /// 
         /// </summary>
@@ -32,13 +26,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BetaInputMessage" /> class.
         /// </summary>
-        /// <param name="role"></param>
         /// <param name="content"></param>
         public BetaInputMessage(
-            global::G.BetaInputMessageRole role,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaInputContentBlock>> content)
         {
-            this.Role = role;
             this.Content = content;
         }
 

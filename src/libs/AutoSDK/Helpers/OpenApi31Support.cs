@@ -191,7 +191,7 @@ public static class OpenApi31Support
             {
                 if (!node.ContainsKey("enum"))
                 {
-                    node["enum"] = new JsonArray(entry.Value);
+                    node["enum"] = new JsonArray(entry.Value?.DeepClone());
                 }
                 node.Remove(keyString);
             }

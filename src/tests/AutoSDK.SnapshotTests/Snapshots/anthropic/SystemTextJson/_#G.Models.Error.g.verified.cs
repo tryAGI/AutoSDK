@@ -89,6 +89,41 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::G.BetaBillingError? BillingError { get; init; }
+#else
+        public global::G.BetaBillingError? BillingError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(BillingError))]
+#endif
+        public bool IsBillingError => BillingError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Error(global::G.BetaBillingError value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.BetaBillingError?(Error @this) => @this.BillingError;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Error(global::G.BetaBillingError? value)
+        {
+            BillingError = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::G.BetaPermissionError? PermissionError { get; init; }
 #else
         public global::G.BetaPermissionError? PermissionError { get; }
@@ -194,6 +229,41 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
+        public global::G.BetaGatewayTimeoutError? TimeoutError { get; init; }
+#else
+        public global::G.BetaGatewayTimeoutError? TimeoutError { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TimeoutError))]
+#endif
+        public bool IsTimeoutError => TimeoutError != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Error(global::G.BetaGatewayTimeoutError value) => new Error(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.BetaGatewayTimeoutError?(Error @this) => @this.TimeoutError;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Error(global::G.BetaGatewayTimeoutError? value)
+        {
+            TimeoutError = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
         public global::G.BetaAPIError? ApiError { get; init; }
 #else
         public global::G.BetaAPIError? ApiError { get; }
@@ -267,9 +337,11 @@ namespace G
             global::G.BetaErrorResponseErrorDiscriminatorType? type,
             global::G.BetaInvalidRequestError? invalidRequestError,
             global::G.BetaAuthenticationError? authenticationError,
+            global::G.BetaBillingError? billingError,
             global::G.BetaPermissionError? permissionError,
             global::G.BetaNotFoundError? notFoundError,
             global::G.BetaRateLimitError? rateLimitError,
+            global::G.BetaGatewayTimeoutError? timeoutError,
             global::G.BetaAPIError? apiError,
             global::G.BetaOverloadedError? overloadedError
             )
@@ -278,9 +350,11 @@ namespace G
 
             InvalidRequestError = invalidRequestError;
             AuthenticationError = authenticationError;
+            BillingError = billingError;
             PermissionError = permissionError;
             NotFoundError = notFoundError;
             RateLimitError = rateLimitError;
+            TimeoutError = timeoutError;
             ApiError = apiError;
             OverloadedError = overloadedError;
         }
@@ -291,9 +365,11 @@ namespace G
         public object? Object =>
             OverloadedError as object ??
             ApiError as object ??
+            TimeoutError as object ??
             RateLimitError as object ??
             NotFoundError as object ??
             PermissionError as object ??
+            BillingError as object ??
             AuthenticationError as object ??
             InvalidRequestError as object 
             ;
@@ -303,7 +379,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && IsAuthenticationError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && IsNotFoundError && !IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && !IsNotFoundError && IsRateLimitError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsApiError && IsOverloadedError;
+            return IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && IsRateLimitError && !IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && IsTimeoutError && !IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && IsApiError && !IsOverloadedError || !IsInvalidRequestError && !IsAuthenticationError && !IsBillingError && !IsPermissionError && !IsNotFoundError && !IsRateLimitError && !IsTimeoutError && !IsApiError && IsOverloadedError;
         }
 
         /// <summary>
@@ -312,9 +388,11 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.BetaInvalidRequestError?, TResult>? invalidRequestError = null,
             global::System.Func<global::G.BetaAuthenticationError?, TResult>? authenticationError = null,
+            global::System.Func<global::G.BetaBillingError?, TResult>? billingError = null,
             global::System.Func<global::G.BetaPermissionError?, TResult>? permissionError = null,
             global::System.Func<global::G.BetaNotFoundError?, TResult>? notFoundError = null,
             global::System.Func<global::G.BetaRateLimitError?, TResult>? rateLimitError = null,
+            global::System.Func<global::G.BetaGatewayTimeoutError?, TResult>? timeoutError = null,
             global::System.Func<global::G.BetaAPIError?, TResult>? apiError = null,
             global::System.Func<global::G.BetaOverloadedError?, TResult>? overloadedError = null,
             bool validate = true)
@@ -332,6 +410,10 @@ namespace G
             {
                 return authenticationError(AuthenticationError!);
             }
+            else if (IsBillingError && billingError != null)
+            {
+                return billingError(BillingError!);
+            }
             else if (IsPermissionError && permissionError != null)
             {
                 return permissionError(PermissionError!);
@@ -343,6 +425,10 @@ namespace G
             else if (IsRateLimitError && rateLimitError != null)
             {
                 return rateLimitError(RateLimitError!);
+            }
+            else if (IsTimeoutError && timeoutError != null)
+            {
+                return timeoutError(TimeoutError!);
             }
             else if (IsApiError && apiError != null)
             {
@@ -362,9 +448,11 @@ namespace G
         public void Match(
             global::System.Action<global::G.BetaInvalidRequestError?>? invalidRequestError = null,
             global::System.Action<global::G.BetaAuthenticationError?>? authenticationError = null,
+            global::System.Action<global::G.BetaBillingError?>? billingError = null,
             global::System.Action<global::G.BetaPermissionError?>? permissionError = null,
             global::System.Action<global::G.BetaNotFoundError?>? notFoundError = null,
             global::System.Action<global::G.BetaRateLimitError?>? rateLimitError = null,
+            global::System.Action<global::G.BetaGatewayTimeoutError?>? timeoutError = null,
             global::System.Action<global::G.BetaAPIError?>? apiError = null,
             global::System.Action<global::G.BetaOverloadedError?>? overloadedError = null,
             bool validate = true)
@@ -382,6 +470,10 @@ namespace G
             {
                 authenticationError?.Invoke(AuthenticationError!);
             }
+            else if (IsBillingError)
+            {
+                billingError?.Invoke(BillingError!);
+            }
             else if (IsPermissionError)
             {
                 permissionError?.Invoke(PermissionError!);
@@ -393,6 +485,10 @@ namespace G
             else if (IsRateLimitError)
             {
                 rateLimitError?.Invoke(RateLimitError!);
+            }
+            else if (IsTimeoutError)
+            {
+                timeoutError?.Invoke(TimeoutError!);
             }
             else if (IsApiError)
             {
@@ -415,12 +511,16 @@ namespace G
                 typeof(global::G.BetaInvalidRequestError),
                 AuthenticationError,
                 typeof(global::G.BetaAuthenticationError),
+                BillingError,
+                typeof(global::G.BetaBillingError),
                 PermissionError,
                 typeof(global::G.BetaPermissionError),
                 NotFoundError,
                 typeof(global::G.BetaNotFoundError),
                 RateLimitError,
                 typeof(global::G.BetaRateLimitError),
+                TimeoutError,
+                typeof(global::G.BetaGatewayTimeoutError),
                 ApiError,
                 typeof(global::G.BetaAPIError),
                 OverloadedError,
@@ -443,9 +543,11 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaInvalidRequestError?>.Default.Equals(InvalidRequestError, other.InvalidRequestError) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaAuthenticationError?>.Default.Equals(AuthenticationError, other.AuthenticationError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaBillingError?>.Default.Equals(BillingError, other.BillingError) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaPermissionError?>.Default.Equals(PermissionError, other.PermissionError) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaNotFoundError?>.Default.Equals(NotFoundError, other.NotFoundError) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaRateLimitError?>.Default.Equals(RateLimitError, other.RateLimitError) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaGatewayTimeoutError?>.Default.Equals(TimeoutError, other.TimeoutError) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaAPIError?>.Default.Equals(ApiError, other.ApiError) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaOverloadedError?>.Default.Equals(OverloadedError, other.OverloadedError) 
                 ;

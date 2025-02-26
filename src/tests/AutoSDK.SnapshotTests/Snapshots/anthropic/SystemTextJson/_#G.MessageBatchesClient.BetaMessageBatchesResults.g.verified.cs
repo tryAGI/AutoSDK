@@ -50,7 +50,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<byte[]> BetaMessageBatchesResultsAsync(
+        public async global::System.Threading.Tasks.Task<global::G.BetaMessageBatchIndividualResponse> BetaMessageBatchesResultsAsync(
             string messageBatchId,
             string? anthropicBeta = default,
             string? anthropicVersion = default,
@@ -77,22 +77,6 @@ namespace G
             __httpRequest.Version = global::System.Net.HttpVersion.Version11;
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-
-            foreach (var __authorization in Authorizations)
-            {
-                if (__authorization.Type == "Http" ||
-                    __authorization.Type == "OAuth2")
-                {
-                    __httpRequest.Headers.Authorization = new global::System.Net.Http.Headers.AuthenticationHeaderValue(
-                        scheme: __authorization.Name,
-                        parameter: __authorization.Value);
-                }
-                else if (__authorization.Type == "ApiKey" &&
-                         __authorization.Location == "Header")
-                {
-                    __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                }
-            }
 
             if (anthropicBeta != default)
             {
@@ -196,7 +180,7 @@ namespace G
                 }
 
                 return
-                    global::System.Text.Json.JsonSerializer.Deserialize<byte[]?>(__content, JsonSerializerOptions) ??
+                    global::G.BetaMessageBatchIndividualResponse.FromJson(__content, JsonSerializerOptions) ??
                     throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
             }
             else
@@ -226,7 +210,7 @@ namespace G
                 ).ConfigureAwait(false);
 
                 return
-                    await global::System.Text.Json.JsonSerializer.DeserializeAsync<byte[]?>(__content, JsonSerializerOptions).ConfigureAwait(false) ??
+                    await global::G.BetaMessageBatchIndividualResponse.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                     throw new global::System.InvalidOperationException("Response deserialization failed.");
             }
         }

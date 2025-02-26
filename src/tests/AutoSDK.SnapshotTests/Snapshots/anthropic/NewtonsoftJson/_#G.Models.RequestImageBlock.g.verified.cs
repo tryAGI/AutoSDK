@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("cache_control")]
+        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RequestImageBlockType Type { get; set; }
 
@@ -30,13 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestImageBlock" /> class.
         /// </summary>
+        /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="source"></param>
         public RequestImageBlock(
             global::G.Base64ImageSource source,
+            global::G.CacheControlEphemeral? cacheControl,
             global::G.RequestImageBlockType type)
         {
             this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.CacheControl = cacheControl;
             this.Type = type;
         }
 

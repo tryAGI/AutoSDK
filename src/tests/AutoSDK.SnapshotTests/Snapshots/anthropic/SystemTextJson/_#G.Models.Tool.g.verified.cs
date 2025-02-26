@@ -35,6 +35,12 @@ namespace G
         public required global::G.InputSchema InputSchema { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -56,17 +62,20 @@ namespace G
         /// [JSON schema](https://json-schema.org/) for this tool's input.<br/>
         /// This defines the shape of the `input` that your tool accepts and that the model will produce.
         /// </param>
+        /// <param name="cacheControl"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Tool(
             string name,
             global::G.InputSchema inputSchema,
-            string? description)
+            string? description,
+            global::G.CacheControlEphemeral? cacheControl)
         {
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.InputSchema = inputSchema ?? throw new global::System.ArgumentNullException(nameof(inputSchema));
             this.Description = description;
+            this.CacheControl = cacheControl;
         }
 
         /// <summary>

@@ -23,6 +23,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="billing_error")]
+        BillingError,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="invalid_request_error")]
         InvalidRequestError,
         /// <summary>
@@ -45,6 +50,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="rate_limit_error")]
         RateLimitError,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="timeout_error")]
+        TimeoutError,
     }
 
     /// <summary>
@@ -61,11 +71,13 @@ namespace G
             {
                 ErrorResponseErrorDiscriminatorType.ApiError => "api_error",
                 ErrorResponseErrorDiscriminatorType.AuthenticationError => "authentication_error",
+                ErrorResponseErrorDiscriminatorType.BillingError => "billing_error",
                 ErrorResponseErrorDiscriminatorType.InvalidRequestError => "invalid_request_error",
                 ErrorResponseErrorDiscriminatorType.NotFoundError => "not_found_error",
                 ErrorResponseErrorDiscriminatorType.OverloadedError => "overloaded_error",
                 ErrorResponseErrorDiscriminatorType.PermissionError => "permission_error",
                 ErrorResponseErrorDiscriminatorType.RateLimitError => "rate_limit_error",
+                ErrorResponseErrorDiscriminatorType.TimeoutError => "timeout_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -78,11 +90,13 @@ namespace G
             {
                 "api_error" => ErrorResponseErrorDiscriminatorType.ApiError,
                 "authentication_error" => ErrorResponseErrorDiscriminatorType.AuthenticationError,
+                "billing_error" => ErrorResponseErrorDiscriminatorType.BillingError,
                 "invalid_request_error" => ErrorResponseErrorDiscriminatorType.InvalidRequestError,
                 "not_found_error" => ErrorResponseErrorDiscriminatorType.NotFoundError,
                 "overloaded_error" => ErrorResponseErrorDiscriminatorType.OverloadedError,
                 "permission_error" => ErrorResponseErrorDiscriminatorType.PermissionError,
                 "rate_limit_error" => ErrorResponseErrorDiscriminatorType.RateLimitError,
+                "timeout_error" => ErrorResponseErrorDiscriminatorType.TimeoutError,
                 _ => null,
             };
         }

@@ -36,11 +36,19 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaInputJsonContentBlockDelta)}");
                 inputJsonDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::G.BetaCitationsDelta? citationsDelta = default;
+            if (discriminator?.Type == global::G.BetaContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaCitationsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaCitationsDelta> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaCitationsDelta)}");
+                citationsDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::G.Delta(
                 discriminator?.Type,
                 textDelta,
-                inputJsonDelta
+                inputJsonDelta,
+                citationsDelta
                 );
 
             return result;
@@ -66,6 +74,12 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaInputJsonContentBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaInputJsonContentBlockDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaInputJsonContentBlockDelta).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.InputJsonDelta, typeInfo);
+            }
+            else if (value.IsCitationsDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaCitationsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaCitationsDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaCitationsDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.CitationsDelta, typeInfo);
             }
         }
     }

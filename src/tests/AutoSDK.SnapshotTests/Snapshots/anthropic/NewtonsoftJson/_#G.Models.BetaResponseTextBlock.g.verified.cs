@@ -23,6 +23,13 @@ namespace G
         public string Text { get; set; } = default!;
 
         /// <summary>
+        /// Citations supporting the text block.<br/>
+        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("citations", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.CitationsItem2>? Citations { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -35,11 +42,17 @@ namespace G
         /// Default Value: text
         /// </param>
         /// <param name="text"></param>
+        /// <param name="citations">
+        /// Citations supporting the text block.<br/>
+        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+        /// </param>
         public BetaResponseTextBlock(
             string text,
+            global::System.Collections.Generic.IList<global::G.CitationsItem2>? citations,
             global::G.BetaResponseTextBlockType type = global::G.BetaResponseTextBlockType.Text)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
             this.Type = type;
         }
 

@@ -17,7 +17,7 @@ namespace G
         /// </param>
         /// <param name="limit">
         /// Number of items to return per page.<br/>
-        /// Defaults to `20`. Ranges from `1` to `100`.<br/>
+        /// Defaults to `20`. Ranges from `1` to `1000`.<br/>
         /// Default Value: 20
         /// </param>
         /// <param name="anthropicBeta">

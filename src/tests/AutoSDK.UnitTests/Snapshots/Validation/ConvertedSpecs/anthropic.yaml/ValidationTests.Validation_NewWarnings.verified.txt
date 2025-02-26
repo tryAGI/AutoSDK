@@ -12,32 +12,12 @@
   {
     RuleName: SchemaMismatchedDataType,
     Message: Data and type mismatch found.,
-    Pointer: #/components/schemas/BetaUsage/properties/cache_creation_input_tokens/default
-  },
-  {
-    RuleName: SchemaMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/components/schemas/BetaUsage/properties/cache_read_input_tokens/default
+    Pointer: #/components/schemas/CountMessageTokensParams/properties/tools/example
   },
   {
     RuleName: SchemaMismatchedDataType,
     Message: Data and type mismatch found.,
     Pointer: #/components/schemas/CreateMessageParams/properties/tools/example
-  },
-  {
-    RuleName: SchemaMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/components/schemas/PromptCachingBetaCreateMessageParams/properties/tools/example
-  },
-  {
-    RuleName: SchemaMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/components/schemas/PromptCachingBetaUsage/properties/cache_creation_input_tokens/default
-  },
-  {
-    RuleName: SchemaMismatchedDataType,
-    Message: Data and type mismatch found.,
-    Pointer: #/components/schemas/PromptCachingBetaUsage/properties/cache_read_input_tokens/default
   },
   {
     RuleName: SchemaMismatchedDataType,

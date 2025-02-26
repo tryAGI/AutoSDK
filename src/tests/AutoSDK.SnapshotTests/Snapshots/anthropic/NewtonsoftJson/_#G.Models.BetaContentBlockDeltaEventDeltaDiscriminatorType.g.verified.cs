@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="citations_delta")]
+        CitationsDelta,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="input_json_delta")]
         InputJsonDelta,
         /// <summary>
@@ -34,6 +39,7 @@ namespace G
         {
             return value switch
             {
+                BetaContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta => "citations_delta",
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta => "input_json_delta",
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.TextDelta => "text_delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -46,6 +52,7 @@ namespace G
         {
             return value switch
             {
+                "citations_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta,
                 "input_json_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta,
                 "text_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.TextDelta,
                 _ => null,

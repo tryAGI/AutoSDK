@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("cache_control")]
+        public global::G.CacheControlEphemeral? CacheControl { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RequestToolUseBlockTypeJsonConverter))]
         public global::G.RequestToolUseBlockType Type { get; set; }
@@ -46,6 +52,7 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RequestToolUseBlock" /> class.
         /// </summary>
+        /// <param name="cacheControl"></param>
         /// <param name="type"></param>
         /// <param name="id"></param>
         /// <param name="name"></param>
@@ -57,11 +64,13 @@ namespace G
             string id,
             string name,
             object input,
+            global::G.CacheControlEphemeral? cacheControl,
             global::G.RequestToolUseBlockType type)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
+            this.CacheControl = cacheControl;
             this.Type = type;
         }
 

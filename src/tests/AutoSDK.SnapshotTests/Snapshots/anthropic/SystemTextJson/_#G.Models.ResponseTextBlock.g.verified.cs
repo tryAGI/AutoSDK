@@ -25,6 +25,14 @@ namespace G
         public required string Text { get; set; }
 
         /// <summary>
+        /// Citations supporting the text block.<br/>
+        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("citations")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::System.Collections.Generic.IList<global::G.CitationsItem4>? Citations { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -37,14 +45,20 @@ namespace G
         /// Default Value: text
         /// </param>
         /// <param name="text"></param>
+        /// <param name="citations">
+        /// Citations supporting the text block.<br/>
+        /// The type of citation returned will depend on the type of document being cited. Citing a PDF results in `page_location`, plain text results in `char_location`, and content document results in `content_block_location`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ResponseTextBlock(
             string text,
+            global::System.Collections.Generic.IList<global::G.CitationsItem4>? citations,
             global::G.ResponseTextBlockType type = global::G.ResponseTextBlockType.Text)
         {
             this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Citations = citations ?? throw new global::System.ArgumentNullException(nameof(citations));
             this.Type = type;
         }
 

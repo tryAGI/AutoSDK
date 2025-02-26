@@ -20,6 +20,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        BillingError,
+        /// <summary>
+        /// 
+        /// </summary>
         InvalidRequestError,
         /// <summary>
         /// 
@@ -37,6 +41,10 @@ namespace G
         /// 
         /// </summary>
         RateLimitError,
+        /// <summary>
+        /// 
+        /// </summary>
+        TimeoutError,
     }
 
     /// <summary>
@@ -53,11 +61,13 @@ namespace G
             {
                 BetaErrorResponseErrorDiscriminatorType.ApiError => "api_error",
                 BetaErrorResponseErrorDiscriminatorType.AuthenticationError => "authentication_error",
+                BetaErrorResponseErrorDiscriminatorType.BillingError => "billing_error",
                 BetaErrorResponseErrorDiscriminatorType.InvalidRequestError => "invalid_request_error",
                 BetaErrorResponseErrorDiscriminatorType.NotFoundError => "not_found_error",
                 BetaErrorResponseErrorDiscriminatorType.OverloadedError => "overloaded_error",
                 BetaErrorResponseErrorDiscriminatorType.PermissionError => "permission_error",
                 BetaErrorResponseErrorDiscriminatorType.RateLimitError => "rate_limit_error",
+                BetaErrorResponseErrorDiscriminatorType.TimeoutError => "timeout_error",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -70,11 +80,13 @@ namespace G
             {
                 "api_error" => BetaErrorResponseErrorDiscriminatorType.ApiError,
                 "authentication_error" => BetaErrorResponseErrorDiscriminatorType.AuthenticationError,
+                "billing_error" => BetaErrorResponseErrorDiscriminatorType.BillingError,
                 "invalid_request_error" => BetaErrorResponseErrorDiscriminatorType.InvalidRequestError,
                 "not_found_error" => BetaErrorResponseErrorDiscriminatorType.NotFoundError,
                 "overloaded_error" => BetaErrorResponseErrorDiscriminatorType.OverloadedError,
                 "permission_error" => BetaErrorResponseErrorDiscriminatorType.PermissionError,
                 "rate_limit_error" => BetaErrorResponseErrorDiscriminatorType.RateLimitError,
+                "timeout_error" => BetaErrorResponseErrorDiscriminatorType.TimeoutError,
                 _ => null,
             };
         }

@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class BetaInputMessage
+    public partial class BetaInputMessage
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

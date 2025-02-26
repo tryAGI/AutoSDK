@@ -88,22 +88,60 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaCitationsDelta? CitationsDelta { get; init; }
+#else
+        public global::G.BetaCitationsDelta? CitationsDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CitationsDelta))]
+#endif
+        public bool IsCitationsDelta => CitationsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Delta(global::G.BetaCitationsDelta value) => new Delta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.BetaCitationsDelta?(Delta @this) => @this.CitationsDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Delta(global::G.BetaCitationsDelta? value)
+        {
+            CitationsDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Delta(
             global::G.BetaContentBlockDeltaEventDeltaDiscriminatorType? type,
             global::G.BetaTextContentBlockDelta? textDelta,
-            global::G.BetaInputJsonContentBlockDelta? inputJsonDelta
+            global::G.BetaInputJsonContentBlockDelta? inputJsonDelta,
+            global::G.BetaCitationsDelta? citationsDelta
             )
         {
             Type = type;
 
             TextDelta = textDelta;
             InputJsonDelta = inputJsonDelta;
+            CitationsDelta = citationsDelta;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            CitationsDelta as object ??
             InputJsonDelta as object ??
             TextDelta as object 
             ;
@@ -113,7 +151,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsTextDelta && !IsInputJsonDelta || !IsTextDelta && IsInputJsonDelta;
+            return IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta || !IsTextDelta && IsInputJsonDelta && !IsCitationsDelta || !IsTextDelta && !IsInputJsonDelta && IsCitationsDelta;
         }
 
         /// <summary>
@@ -122,6 +160,7 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.BetaTextContentBlockDelta?, TResult>? textDelta = null,
             global::System.Func<global::G.BetaInputJsonContentBlockDelta?, TResult>? inputJsonDelta = null,
+            global::System.Func<global::G.BetaCitationsDelta?, TResult>? citationsDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -137,6 +176,10 @@ namespace G
             {
                 return inputJsonDelta(InputJsonDelta!);
             }
+            else if (IsCitationsDelta && citationsDelta != null)
+            {
+                return citationsDelta(CitationsDelta!);
+            }
 
             return default(TResult);
         }
@@ -147,6 +190,7 @@ namespace G
         public void Match(
             global::System.Action<global::G.BetaTextContentBlockDelta?>? textDelta = null,
             global::System.Action<global::G.BetaInputJsonContentBlockDelta?>? inputJsonDelta = null,
+            global::System.Action<global::G.BetaCitationsDelta?>? citationsDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -162,6 +206,10 @@ namespace G
             {
                 inputJsonDelta?.Invoke(InputJsonDelta!);
             }
+            else if (IsCitationsDelta)
+            {
+                citationsDelta?.Invoke(CitationsDelta!);
+            }
         }
 
         /// <summary>
@@ -175,6 +223,8 @@ namespace G
                 typeof(global::G.BetaTextContentBlockDelta),
                 InputJsonDelta,
                 typeof(global::G.BetaInputJsonContentBlockDelta),
+                CitationsDelta,
+                typeof(global::G.BetaCitationsDelta),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -192,7 +242,8 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaTextContentBlockDelta?>.Default.Equals(TextDelta, other.TextDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaInputJsonContentBlockDelta?>.Default.Equals(InputJsonDelta, other.InputJsonDelta) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaInputJsonContentBlockDelta?>.Default.Equals(InputJsonDelta, other.InputJsonDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaCitationsDelta?>.Default.Equals(CitationsDelta, other.CitationsDelta) 
                 ;
         }
 

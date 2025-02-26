@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.InputMessageContentVariant2ItemDiscriminatorType? Type { get; }
+        public global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RequestTextBlock? Text { get; init; }
+        public global::G.BetaRequestTextBlock? Text { get; init; }
 #else
-        public global::G.RequestTextBlock? Text { get; }
+        public global::G.BetaRequestTextBlock? Text { get; }
 #endif
 
         /// <summary>
@@ -35,17 +35,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item2(global::G.RequestTextBlock value) => new ContentVariant2Item2(value);
+        public static implicit operator ContentVariant2Item2(global::G.BetaRequestTextBlock value) => new ContentVariant2Item2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RequestTextBlock?(ContentVariant2Item2 @this) => @this.Text;
+        public static implicit operator global::G.BetaRequestTextBlock?(ContentVariant2Item2 @this) => @this.Text;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentVariant2Item2(global::G.RequestTextBlock? value)
+        public ContentVariant2Item2(global::G.BetaRequestTextBlock? value)
         {
             Text = value;
         }
@@ -54,9 +54,9 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.RequestImageBlock? Image { get; init; }
+        public global::G.BetaRequestImageBlock? Image { get; init; }
 #else
-        public global::G.RequestImageBlock? Image { get; }
+        public global::G.BetaRequestImageBlock? Image { get; }
 #endif
 
         /// <summary>
@@ -70,17 +70,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator ContentVariant2Item2(global::G.RequestImageBlock value) => new ContentVariant2Item2(value);
+        public static implicit operator ContentVariant2Item2(global::G.BetaRequestImageBlock value) => new ContentVariant2Item2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.RequestImageBlock?(ContentVariant2Item2 @this) => @this.Image;
+        public static implicit operator global::G.BetaRequestImageBlock?(ContentVariant2Item2 @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
-        public ContentVariant2Item2(global::G.RequestImageBlock? value)
+        public ContentVariant2Item2(global::G.BetaRequestImageBlock? value)
         {
             Image = value;
         }
@@ -88,98 +88,22 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RequestToolUseBlock? ToolUse { get; init; }
-#else
-        public global::G.RequestToolUseBlock? ToolUse { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolUse))]
-#endif
-        public bool IsToolUse => ToolUse != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ContentVariant2Item2(global::G.RequestToolUseBlock value) => new ContentVariant2Item2(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RequestToolUseBlock?(ContentVariant2Item2 @this) => @this.ToolUse;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ContentVariant2Item2(global::G.RequestToolUseBlock? value)
-        {
-            ToolUse = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.RequestToolResultBlock? ToolResult { get; init; }
-#else
-        public global::G.RequestToolResultBlock? ToolResult { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ToolResult))]
-#endif
-        public bool IsToolResult => ToolResult != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator ContentVariant2Item2(global::G.RequestToolResultBlock value) => new ContentVariant2Item2(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.RequestToolResultBlock?(ContentVariant2Item2 @this) => @this.ToolResult;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public ContentVariant2Item2(global::G.RequestToolResultBlock? value)
-        {
-            ToolResult = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
         public ContentVariant2Item2(
-            global::G.InputMessageContentVariant2ItemDiscriminatorType? type,
-            global::G.RequestTextBlock? text,
-            global::G.RequestImageBlock? image,
-            global::G.RequestToolUseBlock? toolUse,
-            global::G.RequestToolResultBlock? toolResult
+            global::G.BetaRequestToolResultBlockContentVariant2ItemDiscriminatorType? type,
+            global::G.BetaRequestTextBlock? text,
+            global::G.BetaRequestImageBlock? image
             )
         {
             Type = type;
 
             Text = text;
             Image = image;
-            ToolUse = toolUse;
-            ToolResult = toolResult;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            ToolResult as object ??
-            ToolUse as object ??
             Image as object ??
             Text as object 
             ;
@@ -189,17 +113,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsToolUse && !IsToolResult || !IsText && IsImage && !IsToolUse && !IsToolResult || !IsText && !IsImage && IsToolUse && !IsToolResult || !IsText && !IsImage && !IsToolUse && IsToolResult;
+            return IsText && !IsImage || !IsText && IsImage;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.RequestTextBlock?, TResult>? text = null,
-            global::System.Func<global::G.RequestImageBlock?, TResult>? image = null,
-            global::System.Func<global::G.RequestToolUseBlock?, TResult>? toolUse = null,
-            global::System.Func<global::G.RequestToolResultBlock?, TResult>? toolResult = null,
+            global::System.Func<global::G.BetaRequestTextBlock?, TResult>? text = null,
+            global::System.Func<global::G.BetaRequestImageBlock?, TResult>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -215,14 +137,6 @@ namespace G
             {
                 return image(Image!);
             }
-            else if (IsToolUse && toolUse != null)
-            {
-                return toolUse(ToolUse!);
-            }
-            else if (IsToolResult && toolResult != null)
-            {
-                return toolResult(ToolResult!);
-            }
 
             return default(TResult);
         }
@@ -231,10 +145,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.RequestTextBlock?>? text = null,
-            global::System.Action<global::G.RequestImageBlock?>? image = null,
-            global::System.Action<global::G.RequestToolUseBlock?>? toolUse = null,
-            global::System.Action<global::G.RequestToolResultBlock?>? toolResult = null,
+            global::System.Action<global::G.BetaRequestTextBlock?>? text = null,
+            global::System.Action<global::G.BetaRequestImageBlock?>? image = null,
             bool validate = true)
         {
             if (validate)
@@ -250,14 +162,6 @@ namespace G
             {
                 image?.Invoke(Image!);
             }
-            else if (IsToolUse)
-            {
-                toolUse?.Invoke(ToolUse!);
-            }
-            else if (IsToolResult)
-            {
-                toolResult?.Invoke(ToolResult!);
-            }
         }
 
         /// <summary>
@@ -268,13 +172,9 @@ namespace G
             var fields = new object?[]
             {
                 Text,
-                typeof(global::G.RequestTextBlock),
+                typeof(global::G.BetaRequestTextBlock),
                 Image,
-                typeof(global::G.RequestImageBlock),
-                ToolUse,
-                typeof(global::G.RequestToolUseBlock),
-                ToolResult,
-                typeof(global::G.RequestToolResultBlock),
+                typeof(global::G.BetaRequestImageBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -291,10 +191,8 @@ namespace G
         public bool Equals(ContentVariant2Item2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestTextBlock?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestImageBlock?>.Default.Equals(Image, other.Image) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.RequestToolResultBlock?>.Default.Equals(ToolResult, other.ToolResult) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestTextBlock?>.Default.Equals(Text, other.Text) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) 
                 ;
         }
 

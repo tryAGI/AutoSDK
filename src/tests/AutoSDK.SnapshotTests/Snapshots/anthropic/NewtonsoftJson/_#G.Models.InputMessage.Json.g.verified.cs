@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class InputMessage
+    public partial class InputMessage
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

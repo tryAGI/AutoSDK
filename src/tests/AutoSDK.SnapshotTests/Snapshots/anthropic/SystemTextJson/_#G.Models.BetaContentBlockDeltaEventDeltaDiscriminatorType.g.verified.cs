@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        CitationsDelta,
+        /// <summary>
+        /// 
+        /// </summary>
         InputJsonDelta,
         /// <summary>
         /// 
@@ -31,6 +35,7 @@ namespace G
         {
             return value switch
             {
+                BetaContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta => "citations_delta",
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta => "input_json_delta",
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.TextDelta => "text_delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -43,6 +48,7 @@ namespace G
         {
             return value switch
             {
+                "citations_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta,
                 "input_json_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta,
                 "text_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.TextDelta,
                 _ => null,
