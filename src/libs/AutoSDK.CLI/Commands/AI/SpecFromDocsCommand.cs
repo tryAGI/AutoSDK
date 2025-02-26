@@ -34,7 +34,7 @@ internal sealed class SpecFromDocsCommand : Command
         using var firecrawlApi = new FirecrawlApp(apiKey:
             Environment.GetEnvironmentVariable("FIRECRAWL_API_KEY") ??
             throw new InvalidOperationException("Please set FIRECRAWL_API_KEY environment variable."));
-        var firecrawlResponse = await firecrawlApi.Scraping.ScrapeAsync(
+        var firecrawlResponse = await firecrawlApi.Scraping.ScrapeAndExtractFromUrlAsync(
             uri.ToString(),
             waitFor: 15000).ConfigureAwait(false);
 
