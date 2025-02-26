@@ -89,7 +89,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="**\*.yaml" />
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="AutoSDK_OpenApiSpecification" />
   </ItemGroup>
 
 </Project>

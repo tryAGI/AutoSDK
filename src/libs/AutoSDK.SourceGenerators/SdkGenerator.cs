@@ -36,9 +36,10 @@ public class SdkGenerator : IIncrementalGenerator
             .AddSource(context);
         
         var data = context.AdditionalTextsProvider
-            .Where(static text => text.Path.EndsWith(".yaml", StringComparison.InvariantCultureIgnoreCase) ||
-                                  text.Path.EndsWith(".json", StringComparison.InvariantCultureIgnoreCase))
-            .Select(static (text, cancellationToken) => GetContent(text, cancellationToken))
+            .Combine(context.AnalyzerConfigOptionsProvider)
+            .Where(static pair =>
+                pair.Right.GetOption(pair.Left, "OpenApiSpecification", prefix: "AutoSDK")?.ToUpperInvariant() == "TRUE")
+            .Select(static (pair, cancellationToken) => GetContent(pair.Left, cancellationToken))
             .Combine(settings)
             .SelectAndReportExceptions(Data.Prepare, context, Id);
         

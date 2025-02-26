@@ -85,6 +85,14 @@ namespace G
 }
 "));
         }
+
+        var additionalTextOptions = new Dictionary<string, Dictionary<string, string>>();
+        foreach (var additionalText in additionalTexts)
+        {
+            var options = new Dictionary<string, string>();
+            options.TryAdd("build_metadata.AdditionalFiles.AutoSDK_OpenApiSpecification", "true");
+            additionalTextOptions.Add(additionalText.Path, options);
+        }
         
         var compilation = (Compilation)CSharpCompilation.Create(
             assemblyName: "Tests",
@@ -98,7 +106,7 @@ namespace G
                 .Select(GeneratorExtensions.AsSourceGenerator)
                 .ToArray())
             .AddAdditionalTexts([..additionalTexts])
-            .WithUpdatedAnalyzerConfigOptions(new DictionaryAnalyzerConfigOptionsProvider(globalOptions))
+            .WithUpdatedAnalyzerConfigOptions(new DictionaryAnalyzerConfigOptionsProvider(globalOptions, additionalTextOptions: additionalTextOptions))
             .RunGeneratorsAndUpdateCompilation(compilation, out compilation, out _, cancellationToken);
         var diagnostics = compilation.GetDiagnostics(cancellationToken)
             .Where(x => x.Id != "CS0618")

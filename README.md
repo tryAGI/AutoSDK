@@ -43,10 +43,8 @@ dotnet add package AutoSDK.SourceGenerators
 ```
 - Add the following optional settings to your csproj file to customize generation. You can check all settings [here](https://github.com/tryAGI/AutoSDK/blob/main/src/libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.props):
 ```xml
-<!-- This generator automatically detects all .yaml files in the project directory and adds them to the generation -->
-<!-- If your yaml file is not in the project directory, you can specify it manually -->
 <ItemGroup Label="AutoSDK">
-    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../docs/openapi.yaml" />
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../docs/openapi.yaml" AutoSDK_OpenApiSpecification="true" />
 </ItemGroup>
 
 <!-- All settings optional -->
