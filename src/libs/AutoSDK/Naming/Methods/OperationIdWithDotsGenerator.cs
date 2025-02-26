@@ -14,10 +14,21 @@ public class OperationIdWithDotsGenerator : IMethodNameGenerator
         {
             return null;
         }
+
+        var parts = operation.Operation.OperationId.Split('.');
+        var invertedParts = InvertedParts(parts);
         
-        return string.Concat(operation.Operation.OperationId
-            .Split('.')
-            .Reverse()
-            .Select(x => x.ToPropertyName()));
+        return string.Concat(invertedParts.Select(x => x.ToPropertyName()));
+    }
+    
+    private static string[] InvertedParts(string[] parts)
+    {
+        var newParts = new string[parts.Length];
+        for (var i = 0; i < parts.Length; i++)
+        {
+            newParts[i] = parts[parts.Length - i - 1];
+        }
+        
+        return newParts;
     }
 }
