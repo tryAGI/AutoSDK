@@ -127,7 +127,8 @@ namespace {endPoint.Namespace}
             var {x.ArgumentName} = {x.ParameterName} switch
             {{
 {x.Type.Properties.Zip(x.Type.EnumValues, (property, value) => (Property: property, Value: value))
-    .Select(y => $@"
+    .Select(y => string.IsNullOrWhiteSpace(y.Property) ? @"
+                null => string.Empty," : $@"
                 {x.Type.CSharpTypeWithoutNullability}.{y.Property} => ""{y.Value}"",").Inject()}
                 _ => throw new global::System.NotImplementedException(""Enum value not implemented.""),
             }};").Inject() : " ")}
