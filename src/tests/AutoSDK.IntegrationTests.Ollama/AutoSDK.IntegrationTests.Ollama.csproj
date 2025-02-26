@@ -1,21 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
   </PropertyGroup>
-  
-  <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />
+
+  <Import Project="$(MSBuildThisFileDirectory)../../libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.props" />
 
   <ItemGroup>
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/ollama.yaml" />
   </ItemGroup>
 
   <PropertyGroup>
-    <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests</OpenApiGenerator_Namespace>
-    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
-    <OpenApiGenerator_GenerateMethods>true</OpenApiGenerator_GenerateMethods>
-    <OpenApiGenerator_GenerateConstructors>true</OpenApiGenerator_GenerateConstructors>
-    <OpenApiGenerator_JsonSerializerContext>OpenApiGenerator.IntegrationTests.SourceGenerationContext</OpenApiGenerator_JsonSerializerContext>
+    <AutoSDK_Namespace>AutoSDK.IntegrationTests</AutoSDK_Namespace>
+    <AutoSDK_GenerateSdk>false</AutoSDK_GenerateSdk>
+    <AutoSDK_GenerateMethods>true</AutoSDK_GenerateMethods>
+    <AutoSDK_GenerateConstructors>true</AutoSDK_GenerateConstructors>
+    <AutoSDK_JsonSerializerContext>AutoSDK.IntegrationTests.SourceGenerationContext</AutoSDK_JsonSerializerContext>
   </PropertyGroup>
 
   <PropertyGroup Label="Analyzers">
@@ -29,10 +29,10 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.10.0" />
-    <PackageReference Include="MSTest.TestAdapter" Version="3.5.0" />
-    <PackageReference Include="MSTest.TestFramework" Version="3.5.0" />
-    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="3.8.2" />
+    <PackageReference Include="MSTest.TestFramework" Version="3.8.2" />
+    <PackageReference Include="AwesomeAssertions" Version="8.0.1" />
   </ItemGroup>
 
   <ItemGroup Label="GlobalUsings">
@@ -41,21 +41,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="H.Resources.Generator" Version="1.6.0">
+    <PackageReference Include="H.Resources.Generator" Version="1.6.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
-    <PackageReference Include="Microsoft.OpenApi" Version="1.6.16" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.16" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.23" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.23" />
     <PackageReference Include="SharpYaml" Version="2.1.1" />
-    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" OutputItemType="Analyzer" />
-    <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-    <ProjectReference Include="..\OpenApiGenerator.IntegrationTests.Ollama.Models\OpenApiGenerator.IntegrationTests.Ollama.Models.csproj" />
+    <ProjectReference Include="..\..\libs\AutoSDK\AutoSDK.csproj" OutputItemType="Analyzer" />
+    <ProjectReference Include="..\..\libs\AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\AutoSDK.IntegrationTests.Ollama.Models\AutoSDK.IntegrationTests.Ollama.Models.csproj" />
   </ItemGroup>
 
 </Project>

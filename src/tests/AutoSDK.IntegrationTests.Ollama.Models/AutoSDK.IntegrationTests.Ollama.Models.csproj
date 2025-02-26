@@ -1,20 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
   </PropertyGroup>
   
-  <Import Project="../../libs/OpenApiGenerator/OpenApiGenerator.props" />
+  <Import Project="$(MSBuildThisFileDirectory)../../libs/AutoSDK.SourceGenerators/AutoSDK.SourceGenerators.props" />
 
   <ItemGroup>
     <AdditionalFiles Include="$(MSBuildThisFileDirectory)../../../specs/ollama.yaml" />
   </ItemGroup>
 
   <PropertyGroup>
-    <OpenApiGenerator_Namespace>OpenApiGenerator.IntegrationTests</OpenApiGenerator_Namespace>
-    <OpenApiGenerator_GenerateSdk>false</OpenApiGenerator_GenerateSdk>
-    <OpenApiGenerator_GenerateModels>true</OpenApiGenerator_GenerateModels>
-    <OpenApiGenerator_GenerateJsonSerializerContextTypes>true</OpenApiGenerator_GenerateJsonSerializerContextTypes>
+    <AutoSDK_Namespace>AutoSDK.IntegrationTests</AutoSDK_Namespace>
+    <AutoSDK_GenerateSdk>false</AutoSDK_GenerateSdk>
+    <AutoSDK_GenerateModels>true</AutoSDK_GenerateModels>
+    <AutoSDK_GenerateJsonSerializerContextTypes>true</AutoSDK_GenerateJsonSerializerContextTypes>
   </PropertyGroup>
 
   <PropertyGroup Label="Analyzers">
@@ -24,16 +24,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.8.0" />
-    <PackageReference Include="Microsoft.OpenApi" Version="1.6.16" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.16" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.13.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.23" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.23" />
     <PackageReference Include="SharpYaml" Version="2.1.1" />
-    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+    <PackageReference Include="System.Collections.Immutable" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\libs\OpenApiGenerator.Core\OpenApiGenerator.Core.csproj" OutputItemType="Analyzer" />
-    <ProjectReference Include="..\..\libs\OpenApiGenerator\OpenApiGenerator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="..\..\libs\AutoSDK\AutoSDK.csproj" OutputItemType="Analyzer" />
+    <ProjectReference Include="..\..\libs\AutoSDK.SourceGenerators\AutoSDK.SourceGenerators.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
   </ItemGroup>
 
 </Project>

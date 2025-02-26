@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace OpenApiGenerator.IntegrationTests;
+namespace AutoSDK.IntegrationTests;
 
 [JsonSourceGenerationOptions(DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
 [JsonSerializable(typeof(JsonSerializerContextTypes))]

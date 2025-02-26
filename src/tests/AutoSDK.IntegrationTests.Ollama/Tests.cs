@@ -1,4 +1,4 @@
-﻿namespace OpenApiGenerator.IntegrationTests;
+﻿namespace AutoSDK.IntegrationTests;
 
 [TestClass]
 public class NSwagGeneratorTests
