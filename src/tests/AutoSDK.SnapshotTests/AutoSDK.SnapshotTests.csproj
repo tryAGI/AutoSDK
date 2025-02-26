@@ -13,7 +13,7 @@
     <PackageReference Include="H.Generators.Tests.Extensions" Version="1.24.1" />
     <PackageReference Include="Microsoft.OpenApi" Version="1.6.23" />
     <PackageReference Include="MSTest" Version="3.8.2" />
-    <PackageReference Include="FluentAssertions" Version="8.1.1" />
+    <PackageReference Include="AwesomeAssertions" Version="8.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
