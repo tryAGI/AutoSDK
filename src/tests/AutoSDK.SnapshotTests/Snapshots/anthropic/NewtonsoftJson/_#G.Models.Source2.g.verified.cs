@@ -13,15 +13,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public global::G.RequestDocumentBlockSourceDiscriminatorType? Type { get; }
+        public global::G.BetaRequestImageBlockSourceDiscriminatorType? Type { get; }
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.Base64PDFSource? Base64 { get; init; }
+        public global::G.BetaBase64ImageSource? Base64 { get; init; }
 #else
-        public global::G.Base64PDFSource? Base64 { get; }
+        public global::G.BetaBase64ImageSource? Base64 { get; }
 #endif
 
         /// <summary>
@@ -35,17 +35,17 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source2(global::G.Base64PDFSource value) => new Source2(value);
+        public static implicit operator Source2(global::G.BetaBase64ImageSource value) => new Source2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.Base64PDFSource?(Source2 @this) => @this.Base64;
+        public static implicit operator global::G.BetaBase64ImageSource?(Source2 @this) => @this.Base64;
 
         /// <summary>
         /// 
         /// </summary>
-        public Source2(global::G.Base64PDFSource? value)
+        public Source2(global::G.BetaBase64ImageSource? value)
         {
             Base64 = value;
         }
@@ -54,95 +54,57 @@ namespace G
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.PlainTextSource? Text { get; init; }
+        public global::G.BetaURLImageSource? Url { get; init; }
 #else
-        public global::G.PlainTextSource? Text { get; }
+        public global::G.BetaURLImageSource? Url { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Text))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Url))]
 #endif
-        public bool IsText => Text != null;
+        public bool IsUrl => Url != null;
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator Source2(global::G.PlainTextSource value) => new Source2(value);
+        public static implicit operator Source2(global::G.BetaURLImageSource value) => new Source2(value);
 
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.PlainTextSource?(Source2 @this) => @this.Text;
+        public static implicit operator global::G.BetaURLImageSource?(Source2 @this) => @this.Url;
 
         /// <summary>
         /// 
         /// </summary>
-        public Source2(global::G.PlainTextSource? value)
+        public Source2(global::G.BetaURLImageSource? value)
         {
-            Text = value;
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        public global::G.ContentBlockSource? Content { get; init; }
-#else
-        public global::G.ContentBlockSource? Content { get; }
-#endif
-
-        /// <summary>
-        /// 
-        /// </summary>
-#if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Content))]
-#endif
-        public bool IsContent => Content != null;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator Source2(global::G.ContentBlockSource value) => new Source2(value);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public static implicit operator global::G.ContentBlockSource?(Source2 @this) => @this.Content;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        public Source2(global::G.ContentBlockSource? value)
-        {
-            Content = value;
+            Url = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public Source2(
-            global::G.RequestDocumentBlockSourceDiscriminatorType? type,
-            global::G.Base64PDFSource? base64,
-            global::G.PlainTextSource? text,
-            global::G.ContentBlockSource? content
+            global::G.BetaRequestImageBlockSourceDiscriminatorType? type,
+            global::G.BetaBase64ImageSource? base64,
+            global::G.BetaURLImageSource? url
             )
         {
             Type = type;
 
             Base64 = base64;
-            Text = text;
-            Content = content;
+            Url = url;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Content as object ??
-            Text as object ??
+            Url as object ??
             Base64 as object 
             ;
 
@@ -151,16 +113,15 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsBase64 && !IsText && !IsContent || !IsBase64 && IsText && !IsContent || !IsBase64 && !IsText && IsContent;
+            return IsBase64 && !IsUrl || !IsBase64 && IsUrl;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::G.Base64PDFSource?, TResult>? base64 = null,
-            global::System.Func<global::G.PlainTextSource?, TResult>? text = null,
-            global::System.Func<global::G.ContentBlockSource?, TResult>? content = null,
+            global::System.Func<global::G.BetaBase64ImageSource?, TResult>? base64 = null,
+            global::System.Func<global::G.BetaURLImageSource?, TResult>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -172,13 +133,9 @@ namespace G
             {
                 return base64(Base64!);
             }
-            else if (IsText && text != null)
+            else if (IsUrl && url != null)
             {
-                return text(Text!);
-            }
-            else if (IsContent && content != null)
-            {
-                return content(Content!);
+                return url(Url!);
             }
 
             return default(TResult);
@@ -188,9 +145,8 @@ namespace G
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::G.Base64PDFSource?>? base64 = null,
-            global::System.Action<global::G.PlainTextSource?>? text = null,
-            global::System.Action<global::G.ContentBlockSource?>? content = null,
+            global::System.Action<global::G.BetaBase64ImageSource?>? base64 = null,
+            global::System.Action<global::G.BetaURLImageSource?>? url = null,
             bool validate = true)
         {
             if (validate)
@@ -202,13 +158,9 @@ namespace G
             {
                 base64?.Invoke(Base64!);
             }
-            else if (IsText)
+            else if (IsUrl)
             {
-                text?.Invoke(Text!);
-            }
-            else if (IsContent)
-            {
-                content?.Invoke(Content!);
+                url?.Invoke(Url!);
             }
         }
 
@@ -220,11 +172,9 @@ namespace G
             var fields = new object?[]
             {
                 Base64,
-                typeof(global::G.Base64PDFSource),
-                Text,
-                typeof(global::G.PlainTextSource),
-                Content,
-                typeof(global::G.ContentBlockSource),
+                typeof(global::G.BetaBase64ImageSource),
+                Url,
+                typeof(global::G.BetaURLImageSource),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -241,9 +191,8 @@ namespace G
         public bool Equals(Source2 other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::G.Base64PDFSource?>.Default.Equals(Base64, other.Base64) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.PlainTextSource?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ContentBlockSource?>.Default.Equals(Content, other.Content) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaBase64ImageSource?>.Default.Equals(Base64, other.Base64) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaURLImageSource?>.Default.Equals(Url, other.Url) 
                 ;
         }
 

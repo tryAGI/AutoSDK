@@ -26,9 +26,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Source2JsonConverter))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Source3JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Source2 Source { get; set; }
+        public required global::G.Source3 Source { get; set; }
 
         /// <summary>
         /// 
@@ -67,7 +67,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestDocumentBlock(
-            global::G.Source2 source,
+            global::G.Source3 source,
             global::G.CacheControlEphemeral? cacheControl,
             global::G.RequestDocumentBlockType type,
             string? title,

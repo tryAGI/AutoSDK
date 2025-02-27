@@ -5,14 +5,14 @@
 namespace G
 {
     /// <summary>
-    /// Excels at writing and complex tasks
+    /// 
     /// </summary>
     public enum ModelVariant8
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude3Opus20240229,
+        Claude35Sonnet20240620,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                ModelVariant8.Claude3Opus20240229 => "claude-3-opus-20240229",
+                ModelVariant8.Claude35Sonnet20240620 => "claude-3-5-sonnet-20240620",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "claude-3-opus-20240229" => ModelVariant8.Claude3Opus20240229,
+                "claude-3-5-sonnet-20240620" => ModelVariant8.Claude35Sonnet20240620,
                 _ => null,
             };
         }

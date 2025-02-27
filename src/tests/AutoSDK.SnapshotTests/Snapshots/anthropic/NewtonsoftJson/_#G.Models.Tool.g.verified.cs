@@ -26,7 +26,7 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// [JSON schema](https://json-schema.org/) for this tool's input.<br/>
+        /// [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.<br/>
         /// This defines the shape of the `input` that your tool accepts and that the model will produce.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input_schema", Required = global::Newtonsoft.Json.Required.Always)]
@@ -57,7 +57,7 @@ namespace G
         /// This is how the tool will be called by the model and in tool_use blocks.
         /// </param>
         /// <param name="inputSchema">
-        /// [JSON schema](https://json-schema.org/) for this tool's input.<br/>
+        /// [JSON schema](https://json-schema.org/draft/2020-12) for this tool's input.<br/>
         /// This defines the shape of the `input` that your tool accepts and that the model will produce.
         /// </param>
         /// <param name="cacheControl"></param>

@@ -57,6 +57,20 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequestDocumentBlock)}");
                 document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::G.RequestThinkingBlock? thinking = default;
+            if (discriminator?.Type == global::G.InputContentBlockDiscriminatorType.Thinking)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestThinkingBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequestThinkingBlock)}");
+                thinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::G.RequestRedactedThinkingBlock? redactedThinking = default;
+            if (discriminator?.Type == global::G.InputContentBlockDiscriminatorType.RedactedThinking)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestRedactedThinkingBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.RequestRedactedThinkingBlock)}");
+                redactedThinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::G.InputContentBlock(
                 discriminator?.Type,
@@ -64,7 +78,9 @@ namespace G.JsonConverters
                 image,
                 toolUse,
                 toolResult,
-                document
+                document,
+                thinking,
+                redactedThinking
                 );
 
             return result;
@@ -108,6 +124,18 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestDocumentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestDocumentBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestDocumentBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document, typeInfo);
+            }
+            else if (value.IsThinking)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestThinkingBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestThinkingBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thinking, typeInfo);
+            }
+            else if (value.IsRedactedThinking)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.RequestRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.RequestRedactedThinkingBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.RequestRedactedThinkingBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedThinking, typeInfo);
             }
         }
     }

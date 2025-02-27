@@ -12,7 +12,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        RedactedThinking,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Thinking,
         /// <summary>
         /// 
         /// </summary>
@@ -31,7 +39,9 @@ namespace G
         {
             return value switch
             {
+                BetaContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 BetaContentBlockDiscriminatorType.Text => "text",
+                BetaContentBlockDiscriminatorType.Thinking => "thinking",
                 BetaContentBlockDiscriminatorType.ToolUse => "tool_use",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -43,7 +53,9 @@ namespace G
         {
             return value switch
             {
+                "redacted_thinking" => BetaContentBlockDiscriminatorType.RedactedThinking,
                 "text" => BetaContentBlockDiscriminatorType.Text,
+                "thinking" => BetaContentBlockDiscriminatorType.Thinking,
                 "tool_use" => BetaContentBlockDiscriminatorType.ToolUse,
                 _ => null,
             };

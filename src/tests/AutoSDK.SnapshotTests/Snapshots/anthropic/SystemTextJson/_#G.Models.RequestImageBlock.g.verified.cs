@@ -26,8 +26,9 @@ namespace G
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("source")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.Source4JsonConverter))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.Base64ImageSource Source { get; set; }
+        public required global::G.Source4 Source { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,11 +46,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RequestImageBlock(
-            global::G.Base64ImageSource source,
+            global::G.Source4 source,
             global::G.CacheControlEphemeral? cacheControl,
             global::G.RequestImageBlockType type)
         {
-            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.Source = source;
             this.CacheControl = cacheControl;
             this.Type = type;
         }

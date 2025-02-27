@@ -57,6 +57,20 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestDocumentBlock)}");
                 document = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::G.BetaRequestThinkingBlock? thinking = default;
+            if (discriminator?.Type == global::G.BetaInputContentBlockDiscriminatorType.Thinking)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestThinkingBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestThinkingBlock)}");
+                thinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::G.BetaRequestRedactedThinkingBlock? redactedThinking = default;
+            if (discriminator?.Type == global::G.BetaInputContentBlockDiscriminatorType.RedactedThinking)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestRedactedThinkingBlock> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaRequestRedactedThinkingBlock)}");
+                redactedThinking = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::G.BetaInputContentBlock(
                 discriminator?.Type,
@@ -64,7 +78,9 @@ namespace G.JsonConverters
                 image,
                 toolUse,
                 toolResult,
-                document
+                document,
+                thinking,
+                redactedThinking
                 );
 
             return result;
@@ -108,6 +124,18 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestDocumentBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestDocumentBlock?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestDocumentBlock).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.Document, typeInfo);
+            }
+            else if (value.IsThinking)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestThinkingBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestThinkingBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Thinking, typeInfo);
+            }
+            else if (value.IsRedactedThinking)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaRequestRedactedThinkingBlock), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaRequestRedactedThinkingBlock?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaRequestRedactedThinkingBlock).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.RedactedThinking, typeInfo);
             }
         }
     }

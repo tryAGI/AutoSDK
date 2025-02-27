@@ -23,8 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="signature_delta")]
+        SignatureDelta,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text_delta")]
         TextDelta,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="thinking_delta")]
+        ThinkingDelta,
     }
 
     /// <summary>
@@ -41,7 +51,9 @@ namespace G
             {
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta => "citations_delta",
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta => "input_json_delta",
+                BetaContentBlockDeltaEventDeltaDiscriminatorType.SignatureDelta => "signature_delta",
                 BetaContentBlockDeltaEventDeltaDiscriminatorType.TextDelta => "text_delta",
+                BetaContentBlockDeltaEventDeltaDiscriminatorType.ThinkingDelta => "thinking_delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -54,7 +66,9 @@ namespace G
             {
                 "citations_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta,
                 "input_json_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta,
+                "signature_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.SignatureDelta,
                 "text_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.TextDelta,
+                "thinking_delta" => BetaContentBlockDeltaEventDeltaDiscriminatorType.ThinkingDelta,
                 _ => null,
             };
         }

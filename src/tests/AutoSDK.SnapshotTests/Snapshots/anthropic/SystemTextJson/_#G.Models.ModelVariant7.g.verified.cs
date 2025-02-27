@@ -5,14 +5,14 @@
 namespace G
 {
     /// <summary>
-    /// Excels at writing and complex tasks
+    /// Our previous most intelligent model
     /// </summary>
     public enum ModelVariant7
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude3OpusLatest,
+        Claude35Sonnet20241022,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                ModelVariant7.Claude3OpusLatest => "claude-3-opus-latest",
+                ModelVariant7.Claude35Sonnet20241022 => "claude-3-5-sonnet-20241022",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "claude-3-opus-latest" => ModelVariant7.Claude3OpusLatest,
+                "claude-3-5-sonnet-20241022" => ModelVariant7.Claude35Sonnet20241022,
                 _ => null,
             };
         }

@@ -118,6 +118,15 @@ namespace G
         public double? Temperature { get; set; }
 
         /// <summary>
+        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
+        /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("thinking")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ThinkingConfigParamJsonConverter))]
+        public global::G.ThinkingConfigParam? Thinking { get; set; }
+
+        /// <summary>
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tool_choice")]
@@ -130,7 +139,7 @@ namespace G
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
-        /// * `input_schema`: [JSON schema](https://json-schema.org/) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
+        /// * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
         /// For example, if you defined `tools` as:<br/>
         /// ```json<br/>
         /// [<br/>
@@ -175,7 +184,7 @@ namespace G
         /// See our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("tools")]
-        public global::System.Collections.Generic.IList<global::G.Tool>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.Tool, global::G.BashTool20250124, global::G.TextEditor20250124>>? Tools { get; set; }
 
         /// <summary>
         /// Only sample from the top K options for each subsequent token.<br/>
@@ -283,6 +292,11 @@ namespace G
         /// Note that even with `temperature` of `0.0`, the results will not be fully deterministic.<br/>
         /// Example: 1
         /// </param>
+        /// <param name="thinking">
+        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
+        /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// </param>
         /// <param name="toolChoice">
         /// How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.
         /// </param>
@@ -292,7 +306,7 @@ namespace G
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
-        /// * `input_schema`: [JSON schema](https://json-schema.org/) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
+        /// * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
         /// For example, if you defined `tools` as:<br/>
         /// ```json<br/>
         /// [<br/>
@@ -359,8 +373,9 @@ namespace G
             global::System.Collections.Generic.IList<string>? stopSequences,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.RequestTextBlock>>? system,
             double? temperature,
+            global::G.ThinkingConfigParam? thinking,
             global::G.ToolChoice? toolChoice,
-            global::System.Collections.Generic.IList<global::G.Tool>? tools,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.Tool, global::G.BashTool20250124, global::G.TextEditor20250124>>? tools,
             int? topK,
             double? topP)
         {
@@ -371,6 +386,7 @@ namespace G
             this.StopSequences = stopSequences;
             this.System = system;
             this.Temperature = temperature;
+            this.Thinking = thinking;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
             this.TopK = topK;

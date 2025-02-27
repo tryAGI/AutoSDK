@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "Anthropic API",
-    "version": "16"
+    "version": "44"
   },
   "paths": {
     "/v1/messages": {
@@ -11,7 +11,7 @@
           "Messages"
         ],
         "summary": "Create a Message",
-        "description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.",
+        "description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](/en/docs/initial-setup)",
         "operationId": "messages_post",
         "parameters": [
           {
@@ -174,10 +174,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -238,10 +238,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -274,7 +274,7 @@
           "Message Batches"
         ],
         "summary": "Create a Message Batch",
-        "description": "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.",
+        "description": "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "message_batches_post",
         "parameters": [
           {
@@ -327,7 +327,7 @@
           "Message Batches"
         ],
         "summary": "List Message Batches",
-        "description": "List all Message Batches within a Workspace. Most recently created batches are returned first.",
+        "description": "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "message_batches_list",
         "parameters": [
           {
@@ -383,10 +383,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -419,7 +419,7 @@
           "Message Batches"
         ],
         "summary": "Retrieve a Message Batch",
-        "description": "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the \u0060results_url\u0060 field in the response.",
+        "description": "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the \u0060results_url\u0060 field in the response.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "message_batches_retrieve",
         "parameters": [
           {
@@ -450,10 +450,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -484,7 +484,7 @@
           "Message Batches"
         ],
         "summary": "Delete a Message Batch",
-        "description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they\u0027ve finished processing. If you\u0027d like to delete an in-progress batch, you must first cancel it.",
+        "description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they\u0027ve finished processing. If you\u0027d like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "message_batches_delete",
         "parameters": [
           {
@@ -515,10 +515,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -551,7 +551,7 @@
           "Message Batches"
         ],
         "summary": "Cancel a Message Batch",
-        "description": "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a \u0060canceling\u0060 state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in \u0060request_counts\u0060. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.",
+        "description": "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a \u0060canceling\u0060 state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in \u0060request_counts\u0060. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "message_batches_cancel",
         "parameters": [
           {
@@ -607,7 +607,7 @@
           "Message Batches"
         ],
         "summary": "Retrieve Message Batch results",
-        "description": "Streams the results of a Message Batch as a \u0060.jsonl\u0060 file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the \u0060custom_id\u0060 field to match results to requests.",
+        "description": "Streams the results of a Message Batch as a \u0060.jsonl\u0060 file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the \u0060custom_id\u0060 field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "message_batches_results",
         "parameters": [
           {
@@ -638,10 +638,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -674,7 +674,7 @@
           "Messages"
         ],
         "summary": "Count tokens in a Message",
-        "description": "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.",
+        "description": "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)",
         "operationId": "messages_count_tokens_post",
         "parameters": [
           {
@@ -729,7 +729,7 @@
           "Messages"
         ],
         "summary": "Create a Message",
-        "description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.",
+        "description": "Send a structured list of input messages with text and/or image content, and the model will generate the next message in the conversation.\n\nThe Messages API can be used for either single queries or stateless multi-turn conversations.\n\nLearn more about the Messages API in our [user guide](/en/docs/initial-setup)",
         "operationId": "beta_messages_post",
         "parameters": [
           {
@@ -860,10 +860,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -924,10 +924,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -960,7 +960,7 @@
           "Message Batches"
         ],
         "summary": "Create a Message Batch",
-        "description": "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.",
+        "description": "Send a batch of Message creation requests.\n\nThe Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "beta_message_batches_post",
         "parameters": [
           {
@@ -1036,7 +1036,7 @@
           "Message Batches"
         ],
         "summary": "List Message Batches",
-        "description": "List all Message Batches within a Workspace. Most recently created batches are returned first.",
+        "description": "List all Message Batches within a Workspace. Most recently created batches are returned first.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "beta_message_batches_list",
         "parameters": [
           {
@@ -1115,10 +1115,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -1151,7 +1151,7 @@
           "Message Batches"
         ],
         "summary": "Retrieve a Message Batch",
-        "description": "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the \u0060results_url\u0060 field in the response.",
+        "description": "This endpoint is idempotent and can be used to poll for Message Batch completion. To access the results of a Message Batch, make a request to the \u0060results_url\u0060 field in the response.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "beta_message_batches_retrieve",
         "parameters": [
           {
@@ -1205,10 +1205,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -1239,7 +1239,7 @@
           "Message Batches"
         ],
         "summary": "Delete a Message Batch",
-        "description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they\u0027ve finished processing. If you\u0027d like to delete an in-progress batch, you must first cancel it.",
+        "description": "Delete a Message Batch.\n\nMessage Batches can only be deleted once they\u0027ve finished processing. If you\u0027d like to delete an in-progress batch, you must first cancel it.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "beta_message_batches_delete",
         "parameters": [
           {
@@ -1293,10 +1293,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -1329,7 +1329,7 @@
           "Message Batches"
         ],
         "summary": "Cancel a Message Batch",
-        "description": "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a \u0060canceling\u0060 state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in \u0060request_counts\u0060. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.",
+        "description": "Batches may be canceled any time before processing ends. Once cancellation is initiated, the batch enters a \u0060canceling\u0060 state, at which time the system may complete any in-progress, non-interruptible requests before finalizing cancellation.\n\nThe number of canceled requests is specified in \u0060request_counts\u0060. To determine which requests were canceled, check the individual results within the batch. Note that cancellation may not result in any canceled requests if they were non-interruptible.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "beta_message_batches_cancel",
         "parameters": [
           {
@@ -1408,7 +1408,7 @@
           "Message Batches"
         ],
         "summary": "Retrieve Message Batch results",
-        "description": "Streams the results of a Message Batch as a \u0060.jsonl\u0060 file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the \u0060custom_id\u0060 field to match results to requests.",
+        "description": "Streams the results of a Message Batch as a \u0060.jsonl\u0060 file.\n\nEach line in the file is a JSON object containing the result of a single request in the Message Batch. Results are not guaranteed to be in the same order as requests. Use the \u0060custom_id\u0060 field to match results to requests.\n\nLearn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)",
         "operationId": "beta_message_batches_results",
         "parameters": [
           {
@@ -1462,10 +1462,10 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
+              "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.",
               "title": "X-Api-Key"
             },
-            "description": "Your unique API key for authentication. \n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
+            "description": "Your unique API key for authentication.\n\nThis key is required in the header of all API requests, to authenticate your account and access Anthropic\u0027s services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace."
           }
         ],
         "responses": {
@@ -1498,7 +1498,7 @@
           "Messages"
         ],
         "summary": "Count tokens in a Message",
-        "description": "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.",
+        "description": "Count the number of tokens in a Message.\n\nThe Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.\n\nLearn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)",
         "operationId": "beta_messages_count_tokens_post",
         "parameters": [
           {
@@ -1684,6 +1684,48 @@
         "title": "Base64PDFSource",
         "type": "object"
       },
+      "BashTool_20250124": {
+        "additionalProperties": false,
+        "properties": {
+          "cache_control": {
+            "title": "Cache Control",
+            "type": null,
+            "nullable": true,
+            "discriminator": {
+              "mapping": {
+                "ephemeral": "#/components/schemas/CacheControlEphemeral"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CacheControlEphemeral"
+              }
+            ]
+          },
+          "type": {
+            "enum": [
+              "bash_20250124"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the tool.\n\nThis is how the tool will be called by the model and in tool_use blocks.",
+            "enum": [
+              "bash"
+            ],
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "title": "BashTool_20250124",
+        "type": "object"
+      },
       "BetaAPIError": {
         "properties": {
           "type": {
@@ -1835,6 +1877,48 @@
           "name"
         ],
         "title": "BashTool_20241022",
+        "type": "object"
+      },
+      "BetaBashTool_20250124": {
+        "additionalProperties": false,
+        "properties": {
+          "cache_control": {
+            "title": "Cache Control",
+            "type": null,
+            "nullable": true,
+            "discriminator": {
+              "mapping": {
+                "ephemeral": "#/components/schemas/BetaCacheControlEphemeral"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BetaCacheControlEphemeral"
+              }
+            ]
+          },
+          "type": {
+            "enum": [
+              "bash_20250124"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the tool.\n\nThis is how the tool will be called by the model and in tool_use blocks.",
+            "enum": [
+              "bash"
+            ],
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "title": "BashTool_20250124",
         "type": "object"
       },
       "BetaBillingError": {
@@ -1997,6 +2081,69 @@
         "title": "ComputerUseTool_20241022",
         "type": "object"
       },
+      "BetaComputerUseTool_20250124": {
+        "additionalProperties": false,
+        "properties": {
+          "cache_control": {
+            "title": "Cache Control",
+            "type": null,
+            "nullable": true,
+            "discriminator": {
+              "mapping": {
+                "ephemeral": "#/components/schemas/BetaCacheControlEphemeral"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BetaCacheControlEphemeral"
+              }
+            ]
+          },
+          "type": {
+            "enum": [
+              "computer_20250124"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the tool.\n\nThis is how the tool will be called by the model and in tool_use blocks.",
+            "enum": [
+              "computer"
+            ],
+            "title": "Name",
+            "type": "string"
+          },
+          "display_height_px": {
+            "description": "The height of the display in pixels.",
+            "minimum": 1,
+            "title": "Display Height Px",
+            "type": "integer"
+          },
+          "display_width_px": {
+            "description": "The width of the display in pixels.",
+            "minimum": 1,
+            "title": "Display Width Px",
+            "type": "integer"
+          },
+          "display_number": {
+            "description": "The X11 display number (e.g. 0, 1) for the display.",
+            "title": "Display Number",
+            "type": "integer",
+            "nullable": true,
+            "minimum": 0
+          }
+        },
+        "required": [
+          "type",
+          "name",
+          "display_height_px",
+          "display_width_px"
+        ],
+        "title": "ComputerUseTool_20250124",
+        "type": "object"
+      },
       "BetaContentBlockDeltaEvent": {
         "properties": {
           "type": {
@@ -2016,7 +2163,9 @@
               "mapping": {
                 "citations_delta": "#/components/schemas/BetaCitationsDelta",
                 "input_json_delta": "#/components/schemas/BetaInputJsonContentBlockDelta",
-                "text_delta": "#/components/schemas/BetaTextContentBlockDelta"
+                "signature_delta": "#/components/schemas/BetaSignatureContentBlockDelta",
+                "text_delta": "#/components/schemas/BetaTextContentBlockDelta",
+                "thinking_delta": "#/components/schemas/BetaThinkingContentBlockDelta"
               },
               "propertyName": "type"
             },
@@ -2029,6 +2178,12 @@
               },
               {
                 "$ref": "#/components/schemas/BetaCitationsDelta"
+              },
+              {
+                "$ref": "#/components/schemas/BetaThinkingContentBlockDelta"
+              },
+              {
+                "$ref": "#/components/schemas/BetaSignatureContentBlockDelta"
               }
             ],
             "title": "Delta"
@@ -2107,7 +2262,9 @@
           "content_block": {
             "discriminator": {
               "mapping": {
+                "redacted_thinking": "#/components/schemas/BetaResponseRedactedThinkingBlock",
                 "text": "#/components/schemas/BetaResponseTextBlock",
+                "thinking": "#/components/schemas/BetaResponseThinkingBlock",
                 "tool_use": "#/components/schemas/BetaResponseToolUseBlock"
               },
               "propertyName": "type"
@@ -2118,6 +2275,12 @@
               },
               {
                 "$ref": "#/components/schemas/BetaResponseToolUseBlock"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseThinkingBlock"
+              },
+              {
+                "$ref": "#/components/schemas/BetaResponseRedactedThinkingBlock"
               }
             ],
             "title": "Content Block"
@@ -2160,7 +2323,7 @@
             "$ref": "#/components/schemas/BetaToolChoice"
           },
           "tools": {
-            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
+            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/draft/2020-12) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
             "items": {
               "oneOf": [
                 {
@@ -2174,6 +2337,15 @@
                 },
                 {
                   "$ref": "#/components/schemas/BetaTextEditor_20241022"
+                },
+                {
+                  "$ref": "#/components/schemas/BetaComputerUseTool_20250124"
+                },
+                {
+                  "$ref": "#/components/schemas/BetaBashTool_20250124"
+                },
+                {
+                  "$ref": "#/components/schemas/BetaTextEditor_20250124"
                 }
               ]
             },
@@ -2229,6 +2401,9 @@
               }
             ]
           },
+          "thinking": {
+            "$ref": "#/components/schemas/BetaThinkingConfigParam"
+          },
           "model": {
             "$ref": "#/components/schemas/Model"
           }
@@ -2246,7 +2421,7 @@
               "role": "user"
             }
           ],
-          "model": "claude-3-5-sonnet-20241022"
+          "model": "claude-3-7-sonnet-20250219"
         }
       },
       "BetaCountMessageTokensResponse": {
@@ -2297,7 +2472,7 @@
               "role": "user"
             }
           ],
-          "model": "claude-3-5-sonnet-20241022"
+          "model": "claude-3-7-sonnet-20250219"
         },
         "properties": {
           "model": {
@@ -2372,11 +2547,14 @@
             "type": "number",
             "example": 1
           },
+          "thinking": {
+            "$ref": "#/components/schemas/BetaThinkingConfigParam"
+          },
           "tool_choice": {
             "$ref": "#/components/schemas/BetaToolChoice"
           },
           "tools": {
-            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
+            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/draft/2020-12) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
             "items": {
               "oneOf": [
                 {
@@ -2390,6 +2568,15 @@
                 },
                 {
                   "$ref": "#/components/schemas/BetaTextEditor_20241022"
+                },
+                {
+                  "$ref": "#/components/schemas/BetaComputerUseTool_20250124"
+                },
+                {
+                  "$ref": "#/components/schemas/BetaBashTool_20250124"
+                },
+                {
+                  "$ref": "#/components/schemas/BetaTextEditor_20250124"
                 }
               ]
             },
@@ -2843,7 +3030,7 @@
                 "$ref": "#/components/schemas/BetaUsage"
               }
             ],
-            "description": "Billing and rate-limit usage.\n\nAnthropic\u0027s API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model\u0027s output then goes through a parsing stage before becoming an API response. As a result, the token counts in \u0060usage\u0060 will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, \u0060output_tokens\u0060 will be non-zero, even for an empty string response from Claude.",
+            "description": "Billing and rate-limit usage.\n\nAnthropic\u0027s API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model\u0027s output then goes through a parsing stage before becoming an API response. As a result, the token counts in \u0060usage\u0060 will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, \u0060output_tokens\u0060 will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of \u0060input_tokens\u0060, \u0060cache_creation_input_tokens\u0060, and \u0060cache_read_input_tokens\u0060.",
             "example": {
               "input_tokens": 2095,
               "output_tokens": 503
@@ -2873,7 +3060,7 @@
             }
           ],
           "id": "msg_013Zva2CMHLNnXjNJJKqJ2EF",
-          "model": "claude-3-5-sonnet-20241022",
+          "model": "claude-3-7-sonnet-20250219",
           "role": "assistant",
           "stop_reason": "end_turn",
           "stop_sequence": null,
@@ -3099,7 +3286,7 @@
                 "$ref": "#/components/schemas/BetaMessageDeltaUsage"
               }
             ],
-            "description": "Billing and rate-limit usage.\n\nAnthropic\u0027s API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model\u0027s output then goes through a parsing stage before becoming an API response. As a result, the token counts in \u0060usage\u0060 will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, \u0060output_tokens\u0060 will be non-zero, even for an empty string response from Claude.",
+            "description": "Billing and rate-limit usage.\n\nAnthropic\u0027s API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model\u0027s output then goes through a parsing stage before becoming an API response. As a result, the token counts in \u0060usage\u0060 will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, \u0060output_tokens\u0060 will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of \u0060input_tokens\u0060, \u0060cache_creation_input_tokens\u0060, and \u0060cache_read_input_tokens\u0060.",
             "example": {
               "output_tokens": 503
             }
@@ -3230,20 +3417,20 @@
             "type": "string",
             "title": "Id",
             "description": "Unique model identifier.",
-            "example": "claude-3-5-sonnet-20241022"
+            "example": "claude-3-7-sonnet-20250219"
           },
           "display_name": {
             "type": "string",
             "title": "Display Name",
             "description": "A human-readable name for the model.",
-            "example": "Claude 3.5 Sonnet (New)"
+            "example": "Claude 3.7 Sonnet"
           },
           "created_at": {
             "type": "string",
             "format": "date-time",
             "title": "Created At",
             "description": "RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.",
-            "example": "2024-10-22T00:00:00Z"
+            "example": "2025-02-19T00:00:00Z"
           }
         },
         "type": "object",
@@ -3561,7 +3748,8 @@
               "mapping": {
                 "base64": "#/components/schemas/BetaBase64PDFSource",
                 "content": "#/components/schemas/BetaContentBlockSource",
-                "text": "#/components/schemas/BetaPlainTextSource"
+                "text": "#/components/schemas/BetaPlainTextSource",
+                "url": "#/components/schemas/BetaURLPDFSource"
               },
               "propertyName": "type"
             },
@@ -3574,6 +3762,9 @@
               },
               {
                 "$ref": "#/components/schemas/BetaContentBlockSource"
+              },
+              {
+                "$ref": "#/components/schemas/BetaURLPDFSource"
               }
             ],
             "title": "Source"
@@ -3582,7 +3773,7 @@
             "title": "Title",
             "type": "string",
             "nullable": true,
-            "maxLength": 255,
+            "maxLength": 500,
             "minLength": 1
           },
           "context": {
@@ -3629,9 +3820,19 @@
             "type": "string"
           },
           "source": {
-            "allOf": [
+            "discriminator": {
+              "mapping": {
+                "base64": "#/components/schemas/BetaBase64ImageSource",
+                "url": "#/components/schemas/BetaURLImageSource"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/BetaBase64ImageSource"
+              },
+              {
+                "$ref": "#/components/schemas/BetaURLImageSource"
               }
             ],
             "title": "Source"
@@ -3689,6 +3890,28 @@
           "end_page_number"
         ],
         "title": "RequestPageLocationCitation",
+        "type": "object"
+      },
+      "BetaRequestRedactedThinkingBlock": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "redacted_thinking"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "data": {
+            "title": "Data",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "data"
+        ],
+        "title": "RequestRedactedThinkingBlock",
         "type": "object"
       },
       "BetaRequestTextBlock": {
@@ -3754,6 +3977,33 @@
           "type"
         ],
         "title": "RequestTextBlock",
+        "type": "object"
+      },
+      "BetaRequestThinkingBlock": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "thinking"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "thinking": {
+            "title": "Thinking",
+            "type": "string"
+          },
+          "signature": {
+            "title": "Signature",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "thinking",
+          "signature"
+        ],
+        "title": "RequestThinkingBlock",
         "type": "object"
       },
       "BetaRequestToolResultBlock": {
@@ -4027,6 +4277,28 @@
         "title": "ResponsePageLocationCitation",
         "type": "object"
       },
+      "BetaResponseRedactedThinkingBlock": {
+        "properties": {
+          "type": {
+            "default": "redacted_thinking",
+            "enum": [
+              "redacted_thinking"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "data": {
+            "title": "Data",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "data"
+        ],
+        "title": "ResponseRedactedThinkingBlock",
+        "type": "object"
+      },
       "BetaResponseTextBlock": {
         "properties": {
           "type": {
@@ -4080,6 +4352,33 @@
         "title": "ResponseTextBlock",
         "type": "object"
       },
+      "BetaResponseThinkingBlock": {
+        "properties": {
+          "type": {
+            "default": "thinking",
+            "enum": [
+              "thinking"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "thinking": {
+            "title": "Thinking",
+            "type": "string"
+          },
+          "signature": {
+            "title": "Signature",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "thinking",
+          "signature"
+        ],
+        "title": "ResponseThinkingBlock",
+        "type": "object"
+      },
       "BetaResponseToolUseBlock": {
         "properties": {
           "type": {
@@ -4112,6 +4411,28 @@
           "input"
         ],
         "title": "ResponseToolUseBlock",
+        "type": "object"
+      },
+      "BetaSignatureContentBlockDelta": {
+        "properties": {
+          "type": {
+            "default": "signature_delta",
+            "enum": [
+              "signature_delta"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "signature": {
+            "title": "Signature",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "signature"
+        ],
+        "title": "SignatureContentBlockDelta",
         "type": "object"
       },
       "BetaSucceededResult": {
@@ -4199,6 +4520,111 @@
         "title": "TextEditor_20241022",
         "type": "object"
       },
+      "BetaTextEditor_20250124": {
+        "additionalProperties": false,
+        "properties": {
+          "cache_control": {
+            "title": "Cache Control",
+            "type": null,
+            "nullable": true,
+            "discriminator": {
+              "mapping": {
+                "ephemeral": "#/components/schemas/BetaCacheControlEphemeral"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/BetaCacheControlEphemeral"
+              }
+            ]
+          },
+          "type": {
+            "enum": [
+              "text_editor_20250124"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the tool.\n\nThis is how the tool will be called by the model and in tool_use blocks.",
+            "enum": [
+              "str_replace_editor"
+            ],
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "title": "TextEditor_20250124",
+        "type": "object"
+      },
+      "BetaThinkingConfigDisabled": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "disabled"
+            ],
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "ThinkingConfigDisabled",
+        "type": "object"
+      },
+      "BetaThinkingConfigEnabled": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "enabled"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "budget_tokens": {
+            "description": "Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. \n\nMust be \u22651024 and less than \u0060max_tokens\u0060.\n\nSee [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.",
+            "minimum": 1024,
+            "title": "Budget Tokens",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "type",
+          "budget_tokens"
+        ],
+        "title": "ThinkingConfigEnabled",
+        "type": "object"
+      },
+      "BetaThinkingContentBlockDelta": {
+        "properties": {
+          "type": {
+            "default": "thinking_delta",
+            "enum": [
+              "thinking_delta"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "thinking": {
+            "title": "Thinking",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "thinking"
+        ],
+        "title": "ThinkingContentBlockDelta",
+        "type": "object"
+      },
       "BetaTool": {
         "additionalProperties": false,
         "properties": {
@@ -4230,7 +4656,7 @@
                 "$ref": "#/components/schemas/BetaInputSchema"
               }
             ],
-            "description": "[JSON schema](https://json-schema.org/) for this tool\u0027s input.\n\nThis defines the shape of the \u0060input\u0060 that your tool accepts and that the model will produce.",
+            "description": "[JSON schema](https://json-schema.org/draft/2020-12) for this tool\u0027s input.\n\nThis defines the shape of the \u0060input\u0060 that your tool accepts and that the model will produce.",
             "example": {
               "properties": {
                 "location": {
@@ -4345,6 +4771,50 @@
           "name"
         ],
         "title": "ToolChoiceTool",
+        "type": "object"
+      },
+      "BetaURLImageSource": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "url"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "url"
+        ],
+        "title": "URLImageSource",
+        "type": "object"
+      },
+      "BetaURLPDFSource": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "url"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "url"
+        ],
+        "title": "URLPDFSource",
         "type": "object"
       },
       "BetaUsage": {
@@ -4635,7 +5105,9 @@
               "mapping": {
                 "citations_delta": "#/components/schemas/CitationsDelta",
                 "input_json_delta": "#/components/schemas/InputJsonContentBlockDelta",
-                "text_delta": "#/components/schemas/TextContentBlockDelta"
+                "signature_delta": "#/components/schemas/SignatureContentBlockDelta",
+                "text_delta": "#/components/schemas/TextContentBlockDelta",
+                "thinking_delta": "#/components/schemas/ThinkingContentBlockDelta"
               },
               "propertyName": "type"
             },
@@ -4648,6 +5120,12 @@
               },
               {
                 "$ref": "#/components/schemas/CitationsDelta"
+              },
+              {
+                "$ref": "#/components/schemas/ThinkingContentBlockDelta"
+              },
+              {
+                "$ref": "#/components/schemas/SignatureContentBlockDelta"
               }
             ],
             "title": "Delta"
@@ -4731,7 +5209,9 @@
           "content_block": {
             "discriminator": {
               "mapping": {
+                "redacted_thinking": "#/components/schemas/ResponseRedactedThinkingBlock",
                 "text": "#/components/schemas/ResponseTextBlock",
+                "thinking": "#/components/schemas/ResponseThinkingBlock",
                 "tool_use": "#/components/schemas/ResponseToolUseBlock"
               },
               "propertyName": "type"
@@ -4742,6 +5222,12 @@
               },
               {
                 "$ref": "#/components/schemas/ResponseToolUseBlock"
+              },
+              {
+                "$ref": "#/components/schemas/ResponseThinkingBlock"
+              },
+              {
+                "$ref": "#/components/schemas/ResponseRedactedThinkingBlock"
               }
             ],
             "title": "Content Block"
@@ -4794,9 +5280,19 @@
             "$ref": "#/components/schemas/ToolChoice"
           },
           "tools": {
-            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
+            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/draft/2020-12) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
             "items": {
-              "$ref": "#/components/schemas/Tool"
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Tool"
+                },
+                {
+                  "$ref": "#/components/schemas/BashTool_20250124"
+                },
+                {
+                  "$ref": "#/components/schemas/TextEditor_20250124"
+                }
+              ]
             },
             "title": "Tools",
             "type": "array",
@@ -4850,6 +5346,9 @@
               }
             ]
           },
+          "thinking": {
+            "$ref": "#/components/schemas/ThinkingConfigParam"
+          },
           "model": {
             "$ref": "#/components/schemas/Model"
           }
@@ -4867,7 +5366,7 @@
               "role": "user"
             }
           ],
-          "model": "claude-3-5-sonnet-20241022"
+          "model": "claude-3-7-sonnet-20250219"
         }
       },
       "CountMessageTokensResponse": {
@@ -4918,7 +5417,7 @@
               "role": "user"
             }
           ],
-          "model": "claude-3-5-sonnet-20241022"
+          "model": "claude-3-7-sonnet-20250219"
         },
         "properties": {
           "model": {
@@ -4993,13 +5492,26 @@
             "type": "number",
             "example": 1
           },
+          "thinking": {
+            "$ref": "#/components/schemas/ThinkingConfigParam"
+          },
           "tool_choice": {
             "$ref": "#/components/schemas/ToolChoice"
           },
           "tools": {
-            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
+            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/draft/2020-12) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
             "items": {
-              "$ref": "#/components/schemas/Tool"
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Tool"
+                },
+                {
+                  "$ref": "#/components/schemas/BashTool_20250124"
+                },
+                {
+                  "$ref": "#/components/schemas/TextEditor_20250124"
+                }
+              ]
             },
             "title": "Tools",
             "type": "array",
@@ -5451,7 +5963,7 @@
                 "$ref": "#/components/schemas/Usage"
               }
             ],
-            "description": "Billing and rate-limit usage.\n\nAnthropic\u0027s API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model\u0027s output then goes through a parsing stage before becoming an API response. As a result, the token counts in \u0060usage\u0060 will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, \u0060output_tokens\u0060 will be non-zero, even for an empty string response from Claude.",
+            "description": "Billing and rate-limit usage.\n\nAnthropic\u0027s API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model\u0027s output then goes through a parsing stage before becoming an API response. As a result, the token counts in \u0060usage\u0060 will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, \u0060output_tokens\u0060 will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of \u0060input_tokens\u0060, \u0060cache_creation_input_tokens\u0060, and \u0060cache_read_input_tokens\u0060.",
             "example": {
               "input_tokens": 2095,
               "output_tokens": 503
@@ -5481,7 +5993,7 @@
             }
           ],
           "id": "msg_013Zva2CMHLNnXjNJJKqJ2EF",
-          "model": "claude-3-5-sonnet-20241022",
+          "model": "claude-3-7-sonnet-20250219",
           "role": "assistant",
           "stop_reason": "end_turn",
           "stop_sequence": null,
@@ -5707,7 +6219,7 @@
                 "$ref": "#/components/schemas/MessageDeltaUsage"
               }
             ],
-            "description": "Billing and rate-limit usage.\n\nAnthropic\u0027s API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model\u0027s output then goes through a parsing stage before becoming an API response. As a result, the token counts in \u0060usage\u0060 will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, \u0060output_tokens\u0060 will be non-zero, even for an empty string response from Claude.",
+            "description": "Billing and rate-limit usage.\n\nAnthropic\u0027s API bills and rate-limits by token counts, as tokens represent the underlying cost to our systems.\n\nUnder the hood, the API transforms requests into a format suitable for the model. The model\u0027s output then goes through a parsing stage before becoming an API response. As a result, the token counts in \u0060usage\u0060 will not match one-to-one with the exact visible content of an API request or response.\n\nFor example, \u0060output_tokens\u0060 will be non-zero, even for an empty string response from Claude.\n\nTotal input tokens in a request is the summation of \u0060input_tokens\u0060, \u0060cache_creation_input_tokens\u0060, and \u0060cache_read_input_tokens\u0060.",
             "example": {
               "output_tokens": 503
             }
@@ -5858,20 +6370,20 @@
             "type": "string",
             "title": "Id",
             "description": "Unique model identifier.",
-            "example": "claude-3-5-sonnet-20241022"
+            "example": "claude-3-7-sonnet-20250219"
           },
           "display_name": {
             "type": "string",
             "title": "Display Name",
             "description": "A human-readable name for the model.",
-            "example": "Claude 3.5 Sonnet (New)"
+            "example": "Claude 3.7 Sonnet"
           },
           "created_at": {
             "type": "string",
             "format": "date-time",
             "title": "Created At",
             "description": "RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.",
-            "example": "2024-10-22T00:00:00Z"
+            "example": "2025-02-19T00:00:00Z"
           }
         },
         "type": "object",
@@ -6189,7 +6701,8 @@
               "mapping": {
                 "base64": "#/components/schemas/Base64PDFSource",
                 "content": "#/components/schemas/ContentBlockSource",
-                "text": "#/components/schemas/PlainTextSource"
+                "text": "#/components/schemas/PlainTextSource",
+                "url": "#/components/schemas/URLPDFSource"
               },
               "propertyName": "type"
             },
@@ -6202,6 +6715,9 @@
               },
               {
                 "$ref": "#/components/schemas/ContentBlockSource"
+              },
+              {
+                "$ref": "#/components/schemas/URLPDFSource"
               }
             ],
             "title": "Source"
@@ -6210,7 +6726,7 @@
             "title": "Title",
             "type": "string",
             "nullable": true,
-            "maxLength": 255,
+            "maxLength": 500,
             "minLength": 1
           },
           "context": {
@@ -6257,9 +6773,19 @@
             "type": "string"
           },
           "source": {
-            "allOf": [
+            "discriminator": {
+              "mapping": {
+                "base64": "#/components/schemas/Base64ImageSource",
+                "url": "#/components/schemas/URLImageSource"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
               {
                 "$ref": "#/components/schemas/Base64ImageSource"
+              },
+              {
+                "$ref": "#/components/schemas/URLImageSource"
               }
             ],
             "title": "Source"
@@ -6317,6 +6843,28 @@
           "end_page_number"
         ],
         "title": "RequestPageLocationCitation",
+        "type": "object"
+      },
+      "RequestRedactedThinkingBlock": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "redacted_thinking"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "data": {
+            "title": "Data",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "data"
+        ],
+        "title": "RequestRedactedThinkingBlock",
         "type": "object"
       },
       "RequestTextBlock": {
@@ -6382,6 +6930,33 @@
           "type"
         ],
         "title": "RequestTextBlock",
+        "type": "object"
+      },
+      "RequestThinkingBlock": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "thinking"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "thinking": {
+            "title": "Thinking",
+            "type": "string"
+          },
+          "signature": {
+            "title": "Signature",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "thinking",
+          "signature"
+        ],
+        "title": "RequestThinkingBlock",
         "type": "object"
       },
       "RequestToolResultBlock": {
@@ -6655,6 +7230,28 @@
         "title": "ResponsePageLocationCitation",
         "type": "object"
       },
+      "ResponseRedactedThinkingBlock": {
+        "properties": {
+          "type": {
+            "default": "redacted_thinking",
+            "enum": [
+              "redacted_thinking"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "data": {
+            "title": "Data",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "data"
+        ],
+        "title": "ResponseRedactedThinkingBlock",
+        "type": "object"
+      },
       "ResponseTextBlock": {
         "properties": {
           "type": {
@@ -6708,6 +7305,33 @@
         "title": "ResponseTextBlock",
         "type": "object"
       },
+      "ResponseThinkingBlock": {
+        "properties": {
+          "type": {
+            "default": "thinking",
+            "enum": [
+              "thinking"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "thinking": {
+            "title": "Thinking",
+            "type": "string"
+          },
+          "signature": {
+            "title": "Signature",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "thinking",
+          "signature"
+        ],
+        "title": "ResponseThinkingBlock",
+        "type": "object"
+      },
       "ResponseToolUseBlock": {
         "properties": {
           "type": {
@@ -6740,6 +7364,28 @@
           "input"
         ],
         "title": "ResponseToolUseBlock",
+        "type": "object"
+      },
+      "SignatureContentBlockDelta": {
+        "properties": {
+          "type": {
+            "default": "signature_delta",
+            "enum": [
+              "signature_delta"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "signature": {
+            "title": "Signature",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "signature"
+        ],
+        "title": "SignatureContentBlockDelta",
         "type": "object"
       },
       "SucceededResult": {
@@ -6785,6 +7431,111 @@
         "title": "TextContentBlockDelta",
         "type": "object"
       },
+      "TextEditor_20250124": {
+        "additionalProperties": false,
+        "properties": {
+          "cache_control": {
+            "title": "Cache Control",
+            "type": null,
+            "nullable": true,
+            "discriminator": {
+              "mapping": {
+                "ephemeral": "#/components/schemas/CacheControlEphemeral"
+              },
+              "propertyName": "type"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/CacheControlEphemeral"
+              }
+            ]
+          },
+          "type": {
+            "enum": [
+              "text_editor_20250124"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "name": {
+            "description": "Name of the tool.\n\nThis is how the tool will be called by the model and in tool_use blocks.",
+            "enum": [
+              "str_replace_editor"
+            ],
+            "title": "Name",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "title": "TextEditor_20250124",
+        "type": "object"
+      },
+      "ThinkingConfigDisabled": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "disabled"
+            ],
+            "title": "Type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "title": "ThinkingConfigDisabled",
+        "type": "object"
+      },
+      "ThinkingConfigEnabled": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "enabled"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "budget_tokens": {
+            "description": "Determines how many tokens Claude can use for its internal reasoning process. Larger budgets can enable more thorough analysis for complex problems, improving response quality. \n\nMust be \u22651024 and less than \u0060max_tokens\u0060.\n\nSee [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.",
+            "minimum": 1024,
+            "title": "Budget Tokens",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "type",
+          "budget_tokens"
+        ],
+        "title": "ThinkingConfigEnabled",
+        "type": "object"
+      },
+      "ThinkingContentBlockDelta": {
+        "properties": {
+          "type": {
+            "default": "thinking_delta",
+            "enum": [
+              "thinking_delta"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "thinking": {
+            "title": "Thinking",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "thinking"
+        ],
+        "title": "ThinkingContentBlockDelta",
+        "type": "object"
+      },
       "Tool": {
         "additionalProperties": false,
         "properties": {
@@ -6808,7 +7559,7 @@
                 "$ref": "#/components/schemas/InputSchema"
               }
             ],
-            "description": "[JSON schema](https://json-schema.org/) for this tool\u0027s input.\n\nThis defines the shape of the \u0060input\u0060 that your tool accepts and that the model will produce.",
+            "description": "[JSON schema](https://json-schema.org/draft/2020-12) for this tool\u0027s input.\n\nThis defines the shape of the \u0060input\u0060 that your tool accepts and that the model will produce.",
             "x-stainless-skip": [
               "cli"
             ],
@@ -6928,6 +7679,50 @@
         "title": "ToolChoiceTool",
         "type": "object"
       },
+      "URLImageSource": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "url"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "url"
+        ],
+        "title": "URLImageSource",
+        "type": "object"
+      },
+      "URLPDFSource": {
+        "additionalProperties": false,
+        "properties": {
+          "type": {
+            "enum": [
+              "url"
+            ],
+            "title": "Type",
+            "type": "string"
+          },
+          "url": {
+            "title": "Url",
+            "type": "string"
+          }
+        },
+        "required": [
+          "type",
+          "url"
+        ],
+        "title": "URLPDFSource",
+        "type": "object"
+      },
       "Usage": {
         "properties": {
           "input_tokens": {
@@ -6982,7 +7777,7 @@
               "role": "user"
             }
           ],
-          "model": "claude-3-5-sonnet-20241022"
+          "model": "claude-3-7-sonnet-20250219"
         },
         "properties": {
           "model": {
@@ -7048,13 +7843,26 @@
             "type": "number",
             "example": 1
           },
+          "thinking": {
+            "$ref": "#/components/schemas/ThinkingConfigParam"
+          },
           "tool_choice": {
             "$ref": "#/components/schemas/ToolChoice"
           },
           "tools": {
-            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
+            "description": "Definitions of tools that the model may use.\n\nIf you include \u0060tools\u0060 in your API request, the model may return \u0060tool_use\u0060 content blocks that represent the model\u0027s use of those tools. You can then run those tools using the tool input generated by the model and then optionally return results back to the model using \u0060tool_result\u0060 content blocks.\n\nEach tool definition includes:\n\n* \u0060name\u0060: Name of the tool.\n* \u0060description\u0060: Optional, but strongly-recommended description of the tool.\n* \u0060input_schema\u0060: [JSON schema](https://json-schema.org/draft/2020-12) for the tool \u0060input\u0060 shape that the model will produce in \u0060tool_use\u0060 output content blocks.\n\nFor example, if you defined \u0060tools\u0060 as:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022description\u0022: \u0022Get the current stock price for a given ticker symbol.\u0022,\n    \u0022input_schema\u0022: {\n      \u0022type\u0022: \u0022object\u0022,\n      \u0022properties\u0022: {\n        \u0022ticker\u0022: {\n          \u0022type\u0022: \u0022string\u0022,\n          \u0022description\u0022: \u0022The stock ticker symbol, e.g. AAPL for Apple Inc.\u0022\n        }\n      },\n      \u0022required\u0022: [\u0022ticker\u0022]\n    }\n  }\n]\n\u0060\u0060\u0060\n\nAnd then asked the model \u0022What\u0027s the S\u0026P 500 at today?\u0022, the model might produce \u0060tool_use\u0060 content blocks in the response like this:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_use\u0022,\n    \u0022id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022name\u0022: \u0022get_stock_price\u0022,\n    \u0022input\u0022: { \u0022ticker\u0022: \u0022^GSPC\u0022 }\n  }\n]\n\u0060\u0060\u0060\n\nYou might then run your \u0060get_stock_price\u0060 tool with \u0060{\u0022ticker\u0022: \u0022^GSPC\u0022}\u0060 as an input, and return the following back to the model in a subsequent \u0060user\u0060 message:\n\n\u0060\u0060\u0060json\n[\n  {\n    \u0022type\u0022: \u0022tool_result\u0022,\n    \u0022tool_use_id\u0022: \u0022toolu_01D7FLrfh4GYq7yT1ULFeyMV\u0022,\n    \u0022content\u0022: \u0022259.75 USD\u0022\n  }\n]\n\u0060\u0060\u0060\n\nTools can be used for workflows that include running client-side tools and functions, or more generally whenever you want the model to produce a particular JSON structure of output.\n\nSee our [guide](https://docs.anthropic.com/en/docs/tool-use) for more details.",
             "items": {
-              "$ref": "#/components/schemas/Tool"
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/Tool"
+                },
+                {
+                  "$ref": "#/components/schemas/BashTool_20250124"
+                },
+                {
+                  "$ref": "#/components/schemas/TextEditor_20250124"
+                }
+              ]
             },
             "title": "Tools",
             "type": "array",
@@ -7114,12 +7922,53 @@
               "message-batches-2024-09-24",
               "prompt-caching-2024-07-31",
               "computer-use-2024-10-22",
+              "computer-use-2025-01-24",
               "pdfs-2024-09-25",
-              "token-counting-2024-11-01"
+              "token-counting-2024-11-01",
+              "token-efficient-tools-2025-02-19",
+              "output-128k-2025-02-19"
             ],
             "x-stainless-nominal": false
           }
         ]
+      },
+      "ThinkingConfigParam": {
+        "description": "Configuration for enabling Claude\u0027s extended thinking. \n\nWhen enabled, responses include \u0060thinking\u0060 content blocks showing Claude\u0027s thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your \u0060max_tokens\u0060 limit.\n\nSee [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.",
+        "discriminator": {
+          "mapping": {
+            "disabled": "#/components/schemas/ThinkingConfigDisabled",
+            "enabled": "#/components/schemas/ThinkingConfigEnabled"
+          },
+          "propertyName": "type"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/ThinkingConfigEnabled"
+          },
+          {
+            "$ref": "#/components/schemas/ThinkingConfigDisabled"
+          }
+        ],
+        "title": "Thinking"
+      },
+      "BetaThinkingConfigParam": {
+        "description": "Configuration for enabling Claude\u0027s extended thinking. \n\nWhen enabled, responses include \u0060thinking\u0060 content blocks showing Claude\u0027s thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your \u0060max_tokens\u0060 limit.\n\nSee [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.",
+        "discriminator": {
+          "mapping": {
+            "disabled": "#/components/schemas/BetaThinkingConfigDisabled",
+            "enabled": "#/components/schemas/BetaThinkingConfigEnabled"
+          },
+          "propertyName": "type"
+        },
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BetaThinkingConfigEnabled"
+          },
+          {
+            "$ref": "#/components/schemas/BetaThinkingConfigDisabled"
+          }
+        ],
+        "title": "Thinking"
       },
       "ToolChoice": {
         "description": "How the model should use the provided tools. The model can use a specific tool, any available tool, or decide by itself.",
@@ -7170,7 +8019,9 @@
       "ContentBlock": {
         "discriminator": {
           "mapping": {
+            "redacted_thinking": "#/components/schemas/ResponseRedactedThinkingBlock",
             "text": "#/components/schemas/ResponseTextBlock",
+            "thinking": "#/components/schemas/ResponseThinkingBlock",
             "tool_use": "#/components/schemas/ResponseToolUseBlock"
           },
           "propertyName": "type"
@@ -7181,6 +8032,12 @@
           },
           {
             "$ref": "#/components/schemas/ResponseToolUseBlock"
+          },
+          {
+            "$ref": "#/components/schemas/ResponseThinkingBlock"
+          },
+          {
+            "$ref": "#/components/schemas/ResponseRedactedThinkingBlock"
           }
         ]
       },
@@ -7189,7 +8046,9 @@
           "mapping": {
             "document": "#/components/schemas/RequestDocumentBlock",
             "image": "#/components/schemas/RequestImageBlock",
+            "redacted_thinking": "#/components/schemas/RequestRedactedThinkingBlock",
             "text": "#/components/schemas/RequestTextBlock",
+            "thinking": "#/components/schemas/RequestThinkingBlock",
             "tool_result": "#/components/schemas/RequestToolResultBlock",
             "tool_use": "#/components/schemas/RequestToolUseBlock"
           },
@@ -7210,6 +8069,12 @@
           },
           {
             "$ref": "#/components/schemas/RequestDocumentBlock"
+          },
+          {
+            "$ref": "#/components/schemas/RequestThinkingBlock"
+          },
+          {
+            "$ref": "#/components/schemas/RequestRedactedThinkingBlock"
           }
         ],
         "x-stainless-python-extend-union": [
@@ -7222,7 +8087,9 @@
       "BetaContentBlock": {
         "discriminator": {
           "mapping": {
+            "redacted_thinking": "#/components/schemas/BetaResponseRedactedThinkingBlock",
             "text": "#/components/schemas/BetaResponseTextBlock",
+            "thinking": "#/components/schemas/BetaResponseThinkingBlock",
             "tool_use": "#/components/schemas/BetaResponseToolUseBlock"
           },
           "propertyName": "type"
@@ -7233,6 +8100,12 @@
           },
           {
             "$ref": "#/components/schemas/BetaResponseToolUseBlock"
+          },
+          {
+            "$ref": "#/components/schemas/BetaResponseThinkingBlock"
+          },
+          {
+            "$ref": "#/components/schemas/BetaResponseRedactedThinkingBlock"
           }
         ]
       },
@@ -7241,7 +8114,9 @@
           "mapping": {
             "document": "#/components/schemas/BetaRequestDocumentBlock",
             "image": "#/components/schemas/BetaRequestImageBlock",
+            "redacted_thinking": "#/components/schemas/BetaRequestRedactedThinkingBlock",
             "text": "#/components/schemas/BetaRequestTextBlock",
+            "thinking": "#/components/schemas/BetaRequestThinkingBlock",
             "tool_result": "#/components/schemas/BetaRequestToolResultBlock",
             "tool_use": "#/components/schemas/BetaRequestToolUseBlock"
           },
@@ -7262,6 +8137,12 @@
           },
           {
             "$ref": "#/components/schemas/BetaRequestDocumentBlock"
+          },
+          {
+            "$ref": "#/components/schemas/BetaRequestThinkingBlock"
+          },
+          {
+            "$ref": "#/components/schemas/BetaRequestRedactedThinkingBlock"
           }
         ]
       },
@@ -7274,35 +8155,48 @@
             "type": "string"
           },
           {
-            "description": "Fast and cost-effective model",
+            "description": "Our most intelligent model",
+            "x-stainless-nominal": false,
+            "enum": [
+              "claude-3-7-sonnet-latest"
+            ]
+          },
+          {
+            "description": "Our most intelligent model",
+            "x-stainless-nominal": false,
+            "enum": [
+              "claude-3-7-sonnet-20250219"
+            ]
+          },
+          {
+            "description": "Fastest and most compact model for near-instant responsiveness",
             "x-stainless-nominal": false,
             "enum": [
               "claude-3-5-haiku-latest"
             ]
           },
           {
-            "description": "Fast and cost-effective model",
+            "description": "Our fastest model",
             "x-stainless-nominal": false,
             "enum": [
               "claude-3-5-haiku-20241022"
             ]
           },
           {
-            "description": "Our most intelligent model",
+            "description": "Our previous most intelligent model",
             "x-stainless-nominal": false,
             "enum": [
               "claude-3-5-sonnet-latest"
             ]
           },
           {
-            "description": "Our most intelligent model",
+            "description": "Our previous most intelligent model",
             "x-stainless-nominal": false,
             "enum": [
               "claude-3-5-sonnet-20241022"
             ]
           },
           {
-            "description": "Our previous most intelligent model",
             "x-stainless-nominal": false,
             "enum": [
               "claude-3-5-sonnet-20240620"
@@ -7332,7 +8226,7 @@
             ]
           },
           {
-            "description": "Our previous fast and cost-effective",
+            "description": "Our previous most fast and cost-effective",
             "x-stainless-nominal": false,
             "enum": [
               "claude-3-haiku-20240307"

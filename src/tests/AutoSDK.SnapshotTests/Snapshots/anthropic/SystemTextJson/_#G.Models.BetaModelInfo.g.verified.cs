@@ -21,18 +21,18 @@ namespace G
 
         /// <summary>
         /// Unique model identifier.<br/>
-        /// Example: claude-3-5-sonnet-20241022
+        /// Example: claude-3-7-sonnet-20250219
         /// </summary>
-        /// <example>claude-3-5-sonnet-20241022</example>
+        /// <example>claude-3-7-sonnet-20250219</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
         /// A human-readable name for the model.<br/>
-        /// Example: Claude 3.5 Sonnet (New)
+        /// Example: Claude 3.7 Sonnet
         /// </summary>
-        /// <example>Claude 3.5 Sonnet (New)</example>
+        /// <example>Claude 3.7 Sonnet</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("display_name")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string DisplayName { get; set; }
@@ -60,11 +60,11 @@ namespace G
         /// </param>
         /// <param name="id">
         /// Unique model identifier.<br/>
-        /// Example: claude-3-5-sonnet-20241022
+        /// Example: claude-3-7-sonnet-20250219
         /// </param>
         /// <param name="displayName">
         /// A human-readable name for the model.<br/>
-        /// Example: Claude 3.5 Sonnet (New)
+        /// Example: Claude 3.7 Sonnet
         /// </param>
         /// <param name="createdAt">
         /// RFC 3339 datetime string representing the time at which the model was released. May be set to an epoch value if the release date is unknown.

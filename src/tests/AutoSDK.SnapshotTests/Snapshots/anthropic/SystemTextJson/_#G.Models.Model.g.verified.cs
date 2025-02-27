@@ -46,7 +46,7 @@ namespace G
         }
 
         /// <summary>
-        /// Fast and cost-effective model
+        /// Our most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant2? Value2 { get; init; }
@@ -81,7 +81,7 @@ namespace G
         }
 
         /// <summary>
-        /// Fast and cost-effective model
+        /// Our most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant3? Value3 { get; init; }
@@ -116,7 +116,7 @@ namespace G
         }
 
         /// <summary>
-        /// Our most intelligent model
+        /// Fastest and most compact model for near-instant responsiveness
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant4? Value4 { get; init; }
@@ -151,7 +151,7 @@ namespace G
         }
 
         /// <summary>
-        /// Our most intelligent model
+        /// Our fastest model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant5? Value5 { get; init; }
@@ -221,7 +221,7 @@ namespace G
         }
 
         /// <summary>
-        /// Excels at writing and complex tasks
+        /// Our previous most intelligent model
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant7? Value7 { get; init; }
@@ -256,7 +256,7 @@ namespace G
         }
 
         /// <summary>
-        /// Excels at writing and complex tasks
+        /// 
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant8? Value8 { get; init; }
@@ -291,7 +291,7 @@ namespace G
         }
 
         /// <summary>
-        /// Balance of speed and intelligence
+        /// Excels at writing and complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant9? Value9 { get; init; }
@@ -326,7 +326,7 @@ namespace G
         }
 
         /// <summary>
-        /// Our previous fast and cost-effective
+        /// Excels at writing and complex tasks
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant10? Value10 { get; init; }
@@ -361,7 +361,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Balance of speed and intelligence
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant11? Value11 { get; init; }
@@ -396,7 +396,7 @@ namespace G
         }
 
         /// <summary>
-        /// 
+        /// Our previous most fast and cost-effective
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::G.ModelVariant12? Value12 { get; init; }
@@ -433,6 +433,76 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ModelVariant13? Value13 { get; init; }
+#else
+        public global::G.ModelVariant13? Value13 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value13))]
+#endif
+        public bool IsValue13 => Value13 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Model(global::G.ModelVariant13 value) => new Model(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ModelVariant13?(Model @this) => @this.Value13;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Model(global::G.ModelVariant13? value)
+        {
+            Value13 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ModelVariant14? Value14 { get; init; }
+#else
+        public global::G.ModelVariant14? Value14 { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value14))]
+#endif
+        public bool IsValue14 => Value14 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Model(global::G.ModelVariant14 value) => new Model(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ModelVariant14?(Model @this) => @this.Value14;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Model(global::G.ModelVariant14? value)
+        {
+            Value14 = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Model(
             string? value1,
             global::G.ModelVariant2? value2,
@@ -445,7 +515,9 @@ namespace G
             global::G.ModelVariant9? value9,
             global::G.ModelVariant10? value10,
             global::G.ModelVariant11? value11,
-            global::G.ModelVariant12? value12
+            global::G.ModelVariant12? value12,
+            global::G.ModelVariant13? value13,
+            global::G.ModelVariant14? value14
             )
         {
             Value1 = value1;
@@ -460,12 +532,16 @@ namespace G
             Value10 = value10;
             Value11 = value11;
             Value12 = value12;
+            Value13 = value13;
+            Value14 = value14;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            Value14 as object ??
+            Value13 as object ??
             Value12 as object ??
             Value11 as object ??
             Value10 as object ??
@@ -485,7 +561,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12;
+            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9 || IsValue10 || IsValue11 || IsValue12 || IsValue13 || IsValue14;
         }
 
         /// <summary>
@@ -504,6 +580,8 @@ namespace G
             global::System.Func<global::G.ModelVariant10?, TResult>? value10 = null,
             global::System.Func<global::G.ModelVariant11?, TResult>? value11 = null,
             global::System.Func<global::G.ModelVariant12?, TResult>? value12 = null,
+            global::System.Func<global::G.ModelVariant13?, TResult>? value13 = null,
+            global::System.Func<global::G.ModelVariant14?, TResult>? value14 = null,
             bool validate = true)
         {
             if (validate)
@@ -559,6 +637,14 @@ namespace G
             {
                 return value12(Value12!);
             }
+            else if (IsValue13 && value13 != null)
+            {
+                return value13(Value13!);
+            }
+            else if (IsValue14 && value14 != null)
+            {
+                return value14(Value14!);
+            }
 
             return default(TResult);
         }
@@ -579,6 +665,8 @@ namespace G
             global::System.Action<global::G.ModelVariant10?>? value10 = null,
             global::System.Action<global::G.ModelVariant11?>? value11 = null,
             global::System.Action<global::G.ModelVariant12?>? value12 = null,
+            global::System.Action<global::G.ModelVariant13?>? value13 = null,
+            global::System.Action<global::G.ModelVariant14?>? value14 = null,
             bool validate = true)
         {
             if (validate)
@@ -634,6 +722,14 @@ namespace G
             {
                 value12?.Invoke(Value12!);
             }
+            else if (IsValue13)
+            {
+                value13?.Invoke(Value13!);
+            }
+            else if (IsValue14)
+            {
+                value14?.Invoke(Value14!);
+            }
         }
 
         /// <summary>
@@ -667,6 +763,10 @@ namespace G
                 typeof(global::G.ModelVariant11),
                 Value12,
                 typeof(global::G.ModelVariant12),
+                Value13,
+                typeof(global::G.ModelVariant13),
+                Value14,
+                typeof(global::G.ModelVariant14),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -694,7 +794,9 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant9?>.Default.Equals(Value9, other.Value9) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant10?>.Default.Equals(Value10, other.Value10) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant11?>.Default.Equals(Value11, other.Value11) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant12?>.Default.Equals(Value12, other.Value12) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant12?>.Default.Equals(Value12, other.Value12) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant13?>.Default.Equals(Value13, other.Value13) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ModelVariant14?>.Default.Equals(Value14, other.Value14) 
                 ;
         }
 

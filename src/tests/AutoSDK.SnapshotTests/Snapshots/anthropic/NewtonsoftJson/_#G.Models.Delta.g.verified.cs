@@ -123,11 +123,83 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaThinkingContentBlockDelta? ThinkingDelta { get; init; }
+#else
+        public global::G.BetaThinkingContentBlockDelta? ThinkingDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ThinkingDelta))]
+#endif
+        public bool IsThinkingDelta => ThinkingDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Delta(global::G.BetaThinkingContentBlockDelta value) => new Delta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.BetaThinkingContentBlockDelta?(Delta @this) => @this.ThinkingDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Delta(global::G.BetaThinkingContentBlockDelta? value)
+        {
+            ThinkingDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaSignatureContentBlockDelta? SignatureDelta { get; init; }
+#else
+        public global::G.BetaSignatureContentBlockDelta? SignatureDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(SignatureDelta))]
+#endif
+        public bool IsSignatureDelta => SignatureDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator Delta(global::G.BetaSignatureContentBlockDelta value) => new Delta(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.BetaSignatureContentBlockDelta?(Delta @this) => @this.SignatureDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public Delta(global::G.BetaSignatureContentBlockDelta? value)
+        {
+            SignatureDelta = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public Delta(
             global::G.BetaContentBlockDeltaEventDeltaDiscriminatorType? type,
             global::G.BetaTextContentBlockDelta? textDelta,
             global::G.BetaInputJsonContentBlockDelta? inputJsonDelta,
-            global::G.BetaCitationsDelta? citationsDelta
+            global::G.BetaCitationsDelta? citationsDelta,
+            global::G.BetaThinkingContentBlockDelta? thinkingDelta,
+            global::G.BetaSignatureContentBlockDelta? signatureDelta
             )
         {
             Type = type;
@@ -135,12 +207,16 @@ namespace G
             TextDelta = textDelta;
             InputJsonDelta = inputJsonDelta;
             CitationsDelta = citationsDelta;
+            ThinkingDelta = thinkingDelta;
+            SignatureDelta = signatureDelta;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            SignatureDelta as object ??
+            ThinkingDelta as object ??
             CitationsDelta as object ??
             InputJsonDelta as object ??
             TextDelta as object 
@@ -151,7 +227,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta || !IsTextDelta && IsInputJsonDelta && !IsCitationsDelta || !IsTextDelta && !IsInputJsonDelta && IsCitationsDelta;
+            return IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta && !IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && IsInputJsonDelta && !IsCitationsDelta && !IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && !IsInputJsonDelta && IsCitationsDelta && !IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta && IsThinkingDelta && !IsSignatureDelta || !IsTextDelta && !IsInputJsonDelta && !IsCitationsDelta && !IsThinkingDelta && IsSignatureDelta;
         }
 
         /// <summary>
@@ -161,6 +237,8 @@ namespace G
             global::System.Func<global::G.BetaTextContentBlockDelta?, TResult>? textDelta = null,
             global::System.Func<global::G.BetaInputJsonContentBlockDelta?, TResult>? inputJsonDelta = null,
             global::System.Func<global::G.BetaCitationsDelta?, TResult>? citationsDelta = null,
+            global::System.Func<global::G.BetaThinkingContentBlockDelta?, TResult>? thinkingDelta = null,
+            global::System.Func<global::G.BetaSignatureContentBlockDelta?, TResult>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -180,6 +258,14 @@ namespace G
             {
                 return citationsDelta(CitationsDelta!);
             }
+            else if (IsThinkingDelta && thinkingDelta != null)
+            {
+                return thinkingDelta(ThinkingDelta!);
+            }
+            else if (IsSignatureDelta && signatureDelta != null)
+            {
+                return signatureDelta(SignatureDelta!);
+            }
 
             return default(TResult);
         }
@@ -191,6 +277,8 @@ namespace G
             global::System.Action<global::G.BetaTextContentBlockDelta?>? textDelta = null,
             global::System.Action<global::G.BetaInputJsonContentBlockDelta?>? inputJsonDelta = null,
             global::System.Action<global::G.BetaCitationsDelta?>? citationsDelta = null,
+            global::System.Action<global::G.BetaThinkingContentBlockDelta?>? thinkingDelta = null,
+            global::System.Action<global::G.BetaSignatureContentBlockDelta?>? signatureDelta = null,
             bool validate = true)
         {
             if (validate)
@@ -210,6 +298,14 @@ namespace G
             {
                 citationsDelta?.Invoke(CitationsDelta!);
             }
+            else if (IsThinkingDelta)
+            {
+                thinkingDelta?.Invoke(ThinkingDelta!);
+            }
+            else if (IsSignatureDelta)
+            {
+                signatureDelta?.Invoke(SignatureDelta!);
+            }
         }
 
         /// <summary>
@@ -225,6 +321,10 @@ namespace G
                 typeof(global::G.BetaInputJsonContentBlockDelta),
                 CitationsDelta,
                 typeof(global::G.BetaCitationsDelta),
+                ThinkingDelta,
+                typeof(global::G.BetaThinkingContentBlockDelta),
+                SignatureDelta,
+                typeof(global::G.BetaSignatureContentBlockDelta),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -243,7 +343,9 @@ namespace G
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaTextContentBlockDelta?>.Default.Equals(TextDelta, other.TextDelta) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaInputJsonContentBlockDelta?>.Default.Equals(InputJsonDelta, other.InputJsonDelta) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaCitationsDelta?>.Default.Equals(CitationsDelta, other.CitationsDelta) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaCitationsDelta?>.Default.Equals(CitationsDelta, other.CitationsDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaThinkingContentBlockDelta?>.Default.Equals(ThinkingDelta, other.ThinkingDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaSignatureContentBlockDelta?>.Default.Equals(SignatureDelta, other.SignatureDelta) 
                 ;
         }
 

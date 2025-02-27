@@ -21,6 +21,10 @@ namespace G
         /// 
         /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Url,
     }
 
     /// <summary>
@@ -38,6 +42,7 @@ namespace G
                 BetaRequestDocumentBlockSourceDiscriminatorType.Base64 => "base64",
                 BetaRequestDocumentBlockSourceDiscriminatorType.Content => "content",
                 BetaRequestDocumentBlockSourceDiscriminatorType.Text => "text",
+                BetaRequestDocumentBlockSourceDiscriminatorType.Url => "url",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,6 +56,7 @@ namespace G
                 "base64" => BetaRequestDocumentBlockSourceDiscriminatorType.Base64,
                 "content" => BetaRequestDocumentBlockSourceDiscriminatorType.Content,
                 "text" => BetaRequestDocumentBlockSourceDiscriminatorType.Text,
+                "url" => BetaRequestDocumentBlockSourceDiscriminatorType.Url,
                 _ => null,
             };
         }

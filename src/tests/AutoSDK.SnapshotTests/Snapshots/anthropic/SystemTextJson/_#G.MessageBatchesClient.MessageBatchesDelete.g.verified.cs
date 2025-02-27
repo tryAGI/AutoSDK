@@ -29,7 +29,8 @@ namespace G
         /// <summary>
         /// Delete a Message Batch<br/>
         /// Delete a Message Batch.<br/>
-        /// Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.
+        /// Message Batches can only be deleted once they've finished processing. If you'd like to delete an in-progress batch, you must first cancel it.<br/>
+        /// Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="messageBatchId">
         /// ID of the Message Batch.
@@ -39,7 +40,7 @@ namespace G
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
-        /// Your unique API key for authentication. <br/>
+        /// Your unique API key for authentication.<br/>
         /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

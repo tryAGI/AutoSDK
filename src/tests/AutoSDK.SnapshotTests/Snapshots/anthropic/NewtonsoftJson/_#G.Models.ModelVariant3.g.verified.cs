@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// Fast and cost-effective model
+    /// Our most intelligent model
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ModelVariant3
@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="claude-3-5-haiku-20241022")]
-        Claude35Haiku20241022,
+        [global::System.Runtime.Serialization.EnumMember(Value="claude-3-7-sonnet-20250219")]
+        Claude37Sonnet20250219,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                ModelVariant3.Claude35Haiku20241022 => "claude-3-5-haiku-20241022",
+                ModelVariant3.Claude37Sonnet20250219 => "claude-3-7-sonnet-20250219",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "claude-3-5-haiku-20241022" => ModelVariant3.Claude35Haiku20241022,
+                "claude-3-7-sonnet-20250219" => ModelVariant3.Claude37Sonnet20250219,
                 _ => null,
             };
         }

@@ -8,7 +8,8 @@ namespace G
         /// <summary>
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
-        /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.
+        /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
+        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -30,7 +31,8 @@ namespace G
         /// <summary>
         /// Count tokens in a Message<br/>
         /// Count the number of tokens in a Message.<br/>
-        /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.
+        /// The Token Count API can be used to count the number of tokens in a Message, including tools, images, and documents, without creating it.<br/>
+        /// Learn more about token counting in our [user guide](/en/docs/build-with-claude/token-counting)
         /// </summary>
         /// <param name="anthropicBeta">
         /// Optional header to specify the beta version(s) you want to use.<br/>
@@ -49,7 +51,7 @@ namespace G
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
-        /// * `input_schema`: [JSON schema](https://json-schema.org/) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
+        /// * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
         /// For example, if you defined `tools` as:<br/>
         /// ```json<br/>
         /// [<br/>
@@ -147,6 +149,11 @@ namespace G
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).<br/>
         /// Example: []
         /// </param>
+        /// <param name="thinking">
+        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
+        /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
@@ -160,6 +167,7 @@ namespace G
             global::G.BetaToolChoice? toolChoice = default,
             global::System.Collections.Generic.IList<global::G.ToolsItem>? tools = default,
             global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaRequestTextBlock>>? system = default,
+            global::G.BetaThinkingConfigParam? thinking = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

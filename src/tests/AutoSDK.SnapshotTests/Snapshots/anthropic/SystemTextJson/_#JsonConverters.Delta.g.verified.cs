@@ -43,12 +43,28 @@ namespace G.JsonConverters
                                throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaCitationsDelta)}");
                 citationsDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
             }
+            global::G.BetaThinkingContentBlockDelta? thinkingDelta = default;
+            if (discriminator?.Type == global::G.BetaContentBlockDeltaEventDeltaDiscriminatorType.ThinkingDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaThinkingContentBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaThinkingContentBlockDelta> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaThinkingContentBlockDelta)}");
+                thinkingDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            global::G.BetaSignatureContentBlockDelta? signatureDelta = default;
+            if (discriminator?.Type == global::G.BetaContentBlockDeltaEventDeltaDiscriminatorType.SignatureDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaSignatureContentBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaSignatureContentBlockDelta> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.BetaSignatureContentBlockDelta)}");
+                signatureDelta = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             var result = new global::G.Delta(
                 discriminator?.Type,
                 textDelta,
                 inputJsonDelta,
-                citationsDelta
+                citationsDelta,
+                thinkingDelta,
+                signatureDelta
                 );
 
             return result;
@@ -80,6 +96,18 @@ namespace G.JsonConverters
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaCitationsDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaCitationsDelta?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaCitationsDelta).Name}");
                 global::System.Text.Json.JsonSerializer.Serialize(writer, value.CitationsDelta, typeInfo);
+            }
+            else if (value.IsThinkingDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaThinkingContentBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaThinkingContentBlockDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaThinkingContentBlockDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ThinkingDelta, typeInfo);
+            }
+            else if (value.IsSignatureDelta)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.BetaSignatureContentBlockDelta), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.BetaSignatureContentBlockDelta?> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.BetaSignatureContentBlockDelta).Name}");
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.SignatureDelta, typeInfo);
             }
         }
     }

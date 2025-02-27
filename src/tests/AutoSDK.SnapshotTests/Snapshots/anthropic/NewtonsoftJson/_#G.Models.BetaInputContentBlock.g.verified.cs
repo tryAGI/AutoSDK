@@ -193,13 +193,85 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaRequestThinkingBlock? Thinking { get; init; }
+#else
+        public global::G.BetaRequestThinkingBlock? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::G.BetaRequestThinkingBlock value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.BetaRequestThinkingBlock?(BetaInputContentBlock @this) => @this.Thinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::G.BetaRequestThinkingBlock? value)
+        {
+            Thinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.BetaRequestRedactedThinkingBlock? RedactedThinking { get; init; }
+#else
+        public global::G.BetaRequestRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator BetaInputContentBlock(global::G.BetaRequestRedactedThinkingBlock value) => new BetaInputContentBlock(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.BetaRequestRedactedThinkingBlock?(BetaInputContentBlock @this) => @this.RedactedThinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public BetaInputContentBlock(global::G.BetaRequestRedactedThinkingBlock? value)
+        {
+            RedactedThinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public BetaInputContentBlock(
             global::G.BetaInputContentBlockDiscriminatorType? type,
             global::G.BetaRequestTextBlock? text,
             global::G.BetaRequestImageBlock? image,
             global::G.BetaRequestToolUseBlock? toolUse,
             global::G.BetaRequestToolResultBlock? toolResult,
-            global::G.BetaRequestDocumentBlock? document
+            global::G.BetaRequestDocumentBlock? document,
+            global::G.BetaRequestThinkingBlock? thinking,
+            global::G.BetaRequestRedactedThinkingBlock? redactedThinking
             )
         {
             Type = type;
@@ -209,12 +281,16 @@ namespace G
             ToolUse = toolUse;
             ToolResult = toolResult;
             Document = document;
+            Thinking = thinking;
+            RedactedThinking = redactedThinking;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            RedactedThinking as object ??
+            Thinking as object ??
             Document as object ??
             ToolResult as object ??
             ToolUse as object ??
@@ -227,7 +303,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument || !IsText && IsImage && !IsToolUse && !IsToolResult && !IsDocument || !IsText && !IsImage && IsToolUse && !IsToolResult && !IsDocument || !IsText && !IsImage && !IsToolUse && IsToolResult && !IsDocument || !IsText && !IsImage && !IsToolUse && !IsToolResult && IsDocument;
+            return IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && IsToolUse && !IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && IsToolResult && !IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && IsDocument && !IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && IsThinking && !IsRedactedThinking || !IsText && !IsImage && !IsToolUse && !IsToolResult && !IsDocument && !IsThinking && IsRedactedThinking;
         }
 
         /// <summary>
@@ -239,6 +315,8 @@ namespace G
             global::System.Func<global::G.BetaRequestToolUseBlock?, TResult>? toolUse = null,
             global::System.Func<global::G.BetaRequestToolResultBlock?, TResult>? toolResult = null,
             global::System.Func<global::G.BetaRequestDocumentBlock?, TResult>? document = null,
+            global::System.Func<global::G.BetaRequestThinkingBlock?, TResult>? thinking = null,
+            global::System.Func<global::G.BetaRequestRedactedThinkingBlock?, TResult>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -266,6 +344,14 @@ namespace G
             {
                 return document(Document!);
             }
+            else if (IsThinking && thinking != null)
+            {
+                return thinking(Thinking!);
+            }
+            else if (IsRedactedThinking && redactedThinking != null)
+            {
+                return redactedThinking(RedactedThinking!);
+            }
 
             return default(TResult);
         }
@@ -279,6 +365,8 @@ namespace G
             global::System.Action<global::G.BetaRequestToolUseBlock?>? toolUse = null,
             global::System.Action<global::G.BetaRequestToolResultBlock?>? toolResult = null,
             global::System.Action<global::G.BetaRequestDocumentBlock?>? document = null,
+            global::System.Action<global::G.BetaRequestThinkingBlock?>? thinking = null,
+            global::System.Action<global::G.BetaRequestRedactedThinkingBlock?>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -306,6 +394,14 @@ namespace G
             {
                 document?.Invoke(Document!);
             }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsRedactedThinking)
+            {
+                redactedThinking?.Invoke(RedactedThinking!);
+            }
         }
 
         /// <summary>
@@ -325,6 +421,10 @@ namespace G
                 typeof(global::G.BetaRequestToolResultBlock),
                 Document,
                 typeof(global::G.BetaRequestDocumentBlock),
+                Thinking,
+                typeof(global::G.BetaRequestThinkingBlock),
+                RedactedThinking,
+                typeof(global::G.BetaRequestRedactedThinkingBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -345,7 +445,9 @@ namespace G
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestImageBlock?>.Default.Equals(Image, other.Image) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
                 global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestToolResultBlock?>.Default.Equals(ToolResult, other.ToolResult) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestDocumentBlock?>.Default.Equals(Document, other.Document) 
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestDocumentBlock?>.Default.Equals(Document, other.Document) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.BetaRequestRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) 
                 ;
         }
 

@@ -13,8 +13,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="redacted_thinking")]
+        RedactedThinking,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="thinking")]
+        Thinking,
         /// <summary>
         /// 
         /// </summary>
@@ -34,7 +44,9 @@ namespace G
         {
             return value switch
             {
+                ContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 ContentBlockStartEventContentBlockDiscriminatorType.Text => "text",
+                ContentBlockStartEventContentBlockDiscriminatorType.Thinking => "thinking",
                 ContentBlockStartEventContentBlockDiscriminatorType.ToolUse => "tool_use",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -46,7 +58,9 @@ namespace G
         {
             return value switch
             {
+                "redacted_thinking" => ContentBlockStartEventContentBlockDiscriminatorType.RedactedThinking,
                 "text" => ContentBlockStartEventContentBlockDiscriminatorType.Text,
+                "thinking" => ContentBlockStartEventContentBlockDiscriminatorType.Thinking,
                 "tool_use" => ContentBlockStartEventContentBlockDiscriminatorType.ToolUse,
                 _ => null,
             };

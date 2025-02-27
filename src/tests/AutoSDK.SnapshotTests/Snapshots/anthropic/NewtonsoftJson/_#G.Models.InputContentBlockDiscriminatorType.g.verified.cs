@@ -23,8 +23,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="redacted_thinking")]
+        RedactedThinking,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="thinking")]
+        Thinking,
         /// <summary>
         /// 
         /// </summary>
@@ -51,7 +61,9 @@ namespace G
             {
                 InputContentBlockDiscriminatorType.Document => "document",
                 InputContentBlockDiscriminatorType.Image => "image",
+                InputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 InputContentBlockDiscriminatorType.Text => "text",
+                InputContentBlockDiscriminatorType.Thinking => "thinking",
                 InputContentBlockDiscriminatorType.ToolResult => "tool_result",
                 InputContentBlockDiscriminatorType.ToolUse => "tool_use",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -66,7 +78,9 @@ namespace G
             {
                 "document" => InputContentBlockDiscriminatorType.Document,
                 "image" => InputContentBlockDiscriminatorType.Image,
+                "redacted_thinking" => InputContentBlockDiscriminatorType.RedactedThinking,
                 "text" => InputContentBlockDiscriminatorType.Text,
+                "thinking" => InputContentBlockDiscriminatorType.Thinking,
                 "tool_result" => InputContentBlockDiscriminatorType.ToolResult,
                 "tool_use" => InputContentBlockDiscriminatorType.ToolUse,
                 _ => null,

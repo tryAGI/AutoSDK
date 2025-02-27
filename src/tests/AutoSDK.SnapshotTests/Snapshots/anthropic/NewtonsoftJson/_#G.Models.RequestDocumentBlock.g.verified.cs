@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Source2 Source { get; set; } = default!;
+        public global::G.Source3 Source { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace G
         /// <param name="context"></param>
         /// <param name="citations"></param>
         public RequestDocumentBlock(
-            global::G.Source2 source,
+            global::G.Source3 source,
             global::G.CacheControlEphemeral? cacheControl,
             global::G.RequestDocumentBlockType type,
             string? title,

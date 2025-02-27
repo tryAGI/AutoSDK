@@ -25,7 +25,7 @@ namespace G
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("source", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Base64ImageSource Source { get; set; } = default!;
+        public global::G.Source4 Source { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -40,11 +40,11 @@ namespace G
         /// <param name="type"></param>
         /// <param name="source"></param>
         public RequestImageBlock(
-            global::G.Base64ImageSource source,
+            global::G.Source4 source,
             global::G.CacheControlEphemeral? cacheControl,
             global::G.RequestImageBlockType type)
         {
-            this.Source = source ?? throw new global::System.ArgumentNullException(nameof(source));
+            this.Source = source;
             this.CacheControl = cacheControl;
             this.Type = type;
         }

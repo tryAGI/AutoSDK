@@ -25,6 +25,18 @@ namespace G
         /// 
         /// </summary>
         TextEditor20241022,
+        /// <summary>
+        /// 
+        /// </summary>
+        Computer20250124,
+        /// <summary>
+        /// 
+        /// </summary>
+        Bash20250124,
+        /// <summary>
+        /// 
+        /// </summary>
+        TextEditor20250124,
     }
 
     /// <summary>
@@ -43,6 +55,9 @@ namespace G
                 BetaCreateMessageParamsToolDiscriminatorType.Computer20241022 => "computer_20241022",
                 BetaCreateMessageParamsToolDiscriminatorType.Bash20241022 => "bash_20241022",
                 BetaCreateMessageParamsToolDiscriminatorType.TextEditor20241022 => "text_editor_20241022",
+                BetaCreateMessageParamsToolDiscriminatorType.Computer20250124 => "computer_20250124",
+                BetaCreateMessageParamsToolDiscriminatorType.Bash20250124 => "bash_20250124",
+                BetaCreateMessageParamsToolDiscriminatorType.TextEditor20250124 => "text_editor_20250124",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,6 +72,9 @@ namespace G
                 "computer_20241022" => BetaCreateMessageParamsToolDiscriminatorType.Computer20241022,
                 "bash_20241022" => BetaCreateMessageParamsToolDiscriminatorType.Bash20241022,
                 "text_editor_20241022" => BetaCreateMessageParamsToolDiscriminatorType.TextEditor20241022,
+                "computer_20250124" => BetaCreateMessageParamsToolDiscriminatorType.Computer20250124,
+                "bash_20250124" => BetaCreateMessageParamsToolDiscriminatorType.Bash20250124,
+                "text_editor_20250124" => BetaCreateMessageParamsToolDiscriminatorType.TextEditor20250124,
                 _ => null,
             };
         }

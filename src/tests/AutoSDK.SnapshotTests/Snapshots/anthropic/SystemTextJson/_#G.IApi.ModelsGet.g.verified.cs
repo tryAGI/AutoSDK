@@ -18,7 +18,7 @@ namespace G
         /// Read more about versioning and our version history [here](https://docs.anthropic.com/en/api/versioning).
         /// </param>
         /// <param name="xApiKey">
-        /// Your unique API key for authentication. <br/>
+        /// Your unique API key for authentication.<br/>
         /// This key is required in the header of all API requests, to authenticate your account and access Anthropic's services. Get your API key through the [Console](https://console.anthropic.com/settings/keys). Each key is scoped to a Workspace.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>

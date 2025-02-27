@@ -5,14 +5,14 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Balance of speed and intelligence
     /// </summary>
     public enum ModelVariant11
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude21,
+        Claude3Sonnet20240229,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                ModelVariant11.Claude21 => "claude-2.1",
+                ModelVariant11.Claude3Sonnet20240229 => "claude-3-sonnet-20240229",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "claude-2.1" => ModelVariant11.Claude21,
+                "claude-3-sonnet-20240229" => ModelVariant11.Claude3Sonnet20240229,
                 _ => null,
             };
         }

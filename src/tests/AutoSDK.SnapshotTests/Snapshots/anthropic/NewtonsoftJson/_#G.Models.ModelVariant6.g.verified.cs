@@ -13,8 +13,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Runtime.Serialization.EnumMember(Value="claude-3-5-sonnet-20240620")]
-        Claude35Sonnet20240620,
+        [global::System.Runtime.Serialization.EnumMember(Value="claude-3-5-sonnet-latest")]
+        Claude35SonnetLatest,
     }
 
     /// <summary>
@@ -29,7 +29,7 @@ namespace G
         {
             return value switch
             {
-                ModelVariant6.Claude35Sonnet20240620 => "claude-3-5-sonnet-20240620",
+                ModelVariant6.Claude35SonnetLatest => "claude-3-5-sonnet-latest",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -40,7 +40,7 @@ namespace G
         {
             return value switch
             {
-                "claude-3-5-sonnet-20240620" => ModelVariant6.Claude35Sonnet20240620,
+                "claude-3-5-sonnet-latest" => ModelVariant6.Claude35SonnetLatest,
                 _ => null,
             };
         }

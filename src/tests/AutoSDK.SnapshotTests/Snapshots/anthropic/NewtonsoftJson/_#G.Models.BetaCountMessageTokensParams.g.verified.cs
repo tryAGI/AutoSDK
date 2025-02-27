@@ -23,7 +23,7 @@ namespace G
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
-        /// * `input_schema`: [JSON schema](https://json-schema.org/) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
+        /// * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
         /// For example, if you defined `tools` as:<br/>
         /// ```json<br/>
         /// [<br/>
@@ -132,6 +132,14 @@ namespace G
         public global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaRequestTextBlock>>? System { get; set; }
 
         /// <summary>
+        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
+        /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("thinking")]
+        public global::G.BetaThinkingConfigParam? Thinking { get; set; }
+
+        /// <summary>
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
@@ -155,7 +163,7 @@ namespace G
         /// Each tool definition includes:<br/>
         /// * `name`: Name of the tool.<br/>
         /// * `description`: Optional, but strongly-recommended description of the tool.<br/>
-        /// * `input_schema`: [JSON schema](https://json-schema.org/) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
+        /// * `input_schema`: [JSON schema](https://json-schema.org/draft/2020-12) for the tool `input` shape that the model will produce in `tool_use` output content blocks.<br/>
         /// For example, if you defined `tools` as:<br/>
         /// ```json<br/>
         /// [<br/>
@@ -253,6 +261,11 @@ namespace G
         /// A system prompt is a way of providing context and instructions to Claude, such as specifying a particular goal or role. See our [guide to system prompts](https://docs.anthropic.com/en/docs/system-prompts).<br/>
         /// Example: []
         /// </param>
+        /// <param name="thinking">
+        /// Configuration for enabling Claude's extended thinking. <br/>
+        /// When enabled, responses include `thinking` content blocks showing Claude's thinking process before the final answer. Requires a minimum budget of 1,024 tokens and counts towards your `max_tokens` limit.<br/>
+        /// See [extended thinking](https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking) for details.
+        /// </param>
         /// <param name="model">
         /// The model that will complete your prompt.\n\nSee [models](https://docs.anthropic.com/en/docs/models-overview) for additional details and options.
         /// </param>
@@ -261,13 +274,15 @@ namespace G
             global::G.Model model,
             global::G.BetaToolChoice? toolChoice,
             global::System.Collections.Generic.IList<global::G.ToolsItem>? tools,
-            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaRequestTextBlock>>? system)
+            global::G.AnyOf<string, global::System.Collections.Generic.IList<global::G.BetaRequestTextBlock>>? system,
+            global::G.BetaThinkingConfigParam? thinking)
         {
             this.Messages = messages ?? throw new global::System.ArgumentNullException(nameof(messages));
             this.Model = model;
             this.ToolChoice = toolChoice;
             this.Tools = tools;
             this.System = system;
+            this.Thinking = thinking;
         }
 
         /// <summary>

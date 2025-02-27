@@ -20,7 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        RedactedThinking,
+        /// <summary>
+        /// 
+        /// </summary>
         Text,
+        /// <summary>
+        /// 
+        /// </summary>
+        Thinking,
         /// <summary>
         /// 
         /// </summary>
@@ -45,7 +53,9 @@ namespace G
             {
                 InputContentBlockDiscriminatorType.Document => "document",
                 InputContentBlockDiscriminatorType.Image => "image",
+                InputContentBlockDiscriminatorType.RedactedThinking => "redacted_thinking",
                 InputContentBlockDiscriminatorType.Text => "text",
+                InputContentBlockDiscriminatorType.Thinking => "thinking",
                 InputContentBlockDiscriminatorType.ToolResult => "tool_result",
                 InputContentBlockDiscriminatorType.ToolUse => "tool_use",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -60,7 +70,9 @@ namespace G
             {
                 "document" => InputContentBlockDiscriminatorType.Document,
                 "image" => InputContentBlockDiscriminatorType.Image,
+                "redacted_thinking" => InputContentBlockDiscriminatorType.RedactedThinking,
                 "text" => InputContentBlockDiscriminatorType.Text,
+                "thinking" => InputContentBlockDiscriminatorType.Thinking,
                 "tool_result" => InputContentBlockDiscriminatorType.ToolResult,
                 "tool_use" => InputContentBlockDiscriminatorType.ToolUse,
                 _ => null,

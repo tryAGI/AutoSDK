@@ -5,14 +5,14 @@
 namespace G
 {
     /// <summary>
-    /// Our most intelligent model
+    /// Our fastest model
     /// </summary>
     public enum ModelVariant5
     {
         /// <summary>
         /// 
         /// </summary>
-        Claude35Sonnet20241022,
+        Claude35Haiku20241022,
     }
 
     /// <summary>
@@ -27,7 +27,7 @@ namespace G
         {
             return value switch
             {
-                ModelVariant5.Claude35Sonnet20241022 => "claude-3-5-sonnet-20241022",
+                ModelVariant5.Claude35Haiku20241022 => "claude-3-5-haiku-20241022",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -38,7 +38,7 @@ namespace G
         {
             return value switch
             {
-                "claude-3-5-sonnet-20241022" => ModelVariant5.Claude35Sonnet20241022,
+                "claude-3-5-haiku-20241022" => ModelVariant5.Claude35Haiku20241022,
                 _ => null,
             };
         }

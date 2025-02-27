@@ -88,22 +88,98 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseThinkingBlock? Thinking { get; init; }
+#else
+        public global::G.ResponseThinkingBlock? Thinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Thinking))]
+#endif
+        public bool IsThinking => Thinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentBlock3(global::G.ResponseThinkingBlock value) => new ContentBlock3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseThinkingBlock?(ContentBlock3 @this) => @this.Thinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentBlock3(global::G.ResponseThinkingBlock? value)
+        {
+            Thinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseRedactedThinkingBlock? RedactedThinking { get; init; }
+#else
+        public global::G.ResponseRedactedThinkingBlock? RedactedThinking { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RedactedThinking))]
+#endif
+        public bool IsRedactedThinking => RedactedThinking != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ContentBlock3(global::G.ResponseRedactedThinkingBlock value) => new ContentBlock3(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseRedactedThinkingBlock?(ContentBlock3 @this) => @this.RedactedThinking;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ContentBlock3(global::G.ResponseRedactedThinkingBlock? value)
+        {
+            RedactedThinking = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ContentBlock3(
             global::G.ContentBlockDiscriminatorType? type,
             global::G.ResponseTextBlock? text,
-            global::G.ResponseToolUseBlock? toolUse
+            global::G.ResponseToolUseBlock? toolUse,
+            global::G.ResponseThinkingBlock? thinking,
+            global::G.ResponseRedactedThinkingBlock? redactedThinking
             )
         {
             Type = type;
 
             Text = text;
             ToolUse = toolUse;
+            Thinking = thinking;
+            RedactedThinking = redactedThinking;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
+            RedactedThinking as object ??
+            Thinking as object ??
             ToolUse as object ??
             Text as object 
             ;
@@ -113,7 +189,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsToolUse || !IsText && IsToolUse;
+            return IsText && !IsToolUse && !IsThinking && !IsRedactedThinking || !IsText && IsToolUse && !IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && IsThinking && !IsRedactedThinking || !IsText && !IsToolUse && !IsThinking && IsRedactedThinking;
         }
 
         /// <summary>
@@ -122,6 +198,8 @@ namespace G
         public TResult? Match<TResult>(
             global::System.Func<global::G.ResponseTextBlock?, TResult>? text = null,
             global::System.Func<global::G.ResponseToolUseBlock?, TResult>? toolUse = null,
+            global::System.Func<global::G.ResponseThinkingBlock?, TResult>? thinking = null,
+            global::System.Func<global::G.ResponseRedactedThinkingBlock?, TResult>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -137,6 +215,14 @@ namespace G
             {
                 return toolUse(ToolUse!);
             }
+            else if (IsThinking && thinking != null)
+            {
+                return thinking(Thinking!);
+            }
+            else if (IsRedactedThinking && redactedThinking != null)
+            {
+                return redactedThinking(RedactedThinking!);
+            }
 
             return default(TResult);
         }
@@ -147,6 +233,8 @@ namespace G
         public void Match(
             global::System.Action<global::G.ResponseTextBlock?>? text = null,
             global::System.Action<global::G.ResponseToolUseBlock?>? toolUse = null,
+            global::System.Action<global::G.ResponseThinkingBlock?>? thinking = null,
+            global::System.Action<global::G.ResponseRedactedThinkingBlock?>? redactedThinking = null,
             bool validate = true)
         {
             if (validate)
@@ -162,6 +250,14 @@ namespace G
             {
                 toolUse?.Invoke(ToolUse!);
             }
+            else if (IsThinking)
+            {
+                thinking?.Invoke(Thinking!);
+            }
+            else if (IsRedactedThinking)
+            {
+                redactedThinking?.Invoke(RedactedThinking!);
+            }
         }
 
         /// <summary>
@@ -175,6 +271,10 @@ namespace G
                 typeof(global::G.ResponseTextBlock),
                 ToolUse,
                 typeof(global::G.ResponseToolUseBlock),
+                Thinking,
+                typeof(global::G.ResponseThinkingBlock),
+                RedactedThinking,
+                typeof(global::G.ResponseRedactedThinkingBlock),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -192,7 +292,9 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ResponseTextBlock?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ResponseToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseToolUseBlock?>.Default.Equals(ToolUse, other.ToolUse) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseThinkingBlock?>.Default.Equals(Thinking, other.Thinking) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseRedactedThinkingBlock?>.Default.Equals(RedactedThinking, other.RedactedThinking) 
                 ;
         }
 

@@ -20,7 +20,15 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        SignatureDelta,
+        /// <summary>
+        /// 
+        /// </summary>
         TextDelta,
+        /// <summary>
+        /// 
+        /// </summary>
+        ThinkingDelta,
     }
 
     /// <summary>
@@ -37,7 +45,9 @@ namespace G
             {
                 ContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta => "citations_delta",
                 ContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta => "input_json_delta",
+                ContentBlockDeltaEventDeltaDiscriminatorType.SignatureDelta => "signature_delta",
                 ContentBlockDeltaEventDeltaDiscriminatorType.TextDelta => "text_delta",
+                ContentBlockDeltaEventDeltaDiscriminatorType.ThinkingDelta => "thinking_delta",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -50,7 +60,9 @@ namespace G
             {
                 "citations_delta" => ContentBlockDeltaEventDeltaDiscriminatorType.CitationsDelta,
                 "input_json_delta" => ContentBlockDeltaEventDeltaDiscriminatorType.InputJsonDelta,
+                "signature_delta" => ContentBlockDeltaEventDeltaDiscriminatorType.SignatureDelta,
                 "text_delta" => ContentBlockDeltaEventDeltaDiscriminatorType.TextDelta,
+                "thinking_delta" => ContentBlockDeltaEventDeltaDiscriminatorType.ThinkingDelta,
                 _ => null,
             };
         }

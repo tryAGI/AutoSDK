@@ -27,7 +27,8 @@ namespace G
         /// <summary>
         /// Create a Message Batch<br/>
         /// Send a batch of Message creation requests.<br/>
-        /// The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.
+        /// The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.<br/>
+        /// Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Anthropic API you want to use.<br/>
@@ -198,7 +199,8 @@ namespace G
         /// <summary>
         /// Create a Message Batch<br/>
         /// Send a batch of Message creation requests.<br/>
-        /// The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.
+        /// The Message Batches API can be used to process multiple Messages API requests at once. Once a Message Batch is created, it begins processing immediately. Batches can take up to 24 hours to complete.<br/>
+        /// Learn more about the Message Batches API in our [user guide](/en/docs/build-with-claude/batch-processing)
         /// </summary>
         /// <param name="anthropicVersion">
         /// The version of the Anthropic API you want to use.<br/>
