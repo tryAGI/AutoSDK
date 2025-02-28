@@ -107,7 +107,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.OneOf<global::G.ValidationError, global::G.ValidationErrorSimple>?>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
@@ -135,7 +135,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_409 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_409,

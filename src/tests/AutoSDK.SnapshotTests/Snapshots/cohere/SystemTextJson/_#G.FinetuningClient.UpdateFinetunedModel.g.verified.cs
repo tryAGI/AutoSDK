@@ -128,7 +128,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.Error>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
@@ -156,7 +156,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.Error>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,
@@ -184,7 +184,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.Error>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
@@ -212,7 +212,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.Error>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_404,
@@ -240,7 +240,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.Error>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_500,
@@ -268,7 +268,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.Error>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_503,

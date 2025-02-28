@@ -126,7 +126,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
@@ -150,7 +150,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,

@@ -105,7 +105,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_301 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_301,
@@ -133,7 +133,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_404,
@@ -161,7 +161,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_410 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_410,

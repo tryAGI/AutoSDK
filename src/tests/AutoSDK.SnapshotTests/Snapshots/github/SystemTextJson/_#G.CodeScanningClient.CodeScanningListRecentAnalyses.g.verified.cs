@@ -187,7 +187,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
@@ -215,7 +215,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.BasicError>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_404,
@@ -243,7 +243,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.CodeScanningListRecentAnalysesResponse>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_503,

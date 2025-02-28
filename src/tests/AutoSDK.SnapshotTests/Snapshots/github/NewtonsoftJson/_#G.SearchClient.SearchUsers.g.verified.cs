@@ -139,7 +139,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_304 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_304,
@@ -166,7 +166,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.SearchUsersResponse2>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_503,
@@ -194,7 +194,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ValidationError>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,

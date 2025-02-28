@@ -97,7 +97,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<string>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,
@@ -125,7 +125,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.RpcStatus>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_default ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_default,

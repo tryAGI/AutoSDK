@@ -420,7 +420,7 @@ namespace {endPoint.Namespace}
 {(!string.IsNullOrWhiteSpace(x.Type.CSharpTypeWithoutNullability) ? $@" 
                 throw new global::{endPoint.Settings.Namespace}.ApiException<{x.Type.CSharpTypeWithNullabilityForValueTypes}>(" : $@" 
                 throw new global::{endPoint.Settings.Namespace}.ApiException(")}
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_{x.StatusCode} ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {{
                     ResponseBody = __content_{x.StatusCode},

@@ -119,7 +119,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ErrorResponse>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_4XX ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_4XX,

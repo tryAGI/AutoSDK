@@ -97,7 +97,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ProblemDetails>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_500,

@@ -140,7 +140,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse2>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_400,
@@ -168,7 +168,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse3>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_401,
@@ -196,7 +196,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse4>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_403,
@@ -224,7 +224,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse5>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_404,
@@ -252,7 +252,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse6>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_422,
@@ -280,7 +280,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse7>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_429,
@@ -308,7 +308,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse8>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_498 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_498,
@@ -336,7 +336,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse9>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_499 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_499,
@@ -364,7 +364,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse10>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_500,
@@ -392,7 +392,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse11>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_501 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_501,
@@ -420,7 +420,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse12>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_503 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_503,
@@ -448,7 +448,7 @@ namespace G
                 }
 
                 throw new global::G.ApiException<global::G.ListModelsResponse13>(
-                    message: __response.ReasonPhrase ?? string.Empty,
+                    message: __content_504 ?? __response.ReasonPhrase ?? string.Empty,
                     statusCode: __response.StatusCode)
                 {
                     ResponseBody = __content_504,
