@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup Label="Base packages">
-    <PackageReference Include="CliWrap" Version="3.8.1" />
+    <PackageReference Include="CliWrap" Version="3.8.2" />
     <PackageReference Include="DotnetCliWrapper" Version="0.2.0" />
     <PackageReference Include="GitHubActionsTestLogger" Version="2.4.1">
       <PrivateAssets>all</PrivateAssets>
