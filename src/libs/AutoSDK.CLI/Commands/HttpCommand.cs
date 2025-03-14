@@ -106,7 +106,7 @@ internal sealed class HttpCommand : Command
                 content += $@"
 ### {operation.OperationType.ToString("G").ToUpperInvariant()} {operation.OperationPath}
 {operation.OperationType.ToString("G").ToUpperInvariant()} {{{{host}}}}{operation.OperationPath}
-{(operation.GlobalSecurityRequirements.Any() || operation.Operation.Security.Any() ? @"
+{(operation.GlobalSecurityRequirements.Any() || operation.Operation.Security.Any() ? @" 
 Authorization: Bearer {{token}}" : " ")}
 Content-Type: application/json
 
