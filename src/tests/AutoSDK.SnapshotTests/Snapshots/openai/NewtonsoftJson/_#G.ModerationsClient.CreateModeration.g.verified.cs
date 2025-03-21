@@ -185,7 +185,7 @@ namespace G
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.CreateModerationResponse> CreateModerationAsync(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>> input,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateModerationRequestInputVariant3ItemVariant1, global::G.CreateModerationRequestInputVariant3ItemVariant2>>> input,
             global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? model = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

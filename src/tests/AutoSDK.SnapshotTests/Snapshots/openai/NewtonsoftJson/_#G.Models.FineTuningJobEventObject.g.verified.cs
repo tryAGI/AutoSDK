@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The object type, which is always "fine_tuning.job.event".
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum FineTuningJobEventObject

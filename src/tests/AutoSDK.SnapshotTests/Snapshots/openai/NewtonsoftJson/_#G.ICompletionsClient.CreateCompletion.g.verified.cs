@@ -18,14 +18,6 @@ namespace G
         /// <summary>
         /// Creates a completion for the provided prompt and parameters.
         /// </summary>
-        /// <param name="model">
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
-        /// </param>
-        /// <param name="prompt">
-        /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.<br/>
-        /// Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.<br/>
-        /// Default Value: &lt;|endoftext|&gt;
-        /// </param>
         /// <param name="bestOf">
         /// Generates `best_of` completions server-side and returns the "best" (the one with the highest log probability per token). Results cannot be streamed.<br/>
         /// When used with `n`, `best_of` controls the number of candidate completions and `n` specifies how many to return – `best_of` must be greater than `n`.<br/>
@@ -56,6 +48,9 @@ namespace G
         /// Default Value: 16<br/>
         /// Example: 16
         /// </param>
+        /// <param name="model">
+        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+        /// </param>
         /// <param name="n">
         /// How many completions to generate for each prompt.<br/>
         /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.<br/>
@@ -67,12 +62,18 @@ namespace G
         /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </param>
+        /// <param name="prompt">
+        /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.<br/>
+        /// Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.<br/>
+        /// Default Value: &lt;|endoftext|&gt;
+        /// </param>
         /// <param name="seed">
         /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </param>
         /// <param name="stop">
-        /// Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.
         /// </param>
         /// <param name="stream">
         /// Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
@@ -115,8 +116,8 @@ namespace G
             int? maxTokens = default,
             int? n = default,
             double? presencePenalty = default,
-            int? seed = default,
-            global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? stop = default,
+            long? seed = default,
+            global::G.StopConfiguration? stop = default,
             bool? stream = default,
             global::G.ChatCompletionStreamOptions? streamOptions = default,
             string? suffix = default,

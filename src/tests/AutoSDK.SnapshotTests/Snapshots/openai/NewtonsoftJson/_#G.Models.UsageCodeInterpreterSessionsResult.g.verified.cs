@@ -10,16 +10,16 @@ namespace G
     public sealed partial class UsageCodeInterpreterSessionsResult
     {
         /// <summary>
+        /// The number of code interpreter sessions.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("num_sessions")]
+        public int? NumSessions { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
         public global::G.UsageCodeInterpreterSessionsResultObject Object { get; set; }
-
-        /// <summary>
-        /// The number of code interpreter sessions.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("sessions", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Sessions { get; set; } = default!;
 
         /// <summary>
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
@@ -36,19 +36,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageCodeInterpreterSessionsResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
-        /// <param name="sessions">
+        /// <param name="numSessions">
         /// The number of code interpreter sessions.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
         public UsageCodeInterpreterSessionsResult(
-            int sessions,
+            int? numSessions,
             global::G.UsageCodeInterpreterSessionsResultObject @object,
             string? projectId)
         {
-            this.Sessions = sessions;
+            this.NumSessions = numSessions;
             this.Object = @object;
             this.ProjectId = projectId;
         }

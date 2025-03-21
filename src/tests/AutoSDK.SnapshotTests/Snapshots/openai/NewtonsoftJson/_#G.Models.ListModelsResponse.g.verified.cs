@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.ListModelsResponseObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.Model14> Data { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.Model15> Data { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ListModelsResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListModelsResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
         /// <param name="data"></param>
+        /// <param name="object"></param>
         public ListModelsResponse(
-            global::System.Collections.Generic.IList<global::G.Model15> data,
+            global::System.Collections.Generic.IList<global::G.Model14> data,
             global::G.ListModelsResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));

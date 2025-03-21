@@ -18,6 +18,13 @@ namespace G
     public sealed partial class RealtimeClientEventInputAudioBufferAppend
     {
         /// <summary>
+        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
+        /// `input_audio_format` field in the session configuration.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("audio", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Audio { get; set; } = default!;
+
+        /// <summary>
         /// Optional client-generated ID used to identify this event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_id")]
@@ -30,13 +37,6 @@ namespace G
         public global::G.RealtimeClientEventInputAudioBufferAppendType Type { get; set; }
 
         /// <summary>
-        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
-        /// `input_audio_format` field in the session configuration.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("audio", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Audio { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -45,15 +45,15 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeClientEventInputAudioBufferAppend" /> class.
         /// </summary>
+        /// <param name="audio">
+        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
+        /// `input_audio_format` field in the session configuration.
+        /// </param>
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
         /// <param name="type">
         /// The event type, must be `input_audio_buffer.append`.
-        /// </param>
-        /// <param name="audio">
-        /// Base64-encoded audio bytes. This must be in the format specified by the <br/>
-        /// `input_audio_format` field in the session configuration.
         /// </param>
         public RealtimeClientEventInputAudioBufferAppend(
             string audio,

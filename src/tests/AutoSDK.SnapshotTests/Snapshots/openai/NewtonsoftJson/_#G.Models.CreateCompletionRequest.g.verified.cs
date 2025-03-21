@@ -12,20 +12,6 @@ namespace G
     public sealed partial class CreateCompletionRequest
     {
         /// <summary>
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AnyOf<string, global::G.CreateCompletionRequestModel?> Model { get; set; } = default!;
-
-        /// <summary>
-        /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.<br/>
-        /// Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.<br/>
-        /// Default Value: &lt;|endoftext|&gt;
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? Prompt { get; set; } = default!;
-
-        /// <summary>
         /// Generates `best_of` completions server-side and returns the "best" (the one with the highest log probability per token). Results cannot be streamed.<br/>
         /// When used with `n`, `best_of` controls the number of candidate completions and `n` specifies how many to return – `best_of` must be greater than `n`.<br/>
         /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.<br/>
@@ -75,6 +61,12 @@ namespace G
         public int? MaxTokens { get; set; }
 
         /// <summary>
+        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("model", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.AnyOf<string, global::G.CreateCompletionRequestModel?> Model { get; set; } = default!;
+
+        /// <summary>
         /// How many completions to generate for each prompt.<br/>
         /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.<br/>
         /// Default Value: 1<br/>
@@ -93,17 +85,26 @@ namespace G
         public double? PresencePenalty { get; set; }
 
         /// <summary>
+        /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.<br/>
+        /// Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.<br/>
+        /// Default Value: &lt;|endoftext|&gt;
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<int>, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? Prompt { get; set; } = default!;
+
+        /// <summary>
         /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("seed")]
-        public int? Seed { get; set; }
+        public long? Seed { get; set; }
 
         /// <summary>
-        /// Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("stop")]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? Stop { get; set; }
+        public global::G.StopConfiguration? Stop { get; set; }
 
         /// <summary>
         /// Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
@@ -164,14 +165,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateCompletionRequest" /> class.
         /// </summary>
-        /// <param name="model">
-        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
-        /// </param>
-        /// <param name="prompt">
-        /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.<br/>
-        /// Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.<br/>
-        /// Default Value: &lt;|endoftext|&gt;
-        /// </param>
         /// <param name="bestOf">
         /// Generates `best_of` completions server-side and returns the "best" (the one with the highest log probability per token). Results cannot be streamed.<br/>
         /// When used with `n`, `best_of` controls the number of candidate completions and `n` specifies how many to return – `best_of` must be greater than `n`.<br/>
@@ -202,6 +195,9 @@ namespace G
         /// Default Value: 16<br/>
         /// Example: 16
         /// </param>
+        /// <param name="model">
+        /// ID of the model to use. You can use the [List models](/docs/api-reference/models/list) API to see all of your available models, or see our [Model overview](/docs/models) for descriptions of them.
+        /// </param>
         /// <param name="n">
         /// How many completions to generate for each prompt.<br/>
         /// **Note:** Because this parameter generates many completions, it can quickly consume your token quota. Use carefully and ensure that you have reasonable settings for `max_tokens` and `stop`.<br/>
@@ -213,12 +209,18 @@ namespace G
         /// [See more information about frequency and presence penalties.](/docs/guides/text-generation)<br/>
         /// Default Value: 0
         /// </param>
+        /// <param name="prompt">
+        /// The prompt(s) to generate completions for, encoded as a string, array of strings, array of tokens, or array of token arrays.<br/>
+        /// Note that &lt;|endoftext|&gt; is the document separator that the model sees during training, so if a prompt is not specified the model will generate as if from the beginning of a new document.<br/>
+        /// Default Value: &lt;|endoftext|&gt;
+        /// </param>
         /// <param name="seed">
         /// If specified, our system will make a best effort to sample deterministically, such that repeated requests with the same `seed` and parameters should return the same result.<br/>
         /// Determinism is not guaranteed, and you should refer to the `system_fingerprint` response parameter to monitor changes in the backend.
         /// </param>
         /// <param name="stop">
-        /// Up to 4 sequences where the API will stop generating further tokens. The returned text will not contain the stop sequence.
+        /// Up to 4 sequences where the API will stop generating further tokens. The<br/>
+        /// returned text will not contain the stop sequence.
         /// </param>
         /// <param name="stream">
         /// Whether to stream back partial progress. If set, tokens will be sent as data-only [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events#Event_stream_format) as they become available, with the stream terminated by a `data: [DONE]` message. [Example Python code](https://cookbook.openai.com/examples/how_to_stream_completions).<br/>
@@ -259,8 +261,8 @@ namespace G
             int? maxTokens,
             int? n,
             double? presencePenalty,
-            int? seed,
-            global::G.OneOf<string, global::System.Collections.Generic.IList<string>>? stop,
+            long? seed,
+            global::G.StopConfiguration? stop,
             bool? stream,
             global::G.ChatCompletionStreamOptions? streamOptions,
             string? suffix,

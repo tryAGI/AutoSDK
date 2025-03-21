@@ -5,32 +5,41 @@
 namespace G
 {
     /// <summary>
-    /// The intended purpose of the uploaded file.<br/>
-    /// Use "assistants" for [Assistants](/docs/api-reference/assistants) and [Message](/docs/api-reference/messages) files, "vision" for Assistants image file inputs, "batch" for [Batch API](/docs/guides/batch), and "fine-tune" for [Fine-tuning](/docs/api-reference/fine-tuning).
+    /// The intended purpose of the uploaded file. One of: - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum CreateFileRequestPurpose
     {
         /// <summary>
-        /// 
+        /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="assistants")]
         Assistants,
         /// <summary>
-        /// 
+        /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="batch")]
         Batch,
         /// <summary>
-        /// 
+        /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="fine-tune")]
         FineTune,
         /// <summary>
-        /// 
+        /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="vision")]
         Vision,
+        /// <summary>
+        /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="user_data")]
+        UserData,
+        /// <summary>
+        /// - `assistants`: Used in the Assistants API - `batch`: Used in the Batch API - `fine-tune`: Used for fine-tuning - `vision`: Images used for vision fine-tuning - `user_data`: Flexible file type for any purpose - `evals`: Used for eval data sets
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="evals")]
+        Evals,
     }
 
     /// <summary>
@@ -49,6 +58,8 @@ namespace G
                 CreateFileRequestPurpose.Batch => "batch",
                 CreateFileRequestPurpose.FineTune => "fine-tune",
                 CreateFileRequestPurpose.Vision => "vision",
+                CreateFileRequestPurpose.UserData => "user_data",
+                CreateFileRequestPurpose.Evals => "evals",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -63,6 +74,8 @@ namespace G
                 "batch" => CreateFileRequestPurpose.Batch,
                 "fine-tune" => CreateFileRequestPurpose.FineTune,
                 "vision" => CreateFileRequestPurpose.Vision,
+                "user_data" => CreateFileRequestPurpose.UserData,
+                "evals" => CreateFileRequestPurpose.Evals,
                 _ => null,
             };
         }

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.MessageObjectAttachment.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -19,7 +21,7 @@ namespace G
         /// The tools to add this file to.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tools")]
-        public global::System.Collections.Generic.IList<global::G.ToolsItem6>? Tools { get; set; }
+        public global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearchTypeOnly>>? Tools { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,7 +40,7 @@ namespace G
         /// </param>
         public MessageObjectAttachment(
             string? fileId,
-            global::System.Collections.Generic.IList<global::G.ToolsItem6>? tools)
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.AssistantToolsCode, global::G.AssistantToolsFileSearchTypeOnly>>? tools)
         {
             this.FileId = fileId;
             this.Tools = tools;

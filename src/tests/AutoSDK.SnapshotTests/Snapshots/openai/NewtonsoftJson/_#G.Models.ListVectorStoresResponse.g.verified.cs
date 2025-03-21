@@ -10,13 +10,6 @@ namespace G
     public sealed partial class ListVectorStoresResponse
     {
         /// <summary>
-        /// Example: list
-        /// </summary>
-        /// <example>list</example>
-        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Object { get; set; } = default!;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
@@ -30,6 +23,13 @@ namespace G
         public string FirstId { get; set; } = default!;
 
         /// <summary>
+        /// Example: false
+        /// </summary>
+        /// <example>false</example>
+        [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool HasMore { get; set; } = default!;
+
+        /// <summary>
         /// Example: vs_abc456
         /// </summary>
         /// <example>vs_abc456</example>
@@ -37,11 +37,11 @@ namespace G
         public string LastId { get; set; } = default!;
 
         /// <summary>
-        /// Example: false
+        /// Example: list
         /// </summary>
-        /// <example>false</example>
-        [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool HasMore { get; set; } = default!;
+        /// <example>list</example>
+        [global::Newtonsoft.Json.JsonProperty("object", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Object { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,31 +52,31 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ListVectorStoresResponse" /> class.
         /// </summary>
-        /// <param name="object">
-        /// Example: list
-        /// </param>
         /// <param name="data"></param>
         /// <param name="firstId">
         /// Example: vs_abc123
         /// </param>
-        /// <param name="lastId">
-        /// Example: vs_abc456
-        /// </param>
         /// <param name="hasMore">
         /// Example: false
         /// </param>
+        /// <param name="lastId">
+        /// Example: vs_abc456
+        /// </param>
+        /// <param name="object">
+        /// Example: list
+        /// </param>
         public ListVectorStoresResponse(
-            string @object,
             global::System.Collections.Generic.IList<global::G.VectorStoreObject> data,
             string firstId,
+            bool hasMore,
             string lastId,
-            bool hasMore)
+            string @object)
         {
-            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
             this.FirstId = firstId ?? throw new global::System.ArgumentNullException(nameof(firstId));
-            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
             this.HasMore = hasMore;
+            this.LastId = lastId ?? throw new global::System.ArgumentNullException(nameof(lastId));
+            this.Object = @object ?? throw new global::System.ArgumentNullException(nameof(@object));
         }
 
         /// <summary>

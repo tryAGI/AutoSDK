@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class CreateChatCompletionRequest
+    public readonly partial struct CreateChatCompletionRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerOptions.

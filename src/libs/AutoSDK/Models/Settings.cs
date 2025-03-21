@@ -29,6 +29,7 @@ public readonly record struct Settings(
     bool ExcludeDeprecatedOperations,
     string JsonSerializerContext,
     bool GenerateJsonSerializerContextTypes,
+    bool ComputeDiscriminators,
 
     bool GenerateModels,
     bool GenerateModelValidationMethods,
@@ -70,6 +71,7 @@ public readonly record struct Settings(
         ExcludeDeprecatedOperations: false,
         JsonSerializerContext: string.Empty,
         GenerateJsonSerializerContextTypes: false,
+        ComputeDiscriminators: false,
         GenerateModels: false,
         GenerateModelValidationMethods: false,
         ValidateAnyOfs: false,

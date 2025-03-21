@@ -172,6 +172,9 @@ namespace G
         /// <param name="email">
         /// Send an email to this address
         /// </param>
+        /// <param name="projects">
+        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
+        /// </param>
         /// <param name="role">
         /// `owner` or `reader`
         /// </param>
@@ -180,11 +183,13 @@ namespace G
         public async global::System.Threading.Tasks.Task<global::G.Invite> InviteUserAsync(
             string email,
             global::G.InviteRequestRole role,
+            global::System.Collections.Generic.IList<global::G.InviteRequestProject>? projects = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.InviteRequest
             {
                 Email = email,
+                Projects = projects,
                 Role = role,
             };
 

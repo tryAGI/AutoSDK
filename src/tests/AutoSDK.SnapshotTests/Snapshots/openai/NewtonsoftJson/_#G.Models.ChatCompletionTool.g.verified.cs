@@ -10,16 +10,16 @@ namespace G
     public sealed partial class ChatCompletionTool
     {
         /// <summary>
-        /// The type of the tool. Currently, only `function` is supported.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.ChatCompletionToolType Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.FunctionObject Function { get; set; } = default!;
+
+        /// <summary>
+        /// The type of the tool. Currently, only `function` is supported.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.ChatCompletionToolType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionTool" /> class.
         /// </summary>
+        /// <param name="function"></param>
         /// <param name="type">
         /// The type of the tool. Currently, only `function` is supported.
         /// </param>
-        /// <param name="function"></param>
         public ChatCompletionTool(
             global::G.FunctionObject function,
             global::G.ChatCompletionToolType type)

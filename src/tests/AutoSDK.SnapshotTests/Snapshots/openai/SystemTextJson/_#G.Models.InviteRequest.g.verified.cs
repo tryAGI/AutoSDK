@@ -17,6 +17,12 @@ namespace G
         public required string Email { get; set; }
 
         /// <summary>
+        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("projects")]
+        public global::System.Collections.Generic.IList<global::G.InviteRequestProject>? Projects { get; set; }
+
+        /// <summary>
         /// `owner` or `reader`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("role")]
@@ -36,6 +42,9 @@ namespace G
         /// <param name="email">
         /// Send an email to this address
         /// </param>
+        /// <param name="projects">
+        /// An array of projects to which membership is granted at the same time the org invite is accepted. If omitted, the user will be invited to the default project for compatibility with legacy behavior.
+        /// </param>
         /// <param name="role">
         /// `owner` or `reader`
         /// </param>
@@ -44,10 +53,12 @@ namespace G
 #endif
         public InviteRequest(
             string email,
-            global::G.InviteRequestRole role)
+            global::G.InviteRequestRole role,
+            global::System.Collections.Generic.IList<global::G.InviteRequestProject>? projects)
         {
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Role = role;
+            this.Projects = projects;
         }
 
         /// <summary>

@@ -10,12 +10,6 @@ namespace G
     public sealed partial class RealtimeServerEventConversationItemInputAudioTranscriptionFailedError
     {
         /// <summary>
-        /// The type of error.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public string? Type { get; set; }
-
-        /// <summary>
         /// Error code, if any.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("code")]
@@ -34,6 +28,12 @@ namespace G
         public string? Param { get; set; }
 
         /// <summary>
+        /// The type of error.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public string? Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -42,9 +42,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventConversationItemInputAudioTranscriptionFailedError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of error.
-        /// </param>
         /// <param name="code">
         /// Error code, if any.
         /// </param>
@@ -54,16 +51,19 @@ namespace G
         /// <param name="param">
         /// Parameter related to the error, if any.
         /// </param>
+        /// <param name="type">
+        /// The type of error.
+        /// </param>
         public RealtimeServerEventConversationItemInputAudioTranscriptionFailedError(
-            string? type,
             string? code,
             string? message,
-            string? param)
+            string? param,
+            string? type)
         {
-            this.Type = type;
             this.Code = code;
             this.Message = message;
             this.Param = param;
+            this.Type = type;
         }
 
         /// <summary>

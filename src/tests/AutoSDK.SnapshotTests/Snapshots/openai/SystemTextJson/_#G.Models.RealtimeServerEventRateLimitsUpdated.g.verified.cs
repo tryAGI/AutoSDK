@@ -20,18 +20,18 @@ namespace G
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `rate_limits.updated`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventRateLimitsUpdatedTypeJsonConverter))]
-        public global::G.RealtimeServerEventRateLimitsUpdatedType Type { get; set; }
-
-        /// <summary>
         /// List of rate limit information.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rate_limits")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::System.Collections.Generic.IList<global::G.RealtimeServerEventRateLimitsUpdatedRateLimit> RateLimits { get; set; }
+
+        /// <summary>
+        /// The event type, must be `rate_limits.updated`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventRateLimitsUpdatedTypeJsonConverter))]
+        public global::G.RealtimeServerEventRateLimitsUpdatedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,11 +45,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `rate_limits.updated`.
-        /// </param>
         /// <param name="rateLimits">
         /// List of rate limit information.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `rate_limits.updated`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

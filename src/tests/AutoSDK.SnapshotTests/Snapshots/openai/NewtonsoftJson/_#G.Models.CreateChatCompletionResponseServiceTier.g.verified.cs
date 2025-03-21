@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The service tier used for processing the request. This field is only included if the `service_tier` parameter is specified in the request.<br/>
+    /// The service tier used for processing the request.<br/>
     /// Example: scale
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]

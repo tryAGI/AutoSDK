@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The log level of the event.
     /// </summary>
     public enum FineTuningJobEventLevel
     {

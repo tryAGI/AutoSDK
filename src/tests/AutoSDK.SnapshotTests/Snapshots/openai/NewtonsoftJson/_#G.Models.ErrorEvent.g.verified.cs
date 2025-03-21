@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("event")]
-        public global::G.ErrorEventEvent Event { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.Error Data { get; set; } = default!;
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.Error Data { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("event")]
+        public global::G.ErrorEventEvent Event { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,8 +30,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ErrorEvent" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data"></param>
+        /// <param name="event"></param>
         public ErrorEvent(
             global::G.Error data,
             global::G.ErrorEventEvent @event)

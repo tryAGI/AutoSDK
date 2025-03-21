@@ -5,12 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// The type of response format being defined: `json_object`
+    /// The type of response format being defined. Always `json_object`.
     /// </summary>
     public enum ResponseFormatJsonObjectType
     {
         /// <summary>
-        /// `json_object`
+        /// 
         /// </summary>
         JsonObject,
     }

@@ -17,17 +17,17 @@ namespace G
         public required int Index { get; set; }
 
         /// <summary>
+        /// The text output from the Code Interpreter tool call.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("logs")]
+        public string? Logs { get; set; }
+
+        /// <summary>
         /// Always `logs`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
         public global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
-
-        /// <summary>
-        /// The text output from the Code Interpreter tool call.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("logs")]
-        public string? Logs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,23 +41,23 @@ namespace G
         /// <param name="index">
         /// The index of the output in the outputs array.
         /// </param>
-        /// <param name="type">
-        /// Always `logs`.
-        /// </param>
         /// <param name="logs">
         /// The text output from the Code Interpreter tool call.
+        /// </param>
+        /// <param name="type">
+        /// Always `logs`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDeltaStepDetailsToolCallsCodeOutputLogsObject(
             int index,
-            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType type,
-            string? logs)
+            string? logs,
+            global::G.RunStepDeltaStepDetailsToolCallsCodeOutputLogsObjectType type)
         {
             this.Index = index;
-            this.Type = type;
             this.Logs = logs;
+            this.Type = type;
         }
 
         /// <summary>

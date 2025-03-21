@@ -204,24 +204,24 @@ namespace G
         /// Adds a user to the project. Users must already be members of the organization to be added to a project.
         /// </summary>
         /// <param name="projectId"></param>
-        /// <param name="userId">
-        /// The ID of the user.
-        /// </param>
         /// <param name="role">
         /// `owner` or `member`
+        /// </param>
+        /// <param name="userId">
+        /// The ID of the user.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.ProjectUser> CreateProjectUserAsync(
             string projectId,
-            string userId,
             global::G.ProjectUserCreateRequestRole role,
+            string userId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::G.ProjectUserCreateRequest
             {
-                UserId = userId,
                 Role = role,
+                UserId = userId,
             };
 
             return await CreateProjectUserAsync(

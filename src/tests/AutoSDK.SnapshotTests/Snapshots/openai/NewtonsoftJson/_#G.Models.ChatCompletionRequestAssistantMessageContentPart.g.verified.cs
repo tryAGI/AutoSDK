@@ -11,11 +11,6 @@ namespace G
     public readonly partial struct ChatCompletionRequestAssistantMessageContentPart : global::System.IEquatable<ChatCompletionRequestAssistantMessageContentPart>
     {
         /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? Type { get; }
-
-        /// <summary>
         /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -89,13 +84,10 @@ namespace G
         /// 
         /// </summary>
         public ChatCompletionRequestAssistantMessageContentPart(
-            global::G.ChatCompletionRequestAssistantMessageContentPartDiscriminatorType? type,
             global::G.ChatCompletionRequestMessageContentPartText? text,
             global::G.ChatCompletionRequestMessageContentPartRefusal? refusal
             )
         {
-            Type = type;
-
             Text = text;
             Refusal = refusal;
         }

@@ -12,6 +12,10 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        Developer,
+        /// <summary>
+        /// 
+        /// </summary>
         System,
         /// <summary>
         /// 
@@ -39,6 +43,7 @@ namespace G
         {
             return value switch
             {
+                ChatCompletionStreamResponseDeltaRole.Developer => "developer",
                 ChatCompletionStreamResponseDeltaRole.System => "system",
                 ChatCompletionStreamResponseDeltaRole.User => "user",
                 ChatCompletionStreamResponseDeltaRole.Assistant => "assistant",
@@ -53,6 +58,7 @@ namespace G
         {
             return value switch
             {
+                "developer" => ChatCompletionStreamResponseDeltaRole.Developer,
                 "system" => ChatCompletionStreamResponseDeltaRole.System,
                 "user" => ChatCompletionStreamResponseDeltaRole.User,
                 "assistant" => ChatCompletionStreamResponseDeltaRole.Assistant,

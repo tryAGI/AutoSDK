@@ -7,8 +7,10 @@
 namespace G
 {
     /// <summary>
-    /// The hyperparameters used for the fine-tuning job.
+    /// The hyperparameters used for the fine-tuning job.<br/>
+    /// This value is now deprecated in favor of `method`, and should be passed in under the `method` parameter.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class CreateFineTuningJobRequestHyperparameters
     {
         /// <summary>
@@ -18,6 +20,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("batch_size")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? BatchSize { get; set; }
 
         /// <summary>
@@ -27,6 +30,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("learning_rate_multiplier")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; }
 
         /// <summary>
@@ -36,6 +40,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("n_epochs")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<global::G.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>))]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? NEpochs { get; set; }
 
         /// <summary>

@@ -18,6 +18,13 @@ namespace G
         public string? EventId { get; set; }
 
         /// <summary>
+        /// A specific response ID to cancel - if not provided, will cancel an <br/>
+        /// in-progress response in the default conversation.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("response_id")]
+        public string? ResponseId { get; set; }
+
+        /// <summary>
         /// The event type, must be `response.cancel`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
@@ -35,14 +42,20 @@ namespace G
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
+        /// <param name="responseId">
+        /// A specific response ID to cancel - if not provided, will cancel an <br/>
+        /// in-progress response in the default conversation.
+        /// </param>
         /// <param name="type">
         /// The event type, must be `response.cancel`.
         /// </param>
         public RealtimeClientEventResponseCancel(
             string? eventId,
+            string? responseId,
             global::G.RealtimeClientEventResponseCancelType type)
         {
             this.EventId = eventId;
+            this.ResponseId = responseId;
             this.Type = type;
         }
 

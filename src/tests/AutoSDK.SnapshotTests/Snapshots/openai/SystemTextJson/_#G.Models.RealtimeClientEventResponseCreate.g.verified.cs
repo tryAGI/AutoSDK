@@ -27,18 +27,17 @@ namespace G
         public string? EventId { get; set; }
 
         /// <summary>
+        /// Create a new Realtime response with these parameters
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response")]
+        public global::G.RealtimeResponseCreateParams? Response { get; set; }
+
+        /// <summary>
         /// The event type, must be `response.create`.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventResponseCreateTypeJsonConverter))]
         public global::G.RealtimeClientEventResponseCreateType Type { get; set; }
-
-        /// <summary>
-        /// Realtime session object configuration.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("response")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RealtimeSession Response { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,22 +51,22 @@ namespace G
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
+        /// <param name="response">
+        /// Create a new Realtime response with these parameters
+        /// </param>
         /// <param name="type">
         /// The event type, must be `response.create`.
-        /// </param>
-        /// <param name="response">
-        /// Realtime session object configuration.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeClientEventResponseCreate(
-            global::G.RealtimeSession response,
             string? eventId,
+            global::G.RealtimeResponseCreateParams? response,
             global::G.RealtimeClientEventResponseCreateType type)
         {
-            this.Response = response ?? throw new global::System.ArgumentNullException(nameof(response));
             this.EventId = eventId;
+            this.Response = response;
             this.Type = type;
         }
 

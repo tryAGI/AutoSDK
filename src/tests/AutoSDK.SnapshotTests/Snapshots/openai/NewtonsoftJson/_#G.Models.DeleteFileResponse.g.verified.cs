@@ -12,6 +12,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Deleted { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
 
@@ -22,12 +28,6 @@ namespace G
         public global::G.DeleteFileResponseObject Object { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool Deleted { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteFileResponse" /> class.
         /// </summary>
+        /// <param name="deleted"></param>
         /// <param name="id"></param>
         /// <param name="object"></param>
-        /// <param name="deleted"></param>
         public DeleteFileResponse(
-            string id,
             bool deleted,
+            string id,
             global::G.DeleteFileResponseObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
         }
 

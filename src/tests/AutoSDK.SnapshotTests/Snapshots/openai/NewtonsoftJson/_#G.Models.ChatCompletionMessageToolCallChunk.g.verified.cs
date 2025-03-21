@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Index { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("function")]
+        public global::G.ChatCompletionMessageToolCallChunkFunction? Function { get; set; }
 
         /// <summary>
         /// The ID of the tool call.
@@ -22,16 +22,16 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Index { get; set; } = default!;
+
+        /// <summary>
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ChatCompletionMessageToolCallChunkType? Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("function")]
-        public global::G.ChatCompletionMessageToolCallChunkFunction? Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,24 +42,24 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionMessageToolCallChunk" /> class.
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="function"></param>
         /// <param name="id">
         /// The ID of the tool call.
         /// </param>
+        /// <param name="index"></param>
         /// <param name="type">
         /// The type of the tool. Currently, only `function` is supported.
         /// </param>
-        /// <param name="function"></param>
         public ChatCompletionMessageToolCallChunk(
             int index,
+            global::G.ChatCompletionMessageToolCallChunkFunction? function,
             string? id,
-            global::G.ChatCompletionMessageToolCallChunkType? type,
-            global::G.ChatCompletionMessageToolCallChunkFunction? function)
+            global::G.ChatCompletionMessageToolCallChunkType? type)
         {
             this.Index = index;
+            this.Function = function;
             this.Id = id;
             this.Type = type;
-            this.Function = function;
         }
 
         /// <summary>

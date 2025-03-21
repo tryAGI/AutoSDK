@@ -10,16 +10,10 @@ namespace G
     public sealed partial class MessageContentTextAnnotationsFilePathObject
     {
         /// <summary>
-        /// Always `file_path`.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
-
-        /// <summary>
-        /// The text in the message content that needs to be replaced.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Text { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("end_index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int EndIndex { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -34,10 +28,16 @@ namespace G
         public int StartIndex { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The text in the message content that needs to be replaced.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("end_index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int EndIndex { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Text { get; set; } = default!;
+
+        /// <summary>
+        /// Always `file_path`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,26 +48,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentTextAnnotationsFilePathObject" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `file_path`.
-        /// </param>
+        /// <param name="endIndex"></param>
+        /// <param name="filePath"></param>
+        /// <param name="startIndex"></param>
         /// <param name="text">
         /// The text in the message content that needs to be replaced.
         /// </param>
-        /// <param name="filePath"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
+        /// <param name="type">
+        /// Always `file_path`.
+        /// </param>
         public MessageContentTextAnnotationsFilePathObject(
-            string text,
+            int endIndex,
             global::G.MessageContentTextAnnotationsFilePathObjectFilePath filePath,
             int startIndex,
-            int endIndex,
+            string text,
             global::G.MessageContentTextAnnotationsFilePathObjectType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.EndIndex = endIndex;
             this.FilePath = filePath ?? throw new global::System.ArgumentNullException(nameof(filePath));
             this.StartIndex = startIndex;
-            this.EndIndex = endIndex;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
         }
 

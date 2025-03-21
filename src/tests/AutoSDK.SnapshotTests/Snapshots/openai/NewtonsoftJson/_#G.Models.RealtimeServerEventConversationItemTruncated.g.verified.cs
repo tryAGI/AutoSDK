@@ -14,22 +14,10 @@ namespace G
     public sealed partial class RealtimeServerEventConversationItemTruncated
     {
         /// <summary>
-        /// The unique ID of the server event.
+        /// The duration up to which the audio was truncated, in milliseconds.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("event_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string EventId { get; set; } = default!;
-
-        /// <summary>
-        /// The event type, must be `conversation.item.truncated`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventConversationItemTruncatedType Type { get; set; }
-
-        /// <summary>
-        /// The ID of the assistant message item that was truncated.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ItemId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("audio_end_ms", Required = global::Newtonsoft.Json.Required.Always)]
+        public int AudioEndMs { get; set; } = default!;
 
         /// <summary>
         /// The index of the content part that was truncated.
@@ -38,10 +26,22 @@ namespace G
         public int ContentIndex { get; set; } = default!;
 
         /// <summary>
-        /// The duration up to which the audio was truncated, in milliseconds.
+        /// The unique ID of the server event.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("audio_end_ms", Required = global::Newtonsoft.Json.Required.Always)]
-        public int AudioEndMs { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("event_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string EventId { get; set; } = default!;
+
+        /// <summary>
+        /// The ID of the assistant message item that was truncated.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ItemId { get; set; } = default!;
+
+        /// <summary>
+        /// The event type, must be `conversation.item.truncated`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventConversationItemTruncatedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -52,32 +52,32 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventConversationItemTruncated" /> class.
         /// </summary>
-        /// <param name="eventId">
-        /// The unique ID of the server event.
-        /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.truncated`.
-        /// </param>
-        /// <param name="itemId">
-        /// The ID of the assistant message item that was truncated.
+        /// <param name="audioEndMs">
+        /// The duration up to which the audio was truncated, in milliseconds.
         /// </param>
         /// <param name="contentIndex">
         /// The index of the content part that was truncated.
         /// </param>
-        /// <param name="audioEndMs">
-        /// The duration up to which the audio was truncated, in milliseconds.
+        /// <param name="eventId">
+        /// The unique ID of the server event.
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the assistant message item that was truncated.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.truncated`.
         /// </param>
         public RealtimeServerEventConversationItemTruncated(
+            int audioEndMs,
+            int contentIndex,
             string eventId,
             string itemId,
-            int contentIndex,
-            int audioEndMs,
             global::G.RealtimeServerEventConversationItemTruncatedType type)
         {
+            this.AudioEndMs = audioEndMs;
+            this.ContentIndex = contentIndex;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.ContentIndex = contentIndex;
-            this.AudioEndMs = audioEndMs;
             this.Type = type;
         }
 

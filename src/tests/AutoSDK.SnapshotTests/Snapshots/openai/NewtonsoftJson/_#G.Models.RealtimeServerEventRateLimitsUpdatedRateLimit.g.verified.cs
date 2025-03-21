@@ -10,16 +10,16 @@ namespace G
     public sealed partial class RealtimeServerEventRateLimitsUpdatedRateLimit
     {
         /// <summary>
-        /// The name of the rate limit (`requests`, `tokens`).
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// The maximum allowed value for the rate limit.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("limit")]
         public int? Limit { get; set; }
+
+        /// <summary>
+        /// The name of the rate limit (`requests`, `tokens`).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("name")]
+        public global::G.RealtimeServerEventRateLimitsUpdatedRateLimitName? Name { get; set; }
 
         /// <summary>
         /// The remaining value before the limit is reached.
@@ -42,11 +42,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventRateLimitsUpdatedRateLimit" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the rate limit (`requests`, `tokens`).
-        /// </param>
         /// <param name="limit">
         /// The maximum allowed value for the rate limit.
+        /// </param>
+        /// <param name="name">
+        /// The name of the rate limit (`requests`, `tokens`).
         /// </param>
         /// <param name="remaining">
         /// The remaining value before the limit is reached.
@@ -55,13 +55,13 @@ namespace G
         /// Seconds until the rate limit resets.
         /// </param>
         public RealtimeServerEventRateLimitsUpdatedRateLimit(
-            string? name,
             int? limit,
+            global::G.RealtimeServerEventRateLimitsUpdatedRateLimitName? name,
             int? remaining,
             double? resetSeconds)
         {
-            this.Name = name;
             this.Limit = limit;
+            this.Name = name;
             this.Remaining = remaining;
             this.ResetSeconds = resetSeconds;
         }

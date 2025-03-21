@@ -10,18 +10,18 @@ namespace G
     public sealed partial class RunStepDetailsToolCallsCodeOutputLogsObject
     {
         /// <summary>
-        /// Always `logs`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
-        public global::G.RunStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
-
-        /// <summary>
         /// The text output from the Code Interpreter tool call.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("logs")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Logs { get; set; }
+
+        /// <summary>
+        /// Always `logs`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepDetailsToolCallsCodeOutputLogsObjectTypeJsonConverter))]
+        public global::G.RunStepDetailsToolCallsCodeOutputLogsObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,11 +32,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsCodeOutputLogsObject" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `logs`.
-        /// </param>
         /// <param name="logs">
         /// The text output from the Code Interpreter tool call.
+        /// </param>
+        /// <param name="type">
+        /// Always `logs`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

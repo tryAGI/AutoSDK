@@ -10,11 +10,10 @@ namespace G
     public sealed partial class AuditLogActor
     {
         /// <summary>
-        /// The type of actor. Is either `session` or `api_key`.
+        /// The API Key used to perform the audit logged action.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuditLogActorTypeJsonConverter))]
-        public global::G.AuditLogActorType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("api_key")]
+        public global::G.AuditLogActorApiKey? ApiKey { get; set; }
 
         /// <summary>
         /// The session in which the audit logged action was performed.
@@ -23,10 +22,11 @@ namespace G
         public global::G.AuditLogActorSession? Session { get; set; }
 
         /// <summary>
-        /// The API Key used to perform the audit logged action.
+        /// The type of actor. Is either `session` or `api_key`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("api_key")]
-        public global::G.AuditLogActorApiKey? ApiKey { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.AuditLogActorTypeJsonConverter))]
+        public global::G.AuditLogActorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -37,26 +37,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogActor" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of actor. Is either `session` or `api_key`.
+        /// <param name="apiKey">
+        /// The API Key used to perform the audit logged action.
         /// </param>
         /// <param name="session">
         /// The session in which the audit logged action was performed.
         /// </param>
-        /// <param name="apiKey">
-        /// The API Key used to perform the audit logged action.
+        /// <param name="type">
+        /// The type of actor. Is either `session` or `api_key`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogActor(
-            global::G.AuditLogActorType? type,
+            global::G.AuditLogActorApiKey? apiKey,
             global::G.AuditLogActorSession? session,
-            global::G.AuditLogActorApiKey? apiKey)
+            global::G.AuditLogActorType? type)
         {
-            this.Type = type;
-            this.Session = session;
             this.ApiKey = apiKey;
+            this.Session = session;
+            this.Type = type;
         }
 
         /// <summary>

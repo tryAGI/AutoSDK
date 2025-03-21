@@ -10,10 +10,10 @@ namespace G
     public sealed partial class InviteDeleteResponse
     {
         /// <summary>
-        /// The object type, which is always `organization.invite.deleted`
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.InviteDeleteResponseObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Deleted { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -22,10 +22,10 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// 
+        /// The object type, which is always `organization.invite.deleted`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool Deleted { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.InviteDeleteResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,18 +36,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InviteDeleteResponse" /> class.
         /// </summary>
+        /// <param name="deleted"></param>
+        /// <param name="id"></param>
         /// <param name="object">
         /// The object type, which is always `organization.invite.deleted`
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="deleted"></param>
         public InviteDeleteResponse(
-            string id,
             bool deleted,
+            string id,
             global::G.InviteDeleteResponseObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
         }
 

@@ -16,16 +16,16 @@ namespace G
         public string? B64Json { get; set; }
 
         /// <summary>
-        /// The URL of the generated image, if `response_format` is `url` (default).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
-        public string? Url { get; set; }
-
-        /// <summary>
         /// The prompt that was used to generate the image, if there was any revision to the prompt.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("revised_prompt")]
         public string? RevisedPrompt { get; set; }
+
+        /// <summary>
+        /// The URL of the generated image, if `response_format` is `url` (default).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("url")]
+        public string? Url { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,23 +39,23 @@ namespace G
         /// <param name="b64Json">
         /// The base64-encoded JSON of the generated image, if `response_format` is `b64_json`.
         /// </param>
-        /// <param name="url">
-        /// The URL of the generated image, if `response_format` is `url` (default).
-        /// </param>
         /// <param name="revisedPrompt">
         /// The prompt that was used to generate the image, if there was any revision to the prompt.
+        /// </param>
+        /// <param name="url">
+        /// The URL of the generated image, if `response_format` is `url` (default).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Image(
             string? b64Json,
-            string? url,
-            string? revisedPrompt)
+            string? revisedPrompt,
+            string? url)
         {
             this.B64Json = b64Json;
-            this.Url = url;
             this.RevisedPrompt = revisedPrompt;
+            this.Url = url;
         }
 
         /// <summary>

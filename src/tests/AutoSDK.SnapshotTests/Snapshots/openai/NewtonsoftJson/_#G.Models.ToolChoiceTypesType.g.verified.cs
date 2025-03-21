@@ -1,0 +1,74 @@
+﻿//HintName: G.Models.ToolChoiceTypesType.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// The type of hosted tool the model should to use. Learn more about<br/>
+    /// [built-in tools](/docs/guides/tools).<br/>
+    /// Allowed values are:<br/>
+    /// - `file_search`<br/>
+    /// - `web_search_preview`<br/>
+    /// - `computer_use_preview`
+    /// </summary>
+    [global::System.Runtime.Serialization.DataContract]
+    public enum ToolChoiceTypesType
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="file_search")]
+        FileSearch,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="web_search_preview")]
+        WebSearchPreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="computer_use_preview")]
+        ComputerUsePreview,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="web_search_preview_2025_03_11")]
+        WebSearchPreview20250311,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class ToolChoiceTypesTypeExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this ToolChoiceTypesType value)
+        {
+            return value switch
+            {
+                ToolChoiceTypesType.FileSearch => "file_search",
+                ToolChoiceTypesType.WebSearchPreview => "web_search_preview",
+                ToolChoiceTypesType.ComputerUsePreview => "computer_use_preview",
+                ToolChoiceTypesType.WebSearchPreview20250311 => "web_search_preview_2025_03_11",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static ToolChoiceTypesType? ToEnum(string value)
+        {
+            return value switch
+            {
+                "file_search" => ToolChoiceTypesType.FileSearch,
+                "web_search_preview" => ToolChoiceTypesType.WebSearchPreview,
+                "computer_use_preview" => ToolChoiceTypesType.ComputerUsePreview,
+                "web_search_preview_2025_03_11" => ToolChoiceTypesType.WebSearchPreview20250311,
+                _ => null,
+            };
+        }
+    }
+}

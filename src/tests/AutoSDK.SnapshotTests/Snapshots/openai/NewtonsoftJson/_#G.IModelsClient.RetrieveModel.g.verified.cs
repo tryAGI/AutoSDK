@@ -13,7 +13,7 @@ namespace G
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::G.Model15> RetrieveModelAsync(
+        global::System.Threading.Tasks.Task<global::G.Model14> RetrieveModelAsync(
             string model,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

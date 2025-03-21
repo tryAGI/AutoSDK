@@ -10,10 +10,10 @@ namespace G
     public sealed partial class VectorStoreFileBatchObjectFileCounts
     {
         /// <summary>
-        /// The number of files that are currently being processed.
+        /// The number of files that where cancelled.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("in_progress", Required = global::Newtonsoft.Json.Required.Always)]
-        public int InProgress { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("cancelled", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Cancelled { get; set; } = default!;
 
         /// <summary>
         /// The number of files that have been processed.
@@ -28,10 +28,10 @@ namespace G
         public int Failed { get; set; } = default!;
 
         /// <summary>
-        /// The number of files that where cancelled.
+        /// The number of files that are currently being processed.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("cancelled", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Cancelled { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("in_progress", Required = global::Newtonsoft.Json.Required.Always)]
+        public int InProgress { get; set; } = default!;
 
         /// <summary>
         /// The total number of files.
@@ -48,8 +48,8 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="VectorStoreFileBatchObjectFileCounts" /> class.
         /// </summary>
-        /// <param name="inProgress">
-        /// The number of files that are currently being processed.
+        /// <param name="cancelled">
+        /// The number of files that where cancelled.
         /// </param>
         /// <param name="completed">
         /// The number of files that have been processed.
@@ -57,23 +57,23 @@ namespace G
         /// <param name="failed">
         /// The number of files that have failed to process.
         /// </param>
-        /// <param name="cancelled">
-        /// The number of files that where cancelled.
+        /// <param name="inProgress">
+        /// The number of files that are currently being processed.
         /// </param>
         /// <param name="total">
         /// The total number of files.
         /// </param>
         public VectorStoreFileBatchObjectFileCounts(
-            int inProgress,
+            int cancelled,
             int completed,
             int failed,
-            int cancelled,
+            int inProgress,
             int total)
         {
-            this.InProgress = inProgress;
+            this.Cancelled = cancelled;
             this.Completed = completed;
             this.Failed = failed;
-            this.Cancelled = cancelled;
+            this.InProgress = inProgress;
             this.Total = total;
         }
 

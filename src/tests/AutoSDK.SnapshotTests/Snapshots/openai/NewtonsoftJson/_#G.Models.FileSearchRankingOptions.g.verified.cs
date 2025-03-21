@@ -14,7 +14,7 @@ namespace G
         /// The ranker to use for the file search. If not specified will use the `auto` ranker.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("ranker")]
-        public global::G.FileSearchRankingOptionsRanker? Ranker { get; set; }
+        public global::G.FileSearchRanker? Ranker { get; set; }
 
         /// <summary>
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
@@ -39,7 +39,7 @@ namespace G
         /// </param>
         public FileSearchRankingOptions(
             double scoreThreshold,
-            global::G.FileSearchRankingOptionsRanker? ranker)
+            global::G.FileSearchRanker? ranker)
         {
             this.ScoreThreshold = scoreThreshold;
             this.Ranker = ranker;

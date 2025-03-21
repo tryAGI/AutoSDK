@@ -10,13 +10,15 @@ namespace G
     public sealed partial class CompletionUsagePromptTokensDetails
     {
         /// <summary>
-        /// Audio input tokens present in the prompt.
+        /// Audio input tokens present in the prompt.<br/>
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("audio_tokens")]
         public int? AudioTokens { get; set; }
 
         /// <summary>
-        /// Cached tokens present in the prompt.
+        /// Cached tokens present in the prompt.<br/>
+        /// Default Value: 0
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cached_tokens")]
         public int? CachedTokens { get; set; }
@@ -31,10 +33,12 @@ namespace G
         /// Initializes a new instance of the <see cref="CompletionUsagePromptTokensDetails" /> class.
         /// </summary>
         /// <param name="audioTokens">
-        /// Audio input tokens present in the prompt.
+        /// Audio input tokens present in the prompt.<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="cachedTokens">
-        /// Cached tokens present in the prompt.
+        /// Cached tokens present in the prompt.<br/>
+        /// Default Value: 0
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

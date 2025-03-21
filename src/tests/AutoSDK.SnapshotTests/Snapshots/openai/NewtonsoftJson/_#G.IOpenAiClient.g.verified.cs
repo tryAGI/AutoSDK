@@ -126,6 +126,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        public RealtimeClient Realtime { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponsesClient Responses { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         public VectorStoresClient VectorStores { get; }
 
     }

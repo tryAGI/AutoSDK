@@ -10,12 +10,11 @@ namespace G
     public sealed partial class RealtimeResponseStatusDetails
     {
         /// <summary>
-        /// The type of error that caused the response to fail, corresponding <br/>
-        /// with the `status` field (`cancelled`, `incomplete`, `failed`).
+        /// A description of the error that caused the response to fail, <br/>
+        /// populated when the `status` is `failed`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeResponseStatusDetailsTypeJsonConverter))]
-        public global::G.RealtimeResponseStatusDetailsType? Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
+        public global::G.RealtimeResponseStatusDetailsError? Error { get; set; }
 
         /// <summary>
         /// The reason the Response did not complete. For a `cancelled` Response, <br/>
@@ -29,11 +28,13 @@ namespace G
         public global::G.RealtimeResponseStatusDetailsReason? Reason { get; set; }
 
         /// <summary>
-        /// A description of the error that caused the response to fail, <br/>
-        /// populated when the `status` is `failed`.
+        /// The type of error that caused the response to fail, corresponding <br/>
+        /// with the `status` field (`completed`, `cancelled`, `incomplete`, <br/>
+        /// `failed`).
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("error")]
-        public global::G.RealtimeResponseStatusDetailsError? Error { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeResponseStatusDetailsTypeJsonConverter))]
+        public global::G.RealtimeResponseStatusDetailsType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,9 +45,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeResponseStatusDetails" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of error that caused the response to fail, corresponding <br/>
-        /// with the `status` field (`cancelled`, `incomplete`, `failed`).
+        /// <param name="error">
+        /// A description of the error that caused the response to fail, <br/>
+        /// populated when the `status` is `failed`.
         /// </param>
         /// <param name="reason">
         /// The reason the Response did not complete. For a `cancelled` Response, <br/>
@@ -55,21 +56,22 @@ namespace G
         /// `incomplete` Response, one of `max_output_tokens` or `content_filter` <br/>
         /// (the server-side safety filter activated and cut off the response).
         /// </param>
-        /// <param name="error">
-        /// A description of the error that caused the response to fail, <br/>
-        /// populated when the `status` is `failed`.
+        /// <param name="type">
+        /// The type of error that caused the response to fail, corresponding <br/>
+        /// with the `status` field (`completed`, `cancelled`, `incomplete`, <br/>
+        /// `failed`).
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeResponseStatusDetails(
-            global::G.RealtimeResponseStatusDetailsType? type,
+            global::G.RealtimeResponseStatusDetailsError? error,
             global::G.RealtimeResponseStatusDetailsReason? reason,
-            global::G.RealtimeResponseStatusDetailsError? error)
+            global::G.RealtimeResponseStatusDetailsType? type)
         {
-            this.Type = type;
-            this.Reason = reason;
             this.Error = error;
+            this.Reason = reason;
+            this.Type = type;
         }
 
         /// <summary>

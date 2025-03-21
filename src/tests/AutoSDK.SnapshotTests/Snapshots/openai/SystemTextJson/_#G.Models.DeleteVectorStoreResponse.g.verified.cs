@@ -12,16 +12,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Id { get; set; }
+        public required bool Deleted { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Deleted { get; set; }
+        public required string Id { get; set; }
 
         /// <summary>
         /// 
@@ -39,19 +39,19 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DeleteVectorStoreResponse" /> class.
         /// </summary>
-        /// <param name="id"></param>
         /// <param name="deleted"></param>
+        /// <param name="id"></param>
         /// <param name="object"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public DeleteVectorStoreResponse(
-            string id,
             bool deleted,
+            string id,
             global::G.DeleteVectorStoreResponseObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
         }
 

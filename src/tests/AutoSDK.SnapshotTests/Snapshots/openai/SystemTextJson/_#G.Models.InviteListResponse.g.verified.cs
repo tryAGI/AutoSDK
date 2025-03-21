@@ -10,13 +10,6 @@ namespace G
     public sealed partial class InviteListResponse
     {
         /// <summary>
-        /// The object type, which is always `list`
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InviteListResponseObjectJsonConverter))]
-        public global::G.InviteListResponseObject Object { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
@@ -30,16 +23,23 @@ namespace G
         public string? FirstId { get; set; }
 
         /// <summary>
+        /// The `has_more` property is used for pagination to indicate there are additional results.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
+        public bool? HasMore { get; set; }
+
+        /// <summary>
         /// The last `invite_id` in the retrieved `list`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("last_id")]
         public string? LastId { get; set; }
 
         /// <summary>
-        /// The `has_more` property is used for pagination to indicate there are additional results.
+        /// The object type, which is always `list`
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        public bool? HasMore { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InviteListResponseObjectJsonConverter))]
+        public global::G.InviteListResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -50,34 +50,34 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InviteListResponse" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `list`
-        /// </param>
         /// <param name="data"></param>
         /// <param name="firstId">
         /// The first `invite_id` in the retrieved `list`
         /// </param>
+        /// <param name="hasMore">
+        /// The `has_more` property is used for pagination to indicate there are additional results.
+        /// </param>
         /// <param name="lastId">
         /// The last `invite_id` in the retrieved `list`
         /// </param>
-        /// <param name="hasMore">
-        /// The `has_more` property is used for pagination to indicate there are additional results.
+        /// <param name="object">
+        /// The object type, which is always `list`
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InviteListResponse(
             global::System.Collections.Generic.IList<global::G.Invite> data,
-            global::G.InviteListResponseObject @object,
             string? firstId,
+            bool? hasMore,
             string? lastId,
-            bool? hasMore)
+            global::G.InviteListResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
-            this.Object = @object;
             this.FirstId = firstId;
-            this.LastId = lastId;
             this.HasMore = hasMore;
+            this.LastId = lastId;
+            this.Object = @object;
         }
 
         /// <summary>

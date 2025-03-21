@@ -16,32 +16,48 @@ namespace G.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-
-            var readerCopy = reader;
-            var discriminatorTypeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.ChunkingStrategyRequestParamDiscriminator), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.ChunkingStrategyRequestParamDiscriminator> ??
-                            throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.ChunkingStrategyRequestParamDiscriminator)}");
-            var discriminator = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, discriminatorTypeInfo);
-
+            var
+            readerCopy = reader;
             global::G.AutoChunkingStrategyRequestParam? auto = default;
-            if (discriminator?.Type == global::G.ChunkingStrategyRequestParamDiscriminatorType.Auto)
+            try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AutoChunkingStrategyRequestParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.AutoChunkingStrategyRequestParam)}");
-                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AutoChunkingStrategyRequestParam).Name}");
+                auto = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
             }
+            catch (global::System.Text.Json.JsonException)
+            {
+            }
+
+            readerCopy = reader;
             global::G.StaticChunkingStrategyRequestParam? @static = default;
-            if (discriminator?.Type == global::G.ChunkingStrategyRequestParamDiscriminatorType.Static)
+            try
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyRequestParam> ??
-                               throw new global::System.InvalidOperationException($"Cannot get type info for {nameof(global::G.StaticChunkingStrategyRequestParam)}");
-                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StaticChunkingStrategyRequestParam).Name}");
+                @static = global::System.Text.Json.JsonSerializer.Deserialize(ref readerCopy, typeInfo);
+            }
+            catch (global::System.Text.Json.JsonException)
+            {
             }
 
             var result = new global::G.ChunkingStrategyRequestParam(
-                discriminator?.Type,
                 auto,
                 @static
                 );
+
+            if (auto != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.AutoChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.AutoChunkingStrategyRequestParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.AutoChunkingStrategyRequestParam).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
+            else if (@static != null)
+            {
+                var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::G.StaticChunkingStrategyRequestParam), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::G.StaticChunkingStrategyRequestParam> ??
+                               throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::G.StaticChunkingStrategyRequestParam).Name}");
+                _ = global::System.Text.Json.JsonSerializer.Deserialize(ref reader, typeInfo);
+            }
 
             return result;
         }

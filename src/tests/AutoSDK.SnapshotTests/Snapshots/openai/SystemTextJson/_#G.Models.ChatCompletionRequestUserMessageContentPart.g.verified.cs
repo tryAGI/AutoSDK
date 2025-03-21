@@ -11,11 +11,6 @@ namespace G
     public readonly partial struct ChatCompletionRequestUserMessageContentPart : global::System.IEquatable<ChatCompletionRequestUserMessageContentPart>
     {
         /// <summary>
-        /// 
-        /// </summary>
-        public global::G.ChatCompletionRequestUserMessageContentPartDiscriminatorType? Type { get; }
-
-        /// <summary>
         /// Learn about [text inputs](/docs/guides/text-generation).
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -54,18 +49,18 @@ namespace G
         /// Learn about [image inputs](/docs/guides/vision).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartImage? ImageUrl { get; init; }
+        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; init; }
 #else
-        public global::G.ChatCompletionRequestMessageContentPartImage? ImageUrl { get; }
+        public global::G.ChatCompletionRequestMessageContentPartImage? Image { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageUrl))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Image))]
 #endif
-        public bool IsImageUrl => ImageUrl != null;
+        public bool IsImage => Image != null;
 
         /// <summary>
         /// 
@@ -75,32 +70,32 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestMessageContentPartImage?(ChatCompletionRequestUserMessageContentPart @this) => @this.ImageUrl;
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartImage?(ChatCompletionRequestUserMessageContentPart @this) => @this.Image;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartImage? value)
         {
-            ImageUrl = value;
+            Image = value;
         }
 
         /// <summary>
         /// Learn about [audio inputs](/docs/guides/audio).
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::G.ChatCompletionRequestMessageContentPartAudio? InputAudio { get; init; }
+        public global::G.ChatCompletionRequestMessageContentPartAudio? Audio { get; init; }
 #else
-        public global::G.ChatCompletionRequestMessageContentPartAudio? InputAudio { get; }
+        public global::G.ChatCompletionRequestMessageContentPartAudio? Audio { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InputAudio))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Audio))]
 #endif
-        public bool IsInputAudio => InputAudio != null;
+        public bool IsAudio => Audio != null;
 
         /// <summary>
         /// 
@@ -110,39 +105,74 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::G.ChatCompletionRequestMessageContentPartAudio?(ChatCompletionRequestUserMessageContentPart @this) => @this.InputAudio;
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartAudio?(ChatCompletionRequestUserMessageContentPart @this) => @this.Audio;
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartAudio? value)
         {
-            InputAudio = value;
+            Audio = value;
+        }
+
+        /// <summary>
+        /// Learn about [file inputs](/docs/guides/text) for text generation.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ChatCompletionRequestMessageContentPartFile? File { get; init; }
+#else
+        public global::G.ChatCompletionRequestMessageContentPartFile? File { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(File))]
+#endif
+        public bool IsFile => File != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartFile value) => new ChatCompletionRequestUserMessageContentPart(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ChatCompletionRequestMessageContentPartFile?(ChatCompletionRequestUserMessageContentPart @this) => @this.File;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ChatCompletionRequestUserMessageContentPart(global::G.ChatCompletionRequestMessageContentPartFile? value)
+        {
+            File = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ChatCompletionRequestUserMessageContentPart(
-            global::G.ChatCompletionRequestUserMessageContentPartDiscriminatorType? type,
             global::G.ChatCompletionRequestMessageContentPartText? text,
-            global::G.ChatCompletionRequestMessageContentPartImage? imageUrl,
-            global::G.ChatCompletionRequestMessageContentPartAudio? inputAudio
+            global::G.ChatCompletionRequestMessageContentPartImage? image,
+            global::G.ChatCompletionRequestMessageContentPartAudio? audio,
+            global::G.ChatCompletionRequestMessageContentPartFile? file
             )
         {
-            Type = type;
-
             Text = text;
-            ImageUrl = imageUrl;
-            InputAudio = inputAudio;
+            Image = image;
+            Audio = audio;
+            File = file;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            InputAudio as object ??
-            ImageUrl as object ??
+            File as object ??
+            Audio as object ??
+            Image as object ??
             Text as object 
             ;
 
@@ -151,7 +181,7 @@ namespace G
         /// </summary>
         public bool Validate()
         {
-            return IsText && !IsImageUrl && !IsInputAudio || !IsText && IsImageUrl && !IsInputAudio || !IsText && !IsImageUrl && IsInputAudio;
+            return IsText && !IsImage && !IsAudio && !IsFile || !IsText && IsImage && !IsAudio && !IsFile || !IsText && !IsImage && IsAudio && !IsFile || !IsText && !IsImage && !IsAudio && IsFile;
         }
 
         /// <summary>
@@ -159,8 +189,9 @@ namespace G
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::G.ChatCompletionRequestMessageContentPartText?, TResult>? text = null,
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartImage?, TResult>? imageUrl = null,
-            global::System.Func<global::G.ChatCompletionRequestMessageContentPartAudio?, TResult>? inputAudio = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartImage?, TResult>? image = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartAudio?, TResult>? audio = null,
+            global::System.Func<global::G.ChatCompletionRequestMessageContentPartFile?, TResult>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -172,13 +203,17 @@ namespace G
             {
                 return text(Text!);
             }
-            else if (IsImageUrl && imageUrl != null)
+            else if (IsImage && image != null)
             {
-                return imageUrl(ImageUrl!);
+                return image(Image!);
             }
-            else if (IsInputAudio && inputAudio != null)
+            else if (IsAudio && audio != null)
             {
-                return inputAudio(InputAudio!);
+                return audio(Audio!);
+            }
+            else if (IsFile && file != null)
+            {
+                return file(File!);
             }
 
             return default(TResult);
@@ -189,8 +224,9 @@ namespace G
         /// </summary>
         public void Match(
             global::System.Action<global::G.ChatCompletionRequestMessageContentPartText?>? text = null,
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage?>? imageUrl = null,
-            global::System.Action<global::G.ChatCompletionRequestMessageContentPartAudio?>? inputAudio = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartImage?>? image = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartAudio?>? audio = null,
+            global::System.Action<global::G.ChatCompletionRequestMessageContentPartFile?>? file = null,
             bool validate = true)
         {
             if (validate)
@@ -202,13 +238,17 @@ namespace G
             {
                 text?.Invoke(Text!);
             }
-            else if (IsImageUrl)
+            else if (IsImage)
             {
-                imageUrl?.Invoke(ImageUrl!);
+                image?.Invoke(Image!);
             }
-            else if (IsInputAudio)
+            else if (IsAudio)
             {
-                inputAudio?.Invoke(InputAudio!);
+                audio?.Invoke(Audio!);
+            }
+            else if (IsFile)
+            {
+                file?.Invoke(File!);
             }
         }
 
@@ -221,10 +261,12 @@ namespace G
             {
                 Text,
                 typeof(global::G.ChatCompletionRequestMessageContentPartText),
-                ImageUrl,
+                Image,
                 typeof(global::G.ChatCompletionRequestMessageContentPartImage),
-                InputAudio,
+                Audio,
                 typeof(global::G.ChatCompletionRequestMessageContentPartAudio),
+                File,
+                typeof(global::G.ChatCompletionRequestMessageContentPartFile),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -242,8 +284,9 @@ namespace G
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartText?>.Default.Equals(Text, other.Text) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(ImageUrl, other.ImageUrl) &&
-                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartAudio?>.Default.Equals(InputAudio, other.InputAudio) 
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartImage?>.Default.Equals(Image, other.Image) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartAudio?>.Default.Equals(Audio, other.Audio) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ChatCompletionRequestMessageContentPartFile?>.Default.Equals(File, other.File) 
                 ;
         }
 

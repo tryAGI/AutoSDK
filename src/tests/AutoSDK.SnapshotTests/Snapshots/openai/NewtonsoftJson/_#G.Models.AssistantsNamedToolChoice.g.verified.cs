@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AssistantsNamedToolChoice
     {
         /// <summary>
-        /// The type of the tool. If type is `function`, the function name must be set
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.AssistantsNamedToolChoiceType Type { get; set; } = default!;
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("function")]
         public global::G.AssistantsNamedToolChoiceFunction? Function { get; set; }
+
+        /// <summary>
+        /// The type of the tool. If type is `function`, the function name must be set
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.AssistantsNamedToolChoiceType Type { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AssistantsNamedToolChoice" /> class.
         /// </summary>
+        /// <param name="function"></param>
         /// <param name="type">
         /// The type of the tool. If type is `function`, the function name must be set
         /// </param>
-        /// <param name="function"></param>
         public AssistantsNamedToolChoice(
             global::G.AssistantsNamedToolChoiceType type,
             global::G.AssistantsNamedToolChoiceFunction? function)

@@ -26,11 +26,11 @@ namespace G
         public required string EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `conversation.item.created`.
+        /// The item to add to the conversation.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventConversationItemCreatedTypeJsonConverter))]
-        public global::G.RealtimeServerEventConversationItemCreatedType Type { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.RealtimeConversationItem Item { get; set; }
 
         /// <summary>
         /// The ID of the preceding item in the Conversation context, allows the <br/>
@@ -41,11 +41,11 @@ namespace G
         public required string PreviousItemId { get; set; }
 
         /// <summary>
-        /// The item to add to the conversation.
+        /// The event type, must be `conversation.item.created`.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("item")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.RealtimeConversationItem Item { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventConversationItemCreatedTypeJsonConverter))]
+        public global::G.RealtimeServerEventConversationItemCreatedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -59,28 +59,28 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.created`.
+        /// <param name="item">
+        /// The item to add to the conversation.
         /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item in the Conversation context, allows the <br/>
         /// client to understand the order of the conversation.
         /// </param>
-        /// <param name="item">
-        /// The item to add to the conversation.
+        /// <param name="type">
+        /// The event type, must be `conversation.item.created`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventConversationItemCreated(
             string eventId,
-            string previousItemId,
             global::G.RealtimeConversationItem item,
+            string previousItemId,
             global::G.RealtimeServerEventConversationItemCreatedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.Item = item ?? throw new global::System.ArgumentNullException(nameof(item));
+            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.Type = type;
         }
 

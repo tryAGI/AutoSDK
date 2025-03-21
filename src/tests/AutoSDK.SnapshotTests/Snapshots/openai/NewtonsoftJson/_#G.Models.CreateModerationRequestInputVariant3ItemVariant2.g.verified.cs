@@ -10,18 +10,18 @@ namespace G
     public sealed partial class CreateModerationRequestInputVariant3ItemVariant2
     {
         /// <summary>
-        /// Always `text`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.CreateModerationRequestInputVariant3ItemVariant2Type Type { get; set; }
-
-        /// <summary>
         /// A string of text to classify.<br/>
         /// Example: I want to kill them
         /// </summary>
         /// <example>I want to kill them</example>
         [global::Newtonsoft.Json.JsonProperty("text", Required = global::Newtonsoft.Json.Required.Always)]
         public string Text { get; set; } = default!;
+
+        /// <summary>
+        /// Always `text`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.CreateModerationRequestInputVariant3ItemVariant2Type Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -32,12 +32,12 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateModerationRequestInputVariant3ItemVariant2" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `text`.
-        /// </param>
         /// <param name="text">
         /// A string of text to classify.<br/>
         /// Example: I want to kill them
+        /// </param>
+        /// <param name="type">
+        /// Always `text`.
         /// </param>
         public CreateModerationRequestInputVariant3ItemVariant2(
             string text,

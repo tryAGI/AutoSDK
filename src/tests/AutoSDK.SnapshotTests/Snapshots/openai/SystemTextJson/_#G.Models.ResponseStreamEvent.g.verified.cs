@@ -1,0 +1,1745 @@
+﻿//HintName: G.Models.ResponseStreamEvent.g.cs
+#pragma warning disable CS0618 // Type or member is obsolete
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    public readonly partial struct ResponseStreamEvent : global::System.IEquatable<ResponseStreamEvent>
+    {
+        /// <summary>
+        /// Emitted when there is a partial audio response.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseAudioDeltaEvent? AudioDelta { get; init; }
+#else
+        public global::G.ResponseAudioDeltaEvent? AudioDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioDelta))]
+#endif
+        public bool IsAudioDelta => AudioDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioDeltaEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseAudioDeltaEvent?(ResponseStreamEvent @this) => @this.AudioDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseAudioDeltaEvent? value)
+        {
+            AudioDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when the audio response is complete.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseAudioDoneEvent? AudioDone { get; init; }
+#else
+        public global::G.ResponseAudioDoneEvent? AudioDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioDone))]
+#endif
+        public bool IsAudioDone => AudioDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseAudioDoneEvent?(ResponseStreamEvent @this) => @this.AudioDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseAudioDoneEvent? value)
+        {
+            AudioDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when there is a partial transcript of audio.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseAudioTranscriptDeltaEvent? AudioTranscriptDelta { get; init; }
+#else
+        public global::G.ResponseAudioTranscriptDeltaEvent? AudioTranscriptDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioTranscriptDelta))]
+#endif
+        public bool IsAudioTranscriptDelta => AudioTranscriptDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioTranscriptDeltaEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseAudioTranscriptDeltaEvent?(ResponseStreamEvent @this) => @this.AudioTranscriptDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseAudioTranscriptDeltaEvent? value)
+        {
+            AudioTranscriptDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when the full audio transcript is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseAudioTranscriptDoneEvent? AudioTranscriptDone { get; init; }
+#else
+        public global::G.ResponseAudioTranscriptDoneEvent? AudioTranscriptDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(AudioTranscriptDone))]
+#endif
+        public bool IsAudioTranscriptDone => AudioTranscriptDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseAudioTranscriptDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseAudioTranscriptDoneEvent?(ResponseStreamEvent @this) => @this.AudioTranscriptDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseAudioTranscriptDoneEvent? value)
+        {
+            AudioTranscriptDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when a partial code snippet is added by the code interpreter.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallCodeDeltaEvent? CodeInterpreterCallDelta { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallCodeDeltaEvent? CodeInterpreterCallDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallDelta))]
+#endif
+        public bool IsCodeInterpreterCallDelta => CodeInterpreterCallDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCodeDeltaEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseCodeInterpreterCallCodeDeltaEvent?(ResponseStreamEvent @this) => @this.CodeInterpreterCallDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCodeDeltaEvent? value)
+        {
+            CodeInterpreterCallDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when code snippet output is finalized by the code interpreter.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallCodeDoneEvent? CodeInterpreterCallDone { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallCodeDoneEvent? CodeInterpreterCallDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallDone))]
+#endif
+        public bool IsCodeInterpreterCallDone => CodeInterpreterCallDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCodeDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseCodeInterpreterCallCodeDoneEvent?(ResponseStreamEvent @this) => @this.CodeInterpreterCallDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCodeDoneEvent? value)
+        {
+            CodeInterpreterCallDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when the code interpreter call is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallCompletedEvent? CodeInterpreterCallCompleted { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallCompletedEvent? CodeInterpreterCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallCompleted))]
+#endif
+        public bool IsCodeInterpreterCallCompleted => CodeInterpreterCallCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCompletedEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseCodeInterpreterCallCompletedEvent?(ResponseStreamEvent @this) => @this.CodeInterpreterCallCompleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseCodeInterpreterCallCompletedEvent? value)
+        {
+            CodeInterpreterCallCompleted = value;
+        }
+
+        /// <summary>
+        /// Emitted when a code interpreter call is in progress.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallInProgressEvent? CodeInterpreterCallInProgress { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallInProgressEvent? CodeInterpreterCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallInProgress))]
+#endif
+        public bool IsCodeInterpreterCallInProgress => CodeInterpreterCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallInProgressEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseCodeInterpreterCallInProgressEvent?(ResponseStreamEvent @this) => @this.CodeInterpreterCallInProgress;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseCodeInterpreterCallInProgressEvent? value)
+        {
+            CodeInterpreterCallInProgress = value;
+        }
+
+        /// <summary>
+        /// Emitted when the code interpreter is actively interpreting the code snippet.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCodeInterpreterCallInterpretingEvent? CodeInterpreterCallInterpreting { get; init; }
+#else
+        public global::G.ResponseCodeInterpreterCallInterpretingEvent? CodeInterpreterCallInterpreting { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(CodeInterpreterCallInterpreting))]
+#endif
+        public bool IsCodeInterpreterCallInterpreting => CodeInterpreterCallInterpreting != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCodeInterpreterCallInterpretingEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseCodeInterpreterCallInterpretingEvent?(ResponseStreamEvent @this) => @this.CodeInterpreterCallInterpreting;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseCodeInterpreterCallInterpretingEvent? value)
+        {
+            CodeInterpreterCallInterpreting = value;
+        }
+
+        /// <summary>
+        /// Emitted when the model response is complete.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCompletedEvent? Completed { get; init; }
+#else
+        public global::G.ResponseCompletedEvent? Completed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Completed))]
+#endif
+        public bool IsCompleted => Completed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCompletedEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseCompletedEvent?(ResponseStreamEvent @this) => @this.Completed;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseCompletedEvent? value)
+        {
+            Completed = value;
+        }
+
+        /// <summary>
+        /// Emitted when a new content part is added.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseContentPartAddedEvent? ContentPartAdded { get; init; }
+#else
+        public global::G.ResponseContentPartAddedEvent? ContentPartAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentPartAdded))]
+#endif
+        public bool IsContentPartAdded => ContentPartAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseContentPartAddedEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseContentPartAddedEvent?(ResponseStreamEvent @this) => @this.ContentPartAdded;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseContentPartAddedEvent? value)
+        {
+            ContentPartAdded = value;
+        }
+
+        /// <summary>
+        /// Emitted when a content part is done.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseContentPartDoneEvent? ContentPartDone { get; init; }
+#else
+        public global::G.ResponseContentPartDoneEvent? ContentPartDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ContentPartDone))]
+#endif
+        public bool IsContentPartDone => ContentPartDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseContentPartDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseContentPartDoneEvent?(ResponseStreamEvent @this) => @this.ContentPartDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseContentPartDoneEvent? value)
+        {
+            ContentPartDone = value;
+        }
+
+        /// <summary>
+        /// An event that is emitted when a response is created.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseCreatedEvent? Created { get; init; }
+#else
+        public global::G.ResponseCreatedEvent? Created { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Created))]
+#endif
+        public bool IsCreated => Created != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseCreatedEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseCreatedEvent?(ResponseStreamEvent @this) => @this.Created;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseCreatedEvent? value)
+        {
+            Created = value;
+        }
+
+        /// <summary>
+        /// Emitted when an error occurs.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseErrorEvent? Error { get; init; }
+#else
+        public global::G.ResponseErrorEvent? Error { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Error))]
+#endif
+        public bool IsError => Error != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseErrorEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseErrorEvent?(ResponseStreamEvent @this) => @this.Error;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseErrorEvent? value)
+        {
+            Error = value;
+        }
+
+        /// <summary>
+        /// Emitted when a file search call is completed (results found).
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFileSearchCallCompletedEvent? FileSearchCallCompleted { get; init; }
+#else
+        public global::G.ResponseFileSearchCallCompletedEvent? FileSearchCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCallCompleted))]
+#endif
+        public bool IsFileSearchCallCompleted => FileSearchCallCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallCompletedEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseFileSearchCallCompletedEvent?(ResponseStreamEvent @this) => @this.FileSearchCallCompleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseFileSearchCallCompletedEvent? value)
+        {
+            FileSearchCallCompleted = value;
+        }
+
+        /// <summary>
+        /// Emitted when a file search call is initiated.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFileSearchCallInProgressEvent? FileSearchCallInProgress { get; init; }
+#else
+        public global::G.ResponseFileSearchCallInProgressEvent? FileSearchCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCallInProgress))]
+#endif
+        public bool IsFileSearchCallInProgress => FileSearchCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallInProgressEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseFileSearchCallInProgressEvent?(ResponseStreamEvent @this) => @this.FileSearchCallInProgress;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseFileSearchCallInProgressEvent? value)
+        {
+            FileSearchCallInProgress = value;
+        }
+
+        /// <summary>
+        /// Emitted when a file search is currently searching.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFileSearchCallSearchingEvent? FileSearchCallSearching { get; init; }
+#else
+        public global::G.ResponseFileSearchCallSearchingEvent? FileSearchCallSearching { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FileSearchCallSearching))]
+#endif
+        public bool IsFileSearchCallSearching => FileSearchCallSearching != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFileSearchCallSearchingEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseFileSearchCallSearchingEvent?(ResponseStreamEvent @this) => @this.FileSearchCallSearching;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseFileSearchCallSearchingEvent? value)
+        {
+            FileSearchCallSearching = value;
+        }
+
+        /// <summary>
+        /// Emitted when there is a partial function-call arguments delta.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFunctionCallArgumentsDeltaEvent? FunctionCallArgumentsDelta { get; init; }
+#else
+        public global::G.ResponseFunctionCallArgumentsDeltaEvent? FunctionCallArgumentsDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallArgumentsDelta))]
+#endif
+        public bool IsFunctionCallArgumentsDelta => FunctionCallArgumentsDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFunctionCallArgumentsDeltaEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseFunctionCallArgumentsDeltaEvent?(ResponseStreamEvent @this) => @this.FunctionCallArgumentsDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseFunctionCallArgumentsDeltaEvent? value)
+        {
+            FunctionCallArgumentsDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when function-call arguments are finalized.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFunctionCallArgumentsDoneEvent? FunctionCallArgumentsDone { get; init; }
+#else
+        public global::G.ResponseFunctionCallArgumentsDoneEvent? FunctionCallArgumentsDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(FunctionCallArgumentsDone))]
+#endif
+        public bool IsFunctionCallArgumentsDone => FunctionCallArgumentsDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFunctionCallArgumentsDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseFunctionCallArgumentsDoneEvent?(ResponseStreamEvent @this) => @this.FunctionCallArgumentsDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseFunctionCallArgumentsDoneEvent? value)
+        {
+            FunctionCallArgumentsDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when the response is in progress.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseInProgressEvent? InProgress { get; init; }
+#else
+        public global::G.ResponseInProgressEvent? InProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(InProgress))]
+#endif
+        public bool IsInProgress => InProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseInProgressEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseInProgressEvent?(ResponseStreamEvent @this) => @this.InProgress;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseInProgressEvent? value)
+        {
+            InProgress = value;
+        }
+
+        /// <summary>
+        /// An event that is emitted when a response fails.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseFailedEvent? Failed { get; init; }
+#else
+        public global::G.ResponseFailedEvent? Failed { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Failed))]
+#endif
+        public bool IsFailed => Failed != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseFailedEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseFailedEvent?(ResponseStreamEvent @this) => @this.Failed;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseFailedEvent? value)
+        {
+            Failed = value;
+        }
+
+        /// <summary>
+        /// An event that is emitted when a response finishes as incomplete.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseIncompleteEvent? Incomplete { get; init; }
+#else
+        public global::G.ResponseIncompleteEvent? Incomplete { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Incomplete))]
+#endif
+        public bool IsIncomplete => Incomplete != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseIncompleteEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseIncompleteEvent?(ResponseStreamEvent @this) => @this.Incomplete;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseIncompleteEvent? value)
+        {
+            Incomplete = value;
+        }
+
+        /// <summary>
+        /// Emitted when a new output item is added.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseOutputItemAddedEvent? OutputItemAdded { get; init; }
+#else
+        public global::G.ResponseOutputItemAddedEvent? OutputItemAdded { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemAdded))]
+#endif
+        public bool IsOutputItemAdded => OutputItemAdded != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseOutputItemAddedEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseOutputItemAddedEvent?(ResponseStreamEvent @this) => @this.OutputItemAdded;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseOutputItemAddedEvent? value)
+        {
+            OutputItemAdded = value;
+        }
+
+        /// <summary>
+        /// Emitted when an output item is marked done.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseOutputItemDoneEvent? OutputItemDone { get; init; }
+#else
+        public global::G.ResponseOutputItemDoneEvent? OutputItemDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(OutputItemDone))]
+#endif
+        public bool IsOutputItemDone => OutputItemDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseOutputItemDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseOutputItemDoneEvent?(ResponseStreamEvent @this) => @this.OutputItemDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseOutputItemDoneEvent? value)
+        {
+            OutputItemDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when there is a partial refusal text.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseRefusalDeltaEvent? RefusalDelta { get; init; }
+#else
+        public global::G.ResponseRefusalDeltaEvent? RefusalDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RefusalDelta))]
+#endif
+        public bool IsRefusalDelta => RefusalDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseRefusalDeltaEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseRefusalDeltaEvent?(ResponseStreamEvent @this) => @this.RefusalDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseRefusalDeltaEvent? value)
+        {
+            RefusalDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when refusal text is finalized.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseRefusalDoneEvent? RefusalDone { get; init; }
+#else
+        public global::G.ResponseRefusalDoneEvent? RefusalDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(RefusalDone))]
+#endif
+        public bool IsRefusalDone => RefusalDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseRefusalDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseRefusalDoneEvent?(ResponseStreamEvent @this) => @this.RefusalDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseRefusalDoneEvent? value)
+        {
+            RefusalDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when a text annotation is added.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseTextAnnotationDeltaEvent? TextAnnotationDelta { get; init; }
+#else
+        public global::G.ResponseTextAnnotationDeltaEvent? TextAnnotationDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextAnnotationDelta))]
+#endif
+        public bool IsTextAnnotationDelta => TextAnnotationDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseTextAnnotationDeltaEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseTextAnnotationDeltaEvent?(ResponseStreamEvent @this) => @this.TextAnnotationDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseTextAnnotationDeltaEvent? value)
+        {
+            TextAnnotationDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when there is an additional text delta.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseTextDeltaEvent? TextDelta { get; init; }
+#else
+        public global::G.ResponseTextDeltaEvent? TextDelta { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDelta))]
+#endif
+        public bool IsTextDelta => TextDelta != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseTextDeltaEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseTextDeltaEvent?(ResponseStreamEvent @this) => @this.TextDelta;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseTextDeltaEvent? value)
+        {
+            TextDelta = value;
+        }
+
+        /// <summary>
+        /// Emitted when text content is finalized.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseTextDoneEvent? TextDone { get; init; }
+#else
+        public global::G.ResponseTextDoneEvent? TextDone { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextDone))]
+#endif
+        public bool IsTextDone => TextDone != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseTextDoneEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseTextDoneEvent?(ResponseStreamEvent @this) => @this.TextDone;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseTextDoneEvent? value)
+        {
+            TextDone = value;
+        }
+
+        /// <summary>
+        /// Emitted when a web search call is completed.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseWebSearchCallCompletedEvent? WebSearchCallCompleted { get; init; }
+#else
+        public global::G.ResponseWebSearchCallCompletedEvent? WebSearchCallCompleted { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCallCompleted))]
+#endif
+        public bool IsWebSearchCallCompleted => WebSearchCallCompleted != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallCompletedEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseWebSearchCallCompletedEvent?(ResponseStreamEvent @this) => @this.WebSearchCallCompleted;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseWebSearchCallCompletedEvent? value)
+        {
+            WebSearchCallCompleted = value;
+        }
+
+        /// <summary>
+        /// Emitted when a web search call is initiated.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseWebSearchCallInProgressEvent? WebSearchCallInProgress { get; init; }
+#else
+        public global::G.ResponseWebSearchCallInProgressEvent? WebSearchCallInProgress { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCallInProgress))]
+#endif
+        public bool IsWebSearchCallInProgress => WebSearchCallInProgress != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallInProgressEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseWebSearchCallInProgressEvent?(ResponseStreamEvent @this) => @this.WebSearchCallInProgress;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseWebSearchCallInProgressEvent? value)
+        {
+            WebSearchCallInProgress = value;
+        }
+
+        /// <summary>
+        /// Emitted when a web search call is executing.
+        /// </summary>
+#if NET6_0_OR_GREATER
+        public global::G.ResponseWebSearchCallSearchingEvent? WebSearchCallSearching { get; init; }
+#else
+        public global::G.ResponseWebSearchCallSearchingEvent? WebSearchCallSearching { get; }
+#endif
+
+        /// <summary>
+        /// 
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebSearchCallSearching))]
+#endif
+        public bool IsWebSearchCallSearching => WebSearchCallSearching != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator ResponseStreamEvent(global::G.ResponseWebSearchCallSearchingEvent value) => new ResponseStreamEvent(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static implicit operator global::G.ResponseWebSearchCallSearchingEvent?(ResponseStreamEvent @this) => @this.WebSearchCallSearching;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(global::G.ResponseWebSearchCallSearchingEvent? value)
+        {
+            WebSearchCallSearching = value;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public ResponseStreamEvent(
+            global::G.ResponseAudioDeltaEvent? audioDelta,
+            global::G.ResponseAudioDoneEvent? audioDone,
+            global::G.ResponseAudioTranscriptDeltaEvent? audioTranscriptDelta,
+            global::G.ResponseAudioTranscriptDoneEvent? audioTranscriptDone,
+            global::G.ResponseCodeInterpreterCallCodeDeltaEvent? codeInterpreterCallDelta,
+            global::G.ResponseCodeInterpreterCallCodeDoneEvent? codeInterpreterCallDone,
+            global::G.ResponseCodeInterpreterCallCompletedEvent? codeInterpreterCallCompleted,
+            global::G.ResponseCodeInterpreterCallInProgressEvent? codeInterpreterCallInProgress,
+            global::G.ResponseCodeInterpreterCallInterpretingEvent? codeInterpreterCallInterpreting,
+            global::G.ResponseCompletedEvent? completed,
+            global::G.ResponseContentPartAddedEvent? contentPartAdded,
+            global::G.ResponseContentPartDoneEvent? contentPartDone,
+            global::G.ResponseCreatedEvent? created,
+            global::G.ResponseErrorEvent? error,
+            global::G.ResponseFileSearchCallCompletedEvent? fileSearchCallCompleted,
+            global::G.ResponseFileSearchCallInProgressEvent? fileSearchCallInProgress,
+            global::G.ResponseFileSearchCallSearchingEvent? fileSearchCallSearching,
+            global::G.ResponseFunctionCallArgumentsDeltaEvent? functionCallArgumentsDelta,
+            global::G.ResponseFunctionCallArgumentsDoneEvent? functionCallArgumentsDone,
+            global::G.ResponseInProgressEvent? inProgress,
+            global::G.ResponseFailedEvent? failed,
+            global::G.ResponseIncompleteEvent? incomplete,
+            global::G.ResponseOutputItemAddedEvent? outputItemAdded,
+            global::G.ResponseOutputItemDoneEvent? outputItemDone,
+            global::G.ResponseRefusalDeltaEvent? refusalDelta,
+            global::G.ResponseRefusalDoneEvent? refusalDone,
+            global::G.ResponseTextAnnotationDeltaEvent? textAnnotationDelta,
+            global::G.ResponseTextDeltaEvent? textDelta,
+            global::G.ResponseTextDoneEvent? textDone,
+            global::G.ResponseWebSearchCallCompletedEvent? webSearchCallCompleted,
+            global::G.ResponseWebSearchCallInProgressEvent? webSearchCallInProgress,
+            global::G.ResponseWebSearchCallSearchingEvent? webSearchCallSearching
+            )
+        {
+            AudioDelta = audioDelta;
+            AudioDone = audioDone;
+            AudioTranscriptDelta = audioTranscriptDelta;
+            AudioTranscriptDone = audioTranscriptDone;
+            CodeInterpreterCallDelta = codeInterpreterCallDelta;
+            CodeInterpreterCallDone = codeInterpreterCallDone;
+            CodeInterpreterCallCompleted = codeInterpreterCallCompleted;
+            CodeInterpreterCallInProgress = codeInterpreterCallInProgress;
+            CodeInterpreterCallInterpreting = codeInterpreterCallInterpreting;
+            Completed = completed;
+            ContentPartAdded = contentPartAdded;
+            ContentPartDone = contentPartDone;
+            Created = created;
+            Error = error;
+            FileSearchCallCompleted = fileSearchCallCompleted;
+            FileSearchCallInProgress = fileSearchCallInProgress;
+            FileSearchCallSearching = fileSearchCallSearching;
+            FunctionCallArgumentsDelta = functionCallArgumentsDelta;
+            FunctionCallArgumentsDone = functionCallArgumentsDone;
+            InProgress = inProgress;
+            Failed = failed;
+            Incomplete = incomplete;
+            OutputItemAdded = outputItemAdded;
+            OutputItemDone = outputItemDone;
+            RefusalDelta = refusalDelta;
+            RefusalDone = refusalDone;
+            TextAnnotationDelta = textAnnotationDelta;
+            TextDelta = textDelta;
+            TextDone = textDone;
+            WebSearchCallCompleted = webSearchCallCompleted;
+            WebSearchCallInProgress = webSearchCallInProgress;
+            WebSearchCallSearching = webSearchCallSearching;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public object? Object =>
+            WebSearchCallSearching as object ??
+            WebSearchCallInProgress as object ??
+            WebSearchCallCompleted as object ??
+            TextDone as object ??
+            TextDelta as object ??
+            TextAnnotationDelta as object ??
+            RefusalDone as object ??
+            RefusalDelta as object ??
+            OutputItemDone as object ??
+            OutputItemAdded as object ??
+            Incomplete as object ??
+            Failed as object ??
+            InProgress as object ??
+            FunctionCallArgumentsDone as object ??
+            FunctionCallArgumentsDelta as object ??
+            FileSearchCallSearching as object ??
+            FileSearchCallInProgress as object ??
+            FileSearchCallCompleted as object ??
+            Error as object ??
+            Created as object ??
+            ContentPartDone as object ??
+            ContentPartAdded as object ??
+            Completed as object ??
+            CodeInterpreterCallInterpreting as object ??
+            CodeInterpreterCallInProgress as object ??
+            CodeInterpreterCallCompleted as object ??
+            CodeInterpreterCallDone as object ??
+            CodeInterpreterCallDelta as object ??
+            AudioTranscriptDone as object ??
+            AudioTranscriptDelta as object ??
+            AudioDone as object ??
+            AudioDelta as object 
+            ;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Validate()
+        {
+            return IsAudioDelta || IsAudioDone || IsAudioTranscriptDelta || IsAudioTranscriptDone || IsCodeInterpreterCallDelta || IsCodeInterpreterCallDone || IsCodeInterpreterCallCompleted || IsCodeInterpreterCallInProgress || IsCodeInterpreterCallInterpreting || IsCompleted || IsContentPartAdded || IsContentPartDone || IsCreated || IsError || IsFileSearchCallCompleted || IsFileSearchCallInProgress || IsFileSearchCallSearching || IsFunctionCallArgumentsDelta || IsFunctionCallArgumentsDone || IsInProgress || IsFailed || IsIncomplete || IsOutputItemAdded || IsOutputItemDone || IsRefusalDelta || IsRefusalDone || IsTextAnnotationDelta || IsTextDelta || IsTextDone || IsWebSearchCallCompleted || IsWebSearchCallInProgress || IsWebSearchCallSearching;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public TResult? Match<TResult>(
+            global::System.Func<global::G.ResponseAudioDeltaEvent?, TResult>? audioDelta = null,
+            global::System.Func<global::G.ResponseAudioDoneEvent?, TResult>? audioDone = null,
+            global::System.Func<global::G.ResponseAudioTranscriptDeltaEvent?, TResult>? audioTranscriptDelta = null,
+            global::System.Func<global::G.ResponseAudioTranscriptDoneEvent?, TResult>? audioTranscriptDone = null,
+            global::System.Func<global::G.ResponseCodeInterpreterCallCodeDeltaEvent?, TResult>? codeInterpreterCallDelta = null,
+            global::System.Func<global::G.ResponseCodeInterpreterCallCodeDoneEvent?, TResult>? codeInterpreterCallDone = null,
+            global::System.Func<global::G.ResponseCodeInterpreterCallCompletedEvent?, TResult>? codeInterpreterCallCompleted = null,
+            global::System.Func<global::G.ResponseCodeInterpreterCallInProgressEvent?, TResult>? codeInterpreterCallInProgress = null,
+            global::System.Func<global::G.ResponseCodeInterpreterCallInterpretingEvent?, TResult>? codeInterpreterCallInterpreting = null,
+            global::System.Func<global::G.ResponseCompletedEvent?, TResult>? completed = null,
+            global::System.Func<global::G.ResponseContentPartAddedEvent?, TResult>? contentPartAdded = null,
+            global::System.Func<global::G.ResponseContentPartDoneEvent?, TResult>? contentPartDone = null,
+            global::System.Func<global::G.ResponseCreatedEvent?, TResult>? created = null,
+            global::System.Func<global::G.ResponseErrorEvent?, TResult>? error = null,
+            global::System.Func<global::G.ResponseFileSearchCallCompletedEvent?, TResult>? fileSearchCallCompleted = null,
+            global::System.Func<global::G.ResponseFileSearchCallInProgressEvent?, TResult>? fileSearchCallInProgress = null,
+            global::System.Func<global::G.ResponseFileSearchCallSearchingEvent?, TResult>? fileSearchCallSearching = null,
+            global::System.Func<global::G.ResponseFunctionCallArgumentsDeltaEvent?, TResult>? functionCallArgumentsDelta = null,
+            global::System.Func<global::G.ResponseFunctionCallArgumentsDoneEvent?, TResult>? functionCallArgumentsDone = null,
+            global::System.Func<global::G.ResponseInProgressEvent?, TResult>? inProgress = null,
+            global::System.Func<global::G.ResponseFailedEvent?, TResult>? failed = null,
+            global::System.Func<global::G.ResponseIncompleteEvent?, TResult>? incomplete = null,
+            global::System.Func<global::G.ResponseOutputItemAddedEvent?, TResult>? outputItemAdded = null,
+            global::System.Func<global::G.ResponseOutputItemDoneEvent?, TResult>? outputItemDone = null,
+            global::System.Func<global::G.ResponseRefusalDeltaEvent?, TResult>? refusalDelta = null,
+            global::System.Func<global::G.ResponseRefusalDoneEvent?, TResult>? refusalDone = null,
+            global::System.Func<global::G.ResponseTextAnnotationDeltaEvent?, TResult>? textAnnotationDelta = null,
+            global::System.Func<global::G.ResponseTextDeltaEvent?, TResult>? textDelta = null,
+            global::System.Func<global::G.ResponseTextDoneEvent?, TResult>? textDone = null,
+            global::System.Func<global::G.ResponseWebSearchCallCompletedEvent?, TResult>? webSearchCallCompleted = null,
+            global::System.Func<global::G.ResponseWebSearchCallInProgressEvent?, TResult>? webSearchCallInProgress = null,
+            global::System.Func<global::G.ResponseWebSearchCallSearchingEvent?, TResult>? webSearchCallSearching = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAudioDelta && audioDelta != null)
+            {
+                return audioDelta(AudioDelta!);
+            }
+            else if (IsAudioDone && audioDone != null)
+            {
+                return audioDone(AudioDone!);
+            }
+            else if (IsAudioTranscriptDelta && audioTranscriptDelta != null)
+            {
+                return audioTranscriptDelta(AudioTranscriptDelta!);
+            }
+            else if (IsAudioTranscriptDone && audioTranscriptDone != null)
+            {
+                return audioTranscriptDone(AudioTranscriptDone!);
+            }
+            else if (IsCodeInterpreterCallDelta && codeInterpreterCallDelta != null)
+            {
+                return codeInterpreterCallDelta(CodeInterpreterCallDelta!);
+            }
+            else if (IsCodeInterpreterCallDone && codeInterpreterCallDone != null)
+            {
+                return codeInterpreterCallDone(CodeInterpreterCallDone!);
+            }
+            else if (IsCodeInterpreterCallCompleted && codeInterpreterCallCompleted != null)
+            {
+                return codeInterpreterCallCompleted(CodeInterpreterCallCompleted!);
+            }
+            else if (IsCodeInterpreterCallInProgress && codeInterpreterCallInProgress != null)
+            {
+                return codeInterpreterCallInProgress(CodeInterpreterCallInProgress!);
+            }
+            else if (IsCodeInterpreterCallInterpreting && codeInterpreterCallInterpreting != null)
+            {
+                return codeInterpreterCallInterpreting(CodeInterpreterCallInterpreting!);
+            }
+            else if (IsCompleted && completed != null)
+            {
+                return completed(Completed!);
+            }
+            else if (IsContentPartAdded && contentPartAdded != null)
+            {
+                return contentPartAdded(ContentPartAdded!);
+            }
+            else if (IsContentPartDone && contentPartDone != null)
+            {
+                return contentPartDone(ContentPartDone!);
+            }
+            else if (IsCreated && created != null)
+            {
+                return created(Created!);
+            }
+            else if (IsError && error != null)
+            {
+                return error(Error!);
+            }
+            else if (IsFileSearchCallCompleted && fileSearchCallCompleted != null)
+            {
+                return fileSearchCallCompleted(FileSearchCallCompleted!);
+            }
+            else if (IsFileSearchCallInProgress && fileSearchCallInProgress != null)
+            {
+                return fileSearchCallInProgress(FileSearchCallInProgress!);
+            }
+            else if (IsFileSearchCallSearching && fileSearchCallSearching != null)
+            {
+                return fileSearchCallSearching(FileSearchCallSearching!);
+            }
+            else if (IsFunctionCallArgumentsDelta && functionCallArgumentsDelta != null)
+            {
+                return functionCallArgumentsDelta(FunctionCallArgumentsDelta!);
+            }
+            else if (IsFunctionCallArgumentsDone && functionCallArgumentsDone != null)
+            {
+                return functionCallArgumentsDone(FunctionCallArgumentsDone!);
+            }
+            else if (IsInProgress && inProgress != null)
+            {
+                return inProgress(InProgress!);
+            }
+            else if (IsFailed && failed != null)
+            {
+                return failed(Failed!);
+            }
+            else if (IsIncomplete && incomplete != null)
+            {
+                return incomplete(Incomplete!);
+            }
+            else if (IsOutputItemAdded && outputItemAdded != null)
+            {
+                return outputItemAdded(OutputItemAdded!);
+            }
+            else if (IsOutputItemDone && outputItemDone != null)
+            {
+                return outputItemDone(OutputItemDone!);
+            }
+            else if (IsRefusalDelta && refusalDelta != null)
+            {
+                return refusalDelta(RefusalDelta!);
+            }
+            else if (IsRefusalDone && refusalDone != null)
+            {
+                return refusalDone(RefusalDone!);
+            }
+            else if (IsTextAnnotationDelta && textAnnotationDelta != null)
+            {
+                return textAnnotationDelta(TextAnnotationDelta!);
+            }
+            else if (IsTextDelta && textDelta != null)
+            {
+                return textDelta(TextDelta!);
+            }
+            else if (IsTextDone && textDone != null)
+            {
+                return textDone(TextDone!);
+            }
+            else if (IsWebSearchCallCompleted && webSearchCallCompleted != null)
+            {
+                return webSearchCallCompleted(WebSearchCallCompleted!);
+            }
+            else if (IsWebSearchCallInProgress && webSearchCallInProgress != null)
+            {
+                return webSearchCallInProgress(WebSearchCallInProgress!);
+            }
+            else if (IsWebSearchCallSearching && webSearchCallSearching != null)
+            {
+                return webSearchCallSearching(WebSearchCallSearching!);
+            }
+
+            return default(TResult);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Match(
+            global::System.Action<global::G.ResponseAudioDeltaEvent?>? audioDelta = null,
+            global::System.Action<global::G.ResponseAudioDoneEvent?>? audioDone = null,
+            global::System.Action<global::G.ResponseAudioTranscriptDeltaEvent?>? audioTranscriptDelta = null,
+            global::System.Action<global::G.ResponseAudioTranscriptDoneEvent?>? audioTranscriptDone = null,
+            global::System.Action<global::G.ResponseCodeInterpreterCallCodeDeltaEvent?>? codeInterpreterCallDelta = null,
+            global::System.Action<global::G.ResponseCodeInterpreterCallCodeDoneEvent?>? codeInterpreterCallDone = null,
+            global::System.Action<global::G.ResponseCodeInterpreterCallCompletedEvent?>? codeInterpreterCallCompleted = null,
+            global::System.Action<global::G.ResponseCodeInterpreterCallInProgressEvent?>? codeInterpreterCallInProgress = null,
+            global::System.Action<global::G.ResponseCodeInterpreterCallInterpretingEvent?>? codeInterpreterCallInterpreting = null,
+            global::System.Action<global::G.ResponseCompletedEvent?>? completed = null,
+            global::System.Action<global::G.ResponseContentPartAddedEvent?>? contentPartAdded = null,
+            global::System.Action<global::G.ResponseContentPartDoneEvent?>? contentPartDone = null,
+            global::System.Action<global::G.ResponseCreatedEvent?>? created = null,
+            global::System.Action<global::G.ResponseErrorEvent?>? error = null,
+            global::System.Action<global::G.ResponseFileSearchCallCompletedEvent?>? fileSearchCallCompleted = null,
+            global::System.Action<global::G.ResponseFileSearchCallInProgressEvent?>? fileSearchCallInProgress = null,
+            global::System.Action<global::G.ResponseFileSearchCallSearchingEvent?>? fileSearchCallSearching = null,
+            global::System.Action<global::G.ResponseFunctionCallArgumentsDeltaEvent?>? functionCallArgumentsDelta = null,
+            global::System.Action<global::G.ResponseFunctionCallArgumentsDoneEvent?>? functionCallArgumentsDone = null,
+            global::System.Action<global::G.ResponseInProgressEvent?>? inProgress = null,
+            global::System.Action<global::G.ResponseFailedEvent?>? failed = null,
+            global::System.Action<global::G.ResponseIncompleteEvent?>? incomplete = null,
+            global::System.Action<global::G.ResponseOutputItemAddedEvent?>? outputItemAdded = null,
+            global::System.Action<global::G.ResponseOutputItemDoneEvent?>? outputItemDone = null,
+            global::System.Action<global::G.ResponseRefusalDeltaEvent?>? refusalDelta = null,
+            global::System.Action<global::G.ResponseRefusalDoneEvent?>? refusalDone = null,
+            global::System.Action<global::G.ResponseTextAnnotationDeltaEvent?>? textAnnotationDelta = null,
+            global::System.Action<global::G.ResponseTextDeltaEvent?>? textDelta = null,
+            global::System.Action<global::G.ResponseTextDoneEvent?>? textDone = null,
+            global::System.Action<global::G.ResponseWebSearchCallCompletedEvent?>? webSearchCallCompleted = null,
+            global::System.Action<global::G.ResponseWebSearchCallInProgressEvent?>? webSearchCallInProgress = null,
+            global::System.Action<global::G.ResponseWebSearchCallSearchingEvent?>? webSearchCallSearching = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsAudioDelta)
+            {
+                audioDelta?.Invoke(AudioDelta!);
+            }
+            else if (IsAudioDone)
+            {
+                audioDone?.Invoke(AudioDone!);
+            }
+            else if (IsAudioTranscriptDelta)
+            {
+                audioTranscriptDelta?.Invoke(AudioTranscriptDelta!);
+            }
+            else if (IsAudioTranscriptDone)
+            {
+                audioTranscriptDone?.Invoke(AudioTranscriptDone!);
+            }
+            else if (IsCodeInterpreterCallDelta)
+            {
+                codeInterpreterCallDelta?.Invoke(CodeInterpreterCallDelta!);
+            }
+            else if (IsCodeInterpreterCallDone)
+            {
+                codeInterpreterCallDone?.Invoke(CodeInterpreterCallDone!);
+            }
+            else if (IsCodeInterpreterCallCompleted)
+            {
+                codeInterpreterCallCompleted?.Invoke(CodeInterpreterCallCompleted!);
+            }
+            else if (IsCodeInterpreterCallInProgress)
+            {
+                codeInterpreterCallInProgress?.Invoke(CodeInterpreterCallInProgress!);
+            }
+            else if (IsCodeInterpreterCallInterpreting)
+            {
+                codeInterpreterCallInterpreting?.Invoke(CodeInterpreterCallInterpreting!);
+            }
+            else if (IsCompleted)
+            {
+                completed?.Invoke(Completed!);
+            }
+            else if (IsContentPartAdded)
+            {
+                contentPartAdded?.Invoke(ContentPartAdded!);
+            }
+            else if (IsContentPartDone)
+            {
+                contentPartDone?.Invoke(ContentPartDone!);
+            }
+            else if (IsCreated)
+            {
+                created?.Invoke(Created!);
+            }
+            else if (IsError)
+            {
+                error?.Invoke(Error!);
+            }
+            else if (IsFileSearchCallCompleted)
+            {
+                fileSearchCallCompleted?.Invoke(FileSearchCallCompleted!);
+            }
+            else if (IsFileSearchCallInProgress)
+            {
+                fileSearchCallInProgress?.Invoke(FileSearchCallInProgress!);
+            }
+            else if (IsFileSearchCallSearching)
+            {
+                fileSearchCallSearching?.Invoke(FileSearchCallSearching!);
+            }
+            else if (IsFunctionCallArgumentsDelta)
+            {
+                functionCallArgumentsDelta?.Invoke(FunctionCallArgumentsDelta!);
+            }
+            else if (IsFunctionCallArgumentsDone)
+            {
+                functionCallArgumentsDone?.Invoke(FunctionCallArgumentsDone!);
+            }
+            else if (IsInProgress)
+            {
+                inProgress?.Invoke(InProgress!);
+            }
+            else if (IsFailed)
+            {
+                failed?.Invoke(Failed!);
+            }
+            else if (IsIncomplete)
+            {
+                incomplete?.Invoke(Incomplete!);
+            }
+            else if (IsOutputItemAdded)
+            {
+                outputItemAdded?.Invoke(OutputItemAdded!);
+            }
+            else if (IsOutputItemDone)
+            {
+                outputItemDone?.Invoke(OutputItemDone!);
+            }
+            else if (IsRefusalDelta)
+            {
+                refusalDelta?.Invoke(RefusalDelta!);
+            }
+            else if (IsRefusalDone)
+            {
+                refusalDone?.Invoke(RefusalDone!);
+            }
+            else if (IsTextAnnotationDelta)
+            {
+                textAnnotationDelta?.Invoke(TextAnnotationDelta!);
+            }
+            else if (IsTextDelta)
+            {
+                textDelta?.Invoke(TextDelta!);
+            }
+            else if (IsTextDone)
+            {
+                textDone?.Invoke(TextDone!);
+            }
+            else if (IsWebSearchCallCompleted)
+            {
+                webSearchCallCompleted?.Invoke(WebSearchCallCompleted!);
+            }
+            else if (IsWebSearchCallInProgress)
+            {
+                webSearchCallInProgress?.Invoke(WebSearchCallInProgress!);
+            }
+            else if (IsWebSearchCallSearching)
+            {
+                webSearchCallSearching?.Invoke(WebSearchCallSearching!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override int GetHashCode()
+        {
+            var fields = new object?[]
+            {
+                AudioDelta,
+                typeof(global::G.ResponseAudioDeltaEvent),
+                AudioDone,
+                typeof(global::G.ResponseAudioDoneEvent),
+                AudioTranscriptDelta,
+                typeof(global::G.ResponseAudioTranscriptDeltaEvent),
+                AudioTranscriptDone,
+                typeof(global::G.ResponseAudioTranscriptDoneEvent),
+                CodeInterpreterCallDelta,
+                typeof(global::G.ResponseCodeInterpreterCallCodeDeltaEvent),
+                CodeInterpreterCallDone,
+                typeof(global::G.ResponseCodeInterpreterCallCodeDoneEvent),
+                CodeInterpreterCallCompleted,
+                typeof(global::G.ResponseCodeInterpreterCallCompletedEvent),
+                CodeInterpreterCallInProgress,
+                typeof(global::G.ResponseCodeInterpreterCallInProgressEvent),
+                CodeInterpreterCallInterpreting,
+                typeof(global::G.ResponseCodeInterpreterCallInterpretingEvent),
+                Completed,
+                typeof(global::G.ResponseCompletedEvent),
+                ContentPartAdded,
+                typeof(global::G.ResponseContentPartAddedEvent),
+                ContentPartDone,
+                typeof(global::G.ResponseContentPartDoneEvent),
+                Created,
+                typeof(global::G.ResponseCreatedEvent),
+                Error,
+                typeof(global::G.ResponseErrorEvent),
+                FileSearchCallCompleted,
+                typeof(global::G.ResponseFileSearchCallCompletedEvent),
+                FileSearchCallInProgress,
+                typeof(global::G.ResponseFileSearchCallInProgressEvent),
+                FileSearchCallSearching,
+                typeof(global::G.ResponseFileSearchCallSearchingEvent),
+                FunctionCallArgumentsDelta,
+                typeof(global::G.ResponseFunctionCallArgumentsDeltaEvent),
+                FunctionCallArgumentsDone,
+                typeof(global::G.ResponseFunctionCallArgumentsDoneEvent),
+                InProgress,
+                typeof(global::G.ResponseInProgressEvent),
+                Failed,
+                typeof(global::G.ResponseFailedEvent),
+                Incomplete,
+                typeof(global::G.ResponseIncompleteEvent),
+                OutputItemAdded,
+                typeof(global::G.ResponseOutputItemAddedEvent),
+                OutputItemDone,
+                typeof(global::G.ResponseOutputItemDoneEvent),
+                RefusalDelta,
+                typeof(global::G.ResponseRefusalDeltaEvent),
+                RefusalDone,
+                typeof(global::G.ResponseRefusalDoneEvent),
+                TextAnnotationDelta,
+                typeof(global::G.ResponseTextAnnotationDeltaEvent),
+                TextDelta,
+                typeof(global::G.ResponseTextDeltaEvent),
+                TextDone,
+                typeof(global::G.ResponseTextDoneEvent),
+                WebSearchCallCompleted,
+                typeof(global::G.ResponseWebSearchCallCompletedEvent),
+                WebSearchCallInProgress,
+                typeof(global::G.ResponseWebSearchCallInProgressEvent),
+                WebSearchCallSearching,
+                typeof(global::G.ResponseWebSearchCallSearchingEvent),
+            };
+            const int offset = unchecked((int)2166136261);
+            const int prime = 16777619;
+            static int HashCodeAggregator(int hashCode, object? value) => value == null
+                ? (hashCode ^ 0) * prime
+                : (hashCode ^ value.GetHashCode()) * prime;
+
+            return global::System.Linq.Enumerable.Aggregate(fields, offset, HashCodeAggregator);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool Equals(ResponseStreamEvent other)
+        {
+            return
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseAudioDeltaEvent?>.Default.Equals(AudioDelta, other.AudioDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseAudioDoneEvent?>.Default.Equals(AudioDone, other.AudioDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseAudioTranscriptDeltaEvent?>.Default.Equals(AudioTranscriptDelta, other.AudioTranscriptDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseAudioTranscriptDoneEvent?>.Default.Equals(AudioTranscriptDone, other.AudioTranscriptDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseCodeInterpreterCallCodeDeltaEvent?>.Default.Equals(CodeInterpreterCallDelta, other.CodeInterpreterCallDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseCodeInterpreterCallCodeDoneEvent?>.Default.Equals(CodeInterpreterCallDone, other.CodeInterpreterCallDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseCodeInterpreterCallCompletedEvent?>.Default.Equals(CodeInterpreterCallCompleted, other.CodeInterpreterCallCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseCodeInterpreterCallInProgressEvent?>.Default.Equals(CodeInterpreterCallInProgress, other.CodeInterpreterCallInProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseCodeInterpreterCallInterpretingEvent?>.Default.Equals(CodeInterpreterCallInterpreting, other.CodeInterpreterCallInterpreting) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseCompletedEvent?>.Default.Equals(Completed, other.Completed) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseContentPartAddedEvent?>.Default.Equals(ContentPartAdded, other.ContentPartAdded) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseContentPartDoneEvent?>.Default.Equals(ContentPartDone, other.ContentPartDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseCreatedEvent?>.Default.Equals(Created, other.Created) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseErrorEvent?>.Default.Equals(Error, other.Error) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFileSearchCallCompletedEvent?>.Default.Equals(FileSearchCallCompleted, other.FileSearchCallCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFileSearchCallInProgressEvent?>.Default.Equals(FileSearchCallInProgress, other.FileSearchCallInProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFileSearchCallSearchingEvent?>.Default.Equals(FileSearchCallSearching, other.FileSearchCallSearching) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFunctionCallArgumentsDeltaEvent?>.Default.Equals(FunctionCallArgumentsDelta, other.FunctionCallArgumentsDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFunctionCallArgumentsDoneEvent?>.Default.Equals(FunctionCallArgumentsDone, other.FunctionCallArgumentsDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseInProgressEvent?>.Default.Equals(InProgress, other.InProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseFailedEvent?>.Default.Equals(Failed, other.Failed) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseIncompleteEvent?>.Default.Equals(Incomplete, other.Incomplete) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseOutputItemAddedEvent?>.Default.Equals(OutputItemAdded, other.OutputItemAdded) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseOutputItemDoneEvent?>.Default.Equals(OutputItemDone, other.OutputItemDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseRefusalDeltaEvent?>.Default.Equals(RefusalDelta, other.RefusalDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseRefusalDoneEvent?>.Default.Equals(RefusalDone, other.RefusalDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseTextAnnotationDeltaEvent?>.Default.Equals(TextAnnotationDelta, other.TextAnnotationDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseTextDeltaEvent?>.Default.Equals(TextDelta, other.TextDelta) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseTextDoneEvent?>.Default.Equals(TextDone, other.TextDone) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseWebSearchCallCompletedEvent?>.Default.Equals(WebSearchCallCompleted, other.WebSearchCallCompleted) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseWebSearchCallInProgressEvent?>.Default.Equals(WebSearchCallInProgress, other.WebSearchCallInProgress) &&
+                global::System.Collections.Generic.EqualityComparer<global::G.ResponseWebSearchCallSearchingEvent?>.Default.Equals(WebSearchCallSearching, other.WebSearchCallSearching) 
+                ;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator ==(ResponseStreamEvent obj1, ResponseStreamEvent obj2)
+        {
+            return global::System.Collections.Generic.EqualityComparer<ResponseStreamEvent>.Default.Equals(obj1, obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static bool operator !=(ResponseStreamEvent obj1, ResponseStreamEvent obj2)
+        {
+            return !(obj1 == obj2);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public override bool Equals(object? obj)
+        {
+            return obj is ResponseStreamEvent o && Equals(o);
+        }
+    }
+}

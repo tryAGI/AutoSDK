@@ -12,6 +12,18 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("full_valid_loss")]
+        public double? FullValidLoss { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("full_valid_mean_token_accuracy")]
+        public double? FullValidMeanTokenAccuracy { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("step")]
         public double? Step { get; set; }
 
@@ -40,18 +52,6 @@ namespace G
         public double? ValidMeanTokenAccuracy { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("full_valid_loss")]
-        public double? FullValidLoss { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("full_valid_mean_token_accuracy")]
-        public double? FullValidMeanTokenAccuracy { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -60,29 +60,29 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="FineTuningJobCheckpointMetrics" /> class.
         /// </summary>
+        /// <param name="fullValidLoss"></param>
+        /// <param name="fullValidMeanTokenAccuracy"></param>
         /// <param name="step"></param>
         /// <param name="trainLoss"></param>
         /// <param name="trainMeanTokenAccuracy"></param>
         /// <param name="validLoss"></param>
         /// <param name="validMeanTokenAccuracy"></param>
-        /// <param name="fullValidLoss"></param>
-        /// <param name="fullValidMeanTokenAccuracy"></param>
         public FineTuningJobCheckpointMetrics(
+            double? fullValidLoss,
+            double? fullValidMeanTokenAccuracy,
             double? step,
             double? trainLoss,
             double? trainMeanTokenAccuracy,
             double? validLoss,
-            double? validMeanTokenAccuracy,
-            double? fullValidLoss,
-            double? fullValidMeanTokenAccuracy)
+            double? validMeanTokenAccuracy)
         {
+            this.FullValidLoss = fullValidLoss;
+            this.FullValidMeanTokenAccuracy = fullValidMeanTokenAccuracy;
             this.Step = step;
             this.TrainLoss = trainLoss;
             this.TrainMeanTokenAccuracy = trainMeanTokenAccuracy;
             this.ValidLoss = validLoss;
             this.ValidMeanTokenAccuracy = validMeanTokenAccuracy;
-            this.FullValidLoss = fullValidLoss;
-            this.FullValidMeanTokenAccuracy = fullValidMeanTokenAccuracy;
         }
 
         /// <summary>

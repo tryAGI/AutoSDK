@@ -12,14 +12,6 @@ namespace G
     public sealed partial class CreateImageRequest
     {
         /// <summary>
-        /// A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.<br/>
-        /// Example: A cute baby sea otter
-        /// </summary>
-        /// <example>A cute baby sea otter</example>
-        [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Prompt { get; set; } = default!;
-
-        /// <summary>
         /// The model to use for image generation.<br/>
         /// Default Value: dall-e-2<br/>
         /// Example: dall-e-3
@@ -36,6 +28,14 @@ namespace G
         /// <example>1</example>
         [global::Newtonsoft.Json.JsonProperty("n")]
         public int? N { get; set; }
+
+        /// <summary>
+        /// A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.<br/>
+        /// Example: A cute baby sea otter
+        /// </summary>
+        /// <example>A cute baby sea otter</example>
+        [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Prompt { get; set; } = default!;
 
         /// <summary>
         /// The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`.<br/>
@@ -90,10 +90,6 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateImageRequest" /> class.
         /// </summary>
-        /// <param name="prompt">
-        /// A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.<br/>
-        /// Example: A cute baby sea otter
-        /// </param>
         /// <param name="model">
         /// The model to use for image generation.<br/>
         /// Default Value: dall-e-2<br/>
@@ -103,6 +99,10 @@ namespace G
         /// The number of images to generate. Must be between 1 and 10. For `dall-e-3`, only `n=1` is supported.<br/>
         /// Default Value: 1<br/>
         /// Example: 1
+        /// </param>
+        /// <param name="prompt">
+        /// A text description of the desired image(s). The maximum length is 1000 characters for `dall-e-2` and 4000 characters for `dall-e-3`.<br/>
+        /// Example: A cute baby sea otter
         /// </param>
         /// <param name="quality">
         /// The quality of the image that will be generated. `hd` creates images with finer details and greater consistency across the image. This param is only supported for `dall-e-3`.<br/>

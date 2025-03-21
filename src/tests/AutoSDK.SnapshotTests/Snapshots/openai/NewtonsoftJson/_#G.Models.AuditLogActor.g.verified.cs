@@ -10,10 +10,10 @@ namespace G
     public sealed partial class AuditLogActor
     {
         /// <summary>
-        /// The type of actor. Is either `session` or `api_key`.
+        /// The API Key used to perform the audit logged action.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.AuditLogActorType? Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("api_key")]
+        public global::G.AuditLogActorApiKey? ApiKey { get; set; }
 
         /// <summary>
         /// The session in which the audit logged action was performed.
@@ -22,10 +22,10 @@ namespace G
         public global::G.AuditLogActorSession? Session { get; set; }
 
         /// <summary>
-        /// The API Key used to perform the audit logged action.
+        /// The type of actor. Is either `session` or `api_key`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("api_key")]
-        public global::G.AuditLogActorApiKey? ApiKey { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.AuditLogActorType? Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogActor" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of actor. Is either `session` or `api_key`.
+        /// <param name="apiKey">
+        /// The API Key used to perform the audit logged action.
         /// </param>
         /// <param name="session">
         /// The session in which the audit logged action was performed.
         /// </param>
-        /// <param name="apiKey">
-        /// The API Key used to perform the audit logged action.
+        /// <param name="type">
+        /// The type of actor. Is either `session` or `api_key`.
         /// </param>
         public AuditLogActor(
-            global::G.AuditLogActorType? type,
+            global::G.AuditLogActorApiKey? apiKey,
             global::G.AuditLogActorSession? session,
-            global::G.AuditLogActorApiKey? apiKey)
+            global::G.AuditLogActorType? type)
         {
-            this.Type = type;
-            this.Session = session;
             this.ApiKey = apiKey;
+            this.Session = session;
+            this.Type = type;
         }
 
         /// <summary>

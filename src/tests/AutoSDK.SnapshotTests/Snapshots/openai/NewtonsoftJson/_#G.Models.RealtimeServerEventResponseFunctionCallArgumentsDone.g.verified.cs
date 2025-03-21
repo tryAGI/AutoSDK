@@ -11,22 +11,22 @@ namespace G
     public sealed partial class RealtimeServerEventResponseFunctionCallArgumentsDone
     {
         /// <summary>
+        /// The final arguments as a JSON string.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Arguments { get; set; } = default!;
+
+        /// <summary>
+        /// The ID of the function call.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("call_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string CallId { get; set; } = default!;
+
+        /// <summary>
         /// The unique ID of the server event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string EventId { get; set; } = default!;
-
-        /// <summary>
-        /// The event type, must be `response.function_call_arguments.done`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventResponseFunctionCallArgumentsDoneType Type { get; set; }
-
-        /// <summary>
-        /// The ID of the response.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("response_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ResponseId { get; set; } = default!;
 
         /// <summary>
         /// The ID of the function call item.
@@ -41,16 +41,16 @@ namespace G
         public int OutputIndex { get; set; } = default!;
 
         /// <summary>
-        /// The ID of the function call.
+        /// The ID of the response.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("call_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string CallId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("response_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ResponseId { get; set; } = default!;
 
         /// <summary>
-        /// The final arguments as a JSON string.
+        /// The event type, must be `response.function_call_arguments.done`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("arguments", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Arguments { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventResponseFunctionCallArgumentsDoneType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -61,14 +61,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventResponseFunctionCallArgumentsDone" /> class.
         /// </summary>
+        /// <param name="arguments">
+        /// The final arguments as a JSON string.
+        /// </param>
+        /// <param name="callId">
+        /// The ID of the function call.
+        /// </param>
         /// <param name="eventId">
         /// The unique ID of the server event.
-        /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.function_call_arguments.done`.
-        /// </param>
-        /// <param name="responseId">
-        /// The ID of the response.
         /// </param>
         /// <param name="itemId">
         /// The ID of the function call item.
@@ -76,27 +76,27 @@ namespace G
         /// <param name="outputIndex">
         /// The index of the output item in the response.
         /// </param>
-        /// <param name="callId">
-        /// The ID of the function call.
+        /// <param name="responseId">
+        /// The ID of the response.
         /// </param>
-        /// <param name="arguments">
-        /// The final arguments as a JSON string.
+        /// <param name="type">
+        /// The event type, must be `response.function_call_arguments.done`.
         /// </param>
         public RealtimeServerEventResponseFunctionCallArgumentsDone(
+            string arguments,
+            string callId,
             string eventId,
-            string responseId,
             string itemId,
             int outputIndex,
-            string callId,
-            string arguments,
+            string responseId,
             global::G.RealtimeServerEventResponseFunctionCallArgumentsDoneType type)
         {
+            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.OutputIndex = outputIndex;
-            this.CallId = callId ?? throw new global::System.ArgumentNullException(nameof(callId));
-            this.Arguments = arguments ?? throw new global::System.ArgumentNullException(nameof(arguments));
+            this.ResponseId = responseId ?? throw new global::System.ArgumentNullException(nameof(responseId));
             this.Type = type;
         }
 

@@ -10,11 +10,12 @@ namespace G
     public sealed partial class RunStepDetailsToolCallsFileSearchRankingOptionsObject
     {
         /// <summary>
-        /// The ranker used for the file search.
+        /// The ranker to use for the file search. If not specified will use the `auto` ranker.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ranker")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RunStepDetailsToolCallsFileSearchRankingOptionsObjectRankerJsonConverter))]
-        public global::G.RunStepDetailsToolCallsFileSearchRankingOptionsObjectRanker Ranker { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FileSearchRankerJsonConverter))]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required global::G.FileSearchRanker Ranker { get; set; }
 
         /// <summary>
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
@@ -33,7 +34,7 @@ namespace G
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsFileSearchRankingOptionsObject" /> class.
         /// </summary>
         /// <param name="ranker">
-        /// The ranker used for the file search.
+        /// The ranker to use for the file search. If not specified will use the `auto` ranker.
         /// </param>
         /// <param name="scoreThreshold">
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
@@ -42,11 +43,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RunStepDetailsToolCallsFileSearchRankingOptionsObject(
-            double scoreThreshold,
-            global::G.RunStepDetailsToolCallsFileSearchRankingOptionsObjectRanker ranker)
+            global::G.FileSearchRanker ranker,
+            double scoreThreshold)
         {
-            this.ScoreThreshold = scoreThreshold;
             this.Ranker = ranker;
+            this.ScoreThreshold = scoreThreshold;
         }
 
         /// <summary>

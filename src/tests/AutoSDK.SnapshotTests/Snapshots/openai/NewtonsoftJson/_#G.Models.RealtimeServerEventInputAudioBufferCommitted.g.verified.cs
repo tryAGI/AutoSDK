@@ -19,10 +19,10 @@ namespace G
         public string EventId { get; set; } = default!;
 
         /// <summary>
-        /// The event type, must be `input_audio_buffer.committed`.
+        /// The ID of the user message item that will be created.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventInputAudioBufferCommittedType Type { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ItemId { get; set; } = default!;
 
         /// <summary>
         /// The ID of the preceding item after which the new item will be inserted.
@@ -31,10 +31,10 @@ namespace G
         public string PreviousItemId { get; set; } = default!;
 
         /// <summary>
-        /// The ID of the user message item that will be created.
+        /// The event type, must be `input_audio_buffer.committed`.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ItemId { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventInputAudioBufferCommittedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,24 +48,24 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `input_audio_buffer.committed`.
+        /// <param name="itemId">
+        /// The ID of the user message item that will be created.
         /// </param>
         /// <param name="previousItemId">
         /// The ID of the preceding item after which the new item will be inserted.
         /// </param>
-        /// <param name="itemId">
-        /// The ID of the user message item that will be created.
+        /// <param name="type">
+        /// The event type, must be `input_audio_buffer.committed`.
         /// </param>
         public RealtimeServerEventInputAudioBufferCommitted(
             string eventId,
-            string previousItemId,
             string itemId,
+            string previousItemId,
             global::G.RealtimeServerEventInputAudioBufferCommittedType type)
         {
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
+            this.PreviousItemId = previousItemId ?? throw new global::System.ArgumentNullException(nameof(previousItemId));
             this.Type = type;
         }
 

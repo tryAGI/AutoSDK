@@ -10,11 +10,11 @@ namespace G
     public sealed partial class InviteDeleteResponse
     {
         /// <summary>
-        /// The object type, which is always `organization.invite.deleted`
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InviteDeleteResponseObjectJsonConverter))]
-        public global::G.InviteDeleteResponseObject Object { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required bool Deleted { get; set; }
 
         /// <summary>
         /// 
@@ -24,11 +24,11 @@ namespace G
         public required string Id { get; set; }
 
         /// <summary>
-        /// 
+        /// The object type, which is always `organization.invite.deleted`
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("deleted")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required bool Deleted { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.InviteDeleteResponseObjectJsonConverter))]
+        public global::G.InviteDeleteResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,21 +39,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="InviteDeleteResponse" /> class.
         /// </summary>
+        /// <param name="deleted"></param>
+        /// <param name="id"></param>
         /// <param name="object">
         /// The object type, which is always `organization.invite.deleted`
         /// </param>
-        /// <param name="id"></param>
-        /// <param name="deleted"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public InviteDeleteResponse(
-            string id,
             bool deleted,
+            string id,
             global::G.InviteDeleteResponseObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
         }
 

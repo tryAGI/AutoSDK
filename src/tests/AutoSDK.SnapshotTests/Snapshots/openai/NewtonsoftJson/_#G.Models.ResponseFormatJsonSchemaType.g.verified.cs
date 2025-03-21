@@ -5,13 +5,13 @@
 namespace G
 {
     /// <summary>
-    /// The type of response format being defined: `json_schema`
+    /// The type of response format being defined. Always `json_schema`.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ResponseFormatJsonSchemaType
     {
         /// <summary>
-        /// `json_schema`
+        /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="json_schema")]
         JsonSchema,

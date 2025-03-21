@@ -17,8 +17,6 @@
     Request(oneOf),
       GenerationRequest(ref),
       ImageGenerationRequest(ref),
-      GenerationRequestDiscriminator(class),
-        GenerationRequestDiscriminatorGenerationType(enum),
     State(ref),
   GenerationReference(class),
     Id(string),

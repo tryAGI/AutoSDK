@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AuditLogInviteSent
     {
         /// <summary>
-        /// The ID of the invite.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// The payload used to create the invite.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
         public global::G.AuditLogInviteSentData? Data { get; set; }
+
+        /// <summary>
+        /// The ID of the invite.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogInviteSent" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The ID of the invite.
-        /// </param>
         /// <param name="data">
         /// The payload used to create the invite.
         /// </param>
+        /// <param name="id">
+        /// The ID of the invite.
+        /// </param>
         public AuditLogInviteSent(
-            string? id,
-            global::G.AuditLogInviteSentData? data)
+            global::G.AuditLogInviteSentData? data,
+            string? id)
         {
-            this.Id = id;
             this.Data = data;
+            this.Id = id;
         }
 
         /// <summary>

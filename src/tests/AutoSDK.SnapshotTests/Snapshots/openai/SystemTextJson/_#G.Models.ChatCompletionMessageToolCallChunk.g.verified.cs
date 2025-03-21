@@ -12,9 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Index { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
+        public global::G.ChatCompletionMessageToolCallChunkFunction? Function { get; set; }
 
         /// <summary>
         /// The ID of the tool call.
@@ -23,17 +22,18 @@ namespace G
         public string? Id { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("index")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int Index { get; set; }
+
+        /// <summary>
         /// The type of the tool. Currently, only `function` is supported.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionMessageToolCallChunkTypeJsonConverter))]
         public global::G.ChatCompletionMessageToolCallChunkType? Type { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("function")]
-        public global::G.ChatCompletionMessageToolCallChunkFunction? Function { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,27 +44,27 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionMessageToolCallChunk" /> class.
         /// </summary>
-        /// <param name="index"></param>
+        /// <param name="function"></param>
         /// <param name="id">
         /// The ID of the tool call.
         /// </param>
+        /// <param name="index"></param>
         /// <param name="type">
         /// The type of the tool. Currently, only `function` is supported.
         /// </param>
-        /// <param name="function"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ChatCompletionMessageToolCallChunk(
             int index,
+            global::G.ChatCompletionMessageToolCallChunkFunction? function,
             string? id,
-            global::G.ChatCompletionMessageToolCallChunkType? type,
-            global::G.ChatCompletionMessageToolCallChunkFunction? function)
+            global::G.ChatCompletionMessageToolCallChunkType? type)
         {
             this.Index = index;
+            this.Function = function;
             this.Id = id;
             this.Type = type;
-            this.Function = function;
         }
 
         /// <summary>

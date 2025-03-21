@@ -18,16 +18,16 @@ namespace G
         public string EventId { get; set; } = default!;
 
         /// <summary>
-        /// The event type, must be `response.done`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventResponseDoneType Type { get; set; }
-
-        /// <summary>
         /// The response resource.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("response", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.RealtimeResponse Response { get; set; } = default!;
+
+        /// <summary>
+        /// The event type, must be `response.done`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventResponseDoneType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,11 +41,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `response.done`.
-        /// </param>
         /// <param name="response">
         /// The response resource.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `response.done`.
         /// </param>
         public RealtimeServerEventResponseDone(
             string eventId,

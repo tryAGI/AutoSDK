@@ -81,6 +81,22 @@ public partial class Tests
 
         var globalOptions = fileName switch
         {
+            "cohere.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
+            "anthropic.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
+            "github.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
+            "together.yaml" => new Dictionary<string, string>
+            {
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
+            },
             "mystic.yaml" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_MethodNamingConvention"] = "Summary",
@@ -132,6 +148,7 @@ public partial class Tests
             "luma.yaml" => new Dictionary<string, string>
             {
                 ["build_property.AutoSDK_IgnoreOpenApiErrors"] = "true",
+                ["build_property.AutoSDK_ComputeDiscriminators"] = "true",
             },
             _ => new Dictionary<string, string>(),
         };

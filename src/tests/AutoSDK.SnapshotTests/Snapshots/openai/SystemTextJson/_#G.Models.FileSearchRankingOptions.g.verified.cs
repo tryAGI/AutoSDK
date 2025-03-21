@@ -14,8 +14,8 @@ namespace G
         /// The ranker to use for the file search. If not specified will use the `auto` ranker.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("ranker")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FileSearchRankingOptionsRankerJsonConverter))]
-        public global::G.FileSearchRankingOptionsRanker? Ranker { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.FileSearchRankerJsonConverter))]
+        public global::G.FileSearchRanker? Ranker { get; set; }
 
         /// <summary>
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
@@ -44,7 +44,7 @@ namespace G
 #endif
         public FileSearchRankingOptions(
             double scoreThreshold,
-            global::G.FileSearchRankingOptionsRanker? ranker)
+            global::G.FileSearchRanker? ranker)
         {
             this.ScoreThreshold = scoreThreshold;
             this.Ranker = ranker;

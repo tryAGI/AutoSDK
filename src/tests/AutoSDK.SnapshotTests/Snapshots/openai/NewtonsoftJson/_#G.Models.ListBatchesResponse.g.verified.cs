@@ -23,17 +23,17 @@ namespace G
         public string? FirstId { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool HasMore { get; set; } = default!;
+
+        /// <summary>
         /// Example: batch_abc456
         /// </summary>
         /// <example>batch_abc456</example>
         [global::Newtonsoft.Json.JsonProperty("last_id")]
         public string? LastId { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool HasMore { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -54,10 +54,10 @@ namespace G
         /// <param name="firstId">
         /// Example: batch_abc123
         /// </param>
+        /// <param name="hasMore"></param>
         /// <param name="lastId">
         /// Example: batch_abc456
         /// </param>
-        /// <param name="hasMore"></param>
         /// <param name="object"></param>
         public ListBatchesResponse(
             global::System.Collections.Generic.IList<global::G.Batch> data,

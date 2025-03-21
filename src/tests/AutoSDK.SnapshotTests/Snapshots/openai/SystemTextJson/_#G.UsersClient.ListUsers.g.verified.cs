@@ -9,12 +9,14 @@ namespace G
         partial void PrepareListUsersArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref int? limit,
-            ref string? after);
+            ref string? after,
+            global::System.Collections.Generic.IList<string>? emails);
         partial void PrepareListUsersRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             int? limit,
-            string? after);
+            string? after,
+            global::System.Collections.Generic.IList<string>? emails);
         partial void ProcessListUsersResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -31,11 +33,13 @@ namespace G
         /// Default Value: 20
         /// </param>
         /// <param name="after"></param>
+        /// <param name="emails"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::G.ApiException"></exception>
         public async global::System.Threading.Tasks.Task<global::G.UserListResponse> ListUsersAsync(
             int? limit = default,
             string? after = default,
+            global::System.Collections.Generic.IList<string>? emails = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             PrepareArguments(
@@ -43,7 +47,8 @@ namespace G
             PrepareListUsersArguments(
                 httpClient: HttpClient,
                 limit: ref limit,
-                after: ref after);
+                after: ref after,
+                emails: emails);
 
             var __pathBuilder = new PathBuilder(
                 path: "/organization/users",
@@ -51,6 +56,7 @@ namespace G
             __pathBuilder 
                 .AddOptionalParameter("limit", limit?.ToString()) 
                 .AddOptionalParameter("after", after) 
+                .AddOptionalParameter("emails", emails, delimiter: ",", explode: true) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
@@ -84,7 +90,8 @@ namespace G
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 limit: limit,
-                after: after);
+                after: after,
+                emails: emails);
 
             using var __response = await HttpClient.SendAsync(
                 request: __httpRequest,

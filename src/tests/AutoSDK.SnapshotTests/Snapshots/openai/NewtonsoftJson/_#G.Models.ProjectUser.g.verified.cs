@@ -10,10 +10,16 @@ namespace G
     public sealed partial class ProjectUser
     {
         /// <summary>
-        /// The object type, which is always `organization.project.user`
+        /// The Unix timestamp (in seconds) of when the project was added.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.ProjectUserObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("added_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset AddedAt { get; set; } = default!;
+
+        /// <summary>
+        /// The email address of the user
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Email { get; set; } = default!;
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -28,22 +34,16 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
-        /// The email address of the user
+        /// The object type, which is always `organization.project.user`
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Email { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ProjectUserObject Object { get; set; }
 
         /// <summary>
         /// `owner` or `member`
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("role", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ProjectUserRole Role { get; set; } = default!;
-
-        /// <summary>
-        /// The Unix timestamp (in seconds) of when the project was added.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("added_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset AddedAt { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,8 +54,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectUser" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.project.user`
+        /// <param name="addedAt">
+        /// The Unix timestamp (in seconds) of when the project was added.
+        /// </param>
+        /// <param name="email">
+        /// The email address of the user
         /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
@@ -63,28 +66,25 @@ namespace G
         /// <param name="name">
         /// The name of the user
         /// </param>
-        /// <param name="email">
-        /// The email address of the user
+        /// <param name="object">
+        /// The object type, which is always `organization.project.user`
         /// </param>
         /// <param name="role">
         /// `owner` or `member`
         /// </param>
-        /// <param name="addedAt">
-        /// The Unix timestamp (in seconds) of when the project was added.
-        /// </param>
         public ProjectUser(
+            global::System.DateTimeOffset addedAt,
+            string email,
             string id,
             string name,
-            string email,
             global::G.ProjectUserRole role,
-            global::System.DateTimeOffset addedAt,
             global::G.ProjectUserObject @object)
         {
+            this.AddedAt = addedAt;
+            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
             this.Role = role;
-            this.AddedAt = addedAt;
             this.Object = @object;
         }
 

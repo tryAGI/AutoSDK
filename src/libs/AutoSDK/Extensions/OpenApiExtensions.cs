@@ -50,7 +50,10 @@ public static class OpenApiExtensions
         openApiDocument.SecurityRequirements ??= new List<OpenApiSecurityRequirement>();
         openApiDocument.Servers ??= new List<OpenApiServer>();
 
-        openApiDocument = openApiDocument.ComputeDiscriminators();
+        if (settings.ComputeDiscriminators)
+        {
+            openApiDocument = openApiDocument.ComputeDiscriminators();
+        }
 
         return openApiDocument;
     }

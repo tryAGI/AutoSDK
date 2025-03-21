@@ -10,18 +10,11 @@ namespace G
     public sealed partial class MessageContentTextAnnotationsFileCitationObject
     {
         /// <summary>
-        /// Always `file_citation`.
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
-        public global::G.MessageContentTextAnnotationsFileCitationObjectType Type { get; set; }
-
-        /// <summary>
-        /// The text in the message content that needs to be replaced.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Text { get; set; }
+        public required int EndIndex { get; set; }
 
         /// <summary>
         /// 
@@ -38,11 +31,18 @@ namespace G
         public required int StartIndex { get; set; }
 
         /// <summary>
-        /// 
+        /// The text in the message content that needs to be replaced.
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("end_index")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("text")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required int EndIndex { get; set; }
+        public required string Text { get; set; }
+
+        /// <summary>
+        /// Always `file_citation`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.MessageContentTextAnnotationsFileCitationObjectTypeJsonConverter))]
+        public global::G.MessageContentTextAnnotationsFileCitationObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,29 +53,29 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentTextAnnotationsFileCitationObject" /> class.
         /// </summary>
-        /// <param name="type">
-        /// Always `file_citation`.
-        /// </param>
+        /// <param name="endIndex"></param>
+        /// <param name="fileCitation"></param>
+        /// <param name="startIndex"></param>
         /// <param name="text">
         /// The text in the message content that needs to be replaced.
         /// </param>
-        /// <param name="fileCitation"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
+        /// <param name="type">
+        /// Always `file_citation`.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public MessageContentTextAnnotationsFileCitationObject(
-            string text,
+            int endIndex,
             global::G.MessageContentTextAnnotationsFileCitationObjectFileCitation fileCitation,
             int startIndex,
-            int endIndex,
+            string text,
             global::G.MessageContentTextAnnotationsFileCitationObjectType type)
         {
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.EndIndex = endIndex;
             this.FileCitation = fileCitation ?? throw new global::System.ArgumentNullException(nameof(fileCitation));
             this.StartIndex = startIndex;
-            this.EndIndex = endIndex;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.Type = type;
         }
 

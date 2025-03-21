@@ -24,14 +24,6 @@ namespace G
         public string Imagename { get; set; } = default!;
 
         /// <summary>
-        /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
-        /// Example: A cute baby sea otter wearing a beret
-        /// </summary>
-        /// <example>A cute baby sea otter wearing a beret</example>
-        [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Prompt { get; set; } = default!;
-
-        /// <summary>
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("mask")]
@@ -62,13 +54,12 @@ namespace G
         public int? N { get; set; }
 
         /// <summary>
-        /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
-        /// Default Value: 1024x1024<br/>
-        /// Example: 1024x1024
+        /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
+        /// Example: A cute baby sea otter wearing a beret
         /// </summary>
-        /// <example>1024x1024</example>
-        [global::Newtonsoft.Json.JsonProperty("size")]
-        public global::G.CreateImageEditRequestSize? Size { get; set; }
+        /// <example>A cute baby sea otter wearing a beret</example>
+        [global::Newtonsoft.Json.JsonProperty("prompt", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Prompt { get; set; } = default!;
 
         /// <summary>
         /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
@@ -78,6 +69,15 @@ namespace G
         /// <example>url</example>
         [global::Newtonsoft.Json.JsonProperty("response_format")]
         public global::G.CreateImageEditRequestResponseFormat? ResponseFormat { get; set; }
+
+        /// <summary>
+        /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
+        /// Default Value: 1024x1024<br/>
+        /// Example: 1024x1024
+        /// </summary>
+        /// <example>1024x1024</example>
+        [global::Newtonsoft.Json.JsonProperty("size")]
+        public global::G.CreateImageEditRequestSize? Size { get; set; }
 
         /// <summary>
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
@@ -102,10 +102,6 @@ namespace G
         /// <param name="imagename">
         /// The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
         /// </param>
-        /// <param name="prompt">
-        /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
-        /// Example: A cute baby sea otter wearing a beret
-        /// </param>
         /// <param name="mask">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
@@ -122,15 +118,19 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
-        /// <param name="size">
-        /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
-        /// Default Value: 1024x1024<br/>
-        /// Example: 1024x1024
+        /// <param name="prompt">
+        /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
+        /// Example: A cute baby sea otter wearing a beret
         /// </param>
         /// <param name="responseFormat">
         /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
         /// Default Value: url<br/>
         /// Example: url
+        /// </param>
+        /// <param name="size">
+        /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
+        /// Default Value: 1024x1024<br/>
+        /// Example: 1024x1024
         /// </param>
         /// <param name="user">
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
@@ -144,8 +144,8 @@ namespace G
             string? maskname,
             global::G.AnyOf<string, global::G.CreateImageEditRequestModel?>? model,
             int? n,
-            global::G.CreateImageEditRequestSize? size,
             global::G.CreateImageEditRequestResponseFormat? responseFormat,
+            global::G.CreateImageEditRequestSize? size,
             string? user)
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
@@ -155,8 +155,8 @@ namespace G
             this.Maskname = maskname;
             this.Model = model;
             this.N = n;
-            this.Size = size;
             this.ResponseFormat = responseFormat;
+            this.Size = size;
             this.User = user;
         }
 

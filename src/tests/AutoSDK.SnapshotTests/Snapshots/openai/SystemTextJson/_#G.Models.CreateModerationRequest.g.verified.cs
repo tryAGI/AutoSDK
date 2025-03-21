@@ -16,9 +16,9 @@ namespace G
         /// an array of multi-modal input objects similar to other models.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>>))]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.OneOfJsonConverter<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateModerationRequestInputVariant3ItemVariant1, global::G.CreateModerationRequestInputVariant3ItemVariant2>>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>> Input { get; set; }
+        public required global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateModerationRequestInputVariant3ItemVariant1, global::G.CreateModerationRequestInputVariant3ItemVariant2>>> Input { get; set; }
 
         /// <summary>
         /// The content moderation model you would like to use. Learn more in<br/>
@@ -56,7 +56,7 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateModerationRequest(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>> input,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateModerationRequestInputVariant3ItemVariant1, global::G.CreateModerationRequestInputVariant3ItemVariant2>>> input,
             global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? model)
         {
             this.Input = input;

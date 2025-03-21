@@ -11,14 +11,6 @@ namespace G
     public sealed partial class ChatCompletionRequestFunctionMessage
     {
         /// <summary>
-        /// The role of the messages author, in this case `function`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestFunctionMessageRoleJsonConverter))]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionRequestFunctionMessageRole Role { get; set; }
-
-        /// <summary>
         /// The contents of the function message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("content")]
@@ -35,6 +27,14 @@ namespace G
         public required string Name { get; set; }
 
         /// <summary>
+        /// The role of the messages author, in this case `function`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("role")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.ChatCompletionRequestFunctionMessageRoleJsonConverter))]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionRequestFunctionMessageRole Role { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -43,14 +43,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestFunctionMessage" /> class.
         /// </summary>
-        /// <param name="role">
-        /// The role of the messages author, in this case `function`.
-        /// </param>
         /// <param name="content">
         /// The contents of the function message.
         /// </param>
         /// <param name="name">
         /// The name of the function to call.
+        /// </param>
+        /// <param name="role">
+        /// The role of the messages author, in this case `function`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

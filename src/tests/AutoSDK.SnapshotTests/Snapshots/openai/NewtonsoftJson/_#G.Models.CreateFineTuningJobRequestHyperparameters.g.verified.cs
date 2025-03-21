@@ -7,8 +7,10 @@
 namespace G
 {
     /// <summary>
-    /// The hyperparameters used for the fine-tuning job.
+    /// The hyperparameters used for the fine-tuning job.<br/>
+    /// This value is now deprecated in favor of `method`, and should be passed in under the `method` parameter.
     /// </summary>
+    [global::System.Obsolete("This model marked as deprecated.")]
     public sealed partial class CreateFineTuningJobRequestHyperparameters
     {
         /// <summary>
@@ -17,6 +19,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("batch_size")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersBatchSize?, int?>? BatchSize { get; set; }
 
         /// <summary>
@@ -25,6 +28,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("learning_rate_multiplier")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersLearningRateMultiplier?, double?>? LearningRateMultiplier { get; set; }
 
         /// <summary>
@@ -33,6 +37,7 @@ namespace G
         /// Default Value: auto
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("n_epochs")]
+        [global::System.Obsolete("This property marked as deprecated.")]
         public global::G.OneOf<global::G.CreateFineTuningJobRequestHyperparametersNEpochs?, int?>? NEpochs { get; set; }
 
         /// <summary>

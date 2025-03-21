@@ -16,16 +16,16 @@ namespace G
         public int Index { get; set; } = default!;
 
         /// <summary>
-        /// Always `refusal`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.MessageDeltaContentRefusalObjectType Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("refusal")]
         public string? Refusal { get; set; }
+
+        /// <summary>
+        /// Always `refusal`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageDeltaContentRefusalObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,18 +39,18 @@ namespace G
         /// <param name="index">
         /// The index of the refusal part in the message.
         /// </param>
+        /// <param name="refusal"></param>
         /// <param name="type">
         /// Always `refusal`.
         /// </param>
-        /// <param name="refusal"></param>
         public MessageDeltaContentRefusalObject(
             int index,
-            global::G.MessageDeltaContentRefusalObjectType type,
-            string? refusal)
+            string? refusal,
+            global::G.MessageDeltaContentRefusalObjectType type)
         {
             this.Index = index;
-            this.Type = type;
             this.Refusal = refusal;
+            this.Type = type;
         }
 
         /// <summary>

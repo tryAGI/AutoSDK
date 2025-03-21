@@ -18,17 +18,16 @@ namespace G
     public sealed partial class RealtimeServerEventConversationItemInputAudioTranscriptionCompleted
     {
         /// <summary>
+        /// The index of the content part containing the audio.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("content_index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int ContentIndex { get; set; } = default!;
+
+        /// <summary>
         /// The unique ID of the server event.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("event_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string EventId { get; set; } = default!;
-
-        /// <summary>
-        /// The event type, must be<br/>
-        /// `conversation.item.input_audio_transcription.completed`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType Type { get; set; }
 
         /// <summary>
         /// The ID of the user message item containing the audio.
@@ -37,16 +36,17 @@ namespace G
         public string ItemId { get; set; } = default!;
 
         /// <summary>
-        /// The index of the content part containing the audio.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content_index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int ContentIndex { get; set; } = default!;
-
-        /// <summary>
         /// The transcribed text.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("transcript", Required = global::Newtonsoft.Json.Required.Always)]
         public string Transcript { get; set; } = default!;
+
+        /// <summary>
+        /// The event type, must be<br/>
+        /// `conversation.item.input_audio_transcription.completed`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -57,32 +57,32 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventConversationItemInputAudioTranscriptionCompleted" /> class.
         /// </summary>
+        /// <param name="contentIndex">
+        /// The index of the content part containing the audio.
+        /// </param>
         /// <param name="eventId">
         /// The unique ID of the server event.
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the user message item containing the audio.
+        /// </param>
+        /// <param name="transcript">
+        /// The transcribed text.
         /// </param>
         /// <param name="type">
         /// The event type, must be<br/>
         /// `conversation.item.input_audio_transcription.completed`.
         /// </param>
-        /// <param name="itemId">
-        /// The ID of the user message item containing the audio.
-        /// </param>
-        /// <param name="contentIndex">
-        /// The index of the content part containing the audio.
-        /// </param>
-        /// <param name="transcript">
-        /// The transcribed text.
-        /// </param>
         public RealtimeServerEventConversationItemInputAudioTranscriptionCompleted(
+            int contentIndex,
             string eventId,
             string itemId,
-            int contentIndex,
             string transcript,
             global::G.RealtimeServerEventConversationItemInputAudioTranscriptionCompletedType type)
         {
+            this.ContentIndex = contentIndex;
             this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
-            this.ContentIndex = contentIndex;
             this.Transcript = transcript ?? throw new global::System.ArgumentNullException(nameof(transcript));
             this.Type = type;
         }

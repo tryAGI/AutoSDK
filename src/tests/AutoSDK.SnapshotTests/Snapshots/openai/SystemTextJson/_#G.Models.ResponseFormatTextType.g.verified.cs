@@ -5,12 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// The type of response format being defined: `text`
+    /// The type of response format being defined. Always `text`.
     /// </summary>
     public enum ResponseFormatTextType
     {
         /// <summary>
-        /// `text`
+        /// 
         /// </summary>
         Text,
     }

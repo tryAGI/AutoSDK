@@ -58,6 +58,8 @@
     <CompilerVisibleProperty Include="AutoSDK_JsonSerializerContext"/>
     <!-- Allow you to specify only one type for JsonSerializerContext to enable trimming support for System.Text.Json. true/false. Default: false -->
     <CompilerVisibleProperty Include="AutoSDK_GenerateJsonSerializerContextTypes"/>
+    <!-- true/false. Default: false -->
+    <CompilerVisibleProperty Include="AutoSDK_ComputeDiscriminators"/>
 
     <!-- Models generation -->
     <!-- true/false. Default: false -->

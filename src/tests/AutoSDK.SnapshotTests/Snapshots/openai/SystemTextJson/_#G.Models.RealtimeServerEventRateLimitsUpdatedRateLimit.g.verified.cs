@@ -10,16 +10,17 @@ namespace G
     public sealed partial class RealtimeServerEventRateLimitsUpdatedRateLimit
     {
         /// <summary>
-        /// The name of the rate limit (`requests`, `tokens`).
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
-
-        /// <summary>
         /// The maximum allowed value for the rate limit.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("limit")]
         public int? Limit { get; set; }
+
+        /// <summary>
+        /// The name of the rate limit (`requests`, `tokens`).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("name")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeServerEventRateLimitsUpdatedRateLimitNameJsonConverter))]
+        public global::G.RealtimeServerEventRateLimitsUpdatedRateLimitName? Name { get; set; }
 
         /// <summary>
         /// The remaining value before the limit is reached.
@@ -42,11 +43,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventRateLimitsUpdatedRateLimit" /> class.
         /// </summary>
-        /// <param name="name">
-        /// The name of the rate limit (`requests`, `tokens`).
-        /// </param>
         /// <param name="limit">
         /// The maximum allowed value for the rate limit.
+        /// </param>
+        /// <param name="name">
+        /// The name of the rate limit (`requests`, `tokens`).
         /// </param>
         /// <param name="remaining">
         /// The remaining value before the limit is reached.
@@ -58,13 +59,13 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventRateLimitsUpdatedRateLimit(
-            string? name,
             int? limit,
+            global::G.RealtimeServerEventRateLimitsUpdatedRateLimitName? name,
             int? remaining,
             double? resetSeconds)
         {
-            this.Name = name;
             this.Limit = limit;
+            this.Name = name;
             this.Remaining = remaining;
             this.ResetSeconds = resetSeconds;
         }

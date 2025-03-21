@@ -43,6 +43,16 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4.5-preview")]
+        Gpt45Preview,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="gpt-4.5-preview-2025-02-27")]
+        Gpt45Preview20250227,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="gpt-4-turbo")]
         Gpt4Turbo,
         /// <summary>
@@ -150,6 +160,8 @@ namespace G
                 CreateThreadAndRunRequestModel.Gpt4o20240513 => "gpt-4o-2024-05-13",
                 CreateThreadAndRunRequestModel.Gpt4oMini => "gpt-4o-mini",
                 CreateThreadAndRunRequestModel.Gpt4oMini20240718 => "gpt-4o-mini-2024-07-18",
+                CreateThreadAndRunRequestModel.Gpt45Preview => "gpt-4.5-preview",
+                CreateThreadAndRunRequestModel.Gpt45Preview20250227 => "gpt-4.5-preview-2025-02-27",
                 CreateThreadAndRunRequestModel.Gpt4Turbo => "gpt-4-turbo",
                 CreateThreadAndRunRequestModel.Gpt4Turbo20240409 => "gpt-4-turbo-2024-04-09",
                 CreateThreadAndRunRequestModel.Gpt40125Preview => "gpt-4-0125-preview",
@@ -184,6 +196,8 @@ namespace G
                 "gpt-4o-2024-05-13" => CreateThreadAndRunRequestModel.Gpt4o20240513,
                 "gpt-4o-mini" => CreateThreadAndRunRequestModel.Gpt4oMini,
                 "gpt-4o-mini-2024-07-18" => CreateThreadAndRunRequestModel.Gpt4oMini20240718,
+                "gpt-4.5-preview" => CreateThreadAndRunRequestModel.Gpt45Preview,
+                "gpt-4.5-preview-2025-02-27" => CreateThreadAndRunRequestModel.Gpt45Preview20250227,
                 "gpt-4-turbo" => CreateThreadAndRunRequestModel.Gpt4Turbo,
                 "gpt-4-turbo-2024-04-09" => CreateThreadAndRunRequestModel.Gpt4Turbo20240409,
                 "gpt-4-0125-preview" => CreateThreadAndRunRequestModel.Gpt40125Preview,

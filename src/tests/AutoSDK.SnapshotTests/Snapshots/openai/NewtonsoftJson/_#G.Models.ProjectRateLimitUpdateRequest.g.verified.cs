@@ -10,6 +10,30 @@ namespace G
     public sealed partial class ProjectRateLimitUpdateRequest
     {
         /// <summary>
+        /// The maximum batch input tokens per day. Only relevant for certain models.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("batch_1_day_max_input_tokens")]
+        public int? Batch1DayMaxInputTokens { get; set; }
+
+        /// <summary>
+        /// The maximum audio megabytes per minute. Only relevant for certain models.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_audio_megabytes_per_1_minute")]
+        public int? MaxAudioMegabytesPer1Minute { get; set; }
+
+        /// <summary>
+        /// The maximum images per minute. Only relevant for certain models.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_images_per_1_minute")]
+        public int? MaxImagesPer1Minute { get; set; }
+
+        /// <summary>
+        /// The maximum requests per day. Only relevant for certain models.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("max_requests_per_1_day")]
+        public int? MaxRequestsPer1Day { get; set; }
+
+        /// <summary>
         /// The maximum requests per minute.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("max_requests_per_1_minute")]
@@ -22,30 +46,6 @@ namespace G
         public int? MaxTokensPer1Minute { get; set; }
 
         /// <summary>
-        /// The maximum images per minute. Only relevant for certain models.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_images_per_1_minute")]
-        public int? MaxImagesPer1Minute { get; set; }
-
-        /// <summary>
-        /// The maximum audio megabytes per minute. Only relevant for certain models.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_audio_megabytes_per_1_minute")]
-        public int? MaxAudioMegabytesPer1Minute { get; set; }
-
-        /// <summary>
-        /// The maximum requests per day. Only relevant for certain models.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("max_requests_per_1_day")]
-        public int? MaxRequestsPer1Day { get; set; }
-
-        /// <summary>
-        /// The maximum batch input tokens per day. Only relevant for certain models.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("batch_1_day_max_input_tokens")]
-        public int? Batch1DayMaxInputTokens { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -54,38 +54,38 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectRateLimitUpdateRequest" /> class.
         /// </summary>
+        /// <param name="batch1DayMaxInputTokens">
+        /// The maximum batch input tokens per day. Only relevant for certain models.
+        /// </param>
+        /// <param name="maxAudioMegabytesPer1Minute">
+        /// The maximum audio megabytes per minute. Only relevant for certain models.
+        /// </param>
+        /// <param name="maxImagesPer1Minute">
+        /// The maximum images per minute. Only relevant for certain models.
+        /// </param>
+        /// <param name="maxRequestsPer1Day">
+        /// The maximum requests per day. Only relevant for certain models.
+        /// </param>
         /// <param name="maxRequestsPer1Minute">
         /// The maximum requests per minute.
         /// </param>
         /// <param name="maxTokensPer1Minute">
         /// The maximum tokens per minute.
         /// </param>
-        /// <param name="maxImagesPer1Minute">
-        /// The maximum images per minute. Only relevant for certain models.
-        /// </param>
-        /// <param name="maxAudioMegabytesPer1Minute">
-        /// The maximum audio megabytes per minute. Only relevant for certain models.
-        /// </param>
-        /// <param name="maxRequestsPer1Day">
-        /// The maximum requests per day. Only relevant for certain models.
-        /// </param>
-        /// <param name="batch1DayMaxInputTokens">
-        /// The maximum batch input tokens per day. Only relevant for certain models.
-        /// </param>
         public ProjectRateLimitUpdateRequest(
-            int? maxRequestsPer1Minute,
-            int? maxTokensPer1Minute,
-            int? maxImagesPer1Minute,
+            int? batch1DayMaxInputTokens,
             int? maxAudioMegabytesPer1Minute,
+            int? maxImagesPer1Minute,
             int? maxRequestsPer1Day,
-            int? batch1DayMaxInputTokens)
+            int? maxRequestsPer1Minute,
+            int? maxTokensPer1Minute)
         {
+            this.Batch1DayMaxInputTokens = batch1DayMaxInputTokens;
+            this.MaxAudioMegabytesPer1Minute = maxAudioMegabytesPer1Minute;
+            this.MaxImagesPer1Minute = maxImagesPer1Minute;
+            this.MaxRequestsPer1Day = maxRequestsPer1Day;
             this.MaxRequestsPer1Minute = maxRequestsPer1Minute;
             this.MaxTokensPer1Minute = maxTokensPer1Minute;
-            this.MaxImagesPer1Minute = maxImagesPer1Minute;
-            this.MaxAudioMegabytesPer1Minute = maxAudioMegabytesPer1Minute;
-            this.MaxRequestsPer1Day = maxRequestsPer1Day;
-            this.Batch1DayMaxInputTokens = batch1DayMaxInputTokens;
         }
 
         /// <summary>

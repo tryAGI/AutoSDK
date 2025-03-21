@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AuditLogServiceAccountCreated
     {
         /// <summary>
-        /// The service account ID.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// The payload used to create the service account.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data")]
         public global::G.AuditLogServiceAccountCreatedData? Data { get; set; }
+
+        /// <summary>
+        /// The service account ID.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,21 +30,21 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogServiceAccountCreated" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The service account ID.
-        /// </param>
         /// <param name="data">
         /// The payload used to create the service account.
+        /// </param>
+        /// <param name="id">
+        /// The service account ID.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public AuditLogServiceAccountCreated(
-            string? id,
-            global::G.AuditLogServiceAccountCreatedData? data)
+            global::G.AuditLogServiceAccountCreatedData? data,
+            string? id)
         {
-            this.Id = id;
             this.Data = data;
+            this.Id = id;
         }
 
         /// <summary>

@@ -10,18 +10,17 @@ namespace G
     public sealed partial class UsageCodeInterpreterSessionsResult
     {
         /// <summary>
+        /// The number of code interpreter sessions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("num_sessions")]
+        public int? NumSessions { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("object")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UsageCodeInterpreterSessionsResultObjectJsonConverter))]
         public global::G.UsageCodeInterpreterSessionsResultObject Object { get; set; }
-
-        /// <summary>
-        /// The number of code interpreter sessions.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("sessions")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int Sessions { get; set; }
 
         /// <summary>
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
@@ -38,10 +37,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageCodeInterpreterSessionsResult" /> class.
         /// </summary>
-        /// <param name="object"></param>
-        /// <param name="sessions">
+        /// <param name="numSessions">
         /// The number of code interpreter sessions.
         /// </param>
+        /// <param name="object"></param>
         /// <param name="projectId">
         /// When `group_by=project_id`, this field provides the project ID of the grouped usage result.
         /// </param>
@@ -49,11 +48,11 @@ namespace G
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageCodeInterpreterSessionsResult(
-            int sessions,
+            int? numSessions,
             global::G.UsageCodeInterpreterSessionsResultObject @object,
             string? projectId)
         {
-            this.Sessions = sessions;
+            this.NumSessions = numSessions;
             this.Object = @object;
             this.ProjectId = projectId;
         }

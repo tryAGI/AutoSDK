@@ -13,6 +13,11 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="developer")]
+        Developer,
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="system")]
         System,
         /// <summary>
@@ -44,6 +49,7 @@ namespace G
         {
             return value switch
             {
+                ChatCompletionStreamResponseDeltaRole.Developer => "developer",
                 ChatCompletionStreamResponseDeltaRole.System => "system",
                 ChatCompletionStreamResponseDeltaRole.User => "user",
                 ChatCompletionStreamResponseDeltaRole.Assistant => "assistant",
@@ -58,6 +64,7 @@ namespace G
         {
             return value switch
             {
+                "developer" => ChatCompletionStreamResponseDeltaRole.Developer,
                 "system" => ChatCompletionStreamResponseDeltaRole.System,
                 "user" => ChatCompletionStreamResponseDeltaRole.User,
                 "assistant" => ChatCompletionStreamResponseDeltaRole.Assistant,

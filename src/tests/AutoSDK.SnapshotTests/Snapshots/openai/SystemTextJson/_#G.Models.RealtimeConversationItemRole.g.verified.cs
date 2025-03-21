@@ -21,7 +21,7 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        Systems,
+        System,
     }
 
     /// <summary>
@@ -38,7 +38,7 @@ namespace G
             {
                 RealtimeConversationItemRole.User => "user",
                 RealtimeConversationItemRole.Assistant => "assistant",
-                RealtimeConversationItemRole.Systems => "systems",
+                RealtimeConversationItemRole.System => "system",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,7 +51,7 @@ namespace G
             {
                 "user" => RealtimeConversationItemRole.User,
                 "assistant" => RealtimeConversationItemRole.Assistant,
-                "systems" => RealtimeConversationItemRole.Systems,
+                "system" => RealtimeConversationItemRole.System,
                 _ => null,
             };
         }

@@ -10,6 +10,12 @@ namespace G
     public sealed partial class RunStepDetailsToolCallsFileSearchResultObject
     {
         /// <summary>
+        /// The content of the result that was found. The content is only included if requested via the include query parameter.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("content")]
+        public global::System.Collections.Generic.IList<global::G.RunStepDetailsToolCallsFileSearchResultObjectContentItem>? Content { get; set; }
+
+        /// <summary>
         /// The ID of the file that result was found in.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("file_id", Required = global::Newtonsoft.Json.Required.Always)]
@@ -28,12 +34,6 @@ namespace G
         public double Score { get; set; } = default!;
 
         /// <summary>
-        /// The content of the result that was found. The content is only included if requested via the include query parameter.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("content")]
-        public global::System.Collections.Generic.IList<global::G.RunStepDetailsToolCallsFileSearchResultObjectContentItem>? Content { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -42,6 +42,9 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsFileSearchResultObject" /> class.
         /// </summary>
+        /// <param name="content">
+        /// The content of the result that was found. The content is only included if requested via the include query parameter.
+        /// </param>
         /// <param name="fileId">
         /// The ID of the file that result was found in.
         /// </param>
@@ -50,9 +53,6 @@ namespace G
         /// </param>
         /// <param name="score">
         /// The score of the result. All values must be a floating point number between 0 and 1.
-        /// </param>
-        /// <param name="content">
-        /// The content of the result that was found. The content is only included if requested via the include query parameter.
         /// </param>
         public RunStepDetailsToolCallsFileSearchResultObject(
             string fileId,

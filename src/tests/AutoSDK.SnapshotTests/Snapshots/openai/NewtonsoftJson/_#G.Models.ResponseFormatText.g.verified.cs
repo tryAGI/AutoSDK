@@ -5,12 +5,12 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Default response format. Used to generate text responses.
     /// </summary>
     public sealed partial class ResponseFormatText
     {
         /// <summary>
-        /// The type of response format being defined: `text`
+        /// The type of response format being defined. Always `text`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.ResponseFormatTextType Type { get; set; }
@@ -25,7 +25,7 @@ namespace G
         /// Initializes a new instance of the <see cref="ResponseFormatText" /> class.
         /// </summary>
         /// <param name="type">
-        /// The type of response format being defined: `text`
+        /// The type of response format being defined. Always `text`.
         /// </param>
         public ResponseFormatText(
             global::G.ResponseFormatTextType type)

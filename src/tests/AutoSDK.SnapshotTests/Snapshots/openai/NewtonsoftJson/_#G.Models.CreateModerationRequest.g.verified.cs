@@ -16,7 +16,7 @@ namespace G
         /// an array of multi-modal input objects similar to other models.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("input", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>> Input { get; set; } = default!;
+        public global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateModerationRequestInputVariant3ItemVariant1, global::G.CreateModerationRequestInputVariant3ItemVariant2>>> Input { get; set; } = default!;
 
         /// <summary>
         /// The content moderation model you would like to use. Learn more in<br/>
@@ -50,7 +50,7 @@ namespace G
         /// Example: omni-moderation-2024-09-26
         /// </param>
         public CreateModerationRequest(
-            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.InputVariant3Item>> input,
+            global::G.OneOf<string, global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.IList<global::G.OneOf<global::G.CreateModerationRequestInputVariant3ItemVariant1, global::G.CreateModerationRequestInputVariant3ItemVariant2>>> input,
             global::G.AnyOf<string, global::G.CreateModerationRequestModel?>? model)
         {
             this.Input = input;

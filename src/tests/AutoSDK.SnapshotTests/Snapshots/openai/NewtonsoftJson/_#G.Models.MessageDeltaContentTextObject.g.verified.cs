@@ -16,16 +16,16 @@ namespace G
         public int Index { get; set; } = default!;
 
         /// <summary>
-        /// Always `text`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.MessageDeltaContentTextObjectType Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("text")]
         public global::G.MessageDeltaContentTextObjectText? Text { get; set; }
+
+        /// <summary>
+        /// Always `text`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageDeltaContentTextObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -39,18 +39,18 @@ namespace G
         /// <param name="index">
         /// The index of the content part in the message.
         /// </param>
+        /// <param name="text"></param>
         /// <param name="type">
         /// Always `text`.
         /// </param>
-        /// <param name="text"></param>
         public MessageDeltaContentTextObject(
             int index,
-            global::G.MessageDeltaContentTextObjectType type,
-            global::G.MessageDeltaContentTextObjectText? text)
+            global::G.MessageDeltaContentTextObjectText? text,
+            global::G.MessageDeltaContentTextObjectType type)
         {
             this.Index = index;
-            this.Type = type;
             this.Text = text;
+            this.Type = type;
         }
 
         /// <summary>

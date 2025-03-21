@@ -58,6 +58,10 @@ internal sealed class GenerateCommand : Command
             aliases: ["--validation"],
             getDefaultValue: () => Settings.Default.GenerateModelValidationMethods,
             description: "Generate validation methods for models");
+        var computeDiscriminatorsOption = new Option<bool>(
+            aliases: ["--compute-discriminators"],
+            getDefaultValue: () => Settings.Default.ComputeDiscriminators,
+            description: "Compute discriminators for polymorphic models");
         AddArgument(inputOption);
         AddOption(outputOption);
         AddOption(targetFrameworkOption);
@@ -70,6 +74,7 @@ internal sealed class GenerateCommand : Command
         AddOption(ignoreOpenApiErrorsOption);
         AddOption(ignoreOpenApiWarningsOption);
         AddOption(validationOption);
+        AddOption(computeDiscriminatorsOption);
 
         this.SetHandler(
             HandleAsync,
@@ -85,7 +90,8 @@ internal sealed class GenerateCommand : Command
                 clsCompliantEnumPrefixOption,
                 ignoreOpenApiErrorsOption,
                 ignoreOpenApiWarningsOption,
-                validationOption));
+                validationOption,
+                computeDiscriminatorsOption));
     }
 
     private static async Task HandleAsync(

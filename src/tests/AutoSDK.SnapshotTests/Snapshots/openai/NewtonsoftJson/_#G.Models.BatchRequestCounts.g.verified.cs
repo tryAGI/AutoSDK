@@ -10,12 +10,6 @@ namespace G
     public sealed partial class BatchRequestCounts
     {
         /// <summary>
-        /// Total number of requests in the batch.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("total", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Total { get; set; } = default!;
-
-        /// <summary>
         /// Number of requests that have been completed successfully.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("completed", Required = global::Newtonsoft.Json.Required.Always)]
@@ -28,6 +22,12 @@ namespace G
         public int Failed { get; set; } = default!;
 
         /// <summary>
+        /// Total number of requests in the batch.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("total", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Total { get; set; } = default!;
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -36,23 +36,23 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchRequestCounts" /> class.
         /// </summary>
-        /// <param name="total">
-        /// Total number of requests in the batch.
-        /// </param>
         /// <param name="completed">
         /// Number of requests that have been completed successfully.
         /// </param>
         /// <param name="failed">
         /// Number of requests that have failed.
         /// </param>
+        /// <param name="total">
+        /// Total number of requests in the batch.
+        /// </param>
         public BatchRequestCounts(
-            int total,
             int completed,
-            int failed)
+            int failed,
+            int total)
         {
-            this.Total = total;
             this.Completed = completed;
             this.Failed = failed;
+            this.Total = total;
         }
 
         /// <summary>

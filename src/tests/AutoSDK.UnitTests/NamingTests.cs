@@ -11,7 +11,10 @@ public partial class NamingTests
 {
     public static SchemaContext[] PrepareModels([StringSyntax("yaml")] string yaml)
     {
-        var settings = Settings.Default;
+        var settings = Settings.Default with
+        {
+            ComputeDiscriminators = true,
+        };
         var openApiDocument = yaml.GetOpenApiDocument(settings);
         var schemaContexts = openApiDocument.GetSchemas(settings);
         

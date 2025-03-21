@@ -10,22 +10,10 @@ namespace G
     public sealed partial class MessageDeltaContentTextAnnotationsFilePathObject
     {
         /// <summary>
-        /// The index of the annotation in the text content part.
+        /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Index { get; set; } = default!;
-
-        /// <summary>
-        /// Always `file_path`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
-
-        /// <summary>
-        /// The text in the message content that needs to be replaced.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("text")]
-        public string? Text { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("end_index")]
+        public int? EndIndex { get; set; }
 
         /// <summary>
         /// 
@@ -34,16 +22,28 @@ namespace G
         public global::G.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? FilePath { get; set; }
 
         /// <summary>
+        /// The index of the annotation in the text content part.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Index { get; set; } = default!;
+
+        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("start_index")]
         public int? StartIndex { get; set; }
 
         /// <summary>
-        /// 
+        /// The text in the message content that needs to be replaced.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("end_index")]
-        public int? EndIndex { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("text")]
+        public string? Text { get; set; }
+
+        /// <summary>
+        /// Always `file_path`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageDeltaContentTextAnnotationsFilePathObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -54,32 +54,32 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageDeltaContentTextAnnotationsFilePathObject" /> class.
         /// </summary>
+        /// <param name="endIndex"></param>
+        /// <param name="filePath"></param>
         /// <param name="index">
         /// The index of the annotation in the text content part.
+        /// </param>
+        /// <param name="startIndex"></param>
+        /// <param name="text">
+        /// The text in the message content that needs to be replaced.
         /// </param>
         /// <param name="type">
         /// Always `file_path`.
         /// </param>
-        /// <param name="text">
-        /// The text in the message content that needs to be replaced.
-        /// </param>
-        /// <param name="filePath"></param>
-        /// <param name="startIndex"></param>
-        /// <param name="endIndex"></param>
         public MessageDeltaContentTextAnnotationsFilePathObject(
             int index,
-            global::G.MessageDeltaContentTextAnnotationsFilePathObjectType type,
-            string? text,
+            int? endIndex,
             global::G.MessageDeltaContentTextAnnotationsFilePathObjectFilePath? filePath,
             int? startIndex,
-            int? endIndex)
+            string? text,
+            global::G.MessageDeltaContentTextAnnotationsFilePathObjectType type)
         {
             this.Index = index;
-            this.Type = type;
-            this.Text = text;
+            this.EndIndex = endIndex;
             this.FilePath = filePath;
             this.StartIndex = startIndex;
-            this.EndIndex = endIndex;
+            this.Text = text;
+            this.Type = type;
         }
 
         /// <summary>

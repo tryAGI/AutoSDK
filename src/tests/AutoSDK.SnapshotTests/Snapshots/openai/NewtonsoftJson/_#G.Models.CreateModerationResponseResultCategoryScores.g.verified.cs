@@ -10,18 +10,6 @@ namespace G
     public sealed partial class CreateModerationResponseResultCategoryScores
     {
         /// <summary>
-        /// The score for the category 'hate'.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("hate", Required = global::Newtonsoft.Json.Required.Always)]
-        public double Hate { get; set; } = default!;
-
-        /// <summary>
-        /// The score for the category 'hate/threatening'.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("hate/threatening", Required = global::Newtonsoft.Json.Required.Always)]
-        public double HateThreatening { get; set; } = default!;
-
-        /// <summary>
         /// The score for the category 'harassment'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("harassment", Required = global::Newtonsoft.Json.Required.Always)]
@@ -32,6 +20,18 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("harassment/threatening", Required = global::Newtonsoft.Json.Required.Always)]
         public double HarassmentThreatening { get; set; } = default!;
+
+        /// <summary>
+        /// The score for the category 'hate'.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("hate", Required = global::Newtonsoft.Json.Required.Always)]
+        public double Hate { get; set; } = default!;
+
+        /// <summary>
+        /// The score for the category 'hate/threatening'.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("hate/threatening", Required = global::Newtonsoft.Json.Required.Always)]
+        public double HateThreatening { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'illicit'.
@@ -52,16 +52,16 @@ namespace G
         public double SelfHarm { get; set; } = default!;
 
         /// <summary>
-        /// The score for the category 'self-harm/intent'.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("self-harm/intent", Required = global::Newtonsoft.Json.Required.Always)]
-        public double SelfHarmIntent { get; set; } = default!;
-
-        /// <summary>
         /// The score for the category 'self-harm/instructions'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("self-harm/instructions", Required = global::Newtonsoft.Json.Required.Always)]
         public double SelfHarmInstructions { get; set; } = default!;
+
+        /// <summary>
+        /// The score for the category 'self-harm/intent'.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("self-harm/intent", Required = global::Newtonsoft.Json.Required.Always)]
+        public double SelfHarmIntent { get; set; } = default!;
 
         /// <summary>
         /// The score for the category 'sexual'.
@@ -96,17 +96,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateModerationResponseResultCategoryScores" /> class.
         /// </summary>
-        /// <param name="hate">
-        /// The score for the category 'hate'.
-        /// </param>
-        /// <param name="hateThreatening">
-        /// The score for the category 'hate/threatening'.
-        /// </param>
         /// <param name="harassment">
         /// The score for the category 'harassment'.
         /// </param>
         /// <param name="harassmentThreatening">
         /// The score for the category 'harassment/threatening'.
+        /// </param>
+        /// <param name="hate">
+        /// The score for the category 'hate'.
+        /// </param>
+        /// <param name="hateThreatening">
+        /// The score for the category 'hate/threatening'.
         /// </param>
         /// <param name="illicit">
         /// The score for the category 'illicit'.
@@ -117,11 +117,11 @@ namespace G
         /// <param name="selfHarm">
         /// The score for the category 'self-harm'.
         /// </param>
-        /// <param name="selfHarmIntent">
-        /// The score for the category 'self-harm/intent'.
-        /// </param>
         /// <param name="selfHarmInstructions">
         /// The score for the category 'self-harm/instructions'.
+        /// </param>
+        /// <param name="selfHarmIntent">
+        /// The score for the category 'self-harm/intent'.
         /// </param>
         /// <param name="sexual">
         /// The score for the category 'sexual'.
@@ -136,29 +136,29 @@ namespace G
         /// The score for the category 'violence/graphic'.
         /// </param>
         public CreateModerationResponseResultCategoryScores(
-            double hate,
-            double hateThreatening,
             double harassment,
             double harassmentThreatening,
+            double hate,
+            double hateThreatening,
             double illicit,
             double illicitViolent,
             double selfHarm,
-            double selfHarmIntent,
             double selfHarmInstructions,
+            double selfHarmIntent,
             double sexual,
             double sexualMinors,
             double violence,
             double violenceGraphic)
         {
-            this.Hate = hate;
-            this.HateThreatening = hateThreatening;
             this.Harassment = harassment;
             this.HarassmentThreatening = harassmentThreatening;
+            this.Hate = hate;
+            this.HateThreatening = hateThreatening;
             this.Illicit = illicit;
             this.IllicitViolent = illicitViolent;
             this.SelfHarm = selfHarm;
-            this.SelfHarmIntent = selfHarmIntent;
             this.SelfHarmInstructions = selfHarmInstructions;
+            this.SelfHarmIntent = selfHarmIntent;
             this.Sexual = sexual;
             this.SexualMinors = sexualMinors;
             this.Violence = violence;

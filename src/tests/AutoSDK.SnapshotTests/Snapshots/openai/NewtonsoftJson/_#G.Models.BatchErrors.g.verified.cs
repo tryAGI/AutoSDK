@@ -10,16 +10,16 @@ namespace G
     public sealed partial class BatchErrors
     {
         /// <summary>
-        /// The object type, which is always `list`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public string? Object { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("data")]
         public global::System.Collections.Generic.IList<global::G.BatchErrorsDataItem>? Data { get; set; }
+
+        /// <summary>
+        /// The object type, which is always `list`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public string? Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,16 +30,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchErrors" /> class.
         /// </summary>
+        /// <param name="data"></param>
         /// <param name="object">
         /// The object type, which is always `list`.
         /// </param>
-        /// <param name="data"></param>
         public BatchErrors(
-            string? @object,
-            global::System.Collections.Generic.IList<global::G.BatchErrorsDataItem>? data)
+            global::System.Collections.Generic.IList<global::G.BatchErrorsDataItem>? data,
+            string? @object)
         {
-            this.Object = @object;
             this.Data = data;
+            this.Object = @object;
         }
 
         /// <summary>

@@ -12,12 +12,11 @@ namespace G
     public sealed partial class CreateFineTuningJobRequestIntegrationWandb
     {
         /// <summary>
-        /// The name of the project that the new run will be created under.<br/>
-        /// Example: my-wandb-project
+        /// The entity to use for the run. This allows you to set the team or username of the WandB user that you would<br/>
+        /// like associated with the run. If not set, the default entity for the registered WandB API key is used.
         /// </summary>
-        /// <example>my-wandb-project</example>
-        [global::Newtonsoft.Json.JsonProperty("project", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Project { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("entity")]
+        public string? Entity { get; set; }
 
         /// <summary>
         /// A display name to set for the run. If not set, we will use the Job ID as the name.
@@ -26,11 +25,12 @@ namespace G
         public string? Name { get; set; }
 
         /// <summary>
-        /// The entity to use for the run. This allows you to set the team or username of the WandB user that you would<br/>
-        /// like associated with the run. If not set, the default entity for the registered WandB API key is used.
+        /// The name of the project that the new run will be created under.<br/>
+        /// Example: my-wandb-project
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("entity")]
-        public string? Entity { get; set; }
+        /// <example>my-wandb-project</example>
+        [global::Newtonsoft.Json.JsonProperty("project", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Project { get; set; } = default!;
 
         /// <summary>
         /// A list of tags to be attached to the newly created run. These tags are passed through directly to WandB. Some<br/>
@@ -48,16 +48,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateFineTuningJobRequestIntegrationWandb" /> class.
         /// </summary>
-        /// <param name="project">
-        /// The name of the project that the new run will be created under.<br/>
-        /// Example: my-wandb-project
+        /// <param name="entity">
+        /// The entity to use for the run. This allows you to set the team or username of the WandB user that you would<br/>
+        /// like associated with the run. If not set, the default entity for the registered WandB API key is used.
         /// </param>
         /// <param name="name">
         /// A display name to set for the run. If not set, we will use the Job ID as the name.
         /// </param>
-        /// <param name="entity">
-        /// The entity to use for the run. This allows you to set the team or username of the WandB user that you would<br/>
-        /// like associated with the run. If not set, the default entity for the registered WandB API key is used.
+        /// <param name="project">
+        /// The name of the project that the new run will be created under.<br/>
+        /// Example: my-wandb-project
         /// </param>
         /// <param name="tags">
         /// A list of tags to be attached to the newly created run. These tags are passed through directly to WandB. Some<br/>
@@ -65,13 +65,13 @@ namespace G
         /// </param>
         public CreateFineTuningJobRequestIntegrationWandb(
             string project,
-            string? name,
             string? entity,
+            string? name,
             global::System.Collections.Generic.IList<string>? tags)
         {
             this.Project = project ?? throw new global::System.ArgumentNullException(nameof(project));
-            this.Name = name;
             this.Entity = entity;
+            this.Name = name;
             this.Tags = tags;
         }
 

@@ -18,6 +18,12 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("has_more", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool HasMore { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::Newtonsoft.Json.JsonProperty("object")]
         public global::G.ListFineTuningJobEventsResponseObject Object { get; set; }
 
@@ -31,12 +37,15 @@ namespace G
         /// Initializes a new instance of the <see cref="ListFineTuningJobEventsResponse" /> class.
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="hasMore"></param>
         /// <param name="object"></param>
         public ListFineTuningJobEventsResponse(
             global::System.Collections.Generic.IList<global::G.FineTuningJobEvent> data,
+            bool hasMore,
             global::G.ListFineTuningJobEventsResponseObject @object)
         {
             this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.HasMore = hasMore;
             this.Object = @object;
         }
 

@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.RunStepDetailsToolCallsCodeObjectCodeInterpreter.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -21,7 +23,7 @@ namespace G
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("outputs")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.RunStepDetailsToolCallsCodeObjectCodeInterpreterOutput> Outputs { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDetailsToolCallsCodeOutputImageObject>> Outputs { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -43,7 +45,7 @@ namespace G
 #endif
         public RunStepDetailsToolCallsCodeObjectCodeInterpreter(
             string input,
-            global::System.Collections.Generic.IList<global::G.RunStepDetailsToolCallsCodeObjectCodeInterpreterOutput> outputs)
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.RunStepDetailsToolCallsCodeOutputLogsObject, global::G.RunStepDetailsToolCallsCodeOutputImageObject>> outputs)
         {
             this.Input = input ?? throw new global::System.ArgumentNullException(nameof(input));
             this.Outputs = outputs ?? throw new global::System.ArgumentNullException(nameof(outputs));

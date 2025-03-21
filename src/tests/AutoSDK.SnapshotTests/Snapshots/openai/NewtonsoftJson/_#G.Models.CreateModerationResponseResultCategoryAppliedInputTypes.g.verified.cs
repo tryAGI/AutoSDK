@@ -10,18 +10,6 @@ namespace G
     public sealed partial class CreateModerationResponseResultCategoryAppliedInputTypes
     {
         /// <summary>
-        /// The applied input type(s) for the category 'hate'.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("hate", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHateItem> Hate { get; set; } = default!;
-
-        /// <summary>
-        /// The applied input type(s) for the category 'hate/threatening'.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("hate/threatening", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem> HateThreatening { get; set; } = default!;
-
-        /// <summary>
         /// The applied input type(s) for the category 'harassment'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("harassment", Required = global::Newtonsoft.Json.Required.Always)]
@@ -32,6 +20,18 @@ namespace G
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("harassment/threatening", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentThreateningItem> HarassmentThreatening { get; set; } = default!;
+
+        /// <summary>
+        /// The applied input type(s) for the category 'hate'.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("hate", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHateItem> Hate { get; set; } = default!;
+
+        /// <summary>
+        /// The applied input type(s) for the category 'hate/threatening'.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("hate/threatening", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem> HateThreatening { get; set; } = default!;
 
         /// <summary>
         /// The applied input type(s) for the category 'illicit'.
@@ -52,16 +52,16 @@ namespace G
         public global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmItem> SelfHarm { get; set; } = default!;
 
         /// <summary>
-        /// The applied input type(s) for the category 'self-harm/intent'.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("self-harm/intent", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem> SelfHarmIntent { get; set; } = default!;
-
-        /// <summary>
         /// The applied input type(s) for the category 'self-harm/instructions'.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("self-harm/instructions", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmInstruction> SelfHarmInstructions { get; set; } = default!;
+
+        /// <summary>
+        /// The applied input type(s) for the category 'self-harm/intent'.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("self-harm/intent", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem> SelfHarmIntent { get; set; } = default!;
 
         /// <summary>
         /// The applied input type(s) for the category 'sexual'.
@@ -96,17 +96,17 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateModerationResponseResultCategoryAppliedInputTypes" /> class.
         /// </summary>
-        /// <param name="hate">
-        /// The applied input type(s) for the category 'hate'.
-        /// </param>
-        /// <param name="hateThreatening">
-        /// The applied input type(s) for the category 'hate/threatening'.
-        /// </param>
         /// <param name="harassment">
         /// The applied input type(s) for the category 'harassment'.
         /// </param>
         /// <param name="harassmentThreatening">
         /// The applied input type(s) for the category 'harassment/threatening'.
+        /// </param>
+        /// <param name="hate">
+        /// The applied input type(s) for the category 'hate'.
+        /// </param>
+        /// <param name="hateThreatening">
+        /// The applied input type(s) for the category 'hate/threatening'.
         /// </param>
         /// <param name="illicit">
         /// The applied input type(s) for the category 'illicit'.
@@ -117,11 +117,11 @@ namespace G
         /// <param name="selfHarm">
         /// The applied input type(s) for the category 'self-harm'.
         /// </param>
-        /// <param name="selfHarmIntent">
-        /// The applied input type(s) for the category 'self-harm/intent'.
-        /// </param>
         /// <param name="selfHarmInstructions">
         /// The applied input type(s) for the category 'self-harm/instructions'.
+        /// </param>
+        /// <param name="selfHarmIntent">
+        /// The applied input type(s) for the category 'self-harm/intent'.
         /// </param>
         /// <param name="sexual">
         /// The applied input type(s) for the category 'sexual'.
@@ -136,29 +136,29 @@ namespace G
         /// The applied input type(s) for the category 'violence/graphic'.
         /// </param>
         public CreateModerationResponseResultCategoryAppliedInputTypes(
-            global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHateItem> hate,
-            global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem> hateThreatening,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentItem> harassment,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHarassmentThreateningItem> harassmentThreatening,
+            global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHateItem> hate,
+            global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesHateThreateningItem> hateThreatening,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesIllicitItem> illicit,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesIllicitViolentItem> illicitViolent,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmItem> selfHarm,
-            global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem> selfHarmIntent,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmInstruction> selfHarmInstructions,
+            global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSelfHarmIntentItem> selfHarmIntent,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSexualItem> sexual,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesSexualMinor> sexualMinors,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesViolenceItem> violence,
             global::System.Collections.Generic.IList<global::G.CreateModerationResponseResultCategoryAppliedInputTypesViolenceGraphicItem> violenceGraphic)
         {
-            this.Hate = hate ?? throw new global::System.ArgumentNullException(nameof(hate));
-            this.HateThreatening = hateThreatening ?? throw new global::System.ArgumentNullException(nameof(hateThreatening));
             this.Harassment = harassment ?? throw new global::System.ArgumentNullException(nameof(harassment));
             this.HarassmentThreatening = harassmentThreatening ?? throw new global::System.ArgumentNullException(nameof(harassmentThreatening));
+            this.Hate = hate ?? throw new global::System.ArgumentNullException(nameof(hate));
+            this.HateThreatening = hateThreatening ?? throw new global::System.ArgumentNullException(nameof(hateThreatening));
             this.Illicit = illicit ?? throw new global::System.ArgumentNullException(nameof(illicit));
             this.IllicitViolent = illicitViolent ?? throw new global::System.ArgumentNullException(nameof(illicitViolent));
             this.SelfHarm = selfHarm ?? throw new global::System.ArgumentNullException(nameof(selfHarm));
-            this.SelfHarmIntent = selfHarmIntent ?? throw new global::System.ArgumentNullException(nameof(selfHarmIntent));
             this.SelfHarmInstructions = selfHarmInstructions ?? throw new global::System.ArgumentNullException(nameof(selfHarmInstructions));
+            this.SelfHarmIntent = selfHarmIntent ?? throw new global::System.ArgumentNullException(nameof(selfHarmIntent));
             this.Sexual = sexual ?? throw new global::System.ArgumentNullException(nameof(sexual));
             this.SexualMinors = sexualMinors ?? throw new global::System.ArgumentNullException(nameof(sexualMinors));
             this.Violence = violence ?? throw new global::System.ArgumentNullException(nameof(violence));

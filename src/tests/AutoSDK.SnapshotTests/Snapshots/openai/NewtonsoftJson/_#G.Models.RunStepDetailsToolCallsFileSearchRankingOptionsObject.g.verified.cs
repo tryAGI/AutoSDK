@@ -10,10 +10,10 @@ namespace G
     public sealed partial class RunStepDetailsToolCallsFileSearchRankingOptionsObject
     {
         /// <summary>
-        /// The ranker used for the file search.
+        /// The ranker to use for the file search. If not specified will use the `auto` ranker.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("ranker")]
-        public global::G.RunStepDetailsToolCallsFileSearchRankingOptionsObjectRanker Ranker { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("ranker", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.FileSearchRanker Ranker { get; set; } = default!;
 
         /// <summary>
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
@@ -31,17 +31,17 @@ namespace G
         /// Initializes a new instance of the <see cref="RunStepDetailsToolCallsFileSearchRankingOptionsObject" /> class.
         /// </summary>
         /// <param name="ranker">
-        /// The ranker used for the file search.
+        /// The ranker to use for the file search. If not specified will use the `auto` ranker.
         /// </param>
         /// <param name="scoreThreshold">
         /// The score threshold for the file search. All values must be a floating point number between 0 and 1.
         /// </param>
         public RunStepDetailsToolCallsFileSearchRankingOptionsObject(
-            double scoreThreshold,
-            global::G.RunStepDetailsToolCallsFileSearchRankingOptionsObjectRanker ranker)
+            global::G.FileSearchRanker ranker,
+            double scoreThreshold)
         {
-            this.ScoreThreshold = scoreThreshold;
             this.Ranker = ranker;
+            this.ScoreThreshold = scoreThreshold;
         }
 
         /// <summary>

@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// The content type (`input_text`, `input_audio`, `text`).
+    /// The content type (`input_text`, `input_audio`, `item_reference`, `text`).
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum RealtimeConversationItemContentItemType
@@ -20,6 +20,11 @@ namespace G
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="input_text")]
         InputText,
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Runtime.Serialization.EnumMember(Value="item_reference")]
+        ItemReference,
         /// <summary>
         /// 
         /// </summary>
@@ -41,6 +46,7 @@ namespace G
             {
                 RealtimeConversationItemContentItemType.InputAudio => "input_audio",
                 RealtimeConversationItemContentItemType.InputText => "input_text",
+                RealtimeConversationItemContentItemType.ItemReference => "item_reference",
                 RealtimeConversationItemContentItemType.Text => "text",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
@@ -54,6 +60,7 @@ namespace G
             {
                 "input_audio" => RealtimeConversationItemContentItemType.InputAudio,
                 "input_text" => RealtimeConversationItemContentItemType.InputText,
+                "item_reference" => RealtimeConversationItemContentItemType.ItemReference,
                 "text" => RealtimeConversationItemContentItemType.Text,
                 _ => null,
             };

@@ -10,10 +10,34 @@ namespace G
     public sealed partial class TranscriptionSegment
     {
         /// <summary>
+        /// Average logprob of the segment. If the value is lower than -1, consider the logprobs failed.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("avg_logprob", Required = global::Newtonsoft.Json.Required.Always)]
+        public float AvgLogprob { get; set; } = default!;
+
+        /// <summary>
+        /// Compression ratio of the segment. If the value is greater than 2.4, consider the compression failed.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("compression_ratio", Required = global::Newtonsoft.Json.Required.Always)]
+        public float CompressionRatio { get; set; } = default!;
+
+        /// <summary>
+        /// End time of the segment in seconds.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("end", Required = global::Newtonsoft.Json.Required.Always)]
+        public float End { get; set; } = default!;
+
+        /// <summary>
         /// Unique identifier of the segment.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public int Id { get; set; } = default!;
+
+        /// <summary>
+        /// Probability of no speech in the segment. If the value is higher than 1.0 and the `avg_logprob` is below -1, consider this segment silent.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("no_speech_prob", Required = global::Newtonsoft.Json.Required.Always)]
+        public float NoSpeechProb { get; set; } = default!;
 
         /// <summary>
         /// Seek offset of the segment.
@@ -28,10 +52,10 @@ namespace G
         public float Start { get; set; } = default!;
 
         /// <summary>
-        /// End time of the segment in seconds.
+        /// Temperature parameter used for generating the segment.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("end", Required = global::Newtonsoft.Json.Required.Always)]
-        public float End { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("temperature", Required = global::Newtonsoft.Json.Required.Always)]
+        public float Temperature { get; set; } = default!;
 
         /// <summary>
         /// Text content of the segment.
@@ -46,30 +70,6 @@ namespace G
         public global::System.Collections.Generic.IList<int> Tokens { get; set; } = default!;
 
         /// <summary>
-        /// Temperature parameter used for generating the segment.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("temperature", Required = global::Newtonsoft.Json.Required.Always)]
-        public float Temperature { get; set; } = default!;
-
-        /// <summary>
-        /// Average logprob of the segment. If the value is lower than -1, consider the logprobs failed.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("avg_logprob", Required = global::Newtonsoft.Json.Required.Always)]
-        public float AvgLogprob { get; set; } = default!;
-
-        /// <summary>
-        /// Compression ratio of the segment. If the value is greater than 2.4, consider the compression failed.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("compression_ratio", Required = global::Newtonsoft.Json.Required.Always)]
-        public float CompressionRatio { get; set; } = default!;
-
-        /// <summary>
-        /// Probability of no speech in the segment. If the value is higher than 1.0 and the `avg_logprob` is below -1, consider this segment silent.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("no_speech_prob", Required = global::Newtonsoft.Json.Required.Always)]
-        public float NoSpeechProb { get; set; } = default!;
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -78,8 +78,20 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="TranscriptionSegment" /> class.
         /// </summary>
+        /// <param name="avgLogprob">
+        /// Average logprob of the segment. If the value is lower than -1, consider the logprobs failed.
+        /// </param>
+        /// <param name="compressionRatio">
+        /// Compression ratio of the segment. If the value is greater than 2.4, consider the compression failed.
+        /// </param>
+        /// <param name="end">
+        /// End time of the segment in seconds.
+        /// </param>
         /// <param name="id">
         /// Unique identifier of the segment.
+        /// </param>
+        /// <param name="noSpeechProb">
+        /// Probability of no speech in the segment. If the value is higher than 1.0 and the `avg_logprob` is below -1, consider this segment silent.
         /// </param>
         /// <param name="seek">
         /// Seek offset of the segment.
@@ -87,8 +99,8 @@ namespace G
         /// <param name="start">
         /// Start time of the segment in seconds.
         /// </param>
-        /// <param name="end">
-        /// End time of the segment in seconds.
+        /// <param name="temperature">
+        /// Temperature parameter used for generating the segment.
         /// </param>
         /// <param name="text">
         /// Text content of the segment.
@@ -96,40 +108,28 @@ namespace G
         /// <param name="tokens">
         /// Array of token IDs for the text content.
         /// </param>
-        /// <param name="temperature">
-        /// Temperature parameter used for generating the segment.
-        /// </param>
-        /// <param name="avgLogprob">
-        /// Average logprob of the segment. If the value is lower than -1, consider the logprobs failed.
-        /// </param>
-        /// <param name="compressionRatio">
-        /// Compression ratio of the segment. If the value is greater than 2.4, consider the compression failed.
-        /// </param>
-        /// <param name="noSpeechProb">
-        /// Probability of no speech in the segment. If the value is higher than 1.0 and the `avg_logprob` is below -1, consider this segment silent.
-        /// </param>
         public TranscriptionSegment(
-            int id,
-            int seek,
-            float start,
-            float end,
-            string text,
-            global::System.Collections.Generic.IList<int> tokens,
-            float temperature,
             float avgLogprob,
             float compressionRatio,
-            float noSpeechProb)
+            float end,
+            int id,
+            float noSpeechProb,
+            int seek,
+            float start,
+            float temperature,
+            string text,
+            global::System.Collections.Generic.IList<int> tokens)
         {
-            this.Id = id;
-            this.Seek = seek;
-            this.Start = start;
-            this.End = end;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
-            this.Tokens = tokens ?? throw new global::System.ArgumentNullException(nameof(tokens));
-            this.Temperature = temperature;
             this.AvgLogprob = avgLogprob;
             this.CompressionRatio = compressionRatio;
+            this.End = end;
+            this.Id = id;
             this.NoSpeechProb = noSpeechProb;
+            this.Seek = seek;
+            this.Start = start;
+            this.Temperature = temperature;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
+            this.Tokens = tokens ?? throw new global::System.ArgumentNullException(nameof(tokens));
         }
 
         /// <summary>

@@ -2477,8 +2477,6 @@
         MaxFileSize(int),
     RepositoryRuleWorkflows(ref),
     RepositoryRuleCodeScanning(ref),
-    RepositoryRuleDiscriminator(class),
-      RepositoryRuleDiscriminatorType(enum),
   RepositoryRuleset(class),
     Id(int),
     Name(string),

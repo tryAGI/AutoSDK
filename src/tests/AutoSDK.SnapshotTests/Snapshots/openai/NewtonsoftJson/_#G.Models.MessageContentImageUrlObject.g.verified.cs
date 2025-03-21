@@ -10,16 +10,16 @@ namespace G
     public sealed partial class MessageContentImageUrlObject
     {
         /// <summary>
-        /// The type of the content part.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.MessageContentImageUrlObjectType Type { get; set; }
-
-        /// <summary>
         /// 
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("image_url", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.MessageContentImageUrlObjectImageUrl ImageUrl { get; set; } = default!;
+
+        /// <summary>
+        /// The type of the content part.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.MessageContentImageUrlObjectType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,10 +30,10 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="MessageContentImageUrlObject" /> class.
         /// </summary>
+        /// <param name="imageUrl"></param>
         /// <param name="type">
         /// The type of the content part.
         /// </param>
-        /// <param name="imageUrl"></param>
         public MessageContentImageUrlObject(
             global::G.MessageContentImageUrlObjectImageUrl imageUrl,
             global::G.MessageContentImageUrlObjectType type)

@@ -11,13 +11,6 @@ namespace G
     public sealed partial class ChatCompletionRequestFunctionMessage
     {
         /// <summary>
-        /// The role of the messages author, in this case `function`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        [global::System.Obsolete("This property marked as deprecated.")]
-        public global::G.ChatCompletionRequestFunctionMessageRole Role { get; set; }
-
-        /// <summary>
         /// The contents of the function message.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content", Required = global::Newtonsoft.Json.Required.Always)]
@@ -32,6 +25,13 @@ namespace G
         public string Name { get; set; } = default!;
 
         /// <summary>
+        /// The role of the messages author, in this case `function`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        [global::System.Obsolete("This property marked as deprecated.")]
+        public global::G.ChatCompletionRequestFunctionMessageRole Role { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -40,14 +40,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatCompletionRequestFunctionMessage" /> class.
         /// </summary>
-        /// <param name="role">
-        /// The role of the messages author, in this case `function`.
-        /// </param>
         /// <param name="content">
         /// The contents of the function message.
         /// </param>
         /// <param name="name">
         /// The name of the function to call.
+        /// </param>
+        /// <param name="role">
+        /// The role of the messages author, in this case `function`.
         /// </param>
         public ChatCompletionRequestFunctionMessage(
             string? content,

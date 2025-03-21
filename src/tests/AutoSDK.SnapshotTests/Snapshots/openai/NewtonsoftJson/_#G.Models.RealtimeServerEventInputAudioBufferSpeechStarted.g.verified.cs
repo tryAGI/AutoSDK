@@ -18,18 +18,6 @@ namespace G
     public sealed partial class RealtimeServerEventInputAudioBufferSpeechStarted
     {
         /// <summary>
-        /// The unique ID of the server event.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("event_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string EventId { get; set; } = default!;
-
-        /// <summary>
-        /// The event type, must be `input_audio_buffer.speech_started`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventInputAudioBufferSpeechStartedType Type { get; set; }
-
-        /// <summary>
         /// Milliseconds from the start of all audio written to the buffer during the <br/>
         /// session when speech was first detected. This will correspond to the <br/>
         /// beginning of audio sent to the model, and thus includes the <br/>
@@ -39,10 +27,22 @@ namespace G
         public int AudioStartMs { get; set; } = default!;
 
         /// <summary>
+        /// The unique ID of the server event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("event_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string EventId { get; set; } = default!;
+
+        /// <summary>
         /// The ID of the user message item that will be created when speech stops.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
         public string ItemId { get; set; } = default!;
+
+        /// <summary>
+        /// The event type, must be `input_audio_buffer.speech_started`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventInputAudioBufferSpeechStartedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -53,29 +53,29 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventInputAudioBufferSpeechStarted" /> class.
         /// </summary>
-        /// <param name="eventId">
-        /// The unique ID of the server event.
-        /// </param>
-        /// <param name="type">
-        /// The event type, must be `input_audio_buffer.speech_started`.
-        /// </param>
         /// <param name="audioStartMs">
         /// Milliseconds from the start of all audio written to the buffer during the <br/>
         /// session when speech was first detected. This will correspond to the <br/>
         /// beginning of audio sent to the model, and thus includes the <br/>
         /// `prefix_padding_ms` configured in the Session.
         /// </param>
+        /// <param name="eventId">
+        /// The unique ID of the server event.
+        /// </param>
         /// <param name="itemId">
         /// The ID of the user message item that will be created when speech stops.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `input_audio_buffer.speech_started`.
+        /// </param>
         public RealtimeServerEventInputAudioBufferSpeechStarted(
-            string eventId,
             int audioStartMs,
+            string eventId,
             string itemId,
             global::G.RealtimeServerEventInputAudioBufferSpeechStartedType type)
         {
-            this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.AudioStartMs = audioStartMs;
+            this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
             this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
         }

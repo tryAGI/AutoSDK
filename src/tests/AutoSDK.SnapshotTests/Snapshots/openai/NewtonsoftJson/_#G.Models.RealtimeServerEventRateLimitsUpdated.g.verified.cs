@@ -19,16 +19,16 @@ namespace G
         public string EventId { get; set; } = default!;
 
         /// <summary>
-        /// The event type, must be `rate_limits.updated`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventRateLimitsUpdatedType Type { get; set; }
-
-        /// <summary>
         /// List of rate limit information.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("rate_limits", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<global::G.RealtimeServerEventRateLimitsUpdatedRateLimit> RateLimits { get; set; } = default!;
+
+        /// <summary>
+        /// The event type, must be `rate_limits.updated`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventRateLimitsUpdatedType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -42,11 +42,11 @@ namespace G
         /// <param name="eventId">
         /// The unique ID of the server event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `rate_limits.updated`.
-        /// </param>
         /// <param name="rateLimits">
         /// List of rate limit information.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `rate_limits.updated`.
         /// </param>
         public RealtimeServerEventRateLimitsUpdated(
             string eventId,

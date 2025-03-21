@@ -12,8 +12,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.ProjectServiceAccountDeleteResponseObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
+        public bool Deleted { get; set; } = default!;
 
         /// <summary>
         /// 
@@ -24,8 +24,8 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("deleted", Required = global::Newtonsoft.Json.Required.Always)]
-        public bool Deleted { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.ProjectServiceAccountDeleteResponseObject Object { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -36,16 +36,16 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectServiceAccountDeleteResponse" /> class.
         /// </summary>
-        /// <param name="object"></param>
-        /// <param name="id"></param>
         /// <param name="deleted"></param>
+        /// <param name="id"></param>
+        /// <param name="object"></param>
         public ProjectServiceAccountDeleteResponse(
-            string id,
             bool deleted,
+            string id,
             global::G.ProjectServiceAccountDeleteResponseObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Deleted = deleted;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Object = @object;
         }
 

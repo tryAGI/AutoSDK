@@ -215,8 +215,6 @@
   ToolContent(oneOf)[],
     TextContent(ref)[],
     DocumentContent(ref)[],
-    ToolContentDiscriminator(class)[],
-      ToolContentDiscriminatorType(enum)[],
   ToolMessageV2(class)[],
     ToolMessageV2Role(enum)[],
     ToolCallId(string)[],

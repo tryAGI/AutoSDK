@@ -10,22 +10,23 @@ namespace G
     public sealed partial class RealtimeServerEventErrorError
     {
         /// <summary>
-        /// The type of error (e.g., "invalid_request_error", "server_error").
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        public string? Type { get; set; }
-
-        /// <summary>
         /// Error code, if any.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("code")]
         public string? Code { get; set; }
 
         /// <summary>
+        /// The event_id of the client event that caused the error, if applicable.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
+        public string? EventId { get; set; }
+
+        /// <summary>
         /// A human-readable error message.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("message")]
-        public string? Message { get; set; }
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Message { get; set; }
 
         /// <summary>
         /// Parameter related to the error, if any.
@@ -34,10 +35,11 @@ namespace G
         public string? Param { get; set; }
 
         /// <summary>
-        /// The event_id of the client event that caused the error, if applicable.
+        /// The type of error (e.g., "invalid_request_error", "server_error").
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("event_id")]
-        public string? EventId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,11 +50,11 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventErrorError" /> class.
         /// </summary>
-        /// <param name="type">
-        /// The type of error (e.g., "invalid_request_error", "server_error").
-        /// </param>
         /// <param name="code">
         /// Error code, if any.
+        /// </param>
+        /// <param name="eventId">
+        /// The event_id of the client event that caused the error, if applicable.
         /// </param>
         /// <param name="message">
         /// A human-readable error message.
@@ -60,24 +62,24 @@ namespace G
         /// <param name="param">
         /// Parameter related to the error, if any.
         /// </param>
-        /// <param name="eventId">
-        /// The event_id of the client event that caused the error, if applicable.
+        /// <param name="type">
+        /// The type of error (e.g., "invalid_request_error", "server_error").
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RealtimeServerEventErrorError(
-            string? type,
+            string message,
+            string type,
             string? code,
-            string? message,
-            string? param,
-            string? eventId)
+            string? eventId,
+            string? param)
         {
-            this.Type = type;
+            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
             this.Code = code;
-            this.Message = message;
-            this.Param = param;
             this.EventId = eventId;
+            this.Param = param;
         }
 
         /// <summary>

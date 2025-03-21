@@ -7,7 +7,8 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// Messages sent by an end user, containing prompts or additional context<br/>
+    /// information.
     /// </summary>
     public sealed partial class ChatCompletionRequestUserMessage
     {
@@ -18,16 +19,16 @@ namespace G
         public global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestUserMessageContentPart>> Content { get; set; } = default!;
 
         /// <summary>
-        /// The role of the messages author, in this case `user`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("role")]
-        public global::G.ChatCompletionRequestUserMessageRole Role { get; set; }
-
-        /// <summary>
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("name")]
         public string? Name { get; set; }
+
+        /// <summary>
+        /// The role of the messages author, in this case `user`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("role")]
+        public global::G.ChatCompletionRequestUserMessageRole Role { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -41,20 +42,20 @@ namespace G
         /// <param name="content">
         /// The contents of the user message.
         /// </param>
-        /// <param name="role">
-        /// The role of the messages author, in this case `user`.
-        /// </param>
         /// <param name="name">
         /// An optional name for the participant. Provides the model information to differentiate between participants of the same role.
         /// </param>
+        /// <param name="role">
+        /// The role of the messages author, in this case `user`.
+        /// </param>
         public ChatCompletionRequestUserMessage(
             global::G.OneOf<string, global::System.Collections.Generic.IList<global::G.ChatCompletionRequestUserMessageContentPart>> content,
-            global::G.ChatCompletionRequestUserMessageRole role,
-            string? name)
+            string? name,
+            global::G.ChatCompletionRequestUserMessageRole role)
         {
             this.Content = content;
-            this.Role = role;
             this.Name = name;
+            this.Role = role;
         }
 
         /// <summary>

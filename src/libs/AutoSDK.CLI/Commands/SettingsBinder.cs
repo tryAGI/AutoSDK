@@ -14,7 +14,8 @@ internal sealed class SettingsBinder(
     Option<string> clsCompliantEnumPrefix,
     Option<bool> ignoreOpenApiErrors,
     Option<bool> ignoreOpenApiWarnings,
-    Option<bool> validation
+    Option<bool> validation,
+    Option<bool> computeDiscriminators
     )
     : BinderBase<Settings>
 {
@@ -34,6 +35,7 @@ internal sealed class SettingsBinder(
             ExcludeDeprecatedOperations = bindingContext.ParseResult.GetValueForOption(excludeDeprecatedOperations),
             JsonSerializerContext = $"{namespaceValue}.SourceGenerationContext",
             GenerateJsonSerializerContextTypes = true,
+            ComputeDiscriminators = bindingContext.ParseResult.GetValueForOption(computeDiscriminators),
             GenerateModelValidationMethods = bindingContext.ParseResult.GetValueForOption(validation),
             IgnoreOpenApiErrors = bindingContext.ParseResult.GetValueForOption(ignoreOpenApiErrors),
             IgnoreOpenApiWarnings = bindingContext.ParseResult.GetValueForOption(ignoreOpenApiWarnings),

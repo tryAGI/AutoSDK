@@ -10,10 +10,26 @@ namespace G
     public sealed partial class ThreadObject
     {
         /// <summary>
+        /// The Unix timestamp (in seconds) for when the thread was created.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
+
+        /// <summary>
         /// The identifier, which can be referenced in API endpoints.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("id", Required = global::Newtonsoft.Json.Required.Always)]
         public string Id { get; set; } = default!;
+
+        /// <summary>
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.Collections.Generic.Dictionary<string, string>? Metadata { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always `thread`.
@@ -22,22 +38,10 @@ namespace G
         public global::G.ThreadObjectObject Object { get; set; }
 
         /// <summary>
-        /// The Unix timestamp (in seconds) for when the thread was created.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("created_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset CreatedAt { get; set; } = default!;
-
-        /// <summary>
         /// A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("tool_resources", Required = global::Newtonsoft.Json.Required.Always)]
         public global::G.ThreadObjectToolResources? ToolResources { get; set; } = default!;
-
-        /// <summary>
-        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("metadata", Required = global::Newtonsoft.Json.Required.Always)]
-        public object? Metadata { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,32 +52,36 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="ThreadObject" /> class.
         /// </summary>
+        /// <param name="createdAt">
+        /// The Unix timestamp (in seconds) for when the thread was created.
+        /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints.
+        /// </param>
+        /// <param name="metadata">
+        /// Set of 16 key-value pairs that can be attached to an object. This can be<br/>
+        /// useful for storing additional information about the object in a structured<br/>
+        /// format, and querying for objects via API or the dashboard. <br/>
+        /// Keys are strings with a maximum length of 64 characters. Values are strings<br/>
+        /// with a maximum length of 512 characters.
         /// </param>
         /// <param name="object">
         /// The object type, which is always `thread`.
         /// </param>
-        /// <param name="createdAt">
-        /// The Unix timestamp (in seconds) for when the thread was created.
-        /// </param>
         /// <param name="toolResources">
         /// A set of resources that are made available to the assistant's tools in this thread. The resources are specific to the type of tool. For example, the `code_interpreter` tool requires a list of file IDs, while the `file_search` tool requires a list of vector store IDs.
         /// </param>
-        /// <param name="metadata">
-        /// Set of 16 key-value pairs that can be attached to an object. This can be useful for storing additional information about the object in a structured format. Keys can be a maximum of 64 characters long and values can be a maximum of 512 characters long.
-        /// </param>
         public ThreadObject(
-            string id,
             global::System.DateTimeOffset createdAt,
+            string id,
+            global::System.Collections.Generic.Dictionary<string, string>? metadata,
             global::G.ThreadObjectToolResources? toolResources,
-            object? metadata,
             global::G.ThreadObjectObject @object)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.CreatedAt = createdAt;
-            this.ToolResources = toolResources ?? throw new global::System.ArgumentNullException(nameof(toolResources));
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Metadata = metadata ?? throw new global::System.ArgumentNullException(nameof(metadata));
+            this.ToolResources = toolResources ?? throw new global::System.ArgumentNullException(nameof(toolResources));
             this.Object = @object;
         }
 

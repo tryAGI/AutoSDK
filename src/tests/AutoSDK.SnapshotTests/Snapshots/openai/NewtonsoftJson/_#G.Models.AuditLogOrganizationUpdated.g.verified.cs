@@ -10,16 +10,16 @@ namespace G
     public sealed partial class AuditLogOrganizationUpdated
     {
         /// <summary>
-        /// The organization ID.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("id")]
-        public string? Id { get; set; }
-
-        /// <summary>
         /// The payload used to update the organization settings.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("changes_requested")]
         public global::G.AuditLogOrganizationUpdatedChangesRequested? ChangesRequested { get; set; }
+
+        /// <summary>
+        /// The organization ID.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("id")]
+        public string? Id { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,18 +30,18 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditLogOrganizationUpdated" /> class.
         /// </summary>
-        /// <param name="id">
-        /// The organization ID.
-        /// </param>
         /// <param name="changesRequested">
         /// The payload used to update the organization settings.
         /// </param>
+        /// <param name="id">
+        /// The organization ID.
+        /// </param>
         public AuditLogOrganizationUpdated(
-            string? id,
-            global::G.AuditLogOrganizationUpdatedChangesRequested? changesRequested)
+            global::G.AuditLogOrganizationUpdatedChangesRequested? changesRequested,
+            string? id)
         {
-            this.Id = id;
             this.ChangesRequested = changesRequested;
+            this.Id = id;
         }
 
         /// <summary>

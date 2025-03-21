@@ -5,12 +5,10 @@
 namespace G
 {
     /// <summary>
-    /// The voice the model uses to respond. Current voice options are `ash`, <br/>
-    /// `ballad`, `coral`, `sage`, and `verse`. <br/>
-    /// Also supported but not recommended are `alloy`, `echo`, and `shimmer`. <br/>
-    /// These older voices are less expressive. <br/>
-    /// Voice cannot be changed during the session once the model has <br/>
-    /// responded with audio at least once.
+    /// The voice the model uses to respond. Voice cannot be changed during the <br/>
+    /// session once the model has responded with audio at least once. Current <br/>
+    /// voice options are `alloy`, `ash`, `ballad`, `coral`, `echo` `sage`, <br/>
+    /// `shimmer` and `verse`.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum RealtimeSessionVoice

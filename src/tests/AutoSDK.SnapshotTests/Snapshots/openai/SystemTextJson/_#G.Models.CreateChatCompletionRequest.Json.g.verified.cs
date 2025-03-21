@@ -3,7 +3,7 @@
 
 namespace G
 {
-    public sealed partial class CreateChatCompletionRequest
+    public readonly partial struct CreateChatCompletionRequest
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -42,7 +42,7 @@ namespace G
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
                 typeof(global::G.CreateChatCompletionRequest),
-                jsonSerializerContext) as global::G.CreateChatCompletionRequest;
+                jsonSerializerContext) as global::G.CreateChatCompletionRequest?;
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace G
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
                 typeof(global::G.CreateChatCompletionRequest),
-                jsonSerializerContext).ConfigureAwait(false)) as global::G.CreateChatCompletionRequest;
+                jsonSerializerContext).ConfigureAwait(false)) as global::G.CreateChatCompletionRequest?;
         }
 
         /// <summary>

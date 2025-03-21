@@ -186,11 +186,11 @@ namespace G
         /// <param name="uploadId">
         /// Example: upload_abc123
         /// </param>
-        /// <param name="partIds">
-        /// The ordered list of Part IDs.
-        /// </param>
         /// <param name="md5">
         /// The optional md5 checksum for the file contents to verify if the bytes uploaded matches what you expect.
+        /// </param>
+        /// <param name="partIds">
+        /// The ordered list of Part IDs.
         /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -202,8 +202,8 @@ namespace G
         {
             var __request = new global::G.CompleteUploadRequest
             {
-                PartIds = partIds,
                 Md5 = md5,
+                PartIds = partIds,
             };
 
             return await CompleteUploadAsync(

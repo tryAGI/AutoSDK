@@ -5,13 +5,13 @@
 namespace G
 {
     /// <summary>
-    /// The type of response format being defined: `json_object`
+    /// The type of response format being defined. Always `json_object`.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ResponseFormatJsonObjectType
     {
         /// <summary>
-        /// `json_object`
+        /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="json_object")]
         JsonObject,

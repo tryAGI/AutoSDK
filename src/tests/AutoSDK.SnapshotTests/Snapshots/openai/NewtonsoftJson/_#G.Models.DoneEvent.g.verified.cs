@@ -12,14 +12,14 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("event")]
-        public global::G.DoneEventEvent Event { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("data")]
+        public global::G.DoneEventData Data { get; set; }
 
         /// <summary>
         /// 
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("data")]
-        public global::G.DoneEventData Data { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("event")]
+        public global::G.DoneEventEvent Event { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -30,14 +30,14 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="DoneEvent" /> class.
         /// </summary>
-        /// <param name="event"></param>
         /// <param name="data"></param>
+        /// <param name="event"></param>
         public DoneEvent(
-            global::G.DoneEventEvent @event,
-            global::G.DoneEventData data)
+            global::G.DoneEventData data,
+            global::G.DoneEventEvent @event)
         {
-            this.Event = @event;
             this.Data = data;
+            this.Event = @event;
         }
 
         /// <summary>

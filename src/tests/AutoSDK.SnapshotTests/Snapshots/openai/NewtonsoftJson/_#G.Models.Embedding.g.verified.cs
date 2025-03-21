@@ -10,16 +10,16 @@ namespace G
     public sealed partial class Embedding
     {
         /// <summary>
-        /// The index of the embedding in the list of embeddings.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
-        public int Index { get; set; } = default!;
-
-        /// <summary>
         /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("embedding", Required = global::Newtonsoft.Json.Required.Always)]
         public global::System.Collections.Generic.IList<double> Embedding1 { get; set; } = default!;
+
+        /// <summary>
+        /// The index of the embedding in the list of embeddings.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("index", Required = global::Newtonsoft.Json.Required.Always)]
+        public int Index { get; set; } = default!;
 
         /// <summary>
         /// The object type, which is always "embedding".
@@ -36,22 +36,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Embedding" /> class.
         /// </summary>
-        /// <param name="index">
-        /// The index of the embedding in the list of embeddings.
-        /// </param>
         /// <param name="embedding1">
         /// The embedding vector, which is a list of floats. The length of vector depends on the model as listed in the [embedding guide](/docs/guides/embeddings).
+        /// </param>
+        /// <param name="index">
+        /// The index of the embedding in the list of embeddings.
         /// </param>
         /// <param name="object">
         /// The object type, which is always "embedding".
         /// </param>
         public Embedding(
-            int index,
             global::System.Collections.Generic.IList<double> embedding1,
+            int index,
             global::G.EmbeddingObject @object)
         {
-            this.Index = index;
             this.Embedding1 = embedding1 ?? throw new global::System.ArgumentNullException(nameof(embedding1));
+            this.Index = index;
             this.Object = @object;
         }
 

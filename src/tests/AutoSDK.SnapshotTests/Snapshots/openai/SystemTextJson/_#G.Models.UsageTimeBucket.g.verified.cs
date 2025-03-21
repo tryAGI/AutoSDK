@@ -1,5 +1,7 @@
 ﻿//HintName: G.Models.UsageTimeBucket.g.cs
 
+#pragma warning disable CS0618 // Type or member is obsolete
+
 #nullable enable
 
 namespace G
@@ -12,20 +14,6 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UsageTimeBucketObjectJsonConverter))]
-        public global::G.UsageTimeBucketObject Object { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required int StartTime { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("end_time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int EndTime { get; set; }
@@ -33,9 +21,23 @@ namespace G
         /// <summary>
         /// 
         /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("object")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.UsageTimeBucketObjectJsonConverter))]
+        public global::G.UsageTimeBucketObject Object { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("result")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::G.ResultItem> Result { get; set; }
+        public required global::System.Collections.Generic.IList<global::G.OneOf<global::G.UsageCompletionsResult, global::G.UsageEmbeddingsResult, global::G.UsageModerationsResult, global::G.UsageImagesResult, global::G.UsageAudioSpeechesResult, global::G.UsageAudioTranscriptionsResult, global::G.UsageVectorStoresResult, global::G.UsageCodeInterpreterSessionsResult, global::G.CostsResult>> Result { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("start_time")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required int StartTime { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -46,22 +48,22 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="UsageTimeBucket" /> class.
         /// </summary>
-        /// <param name="object"></param>
-        /// <param name="startTime"></param>
         /// <param name="endTime"></param>
+        /// <param name="object"></param>
         /// <param name="result"></param>
+        /// <param name="startTime"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public UsageTimeBucket(
-            int startTime,
             int endTime,
-            global::System.Collections.Generic.IList<global::G.ResultItem> result,
+            global::System.Collections.Generic.IList<global::G.OneOf<global::G.UsageCompletionsResult, global::G.UsageEmbeddingsResult, global::G.UsageModerationsResult, global::G.UsageImagesResult, global::G.UsageAudioSpeechesResult, global::G.UsageAudioTranscriptionsResult, global::G.UsageVectorStoresResult, global::G.UsageCodeInterpreterSessionsResult, global::G.CostsResult>> result,
+            int startTime,
             global::G.UsageTimeBucketObject @object)
         {
-            this.StartTime = startTime;
             this.EndTime = endTime;
             this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
+            this.StartTime = startTime;
             this.Object = @object;
         }
 

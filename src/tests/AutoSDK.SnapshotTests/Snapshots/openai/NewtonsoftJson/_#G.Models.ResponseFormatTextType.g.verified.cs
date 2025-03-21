@@ -5,13 +5,13 @@
 namespace G
 {
     /// <summary>
-    /// The type of response format being defined: `text`
+    /// The type of response format being defined. Always `text`.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum ResponseFormatTextType
     {
         /// <summary>
-        /// `text`
+        /// 
         /// </summary>
         [global::System.Runtime.Serialization.EnumMember(Value="text")]
         Text,

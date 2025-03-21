@@ -5,7 +5,7 @@
 namespace G
 {
     /// <summary>
-    /// 
+    /// The log level of the event.
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum FineTuningJobEventLevel

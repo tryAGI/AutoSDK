@@ -1,0 +1,52 @@
+﻿//HintName: G.Models.MessageStreamEventVariant5.g.cs
+
+#nullable enable
+
+namespace G
+{
+    /// <summary>
+    /// Occurs when a [message](/docs/api-reference/messages/object) ends before it is completed.
+    /// </summary>
+    public sealed partial class MessageStreamEventVariant5
+    {
+        /// <summary>
+        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("data", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.MessageObject Data { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("event")]
+        public global::G.MessageStreamEventVariant5Event Event { get; set; }
+
+        /// <summary>
+        /// Additional properties that are not explicitly defined in the schema
+        /// </summary>
+        [global::Newtonsoft.Json.JsonExtensionData]
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageStreamEventVariant5" /> class.
+        /// </summary>
+        /// <param name="data">
+        /// Represents a message within a [thread](/docs/api-reference/threads).
+        /// </param>
+        /// <param name="event"></param>
+        public MessageStreamEventVariant5(
+            global::G.MessageObject data,
+            global::G.MessageStreamEventVariant5Event @event)
+        {
+            this.Data = data ?? throw new global::System.ArgumentNullException(nameof(data));
+            this.Event = @event;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MessageStreamEventVariant5" /> class.
+        /// </summary>
+        public MessageStreamEventVariant5()
+        {
+        }
+    }
+}

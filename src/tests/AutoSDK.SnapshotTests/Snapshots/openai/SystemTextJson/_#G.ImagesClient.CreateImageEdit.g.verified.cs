@@ -72,9 +72,6 @@ namespace G
                 content: new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>()),
                 name: "image",
                 fileName: request.Imagename ?? string.Empty);
-            __httpRequestContent.Add(
-                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
-                name: "prompt");
             if (request.Mask != default)
             {
                 __httpRequestContent.Add(
@@ -94,17 +91,20 @@ namespace G
                     content: new global::System.Net.Http.StringContent($"{request.N}"),
                     name: "n");
             } 
-            if (request.Size != default)
-            {
-                __httpRequestContent.Add(
-                    content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
-                    name: "size");
-            } 
+            __httpRequestContent.Add(
+                content: new global::System.Net.Http.StringContent($"{request.Prompt}"),
+                name: "prompt");
             if (request.ResponseFormat != default)
             {
                 __httpRequestContent.Add(
                     content: new global::System.Net.Http.StringContent($"{request.ResponseFormat?.ToValueString()}"),
                     name: "response_format");
+            } 
+            if (request.Size != default)
+            {
+                __httpRequestContent.Add(
+                    content: new global::System.Net.Http.StringContent($"{request.Size?.ToValueString()}"),
+                    name: "size");
             } 
             if (request.User != default)
             {
@@ -215,10 +215,6 @@ namespace G
         /// <param name="imagename">
         /// The image to edit. Must be a valid PNG file, less than 4MB, and square. If mask is not provided, image must have transparency, which will be used as the mask.
         /// </param>
-        /// <param name="prompt">
-        /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
-        /// Example: A cute baby sea otter wearing a beret
-        /// </param>
         /// <param name="mask">
         /// An additional image whose fully transparent areas (e.g. where alpha is zero) indicate where `image` should be edited. Must be a valid PNG file, less than 4MB, and have the same dimensions as `image`.
         /// </param>
@@ -235,15 +231,19 @@ namespace G
         /// Default Value: 1<br/>
         /// Example: 1
         /// </param>
-        /// <param name="size">
-        /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
-        /// Default Value: 1024x1024<br/>
-        /// Example: 1024x1024
+        /// <param name="prompt">
+        /// A text description of the desired image(s). The maximum length is 1000 characters.<br/>
+        /// Example: A cute baby sea otter wearing a beret
         /// </param>
         /// <param name="responseFormat">
         /// The format in which the generated images are returned. Must be one of `url` or `b64_json`. URLs are only valid for 60 minutes after the image has been generated.<br/>
         /// Default Value: url<br/>
         /// Example: url
+        /// </param>
+        /// <param name="size">
+        /// The size of the generated images. Must be one of `256x256`, `512x512`, or `1024x1024`.<br/>
+        /// Default Value: 1024x1024<br/>
+        /// Example: 1024x1024
         /// </param>
         /// <param name="user">
         /// A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices#end-user-ids).<br/>
@@ -259,8 +259,8 @@ namespace G
             string? maskname = default,
             global::G.AnyOf<string, global::G.CreateImageEditRequestModel?>? model = default,
             int? n = default,
-            global::G.CreateImageEditRequestSize? size = default,
             global::G.CreateImageEditRequestResponseFormat? responseFormat = default,
+            global::G.CreateImageEditRequestSize? size = default,
             string? user = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -268,13 +268,13 @@ namespace G
             {
                 Image = image,
                 Imagename = imagename,
-                Prompt = prompt,
                 Mask = mask,
                 Maskname = maskname,
                 Model = model,
                 N = n,
-                Size = size,
+                Prompt = prompt,
                 ResponseFormat = responseFormat,
+                Size = size,
                 User = user,
             };
 

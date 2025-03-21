@@ -5,12 +5,15 @@
 namespace G
 {
     /// <summary>
-    /// Send this event to update the session’s default configuration. The client may <br/>
-    /// send this event at any time to update the session configuration, and any <br/>
-    /// field may be updated at any time, except for "voice". The server will respond <br/>
-    /// with a `session.updated` event that shows the full effective configuration. <br/>
-    /// Only fields that are present are updated, thus the correct way to clear a <br/>
-    /// field like "instructions" is to pass an empty string.
+    /// Send this event to update the session’s default configuration.<br/>
+    /// The client may send this event at any time to update any field,<br/>
+    /// except for `voice`. However, note that once a session has been<br/>
+    /// initialized with a particular `model`, it can’t be changed to<br/>
+    /// another model using `session.update`.<br/>
+    /// When the server receives a `session.update`, it will respond<br/>
+    /// with a `session.updated` event showing the full, effective configuration.<br/>
+    /// Only the fields that are present are updated. To clear a field like<br/>
+    /// `instructions`, pass an empty string.
     /// </summary>
     public sealed partial class RealtimeClientEventSessionUpdate
     {
@@ -21,16 +24,16 @@ namespace G
         public string? EventId { get; set; }
 
         /// <summary>
+        /// Realtime session object configuration.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("session", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::G.RealtimeSessionCreateRequest Session { get; set; } = default!;
+
+        /// <summary>
         /// The event type, must be `session.update`.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("type")]
         public global::G.RealtimeClientEventSessionUpdateType Type { get; set; }
-
-        /// <summary>
-        /// Realtime session object configuration.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("session", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::G.RealtimeSession Session { get; set; } = default!;
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,14 +47,14 @@ namespace G
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `session.update`.
-        /// </param>
         /// <param name="session">
         /// Realtime session object configuration.
         /// </param>
+        /// <param name="type">
+        /// The event type, must be `session.update`.
+        /// </param>
         public RealtimeClientEventSessionUpdate(
-            global::G.RealtimeSession session,
+            global::G.RealtimeSessionCreateRequest session,
             string? eventId,
             global::G.RealtimeClientEventSessionUpdateType type)
         {

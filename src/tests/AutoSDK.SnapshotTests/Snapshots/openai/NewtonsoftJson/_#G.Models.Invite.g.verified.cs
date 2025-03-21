@@ -10,10 +10,22 @@ namespace G
     public sealed partial class Invite
     {
         /// <summary>
-        /// The object type, which is always `organization.invite`
+        /// The Unix timestamp (in seconds) of when the invite was accepted.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("object")]
-        public global::G.InviteObject Object { get; set; }
+        [global::Newtonsoft.Json.JsonProperty("accepted_at")]
+        public global::System.DateTimeOffset? AcceptedAt { get; set; }
+
+        /// <summary>
+        /// The email address of the individual to whom the invite was sent
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
+        public string Email { get; set; } = default!;
+
+        /// <summary>
+        /// The Unix timestamp (in seconds) of when the invite expires.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset ExpiresAt { get; set; } = default!;
 
         /// <summary>
         /// The identifier, which can be referenced in API endpoints
@@ -22,10 +34,22 @@ namespace G
         public string Id { get; set; } = default!;
 
         /// <summary>
-        /// The email address of the individual to whom the invite was sent
+        /// The Unix timestamp (in seconds) of when the invite was sent.
         /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("email", Required = global::Newtonsoft.Json.Required.Always)]
-        public string Email { get; set; } = default!;
+        [global::Newtonsoft.Json.JsonProperty("invited_at", Required = global::Newtonsoft.Json.Required.Always)]
+        public global::System.DateTimeOffset InvitedAt { get; set; } = default!;
+
+        /// <summary>
+        /// The object type, which is always `organization.invite`
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("object")]
+        public global::G.InviteObject Object { get; set; }
+
+        /// <summary>
+        /// The projects that were granted membership upon acceptance of the invite.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("projects")]
+        public global::System.Collections.Generic.IList<global::G.InviteProject>? Projects { get; set; }
 
         /// <summary>
         /// `owner` or `reader`
@@ -40,24 +64,6 @@ namespace G
         public global::G.InviteStatus Status { get; set; } = default!;
 
         /// <summary>
-        /// The Unix timestamp (in seconds) of when the invite was sent.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("invited_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset InvitedAt { get; set; } = default!;
-
-        /// <summary>
-        /// The Unix timestamp (in seconds) of when the invite expires.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("expires_at", Required = global::Newtonsoft.Json.Required.Always)]
-        public global::System.DateTimeOffset ExpiresAt { get; set; } = default!;
-
-        /// <summary>
-        /// The Unix timestamp (in seconds) of when the invite was accepted.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("accepted_at")]
-        public global::System.DateTimeOffset? AcceptedAt { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -66,14 +72,26 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="Invite" /> class.
         /// </summary>
-        /// <param name="object">
-        /// The object type, which is always `organization.invite`
+        /// <param name="acceptedAt">
+        /// The Unix timestamp (in seconds) of when the invite was accepted.
+        /// </param>
+        /// <param name="email">
+        /// The email address of the individual to whom the invite was sent
+        /// </param>
+        /// <param name="expiresAt">
+        /// The Unix timestamp (in seconds) of when the invite expires.
         /// </param>
         /// <param name="id">
         /// The identifier, which can be referenced in API endpoints
         /// </param>
-        /// <param name="email">
-        /// The email address of the individual to whom the invite was sent
+        /// <param name="invitedAt">
+        /// The Unix timestamp (in seconds) of when the invite was sent.
+        /// </param>
+        /// <param name="object">
+        /// The object type, which is always `organization.invite`
+        /// </param>
+        /// <param name="projects">
+        /// The projects that were granted membership upon acceptance of the invite.
         /// </param>
         /// <param name="role">
         /// `owner` or `reader`
@@ -81,33 +99,26 @@ namespace G
         /// <param name="status">
         /// `accepted`,`expired`, or `pending`
         /// </param>
-        /// <param name="invitedAt">
-        /// The Unix timestamp (in seconds) of when the invite was sent.
-        /// </param>
-        /// <param name="expiresAt">
-        /// The Unix timestamp (in seconds) of when the invite expires.
-        /// </param>
-        /// <param name="acceptedAt">
-        /// The Unix timestamp (in seconds) of when the invite was accepted.
-        /// </param>
         public Invite(
-            string id,
             string email,
+            global::System.DateTimeOffset expiresAt,
+            string id,
+            global::System.DateTimeOffset invitedAt,
             global::G.InviteRole role,
             global::G.InviteStatus status,
-            global::System.DateTimeOffset invitedAt,
-            global::System.DateTimeOffset expiresAt,
+            global::System.DateTimeOffset? acceptedAt,
             global::G.InviteObject @object,
-            global::System.DateTimeOffset? acceptedAt)
+            global::System.Collections.Generic.IList<global::G.InviteProject>? projects)
         {
-            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Email = email ?? throw new global::System.ArgumentNullException(nameof(email));
+            this.ExpiresAt = expiresAt;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.InvitedAt = invitedAt;
             this.Role = role;
             this.Status = status;
-            this.InvitedAt = invitedAt;
-            this.ExpiresAt = expiresAt;
-            this.Object = @object;
             this.AcceptedAt = acceptedAt;
+            this.Object = @object;
+            this.Projects = projects;
         }
 
         /// <summary>

@@ -12,25 +12,6 @@ namespace G
     public sealed partial class RealtimeServerEventConversationItemInputAudioTranscriptionFailed
     {
         /// <summary>
-        /// The unique ID of the server event.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("event_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string EventId { get; set; } = default!;
-
-        /// <summary>
-        /// The event type, must be<br/>
-        /// `conversation.item.input_audio_transcription.failed`.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("type")]
-        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailedType Type { get; set; }
-
-        /// <summary>
-        /// The ID of the user message item.
-        /// </summary>
-        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
-        public string ItemId { get; set; } = default!;
-
-        /// <summary>
         /// The index of the content part containing the audio.
         /// </summary>
         [global::Newtonsoft.Json.JsonProperty("content_index", Required = global::Newtonsoft.Json.Required.Always)]
@@ -43,6 +24,25 @@ namespace G
         public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailedError Error { get; set; } = default!;
 
         /// <summary>
+        /// The unique ID of the server event.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("event_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string EventId { get; set; } = default!;
+
+        /// <summary>
+        /// The ID of the user message item.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("item_id", Required = global::Newtonsoft.Json.Required.Always)]
+        public string ItemId { get; set; } = default!;
+
+        /// <summary>
+        /// The event type, must be<br/>
+        /// `conversation.item.input_audio_transcription.failed`.
+        /// </summary>
+        [global::Newtonsoft.Json.JsonProperty("type")]
+        public global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailedType Type { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::Newtonsoft.Json.JsonExtensionData]
@@ -51,33 +51,33 @@ namespace G
         /// <summary>
         /// Initializes a new instance of the <see cref="RealtimeServerEventConversationItemInputAudioTranscriptionFailed" /> class.
         /// </summary>
-        /// <param name="eventId">
-        /// The unique ID of the server event.
-        /// </param>
-        /// <param name="type">
-        /// The event type, must be<br/>
-        /// `conversation.item.input_audio_transcription.failed`.
-        /// </param>
-        /// <param name="itemId">
-        /// The ID of the user message item.
-        /// </param>
         /// <param name="contentIndex">
         /// The index of the content part containing the audio.
         /// </param>
         /// <param name="error">
         /// Details of the transcription error.
         /// </param>
+        /// <param name="eventId">
+        /// The unique ID of the server event.
+        /// </param>
+        /// <param name="itemId">
+        /// The ID of the user message item.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be<br/>
+        /// `conversation.item.input_audio_transcription.failed`.
+        /// </param>
         public RealtimeServerEventConversationItemInputAudioTranscriptionFailed(
-            string eventId,
-            string itemId,
             int contentIndex,
             global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailedError error,
+            string eventId,
+            string itemId,
             global::G.RealtimeServerEventConversationItemInputAudioTranscriptionFailedType type)
         {
-            this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
-            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.ContentIndex = contentIndex;
             this.Error = error ?? throw new global::System.ArgumentNullException(nameof(error));
+            this.EventId = eventId ?? throw new global::System.ArgumentNullException(nameof(eventId));
+            this.ItemId = itemId ?? throw new global::System.ArgumentNullException(nameof(itemId));
             this.Type = type;
         }
 

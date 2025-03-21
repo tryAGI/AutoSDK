@@ -19,18 +19,18 @@ namespace G
         public string? EventId { get; set; }
 
         /// <summary>
-        /// The event type, must be `conversation.item.delete`.
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventConversationItemDeleteTypeJsonConverter))]
-        public global::G.RealtimeClientEventConversationItemDeleteType Type { get; set; }
-
-        /// <summary>
         /// The ID of the item to delete.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("item_id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string ItemId { get; set; }
+
+        /// <summary>
+        /// The event type, must be `conversation.item.delete`.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("type")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::G.JsonConverters.RealtimeClientEventConversationItemDeleteTypeJsonConverter))]
+        public global::G.RealtimeClientEventConversationItemDeleteType Type { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,11 +44,11 @@ namespace G
         /// <param name="eventId">
         /// Optional client-generated ID used to identify this event.
         /// </param>
-        /// <param name="type">
-        /// The event type, must be `conversation.item.delete`.
-        /// </param>
         /// <param name="itemId">
         /// The ID of the item to delete.
+        /// </param>
+        /// <param name="type">
+        /// The event type, must be `conversation.item.delete`.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

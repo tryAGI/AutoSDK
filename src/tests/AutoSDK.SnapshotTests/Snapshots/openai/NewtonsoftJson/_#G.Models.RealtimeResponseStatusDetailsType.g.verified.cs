@@ -6,7 +6,8 @@ namespace G
 {
     /// <summary>
     /// The type of error that caused the response to fail, corresponding <br/>
-    /// with the `status` field (`cancelled`, `incomplete`, `failed`).
+    /// with the `status` field (`completed`, `cancelled`, `incomplete`, <br/>
+    /// `failed`).
     /// </summary>
     [global::System.Runtime.Serialization.DataContract]
     public enum RealtimeResponseStatusDetailsType
